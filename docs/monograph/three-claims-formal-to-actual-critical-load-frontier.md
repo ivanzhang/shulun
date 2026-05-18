@@ -7697,3 +7697,59 @@ NormalizedTailGapPositiveOrDenseTailReturnPDEC
 
 本步没有证明归一化 gap 为正；它把剩余从二维窗口几何压成一维 tail-index 和式。
 若一维 gap 仍不足，必须由 dense tail、tail saturation 或 named-return mass PDEC/SAE 承载。
+
+## 178. Tail gap 全整数 margin 分裂
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_integer_margin_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-integer-margin-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-integer-margin-router.json
+data/prime-matrix-firstbreak-tail-gap-integer-margin-ledger.json
+```
+
+本步继续攻击 `NormalizedTailGapPositiveOrDenseTailReturnPDEC`。同步结果：
+
+```text
+normalized_tail_gap_imported=true
+one_dimensional_tail_imported=true
+integer_margin_functional_closed=true
+prime_tail_dominated_by_integer_tail_closed=true
+positive_branch_criterion_closed=true
+early_half_support_tail_cannot_saturate_closed=true
+integer_margin_positive_globally_proved=false
+late_support_dense_tail_named_return_pdec_excluded=false
+normalized_positive_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：把 prime-tail 上界放宽成全整数上界
+
+```text
+C_all = sum_{1<=r<y} min(L,r) ceil((P-1)/(P-y+r)),
+G_int = L(P-1)-C_all.
+```
+
+则：
+
+```text
+C_tail <= C_all,
+G_prime >= G_int.
+```
+
+所以 `G_int>R_named` 是正 gap 的充分条件。进一步，在 `y<=floor(P/2)` 的前半支撑中：
+
+```text
+C_all <= L(2y-L-1),
+G_int >= L(P-2y+L)>0.
+```
+
+新的直接主攻为：
+
+```text
+IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC
+```
+
+本步没有证明全局正 gap；它删除了前半支撑 pure-tail 饱和解释。
+剩余必须表现为 late-support dense-tail，或命名 return 质量 `R_named` 过大。

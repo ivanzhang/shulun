@@ -1,0 +1,122 @@
+{
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_integer_margin_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "NormalizedTailGapImported",
+      "meaning": "上一层把正 gap 硬点压成 q=H+r 的一维 prime-tail functional。",
+      "proved": false,
+      "remaining": "NormalizedTailGapPositiveOrDenseTailReturnPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "OneDimensionalTailImported",
+      "meaning": "已得到 C_tail=sum_{prime q=H+r<P} min(L,r)ceil((P-1)/(H+r))。",
+      "proved": true,
+      "remaining": "ExactPrimeTailEnvelopeOneDimensionalLedger"
+    },
+    {
+      "closed": true,
+      "gate": "IntegerMarginFunctionalClosed",
+      "meaning": "定义 G_int=L(P-1)-C_all，其中 C_all=sum_{1<=r<y}min(L,r)ceil((P-1)/(P-y+r))。",
+      "proved": true,
+      "remaining": "NormalizedIntegerTailMarginFunctionalLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeTailDominatedByIntegerTailClosed",
+      "meaning": "因 prime tail 是 integer tail 的子和，C_tail<=C_all，故 G'=L(P-1)-C_tail>=G_int。",
+      "proved": true,
+      "remaining": "PrimeTailDominatedByIntegerTailEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveBranchCriterionClosed",
+      "meaning": "若 G_int>R_named，则 G=L(P-1)-C_tail-R_named>0。",
+      "proved": true,
+      "remaining": "IntegerMarginPositiveBranchCriterionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyHalfPureTailCannotSaturateClosed",
+      "meaning": "若 P 为奇素数且 y<=floor(P/2)，则 ceil((P-1)/(P-y+r))<=2，故 G_int>=L(P-2y+L)>0。",
+      "proved": true,
+      "remaining": "EarlyHalfSupportTailCannotSaturateLemma"
+    },
+    {
+      "closed": false,
+      "gate": "LateSupportOrNamedReturnStillOpen",
+      "meaning": "仍未排斥 y>floor(P/2) 的 late-support dense-tail，或 R_named 吃掉整数 margin 的命名 return 质量。",
+      "proved": false,
+      "remaining": "IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "NormalizedTailGapReduced",
+      "meaning": "NormalizedTailGapPositiveOrDenseTailReturnPDEC 被压成整数 margin、prime/integer 支配、前半支撑 tail 不饱和，以及 late-support/named-return PDEC。",
+      "proved": false,
+      "remaining": "NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "NormalizedPositiveGapProved",
+      "meaning": "本步没有证明全局 G>0；只关闭前半支撑的 pure-tail 饱和解释，并把失败口径集中到 late support 或 R_named。",
+      "proved": false,
+      "remaining": "IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需排斥 late-support dense-tail/named-return 质量，并行还需高纤维、碰撞、history switch、strict-gap 与 source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "early_half_support_tail_cannot_saturate_closed": true,
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC",
+  "hardpoint_before_router": "NormalizedTailGapPositiveOrDenseTailReturnPDEC",
+  "integer_margin_formulas": {
+    "C_all": "sum_{1<=r<y} min(L,r) ceil((P-1)/(P-y+r))",
+    "G_int": "L(P-1)-C_all",
+    "early_half_bound": "y<=floor(P/2) => C_all<=L(2y-L-1) and G_int>=L(P-2y+L)>0",
+    "positive_branch": "G_int>R_named => G>0",
+    "prime_domination": "C_tail<=C_all and G_prime>=G_int"
+  },
+  "integer_margin_functional_closed": true,
+  "integer_margin_positive_globally_proved": false,
+  "late_support_dense_tail_named_return_pdec_excluded": false,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC",
+  "no_theorem_switch": true,
+  "normalized_positive_gap_proved": false,
+  "normalized_tail_gap_imported": true,
+  "one_dimensional_tail_imported": true,
+  "parallel_attack_targets": [
+    "HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn",
+    "ArrivalCollisionOrDuplicatePaymentReturnLedger",
+    "TerminalNonarrivalLargeStepEscapePDECOrSAE",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "归一化 tail gap 被继续压成全整数 margin。由于 prime tail 是 integer tail 的子和，只要 G_int=L(P-1)-C_all 超过命名 return 质量 R_named，就得到正 gap。特别地，当首破裂 y 仍在前半支撑 y<=floor(P/2) 时，所有 tail carrier 都满足 ceil((P-1)/(P-y+r))<=2，从而 G_int>=L(P-2y+L)>0；因此 pure tail 本身不能吃满零块义务。剩余硬点集中到 late-support dense-tail 或 R_named 过大。",
+  "positive_branch_criterion_closed": true,
+  "prime_tail_dominated_by_integer_tail_closed": true,
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.json": "a3dd4c8f63dec374475a41dfa3b6439bf2c62823e30576ef870b05e713f752f0",
+    "docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.json": "b9d4683be96296b04e206cdc5d17afee2e936457da2c913f55a60ac820ddb557",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.json": "f10a978ed4750e3994f4075cafaa86cd69d6b525916472195c25a479c13d5cbd",
+    "experiments/prime_matrix_firstbreak_tail_gap_integer_margin_router.py": "74b720c70739b76e92503b1ae0cad05d234f29cdfe63e5f26288d2d4d1be2fcc"
+  },
+  "status": "normalized_tail_gap_reduced_to_integer_margin_or_late_support_dense_tail_open"
+}

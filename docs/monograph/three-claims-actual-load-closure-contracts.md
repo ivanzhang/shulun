@@ -7979,3 +7979,72 @@ PositiveStableTailGapOrNamedReturnMassPDEC
 本步关闭的是 tail window 的变量替换和一维 functional；真正剩余是证明归一化 prime-tail functional 留出正 gap，
 或证明 dense tail、tail saturation、`R_named` 过大已经进入 PDEC/SAE。
 行/列命题仍未无条件闭合。
+
+## 178. Tail gap 全整数 margin 分裂回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_integer_margin_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-integer-margin-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-integer-margin-router.json
+data/prime-matrix-firstbreak-tail-gap-integer-margin-ledger.json
+```
+
+本步继续攻击 `NormalizedTailGapPositiveOrDenseTailReturnPDEC`。同步读数为：
+
+```text
+normalized_tail_gap_imported=true
+one_dimensional_tail_imported=true
+integer_margin_functional_closed=true
+prime_tail_dominated_by_integer_tail_closed=true
+positive_branch_criterion_closed=true
+early_half_support_tail_cannot_saturate_closed=true
+integer_margin_positive_globally_proved=false
+late_support_dense_tail_named_return_pdec_excluded=false
+normalized_positive_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+由上一层 `H=P-y` 与一维 tail 和式，定义全整数上界：
+
+```text
+C_all = sum_{1<=r<y} min(L,r) ceil((P-1)/(P-y+r)),
+G_int = L(P-1)-C_all.
+```
+
+因为 prime tail 是 integer tail 的子和：
+
+```text
+C_tail <= C_all,
+G_prime=L(P-1)-C_tail >= G_int.
+```
+
+于是若 `G_int>R_named`，则：
+
+```text
+G=G_prime-R_named>0.
+```
+
+前半支撑分支还给出无条件的 pure-tail 不饱和引理。若 `P` 为奇素数且 `y<=floor(P/2)`，则：
+
+```text
+ceil((P-1)/(P-y+r)) <= 2,
+C_all <= L(2y-L-1),
+G_int >= L(P-2y+L)>0.
+```
+
+硬点更新为：
+
+```text
+NormalizedTailGapPositiveOrDenseTailReturnPDEC
+  -> NormalizedIntegerTailMarginFunctionalLedger
+  AND PrimeTailDominatedByIntegerTailEnvelopeLedger
+  AND EarlyHalfSupportTailCannotSaturateLemma
+  AND IntegerMarginPositiveBranchCriterionLedger
+  AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC
+```
+
+本步关闭的是前半支撑的 pure-tail 饱和解释。剩余集中为：
+late-support dense-tail，或 `R_named` 吃掉整数 margin 的命名 return 质量。
+行/列命题仍未无条件闭合。

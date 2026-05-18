@@ -11624,6 +11624,77 @@ not exclude dense tail, tail saturation, or named-return mass PDEC/SAE.  The
 row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Integer margin split for the tail gap]
+In the notation of the preceding theorem, define the all-integer tail envelope
+\[
+  C_{\rm all}:=
+  \sum_{1\le r<y}\min(L,r)
+  \Big\lceil \frac{P-1}{P-y+r}\Big\rceil
+\]
+and the integer margin
+\[
+  G_{\rm int}=L(P-1)-C_{\rm all}.
+\]
+Since the prime tail is a sub-sum of the integer tail,
+\[
+  C_{\rm tail}\le C_{\rm all},
+  \qquad
+  L(P-1)-C_{\rm tail}\ge G_{\rm int}.
+\]
+Therefore \(G_{\rm int}>R_{\rm named}\) implies
+\[
+  L(P-1)-C_{\rm tail}-R_{\rm named}>0.
+\]
+Moreover, if \(P\) is odd and \(y\le \lfloor P/2\rfloor\), then
+\[
+  P-y+r>(P-1)/2,\qquad
+  \Big\lceil\frac{P-1}{P-y+r}\Big\rceil\le2
+\]
+for every \(1\le r<y\).  Since \(1\le L\le y\),
+\[
+  C_{\rm all}\le 2\sum_{1\le r<y}\min(L,r)
+  =L(2y-L-1),
+\]
+and hence
+\[
+  G_{\rm int}\ge L(P-2y+L)>0.
+\]
+Thus a pure tail envelope cannot saturate the zero-block obligation in the
+early-half support branch.  The remaining obstruction must be a late-support
+dense tail or named-return mass.  Hence
+\begin{quote}\scriptsize\ttfamily
+NormalizedTailGapPositiveOrDenseTailReturnPDEC\\
+\(\rightarrow\) NormalizedIntegerTailMarginFunctionalLedger\\
+AND PrimeTailDominatedByIntegerTailEnvelopeLedger\\
+AND EarlyHalfSupportTailCannotSaturateLemma\\
+AND IntegerMarginPositiveBranchCriterionLedger\\
+AND IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-integer-margin-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+normalized\_tail\_gap\_imported=true\\
+one\_dimensional\_tail\_imported=true\\
+integer\_margin\_functional\_closed=true\\
+prime\_tail\_dominated\_by\_integer\_tail\_closed=true\\
+positive\_branch\_criterion\_closed=true\\
+early\_half\_support\_tail\_cannot\_saturate\_closed=true\\
+integer\_margin\_positive\_globally\_proved=false\\
+late\_support\_dense\_tail\_named\_return\_pdec\_excluded=false\\
+normalized\_positive\_gap\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the integer-margin domination and the early-half
+pure-tail non-saturation branch.  It does not prove the global integer margin
+positive after named returns, and it does not exclude late-support dense-tail
+or named-return mass PDEC/SAE.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
