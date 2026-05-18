@@ -7446,3 +7446,69 @@ AND TerminalNonarrivalLargeStepEscapePDECOrSAE
 ```
 
 本步没有证明 distinct arrival demand 已足够大；它只关闭了 quotient 纤维乘数纪律。
+
+## 174. Arrival raw mass 层平衡与低步长阈值
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_raw_mass_layer_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-raw-mass-layer-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-raw-mass-layer-router.json
+data/prime-matrix-firstbreak-arrival-raw-mass-layer-ledger.json
+```
+
+本步继续攻击 `ArrivalRawSourceMassAfterNonarrivalRemoval`。同步结果：
+
+```text
+raw_arrival_mass_imported=true
+ap_successor_dichotomy_imported=true
+source_layer_universe_defined=true
+arrival_nonarrival_source_layer_balance_closed=true
+low_step_always_arrives_closed=true
+terminal_escape_tail_cutoff_closed=true
+raw_arrival_lower_bound_formula_closed=true
+low_step_stable_history_mass_lower_bound_proved=false
+large_step_tail_escape_registered=true
+large_step_tail_escape_excluded=false
+raw_arrival_mass_after_nonarrival_removal_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：设 `H=P-y`，稳定 history 源标签的最后零块命中为 `t_*`。
+若 `q<=H`，则
+
+```text
+t_*+q <= y-1+H = P-1,
+```
+
+所以低步长层必定成为 source-tagged arrival。若 terminal nonarrival 发生，则
+
+```text
+t_*+q>=P  =>  q>=P-t_*>=H+1.
+```
+
+因此
+
+```text
+|A| >= |S_{q<=H}|.
+```
+
+新的直接主攻为：
+
+```text
+LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC
+```
+
+并行保留：
+
+```text
+LargeStepTailTerminalEscapePDECOrSAE
+AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn
+AND ArrivalCollisionOrDuplicatePaymentReturnLedger
+AND TerminalNonarrivalLargeStepEscapePDECOrSAE
+```
+
+本步没有证明 raw arrival mass 已足够大；它只关闭了 nonarrival 去除的精确阈值：
+低步长稳定源不会被 terminal nonarrival 吞掉，剩余硬点变成低步长稳定源质量下界，
+或证明质量集中到 `q>H` 大步长尾部必为 PDEC/SAE。

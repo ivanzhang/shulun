@@ -1,0 +1,142 @@
+{
+  "ap_successor_dichotomy_imported": true,
+  "arrival_nonarrival_source_layer_balance_closed": true,
+  "certificate_type": "prime_matrix_firstbreak_arrival_raw_mass_layer_router",
+  "counterexample_assumption_only": true,
+  "cutoff_identity": {
+    "low_step_arrival": "q<=H => t_*+q<=P-1",
+    "postbreak_width": "H=P-y",
+    "raw_lower_bound": "|A|>=|S_{q<=H}|",
+    "terminal_escape_tail": "t_*+q>=P => q>=H+1"
+  },
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "RawMassImported",
+      "meaning": "上一层把 distinct arrival quotient 的直接主攻压到 terminal nonarrival 去除后的 raw source mass。",
+      "proved": false,
+      "remaining": "ArrivalRawSourceMassAfterNonarrivalRemoval"
+    },
+    {
+      "closed": true,
+      "gate": "APSuccessorDichotomyImported",
+      "meaning": "稳定 history 的 AP 后继二分已闭合：每个稳定源标签只能到达或成为 terminal nonarrival。",
+      "proved": true,
+      "remaining": "StableHistoryAPSuccessorDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLayerUniverseDefined",
+      "meaning": "令 S 为 no-loss 与 history-switch 处理后仍留在稳定表中的 source-tagged history 记录。",
+      "proved": true,
+      "remaining": "S=stable source-tagged history layer"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalNonarrivalBalanceClosed",
+      "meaning": "对 S 中每个记录，以最后零块命中 t_* 和 carrier q 定义后继 t_*+q；于是 S=A disjoint_union E。",
+      "proved": true,
+      "remaining": "ArrivalNonarrivalSourceLayerBalanceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LowStepAlwaysArrivesClosed",
+      "meaning": "设 H=P-y。因 t_*<=y-1，若 q<=H，则 t_*+q<=P-1，所以该源标签必在 post-break 支撑内到达。",
+      "proved": true,
+      "remaining": "LowStepStableHistoryAlwaysArrivesLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalEscapeTailCutoffClosed",
+      "meaning": "若 t_*+q>=P，则 q>=P-t_*>=H+1；terminal nonarrival 全部位于 q>H 的大步长尾部。",
+      "proved": true,
+      "remaining": "LargeStepTailTerminalEscapePDECOrSAE"
+    },
+    {
+      "closed": true,
+      "gate": "RawArrivalLowerBoundFormulaClosed",
+      "meaning": "由低步长必到达，raw arrival mass 满足 |A|>=|S_{q<=H}|；扣除 nonarrival 不会损失低步长层。",
+      "proved": true,
+      "remaining": "RawArrivalMassLowerBoundFromLowStepHistory"
+    },
+    {
+      "closed": false,
+      "gate": "LowStepMassStillOpen",
+      "meaning": "仍未证明稳定源层在 q<=H 上有足够质量；若没有，则质量集中到 q>H 大步长尾部。",
+      "proved": false,
+      "remaining": "LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC"
+    },
+    {
+      "closed": true,
+      "gate": "LargeStepTailEscapeRegistered",
+      "meaning": "若低步长质量不足以支撑 raw arrival 下界，则反例链必须解释为 q>H tail escape/PDEC/SAE。",
+      "proved": false,
+      "remaining": "LargeStepTailTerminalEscapePDECOrSAE"
+    },
+    {
+      "closed": true,
+      "gate": "RawArrivalMassReduced",
+      "meaning": "ArrivalRawSourceMassAfterNonarrivalRemoval 被压成 source-layer 平衡、低步长必到达、raw 下界公式和低步长质量/大步长尾逃逸。",
+      "proved": false,
+      "remaining": "ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RawArrivalMassProved",
+      "meaning": "本步只关闭 terminal nonarrival 去除的精确阈值与质量恒等式；不证明 q<=H 层已有足够质量。",
+      "proved": false,
+      "remaining": "LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需低步长稳定质量下界或大步长尾逃逸排斥、高纤维碰撞排斥、history switch 排斥、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC",
+  "hardpoint_before_router": "ArrivalRawSourceMassAfterNonarrivalRemoval",
+  "large_step_tail_escape_excluded": false,
+  "large_step_tail_escape_registered": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "low_step_always_arrives_closed": true,
+  "low_step_stable_history_mass_lower_bound_proved": false,
+  "next_direct_attack_target": "LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "LargeStepTailTerminalEscapePDECOrSAE",
+    "HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn",
+    "ArrivalCollisionOrDuplicatePaymentReturnLedger",
+    "TerminalNonarrivalLargeStepEscapePDECOrSAE",
+    "HistorySwitchPDECOrColumnCRTExclusion",
+    "ShortZeroBlockSingletonSAESummability",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "raw arrival mass 的 terminal nonarrival 去除被压成精确层平衡。设 H=P-y，稳定 history 源标签的最后零块命中为 t_*。若 q<=H，则 t_*+q<=P-1，所以该源必到达；若 terminal nonarrival 发生，则 q>=H+1。因此 |A|>=|S_{q<=H}|，剩余硬点不是去除口径，而是证明低步长稳定源质量足够；若不足，反例链必须集中在 q>H 的大步长尾逃逸并登记为 PDEC/SAE。",
+  "raw_arrival_lower_bound_formula_closed": true,
+  "raw_arrival_mass_after_nonarrival_removal_proved": false,
+  "raw_arrival_mass_imported": true,
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.json": "31bc34c50e0032154758f6ca75fd2bc9f0fffcf9d6f1de7cd71ac07489793da5",
+    "docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.json": "239ad1e89e72ffed043aeaa5087190a2714c04038f7a7743c563405442e389a8",
+    "docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.json": "e5c371d3a6176d81ee48272332c77e73dab552a2aec026249f687dbd55cbe7aa",
+    "docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.json": "93c614915d07bfaebb5b3dca9ccb7720e877fe545e0b3bb157f7edb8abcf16e2",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.md": "9215c5f0e251cd7170759c2cc51c02ddfc9fdfda469a0ff35f26b524ea6cc692",
+    "experiments/prime_matrix_firstbreak_arrival_raw_mass_layer_router.py": "7d1b6b1c05fa66341e8f695e167897a6a4384dc8115073dc0d3d2c761c5e57cd"
+  },
+  "source_layer_universe_defined": true,
+  "status": "arrival_raw_mass_reduced_to_low_step_history_mass_or_large_step_tail_escape_open",
+  "terminal_escape_tail_cutoff_closed": true
+}

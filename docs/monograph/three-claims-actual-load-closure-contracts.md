@@ -7705,3 +7705,70 @@ DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC
 本步关闭的是 arrival quotient 的乘数纪律。尚未证明 terminal nonarrival 去除后的 raw arrival mass 足够大；
 若 weighted image 仍太小，则说明压力集中在小 `q`/高纤维或重复碰撞上，必须回流到 dense low-carrier/PDEC/SAE。
 行/列命题仍未无条件闭合。
+
+## 174. Arrival raw mass 层平衡与低步长阈值
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_raw_mass_layer_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-raw-mass-layer-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-raw-mass-layer-router.json
+data/prime-matrix-firstbreak-arrival-raw-mass-layer-ledger.json
+```
+
+本步继续攻击 `ArrivalRawSourceMassAfterNonarrivalRemoval`。同步读数为：
+
+```text
+raw_arrival_mass_imported=true
+ap_successor_dichotomy_imported=true
+source_layer_universe_defined=true
+arrival_nonarrival_source_layer_balance_closed=true
+low_step_always_arrives_closed=true
+terminal_escape_tail_cutoff_closed=true
+raw_arrival_lower_bound_formula_closed=true
+low_step_stable_history_mass_lower_bound_proved=false
+large_step_tail_escape_registered=true
+large_step_tail_escape_excluded=false
+raw_arrival_mass_after_nonarrival_removal_proved=false
+row_column_unconditional_closed=false
+```
+
+令 `S` 为稳定 source-tagged history 层，`A` 为到达层，`E` 为 terminal nonarrival 层。
+AP 后继二分给出
+
+```text
+S = A disjoint_union E.
+```
+
+设 `H=P-y`。对任意 `u in S`，最后零块命中 `t_*(u)<=y-1`。若 `q(u)<=H`，则：
+
+```text
+t_*(u)+q(u)<=P-1,
+```
+
+故 `u in A`。若 `u in E`，则：
+
+```text
+q(u)>=P-t_*(u)>=H+1.
+```
+
+于是得到非循环 raw mass 下界：
+
+```text
+|A| >= |S_{q<=H}|.
+```
+
+硬点更新为：
+
+```text
+ArrivalRawSourceMassAfterNonarrivalRemoval
+  -> ArrivalNonarrivalSourceLayerBalanceLedger
+  AND LowStepStableHistoryAlwaysArrivesLedger
+  AND RawArrivalMassLowerBoundFromLowStepHistory
+  AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC
+```
+
+本步关闭的是 terminal nonarrival 去除的阈值纪律。尚未证明 `S_{q<=H}` 足够厚；
+若该层不足，则反例链必须集中到 `q>H` 的大步长尾逃逸，并登记为 PDEC/SAE。
+行/列命题仍未无条件闭合。

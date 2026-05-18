@@ -11382,6 +11382,66 @@ nonarrival is removed, and it does not exclude high-fiber collision or dense
 low-carrier returns.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Arrival raw-mass layer balance]
+Let \(S\) be the stable source-tagged history layer after no-loss projection
+and named history-switch removal.  For \(u\in S\), let \(q(u)\) be its
+carrier and let \(t_*(u)\le y-1\) be the last row in the zero block carrying
+the same history key.  The AP successor dichotomy gives
+\[
+  t_{\rm next}(u)=t_*(u)+q(u),
+\]
+and partitions
+\[
+  S=A\sqcup E,
+\]
+where \(A\) is the source-tagged arrival layer and \(E\) is the terminal
+nonarrival layer.  Put \(H=P-y\).  If \(q(u)\le H\), then
+\[
+  t_*(u)+q(u)\le y-1+H=P-1,
+\]
+so \(u\in A\).  If \(u\in E\), then
+\[
+  q(u)\ge P-t_*(u)\ge P-(y-1)=H+1.
+\]
+Consequently terminal nonarrival removes only the large-step tail \(q>H\),
+and
+\[
+  |A|\ge |S_{\le H}|,\qquad S_{\le H}=\{u\in S:q(u)\le H\}.
+\]
+Thus
+\begin{quote}\scriptsize\ttfamily
+ArrivalRawSourceMassAfterNonarrivalRemoval\\
+\(\rightarrow\) ArrivalNonarrivalSourceLayerBalanceLedger\\
+AND LowStepStableHistoryAlwaysArrivesLedger\\
+AND RawArrivalMassLowerBoundFromLowStepHistory\\
+AND LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-arrival-raw-mass-layer-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+raw\_arrival\_mass\_imported=true\\
+ap\_successor\_dichotomy\_imported=true\\
+source\_layer\_universe\_defined=true\\
+arrival\_nonarrival\_source\_layer\_balance\_closed=true\\
+low\_step\_always\_arrives\_closed=true\\
+terminal\_escape\_tail\_cutoff\_closed=true\\
+raw\_arrival\_lower\_bound\_formula\_closed=true\\
+low\_step\_stable\_history\_mass\_lower\_bound\_proved=false\\
+large\_step\_tail\_escape\_registered=true\\
+large\_step\_tail\_escape\_excluded=false\\
+raw\_arrival\_mass\_after\_nonarrival\_removal\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes the exact low-step cutoff and layer-balance formula only.
+It does not prove that \(S_{\le H}\) has enough mass, and it does not exclude
+large-step tail escape.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
