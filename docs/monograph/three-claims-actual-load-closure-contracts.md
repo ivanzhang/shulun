@@ -5856,3 +5856,41 @@ PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTu
 ```
 
 但它不是孤立输入；仍需同一 pre-Cauchy actual source tuple 的 rows formula、word/coefficient identity 与 no-downstream-return ledger。canonical-lock、independent source bridge、PDEC/外部谱、complete/fixed-key、ExactUV、模型余量、RatePreservation 和 DStructure/Rankin 仍是独立开放门。
+
+## 129. Strict cycle-cut unified antisplit downstream sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_cyclecut_unified_antisplit_downstream_sync_router.py
+docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.json
+data/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-ledger.json
+```
+
+本步把普通 joint declaration 继续同步到既有下游前沿。关键结论是：普通 declaration 会降到
+`ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple`，
+而普通 constructor 路线已经登记为 signed-source 固定点，不能作为非循环证明。真正内部自足路线必须走反分裂 atomic rows。
+
+当前读数：
+
+```text
+ordinary_joint_declaration_route_rejected_as_nonproof=true
+antisplit_atomic_route_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+built_in_signed_pairing_proved=false
+row_column_unconditional_closed=false
+```
+
+下一直接主攻更新为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+并行硬点为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```

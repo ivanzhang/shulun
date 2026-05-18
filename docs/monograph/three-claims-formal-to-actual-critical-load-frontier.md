@@ -5756,3 +5756,68 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步的实质推进是删除三个误出口：cycle-cut 不能靠顺序拆分破环，terminal descent 不能靠宏循环当下降，PDEC same-set 在当前内部语料中不能当独立无条件出口。行/列命题仍未无条件闭合，下一直接硬点是提交真正的 pre-Cauchy joint declaration line，或给出 canonical-lock、independent bridge、PDEC/外部谱等独立输入。
+
+## 140. Strict cycle-cut unified antisplit downstream sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_cyclecut_unified_antisplit_downstream_sync_router.py
+docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.json
+data/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-ledger.json
+```
+
+本步把上一节的 `PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple`
+继续沿仓库已有下游证书同步。同步边为：
+
+```text
+ordinary joint declaration
+-> explicit joint alpha/delta constructor rule
+-> signed-source fixed point unless replaced
+antisplit route
+-> AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+ExactUV gate
+-> ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+导入结果：
+
+```text
+ordinary_joint_declaration_route_rejected_as_nonproof=true
+antisplit_atomic_route_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+因此最新内部下游基为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+统一保留剩余基改写为：
+
+```text
+((BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger)
+OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步删除的是“普通 joint declaration 可直接闭合”的误出口。若不提交内置 signed coefficient/pairing 闭式，ordinary constructor 只会回到 signed-source 固定点；若不证明 ExactUV entropy/fiber，则 source lane 也不能晋级。行/列命题仍未无条件闭合。
