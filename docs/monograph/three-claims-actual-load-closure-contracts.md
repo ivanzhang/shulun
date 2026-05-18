@@ -6271,3 +6271,60 @@ word/coefficient pairing、actual source-domain entropy、fixed exact `(u,v)` fi
 bound、same formal-unit exact-pair no-heavy/L2 能量账本，以及 no-downstream-recovery
 的命名回流分割。本步不是行/列命题无条件闭合；source-root、全局终端、direct PDEC
 作用域、高段模型、Rate 与 DStructure 仍未证明。
+
+## 151. Strict forward source-root terminal cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_forward_source_root_terminal_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.json
+data/prime-matrix-strict-forward-source-root-terminal-cycle-sync-ledger.json
+```
+
+本步继续直接攻击上一节留下的
+`ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn`。同步 common packet 下游、
+signed-lane 自证环、new primitive/source-rank 汇合、cycle-cut/terminal descent、
+antisplit ExactUV 原子化、逐点 primitive alpha/delta 核表、alpha row unsigned
+skeleton、signed-lift 回流与 anchor-collar overload 回流后，结论是：当前语料中的
+source-root 内部路线没有留下独立非循环闭合；它回到终端容量环。
+
+关键读数：
+
+```text
+forward_source_root_packet_proved=false
+forward_source_root_independent_after_router=false
+signed_lane_self_proof_eliminated=true
+source_rank_paths_converged_to_pointwise_kernel=true
+alpha_unsigned_skeleton_closed=true
+signed_lift_branch_recycles_to_terminal_gap=true
+anchor_collar_overload_return_schema_closed=true
+row_column_unconditional_closed=false
+```
+
+因此上一节的 source-root 名称被同步为终端循环，而不是全局证明。最新严格剩余改写为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+```
+
+严格活动基仍需保留：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻相应变为：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+并行保留非循环 KZ/DLS、高段模型、RatePreservation 与 DStructure/Rankin。这里的
+`NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse` 是硬边界：
+如果 CleanKLS/KZ-DLS 再经 NCBLK/source-root 线闭合，就回到本节识别出的同一终端环。
+本步只封住 source-root 的自足回环；行/列命题仍未无条件闭合。

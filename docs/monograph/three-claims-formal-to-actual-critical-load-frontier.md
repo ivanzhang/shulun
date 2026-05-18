@@ -6325,3 +6325,52 @@ pre-Cauchy actual source-root packet 承载真实 source 质量；不能由早�
 unsigned CRT 覆盖图、payment skeleton 或 generic WFD 模板反推出该 packet。若不能
 正向给出 packet，失败必须进入 global PDEC/sparse、direct PDEC scope 或外部谱/模型
 账本，而不能作为 hidden actual load 留在 `NCBLK` 名称下。
+
+## 151. Strict forward source-root terminal cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_forward_source_root_terminal_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.json
+data/prime-matrix-strict-forward-source-root-terminal-cycle-sync-ledger.json
+```
+
+本步把 `ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn` 展开到底，检查它是否
+仍是可独立攻击的 actual-load 入口。同步结果显示：
+
+```text
+forward_source_root_packet_proved=false
+forward_source_root_independent_after_router=false
+ForwardSourceRootSubsumedByTerminalCycle=true
+RowColumnUnconditionalClosureReached=false
+```
+
+具体链条为：
+
+```text
+Forward source-root
+-> common packet downstream
+-> signed-lane cycle / ExactUV source-rank atoms
+-> pointwise primitive alpha/delta kernel table
+-> alpha row formula
+-> unsigned skeleton closed
+-> signed lift and anchor-collar overload return
+-> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+```
+
+所以 formal-to-actual 前沿再次收窄：source-root 不是新的 hidden actual load，而是
+一个已经被下游证书证明会回到终端容量门的循环名称。要继续无条件化，不能再让
+CleanKLS/KZ-DLS 使用 NCBLK/source-root 作为闭合输入；必须给出非循环 KZ/DLS，或直接
+证明同一 formal unit、same-set 作用域下的 PDEC cap dual certificate。
+
+最新剩余同步为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
