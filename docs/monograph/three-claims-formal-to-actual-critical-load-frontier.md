@@ -5474,3 +5474,35 @@ SquarePhaseSpecialPhaseLongBlockPDECExclusion
 `PDEC/SAE/ColumnCRT` 并排斥或吸收。
 
 该证书是接口合流，不是行/列命题无条件闭合。
+
+## 133. Terminal-square downstream frontier sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_square_phase_downstream_frontier_sync_router.py
+docs/monograph/prime-matrix-terminal-square-phase-downstream-frontier-sync-router.md
+docs/monograph/prime-matrix-terminal-square-phase-downstream-frontier-sync-router.json
+data/prime-matrix-terminal-square-phase-downstream-frontier-sync-ledger.json
+```
+
+本步把 terminal-row square-phase bridge 的旧硬点
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+```
+
+同步为仓库已有下游前沿的上游别名。已有链条已经把它分别压入：
+
+```text
+HalfGridSurvivorBeatsActivatedTailSupportOrBoundaryWordPDEC
+NoSlotTailPrimePhaseBandDensityPDECExclusion
+PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2
+ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+```
+
+因此最新 terminal-square 口径不再停在普通平方相位长块，而是同步到 AP 零点包、signed payload、
+same-set PDEC 和若干全局输入的 consolidated 剩余基。该同步防止把较旧接口误当作最新硬点；
+它不构成行/列命题无条件闭合。

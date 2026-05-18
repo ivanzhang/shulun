@@ -5584,3 +5584,40 @@ PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2OrAPZeroPacketFrontier
 ```
 
 本步关闭的是“从完整 CRT 周期对称性直接推出终端行局部矛盾”的跳步；行/列命题仍未无条件闭合。
+
+## 122. Terminal-square downstream frontier sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_square_phase_downstream_frontier_sync_router.py
+docs/monograph/prime-matrix-terminal-square-phase-downstream-frontier-sync-router.md
+docs/monograph/prime-matrix-terminal-square-phase-downstream-frontier-sync-router.json
+data/prime-matrix-terminal-square-phase-downstream-frontier-sync-ledger.json
+```
+
+本步不是新闭合证明，而是把上一节的终端行平方相位桥接同步到仓库中已经存在的更深前沿。
+同步表确认：
+
+```text
+frontier_file_count=10
+square_phase_longblock_synced_downstream=true
+row_column_unconditional_closed=false
+```
+
+因此 `SquarePhaseSpecialPhaseLongBlockPDECExclusion` 应作为上游接口别名保留；它已经被
+half-grid/boundary-word、no-slot phase-band、localized P-CRT/AP 零点包、global CRT signed-payload
+等路线进一步细化。当前 consolidated 剩余基为：
+
+```text
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步关闭的是前沿口径错位，不关闭行/列命题。下一步应直接攻击 consolidated 剩余基中的
+AP 零点包、signed payload 或 same-set PDEC 输入。
