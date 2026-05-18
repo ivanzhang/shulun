@@ -1,0 +1,121 @@
+{
+  "active_prime_product_dichotomy_closed": true,
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_cofactor_lpf_dyadic_pressure_router",
+  "cofactor_lpf_cover_debt_imported": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CofactorLPFCoverDebtImported",
+      "meaning": "上一层把 rough 支撑不足改写为 cofactor 最小素因子覆盖过量或 product-width ColumnCRT/PDEC。",
+      "proved": false,
+      "remaining": "CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "ExcessThresholdClosed",
+      "meaning": "对 cell C，令 H_C=F_C-A_C；局部反例要求 E_C>H_C。",
+      "proved": true,
+      "remaining": "CofactorCoverExcessThresholdLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ActivePrimeProductDichotomyClosed",
+      "meaning": "活动 cofactor primes R_C 的乘积 M_C=prod R_C；若 M_C 超过支撑宽度，则进入 product-width ColumnCRT/PDEC，否则进入 small-product concentration。",
+      "proved": true,
+      "remaining": "ActiveCofactorPrimeProductDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicRPartitionClosed",
+      "meaning": "按 Z<r<=2Z 分解 E_C=sum_Z E_Z，同时 M_C=prod_Z M_Z。",
+      "proved": true,
+      "remaining": "DyadicCofactorPrimePressurePartitionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OverfullLocalizationClosed",
+      "meaning": "若 E_C>H_C 且候选允许预算 sum_Z U_Z<=H_C，则至少一个 dyadic r 层满足 E_Z>U_Z。",
+      "proved": true,
+      "remaining": "OverfullDyadicRLayerLocalizationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FixedRMEndpointClosed",
+      "meaning": "固定 r 后，n=r*m 给出 m_min=ceil(n_min/r)、m_max=floor(n_max/r) 的显式短区间。",
+      "proved": true,
+      "remaining": "FixedRToMIntervalEndpointLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RLayerCRTClosed",
+      "meaning": "固定 r 层保留 gcd(m,W_<r)=1，成为更低阶 rough-m CRT 支撑。",
+      "proved": true,
+      "remaining": "RLayerRoughMCRTSupportLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SmallProductConcentrationStillOpen",
+      "meaning": "仍未排除 active product 小于支撑宽度时的局部高覆盖集中。",
+      "proved": false,
+      "remaining": "SmallProductActiveCoverConcentrationPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "CofactorCoverDebtReduced",
+      "meaning": "CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC 被压成 excess threshold、active product 二分、dyadic r 压力层与 small-product 出口。",
+      "proved": false,
+      "remaining": "CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "DyadicPressureExcluded",
+      "meaning": "本步没有证明 dyadic r 层过载不可能。",
+      "proved": false,
+      "remaining": "DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需排斥 dyadic cofactor-LPF pressure 或 small-product ColumnCRT/PDEC。",
+      "proved": false,
+      "remaining": "DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC"
+    }
+  ],
+  "dyadic_pressure_excluded": false,
+  "dyadic_pressure_formulas": {
+    "active_product": "M_C=prod_{r in R_C}r",
+    "active_set": "R_C={r prime: E_r(C)>0}",
+    "dyadic_r_layer": "E_Z(C)=sum_{Z<r<=2Z}E_r(C)",
+    "excess_threshold": "H_C=F_C-A_C; local debt requires E_C>H_C",
+    "fixed_r_crt": "E_r(C)=sum_{m_min<=m<=m_max, gcd(m,W_<r)=1} alpha_{ell,r*m}",
+    "fixed_r_endpoint": "n in [n_min,n_max], n=r*m => m_min=ceil(n_min/r), m_max=floor(n_max/r)",
+    "new_failure": "dyadic r-layer overpressure or small-product ColumnCRT/PDEC",
+    "overfull_pigeonhole": "E_C>H_C and sum_Z U_Z<=H_C => exists Z with E_Z(C)>U_Z",
+    "product_width_branch": "M_C>width(C) => product-width ColumnCRT/PDEC or finite atom",
+    "r_layer_product": "M_Z=prod_{Z<r<=2Z, E_r(C)>0}r; M_C=prod_Z M_Z",
+    "small_product_branch": "M_C<=width(C) => small-product active cover concentration"
+  },
+  "dyadic_r_partition_closed": true,
+  "empirical_absence_not_used_as_proof": true,
+  "excess_threshold_closed": true,
+  "fixed_r_m_endpoint_closed": true,
+  "hardpoint_after_router": "CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC",
+  "hardpoint_before_router": "CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC",
+  "no_theorem_switch": true,
+  "overfull_localization_closed": true,
+  "plain_conclusion": "cofactor-LPF 覆盖债务被继续拆成局部 excess threshold、活动素因子 product-width 二分、dyadic r 层压力定位和固定 r 的 rough-m CRT 支撑。若活动素因子乘积大于 cell 支撑宽度，只能作为 product-width ColumnCRT/PDEC 复现；若乘积不大，则反例必须集中在 small-product active cover，且至少一个 dyadic r 层超过其候选预算。",
+  "r_layer_crt_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "small_product_concentration_excluded": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.json": "d0820c64d6454d2627268b840d6a30f988a104577904f8875f20e4ff5b2df8d2",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.json": "f59a57081a109ae4dac81c86cb87f5590ca50f8627e6ad8b944326fed1b84e8e",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.json": "815193dc88d323df25634a9ccc113d5720ea0b6081cd0547993b2f622cc7e1ed",
+    "experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_dyadic_pressure_router.py": "30c0006077bc25ffa7ea92a97f2fc838df9dd15a7ba9a97650d2c77fbd416d29"
+  },
+  "status": "cofactor_lpf_cover_debt_reduced_to_dyadic_pressure_or_small_product_columncrt_open"
+}

@@ -8146,3 +8146,69 @@ CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
 
 本步没有证明 cofactor-LPF 过覆盖不可能；它把 rough 支撑债务推到更低素因子的
 短区间 CRT 覆盖债务与 product-width ColumnCRT/PDEC 出口。
+
+## 185. Cofactor-LPF dyadic pressure frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_dyadic_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-ledger.json
+```
+
+本步继续攻击 `CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC`。同步结果：
+
+```text
+excess_threshold_closed=true
+active_prime_product_dichotomy_closed=true
+dyadic_r_partition_closed=true
+overfull_localization_closed=true
+fixed_r_m_endpoint_closed=true
+r_layer_crt_closed=true
+small_product_concentration_excluded=false
+dyadic_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：cofactor-LPF 过覆盖被写成一个明确 excess threshold：
+
+```text
+H_C=F_C-A_C,
+E_C>H_C.
+```
+
+活动素因子集合与其相位周期为：
+
+```text
+R_C={r prime: E_r(C)>0},
+M_C=prod_{r in R_C}r.
+```
+
+若 `M_C>width(C)`，同一覆盖相位字的精确复现周期已经超过 cell 支撑宽度，只能登记为
+product-width ColumnCRT/PDEC 或有限原子。否则进入 small-product active cover concentration。
+
+然后按 dyadic `r` 层：
+
+```text
+E_C=sum_Z E_Z(C).
+```
+
+若 `E_C>H_C` 且候选预算 `sum_Z U_Z<=H_C`，则存在层 `E_Z(C)>U_Z`。固定 `r` 后：
+
+```text
+n=r*m,
+m_min=ceil(n_min/r),
+m_max=floor(n_max/r),
+gcd(m,W_<r)=1.
+```
+
+新的直接主攻为：
+
+```text
+DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
+```
+
+本步没有证明 dyadic `r` 层过载不可能；它把最新剩余压到 product-width 二分和更低阶
+rough-m CRT 支撑压力。

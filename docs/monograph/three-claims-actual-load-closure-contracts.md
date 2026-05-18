@@ -8596,3 +8596,98 @@ DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
 本步关闭的是 cell 权重包络、quota 等价、cofactor 最小素因子分区、CRT cell 与
 product-width 登记。剩余集中为：cofactor-LPF 过覆盖债务本身，或 product-width
 ColumnCRT/PDEC 出口。行/列命题仍未无条件闭合。
+
+## 185. cofactor-LPF dyadic pressure 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_dyadic_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-ledger.json
+```
+
+本步继续攻击 `CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC`。同步读数为：
+
+```text
+cofactor_lpf_cover_debt_imported=true
+excess_threshold_closed=true
+active_prime_product_dichotomy_closed=true
+dyadic_r_partition_closed=true
+overfull_localization_closed=true
+fixed_r_m_endpoint_closed=true
+r_layer_crt_closed=true
+small_product_concentration_excluded=false
+dyadic_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+上一层给出 `B_C<A_C <=> E_C>F_C-A_C`。本步记
+
+```text
+H_C=F_C-A_C.
+```
+
+因此局部反例要求：
+
+```text
+E_C>H_C.
+```
+
+令活动 cofactor primes 为：
+
+```text
+R_C={r prime: E_r(C)>0},
+M_C=prod_{r in R_C}r.
+```
+
+若 `M_C>width(C)`，完整覆盖相位字的周期超过 cell 支撑宽度，必须进入 product-width
+ColumnCRT/PDEC 或有限原子出口。若 `M_C<=width(C)`，反例只能集中在 small-product
+active cover 上。
+
+再按 dyadic `r` 层分解：
+
+```text
+E_C=sum_Z E_Z(C),
+M_C=prod_Z M_Z.
+```
+
+若候选允许预算满足
+
+```text
+sum_Z U_Z<=H_C
+```
+
+而反例要求 `E_C>H_C`，则存在至少一个 dyadic 层：
+
+```text
+E_Z(C)>U_Z.
+```
+
+固定 `r` 后，cofactor 区间给出更低阶 rough-m CRT 单元：
+
+```text
+n=r*m,
+m_min=ceil(n_min/r),
+m_max=floor(n_max/r),
+gcd(m,W_<r)=1.
+```
+
+硬点更新为：
+
+```text
+CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
+  -> CofactorCoverExcessThresholdLedger
+  AND ActiveCofactorPrimeProductDichotomyLedger
+  AND DyadicCofactorPrimePressurePartitionLedger
+  AND OverfullDyadicRLayerLocalizationLedger
+  AND FixedRToMIntervalEndpointLedger
+  AND RLayerRoughMCRTSupportLedger
+  AND SmallProductActiveCoverConcentrationPDEC
+  AND DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
+```
+
+本步关闭的是 excess 阈值、active product-width 二分、dyadic `r` 压力定位和 fixed-r
+rough-m CRT 端点。剩余集中为：dyadic `r` 层过载，或 small-product active cover
+的 ColumnCRT/PDEC。行/列命题仍未无条件闭合。

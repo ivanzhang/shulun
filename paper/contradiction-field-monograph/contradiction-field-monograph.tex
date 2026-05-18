@@ -12162,6 +12162,83 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Cofactor-LPF dyadic pressure reduction]
+The cofactor-LPF cover debt can be reduced to a product-width dichotomy and a
+dyadic lower-prime pressure problem.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+CofactorCoverExcessThresholdLedger\\
+AND ActiveCofactorPrimeProductDichotomyLedger\\
+AND DyadicCofactorPrimePressurePartitionLedger\\
+AND OverfullDyadicRLayerLocalizationLedger\\
+AND FixedRToMIntervalEndpointLedger\\
+AND RLayerRoughMCRTSupportLedger\\
+AND SmallProductActiveCoverConcentrationPDEC\\
+AND DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Reduction ledger]
+For a fixed cell \(C\), put
+\[
+  H_C=F_C-A_C.
+\]
+The previous ledger gives
+\[
+  B_C<A_C\quad\Longleftrightarrow\quad E_C>H_C.
+\]
+Thus a local counterexample requires explicit over-cover:
+\[
+  E_C>H_C.
+\]
+
+Let
+\[
+  R_C=\{r\ {\rm prime}:E_r(C)>0\},\qquad
+  M_C=\prod_{r\in R_C}r.
+\]
+If \(M_C\) exceeds the support width of \(C\), the full cover word has a
+period larger than the cell itself; exact replay must be treated as a
+product-width ColumnCRT/PDEC or finite-atom exit.  If not, the cover is confined
+to a small-product active set.
+
+Now decompose the active \(r\)-primes dyadically:
+\[
+  E_C=\sum_Z E_Z(C),\qquad
+  M_C=\prod_Z M_Z.
+\]
+For any proposed dyadic allowance \(U_Z\), if
+\[
+  \sum_Z U_Z\le H_C
+\]
+while \(E_C>H_C\), then some dyadic layer satisfies
+\[
+  E_Z(C)>U_Z.
+\]
+This is a finite pigeonhole localization of over-cover pressure.
+
+Finally, for fixed \(r\), the cofactor interval becomes
+\[
+  n=rm,\qquad
+  m_{\min}=\lceil n_{\min}/r\rceil,\qquad
+  m_{\max}=\lfloor n_{\max}/r\rfloor,
+\]
+with the residual CRT condition
+\[
+  (m,W_{<r})=1.
+\]
+Thus the remaining pressure is a lower-prime rough-\(m\) CRT support problem,
+not an invocation of the original row-gap statement.  This reduction does not
+exclude dyadic \(r\)-layer overpressure or small-product active-cover
+concentration.  The row/column theorem remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
