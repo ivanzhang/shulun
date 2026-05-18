@@ -5617,3 +5617,36 @@ AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
 ```
 
 ExactUV entropy/fiber、RatePreservation 与 DStructure/Rankin 仍独立开放。
+
+## 137. Strict new primitive payload source-atom alignment router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_new_primitive_payload_source_atom_alignment_router.py
+docs/monograph/prime-matrix-strict-new-primitive-payload-source-atom-alignment-router.md
+docs/monograph/prime-matrix-strict-new-primitive-payload-source-atom-alignment-router.json
+data/prime-matrix-strict-new-primitive-payload-source-atom-alignment-ledger.json
+```
+
+本步把 signed-lane 闭环后的 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact` 拆成最低字段合同。
+真正能破环的 primitive payload/trace 工件必须同时携带 same formal unit lock、pre-Cauchy actual
+source object、signed payload formula、complete key partition、source-domain absolute entropy、
+fixed-key exact-UV local multiplicity 与 no-cycle/no-terminal-recovery 条件。
+
+对齐后，new primitive 出口不再是独立无名终端，而是回到：
+
+```text
+ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+```
+
+其三原子仍未证明：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+当前语料没有提交独立 new primitive 工件；外部谱输入、terminal descent、same-set PDEC 与
+DStructure/Rankin 独立验收仍是未闭合边界。

@@ -5768,3 +5768,33 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步是自证路线删除，不是行/列命题无条件闭合。
+
+## 126. Strict new primitive payload source-atom alignment router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_new_primitive_payload_source_atom_alignment_router.py
+docs/monograph/prime-matrix-strict-new-primitive-payload-source-atom-alignment-router.md
+docs/monograph/prime-matrix-strict-new-primitive-payload-source-atom-alignment-router.json
+data/prime-matrix-strict-new-primitive-payload-source-atom-alignment-ledger.json
+```
+
+本步直接审计 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`。结论是：它若只是
+signed-lane 环内的 trace、payload、origin 或 common packet 改名，不能破环；若要成为真正
+new primitive 工件，则必须在 Cauchy/Phi/payment 前声明同一 actual source object，并给出：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+因此该出口已对齐到：
+
+```text
+ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+```
+
+或转入 terminal descent、PDEC、外部谱输入。当前没有独立 new primitive 工件，下一直接主攻为
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`；行/列命题仍未无条件闭合。
