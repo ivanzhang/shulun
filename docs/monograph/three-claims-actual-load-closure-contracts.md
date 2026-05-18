@@ -6186,3 +6186,39 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本步不是行/列命题的无条件闭合；三路中的直接 pair-energy 大筛、Kuznetsov/DLS 与
 PDEC/CleanKLS+模型余量均仍未证明。
+
+## 149. Strict pair-energy diagonal peeling terminal reduction router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_pair_energy_diagonal_peeling_terminal_reduction_router.py
+docs/monograph/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-router.md
+docs/monograph/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-router.json
+data/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-ledger.json
+```
+
+本步继续直接拆解上一节留下的
+`SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed`。关键剥离是对角项：
+没有同 formal unit 的 exact-pair no-heavy 输入时，单个 exact pair 的 delta 模型已经破坏
+任意 log-power L2/max-atom 目标；因此 direct pair-energy 大筛不能作为黑箱第三分支。
+
+对角失败正是既有 `RateBearingLargePairAtomPacketExclusion`，会回到 PDEC/clean 终端；
+对角剥离后的 off-diagonal 双线性型就是 clean Kuznetsov/DLS。结合 KZ 原子同步、
+PDEC/CleanKLS 终端二分与模型余量有限段闭合后，最新严格剩余压成：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+```
+
+严格活动基仍需保留：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是无条件闭合；NCBLK/source anti-atom、PDEC 同集作用域、高段模型余量、
+RatePreservation 与 DStructure/Rankin 都仍未证明。

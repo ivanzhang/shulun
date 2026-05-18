@@ -1,0 +1,215 @@
+{
+  "acyclic_ncblk_actual_block_nonconcentration_proved": false,
+  "acyclic_same_set_scope_match_proved": false,
+  "certificate_type": "prime_matrix_strict_pair_energy_diagonal_peeling_terminal_reduction_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "DirectPairEnergyAtomActive",
+      "meaning": "上一轮把下一直接主攻钉为 direct exact-pair energy 大筛。",
+      "proved": false,
+      "remaining": "SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalDeltaObstructionClosed",
+      "meaning": "没有同 formal unit 的对角无重原子输入时，单 exact-pair delta 模型直接违反 L2/max-atom 目标。",
+      "proved": true,
+      "remaining": "SameFormalUnitExactPairDiagonalNoHeavyAtomLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PairEnergyMustPeelDiagonal",
+      "meaning": "direct pair-energy 大筛必须拆成对角 no-heavy 账本与 off-diagonal clean 双线性大筛。",
+      "proved": true,
+      "remaining": "SameFormalUnitExactPairDiagonalNoHeavyAtomLedger AND CleanOffDiagonalExactPairDualLargeSieveLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalFailureReturnsToRatePacket",
+      "meaning": "对角 no-heavy 失败已经由既有 packetization 精确登记为 rate-bearing 大 pair packet，并进入终端三路。",
+      "proved": true,
+      "remaining": "RateBearingLargePairAtomPacketExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "SourcePacketStillOpenForDiagonalNoHeavy",
+      "meaning": "若要正向证明对角 no-heavy，需要 pre-Cauchy actual source declaration packet；当前语料未给出。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalPartEqualsCleanKuznetsovDLS",
+      "meaning": "剥离对角、PDEC 和 sparse/ColumnCRT 后，off-diagonal 估计正是 clean Kloosterman/Kuznetsov-DLS 大筛。",
+      "proved": false,
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": true,
+      "gate": "KuznetsovDLSReducedToNCBLK",
+      "meaning": "KZ-A--KZ-D 已闭合，KZ-E 的 log-saving 剩余压到 acyclic NC-BLK/source anti-atom。",
+      "proved": false,
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "closed": true,
+      "gate": "PDECCleanKLSAndModelGapSplitImported",
+      "meaning": "PDEC/CleanKLS 已拆成同集 PDEC 作用域或 KZ/DLS；模型余量有限段闭合，高段解析余量仍开放。",
+      "proved": false,
+      "remaining": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "closed": true,
+      "gate": "DirectPairEnergyDisjunctSubsumed",
+      "meaning": "direct pair-energy 分支剥离后只回到 KZ/NCBLK 或 PDEC 作用域；它不再是独立于终端两路的第三分支。",
+      "proved": true,
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只删除 direct pair-energy 伪独立分支；NCBLK/source anti-atom、PDEC 作用域、高段模型余量、Rate 与 DStructure 仍未证明。",
+      "proved": false,
+      "remaining": "(AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "diagonal_delta_obstruction_closed": true,
+  "diagonal_delta_obstruction_rows": [
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 3,
+      "log_y": 6.907755278982137,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 3.7205650773392656e-14,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 3.7289719760084163e-16,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 5,
+      "log_y": 11.512925464970229,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 1.0496123001016592e-17,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 6,
+      "log_y": 13.815510557964274,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 5.677131770842385e-19,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 4.8192598155357166e-20,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 5.6899596801886236e-21,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    },
+    {
+      "diagonal_l2_energy": 1.0,
+      "k": 9,
+      "log_y": 20.72326583694641,
+      "single_pair_mass": 1.0,
+      "threshold_L_minus_power": 8.643085909700916e-22,
+      "total_mass": 1.0,
+      "violates_no_heavy_target": true
+    }
+  ],
+  "diagonal_no_heavy_ledger_proved": false,
+  "direct_pair_energy_atom_active": true,
+  "direct_pair_energy_disjunct_still_independent": false,
+  "dstructure_independent_gate_closed": false,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "hardpoint_after_router": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)",
+  "hardpoint_before_router": "SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)",
+  "high_segment_model_gap_alpha043_c3_analytic_ledger_proved": false,
+  "kuznetsov_dls_reduced_to_ncblk": true,
+  "model_gap_reduced_to_high_segment": true,
+  "next_direct_attack_target": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom",
+  "no_theorem_switch": true,
+  "offdiagonal_clean_pair_large_sieve_reduced_to_kuznetsov_dls": true,
+  "parallel_attack_targets": [
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_clean_kls_split_imported": true,
+  "plain_conclusion": "本步直接拆解 `SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed`。任何 exact-pair L2/max-atom 大筛都必须先处理对角重原子；否则单个 exact pair 的 delta 模型立即破坏 log-power no-heavy 目标。对角失败已经是既有 `RateBearingLargePairAtomPacketExclusion`，并回到 PDEC/clean terminal 三路；对角剥离后的 off-diagonal 估计正是 clean Kuznetsov/DLS，而该原子已进一步压到 `AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom`。同时 PDEC/CleanKLS+模型余量分支拆成同集 PDEC 作用域与高段模型余量。因此 direct pair-energy 不再是独立第三分支；最新严格剩余为 NCBLK/source anti-atom，或 PDEC 同集作用域加高段模型余量。行/列命题仍未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "reduction_edges": [
+    {
+      "from": "SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed",
+      "meaning": "任何 exact-pair L2/max-atom 大筛都必须先控制对角单 pair 质量，再处理 off-diagonal 相关和。",
+      "to": "SameFormalUnitExactPairDiagonalNoHeavyAtomLedger AND CleanOffDiagonalExactPairDualLargeSieveLedger"
+    },
+    {
+      "from": "NOT SameFormalUnitExactPairDiagonalNoHeavyAtomLedger",
+      "meaning": "对角无重原子失败就是同 formal unit 的 rate-bearing 大 exact-pair 原子包。",
+      "to": "RateBearingLargePairAtomPacketExclusion"
+    },
+    {
+      "from": "RateBearingLargePairAtomPacketExclusion",
+      "meaning": "rate-bearing 大 pair packet 的持久签名进入 PDEC 作用域；clean 漂移进入 Kuznetsov/DLS。",
+      "to": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "from": "CleanOffDiagonalExactPairDualLargeSieveLedger",
+      "meaning": "剥离对角与低维回流后，off-diagonal exact-pair 双线性型就是 clean Kloosterman/DLS 大筛对象。",
+      "to": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "from": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+      "meaning": "既有 KZ-A--KZ-E 同步把自足 Kuznetsov/DLS 的剩余压到 acyclic NC-BLK/source anti-atom。",
+      "to": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "from": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "PDEC/CleanKLS 终端拆成同集 PDEC 作用域或 KZ/DLS；模型余量有限段已闭合，高段余量仍开放。",
+      "to": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND HighSegmentModelGapAlpha043C3AnalyticLedger"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-explicit-model-gap-finite-ledger-router.json": "c7a64bd09aae24e52f1a6a6d8048506342358f959952c7678bf91c82dcf20e1a",
+    "docs/monograph/prime-matrix-strict-actual-source-antiatom-exactuv-terminal-sync-router.json": "949d8afe0b5b1c450c23dd4cc72eecdca5368c247d63507ebd7eb9d3d42493d5",
+    "docs/monograph/prime-matrix-strict-acyclic-kuznetsov-dls-atom-router.json": "fb988aea08dcdf541574fa412e2e37254570b8ad688b010a6c0366c03c4e7270",
+    "docs/monograph/prime-matrix-strict-exact-uv-support-attack-router.json": "e9f89b9cc78c45934694a16a33c108347a20b70c1a9a814f34dd39c9f565a08b",
+    "docs/monograph/prime-matrix-strict-independent-pair-energy-attack-router.json": "b587d4d2665daeb0158f0c429f52b98ec6461e1e33d6d6a1b4b60af76dd88f74",
+    "docs/monograph/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-router.json": "e3a50b8cac8b76860ca77442c786e57e7420e7a8cb05182b570798f68c56174c",
+    "docs/monograph/prime-matrix-strict-pdec-clean-kls-terminal-hardpoint-router.json": "9c97ae816a9b8840e743496fabd791c8792c136a547c0990010f31ea0a80f19d",
+    "docs/monograph/prime-matrix-strict-rate-bearing-large-pair-packet-router.json": "2d8b4f875ebf4cbe7712e4d8f3ac6ad3cda374b0a381788a599587bc7e246872",
+    "docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json": "d9e042ffccaaf050e72788abdb0a10a5776a3cb4d8a37fc949c9710a4a832f44",
+    "experiments/prime_matrix_strict_pair_energy_diagonal_peeling_terminal_reduction_router.py": "4b861b4985f24a5504381b045e5b1690db8bb082faaa0c4c057333c2e114fa40"
+  },
+  "status": "direct_pair_energy_diagonal_peeling_reduces_to_ncblk_or_pdec_model_open",
+  "strict_active_basis_after_router": "(AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}

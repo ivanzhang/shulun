@@ -6248,3 +6248,43 @@ AND ExplicitModelGapAndFiniteDPRCLedger)
 ```
 
 这只是前沿压缩，不是无条件证明；RatePreservation 与 DStructure/Rankin 门仍需独立闭合。
+
+## 149. Strict pair-energy diagonal peeling terminal reduction router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_pair_energy_diagonal_peeling_terminal_reduction_router.py
+docs/monograph/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-router.md
+docs/monograph/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-router.json
+data/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-ledger.json
+```
+
+本步把 direct pair-energy 大筛拆成对角 no-heavy 账本与 off-diagonal clean 双线性大筛：
+
+```text
+SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed
+=> SameFormalUnitExactPairDiagonalNoHeavyAtomLedger
+AND CleanOffDiagonalExactPairDualLargeSieveLedger
+```
+
+对角 no-heavy 失败已经是 rate-bearing 大 pair packet；off-diagonal clean 部分则等于
+Kuznetsov/DLS，而 KZ-A--KZ-E 既有同步又把它压到 NCBLK/source anti-atom。PDEC/CleanKLS
+和模型余量分支同步后，direct pair-energy 不再是独立第三分支。
+
+最新前沿：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+```
+
+下一直接主攻：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+```
+
+并行保留 `AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`、
+`HighSegmentModelGapAlpha043C3AnalyticLedger`、RatePreservation 与 DStructure/Rankin。
