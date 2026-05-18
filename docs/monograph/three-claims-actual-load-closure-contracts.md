@@ -10965,3 +10965,94 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步关闭的是匿名 long-arc/boundary 口径。剩余集中为 endpoint singleton
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、endpoint orbit signed
 Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 212. stable-ladder endpoint orbit conductor-character 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_conductor_character_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_signed_fourier_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_nonzero_frequency_conductor_closed=true
+endpoint_orbit_frequency_kernel_quotient_closed=true
+endpoint_orbit_kernel_fiber_collapse_closed=true
+endpoint_orbit_primitive_conductor_character_packet_registered=true
+endpoint_orbit_derivative_multiplier_absorbed=true
+anonymous_endpoint_orbit_signed_fourier_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_primitive_conductor_character_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+对 signed Fourier 分支的非零频率 `h`，令：
+
+```text
+1 <= h <= r-1,
+d=gcd(h,r),
+m=r/d>1,
+h0=h/d,
+gcd(h0,m)=1.
+```
+
+则：
+
+```text
+exp(-2*pi*i*h*t/r)=exp(-2*pi*i*h0*(t mod m)/m).
+```
+
+该角色的 kernel 为 `{0,m,2m,...,(d-1)m}`，并且 `C_r/kernel ~= C_m`。
+把有符号负载沿 kernel 纤维折叠：
+
+```text
+G_s=sum_{u=0}^{d-1} g_{s+u*m}.
+```
+
+得到精确恒等式：
+
+```text
+hat g(h)=sum_{s mod m} G_s exp(-2*pi*i*h0*s/m).
+```
+
+由于 `gcd(h0,m)=1`，这是 `C_m` 上的 primitive additive character packet。
+若上一层来自 derivative Fourier 下界，则由 `|omega_r^h-1|<=2` 吸收常数：
+
+```text
+|(omega_r^h-1)hat g(h)| >= M  =>  |hat g(h)| >= M/2.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap
+  -> StableLadderEndpointOrbitSignedFourierImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterConductorLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardLedger
+  AND StableLadderEndpointOrbitNonzeroFrequencyConductorLedger
+  AND StableLadderEndpointOrbitFrequencyKernelQuotientLedger
+  AND StableLadderEndpointOrbitKernelFiberCollapseLedger
+  AND StableLadderEndpointOrbitPrimitiveConductorCharacterPacketLedger
+  AND StableLadderEndpointOrbitDerivativeMultiplierAbsorbedLedger
+  AND NoAnonymousEndpointOrbitSignedFourierExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterOrbitConductorLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap
+```
+
+本步关闭的是匿名 signed Fourier 频率口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、endpoint orbit primitive
+conductor character/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题
+仍未无条件闭合。

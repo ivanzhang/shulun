@@ -14054,6 +14054,81 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-sig
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit conductor-character reduction]
+The endpoint-orbit signed Fourier outlet reduces to a primitive conductor
+character packet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitSignedFourierImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterConductorLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardLedger\\
+AND StableLadderEndpointOrbitNonzeroFrequencyConductorLedger\\
+AND StableLadderEndpointOrbitFrequencyKernelQuotientLedger\\
+AND StableLadderEndpointOrbitKernelFiberCollapseLedger\\
+AND StableLadderEndpointOrbitPrimitiveConductorCharacterPacketLedger\\
+AND StableLadderEndpointOrbitDerivativeMultiplierAbsorbedLedger\\
+AND NoAnonymousEndpointOrbitSignedFourierExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterOrbitConductorLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit conductor-character ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, and the
+sparse scale-ladder SAE outlet are carried forward.  Consider the signed
+Fourier branch on \(C_r=\mathbf Z/r\mathbf Z\).  Let \(h\) be the nonzero
+frequency.  Put
+\[
+  d=\gcd(h,r),\qquad m=r/d,\qquad h_0=h/d .
+\]
+Then \(m>1\) and \(\gcd(h_0,m)=1\).  The character factors through the
+conductor quotient:
+\[
+  e^{-2\pi i h t/r}=e^{-2\pi i h_0(t\bmod m)/m}.
+\]
+Its kernel in \(C_r\) is
+\[
+  \{0,m,2m,\ldots,(d-1)m\},
+\]
+of size \(d\), and the quotient is \(C_m\).
+
+Collapse the signed load along these kernel fibers:
+\[
+  G_s=\sum_{u=0}^{d-1} g_{s+um},\qquad s\in\mathbf Z/m\mathbf Z .
+\]
+Then the Fourier coefficient has the exact primitive-conductor form
+\[
+  \widehat g(h)=
+  \sum_{s\bmod m}G_s\,e^{-2\pi i h_0s/m}.
+\]
+Because \(h_0\) is coprime to \(m\), this is a primitive additive character
+packet on \(C_m\).
+
+If the previous lower bound came from the derivative Fourier branch, then
+\[
+  |(e^{2\pi i h/r}-1)\widehat g(h)|\ge M
+\]
+implies
+\[
+  |\widehat g(h)|\ge M/2,
+\]
+since \(|e^{2\pi i h/r}-1|\le2\).  Thus the long-arc Fourier and boundary
+derivative-Fourier branches both enter the same primitive conductor-character
+outlet, up to an absolute constant already recorded in the ledger.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the primitive
+conductor-character PDEC/cap outlet, and it does not prove global summability
+of the sparse scale-ladder SAE outlet.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

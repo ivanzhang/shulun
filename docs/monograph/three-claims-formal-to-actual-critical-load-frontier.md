@@ -9786,3 +9786,59 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、signed
 Fourier/PDEC cap 或 sparse SAE 求和；它只把 long-arc/boundary 二出口压成
 full-cycle mean atom 或 signed Fourier cap。
+
+## 212. Stable-ladder endpoint orbit conductor-character frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_conductor_character_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-conductor-character-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_signed_fourier_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_nonzero_frequency_conductor_closed=true
+endpoint_orbit_frequency_kernel_quotient_closed=true
+endpoint_orbit_kernel_fiber_collapse_closed=true
+endpoint_orbit_primitive_conductor_character_packet_registered=true
+endpoint_orbit_derivative_multiplier_absorbed=true
+anonymous_endpoint_orbit_signed_fourier_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_primitive_conductor_character_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：signed Fourier 的非零频率不再作为匿名 `h` 保留。
+令 `d=gcd(h,r)`，`m=r/d`，`h0=h/d`，则 `h0` 与 `m` 互素，且原 Fourier
+和精确折叠为：
+
+```text
+hat g(h)=sum_{s mod m} G_s exp(-2*pi*i*h0*s/m),
+G_s=sum_{u=0}^{d-1} g_{s+u*m}.
+```
+
+所以 signed Fourier cap 现在是导子 `m` 上的 primitive additive character
+packet。derivative Fourier 分支通过 `|omega_r^h-1|<=2` 只损失常数进入同一
+出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+primitive conductor character/PDEC cap 或 sparse SAE 求和；它只把 signed
+Fourier 频率规范化到 primitive conductor character packet。
