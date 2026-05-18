@@ -9522,3 +9522,73 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDy
 本步没有证明 endpoint dyadic energy packet/PDEC cap、孤立 singleton 求和或
 sparse SAE 求和；它只把端点边际 Fourier 与 balanced energy 出口变成显式
 可计数能量包。
+
+## 208. Stable-ladder endpoint packet autocorrelation frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_packet_autocorrelation_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap`。
+同步结果：
+
+```text
+endpoint_dyadic_energy_packet_imported=true
+isolated_singleton_carried_forward=true
+endpoint_packet_finite_group_closed=true
+endpoint_packet_signed_support_closed=true
+endpoint_packet_singleton_atom_registered=true
+endpoint_packet_nonzero_pair_count_closed=true
+endpoint_packet_displacement_pigeonhole_closed=true
+endpoint_packet_weighted_autocorrelation_closed=true
+endpoint_packet_dimension_preserved=true
+anonymous_endpoint_dyadic_energy_packet_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_packet_singleton_atom_sae_proved=false
+endpoint_displacement_autocorrelation_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：dyadic energy packet 不再停留在抽象能量。设其同号
+支持为：
+
+```text
+S={z in H: lambda < epsilon*F(z) <= 2lambda}.
+```
+
+若 `|S|=1`，它是 endpoint packet singleton atom。若 `|S|=m>=2`，则非零
+差分支持对满足：
+
+```text
+sum_{delta != 0} C_S(delta)=m(m-1).
+```
+
+所以存在非零位移：
+
+```text
+C_S(delta) >= m(m-1)/(|H|-1).
+```
+
+同号尺度给出 weighted autocorrelation：
+
+```text
+A_F(delta)>=lambda^2*C_S(delta).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap
+```
+
+本步没有证明 endpoint packet singleton atom/SAE、endpoint displacement
+autocorrelation/PDEC cap、孤立 singleton 求和或 sparse SAE 求和；它只把能量包
+变成显式非零位移自相关或单点 atom。

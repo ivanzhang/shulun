@@ -13743,6 +13743,82 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-pa
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint packet autocorrelation reduction]
+The endpoint dyadic energy packet outlet reduces to either a singleton packet
+atom or a non-zero endpoint displacement autocorrelation.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointDyadicEnergyPacketImportedLedger\\
+AND StableLadderIsolatedSingletonCarriedForwardAfterPacketAutocorrelationLedger\\
+AND StableLadderEndpointPacketFiniteGroupLedger\\
+AND StableLadderEndpointPacketSignedSupportLedger\\
+AND StableLadderEndpointPacketSingletonAtomLedger\\
+AND StableLadderEndpointPacketNonzeroPairCountLedger\\
+AND StableLadderEndpointPacketDisplacementPigeonholeLedger\\
+AND StableLadderEndpointPacketWeightedAutocorrelationLedger\\
+AND StableLadderEndpointPacketDimensionPreservedLedger\\
+AND NoAnonymousEndpointDyadicEnergyPacketExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPacketAutocorrelationLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint packet autocorrelation ledger]
+The previous ledger produces a signed dyadic packet on a finite endpoint group
+\[
+  H=\mathbf Z/q_j\mathbf Z
+  \quad\hbox{or}\quad
+  H=(\mathbf Z/q_j\mathbf Z)^2 .
+\]
+It has a scale \(\lambda\), a sign \(\epsilon\in\{\pm1\}\), and support
+\[
+  S=\{z\in H:\lambda<\epsilon F(z)\le 2\lambda\}.
+\]
+Here \(F\) is either an endpoint marginal deviation or the balanced endpoint
+cell deviation.
+
+If \(|S|=1\), the packet is a singleton endpoint atom.  This branch is not
+closed here; it is merely no longer anonymous.
+
+Assume now that \(|S|=m\ge2\).  Define
+\[
+  C_S(\delta)=\#\{z\in S:z+\delta\in S\}.
+\]
+Every ordered pair of distinct elements of \(S\) contributes one non-zero
+displacement, hence
+\[
+  \sum_{\delta\ne0}C_S(\delta)=m(m-1).
+\]
+Since \(H\) is finite, there is a non-zero displacement \(\delta\) such that
+\[
+  C_S(\delta)\ge \frac{m(m-1)}{|H|-1}.
+\]
+On the signed dyadic support, all products have the same sign and satisfy
+\[
+  F(z)F(z+\delta)\ge \lambda^2 .
+\]
+Therefore the weighted autocorrelation obeys
+\[
+  A_F(\delta)=\sum_{z,z+\delta\in S}F(z)F(z+\delta)
+  \ge \lambda^2 C_S(\delta).
+\]
+For dimension one this is an endpoint-residue displacement; for dimension two
+it is an endpoint-cell displacement.  Thus the packet has become an explicit
+same-sign displacement autocorrelation.
+
+This theorem does not prove the endpoint packet singleton atom/SAE branch, it
+does not prove the endpoint displacement autocorrelation/PDEC cap, it does not
+prove summability of isolated singletons, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

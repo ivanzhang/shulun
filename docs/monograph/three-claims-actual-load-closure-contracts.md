@@ -10595,3 +10595,99 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMa
 本步关闭的是匿名端点边际 Fourier / balanced energy 口径。剩余集中为孤立
 singleton 全局求和、endpoint dyadic energy packet/PDEC cap，或 sparse
 scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 208. stable-ladder endpoint packet autocorrelation 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_packet_autocorrelation_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap`。
+同步读数为：
+
+```text
+endpoint_dyadic_energy_packet_imported=true
+isolated_singleton_carried_forward=true
+endpoint_packet_finite_group_closed=true
+endpoint_packet_signed_support_closed=true
+endpoint_packet_singleton_atom_registered=true
+endpoint_packet_nonzero_pair_count_closed=true
+endpoint_packet_displacement_pigeonhole_closed=true
+endpoint_packet_weighted_autocorrelation_closed=true
+endpoint_packet_dimension_preserved=true
+anonymous_endpoint_dyadic_energy_packet_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_packet_singleton_atom_sae_proved=false
+endpoint_displacement_autocorrelation_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+endpoint dyadic packet 位于有限群：
+
+```text
+dimension=1: H=Z/q_j Z,
+dimension=2: H=(Z/q_j Z)^2.
+```
+
+上一层已经给出尺度 `lambda`、符号 `epsilon` 和同号支持：
+
+```text
+S={z in H: lambda < epsilon*F(z) <= 2lambda}.
+```
+
+若 `|S|=1`，则 packet 成为 endpoint packet singleton atom。若
+`|S|=m>=2`，定义：
+
+```text
+C_S(delta)=#{z in S: z+delta in S}.
+```
+
+所有有序不同点对给出：
+
+```text
+sum_{delta != 0} C_S(delta)=m(m-1).
+```
+
+有限群鸽巢给出某个非零位移：
+
+```text
+C_S(delta) >= m(m-1)/(|H|-1).
+```
+
+同号 dyadic 幅度进一步给出：
+
+```text
+A_F(delta)=sum_{z,z+delta in S} F(z)F(z+delta)
+          >= lambda^2*C_S(delta).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap
+  -> StableLadderEndpointDyadicEnergyPacketImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterPacketAutocorrelationLedger
+  AND StableLadderEndpointPacketFiniteGroupLedger
+  AND StableLadderEndpointPacketSignedSupportLedger
+  AND StableLadderEndpointPacketSingletonAtomLedger
+  AND StableLadderEndpointPacketNonzeroPairCountLedger
+  AND StableLadderEndpointPacketDisplacementPigeonholeLedger
+  AND StableLadderEndpointPacketWeightedAutocorrelationLedger
+  AND StableLadderEndpointPacketDimensionPreservedLedger
+  AND NoAnonymousEndpointDyadicEnergyPacketExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPacketAutocorrelationLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap
+```
+
+本步关闭的是匿名 endpoint dyadic energy packet 口径。剩余集中为原有孤立
+singleton 全局求和、endpoint packet singleton atom/SAE、endpoint
+displacement autocorrelation/PDEC cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。
