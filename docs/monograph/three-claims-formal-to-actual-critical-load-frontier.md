@@ -7048,3 +7048,47 @@ AND MovingCarrierPhaseSlipPDECExclusion
 ```
 
 这一步没有排斥首破裂，只是把“相位滑移终端”拆成三个更低层的可审计出口。
+
+## 165. First-break small-LCM rank-pressure 压缩
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_small_lcm_rank_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.json
+data/prime-matrix-firstbreak-small-lcm-rank-pressure-ledger.json
+```
+
+本步继续下钻 small-LCM 出口。同步结果：
+
+```text
+distinct_prime_product_law_closed=true
+small_lcm_rank_pressure_closed=true
+two_large_carrier_sqrt_barrier_closed=true
+small_lcm_branch_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：fixed small-LCM 分支的 carrier 标签不能很多。若活动标签集为 `Lambda`，则
+
+```text
+lcm(Lambda)=product Lambda <= H=P-y.
+```
+
+所以任意阈值 `B` 以上的 carrier 数量满足：
+
+```text
+rank_{>B} <= floor(log H/log B).
+```
+
+特别地，两个 `>sqrt(H)` 的 carrier 不能同时存在。于是小 LCM 压力不可能仍被解释为“许多中高素 carrier
+自由叠加”；它必须落入：
+
+```text
+LowCarrierFixedResidueColumnCRTPDECExclusion
+AND LowCarrierNonpersistentSparseSAESummability
+AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE
+```
+
+这一步提供的是非循环 rank-pressure 结构压缩，不是终端排斥。

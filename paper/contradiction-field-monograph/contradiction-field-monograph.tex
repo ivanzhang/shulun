@@ -10951,6 +10951,57 @@ AND MovingCarrierPhaseSlipPDECExclusion.
 The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[First-break small-LCM rank-pressure compression]
+In the fixed small-LCM branch of the first-break phase-slip return, the replay
+width is positive, \(H=P-y\ge1\).  If \(y=P\), there is no nonzero replay row
+before the square anchor and the branch returns to the square-anchor/SAE
+boundary.  Let \(\Lambda\) be the active carrier-prime label set.  Since these
+labels are distinct primes,
+\[
+  \operatorname{lcm}(\Lambda)=\prod_{q\in\Lambda}q\le H .
+\]
+Consequently for every threshold \(B>1\),
+\[
+  |\{q\in\Lambda:q>B\}|\le \left\lfloor{\frac{\log H}{\log B}}\right\rfloor .
+\]
+In particular, two carriers \(q>\sqrt H\) cannot occur in the same fixed
+small-LCM formal unit.  Therefore a small-LCM first-break branch cannot be a
+free superposition of many medium/high carrier phases.  Any remaining pressure
+must be routed to one of three lower-level exits:
+\begin{quote}\scriptsize\ttfamily
+LowCarrierFixedResidueColumnCRTPDECExclusion\\
+AND LowCarrierNonpersistentSparseSAESummability\\
+AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+distinct\_prime\_product\_law\_closed=true\\
+small\_lcm\_rank\_pressure\_closed=true\\
+two\_large\_carrier\_sqrt\_barrier\_closed=true\\
+small\_lcm\_branch\_excluded=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This closes only the deterministic rank-pressure structure of the small-LCM
+branch.  It does not exclude persistent low-carrier fixed residues,
+nonpersistent sparse SAE mass, or the high-carrier rank-deficit capacity
+obligation.  The inverse-alignment return is updated to
+\begin{quote}\scriptsize\ttfamily
+NoZeroRowAtXEqualsP\_PlusOneRowAfterSquare\\
+AND LowCarrierFixedResidueColumnCRTPDECExclusion\\
+AND LowCarrierNonpersistentSparseSAESummability\\
+AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE\\
+AND NonreplaySparseFirstBreakSAESummability\\
+AND MovingCarrierPhaseSlipPDECExclusion.
+\end{quote}
+The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

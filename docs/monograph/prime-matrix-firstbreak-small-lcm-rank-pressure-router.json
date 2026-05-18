@@ -1,0 +1,124 @@
+{
+  "certificate_type": "prime_matrix_firstbreak_small_lcm_rank_pressure_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "SmallLCMBranchImported",
+      "meaning": "上一层把首破裂终端拆成 small-LCM、nonreplay sparse SAE、moving-carrier 三项。",
+      "proved": false,
+      "remaining": "SmallLCMColumnCRTPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveReplayWidthGuardClosed",
+      "meaning": "fixed small-LCM replay 只有在 H=P-y>=1 时才有非零步长；若 y=P，则没有后续复现行，回到 square-anchor/SAE 边界。",
+      "proved": true,
+      "remaining": "H>=1 for this branch"
+    },
+    {
+      "closed": true,
+      "gate": "DistinctPrimeProductLawClosed",
+      "meaning": "首破裂固定 carrier 标签是互异素数时，L=lcm(Lambda)=prod_{q in Lambda} q。",
+      "proved": true,
+      "remaining": "none for formula"
+    },
+    {
+      "closed": true,
+      "gate": "SmallLCMRankPressureClosed",
+      "meaning": "小 LCM 分支满足 prod Lambda=L<=H=P-y；因此任意阈值 B 下，q>B 的 carrier 数至多 floor(log H/log B)。",
+      "proved": true,
+      "remaining": "rank_{>B} <= floor(log H/log B)"
+    },
+    {
+      "closed": true,
+      "gate": "TwoLargeCarrierSqrtBarrierClosed",
+      "meaning": "特别地，两个 q>sqrt(H) 的 carrier 不能同时出现在同一固定 small-LCM formal unit 中。",
+      "proved": true,
+      "remaining": "HighCarrierRankDeficitCapacityBoundOrSingletonSAE"
+    },
+    {
+      "closed": true,
+      "gate": "ShortWindowLCMDisciplineImported",
+      "meaning": "仓库已有 LCM 乘子纪律：不能制造 LCM 爆炸的高密度对象必须产生共同核/固定 residue 复现。",
+      "proved": true,
+      "remaining": "LowCarrierFixedResidueColumnCRTPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "LowCarrierFixedResidueRouteRegistered",
+      "meaning": "若小 LCM 压力由 q<=B 的低 carrier 承担，则同一 q/residue 在 H 内反复出现；持久时是 ColumnCRT/PDEC。",
+      "proved": true,
+      "remaining": "LowCarrierFixedResidueColumnCRTPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "LowCarrierNonpersistentSparseRouteRegistered",
+      "meaning": "若低 carrier 不持久复用固定 residue，则不能形成稳定支付链，只能作为 sparse SAE/LocalSurvivor 计费。",
+      "proved": true,
+      "remaining": "LowCarrierNonpersistentSparseSAESummability"
+    },
+    {
+      "closed": true,
+      "gate": "HighCarrierRankDeficitRouteRegistered",
+      "meaning": "排除低 carrier 后，高 carrier rank 被 log H/log B 控制；若仍要覆盖反例压力，必须证明低秩容量不足或退化为 singleton SAE。",
+      "proved": false,
+      "remaining": "HighCarrierRankDeficitCapacityBoundOrSingletonSAE"
+    },
+    {
+      "closed": true,
+      "gate": "SmallLCMBranchReduced",
+      "meaning": "抽象 SmallLCMColumnCRTPDECExclusion 被压成低 carrier 固定 residue、低 carrier 稀疏 SAE、高 carrier rank deficit 三项。",
+      "proved": false,
+      "remaining": "LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE"
+    },
+    {
+      "closed": false,
+      "gate": "SmallLCMBranchExcluded",
+      "meaning": "本步没有排斥三项终端，只关闭了 small-LCM 的 rank-pressure 结构。",
+      "proved": false,
+      "remaining": "LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、小 LCM 三项、nonreplay SAE、moving carrier 与并行 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "distinct_prime_product_law_closed": true,
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+  "hardpoint_before_router": "SmallLCMColumnCRTPDECExclusion",
+  "high_carrier_rank_deficit_route_registered": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "low_carrier_fixed_residue_route_registered": true,
+  "low_carrier_nonpersistent_sparse_route_registered": true,
+  "next_direct_attack_target": "LowCarrierFixedResidueColumnCRTPDECExclusion",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion",
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+  ],
+  "plain_conclusion": "首破裂 small-LCM 分支已被压成 rank-pressure 三分：固定 carrier 标签集满足 L=prod Lambda<=H=P-y，故任意阈值 B 以上的独立 carrier 数最多为 floor(log H/log B)，特别是两个大于 sqrt(H) 的 carrier 不可能同处一个 fixed small-LCM formal unit。因此小 LCM 若要承担反例压力，必须由低 carrier 固定 residue 复用、非持久稀疏 SAE，或高 carrier 低秩容量缺口来解释。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND LowCarrierFixedResidueColumnCRTPDECExclusion AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "small_lcm_branch_excluded": false,
+  "small_lcm_rank_pressure_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.json": "5bd12e6d5f2553e041f20f2b0c1b86ba145c05425b0aa89d973f7707ac4925e2",
+    "docs/monograph/prime-matrix-pdec-cap-occupancy-saturation-kernel-router.md": "9974e8d739fa510a9fdd417a658dacb308326aad48a646cf3f9c361d3d295079",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md": "6b1498eb0c46eb3302ed336a68c479b7f4f7bbff0b7b971d5b3fc05346d1707d",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json": "b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e",
+    "experiments/prime_matrix_firstbreak_small_lcm_rank_pressure_router.py": "0546345213fdcce70b092b52e2b55299b5a6dbcc97e6cef788dad6b50cabc8f1"
+  },
+  "status": "firstbreak_small_lcm_reduced_to_low_carrier_or_rank_deficit_open",
+  "two_large_carrier_sqrt_barrier_closed": true
+}

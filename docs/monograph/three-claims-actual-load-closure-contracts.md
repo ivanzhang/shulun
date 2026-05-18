@@ -7175,3 +7175,61 @@ AND MovingCarrierPhaseSlipPDECExclusion
 
 本步关闭的是固定 carrier 复现的合成模数屏障；小 LCM PDEC、非复现 sparse SAE 与 moving-carrier PDEC
 仍未排斥，行/列命题仍未无条件闭合。
+
+## 165. First-break small-LCM rank-pressure 压缩
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_small_lcm_rank_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.json
+data/prime-matrix-firstbreak-small-lcm-rank-pressure-ledger.json
+```
+
+本步继续攻击 `SmallLCMColumnCRTPDECExclusion`。同步读数为：
+
+```text
+distinct_prime_product_law_closed=true
+small_lcm_rank_pressure_closed=true
+two_large_carrier_sqrt_barrier_closed=true
+small_lcm_branch_excluded=false
+row_column_unconditional_closed=false
+```
+
+在 fixed small-LCM 分支中，必须有 `H=P-y>=1`；若 `y=P`，则没有后续非零复现步长，回到
+square-anchor/SAE 边界。活动 carrier 标签集 `Lambda` 由互异素数构成，并满足：
+
+```text
+L = lcm(Lambda) = product_{q in Lambda} q <= H = P-y.
+```
+
+对任意阈值 `B>1`：
+
+```text
+|{q in Lambda:q>B}| <= floor(log H / log B).
+```
+
+特别地，两个 `q>sqrt(H)` 的 carrier 不可能同处一个 fixed small-LCM formal unit。因此小 LCM
+若要承担反例压力，只能进入三类更低层出口：
+
+```text
+SmallLCMColumnCRTPDECExclusion
+  -> LowCarrierFixedResidueColumnCRTPDECExclusion
+  AND LowCarrierNonpersistentSparseSAESummability
+  AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE
+```
+
+当前 inverse-alignment 回流分支更新为：
+
+```text
+NoZeroRowAtXEqualsP_PlusOneRowAfterSquare
+AND LowCarrierFixedResidueColumnCRTPDECExclusion
+AND LowCarrierNonpersistentSparseSAESummability
+AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE
+AND NonreplaySparseFirstBreakSAESummability
+AND MovingCarrierPhaseSlipPDECExclusion
+```
+
+本步没有排斥 small-LCM 分支，而是把它从宽口径 ColumnCRT/PDEC 压成低 carrier 固定 residue、低 carrier
+非持久 sparse SAE、高 carrier 低秩容量缺口三项。
