@@ -5667,3 +5667,51 @@ packet，也不关闭 AP 零点包、same-set PDEC、模型余量、RatePreserva
 ```text
 PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 ```
+
+## 124. Strict source declaration downstream sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_declaration_downstream_sync_router.py
+docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.md
+docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.json
+data/prime-matrix-strict-source-declaration-downstream-sync-ledger.json
+```
+
+本步把上一节的 common packet 继续同步到已有下游前沿。`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`
+分成两条子线：
+
+```text
+signed/payload lane -> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+ExactUV lane -> ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+关键判定是：普通 `ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRule` 继续展开会回到
+signed-source 固定点；若要避免固定点，必须使用反分裂原子声明，把 rows formula、basis word/signed
+coefficient pairing、alpha/delta payload 与 prepushforward identity 内置到同一 pre-Cauchy row 中。
+已有 `atomic-joint-rows` 证书进一步把这个原子声明压到 built-in signed coefficient/pairing 闭式。
+
+当前读数：
+
+```text
+downstream_sync_closed=true
+built_in_signed_pairing_proved=false
+actual_emitter_exact_uv_bounded_multiplicity_incidence_proved=false
+common_packet_proved=false
+row_column_unconditional_closed=false
+```
+
+因此 common packet 不再是一个未拆分黑箱。下一直接主攻是：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+并行 ExactUV 子线仍需：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+本步不关闭 AP 零点包、same-set PDEC、RatePreservation 或 DStructure/Rankin 门。

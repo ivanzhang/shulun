@@ -5551,3 +5551,33 @@ ExplicitModelGapAndFiniteDPRCLedger
 RatePreservationLedger_FOR_moving_atom_packet
 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
+
+## 135. Strict source declaration downstream sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_declaration_downstream_sync_router.py
+docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.md
+docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.json
+data/prime-matrix-strict-source-declaration-downstream-sync-ledger.json
+```
+
+本步将 common packet 的字段下游拆开，得到当前更精确的 strict source lane 基：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+普通 joint constructor 线被证实为固定点：它经 alpha-side、same-row、row-level origin table
+回到 signed-source 来源环，不能作为 packet 的非循环证明。保持反分裂的路线必须进入原子 joint rows，
+而该路线的 signed 首缺口正是每条 atomic row 的内置 signed coefficient/pairing 闭式值。
+
+这一步只是下游同步，不是行/列命题无条件闭合。下一直接主攻：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
