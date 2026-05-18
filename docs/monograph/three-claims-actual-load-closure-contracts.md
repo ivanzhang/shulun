@@ -9839,3 +9839,83 @@ SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
 或同 cell period-pair 的显式二分。剩余集中为 singleton surplus atom 的全局
 可求和、same-cell period-pair PDEC/cap，或 sparse scale-ladder SAE 全局求和。
 行/列命题仍未无条件闭合。
+
+## 200. stable-ladder singleton/pair width 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_singleton_pair_width_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap`。
+同步读数为：
+
+```text
+singleton_pair_imported=true
+singleton_low_fiber_quota_closed=true
+pair_support_width_dichotomy_closed=true
+short_support_pair_excluded=true
+long_width_pair_registered=true
+anonymous_singleton_or_pair_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+low_fiber_singleton_summability_proved=false
+long_width_pair_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+singleton 分支满足：
+
+```text
+M_s=1,
+M_s-L/q_j>=eta>0.
+```
+
+因此：
+
+```text
+1-L/q_j>0,
+L<q_j.
+```
+
+所以 singleton surplus atom 不能留在高 pivot 纤维中；它只能作为低纤维事件
+继续求和/排斥。
+
+pair 分支满足：
+
+```text
+n2-n1=tW, t>=1, W=lcm_i(q_i).
+```
+
+若承载支撑直径为 `H`，则必有：
+
+```text
+H>=n2-n1>=W.
+```
+
+因此 `H<W` 的短支撑分支排斥同 cell period-pair；只有 `H>=W` 的长宽度
+分支保留为显式 PDEC/cap。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap
+  -> StableActualLadderSingletonOrPairPeriodImportedLedger
+  AND StableLadderSingletonSurplusLowFiberQuotaLedger
+  AND StableLadderSameCellPairSupportWidthDichotomyLedger
+  AND StableLadderShortSupportPairExclusionLedger
+  AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger
+  AND NoAnonymousSingletonOrPairPeriodExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap
+```
+
+本步关闭的是匿名 singleton/pair 出口：singleton 被限制到低纤维 `L<q_j`，
+pair 被限制到长宽度 `H>=W`。剩余集中为低纤维 singleton 全局求和、长宽度
+same-cell period-pair PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列
+命题仍未无条件闭合。

@@ -9021,3 +9021,57 @@ SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPer
 
 本步没有证明 singleton surplus atom 全局可求和，也没有证明 same-cell
 period-pair PDEC cap；它只把正过载口径改写为整数占位的 singleton/pair 二分。
+
+## 200. Stable-ladder singleton/pair width frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_singleton_pair_width_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap`。
+同步结果：
+
+```text
+singleton_pair_imported=true
+singleton_low_fiber_quota_closed=true
+pair_support_width_dichotomy_closed=true
+short_support_pair_excluded=true
+long_width_pair_registered=true
+anonymous_singleton_or_pair_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+low_fiber_singleton_summability_proved=false
+long_width_pair_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的 singleton/pair 出口可以再拆成两个更具体的
+几何-容量接口。若 `M_s=1` 且仍有正过载 `M_s-L/q_j>=eta>0`，则：
+
+```text
+L<q_j.
+```
+
+若 same-cell pair 存在，则：
+
+```text
+n2-n1=tW>=W,
+H>=W.
+```
+
+所以短支撑 `H<W` 分支不能承载 pair；剩余 pair 必是长宽度 period-pair。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap
+```
+
+本步没有证明低纤维 singleton 全局可求和，也没有证明长宽度 same-cell
+period-pair PDEC cap；它只把 singleton/pair 改写为低纤维/长宽度二分。

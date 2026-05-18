@@ -13174,6 +13174,64 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotom
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder singleton/pair width reduction]
+The singleton-or-period-pair outlet has a low-fiber/long-width form.  The open
+hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderSingletonOrPairPeriodImportedLedger\\
+AND StableLadderSingletonSurplusLowFiberQuotaLedger\\
+AND StableLadderSameCellPairSupportWidthDichotomyLedger\\
+AND StableLadderShortSupportPairExclusionLedger\\
+AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger\\
+AND NoAnonymousSingletonOrPairPeriodExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Singleton/pair width ledger]
+For the singleton branch, combine \(M_s=1\) with the positive overload
+\[
+  M_s-\frac{L}{q_j}\ge \eta>0.
+\]
+This gives
+\[
+  1-\frac{L}{q_j}>0,\qquad L<q_j.
+\]
+Thus a singleton surplus atom cannot live in a high pivot fiber \(L\ge q_j\).
+It is a low-fiber singleton event and remains to be summed or excluded there.
+
+For the pair branch, the preceding occupancy theorem gives two points
+\(n_1<n_2\) in the same stable-ladder cell.  With
+\[
+  W=\operatorname {lcm}_i(q_i),
+\]
+there is an integer \(t\ge 1\) such that
+\[
+  n_2-n_1=tW\ge W.
+\]
+If \(H\) is the diameter of any support carrying both points, then
+\[
+  H\ge n_2-n_1\ge W.
+\]
+Consequently the short-support case \(H<W\) excludes the pair branch.  The only
+remaining pair obstruction is a named long-width same-cell period-pair PDEC
+cap.
+
+Therefore the singleton-or-period-pair outlet is not anonymous: it is either a
+low-fiber singleton outlet or a long-width same-cell period-pair outlet.  This
+theorem does not prove the low-fiber singleton summability cap, it does not
+prove the long-width period-pair cap, and it does not prove global summability
+of the sparse scale-ladder SAE outlet.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
