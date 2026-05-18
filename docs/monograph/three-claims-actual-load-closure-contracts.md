@@ -9034,3 +9034,89 @@ RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC
 
 本步关闭的是匿名 rank-budgeted moving-family 口径；剩余集中为首移动 LPF 坐标的
 相位/容量压力，或 word-motion ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 190. first-moving LPF coordinate 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_first_moving_lpf_coordinate_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-router.json
+data/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-ledger.json
+```
+
+本步继续攻击 `FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC`。同步读数为：
+
+```text
+first_moving_coordinate_pressure_imported=true
+stable_prefix_product_support_closed=true
+effective_width_closed=true
+low_coordinate_finite_atom_closed=true
+dyadic_coordinate_partition_closed=true
+active_product_width_exit_closed=true
+active_count_bound_closed=true
+single_coordinate_pressure_localized=true
+fixed_coordinate_columncrt_exit_closed=true
+anonymous_coordinate_pool_removed=true
+single_coordinate_drift_excluded=false
+row_column_unconditional_closed=false
+```
+
+首移动坐标 `mu` 前的 LPF word 前缀稳定，记：
+
+```text
+A_prefix=stable prefix product,
+W_prefix=floor(W/A_prefix).
+```
+
+若 `mu>W_prefix`，则 `A_prefix*mu>W`，直接进入 product-width ColumnCRT/PDEC 或有限原子。
+低坐标 `mu<=2` 也只给出有限原子。其余活动坐标落入有限 dyadic 层：
+
+```text
+B<mu<=2B,
+B=2^b,
+B>=2,
+B<=W_prefix.
+```
+
+固定一层，令活动坐标集合为 `M_B`：
+
+```text
+P_B=prod_{mu in M_B}mu.
+```
+
+若 `P_B>W_prefix`，进入 ColumnCRT/PDEC 或有限原子；若 `P_B<=W_prefix`，则：
+
+```text
+|M_B|<=floor(log W_prefix/log B).
+```
+
+因此 dyadic 层聚合压力若超界，必须定位到单个坐标：
+
+```text
+E_mu>U_B/|M_B|.
+```
+
+若该 `mu` 稳定，则回到固定 word 坐标的 Prefix/ColumnCRT/PDEC；若它随 `P` 漂移，
+进入新的单坐标漂移硬点。
+
+硬点更新为：
+
+```text
+FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
+  -> FirstMovingLPFCoordinatePressureImportedLedger
+  AND StablePrefixProductSupportLedger
+  AND FirstMovingCoordinateEffectiveWidthLedger
+  AND LowMovingCoordinateFiniteAtomLedger
+  AND FirstMovingCoordinateDyadicPartitionLedger
+  AND MovingCoordinateActiveProductWidthExitLedger
+  AND MovingCoordinateActiveCountBoundLedger
+  AND SingleMovingCoordinatePressureLocalizationLedger
+  AND FixedMovingCoordinateDegeneratesToColumnCRTLedger
+  AND NoAnonymousFirstMovingCoordinatePoolLedger
+  AND SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
+```
+
+本步关闭的是匿名首移动坐标池；剩余集中为单个 moving LPF coordinate drift，
+或 prefix ColumnCRT/PDEC。行/列命题仍未无条件闭合。

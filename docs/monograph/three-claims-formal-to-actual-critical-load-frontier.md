@@ -8455,3 +8455,55 @@ FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
 
 本步没有证明首移动 LPF 坐标压力不可能；它只把移动族压力从匿名 family 压到第一个
 真正改变相位/容量的素坐标。
+
+## 190. First-moving LPF coordinate frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_first_moving_lpf_coordinate_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-router.json
+data/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-ledger.json
+```
+
+本步继续攻击 `FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC`。同步结果：
+
+```text
+stable_prefix_product_support_closed=true
+effective_width_closed=true
+low_coordinate_finite_atom_closed=true
+dyadic_coordinate_partition_closed=true
+active_product_width_exit_closed=true
+active_count_bound_closed=true
+single_coordinate_pressure_localized=true
+fixed_coordinate_columncrt_exit_closed=true
+anonymous_coordinate_pool_removed=true
+single_coordinate_drift_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：首移动坐标池也不能匿名保留。稳定前缀给出：
+
+```text
+A_prefix,
+W_prefix=floor(W/A_prefix).
+```
+
+若 `mu>W_prefix`，或活动坐标乘积超过 `W_prefix`，则相位周期超过有效支撑并回到
+ColumnCRT/PDEC 或有限原子。除低坐标 `mu<=2` 的有限原子外，活动坐标落入
+`B<mu<=2B, B>=2`，并有：
+
+```text
+|M_B|<=floor(log W_prefix/log B)
+```
+
+除非先触发 product-width 出口。因此超界压力必须落在单个 `mu`。若该 `mu` 稳定，
+回到固定 word 坐标；若漂移，新的直接主攻为：
+
+```text
+SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
+```
+
+本步没有证明单个 moving LPF coordinate drift 不可能；它把首移动坐标压力压到单坐标
+漂移接口。

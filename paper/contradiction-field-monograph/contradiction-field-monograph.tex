@@ -12521,6 +12521,79 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.m
 \end{quote}
 \end{proof}
 
+\begin{theorem}[First-moving LPF coordinate reduction]
+The first-moving LPF coordinate branch has a dyadic product-width reduction.
+The open hard point
+\begin{quote}\scriptsize\ttfamily
+FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+FirstMovingLPFCoordinatePressureImportedLedger\\
+AND StablePrefixProductSupportLedger\\
+AND FirstMovingCoordinateEffectiveWidthLedger\\
+AND LowMovingCoordinateFiniteAtomLedger\\
+AND FirstMovingCoordinateDyadicPartitionLedger\\
+AND MovingCoordinateActiveProductWidthExitLedger\\
+AND MovingCoordinateActiveCountBoundLedger\\
+AND SingleMovingCoordinatePressureLocalizationLedger\\
+AND FixedMovingCoordinateDegeneratesToColumnCRTLedger\\
+AND NoAnonymousFirstMovingCoordinatePoolLedger\\
+AND SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Coordinate ledger]
+Let \(\mu\) be the first LPF coordinate that moves in the pressure-carrying
+word.  The word prefix before \(\mu\) is stable; write its product as
+\[
+  A_{\rm prefix}.
+\]
+If \(W\) is the original \(m\)-support width, define the effective coordinate
+width
+\[
+  W_{\rm prefix}=\left\lfloor \frac{W}{A_{\rm prefix}}\right\rfloor .
+\]
+When \(\mu>W_{\rm prefix}\), the composite period
+\[
+  A_{\rm prefix}\mu
+\]
+already exceeds \(W\), so the branch is a product-width ColumnCRT/PDEC or a
+finite atom.  The low coordinate case \(\mu\le2\) is also finite.
+
+For the remaining coordinates, partition into dyadic layers
+\[
+  B<\mu\le 2B,\qquad B=2^b,\qquad B\ge2,\qquad B\le W_{\rm prefix}.
+\]
+Fix such a layer and let \(M_B\) be its active coordinate set.  If
+\[
+  \prod_{\mu\in M_B}\mu>W_{\rm prefix},
+\]
+then the active coordinate word has period exceeding the effective support and
+is again a ColumnCRT/PDEC or finite-atom exit.  Otherwise, since every
+\(\mu>B\),
+\[
+  |M_B|\le \left\lfloor \frac{\log W_{\rm prefix}}{\log B}\right\rfloor .
+\]
+Thus the active coordinate pool has a finite logarithmic capacity.
+
+The layer pressure decomposes over disjoint coordinate cells:
+\[
+  E_B=\sum_{\mu\in M_B}E_\mu .
+\]
+If \(E_B>U_B\), then some coordinate satisfies
+\[
+  E_\mu>\frac{U_B}{|M_B|}.
+\]
+If that coordinate is stable along the family, the supposed first motion
+degenerates to a fixed word coordinate and is routed to the prefix
+ColumnCRT/PDEC or finite-atom exit.  If it is not stable, the remaining
+obstruction is a single moving LPF coordinate drift.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
