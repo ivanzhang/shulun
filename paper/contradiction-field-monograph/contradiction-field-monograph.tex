@@ -12305,6 +12305,81 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-r
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Fixed-pair second-LPF descent reduction]
+The fixed-pair rough-\(m\) pressure branch admits a strict scale descent.  The
+open hard point
+\begin{quote}\scriptsize\ttfamily
+SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+FixedPairPressureImportedLedger\\
+AND FixedPairMSupportStrictDescentLedger\\
+AND MEqualsOneFiniteAtomLedger\\
+AND SecondCofactorLeastPrimeFactorPartitionLedger\\
+AND SecondLPFRoughTCRTCellLedger\\
+AND SecondLPFProductWidthColumnCRTExitLedger\\
+AND ResidualSupportWidthStrictDecreaseNoCycleLedger\\
+AND SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Reduction ledger]
+On a fixed pair \((r,\ell)\), the cell is
+\[
+  q=\ell r m,\qquad m_{\min}\le m\le m_{\max},\qquad
+  (m,W_{<r})=1,
+\]
+with weight
+\[
+  \beta_m=j\,u(\ell r m).
+\]
+The case \(m=1\) is the single point \(q=\ell r\), hence a finite atom.
+
+For \(m>1\), let \(s={\rm lpf}(m)\).  Since \((m,W_{<r})=1\), one has
+\[
+  s\ge r.
+\]
+Thus
+\[
+  m=st,\qquad (t,W_{<s})=1,
+\]
+with
+\[
+  t_{\min}=\lceil m_{\min}/s\rceil,\qquad
+  t_{\max}=\lfloor m_{\max}/s\rfloor .
+\]
+This gives the disjoint second-LPF partition
+\[
+  E_{r\leftarrow\ell}
+  =E_{m=1}+\sum_{s\ge r}E_{s\leftarrow r,\ell}.
+\]
+
+Let \(w_m=m_{\max}-m_{\min}+1\) and
+\[
+  w_t=t_{\max}-t_{\min}+1.
+\]
+For fixed \(s\),
+\[
+  w_t\le \lceil w_m/s\rceil\le \lceil w_m/r\rceil .
+\]
+In the non-finite branch \(r\ge2\), so \(w_t<w_m\) whenever \(w_m>1\); if
+\(w_m\le1\), the cell is already finite.  Therefore repeated descent cannot
+cycle at the same support scale.
+
+If the active second-level primes \(S\) have product
+\[
+  M_S=\prod_{s\in S}s
+\]
+larger than \(w_m\), the second-level phase word has period exceeding the
+original \(m\)-support and must be registered as a ColumnCRT/PDEC or finite
+atom exit.  This step does not exclude the resulting second-LPF/triple
+rough-\(t\) pressure; it records a strict no-cycle reduction.  The row/column
+theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -8780,3 +8780,87 @@ DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
 本步关闭的是 small-product 活动个数界、低层有限原子边界、single-r 压力定位与
 fixed-pair rough-m CRT 形式。剩余集中为：single-r/fixed-pair pressure，或 fixed-pair
 ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 187. fixed-pair second-LPF descent 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_fixed_pair_second_lpf_descent_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-router.json
+data/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-ledger.json
+```
+
+本步继续攻击 `SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC`。同步读数为：
+
+```text
+fixed_pair_pressure_imported=true
+m_support_strict_descent_closed=true
+m_equals_one_finite_atom_closed=true
+second_lpf_partition_closed=true
+second_lpf_crt_cell_closed=true
+second_product_width_closed=true
+strict_no_cycle_closed=true
+second_lpf_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+固定 `(r,ell)` 后：
+
+```text
+q=ell*r*m,
+m_min<=m<=m_max,
+gcd(m,W_<r)=1,
+beta_m=j*u(ell*r*m).
+```
+
+`m=1` 只给出单点 `q=ell*r`，登记为有限原子。对 `m>1`，由
+`gcd(m,W_<r)=1` 得：
+
+```text
+s=lpf(m)>=r.
+```
+
+于是：
+
+```text
+m=s*t,
+gcd(t,W_<s)=1,
+t_min=ceil(m_min/s),
+t_max=floor(m_max/s).
+```
+
+并有互不重叠分区：
+
+```text
+E_{r<-ell}=E_{m=1}+sum_{s>=r}E_{s<-r,ell}.
+```
+
+记 `width_m=m_max-m_min+1`，则固定 `s` 后：
+
+```text
+width_t<=ceil(width_m/s)<=ceil(width_m/r).
+```
+
+非有限分支 `r>=2`，因此若 `width_m>1`，二级递降后的支撑严格变小；若
+`width_m<=1`，直接进入有限原子。这给出 non-cycle 证书：fixed-pair pressure
+不能在同一支撑尺度上循环。
+
+硬点更新为：
+
+```text
+SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
+  -> FixedPairPressureImportedLedger
+  AND FixedPairMSupportStrictDescentLedger
+  AND MEqualsOneFiniteAtomLedger
+  AND SecondCofactorLeastPrimeFactorPartitionLedger
+  AND SecondLPFRoughTCRTCellLedger
+  AND SecondLPFProductWidthColumnCRTExitLedger
+  AND ResidualSupportWidthStrictDecreaseNoCycleLedger
+  AND SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC
+```
+
+本步关闭的是 fixed-pair 下的 m=1 有限原子、二级 LPF 分区、rough-t CRT 形式、
+product-width 登记与支撑宽度严格下降。剩余集中为：二级 LPF/triple pressure，
+或二级 product-width ColumnCRT/PDEC。行/列命题仍未无条件闭合。

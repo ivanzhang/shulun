@@ -8273,3 +8273,67 @@ SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
 
 本步没有证明 single-r/fixed-pair pressure 不可能；它把 small-product dyadic 压力压成
 单个 cofactor prime 和固定 pair 的 rough-m CRT 单元。
+
+## 187. Fixed-pair second-LPF descent frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_fixed_pair_second_lpf_descent_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-router.json
+data/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-ledger.json
+```
+
+本步继续攻击 `SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC`。同步结果：
+
+```text
+m_support_strict_descent_closed=true
+m_equals_one_finite_atom_closed=true
+second_lpf_partition_closed=true
+second_lpf_crt_cell_closed=true
+second_product_width_closed=true
+strict_no_cycle_closed=true
+second_lpf_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：固定 `(r,ell)` 后，压力单元为：
+
+```text
+q=ell*r*m,
+gcd(m,W_<r)=1.
+```
+
+`m=1` 是有限原子。若 `m>1`，则：
+
+```text
+s=lpf(m)>=r,
+m=s*t,
+gcd(t,W_<s)=1.
+```
+
+端点为：
+
+```text
+t_min=ceil(m_min/s),
+t_max=floor(m_max/s).
+```
+
+支撑宽度满足：
+
+```text
+width_t<=ceil(width_m/s)<=ceil(width_m/r).
+```
+
+在非有限分支 `r>=2`，所以每次二级 LPF 递降都严格降低支撑尺度，直到有限原子或
+ColumnCRT/PDEC 出口。
+
+新的直接主攻为：
+
+```text
+SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC
+```
+
+本步没有证明二级 LPF/triple pressure 不可能；它把 fixed-pair pressure 变成严格下降的
+rough-t CRT 单元，排除了同尺度循环解释。
