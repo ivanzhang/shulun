@@ -6422,3 +6422,62 @@ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
 ```text
 NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 ```
+
+## 153. Strict post-PDEC new-joint noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_pdec_new_joint_noncycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.json
+data/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-ledger.json
+```
+
+本步把 post-PDEC 前沿中的 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`
+继续沿既有 branch trace、signed payload、signed-lane cycle、new primitive 和
+source-rank convergence 链条展开。同步结果显示：
+
+```text
+new_joint_current_internal_route_saturated=true
+new_explicit_joint_constructor_formula_artifact_present=false
+exact_atomic_branch_trace_formula_proved=false
+atomic_signed_payload_constructor_proved=false
+new_primitive_artifact_independent_present=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：可见 CRT branch trace 不等于 actual signed payload；它没有
+orientation、local factor 与 signed coefficient。若 new-joint 只经旧
+joint/antisplit/branch-trace 路线，则它最终回到 signed-lane/source-rank/alpha 终端环；
+若要成为真实 actual-load 输入，必须提交闭环外的新 signed payload 或 pre-Cauchy
+source-rank/no-collapse 工件。
+
+最新内部非循环剩余为：
+
+```text
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+```
+
+下一直接主攻：
+
+```text
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+```
+
+因此 new-joint 名称当前不是已证 actual contradiction carrier，而是一个已饱和回环名。
+全局无条件化仍要在非循环 KZ/DLS、高段模型、RatePreservation 和 DStructure/Rankin
+四个门上继续推进。

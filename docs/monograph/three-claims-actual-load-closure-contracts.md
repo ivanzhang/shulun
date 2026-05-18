@@ -6390,3 +6390,69 @@ NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 本步不是行/列命题无条件闭合；它只说明 post-source-root 的 direct PDEC 内部路线已经
 不能继续作为已证非循环出口。新 PDEC scope 证书、外部 DIBFI、非循环 KZ/DLS、高段模型、
 RatePreservation 与 DStructure/Rankin 仍均未给出。
+
+## 153. Strict post-PDEC new-joint noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_pdec_new_joint_noncycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.json
+data/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-ledger.json
+```
+
+本步继续攻击上一节留下的
+`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`。同步 global CRT
+branch-trace、signed payload、atomic trace payload、signed-lane cycle、new primitive
+和 post-antisplit source-rank convergence 证书后，关键读数为：
+
+```text
+new_joint_current_internal_route_saturated=true
+new_explicit_joint_constructor_formula_artifact_present=false
+exact_atomic_branch_trace_formula_proved=false
+atomic_signed_payload_constructor_proved=false
+signed_lane_self_proof_eliminated=true
+new_primitive_artifact_independent_present=false
+noncircular_kuznetsov_dls_without_source_root_reuse_proved=false
+row_column_unconditional_closed=false
+```
+
+结论是：当前内部 new-joint 旧路线不能作为非循环出口。旧 joint/antisplit
+链只把生产性内容压到 exact atomic branch trace；branch trace 只给可见坐标；
+signed coefficient/local factor 仍需要 atomic signed payload constructor；而 signed
+payload 又回到 origin/common-packet 闭环。new primitive 若要破环，必须提交闭环外的
+pre-Cauchy actual source-rank/no-collapse 工件；当前语料没有该工件。
+
+最新内部非循环基同步为：
+
+```text
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留线为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻改为：
+
+```text
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+```
+
+本步不是行/列命题无条件闭合；它只删除 new-joint 的旧内部自证路线。剩余核心是一个不
+复用 NCBLK/source-root 的 Kuznetsov/DLS 大筛证明，并且高段模型、RatePreservation 与
+DStructure/Rankin 仍未闭合。
