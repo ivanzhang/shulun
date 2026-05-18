@@ -10106,3 +10106,87 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotC
 补周期商变量 `t` 的非零/零 pivot 相位。剩余集中为孤立 singleton 全局求和、
 quotient phase cycle PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列
 命题仍未无条件闭合。
+
+## 203. stable-ladder quotient short-arc/mean 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_phase_arc_mean_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap`。
+同步读数为：
+
+```text
+quotient_phase_cycle_imported=true
+isolated_singleton_carried_forward=true
+quotient_span_parameter_closed=true
+nowrap_zero_phase_exclusion_closed=true
+short_arc_cluster_registered=true
+full_cycle_euclidean_decomposition_closed=true
+full_cycle_formal_phase_mean_closed=true
+full_cycle_residual_tail_arc_closed=true
+anonymous_quotient_cycle_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+quotient_short_arc_cluster_cap_proved=false
+phase_cycle_actual_mean_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+沿用上一层记号：
+
+```text
+B=W_-j,
+g=gcd(q_j,B),
+R=q_j/g,
+d=n2-n1=tB.
+```
+
+支撑直径给出：
+
+```text
+T=floor(H/B), 1<=t<=T.
+```
+
+若 `T<R`，则 `t=1,...,T` 在 `Z/RZ` 中是真短弧，且不含零相位。
+因此 no-wrap 分支中 full-cell pair 不可能，实际 pair 只能登记为
+`QuotientShortArcCluster`。
+
+若 `T>=R`，写：
+
+```text
+T=aR+s, a=floor(T/R)>=1, 0<=s<R.
+```
+
+完整周期给出 formal phase mean：每个 pivot 相位在每个完整周期中出现一次，
+`a` 个完整周期给出同样次数 `a`；尾段 `s<R` 回到 no-wrap 短弧。这里不把
+formal mean 当成 actual load 证明，只把剩余压成 actual-mean cap 或短弧 cap。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap
+  -> StableActualLadderQuotientPhaseCycleImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterArcMeanLedger
+  AND StableLadderQuotientSpanParameterLedger
+  AND StableLadderQuotientNoWrapZeroPhaseExclusionLedger
+  AND StableLadderQuotientShortArcClusterLedger
+  AND StableLadderFullCycleEuclideanDecompositionLedger
+  AND StableLadderFullCycleFormalPhaseMeanLedger
+  AND StableLadderFullCycleResidualTailArcLedger
+  AND NoAnonymousQuotientPhaseCycleExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterArcMeanLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap
+```
+
+本步关闭的是匿名 quotient cycle 口径：它被拆成 no-wrap 真短弧聚集、完整
+周期 formal mean 与尾弧。剩余集中为孤立 singleton 全局求和、
+quotient short-arc cluster cap、phase-cycle actual-mean cap，或 sparse
+scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

@@ -9195,3 +9195,56 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotie
 
 本步没有证明孤立 singleton 全局可求和，也没有证明 quotient phase cycle
 PDEC/cap；它只把 anti-pivot/full-cell pair 统一到补周期商变量与 pivot 相位周期。
+
+## 203. Stable-ladder quotient short-arc/mean frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_phase_arc_mean_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap`。
+同步结果：
+
+```text
+quotient_phase_cycle_imported=true
+isolated_singleton_carried_forward=true
+quotient_span_parameter_closed=true
+nowrap_zero_phase_exclusion_closed=true
+short_arc_cluster_registered=true
+full_cycle_euclidean_decomposition_closed=true
+full_cycle_formal_phase_mean_closed=true
+full_cycle_residual_tail_arc_closed=true
+anonymous_quotient_cycle_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+quotient_short_arc_cluster_cap_proved=false
+phase_cycle_actual_mean_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：quotient cycle 不能再作为未分解黑箱。令
+
+```text
+T=floor(H/B).
+```
+
+若 `T<R`，则 `1<=t<=T` 是 `Z/RZ` 的真短弧，零相位不存在；no-wrap 分支
+只能是 short-arc cluster。若 `T>=R`，则 `T=aR+s`，完整周期只给 formal
+phase mean，尾段仍是短弧；actual 偏差必须进入 phase-cycle actual-mean cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap
+```
+
+本步没有证明 short-arc cluster cap、phase-cycle actual-mean cap、孤立
+singleton 求和或 sparse SAE 求和；它只把 quotient phase cycle 拆成短弧和
+完整周期均值/尾弧。

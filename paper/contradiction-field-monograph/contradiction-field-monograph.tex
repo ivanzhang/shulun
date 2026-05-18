@@ -13370,6 +13370,66 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phas
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder quotient short-arc/mean reduction]
+The quotient-phase cycle outlet has a non-cyclic short-arc/mean
+decomposition.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderQuotientPhaseCycleImportedLedger\\
+AND StableLadderIsolatedSingletonCarriedForwardAfterArcMeanLedger\\
+AND StableLadderQuotientSpanParameterLedger\\
+AND StableLadderQuotientNoWrapZeroPhaseExclusionLedger\\
+AND StableLadderQuotientShortArcClusterLedger\\
+AND StableLadderFullCycleEuclideanDecompositionLedger\\
+AND StableLadderFullCycleFormalPhaseMeanLedger\\
+AND StableLadderFullCycleResidualTailArcLedger\\
+AND NoAnonymousQuotientPhaseCycleExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterArcMeanLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Short-arc/mean ledger]
+Keep the notation of the pair quotient-phase reduction:
+\[
+  B=W_{-j},\qquad g=\gcd(q_j,B),\qquad R=q_j/g,
+  \qquad d=n_2-n_1=tB .
+\]
+If \(H\) is the support diameter, set
+\[
+  T=\left\lfloor H/B\right\rfloor .
+\]
+Then every quotient-pair witness satisfies \(1\le t\le T\).
+
+If \(T<R\), the set \(\{1,\ldots,T\}\) is a proper non-wrapping arc in
+\(\mathbf Z/R\mathbf Z\), and it contains no zero phase.  Hence the full-cell
+branch is impossible inside the no-wrap case; any actual pair in that case is
+registered as a quotient short-arc cluster.
+
+If \(T\ge R\), write
+\[
+  T=aR+s,\qquad a=\lfloor T/R\rfloor\ge 1,\qquad 0\le s<R .
+\]
+The first \(aR\) formal quotient parameters decompose into \(a\) complete
+cycles, so each pivot phase occurs exactly \(a\) times in the formal quotient
+parameter interval.  The residual \(s\) parameters again form a proper
+no-wrap tail arc.  Thus a persistent actual excess cannot hide in an
+anonymous quotient cycle: after subtracting the complete-cycle formal mean it
+must appear either as a phase-cycle actual-mean cap problem, or as a tail
+short-arc cluster.
+
+This theorem does not prove the short-arc cluster cap, it does not prove the
+phase-cycle actual-mean cap, it does not prove summability of isolated
+singletons, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
