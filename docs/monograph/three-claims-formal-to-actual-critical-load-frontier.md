@@ -9592,3 +9592,72 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPa
 本步没有证明 endpoint packet singleton atom/SAE、endpoint displacement
 autocorrelation/PDEC cap、孤立 singleton 求和或 sparse SAE 求和；它只把能量包
 变成显式非零位移自相关或单点 atom。
+
+## 209. Stable-ladder endpoint displacement orbit frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_displacement_orbit_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap`。
+同步结果：
+
+```text
+endpoint_singleton_or_displacement_autocorrelation_imported=true
+endpoint_singleton_atom_sae_unified=true
+endpoint_displacement_autocorrelation_imported=true
+endpoint_nonzero_displacement_order_closed=true
+endpoint_displacement_orbit_partition_closed=true
+endpoint_autocorrelation_orbit_decomposition_closed=true
+endpoint_weighted_orbit_pigeonhole_closed=true
+endpoint_orbit_cyclic_adjacency_packet_registered=true
+endpoint_orbit_dimension_preserved=true
+anonymous_endpoint_displacement_autocorrelation_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_translation_orbit_adjacency_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：singleton 出口统一为 `EndpointSingletonAtomSAE`；
+非零位移自相关不再留在全群，而进入单个平移周期轨道。令：
+
+```text
+r=ord_H(delta)>1,
+Omega=H/<delta>.
+```
+
+则每个轨道为：
+
+```text
+O=a+<delta>={a+t*delta: t in Z/rZ}.
+```
+
+全局加权自相关分解为：
+
+```text
+A_F(delta)=sum_{O in Omega} A_O(delta).
+```
+
+因此存在单个轨道承载至少平均质量：
+
+```text
+A_O(delta) >= A_F(delta)/|Omega|.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、endpoint translation orbit
+adjacency/PDEC cap 或 sparse SAE 求和；它只把非零位移自相关压成单个 CRT
+平移周期上的循环邻接包。

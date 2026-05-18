@@ -10691,3 +10691,91 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDy
 singleton 全局求和、endpoint packet singleton atom/SAE、endpoint
 displacement autocorrelation/PDEC cap，或 sparse scale-ladder SAE 全局求和。
 行/列命题仍未无条件闭合。
+
+## 209. stable-ladder endpoint displacement orbit 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_displacement_orbit_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap`。
+同步读数为：
+
+```text
+endpoint_singleton_or_displacement_autocorrelation_imported=true
+endpoint_singleton_atom_sae_unified=true
+endpoint_displacement_autocorrelation_imported=true
+endpoint_nonzero_displacement_order_closed=true
+endpoint_displacement_orbit_partition_closed=true
+endpoint_autocorrelation_orbit_decomposition_closed=true
+endpoint_weighted_orbit_pigeonhole_closed=true
+endpoint_orbit_cyclic_adjacency_packet_registered=true
+endpoint_orbit_dimension_preserved=true
+anonymous_endpoint_displacement_autocorrelation_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_translation_orbit_adjacency_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+原有 isolated singleton 与 packet singleton 合并为：
+
+```text
+EndpointSingletonAtomSAE.
+```
+
+对非零位移自相关分支，令：
+
+```text
+r=ord_H(delta)>1.
+```
+
+有限群 `H` 被平移 `T_delta:z -> z+delta` 分解为周期轨道：
+
+```text
+Omega=H/<delta>,
+O=a+<delta>={a+t*delta: t in Z/rZ},
+|Omega|=|H|/r.
+```
+
+加权自相关按轨道精确分解：
+
+```text
+A_F(delta)=sum_{O in Omega} A_O(delta),
+A_O(delta)=sum_{t in Z/rZ} F(a+t*delta)F(a+(t+1)*delta) 1_{both in S}.
+```
+
+若全局分支达到下界，则存在单个轨道：
+
+```text
+A_O(delta) >= A_F(delta)/|Omega|.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap
+  -> StableLadderEndpointSingletonOrDisplacementAutocorrelationImportedLedger
+  AND StableLadderEndpointSingletonAtomSAEUnifiedLedger
+  AND StableLadderEndpointDisplacementAutocorrelationImportedLedger
+  AND StableLadderEndpointNonzeroDisplacementOrderLedger
+  AND StableLadderEndpointDisplacementOrbitPartitionLedger
+  AND StableLadderEndpointAutocorrelationOrbitDecompositionLedger
+  AND StableLadderEndpointWeightedOrbitPigeonholeLedger
+  AND StableLadderEndpointOrbitCyclicAdjacencyPacketLedger
+  AND StableLadderEndpointOrbitDimensionPreservedLedger
+  AND NoAnonymousEndpointDisplacementAutocorrelationExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterDisplacementOrbitLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap
+```
+
+本步关闭的是匿名 displacement autocorrelation 口径。剩余集中为 endpoint
+singleton atom/SAE、endpoint translation orbit adjacency/PDEC cap，或 sparse
+scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

@@ -13819,6 +13819,77 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-au
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint displacement orbit reduction]
+The endpoint displacement autocorrelation outlet reduces to a cyclic adjacency
+packet on one translation orbit.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointSingletonOrDisplacementAutocorrelationImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAEUnifiedLedger\\
+AND StableLadderEndpointDisplacementAutocorrelationImportedLedger\\
+AND StableLadderEndpointNonzeroDisplacementOrderLedger\\
+AND StableLadderEndpointDisplacementOrbitPartitionLedger\\
+AND StableLadderEndpointAutocorrelationOrbitDecompositionLedger\\
+AND StableLadderEndpointWeightedOrbitPigeonholeLedger\\
+AND StableLadderEndpointOrbitCyclicAdjacencyPacketLedger\\
+AND StableLadderEndpointOrbitDimensionPreservedLedger\\
+AND NoAnonymousEndpointDisplacementAutocorrelationExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterDisplacementOrbitLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint displacement orbit ledger]
+The singleton branches from the previous ledger are first unified as endpoint
+singleton atoms.  This unification does not prove their summability; it only
+prevents two names for the same single-point obstruction.
+
+Now consider the displacement autocorrelation branch.  Let \(H\) be the finite
+endpoint group and let \(\delta\ne0\) be the displacement.  Put
+\[
+  r=\operatorname {ord}_H(\delta)>1 .
+\]
+The translation \(T_\delta z=z+\delta\) partitions \(H\) into cycles
+\[
+  O=a+\langle\delta\rangle
+   =\{a+t\delta:t\in\mathbf Z/r\mathbf Z\}.
+\]
+The set of all cycles is \(\Omega=H/\langle\delta\rangle\), with
+\(|\Omega|=|H|/r\).
+
+The weighted autocorrelation from the previous ledger decomposes exactly along
+these cycles:
+\[
+  A_F(\delta)=\sum_{O\in\Omega}A_O(\delta),
+\]
+where
+\[
+  A_O(\delta)=\sum_{t\in\mathbf Z/r\mathbf Z}
+  F(a+t\delta)F(a+(t+1)\delta)\,
+  {\bf 1}_{a+t\delta\in S}\,{\bf 1}_{a+(t+1)\delta\in S}.
+\]
+Hence, if \(A_F(\delta)\) is the active lower-bound obstruction, then some
+orbit satisfies
+\[
+  A_O(\delta)\ge \frac{A_F(\delta)}{|\Omega|}.
+\]
+On that orbit the obstruction is a signed dyadic adjacency packet on the
+cycle \(\mathbf Z/r\mathbf Z\).  In dimension one this is an endpoint-residue
+cycle; in dimension two it is an endpoint-cell cycle.  Thus the full-group
+autocorrelation has been reduced to one explicit CRT translation orbit.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the endpoint translation orbit adjacency/PDEC cap, and it does not
+prove global summability of the sparse scale-ladder SAE outlet.  The
+row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacement-orbit-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

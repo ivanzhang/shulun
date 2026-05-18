@@ -1,0 +1,135 @@
+{
+  "anonymous_endpoint_displacement_autocorrelation_removed": true,
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_displacement_orbit_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointSingletonOrDisplacementAutocorrelationImported",
+      "meaning": "上一层剩余为孤立 singleton、endpoint packet singleton、displacement autocorrelation 或 sparse SAE。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointSingletonAtomSAEUnified",
+      "meaning": "原有孤立 singleton 与 packet singleton 合并为 endpoint singleton atom/SAE；本步不证明其可求和。",
+      "proved": false,
+      "remaining": "StableLadderEndpointSingletonAtomSAEUnifiedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointDisplacementAutocorrelationImported",
+      "meaning": "非零位移 weighted autocorrelation 分支从上一层导入；本步不排斥该 cap。",
+      "proved": false,
+      "remaining": "StableLadderEndpointDisplacementAutocorrelationImportedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointNonzeroDisplacementOrder",
+      "meaning": "对有限群 H 中非零 delta，r=ord_H(delta)>1，平移 T_delta 生成长度 r 的循环轨道。",
+      "proved": true,
+      "remaining": "StableLadderEndpointNonzeroDisplacementOrderLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointDisplacementOrbitPartition",
+      "meaning": "H 被商 H/<delta> 分解为互不相交的 T_delta 轨道。",
+      "proved": true,
+      "remaining": "StableLadderEndpointDisplacementOrbitPartitionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointAutocorrelationOrbitDecomposition",
+      "meaning": "A_F(delta) 精确分解为各轨道上的邻接加权和 A_O(delta)。",
+      "proved": true,
+      "remaining": "StableLadderEndpointAutocorrelationOrbitDecompositionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointWeightedOrbitPigeonhole",
+      "meaning": "若全局 A_F(delta) 超阈，则存在单个轨道 O 承载至少平均值的加权邻接质量。",
+      "proved": true,
+      "remaining": "StableLadderEndpointWeightedOrbitPigeonholeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointOrbitCyclicAdjacencyPacket",
+      "meaning": "该单轨道成为 Z/rZ 上的 signed cyclic adjacency packet；排斥仍是开放 PDEC/cap。",
+      "proved": false,
+      "remaining": "StableLadderEndpointOrbitCyclicAdjacencyPacketLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderEndpointOrbitDimensionPreserved",
+      "meaning": "dimension=1 保留端点余数周期轨道；dimension=2 保留端点 cell 周期轨道。",
+      "proved": true,
+      "remaining": "StableLadderEndpointOrbitDimensionPreservedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoAnonymousEndpointDisplacementAutocorrelationExit",
+      "meaning": "endpoint displacement autocorrelation 被压成单个 translation orbit adjacency packet。",
+      "proved": true,
+      "remaining": "NoAnonymousEndpointDisplacementAutocorrelationExitLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SparseScaleLadderSAECarriedForwardAfterDisplacementOrbit",
+      "meaning": "sparse scale-ladder SAE 继续前传；本步不证明全局求和。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAECarriedForwardAfterDisplacementOrbitLedger"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointTranslationOrbitAdjacencyCapStillOpen",
+      "meaning": "仍未排斥 endpoint singleton atom/SAE 或 endpoint translation orbit adjacency PDEC/cap。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需关闭 endpoint singleton、translation orbit adjacency 或 sparse SAE。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "endpoint_autocorrelation_orbit_decomposition_closed": true,
+  "endpoint_displacement_autocorrelation_imported": true,
+  "endpoint_displacement_orbit_partition_closed": true,
+  "endpoint_nonzero_displacement_order_closed": true,
+  "endpoint_orbit_cyclic_adjacency_packet_registered": true,
+  "endpoint_orbit_dimension_preserved": true,
+  "endpoint_singleton_atom_sae_proved": false,
+  "endpoint_singleton_atom_sae_unified": true,
+  "endpoint_singleton_or_displacement_autocorrelation_imported": true,
+  "endpoint_translation_orbit_adjacency_pdec_cap_proved": false,
+  "endpoint_weighted_orbit_pigeonhole_closed": true,
+  "hardpoint_after_router": "StableLadderEndpointSingletonOrDisplacementAutocorrelationImportedLedger AND StableLadderEndpointSingletonAtomSAEUnifiedLedger AND StableLadderEndpointDisplacementAutocorrelationImportedLedger AND StableLadderEndpointNonzeroDisplacementOrderLedger AND StableLadderEndpointDisplacementOrbitPartitionLedger AND StableLadderEndpointAutocorrelationOrbitDecompositionLedger AND StableLadderEndpointWeightedOrbitPigeonholeLedger AND StableLadderEndpointOrbitCyclicAdjacencyPacketLedger AND StableLadderEndpointOrbitDimensionPreservedLedger AND NoAnonymousEndpointDisplacementAutocorrelationExitLedger AND SparseScaleLadderSAECarriedForwardAfterDisplacementOrbitLedger AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap",
+  "hardpoint_before_router": "SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPacketSingletonAtomSAEOrEndpointDisplacementAutocorrelationPDECCap",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND StableActualLadderSingletonOrPairPeriodImportedLedger AND StableLadderSingletonSurplusLowFiberQuotaLedger AND StableLadderSameCellPairSupportWidthDichotomyLedger AND StableLadderShortSupportPairExclusionLedger AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger AND NoAnonymousSingletonOrPairPeriodExitLedger AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger AND StableActualLadderLowFiberSingletonOrLongPairImportedLedger AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger AND StableLadderFiberIsolatedSingletonAtomLedger AND StableLadderRepeatedPivotModulusForcesIsolationLedger AND StableLadderComplementFiberAntiPivotPairLedger AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger AND StableLadderComplementFiberPairWidthDichotomyLedger AND StableLadderLongFullCellPairCarriedForwardLedger AND NoAnonymousLowFiberSingletonExitLedger AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger AND StableActualLadderIsolatedSingletonOrPairImportedLedger AND StableLadderIsolatedSingletonCarriedForwardLedger AND StableLadderComplementBasePeriodLedger AND StableLadderPairDifferenceQuotientNormalizationLedger AND StableLadderPivotPhaseQuotientPeriodLedger AND StableLadderAntiPivotPairNonzeroQuotientPhaseLedger AND StableLadderFullCellPairZeroQuotientPhaseLedger AND StableLadderPairQuotientWidthEnvelopeLedger AND StableLadderQuotientNoWrapOrFullPeriodDichotomyLedger AND NoAnonymousAntiPivotOrFullPairExitLedger AND SparseScaleLadderSAECarriedForwardAfterPairQuotientPhaseLedger AND StableActualLadderQuotientPhaseCycleImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterArcMeanLedger AND StableLadderQuotientSpanParameterLedger AND StableLadderQuotientNoWrapZeroPhaseExclusionLedger AND StableLadderQuotientShortArcClusterLedger AND StableLadderFullCycleEuclideanDecompositionLedger AND StableLadderFullCycleFormalPhaseMeanLedger AND StableLadderFullCycleResidualTailArcLedger AND NoAnonymousQuotientPhaseCycleExitLedger AND SparseScaleLadderSAECarriedForwardAfterArcMeanLedger AND StableLadderQuotientShortArcOrMeanImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger AND StableLadderQuotientCircleGroupLedger AND StableLadderQuotientActualPhaseLoadMeasureLedger AND StableLadderQuotientArcDiscrepancyFunctionalLedger AND StableLadderQuotientDirichletKernelIdentityLedger AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger AND StableLadderPhaseMeanCapAsPointArcLedger AND NoAnonymousShortArcOrPhaseMeanExitLedger AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger AND StableLadderQuotientArcFourierImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterFourierLiftLedger AND StableLadderNontrivialQuotientFrequencyForcesRGreaterOneLedger AND StableLadderQuotientCoprimeFactorizationLedger AND StableLadderQuotientInverseLiftLedger AND StableLadderQuotientCharacterToPivotDifferenceLedger AND StableLadderLiftedCharacterNontrivialityLedger AND StableLadderEndpointBilinearPhaseFactorizationLedger AND StableLadderCenteredModelKernelSeparatedLedger AND NoAnonymousQuotientArcFourierExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierLiftLedger AND StableLadderEndpointBilinearFourierImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalanceLedger AND StableLadderEndpointPairMatrixRegisteredLedger AND StableLadderEndpointCenteredKernelTotalZeroLedger AND StableLadderEndpointMarginalBalancedDecompositionLedger AND StableLadderEndpointBilinearPhasePairingLedger AND StableLadderEndpointBilinearTriangleTrichotomyLedger AND StableLadderEndpointRowMarginalFourierExitLedger AND StableLadderEndpointColumnMarginalFourierExitLedger AND StableLadderEndpointBalancedCoreEnergyLowerBoundLedger AND NoAnonymousEndpointBilinearFourierExitLedger AND SparseScaleLadderSAECarriedForwardAfterBilinearBalanceLedger AND StableLadderEndpointMarginalOrBalancedEnergyImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterEnergyPacketLedger AND StableLadderEndpointMarginalFourierParsevalVarianceLedger AND StableLadderEndpointMarginalVarianceDyadicPacketLedger AND StableLadderBalancedCoreEnergyImportedLedger AND StableLadderBalancedCoreEnergyDyadicCellPacketLedger AND StableLadderEndpointEnergyPacketSignedHalfLedger AND StableLadderEndpointDyadicEnergyPacketRegisteredLedger AND NoAnonymousEndpointMarginalOrBalancedEnergyExitLedger AND SparseScaleLadderSAECarriedForwardAfterEndpointEnergyPacketLedger AND StableLadderEndpointDyadicEnergyPacketImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterPacketAutocorrelationLedger AND StableLadderEndpointPacketFiniteGroupLedger AND StableLadderEndpointPacketSignedSupportLedger AND StableLadderEndpointPacketSingletonAtomLedger AND StableLadderEndpointPacketNonzeroPairCountLedger AND StableLadderEndpointPacketDisplacementPigeonholeLedger AND StableLadderEndpointPacketWeightedAutocorrelationLedger AND StableLadderEndpointPacketDimensionPreservedLedger AND NoAnonymousEndpointDyadicEnergyPacketExitLedger AND SparseScaleLadderSAECarriedForwardAfterPacketAutocorrelationLedger AND StableLadderEndpointSingletonOrDisplacementAutocorrelationImportedLedger AND StableLadderEndpointSingletonAtomSAEUnifiedLedger AND StableLadderEndpointDisplacementAutocorrelationImportedLedger AND StableLadderEndpointNonzeroDisplacementOrderLedger AND StableLadderEndpointDisplacementOrbitPartitionLedger AND StableLadderEndpointAutocorrelationOrbitDecompositionLedger AND StableLadderEndpointWeightedOrbitPigeonholeLedger AND StableLadderEndpointOrbitCyclicAdjacencyPacketLedger AND StableLadderEndpointOrbitDimensionPreservedLedger AND NoAnonymousEndpointDisplacementAutocorrelationExitLedger AND SparseScaleLadderSAECarriedForwardAfterDisplacementOrbitLedger AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap",
+  "no_theorem_switch": true,
+  "orbit_formulas": {
+    "cyclic_packet": "single orbit becomes signed adjacency packet on Z/rZ",
+    "global_decomposition": "A_F(delta)=sum_{O in Omega} A_O(delta)",
+    "orbit_parametrization": "O=a+<delta>={a+t*delta: t in Z/rZ}",
+    "orbit_space": "Omega=H/<delta>, |Omega|=|H|/r",
+    "orbit_sum": "A_O(delta)=sum_{t in Z/rZ} F(a+t*delta)F(a+(t+1)*delta) 1_{both in S}",
+    "order": "r=ord_H(delta)>1",
+    "pigeonhole": "exists O: A_O(delta)>=A_F(delta)/|Omega|",
+    "singleton_unification": "isolated singleton or packet singleton => EndpointSingletonAtomSAE"
+  },
+  "plain_conclusion": "endpoint displacement autocorrelation 可压到单个平移轨道上的循环邻接包。先把原有 isolated singleton 与 packet singleton 统一为 endpoint singleton atom/SAE。对非零位移 delta，令 r=ord_H(delta)>1；有限群 H 被 T_delta 轨道分解。全局 weighted autocorrelation 是各轨道邻接加权和之和，因此若全局分支超阈，必有一个轨道承载至少平均邻接质量。剩余不再是全群匿名位移，而是 Z/rZ 上的 signed translation orbit adjacency packet。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-packet-autocorrelation-router.json": "eccd851e2fadc04631e2687c6ecb7ecf7b680c3ff5478377290e0248d4025c98",
+    "experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_displacement_orbit_router.py": "570f24e0e5fb97d9f99d42a366a8f696f40620a16f63a96a677ce19abe11f1ac"
+  },
+  "sparse_scale_ladder_sae_carried_forward": true,
+  "sparse_scale_ladder_sae_summability_proved": false,
+  "status": "endpoint_displacement_autocorrelation_reduced_to_translation_orbit_adjacency_open"
+}
