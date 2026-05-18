@@ -11056,3 +11056,79 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、endpoint orbit primitive
 conductor character/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题
 仍未无条件闭合。
+
+## 213. stable-ladder endpoint orbit standard-character 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_standard_character_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_primitive_conductor_character_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_conductor_unit_automorphism_closed=true
+endpoint_orbit_standard_phase_coordinate_closed=true
+endpoint_orbit_automorphic_load_permutation_closed=true
+endpoint_orbit_first_harmonic_identity_closed=true
+endpoint_orbit_load_norms_and_support_preserved=true
+anonymous_primitive_conductor_frequency_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_standard_conductor_first_harmonic_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层 conductor packet 形如：
+
+```text
+m>1, gcd(h0,m)=1,
+sum_{s mod m} G_s exp(-2*pi*i*h0*s/m).
+```
+
+因为 `h0` 是 `Z/mZ` 的单位，取逆元 `u*h0==1 mod m`。令：
+
+```text
+a=h0*s mod m,
+S_a=G_{u*a mod m}.
+```
+
+这是 `C_m` 上的精确置换，并给出恒等式：
+
+```text
+sum_{s mod m} G_s exp(-2*pi*i*h0*s/m)
+  = sum_{a mod m} S_a exp(-2*pi*i*a/m).
+```
+
+置换保持支撑、`L1/L2` 质量、均值和 Fourier 下界常数。硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap
+  -> StableLadderEndpointOrbitPrimitiveConductorCharacterImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterStandardCharacterLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterStandardCharacterLedger
+  AND StableLadderEndpointOrbitConductorUnitAutomorphismLedger
+  AND StableLadderEndpointOrbitStandardPhaseCoordinateLedger
+  AND StableLadderEndpointOrbitAutomorphicLoadPermutationLedger
+  AND StableLadderEndpointOrbitFirstHarmonicIdentityLedger
+  AND StableLadderEndpointOrbitLoadNormsAndSupportPreservedLedger
+  AND NoAnonymousPrimitiveConductorFrequencyExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterStandardCharacterLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap
+```
+
+本步关闭的是匿名 primitive 频率口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、standard conductor
+first-harmonic PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未
+无条件闭合。

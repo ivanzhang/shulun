@@ -9842,3 +9842,63 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 primitive conductor character/PDEC cap 或 sparse SAE 求和；它只把 signed
 Fourier 频率规范化到 primitive conductor character packet。
+
+## 213. Stable-ladder endpoint orbit standard-character frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_standard_character_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-standard-character-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPrimitiveConductorCharacterPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_primitive_conductor_character_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_conductor_unit_automorphism_closed=true
+endpoint_orbit_standard_phase_coordinate_closed=true
+endpoint_orbit_automorphic_load_permutation_closed=true
+endpoint_orbit_first_harmonic_identity_closed=true
+endpoint_orbit_load_norms_and_support_preserved=true
+anonymous_primitive_conductor_frequency_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_standard_conductor_first_harmonic_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：primitive conductor character 中的频率 `h0` 不再保留
+为真实硬点。由于 `gcd(h0,m)=1`，乘以 `h0` 是 `C_m` 的置换。取
+`u*h0==1 mod m`，并令：
+
+```text
+a=h0*s mod m,
+S_a=G_{u*a mod m}.
+```
+
+于是精确恒等式为：
+
+```text
+sum_{s mod m} G_s exp(-2*pi*i*h0*s/m)
+  = sum_{a mod m} S_a exp(-2*pi*i*a/m).
+```
+
+该置换保持支撑、`L1/L2` 质量、均值和 Fourier 下界常数。因此 primitive
+频率参数被删除，新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+standard conductor first-harmonic PDEC/cap 或 sparse SAE 求和；它只把 primitive
+conductor character packet 规范化为标准 first-harmonic packet。
