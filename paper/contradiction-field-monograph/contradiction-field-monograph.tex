@@ -12380,6 +12380,74 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-fixed-pair-second-lpf-descent-ro
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Iterated LPF rank-budget reduction]
+The second-LPF/triple rough residual branch is not a free recurrent failure
+mode.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+SecondLPFTriplePressureImportedLedger\\
+AND IteratedLPFOrderedRoughResidualChainLedger\\
+AND LPFSupportProductReciprocityInvariantLedger\\
+AND LPFDepthRankBudgetLedger\\
+AND IteratedLPFCRTWordCellLedger\\
+AND IteratedLPFProductWidthColumnCRTExitLedger\\
+AND TerminalResidualFiniteAtomLedger\\
+AND IteratedLPFWellFoundedNoCycleLedger\\
+AND RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Rank-budget ledger]
+After the fixed-pair second-LPF step, fix \((r,\ell,s)\).  The cell has
+\[
+  q=\ell r m,\qquad m=st,\qquad s={\rm lpf}(m)\ge r,\qquad
+  (t,W_{<s})=1.
+\]
+Starting from the residual \(n_0=t\), recursively define, whenever
+\(n_i>1\),
+\[
+  a_i={\rm lpf}(n_i),\qquad n_i=a_i n_{i+1},\qquad
+  (n_{i+1},W_{<a_i})=1.
+\]
+The roughness condition gives an ordered LPF word
+\[
+  r\le s\le a_1\le a_2\le\cdots,
+\]
+with repetitions allowed.
+
+Let
+\[
+  A_h=s\prod_{i\le h} a_i .
+\]
+If the original \(m\)-support has width \(w_m\), then after fixing this LPF
+word the residual support has width at most
+\[
+  \left\lceil \frac{w_m}{A_h}\right\rceil .
+\]
+Thus each added least-prime-factor enlarges the composite CRT period while
+shrinking the residual support by the same product scale.  If the active word
+modulus product exceeds \(w_m\), the same phase word can only contribute an
+isolated atom in the original support and is registered as a ColumnCRT/PDEC or
+finite-atom exit.
+
+On the non-finite branch \(r\ge2\).  If no product-width exit has occurred,
+then \(A_h\le w_m\).  Since every factor in the word is at least \(r\), the
+total factor depth \(d\), including the initial second-level factor \(s\),
+satisfies
+\[
+  d\le \lfloor \log_r w_m\rfloor .
+\]
+Consequently the triple branch cannot hide an infinite same-scale LPF tower.
+The remaining obstruction is a rank-budgeted iterated-LPF moving family, not an
+unstructured triple pressure.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-iterated-lpf-rank-budget-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -8864,3 +8864,90 @@ SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
 本步关闭的是 fixed-pair 下的 m=1 有限原子、二级 LPF 分区、rough-t CRT 形式、
 product-width 登记与支撑宽度严格下降。剩余集中为：二级 LPF/triple pressure，
 或二级 product-width ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 188. iterated LPF rank-budget 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_iterated_lpf_rank_budget_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-iterated-lpf-rank-budget-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-iterated-lpf-rank-budget-router.json
+data/prime-matrix-firstbreak-tail-gap-iterated-lpf-rank-budget-ledger.json
+```
+
+本步继续攻击 `SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC`。同步读数为：
+
+```text
+second_lpf_triple_pressure_imported=true
+ordered_residual_chain_closed=true
+support_product_reciprocity_closed=true
+depth_rank_budget_closed=true
+iterated_crt_word_cell_closed=true
+product_width_exit_closed=true
+terminal_residual_finite_atom_closed=true
+well_founded_no_cycle_closed=true
+rank_budgeted_moving_family_excluded=false
+row_column_unconditional_closed=false
+```
+
+固定 `(r,ell,s)` 后：
+
+```text
+q=ell*r*m,
+m=s*t,
+s=lpf(m)>=r,
+gcd(t,W_<s)=1.
+```
+
+若 residual `n_i>1`，递归取：
+
+```text
+a_i=lpf(n_i),
+n_i=a_i*n_{i+1},
+gcd(n_{i+1},W_<a_i)=1.
+```
+
+于是 LPF 因子词非降：
+
+```text
+r<=s<=a_1<=a_2<=...
+```
+
+令：
+
+```text
+A_h=s*prod_{i<=h}a_i.
+```
+
+原 m 支撑宽度为 `width_m`。支撑-周期互反不变量为：
+
+```text
+width(n_h-support)<=ceil(width_m/A_h).
+```
+
+若仍未进入 product-width 出口，则 `A_h<=width_m`。非有限分支中所有因子至少为
+`r>=2`，所以含初始二级因子 `s` 的总深度 `d` 满足：
+
+```text
+d<=floor(log_r(width_m)).
+```
+
+硬点更新为：
+
+```text
+SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC
+  -> SecondLPFTriplePressureImportedLedger
+  AND IteratedLPFOrderedRoughResidualChainLedger
+  AND LPFSupportProductReciprocityInvariantLedger
+  AND LPFDepthRankBudgetLedger
+  AND IteratedLPFCRTWordCellLedger
+  AND IteratedLPFProductWidthColumnCRTExitLedger
+  AND TerminalResidualFiniteAtomLedger
+  AND IteratedLPFWellFoundedNoCycleLedger
+  AND RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC
+```
+
+本步关闭的是迭代 LPF 的有序分解、支撑-周期互反不变量、有限秩预算、终端有限原子
+与 product-width ColumnCRT/PDEC 出口。剩余集中为：随 `P` 移动的低秩因子词族。
+行/列命题仍未无条件闭合。
