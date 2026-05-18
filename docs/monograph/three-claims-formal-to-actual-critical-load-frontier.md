@@ -9457,3 +9457,68 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMa
 本步没有证明端点边际 Fourier/PDEC cap、balanced bilinear energy/PDEC cap、
 孤立 singleton 求和或 sparse SAE 求和；它只把 endpoint bilinear Fourier
 cap 拆成可审计的边际/平衡核出口。
+
+## 207. Stable-ladder endpoint energy packet frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_energy_packet_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap`。
+同步结果：
+
+```text
+endpoint_marginal_or_balanced_energy_imported=true
+isolated_singleton_carried_forward=true
+endpoint_marginal_fourier_parseval_variance_closed=true
+endpoint_marginal_variance_dyadic_packet_closed=true
+balanced_core_energy_imported=true
+balanced_core_energy_dyadic_cell_packet_closed=true
+endpoint_energy_packet_signed_half_closed=true
+endpoint_dyadic_energy_packet_registered=true
+anonymous_endpoint_marginal_or_balanced_energy_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_dyadic_energy_packet_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：端点边际 Fourier 与 balanced core 能量不再作为
+匿名异常保存。若边际 Fourier 满足：
+
+```text
+|hat rho(beta)| >= eta,
+```
+
+则 Parseval 给出：
+
+```text
+sum_x |rho(x)|^2 >= eta^2/q_j.
+```
+
+balanced 分支直接给出 `||K0||_HS^2 >= E`。两者都可在有限端点支持上做
+dyadic pigeonhole，得到某个尺度 `lambda` 和一个一维或二维能量包：
+
+```text
+lambda^2 * |packet support| >= energy/L.
+```
+
+再按正负偏差取至少半能量一侧，得到带有 `dimension`、`lambda`、`sign`、
+`support` 的 endpoint dyadic energy packet。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap
+```
+
+本步没有证明 endpoint dyadic energy packet/PDEC cap、孤立 singleton 求和或
+sparse SAE 求和；它只把端点边际 Fourier 与 balanced energy 出口变成显式
+可计数能量包。

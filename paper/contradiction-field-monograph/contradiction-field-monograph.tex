@@ -13670,6 +13670,79 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint energy packet reduction]
+The endpoint marginal Fourier outlet and the balanced bilinear energy outlet
+have a common dyadic packet form.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointMarginalOrBalancedEnergyImportedLedger\\
+AND StableLadderIsolatedSingletonCarriedForwardAfterEnergyPacketLedger\\
+AND StableLadderEndpointMarginalFourierParsevalVarianceLedger\\
+AND StableLadderEndpointMarginalVarianceDyadicPacketLedger\\
+AND StableLadderBalancedCoreEnergyImportedLedger\\
+AND StableLadderBalancedCoreEnergyDyadicCellPacketLedger\\
+AND StableLadderEndpointEnergyPacketSignedHalfLedger\\
+AND StableLadderEndpointDyadicEnergyPacketRegisteredLedger\\
+AND NoAnonymousEndpointMarginalOrBalancedEnergyExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterEndpointEnergyPacketLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint energy packet ledger]
+Consider first a row endpoint marginal \(\rho\) on
+\(\mathbf Z/q_j\mathbf Z\).  If the endpoint marginal Fourier outlet gives a
+non-trivial frequency with
+\[
+  |\widehat\rho(\beta)|\ge \eta ,
+\]
+then Parseval gives
+\[
+  \sum_x |\rho(x)|^2\ge \frac{\eta^2}{q_j}.
+\]
+The same argument applies to a column marginal \(\sigma\).  Hence every
+marginal Fourier outlet is already a one-dimensional endpoint variance outlet.
+
+The balanced branch from the previous ledger is already an energy outlet:
+\[
+  \|K_0\|_{\rm HS}^2\ge E ,
+\]
+where \(K_0\) has zero row and column marginals.  Thus both possible outlets
+are finite \(L^2\)-energy statements: either on endpoint residues or on endpoint
+cells.
+
+For any finite real-valued deviation function \(F\) on a finite support
+\(\Omega\), let
+\[
+  E_F=\sum_{z\in\Omega}|F(z)|^2 .
+\]
+Partition the non-zero values of \(|F|\) into dyadic layers.  If \(L\) is the
+number of non-empty layers, then one layer with scale \(\lambda\) satisfies
+\[
+  \lambda^2\,\#\{z:\lambda<|F(z)|\le 2\lambda\}
+  \ge \frac{E_F}{L}.
+\]
+Applied to \(F=\rho\) or \(F=\sigma\), this gives a one-dimensional endpoint
+marginal packet.  Applied to \(F=K_0\), this gives a two-dimensional balanced
+endpoint-cell packet.
+
+Finally split the selected layer by sign.  Since the deviations are real, at
+least one sign contributes half the selected square energy.  Therefore the
+remaining obstruction can be registered as a signed dyadic endpoint energy
+packet, carrying its dimension, scale, support, sign, and energy lower bound.
+
+This theorem does not prove the endpoint dyadic energy packet/PDEC cap, it
+does not prove summability of isolated singletons, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

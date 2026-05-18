@@ -10509,3 +10509,89 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEn
 本步关闭的是匿名 endpoint bilinear Fourier 口径。剩余集中为孤立 singleton
 全局求和、端点边际 Fourier/PDEC cap、balanced bilinear energy/PDEC cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 207. stable-ladder endpoint energy packet 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_energy_packet_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-energy-packet-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap`。
+同步读数为：
+
+```text
+endpoint_marginal_or_balanced_energy_imported=true
+isolated_singleton_carried_forward=true
+endpoint_marginal_fourier_parseval_variance_closed=true
+endpoint_marginal_variance_dyadic_packet_closed=true
+balanced_core_energy_imported=true
+balanced_core_energy_dyadic_cell_packet_closed=true
+endpoint_energy_packet_signed_half_closed=true
+endpoint_dyadic_energy_packet_registered=true
+anonymous_endpoint_marginal_or_balanced_energy_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_dyadic_energy_packet_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+端点边际 Fourier 出口先由 Parseval 转成边际二范数。若：
+
+```text
+|hat rho(beta)| >= eta,
+```
+
+则：
+
+```text
+sum_x |rho(x)|^2 >= eta^2/q_j.
+```
+
+列边际 `sigma` 同理。balanced 分支沿用上一层：
+
+```text
+||K0||_HS^2 >= E.
+```
+
+对任意有限支持实值偏差函数 `F`，dyadic 分层给出某个尺度 `lambda`：
+
+```text
+lambda^2 * #{z: lambda < |F(z)| <= 2lambda} >= E_F/L,
+E_F=sum_z |F(z)|^2.
+```
+
+其中 `L` 是有限非空 dyadic 层数。对 `rho` 或 `sigma` 得到一维端点边际包；
+对 `K0` 得到二维端点 cell 包。再按正负偏差分裂，至少一侧贡献一半能量：
+
+```text
+energy(positive packet) >= packet_energy/2
+or energy(negative packet) >= packet_energy/2.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap
+  -> StableLadderEndpointMarginalOrBalancedEnergyImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterEnergyPacketLedger
+  AND StableLadderEndpointMarginalFourierParsevalVarianceLedger
+  AND StableLadderEndpointMarginalVarianceDyadicPacketLedger
+  AND StableLadderBalancedCoreEnergyImportedLedger
+  AND StableLadderBalancedCoreEnergyDyadicCellPacketLedger
+  AND StableLadderEndpointEnergyPacketSignedHalfLedger
+  AND StableLadderEndpointDyadicEnergyPacketRegisteredLedger
+  AND NoAnonymousEndpointMarginalOrBalancedEnergyExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterEndpointEnergyPacketLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointDyadicEnergyPacketPDECCap
+```
+
+本步关闭的是匿名端点边际 Fourier / balanced energy 口径。剩余集中为孤立
+singleton 全局求和、endpoint dyadic energy packet/PDEC cap，或 sparse
+scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
