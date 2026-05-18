@@ -6902,3 +6902,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```text
 NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
 ```
+
+## 161. Exact-UV fiber latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_exactuv_fiber_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json
+data/prime-matrix-exactuv-fiber-latest-noncycle-sync-ledger.json
+```
+
+本步继续攻击上一节留下的 exact-source 首攻点。同步读数为：
+
+```text
+preterminal_fiber_atomization_imported=true
+deterministic_source_atom_implication_closed=true
+source_entropy_reduced_to_signed_rows=true
+complete_key_reduced_to_actual_source_table=true
+fixed_pair_fiber_formal_inequality_closed=true
+map_rank_equivalent_to_bounded_incidence=true
+nonterminal_exactuv_fiber_aperiodicity_proved=false
+row_column_unconditional_closed=false
+```
+
+核心结论是：`NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource`
+不是 CRT 位置/相位刚性问题，而是同一 actual formal unit 内 pre-Cauchy source 的源域熵、
+complete emitter key 分区与 fixed-key exact-UV 局部重数问题。当前已闭合的是形式蕴含：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+=> NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+```
+
+未闭合的是这三个 actual 源侧输入本身。完全原子化后的内部基为：
+
+```text
+((AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+  AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+  AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger)
+ AND (ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+  AND CompleteEmitterTraceKeyBudgetLedger
+  AND SignLocalFactorRefinementNoCancellationLedger
+  AND OverBudgetOrUnregisteredReturnLedger)
+ AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若导入既有 strict 下游同步，内部剩余可继续压到：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+```
+
+并行保留 `ActualNoncanonicalPrimitiveEmitterSourceTableLedger`、
+`FixedKeyExactUVLocalMultiplicityO1Ledger`、`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`
+与 `ExternalDIBFIKuznetsovDispersionTheoremMatch`。本步删除 exact-UV 作为纯 CRT/位置问题的误出口；
+行/列命题仍未全局无条件闭合。

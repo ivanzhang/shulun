@@ -6848,3 +6848,74 @@ NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
 
 所以当前前沿删除了 `Q1/Q2` 作为独立纯 CRT 终端的误出口；它没有完成行/列命题，只把剩余压回
 actual-source exact-UV 非集中、外部谱输入或 strict new-joint 前沿。
+
+## 161. Exact-UV fiber latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_exactuv_fiber_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json
+data/prime-matrix-exactuv-fiber-latest-noncycle-sync-ledger.json
+```
+
+本步把 `NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource`
+从 Q1/Q2 后的首攻点同步到 actual source-rank/no-collapse 原子包。同步结果显示：
+
+```text
+preterminal_fiber_atomization_imported=true
+deterministic_source_atom_implication_closed=true
+source_entropy_reduced_to_signed_rows=true
+complete_key_reduced_to_actual_source_table=true
+fixed_pair_fiber_formal_inequality_closed=true
+map_rank_equivalent_to_bounded_incidence=true
+nonterminal_exactuv_fiber_aperiodicity_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：CRT、payment skeleton、DLS 可逆变量、signed-only 相消或 canonical cross-import
+都不能直接给出 exact-UV fiber 非集中。可用的闭合蕴含只有：
+
+```text
+source-domain entropy
+AND complete primitive emitter key partition
+AND fixed-key exact-UV local O(1) multiplicity
+=> exact-UV fiber aperiodicity / no-collapse
+```
+
+因此 immediate source-rank 基为：
+
+```text
+(ActualPreCauchySourceDomainAbsoluteEntropyLedger
+ AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+ AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+完全原子化后，内部剩余为：
+
+```text
+((AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+  AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+  AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger)
+ AND (ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+  AND CompleteEmitterTraceKeyBudgetLedger
+  AND SignLocalFactorRefinementNoCancellationLedger
+  AND OverBudgetOrUnregisteredReturnLedger)
+ AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+```
+
+所以当前前沿不再寻找纯 CRT 全周期结构矛盾来直接推出 exact-UV 非集中；它被压成 signed-row 源律、
+actual emitter 源表/key 预算、fixed-key 局部重数、外部谱或 strict new-joint 前沿。该同步仍不是行/列命题的无条件闭合。
