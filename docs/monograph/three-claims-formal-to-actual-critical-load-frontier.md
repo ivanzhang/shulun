@@ -6145,3 +6145,70 @@ AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
 ```
 
 本步仍不是无条件闭合；下一步必须证明 canonical-lock 五项同集证书，或在进入 exact-UV/rank/alpha 回边前独立证明 actual-source 恒等或强化反原子。
+
+## 147. Strict alpha-return bridge to concrete terminal split sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_alpha_return_bridge_to_concrete_terminal_split_sync_router.py
+docs/monograph/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-router.md
+docs/monograph/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-router.json
+data/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-ledger.json
+```
+
+本步把上一节的二选一继续拆到底层具体终端。independent actual-source 侧：
+
+```text
+IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
+-> A1CleanBranchCanonicalSourceAdmission OR ExactCleanCoreFullSNonAPWFDSourceEntropy
+
+A1CleanBranchCanonicalSourceAdmission
+-> scoped A1 branch statement, not global contradiction
+
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+-> AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+   AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
+```
+
+canonical-lock 侧：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+-> (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+    AND ExplicitModelGapAndFiniteDPRCLedger)
+   OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+```
+
+因此最新具体终端分裂为：
+
+```text
+((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed)
+OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger))
+```
+
+rate-packet 口径下仍需：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+严格自足高段尾项口径下仍需：
+
+```text
+SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+下一直接主攻钉为：
+
+```text
+IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
+```
+
+并行仍需提交无环 pre-Cauchy source seed、自足 Kuznetsov/DLS 大筛，或 PDEC/CleanKLS+模型余量。行/列命题仍未无条件闭合。

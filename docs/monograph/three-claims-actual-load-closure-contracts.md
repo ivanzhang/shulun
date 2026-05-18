@@ -6107,3 +6107,46 @@ OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
 ```
 
 前者要提交 canonical-lock 的同集推前、有限因子图、无 noncanonical payload 残留等证书；后者要在进入 exact-UV/rank/alpha 回边前，独立证明 actual-source 恒等或强化反原子。当前仍没有全局无条件闭合。
+
+## 147. Strict alpha-return bridge to concrete terminal split sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_alpha_return_bridge_to_concrete_terminal_split_sync_router.py
+docs/monograph/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-router.md
+docs/monograph/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-router.json
+data/prime-matrix-strict-alpha-return-bridge-to-concrete-terminal-split-sync-ledger.json
+```
+
+本步把 alpha-return 二选一压成三类具体硬点：
+
+```text
+((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed)
+OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger))
+```
+
+读数确认：
+
+```text
+alpha_return_bridge_imported=true
+independent_bridge_concrete_atoms_imported=true
+a1_admission_absorbed_as_scoped_only=true
+exact_entropy_reduced_to_seed_and_pair_energy=true
+canonical_lock_direct_attack_imported=true
+concrete_terminal_split_pinned=true
+row_column_unconditional_closed=false
+```
+
+负载链条上的实质含义是：A1 admission 已不能作为全局矛盾；exact entropy 不能绕过无环 seed 与独立 pair-energy；canonical-lock 也不能作为单标签闭合，只能进入 Kuznetsov/DLS 或 PDEC/CleanKLS+模型余量。
+
+下一直接主攻：
+
+```text
+IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
+```
+
+并行保留无环 seed、自足 Kuznetsov/DLS、PDEC/CleanKLS+模型余量、RatePreservation 与 DStructure/Rankin。

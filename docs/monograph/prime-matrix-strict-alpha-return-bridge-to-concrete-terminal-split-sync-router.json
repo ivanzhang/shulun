@@ -1,0 +1,155 @@
+{
+  "a1_admission_absorbed_as_scoped_only": true,
+  "acyclic_precauchy_seed_proved": false,
+  "alpha_return_bridge_imported": true,
+  "canonical_lock_direct_attack_imported": true,
+  "certificate_type": "prime_matrix_strict_alpha_return_bridge_to_concrete_terminal_split_sync_router",
+  "concrete_terminal_split": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger))",
+  "concrete_terminal_split_pinned": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_entropy_reduced_to_seed_and_pair_energy": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "hypothetical_chain_only": true,
+  "independent_bridge_concrete_atoms_imported": true,
+  "independent_exact_pair_l2_or_max_atom_bound_proved": false,
+  "missing_sources": [],
+  "next_direct_attack_target": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+    "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "当前 `canonical-lock OR independent actual-source bridge` 二选一还能继续压缩。independent bridge 侧的 A1 admission 被吸收为 scoped 陈述，exact entropy 侧必须提交无环 pre-Cauchy seed 与独立 pair L2/max-atom 能量界；canonical-lock 侧则被直攻压到Kuznetsov/DLS 或 PDEC/CleanKLS+模型余量。故最新具体终端分裂为 `(AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)`；行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AlphaReturnBridgeImported",
+      "meaning": "上一层已把 terminal atoms 同步到 canonical-lock 或 alpha-return 前独立 actual-source 桥。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentBridgeConcreteAtomsImported",
+      "meaning": "独立 actual-source 桥继续压成 clean A1 source admission 或 exact clean-core source entropy。",
+      "proved": false,
+      "remaining": "A1CleanBranchCanonicalSourceAdmission OR ExactCleanCoreFullSNonAPWFDSourceEntropy"
+    },
+    {
+      "closed": true,
+      "gate": "A1AdmissionAbsorbedAsScopedOnly",
+      "meaning": "A1 canonical source admission 只是 scoped 分支陈述，不能作为独立全局矛盾。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "ExactEntropyReducedToSeedAndPairEnergy",
+      "meaning": "exact entropy 支撑路线不能用 moving-atom/source-entropy 自身回证 pair energy。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "SourceDomainEntropySignedRowRouteStillBackedge",
+      "meaning": "source-domain entropy 的 signed row 下钻仍缺 pre-Cauchy signed coefficient law，并回到终端家族。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSourceAntiAtomSyncedBackToTerminalFamily",
+      "meaning": "强化反原子线若继续下钻，会经 ExactUV/pair-energy/seed 回到 strict acyclic 终端家族。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockDirectAttackImported",
+      "meaning": "canonical-lock 直攻没有闭合；等式真时只是 scoped 吸收，mismatch 进入 DLS/PDEC/命名回流。",
+      "proved": false,
+      "remaining": "(PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": true,
+      "gate": "KuznetsovDLSStillOpen",
+      "meaning": "clean DLS 形式层已压到自足 Kuznetsov/DLS 大筛不等式，但该不等式未证。",
+      "proved": false,
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": true,
+      "gate": "PDECCleanKLSStillOpen",
+      "meaning": "PDEC/CleanKLS 标签仍需同集作用域、内部大筛和模型余量，不能当黑箱。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentConcreteTerminalSplitPinned",
+      "meaning": "当前二选一已同步为 pair-energy seed 线、Kuznetsov/DLS 线、PDEC/CleanKLS+模型余量线三类具体硬点。",
+      "proved": false,
+      "remaining": "(AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只完成具体终端分裂同步；尚未证明 seed+pair energy、Kuznetsov/DLS、PDEC/CleanKLS+模型余量、Rate 或 DStructure。",
+      "proved": false,
+      "remaining": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-source-antiatom-exactuv-terminal-sync-router.json": "949d8afe0b5b1c450c23dd4cc72eecdca5368c247d63507ebd7eb9d3d42493d5",
+    "docs/monograph/prime-matrix-strict-actual-source-domain-entropy-atom-router.json": "0eaacb65ce36ad81475e8fb8806bdd90570f24939b224d6f59c38262cf2374a9",
+    "docs/monograph/prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json": "1fc50ba815f27922f23758ed4799dc2f3e88293050b98961acef8703a283e4b9",
+    "docs/monograph/prime-matrix-strict-independent-actual-source-bridge-concrete-atom-sync-router.json": "122b297efd04baa3ba8a3238a5be035cde957fe69af858124d17be2f1e08f2be",
+    "docs/monograph/prime-matrix-strict-latest-self-contained-hardpoint-sync-router.json": "c2c2b1bb4d62f4621765fddeeecdc8e8577a6a3bd527bb8f6914c0cdd25227e2",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-nonrecursive-guard-router.json": "e98a9dd57c529570b1a7fdf42b3481d44ab8787b5cb863f433c00eb0dd59a83e",
+    "docs/monograph/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-router.json": "44522a6d1ce2e819d756d34e6d73ae2d701d3dc5949b17ac2dc25b9e167dcd6d",
+    "docs/monograph/prime-matrix-strict-terminal-canonical-lock-direct-attack-sync-router.json": "26d27f94385e01fda33bd58c3bc487b6fd5870ce4e5a796e7e6f8b257a44e907"
+  },
+  "status": "alpha_return_bridge_synced_to_concrete_terminal_split_open",
+  "strict_rate_packet_basis_after_router": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_self_contained_high_tail_basis_after_router": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "sync_chain": [
+    {
+      "from": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn",
+      "meaning": "上一层只说明二选一；本轮分别下钻两条手臂。",
+      "to": "canonical-lock arm OR independent actual-source arm"
+    },
+    {
+      "from": "IndependentActualSourceBridgeNotFactoredThroughAlphaReturn",
+      "meaning": "actual-source 桥已具体化为 clean A1 源准入或 actual clean-core exact entropy。",
+      "to": "A1CleanBranchCanonicalSourceAdmission OR ExactCleanCoreFullSNonAPWFDSourceEntropy"
+    },
+    {
+      "from": "A1CleanBranchCanonicalSourceAdmission",
+      "meaning": "A1 准入只能给 scoped canonical 陈述，不能单独关闭 unrestricted noncanonical 分支。",
+      "to": "scoped A1 branch statement, not global contradiction"
+    },
+    {
+      "from": "ExactCleanCoreFullSNonAPWFDSourceEntropy",
+      "meaning": "exact entropy 若走 ExactUV 支撑路线，必须给无环 pre-Cauchy seed 和独立 pair L2/max-atom 能量界。",
+      "to": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "from": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+      "meaning": "canonical-lock 直攻只给 scoped 吸收；mismatch 出口同步到 PDEC/CleanKLS+模型余量或自足 Kuznetsov/DLS。",
+      "to": "(PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "from": "signed source / alpha weight / pointwise routes",
+      "meaning": "这些旧路线继续下钻会回到 PDEC/CleanKLS 或 signed-source 固定点，不能当作新进展量。",
+      "to": "terminal-family backedge"
+    }
+  ],
+  "with_external_mertens_high_tail_removed_basis": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+}
