@@ -11095,6 +11095,45 @@ row-incidence demand lower bound, and it does not exclude the dense-table
 PDEC alternative.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[First-break actual-demand source cut]
+In the first-break branch, the imported release-set statement gives only a
+unit source-side demand:
+\[
+  R_y\ne\emptyset \quad\Longrightarrow\quad D_y\ge 1 .
+\]
+This is a genuine actual lower bound, but it is not enough to beat the AP
+envelope, since a single low-carrier residue cell can already support one
+incidence whenever it meets \(I_y\).  Therefore the gate
+\texttt{ActualLowCarrierRowIncidenceDemandLowerBound} cannot be closed by the
+nonemptiness of \(R_y\) alone.  It is reduced to
+\begin{quote}\scriptsize\ttfamily
+FirstBreakReleaseMassAmplificationOrSingletonSAE\\
+AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+firstbreak\_release\_set\_imported=true\\
+unit\_release\_demand\_lower\_bound\_closed=true\\
+unit\_demand\_not\_gap\_sufficient=true\\
+no\_envelope\_recycling\_guard=true\\
+release\_mass\_amplification\_proved=false\\
+low\_carrier\_payment\_injection\_proved=false\\
+actual\_low\_carrier\_row\_incidence\_demand\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The demand lower bound must be proved from the zero-row/first-break source
+side, not by recycling AP-envelope saturation.  If source mass does not
+amplify, the event is a singleton or sparse SAE; if amplified mass cannot be
+injected into the low-carrier AP table, it returns to the high-rank,
+moving-carrier, PDEC, or SAE exits.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

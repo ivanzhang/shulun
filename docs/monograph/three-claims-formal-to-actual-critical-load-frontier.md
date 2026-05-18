@@ -7178,3 +7178,38 @@ AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC
 
 也就是说，下一步必须证明首破裂反例链在低 carrier AP table 上产生足够 actual 行发生需求；若为了接近
 envelope 而长期占满许多低维 residue cell，则必须登记并排斥为 dense-table PDEC。
+
+## 168. First-break actual demand 源侧切口
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_actual_demand_source_cut_router.py
+docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.md
+docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.json
+data/prime-matrix-firstbreak-actual-demand-source-cut-ledger.json
+```
+
+本步把 `ActualLowCarrierRowIncidenceDemandLowerBound` 拆成源侧放大与支付注入。同步结果：
+
+```text
+firstbreak_release_set_imported=true
+unit_release_demand_lower_bound_closed=true
+unit_demand_not_gap_sufficient=true
+no_envelope_recycling_guard=true
+release_mass_amplification_proved=false
+low_carrier_payment_injection_proved=false
+actual_low_carrier_row_incidence_demand_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：首破裂释放非空是严格源侧事实，但它只给出单位需求 `D_y>=1`。这不足以超过
+AP exact-envelope，因此不能把“出现了释放列”直接升格为容量矛盾。非循环证明需要两步：
+
+```text
+FirstBreakReleaseMassAmplificationOrSingletonSAE
+AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
+```
+
+第一步从零行/首破裂源侧证明释放质量会沿反例链放大；若不放大，则事件是 singleton/sparse SAE。
+第二步证明这些放大的压力确实注入低 carrier AP table，且证明过程不借用 AP envelope 饱和本身。

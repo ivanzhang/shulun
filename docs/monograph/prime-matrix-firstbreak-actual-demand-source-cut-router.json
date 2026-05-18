@@ -1,0 +1,105 @@
+{
+  "actual_low_carrier_row_incidence_demand_proved": false,
+  "certificate_type": "prime_matrix_firstbreak_actual_demand_source_cut_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ActualDemandImported",
+      "meaning": "上一层 AP exact-envelope 证书把容量比较剩余压到 actual row-incidence demand 下界。",
+      "proved": false,
+      "remaining": "ActualLowCarrierRowIncidenceDemandLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "FirstBreakReleaseSetImported",
+      "meaning": "early-to-square 分裂已证明：若 square-anchor 分支不接管，则首破裂行 y 有非空释放列集。",
+      "proved": true,
+      "remaining": "FirstBreakUnitReleaseDemandLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "UnitReleaseDemandLowerBoundClosed",
+      "meaning": "释放列非空只给出 D_y>=1 的单位 actual demand；这是源侧事实，不使用 AP envelope。",
+      "proved": true,
+      "remaining": "FirstBreakUnitReleaseDemandLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "UnitDemandNotGapSufficient",
+      "meaning": "单位需求不足以超过 AP envelope：单个 residue cell 已可提供至少一个发生位，因此不能由 D_y>=1 得到容量矛盾。",
+      "proved": true,
+      "remaining": "FirstBreakReleaseMassAmplificationOrSingletonSAE"
+    },
+    {
+      "closed": true,
+      "gate": "NoEnvelopeRecyclingGuard",
+      "meaning": "actual demand 下界必须来自首破裂/零行源侧，不能从 AP table 接近饱和反推需求；否则论证循环。",
+      "proved": true,
+      "remaining": "NoAPEnvelopeRecyclingDemandGuard"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentInjectionSeparated",
+      "meaning": "即使源侧释放质量被放大，还必须证明这些压力注入同一低 carrier AP table；若不能注入，则回流到高秩、moving carrier、PDEC 或 SAE。",
+      "proved": false,
+      "remaining": "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse"
+    },
+    {
+      "closed": true,
+      "gate": "ActualDemandReduced",
+      "meaning": "ActualLowCarrierRowIncidenceDemandLowerBound 被切成源侧释放质量放大和非循环支付注入两项。",
+      "proved": false,
+      "remaining": "FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse"
+    },
+    {
+      "closed": false,
+      "gate": "ActualDemandProved",
+      "meaning": "本步没有证明 Ω(H) 或超 envelope 的 actual demand；只排除了把单位释放误当成容量矛盾的路线。",
+      "proved": false,
+      "remaining": "FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、释放质量放大、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "firstbreak_release_set_imported": true,
+  "hardpoint_after_router": "FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+  "hardpoint_before_router": "ActualLowCarrierRowIncidenceDemandLowerBound",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "low_carrier_payment_injection_proved": false,
+  "next_direct_attack_target": "FirstBreakReleaseMassAmplificationOrSingletonSAE",
+  "no_envelope_recycling_guard": true,
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "Actual demand 的源侧下界被切开：首破裂释放非空只给出单位需求 D_y>=1，不足以超过 AP exact-envelope；真正需要证明的是释放质量沿反例链放大到可与 H 比较，并且这些压力非循环地注入同一低 carrier AP table。若无法放大，则只能登记为 singleton/sparse SAE；若无法注入，则回流到高秩、moving carrier、PDEC 或 SAE 出口。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND FirstBreakReleaseMassAmplificationOrSingletonSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "release_mass_amplification_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.json": "54575ef141b22648dd85608f8db9144e24ef013b69df9a130147857c28840c2f",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json": "2f378d9d29b8bf471ebc203240de29b701774395089998c1477c1af85c384d6f",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.json": "03248e0defb00a2419e713cb229d804f725d8c44e86a277d51a613abb5d6b94c",
+    "docs/monograph/prime-matrix-firstbreak-small-lcm-rank-pressure-router.json": "747ab2d8f1f4569ed1bd9e00f868e26f33a7a22c8310e0776580ee8ad571dad9",
+    "experiments/prime_matrix_firstbreak_actual_demand_source_cut_router.py": "7759dc15959ad468de284efcfa462b140a5bbc16c6932c91a171c5cc6b408b26"
+  },
+  "status": "firstbreak_actual_demand_cut_to_source_amplification_open",
+  "unit_demand_not_gap_sufficient": true,
+  "unit_release_demand_lower_bound_closed": true
+}

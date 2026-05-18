@@ -7358,3 +7358,48 @@ LowCarrierResidueAPEnvelopeCapacityComparison
 
 本步关闭的是 AP table 的 exact envelope 公式。尚未证明反例链强制的 actual row-incidence demand
 超过该 envelope，也未排斥接近 envelope 的稠密低维 table PDEC；行/列命题仍未无条件闭合。
+
+## 168. First-break actual demand 源侧切口
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_actual_demand_source_cut_router.py
+docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.md
+docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.json
+data/prime-matrix-firstbreak-actual-demand-source-cut-ledger.json
+```
+
+本步继续攻击 `ActualLowCarrierRowIncidenceDemandLowerBound`。同步读数为：
+
+```text
+firstbreak_release_set_imported=true
+unit_release_demand_lower_bound_closed=true
+unit_demand_not_gap_sufficient=true
+no_envelope_recycling_guard=true
+release_mass_amplification_proved=false
+low_carrier_payment_injection_proved=false
+actual_low_carrier_row_incidence_demand_proved=false
+row_column_unconditional_closed=false
+```
+
+首破裂分裂只给出源侧单位下界：
+
+```text
+R_y != empty  =>  D_y >= 1.
+```
+
+但 AP exact-envelope 至少可以容纳单个 residue cell 的单位发生，因此 `D_y>=1` 不能推出容量矛盾。
+为了避免循环论证，actual demand 必须从零行/首破裂源侧推出，而不能从 AP table 接近饱和反推。
+
+该硬点更新为：
+
+```text
+ActualLowCarrierRowIncidenceDemandLowerBound
+  -> FirstBreakReleaseMassAmplificationOrSingletonSAE
+  AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
+```
+
+也就是说，下一步必须证明首破裂释放沿反例链放大到可与 `H=P-y` 比较；若不放大，则只能作为
+singleton/sparse SAE 计费。同时还要证明放大的压力确实非循环地注入同一低 carrier AP table；若不能注入，
+则回流到高秩、moving-carrier、PDEC 或 SAE 出口。
