@@ -1,0 +1,111 @@
+{
+  "anonymous_positive_surplus_removed": true,
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_stable_ladder_occupancy_dichotomy_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "StableActualLadderPositiveResidueSurplusImported",
+      "meaning": "上一层把有符号余数计数偏差统一转成固定纤维内的正余数过载。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderOverloadedCellIntegerOccupancyClosed",
+      "meaning": "过载余数类的占位数 M_s 是非负整数，且 M_s-L/q_j>=eta>0 强制 M_s>=1。",
+      "proved": true,
+      "remaining": "StableLadderOverloadedCellIntegerOccupancyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderPositiveSurplusSingletonOrPairDichotomyClosed",
+      "meaning": "整数占位满足 M_s=1 或 M_s>=2；两者穷尽所有正过载可能。",
+      "proved": true,
+      "remaining": "StableLadderPositiveSurplusSingletonOrPairDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderSingletonSurplusAtomRegistered",
+      "meaning": "M_s=1 分支登记为 singleton surplus atom；本步不证明其全局可求和。",
+      "proved": false,
+      "remaining": "StableLadderSingletonSurplusAtomRegistrationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderSameCellPairCongruenceClosed",
+      "meaning": "M_s>=2 分支给出同一完整 stable-ladder cell 中两点 n1<n2。",
+      "proved": true,
+      "remaining": "StableLadderSameCellPairCongruenceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderSameCellPairPeriodMultipleClosed",
+      "meaning": "同一完整 cell 中两点满足 n2-n1 被 W=lcm(q_i) 整除；若有短宽度上界 H<W，可立即排斥该 pair。",
+      "proved": true,
+      "remaining": "StableLadderSameCellPairPeriodMultipleLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoAnonymousPositiveResidueSurplusExit",
+      "meaning": "正余数过载出口被改写成 singleton atom 或同 cell period-pair 出口。",
+      "proved": true,
+      "remaining": "NoAnonymousPositiveResidueSurplusExitLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomy",
+      "meaning": "非持久实际 ladder 事件继续登记为 sparse scale-ladder SAE；本步不证明全局求和。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger"
+    },
+    {
+      "closed": false,
+      "gate": "StableActualLadderSingletonSurplusOrCellPairPeriodPDECCapStillOpen",
+      "meaning": "仍未证明 singleton surplus atom 全局可求和，也未排斥同 cell period-pair/PDEC。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需给出 singleton/cell-pair cap，或证明 sparse scale-ladder SAE 全局可控。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap",
+  "hardpoint_before_router": "SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap",
+  "integer_occupancy_closed": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap",
+  "no_theorem_switch": true,
+  "occupancy_formulas": {
+    "dichotomy": "M_s=1 OR M_s>=2",
+    "integer_floor": "M_s in Z_{>=0} and eta>0 => M_s>=1",
+    "new_failure": "singleton surplus SAE or same-cell period-pair PDEC cap",
+    "pair_branch": "M_s>=2 => exists n1<n2 in the same full stable-ladder cell",
+    "period_modulus": "W=lcm_i(q_i)",
+    "positive_surplus": "M_s-L/q_j>=eta, eta=E_a(S)/((N-1)(q_j-1))",
+    "same_cell_period": "n2-n1 is a nonzero multiple of W",
+    "short_width_exclusion": "if ambient support width H<W, same-cell pair is impossible",
+    "singleton_branch": "M_s=1 is a singleton surplus atom"
+  },
+  "plain_conclusion": "positive residue-surplus 可转成完整 stable-ladder cell 的整数占位二分。设过载余数类占位 M_s 满足 M_s-L/q_j>=eta>0，则 M_s>=1。若 M_s=1，登记为 singleton surplus atom；若 M_s>=2，则同一完整 cell 内存在两点，它们在所有 ladder 坐标上同余，因此差值被 W=lcm_i(q_i) 整除。",
+  "positive_surplus_imported": true,
+  "row_column_unconditional_closed": false,
+  "same_cell_pair_congruence_closed": true,
+  "same_cell_pair_period_multiple_closed": true,
+  "same_cell_pair_period_pdec_cap_proved": false,
+  "same_theorem_target_preserved": true,
+  "singleton_or_pair_dichotomy_closed": true,
+  "singleton_surplus_atom_registered": true,
+  "singleton_surplus_sae_summability_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-router.json": "900d832d6597246dfc268e16b3cf4207560fa7c895e6d72326296e09941164d1",
+    "experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_occupancy_dichotomy_router.py": "11f4219cb3dd9f1db109137d2d163d50a134b6d79f3f6d487879e09a45f7fabc"
+  },
+  "sparse_scale_ladder_sae_carried_forward": true,
+  "status": "positive_surplus_reduced_to_singleton_or_same_cell_pair_open"
+}

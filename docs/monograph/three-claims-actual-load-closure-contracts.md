@@ -9760,3 +9760,82 @@ SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
 本步关闭的是有符号 residue-count 绝对偏差出口：亏损分支由零和关系转移为
 某个余数类正过载。剩余集中为 positive residue-surplus PDEC cap，或 sparse
 scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。
+
+## 199. stable-ladder occupancy-dichotomy 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_occupancy_dichotomy_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap`。
+同步读数为：
+
+```text
+positive_surplus_imported=true
+integer_occupancy_closed=true
+singleton_or_pair_dichotomy_closed=true
+singleton_surplus_atom_registered=true
+same_cell_pair_congruence_closed=true
+same_cell_pair_period_multiple_closed=true
+anonymous_positive_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+singleton_surplus_sae_summability_proved=false
+same_cell_pair_period_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出固定补坐标纤维与 pivot 余数类中的正过载：
+
+```text
+M_s-L/q_j>=eta,
+eta=E_a(S)/((N-1)(q_j-1))>0.
+```
+
+由于 `M_s` 是非负整数，故 `M_s>=1`。于是只剩下两个互斥出口：
+
+```text
+M_s=1  OR  M_s>=2.
+```
+
+`M_s=1` 分支登记为 singleton surplus atom；本步不证明其全局求和。
+若 `M_s>=2`，则同一完整 stable-ladder cell 中存在两点 `n1<n2`。
+令：
+
+```text
+W=lcm_i(q_i).
+```
+
+同一完整 cell 强制两点在所有 ladder 坐标上同余，因此：
+
+```text
+n2-n1 is a nonzero multiple of W.
+```
+
+若上游另有支撑宽度界 `H<W`，则 same-cell pair 分支可立即排斥；否则它成为
+显式 same-cell period-pair PDEC/cap 输入。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
+  -> StableActualLadderPositiveResidueSurplusImportedLedger
+  AND StableLadderOverloadedCellIntegerOccupancyLedger
+  AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger
+  AND StableLadderSingletonSurplusAtomRegistrationLedger
+  AND StableLadderSameCellPairCongruenceLedger
+  AND StableLadderSameCellPairPeriodMultipleLedger
+  AND NoAnonymousPositiveResidueSurplusExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap
+```
+
+本步关闭的是匿名 positive residue-surplus 出口：它被改写为 singleton atom
+或同 cell period-pair 的显式二分。剩余集中为 singleton surplus atom 的全局
+可求和、same-cell period-pair PDEC/cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。

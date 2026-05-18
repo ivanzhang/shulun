@@ -13113,6 +13113,67 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-p
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder occupancy dichotomy]
+The positive residue-surplus cap has an integer occupancy form.  The open hard
+point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderPositiveResidueSurplusImportedLedger\\
+AND StableLadderOverloadedCellIntegerOccupancyLedger\\
+AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger\\
+AND StableLadderSingletonSurplusAtomRegistrationLedger\\
+AND StableLadderSameCellPairCongruenceLedger\\
+AND StableLadderSameCellPairPeriodMultipleLedger\\
+AND NoAnonymousPositiveResidueSurplusExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Occupancy-dichotomy ledger]
+Import the positive overload residue class from the preceding localization:
+\[
+  M_s-\frac{L}{q_j}\ge \eta,\qquad
+  \eta=\frac{E_a(S)}{(N-1)(q_j-1)}>0.
+\]
+Here \(M_s\) is a nonnegative integer occupancy number inside the fixed
+complementary fiber.  Hence \(M_s\ge 1\).  There are exactly two cases:
+\[
+  M_s=1\qquad\hbox{or}\qquad M_s\ge 2.
+\]
+The first case is recorded as a singleton surplus atom.  This theorem does not
+prove summability of all such singleton atoms.
+
+In the second case, two distinct points \(n_1<n_2\) lie in the same complete
+stable-ladder cell.  Let
+\[
+  W=\operatorname {lcm}_i(q_i)
+\]
+be the period of the ladder coordinates.  Equality of all cell coordinates gives
+\[
+  n_2-n_1\equiv 0 \pmod {q_i}\quad\hbox{for every }i,
+\]
+and therefore
+\[
+  W\mid (n_2-n_1),\qquad n_2-n_1>0.
+\]
+Consequently any upstream width bound \(H<W\) rules out the pair branch at once;
+without such a bound the remaining obstruction is the explicit same-cell
+period-pair PDEC cap.
+
+Thus the positive residue-surplus outlet is no longer anonymous: it is either a
+singleton surplus atom or a same-cell period-pair outlet.  The theorem does not
+prove the singleton summability cap, it does not prove the same-cell
+period-pair cap, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -8968,3 +8968,56 @@ SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
 
 本步没有证明 positive residue-surplus PDEC cap，也没有证明 sparse scale-ladder
 SAE 全局可求和；它只把有符号余数计数偏差改写为正余数过载输入。
+
+## 199. Stable-ladder occupancy-dichotomy frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_occupancy_dichotomy_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-occupancy-dichotomy-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap`。
+同步结果：
+
+```text
+positive_surplus_imported=true
+integer_occupancy_closed=true
+singleton_or_pair_dichotomy_closed=true
+singleton_surplus_atom_registered=true
+same_cell_pair_congruence_closed=true
+same_cell_pair_period_multiple_closed=true
+anonymous_positive_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+singleton_surplus_sae_summability_proved=false
+same_cell_pair_period_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：正余数过载已经不再是匿名容量口径。设固定纤维内
+某余数类占位数满足
+
+```text
+M_s-L/q_j>=eta>0.
+```
+
+由于 `M_s` 是整数，占位非空。若 `M_s=1`，则得到 singleton surplus atom；
+若 `M_s>=2`，则得到同一完整 stable-ladder cell 中两点 `n1<n2`。在后一个
+分支，令 `W=lcm_i(q_i)`，同 cell 同余给出：
+
+```text
+n2-n1 is a nonzero multiple of W.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPeriodPDECCap
+```
+
+本步没有证明 singleton surplus atom 全局可求和，也没有证明 same-cell
+period-pair PDEC cap；它只把正过载口径改写为整数占位的 singleton/pair 二分。
