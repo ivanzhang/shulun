@@ -13232,6 +13232,75 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-wid
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder low-fiber phase reduction]
+The low-fiber singleton outlet has an isolated-or-anti-pivot form.  The open
+hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderLowFiberSingletonOrLongPairImportedLedger\\
+AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger\\
+AND StableLadderFiberIsolatedSingletonAtomLedger\\
+AND StableLadderRepeatedPivotModulusForcesIsolationLedger\\
+AND StableLadderComplementFiberAntiPivotPairLedger\\
+AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger\\
+AND StableLadderComplementFiberPairWidthDichotomyLedger\\
+AND StableLadderLongFullCellPairCarriedForwardLedger\\
+AND NoAnonymousLowFiberSingletonExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Low-fiber phase ledger]
+The preceding theorem leaves the low-fiber singleton branch with
+\[
+  M_s=1,\qquad 1\le L<q_j.
+\]
+Hence
+\[
+  L=1\qquad\hbox{or}\qquad 2\le L<q_j.
+\]
+The case \(L=1\) is a singleton atom isolated inside its fixed complementary
+fiber.
+
+Assume next that \(2\le L<q_j\).  Take the point in the singleton residue
+class \(s\), and take another point in the same complementary fiber.  These two
+points have identical residues in every coordinate \(i\ne j\), but their pivot
+residues modulo \(q_j\) are distinct because \(M_s=1\).  Let
+\[
+  W_{-j}=\operatorname {lcm}_{i\ne j}(q_i),
+\]
+with \(W_{-j}=1\) when the complementary list is empty.  Then the two points
+\(n_1<n_2\) satisfy
+\[
+  W_{-j}\mid(n_2-n_1),\qquad q_j\nmid(n_2-n_1).
+\]
+If \(q_j\mid W_{-j}\), the fixed complementary fiber already fixes the pivot
+residue modulo \(q_j\), so the alternative \(2\le L<q_j\) is impossible and the
+branch collapses to \(L=1\).
+
+If \(H\) is the support diameter carrying this complementary-fiber pair, then
+\[
+  H\ge n_2-n_1\ge W_{-j}.
+\]
+Thus \(H<W_{-j}\) excludes the anti-pivot complement-pair branch; otherwise it
+is a named complement-pair PDEC cap.  The previous long full-cell pair branch,
+with \(H\ge W=\operatorname {lcm}_i(q_i)\), is carried forward unchanged.
+
+Therefore the low-fiber singleton outlet is no longer anonymous: it is either a
+fiber-isolated singleton atom, or a complement-period aligned but pivot
+anti-aligned pair.  This theorem does not prove summability of isolated
+singletons, it does not prove the anti-pivot complement-pair cap, it does not
+prove the long full-cell pair cap, and it does not prove global summability of
+the sparse scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

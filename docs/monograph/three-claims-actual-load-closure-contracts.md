@@ -9919,3 +9919,98 @@ SparseScaleLadderSAESummabilityOrStableActualLadderSingletonSurplusOrCellPairPer
 pair 被限制到长宽度 `H>=W`。剩余集中为低纤维 singleton 全局求和、长宽度
 same-cell period-pair PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列
 命题仍未无条件闭合。
+
+## 201. stable-ladder low-fiber phase 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_low_fiber_phase_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap`。
+同步读数为：
+
+```text
+low_fiber_or_long_pair_imported=true
+low_fiber_occupancy_dichotomy_closed=true
+isolated_singleton_atom_registered=true
+repeated_pivot_modulus_forces_isolation=true
+anti_pivot_complement_pair_closed=true
+complement_period_and_antipivot_phase_closed=true
+complement_pair_width_dichotomy_closed=true
+long_full_cell_pair_carried_forward=true
+anonymous_low_fiber_singleton_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+anti_pivot_complement_pair_pdec_cap_proved=false
+long_full_cell_pair_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+低纤维 singleton 分支满足：
+
+```text
+M_s=1,
+1<=L<q_j.
+```
+
+因此只有：
+
+```text
+L=1 OR 2<=L<q_j.
+```
+
+`L=1` 分支登记为补坐标纤维孤立 singleton atom。若 `2<=L<q_j`，取
+singleton 点和同补纤维内另一点；二者补坐标相同但 pivot 残基不同。令：
+
+```text
+W_-j=lcm_{i!=j}(q_i), empty lcm=1.
+```
+
+则：
+
+```text
+W_-j | (n2-n1),
+q_j does not divide (n2-n1).
+```
+
+若 `q_j|W_-j`，固定补坐标已决定 pivot 残基，因此 `M_s=1` 强制 `L=1`；
+非孤立分支必须是真正的 anti-pivot 相位不对齐。
+
+若承载支撑直径为 `H`，补纤维双点还给出：
+
+```text
+H>=W_-j.
+```
+
+因此 `H<W_-j` 的短支撑分支排斥补纤维双点；`H>=W_-j` 保留为
+anti-pivot complement-pair PDEC/cap。上一层 `H>=W=lcm_i(q_i)` 的
+full-cell long pair 继续前传。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap
+  -> StableActualLadderLowFiberSingletonOrLongPairImportedLedger
+  AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger
+  AND StableLadderFiberIsolatedSingletonAtomLedger
+  AND StableLadderRepeatedPivotModulusForcesIsolationLedger
+  AND StableLadderComplementFiberAntiPivotPairLedger
+  AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger
+  AND StableLadderComplementFiberPairWidthDichotomyLedger
+  AND StableLadderLongFullCellPairCarriedForwardLedger
+  AND NoAnonymousLowFiberSingletonExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap
+```
+
+本步关闭的是匿名低纤维 singleton 出口：它被改写为孤立 singleton atom
+或补周期对齐但 pivot 反对齐的 complement-pair。剩余集中为孤立 singleton
+全局求和、anti-pivot complement-pair PDEC/cap、long full-cell pair PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

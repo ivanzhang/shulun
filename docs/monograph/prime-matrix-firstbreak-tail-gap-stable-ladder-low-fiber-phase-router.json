@@ -1,0 +1,128 @@
+{
+  "anonymous_low_fiber_singleton_removed": true,
+  "anti_pivot_complement_pair_closed": true,
+  "anti_pivot_complement_pair_pdec_cap_proved": false,
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_stable_ladder_low_fiber_phase_router",
+  "complement_pair_width_dichotomy_closed": true,
+  "complement_period_and_antipivot_phase_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "StableActualLadderLowFiberSingletonOrLongPairImported",
+      "meaning": "上一层把 singleton/pair 出口压成低纤维 singleton 或长宽度 full-cell pair。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderLowFiberOccupancyOneOrMultiDichotomyClosed",
+      "meaning": "低纤维 singleton 分支有 1<=L<q_j，因此 L=1 或 2<=L<q_j。",
+      "proved": true,
+      "remaining": "StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderFiberIsolatedSingletonAtomRegistered",
+      "meaning": "L=1 分支登记为补坐标纤维孤立 singleton atom；本步不证明其全局可求和。",
+      "proved": false,
+      "remaining": "StableLadderFiberIsolatedSingletonAtomLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderRepeatedPivotModulusForcesIsolationClosed",
+      "meaning": "若 pivot 素数 q_j 已在补坐标周期 W_-j 中出现，则固定补纤维已决定 pivot 残基，M_s=1 强制 L=1。",
+      "proved": true,
+      "remaining": "StableLadderRepeatedPivotModulusForcesIsolationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderComplementFiberAntiPivotPairClosed",
+      "meaning": "若 2<=L<q_j，则 singleton 点与另一补纤维点给出同补坐标但不同 pivot 残基的双点。",
+      "proved": true,
+      "remaining": "StableLadderComplementFiberAntiPivotPairLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderComplementFiberPeriodAndAntiPivotPhaseClosed",
+      "meaning": "该双点差值被 W_-j 整除且不被 q_j 整除；这是补周期对齐与 pivot 反对齐的显式相位出口。",
+      "proved": true,
+      "remaining": "StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderComplementFiberPairWidthDichotomyClosed",
+      "meaning": "若承载支撑直径 H<W_-j，则补纤维双点不可能；否则登记 H>=W_-j 的补纤维 pair cap。",
+      "proved": true,
+      "remaining": "StableLadderComplementFiberPairWidthDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StableLadderLongFullCellPairCarriedForward",
+      "meaning": "上一层 H>=W 的 full-cell period-pair 继续作为长宽度 PDEC/cap 输入。",
+      "proved": false,
+      "remaining": "StableLadderLongFullCellPairCarriedForwardLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoAnonymousLowFiberSingletonExit",
+      "meaning": "低纤维 singleton 出口被拆成孤立 atom 或 anti-pivot complement pair，不再匿名。",
+      "proved": true,
+      "remaining": "NoAnonymousLowFiberSingletonExitLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SparseScaleLadderSAECarriedForwardAfterLowFiberPhase",
+      "meaning": "sparse scale-ladder SAE 继续前传；本步不证明全局求和。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger"
+    },
+    {
+      "closed": false,
+      "gate": "IsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairStillOpen",
+      "meaning": "仍未证明孤立 singleton 可求和，也未排斥 anti-pivot complement pair 或 long full-cell pair。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需关闭孤立 singleton、anti-pivot complement pair、long full-cell pair 或 sparse SAE。",
+      "proved": false,
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "StableActualLadderLowFiberSingletonOrLongPairImportedLedger AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger AND StableLadderFiberIsolatedSingletonAtomLedger AND StableLadderRepeatedPivotModulusForcesIsolationLedger AND StableLadderComplementFiberAntiPivotPairLedger AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger AND StableLadderComplementFiberPairWidthDichotomyLedger AND StableLadderLongFullCellPairCarriedForwardLedger AND NoAnonymousLowFiberSingletonExitLedger AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap",
+  "hardpoint_before_router": "SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap",
+  "isolated_singleton_atom_registered": true,
+  "isolated_singleton_summability_proved": false,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND StableActualLadderSingletonOrPairPeriodImportedLedger AND StableLadderSingletonSurplusLowFiberQuotaLedger AND StableLadderSameCellPairSupportWidthDichotomyLedger AND StableLadderShortSupportPairExclusionLedger AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger AND NoAnonymousSingletonOrPairPeriodExitLedger AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger AND StableActualLadderLowFiberSingletonOrLongPairImportedLedger AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger AND StableLadderFiberIsolatedSingletonAtomLedger AND StableLadderRepeatedPivotModulusForcesIsolationLedger AND StableLadderComplementFiberAntiPivotPairLedger AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger AND StableLadderComplementFiberPairWidthDichotomyLedger AND StableLadderLongFullCellPairCarriedForwardLedger AND NoAnonymousLowFiberSingletonExitLedger AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "long_full_cell_pair_carried_forward": true,
+  "long_full_cell_pair_pdec_cap_proved": false,
+  "low_fiber_occupancy_dichotomy_closed": true,
+  "low_fiber_or_long_pair_imported": true,
+  "next_direct_attack_target": "SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap",
+  "no_theorem_switch": true,
+  "phase_formulas": {
+    "anti_pivot_pair": "2<=L<q_j => exists n1<n2 with W_-j|(n2-n1) and q_j∤(n2-n1)",
+    "complement_period": "W_-j=lcm_{i!=j}(q_i), with W_-j=1 for empty complement",
+    "isolated_branch": "L=1 is a complement-fiber isolated singleton atom",
+    "long_full_cell_pair": "full-cell pair from previous step remains H>=W=lcm_i(q_i)",
+    "low_fiber_dichotomy": "L=1 OR 2<=L<q_j",
+    "low_fiber_range": "1<=L<q_j",
+    "redundant_pivot": "q_j|W_-j => fixed complement already fixes pivot residue; M_s=1 forces L=1",
+    "short_complement_width_exclusion": "H<W_-j => no anti-pivot complement pair"
+  },
+  "plain_conclusion": "低纤维 singleton 分支 1<=L<q_j 可继续二分。若 L=1，则它是补坐标纤维孤立 atom；若 2<=L<q_j，则 singleton 点和另一补纤维点有相同补坐标但不同 pivot 残基，故差值被 W_-j=lcm_{i!=j}(q_i) 整除且不被 q_j 整除。若 H<W_-j，该分支被排斥；否则成为显式 anti-pivot complement-pair PDEC/cap。",
+  "repeated_pivot_modulus_forces_isolation": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-singleton-pair-width-router.json": "f3095a16a76010be6235db283ab8c861f9a5492a4d5312d93283d6d06799147f",
+    "experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_low_fiber_phase_router.py": "b83a62d9089b58d2f257b9f6192970059afa227a6d9f77fa846e98ddeda5874b"
+  },
+  "sparse_scale_ladder_sae_carried_forward": true,
+  "sparse_scale_ladder_sae_summability_proved": false,
+  "status": "low_fiber_singleton_split_to_isolated_or_antipivot_complement_pair_open"
+}

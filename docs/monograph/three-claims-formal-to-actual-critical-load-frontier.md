@@ -9075,3 +9075,61 @@ SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLon
 
 本步没有证明低纤维 singleton 全局可求和，也没有证明长宽度 same-cell
 period-pair PDEC cap；它只把 singleton/pair 改写为低纤维/长宽度二分。
+
+## 201. Stable-ladder low-fiber phase frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_low_fiber_phase_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLongWidthCellPairPDECCap`。
+同步结果：
+
+```text
+low_fiber_or_long_pair_imported=true
+low_fiber_occupancy_dichotomy_closed=true
+isolated_singleton_atom_registered=true
+repeated_pivot_modulus_forces_isolation=true
+anti_pivot_complement_pair_closed=true
+complement_period_and_antipivot_phase_closed=true
+complement_pair_width_dichotomy_closed=true
+long_full_cell_pair_carried_forward=true
+anonymous_low_fiber_singleton_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+anti_pivot_complement_pair_pdec_cap_proved=false
+long_full_cell_pair_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：低纤维 singleton 的 `1<=L<q_j` 不是最终原子；
+它要么是 `L=1` 的补纤维孤立 atom，要么在 `2<=L<q_j` 时强制出现一个
+补坐标同纤维、pivot 残基不同的双点。令：
+
+```text
+W_-j=lcm_{i!=j}(q_i).
+```
+
+非孤立分支满足：
+
+```text
+W_-j | (n2-n1),
+q_j does not divide (n2-n1),
+H>=W_-j.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap
+```
+
+本步没有证明孤立 singleton 全局可求和，也没有证明 anti-pivot complement-pair
+或 long full-cell pair 的 PDEC cap；它只把低纤维 singleton 改写为孤立/相位反对齐二分。
