@@ -9725,3 +9725,64 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、long same-sign arc SAE、boundary
 flux/PDEC cap 或 sparse SAE 求和；它只把单轨道邻接 cap 压成长弧或边界通量
 二分。
+
+## 211. Stable-ladder endpoint orbit signed Fourier frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_signed_fourier_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_run_boundary_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_signed_indicator_sequence_closed=true
+endpoint_orbit_full_cycle_mean_atom_registered=true
+endpoint_orbit_long_arc_centered_discrepancy_closed=true
+endpoint_orbit_arc_dirichlet_kernel_closed=true
+endpoint_orbit_boundary_derivative_support_closed=true
+endpoint_orbit_boundary_derivative_fourier_closed=true
+endpoint_orbit_signed_fourier_cap_registered=true
+anonymous_endpoint_orbit_long_arc_boundary_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_signed_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：长同号弧和边界通量现在被统一写成同一个 signed
+cycle function：
+
+```text
+g_t=sigma_t*u_t in {-1,0,1}.
+```
+
+非全周期极大长同号 run 给出正中心化区间差：
+
+```text
+Delta_epsilon(I)>=|I|/r.
+```
+
+再由 Dirichlet kernel 给出非零 signed Fourier 下界。边界通量则通过循环差分
+`Dg_t=g_{t+1}-g_t` 与 Parseval 给出 derivative Fourier 下界。全周期同号退化
+单独登记为 full-cycle mean atom。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、signed
+Fourier/PDEC cap 或 sparse SAE 求和；它只把 long-arc/boundary 二出口压成
+full-cycle mean atom 或 signed Fourier cap。

@@ -10869,3 +10869,99 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointT
 endpoint singleton atom/SAE、endpoint orbit long same-sign arc SAE、endpoint
 orbit boundary flux/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题
 仍未无条件闭合。
+
+## 211. stable-ladder endpoint orbit signed Fourier 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_signed_fourier_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-signed-fourier-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_run_boundary_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_signed_indicator_sequence_closed=true
+endpoint_orbit_full_cycle_mean_atom_registered=true
+endpoint_orbit_long_arc_centered_discrepancy_closed=true
+endpoint_orbit_arc_dirichlet_kernel_closed=true
+endpoint_orbit_boundary_derivative_support_closed=true
+endpoint_orbit_boundary_derivative_fourier_closed=true
+endpoint_orbit_signed_fourier_cap_registered=true
+anonymous_endpoint_orbit_long_arc_boundary_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_signed_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+固定单轨道 `C_r=Z/rZ`，定义有符号 active 函数：
+
+```text
+g_t=sigma_t*u_t in {-1,0,1},
+bar_g=(1/r) sum_t g_t,
+nu_t=g_t-bar_g.
+```
+
+若极大长同号 run `I` 不是全周期，且 `g_t=epsilon` 于 `I` 上，则：
+
+```text
+Delta_epsilon(I)=epsilon*sum_{t in I} nu_t >= |I|/r > 0.
+```
+
+Fourier 展开给出：
+
+```text
+Delta_epsilon(I)=(epsilon/r) sum_{h!=0} hat g(h) hat 1_I(-h),
+|hat g(h)| >= r*Delta_epsilon(I)/Lambda_r(I)
+```
+
+对 boundary flux 分支，令 `Dg_t=g_{t+1}-g_t`。若切口数为 `b`，则：
+
+```text
+sum_t |Dg_t|^2 >= b,
+sum_{h!=0}|(exp(2*pi*i*h/r)-1)hat g(h)|^2 = r*sum_t |Dg_t|^2.
+```
+
+因此存在非零频率：
+
+```text
+|(exp(2*pi*i*h/r)-1)hat g(h)| >= sqrt(r*b/(r-1)).
+```
+
+全周期同号特例登记为：
+
+```text
+EndpointOrbitFullCycleMeanAtomSAE.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitRunBoundaryImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterSignedFourierLedger
+  AND StableLadderEndpointOrbitSignedIndicatorSequenceLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomRegistrationLedger
+  AND StableLadderEndpointOrbitLongArcCenteredDiscrepancyLedger
+  AND StableLadderEndpointOrbitArcDirichletKernelLedger
+  AND StableLadderEndpointOrbitBoundaryDerivativeSupportLedger
+  AND StableLadderEndpointOrbitBoundaryDerivativeFourierLedger
+  AND StableLadderEndpointOrbitSignedFourierCapRegistrationLedger
+  AND NoAnonymousEndpointOrbitLongArcBoundaryExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterOrbitSignedFourierLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedFourierPDECCap
+```
+
+本步关闭的是匿名 long-arc/boundary 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、endpoint orbit signed
+Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
