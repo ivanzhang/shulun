@@ -6456,3 +6456,64 @@ NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
 本步不是行/列命题无条件闭合；它只删除 new-joint 的旧内部自证路线。剩余核心是一个不
 复用 NCBLK/source-root 的 Kuznetsov/DLS 大筛证明，并且高段模型、RatePreservation 与
 DStructure/Rankin 仍未闭合。
+
+## 154. Strict post-new-joint KZ no-cycle gate sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_new_joint_kz_nocycle_gate_sync_router.py
+docs/monograph/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-router.md
+docs/monograph/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-router.json
+data/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-ledger.json
+```
+
+本步继续攻击上一节留下的
+`NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse`。
+同步 windowed DLS、KZ 原子、KZ 终端同步、NC-BLK/source anti-atom 去重、forward
+source-root 终端环和 alpha terminal cycle guard 后，关键读数为：
+
+```text
+latest_kz_nocycle_gate_active=true
+windowed_dls_formal_layer_imported=true
+kz_abcd_spine_imported=true
+existing_kz_e_route_factors_through_ncblk=true
+ncblk_projection_forbidden_for_nocycle_gate=true
+noncircular_kuznetsov_dls_without_source_root_reuse_proved=false
+kz_e_direct_log_saving_without_ncblk_projection_proved=false
+row_column_unconditional_closed=false
+```
+
+结论是：KZ-A--KZ-D 的谱脊柱和 windowed DLS 形式层已经可以导入，但当前语料里的
+KZ-E log-saving 路线通过 NC-BLK/source anti-atom 投影闭合；该投影随后回到
+source-root/terminal cycle。由于本门明确要求 `without NCBLK/source-root reuse`，
+这条旧路线不能计入非循环 KZ/DLS 证明。
+
+最新内部非循环基同步为：
+
+```text
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件外部线为：
+
+```text
+(AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻改为：
+
+```text
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+```
+
+本步不是行/列命题无条件闭合；它只把“非循环 KZ/DLS”门进一步原子化为不得经
+NC-BLK 投影的 KZ-E well-factorable dispersion log-saving。高段模型、
+RatePreservation 与 DStructure/Rankin 仍未闭合。

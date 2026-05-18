@@ -10399,6 +10399,49 @@ row/column proof.
 \end{proof}
 
 
+\begin{theorem}[Post-new-joint KZ no-cycle gate]
+The non-circular KZ/DLS gate left by the post-new-joint synchronization is
+not closed by the currently documented KZ route.  The windowed DLS formal
+layer and the KZ-A through KZ-D spectral spine may be imported, but the
+documented KZ-E log-saving route factors through
+NCBLK/source-antiatom projection and then returns to the source-root or
+terminal cycle.  Since the current gate explicitly requires no
+NCBLK/source-root reuse, that route cannot count as a non-circular proof.
+The remaining internal frontier is therefore
+\begin{quote}\scriptsize\ttfamily
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection\\
+AND HighSegmentModelGapAlpha043C3AnalyticLedger\\
+AND RatePreservationLedger\_FOR\_moving\_atom\_packet\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-strict-post-new-joint-kz-\\
+nocycle-gate-sync-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+latest\_kz\_nocycle\_gate\_active=true\\
+windowed\_dls\_formal\_layer\_imported=true\\
+kz\_abcd\_spine\_imported=true\\
+existing\_kz\_e\_route\_factors\_through\_ncblk=true\\
+ncblk\_projection\_forbidden\_for\_nocycle\_gate=true\\
+noncircular\_kuznetsov\_dls\_without\_source\_root\_reuse\_proved=false\\
+kz\_e\_direct\_log\_saving\_without\_ncblk\_projection\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The positive information is a gate refinement.  KZ-A--KZ-D no longer hide the
+main obstruction; the obstruction is the direct KZ-E well-factorable
+dispersion saving.  If the saving is obtained only by projecting to
+NCBLK/source anti-atoms, it reuses the cycle that the gate was designed to
+exclude.  Thus the next direct attack is a KZ-E log-saving theorem that does
+not pass through NCBLK projection, or an explicitly external no-projection
+DI/BFI/Kuznetsov certificate.  This is not an unconditional row/column proof.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

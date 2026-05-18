@@ -6481,3 +6481,58 @@ NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
 因此 new-joint 名称当前不是已证 actual contradiction carrier，而是一个已饱和回环名。
 全局无条件化仍要在非循环 KZ/DLS、高段模型、RatePreservation 和 DStructure/Rankin
 四个门上继续推进。
+
+## 154. Strict post-new-joint KZ no-cycle gate sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_new_joint_kz_nocycle_gate_sync_router.py
+docs/monograph/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-router.md
+docs/monograph/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-router.json
+data/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-ledger.json
+```
+
+本步把 `NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse`
+继续沿 windowed DLS/KZ-A--KZ-E 链展开。同步结果显示：
+
+```text
+latest_kz_nocycle_gate_active=true
+windowed_dls_formal_layer_imported=true
+kz_abcd_spine_imported=true
+existing_kz_e_route_factors_through_ncblk=true
+ncblk_projection_forbidden_for_nocycle_gate=true
+kz_e_direct_log_saving_without_ncblk_projection_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：KZ-A--KZ-D 只给出谱框架和大筛脊柱；真正的反例链质量节省
+仍在 KZ-E well-factorable dispersion log-saving。若 KZ-E 只通过
+NC-BLK/source anti-atom 投影获得节省，则它回到 source-root/terminal cycle，不满足当前
+非循环门。因此 actual-load 闭合必须给出不经 NC-BLK 投影的 KZ-E 直接节省，或把外部
+DI/BFI/Kuznetsov 作为明确条件输入。
+
+最新内部非循环剩余为：
+
+```text
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留：
+
+```text
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+```
+
+下一直接主攻：
+
+```text
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+```
+
+所以当前前沿已从“证明一个非循环 KZ/DLS”压到更窄的“直接 KZ-E dispersion log-saving”，
+且禁止经 NC-BLK/source-root 回流偷渡。

@@ -1,0 +1,123 @@
+{
+  "certificate_type": "prime_matrix_strict_post_new_joint_kz_nocycle_gate_sync_router",
+  "conditional_external_basis_retained": "(AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "LatestKZNoCycleGateImported",
+      "meaning": "post-new-joint 同步后，直接主攻点是不得复用 NCBLK/source-root 的非循环 KZ/DLS。",
+      "proved": false,
+      "remaining": "NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse"
+    },
+    {
+      "closed": true,
+      "gate": "WindowedDLSFormalLayerImported",
+      "meaning": "windowed DLS 的对象、相位、L2 范数和失败字母表已压尽，剩 KZ/DLS 谱原子。",
+      "proved": true,
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": true,
+      "gate": "KZABCDSpineImported",
+      "meaning": "KZ-A 平滑、KZ-B trace formula、KZ-C Bessel 衰减、KZ-D 谱大筛脊柱已由既有证书关闭。",
+      "proved": true,
+      "remaining": "KZ-E well-factorable dispersion log-saving"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingKZERouteFactorsThroughNCBLK",
+      "meaning": "既有 KZ-E 路线把 log-saving 压到 NC-BLK/source anti-atom；这不是独立非循环谱证明。",
+      "proved": false,
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "closed": true,
+      "gate": "NCBLKProjectionForbiddenForNoCycleGate",
+      "meaning": "当前门名已经禁止复用 NCBLK/source-root；因此经 NC-BLK/source-root 的 KZ-E 证明不能计入本门闭合。",
+      "proved": true,
+      "remaining": "AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection"
+    },
+    {
+      "closed": true,
+      "gate": "NCBLKReturnToTerminalImported",
+      "meaning": "NC-BLK/source anti-atom 若失败，会物化为 moving atom 并回到 GlobalPDEC/sparse 终端与模型账本。",
+      "proved": true,
+      "remaining": "GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalCycleGuardImported",
+      "meaning": "裸 direct PDEC 与 direct CleanKLS 终端路线已识别为自回流，不能作为进展量。",
+      "proved": true,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingKZTerminalSyncImported",
+      "meaning": "直接沿现有 KZ/DLS 下钻只回到 strict acyclic 终端家族和模型余量账本。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": true,
+      "gate": "StrictGlobalTerminalScopeStillOpen",
+      "meaning": "canonical-source 终端闭合不能直接导入 acyclic noncanonical seed。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": true,
+      "gate": "NonCircularKZCurrentInternalRouteSaturated",
+      "meaning": "当前内部 KZ/DLS 旧路线不满足 no-NCBLK/source-root 限制；若要继续，必须直接证明 KZ-E log-saving。",
+      "proved": false,
+      "remaining": "AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection"
+    },
+    {
+      "closed": true,
+      "gate": "HighModelRateDStructureStillOpen",
+      "meaning": "KZ 门之外，高段模型、RatePreservation 与 DStructure/Rankin 仍是独立开放门。",
+      "proved": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只把非循环 KZ 门压到 KZ-E 直接 log-saving；没有得到无条件终端矛盾。",
+      "proved": false,
+      "remaining": "AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "dstructure_independent_gate_closed": false,
+  "empirical_absence_not_used": true,
+  "existing_kz_e_route_factors_through_ncblk": true,
+  "external_condition_target": "ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY",
+  "hardpoint_before_router": "NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse",
+  "high_segment_model_gap_alpha043_c3_analytic_ledger_proved": false,
+  "kz_abcd_spine_imported": true,
+  "kz_e_direct_log_saving_without_ncblk_projection_proved": false,
+  "latest_kz_nocycle_gate_active": true,
+  "missing_sources": [],
+  "ncblk_projection_forbidden_for_nocycle_gate": true,
+  "next_direct_attack_target": "AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection",
+  "no_theorem_switch": true,
+  "noncircular_kuznetsov_dls_without_source_root_reuse_proved": false,
+  "plain_conclusion": "本步继续攻击 post-new-joint 后的非循环 KZ/DLS 门。既有 windowed DLS 形式层和 KZ-A--KZ-D 谱脊柱已经可导入；但 KZ-E 的现有路线通过 NC-BLK/source anti-atom 获得 log-saving，而该路线又回到 source-root/terminal cycle。由于当前门名要求 `without NCBLK/source-root reuse`，这条旧路线不能计入非循环证明。故当前内部 KZ 路线已饱和，剩余被压成直接的 KZ-E well-factorable dispersion log-saving 证明，且不得经过 NC-BLK 投影；同时高段模型、RatePreservation 与 DStructure/Rankin 仍未闭合。行/列命题仍未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-kuznetsov-dls-atom-router.json": "fb988aea08dcdf541574fa412e2e37254570b8ad688b010a6c0366c03c4e7270",
+    "docs/monograph/prime-matrix-strict-acyclic-ncblk-source-antiatom-router.json": "70b20d8ddca4337179a495286b7249b4ebda9790a65cede89225306711a9cb16",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-alpha-terminal-to-acyclic-cycle-guard-sync-router.json": "9e04c7da91dd0ad9473fea5aefef4e5fab5b2708139c1e08cca40b9ac6c5d93e",
+    "docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.json": "223f7e68d259298177cb2eb4afd3bc6c0f8f7c696f37633ba1cca7407ac07395",
+    "docs/monograph/prime-matrix-strict-global-terminal-scope-router.json": "cb8e05a82c80e38481fd3b97bd57038b21638dafbb0ba0ae97cc54dc574abd9d",
+    "docs/monograph/prime-matrix-strict-kuznetsov-dls-terminal-sync-router.json": "ac1c3264c5130a87e0f43e77ad6f7c201a4a7efd7942f686e317161c2cddbfa2",
+    "docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.json": "b399e75cd4c9aba64d2566b9d05f961d504cddb416a1d3f6fabb53e4126bca62",
+    "experiments/prime_matrix_strict_post_new_joint_kz_nocycle_gate_sync_router.py": "50be914b8e41e9fe1682807a8644bb1c878b73f958ca081b6bfcf4ab1066aa0a"
+  },
+  "status": "post_new_joint_kz_nocycle_gate_reduced_to_kze_direct_log_saving_open",
+  "strict_internal_basis_after_router": "AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "windowed_dls_formal_layer_imported": true
+}
