@@ -1,0 +1,189 @@
+# Prime Matrix stable-ladder endpoint bilinear balance 证书
+
+**状态：** `endpoint_bilinear_split_to_marginal_or_balanced_energy_open`
+
+endpoint bilinear Fourier cap 可转写为端点二部矩阵的中心化相位相关。令 M(x,y) 计数 actual pair witnesses，x=n1 mod q_j, y=n2 mod q_j；减去显式 model 得 K。K 按行边际、列边际和平衡核作精确 ANOVA 分解。若非平凡相位 S_beta 仍超阈，则三分为 row marginal Fourier、column marginal Fourier 或 balanced core Hilbert-Schmidt/additive-energy 异常。因此剩余不再是匿名 endpoint bilinear cap，而是端点边际 Fourier 或平衡核能量 PDEC cap。
+
+```text
+endpoint_bilinear_fourier_imported=true
+isolated_singleton_carried_forward=true
+endpoint_pair_matrix_registered=true
+endpoint_centered_kernel_total_zero=true
+endpoint_marginal_balanced_decomposition_closed=true
+endpoint_bilinear_phase_pairing_closed=true
+endpoint_bilinear_triangle_trichotomy_closed=true
+endpoint_row_marginal_fourier_exit_registered=true
+endpoint_column_marginal_fourier_exit_registered=true
+endpoint_balanced_core_energy_lower_bound_registered=true
+anonymous_endpoint_bilinear_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_marginal_fourier_pdec_cap_proved=false
+balanced_bilinear_energy_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+## 1. 端点二部矩阵
+
+令 `G=Z/q_j Z`。对上一层得到的 actual pair witnesses，记录两个端点余数：
+
+```text
+x=n1 mod q_j,
+y=n2 mod q_j.
+```
+
+定义二部计数矩阵：
+
+```text
+M(x,y)=# actual pair witnesses with endpoint residues (x,y).
+```
+
+从 `M` 中减去上一层已经分离出的显式 model/Dirichlet kernel，得到中心化核：
+
+```text
+K(x,y)=M(x,y)-Model(x,y),
+sum_{x,y} K(x,y)=0.
+```
+
+这里的 `Model` 只作为显式核扣除，不作为 actual load 计数。
+
+## 2. 行列边际与平衡核
+
+在活动端点域 `X,Y` 上写：
+
+```text
+rho(x)=sum_y K(x,y),
+sigma(y)=sum_x K(x,y).
+```
+
+由于总质量中心化，定义：
+
+```text
+K0(x,y)=K(x,y)-rho(x)/|Y|-sigma(y)/|X|.
+```
+
+于是有精确分解：
+
+```text
+K(x,y)=rho(x)/|Y| + sigma(y)/|X| + K0(x,y),
+sum_y K0(x,y)=0,
+sum_x K0(x,y)=0.
+```
+
+若活动域就是完整 residue group，非平凡角色会直接杀掉纯行/列项；若存在窗口或 aperture，行/列项则成为端点边际 Fourier cap。
+
+## 3. 双线性相位配对
+
+令：
+
+```text
+phi_beta(z)=e_{q_j}(beta*z).
+```
+
+上一层的 endpoint bilinear 异常写成：
+
+```text
+S_beta=sum_{x,y} K(x,y)*conjugate(phi_beta(x))*phi_beta(y).
+```
+
+代入分解得到：
+
+```text
+S_beta=S_row(beta)+S_col(beta)+S_bal(beta).
+```
+
+`S_row` 与 `S_col` 只依赖端点边际的 Fourier 系数；`S_bal` 是双边际为零的平衡核相位能量。
+
+## 4. 三分与能量下界
+
+若 endpoint bilinear cap 给出：
+
+```text
+|S_beta| >= eta,
+```
+
+则三角不等式强制至少一个出口发生：
+
+```text
+|S_row(beta)| >= eta/3,
+or |S_col(beta)| >= eta/3,
+or |S_bal(beta)| >= eta/3.
+```
+
+前两项是 row/column endpoint marginal Fourier 异常。第三项由 Cauchy-Schwarz 给出：
+
+```text
+|S_bal(beta)| <= sqrt(|X|*|Y|) * ||K0||_HS.
+```
+
+所以若边际不异常而 `|S_bal(beta)| >= eta/3`，则：
+
+```text
+||K0||_HS^2 >= eta^2/(9|X||Y|).
+```
+
+这就是 balanced bilinear energy/PDEC cap 的显式能量形态。
+
+## 5. 新硬点
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap
+  -> StableLadderEndpointBilinearFourierImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalanceLedger
+  AND StableLadderEndpointPairMatrixRegisteredLedger
+  AND StableLadderEndpointCenteredKernelTotalZeroLedger
+  AND StableLadderEndpointMarginalBalancedDecompositionLedger
+  AND StableLadderEndpointBilinearPhasePairingLedger
+  AND StableLadderEndpointBilinearTriangleTrichotomyLedger
+  AND StableLadderEndpointRowMarginalFourierExitLedger
+  AND StableLadderEndpointColumnMarginalFourierExitLedger
+  AND StableLadderEndpointBalancedCoreEnergyLowerBoundLedger
+  AND NoAnonymousEndpointBilinearFourierExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterBilinearBalanceLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap
+```
+
+剩余从匿名 endpoint bilinear Fourier/PDEC cap 变成端点边际 Fourier cap 或 balanced bilinear energy cap，外加孤立 singleton 与 sparse scale-ladder SAE 全局求和问题。
+
+## 6. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| StableLadderEndpointBilinearFourierImported | `true` | `false` | 上一层剩余为孤立 singleton、endpoint bilinear Fourier/PDEC cap 或 sparse SAE。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap |
+| StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalance | `true` | `false` | 孤立 singleton atom 继续作为单独 summability/cap 出口；本步不证明其全局可求和。 | StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalanceLedger |
+| StableLadderEndpointPairMatrixRegistered | `true` | `true` | actual pair witnesses 按端点余数 x=n1 mod q_j、y=n2 mod q_j 登记为二部矩阵 M(x,y)。 | StableLadderEndpointPairMatrixRegisteredLedger |
+| StableLadderEndpointCenteredKernelTotalZero | `true` | `true` | 从 M 中减去显式 model/Dirichlet kernel 得到中心化 K；总质量差为 0，model 不作为 actual load 计数。 | StableLadderEndpointCenteredKernelTotalZeroLedger |
+| StableLadderEndpointMarginalBalancedDecomposition | `true` | `true` | K 精确分解为 row marginal、column marginal 与双边际为零的 balanced core。 | StableLadderEndpointMarginalBalancedDecompositionLedger |
+| StableLadderEndpointBilinearPhasePairing | `true` | `true` | endpoint 相位和写成 S_beta=<K, conj(phi_beta) otimes phi_beta>。 | StableLadderEndpointBilinearPhasePairingLedger |
+| StableLadderEndpointBilinearTriangleTrichotomy | `true` | `true` | 若 \|S_beta\| 超过 cap 阈值，则 row marginal Fourier、column marginal Fourier 或 balanced core 三者至少一个超阈。 | StableLadderEndpointBilinearTriangleTrichotomyLedger |
+| StableLadderEndpointRowMarginalFourierExit | `true` | `false` | row marginal 异常成为端点边际 Fourier/PDEC cap；本步不排斥该 cap。 | StableLadderEndpointRowMarginalFourierExitLedger |
+| StableLadderEndpointColumnMarginalFourierExit | `true` | `false` | column marginal 异常成为端点边际 Fourier/PDEC cap；本步不排斥该 cap。 | StableLadderEndpointColumnMarginalFourierExitLedger |
+| StableLadderEndpointBalancedCoreEnergyLowerBound | `true` | `false` | 若两侧边际不异常，则 Hilbert-Schmidt/Cauchy 给出 balanced core 能量下界；本步不排斥该能量 cap。 | StableLadderEndpointBalancedCoreEnergyLowerBoundLedger |
+| NoAnonymousEndpointBilinearFourierExit | `true` | `true` | endpoint bilinear Fourier 出口被压成边际 Fourier 或平衡核能量输入。 | NoAnonymousEndpointBilinearFourierExitLedger |
+| SparseScaleLadderSAECarriedForwardAfterBilinearBalance | `true` | `false` | sparse scale-ladder SAE 继续前传；本步不证明全局求和。 | SparseScaleLadderSAECarriedForwardAfterBilinearBalanceLedger |
+| EndpointMarginalOrBalancedEnergyCapStillOpen | `false` | `false` | 仍未排斥端点边际 Fourier cap、balanced bilinear energy cap、孤立 singleton 或 sparse SAE。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 行/列命题仍需关闭孤立 singleton、端点边际/平衡核 cap 或 sparse SAE。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap |
+
+## 7. 新活动基
+
+```text
+((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND StableActualLadderSingletonOrPairPeriodImportedLedger AND StableLadderSingletonSurplusLowFiberQuotaLedger AND StableLadderSameCellPairSupportWidthDichotomyLedger AND StableLadderShortSupportPairExclusionLedger AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger AND NoAnonymousSingletonOrPairPeriodExitLedger AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger AND StableActualLadderLowFiberSingletonOrLongPairImportedLedger AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger AND StableLadderFiberIsolatedSingletonAtomLedger AND StableLadderRepeatedPivotModulusForcesIsolationLedger AND StableLadderComplementFiberAntiPivotPairLedger AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger AND StableLadderComplementFiberPairWidthDichotomyLedger AND StableLadderLongFullCellPairCarriedForwardLedger AND NoAnonymousLowFiberSingletonExitLedger AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger AND StableActualLadderIsolatedSingletonOrPairImportedLedger AND StableLadderIsolatedSingletonCarriedForwardLedger AND StableLadderComplementBasePeriodLedger AND StableLadderPairDifferenceQuotientNormalizationLedger AND StableLadderPivotPhaseQuotientPeriodLedger AND StableLadderAntiPivotPairNonzeroQuotientPhaseLedger AND StableLadderFullCellPairZeroQuotientPhaseLedger AND StableLadderPairQuotientWidthEnvelopeLedger AND StableLadderQuotientNoWrapOrFullPeriodDichotomyLedger AND NoAnonymousAntiPivotOrFullPairExitLedger AND SparseScaleLadderSAECarriedForwardAfterPairQuotientPhaseLedger AND StableActualLadderQuotientPhaseCycleImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterArcMeanLedger AND StableLadderQuotientSpanParameterLedger AND StableLadderQuotientNoWrapZeroPhaseExclusionLedger AND StableLadderQuotientShortArcClusterLedger AND StableLadderFullCycleEuclideanDecompositionLedger AND StableLadderFullCycleFormalPhaseMeanLedger AND StableLadderFullCycleResidualTailArcLedger AND NoAnonymousQuotientPhaseCycleExitLedger AND SparseScaleLadderSAECarriedForwardAfterArcMeanLedger AND StableLadderQuotientShortArcOrMeanImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger AND StableLadderQuotientCircleGroupLedger AND StableLadderQuotientActualPhaseLoadMeasureLedger AND StableLadderQuotientArcDiscrepancyFunctionalLedger AND StableLadderQuotientDirichletKernelIdentityLedger AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger AND StableLadderPhaseMeanCapAsPointArcLedger AND NoAnonymousShortArcOrPhaseMeanExitLedger AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger AND StableLadderQuotientArcFourierImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterFourierLiftLedger AND StableLadderNontrivialQuotientFrequencyForcesRGreaterOneLedger AND StableLadderQuotientCoprimeFactorizationLedger AND StableLadderQuotientInverseLiftLedger AND StableLadderQuotientCharacterToPivotDifferenceLedger AND StableLadderLiftedCharacterNontrivialityLedger AND StableLadderEndpointBilinearPhaseFactorizationLedger AND StableLadderCenteredModelKernelSeparatedLedger AND NoAnonymousQuotientArcFourierExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierLiftLedger AND StableLadderEndpointBilinearFourierImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalanceLedger AND StableLadderEndpointPairMatrixRegisteredLedger AND StableLadderEndpointCenteredKernelTotalZeroLedger AND StableLadderEndpointMarginalBalancedDecompositionLedger AND StableLadderEndpointBilinearPhasePairingLedger AND StableLadderEndpointBilinearTriangleTrichotomyLedger AND StableLadderEndpointRowMarginalFourierExitLedger AND StableLadderEndpointColumnMarginalFourierExitLedger AND StableLadderEndpointBalancedCoreEnergyLowerBoundLedger AND NoAnonymousEndpointBilinearFourierExitLedger AND SparseScaleLadderSAECarriedForwardAfterBilinearBalanceLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 8. 诚实边界
+
+- 本证书没有证明孤立 singleton atom 全局可求和。
+- 本证书没有证明端点边际 Fourier/PDEC cap。
+- 本证书没有证明 balanced bilinear energy/PDEC cap。
+- 本证书没有证明 sparse scale-ladder SAE 全局可求和。
+- 本证书只把 endpoint bilinear Fourier cap 拆成边际或平衡核能量出口。
+- `SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap` 仍未闭合。
+- 行/列命题仍未无条件闭合。
+
+## 9. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_bilinear_balance_router.py` | `21102ec38b2e7289c5e9a30b762049a92d64998eb14b41e6b48beec0a486f8d9` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-router.json` | `174e7176f6cb73e238b774e42ba09a08c1b0a3c9e362390207c6f0b560649b4b` |

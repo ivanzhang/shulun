@@ -9377,3 +9377,83 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEn
 
 本步没有证明 endpoint bilinear Fourier/PDEC cap、孤立 singleton 求和或 sparse
 SAE 求和；它只把 quotient arc Fourier 频率提升为原始 pair 端点双线性相位。
+
+## 206. Stable-ladder endpoint bilinear balance frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_bilinear_balance_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap`。
+同步结果：
+
+```text
+endpoint_bilinear_fourier_imported=true
+isolated_singleton_carried_forward=true
+endpoint_pair_matrix_registered=true
+endpoint_centered_kernel_total_zero=true
+endpoint_marginal_balanced_decomposition_closed=true
+endpoint_bilinear_phase_pairing_closed=true
+endpoint_bilinear_triangle_trichotomy_closed=true
+endpoint_row_marginal_fourier_exit_registered=true
+endpoint_column_marginal_fourier_exit_registered=true
+endpoint_balanced_core_energy_lower_bound_registered=true
+anonymous_endpoint_bilinear_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_marginal_fourier_pdec_cap_proved=false
+balanced_bilinear_energy_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的端点双线性相位不再作为匿名整体处理。
+把 actual pair witnesses 登记为端点二部矩阵：
+
+```text
+M(x,y), x=n1 mod q_j, y=n2 mod q_j.
+```
+
+减去显式 model 得中心化核 `K`。设：
+
+```text
+rho(x)=sum_y K(x,y), sigma(y)=sum_x K(x,y).
+```
+
+则：
+
+```text
+K(x,y)=rho(x)/|Y| + sigma(y)/|X| + K0(x,y),
+sum_y K0(x,y)=0,
+sum_x K0(x,y)=0.
+```
+
+对非平凡角色 `phi_beta(z)=e_{q_j}(beta z)`，
+
+```text
+S_beta=sum K(x,y)conjugate(phi_beta(x))phi_beta(y)
+      =S_row(beta)+S_col(beta)+S_bal(beta).
+```
+
+若 `|S_beta|>=eta`，则 row marginal Fourier、column marginal Fourier
+或 balanced core 至少一项达到 `eta/3`。在 balanced 分支：
+
+```text
+||K0||_HS^2 >= eta^2/(9|X||Y|).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap
+```
+
+本步没有证明端点边际 Fourier/PDEC cap、balanced bilinear energy/PDEC cap、
+孤立 singleton 求和或 sparse SAE 求和；它只把 endpoint bilinear Fourier
+cap 拆成可审计的边际/平衡核出口。

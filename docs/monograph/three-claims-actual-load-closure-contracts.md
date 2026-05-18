@@ -10395,3 +10395,117 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientAr
 本步关闭的是匿名 quotient arc Fourier 口径。剩余集中为孤立 singleton 全局
 求和、endpoint bilinear Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。
 行/列命题仍未无条件闭合。
+
+## 206. stable-ladder endpoint bilinear balance 三分
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_bilinear_balance_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-bilinear-balance-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap`。
+同步读数为：
+
+```text
+endpoint_bilinear_fourier_imported=true
+isolated_singleton_carried_forward=true
+endpoint_pair_matrix_registered=true
+endpoint_centered_kernel_total_zero=true
+endpoint_marginal_balanced_decomposition_closed=true
+endpoint_bilinear_phase_pairing_closed=true
+endpoint_bilinear_triangle_trichotomy_closed=true
+endpoint_row_marginal_fourier_exit_registered=true
+endpoint_column_marginal_fourier_exit_registered=true
+endpoint_balanced_core_energy_lower_bound_registered=true
+anonymous_endpoint_bilinear_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_marginal_fourier_pdec_cap_proved=false
+balanced_bilinear_energy_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+把 actual pair witnesses 按端点余数登记为二部矩阵：
+
+```text
+x=n1 mod q_j,
+y=n2 mod q_j,
+M(x,y)=# actual pair witnesses with endpoints (x,y).
+```
+
+减去上一层显式 model/Dirichlet kernel 得中心化核：
+
+```text
+K(x,y)=M(x,y)-Model(x,y),
+sum_{x,y}K(x,y)=0.
+```
+
+写行列边际：
+
+```text
+rho(x)=sum_y K(x,y),
+sigma(y)=sum_x K(x,y).
+```
+
+则在活动端点域 `X,Y` 上有精确分解：
+
+```text
+K(x,y)=rho(x)/|Y| + sigma(y)/|X| + K0(x,y),
+sum_y K0(x,y)=0,
+sum_x K0(x,y)=0.
+```
+
+上一层端点双线性相位为：
+
+```text
+S_beta=sum_{x,y}K(x,y)*conjugate(phi_beta(x))*phi_beta(y).
+```
+
+代入分解：
+
+```text
+S_beta=S_row(beta)+S_col(beta)+S_bal(beta).
+```
+
+若 `|S_beta|>=eta`，则至少一个出口发生：
+
+```text
+|S_row(beta)|>=eta/3,
+or |S_col(beta)|>=eta/3,
+or |S_bal(beta)|>=eta/3.
+```
+
+前两项是端点行/列边际 Fourier cap。第三项由 Cauchy-Schwarz 给出平衡核能量下界：
+
+```text
+||K0||_HS^2 >= eta^2/(9|X||Y|).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap
+  -> StableLadderEndpointBilinearFourierImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterBilinearBalanceLedger
+  AND StableLadderEndpointPairMatrixRegisteredLedger
+  AND StableLadderEndpointCenteredKernelTotalZeroLedger
+  AND StableLadderEndpointMarginalBalancedDecompositionLedger
+  AND StableLadderEndpointBilinearPhasePairingLedger
+  AND StableLadderEndpointBilinearTriangleTrichotomyLedger
+  AND StableLadderEndpointRowMarginalFourierExitLedger
+  AND StableLadderEndpointColumnMarginalFourierExitLedger
+  AND StableLadderEndpointBalancedCoreEnergyLowerBoundLedger
+  AND NoAnonymousEndpointBilinearFourierExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterBilinearBalanceLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointMarginalFourierOrBalancedBilinearEnergyPDECCap
+```
+
+本步关闭的是匿名 endpoint bilinear Fourier 口径。剩余集中为孤立 singleton
+全局求和、端点边际 Fourier/PDEC cap、balanced bilinear energy/PDEC cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
