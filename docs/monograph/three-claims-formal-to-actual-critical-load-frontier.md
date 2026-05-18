@@ -7753,3 +7753,64 @@ IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC
 
 本步没有证明全局正 gap；它删除了前半支撑 pure-tail 饱和解释。
 剩余必须表现为 late-support dense-tail，或命名 return 质量 `R_named` 过大。
+
+## 179. Tail gap late-support collar
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_late_collar_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.json
+data/prime-matrix-firstbreak-tail-gap-late-collar-ledger.json
+```
+
+本步继续攻击 `IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC`。同步结果：
+
+```text
+late_dense_imported=true
+late_coordinate_closed=true
+regular_tail_endpoint_defect_closed=true
+late_core_excess_functional_closed=true
+late_margin_exact_formula_closed=true
+positive_late_margin_criterion_closed=true
+deep_late_collar_excluded=false
+core_excess_named_return_pdec_excluded=false
+late_dense_tail_named_return_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：late branch 可写成
+
+```text
+P=2m+1, H=P-y, y>m,
+D=2y-P, E=(D-1)/2.
+```
+
+其中超过二重的整数 tail 只在 `1<=r<=E` 的 short core 中出现。设
+
+```text
+X_core=sum_{1<=r<=E} min(L,r)(ceil((P-1)/(P-y+r))-2).
+```
+
+利用 regular tail 的二重上界和端点 `q=P-1` 的一重缺口，可得精确式：
+
+```text
+C_all=L(2y-L-1)+X_core-min(L,y-1),
+G_int=L(L-D)+min(L,y-1)-X_core.
+```
+
+所以若
+
+```text
+L(L-D)+min(L,y-1)>X_core+R_named,
+```
+
+则 `G>0`。新的直接主攻为：
+
+```text
+DeepLateShortCollarOrCoreExcessNamedReturnPDEC
+```
+
+本步没有排斥 deep-late collar，也没有控制 `X_core` 或 `R_named`；
+它把 late-support 剩余压成一个精确的 collar/core-excess 不等式。

@@ -11695,6 +11695,70 @@ positive after named returns, and it does not exclude late-support dense-tail
 or named-return mass PDEC/SAE.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Late-support collar formula for the tail gap]
+Assume the late-support branch \(y>(P-1)/2\), and write
+\[
+  P=2m+1,\qquad H=P-y,\qquad D=2y-P,\qquad
+  E=y-m-1=(D-1)/2.
+\]
+For \(r>E\) and \(r<y-1\), one has \(H+r>m\) and \(H+r<P-1\), hence
+\[
+  \Big\lceil\frac{P-1}{H+r}\Big\rceil=2.
+\]
+At the endpoint \(r=y-1\), one has \(H+r=P-1\), hence the ceiling is \(1\).
+Thus every excess above two-unit tail multiplicity is concentrated in the
+short core \(1\le r\le E\).  Put
+\[
+  X_{\rm core}:=
+  \sum_{1\le r\le E}\min(L,r)
+  \left(\Big\lceil\frac{P-1}{P-y+r}\Big\rceil-2\right).
+\]
+Then the all-integer tail envelope decomposes exactly as
+\[
+  C_{\rm all}=L(2y-L-1)+X_{\rm core}-\min(L,y-1),
+\]
+and therefore
+\[
+  G_{\rm int}=L(P-1)-C_{\rm all}
+  =L(L-D)+\min(L,y-1)-X_{\rm core}.
+\]
+Consequently
+\[
+  L(L-D)+\min(L,y-1)>X_{\rm core}+R_{\rm named}
+\]
+implies the positive gap \(G>0\).  Hence
+\begin{quote}\scriptsize\ttfamily
+IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC\\
+\(\rightarrow\) LateSupportExcessCoordinateLedger\\
+AND RegularTailTwoUnitEndpointDefectLedger\\
+AND LateCoreExcessFunctionalLedger\\
+AND LateCollarMarginExactFormulaLedger\\
+AND DeepLateShortCollarOrCoreExcessNamedReturnPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+late\_dense\_imported=true\\
+late\_coordinate\_closed=true\\
+regular\_tail\_endpoint\_defect\_closed=true\\
+late\_core\_excess\_functional\_closed=true\\
+late\_margin\_exact\_formula\_closed=true\\
+positive\_late\_margin\_criterion\_closed=true\\
+deep\_late\_collar\_excluded=false\\
+core\_excess\_named\_return\_pdec\_excluded=false\\
+late\_dense\_tail\_named\_return\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the exact late-support collar formula.  It does not
+exclude the deep-late short collar, and it does not control
+\(X_{\rm core}\) or \(R_{\rm named}\).  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

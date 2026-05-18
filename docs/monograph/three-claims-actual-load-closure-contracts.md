@@ -8048,3 +8048,79 @@ NormalizedTailGapPositiveOrDenseTailReturnPDEC
 本步关闭的是前半支撑的 pure-tail 饱和解释。剩余集中为：
 late-support dense-tail，或 `R_named` 吃掉整数 margin 的命名 return 质量。
 行/列命题仍未无条件闭合。
+
+## 179. Tail gap late-support collar 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_late_collar_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.json
+data/prime-matrix-firstbreak-tail-gap-late-collar-ledger.json
+```
+
+本步继续攻击 `IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC`。同步读数为：
+
+```text
+late_dense_imported=true
+late_coordinate_closed=true
+regular_tail_endpoint_defect_closed=true
+late_core_excess_functional_closed=true
+late_margin_exact_formula_closed=true
+positive_late_margin_criterion_closed=true
+deep_late_collar_excluded=false
+core_excess_named_return_pdec_excluded=false
+late_dense_tail_named_return_proved=false
+row_column_unconditional_closed=false
+```
+
+在 late branch 写：
+
+```text
+P=2m+1, H=P-y, y>m,
+D=2y-P, E=y-m-1=(D-1)/2.
+```
+
+超过二重的 tail 只来自短 core `1<=r<=E`。当 `r>E` 且 `r<y-1` 时，
+`ceil((P-1)/(H+r))=2`；端点 `r=y-1` 对应 `q=P-1`，故 `ceil=1`。
+
+定义：
+
+```text
+X_core = sum_{1<=r<=E} min(L,r)(ceil((P-1)/(P-y+r))-2).
+```
+
+则全整数 tail 精确分解为：
+
+```text
+C_all = L(2y-L-1)+X_core-min(L,y-1).
+```
+
+因此：
+
+```text
+G_int = L(P-1)-C_all
+      = L(L-D)+min(L,y-1)-X_core.
+```
+
+若
+
+```text
+L(L-D)+min(L,y-1) > X_core+R_named,
+```
+
+则正 gap 已成立。硬点更新为：
+
+```text
+IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC
+  -> LateSupportExcessCoordinateLedger
+  AND RegularTailTwoUnitEndpointDefectLedger
+  AND LateCoreExcessFunctionalLedger
+  AND LateCollarMarginExactFormulaLedger
+  AND DeepLateShortCollarOrCoreExcessNamedReturnPDEC
+```
+
+本步关闭的是 late-support tail 的精确 collar 公式。剩余集中为：
+deep-late short collar，或 `X_core/R_named` 吃掉 late margin。
+行/列命题仍未无条件闭合。
