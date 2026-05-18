@@ -12722,6 +12722,71 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-route
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Scale-ladder word-entropy reduction]
+The persistent scale-ladder signature branch has a finite dyadic word entropy
+budget.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+PersistentScaleLadderSignatureImportedLedger\\
+AND ScaleLadderDyadicWordPartitionLedger\\
+AND ScaleLadderProductBudgetLedger\\
+AND ScaleLadderWordEntropyFiniteCapLedger\\
+AND AggregatePersistentPressureToSingleScaleWordLedger\\
+AND FixedScaleLadderMCRTColumnCRTExitLedger\\
+AND FirstMovingScaleLadderPhaseCoordinateLedger\\
+AND SparseScaleLadderSAECarriedForwardLedger\\
+AND NoAnonymousPersistentScaleLadderSignatureLedger\\
+AND FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Scale-word ledger]
+Write the persistent dyadic scale ladder as
+\[
+  B_i=2^{b_i},\qquad b_i\ge1,\qquad
+  \sigma=(b_1,\ldots,b_d).
+\]
+Its scale product is
+\[
+  A_\sigma=\prod_i B_i=2^{\sum_i b_i}.
+\]
+If \(A_\sigma>W_0\), the composite period already exceeds the initial support
+and the branch is a product-width ColumnCRT/PDEC or finite atom.  Otherwise
+\[
+  \sum_i b_i\le K_0=\left\lceil\log_2\max(W_0,1)\right\rceil .
+\]
+The number of ordered positive-integer scale words is therefore finite:
+\[
+  N_{\rm ladder}(K_0)
+  =1+\sum_{n=1}^{K_0}2^{n-1}
+  \le 2^{K_0}.
+\]
+
+The persistent pressure decomposes over these scale-word cells,
+\[
+  E_{\rm total}=\sum_\sigma E_\sigma .
+\]
+If \(E_{\rm total}>U\), then at least one scale word satisfies
+\[
+  E_\sigma>\frac{U}{N_{\rm ladder}(K_0)}.
+\]
+Thus a persistent scale-ladder obstruction cannot remain an anonymous
+signature reservoir.
+
+For the pressure-carrying word \(\sigma\), if all actual prime coordinates and
+phase residues stabilize on an infinite subfamily, the branch is a fixed MCRT
+word and is routed to ColumnCRT/PDEC or a finite atom.  If not, there is a
+first moving prime coordinate or phase residue inside the fixed scale word.
+That is the remaining named hard point.  The sparse scale-ladder SAE outlet is
+only carried forward here; its global summability is not proved.  The
+row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

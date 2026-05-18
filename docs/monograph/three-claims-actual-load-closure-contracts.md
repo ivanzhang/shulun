@@ -9272,3 +9272,85 @@ ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
 
 本步关闭的是抽象 scale-escape 内循环和匿名递降口径；剩余集中为持久尺度阶梯签名，
 或 sparse scale-ladder SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 193. scale-ladder word-entropy 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_ladder_word_entropy_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-ledger.json
+```
+
+本步继续攻击 `PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC`。同步读数为：
+
+```text
+persistent_scale_ladder_imported=true
+dyadic_word_partition_closed=true
+product_budget_closed=true
+word_entropy_finite_cap_closed=true
+aggregate_to_single_scale_word_closed=true
+fixed_scale_ladder_columncrt_exit_closed=true
+first_moving_scale_ladder_phase_localized=true
+sparse_scale_ladder_sae_carried_forward=true
+anonymous_persistent_scale_ladder_removed=true
+first_moving_scale_ladder_phase_excluded=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+持久尺度阶梯由 dyadic 指数词表示：
+
+```text
+B_i=2^{b_i}, b_i>=1,
+sigma=(b_1,...,b_d),
+A_sigma=prod_i B_i=2^{sum_i b_i}.
+```
+
+若 `A_sigma>W_0`，已经进入 product-width ColumnCRT/PDEC 或有限原子；否则：
+
+```text
+sum_i b_i<=K_0=ceil(log_2 max(W_0,1)).
+```
+
+正整数有序组成给出有限尺度词数：
+
+```text
+N_ladder(K_0)=1+sum_{n=1}^{K_0}2^{n-1}<=2^{K_0}.
+```
+
+因此持久尺度阶梯不能作为匿名无限容量池。若聚合压力：
+
+```text
+E_total=sum_sigma E_sigma
+```
+
+超出预算 `U`，则某个尺度词满足：
+
+```text
+E_sigma>U/N_ladder(K_0).
+```
+
+对该承压尺度词，若实际素坐标和相位残基在无限子族中稳定，则回到固定
+MCRT/ColumnCRT/PDEC 或有限原子；若不稳定，则存在首个移动素坐标或相位残基。
+
+硬点更新为：
+
+```text
+PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
+  -> PersistentScaleLadderSignatureImportedLedger
+  AND ScaleLadderDyadicWordPartitionLedger
+  AND ScaleLadderProductBudgetLedger
+  AND ScaleLadderWordEntropyFiniteCapLedger
+  AND AggregatePersistentPressureToSingleScaleWordLedger
+  AND FixedScaleLadderMCRTColumnCRTExitLedger
+  AND FirstMovingScaleLadderPhaseCoordinateLedger
+  AND SparseScaleLadderSAECarriedForwardLedger
+  AND NoAnonymousPersistentScaleLadderSignatureLedger
+  AND FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
+```
+
+本步关闭的是匿名持久尺度阶梯签名池和尺度词聚合压力口径；剩余集中为固定尺度词内
+首个移动素坐标/相位漂移，或 sparse scale-ladder SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。

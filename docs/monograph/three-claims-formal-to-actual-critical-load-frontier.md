@@ -8616,3 +8616,56 @@ PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
 
 本步没有证明持久尺度阶梯签名不可能，也没有证明 sparse scale-ladder SAE 全局可求和；
 它只把抽象 scale-escape descent 压到有时钟的持久阶梯签名或稀疏出口。
+
+## 193. Scale-ladder word-entropy frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_ladder_word_entropy_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-ledger.json
+```
+
+本步继续攻击 `PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC`。同步结果：
+
+```text
+persistent_scale_ladder_imported=true
+dyadic_word_partition_closed=true
+product_budget_closed=true
+word_entropy_finite_cap_closed=true
+aggregate_to_single_scale_word_closed=true
+fixed_scale_ladder_columncrt_exit_closed=true
+first_moving_scale_ladder_phase_localized=true
+sparse_scale_ladder_sae_carried_forward=true
+anonymous_persistent_scale_ladder_removed=true
+first_moving_scale_ladder_phase_excluded=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：持久尺度阶梯签名也不能作为匿名容量池。写：
+
+```text
+B_i=2^{b_i}, b_i>=1,
+sigma=(b_1,...,b_d),
+A_sigma=2^{sum_i b_i}.
+```
+
+非 product-width 出口满足：
+
+```text
+sum_i b_i<=K_0=ceil(log_2 max(W_0,1)),
+N_ladder(K_0)<=2^{K_0}.
+```
+
+所以聚合压力必须定位到单个尺度词。若该尺度词下实际素坐标与相位稳定，则为固定
+MCRT/ColumnCRT/PDEC 或有限原子；若不稳定，新的直接主攻为：
+
+```text
+FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
+```
+
+本步没有证明固定尺度词内首个移动素坐标/相位漂移不可能，也没有证明 sparse
+scale-ladder SAE 全局可求和；它只把持久签名池压到单个尺度词的首移动层。
