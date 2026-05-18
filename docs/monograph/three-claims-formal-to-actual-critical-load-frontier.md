@@ -7248,3 +7248,49 @@ AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC
 
 短块必须由 singleton/sparse SAE 或局部短块证书吸收；长块必须证明覆盖义务能非循环地转移成 post-break
 AP demand，或者证明转移失败形成持续覆盖历史 PDEC/ColumnCRT/SAE。
+
+## 170. Long zero-block cover mass 稳定 history 注入路由
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_long_zero_block_mass_transfer_router.py
+docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.md
+docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.json
+data/prime-matrix-firstbreak-long-zero-block-mass-transfer-ledger.json
+```
+
+本步把 `LongZeroBlockCoverMassTransferToAPDemandOrPDEC` 拆成无损投影、稳定表/命名切换、稳定历史注入三段。
+同步结果：
+
+```text
+zero_block_cover_obligation_mass_imported=true
+history_projection_key_defined=true
+no_loss_return_accounting_imported=true
+stable_table_or_named_switch_route_registered=true
+history_switch_pdec_excluded=false
+postbreak_ap_demand_injection_proved=false
+long_zero_block_mass_transfer_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：长零块覆盖义务 `O_B` 的每个支付事件都有
+`kappa=(q,a)` 形式的低 carrier/residue history key；no-loss 账本保证这些义务不能无名消失。若同一
+history key 在首破裂后稳定延续，下一步必须证明它给出 post-break AP demand；若 key、carrier 或相位移动，
+则进入 `HistorySwitch-PDEC/ColumnCRT/MovingCarrier/SAE` 命名出口。
+
+新的直接主攻为：
+
+```text
+PostBreakAPDemandInjectionFromStableHistory
+```
+
+并行保留：
+
+```text
+HistorySwitchPDECOrColumnCRTExclusion
+AND ShortZeroBlockSingletonSAESummability
+AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
+```
+
+本步没有把长零块质量转移升级为矛盾；它只把转移失败的匿名缺口压成稳定注入缺口或命名 history-switch 终端。

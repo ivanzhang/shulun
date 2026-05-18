@@ -11177,6 +11177,52 @@ is routed to persistent cover-history PDEC/ColumnCRT/SAE.  The row/column
 theorem remains open.
 \end{proof}
 
+\begin{theorem}[Long zero-block cover-mass transfer routing]
+Assume the long zero-block branch of the first-break ladder.  Let
+\(B=[x_0,y-1]\) and let
+\[
+  O_B=\{(t,c):x_0\le t<y,\ 1\le c<P\}.
+\]
+Then \(|O_B|=L(P-1)\), where \(L=y-x_0\).  Each cover obligation
+\((t,c)\in O_B\) admits a carrier \(q<P\) with \(q\mid tP+c\), hence a
+history key
+\[
+  \kappa=(q,a),\qquad a\equiv c\pmod q,\qquad
+  t\equiv -aP^{-1}\pmod q .
+\]
+Importing the no-loss return accounting ledger, these obligations cannot
+disappear into an unnamed sink.  They are routed either to a stable
+low-carrier/residue payment table, or to a named history-switch
+PDEC/ColumnCRT/MovingCarrier/SAE return.  Therefore
+\begin{quote}\scriptsize\ttfamily
+LongZeroBlockCoverMassTransferToAPDemandOrPDEC\\
+\(\rightarrow\) ZeroBlockHistoryProjectionNoLossLedger\\
+AND StableLowCarrierPaymentTableOrHistorySwitchPDEC\\
+AND PostBreakAPDemandInjectionFromStableHistory.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+zero\_block\_cover\_obligation\_mass\_imported=true\\
+history\_projection\_key\_defined=true\\
+no\_loss\_return\_accounting\_imported=true\\
+stable\_table\_or\_named\_switch\_route\_registered=true\\
+history\_switch\_pdec\_excluded=false\\
+postbreak\_ap\_demand\_injection\_proved=false\\
+long\_zero\_block\_mass\_transfer\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the unnamed-escape route for long zero-block mass.
+It does not prove that stable history injects into post-break actual demand,
+and it does not exclude the named history-switch terminals.  The row/column
+theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

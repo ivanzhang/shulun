@@ -7459,3 +7459,60 @@ FirstBreakReleaseMassAmplificationOrSingletonSAE
 本步关闭的是“放大源头定位”：放大不能来自首破裂单位释放，只能来自前置零行块覆盖账本。尚未证明短块
 singleton/sparse SAE 可求和，也未证明长块覆盖义务必能非循环转移为 post-break AP demand；若转移失败，
 应进入持续覆盖历史 PDEC/ColumnCRT/SAE。
+
+## 170. Long zero-block cover mass 稳定 history 注入路由
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_long_zero_block_mass_transfer_router.py
+docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.md
+docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.json
+data/prime-matrix-firstbreak-long-zero-block-mass-transfer-ledger.json
+```
+
+本步继续攻击 `LongZeroBlockCoverMassTransferToAPDemandOrPDEC`。同步读数为：
+
+```text
+zero_block_cover_obligation_mass_imported=true
+history_projection_key_defined=true
+no_loss_return_accounting_imported=true
+stable_table_or_named_switch_route_registered=true
+history_switch_pdec_excluded=false
+postbreak_ap_demand_injection_proved=false
+long_zero_block_mass_transfer_proved=false
+row_column_unconditional_closed=false
+```
+
+设长零块为 `B=[x0,y-1]`，其覆盖义务域为：
+
+```text
+O_B={(t,c): x0<=t<y, 1<=c<P},   |O_B|=L(P-1).
+```
+
+每个覆盖义务 `q | tP+c` 都给出同一 formal unit 内的 history key：
+
+```text
+kappa=(q,a),   a == c mod q,   t == -a P^{-1} mod q.
+```
+
+这把长零块源质量接到低 carrier AP table 的相位字段上，但仍不能自动推出 post-break demand。利用
+no-loss return accounting，义务只有两种合法去向：
+
+```text
+stable low-carrier/residue table  ->  PostBreakAPDemandInjectionFromStableHistory
+history key/carrier/phase switch  ->  HistorySwitch-PDEC/ColumnCRT/MovingCarrier/SAE
+```
+
+于是硬点进一步更新为：
+
+```text
+LongZeroBlockCoverMassTransferToAPDemandOrPDEC
+  -> ZeroBlockHistoryProjectionNoLossLedger
+  AND StableLowCarrierPaymentTableOrHistorySwitchPDEC
+  AND PostBreakAPDemandInjectionFromStableHistory
+```
+
+本步关闭的是无名逃逸口：长零块质量若稳定，必须进入稳定 history 注入硬点；若不稳定，切换本身必须作为
+PDEC/ColumnCRT/MovingCarrier/SAE 命名终端登记。尚未证明稳定 history 必给出 post-break actual demand
+下界，也未排斥 history switch 终端；行/列命题仍未无条件闭合。
