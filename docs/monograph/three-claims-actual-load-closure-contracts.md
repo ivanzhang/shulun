@@ -7772,3 +7772,79 @@ ArrivalRawSourceMassAfterNonarrivalRemoval
 本步关闭的是 terminal nonarrival 去除的阈值纪律。尚未证明 `S_{q<=H}` 足够厚；
 若该层不足，则反例链必须集中到 `q>H` 的大步长尾逃逸，并登记为 PDEC/SAE。
 行/列命题仍未无条件闭合。
+
+## 175. Low-step/tail 显式容量 envelope
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_lowstep_tail_capacity_router.py
+docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.md
+docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.json
+data/prime-matrix-firstbreak-lowstep-tail-capacity-ledger.json
+```
+
+本步继续攻击 `LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC`。同步读数为：
+
+```text
+lowstep_mass_imported=true
+raw_layer_balance_imported=true
+stable_low_tail_partition_closed=true
+terminal_tail_row_window_closed=true
+tail_column_multiplicity_closed=true
+large_step_tail_envelope_closed=true
+lowstep_mass_from_total_minus_tail_closed=true
+large_step_tail_no_small_lcm_replay_imported=true
+stable_total_minus_tail_envelope_gap_proved=false
+large_step_tail_saturation_pdec_excluded=false
+lowstep_stable_history_mass_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+令 `S` 为稳定 source-tagged history 层。上一层给出：
+
+```text
+S = S_{q<=H} disjoint_union S_{q>H},  H=P-y.
+```
+
+其中 `S_{q<=H}` 必到达。现在控制 `S_{q>H}`。若 `u in S_{q>H}` 是 terminal nonarrival，
+最后零块命中 `t_*` 必满足：
+
+```text
+t_*+q>=P,  t_* in B=[x0,y-1].
+```
+
+故
+
+```text
+t_* in B ∩ [P-q,y-1],
+|B ∩ [P-q,y-1]| <= min(L,q-H).
+```
+
+固定 `q,t_*` 后，源列必须满足 `c == -t_*P mod q`，所以列重数至多 `ceil((P-1)/q)`。
+于是 tail 容量 envelope 为：
+
+```text
+C_tail = sum_{H<q<P} |B ∩ [P-q,y-1]| ceil((P-1)/q),
+|S_{q>H}| <= C_tail.
+```
+
+从而：
+
+```text
+|S_{q<=H}| >= |S| - C_tail.
+```
+
+硬点更新为：
+
+```text
+LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC
+  -> StableHistoryLowTailMassPartitionLedger
+  AND LargeStepTailTerminalWindowEnvelopeLedger
+  AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope
+  AND StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC
+```
+
+本步关闭的是 `q>H` terminal tail 的 row-window/column-multiplicity envelope。
+尚未证明 `|S|-C_tail` 已超过需求阈值；若不超过，必须把 tail 近饱和、重复支付或逃逸登记为 PDEC/SAE。
+行/列命题仍未无条件闭合。

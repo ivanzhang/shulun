@@ -11442,6 +11442,74 @@ It does not prove that \(S_{\le H}\) has enough mass, and it does not exclude
 large-step tail escape.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Low-step/tail capacity envelope]
+Let \(B=[x_0,y-1]\), \(L=y-x_0\), and \(H=P-y\).  In the stable history layer,
+write
+\[
+  S=S_{\le H}\sqcup S_{>H},\qquad
+  S_{\le H}=\{u\in S:q(u)\le H\}.
+\]
+The preceding layer shows that \(S_{\le H}\) is contained in the arrival
+layer.  For \(u\in S_{>H}\) to be terminal nonarrival, its last zero-block
+hit \(t_*(u)\) must satisfy
+\[
+  t_*(u)+q(u)\ge P,\qquad t_*(u)\in B.
+\]
+Hence, for a fixed \(q>H\),
+\[
+  t_*(u)\in T_q:=B\cap [P-q,y-1],
+  \qquad |T_q|\le \min(L,q-H).
+\]
+For each fixed \(q\) and \(t\in T_q\), the source column must satisfy
+\[
+  c\equiv -tP\pmod q,\qquad 1\le c<P,
+\]
+so there are at most \(\lceil (P-1)/q\rceil\) such columns.  Therefore the
+non-duplicated large-step tail satisfies the explicit envelope
+\[
+  |S_{>H}|\le C_{\rm tail}:=
+  \sum_{H<q<P}|B\cap [P-q,y-1]|
+  \Big\lceil \frac{P-1}{q}\Big\rceil ,
+\]
+and consequently, outside duplicate or tail-saturation returns,
+\[
+  |S_{\le H}|\ge |S|-C_{\rm tail}.
+\]
+Thus
+\begin{quote}\scriptsize\ttfamily
+LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC\\
+\(\rightarrow\) StableHistoryLowTailMassPartitionLedger\\
+AND LargeStepTailTerminalWindowEnvelopeLedger\\
+AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope\\
+AND StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+lowstep\_mass\_imported=true\\
+raw\_layer\_balance\_imported=true\\
+stable\_low\_tail\_partition\_closed=true\\
+terminal\_tail\_row\_window\_closed=true\\
+tail\_column\_multiplicity\_closed=true\\
+large\_step\_tail\_envelope\_closed=true\\
+lowstep\_mass\_from\_total\_minus\_tail\_closed=true\\
+large\_step\_tail\_no\_small\_lcm\_replay\_imported=true\\
+stable\_total\_minus\_tail\_envelope\_gap\_proved=false\\
+large\_step\_tail\_saturation\_pdec\_excluded=false\\
+lowstep\_stable\_history\_mass\_lower\_bound\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes the terminal tail row-window and column-multiplicity
+envelope only.  It does not prove that \(|S|-C_{\rm tail}\) is large enough,
+and it does not exclude tail saturation PDEC/SAE.  The row/column theorem
+remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

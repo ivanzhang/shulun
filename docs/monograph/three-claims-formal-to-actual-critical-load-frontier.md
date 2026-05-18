@@ -7512,3 +7512,67 @@ AND TerminalNonarrivalLargeStepEscapePDECOrSAE
 本步没有证明 raw arrival mass 已足够大；它只关闭了 nonarrival 去除的精确阈值：
 低步长稳定源不会被 terminal nonarrival 吞掉，剩余硬点变成低步长稳定源质量下界，
 或证明质量集中到 `q>H` 大步长尾部必为 PDEC/SAE。
+
+## 175. Low-step/tail 显式容量 envelope
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_lowstep_tail_capacity_router.py
+docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.md
+docs/monograph/prime-matrix-firstbreak-lowstep-tail-capacity-router.json
+data/prime-matrix-firstbreak-lowstep-tail-capacity-ledger.json
+```
+
+本步继续攻击 `LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC`。同步结果：
+
+```text
+lowstep_mass_imported=true
+raw_layer_balance_imported=true
+stable_low_tail_partition_closed=true
+terminal_tail_row_window_closed=true
+tail_column_multiplicity_closed=true
+large_step_tail_envelope_closed=true
+lowstep_mass_from_total_minus_tail_closed=true
+large_step_tail_no_small_lcm_replay_imported=true
+stable_total_minus_tail_envelope_gap_proved=false
+large_step_tail_saturation_pdec_excluded=false
+lowstep_stable_history_mass_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：设 `H=P-y`、`B=[x0,y-1]`、`L=y-x0`。稳定层满足
+
+```text
+S = S_{q<=H} disjoint_union S_{q>H}.
+```
+
+对 `q>H` 的 terminal tail，最后命中行必须满足
+
+```text
+t_* in T_q := B ∩ [P-q,y-1],
+|T_q| <= min(L,q-H).
+```
+
+固定 `q,t_*` 后，源列满足 `c == -t_*P mod q`，因此列数至多 `ceil((P-1)/q)`。
+所以 tail 有显式 envelope：
+
+```text
+C_tail = sum_{H<q<P} |B ∩ [P-q,y-1]| ceil((P-1)/q),
+|S_{q>H}| <= C_tail.
+```
+
+于是
+
+```text
+|S_{q<=H}| >= |S| - C_tail.
+```
+
+新的直接主攻为：
+
+```text
+StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC
+```
+
+本步没有证明 `|S|-C_tail` 已足够大；它把剩余硬点压成显式差额问题：
+证明稳定总源质量超过 tail envelope，或证明 tail 近饱和/重复就是 PDEC/SAE。
