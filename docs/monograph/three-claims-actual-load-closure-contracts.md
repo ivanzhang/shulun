@@ -9426,3 +9426,85 @@ FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
 
 本步关闭的是固定尺度词内持久首移动素坐标/相位漂移；剩余集中为稳定实际 ladder
 的 ColumnCRT/PDEC 出口，或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。
+
+## 195. stable-ladder Fourier/PDEC 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_fourier_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC`。
+同步读数为：
+
+```text
+stable_ladder_or_sparse_sae_imported=true
+finite_group_closed=true
+zero_mean_cell_function_closed=true
+exact_excess_identity_closed=true
+fourier_pdec_bridge_closed=true
+nontrivial_character_lower_bound_closed=true
+anonymous_stable_ladder_columncrt_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+stable_ladder_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+稳定实际 ladder 被写成有限乘积群上的固定点位：
+
+```text
+G=prod_i Z/q_iZ,
+N=|G|=prod_i q_i,
+tau(n)=(n mod q_i)_i,
+a=(a_i)_i.
+```
+
+令零均值点位函数
+
+```text
+F_a(g)=1_{g=a}-1/N.
+```
+
+则对任意支撑 `S` 有精确超额恒等式：
+
+```text
+E_a(S)=sum_{n in S}F_a(tau(n))
+      =#{n in S:tau(n)=a}-|S|/N.
+```
+
+在有限群 `G` 上作 Fourier 展开，平凡角色系数为零，并得到：
+
+```text
+E_a(S)=sum_{chi!=1} hat F_a(chi) * S_chi,
+S_chi=sum_{n in S}chi(tau(n)).
+```
+
+若 `E_a(S)>0`，则存在非平凡角色满足：
+
+```text
+max_{chi!=1}|S_chi| >= N*E_a(S)/(N-1).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
+  -> StableActualLadderOrSparseSAEImportedLedger
+  AND StableActualLadderFiniteGroupLedger
+  AND StableActualLadderZeroMeanCellFunctionLedger
+  AND StableActualLadderExactExcessIdentityLedger
+  AND StableActualLadderFourierPDECBridgeLedger
+  AND StableActualLadderNontrivialCharacterLowerBoundLedger
+  AND NoAnonymousStableActualLadderColumnCRTExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
+```
+
+本步关闭的是匿名 stable actual ladder ColumnCRT 出口：它已被改写为显式
+Fourier/PDEC 角色和下界。剩余没有消失，而是集中为 stable ladder Fourier/PDEC
+cap，或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。

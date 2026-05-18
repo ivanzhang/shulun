@@ -12843,6 +12843,75 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-ro
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder Fourier/PDEC bridge]
+The stable actual ladder ColumnCRT exit can be written as an explicit finite
+Fourier/PDEC input.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderOrSparseSAEImportedLedger\\
+AND StableActualLadderFiniteGroupLedger\\
+AND StableActualLadderZeroMeanCellFunctionLedger\\
+AND StableActualLadderExactExcessIdentityLedger\\
+AND StableActualLadderFourierPDECBridgeLedger\\
+AND StableActualLadderNontrivialCharacterLowerBoundLedger\\
+AND NoAnonymousStableActualLadderColumnCRTExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Finite-group Fourier ledger]
+A stable actual ladder fixes a finite list of prime-residue pairs
+\[
+  ((q_i,a_i))_{i=1}^{d}.
+\]
+Work on the finite product group
+\[
+  G=\prod_{i=1}^{d}\mathbb Z/q_i\mathbb Z,\qquad
+  N=|G|=\prod_{i=1}^{d}q_i,
+\]
+with
+\[
+  \tau(n)=(n\bmod q_i)_i,\qquad a=(a_i)_i .
+\]
+This product-group form does not require the displayed primes to be distinct.
+Define the zero-mean cell function
+\[
+  F_a(g)=1_{\{a\}}(g)-\frac1N .
+\]
+Then for every support set \(S\) the stable-ladder excess is exactly
+\[
+  E_a(S)=\sum_{n\in S}F_a(\tau(n))
+       =|\{n\in S:\tau(n)=a\}|-\frac{|S|}{N}.
+\]
+
+Expanding \(F_a\) in the character group \(\widehat G\), the trivial character
+coefficient vanishes.  Hence
+\[
+  E_a(S)=\sum_{\chi\in\widehat G,\ \chi\ne 1}
+    \widehat F_a(\chi)\,S_\chi,\qquad
+  S_\chi=\sum_{n\in S}\chi(\tau(n)).
+\]
+For the point-mass-minus-average function one has
+\(|\widehat F_a(\chi)|=1/N\) for nontrivial \(\chi\).  Therefore, if
+\(E_a(S)>0\), then some nontrivial character satisfies
+\[
+  |S_\chi|\ge \frac{N\,E_a(S)}{N-1}.
+\]
+
+Thus a stable actual ladder cannot remain an anonymous ColumnCRT outlet: any
+positive ladder excess forces a named nontrivial Fourier correlation.  What
+remains is the explicit stable-ladder Fourier/PDEC cap, or the separate global
+summability of the sparse scale-ladder SAE outlet.  This theorem does not prove
+either remaining input, and the row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

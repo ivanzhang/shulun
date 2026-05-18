@@ -1,0 +1,112 @@
+{
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_stable_ladder_fourier_pdec_router",
+  "status": "stable_actual_ladder_columncrt_reduced_to_fourier_pdec_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_before_router": "SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC",
+  "hardpoint_after_router": "StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap",
+  "stable_ladder_or_sparse_sae_imported": true,
+  "finite_group_closed": true,
+  "zero_mean_cell_function_closed": true,
+  "exact_excess_identity_closed": true,
+  "fourier_pdec_bridge_closed": true,
+  "nontrivial_character_lower_bound_closed": true,
+  "anonymous_stable_ladder_columncrt_removed": true,
+  "sparse_scale_ladder_sae_carried_forward": true,
+  "stable_ladder_fourier_pdec_cap_proved": false,
+  "sparse_scale_ladder_sae_summability_proved": false,
+  "row_column_unconditional_closed": false,
+  "fourier_formulas": {
+    "finite_group": "G=prod_i Z/q_iZ, N=|G|=prod_i q_i",
+    "tau": "tau(n)=(n mod q_i)_i",
+    "cell": "C_a={g in G:g=a}",
+    "zero_mean": "F_a(g)=1_{C_a}(g)-1/N",
+    "excess": "E_a(S)=sum_{n in S}F_a(tau(n))=count_S(C_a)-|S|/N",
+    "fourier_coefficients": "hat F_a(1)=0, |hat F_a(chi)|=1/N for chi!=1 under normalized Fourier",
+    "lower_bound": "E_a>0 => exists chi!=1 with |sum_{n in S}chi(tau(n))|>=N*E_a/(N-1)",
+    "new_failure": "stable actual ladder Fourier/PDEC cap or sparse scale-ladder SAE summability"
+  },
+  "next_direct_attack_target": "SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "decision_rows": [
+    {
+      "gate": "StableActualLadderOrSparseSAEImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把固定尺度词内持久漂移压成稳定实际 ladder ColumnCRT/PDEC 或 sparse scale-ladder SAE。",
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC"
+    },
+    {
+      "gate": "StableActualLadderFiniteGroupClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "稳定实际 ladder 给出有限乘积群 G=prod_i Z/q_iZ 与固定点位 a=(a_i)。",
+      "remaining": "StableActualLadderFiniteGroupLedger"
+    },
+    {
+      "gate": "StableActualLadderZeroMeanCellFunctionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "定义 F_a=1_{g=a}-1/|G|，其均值为 0；稳定 ladder 超额正是 F_a 在支撑上的相关。",
+      "remaining": "StableActualLadderZeroMeanCellFunctionLedger"
+    },
+    {
+      "gate": "StableActualLadderExactExcessIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "E_a(S)=sum_{n in S}F_a(tau(n))=|{n in S: tau(n)=a}|-|S|/|G| 精确成立。",
+      "remaining": "StableActualLadderExactExcessIdentityLedger"
+    },
+    {
+      "gate": "StableActualLadderFourierPDECBridgeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限群 Fourier 展开把 E_a(S) 写成非平凡角色和；若 E_a>0，则存在非平凡角色相关非零。",
+      "remaining": "StableActualLadderFourierPDECBridgeLedger"
+    },
+    {
+      "gate": "StableActualLadderNontrivialCharacterLowerBoundClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 |G|=N>1 且 E_a>0，则存在 chi!=1 使 |sum_{n in S}chi(tau(n))|>=N*E_a/(N-1)。",
+      "remaining": "StableActualLadderNontrivialCharacterLowerBoundLedger"
+    },
+    {
+      "gate": "NoAnonymousStableActualLadderColumnCRTExit",
+      "closed": true,
+      "proved": true,
+      "meaning": "稳定实际 ladder ColumnCRT 出口被改写成显式 Fourier/PDEC 输入；不再保留黑箱 ColumnCRT 口径。",
+      "remaining": "NoAnonymousStableActualLadderColumnCRTExitLedger"
+    },
+    {
+      "gate": "SparseScaleLadderSAECarriedForwardAfterFourierBridge",
+      "closed": true,
+      "proved": false,
+      "meaning": "非持久实际 ladder 事件继续登记为 sparse scale-ladder SAE；本步不证明全局求和。",
+      "remaining": "SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger"
+    },
+    {
+      "gate": "StableActualLadderFourierPDECCapStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未排斥该 Fourier/PDEC 下界，也未证明 sparse scale-ladder SAE 全局可求和。",
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "行/列命题仍需给出 stable ladder Fourier/PDEC cap，或证明 sparse scale-ladder SAE 全局可控。",
+      "remaining": "SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_fourier_pdec_router.py": "a131f2fcadb1277015fd31a84dd0b1644c61784e5a059338e5e07e900b3e52bb",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.json": "c08c4bbd6f71cbaa24984949aec981abf7f8ee615ed426378a48c7b66b7c4a4c",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.json": "8657d83b213f688fd5ee653ec0fd48d219e316838d7cce221b84f5cf8be9bbc8",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.json": "4dfe3b824d5d11788941ee4bd2a4dbe0ff7a7693e1ffd8b3fd2fa8ce50550705"
+  },
+  "plain_conclusion": "稳定实际 ladder 被写成有限乘积群 G=prod_i Z/q_iZ 上的固定点位 a。零均值函数 F_a=1_a-1/|G| 的支撑相关精确等于 ladder 超额。若超额 E_a>0，则有限群 Fourier 展开给出非平凡角色下界 max_{chi!=1}|sum chi(tau(n))|>=|G|E_a/(|G|-1)。因此 stable ladder ColumnCRT 出口被改写成显式 Fourier/PDEC 输入。"
+}

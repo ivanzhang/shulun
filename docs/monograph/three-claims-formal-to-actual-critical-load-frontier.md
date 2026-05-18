@@ -8721,3 +8721,68 @@ SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
 
 本步没有排斥稳定实际 ladder 的 ColumnCRT/PDEC 出口，也没有证明 sparse
 scale-ladder SAE 全局可求和；它只删除固定尺度词内持久首移动漂移。
+
+## 195. Stable-ladder Fourier/PDEC frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_fourier_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC`。
+同步结果：
+
+```text
+stable_ladder_or_sparse_sae_imported=true
+finite_group_closed=true
+zero_mean_cell_function_closed=true
+exact_excess_identity_closed=true
+fourier_pdec_bridge_closed=true
+nontrivial_character_lower_bound_closed=true
+anonymous_stable_ladder_columncrt_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+stable_ladder_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层留下的稳定实际 ladder 不再以匿名 ColumnCRT
+出口保存，而是被写成有限乘积群
+
+```text
+G=prod_i Z/q_iZ
+```
+
+上的固定点位 `a=(a_i)_i`。对映射 `tau(n)=(n mod q_i)_i` 定义
+`F_a(g)=1_{g=a}-1/|G|`，则支撑超额满足精确恒等式
+
+```text
+E_a(S)=sum_{n in S}F_a(tau(n))
+      =#{n in S:tau(n)=a}-|S|/|G|.
+```
+
+有限群 Fourier 展开给出：
+
+```text
+E_a(S)=sum_{chi!=1} hat F_a(chi) * sum_{n in S}chi(tau(n)).
+```
+
+因此若该稳定 ladder 真的产生正超额，则存在非平凡角色满足
+
+```text
+|sum_{n in S}chi(tau(n))| >= |G|*E_a(S)/(|G|-1).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
+```
+
+本步没有证明 stable actual ladder Fourier/PDEC cap，也没有证明 sparse
+scale-ladder SAE 全局可求和；它只把稳定实际 ladder 的黑箱 CRT 出口回接到显式
+Fourier/PDEC 输入。
