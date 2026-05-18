@@ -7038,3 +7038,73 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步回答旧稿检查：已有的是 `x=P`/第 `P+1` 行等价链；尚未有第 `P+1` 行非零推出 `x<P` 零行不存在的充分性证明。
+
+## 163. Early-to-square phase-transfer 首破裂分裂
+
+新增文件
+
+```text
+experiments/prime_matrix_early_to_square_phase_transfer_split_router.py
+docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.md
+docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.json
+data/prime-matrix-early-to-square-phase-transfer-split-ledger.json
+```
+
+本步继续攻击上一节新增的 `AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn`。同步读数为：
+
+```text
+contiguous_zero_block_dichotomy_closed=true
+persist_to_square_implies_square_zero=true
+first_break_release_set_nonempty=true
+unit_phase_slip_formula_closed=true
+phase_slip_schema_admission_imported=true
+transfer_proved_as_contradiction=false
+row_column_unconditional_closed=false
+```
+
+设存在早期零行 `x0<P`。从 `x0` 向平方锚 `x=P` 推进，只有两种情形：
+
+```text
+1. 零行块一直延续到 x=P，则得到 square-zero 分支；
+2. 否则存在首个破裂行 y<=P，且 y-1 是零行、y 有非空释放列集。
+```
+
+对首破裂释放列 `c`，上一行由某个 `q<P` 覆盖，而当前行不再被任何 `q<P` 覆盖。覆盖相位满足：
+
+```text
+rho_q(t)=-tP mod q,
+rho_q(t+1)=rho_q(t)-P mod q.
+```
+
+因此首破裂是一个单位相位滑移缺陷；它不再是无名 transfer 缺口，而按旧的
+early-zero phase-defect schema 登记到 `PDEC/SAE/ColumnCRT/LocalSurvivor` 命名回流。
+
+抽象 transfer 分支被压成：
+
+```text
+NoZeroRowAtXEqualsP_PlusOneRowAfterSquare
+AND FirstBreakPhaseSlipNamedReturnExclusion
+```
+
+合并 exact-UV/source-rank 前沿后的活动基为：
+
+```text
+((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare
+  AND FirstBreakPhaseSlipNamedReturnExclusion)
+ OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+  AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+  AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+FirstBreakPhaseSlipNamedReturnExclusion
+```
+
+本步关闭的是抽象 transfer 的无名性；尚未排斥首破裂 phase-slip 的 PDEC/SAE/LocalSurvivor 终端。

@@ -6960,3 +6960,49 @@ AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn
 
 即证明任一早期零行若存在，要么强制 `x=P` 也零行，要么进入命名 `PDEC/SAE/ColumnCRT/source-rank` 出口。
 这一路线与 exact-UV 后的 signed-row 主前沿并行，而不是替代它。
+
+## 163. Early-to-square phase-transfer 首破裂分裂
+
+新增文件
+
+```text
+experiments/prime_matrix_early_to_square_phase_transfer_split_router.py
+docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.md
+docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.json
+data/prime-matrix-early-to-square-phase-transfer-split-ledger.json
+```
+
+本步把上一节的抽象转移接口继续压缩。同步结果显示：
+
+```text
+contiguous_zero_block_dichotomy_closed=true
+persist_to_square_implies_square_zero=true
+first_break_release_set_nonempty=true
+unit_phase_slip_formula_closed=true
+phase_slip_schema_admission_imported=true
+transfer_proved_as_contradiction=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：若早期零行 `x0<P` 不能一路延续到平方锚 `x=P`，则必有首个破裂行 `y`。
+`y-1` 仍是零行，`y` 出现释放列；这些释放列是相位
+
+```text
+rho_q(y)=rho_q(y-1)-P mod q
+```
+
+滑移后的边界非覆盖。若 `y<P`，释放列给出真实早期素数幸存；若 `y=P`，给出平方锚幸存。
+因此抽象 transfer 不再是独立硬点，而分裂为：
+
+```text
+ZeroAtXEqualsP
+OR RegisteredFirstBreakUnitPhaseSlipPDECSAELocalSurvivorReturn
+```
+
+在第 `P+1` 行非零的条件下，剩余进一步压成：
+
+```text
+FirstBreakPhaseSlipNamedReturnExclusion
+```
+
+所以当前 inverse-alignment 回流路线的最新硬点不是“证明所有早期相位转移到平方锚”，而是排斥首破裂相位滑移的命名终端；全局 signed-row/source-rank 前沿仍并行开放。

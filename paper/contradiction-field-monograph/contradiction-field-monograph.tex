@@ -10856,6 +10856,48 @@ does not close the row/column theorem.
 \end{proof}
 
 
+\begin{theorem}[Early-to-square phase-transfer split]
+The abstract transfer target from an early zero row to the square anchor is
+not kept as an unnamed obligation.  Suppose that an early zero row \(x_0<P\)
+exists.  Moving from \(x_0\) to \(P\), either every row remains zero up to
+\(x=P\), in which case the square-anchor row is itself zero, or there is a
+first break row \(y\le P\).  At that row \(y-1\) is still zero and \(y\) has a
+nonempty released-column set.  The local phase motion is
+\[
+  \rho_q(t)=-tP \pmod q,\qquad
+  \rho_q(t+1)=\rho_q(t)-P \pmod q .
+\]
+Thus the first break is a unit phase-slip boundary defect.  Under the
+previous early-zero phase-defect schema it is a named
+PDEC/SAE/ColumnCRT/LocalSurvivor return, not a fourth exit.  Under the
+additional condition that \(x=P\) is not a zero row, the transfer branch is
+reduced to
+\begin{quote}\scriptsize\ttfamily
+FirstBreakPhaseSlipNamedReturnExclusion.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+contiguous\_zero\_block\_dichotomy\_closed=true\\
+persist\_to\_square\_implies\_square\_zero=true\\
+first\_break\_release\_set\_nonempty=true\\
+unit\_phase\_slip\_formula\_closed=true\\
+phase\_slip\_schema\_admission\_imported=true\\
+transfer\_proved\_as\_contradiction=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This closes the unnamed-transfer ambiguity, but it does not exclude the
+first-break named terminal.  The row/column theorem remains open until that
+terminal is excluded, or the parallel signed-source/source-rank frontier is
+closed.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
