@@ -9684,3 +9684,79 @@ SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
 本步关闭的是匿名 primitive fiber 角色相关出口：它被改写为固定补坐标纤维中的
 单余数类计数偏差。剩余集中为 residue-count PDEC cap，或 sparse scale-ladder
 SAE 全局求和问题。行/列命题仍未无条件闭合。
+
+## 198. stable-ladder positive-surplus PDEC 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_positive_surplus_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap`。
+同步读数为：
+
+```text
+residue_count_pdec_imported=true
+sign_dichotomy_closed=true
+zero_sum_transfer_closed=true
+positive_surplus_localization_closed=true
+positive_surplus_threshold_closed=true
+anonymous_signed_imbalance_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+positive_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+沿用上一层固定纤维内的偏差向量：
+
+```text
+D_r=M_r-L/q_j,
+sum_r D_r=0.
+```
+
+上一层给出 `|D_r|>=delta`，其中：
+
+```text
+delta=E_a(S)/(N-1).
+```
+
+若 `D_r>=delta`，则直接得到正余数过载。若 `D_r<=-delta`，则零和给出：
+
+```text
+sum_{s!=r}D_s=-D_r>=delta.
+```
+
+因此某个 `s!=r` 满足：
+
+```text
+D_s>=delta/(q_j-1).
+```
+
+统一写成：
+
+```text
+M_s-L/q_j>=E_a(S)/((N-1)(q_j-1)).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
+  -> StableActualLadderResidueCountPDECImportedLedger
+  AND StableLadderResidueDeviationSignDichotomyLedger
+  AND StableLadderResidueDeviationZeroSumTransferLedger
+  AND StableLadderPositiveResidueSurplusLocalizationLedger
+  AND StableLadderPositiveResidueSurplusThresholdLedger
+  AND NoAnonymousSignedResidueImbalanceExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
+```
+
+本步关闭的是有符号 residue-count 绝对偏差出口：亏损分支由零和关系转移为
+某个余数类正过载。剩余集中为 positive residue-surplus PDEC cap，或 sparse
+scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。

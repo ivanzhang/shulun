@@ -8912,3 +8912,59 @@ SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
 
 本步没有证明 residue-count PDEC cap，也没有证明 sparse scale-ladder SAE
 全局可求和；它只把 primitive fiber 角色相关局部化为单余数类计数偏差。
+
+## 198. Stable-ladder positive-surplus PDEC frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_positive_surplus_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-positive-surplus-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap`。
+同步结果：
+
+```text
+residue_count_pdec_imported=true
+sign_dichotomy_closed=true
+zero_sum_transfer_closed=true
+positive_surplus_localization_closed=true
+positive_surplus_threshold_closed=true
+anonymous_signed_imbalance_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+positive_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：固定纤维内的有符号计数偏差可统一改写为正向过载。
+设 `D_r=M_r-L/q_j` 且 `sum_r D_r=0`。若 `|D_r|>=delta`，则正分支直接给出
+`D_r>=delta`；负分支给出
+
+```text
+sum_{s!=r}D_s>=delta.
+```
+
+所以某个余数类满足：
+
+```text
+D_s>=delta/(q_j-1).
+```
+
+代入 `delta=E_a(S)/(N-1)` 得到：
+
+```text
+M_s-L/q_j>=E_a(S)/((N-1)(q_j-1)).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
+```
+
+本步没有证明 positive residue-surplus PDEC cap，也没有证明 sparse scale-ladder
+SAE 全局可求和；它只把有符号余数计数偏差改写为正余数过载输入。

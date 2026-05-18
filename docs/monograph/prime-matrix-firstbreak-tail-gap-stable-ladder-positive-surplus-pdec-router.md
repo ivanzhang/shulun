@@ -1,0 +1,107 @@
+# Prime Matrix stable-ladder positive-surplus PDEC 证书
+
+**状态：** `residue_count_imbalance_reduced_to_positive_surplus_open`
+
+residue-count 绝对偏差可由零和偏差向量转成正余数过载。若某个 D_r=M_r-L/q_j 满足 |D_r|>=delta，则正分支直接给出 D_r>=delta；负分支 D_r<=-delta 时，其他余数类总盈余至少 delta，故某个余数类正偏差至少 delta/(q_j-1)。代入 delta=E_a(S)/(N-1)，得到正过载阈值 E_a(S)/((N-1)(q_j-1))。
+
+```text
+residue_count_pdec_imported=true
+sign_dichotomy_closed=true
+zero_sum_transfer_closed=true
+positive_surplus_localization_closed=true
+positive_surplus_threshold_closed=true
+anonymous_signed_imbalance_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+positive_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+## 1. 偏差符号二分
+
+沿用上一层固定纤维内的偏差向量：
+
+```text
+D_r=M_r-L/q_j,
+sum_r D_r=0.
+```
+
+上一层给出某个余数 `r` 的绝对偏差阈值：
+
+```text
+|D_r|>=delta,
+delta=E_a(S)/(N-1).
+```
+
+若 `D_r>=delta`，则已经得到正余数过载。
+
+## 2. 亏损到盈余的零和转移
+
+若 `D_r<=-delta`，则：
+
+```text
+sum_{s!=r}D_s=-D_r>=delta.
+```
+
+共有 `q_j-1` 个其他余数类，因此鸽巢原理给出某个 `s!=r` 满足：
+
+```text
+D_s>=delta/(q_j-1).
+```
+
+代入 `delta=E_a(S)/(N-1)` 得到统一正过载阈值：
+
+```text
+M_s-L/q_j>=E_a(S)/((N-1)(q_j-1)).
+```
+
+## 3. 新硬点
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
+  -> StableActualLadderResidueCountPDECImportedLedger
+  AND StableLadderResidueDeviationSignDichotomyLedger
+  AND StableLadderResidueDeviationZeroSumTransferLedger
+  AND StableLadderPositiveResidueSurplusLocalizationLedger
+  AND StableLadderPositiveResidueSurplusThresholdLedger
+  AND NoAnonymousSignedResidueImbalanceExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap
+```
+
+剩余从有符号 residue-count 偏差变成 positive residue-surplus PDEC cap，或 sparse scale-ladder SAE 全局求和问题。
+
+## 4. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| StableActualLadderResidueCountPDECImported | `true` | `false` | 上一层把 primitive fiber 角色相关改写为固定纤维内单余数类绝对计数偏差。 | SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap |
+| StableLadderResidueDeviationSignDichotomyClosed | `true` | `true` | 若 \|D_r\|>=delta，则要么 D_r>=delta，要么 D_r<=-delta。 | StableLadderResidueDeviationSignDichotomyLedger |
+| StableLadderResidueDeviationZeroSumTransferClosed | `true` | `true` | 当 D_r<=-delta 时，由 sum_s D_s=0 得 sum_{s!=r}D_s>=delta。 | StableLadderResidueDeviationZeroSumTransferLedger |
+| StableLadderPositiveResidueSurplusLocalizationClosed | `true` | `true` | 由鸽巢原理，若其他 q_j-1 个余数类总盈余至少 delta，则某个余数类正偏差至少 delta/(q_j-1)。 | StableLadderPositiveResidueSurplusLocalizationLedger |
+| StableLadderPositiveResidueSurplusThresholdClosed | `true` | `true` | 取 delta=E/(N-1)，得到某个余数类满足 M_s-L/q_j>=E/((N-1)(q_j-1))。 | StableLadderPositiveResidueSurplusThresholdLedger |
+| NoAnonymousSignedResidueImbalanceExit | `true` | `true` | 绝对计数偏差出口被改写成正向余数过载出口，亏损分支由零和转移到盈余分支。 | NoAnonymousSignedResidueImbalanceExitLedger |
+| SparseScaleLadderSAECarriedForwardAfterPositiveSurplus | `true` | `false` | 非持久实际 ladder 事件继续登记为 sparse scale-ladder SAE；本步不证明全局求和。 | SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger |
+| StableActualLadderPositiveResidueSurplusPDECCapStillOpen | `false` | `false` | 仍未证明所有固定纤维余数类正过载都低于阈值，也未证明 sparse scale-ladder SAE 全局可求和。 | SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 行/列命题仍需给出 positive residue-surplus PDEC cap，或证明 sparse scale-ladder SAE 全局可控。 | SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap |
+
+## 5. 新活动基
+
+```text
+((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 6. 诚实边界
+
+- 本证书没有证明 positive residue-surplus PDEC cap。
+- 本证书没有证明 sparse scale-ladder SAE 全局可求和。
+- 本证书只把有符号余数计数偏差改写为正余数过载输入。
+- `SparseScaleLadderSAESummabilityOrStableActualLadderPositiveResidueSurplusPDECCap` 仍未闭合。
+- 行/列命题仍未无条件闭合。
+
+## 7. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_positive_surplus_pdec_router.py` | `b5193bcf5ab8cdaed3072c73382b2738b33ccd4115b0297bce950310060b4981` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.json` | `4f7dce53520855b81d2ef1835c80f6d6d979b2aa96d6dc4449bee07b8b203dca` |
