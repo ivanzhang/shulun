@@ -5576,6 +5576,33 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 下一直接主攻为 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`；并行保留 actual-source 外环桥、PDEC same-set 作用域、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+## 133. Strict post-alpha noncycle to terminal three atoms sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_alpha_noncycle_to_terminal_three_atoms_sync_router.py
+docs/monograph/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-router.json
+data/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-ledger.json
+```
+
+本步把 c75 的 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 继续同步到更深前沿：branch trace、signed payload、common source declaration packet 与 signed-lane cycle 已共同说明该线不是非循环闭合点。当前 strict 自足全局前沿被压成三原子：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+其中最窄直接主攻是：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+这一步只删除旧的 `NewExplicit...` 自回流主攻标签；没有证明 moving atom 排斥、canonical-lock、A1 admission 或 DStructure/Rankin 晋级门。
+
 ## 132. Strict post-antisplit alpha terminal leaf sync router
 
 新增文件

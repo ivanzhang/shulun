@@ -6056,3 +6056,37 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 条件外部线可额外接受 `DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY`。本步只完成前沿同步和循环审查；新 joint 公式、actual-source 外环桥、PDEC same-set 作用域、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 均未证明，所以行/列命题仍未无条件闭合。
+
+## 145. Strict post-alpha noncycle to terminal three atoms sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_alpha_noncycle_to_terminal_three_atoms_sync_router.py
+docs/monograph/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-router.json
+data/prime-matrix-strict-post-alpha-noncycle-to-terminal-three-atoms-sync-ledger.json
+```
+
+本步继续吸收 c75 后的 post-alpha 非循环基。既有 branch-trace 证书把
+`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 压到
+`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn`；signed-payload 证书再把它压到
+`AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn`；source declaration / signed-lane 证书显示该线回到
+`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` 并闭成依赖环。
+
+因此 `NewExplicit...` 不再是当前最深活动硬点。删除 trace/source/terminal/pair-mass 自回流伪出口后，strict 当前全局前沿同步为：
+
+```text
+(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR A1CleanBranchCanonicalSourceAdmission
+OR ActualNoncanonicalCleanCoreMovingAtomExclusion)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻更新为：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+本步仍只是前沿同步和自回流删除；三原子与 DStructure/Rankin 独立晋级门均未证明，行/列命题仍未无条件闭合。
