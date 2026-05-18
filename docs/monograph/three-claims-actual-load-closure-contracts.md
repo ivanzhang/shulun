@@ -5825,3 +5825,34 @@ ActualPreCauchySourceDomainAbsoluteEntropyLedger
 `AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput`，source entropy 首原子只能回流
 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` 或其他独立出口。complete-key、
 fixed-key、PDEC/外部谱与 DStructure/Rankin 仍开放。
+
+## 128. Strict cycle-cut / terminal descent unified frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_cyclecut_terminal_descent_unified_frontier_router.py
+docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.md
+docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.json
+data/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-ledger.json
+```
+
+本步把 source entropy 出口、seed-cycle-cut 饱和证书、terminal descent 宏循环证书、PDEC same-set 饱和证书和 joint-emitter 字段原子证书统一到同一张前沿账本。当前读数：
+
+```text
+source_entropy_exit_imported=true
+seed_cycle_cut_branch_saturated=true
+terminal_descent_macrocycle_detected=true
+pdec_internal_branch_saturated=true
+new_joint_formula_reduced_to_declaration_line=true
+pre_cauchy_joint_declaration_line_proved=false
+row_column_unconditional_closed=false
+```
+
+因此最新 strict 内部第一生产性单点是：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+但它不是孤立输入；仍需同一 pre-Cauchy actual source tuple 的 rows formula、word/coefficient identity 与 no-downstream-return ledger。canonical-lock、independent source bridge、PDEC/外部谱、complete/fixed-key、ExactUV、模型余量、RatePreservation 和 DStructure/Rankin 仍是独立开放门。

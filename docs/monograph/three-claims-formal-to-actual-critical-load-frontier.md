@@ -5686,3 +5686,73 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步不关闭行/列命题；它只删除“source entropy 首原子可由 signed-source 环自证”的误出口。
+
+## 139. Strict cycle-cut / terminal descent unified frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_cyclecut_terminal_descent_unified_frontier_router.py
+docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.md
+docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.json
+data/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-ledger.json
+```
+
+本步把上一节 source-entropy 下游的两个出口继续合并审计：
+
+```text
+source entropy
+-> cycle-cut OR terminal descent
+cycle-cut -> PDEC same-set OR new joint formula
+terminal descent -> canonical-lock OR new joint formula OR independent source bridge
+PDEC same-set -> new joint formula, with conditional PDEC/external input retained
+new joint formula -> pre-Cauchy joint declaration line
+```
+
+导入结果为：
+
+```text
+source_entropy_exit_imported=true
+seed_cycle_cut_branch_saturated=true
+terminal_descent_macrocycle_detected=true
+pdec_internal_branch_saturated=true
+new_joint_formula_reduced_to_declaration_line=true
+pre_cauchy_joint_declaration_line_proved=false
+row_column_unconditional_closed=false
+```
+
+因此 strict 内部自足线当前第一生产性单点压成：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+完整 joint 字段基仍为：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+统一保留剩余基为：
+
+```text
+((PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger)
+OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步的实质推进是删除三个误出口：cycle-cut 不能靠顺序拆分破环，terminal descent 不能靠宏循环当下降，PDEC same-set 在当前内部语料中不能当独立无条件出口。行/列命题仍未无条件闭合，下一直接硬点是提交真正的 pre-Cauchy joint declaration line，或给出 canonical-lock、independent bridge、PDEC/外部谱等独立输入。
