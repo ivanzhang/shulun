@@ -5715,3 +5715,56 @@ ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundL
 ```
 
 本步不关闭 AP 零点包、same-set PDEC、RatePreservation 或 DStructure/Rankin 门。
+
+## 125. Strict signed lane cycle closure router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_signed_lane_cycle_closure_router.py
+docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.md
+docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json
+data/prime-matrix-strict-signed-lane-cycle-closure-ledger.json
+```
+
+本步把 signed/payload 子线的下游链闭合成一个可审查环：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+-> NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward
+-> PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+这说明 common packet、built-in pairing、branch trace、signed payload 与 origin identity 不能互相
+自证。branch trace 的可见坐标链只给 row/word 坐标，不产生 orientation、local factor 或 signed
+coefficient；origin identity 又通过 common packet 回到 signed 子线起点。
+
+当前读数：
+
+```text
+signed_lane_cycle_closed=true
+signed_lane_self_proof_eliminated=true
+new_primitive_payload_or_trace_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+因此下一步不能继续在环内换名。非循环出口只剩：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+并行仍需：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步是自证路线删除，不是行/列命题无条件闭合。

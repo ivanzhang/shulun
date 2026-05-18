@@ -1,0 +1,87 @@
+# Prime Matrix strict signed lane cycle closure router
+
+**状态：** `strict_signed_lane_cycle_closed_self_proof_eliminated_global_open`
+
+本步确认 strict signed/payload 子线已经闭成依赖环：`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` -> `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` -> `ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` -> `AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn` -> `NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward` -> `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`。因此不能继续把环内任一节点当作自足证明；下一步只能新增 primitive trace/payload 工件、证明终端 strict descent，或走 PDEC scope，并且 ExactUV 与晋级门仍独立开放。
+
+```text
+signed_lane_cycle_closed=true
+signed_lane_self_proof_eliminated=true
+new_primitive_payload_or_trace_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+## 1. 闭环链
+
+| from | to | closed | meaning |
+| --- | --- | ---: | --- |
+| `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` | `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` | true | common packet 的 signed/payload 子线先被同步到 built-in signed pairing。 |
+| `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` | `ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` | true | built-in pairing 的非循环闭式需要 exact atomic branch trace。 |
+| `ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` | `AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn` | true | exact atomic branch trace 的 visible coordinate 不产生 signed payload。 |
+| `AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn` | `NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward` | true | signed payload 的第一生产性字段回到非循环 basis word/signed coefficient 来源恒等式。 |
+| `NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward` | `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` | true | 该来源恒等式与 ExactUV 子线共同定义 common source declaration packet。 |
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | ---: | ---: | --- | --- |
+| `SignedLaneCycleClosed` | true | true | common packet、built-in pairing、branch trace、signed payload、origin identity 已形成闭环。 | cycle is diagnostic, not proof |
+| `VisibleCoordinateTraceCannotBreakCycle` | true | true | branch trace 的可见坐标链只给 row/word 坐标，不给 orientation、local factor 或 signed coefficient。 | NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact |
+| `OriginIdentityReturnsToCommonPacket` | true | true | atomic origin identity 不再是更深出口；它已经通过 common packet 回到 signed lane 起点。 | remove signed-lane self-proof |
+| `PDECScopeBranchStillParallel` | true | false | PDEC same-set 作用域匹配仍可作为独立新证书输入，但当前未证。 | AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate |
+| `ExistingSignedLaneCurrentCorpusProved` | false | false | 当前语料没有打破该 signed-lane 闭环的新 primitive trace/payload 公式。 | NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact |
+| `TerminalDescentAlternativeStillOpen` | true | false | 若不提交新 primitive payload/trace 工件，只能把 signed-lane 回流转成 well-founded strict descent。 | AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate |
+| `ExactUVLaneStillIndependent` | true | false | ExactUV entropy/fiber 不是 signed payload 闭环的推论，仍需独立证明。 | ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger |
+| `RowColumnUnconditionalClosureReached` | false | false | 本步删除 signed-lane 自证路线，但未证明新 payload 工件、terminal descent、PDEC scope、ExactUV 或 DStructure/Rankin。 | (NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+
+## 3. 非循环出口
+
+| input |
+| --- |
+| `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact` |
+| `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` |
+| `AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate` |
+| `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger` |
+| `RatePreservationLedger_FOR_moving_atom_packet` |
+| `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` |
+
+## 4. 证据同步表
+
+| id | role | status | next |
+| --- | --- | --- | --- |
+| `downstream_sync` | common packet 下游同步到 built-in signed pairing 与 ExactUV | strict_common_source_declaration_packet_synced_to_builtin_pairing_and_exactuv_open | BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows |
+| `builtin_pairing` | built-in signed pairing 被压到 exact atomic branch trace | builtin_signed_pairing_reduced_to_exact_atomic_joint_branch_trace_open | ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn |
+| `atomic_trace_payload` | exact atomic branch trace 被压到 atomic signed payload constructor | exact_atomic_branch_trace_reduced_to_signed_payload_constructor_open | AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn |
+| `payload_origin` | atomic signed payload 被压到 noncircular atomic origin identity | atomic_signed_payload_reduced_to_noncircular_origin_identity_open | NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward |
+| `common_packet` | noncircular origin 与 ExactUV 共同回到 common source declaration packet | strict_payload_and_exactuv_reduced_to_common_precauchy_source_declaration_packet_open | PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket |
+| `global_branch_trace` | global CRT 活动基同步到 PDEC scope 或 exact atomic branch trace | global_crt_latest_frontier_reduced_to_pdec_scope_or_atomic_branch_trace_open | AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn |
+| `current_global_after_trace` | branch trace self-proof 已从 strict 活动证明路径删除 | current_global_frontier_after_trace_cycle_reduced_to_terminal_three_atoms_open |  |
+
+## 5. 命题行
+
+| name | status | statement |
+| --- | --- | --- |
+| `signed_lane_cycle_closure` | `closed_routing` | The current signed/payload lane is a closed dependency cycle from common source packet through built-in pairing, branch trace, signed payload, and origin identity back to the packet. |
+| `signed_lane_self_proof_rejected` | `closed_routing` | No node in that cycle can be used as a self-contained proof unless a new primitive trace/payload artifact or a well-founded terminal descent certificate is added. |
+| `row_column_unconditional_closure` | `open` | New payload/trace input, terminal descent or PDEC scope, plus ExactUV and promotion gates, remain open. |
+
+## 6. 结论边界
+
+- 本步只关闭 signed-lane 的自证路线。
+- 下一直接主攻是 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`。
+- 并行出口为 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`、`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate` 与 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`。
+- 不能把闭环识别解读为行/列命题无条件闭合。
+
+## 7. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_strict_signed_lane_cycle_closure_router.py` | `1b8361297aa7d019e95dd44b8ffeaea3bde4b7eed638e88624eae17271e195d5` |
+| `docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.json` | `6f2a1790c735dacb3d3c3104dd6ae6469abe97a23853e073a57fb4990e4bf769` |
+| `docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json` | `2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb` |
+| `docs/monograph/prime-matrix-strict-atomic-branch-trace-payload-frontier-router.json` | `fe1d86442d7936662a55cd5b8279e339f5bfd21142bd079ec80280c06423df92` |
+| `docs/monograph/prime-matrix-strict-atomic-payload-origin-identity-router.json` | `b5e6909a3aab66eef258b360a1dc599dc6bdd28cf415f6c21f630abe989ce65a` |
+| `docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json` | `d9e042ffccaaf050e72788abdb0a10a5776a3cb4d8a37fc949c9710a4a832f44` |
+| `docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.json` | `6437fc285617d3a363361ed354cbba400ab588ee7ea6f3cd8cbb07582d196084` |
+| `docs/monograph/prime-matrix-strict-current-global-frontier-after-trace-cycle-router.json` | `094823b99842eeb4525d7ea868658fa39ba3d5ac0e7c0163499ab2b70b6f4b5b` |
+| `data/prime-matrix-strict-signed-lane-cycle-closure-ledger.json` | `7009c7467a68196ff7c5da82a54ee6eac694ac865858809a680cac354c45e6c1` |

@@ -5581,3 +5581,39 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```text
 BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
+
+## 136. Strict signed lane cycle closure router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_signed_lane_cycle_closure_router.py
+docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.md
+docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json
+data/prime-matrix-strict-signed-lane-cycle-closure-ledger.json
+```
+
+本步确认 strict signed/payload 子线已经形成完整闭环：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+-> NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward
+-> PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+闭环结论是：环内任何节点都不能再作为 strict 自足证明的终点。下一非循环输入必须是新的
+primitive signed payload/trace 工件，或把回流转成 well-founded terminal descent，或走独立的
+PDEC same-set scope 证书。
+
+最新非循环出口：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+ExactUV entropy/fiber、RatePreservation 与 DStructure/Rankin 仍独立开放。
