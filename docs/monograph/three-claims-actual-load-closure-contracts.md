@@ -6839,3 +6839,66 @@ ExactExternalSqrtLengthPrimeGapInput_FOR_ROW_GAP_ONLY
 ```text
 AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
 ```
+
+## 160. Q1/Q2 transport latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_q1q2_transport_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-q1q2-transport-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-q1q2-transport-latest-noncycle-sync-router.json
+data/prime-matrix-q1q2-transport-latest-noncycle-sync-ledger.json
+```
+
+本步继续攻击上一节留下的 Q1/Q2 传输首攻点。同步读数为：
+
+```text
+q2_endpoint_stable_replay_impossible=true
+persistent_closed_carrier_routes_to_columncrt_pdec=true
+controlled_fresh_endpoint_tail_routes_to_sae=true
+unnamed_aperture_explosion_forbidden=true
+pure_crt_global_phase_contradiction_blocked=true
+q1q2_branch_reduced_to_exact_source_or_external=true
+q1q2_transport_defect_or_stable_short_return_proved_as_global_contradiction=false
+row_column_unconditional_closed=false
+```
+
+核心结论是：Q1/Q2 相邻素数传输确实排除了 endpoint-stable replay。全 `Q2` 阶轮会把
+两个素端点复本分别变成被 `Q1,Q2` 自身整除的复合点。但这只排除“同端点复现”跳步；
+其余分支已有旧 Q2 梯路由：
+
+```text
+persistent closed carrier => ColumnCRT/PDEC
+controlled fresh endpoint tail => SAE
+aperture explosion/support motion => explicit schema firewall
+pure finite CRT phase contradiction => exact-source dispersion required
+```
+
+因此 `AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn` 不能作为独立终端硬点保留。
+立即内部基改写为：
+
+```text
+((NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若同时导入既有 seed/PDEC 分支饱和同步，strict 内部剩余进一步压到：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+```

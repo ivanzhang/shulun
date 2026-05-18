@@ -6790,3 +6790,61 @@ AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
 
 所以当前前沿不再把 direct rough-residue 下界当作内部目标；它被降格为外部平方根长度素数间隙输入，
 内部路线转向 `Q1/Q2` 相邻素数 CRT 传输、seed cycle-cut 或 same-set PDEC 作用域匹配。
+
+## 160. Q1/Q2 transport latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_q1q2_transport_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-q1q2-transport-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-q1q2-transport-latest-noncycle-sync-router.json
+data/prime-matrix-q1q2-transport-latest-noncycle-sync-ledger.json
+```
+
+本步把 `Q1/Q2` 相邻素数传输分支同已有 Q2 阶 CRT 梯重新同步。同步结果显示：
+
+```text
+q2_endpoint_stable_replay_impossible=true
+persistent_closed_carrier_routes_to_columncrt_pdec=true
+controlled_fresh_endpoint_tail_routes_to_sae=true
+unnamed_aperture_explosion_forbidden=true
+pure_crt_global_phase_contradiction_blocked=true
+q1q2_branch_reduced_to_exact_source_or_external=true
+q1q2_transport_defect_or_stable_short_return_proved_as_global_contradiction=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Q1/Q2 的 CRT 刚性只控制位置和相位，不能给 actual source 质量分散。
+全 `Q2` 阶轮已排除素端点稳定复现；固定闭覆盖块是 `ColumnCRT/PDEC`，受控 fresh endpoint tail 是 `SAE`，
+无名孔径爆炸被 schema 防火墙阻断。纯 CRT 全局相位矛盾也被有限轮同质删相位机制排除。
+
+立即内部剩余为：
+
+```text
+((NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若同时导入既有 seed/PDEC 分支饱和同步，strict 内部剩余进一步压到：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+```
+
+所以当前前沿删除了 `Q1/Q2` 作为独立纯 CRT 终端的误出口；它没有完成行/列命题，只把剩余压回
+actual-source exact-UV 非集中、外部谱输入或 strict new-joint 前沿。
