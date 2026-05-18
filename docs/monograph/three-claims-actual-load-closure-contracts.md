@@ -6150,3 +6150,39 @@ IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
 ```
 
 并行保留无环 seed、自足 Kuznetsov/DLS、PDEC/CleanKLS+模型余量、RatePreservation 与 DStructure/Rankin。
+
+## 148. Strict pair-energy to seed-coordinate cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_pair_energy_to_seed_coordinate_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-router.json
+data/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-ledger.json
+```
+
+本步直接攻击上一节钉住的
+`IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed`。同步结果是：seed-only
+和定性投影已经不能给 log-power 速率；旧 ExactUV/source-entropy 脊柱会回到 signed
+坐标-来源环与终端家族；seed 存在/不存在两支也已回流 acyclic terminal family。
+因此抽象 pair-energy 不能再靠内部来源字段继续下降。
+
+最新剩余被压成三路：
+
+```text
+SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed
+OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger)
+```
+
+严格活动基仍需保留：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步不是行/列命题的无条件闭合；三路中的直接 pair-energy 大筛、Kuznetsov/DLS 与
+PDEC/CleanKLS+模型余量均仍未证明。

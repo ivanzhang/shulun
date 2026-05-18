@@ -6212,3 +6212,39 @@ IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
 ```
 
 并行仍需提交无环 pre-Cauchy source seed、自足 Kuznetsov/DLS 大筛，或 PDEC/CleanKLS+模型余量。行/列命题仍未无条件闭合。
+
+## 148. Strict pair-energy to seed-coordinate cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_pair_energy_to_seed_coordinate_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-router.json
+data/prime-matrix-strict-pair-energy-to-seed-coordinate-cycle-sync-ledger.json
+```
+
+本步把上一节的抽象 pair-energy 主攻同步到已有 seed-only 阻断、rate-bearing packet、
+signed 坐标-来源环、seed 融合和 canonical/direct-terminal 下游。关键读数：
+
+```text
+pair_energy_target_imported=true
+seed_only_and_qualitative_projection_blocked=true
+pair_energy_old_spine_recursive=true
+rate_bearing_packet_terminal_trident_imported=true
+seed_coordinate_source_cycle_detected=true
+direct_pair_energy_large_sieve_proved=false
+row_column_unconditional_closed=false
+```
+
+由此，pair-energy 分支若要无循环闭合，必须提交不经 signed source 环的直接能量大筛；
+否则只能走终端三路的具体化版本：
+
+```text
+SelfContainedExactPairEnergyLargeSieveInequalityForAcyclicSeed
+OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger)
+```
+
+这只是前沿压缩，不是无条件证明；RatePreservation 与 DStructure/Rankin 门仍需独立闭合。
