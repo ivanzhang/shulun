@@ -1,0 +1,125 @@
+{
+  "ap_row_class_formula_closed": true,
+  "arrival_candidate_actual_demand_proved": false,
+  "arrival_candidate_registered": true,
+  "arrival_nonarrival_dichotomy_closed": true,
+  "certificate_type": "prime_matrix_firstbreak_stable_history_ap_arrival_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "PostBreakInjectionImported",
+      "meaning": "上一层把长零块稳定 history 分支的直接主攻设为 post-break AP demand 注入。",
+      "proved": false,
+      "remaining": "PostBreakAPDemandInjectionFromStableHistory"
+    },
+    {
+      "closed": true,
+      "gate": "StableHistoryRouteImported",
+      "meaning": "稳定低 carrier/residue 支付表已经从长零块无损投影中分离出来。",
+      "proved": true,
+      "remaining": "StableLowCarrierPaymentTableOrHistorySwitchPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "APRowClassFormulaClosed",
+      "meaning": "对 history key kappa=(q,a)，因 (P,q)=1，行集合精确为 t==-a P^{-1} mod q。",
+      "proved": true,
+      "remaining": "StableHistoryAPSuccessorDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LastPrebreakHitSuccessorClosed",
+      "meaning": "若 t_* 是同 key 在零块 B=[x0,y-1] 中的最后一次命中，则下一次同 key 行必为 t_*+q；且由最后性知 t_*+q>=y。",
+      "proved": true,
+      "remaining": "StableHistoryAPSuccessorDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalNonarrivalDichotomyClosed",
+      "meaning": "同 key 后继命中落入 post-break 支撑 I_y=[y,P-1] 当且仅当 q<=P-1-t_*；否则 q>=P-t_*，成为 terminal nonarrival。",
+      "proved": true,
+      "remaining": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse OR TerminalNonarrivalLargeStepEscapePDECOrSAE"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalNonarrivalLargeStepRegistered",
+      "meaning": "未到达不是 demand：它精确表示 AP 步长超过平方锚前剩余支撑宽度，必须登记为 large-step escape/PDEC/SAE。",
+      "proved": false,
+      "remaining": "TerminalNonarrivalLargeStepEscapePDECOrSAE"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalCandidateRegistered",
+      "meaning": "到达事件只给 post-break AP cell 候选；仍需证明该候选确实承担 actual demand，且不通过 envelope 饱和反推。",
+      "proved": false,
+      "remaining": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalCollisionReturnRegistered",
+      "meaning": "若到达候选被重复支付、碰撞或换源吸收，则必须回到 duplicate/collision return 账本，不能删除。",
+      "proved": false,
+      "remaining": "ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PostBreakInjectionReduced",
+      "meaning": "PostBreakAPDemandInjectionFromStableHistory 被压成 AP 后继二分、到达候选 actual 注入、未到达 large-step 出口三项。",
+      "proved": false,
+      "remaining": "StableHistoryAPSuccessorDichotomyLedger AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE"
+    },
+    {
+      "closed": false,
+      "gate": "PostBreakInjectionProved",
+      "meaning": "本步没有证明稳定 history 已产生 actual demand 下界；只关闭了 AP 后继到达/越界的精确二分。",
+      "proved": false,
+      "remaining": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、短块 SAE、到达候选 actual 注入、terminal nonarrival 排斥、history switch 排斥、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "StableHistoryAPSuccessorDichotomyLedger AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE",
+  "hardpoint_before_router": "PostBreakAPDemandInjectionFromStableHistory",
+  "last_prebreak_hit_successor_closed": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "TerminalNonarrivalLargeStepEscapePDECOrSAE",
+    "ArrivalCollisionOrDuplicatePaymentReturnLedger",
+    "HistorySwitchPDECOrColumnCRTExclusion",
+    "ShortZeroBlockSingletonSAESummability",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "稳定 history 到 post-break AP demand 的注入被压到 AP 后继二分：同一 history key 的零块最后命中 t_* 后，下一次同余行精确为 t_*+q；若 t_*+q<=P-1，则得到 post-break AP arrival candidate；若 t_*+q>=P，则该 key 在平方锚前没有支撑，必须登记为 terminal nonarrival/large-step escape。到达候选仍未自动成为 actual demand。",
+  "postbreak_ap_demand_injection_proved": false,
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.json": "c6166b673207c6fdc19307de71a6fe1f5b7ed887130b6c5e7e8ad28e030bd5f2",
+    "docs/monograph/prime-matrix-firstbreak-long-zero-block-mass-transfer-router.json": "239ad1e89e72ffed043aeaa5087190a2714c04038f7a7743c563405442e389a8",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json": "2f378d9d29b8bf471ebc203240de29b701774395089998c1477c1af85c384d6f",
+    "docs/monograph/prime-matrix-inverse-alignment-prefix-demand-bridge-router.md": "b24c6b66e0c23671e7be814d2b06d405bb240da70b3930e6d37be6241e67ab37",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.md": "9215c5f0e251cd7170759c2cc51c02ddfc9fdfda469a0ff35f26b524ea6cc692",
+    "experiments/prime_matrix_firstbreak_stable_history_ap_arrival_router.py": "120cf6c17fd19d1d3d333aabeeadc322a3718c69b1b317e7d9d5f244aaa3cb53"
+  },
+  "stable_history_route_imported": true,
+  "status": "stable_history_injection_reduced_to_ap_arrival_dichotomy_open",
+  "terminal_nonarrival_excluded": false,
+  "terminal_nonarrival_large_step_registered": true
+}

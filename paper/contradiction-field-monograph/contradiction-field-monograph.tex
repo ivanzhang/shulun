@@ -11223,6 +11223,53 @@ and it does not exclude the named history-switch terminals.  The row/column
 theorem remains open.
 \end{proof}
 
+\begin{theorem}[Stable history AP-arrival dichotomy]
+Assume the stable low-carrier/residue history branch.  For a history key
+\(\kappa=(q,a)\), the associated rows are exactly
+\[
+  t\equiv -aP^{-1}\pmod q .
+\]
+Let \(t_*\) be the last row in the zero block \(B=[x_0,y-1]\) carrying this
+same key.  Then the next row with the same key is \(t_*+q\).  By maximality of
+\(t_*\), one has \(t_*+q\ge y\).  Hence, in the post-break support
+\(I_y=[y,P-1]\), the exact dichotomy is
+\[
+  t_*+q\in I_y \iff q\le P-1-t_*,
+  \qquad
+  t_*+q\ge P \iff q\ge P-t_* .
+\]
+Consequently
+\begin{quote}\scriptsize\ttfamily
+PostBreakAPDemandInjectionFromStableHistory\\
+\(\rightarrow\) StableHistoryAPSuccessorDichotomyLedger\\
+AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse\\
+AND TerminalNonarrivalLargeStepEscapePDECOrSAE.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+stable\_history\_route\_imported=true\\
+ap\_row\_class\_formula\_closed=true\\
+last\_prebreak\_hit\_successor\_closed=true\\
+arrival\_nonarrival\_dichotomy\_closed=true\\
+terminal\_nonarrival\_large\_step\_registered=true\\
+arrival\_candidate\_registered=true\\
+arrival\_candidate\_actual\_demand\_proved=false\\
+terminal\_nonarrival\_excluded=false\\
+postbreak\_ap\_demand\_injection\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step proves only the AP successor and arrival/nonarrival dichotomy.
+An arrival is still only a candidate for actual demand, and a terminal
+nonarrival remains a named large-step PDEC/SAE exit.  The row/column theorem
+remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

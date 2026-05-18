@@ -7294,3 +7294,51 @@ AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
 ```
 
 本步没有把长零块质量转移升级为矛盾；它只把转移失败的匿名缺口压成稳定注入缺口或命名 history-switch 终端。
+
+## 171. Stable history AP 到达/越界二分
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_stable_history_ap_arrival_router.py
+docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.md
+docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.json
+data/prime-matrix-firstbreak-stable-history-ap-arrival-ledger.json
+```
+
+本步把 `PostBreakAPDemandInjectionFromStableHistory` 压成 AP 后继二分、到达候选 actual 注入和未到达越界出口。
+同步结果：
+
+```text
+stable_history_route_imported=true
+ap_row_class_formula_closed=true
+last_prebreak_hit_successor_closed=true
+arrival_nonarrival_dichotomy_closed=true
+terminal_nonarrival_large_step_registered=true
+arrival_candidate_registered=true
+arrival_candidate_actual_demand_proved=false
+terminal_nonarrival_excluded=false
+postbreak_ap_demand_injection_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：稳定 history key 的下一次同余行由 `t_next=t_*+q` 精确给出。若
+`t_next in [y,P-1]`，它只产生 AP arrival candidate；若 `t_next>=P`，则不是 demand，而是
+`TerminalNonarrivalLargeStepEscapePDECOrSAE`。
+
+新的直接主攻为：
+
+```text
+ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse
+```
+
+并行保留：
+
+```text
+TerminalNonarrivalLargeStepEscapePDECOrSAE
+AND HistorySwitchPDECOrColumnCRTExclusion
+AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
+```
+
+本步没有把 arrival candidate 升级为 actual demand；它只把稳定 history 的相位去向从“抽象注入”压成
+精确的到达/越界二分。

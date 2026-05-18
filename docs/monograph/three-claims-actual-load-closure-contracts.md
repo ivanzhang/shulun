@@ -7516,3 +7516,61 @@ LongZeroBlockCoverMassTransferToAPDemandOrPDEC
 本步关闭的是无名逃逸口：长零块质量若稳定，必须进入稳定 history 注入硬点；若不稳定，切换本身必须作为
 PDEC/ColumnCRT/MovingCarrier/SAE 命名终端登记。尚未证明稳定 history 必给出 post-break actual demand
 下界，也未排斥 history switch 终端；行/列命题仍未无条件闭合。
+
+## 171. Stable history AP 到达/越界二分
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_stable_history_ap_arrival_router.py
+docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.md
+docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.json
+data/prime-matrix-firstbreak-stable-history-ap-arrival-ledger.json
+```
+
+本步继续攻击 `PostBreakAPDemandInjectionFromStableHistory`。同步读数为：
+
+```text
+stable_history_route_imported=true
+ap_row_class_formula_closed=true
+last_prebreak_hit_successor_closed=true
+arrival_nonarrival_dichotomy_closed=true
+terminal_nonarrival_large_step_registered=true
+arrival_candidate_registered=true
+arrival_candidate_actual_demand_proved=false
+terminal_nonarrival_excluded=false
+postbreak_ap_demand_injection_proved=false
+row_column_unconditional_closed=false
+```
+
+对稳定 history key `kappa=(q,a)`，低 carrier AP 行类为：
+
+```text
+t == -a P^{-1} mod q.
+```
+
+令 `t_*` 是该 key 在零块 `B=[x0,y-1]` 中的最后一次命中，则下一次同 key 行精确为：
+
+```text
+t_next = t_* + q.
+```
+
+由 `t_*` 的最后性，`t_next>=y`。因此在 post-break 支撑 `I_y=[y,P-1]` 中有精确二分：
+
+```text
+arrival candidate      <=> t_*+q <= P-1 <=> q <= P-1-t_*
+terminal nonarrival   <=> t_*+q >= P   <=> q >= P-t_*
+```
+
+硬点更新为：
+
+```text
+PostBreakAPDemandInjectionFromStableHistory
+  -> StableHistoryAPSuccessorDichotomyLedger
+  AND ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse
+  AND TerminalNonarrivalLargeStepEscapePDECOrSAE
+```
+
+本步关闭的是稳定 history key 的 AP 后继相位门：到达给出 post-break AP cell 候选；未到达说明 AP 周期超过
+平方锚前支撑宽度，必须登记为 large-step escape/PDEC/SAE。尚未证明到达候选必然成为 actual demand，
+也未排斥 terminal nonarrival 出口；行/列命题仍未无条件闭合。
