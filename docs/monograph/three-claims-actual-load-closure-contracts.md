@@ -6328,3 +6328,65 @@ AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
 `NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse` 是硬边界：
 如果 CleanKLS/KZ-DLS 再经 NCBLK/source-root 线闭合，就回到本节识别出的同一终端环。
 本步只封住 source-root 的自足回环；行/列命题仍未无条件闭合。
+
+## 152. Strict post-source-root PDEC scope saturation sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_source_root_pdec_scope_saturation_sync_router.py
+docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.md
+docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json
+data/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-ledger.json
+```
+
+本步继续攻击上一节留下的直接主攻
+`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`。同步既有 direct PDEC
+作用域审计、PDEC scope 分支饱和、canonical-lock 直攻、KZ/DLS 终端回流和终端家族
+饱和证书后，关键读数为：
+
+```text
+post_source_root_pdec_scope_active=true
+direct_pdec_scope_audit_imported=true
+pdec_scope_branch_saturated_in_current_internal_corpus=true
+pdec_scope_proved=false
+noncircular_kuznetsov_dls_without_source_root_reuse_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+结论是：same-set PDEC 协议和 canonical-source 容量边界可用作工具，但不能自动导入
+strict acyclic noncanonical 分支。direct PDEC 若要成为闭合输入，仍需新证书证明
+acyclic 终端证书与 canonical same-set 证书在 formal unit、坏窗集合、`U_CRT/L_PDEC`
+和质量推前上完全同口径；否则它在当前内部语料中已经回到饱和边界。
+
+最新内部非循环基同步为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留线为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻改为：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+本步不是行/列命题无条件闭合；它只说明 post-source-root 的 direct PDEC 内部路线已经
+不能继续作为已证非循环出口。新 PDEC scope 证书、外部 DIBFI、非循环 KZ/DLS、高段模型、
+RatePreservation 与 DStructure/Rankin 仍均未给出。

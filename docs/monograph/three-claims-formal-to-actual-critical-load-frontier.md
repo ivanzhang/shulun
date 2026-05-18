@@ -4234,9 +4234,6 @@ AND RatePreservationLedger_FOR_moving_atom_packet
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
-这一步不是最终证明；它把 global CRT 路线与当前 strict 饱和前沿对齐，并明确剩余只有 PDEC 作用域新证书
-或新的显式 joint alpha/delta 构造公式能破环。
-
 ## 112. Global CRT branch trace frontier router
 
 新增文件
@@ -6373,4 +6370,55 @@ CleanKLS/KZ-DLS 使用 NCBLK/source-root 作为闭合输入；必须给出非循
 AND HighSegmentModelGapAlpha043C3AnalyticLedger
 AND RatePreservationLedger_FOR_moving_atom_packet
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 152. Strict post-source-root PDEC scope saturation sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_source_root_pdec_scope_saturation_sync_router.py
+docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.md
+docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json
+data/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-ledger.json
+```
+
+本步把上一节的 direct PDEC 主攻接入既有作用域审计和 PDEC scope 饱和前沿。结果是：
+
+```text
+post_source_root_pdec_scope_active=true
+direct_pdec_scope_audit_imported=true
+pdec_scope_branch_saturated_in_current_internal_corpus=true
+pdec_scope_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`PDEC` 名称只有在同一 actual formal unit、同一坏窗集合、
+同一 `U_CRT/L_PDEC` 推前和同一质量口径下才是合法容量矛盾。canonical-source
+same-set 证书已经 scoped 闭合，但 strict acyclic noncanonical 分支不能偷渡该结果。
+如果不能提交新的同口径 scope 证书，也不能引用外部 DIBFI 无投影窗口定理，则该 PDEC
+手臂在当前内部语料中只回到既有终端循环和 new-joint 破环口。
+
+最新内部非循环剩余为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+```
+
+下一直接主攻：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 ```
