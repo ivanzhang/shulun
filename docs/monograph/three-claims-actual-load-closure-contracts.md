@@ -6517,3 +6517,65 @@ AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
 本步不是行/列命题无条件闭合；它只把“非循环 KZ/DLS”门进一步原子化为不得经
 NC-BLK 投影的 KZ-E well-factorable dispersion log-saving。高段模型、
 RatePreservation 与 DStructure/Rankin 仍未闭合。
+
+## 155. Strict post-KZ-E direct source-bridge sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_kze_direct_source_bridge_sync_router.py
+docs/monograph/prime-matrix-strict-post-kze-direct-source-bridge-sync-router.md
+docs/monograph/prime-matrix-strict-post-kze-direct-source-bridge-sync-router.json
+data/prime-matrix-strict-post-kze-direct-source-bridge-sync-ledger.json
+```
+
+本步继续攻击上一节留下的
+`AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection`。同步 KZ-E
+spine、DIBFI 自足闭合分类、actual-source provenance、source-lock 合同、branch coverage、
+strict actual-source bridge 障碍和 terminal recurrence firewall 后，关键读数为：
+
+```text
+kze_direct_no_projection_gate_active=true
+self_contained_taxonomy_imported=true
+canonical_provenance_closed_only_for_canonical_branch=true
+source_lock_scoped_not_global=true
+actual_source_bridge_obstruction_imported=true
+noncanonical_moving_atom_not_kz_nocycle_proof=true
+kze_direct_current_internal_route_reduced_to_source_admission=true
+a1_clean_branch_canonical_source_admission_proved=false
+row_column_unconditional_closed=false
+```
+
+结论是：KZ-E direct no-projection 若不接受外部 DI/BFI/Kuznetsov 证书，不能继续走
+generic WFD 自足线，也不能走 noncanonical moving-atom/anti-atom 回流线，因为后者不是当前
+KZ no-cycle 门的直接谱证明。canonical-restricted 自足分支可用，但只在当前 clean A1
+反例分支已经于 Cauchy/dispersion 前准入 canonical RIW/Buchstab source 时可用。
+
+最新内部非循环基同步为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件外部线为：
+
+```text
+(A1CleanBranchCanonicalSourceAdmission
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻改为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+```
+
+本步不是行/列命题无条件闭合；它只把 KZ-E direct 门压到 actual source admission。不能把
+canonical 分支闭合偷渡为 generic/noncanonical 分支闭合；高段模型、RatePreservation 与
+DStructure/Rankin 仍未闭合。

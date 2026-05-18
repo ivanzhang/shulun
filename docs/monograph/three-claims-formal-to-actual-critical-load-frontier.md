@@ -6536,3 +6536,59 @@ AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
 
 所以当前前沿已从“证明一个非循环 KZ/DLS”压到更窄的“直接 KZ-E dispersion log-saving”，
 且禁止经 NC-BLK/source-root 回流偷渡。
+
+## 155. Strict post-KZ-E direct source-bridge sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_kze_direct_source_bridge_sync_router.py
+docs/monograph/prime-matrix-strict-post-kze-direct-source-bridge-sync-router.md
+docs/monograph/prime-matrix-strict-post-kze-direct-source-bridge-sync-router.json
+data/prime-matrix-strict-post-kze-direct-source-bridge-sync-ledger.json
+```
+
+本步把 `AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection` 继续接入
+actual-source bridge 分类。同步结果显示：
+
+```text
+kze_direct_no_projection_gate_active=true
+self_contained_taxonomy_imported=true
+canonical_provenance_closed_only_for_canonical_branch=true
+source_lock_scoped_not_global=true
+actual_source_bridge_obstruction_imported=true
+noncanonical_moving_atom_not_kz_nocycle_proof=true
+kze_direct_current_internal_route_reduced_to_source_admission=true
+a1_clean_branch_canonical_source_admission_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：KZ-E direct 节省不是泛 well-factorable 模板的免费结论。
+canonical-restricted 分支可以闭合，但它要求 actual source 在 Cauchy/dispersion 前已锁定为
+RIW/Buchstab 决策树源头；generic/noncanonical 分支若回到 moving atom 或 source anti-atom，
+则是终端回流而非 KZ no-cycle 证明。
+
+最新内部非循环剩余为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件保留：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+```
+
+下一直接主攻：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+```
+
+因此当前前沿进一步从“直接 KZ-E dispersion log-saving”压到“actual clean A1 分支的
+canonical source admission”，并显式保留外部 no-projection 条件线。
