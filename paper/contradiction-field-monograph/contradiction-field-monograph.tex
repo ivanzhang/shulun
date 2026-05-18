@@ -11759,6 +11759,77 @@ exclude the deep-late short collar, and it does not control
 \(X_{\rm core}\) or \(R_{\rm named}\).  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Deep-late collar and core quotient layers]
+Let \(x_0=y-L\), \(H=P-y\), and \(D=2y-P\).  Then the deep-late short collar
+condition is equivalent to a self-mirror collar containment:
+\[
+  L\le D
+  \quad\Longleftrightarrow\quad
+  y-L\ge y-D
+  \quad\Longleftrightarrow\quad
+  x_0\ge H
+  \quad\Longleftrightarrow\quad
+  [x_0,y-1]\subseteq [H,y-1].
+\]
+If \(L>D\), set
+\[
+  M=L(L-D)+\min(L,y-1).
+\]
+The late-collar formula gives
+\[
+  G_{\rm int}=M-X_{\rm core}.
+\]
+Therefore \(X_{\rm core}+R_{\rm named}<M\) implies the positive gap \(G>0\).
+If a counterexample remains in the cross-collar branch, then necessarily
+\[
+  X_{\rm core}+R_{\rm named}\ge M.
+\]
+Moreover, with \(h=H+r\) and
+\[
+  k(h)=\Big\lceil\frac{P-1}{h}\Big\rceil-2,
+\]
+the core excess decomposes by quotient layers
+\[
+  I_k=\{h:\lceil(P-1)/h\rceil=k+2\},
+\]
+namely
+\[
+  X_{\rm core}=\sum_{k\ge1}k
+  \sum_{h\in I_k}\min(L,h-H).
+\]
+Hence
+\begin{quote}\scriptsize\ttfamily
+DeepLateShortCollarOrCoreExcessNamedReturnPDEC\\
+\(\rightarrow\) DeepLateCollarMirrorContainmentLedger\\
+AND CrossCollarPositiveMarginCriterionLedger\\
+AND CoreExcessQuotientLayerDecompositionLedger\\
+AND CoreExcessLayerConcentrationOrNamedReturnPDEC\\
+AND SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+deep\_collar\_imported=true\\
+mirror\_collar\_equivalence\_closed=true\\
+cross\_collar\_positive\_margin\_closed=true\\
+core\_layer\_decomposition\_closed=true\\
+core\_or\_named\_consumption\_closed=true\\
+self\_mirror\_collar\_excluded=false\\
+core\_layer\_concentration\_excluded=false\\
+deep\_late\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the collar-containment equivalence, the cross-collar
+margin criterion, and the quotient-layer decomposition of \(X_{\rm core}\).
+It does not exclude the self-mirror collar branch or quotient core-layer
+concentration.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -8124,3 +8124,91 @@ IntegerTailMarginPositiveOrLateSupportDenseTailNamedReturnPDEC
 本步关闭的是 late-support tail 的精确 collar 公式。剩余集中为：
 deep-late short collar，或 `X_core/R_named` 吃掉 late margin。
 行/列命题仍未无条件闭合。
+
+## 180. Deep-late collar quotient-layer 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_deep_collar_layer_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.json
+data/prime-matrix-firstbreak-tail-gap-deep-collar-layer-ledger.json
+```
+
+本步继续攻击 `DeepLateShortCollarOrCoreExcessNamedReturnPDEC`。同步读数为：
+
+```text
+deep_collar_imported=true
+mirror_collar_equivalence_closed=true
+cross_collar_positive_margin_closed=true
+core_layer_decomposition_closed=true
+core_or_named_consumption_closed=true
+self_mirror_collar_excluded=false
+core_layer_concentration_excluded=false
+deep_late_closed=false
+row_column_unconditional_closed=false
+```
+
+令：
+
+```text
+x0=y-L, H=P-y, D=2y-P.
+```
+
+则 deep-late short collar 有等价式：
+
+```text
+L<=D
+<=> x0>=H
+<=> B=[x0,y-1] subset [H,y-1].
+```
+
+所以几何剩余不再是一般 late 支撑，而是自镜像 collar 内部相位问题。
+
+若 `L>D`，则零块跨出 collar。记：
+
+```text
+M=L(L-D)+min(L,y-1).
+```
+
+上一层给出 `G_int=M-X_core`，因此：
+
+```text
+X_core+R_named < M  =>  G>0.
+```
+
+若反例仍存在，则必须有：
+
+```text
+X_core+R_named >= M.
+```
+
+同时 core excess 精确分解到 quotient 层。令：
+
+```text
+h=H+r, H+1<=h<=m,
+k(h)=ceil((P-1)/h)-2,
+I_k={h: ceil((P-1)/h)=k+2}.
+```
+
+则：
+
+```text
+X_core=sum_{k>=1} k sum_{h in I_k} min(L,h-H).
+```
+
+硬点更新为：
+
+```text
+DeepLateShortCollarOrCoreExcessNamedReturnPDEC
+  -> DeepLateCollarMirrorContainmentLedger
+  AND CrossCollarPositiveMarginCriterionLedger
+  AND CoreExcessQuotientLayerDecompositionLedger
+  AND CoreExcessLayerConcentrationOrNamedReturnPDEC
+  AND SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC
+```
+
+本步关闭的是 deep-late 的几何等价和 core quotient 层分解。剩余集中为：
+自镜像 collar 内部相位，或 quotient core 层/命名 return 对 margin 的显式消耗。
+行/列命题仍未无条件闭合。

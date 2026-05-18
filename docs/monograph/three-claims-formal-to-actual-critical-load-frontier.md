@@ -7814,3 +7814,65 @@ DeepLateShortCollarOrCoreExcessNamedReturnPDEC
 
 本步没有排斥 deep-late collar，也没有控制 `X_core` 或 `R_named`；
 它把 late-support 剩余压成一个精确的 collar/core-excess 不等式。
+
+## 180. Deep-late collar quotient-layer
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_deep_collar_layer_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.json
+data/prime-matrix-firstbreak-tail-gap-deep-collar-layer-ledger.json
+```
+
+本步继续攻击 `DeepLateShortCollarOrCoreExcessNamedReturnPDEC`。同步结果：
+
+```text
+deep_collar_imported=true
+mirror_collar_equivalence_closed=true
+cross_collar_positive_margin_closed=true
+core_layer_decomposition_closed=true
+core_or_named_consumption_closed=true
+self_mirror_collar_excluded=false
+core_layer_concentration_excluded=false
+deep_late_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：若 `x0=y-L`、`H=P-y`、`D=2y-P`，则
+
+```text
+L<=D <=> x0>=H <=> B subset [H,y-1].
+```
+
+这把 deep-late short branch 改写成自镜像 collar containment。
+
+若 `L>D`，则跨出 collar。设
+
+```text
+M=L(L-D)+min(L,y-1).
+```
+
+正 gap 失败必须满足：
+
+```text
+X_core+R_named >= M.
+```
+
+同时 core excess 有 quotient 层分解：
+
+```text
+h=H+r,
+k(h)=ceil((P-1)/h)-2,
+X_core=sum_{k>=1} k sum_{h in I_k} min(L,h-H).
+```
+
+新的直接主攻为：
+
+```text
+SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC
+```
+
+本步没有排斥自镜像 collar，也没有排斥 quotient core 层集中或 `R_named` 吃掉 margin；
+它把剩余压成几何 self-mirror 分支和显式 quotient-layer 消耗分支。
