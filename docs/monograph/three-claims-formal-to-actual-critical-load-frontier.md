@@ -8850,3 +8850,65 @@ SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
 
 本步没有证明 primitive pivot-fiber PDEC cap，也没有证明 sparse scale-ladder
 SAE 全局可求和；它只把全局 Fourier cap 局部化为单坐标纤维相位相关。
+
+## 197. Stable-ladder residue-count PDEC frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_residue_count_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap`。
+同步结果：
+
+```text
+primitive_fiber_pdec_imported=true
+residue_count_vector_closed=true
+zero_mean_deviation_closed=true
+character_to_residue_deviation_closed=true
+residue_imbalance_localization_closed=true
+residue_imbalance_threshold_closed=true
+anonymous_primitive_character_exit_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+residue_count_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：primitive fiber 的角色相位异常不能继续保留为字符和
+黑箱。固定补坐标纤维 `S_h` 后，定义余数计数
+
+```text
+M_r=#{n in S_h: n mod q_j=r}, L=|S_h|, D_r=M_r-L/q_j.
+```
+
+由于 `chi_j` 非平凡，`sum_r chi_j(r)=0`，所以
+
+```text
+A_h=sum_r M_r chi_j(r)=sum_r D_r chi_j(r).
+```
+
+于是：
+
+```text
+|A_h|<=sum_r |D_r|<=q_j max_r |D_r|.
+```
+
+结合上一层 `|A_h|>=q_j*E_a(S)/(N-1)`，得到某个余数 `r` 满足：
+
+```text
+|M_r-L/q_j|>=E_a(S)/(N-1).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
+```
+
+本步没有证明 residue-count PDEC cap，也没有证明 sparse scale-ladder SAE
+全局可求和；它只把 primitive fiber 角色相关局部化为单余数类计数偏差。

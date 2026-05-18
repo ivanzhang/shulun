@@ -9599,3 +9599,88 @@ SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
 本步关闭的是匿名 stable ladder Fourier cap：它必落到某个单素数模数 `q_j`
 与固定补坐标纤维上的原子相位相关。剩余集中为 primitive pivot-fiber PDEC cap，
 或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。
+
+## 197. stable-ladder residue-count PDEC 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_residue_count_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap`。
+同步读数为：
+
+```text
+primitive_fiber_pdec_imported=true
+residue_count_vector_closed=true
+zero_mean_deviation_closed=true
+character_to_residue_deviation_closed=true
+residue_imbalance_localization_closed=true
+residue_imbalance_threshold_closed=true
+anonymous_primitive_character_exit_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+residue_count_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+在上一层固定的 pivot 坐标 `j` 与补坐标纤维 `S_h` 内，定义：
+
+```text
+L=|S_h|,
+M_r=#{n in S_h: n mod q_j=r},
+D_r=M_r-L/q_j.
+```
+
+则：
+
+```text
+sum_r D_r=0.
+```
+
+上一层的 primitive fiber 角色和满足：
+
+```text
+A_h=sum_{n in S_h} chi_j(n mod q_j)=sum_r M_r chi_j(r).
+```
+
+由于 `chi_j` 非平凡，`sum_r chi_j(r)=0`，所以：
+
+```text
+A_h=sum_r D_r chi_j(r).
+```
+
+三角不等式给出：
+
+```text
+|A_h|<=sum_r |D_r|<=q_j max_r |D_r|.
+```
+
+代入上一层阈值 `|A_h|>=q_j*E_a(S)/(N-1)`，得到存在余数 `r` 使：
+
+```text
+|M_r-L/q_j|>=E_a(S)/(N-1).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
+  -> StableActualLadderPrimitiveFiberPDECImportedLedger
+  AND StableLadderPivotFiberResidueCountVectorLedger
+  AND StableLadderPivotFiberZeroMeanDeviationLedger
+  AND StableLadderPivotFiberCharacterToResidueDeviationLedger
+  AND StableLadderPivotFiberResidueImbalanceLocalizationLedger
+  AND StableLadderPivotFiberResidueImbalanceThresholdLedger
+  AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap
+```
+
+本步关闭的是匿名 primitive fiber 角色相关出口：它被改写为固定补坐标纤维中的
+单余数类计数偏差。剩余集中为 residue-count PDEC cap，或 sparse scale-ladder
+SAE 全局求和问题。行/列命题仍未无条件闭合。

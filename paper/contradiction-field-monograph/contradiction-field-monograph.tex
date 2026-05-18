@@ -12995,6 +12995,71 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-r
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder residue-count PDEC localization]
+The primitive pivot-fiber character cap has an equivalent residue-count
+imbalance form.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderPrimitiveFiberPDECImportedLedger\\
+AND StableLadderPivotFiberResidueCountVectorLedger\\
+AND StableLadderPivotFiberZeroMeanDeviationLedger\\
+AND StableLadderPivotFiberCharacterToResidueDeviationLedger\\
+AND StableLadderPivotFiberResidueImbalanceLocalizationLedger\\
+AND StableLadderPivotFiberResidueImbalanceThresholdLedger\\
+AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderResidueCountPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Residue-count ledger]
+Keep the pivot coordinate \(j\), the modulus \(q_j\), and the complementary
+fiber \(S_h\) from the preceding reduction.  Let
+\[
+  L=|S_h|,\qquad
+  M_r=|\{n\in S_h:n\equiv r\pmod {q_j}\}|,\qquad r\in\mathbb Z/q_j\mathbb Z,
+\]
+and define the centered residue-count deviations
+\[
+  D_r=M_r-\frac{L}{q_j}.
+\]
+Then \(\sum_r D_r=0\).  For the nontrivial pivot character \(\chi_j\), the
+primitive fiber sum is
+\[
+  A_h=\sum_{n\in S_h}\chi_j(n\bmod q_j)
+      =\sum_r M_r\chi_j(r).
+\]
+Since \(\sum_r\chi_j(r)=0\), the average part vanishes and
+\[
+  A_h=\sum_r D_r\chi_j(r).
+\]
+Thus
+\[
+  |A_h|\le \sum_r |D_r|
+       \le q_j\max_r |D_r|.
+\]
+
+The preceding pivot-fiber theorem gives the lower bound
+\[
+  |A_h|\ge \frac{q_j\,E_a(S)}{N-1}.
+\]
+Consequently at least one residue class \(r\) satisfies
+\[
+  \left|M_r-\frac{L}{q_j}\right|\ge \frac{E_a(S)}{N-1}.
+\]
+Therefore the primitive fiber character outlet is not anonymous: it is a
+specific residue-count imbalance inside a fixed complementary-coordinate fiber.
+
+This theorem does not prove the residue-count PDEC cap, and it does not prove
+global summability of the sparse scale-ladder SAE outlet.  The row/column
+theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-residue-count-pdec-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
