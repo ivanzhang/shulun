@@ -6646,3 +6646,54 @@ AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
 所以当前前沿已从“证明 A1 source-admission”转为“提供循环外 seed cycle-cut primitive
 source 或同集 PDEC 作用域匹配/真正新 primitive/外部 no-projection KZ 证书”。宏循环同步本身
 不是行/列命题无条件闭合。
+
+## 157. Row-gap supply/phase cycle-cut router
+
+新增文件
+
+```text
+experiments/prime_matrix_row_gap_supply_phase_cycle_cut_router.py
+docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.md
+docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.json
+data/prime-matrix-row-gap-supply-phase-cycle-cut-ledger.json
+```
+
+本步把用户提出的具体零行反例模型形式化为 `I_k={kP+a:1<=a<P}`。同步结果显示：
+
+```text
+row_gap_model_pinned=true
+correct_divisor_supply_law=true
+low_root_only_claim_rejected=true
+capacity_only_contradiction_rejected=true
+crt_period_mirror_not_contradiction=true
+low_root_deficit_after_near_root_slots_proved=false
+q1q2_transport_defect_or_stable_short_return_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：零行确实要求所有列槽被 `<P` 的素因子覆盖；但将供给全部放在
+`q<=sqrt(kP)` 是过强的，因为近根带
+`sqrt(kP)<q<=sqrt(kP+P-1)` 会提供边缘半素数槽。另一方面，raw capacity 带重数通常不短缺，
+所以不能靠总量矛盾闭合；必须证明低根筛余槽在扣除近根 only 槽后仍有正缺口，或者证明
+`Q1/Q2` 相邻素数的 CRT 传输强制同 formal unit 的短同标签复现/登记缺陷。
+
+最新非循环剩余为：
+
+```text
+(UniformLowRootSiftedResidueDeficitAfterNearRootSlots
+ OR AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR ExactExternalPrimeGapSqrtBarrierCertificate_FOR_ROW_GAP_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+UniformLowRootSiftedResidueDeficitAfterNearRootSlots
+```
+
+所以当前前沿从宏循环破环进一步落到一个具体 row-gap 筛余下界：低根覆盖后，近根槽不能吞掉全部剩余列。

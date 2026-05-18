@@ -6645,3 +6645,79 @@ AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
 本步不证明 A1 source-admission 的全局排斥，也不证明 PDEC/CleanKLS、外部 KZ/DI/BFI、
 高段模型、RatePreservation 或 DStructure/Rankin；它只关闭一条当前内部路线的非循环性审查：
 该路线回到自身，不能作为无条件证明。
+
+## 157. Row-gap supply/phase cycle-cut router
+
+新增文件
+
+```text
+experiments/prime_matrix_row_gap_supply_phase_cycle_cut_router.py
+docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.md
+docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.json
+data/prime-matrix-row-gap-supply-phase-cycle-cut-ledger.json
+```
+
+本步把具体反例模型 `I_k={kP+a:1<=a<P}` 无素数拆成低根供给、近根半素数槽与
+`Q1/Q2` 相邻素数 CRT 传输三块。关键读数为：
+
+```text
+row_gap_model_pinned=true
+correct_divisor_supply_law=true
+low_root_only_claim_rejected=true
+capacity_only_contradiction_rejected=true
+crt_period_mirror_not_contradiction=true
+low_root_deficit_after_near_root_slots_proved=false
+q1q2_transport_defect_or_stable_short_return_proved=false
+row_column_unconditional_closed=false
+```
+
+校正后的供给律是：若 `kP+a` 合数且 `1<=a<P`，则 `kP+a<P^2`，所以存在素因子
+`q<P`；但不能统一写成 `q<=sqrt(kP)`，因为
+
+```text
+sqrt(kP) < q <= sqrt(kP+P-1)
+```
+
+的近根素数仍可能覆盖边缘半素数槽。零行的精确义务是：
+
+```text
+low-root slots union near-root slots covers every a=1..P-1.
+```
+
+raw capacity 带重数通常大于 `P`，所以单纯“供给总量”不产生矛盾；真正可攻点是：
+
+```text
+UniformLowRootSiftedResidueDeficitAfterNearRootSlots
+```
+
+即低根筛余槽在扣除近根 only 槽后仍有统一正缺口。另一路是：
+
+```text
+AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+```
+
+若 `Q1<kP` 与 `Q2>(k+1)P` 是夹住零行的相邻素数，CRT 镜像只给镜像覆盖块，本身不是矛盾；
+必须额外证明 `Q1/Q2` 传输强制同 formal unit 短同标签复现，或所有不稳定都登记为
+PDEC/SAE/ColumnCRT 缺陷。
+
+最新非循环基为：
+
+```text
+(UniformLowRootSiftedResidueDeficitAfterNearRootSlots
+ OR AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR ExactExternalPrimeGapSqrtBarrierCertificate_FOR_ROW_GAP_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+UniformLowRootSiftedResidueDeficitAfterNearRootSlots
+```
+
+本步没有证明所有 row-gap 不可能；它把具体反例的供需/相位矛盾压成统一低根筛余缺口或
+`Q1/Q2` CRT 传输矛盾。

@@ -10542,6 +10542,62 @@ high-segment model, rate-preservation, or D-structure gates.
 \end{proof}
 
 
+\begin{theorem}[Row-gap supply and phase cycle-cut audit]
+Fix an odd prime \(P\) and \(1\le k<P\), and consider the row interval
+\[
+  I_k=\{kP+a:1\le a<P\}.
+\]
+If this interval contains no prime, then each element of \(I_k\) has a prime
+divisor \(q<P\).  The correct uniform root split, however, is
+\begin{quote}\scriptsize\ttfamily
+low-root primes: q <= floor(sqrt(kP)),\\
+near-root primes: floor(sqrt(kP)) < q <= floor(sqrt(kP+P-1)).
+\end{quote}
+Thus it is too strong to assert that the primes below \(\sqrt{kP}\) alone
+must cover the row.  The zero-row obligation is instead the exact finite
+covering condition that the low-root residue classes together with the
+near-root slots cover every column \(a=1,\ldots,P-1\).  Raw covering capacity
+with multiplicity is not a contradiction; the active non-circular inputs are
+therefore a uniform low-root sifted-residue deficit after near-root slots, or
+an adjacent-prime \(Q_1,Q_2\) CRT transport defect forcing a stable short
+same-label return.  The synchronized basis is
+\begin{quote}\scriptsize\ttfamily
+(UniformLowRootSiftedResidueDeficitAfterNearRootSlots\\
+\phantom{(}OR AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn\\
+\phantom{(}OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput\\
+\phantom{(}OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate\\
+\phantom{(}OR ExactExternalPrimeGapSqrtBarrierCertificate\_FOR\_ROW\_GAP\_ONLY)\\
+AND HighSegmentModelGapAlpha043C3AnalyticLedger\\
+AND RatePreservationLedger\_FOR\_moving\_atom\_packet\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+row\_gap\_model\_pinned=true\\
+correct\_divisor\_supply\_law=true\\
+low\_root\_only\_claim\_rejected=true\\
+capacity\_only\_contradiction\_rejected=true\\
+crt\_period\_mirror\_not\_contradiction=true\\
+low\_root\_deficit\_after\_near\_root\_slots\_proved=false\\
+q1q2\_transport\_defect\_or\_stable\_short\_return\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The positive information is the correction of the supply law and the
+separation of two possible non-circular inputs.  If \(Q_1<kP\) and
+\(Q_2>(k+1)P\) are adjacent primes around the putative gap, CRT mirror
+symmetry by itself only gives a mirror covered block.  It becomes a
+contradiction only after one proves a stable same-formal-unit same-label
+short return, or proves that all instabilities enter registered
+PDEC/SAE/ColumnCRT defects.  Those assertions are not proved here.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
