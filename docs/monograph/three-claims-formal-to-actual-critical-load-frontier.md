@@ -7006,3 +7006,45 @@ FirstBreakPhaseSlipNamedReturnExclusion
 ```
 
 所以当前 inverse-alignment 回流路线的最新硬点不是“证明所有早期相位转移到平方锚”，而是排斥首破裂相位滑移的命名终端；全局 signed-row/source-rank 前沿仍并行开放。
+
+## 164. First-break phase-slip LCM-支撑宽度屏障
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_phase_slip_lcm_barrier_router.py
+docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.md
+docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.json
+data/prime-matrix-firstbreak-phase-slip-lcm-barrier-ledger.json
+```
+
+本步把 `FirstBreakPhaseSlipNamedReturnExclusion` 继续压缩为固定 carrier 复现的 LCM 屏障。同步结果：
+
+```text
+fixed_carrier_lcm_replay_period_closed=true
+square_support_width_sharpened_to_p_minus_y=true
+lcm_exceeds_width_no_fixed_replay=true
+firstbreak_phase_slip_named_return_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：首破裂行 `y` 之后，如果释放相位要用同一 carrier 标签集 `Lambda` 再次复现，
+则复现步长 `d` 必须满足：
+
+```text
+lcm(Lambda) | d.
+```
+
+但可复现的行宽只剩 `H=P-y`。因此 `lcm(Lambda)>H` 时，固定标签复现不可能；`lcm(Lambda)<=H`
+时，活动 carrier 的合成模数被强制压在小范围内，进入小 LCM/ColumnCRT/PDEC。若标签移动，则进入
+moving-carrier PDEC/SAE；若没有复现，则只能作为 sparse SAE/LocalSurvivor 处理。
+
+当前硬点更新为：
+
+```text
+SmallLCMColumnCRTPDECExclusion
+AND NonreplaySparseFirstBreakSAESummability
+AND MovingCarrierPhaseSlipPDECExclusion
+```
+
+这一步没有排斥首破裂，只是把“相位滑移终端”拆成三个更低层的可审计出口。

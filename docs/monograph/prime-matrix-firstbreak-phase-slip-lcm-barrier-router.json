@@ -1,0 +1,118 @@
+{
+  "carrier_phase_motion_formula_closed": true,
+  "certificate_type": "prime_matrix_firstbreak_phase_slip_lcm_barrier_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "FirstBreakPhaseSlipImported",
+      "meaning": "上一层把 early-to-square 抽象转移压到 square-zero 或首破裂 phase-slip 命名终端。",
+      "proved": false,
+      "remaining": "FirstBreakPhaseSlipNamedReturnExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "CarrierPhaseMotionFormulaClosed",
+      "meaning": "首破裂 carrier q 的相位满足 rho_q(t+d)=rho_q(t)-dP mod q；因 (P,q)=1，同标签复现要求 q|d。",
+      "proved": true,
+      "remaining": "none for formula"
+    },
+    {
+      "closed": true,
+      "gate": "FixedCarrierLCMReplayPeriodClosed",
+      "meaning": "对固定 carrier 标签集 Lambda，精确同标签复现步长 d 必须被 L=lcm(Lambda) 整除。",
+      "proved": true,
+      "remaining": "FirstBreakFixedCarrierLCMWidthBarrier"
+    },
+    {
+      "closed": true,
+      "gate": "SquareSupportWidthSharpened",
+      "meaning": "首破裂发生在 y 后，直到平方锚前只剩 H=P-y 个可复现步长；这比旧 short< P 自同构门更窄。",
+      "proved": true,
+      "remaining": "support width H=P-y"
+    },
+    {
+      "closed": true,
+      "gate": "LCMExceedsWidthNoReplay",
+      "meaning": "若 L>H，则 1<=d<=H 内不存在固定 carrier 同标签复现；该 first-break 不能成为稳定短周期支付链。",
+      "proved": true,
+      "remaining": "NonreplaySparseFirstBreakSAESummability OR MovingCarrierPhaseSlipPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "SmallLCMBranchIsStructured",
+      "meaning": "若 L<=H，则所有互异 carrier 的乘积已被 H<=P 控制；多标签复现只能落在小 LCM/固定列位移/ColumnCRT/PDEC 分支。",
+      "proved": false,
+      "remaining": "SmallLCMColumnCRTPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "RepeatedCarrierResidueRouted",
+      "meaning": "同一 q 或同一 residue 的重复使用不增加 L，但它正是 fixed-residue/ColumnCRT/PDEC 账本对象。",
+      "proved": true,
+      "remaining": "SmallLCMColumnCRTPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "MovingCarrierIsNamedReturn",
+      "meaning": "若反例链通过更换 carrier 标签逃避 LCM 屏障，则它不是 fixed replay，而是 moving-carrier phase slip，进入 PDEC/SAE 命名回流。",
+      "proved": true,
+      "remaining": "MovingCarrierPhaseSlipPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "FirstBreakBarrierReduced",
+      "meaning": "首破裂终端已被分成小 LCM 固定复现、无复现稀疏 SAE、moving-carrier PDEC 三项；不再保留抽象 phase-slip 终端。",
+      "proved": false,
+      "remaining": "SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "FirstBreakNamedReturnExclusionProved",
+      "meaning": "本步只关闭固定 carrier 复现的合成模数屏障；尚未排斥小 LCM PDEC、非复现 SAE 或 moving-carrier PDEC。",
+      "proved": false,
+      "remaining": "SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、上述三项终端排斥，或并行 signed-row/source-rank 前沿闭合。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "firstbreak_imported": true,
+  "firstbreak_phase_slip_named_return_exclusion_proved": false,
+  "fixed_carrier_lcm_replay_period_closed": true,
+  "hardpoint_after_router": "SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "hardpoint_before_router": "FirstBreakPhaseSlipNamedReturnExclusion",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lcm_exceeds_width_no_fixed_replay": true,
+  "moving_carrier_named_return": true,
+  "next_direct_attack_target": "SmallLCMColumnCRTPDECExclusion",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion",
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+    "ActualNoncanonicalPrimitiveEmitterSourceTableLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger"
+  ],
+  "plain_conclusion": "首破裂 phase-slip 的固定 carrier 复现已经被压成 LCM-支撑宽度屏障：若释放相位在首破裂行 y 之后以同一 carrier 标签集复现，则复现步长 d 必须被所有活动 carrier 的 lcm 整除；但到平方锚前的支撑宽度只有 H=P-y。因此 L>H 时没有非零复现，L<=H 时只剩小 LCM/ColumnCRT/PDEC 分支；逃避固定标签的情形必须登记为 moving-carrier PDEC/SAE。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND SmallLCMColumnCRTPDECExclusion AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "small_lcm_branch_structured_but_not_excluded": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.json": "54575ef141b22648dd85608f8db9144e24ef013b69df9a130147857c28840c2f",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-early-zero-terminal-package-reduction-router.json": "d53ae12d44d1a8d376d29589a9df6eb26aa48a35ad18f88c0372eba62ad03395",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.json": "3b4788e5d5ca0887a903422eff12882a5e41c2040c760df61cdda575cf4109e4",
+    "docs/monograph/prime-matrix-strict-stable-short-return-defect-terminal-schema-sync-router.json": "700c2f6abf741e25d448151b2231720ae03c2e0de3caab67d2bdedfd443d7d25",
+    "experiments/prime_matrix_firstbreak_phase_slip_lcm_barrier_router.py": "ff61a1b66d3d7bb89976a4404a8b7a98934c63b90cd6c98c2ca1306d8b526bf1"
+  },
+  "square_support_width_sharpened_to_p_minus_y": true,
+  "status": "firstbreak_phase_slip_lcm_width_barrier_closed_terminal_exclusion_open"
+}

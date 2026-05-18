@@ -10897,6 +10897,60 @@ terminal is excluded, or the parallel signed-source/source-rank frontier is
 closed.
 \end{proof}
 
+\begin{theorem}[First-break phase-slip LCM width barrier]
+Let the first break from an early zero block occur at row \(y\le P\), so
+that row \(y-1\) is still zero and row \(y\) has a nonempty released-column
+set.  Fix a released formal unit and let \(\Lambda\) be its active carrier
+prime labels.  If the same released phase pattern reappears at row \(y+d\)
+with the same carrier labels, then for every \(q\in\Lambda\)
+\[
+  \rho_q(y+d)=\rho_q(y),\qquad \rho_q(t)=-tP\pmod q,
+\]
+and hence \(dP\equiv0\pmod q\).  Since \(q<P\) is prime and \(q\ne P\), this
+is equivalent to \(q\mid d\).  Therefore
+\[
+  \operatorname{lcm}(\Lambda)\mid d .
+\]
+The remaining row support before the square anchor has width \(H=P-y\).
+Thus if \(\operatorname{lcm}(\Lambda)>H\), no nonzero fixed-carrier replay
+can occur before the square anchor.  If \(\operatorname{lcm}(\Lambda)\le H\),
+the replay is a small-LCM fixed-residue event and must be routed to
+ColumnCRT/PDEC.  If the carrier labels move, the branch is a moving-carrier
+phase-slip PDEC/SAE return.  Consequently the previous first-break terminal
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+SmallLCMColumnCRTPDECExclusion\\
+AND NonreplaySparseFirstBreakSAESummability\\
+AND MovingCarrierPhaseSlipPDECExclusion.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+fixed\_carrier\_lcm\_replay\_period\_closed=true\\
+square\_support\_width\_sharpened\_to\_p\_minus\_y=true\\
+lcm\_exceeds\_width\_no\_fixed\_replay=true\\
+firstbreak\_phase\_slip\_named\_return\_exclusion\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This is a non-circular sharpening of the first-break named terminal: it uses
+only the forward phase motion from row \(y\) to the square anchor.  It does not
+exclude the small-LCM ColumnCRT/PDEC branch, the nonreplay sparse SAE branch,
+or the moving-carrier PDEC branch.  The inverse-alignment return therefore
+becomes
+\begin{quote}\scriptsize\ttfamily
+NoZeroRowAtXEqualsP\_PlusOneRowAfterSquare\\
+AND SmallLCMColumnCRTPDECExclusion\\
+AND NonreplaySparseFirstBreakSAESummability\\
+AND MovingCarrierPhaseSlipPDECExclusion.
+\end{quote}
+The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

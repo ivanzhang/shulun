@@ -7108,3 +7108,70 @@ FirstBreakPhaseSlipNamedReturnExclusion
 ```
 
 本步关闭的是抽象 transfer 的无名性；尚未排斥首破裂 phase-slip 的 PDEC/SAE/LocalSurvivor 终端。
+
+## 164. First-break phase-slip LCM-支撑宽度屏障
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_phase_slip_lcm_barrier_router.py
+docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.md
+docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.json
+data/prime-matrix-firstbreak-phase-slip-lcm-barrier-ledger.json
+```
+
+本步继续攻击 `FirstBreakPhaseSlipNamedReturnExclusion`。同步读数为：
+
+```text
+fixed_carrier_lcm_replay_period_closed=true
+square_support_width_sharpened_to_p_minus_y=true
+lcm_exceeds_width_no_fixed_replay=true
+firstbreak_phase_slip_named_return_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+设首破裂发生在行 `y<=P`，释放 formal unit 的活动 carrier 标签集为 `Lambda`。若同一释放相位模式在
+`y+d` 复现且 carrier 标签不移动，则对每个活动素数 `q` 都有：
+
+```text
+rho_q(y+d)=rho_q(y),
+rho_q(t)=-tP mod q,
+dP == 0 mod q.
+```
+
+因为 `(P,q)=1`，所以 `q|d`，即：
+
+```text
+lcm(Lambda) | d.
+```
+
+从首破裂行到平方锚前的复现支撑宽度只有：
+
+```text
+H=P-y.
+```
+
+因此若 `lcm(Lambda)>H`，在 `1<=d<=H` 内没有固定 carrier 同标签复现；若 `lcm(Lambda)<=H`，则活动
+carrier 的合成模数已经被 `H<=P` 控制，只能作为小 LCM/固定 residue 的 ColumnCRT/PDEC 分支处理。
+若反例链通过更换 carrier 逃避该屏障，则不再是 fixed replay，而是 moving-carrier phase slip。
+
+于是首破裂终端被压成：
+
+```text
+FirstBreakPhaseSlipNamedReturnExclusion
+  -> SmallLCMColumnCRTPDECExclusion
+  AND NonreplaySparseFirstBreakSAESummability
+  AND MovingCarrierPhaseSlipPDECExclusion
+```
+
+inverse-alignment 回流分支更新为：
+
+```text
+NoZeroRowAtXEqualsP_PlusOneRowAfterSquare
+AND SmallLCMColumnCRTPDECExclusion
+AND NonreplaySparseFirstBreakSAESummability
+AND MovingCarrierPhaseSlipPDECExclusion
+```
+
+本步关闭的是固定 carrier 复现的合成模数屏障；小 LCM PDEC、非复现 sparse SAE 与 moving-carrier PDEC
+仍未排斥，行/列命题仍未无条件闭合。
