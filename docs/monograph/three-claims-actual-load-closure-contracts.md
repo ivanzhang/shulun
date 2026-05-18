@@ -6782,3 +6782,60 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```text
 NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
 ```
+
+## 159. Short-interval rough-residue barrier router
+
+新增文件
+
+```text
+experiments/prime_matrix_short_interval_rough_residue_barrier_router.py
+docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.md
+docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json
+data/prime-matrix-short-interval-rough-residue-barrier-ledger.json
+```
+
+本步继续审查上一节的直接首攻点。同步读数为：
+
+```text
+full_root_rough_equals_prime_in_row=true
+near_root_subtraction_keeps_equivalence=true
+mertens_average_insufficient=true
+periodwide_jacobsthal_shortcut_rejected=true
+noncircular_internal_use_rejected=true
+noncircular_short_interval_rough_residue_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+关键压缩是：在 `I_k={kP+a:1<=a<P}`、`1<=k<P` 中，若某槽未被任何
+`q<=sqrt(kP+P-1)` 覆盖，则该槽只能是素数。因此
+
+```text
+full_root_uncovered > 0  <=>  row contains a prime.
+```
+
+low-root 未覆盖数扣除近根 only 槽后的正性仍等价于 full-root 未覆盖正性。于是
+`NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP` 不能再作为自足证明内部黑箱；
+直接证明它已经是平方根长度 row-gap 素数存在性本身。
+
+最新内部非循环基改为：
+
+```text
+(AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若接受外部强输入，可登记：
+
+```text
+ExactExternalSqrtLengthPrimeGapInput_FOR_ROW_GAP_ONLY
+```
+
+但它未在当前文稿内证明，不能冒充自足闭合。下一直接主攻转为：
+
+```text
+AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+```

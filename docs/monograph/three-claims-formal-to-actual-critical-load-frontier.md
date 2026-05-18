@@ -6743,3 +6743,50 @@ NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
 ```
 
 所以当前前沿已压到一个标准但很硬的非循环筛论输入：指定相位短区间 rough residue 下界。
+
+## 159. Short-interval rough-residue barrier router
+
+新增文件
+
+```text
+experiments/prime_matrix_short_interval_rough_residue_barrier_router.py
+docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.md
+docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json
+data/prime-matrix-short-interval-rough-residue-barrier-ledger.json
+```
+
+本步把上一节的 rough-residue 首攻点做非循环性审查。同步结果显示：
+
+```text
+full_root_rough_equals_prime_in_row=true
+near_root_subtraction_keeps_equivalence=true
+mertens_average_insufficient=true
+periodwide_jacobsthal_shortcut_rejected=true
+noncircular_internal_use_rejected=true
+noncircular_short_interval_rough_residue_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`q<=sqrt(kP+P-1)` 的 full-root 未覆盖槽为正，当且仅当 row 内实际有素数。
+因此 `NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP` 不是新的独立 actual-load
+不等式，而是目标 row-gap 的筛论重写。Mertens 平均密度、全周期 Jacobsthal 直觉、有限样本都不能把它变成逐行证明。
+
+最新内部非循环剩余为：
+
+```text
+(AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+```
+
+所以当前前沿不再把 direct rough-residue 下界当作内部目标；它被降格为外部平方根长度素数间隙输入，
+内部路线转向 `Q1/Q2` 相邻素数 CRT 传输、seed cycle-cut 或 same-set PDEC 作用域匹配。

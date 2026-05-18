@@ -1,0 +1,93 @@
+{
+  "basis_if_external_gap_input_is_accepted": "(ExactExternalSqrtLengthPrimeGapInput_FOR_ROW_GAP_ONLY OR (AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "certificate_type": "prime_matrix_short_interval_rough_residue_barrier_router",
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "RoughResidueTargetImported",
+      "meaning": "上一层把 low-root 缺口压到长度 P、筛到 sqrt(kP) 并扣除近根槽后的指定相位 rough-residue 正下界。",
+      "proved": false,
+      "remaining": "NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP"
+    },
+    {
+      "closed": true,
+      "gate": "FullRootRoughEqualsPrimeInRow",
+      "meaning": "在 k<P 且 1<=a<P 时，kP+a<P^2；若未被任何 q<=sqrt(kP+P-1) 覆盖，则 kP+a 只能是素数。",
+      "proved": true,
+      "remaining": "full-root uncovered slot iff row prime slot"
+    },
+    {
+      "closed": true,
+      "gate": "NearRootSubtractionKeepsEquivalence",
+      "meaning": "low-root 未覆盖槽扣除近根 only 槽后的正缺口，正是 full-root 未覆盖槽正性，因此等价于该行有素数。",
+      "proved": true,
+      "remaining": "low_uncovered_minus_near_root_only > 0 iff row contains a prime"
+    },
+    {
+      "closed": true,
+      "gate": "MertensAverageInsufficient",
+      "meaning": "Mertens 或 beta-sieve 平均密度只能给期望量；不能排除某个指定 CRT 相位长度 P 短区间被完全覆盖。",
+      "proved": true,
+      "remaining": "pointwise short-interval lower bound still missing"
+    },
+    {
+      "closed": true,
+      "gate": "PeriodWideJacobsthalShortcutRejected",
+      "meaning": "已有 primorial/Jacobsthal 审计显示全周期最长低筛覆盖块可超过 P；不能用周期全局最长块上界关闭特殊相位。",
+      "proved": true,
+      "remaining": "must use special phase or transport/PDEC, not global Jacobsthal bound"
+    },
+    {
+      "closed": true,
+      "gate": "DirectRoughLowerBoundIsRowGapStrength",
+      "meaning": "若无条件证明该 rough-residue 正下界，就已证明每个 I_k=(kP,kP+P) 有素数；这不是辅助引理，而是行命题本身的平方根长度素数间隙形态。",
+      "proved": false,
+      "remaining": "ExactExternalSqrtLengthPrimeGapInput_FOR_ROW_GAP_ONLY"
+    },
+    {
+      "closed": true,
+      "gate": "NonCircularInternalUseRejected",
+      "meaning": "在自足证明内把该下界当作已证输入会循环使用目标命题；只能登记为外部强输入或转攻非循环相位传输/seed/PDEC。",
+      "proved": true,
+      "remaining": "AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步关闭 direct rough-residue 首攻的循环性审查，但没有给出全局无条件证明。",
+      "proved": false,
+      "remaining": "(AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_rough_lower_bound_is_row_gap_strength": true,
+  "empirical_absence_not_used_as_proof": true,
+  "external_gap_input_accepted": false,
+  "full_root_rough_equals_prime_in_row": true,
+  "mertens_average_insufficient": true,
+  "near_root_subtraction_keeps_equivalence": true,
+  "next_direct_attack_target": "AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn",
+  "no_theorem_switch": true,
+  "noncircular_internal_use_rejected": true,
+  "noncircular_short_interval_rough_residue_lower_bound_proved": false,
+  "optional_external_input": "ExactExternalSqrtLengthPrimeGapInput_FOR_ROW_GAP_ONLY",
+  "parallel_attack_targets": [
+    "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+  ],
+  "periodwide_jacobsthal_shortcut_rejected": true,
+  "plain_conclusion": "`NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP` 被审查为平方根长度短区间素数存在性的同义屏障：扣除近根槽后的 rough-residue 正缺口为正，当且仅当对应 row 内已有素数。因此它不能作为自足非循环证明的内部黑箱；若不用外部短区间素数间隙输入，当前路线必须转到 Q1/Q2 CRT 传输缺陷、seed cycle-cut 或 same-set PDEC 作用域匹配。",
+  "rejected_internal_direct_target": "NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP",
+  "rough_residue_target_imported": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-inverse-alignment-latest-frontier-sync-router.json": "ff08e13fd2dbbd7dbbdaf7a1648fc8f339cd2e52eec84a5ba3a0df7873c05d9c",
+    "docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json": "80ae10c28cd1700bb3e5fb1280198a2332468800f9ea8e306dd8d699a22716f6",
+    "docs/monograph/prime-matrix-primorial-jacobsthal-central-block-router.json": "35ae489251780714fd8168bb39108b636a4882d967acd642f4c24a6a046fbcfb",
+    "docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.json": "6b5c87084ccd8da64c98664cffddfec39cb616129b00181d3694d998510f184f",
+    "docs/monograph/prime-matrix-square-phase-jacobsthal-special-phase-router.json": "fa548f93b15f6961478bb8ecff06afab73694bea5daaec2aeefb741e4a4d34a3",
+    "experiments/prime_matrix_short_interval_rough_residue_barrier_router.py": "8891209fc94a8ae6c205f3bc1507f45df7eef9018cabd01ba96f125d89d08cf7"
+  },
+  "status": "direct_rough_residue_route_classified_as_row_gap_strength_open",
+  "strict_internal_basis_after_router": "(AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
