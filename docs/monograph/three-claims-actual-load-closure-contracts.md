@@ -6074,3 +6074,36 @@ SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 ```
 
 行/列命题仍未无条件闭合。
+
+## 146. Strict terminal atoms to alpha-return bridge sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_terminal_atoms_to_alpha_return_bridge_sync_router.py
+docs/monograph/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-router.md
+docs/monograph/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-router.json
+data/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-ledger.json
+```
+
+本步把上一轮三原子同步到当前更深 strict 前沿。读数确认：
+
+```text
+terminal_three_atoms_imported=true
+moving_atom_reduced_to_exact_entropy=true
+post_mertens_reduced_to_kernel_identity=true
+kernel_identity_reduced_to_pointwise_table=true
+alpha_return_route_reclassified_as_backedge=true
+row_column_unconditional_closed=false
+```
+
+实际负载链条上的意义是：moving atom 不再作为孤立出口；它先进入 exact entropy，再进入同 formal-unit kernel identity 与逐点 primitive 核表。核表若沿旧 alpha/weight/rank 三腿拆开，会回到 PDEC/CleanKLS 与终端家族；因此旧 pointwise/alpha 展开只能记为回边，不能提供严格下降量。
+
+最新 strict 自足主攻为：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
+```
+
+前者要提交 canonical-lock 的同集推前、有限因子图、无 noncanonical payload 残留等证书；后者要在进入 exact-UV/rank/alpha 回边前，独立证明 actual-source 恒等或强化反原子。当前仍没有全局无条件闭合。

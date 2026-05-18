@@ -6090,3 +6090,58 @@ IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
 ```
 
 本步仍只是前沿同步和自回流删除；三原子与 DStructure/Rankin 独立晋级门均未证明，行/列命题仍未无条件闭合。
+
+## 146. Strict terminal atoms to alpha-return bridge sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_terminal_atoms_to_alpha_return_bridge_sync_router.py
+docs/monograph/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-router.md
+docs/monograph/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-router.json
+data/prime-matrix-strict-terminal-atoms-to-alpha-return-bridge-sync-ledger.json
+```
+
+本步把上一轮三原子继续接入已有更深前沿。同步链为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+-> ExactCleanCoreFullSNonAPWFDSourceEntropy
+-> SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion
+-> PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+-> NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> terminal leaf firewall
+-> AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode
+```
+
+再经 noncanonical legal mode 过滤与 alpha-return 防火墙：
+
+```text
+NoncanonicalFullSComplementLegalClosureMode
+-> IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
+
+old pointwise/alpha route
+-> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+-> terminal-family backedge
+```
+
+因此 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore` 不是当前最深主攻点；旧 pointwise/alpha 展开也不能登记为 well-founded descent。最新 strict 自足活动基同步为：
+
+```text
+(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn)
+AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000)
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+若明确接受外部 Mertens/theta 显式输入，高段尾项可暂时移出活动缺口，剩：
+
+```text
+(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn)
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+本步仍不是无条件闭合；下一步必须证明 canonical-lock 五项同集证书，或在进入 exact-UV/rank/alpha 回边前独立证明 actual-source 恒等或强化反原子。
