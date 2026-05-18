@@ -12658,6 +12658,70 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-sca
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Scale-escape support-clock reduction]
+The scale-escaping single-coordinate descent has an integer support clock.  The
+open hard point
+\begin{quote}\scriptsize\ttfamily
+ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+ScaleEscapingSingleCoordinateDescentImportedLedger\\
+AND ScaleEscapeIntegerSupportClockLedger\\
+AND ScaleEscapeHalvingClockDescentLedger\\
+AND FiniteDepthScaleEscapePerFiberLedger\\
+AND TerminalWidthOneFiniteAtomLedger\\
+AND ScaleLadderProductWidthColumnCRTExitLedger\\
+AND PersistentScaleLadderSignatureRegistrationLedger\\
+AND SparseScaleLadderSAERegistrationLedger\\
+AND NoCyclicScaleEscapeDescentLedger\\
+AND NoAnonymousScaleEscapeDescentLedger\\
+AND PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Support-clock ledger]
+Let \(W_i\) be the effective residual support width after \(i\) scale-escaping
+coordinates have been imposed.  Define the integer clock
+\[
+  K(W)=\left\lceil \log_2 \max(W,1)\right\rceil .
+\]
+Thus \(K(W)=0\) exactly at terminal width \(W\le1\), which is a finite atom or
+an already named boundary.
+
+For a genuine scale-escaping coordinate at step \(i\), its dyadic scale
+\(B_i\) satisfies \(B_i\ge2\).  The previous scale-escape ledger gives
+\[
+  W_{i+1}\le \left\lceil \frac{W_i}{B_i}\right\rceil
+  \le \left\lceil \frac{W_i}{2}\right\rceil .
+\]
+If \(W_i\ge2\), then
+\[
+  K(W_{i+1})\le K(W_i)-1.
+\]
+Hence a fixed counterexample fiber has at most \(K(W_0)\) scale-escape steps.
+No scale-escape descent can cycle back to the same support-clock layer.
+
+If the descent reaches \(W\le1\), the branch is terminal.  If the dyadic scale
+ladder satisfies
+\[
+  \prod_i B_i>W_0,
+\]
+then the composite period exceeds the original support and the branch is a
+product-width ColumnCRT/PDEC or finite-atom exit.  Therefore an infinite
+obstruction that is not absorbed by terminal width, product width, or
+nonpersistent sparse mass must carry a named ordered scale-ladder signature
+with its phase data.
+
+This removes the anonymous scale-escape descent and the possibility of an
+internal scale-escape cycle.  It does not yet exclude persistent scale-ladder
+signatures, and it does not prove global summability of the sparse
+scale-ladder SAE mass.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

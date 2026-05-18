@@ -8564,3 +8564,55 @@ ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
 
 本步没有证明尺度逃逸单坐标递降族不可能，也没有证明 sparse drift/SAE 全局可求和；
 它只把单坐标漂移压到尺度逃逸递降和稀疏漂移出口。
+
+## 192. Scale-escape support-clock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_escape_support_clock_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-ledger.json
+```
+
+本步继续攻击 `ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC`。同步结果：
+
+```text
+scale_escape_descent_imported=true
+integer_support_clock_closed=true
+halving_clock_descent_closed=true
+finite_depth_per_fiber_closed=true
+terminal_width_one_finite_atom_closed=true
+scale_ladder_product_width_exit_closed=true
+persistent_scale_ladder_signature_registered=true
+sparse_scale_ladder_sae_registered=true
+cyclic_scale_escape_descent_excluded=true
+anonymous_scale_escape_descent_removed=true
+persistent_scale_ladder_excluded=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：尺度逃逸递降也不能匿名循环保留。定义：
+
+```text
+K(W)=ceil(log_2 max(W,1)).
+```
+
+每个真实尺度逃逸坐标给出：
+
+```text
+W_{i+1}<=ceil(W_i/B_i), B_i>=2,
+K(W_{i+1})<=K(W_i)-1 when W_i>=2.
+```
+
+因此同一反例纤维上的尺度逃逸链有有限深度；到 `W<=1` 则为有限原子，到
+`prod_i B_i>W_0` 则为 product-width ColumnCRT/PDEC 或有限原子。新的直接主攻为：
+
+```text
+PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
+```
+
+本步没有证明持久尺度阶梯签名不可能，也没有证明 sparse scale-ladder SAE 全局可求和；
+它只把抽象 scale-escape descent 压到有时钟的持久阶梯签名或稀疏出口。

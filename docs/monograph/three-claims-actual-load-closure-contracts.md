@@ -9193,3 +9193,82 @@ SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
 
 本步关闭的是有界尺度匿名漂移和同尺度循环；剩余集中为尺度逃逸单坐标递降族，
 或 sparse drift/SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 192. scale-escape support-clock 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_escape_support_clock_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-ledger.json
+```
+
+本步继续攻击 `ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC`。同步读数为：
+
+```text
+scale_escape_descent_imported=true
+integer_support_clock_closed=true
+halving_clock_descent_closed=true
+finite_depth_per_fiber_closed=true
+terminal_width_one_finite_atom_closed=true
+scale_ladder_product_width_exit_closed=true
+persistent_scale_ladder_signature_registered=true
+sparse_scale_ladder_sae_registered=true
+cyclic_scale_escape_descent_excluded=true
+anonymous_scale_escape_descent_removed=true
+persistent_scale_ladder_excluded=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+对有效支撑宽度 `W` 定义整数时钟：
+
+```text
+K(W)=ceil(log_2 max(W,1)).
+```
+
+真实尺度逃逸层满足 `B_i>=2` 且：
+
+```text
+W_{i+1}<=ceil(W_i/B_i)<=ceil(W_i/2).
+```
+
+所以当 `W_i>=2` 时：
+
+```text
+K(W_{i+1})<=K(W_i)-1.
+```
+
+这给出非循环单调量：同一反例纤维上的尺度逃逸步数至多 `K(W_0)`，不能回到同一
+支撑时钟层。若递降到 `W<=1`，进入有限原子或命名边界；若尺度阶梯乘积越过初始
+支撑：
+
+```text
+prod_i B_i>W_0,
+```
+
+则合成周期超过支撑，进入 ColumnCRT/PDEC 或有限原子。剩余无限族不能再作为匿名
+scale-escape descent 存在，必须登记为持久有序尺度阶梯签名；非持久事件进入 sparse
+scale-ladder SAE。
+
+硬点更新为：
+
+```text
+ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
+  -> ScaleEscapingSingleCoordinateDescentImportedLedger
+  AND ScaleEscapeIntegerSupportClockLedger
+  AND ScaleEscapeHalvingClockDescentLedger
+  AND FiniteDepthScaleEscapePerFiberLedger
+  AND TerminalWidthOneFiniteAtomLedger
+  AND ScaleLadderProductWidthColumnCRTExitLedger
+  AND PersistentScaleLadderSignatureRegistrationLedger
+  AND SparseScaleLadderSAERegistrationLedger
+  AND NoCyclicScaleEscapeDescentLedger
+  AND NoAnonymousScaleEscapeDescentLedger
+  AND PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
+```
+
+本步关闭的是抽象 scale-escape 内循环和匿名递降口径；剩余集中为持久尺度阶梯签名，
+或 sparse scale-ladder SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。
