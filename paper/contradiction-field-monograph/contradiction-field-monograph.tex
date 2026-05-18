@@ -11321,6 +11321,67 @@ bound, and it does not exclude duplicate/collision returns.  The row/column
 theorem remains open.
 \end{proof}
 
+\begin{theorem}[Arrival quotient fiber envelope]
+Let \(A\) be the set of source-tagged arrivals and
+\[
+  \pi:A\longrightarrow (t_{\rm next},q,a)
+\]
+be the arrival quotient map.  Fix an image point \((t,q,a)\).  Any preimage
+source row \(s\) must lie in the zero block \(B=[x_0,y-1]\) and satisfy
+\[
+  s\equiv t\pmod q,
+\]
+so the row factor is at most \(\lceil L/q\rceil\).  Any source column \(c\)
+must satisfy \(1\le c<P\) and \(c\equiv a\pmod q\), so the column factor is at
+most \(\lceil (P-1)/q\rceil\).  Therefore
+\[
+  |\pi^{-1}(t,q,a)|\le
+  \Big\lceil \frac{L}{q}\Big\rceil
+  \Big\lceil \frac{P-1}{q}\Big\rceil .
+\]
+Consequently, with
+\[
+  F(t,q,a)=\Big\lceil \frac{L}{q}\Big\rceil
+  \Big\lceil \frac{P-1}{q}\Big\rceil ,
+\]
+one has the weighted image lower bound
+\[
+  |\operatorname{im}\pi|\ge \sum_{u\in A}\frac{1}{F(\pi(u))}.
+\]
+Thus
+\begin{quote}\scriptsize\ttfamily
+DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC\\
+\(\rightarrow\) ArrivalQuotientFiberMultiplicityEnvelopeLedger\\
+AND ArrivalRawSourceMassAfterNonarrivalRemoval\\
+AND WeightedArrivalImageLowerBoundFromFiberEnvelope\\
+AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+source\_tagged\_unit\_incidence\_imported=true\\
+arrival\_quotient\_map\_imported=true\\
+fiber\_row\_factor\_closed=true\\
+fiber\_column\_factor\_closed=true\\
+arrival\_fiber\_envelope\_closed=true\\
+weighted\_image\_lower\_bound\_formula\_closed=true\\
+raw\_arrival\_mass\_after\_nonarrival\_removal\_proved=false\\
+high\_fiber\_concentration\_registered=true\\
+high\_fiber\_collision\_pdec\_excluded=false\\
+distinct\_arrival\_quotient\_lower\_bound\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes the fiber envelope and the weighted image lower-bound
+formula only.  It does not prove enough raw arrival mass after terminal
+nonarrival is removed, and it does not exclude high-fiber collision or dense
+low-carrier returns.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

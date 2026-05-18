@@ -7389,3 +7389,60 @@ AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
 ```
 
 本步没有证明聚合 actual demand 下界；它只关闭了单位 incidence 注入和去重纪律。
+
+## 173. Arrival quotient 纤维 envelope
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_quotient_fiber_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.json
+data/prime-matrix-firstbreak-arrival-quotient-fiber-ledger.json
+```
+
+本步把 `DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC` 压成纤维 envelope、raw arrival mass、
+加权 image 下界和高纤维回流。同步结果：
+
+```text
+source_tagged_unit_incidence_imported=true
+arrival_quotient_map_imported=true
+fiber_row_factor_closed=true
+fiber_column_factor_closed=true
+arrival_fiber_envelope_closed=true
+weighted_image_lower_bound_formula_closed=true
+raw_arrival_mass_after_nonarrival_removal_proved=false
+high_fiber_concentration_registered=true
+high_fiber_collision_pdec_excluded=false
+distinct_arrival_quotient_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：同一 arrival incidence `(t,q,a)` 的源侧原像不能任意大。它至多有
+`ceil(L/q)` 个零块源行和 `ceil((P-1)/q)` 个同余源列，因此：
+
+```text
+|pi^{-1}(t,q,a)| <= ceil(L/q) ceil((P-1)/q).
+```
+
+这给出：
+
+```text
+|image(pi)| >= sum_{u in A} 1/F(pi(u)).
+```
+
+新的直接主攻为：
+
+```text
+ArrivalRawSourceMassAfterNonarrivalRemoval
+```
+
+并行保留：
+
+```text
+HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn
+AND ArrivalCollisionOrDuplicatePaymentReturnLedger
+AND TerminalNonarrivalLargeStepEscapePDECOrSAE
+```
+
+本步没有证明 distinct arrival demand 已足够大；它只关闭了 quotient 纤维乘数纪律。

@@ -1,0 +1,141 @@
+{
+  "arrival_fiber_envelope_closed": true,
+  "arrival_quotient_map_imported": true,
+  "certificate_type": "prime_matrix_firstbreak_arrival_quotient_fiber_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "DistinctArrivalQuotientImported",
+      "meaning": "上一层把聚合 actual demand 的直接主攻设为 distinct arrival quotient 下界或 collision PDEC。",
+      "proved": false,
+      "remaining": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTaggedUnitIncidenceImported",
+      "meaning": "source-tagged arrival 已给出低 carrier AP incidence 单位。",
+      "proved": true,
+      "remaining": "SourceTaggedArrivalUnitIncidenceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalQuotientMapImported",
+      "meaning": "商化映射 pi: source-tagged arrivals -> (t_next,q,a) 已定义。",
+      "proved": true,
+      "remaining": "pi(source arrival)=(t_next,q,a)"
+    },
+    {
+      "closed": true,
+      "gate": "FiberRowFactorClosed",
+      "meaning": "固定 arrival incidence (t,q,a) 的源行 s 必须满足 s==t mod q 且 s in [x0,y-1]，所以行因子至多 ceil(L/q)。",
+      "proved": true,
+      "remaining": "R_B(t,q)<=ceil(L/q)"
+    },
+    {
+      "closed": true,
+      "gate": "FiberColumnFactorClosed",
+      "meaning": "固定 q,a 的源列 c 必须满足 1<=c<P 且 c==a mod q，所以列因子至多 ceil((P-1)/q)。",
+      "proved": true,
+      "remaining": "C_P(a,q)<=ceil((P-1)/q)"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalFiberEnvelopeClosed",
+      "meaning": "同一 (t,q,a) 的原像纤维至多 ceil(L/q)ceil((P-1)/q)；超过该值只能是口径错误或重复登记 return。",
+      "proved": true,
+      "remaining": "ArrivalQuotientFiberMultiplicityEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedImageLowerBoundFormulaClosed",
+      "meaning": "由纤维上界，|image(pi)| >= sum_{arrival u} 1/F(pi(u))；均匀版本为 |image(pi)|>=|A|/Fmax。",
+      "proved": true,
+      "remaining": "WeightedArrivalImageLowerBoundFromFiberEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "RawArrivalMassStillOpen",
+      "meaning": "仍未证明 terminal nonarrival 去除后 raw source-tagged arrival mass 足够大。",
+      "proved": false,
+      "remaining": "ArrivalRawSourceMassAfterNonarrivalRemoval"
+    },
+    {
+      "closed": true,
+      "gate": "HighFiberConcentrationRegistered",
+      "meaning": "若 weighted image 下界不足，压力必须集中在小 q/高纤维或重复碰撞上，登记为 dense low-carrier/PDEC/SAE return。",
+      "proved": false,
+      "remaining": "HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn"
+    },
+    {
+      "closed": false,
+      "gate": "CollisionReturnStillOpen",
+      "meaning": "已登记碰撞/重复支付 return，但尚未排斥或求和吸收。",
+      "proved": false,
+      "remaining": "ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DistinctArrivalQuotientReduced",
+      "meaning": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC 被压成纤维 envelope、raw arrival mass、加权 image 下界和高纤维碰撞回流。",
+      "proved": false,
+      "remaining": "ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalRawSourceMassAfterNonarrivalRemoval AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn"
+    },
+    {
+      "closed": false,
+      "gate": "DistinctArrivalQuotientProved",
+      "meaning": "本步只关闭 quotient 纤维乘数纪律；不证明 image(pi) 已足够大，也不排斥高纤维碰撞。",
+      "proved": false,
+      "remaining": "ArrivalRawSourceMassAfterNonarrivalRemoval AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、短块 SAE、raw arrival mass、terminal nonarrival 排斥、高纤维碰撞排斥、history switch 排斥、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalRawSourceMassAfterNonarrivalRemoval AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "distinct_arrival_quotient_lower_bound_proved": false,
+  "empirical_absence_not_used_as_proof": true,
+  "fiber_column_factor_closed": true,
+  "fiber_row_factor_closed": true,
+  "hardpoint_after_router": "ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalRawSourceMassAfterNonarrivalRemoval AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn",
+  "hardpoint_before_router": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC",
+  "high_fiber_collision_pdec_excluded": false,
+  "high_fiber_concentration_registered": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalRawSourceMassAfterNonarrivalRemoval AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "ArrivalRawSourceMassAfterNonarrivalRemoval",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn",
+    "ArrivalCollisionOrDuplicatePaymentReturnLedger",
+    "TerminalNonarrivalLargeStepEscapePDECOrSAE",
+    "HistorySwitchPDECOrColumnCRTExclusion",
+    "ShortZeroBlockSingletonSAESummability",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "distinct arrival quotient 的乘数纪律被精确化。固定 arrival incidence (t,q,a) 的原像只能来自零块中同一 AP 行类和同一列剩余类，因此纤维大小至多 ceil(L/q)ceil((P-1)/q)。这给出加权 image 下界 |image(pi)| >= sum 1/F(pi(u))。剩余不是口径问题，而是 raw arrival mass 是否足够，以及若 image 过小是否能把高纤维集中登记并排斥为 dense low-carrier/PDEC/SAE。",
+  "raw_arrival_mass_after_nonarrival_removal_proved": false,
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalRawSourceMassAfterNonarrivalRemoval AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.json": "cf9a8c0880194eb2054d4b2275f32664cad594c462e533543e80f9fbcf9807b5",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json": "2f378d9d29b8bf471ebc203240de29b701774395089998c1477c1af85c384d6f",
+    "docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.json": "93c614915d07bfaebb5b3dca9ccb7720e877fe545e0b3bb157f7edb8abcf16e2",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.md": "9215c5f0e251cd7170759c2cc51c02ddfc9fdfda469a0ff35f26b524ea6cc692",
+    "docs/monograph/prime-matrix-strict-active-prefix-product-fiber-multiplicity-router.md": "08244ac0b2a2c56467ef6f22422ff3a2ebb103e7aed313edba16f8edde35f598",
+    "experiments/prime_matrix_firstbreak_arrival_quotient_fiber_router.py": "386fdb314c9e21858d7c7e26fb6cf00a7f545c58aa94f263d4e867350afcad7c"
+  },
+  "source_tagged_unit_incidence_imported": true,
+  "status": "arrival_quotient_reduced_to_fiber_envelope_and_raw_mass_open",
+  "weighted_image_lower_bound_formula_closed": true
+}

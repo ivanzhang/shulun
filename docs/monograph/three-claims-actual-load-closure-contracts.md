@@ -7633,3 +7633,75 @@ ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse
 
 本步关闭的是单位注入与去重口径；尚未证明去重后的 arrival image 足够大，也未排斥碰撞/重复支付终端。
 行/列命题仍未无条件闭合。
+
+## 173. Arrival quotient 纤维 envelope
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_quotient_fiber_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-quotient-fiber-router.json
+data/prime-matrix-firstbreak-arrival-quotient-fiber-ledger.json
+```
+
+本步继续攻击 `DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC`。同步读数为：
+
+```text
+source_tagged_unit_incidence_imported=true
+arrival_quotient_map_imported=true
+fiber_row_factor_closed=true
+fiber_column_factor_closed=true
+arrival_fiber_envelope_closed=true
+weighted_image_lower_bound_formula_closed=true
+raw_arrival_mass_after_nonarrival_removal_proved=false
+high_fiber_concentration_registered=true
+high_fiber_collision_pdec_excluded=false
+distinct_arrival_quotient_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+令 `A` 为 source-tagged arrivals，商化映射为：
+
+```text
+pi: A -> (t_next,q,a).
+```
+
+固定 image 点 `(t,q,a)`。其源行 `s` 必须满足 `s in [x0,y-1]` 且 `s == t mod q`，所以：
+
+```text
+R_B(t,q) <= ceil(L/q).
+```
+
+源列 `c` 必须满足 `1<=c<P` 且 `c == a mod q`，所以：
+
+```text
+C_P(a,q) <= ceil((P-1)/q).
+```
+
+因此 arrival quotient 的原像纤维满足：
+
+```text
+|pi^{-1}(t,q,a)| <= ceil(L/q) ceil((P-1)/q).
+```
+
+于是得到加权 image 下界：
+
+```text
+|image(pi)| >= sum_{u in A} 1/F(pi(u)),
+F(t,q,a)=ceil(L/q)ceil((P-1)/q).
+```
+
+硬点更新为：
+
+```text
+DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC
+  -> ArrivalQuotientFiberMultiplicityEnvelopeLedger
+  AND ArrivalRawSourceMassAfterNonarrivalRemoval
+  AND WeightedArrivalImageLowerBoundFromFiberEnvelope
+  AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn
+```
+
+本步关闭的是 arrival quotient 的乘数纪律。尚未证明 terminal nonarrival 去除后的 raw arrival mass 足够大；
+若 weighted image 仍太小，则说明压力集中在小 `q`/高纤维或重复碰撞上，必须回流到 dense low-carrier/PDEC/SAE。
+行/列命题仍未无条件闭合。
