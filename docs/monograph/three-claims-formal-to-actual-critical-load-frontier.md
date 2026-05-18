@@ -5957,3 +5957,65 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步的实际推进是删除一个重复主攻点：`NewPrimitive...` 已由旧证书吸收到 source-rank/no-collapse，terminal descent 也收敛到同一包。当前真正内部首攻点是 `AlphaRowAnchorPhaseEmissionFormulaLedger`，但该公式、pre-Cauchy 算术恒等式、同表 rank/multiplicity、PDEC/外部谱和最终晋级门均未证明，行/列命题仍未无条件闭合。
+
+## 143. Strict post-antisplit alpha terminal leaf sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_antisplit_alpha_terminal_leaf_sync_router.py
+docs/monograph/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-router.md
+docs/monograph/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-router.json
+data/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-ledger.json
+```
+
+本步继续吸收历史更深前沿，确认 post-antisplit 后不应停在 alpha 单腿：
+
+```text
+post-antisplit source-rank convergence
+-> PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+-> AlphaRowAnchorPhaseEmissionFormulaLedger
+   AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+   AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+
+AlphaRowAnchorPhaseEmissionFormulaLedger
+/ IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+-> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+-> PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+
+三腿合取
+-> NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> signed-source fixed point
+-> terminal leaf firewall
+-> AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+   OR NoncanonicalFullSComplementLegalClosureMode
+```
+
+导入结果：
+
+```text
+post_antisplit_pointwise_frontier_imported=true
+alpha_and_weight_legs_return_to_terminal=true
+three_leg_separate_attack_fixed_point_imported=true
+nonrecursive_pointwise_field_contract_imported=true
+joint_constructor_old_route_returns_to_terminal_leaf=true
+current_terminal_leaf_reduced=true
+noncanonical_legal_mode_proved=false
+acyclic_terminal_canonical_lock_proved=false
+row_column_unconditional_closed=false
+```
+
+最新严格活动基为：
+
+```text
+(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR NoncanonicalFullSComplementLegalClosureMode)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步只完成前沿同步：alpha 单腿、weight 单腿、rank 单腿和旧 joint constructor 展开均不能作为非循环闭合。下一步必须攻 canonical-lock 或 noncanonical legal mode，并同时保留 ExactUV、RatePreservation 与 DStructure/Rankin。

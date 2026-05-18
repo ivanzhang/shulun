@@ -5536,6 +5536,45 @@ PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
 
 行/列命题仍未无条件闭合。
 
+## 132. Strict post-antisplit alpha terminal leaf sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_antisplit_alpha_terminal_leaf_sync_router.py
+docs/monograph/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-router.md
+docs/monograph/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-router.json
+data/prime-matrix-strict-post-antisplit-alpha-terminal-leaf-sync-ledger.json
+```
+
+本步把上一节暴露的 `AlphaRowAnchorPhaseEmissionFormulaLedger` 继续同步到既有三腿回流和终端叶子前沿：
+
+```text
+PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+-> AlphaRowAnchorPhaseEmissionFormulaLedger
+   AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+   AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+
+alpha/weight 两腿 -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+rank/multiplicity 腿 -> 同一 primitive table
+三腿合取 -> NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> signed-source fixed point
+-> terminal leaf firewall
+```
+
+因此当前严格自足活动基更新为：
+
+```text
+(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR NoncanonicalFullSComplementLegalClosureMode)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步删除了“继续单攻 alpha/weight/rank 任一腿即可闭合”的误出口；行/列命题仍未无条件闭合。
+
 ## 121. Terminal-row square-phase bridge router
 
 新增文件
