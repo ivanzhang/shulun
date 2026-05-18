@@ -9354,3 +9354,75 @@ PersistentScaleLadderSignatureOrSparseScaleLadderSAEColumnCRTPDEC
 
 本步关闭的是匿名持久尺度阶梯签名池和尺度词聚合压力口径；剩余集中为固定尺度词内
 首个移动素坐标/相位漂移，或 sparse scale-ladder SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 194. scale-ladder finite-slot lock 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_ladder_finite_slot_lock_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-ledger.json
+```
+
+本步继续攻击 `FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC`。同步读数为：
+
+```text
+first_moving_scale_ladder_phase_imported=true
+fixed_scale_word_slot_closed=true
+finite_prime_choices_per_slot_closed=true
+finite_residue_choices_per_slot_closed=true
+finite_actual_scale_ladder_atom_set_closed=true
+infinite_pigeonhole_stable_actual_ladder_closed=true
+persistent_first_moving_scale_ladder_phase_excluded=true
+stable_actual_ladder_columncrt_exit_closed=true
+sparse_scale_ladder_sae_carried_forward=true
+anonymous_first_moving_scale_ladder_phase_removed=true
+sparse_scale_ladder_sae_summability_proved=false
+stable_actual_ladder_columncrt_pdec_excluded=false
+row_column_unconditional_closed=false
+```
+
+固定尺度词：
+
+```text
+sigma=(b_1,...,b_d), b_i fixed
+```
+
+后，每个槽的实际素数只能来自有限集合：
+
+```text
+Q_i={q prime: 2^{b_i}<=q<2^{b_i+1}}.
+```
+
+固定 `q in Q_i` 后，相位残基 `a_i in Z/qZ` 也有限。于是固定尺度词下实际
+素数-相位词数量满足粗上界：
+
+```text
+N_actual(sigma)<=prod_i sum_{q in Q_i} q < infinity.
+```
+
+若该尺度词在无限子族中持久承压，则由无限鸽巢存在稳定实际素数-相位词子族；
+该子族是固定 MCRT cell，回到 ColumnCRT/PDEC 或有限原子。不能在任一实际词上
+持久复现的事件只登记为 sparse scale-ladder SAE。
+
+硬点更新为：
+
+```text
+FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
+  -> FirstMovingScaleLadderPhaseDriftImportedLedger
+  AND FixedScaleWordSlotLedger
+  AND FinitePrimeChoicesPerScaleSlotLedger
+  AND FiniteResidueChoicesPerPrimeSlotLedger
+  AND FiniteActualScaleLadderAtomSetLedger
+  AND InfinitePigeonholeStableActualScaleLadderLedger
+  AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger
+  AND StableActualScaleLadderMCRTColumnCRTExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger
+  AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
+```
+
+本步关闭的是固定尺度词内持久首移动素坐标/相位漂移；剩余集中为稳定实际 ladder
+的 ColumnCRT/PDEC 出口，或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。

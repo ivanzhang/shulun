@@ -1,0 +1,112 @@
+# Prime Matrix scale-ladder finite-slot lock 证书
+
+**状态：** `first_moving_scale_ladder_phase_drift_reduced_to_finite_slot_lock_open`
+
+固定尺度词 sigma=(b_1,...,b_d) 后，每个槽的实际素数只在有限 dyadic 区间 2^{b_i}<=q_i<2^{b_i+1} 中，相位残基也有限。因此实际素数-相位词集合有限；无限持久承压分支必有稳定实际词子族，回到固定 MCRT/ColumnCRT/PDEC 或有限原子。所谓首移动相位漂移只能是非持久 sparse SAE。
+
+```text
+first_moving_scale_ladder_phase_imported=true
+fixed_scale_word_slot_closed=true
+finite_prime_choices_per_slot_closed=true
+finite_residue_choices_per_slot_closed=true
+finite_actual_scale_ladder_atom_set_closed=true
+infinite_pigeonhole_stable_actual_ladder_closed=true
+persistent_first_moving_scale_ladder_phase_excluded=true
+stable_actual_ladder_columncrt_exit_closed=true
+sparse_scale_ladder_sae_carried_forward=true
+anonymous_first_moving_scale_ladder_phase_removed=true
+sparse_scale_ladder_sae_summability_proved=false
+stable_actual_ladder_columncrt_pdec_excluded=false
+row_column_unconditional_closed=false
+```
+
+## 1. 固定尺度词的有限槽
+
+承压分支已经固定 dyadic 尺度词：
+
+```text
+sigma=(b_1,...,b_d), b_i fixed.
+```
+
+每个槽的实际素数只能来自有限集合：
+
+```text
+Q_i={q prime: 2^{b_i}<=q<2^{b_i+1}}.
+```
+
+固定 `q in Q_i` 后，相位残基 `a_i in Z/qZ` 也只有有限个。
+
+## 2. 实际 ladder 原子有限
+
+固定尺度词下的实际素数-相位词数量有粗上界：
+
+```text
+N_actual(sigma)<=prod_i sum_{q in Q_i} q < infinity.
+```
+
+因此固定尺度词内不存在无限匿名移动槽。
+
+## 3. 无限鸽巢锁定
+
+若某固定尺度词在无限子族中持久承压，则有限实际词集合上必有一个实际素数-相位词无限复现。该子族上所有素坐标与相位残基稳定。
+
+稳定实际词是固定 MCRT cell，回到 ColumnCRT/PDEC 或有限原子。不能在任一实际词上持久复现的事件只登记为 sparse scale-ladder SAE。
+
+## 4. 新硬点
+
+```text
+FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
+  -> FirstMovingScaleLadderPhaseDriftImportedLedger
+  AND FixedScaleWordSlotLedger
+  AND FinitePrimeChoicesPerScaleSlotLedger
+  AND FiniteResidueChoicesPerPrimeSlotLedger
+  AND FiniteActualScaleLadderAtomSetLedger
+  AND InfinitePigeonholeStableActualScaleLadderLedger
+  AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger
+  AND StableActualScaleLadderMCRTColumnCRTExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger
+  AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
+```
+
+剩余从固定尺度词内首移动漂移变成稳定实际 ladder 的 ColumnCRT/PDEC 出口，或 sparse scale-ladder SAE 全局求和问题。
+
+## 5. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| FirstMovingScaleLadderPhaseDriftImported | `true` | `false` | 上一层把持久尺度阶梯签名压到固定尺度词内首个移动素坐标/相位漂移，或 sparse scale-ladder SAE。 | FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC |
+| FixedScaleWordSlotClosed | `true` | `true` | 承压分支已固定 dyadic 尺度词 sigma=(b_1,...,b_d)，每个槽的 dyadic 指数 b_i 固定。 | FixedScaleWordSlotLedger |
+| FinitePrimeChoicesPerSlotClosed | `true` | `true` | 固定槽 i 的实际素数必须满足 2^{b_i}<=q_i<2^{b_i+1}，所以可选素数有限。 | FinitePrimeChoicesPerScaleSlotLedger |
+| FiniteResidueChoicesPerSlotClosed | `true` | `true` | 固定实际素数 q_i 后，相位残基只在 Z/q_iZ 中取值；每槽相位选择有限。 | FiniteResidueChoicesPerPrimeSlotLedger |
+| FiniteActualScaleLadderAtomSetClosed | `true` | `true` | 固定尺度词 sigma 下，实际素数-相位词集合是有限直积；不存在无限匿名移动槽。 | FiniteActualScaleLadderAtomSetLedger |
+| InfinitePigeonholeStableActualScaleLadderClosed | `true` | `true` | 若同一固定尺度词在无限子族中持久承压，则由无限鸽巢存在稳定实际素数-相位词子族。 | InfinitePigeonholeStableActualScaleLadderLedger |
+| NoPersistentFirstMovingScaleLadderPhaseDrift | `true` | `true` | 固定尺度词内的首移动素坐标/相位漂移不能作为持久无限分支；持久分支必固定化，非持久分支为 SAE。 | NoPersistentFirstMovingScaleLadderPhaseDriftLedger |
+| StableActualScaleLadderMCRTColumnCRTExitClosed | `true` | `true` | 稳定实际素数-相位词是固定 MCRT cell，回到 ColumnCRT/PDEC 或有限原子出口。 | StableActualScaleLadderMCRTColumnCRTExitLedger |
+| SparseScaleLadderSAECarriedForwardAfterFiniteSlotLock | `true` | `false` | 不能在任一稳定实际词上持久复现的事件登记为 sparse scale-ladder SAE；本步不证明全局求和。 | SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger |
+| NoAnonymousFirstMovingScaleLadderPhaseDrift | `true` | `true` | 首移动尺度阶梯相位漂移被拆成稳定实际 MCRT 出口或 sparse SAE；不再保留匿名 first-moving 漂移。 | NoAnonymousFirstMovingScaleLadderPhaseDriftLedger |
+| SparseScaleLadderSummabilityStillOpen | `false` | `false` | 仍未证明 sparse scale-ladder SAE 全局可求和，也未排斥稳定实际 ladder 的 ColumnCRT/PDEC 出口。 | SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 行/列命题仍需排斥稳定实际 ladder ColumnCRT/PDEC，或证明 sparse scale-ladder SAE 全局可控。 | SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC |
+
+## 6. 新活动基
+
+```text
+((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 7. 诚实边界
+
+- 本证书没有排斥稳定实际 ladder 的 ColumnCRT/PDEC 出口。
+- 本证书没有证明 sparse scale-ladder SAE 全局可求和。
+- 本证书关闭固定尺度词内持久首移动素坐标/相位漂移。
+- `SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC` 仍未闭合。
+- 行/列命题仍未无条件闭合。
+
+## 8. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_firstbreak_tail_gap_scale_ladder_finite_slot_lock_router.py` | `a4bb2ea50faa0a5da49261bc3f514c77530099d3fea18de023ac5cfb3b19d8c8` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router.json` | `8657d83b213f688fd5ee653ec0fd48d219e316838d7cce221b84f5cf8be9bbc8` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-scale-escape-support-clock-router.json` | `4dfe3b824d5d11788941ee4bd2a4dbe0ff7a7693e1ffd8b3fd2fa8ce50550705` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.json` | `6b868246b6f4ef3560e71693da177d566f7a2310a6e539110838371b6db5e168` |

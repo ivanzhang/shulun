@@ -8669,3 +8669,55 @@ FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
 
 本步没有证明固定尺度词内首个移动素坐标/相位漂移不可能，也没有证明 sparse
 scale-ladder SAE 全局可求和；它只把持久签名池压到单个尺度词的首移动层。
+
+## 194. Scale-ladder finite-slot lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_scale_ladder_finite_slot_lock_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.json
+data/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-ledger.json
+```
+
+本步继续攻击 `FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC`。同步结果：
+
+```text
+first_moving_scale_ladder_phase_imported=true
+fixed_scale_word_slot_closed=true
+finite_prime_choices_per_slot_closed=true
+finite_residue_choices_per_slot_closed=true
+finite_actual_scale_ladder_atom_set_closed=true
+infinite_pigeonhole_stable_actual_ladder_closed=true
+persistent_first_moving_scale_ladder_phase_excluded=true
+stable_actual_ladder_columncrt_exit_closed=true
+sparse_scale_ladder_sae_carried_forward=true
+anonymous_first_moving_scale_ladder_phase_removed=true
+sparse_scale_ladder_sae_summability_proved=false
+stable_actual_ladder_columncrt_pdec_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：固定尺度词内不能存在持久首移动漂移。因为固定：
+
+```text
+sigma=(b_1,...,b_d)
+```
+
+后，每槽实际素数和相位只在有限集合内取值：
+
+```text
+Q_i={q prime: 2^{b_i}<=q<2^{b_i+1}},
+N_actual(sigma)<=prod_i sum_{q in Q_i} q < infinity.
+```
+
+所以无限持久分支必有稳定实际素数-相位词子族，回到固定 MCRT/ColumnCRT/PDEC
+或有限原子。新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
+```
+
+本步没有排斥稳定实际 ladder 的 ColumnCRT/PDEC 出口，也没有证明 sparse
+scale-ladder SAE 全局可求和；它只删除固定尺度词内持久首移动漂移。

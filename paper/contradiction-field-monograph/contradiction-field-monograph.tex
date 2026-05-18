@@ -12787,6 +12787,62 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-word-entropy-router
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Scale-ladder finite-slot lock]
+Inside a fixed dyadic scale word, persistent first-moving phase drift is
+impossible.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+FirstMovingScaleLadderPhaseDriftOrSparseScaleLadderSAEColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+FirstMovingScaleLadderPhaseDriftImportedLedger\\
+AND FixedScaleWordSlotLedger\\
+AND FinitePrimeChoicesPerScaleSlotLedger\\
+AND FiniteResidueChoicesPerPrimeSlotLedger\\
+AND FiniteActualScaleLadderAtomSetLedger\\
+AND InfinitePigeonholeStableActualScaleLadderLedger\\
+AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger\\
+AND StableActualScaleLadderMCRTColumnCRTExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger\\
+AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Finite-slot ledger]
+Fix the pressure-carrying dyadic scale word
+\[
+  \sigma=(b_1,\ldots,b_d),
+\]
+so each \(b_i\) is fixed.  The actual prime in slot \(i\) must lie in the
+finite dyadic set
+\[
+  Q_i=\{q\ {\rm prime}: 2^{b_i}\le q<2^{b_i+1}\}.
+\]
+For a fixed \(q\in Q_i\), the phase residue has only \(q\) possible values.
+Hence the number of actual prime-residue ladder atoms under \(\sigma\) is
+finite, with the crude bound
+\[
+  N_{\rm actual}(\sigma)
+  \le \prod_i\sum_{q\in Q_i}q
+  <\infty .
+\]
+
+If a fixed scale word carries persistent pressure along an infinite subfamily,
+the infinite pigeonhole principle gives an infinite subfamily on which the
+entire actual prime-residue ladder atom is fixed.  Such a stable actual ladder
+is a fixed MCRT cell and is routed to the ColumnCRT/PDEC or finite-atom exit.
+
+Therefore a first moving prime coordinate or phase residue cannot be a
+persistent obstruction inside a fixed scale word.  It is either fixed on an
+infinite subfamily, or it is nonpersistent and is registered as sparse
+scale-ladder SAE.  This does not prove global summability of that sparse mass,
+and it does not exclude the stable actual ladder ColumnCRT/PDEC exit.  The
+row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-scale-ladder-finite-slot-lock-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
