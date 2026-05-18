@@ -9309,3 +9309,71 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientAr
 
 本步没有证明 quotient arc Fourier/PDEC cap、孤立 singleton 求和或 sparse
 SAE 求和；它只把 short-arc/phase-mean 剩余桥接为显式非平凡频率证书。
+
+## 205. Stable-ladder quotient Fourier lift frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_fourier_lift_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap`。
+同步结果：
+
+```text
+quotient_arc_fourier_imported=true
+isolated_singleton_carried_forward=true
+nontrivial_frequency_forces_r_gt_one=true
+quotient_coprime_factorization_closed=true
+quotient_inverse_lift_closed=true
+quotient_character_to_pivot_difference_closed=true
+lifted_character_nontriviality_closed=true
+endpoint_bilinear_phase_factorization_closed=true
+centered_model_kernel_separated=true
+anonymous_quotient_arc_fourier_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_bilinear_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：quotient 非平凡频率可以反解为原始 pair 差值相位。
+写
+
+```text
+g=gcd(q_j,B), B=gB0, q_j=gR, gcd(B0,R)=1.
+```
+
+取 `uB0 == 1 mod R`。若 `d=tB`，则：
+
+```text
+t == u*(d/g) mod R.
+```
+
+因此对任意 `h!=0 mod R`：
+
+```text
+e_R(h*t)=e_{q_j}(beta*d), beta == h*u mod R.
+```
+
+再展开 `d=n2-n1`，得到 endpoint bilinear phase：
+
+```text
+e_{q_j}(beta*(n2-n1))
+  = e_{q_j}(beta*n2) * conjugate(e_{q_j}(beta*n1)).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap
+```
+
+本步没有证明 endpoint bilinear Fourier/PDEC cap、孤立 singleton 求和或 sparse
+SAE 求和；它只把 quotient arc Fourier 频率提升为原始 pair 端点双线性相位。

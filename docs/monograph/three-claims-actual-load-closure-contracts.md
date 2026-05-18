@@ -10292,3 +10292,106 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientSh
 本步关闭的是匿名 short-arc/phase-mean 口径。剩余集中为孤立 singleton 全局
 求和、quotient arc Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。
 行/列命题仍未无条件闭合。
+
+## 205. stable-ladder quotient Fourier lift 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_fourier_lift_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-fourier-lift-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap`。
+同步读数为：
+
+```text
+quotient_arc_fourier_imported=true
+isolated_singleton_carried_forward=true
+nontrivial_frequency_forces_r_gt_one=true
+quotient_coprime_factorization_closed=true
+quotient_inverse_lift_closed=true
+quotient_character_to_pivot_difference_closed=true
+lifted_character_nontriviality_closed=true
+endpoint_bilinear_phase_factorization_closed=true
+centered_model_kernel_separated=true
+anonymous_quotient_arc_fourier_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+endpoint_bilinear_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+沿用 `d=n2-n1=tB`。令：
+
+```text
+g=gcd(q_j,B),
+B=gB0,
+q_j=gR.
+```
+
+则：
+
+```text
+gcd(B0,R)=1.
+```
+
+取 `uB0 == 1 mod R`。因为：
+
+```text
+d/g == tB0 mod R,
+```
+
+所以：
+
+```text
+t == u*(d/g) mod R.
+```
+
+对任意非平凡 quotient 频率 `h`，设 `beta == h*u mod R`，则在 actual
+pair witnesses 上有：
+
+```text
+e_R(h*t)=e_{q_j}(beta*d).
+```
+
+且 `beta` 非零于 `mod R`，所以提升后的 pivot-difference 角色非平凡。
+再用 `d=n2-n1`：
+
+```text
+e_{q_j}(beta*(n2-n1))
+  = e_{q_j}(beta*n2) * conjugate(e_{q_j}(beta*n1)).
+```
+
+因此 quotient arc Fourier 异常不是抽象相位异常，而是原始 pair 两端点的
+显式双线性相位相关。中心化项仍按 actual-load 纪律分离：
+
+```text
+hat nu(h)=actual endpoint bilinear phase sum - explicit model kernel.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap
+  -> StableLadderQuotientArcFourierImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterFourierLiftLedger
+  AND StableLadderNontrivialQuotientFrequencyForcesRGreaterOneLedger
+  AND StableLadderQuotientCoprimeFactorizationLedger
+  AND StableLadderQuotientInverseLiftLedger
+  AND StableLadderQuotientCharacterToPivotDifferenceLedger
+  AND StableLadderLiftedCharacterNontrivialityLedger
+  AND StableLadderEndpointBilinearPhaseFactorizationLedger
+  AND StableLadderCenteredModelKernelSeparatedLedger
+  AND NoAnonymousQuotientArcFourierExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterFourierLiftLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientEndpointBilinearFourierPDECCap
+```
+
+本步关闭的是匿名 quotient arc Fourier 口径。剩余集中为孤立 singleton 全局
+求和、endpoint bilinear Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。
