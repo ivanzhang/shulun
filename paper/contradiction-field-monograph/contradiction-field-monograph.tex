@@ -11270,6 +11270,57 @@ nonarrival remains a named large-step PDEC/SAE exit.  The row/column theorem
 remains open.
 \end{proof}
 
+\begin{theorem}[Arrival candidate unit incidence and quotient discipline]
+Assume an arrival candidate with source history tag \((q,a)\) and
+\[
+  y\le t_{\rm next}\le P-1,\qquad
+  t_{\rm next}\equiv -aP^{-1}\pmod q .
+\]
+Then it gives one source-tagged low-carrier AP row-incidence
+\[
+  (\text{source tag},t_{\rm next},q,a)\mapsto
+  \operatorname{incidence}(t_{\rm next},q,a),
+\]
+without using any AP-envelope saturation.  However, raw source-tagged
+arrivals are not an aggregate demand lower bound.  They must be quotiented by
+\[
+  \pi:\text{source-tagged arrivals}\longrightarrow (t_{\rm next},q,a),
+\]
+and the usable actual demand is the number of distinct incidences in
+\(\operatorname{im}\pi\).  Multiple sources mapping to the same incidence are
+not deleted; they are quotient, weighted, duplicate/collision, PDEC,
+ColumnCRT, or SAE returns.  Consequently
+\begin{quote}\scriptsize\ttfamily
+ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse\\
+\(\rightarrow\) SourceTaggedArrivalUnitIncidenceLedger\\
+AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC\\
+AND ArrivalCollisionOrDuplicatePaymentReturnLedger.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+arrival\_candidate\_imported=true\\
+no\_envelope\_recycling\_guard\_imported=true\\
+source\_tagged\_unit\_incidence\_closed=true\\
+arrival\_quotient\_map\_defined=true\\
+no\_loss\_collision\_return\_imported=true\\
+arrival\_collision\_return\_registered=true\\
+distinct\_arrival\_quotient\_lower\_bound\_proved=false\\
+arrival\_collision\_return\_excluded=false\\
+arrival\_candidate\_actual\_demand\_injection\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes the unit source-tagged incidence injection and the quotient
+discipline only.  It does not prove a large distinct-arrival demand lower
+bound, and it does not exclude duplicate/collision returns.  The row/column
+theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

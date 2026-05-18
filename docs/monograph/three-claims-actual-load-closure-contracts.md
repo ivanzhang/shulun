@@ -7574,3 +7574,62 @@ PostBreakAPDemandInjectionFromStableHistory
 本步关闭的是稳定 history key 的 AP 后继相位门：到达给出 post-break AP cell 候选；未到达说明 AP 周期超过
 平方锚前支撑宽度，必须登记为 large-step escape/PDEC/SAE。尚未证明到达候选必然成为 actual demand，
 也未排斥 terminal nonarrival 出口；行/列命题仍未无条件闭合。
+
+## 172. Arrival candidate actual demand 单位注入与商化
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_candidate_actual_demand_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.json
+data/prime-matrix-firstbreak-arrival-candidate-actual-demand-ledger.json
+```
+
+本步继续攻击 `ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse`。同步读数为：
+
+```text
+arrival_candidate_imported=true
+no_envelope_recycling_guard_imported=true
+source_tagged_unit_incidence_closed=true
+arrival_quotient_map_defined=true
+no_loss_collision_return_imported=true
+arrival_collision_return_registered=true
+distinct_arrival_quotient_lower_bound_proved=false
+arrival_collision_return_excluded=false
+arrival_candidate_actual_demand_injection_proved=false
+row_column_unconditional_closed=false
+```
+
+arrival candidate 带有零块源侧 history tag，并满足：
+
+```text
+t_next == -a P^{-1} mod q,   y <= t_next <= P-1.
+```
+
+因此它非循环地产生一个低 carrier AP row-incidence 单位：
+
+```text
+(source tag, t_next, q, a) -> incidence(t_next,q,a).
+```
+
+但 raw source-tagged arrivals 不能直接当作聚合 demand。必须先商化：
+
+```text
+pi: source-tagged arrivals -> (t_next,q,a).
+```
+
+真正可与 AP envelope 比较的是 `|image(pi)|`。若许多源义务塌缩到少数 `(t_next,q,a)`，则塌缩不能被删除，
+也不能当作多个独立 demand；它必须进入 quotient、weighted return、duplicate/collision PDEC、ColumnCRT 或 SAE。
+
+硬点更新为：
+
+```text
+ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse
+  -> SourceTaggedArrivalUnitIncidenceLedger
+  AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC
+  AND ArrivalCollisionOrDuplicatePaymentReturnLedger
+```
+
+本步关闭的是单位注入与去重口径；尚未证明去重后的 arrival image 足够大，也未排斥碰撞/重复支付终端。
+行/列命题仍未无条件闭合。

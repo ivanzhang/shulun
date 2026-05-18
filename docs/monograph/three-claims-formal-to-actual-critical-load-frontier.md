@@ -7342,3 +7342,50 @@ AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
 
 本步没有把 arrival candidate 升级为 actual demand；它只把稳定 history 的相位去向从“抽象注入”压成
 精确的到达/越界二分。
+
+## 172. Arrival candidate actual demand 单位注入与商化
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_arrival_candidate_actual_demand_router.py
+docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.md
+docs/monograph/prime-matrix-firstbreak-arrival-candidate-actual-demand-router.json
+data/prime-matrix-firstbreak-arrival-candidate-actual-demand-ledger.json
+```
+
+本步把 `ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse` 拆成单位 source-tagged incidence、
+distinct quotient 下界和碰撞 return。同步结果：
+
+```text
+arrival_candidate_imported=true
+no_envelope_recycling_guard_imported=true
+source_tagged_unit_incidence_closed=true
+arrival_quotient_map_defined=true
+no_loss_collision_return_imported=true
+arrival_collision_return_registered=true
+distinct_arrival_quotient_lower_bound_proved=false
+arrival_collision_return_excluded=false
+arrival_candidate_actual_demand_injection_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：每个带源侧 history tag 的到达候选都给出一个 actual AP incidence 单位，
+但聚合需求只能数商化后的 distinct `(t_next,q,a)`。若大量源义务重合到同一 incidence，则这是
+`ArrivalCollisionOrDuplicatePaymentReturnLedger`，不是免费多重需求。
+
+新的直接主攻为：
+
+```text
+DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC
+```
+
+并行保留：
+
+```text
+ArrivalCollisionOrDuplicatePaymentReturnLedger
+AND TerminalNonarrivalLargeStepEscapePDECOrSAE
+AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
+```
+
+本步没有证明聚合 actual demand 下界；它只关闭了单位 incidence 注入和去重纪律。

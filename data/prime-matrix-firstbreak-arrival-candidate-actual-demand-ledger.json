@@ -1,0 +1,133 @@
+{
+  "arrival_candidate_actual_demand_injection_proved": false,
+  "arrival_candidate_imported": true,
+  "arrival_collision_return_excluded": false,
+  "arrival_collision_return_registered": true,
+  "arrival_quotient_map_defined": true,
+  "certificate_type": "prime_matrix_firstbreak_arrival_candidate_actual_demand_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ArrivalCandidateInjectionImported",
+      "meaning": "上一层把稳定 history 的到达分支直接主攻设为 arrival candidate 到 actual demand 的非循环注入。",
+      "proved": false,
+      "remaining": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalCandidateImported",
+      "meaning": "AP 后继二分已登记：当 t_next=t_*+q 落入 [y,P-1] 时形成 post-break arrival candidate。",
+      "proved": true,
+      "remaining": "StableHistoryAPSuccessorDichotomyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoEnvelopeRecyclingGuardImported",
+      "meaning": "actual demand 下界必须来自源侧到达标记，不能从 AP envelope 接近饱和反推。",
+      "proved": true,
+      "remaining": "NoAPEnvelopeRecyclingDemandGuard"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTaggedUnitIncidenceClosed",
+      "meaning": "源侧 arrival candidate 继承零块 history tag，并满足 t_next==-aP^{-1} mod q；因此它给出一个低 carrier AP row-incidence 单位。",
+      "proved": true,
+      "remaining": "SourceTaggedArrivalUnitIncidenceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RawCandidateNotAggregateDemandGuard",
+      "meaning": "raw arrival candidate 数不能直接当成 demand 下界；actual demand 只计去重后的 post-break row/cell incidence。",
+      "proved": true,
+      "remaining": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalQuotientMapDefined",
+      "meaning": "定义商化映射 pi: source-tagged arrivals -> (t_next,q,a)。actual demand 至少是 image(pi) 的 distinct incidence 数。",
+      "proved": true,
+      "remaining": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "NoLossCollisionReturnImported",
+      "meaning": "若多个源义务映到同一 (t,q,a)，重复不能删除；只能商化、加权或登记 duplicate/collision return。",
+      "proved": true,
+      "remaining": "ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalCollisionReturnRegistered",
+      "meaning": "大规模碰撞、重复支付或换源吸收必须进入 PDEC/ColumnCRT/SAE/duplicate return，而不是免费容量。",
+      "proved": false,
+      "remaining": "ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DistinctArrivalQuotientLowerBoundOpen",
+      "meaning": "仍未证明去重后的 image(pi) 足够大，可以和 AP envelope gap 比较；这是新的聚合硬点。",
+      "proved": false,
+      "remaining": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "ArrivalCandidateInjectionReduced",
+      "meaning": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse 被压成单位 source-tagged incidence、distinct quotient 下界和碰撞 return 三项。",
+      "proved": false,
+      "remaining": "SourceTaggedArrivalUnitIncidenceLedger AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ArrivalCandidateInjectionProved",
+      "meaning": "本步只闭合单位注入，不证明聚合 actual demand 下界，也不排斥碰撞终端。",
+      "proved": false,
+      "remaining": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、短块 SAE、distinct arrival quotient 下界、terminal nonarrival 排斥、history switch 排斥、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "distinct_arrival_quotient_lower_bound_proved": false,
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "SourceTaggedArrivalUnitIncidenceLedger AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger",
+  "hardpoint_before_router": "ArrivalCandidateActualDemandInjectionWithoutEnvelopeReuse",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC",
+  "no_envelope_recycling_guard_imported": true,
+  "no_loss_collision_return_imported": true,
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ArrivalCollisionOrDuplicatePaymentReturnLedger",
+    "TerminalNonarrivalLargeStepEscapePDECOrSAE",
+    "HistorySwitchPDECOrColumnCRTExclusion",
+    "ShortZeroBlockSingletonSAESummability",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "arrival candidate 到 actual demand 的接口被拆开：源侧标记的到达候选确实给出一个低 carrier AP row-incidence 单位，且不使用 envelope 饱和反推；但 raw 到达候选不能直接当作聚合需求。必须对 source-tagged arrivals 按 (t_next,q,a) 商化，证明 distinct image 足够大；若大量源义务碰撞到少数 incidence，则该碰撞必须登记为 PDEC/ColumnCRT/SAE/duplicate return。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND DistinctArrivalQuotientDemandLowerBoundOrCollisionPDEC AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.json": "c6166b673207c6fdc19307de71a6fe1f5b7ed887130b6c5e7e8ad28e030bd5f2",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json": "2f378d9d29b8bf471ebc203240de29b701774395089998c1477c1af85c384d6f",
+    "docs/monograph/prime-matrix-firstbreak-stable-history-ap-arrival-router.json": "93c614915d07bfaebb5b3dca9ccb7720e877fe545e0b3bb157f7edb8abcf16e2",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.md": "9215c5f0e251cd7170759c2cc51c02ddfc9fdfda469a0ff35f26b524ea6cc692",
+    "docs/monograph/prime-matrix-strict-active-prefix-product-fiber-multiplicity-router.md": "08244ac0b2a2c56467ef6f22422ff3a2ebb103e7aed313edba16f8edde35f598",
+    "docs/monograph/prime-matrix-strict-forced-obligation-lower-bound-router.md": "46375c4117cd44e681cacc3d31d90bc0555eaed7a6d12ecf4e511fd91671027b",
+    "experiments/prime_matrix_firstbreak_arrival_candidate_actual_demand_router.py": "a4e4c04ecc399e5179fc74737dabeac4ead65cd71f52127ca557a527380f7620"
+  },
+  "source_tagged_unit_incidence_closed": true,
+  "status": "arrival_candidate_actual_demand_reduced_to_unit_incidence_and_quotient_lower_bound_open"
+}
