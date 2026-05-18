@@ -7635,3 +7635,65 @@ PositiveStableTailGapOrNamedReturnMassPDEC
 
 本步没有证明该 gap 已经为正或足够大；它把剩余压成显式不等式：
 证明 `L(P-1)-R_named-C_tail` 足够，或证明 `R_named`/tail saturation 已形成 PDEC/SAE。
+
+## 177. Tail gap 归一化
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_normalization_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.json
+data/prime-matrix-firstbreak-tail-gap-normalization-ledger.json
+```
+
+本步继续攻击 `PositiveStableTailGapOrNamedReturnMassPDEC`。同步结果：
+
+```text
+positive_gap_imported=true
+explicit_gap_functional_imported=true
+tail_index_change_of_variables_closed=true
+exact_prime_tail_envelope_closed=true
+all_integer_dominating_envelope_closed=true
+named_return_separation_closed=true
+normalized_positive_gap_proved=false
+dense_tail_return_pdec_excluded=false
+positive_stable_tail_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：tail carrier 用
+
+```text
+q=H+r,  H=P-y.
+```
+
+重写后满足
+
+```text
+P-q=y-r,
+|B ∩ [P-q,y-1]|=min(L,r).
+```
+
+于是
+
+```text
+C_tail = sum_{prime q=H+r<P} min(L,r) ceil((P-1)/(H+r)),
+C_tail <= sum_{1<=r<P-H} min(L,r) ceil((P-1)/(H+r)).
+```
+
+同时
+
+```text
+G_prime=L(P-1)-C_tail,
+G=G_prime-R_named.
+```
+
+新的直接主攻为：
+
+```text
+NormalizedTailGapPositiveOrDenseTailReturnPDEC
+```
+
+本步没有证明归一化 gap 为正；它把剩余从二维窗口几何压成一维 tail-index 和式。
+若一维 gap 仍不足，必须由 dense tail、tail saturation 或 named-return mass PDEC/SAE 承载。

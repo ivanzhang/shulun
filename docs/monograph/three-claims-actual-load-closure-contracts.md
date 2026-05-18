@@ -7913,3 +7913,69 @@ StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC
 本步关闭的是低步长稳定质量的显式 gap functional。尚未证明该 gap 足够大；
 若不够大，必须由 `R_named`、tail saturation、history switch、duplicate/collision 或 PDEC/SAE 账本承载。
 行/列命题仍未无条件闭合。
+
+## 177. Tail gap 归一化回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_normalization_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.json
+data/prime-matrix-firstbreak-tail-gap-normalization-ledger.json
+```
+
+本步继续攻击 `PositiveStableTailGapOrNamedReturnMassPDEC`。同步读数为：
+
+```text
+positive_gap_imported=true
+explicit_gap_functional_imported=true
+tail_index_change_of_variables_closed=true
+exact_prime_tail_envelope_closed=true
+all_integer_dominating_envelope_closed=true
+named_return_separation_closed=true
+normalized_positive_gap_proved=false
+dense_tail_return_pdec_excluded=false
+positive_stable_tail_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+令 `H=P-y`，对 tail carrier 写 `q=H+r`。因为 `P-q=y-r`，所以 terminal row window 变为：
+
+```text
+B ∩ [P-q,y-1] = B ∩ [y-r,y-1],
+|B ∩ [P-q,y-1]| = min(L,r).
+```
+
+因此上一层 tail envelope 精确归一化为：
+
+```text
+C_tail = sum_{prime q=H+r<P} min(L,r) ceil((P-1)/(H+r)).
+```
+
+去掉素数限制还给出安全整数上界：
+
+```text
+C_tail <= C_all = sum_{1<=r<P-H} min(L,r) ceil((P-1)/(H+r)).
+```
+
+gap 分离为：
+
+```text
+G_prime = L(P-1)-C_tail,
+G = G_prime-R_named.
+```
+
+硬点更新为：
+
+```text
+PositiveStableTailGapOrNamedReturnMassPDEC
+  -> TailIndexChangeOfVariablesLedger
+  AND ExactPrimeTailEnvelopeOneDimensionalLedger
+  AND StableTailGapNamedReturnSeparationLedger
+  AND NormalizedTailGapPositiveOrDenseTailReturnPDEC
+```
+
+本步关闭的是 tail window 的变量替换和一维 functional；真正剩余是证明归一化 prime-tail functional 留出正 gap，
+或证明 dense tail、tail saturation、`R_named` 过大已经进入 PDEC/SAE。
+行/列命题仍未无条件闭合。

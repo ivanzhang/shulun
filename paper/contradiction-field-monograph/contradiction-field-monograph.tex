@@ -11562,6 +11562,68 @@ the gap is positive or sufficient, and it does not exclude named return mass
 or tail saturation PDEC/SAE.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Tail gap normalization]
+Let \(H=P-y\) and write every large-step tail carrier as \(q=H+r\).  Then
+\[
+  P-q=y-r.
+\]
+For the zero block \(B=[x_0,y-1]\) of length \(L\), the terminal row window
+from the preceding theorem becomes
+\[
+  B\cap [P-q,y-1]=B\cap [y-r,y-1],
+  \qquad
+  |B\cap [P-q,y-1]|=\min(L,r).
+\]
+Consequently the tail envelope has the one-dimensional form
+\[
+  C_{\rm tail}=
+  \sum_{\substack{q=H+r<P\\ q\ {\rm prime}}}
+  \min(L,r)\Big\lceil \frac{P-1}{H+r}\Big\rceil ,
+\]
+and is dominated by the integer envelope
+\[
+  C_{\rm tail}\le
+  \sum_{1\le r<P-H}
+  \min(L,r)\Big\lceil \frac{P-1}{H+r}\Big\rceil .
+\]
+Thus the remaining gap separates as
+\[
+  G'=L(P-1)-C_{\rm tail},\qquad
+  G=G'-R_{\rm named}.
+\]
+Hence
+\begin{quote}\scriptsize\ttfamily
+PositiveStableTailGapOrNamedReturnMassPDEC\\
+\(\rightarrow\) TailIndexChangeOfVariablesLedger\\
+AND ExactPrimeTailEnvelopeOneDimensionalLedger\\
+AND StableTailGapNamedReturnSeparationLedger\\
+AND NormalizedTailGapPositiveOrDenseTailReturnPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-normalization-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+positive\_gap\_imported=true\\
+explicit\_gap\_functional\_imported=true\\
+tail\_index\_change\_of\_variables\_closed=true\\
+exact\_prime\_tail\_envelope\_closed=true\\
+all\_integer\_dominating\_envelope\_closed=true\\
+named\_return\_separation\_closed=true\\
+normalized\_positive\_gap\_proved=false\\
+dense\_tail\_return\_pdec\_excluded=false\\
+positive\_stable\_tail\_gap\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the \(q=H+r\) normalization and the one-dimensional
+tail functional.  It does not prove the normalized gap positive, and it does
+not exclude dense tail, tail saturation, or named-return mass PDEC/SAE.  The
+row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
