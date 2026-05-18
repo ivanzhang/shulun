@@ -9902,3 +9902,73 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 standard conductor first-harmonic PDEC/cap 或 sparse SAE 求和；它只把 primitive
 conductor character packet 规范化为标准 first-harmonic packet。
+
+## 214. Stable-ladder endpoint orbit axis-lobe frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_axis_lobe_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_standard_first_harmonic_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_complex_first_harmonic_amplitude_closed=true
+endpoint_orbit_axis_projection_dichotomy_closed=true
+endpoint_orbit_axis_sign_choice_closed=true
+endpoint_orbit_trigonometric_lobe_weight_closed=true
+endpoint_orbit_axis_lobe_weighted_surplus_packet_registered=true
+anonymous_standard_first_harmonic_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_axis_lobe_weighted_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：standard first harmonic 的复数相位不再作为最后硬点
+保留。令：
+
+```text
+F=sum_{a mod m} S_a exp(-2*pi*i*a/m).
+```
+
+则：
+
+```text
+Re F=sum_a S_a cos(2*pi*a/m),
+Im F=-sum_a S_a sin(2*pi*a/m),
+max(|Re F|, |Im F|) >= |F|/sqrt(2).
+```
+
+所以存在某个轴 `j` 和符号 `eps`，使：
+
+```text
+sum_a S_a eps*phi_j(a) >= M/sqrt(2).
+```
+
+把 `eps*phi_j` 分解为正负半圆叶片权重 `w-v` 后，得到：
+
+```text
+sum_a S_a*(w_a-v_a) >= M/sqrt(2).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+axis-lobe weighted surplus PDEC/cap 或 sparse SAE 求和；它只把 standard
+first-harmonic cap 压成轴向半圆叶片加权盈余包。

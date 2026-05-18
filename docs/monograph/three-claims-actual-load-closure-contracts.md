@@ -11132,3 +11132,97 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、standard conductor
 first-harmonic PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未
 无条件闭合。
+
+## 214. stable-ladder endpoint orbit axis-lobe 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_axis_lobe_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_standard_first_harmonic_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_complex_first_harmonic_amplitude_closed=true
+endpoint_orbit_axis_projection_dichotomy_closed=true
+endpoint_orbit_axis_sign_choice_closed=true
+endpoint_orbit_trigonometric_lobe_weight_closed=true
+endpoint_orbit_axis_lobe_weighted_surplus_packet_registered=true
+anonymous_standard_first_harmonic_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_axis_lobe_weighted_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层标准 first harmonic 写成：
+
+```text
+F=sum_{a mod m} S_a exp(-2*pi*i*a/m), |F|>=M.
+```
+
+其实部、虚部分别为：
+
+```text
+Re F=sum_a S_a cos(2*pi*a/m),
+Im F=-sum_a S_a sin(2*pi*a/m).
+```
+
+因此至少一个轴向投影满足：
+
+```text
+max(|Re F|, |Im F|) >= M/sqrt(2).
+```
+
+取 `phi_0(a)=cos(2*pi*a/m)`、`phi_1(a)=-sin(2*pi*a/m)`，存在
+`j in {0,1}` 和 `eps in {+1,-1}` 使：
+
+```text
+sum_a S_a eps*phi_j(a) >= M/sqrt(2).
+```
+
+再令：
+
+```text
+w_a=max(eps*phi_j(a),0),
+v_a=max(-eps*phi_j(a),0),
+```
+
+得到显式半圆叶片加权盈余：
+
+```text
+sum_a S_a*(w_a-v_a) >= M/sqrt(2).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap
+  -> StableLadderEndpointOrbitStandardFirstHarmonicImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterAxisLobeLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterAxisLobeLedger
+  AND StableLadderEndpointOrbitComplexFirstHarmonicAmplitudeLedger
+  AND StableLadderEndpointOrbitAxisProjectionDichotomyLedger
+  AND StableLadderEndpointOrbitAxisSignChoiceLedger
+  AND StableLadderEndpointOrbitTrigonometricLobeWeightLedger
+  AND StableLadderEndpointOrbitAxisLobeWeightedSurplusPacketLedger
+  AND NoAnonymousStandardFirstHarmonicExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterAxisLobeLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap
+```
+
+本步关闭的是匿名复数 first-harmonic 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、axis-lobe weighted
+surplus PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未
+无条件闭合。

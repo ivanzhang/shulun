@@ -14185,6 +14185,73 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-sta
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit axis-lobe reduction]
+The standard first-harmonic conductor outlet reduces to an axis-lobe weighted
+surplus packet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStandardConductorFirstHarmonicPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitStandardFirstHarmonicImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterAxisLobeLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterAxisLobeLedger\\
+AND StableLadderEndpointOrbitComplexFirstHarmonicAmplitudeLedger\\
+AND StableLadderEndpointOrbitAxisProjectionDichotomyLedger\\
+AND StableLadderEndpointOrbitAxisSignChoiceLedger\\
+AND StableLadderEndpointOrbitTrigonometricLobeWeightLedger\\
+AND StableLadderEndpointOrbitAxisLobeWeightedSurplusPacketLedger\\
+AND NoAnonymousStandardFirstHarmonicExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterAxisLobeLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit axis-lobe ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, and the
+sparse scale-ladder SAE outlet are carried forward.  The remaining standard
+first-harmonic packet has the form
+\[
+  F=\sum_{a\bmod m}S_a e^{-2\pi i a/m},\qquad |F|\ge M .
+\]
+Its coordinate projections are
+\[
+  \Re F=\sum_a S_a\cos(2\pi a/m),\qquad
+  \Im F=-\sum_a S_a\sin(2\pi a/m).
+\]
+Since \(|F|^2=(\Re F)^2+(\Im F)^2\), one of these two real projections has
+absolute value at least \(M/\sqrt2\).  Define
+\[
+  \phi_0(a)=\cos(2\pi a/m),\qquad
+  \phi_1(a)=-\sin(2\pi a/m).
+\]
+Thus for some \(j\in\{0,1\}\) and some sign \(\epsilon\in\{\pm1\}\),
+\[
+  \sum_a S_a\,\epsilon\phi_j(a)\ge M/\sqrt2 .
+\]
+Split the chosen trigonometric weight into positive and negative lobes:
+\[
+  w_a=\max(\epsilon\phi_j(a),0),\qquad
+  v_a=\max(-\epsilon\phi_j(a),0).
+\]
+Then \(w\) and \(v\) are supported on opposite axis half-circles and
+\[
+  \sum_a S_a(w_a-v_a)\ge M/\sqrt2 .
+\]
+Hence the complex first-harmonic cap has been converted to a real
+axis-lobe weighted surplus cap with explicit axis, sign, and half-circle
+weights.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the axis-lobe
+weighted-surplus PDEC/cap outlet, and it does not prove global summability of
+the sparse scale-ladder SAE outlet.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-axis-lobe-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
