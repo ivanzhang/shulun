@@ -5650,3 +5650,39 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 当前语料没有提交独立 new primitive 工件；外部谱输入、terminal descent、same-set PDEC 与
 DStructure/Rankin 独立验收仍是未闭合边界。
+
+## 138. Strict source entropy downstream cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_entropy_downstream_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-source-entropy-downstream-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-source-entropy-downstream-cycle-sync-router.json
+data/prime-matrix-strict-source-entropy-downstream-cycle-sync-ledger.json
+```
+
+本步确认上一轮的 source-domain entropy 首原子不是新的终点。它沿已归档证书继续下钻为：
+
+```text
+source entropy
+-> signed row coefficient law
+-> basis weight source
+-> internal arithmetic basis expansion
+-> noncanonical basis alphabet
+-> signed coordinate-source cycle
+```
+
+坐标-来源环已由 cycle guard 判定为互相定义而非证明。因此最新严格活动基同步为：
+
+```text
+((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步不关闭行/列命题；它只删除“source entropy 首原子可由 signed-source 环自证”的误出口。

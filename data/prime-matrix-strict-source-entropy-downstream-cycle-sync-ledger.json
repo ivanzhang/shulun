@@ -1,0 +1,226 @@
+{
+  "certificate_type": "prime_matrix_strict_source_entropy_downstream_cycle_sync_router",
+  "status": "source_entropy_downstream_synced_to_seed_coordinate_cycle_guard_open",
+  "frontier_sync_only": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "source_entropy_downstream_edges_closed": true,
+  "seed_coordinate_source_cycle_detected": true,
+  "raw_cycle_counts_as_closure": false,
+  "primitive_basis_and_coefficient_source_input_proved": false,
+  "acyclic_terminal_descent_proved": false,
+  "complete_key_partition_proved": false,
+  "fixed_key_exact_uv_local_multiplicity_proved": false,
+  "row_column_unconditional_closed": false,
+  "downstream_edges": [
+    {
+      "from": "ActualPreCauchySourceDomainAbsoluteEntropyLedger",
+      "to": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "closed": true,
+      "meaning": "source-domain entropy 的首原子压到 signed row emitter 内每行 signed coefficient law。"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "to": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "closed": true,
+      "meaning": "primitive row signed coefficient law 的第一不可替代字段是 basis weight source。"
+    },
+    {
+      "from": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "to": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "closed": true,
+      "meaning": "basis weight source 必须由 seed 内部 pre-Cauchy 算术基展开给出。"
+    },
+    {
+      "from": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "to": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "closed": true,
+      "meaning": "内部算术基展开首先需要 noncanonical pre-Cauchy basis alphabet。"
+    },
+    {
+      "from": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "to": "WordCoordinateFormula cycle",
+      "closed": true,
+      "meaning": "继续沿 basis alphabet、basis word generation、word formula 会回到 word coordinate 依赖环。"
+    }
+  ],
+  "imported_cycle_edges": [
+    {
+      "actual_next": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-word-coordinate-formula-router.json",
+      "node": "WordCoordinateFormula"
+    },
+    {
+      "actual_next": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json",
+      "node": "SignedWeightCoordinateSlot"
+    },
+    {
+      "actual_next": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json",
+      "node": "SignedSlotValueFormula"
+    },
+    {
+      "actual_next": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json",
+      "node": "CoefficientAssignment"
+    },
+    {
+      "actual_next": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json",
+      "node": "CoefficientValueMap"
+    },
+    {
+      "actual_next": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "edge_matches": true,
+      "expected_next": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-origin-identity-router.json",
+      "node": "BasisWordOriginIdentity"
+    },
+    {
+      "actual_next": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "edge_matches": true,
+      "expected_next": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "file": "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json",
+      "node": "RowLevelOriginGenerationTable"
+    },
+    {
+      "actual_next": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json",
+      "node": "SignedRowEmitter"
+    },
+    {
+      "actual_next": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json",
+      "node": "PrimitiveCoefficientLaw"
+    },
+    {
+      "actual_next": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json",
+      "node": "BasisWeightSource"
+    },
+    {
+      "actual_next": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json",
+      "node": "InternalArithmeticBasisExpansion"
+    },
+    {
+      "actual_next": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json",
+      "node": "BasisAlphabetLedger"
+    },
+    {
+      "actual_next": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-basis-word-generation-router.json",
+      "node": "PrimitiveBasisWordGeneration"
+    },
+    {
+      "actual_next": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-source-tuple-word-constructor-router.json",
+      "node": "SourceTupleWordConstructor"
+    },
+    {
+      "actual_next": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+      "edge_matches": true,
+      "expected_next": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+      "file": "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-formula-router.json",
+      "node": "BasisWordFormula"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "NewPrimitiveImportsSourceEntropyAtom",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一轮 new primitive 出口已把直接主攻压到 actual source-domain absolute entropy。",
+      "remaining": "ActualPreCauchySourceDomainAbsoluteEntropyLedger"
+    },
+    {
+      "gate": "SourceEntropyDownstreamEdgesClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "source entropy -> signed coefficient law -> basis weight source -> internal basis expansion -> basis alphabet 的下游同步闭合。",
+      "remaining": "cycle guard"
+    },
+    {
+      "gate": "SeedCoordinateSourceCycleImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "basis alphabet 继续展开后进入 signed 坐标-来源闭合依赖环；该环已被判定不能作为证明。",
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "gate": "PrimitiveBasisCoefficientCycleCutInputCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有提交同时给 primitive basis words 与 signed coefficients 的无环 pre-Cauchy 源输入。",
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "gate": "TerminalDescentAlternativeStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "若拒绝循环定义，source entropy 分支只能回流 terminal family；该分支仍需 well-founded descent 或 canonical-lock。",
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "gate": "TerminalDescentDownstreamSyncedToKernelTable",
+      "closed": true,
+      "proved": false,
+      "meaning": "terminal descent 下游已同步到 pointwise primitive kernel table/alpha row formula，但该路也未闭合。",
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "gate": "CompleteKeyAndFixedKeyStillParallel",
+      "closed": true,
+      "proved": false,
+      "meaning": "本步只关闭 source-domain entropy 首原子的下游口径；source rank/no-collapse 包的 complete-key 与 fixed-key multiplicity 仍独立开放。",
+      "remaining": "CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只同步到 signed 坐标-来源环守卫；未证明 cycle-cut 输入、terminal descent、PDEC、外部谱、complete/fixed-key 或 DStructure。",
+      "remaining": "((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "next_direct_attack_target": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+  "latest_strict_activity_basis": "((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "本步把上一轮的 `ActualPreCauchySourceDomainAbsoluteEntropyLedger` 沿既有下游证书同步到底：source entropy 首原子经 signed coefficient law、basis weight source、internal basis expansion 和 basis alphabet 后进入 signed 坐标-来源闭合依赖环。该环不能作为证明；若不提交无环 `AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput`，只能回流 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` 或其他独立出口。complete-key、fixed-key、PDEC/外部谱与 DStructure/Rankin 仍开放，行/列命题未无条件闭合。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_source_entropy_downstream_cycle_sync_router.py": "e3686339554912c845c992f0d82edf6ee4e883bd82b6bdf09ab6c621d8fdab54",
+    "docs/monograph/prime-matrix-strict-new-primitive-payload-source-atom-alignment-router.json": "3194b1509c245cd42f607bbab6b96a1e17420454c3ae40245fb859985d38a601",
+    "docs/monograph/prime-matrix-strict-actual-source-domain-entropy-atom-router.json": "0eaacb65ce36ad81475e8fb8806bdd90570f24939b224d6f59c38262cf2374a9",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-terminal-descent-to-pointwise-kernel-sync-router.json": "64c0baf4ed2c463ec6eb69b95ebb14f16da4c5aa909fc6b7f244035d1db041cf"
+  }
+}

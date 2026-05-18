@@ -5798,3 +5798,30 @@ ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
 
 或转入 terminal descent、PDEC、外部谱输入。当前没有独立 new primitive 工件，下一直接主攻为
 `ActualPreCauchySourceDomainAbsoluteEntropyLedger`；行/列命题仍未无条件闭合。
+
+## 127. Strict source entropy downstream cycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_entropy_downstream_cycle_sync_router.py
+docs/monograph/prime-matrix-strict-source-entropy-downstream-cycle-sync-router.md
+docs/monograph/prime-matrix-strict-source-entropy-downstream-cycle-sync-router.json
+data/prime-matrix-strict-source-entropy-downstream-cycle-sync-ledger.json
+```
+
+本步把 `ActualPreCauchySourceDomainAbsoluteEntropyLedger` 沿既有下游证书同步到底：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+-> AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+-> AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows
+-> AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy
+-> AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger
+-> signed coordinate-source cycle
+```
+
+该环不能作为 source entropy 的证明。若不提交无环的
+`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput`，source entropy 首原子只能回流
+`AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` 或其他独立出口。complete-key、
+fixed-key、PDEC/外部谱与 DStructure/Rankin 仍开放。
