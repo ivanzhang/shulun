@@ -7233,3 +7233,64 @@ AND MovingCarrierPhaseSlipPDECExclusion
 
 本步没有排斥 small-LCM 分支，而是把它从宽口径 ColumnCRT/PDEC 压成低 carrier 固定 residue、低 carrier
 非持久 sparse SAE、高 carrier 低秩容量缺口三项。
+
+## 166. First-break low-carrier fixed-residue AP 骨架
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_low_carrier_residue_ap_router.py
+docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.md
+docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.json
+data/prime-matrix-firstbreak-low-carrier-residue-ap-ledger.json
+```
+
+本步继续攻击 `LowCarrierFixedResidueColumnCRTPDECExclusion`。同步读数为：
+
+```text
+residue_to_row_ap_formula_closed=true
+single_residue_ap_envelope_closed=true
+low_carrier_residue_table_finite_closed=true
+ap_envelope_capacity_comparison_proved=false
+low_carrier_fixed_residue_excluded=false
+row_column_unconditional_closed=false
+```
+
+首破裂后行区间记为：
+
+```text
+I_y={y,...,P-1},  H=P-y.
+```
+
+对固定低 carrier 素数 `q<P` 和固定列 residue `a mod q`，覆盖条件
+
+```text
+tP+c == 0 mod q,  c == a mod q
+```
+
+等价于：
+
+```text
+t == -a P^{-1} mod q.
+```
+
+因此同一 `(q,a)` residue cell 在 `I_y` 中最多命中：
+
+```text
+ceil(H/q)
+```
+
+个行位置。固定阈值 `B` 后，所有 `q<=B` 的低 carrier cell 数至多 `sum_{q<=B} q`，所以低
+carrier fixed-residue 压力被写成低维 AP table，而不是无结构的 ColumnCRT 标签。
+
+该出口更新为：
+
+```text
+LowCarrierFixedResidueColumnCRTPDECExclusion
+  -> LowCarrierResidueAPEnvelopeCapacityComparison
+  AND DenseLowCarrierResidueTablePDECExclusion
+  AND SparseLowCarrierResidueCellSAESummability
+```
+
+本步关闭的是 AP 骨架和命名分流；尚未证明 AP envelope 容量比较，也未排斥稠密 residue table PDEC
+或稀疏 cell SAE。

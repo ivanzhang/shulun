@@ -11002,6 +11002,52 @@ AND MovingCarrierPhaseSlipPDECExclusion.
 The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[First-break low-carrier fixed-residue AP skeleton]
+In the low-carrier fixed-residue branch, fix a carrier prime \(q<P\) and a
+column residue \(a\bmod q\).  On a row \(t\), the covering condition is
+\[
+  tP+c\equiv0\pmod q,\qquad c\equiv a\pmod q .
+\]
+Since \(P\) is invertible modulo \(q\), this is equivalent to the single row
+class
+\[
+  t\equiv -aP^{-1}\pmod q .
+\]
+Therefore in the post-break row interval \(I_y=\{y,\ldots,P-1\}\), whose
+length is \(H=P-y\), one fixed residue cell \((q,a)\) can occupy at most
+\[
+  \lceil H/q\rceil
+\]
+row positions.  With a fixed low-carrier threshold \(B\), the number of
+available residue cells is at most \(\sum_{q\le B}q\).  Thus the low-carrier
+fixed-residue branch is no longer an unstructured ColumnCRT label; it is a
+finite AP table.  The branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+LowCarrierResidueAPEnvelopeCapacityComparison\\
+AND DenseLowCarrierResidueTablePDECExclusion\\
+AND SparseLowCarrierResidueCellSAESummability.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+residue\_to\_row\_ap\_formula\_closed=true\\
+single\_residue\_ap\_envelope\_closed=true\\
+low\_carrier\_residue\_table\_finite\_closed=true\\
+ap\_envelope\_capacity\_comparison\_proved=false\\
+low\_carrier\_fixed\_residue\_excluded=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step supplies the exact AP skeleton and the terminal routing.  It does
+not prove that the required counterexample pressure exceeds the AP envelope,
+nor does it exclude the dense low-carrier residue-table PDEC or the sparse
+cell SAE branch.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

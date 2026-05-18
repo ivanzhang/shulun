@@ -7092,3 +7092,43 @@ AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE
 ```
 
 这一步提供的是非循环 rank-pressure 结构压缩，不是终端排斥。
+
+## 166. First-break low-carrier fixed-residue AP 骨架
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_low_carrier_residue_ap_router.py
+docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.md
+docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.json
+data/prime-matrix-firstbreak-low-carrier-residue-ap-ledger.json
+```
+
+本步把 `LowCarrierFixedResidueColumnCRTPDECExclusion` 继续降维。同步结果：
+
+```text
+residue_to_row_ap_formula_closed=true
+single_residue_ap_envelope_closed=true
+low_carrier_residue_table_finite_closed=true
+ap_envelope_capacity_comparison_proved=false
+low_carrier_fixed_residue_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：固定低 carrier `q` 和固定列 residue `a` 不是自由相位。因为 `(P,q)=1`，
+它强制行坐标落在唯一 AP：
+
+```text
+t == -a P^{-1} mod q.
+```
+
+在剩余宽度 `H=P-y` 内，单个 residue cell 的行向供给至多 `ceil(H/q)`。因此低 carrier
+固定 residue 若持续承担压力，只能成为有限低维 AP table 的稠密偏斜：
+
+```text
+LowCarrierResidueAPEnvelopeCapacityComparison
+AND DenseLowCarrierResidueTablePDECExclusion
+AND SparseLowCarrierResidueCellSAESummability
+```
+
+这一步把“低 carrier 固定 residue”从宽泛相位标签变成可数的 AP table 容量接口；终端排斥仍未完成。
