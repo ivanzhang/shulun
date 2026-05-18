@@ -9133,3 +9133,65 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotC
 
 本步没有证明孤立 singleton 全局可求和，也没有证明 anti-pivot complement-pair
 或 long full-cell pair 的 PDEC cap；它只把低纤维 singleton 改写为孤立/相位反对齐二分。
+
+## 202. Stable-ladder pair quotient-phase frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_pair_quotient_phase_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap`。
+同步结果：
+
+```text
+isolated_or_pair_imported=true
+isolated_singleton_carried_forward=true
+complement_base_period_closed=true
+pair_difference_quotient_normalized=true
+pivot_phase_quotient_period_closed=true
+anti_pivot_nonzero_quotient_phase_closed=true
+full_cell_zero_quotient_phase_closed=true
+pair_quotient_width_envelope_closed=true
+quotient_nowrap_or_period_dichotomy_closed=true
+anonymous_pair_branches_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+pair_quotient_phase_cycle_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：anti-pivot complement pair 与 long full-cell pair
+不是两个独立黑箱；二者都是补周期商变量的 pivot 相位。令：
+
+```text
+B=W_-j,
+d=n2-n1=tB,
+g=gcd(q_j,B),
+R=q_j/g.
+```
+
+则：
+
+```text
+anti-pivot branch <=> t not congruent 0 mod R,
+full-cell branch <=> t congruent 0 mod R.
+```
+
+支撑直径给出 `1<=t<=floor(H/B)`，从而 pair 剩余被统一为 quotient phase
+cycle PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap
+```
+
+本步没有证明孤立 singleton 全局可求和，也没有证明 quotient phase cycle
+PDEC/cap；它只把 anti-pivot/full-cell pair 统一到补周期商变量与 pivot 相位周期。

@@ -13301,6 +13301,75 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-low-fiber-phase-ro
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder pair quotient-phase reduction]
+The anti-pivot complement-pair outlet and the long full-cell pair outlet have a
+single quotient-phase form.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderIsolatedSingletonOrPairImportedLedger\\
+AND StableLadderIsolatedSingletonCarriedForwardLedger\\
+AND StableLadderComplementBasePeriodLedger\\
+AND StableLadderPairDifferenceQuotientNormalizationLedger\\
+AND StableLadderPivotPhaseQuotientPeriodLedger\\
+AND StableLadderAntiPivotPairNonzeroQuotientPhaseLedger\\
+AND StableLadderFullCellPairZeroQuotientPhaseLedger\\
+AND StableLadderPairQuotientWidthEnvelopeLedger\\
+AND StableLadderQuotientNoWrapOrFullPeriodDichotomyLedger\\
+AND NoAnonymousAntiPivotOrFullPairExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPairQuotientPhaseLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Pair quotient-phase ledger]
+The isolated singleton atom is carried forward as its own summability/cap
+outlet.  For the pair outlets, use the complementary-coordinate period
+\[
+  B=W_{-j}=\operatorname {lcm}_{i\ne j}(q_i),
+\]
+with \(B=1\) for an empty complementary list.  Every complement-fiber pair has
+a unique quotient
+\[
+  d=n_2-n_1=tB,\qquad t\ge 1.
+\]
+Set
+\[
+  g=\gcd(q_j,B),\qquad R=\frac{q_j}{g}.
+\]
+Then the pivot phase \(d\bmod q_j\) is determined exactly by \(t\bmod R\).
+Indeed \(q_j\mid tB\) if and only if \(R\mid t\).
+
+Therefore the anti-pivot complement-pair branch is precisely the nonzero
+quotient phase branch
+\[
+  t\not\equiv 0\pmod R,
+\]
+whereas the full-cell pair branch is the zero quotient phase branch
+\[
+  t\equiv 0\pmod R,\qquad t=Ru.
+\]
+If \(H\) is the support diameter, then
+\[
+  1\le t\le \left\lfloor\frac{H}{B}\right\rfloor .
+\]
+Thus the quotient interval either has no complete pivot phase period,
+\(\lfloor H/B\rfloor<R\), or contains a complete quotient phase cycle,
+\(\lfloor H/B\rfloor\ge R\).  This is the remaining explicit quotient-phase
+PDEC/cap input.
+
+The two pair outlets are therefore no longer separate anonymous exits; they are
+the nonzero and zero residues of the same quotient variable modulo \(R\).  This
+theorem does not prove summability of isolated singletons, it does not prove
+the quotient phase cycle cap, and it does not prove global summability of the
+sparse scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

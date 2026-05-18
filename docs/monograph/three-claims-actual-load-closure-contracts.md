@@ -10014,3 +10014,95 @@ SparseScaleLadderSAESummabilityOrStableActualLadderLowFiberSingletonSurplusOrLon
 或补周期对齐但 pivot 反对齐的 complement-pair。剩余集中为孤立 singleton
 全局求和、anti-pivot complement-pair PDEC/cap、long full-cell pair PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 202. stable-ladder pair quotient-phase 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_pair_quotient_phase_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-pair-quotient-phase-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap`。
+同步读数为：
+
+```text
+isolated_or_pair_imported=true
+isolated_singleton_carried_forward=true
+complement_base_period_closed=true
+pair_difference_quotient_normalized=true
+pivot_phase_quotient_period_closed=true
+anti_pivot_nonzero_quotient_phase_closed=true
+full_cell_zero_quotient_phase_closed=true
+pair_quotient_width_envelope_closed=true
+quotient_nowrap_or_period_dichotomy_closed=true
+anonymous_pair_branches_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+pair_quotient_phase_cycle_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+对 anti-pivot complement pair 与 long full-cell pair 统一取补坐标基周期：
+
+```text
+B=W_-j=lcm_{i!=j}(q_i), empty lcm=1.
+```
+
+pair 差值写为：
+
+```text
+d=n2-n1=tB, t>=1.
+```
+
+设：
+
+```text
+g=gcd(q_j,B),
+R=q_j/g.
+```
+
+则 pivot 相位 `d mod q_j` 只由 `t mod R` 决定。于是：
+
+```text
+anti-pivot complement pair <=> t not congruent 0 mod R,
+full-cell pair <=> t congruent 0 mod R, equivalently t=R*u.
+```
+
+承载支撑直径 `H` 给出：
+
+```text
+1<=t<=floor(H/B).
+```
+
+因此若 `floor(H/B)<R`，quotient 相位尚未完成一个 pivot 周期；若
+`floor(H/B)>=R`，则 quotient 区间已包含完整相位周期块。该周期块是新的
+显式 PDEC/cap 输入。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrAntiPivotComplementPairOrLongFullCellPairPDECCap
+  -> StableActualLadderIsolatedSingletonOrPairImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardLedger
+  AND StableLadderComplementBasePeriodLedger
+  AND StableLadderPairDifferenceQuotientNormalizationLedger
+  AND StableLadderPivotPhaseQuotientPeriodLedger
+  AND StableLadderAntiPivotPairNonzeroQuotientPhaseLedger
+  AND StableLadderFullCellPairZeroQuotientPhaseLedger
+  AND StableLadderPairQuotientWidthEnvelopeLedger
+  AND StableLadderQuotientNoWrapOrFullPeriodDichotomyLedger
+  AND NoAnonymousAntiPivotOrFullPairExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPairQuotientPhaseLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotientPhaseCyclePDECCap
+```
+
+本步关闭的是分散的 pair 出口：anti-pivot 与 full-cell pair 被统一成
+补周期商变量 `t` 的非零/零 pivot 相位。剩余集中为孤立 singleton 全局求和、
+quotient phase cycle PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列
+命题仍未无条件闭合。
