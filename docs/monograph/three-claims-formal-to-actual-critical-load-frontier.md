@@ -5892,3 +5892,68 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步的关键边界是：exact atomic branch trace 已经落入 signed-lane 闭环，不能作为 built-in pairing 的自足证明；ExactUV 也不能由 signed pairing 推出，而必须单独证明 signed row law、complete key 分区和 fixed-key 局部重数。行/列命题仍未无条件闭合。
+
+## 142. Strict post-antisplit source-rank convergence router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_antisplit_source_rank_convergence_router.py
+docs/monograph/prime-matrix-strict-post-antisplit-source-rank-convergence-router.md
+docs/monograph/prime-matrix-strict-post-antisplit-source-rank-convergence-router.json
+data/prime-matrix-strict-post-antisplit-source-rank-convergence-ledger.json
+```
+
+本步吸收上一节留下的 `NewPrimitive...` 出口，并与 terminal descent、source-rank/no-collapse 的既有前沿合并：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+-> ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+-> ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+
+ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+-> ActualPreCauchySourceDomainAbsoluteEntropyLedger
+   AND CompletePrimitiveEmitterKeyPartitionLedger
+   AND FixedKeyExactUVLocalMultiplicityO1Ledger
+
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+-> AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+
+CompletePrimitiveEmitterKeyPartitionLedger
+/ RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+-> ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+/ CompletePrimitiveEmitterKeyPartitionLedger
+/ RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+/ FixedKeyExactUVLocalMultiplicityO1Ledger
+-> PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+```
+
+导入结果：
+
+```text
+new_primitive_exit_absorbed_to_source_rank=true
+terminal_descent_converges_to_source_rank=true
+source_rank_package_atomized=true
+all_internal_source_rank_routes_meet_at_pointwise_kernel_table=true
+alpha_row_anchor_phase_emission_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+统一保留剩余基更新为：
+
+```text
+((AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步的实际推进是删除一个重复主攻点：`NewPrimitive...` 已由旧证书吸收到 source-rank/no-collapse，terminal descent 也收敛到同一包。当前真正内部首攻点是 `AlphaRowAnchorPhaseEmissionFormulaLedger`，但该公式、pre-Cauchy 算术恒等式、同表 rank/multiplicity、PDEC/外部谱和最终晋级门均未证明，行/列命题仍未无条件闭合。

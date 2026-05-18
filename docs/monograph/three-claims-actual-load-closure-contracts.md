@@ -5929,3 +5929,42 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 ```
 
 当前三项均未证明，行/列命题仍保持开放。
+
+## 131. Strict post-antisplit source-rank convergence router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_antisplit_source_rank_convergence_router.py
+docs/monograph/prime-matrix-strict-post-antisplit-source-rank-convergence-router.md
+docs/monograph/prime-matrix-strict-post-antisplit-source-rank-convergence-router.json
+data/prime-matrix-strict-post-antisplit-source-rank-convergence-ledger.json
+```
+
+本步把刚完成的 antisplit trace/ExactUV 前沿与既有 new primitive、terminal descent、source-rank/no-collapse、source entropy、complete key 和 source table 证书合并。关键收敛链为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+-> ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+-> ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+
+ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger
+-> PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate
+```
+
+因此 `NewPrimitive...` 与 terminal descent 不再是独立闭合点；二者共同回到同 formal-unit 的逐 primitive alpha/delta 核表。当前第一硬点更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+并行硬点为：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+行/列命题仍未无条件闭合。
