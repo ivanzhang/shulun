@@ -12448,6 +12448,79 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-iterated-lpf-rank-budget-router.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[LPF word-entropy and first-moving-coordinate reduction]
+The rank-budgeted iterated-LPF moving-family branch admits a finite word
+partition and a first-motion reduction.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+RankBudgetedMovingFamilyImportedLedger\\
+AND IteratedLPFWordSignaturePartitionLedger\\
+AND LPFWordEntropyFiniteCapLedger\\
+AND AggregatePressureToSingleLPFWordLedger\\
+AND FixedLPFWordColumnCRTExitLedger\\
+AND FirstMovingLPFCoordinateLedger\\
+AND MovingCoordinateSupportReciprocityLedger\\
+AND NoAnonymousRankBudgetedMovingFamilyLedger\\
+AND FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Word-motion ledger]
+By uniqueness of least prime factors, each residual lies in a unique ordered
+word
+\[
+  \omega=(s,a_1,\ldots,a_d),\qquad
+  r\le s\le a_1\le\cdots\le a_d,
+\]
+with product
+\[
+  A(\omega)=s\prod_{i\le d}a_i .
+\]
+If \(A(\omega)>W\), where \(W\) is the original \(m\)-support width, the word
+has already crossed the product-width boundary and is registered as a
+ColumnCRT/PDEC or finite atom.  Otherwise
+\[
+  A(\omega)\le W.
+\]
+Since all factors in the non-finite branch are at least \(r\ge2\), the total
+factor depth obeys
+\[
+  d+1\le \lfloor \log_r W\rfloor .
+\]
+Thus the active word set \(\Omega(P,C)\) is finite and has an explicit entropy
+budget \(H(W,r)\).
+
+The pressure decomposes over disjoint word cells:
+\[
+  E(\Omega)=\sum_{\omega\in\Omega}E_\omega .
+\]
+If \(E(\Omega)>U\), then one word satisfies
+\[
+  E_\omega>\frac{U}{|\Omega|}.
+\]
+Hence any remaining excess must be carried by a single LPF word, not by an
+anonymous moving-family reservoir.
+
+If that pressure-carrying word has stable prime coordinates and stable phase
+residues along the family, it is a fixed MCRT word and is routed to the fixed
+word ColumnCRT/PDEC or finite-atom exit.  If not, there is a first moving
+coordinate \(\mu\).  Let \(A_{\rm prefix}\) be the product of the stable word
+prefix before \(\mu\).  After \(\mu\) is imposed, the residual support width is
+bounded by
+\[
+  \left\lceil \frac{W}{A_{\rm prefix}\mu}\right\rceil .
+\]
+When \(A_{\rm prefix}\mu>W\), this is again a product-width ColumnCRT/PDEC or
+finite-atom exit.  Otherwise the remaining obstruction is the named
+first-moving LPF coordinate pressure.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

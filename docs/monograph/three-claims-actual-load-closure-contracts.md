@@ -8951,3 +8951,86 @@ SecondLPFDescentPressureOrTripleMCRTColumnCRTPDEC
 本步关闭的是迭代 LPF 的有序分解、支撑-周期互反不变量、有限秩预算、终端有限原子
 与 product-width ColumnCRT/PDEC 出口。剩余集中为：随 `P` 移动的低秩因子词族。
 行/列命题仍未无条件闭合。
+
+## 189. LPF word-entropy / first-moving-coordinate 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_word_entropy_motion_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-ledger.json
+```
+
+本步继续攻击 `RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC`。同步读数为：
+
+```text
+rank_budgeted_moving_family_imported=true
+word_signature_partition_closed=true
+word_entropy_finite_cap_closed=true
+aggregate_to_single_word_closed=true
+fixed_word_columncrt_exit_closed=true
+first_moving_coordinate_closed=true
+moving_coordinate_support_reciprocity_closed=true
+anonymous_moving_family_removed=true
+first_moving_coordinate_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+由 LPF 唯一性，每个 residual 落入唯一有序 word：
+
+```text
+omega=(s,a_1,...,a_d),
+r<=s<=a_1<=...<=a_d,
+A(omega)=s*prod_{i<=d}a_i.
+```
+
+若 `A(omega)>W`，其中 `W` 是原 m 支撑宽度，则回到 product-width
+ColumnCRT/PDEC 或有限原子。否则：
+
+```text
+A(omega)<=W,
+d+1<=floor(log_r W).
+```
+
+所以活动 word 集 `Omega(P,C)` 有有限熵预算 `H(W,r)`。聚合压力满足：
+
+```text
+E(Omega)=sum_{omega in Omega}E_omega.
+```
+
+若 `E(Omega)>U`，则存在单个 word：
+
+```text
+E_omega>U/|Omega|.
+```
+
+承压 word 若在族中素坐标和相位残基稳定，则它不是 moving-family，而是固定 MCRT word，
+进入 `FixedLPFWordColumnCRTExit`。若不稳定，则存在首个移动坐标 `mu`，其前缀乘积
+`A_prefix` 稳定，并有：
+
+```text
+width_after_mu<=ceil(W/(A_prefix*mu)).
+```
+
+若 `A_prefix*mu>W`，直接进入 ColumnCRT/PDEC 或有限原子；否则剩余只可能是首移动
+LPF 坐标压力。
+
+硬点更新为：
+
+```text
+RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC
+  -> RankBudgetedMovingFamilyImportedLedger
+  AND IteratedLPFWordSignaturePartitionLedger
+  AND LPFWordEntropyFiniteCapLedger
+  AND AggregatePressureToSingleLPFWordLedger
+  AND FixedLPFWordColumnCRTExitLedger
+  AND FirstMovingLPFCoordinateLedger
+  AND MovingCoordinateSupportReciprocityLedger
+  AND NoAnonymousRankBudgetedMovingFamilyLedger
+  AND FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
+```
+
+本步关闭的是匿名 rank-budgeted moving-family 口径；剩余集中为首移动 LPF 坐标的
+相位/容量压力，或 word-motion ColumnCRT/PDEC。行/列命题仍未无条件闭合。

@@ -8399,3 +8399,59 @@ RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC
 
 本步没有证明秩预算化 moving-family 不可能；它把二级/triple pressure 压成有限秩、
 有限深、支撑-周期互反约束下的迭代 LPF 因子词族。
+
+## 189. LPF word-entropy / first-moving-coordinate frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_word_entropy_motion_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-word-entropy-motion-ledger.json
+```
+
+本步继续攻击 `RankBudgetedIteratedLPFMovingFamilyOrColumnCRTPDEC`。同步结果：
+
+```text
+word_signature_partition_closed=true
+word_entropy_finite_cap_closed=true
+aggregate_to_single_word_closed=true
+fixed_word_columncrt_exit_closed=true
+first_moving_coordinate_closed=true
+moving_coordinate_support_reciprocity_closed=true
+anonymous_moving_family_removed=true
+first_moving_coordinate_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：rank-budgeted moving-family 不能再作为匿名总量保留。每个
+residual 有唯一 LPF word：
+
+```text
+omega=(s,a_1,...,a_d),
+A(omega)=s*prod_{i<=d}a_i.
+```
+
+未进入 product-width 出口时：
+
+```text
+A(omega)<=W,
+d+1<=floor(log_r W).
+```
+
+因此活动 word 集有限。若聚合压力超界，则至少一个 word 承压；该 word 若稳定，则回到
+固定 MCRT/ColumnCRT；若不稳定，则有首个移动 LPF 坐标 `mu`，并满足：
+
+```text
+width_after_mu<=ceil(W/(A_prefix*mu)).
+```
+
+新的直接主攻为：
+
+```text
+FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
+```
+
+本步没有证明首移动 LPF 坐标压力不可能；它只把移动族压力从匿名 family 压到第一个
+真正改变相位/容量的素坐标。
