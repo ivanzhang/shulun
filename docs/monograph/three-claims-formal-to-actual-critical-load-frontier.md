@@ -8786,3 +8786,67 @@ SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
 本步没有证明 stable actual ladder Fourier/PDEC cap，也没有证明 sparse
 scale-ladder SAE 全局可求和；它只把稳定实际 ladder 的黑箱 CRT 出口回接到显式
 Fourier/PDEC 输入。
+
+## 196. Stable-ladder pivot-fiber PDEC frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_pivot_fiber_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap`。
+同步结果：
+
+```text
+stable_ladder_fourier_cap_imported=true
+character_factorization_closed=true
+nontrivial_pivot_coordinate_closed=true
+complement_fiber_partition_closed=true
+global_character_to_pivot_fiber_localization_closed=true
+primitive_pivot_character_correlation_closed=true
+anonymous_fourier_cap_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+primitive_fiber_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：稳定 ladder 的非平凡 Fourier 异常不能继续保留为全局
+角色黑箱。任一非平凡角色分解为坐标角色乘积 `chi=prod_i chi_i`，选择一个
+非平凡坐标 `j`，并按其余坐标分割支撑：
+
+```text
+S_h={n in S: tau_{-j}(n)=h}.
+```
+
+若全局角色和满足 `|S_chi|>=Lambda`，则
+
+```text
+|S_chi|<=sum_h |A_h|<=|G_{-j}| max_h |A_h|,
+A_h=sum_{n in S_h} chi_j(n mod q_j).
+```
+
+因此存在一个补坐标纤维 `h` 使
+
+```text
+|A_h|>=Lambda/|G_{-j}|.
+```
+
+代入上一层 `Lambda=N*E_a(S)/(N-1)` 得到：
+
+```text
+|A_h|>=q_j*E_a(S)/(N-1).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
+```
+
+本步没有证明 primitive pivot-fiber PDEC cap，也没有证明 sparse scale-ladder
+SAE 全局可求和；它只把全局 Fourier cap 局部化为单坐标纤维相位相关。

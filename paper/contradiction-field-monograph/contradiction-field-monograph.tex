@@ -12912,6 +12912,89 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-fourier-pdec-route
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder pivot-fiber PDEC localization]
+The stable-ladder Fourier/PDEC cap has a primitive one-coordinate fiber form.
+The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableActualLadderFourierCapImportedLedger\\
+AND StableLadderCharacterFactorizationLedger\\
+AND StableLadderNontrivialPivotCoordinateLedger\\
+AND StableLadderComplementFiberPartitionLedger\\
+AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger\\
+AND StableLadderPrimitivePivotCharacterCorrelationLedger\\
+AND NoAnonymousStableLadderFourierCapLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Pivot-fiber ledger]
+Let
+\[
+  G=\prod_{i=1}^{d}\mathbb Z/q_i\mathbb Z,\qquad
+  N=|G|=\prod_{i=1}^{d}q_i .
+\]
+Every character of \(G\) factors as
+\[
+  \chi(g)=\prod_{i=1}^{d}\chi_i(g_i).
+\]
+If \(\chi\) is nontrivial, choose a pivot coordinate \(j\) with
+\(\chi_j\ne 1\).  Write
+\[
+  G_{-j}=\prod_{i\ne j}\mathbb Z/q_i\mathbb Z,\qquad
+  |G_{-j}|=\frac{N}{q_j}.
+\]
+For \(h\in G_{-j}\), split the support set by the complementary coordinates,
+\[
+  S_h=\{n\in S:\tau_{-j}(n)=h\},
+\]
+and set
+\[
+  A_h=\sum_{n\in S_h}\chi_j(n\bmod q_j).
+\]
+Then the global character sum decomposes exactly as
+\[
+  S_\chi=\sum_{h\in G_{-j}}\chi_{-j}(h)\,A_h .
+\]
+Since \(|\chi_{-j}(h)|=1\), the triangle inequality gives
+\[
+  |S_\chi|
+  \le \sum_{h\in G_{-j}}|A_h|
+  \le |G_{-j}|\max_{h\in G_{-j}}|A_h|.
+\]
+Thus if \(|S_\chi|\ge \Lambda\), some complementary-coordinate fiber satisfies
+\[
+  |A_h|\ge \frac{\Lambda}{|G_{-j}|}.
+\]
+
+Taking the lower bound from the preceding Fourier bridge,
+\[
+  \Lambda=\frac{N\,E_a(S)}{N-1},
+\]
+one obtains the primitive fiber threshold
+\[
+  |A_h|\ge \frac{q_j\,E_a(S)}{N-1}.
+\]
+Equivalently, the global stable-ladder Fourier cap is witnessed by a single
+nontrivial coordinate character on one fixed complementary fiber.  On the cyclic
+factor \(\mathbb Z/q_j\mathbb Z\), such a character has the form
+\[
+  r\mapsto \exp(2\pi i c_j r/q_j),\qquad c_j\not\equiv 0\pmod {q_j}.
+\]
+So the remaining cap is a primitive pivot-fiber PDEC statement, not an
+anonymous global Fourier outlet.
+
+This theorem does not prove that primitive cap, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+therefore remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

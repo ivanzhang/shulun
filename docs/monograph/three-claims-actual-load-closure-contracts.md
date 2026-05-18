@@ -9508,3 +9508,94 @@ SparseScaleLadderSAESummabilityOrStableActualLadderColumnCRTPDEC
 本步关闭的是匿名 stable actual ladder ColumnCRT 出口：它已被改写为显式
 Fourier/PDEC 角色和下界。剩余没有消失，而是集中为 stable ladder Fourier/PDEC
 cap，或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。
+
+## 196. stable-ladder pivot-fiber PDEC 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_pivot_fiber_pdec_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-pivot-fiber-pdec-ledger.json
+```
+
+本步继续攻击 `SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap`。
+同步读数为：
+
+```text
+stable_ladder_fourier_cap_imported=true
+character_factorization_closed=true
+nontrivial_pivot_coordinate_closed=true
+complement_fiber_partition_closed=true
+global_character_to_pivot_fiber_localization_closed=true
+primitive_pivot_character_correlation_closed=true
+anonymous_fourier_cap_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+primitive_fiber_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+任一非平凡角色都可写成坐标角色乘积：
+
+```text
+chi(g)=prod_i chi_i(g_i).
+```
+
+取 `chi_j` 非平凡的 pivot 坐标 `j`。令：
+
+```text
+G_{-j}=prod_{i!=j} Z/q_iZ,
+|G_{-j}|=N/q_j,
+S_h={n in S: tau_{-j}(n)=h}.
+```
+
+定义纤维角色和：
+
+```text
+A_h=sum_{n in S_h} chi_j(n mod q_j).
+```
+
+则：
+
+```text
+S_chi=sum_h chi_{-j}(h) * A_h
+```
+
+并由三角不等式得到：
+
+```text
+|S_chi|<=sum_h |A_h|<=|G_{-j}| max_h |A_h|.
+```
+
+所以若 `|S_chi|>=Lambda`，则存在补坐标纤维 `h` 使：
+
+```text
+|A_h|>=Lambda/|G_{-j}|.
+```
+
+代入上一层 `Lambda=N*E_a(S)/(N-1)` 与 `|G_{-j}|=N/q_j`，得到原子阈值：
+
+```text
+|A_h|>=q_j*E_a(S)/(N-1).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderFourierPDECCap
+  -> StableActualLadderFourierCapImportedLedger
+  AND StableLadderCharacterFactorizationLedger
+  AND StableLadderNontrivialPivotCoordinateLedger
+  AND StableLadderComplementFiberPartitionLedger
+  AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger
+  AND StableLadderPrimitivePivotCharacterCorrelationLedger
+  AND NoAnonymousStableLadderFourierCapLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderPrimitiveFiberPDECCap
+```
+
+本步关闭的是匿名 stable ladder Fourier cap：它必落到某个单素数模数 `q_j`
+与固定补坐标纤维上的原子相位相关。剩余集中为 primitive pivot-fiber PDEC cap，
+或 sparse scale-ladder SAE 全局求和问题。行/列命题仍未无条件闭合。
