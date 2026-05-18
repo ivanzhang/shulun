@@ -5506,3 +5506,48 @@ AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
 因此最新 terminal-square 口径不再停在普通平方相位长块，而是同步到 AP 零点包、signed payload、
 same-set PDEC 和若干全局输入的 consolidated 剩余基。该同步防止把较旧接口误当作最新硬点；
 它不构成行/列命题无条件闭合。
+
+## 134. Strict source declaration / payload / ExactUV unification router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_declaration_payload_exactuv_unification_router.py
+docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.md
+docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json
+data/prime-matrix-strict-source-declaration-payload-exactuv-unification-ledger.json
+```
+
+本步把 signed payload 与 ActualEmitterExactUV 两个 strict 内部源线接口同步为同一个
+pre-Cauchy actual source declaration packet。payload 侧需要它生成非循环 basis word/signed
+coefficient 来源恒等式；ExactUV 侧需要它生成 source-domain entropy 与 fixed exact `(u,v)`
+polylog fiber bound。
+
+合流后的直接接口为：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+字段包括：
+
+```text
+declaration_line
+source_tuple_domain_entropy
+primitive_summand_rows
+basis_word_signed_coefficient_identity
+alpha_delta_prepushforward_identity
+fixed_exact_uv_fiber_bound
+no_downstream_recovery
+named_return_partition
+```
+
+当前语料没有该 packet；因此本步是硬点压缩，不是行/列命题无条件闭合。并行开放项仍包括：
+
+```text
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```

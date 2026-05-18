@@ -5621,3 +5621,49 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步关闭的是前沿口径错位，不关闭行/列命题。下一步应直接攻击 consolidated 剩余基中的
 AP 零点包、signed payload 或 same-set PDEC 输入。
+
+## 123. Strict source declaration / payload / ExactUV unification router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_source_declaration_payload_exactuv_unification_router.py
+docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.md
+docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json
+data/prime-matrix-strict-source-declaration-payload-exactuv-unification-ledger.json
+```
+
+本步把 strict 内部 source lane 的两个活动硬点合流：
+
+```text
+NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+共同压到：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+该 packet 必须在 Cauchy/Phi/payment 前正向给出 actual noncanonical source declaration、primitive
+summand rows、basis word/signed coefficient 来源恒等式、alpha/delta 推前前等式、source-domain
+entropy、fixed exact `(u,v)` polylog fiber bound，以及缺声明、fiber collapse、entropy deficit、
+符号冲突、local factor 为零、超预算、canonical 泄漏等命名回流。
+
+当前读数：
+
+```text
+common_packet_proved=false
+atomic_signed_payload_constructor_proved=false
+actual_emitter_exact_uv_bounded_multiplicity_incidence_proved=false
+row_column_unconditional_closed=false
+```
+
+这一步关闭的是 payload 线与 ExactUV 线之间的口径分裂；它没有提交共同 source declaration
+packet，也不关闭 AP 零点包、same-set PDEC、模型余量、RatePreservation 或 DStructure/Rankin 门。
+下一直接主攻对象为：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
