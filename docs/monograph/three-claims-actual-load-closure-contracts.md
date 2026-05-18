@@ -9120,3 +9120,76 @@ FirstMovingLPFCoordinatePressureOrWordMotionColumnCRTPDEC
 
 本步关闭的是匿名首移动坐标池；剩余集中为单个 moving LPF coordinate drift，
 或 prefix ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 191. single-moving LPF coordinate scale-escape 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_single_moving_lpf_coordinate_scale_escape_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.json
+data/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-ledger.json
+```
+
+本步继续攻击 `SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC`。同步读数为：
+
+```text
+single_coordinate_drift_imported=true
+stable_prefix_closed=true
+dyadic_scale_closed=true
+bounded_scale_degenerates_closed=true
+unbounded_scale_escape_closed=true
+post_coordinate_support_descent_closed=true
+same_scale_cycle_excluded=true
+sparse_drift_registered=true
+anonymous_single_coordinate_drift_removed=true
+scale_escaping_coordinate_excluded=false
+sparse_drift_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+单坐标漂移保留上一层稳定前缀，记：
+
+```text
+W_prefix=floor(W/A_prefix).
+```
+
+对移动坐标 `mu` 定义 dyadic 尺度：
+
+```text
+B(mu)=2^floor(log_2 mu),
+B(mu)<=mu<=2B(mu).
+```
+
+若 `B(mu)` 在无限子族中有界，则 `mu` 只可能取有限多个素值；由无限鸽巢，
+存在固定 `mu` 的无限子族，故回到固定坐标 ColumnCRT/PDEC 或有限原子。因而真正
+的 moving drift 必须满足 `B(mu)->infty`。
+
+加入 `mu` 后，后继 residual 支撑宽度满足：
+
+```text
+W_after<=ceil(W_prefix/mu)<=ceil(W_prefix/B(mu)).
+```
+
+在非有限分支中 `B(mu)>=2`，所以后继支撑严格下降，排除同尺度循环。若漂移事件不
+形成持久同尺度压力，则只登记为 sparse drift/SAE 质量；本步不证明该 SAE 全局可求和。
+
+硬点更新为：
+
+```text
+SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
+  -> SingleMovingLPFCoordinateDriftImportedLedger
+  AND SingleMovingCoordinateStablePrefixLedger
+  AND SingleMovingCoordinateDyadicScaleLedger
+  AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger
+  AND UnboundedCoordinateScaleEscapeLedger
+  AND PostMovingCoordinateSupportDescentLedger
+  AND SameScaleCoordinateCycleExcludedLedger
+  AND SparseCoordinateDriftSAERegistrationLedger
+  AND NoAnonymousSingleCoordinateDriftLedger
+  AND ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
+```
+
+本步关闭的是有界尺度匿名漂移和同尺度循环；剩余集中为尺度逃逸单坐标递降族，
+或 sparse drift/SAE/ColumnCRT/PDEC。行/列命题仍未无条件闭合。

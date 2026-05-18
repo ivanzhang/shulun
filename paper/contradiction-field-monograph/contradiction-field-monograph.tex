@@ -12594,6 +12594,70 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-first-moving-lpf-coordinate-rout
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Single-moving LPF coordinate scale-escape reduction]
+The single moving LPF coordinate drift has a scale-escape reduction.  The open
+hard point
+\begin{quote}\scriptsize\ttfamily
+SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+SingleMovingLPFCoordinateDriftImportedLedger\\
+AND SingleMovingCoordinateStablePrefixLedger\\
+AND SingleMovingCoordinateDyadicScaleLedger\\
+AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger\\
+AND UnboundedCoordinateScaleEscapeLedger\\
+AND PostMovingCoordinateSupportDescentLedger\\
+AND SameScaleCoordinateCycleExcludedLedger\\
+AND SparseCoordinateDriftSAERegistrationLedger\\
+AND NoAnonymousSingleCoordinateDriftLedger\\
+AND ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Scale-escape ledger]
+Import the remaining branch in which a single LPF coordinate \(\mu\) moves
+with the family.  The prefix before \(\mu\) is stable; with original support
+width \(W\), set
+\[
+  W_{\rm prefix}=\left\lfloor \frac{W}{A_{\rm prefix}}\right\rfloor .
+\]
+Assign to \(\mu\) its dyadic scale
+\[
+  B(\mu)=2^{\lfloor\log_2\mu\rfloor},
+  \qquad B(\mu)\le \mu\le 2B(\mu).
+\]
+
+If \(B(\mu)\) is bounded on an infinite subfamily, then \(\mu\) ranges over
+only finitely many primes.  By the infinite pigeonhole principle, an infinite
+subfamily has fixed \(\mu\).  That branch is no longer a moving coordinate
+drift; it is the already named fixed-coordinate ColumnCRT/PDEC or finite-atom
+exit.  Therefore any genuine single-coordinate drift must satisfy
+\[
+  B(\mu)\to\infty
+\]
+on a cofinal subfamily.
+
+After imposing the coordinate \(\mu\), the residual support width satisfies
+\[
+  W_{\rm after}\le
+  \left\lceil \frac{W_{\rm prefix}}{\mu}\right\rceil
+  \le
+  \left\lceil \frac{W_{\rm prefix}}{B(\mu)}\right\rceil .
+\]
+On every non-finite active layer \(B(\mu)\ge2\), so this gives a strict
+support descent before any same-scale cycle can recur.  Thus the anonymous
+single-coordinate drift is removed: bounded scales degenerate to fixed
+coordinates, true moving scales descend, and nonpersistent drift is registered
+as a sparse drift/SAE exit.
+
+This does not yet exclude scale-escaping coordinate descent, and it does not
+prove global summability of the sparse drift/SAE mass.  The row/column theorem
+therefore remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

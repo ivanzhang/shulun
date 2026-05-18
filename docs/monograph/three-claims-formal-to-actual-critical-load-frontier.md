@@ -8507,3 +8507,60 @@ SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC
 
 本步没有证明单个 moving LPF coordinate drift 不可能；它把首移动坐标压力压到单坐标
 漂移接口。
+
+## 191. Single-moving LPF coordinate scale-escape frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_single_moving_lpf_coordinate_scale_escape_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-router.json
+data/prime-matrix-firstbreak-tail-gap-single-moving-lpf-coordinate-scale-escape-ledger.json
+```
+
+本步继续攻击 `SingleMovingLPFCoordinateDriftOrPrefixColumnCRTPDEC`。同步结果：
+
+```text
+single_coordinate_drift_imported=true
+stable_prefix_closed=true
+dyadic_scale_closed=true
+bounded_scale_degenerates_closed=true
+unbounded_scale_escape_closed=true
+post_coordinate_support_descent_closed=true
+same_scale_cycle_excluded=true
+sparse_drift_registered=true
+anonymous_single_coordinate_drift_removed=true
+scale_escaping_coordinate_excluded=false
+sparse_drift_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：单个移动 LPF 坐标也不能作为匿名漂移口径保留。稳定前缀给出：
+
+```text
+W_prefix=floor(W/A_prefix).
+```
+
+对 `mu` 取 dyadic 尺度：
+
+```text
+B(mu)=2^floor(log_2 mu),
+B(mu)<=mu<=2B(mu).
+```
+
+若尺度有界，则 `mu` 在无限子族中退化为固定坐标，回到固定 ColumnCRT/PDEC 或有限原子。
+若真漂移，则尺度必须无界；加入该坐标后：
+
+```text
+W_after<=ceil(W_prefix/mu)<=ceil(W_prefix/B(mu)).
+```
+
+因此非有限分支不能在同一尺度循环。新的直接主攻为：
+
+```text
+ScaleEscapingSingleCoordinateDescentOrSparseDriftSAEColumnCRTPDEC
+```
+
+本步没有证明尺度逃逸单坐标递降族不可能，也没有证明 sparse drift/SAE 全局可求和；
+它只把单坐标漂移压到尺度逃逸递降和稀疏漂移出口。
