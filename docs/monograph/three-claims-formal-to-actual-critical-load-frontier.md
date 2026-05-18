@@ -9661,3 +9661,67 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointT
 本步没有证明 endpoint singleton atom/SAE、endpoint translation orbit
 adjacency/PDEC cap 或 sparse SAE 求和；它只把非零位移自相关压成单个 CRT
 平移周期上的循环邻接包。
+
+## 210. Stable-ladder endpoint orbit run/boundary frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_run_boundary_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap`。
+同步结果：
+
+```text
+endpoint_translation_orbit_adjacency_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_signed_cycle_model_closed=true
+endpoint_orbit_dyadic_edge_count_closed=true
+endpoint_orbit_run_partition_closed=true
+endpoint_orbit_adjacency_run_boundary_identity_closed=true
+endpoint_orbit_run_boundary_budget_dichotomy_closed=true
+endpoint_orbit_long_same_sign_arc_registered=true
+endpoint_orbit_boundary_flux_registered=true
+anonymous_endpoint_translation_orbit_adjacency_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_long_same_sign_arc_sae_proved=false
+endpoint_orbit_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：单轨道邻接包不再保持为抽象相位对象，而被写成
+`C_r=Z/rZ` 上的 signed active sequence。dyadic 尺度把加权邻接质量 `W`
+与同号邻接边数 `E` 关联为：
+
+```text
+lambda^2 E <= W <= 4 lambda^2 E.
+```
+
+将 active 同号连续点分解为极大 cyclic runs。除 full-cycle 同号特例外：
+
+```text
+E=n-b.
+```
+
+因此对任意边界预算 `B>=1`，要么切口数 `b>B`，要么存在同号连续弧：
+
+```text
+L_max >= E/B.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、long same-sign arc SAE、boundary
+flux/PDEC cap 或 sparse SAE 求和；它只把单轨道邻接 cap 压成长弧或边界通量
+二分。

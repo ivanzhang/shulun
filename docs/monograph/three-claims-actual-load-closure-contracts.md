@@ -10779,3 +10779,93 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrEndpointPa
 本步关闭的是匿名 displacement autocorrelation 口径。剩余集中为 endpoint
 singleton atom/SAE、endpoint translation orbit adjacency/PDEC cap，或 sparse
 scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 210. stable-ladder endpoint orbit run/boundary 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_run_boundary_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap`。
+同步读数为：
+
+```text
+endpoint_translation_orbit_adjacency_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_signed_cycle_model_closed=true
+endpoint_orbit_dyadic_edge_count_closed=true
+endpoint_orbit_run_partition_closed=true
+endpoint_orbit_adjacency_run_boundary_identity_closed=true
+endpoint_orbit_run_boundary_budget_dichotomy_closed=true
+endpoint_orbit_long_same_sign_arc_registered=true
+endpoint_orbit_boundary_flux_registered=true
+anonymous_endpoint_translation_orbit_adjacency_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_long_same_sign_arc_sae_proved=false
+endpoint_orbit_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+固定上一层给出的平移轨道：
+
+```text
+C_r=Z/rZ,
+z_t=a+t*delta.
+```
+
+令 `u_t=1_{z_t in S}`，`sigma_t=sign F(z_t)`。同号邻接边为：
+
+```text
+e_t=1 iff u_t=u_{t+1}=1 and sigma_t=sigma_{t+1}.
+```
+
+在 dyadic packet 中存在尺度 `lambda` 使：
+
+```text
+lambda^2 E <= W <= 4 lambda^2 E.
+```
+
+把 active 同号相邻点分解为极大循环 runs。若不是全周期同号特例，则有：
+
+```text
+E=n-b.
+```
+
+其中 `n` 是 active 点数，`b` 是 run/cut 数。全周期同号特例直接进入长度
+`r` 的 long same-sign arc 出口。对任意边界预算 `B>=1`，若 `b>B` 则进入
+boundary flux 出口；否则：
+
+```text
+L_max >= n/b >= E/B.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap
+  -> StableLadderEndpointTranslationOrbitAdjacencyImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterOrbitRunLedger
+  AND StableLadderEndpointOrbitSignedCycleModelLedger
+  AND StableLadderEndpointOrbitDyadicEdgeCountLedger
+  AND StableLadderEndpointOrbitRunPartitionLedger
+  AND StableLadderEndpointOrbitAdjacencyRunBoundaryIdentityLedger
+  AND StableLadderEndpointOrbitRunBoundaryBudgetDichotomyLedger
+  AND StableLadderEndpointOrbitLongSameSignArcRegistrationLedger
+  AND StableLadderEndpointOrbitBoundaryFluxRegistrationLedger
+  AND NoAnonymousEndpointTranslationOrbitAdjacencyExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterOrbitRunBoundaryLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 endpoint translation orbit adjacency 口径。剩余集中为
+endpoint singleton atom/SAE、endpoint orbit long same-sign arc SAE、endpoint
+orbit boundary flux/PDEC cap，或 sparse scale-ladder SAE 全局求和。行/列命题
+仍未无条件闭合。

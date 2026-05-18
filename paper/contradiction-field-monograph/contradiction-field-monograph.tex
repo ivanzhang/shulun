@@ -13890,6 +13890,82 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-displacem
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit run-boundary reduction]
+The endpoint translation-orbit adjacency outlet reduces to a long same-sign
+arc outlet or to a boundary-flux outlet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointTranslationOrbitAdjacencyPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointTranslationOrbitAdjacencyImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterOrbitRunLedger\\
+AND StableLadderEndpointOrbitSignedCycleModelLedger\\
+AND StableLadderEndpointOrbitDyadicEdgeCountLedger\\
+AND StableLadderEndpointOrbitRunPartitionLedger\\
+AND StableLadderEndpointOrbitAdjacencyRunBoundaryIdentityLedger\\
+AND StableLadderEndpointOrbitRunBoundaryBudgetDichotomyLedger\\
+AND StableLadderEndpointOrbitLongSameSignArcRegistrationLedger\\
+AND StableLadderEndpointOrbitBoundaryFluxRegistrationLedger\\
+AND NoAnonymousEndpointTranslationOrbitAdjacencyExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterOrbitRunBoundaryLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitLongSameSignArcSAEOrEndpointOrbitBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit run-boundary ledger]
+The endpoint singleton atom outlet and the sparse scale-ladder SAE outlet are
+carried forward.  Consider the translation-orbit adjacency branch from the
+previous ledger.  On the selected orbit write
+\[
+  C_r=\mathbf Z/r\mathbf Z,\qquad z_t=a+t\delta .
+\]
+Let \(u_t\) be the active indicator of \(z_t\in S\), and let
+\(\sigma_t=\operatorname {sgn}F(z_t)\).  A same-sign active edge is
+\[
+  e_t=1
+  \quad\Longleftrightarrow\quad
+  u_t=u_{t+1}=1,\quad \sigma_t=\sigma_{t+1}.
+\]
+Let \(E=\sum_t e_t\).
+
+Because the packet is dyadic, there is a scale \(\lambda\) such that each
+active endpoint satisfies \(\lambda\le |F(z_t)|<2\lambda\).  Therefore the
+weighted adjacency mass \(W\) and the unweighted same-sign edge count obey
+\[
+  \lambda^2 E\le W\le 4\lambda^2 E .
+\]
+Thus the capacity part of the translation-orbit adjacency obstruction may be
+tracked by \(E\), up to an absolute dyadic constant.
+
+Partition the active same-sign consecutive vertices into maximal cyclic runs.
+Let \(n\) be the number of active vertices and let \(b\) be the number of
+cuts, equivalently the number of runs unless the whole cycle is one same-sign
+run.  If the whole cycle is one same-sign run, then the long-arc outlet is
+already present with length \(r\).  Otherwise the exact run identity is
+\[
+  E=n-b .
+\]
+Consequently, for every boundary budget \(B\ge1\), either \(b>B\), which is
+registered as the boundary-flux outlet, or \(b\le B\), in which case a
+pigeonhole bound gives a same-sign run of length
+\[
+  L_{\max}\ge \frac{n}{b}\ge \frac{E}{B}.
+\]
+The anonymous translation-orbit adjacency outlet has therefore been replaced
+by two explicit controlled exits: a long same-sign arc on \(C_r\), or many
+cycle cuts carrying boundary flux.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the long same-sign arc SAE outlet, it does not prove the boundary
+flux PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-run-boundary-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
