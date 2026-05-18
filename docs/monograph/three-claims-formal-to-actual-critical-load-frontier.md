@@ -8079,3 +8079,70 @@ DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
 
 本步没有证明每个局部 rough cofactor 区间必给出足够删除质量；它把剩余从
 全局 LPF 债务压成 dyadic/quotient/cofactor interval 上的局部 CRT 支撑债务。
+
+## 184. Cofactor-LPF cover frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_cover_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-ledger.json
+```
+
+本步继续攻击 `DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC`。同步结果：
+
+```text
+weighted_envelope_closed=true
+support_quota_criterion_closed=true
+cofactor_lpf_partition_closed=true
+cofactor_lpf_crt_cell_closed=true
+product_width_dichotomy_closed=true
+local_cofactor_lpf_cover_debt_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：局部 rough 支撑不足被改写为 cofactor 小素因子删除过量。
+固定 cell `C=(Y,sigma,j)` 并令 `alpha_{ell,n}=j*u(ell*n)`，定义：
+
+```text
+F_C=sum all alpha_{ell,n},
+B_C=sum_{gcd(n,W_<ell)=1} alpha_{ell,n},
+E_C=F_C-B_C.
+```
+
+对预算 `A_C` 有精确等价：
+
+```text
+B_C<A_C  <=>  E_C>F_C-A_C.
+```
+
+再按 cofactor 的最小素因子分区：
+
+```text
+E_C=sum_{ell in Y} sum_{r<ell} E_{r<-ell},
+E_{r<-ell}=sum_{n in I_{ell,j,sigma}, r=lpf(n)} alpha_{ell,n}.
+```
+
+每个分区写成
+
+```text
+n=r*m, gcd(m,W_<r)=1.
+```
+
+这一步只使用整数 LPF 唯一性，不把短区间素数存在性作为黑箱。若参与覆盖的
+distinct cofactor primes 为 `R_C`，则局部覆盖字周期为：
+
+```text
+M_R=prod_{r in R_C}r.
+```
+
+新的直接主攻为：
+
+```text
+CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
+```
+
+本步没有证明 cofactor-LPF 过覆盖不可能；它把 rough 支撑债务推到更低素因子的
+短区间 CRT 覆盖债务与 product-width ColumnCRT/PDEC 出口。

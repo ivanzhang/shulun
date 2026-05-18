@@ -12091,6 +12091,77 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Cofactor-LPF cover reduction]
+The remaining dyadic rough-cofactor support debt is equivalent to an explicit
+cofactor least-prime-factor cover debt.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+CofactorCellWeightedEnvelopeLedger\\
+AND RoughSupportQuotaCriterionLedger\\
+AND CofactorLeastPrimeFactorPartitionLedger\\
+AND CofactorLPFCRTCellLedger\\
+AND CofactorCoverPrimeProductWidthLedger\\
+AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC\\
+AND CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Reduction ledger]
+Fix a dyadic/quotient/cofactor cell \(C=(Y,\sigma,j)\).  Put
+\[
+  \alpha_{\ell,n}=j\,u(\ell n).
+\]
+Let
+\[
+  F_C=\sum_{\ell\in Y}\sum_{n\in I_{\ell,j,\sigma}}\alpha_{\ell,n},
+\]
+\[
+  B_C=\sum_{\ell\in Y}
+      \sum_{\substack{n\in I_{\ell,j,\sigma}\\(n,W_{<\ell})=1}}
+      \alpha_{\ell,n},
+  \qquad
+  E_C=F_C-B_C.
+\]
+Here \(F_C\) is the full integer envelope, \(B_C\) is the rough cofactor support,
+and \(E_C\) is the mass deleted by smaller cofactor factors.  Therefore, for a
+local budget \(A_C\),
+\[
+  B_C<A_C\quad\Longleftrightarrow\quad E_C>F_C-A_C.
+\]
+Thus rough support debt is exactly cofactor small-factor over-cover.
+
+For every deleted cofactor, let \(r={\rm lpf}(n)<\ell\).  The least-prime-factor
+partition is disjoint:
+\[
+  E_C=\sum_{\ell\in Y}\sum_{r<\ell}E_{r\leftarrow\ell},\qquad
+  E_{r\leftarrow\ell}
+  =\sum_{\substack{n\in I_{\ell,j,\sigma}\\ r={\rm lpf}(n)}}\alpha_{\ell,n}.
+\]
+Each component has the CRT form
+\[
+  n=rm,\qquad (m,W_{<r})=1,\qquad
+  \lceil n_{\min}/r\rceil\le m\le \lfloor n_{\max}/r\rfloor .
+\]
+This step uses only the unique least prime factor of an integer; it does not use
+any short-interval prime existence input.
+
+If a local cover debt uses the distinct cofactor primes \(R_C\), its complete
+phase word has period
+\[
+  M_R=\prod_{r\in R_C}r.
+\]
+When \(M_R\) exceeds the cell support width, exact replay cannot be a local
+short-period drift; it must be recorded as a finite atom, a ColumnCRT/PDEC exit,
+or a deeper moving-support exit.  This does not yet exclude the local
+cofactor-LPF cover debt.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

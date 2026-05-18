@@ -8510,3 +8510,89 @@ LPFDeletionDebtOrRoughPrefixOverdensityPDEC
 本步关闭的是 dyadic 分层、预算定位、权重分裂、quotient 分块与 cofactor 区间端点公式。
 剩余集中为：某个 dyadic/quotient/cofactor interval 的 rough CRT 支撑仍可能删除质量不足，
 或其失败必须进一步登记为 ColumnCRT/PDEC/SAE。行/列命题仍未无条件闭合。
+
+## 184. cofactor-LPF 覆盖债务回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_cover_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-cover-ledger.json
+```
+
+本步继续攻击 `DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC`。同步读数为：
+
+```text
+dyadic_cofactor_debt_imported=true
+weighted_envelope_closed=true
+support_quota_criterion_closed=true
+cofactor_lpf_partition_closed=true
+cofactor_lpf_crt_cell_closed=true
+product_width_dichotomy_closed=true
+local_cofactor_lpf_cover_debt_excluded=false
+row_column_unconditional_closed=false
+```
+
+固定上一层 cell `C=(Y,sigma,j)`，写
+
+```text
+alpha_{ell,n}=j*u(ell*n).
+```
+
+全整数权重包络、rough 支撑质量与被 cofactor 小因子删除质量为：
+
+```text
+F_C=sum_{ell in Y} sum_{n in I_{ell,j,sigma}} alpha_{ell,n},
+B_C=sum_{ell in Y} sum_{n in I_{ell,j,sigma}, gcd(n,W_<ell)=1} alpha_{ell,n},
+E_C=F_C-B_C.
+```
+
+若该 cell 的目标预算为 `A_C`，则局部 rough 支撑债务等价于：
+
+```text
+B_C<A_C  <=>  E_C>F_C-A_C.
+```
+
+也就是说，支撑不足不再是黑箱，而是 cofactor 小素因子覆盖过量。对每个被删除的
+cofactor 按最小素因子分区：
+
+```text
+r=lpf(n)<ell,
+E_C=sum_{ell in Y} sum_{r<ell} E_{r<-ell}.
+```
+
+每个分区又有短区间 CRT 形式：
+
+```text
+n=r*m,
+gcd(m,W_<r)=1,
+ceil(n_min/r)<=m<=floor(n_max/r).
+```
+
+若局部覆盖债务使用 distinct cofactor primes `R_C`，其完整相位字周期为：
+
+```text
+M_R=prod_{r in R_C}r.
+```
+
+当 `M_R` 超过 cell 支撑宽度时，同一覆盖字不能由局部短周期漂移稳定复现，只能登记为
+有限原子、ColumnCRT/PDEC，或转入更深的 moving-support 出口。
+
+硬点更新为：
+
+```text
+DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
+  -> CofactorCellWeightedEnvelopeLedger
+  AND RoughSupportQuotaCriterionLedger
+  AND CofactorLeastPrimeFactorPartitionLedger
+  AND CofactorLPFCRTCellLedger
+  AND CofactorCoverPrimeProductWidthLedger
+  AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC
+  AND CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
+```
+
+本步关闭的是 cell 权重包络、quota 等价、cofactor 最小素因子分区、CRT cell 与
+product-width 登记。剩余集中为：cofactor-LPF 过覆盖债务本身，或 product-width
+ColumnCRT/PDEC 出口。行/列命题仍未无条件闭合。
