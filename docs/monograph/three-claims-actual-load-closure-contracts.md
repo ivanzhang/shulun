@@ -6973,3 +6973,68 @@ AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
 `FixedKeyExactUVLocalMultiplicityO1Ledger`、`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`
 与 `ExternalDIBFIKuznetsovDispersionTheoremMatch`。本步删除 exact-UV 作为纯 CRT/位置问题的误出口；
 行/列命题仍未全局无条件闭合。
+
+## 162. Inverse-alignment 第 P+1 行归约检查
+
+新增文件
+
+```text
+experiments/prime_matrix_inverse_alignment_pplus1_row_reduction_check_router.py
+docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.md
+docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.json
+data/prime-matrix-inverse-alignment-pplus1-row-reduction-check-ledger.json
+```
+
+本步检查旧仓库中“同余方程组最小对齐解 `x` 必大于 `P`”路线与 `P^2` 后第 `P+1` 行的关系。同步读数为：
+
+```text
+old_minrep_equivalence_closed=true
+pplus1_row_is_x_equals_p=true
+x_equals_p_no_cover_equivalent_to_first_half_prime_square=true
+pplus1_nonzero_suffices_for_all_early_rows_proved=false
+row_column_unconditional_closed=false
+```
+
+按仓库记号，行乘数 `x` 的窗口是 `xP+r, 1<=r<P`；所以 `x=P` 是一编号第 `P+1` 行，
+即平方锚后首行 `(P^2,P^2+P)`。旧稿已经闭合：
+
+```text
+x=P 无全覆盖
+<=> (P^2,P^2+P) 内存在素数
+```
+
+但旧稿没有证明：
+
+```text
+x=P 非零行  =>  所有 1<=x<P 非零行
+```
+
+原因是不同 `x` 给出不同覆盖相位 `rho_q(x)=-xP mod q`；`x=P` 的负平方相位只是一条特殊相位线，
+不能自动控制全部早期相位线。可安全使用的条件归约必须写成：
+
+```text
+EarlyZero(x<P)
+=> ZeroAtXEqualsP OR NamedReturn(PDEC/SAE/ColumnCRT/source-rank)
+```
+
+因此本分支新增的缺失接口为：
+
+```text
+AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn
+```
+
+它不替代上一节的 signed-row 主攻，而是作为 inverse-alignment 旧路线回流接口并行保留。合并后的活动基为：
+
+```text
+((AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+  OR AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn)
+ OR ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+ OR FixedKeyExactUVLocalMultiplicityO1Ledger
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步回答旧稿检查：已有的是 `x=P`/第 `P+1` 行等价链；尚未有第 `P+1` 行非零推出 `x<P` 零行不存在的充分性证明。

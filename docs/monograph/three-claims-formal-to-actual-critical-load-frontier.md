@@ -6919,3 +6919,44 @@ AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
 
 所以当前前沿不再寻找纯 CRT 全周期结构矛盾来直接推出 exact-UV 非集中；它被压成 signed-row 源律、
 actual emitter 源表/key 预算、fixed-key 局部重数、外部谱或 strict new-joint 前沿。该同步仍不是行/列命题的无条件闭合。
+
+## 162. Inverse-alignment 第 P+1 行归约检查
+
+新增文件
+
+```text
+experiments/prime_matrix_inverse_alignment_pplus1_row_reduction_check_router.py
+docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.md
+docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.json
+data/prime-matrix-inverse-alignment-pplus1-row-reduction-check-ledger.json
+```
+
+本步回查旧仓库 inverse-alignment 路线，确认其与 `P^2` 后第 `P+1` 行的精确关系：
+
+```text
+old_minrep_equivalence_closed=true
+pplus1_row_is_x_equals_p=true
+x_equals_p_no_cover_equivalent_to_first_half_prime_square=true
+pplus1_nonzero_suffices_for_all_early_rows_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：旧稿已经证明最小对齐解 `X_0(P)>P` 等价于所有 `1<=x<=P` 行非零；
+也已经证明 `x=P` 特化等价于平方后前半窗素数输入：
+
+```text
+NoZeroRowAtXEqualsP_PlusOneRowAfterSquare
+<=> PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP
+```
+
+但是这只是 `x=P` 这一条特殊相位线。它没有给出从任意早期相位 `1<=x<P`
+转移到平方锚相位 `x=P` 的非循环定理。因此当前不能写成“只要证明第 `P+1` 行不可能是零行，就证明 `x<P` 零行不存在”。
+
+正确的可攻接口是：
+
+```text
+AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn
+```
+
+即证明任一早期零行若存在，要么强制 `x=P` 也零行，要么进入命名 `PDEC/SAE/ColumnCRT/source-rank` 出口。
+这一路线与 exact-UV 后的 signed-row 主前沿并行，而不是替代它。

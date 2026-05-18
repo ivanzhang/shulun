@@ -1,0 +1,97 @@
+{
+  "certificate_type": "prime_matrix_inverse_alignment_pplus1_row_reduction_check_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "OldMinRepEquivalenceClosed",
+      "meaning": "旧稿已闭合：最小对齐解 X_0(P)>P 等价于 1<=x<=P 全部非零行，也等价于每个 P 对齐短区间有素数。",
+      "proved": true,
+      "remaining": "none for equivalence"
+    },
+    {
+      "closed": true,
+      "gate": "PPlusOneRowIsXEqualsP",
+      "meaning": "按仓库记号，x=P 是一编号第 P+1 行，窗口为 P^2+r, 1<=r<P。",
+      "proved": true,
+      "remaining": "none for notation"
+    },
+    {
+      "closed": true,
+      "gate": "XEqualsPNoCoverEquivalentToFirstHalfPrimeSquare",
+      "meaning": "旧稿已闭合：x=P 无全覆盖等价于 (P^2,P^2+P) 内存在素数。",
+      "proved": true,
+      "remaining": "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP"
+    },
+    {
+      "closed": true,
+      "gate": "FinalTailRouteNeedsPPlusOneAsHardInput",
+      "meaning": "final-tail 统一下界若要闭合，代入 x=P 必须先得到平方后前半窗素数输入；这是必要阻塞，不是充分归约。",
+      "proved": true,
+      "remaining": "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP"
+    },
+    {
+      "closed": false,
+      "gate": "PPlusOneNonzeroImpliesAllEarlyRowsNonzero",
+      "meaning": "旧仓库没有证明第 P+1 行非零可推出全部 x<P 非零；不同 x 给出不同相位 rho_q(x)=-xP mod q，不能由 x=P 的负平方相位自动控制。",
+      "proved": false,
+      "remaining": "AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ValidConditionalReduction",
+      "meaning": "若新增证明：任一 x<P 零行必转移到 x=P 零行，或进入命名 PDEC/SAE/ColumnCRT/source-rank 出口；再排除这些出口，则可由第 P+1 行非零推出早期无零行。",
+      "proved": false,
+      "remaining": "AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn AND NoZeroRowAtXEqualsP_PlusOneRowAfterSquare"
+    },
+    {
+      "closed": true,
+      "gate": "LatestNoncycleFrontierPreserved",
+      "meaning": "该检查只新增一个旧路线回流接口；exact-UV 后的 signed-row/source-table/fixed-key 主前沿仍保持开放。",
+      "proved": false,
+      "remaining": "(AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward OR AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步确认旧稿没有把第 P+1 行非零提升为全早期窗口排斥；行/列命题仍未无条件闭合。",
+      "proved": false,
+      "remaining": "(AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward OR AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn OR ActualNoncanonicalPrimitiveEmitterSourceTableLedger OR FixedKeyExactUVLocalMultiplicityO1Ledger OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "first_half_prime_square_current_corpus_proved": false,
+  "global_previous_direct_attack_target_preserved": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+  "latest_noncycle_basis_after_check": "((AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward OR AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn) OR ActualNoncanonicalPrimitiveEmitterSourceTableLedger OR FixedKeyExactUVLocalMultiplicityO1Ledger OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "needed_transfer_theorem": "AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn",
+  "next_direct_attack_target_for_this_branch": "AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn",
+  "no_theorem_switch": true,
+  "old_minrep_equivalence_closed": true,
+  "parallel_direct_attack_targets": [
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+    "ActualNoncanonicalPrimitiveEmitterSourceTableLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch",
+    "SquarePhaseRoughSurvivorUniformLowerBound"
+  ],
+  "plain_conclusion": "旧仓库确实已经把 x=P 特化为第 P+1 行/平方后前半窗问题，并证明该行无全覆盖等价于 (P^2,P^2+P) 内存在素数。但旧仓库没有证明“第 P+1 行非零 => 全部 x<P 非零”。这个方向还需要一个新的非循环相位转移定理：任一早期零行要么强制平方锚 x=P 也零行，要么进入命名 PDEC/SAE/ColumnCRT/source-rank 出口。",
+  "pplus1_nonzero_suffices_for_all_early_rows_proved": false,
+  "pplus1_row_is_x_equals_p": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-inverse-alignment-final-tail-rough-survivor-obstruction-router.json": "2faaae72cd649b0d469ce260b380b6180570c3c180a054ea092f3d0f9af48bd3",
+    "docs/monograph/prime-matrix-inverse-alignment-latest-frontier-sync-router.json": "ff08e13fd2dbbd7dbbdaf7a1648fc8f339cd2e52eec84a5ba3a0df7873c05d9c",
+    "docs/monograph/prime-matrix-inverse-alignment-min-x-phase-scan-router.md": "85b667536392eb61197912532b775a79dabc2c4e4030768d2d3085da7d821083",
+    "docs/monograph/prime-matrix-prime-square-x-equals-p-wheel-router.json": "4544ff30590a112ac0c5329c61505989403a8c2f33942d5769cd77fa9a04e01c",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json": "328ee462d76cb6213f976eee33133885f20109157d16cf80d236ae27d78d8993",
+    "docs/monograph/prime-matrix-zero-row-minrep-route-review.md": "cff5609900bcfaa796b6b586c44458727b9807f2f1afd2210e52360dbe5bef26",
+    "experiments/prime_matrix_inverse_alignment_pplus1_row_reduction_check_router.py": "2891f1f93cd09e75b727ec991351432beb22e4707ab36c32c2675dcf868fd33a"
+  },
+  "status": "pplus1_row_reduction_checked_transfer_missing_open",
+  "valid_conditional_reduction_basis": "AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn AND NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND PDEC_SAE_ColumnCRT_NamedReturnExclusion",
+  "x_equals_p_no_cover_equivalent_to_first_half_prime_square": true,
+  "x_equals_p_no_solution_global_proved": false
+}

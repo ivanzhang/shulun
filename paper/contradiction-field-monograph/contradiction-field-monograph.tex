@@ -10806,6 +10806,56 @@ or D-structure/Rankin promotion.  The row/column theorem remains open.
 \end{proof}
 
 
+\begin{theorem}[Inverse-alignment \(P+1\) row reduction check]
+In the row multiplier notation used in this manuscript, the row \(x=P\) is
+the one-indexed \(P+1\) row and is the square-anchored interval
+\[
+  P^2+r,\qquad 1\le r<P.
+\]
+The older inverse-alignment files already prove the equivalence
+\begin{quote}\scriptsize\ttfamily
+NoZeroRowAtXEqualsP\_PlusOneRowAfterSquare\\
+if and only if PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP.
+\end{quote}
+They also prove that \(X_0(P)>P\) is equivalent to the absence of zero rows
+for all \(1\le x\le P\).  However, the old files do not prove that the
+single assertion \(x=P\) is nonzero implies that every \(1\le x<P\) is
+nonzero.  Such an implication would require a separate non-circular transfer:
+\begin{quote}\scriptsize\ttfamily
+EarlyZero(x<P)\\
+implies ZeroAtXEqualsP OR NamedReturn(PDEC/SAE/ColumnCRT/source-rank).
+\end{quote}
+Thus the new branch target is
+\begin{quote}\scriptsize\ttfamily
+AcyclicEarlyZeroToSquareAnchorPhaseTransferOrNamedReturn,
+\end{quote}
+while the exact-UV source-rank frontier still keeps
+\begin{quote}\scriptsize\ttfamily
+AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+\end{quote}
+as a parallel direct attack.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-inverse-alignment-pplus1-row-reduction-check-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+old\_minrep\_equivalence\_closed=true\\
+pplus1\_row\_is\_x\_equals\_p=true\\
+x\_equals\_p\_no\_cover\_equivalent\_to\_first\_half\_prime\_square=true\\
+pplus1\_nonzero\_suffices\_for\_all\_early\_rows\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The obstruction is phase-theoretic: different early multipliers \(x\) give
+different covering phases \(\rho_q(x)=-xP\bmod q\).  The square anchor
+\(x=P\) is one special phase line and does not automatically dominate the
+whole family \(1\le x<P\).  Therefore this check sharpens the old route but
+does not close the row/column theorem.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
