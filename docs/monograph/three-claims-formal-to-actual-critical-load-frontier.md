@@ -7132,3 +7132,49 @@ AND SparseLowCarrierResidueCellSAESummability
 ```
 
 这一步把“低 carrier 固定 residue”从宽泛相位标签变成可数的 AP table 容量接口；终端排斥仍未完成。
+
+## 167. First-break low-carrier AP exact-envelope 证书
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_low_carrier_ap_envelope_router.py
+docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.md
+docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json
+data/prime-matrix-firstbreak-low-carrier-ap-envelope-ledger.json
+```
+
+本步把 `LowCarrierResidueAPEnvelopeCapacityComparison` 中的形式供给端完全显式化。同步结果：
+
+```text
+cell_count_formula_closed=true
+single_cell_sharp_bound_closed=true
+all_residues_exact_mass_closed=true
+selected_table_envelope_closed=true
+ap_capacity_comparison_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：AP envelope 是真实反例压力必须穿过的硬容量边界，但它本身不是需求下界。
+对任意 table `T`，
+
+```text
+U_T(I_y)=sum_{(q,a) in T} #{t in I_y: t == -a P^{-1} mod q}
+```
+
+且单 cell 有 `ceil(H/q)` 上界；固定 `q` 的所有 residue cell 精确合计为 `H`。所以形式容量端已经闭合：
+
+```text
+U_T(I_y) <= sum_{(q,a) in T} ceil(H/q),
+U_T(I_y) <= H * |{q: exists a with (q,a) in T}|.
+```
+
+真正剩余接口变成：
+
+```text
+ActualLowCarrierRowIncidenceDemandLowerBound
+AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC
+```
+
+也就是说，下一步必须证明首破裂反例链在低 carrier AP table 上产生足够 actual 行发生需求；若为了接近
+envelope 而长期占满许多低维 residue cell，则必须登记并排斥为 dense-table PDEC。

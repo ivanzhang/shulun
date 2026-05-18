@@ -11048,6 +11048,53 @@ nor does it exclude the dense low-carrier residue-table PDEC or the sparse
 cell SAE branch.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[First-break low-carrier AP exact envelope]
+Let \(T\subset\{(q,a):q\le B,\ a\bmod q\}\) be a low-carrier residue table
+and let \(I_y=\{y,\ldots,P-1\}\) have length \(H=P-y\).  Define
+\[
+  U_T(I_y)=\sum_{(q,a)\in T}
+  \#\{t\in I_y:t\equiv -aP^{-1}\pmod q\}.
+\]
+Then every selected cell satisfies
+\[
+  \#\{t\in I_y:t\equiv -aP^{-1}\pmod q\}\le \lceil H/q\rceil .
+\]
+Moreover, for each fixed \(q\),
+\[
+  \sum_{a\bmod q}\#\{t\in I_y:t\equiv -aP^{-1}\pmod q\}=H .
+\]
+Consequently
+\[
+  U_T(I_y)\le \sum_{(q,a)\in T}\lceil H/q\rceil,\qquad
+  U_T(I_y)\le H\cdot \#\{q:\exists a\ (q,a)\in T\}.
+\]
+Thus the formal supply side of
+\texttt{LowCarrierResidueAPEnvelopeCapacityComparison} is exact, and the
+remaining branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+ActualLowCarrierRowIncidenceDemandLowerBound\\
+AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+cell\_count\_formula\_closed=true\\
+single\_cell\_sharp\_bound\_closed=true\\
+all\_residues\_exact\_mass\_closed=true\\
+selected\_table\_envelope\_closed=true\\
+ap\_capacity\_comparison\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This closes only the exact AP envelope.  It does not prove the actual
+row-incidence demand lower bound, and it does not exclude the dense-table
+PDEC alternative.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -7294,3 +7294,67 @@ LowCarrierFixedResidueColumnCRTPDECExclusion
 
 本步关闭的是 AP 骨架和命名分流；尚未证明 AP envelope 容量比较，也未排斥稠密 residue table PDEC
 或稀疏 cell SAE。
+
+## 167. First-break low-carrier AP exact-envelope 证书
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_low_carrier_ap_envelope_router.py
+docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.md
+docs/monograph/prime-matrix-firstbreak-low-carrier-ap-envelope-router.json
+data/prime-matrix-firstbreak-low-carrier-ap-envelope-ledger.json
+```
+
+本步继续攻击 `LowCarrierResidueAPEnvelopeCapacityComparison`。同步读数为：
+
+```text
+cell_count_formula_closed=true
+single_cell_sharp_bound_closed=true
+all_residues_exact_mass_closed=true
+selected_table_envelope_closed=true
+ap_capacity_comparison_proved=false
+row_column_unconditional_closed=false
+```
+
+对任意低 carrier residue table
+
+```text
+T subset {(q,a): q<=B, a mod q},
+```
+
+在首破裂后行区间 `I_y` 上定义
+
+```text
+U_T(I_y)=sum_{(q,a) in T} #{t in I_y: t == -a P^{-1} mod q}.
+```
+
+单个 cell 的发生量满足
+
+```text
+#{t in I_y: t == -a P^{-1} mod q} <= ceil(H/q),  H=P-y.
+```
+
+更关键的是，固定 `q` 后所有 residue cell 精确分割行区间：
+
+```text
+sum_{a mod q} #{t in I_y: t == -a P^{-1} mod q} = H.
+```
+
+因此任意 table 的形式包络为
+
+```text
+U_T(I_y) <= sum_{(q,a) in T} ceil(H/q),
+U_T(I_y) <= H * |{q: exists a with (q,a) in T}|.
+```
+
+该容量比较出口更新为：
+
+```text
+LowCarrierResidueAPEnvelopeCapacityComparison
+  -> ActualLowCarrierRowIncidenceDemandLowerBound
+  AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC
+```
+
+本步关闭的是 AP table 的 exact envelope 公式。尚未证明反例链强制的 actual row-incidence demand
+超过该 envelope，也未排斥接近 envelope 的稠密低维 table PDEC；行/列命题仍未无条件闭合。

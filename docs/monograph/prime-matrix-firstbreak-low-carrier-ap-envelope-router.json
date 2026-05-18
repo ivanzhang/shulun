@@ -1,0 +1,117 @@
+{
+  "all_residues_exact_mass_closed": true,
+  "ap_capacity_comparison_proved": false,
+  "cell_count_formula_closed": true,
+  "certificate_type": "prime_matrix_firstbreak_low_carrier_ap_envelope_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "APEnvelopeCapacityImported",
+      "meaning": "上一层把低 carrier fixed-residue 出口压到 AP envelope 容量比较。",
+      "proved": false,
+      "remaining": "LowCarrierResidueAPEnvelopeCapacityComparison"
+    },
+    {
+      "closed": true,
+      "gate": "CellCountFormulaClosed",
+      "meaning": "对任意 table T，U_T(I)=sum_{(q,a) in T} #{t in I:t≡-aP^{-1} mod q}。",
+      "proved": true,
+      "remaining": "LowCarrierAPExactEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SingleCellSharpBoundClosed",
+      "meaning": "单个 (q,a) cell 的行发生数不超过 floor((H+q-1)/q)=ceil(H/q)。",
+      "proved": true,
+      "remaining": "N_{q,a}(I)<=ceil(H/q)"
+    },
+    {
+      "closed": true,
+      "gate": "AllResiduesExactMassClosed",
+      "meaning": "固定 q 时，所有 a mod q 的 cell 在 I_y 中的发生数精确求和为 H；每一行只选择一个 residue。",
+      "proved": true,
+      "remaining": "sum_a N_{q,a}(I)=H"
+    },
+    {
+      "closed": true,
+      "gate": "SelectedTableEnvelopeClosed",
+      "meaning": "任意选定低 carrier table T 的 envelope 为 U_T<=sum_{(q,a) in T} ceil(H/q)，且 U_T<=H*|Q(T)|。",
+      "proved": true,
+      "remaining": "LowCarrierAPExactEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FormalEnvelopeNotActualDemandGuard",
+      "meaning": "AP envelope 只是可供给上界；要形成矛盾还必须证明反例链强制的 actual row-incidence demand 超过该上界。",
+      "proved": true,
+      "remaining": "ActualLowCarrierRowIncidenceDemandLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "DenseTablePDECRouteRegistered",
+      "meaning": "若 table T 为了接近 envelope 必须在许多低 carrier residue 上持久占位，则它是同 formal unit 的稠密 residue table PDEC。",
+      "proved": true,
+      "remaining": "DenseLowCarrierResidueTablePDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "SparseTableSAERouteRegistered",
+      "meaning": "若 T 稀疏或不持久，AP envelope 发生只进入 sparse cell SAE/LocalSurvivor，不形成稳定反例支付链。",
+      "proved": true,
+      "remaining": "SparseLowCarrierResidueCellSAESummability"
+    },
+    {
+      "closed": true,
+      "gate": "APCapacityComparisonReduced",
+      "meaning": "容量比较被拆成 exact envelope ledger、actual demand 下界、以及 envelope strict gap 或 dense-table PDEC。",
+      "proved": false,
+      "remaining": "ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC"
+    },
+    {
+      "closed": false,
+      "gate": "APCapacityComparisonProved",
+      "meaning": "本步不证明 actual demand 下界，也不排斥 dense table PDEC；只关闭 envelope 公式。",
+      "proved": false,
+      "remaining": "ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、AP demand/gap、PDEC/SAE 终端与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "formal_envelope_not_actual_demand_guard": true,
+  "hardpoint_after_router": "ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+  "hardpoint_before_router": "LowCarrierResidueAPEnvelopeCapacityComparison",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "ActualLowCarrierRowIncidenceDemandLowerBound",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "低 carrier AP envelope 已被精确化：任意 residue table T 的行发生量为 U_T(I)=sum_{(q,a) in T} N_{q,a}(I)，其中 N_{q,a}(I)<=ceil(H/q)；更尖锐地，固定 q 时 sum_a N_{q,a}(I)=H。因此容量比较的形式上界已闭合，真正剩余是证明反例链的 actual row-incidence demand 超过该 envelope，或把接近 envelope 的稠密低维 table 登记并排斥为 PDEC。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ActualLowCarrierRowIncidenceDemandLowerBound AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_table_envelope_closed": true,
+  "single_cell_sharp_bound_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-firstbreak-low-carrier-residue-ap-router.json": "03248e0defb00a2419e713cb229d804f725d8c44e86a277d51a613abb5d6b94c",
+    "docs/monograph/prime-matrix-pdec-cap-occupancy-saturation-kernel-router.md": "9974e8d739fa510a9fdd417a658dacb308326aad48a646cf3f9c361d3d295079",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md": "6b1498eb0c46eb3302ed336a68c479b7f4f7bbff0b7b971d5b3fc05346d1707d",
+    "docs/monograph/prime-matrix-strict-low-effective-mod-endpoint-pdec-columncrt-router.json": "ef556e92601ac57086ad79bb993ec476c0e2bb3de06277d50e450136cfa59c72",
+    "experiments/prime_matrix_firstbreak_low_carrier_ap_envelope_router.py": "18de7a8692e0a1b94699f2a46c802bd442c0455e1b4751640de2b36bbf93e0c3"
+  },
+  "status": "firstbreak_low_carrier_ap_exact_envelope_closed_demand_gap_open"
+}
