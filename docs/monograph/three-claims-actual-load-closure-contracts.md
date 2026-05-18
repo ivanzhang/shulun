@@ -6222,3 +6222,52 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本步仍不是无条件闭合；NCBLK/source anti-atom、PDEC 同集作用域、高段模型余量、
 RatePreservation 与 DStructure/Rankin 都仍未证明。
+
+## 150. Strict NCBLK/source anti-atom frontier sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_ncblk_source_antiatom_frontier_sync_router.py
+docs/monograph/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-router.md
+docs/monograph/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-router.json
+data/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-ledger.json
+```
+
+本步继续攻击上一节留下的
+`AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom`。同步已有
+strict NCBLK 去重、actual-source seed 支撑、假设零行 seed no-go、pre-Cauchy
+来源分类、moving-block 回流与 source-declaration 下游证书后，结论是：
+NCBLK/source anti-atom 仍未证明，但它也不再是最清晰的主攻名。generic WFD
+反原子路线已被 moving-delta 阻断；actual 路线必须先给出不从 downstream 反推的
+forward pre-Cauchy source-root packet。若该 source-root 无法正向给出，既有分类
+把失败推回 moving-block/global PDEC-sparse 终端。
+
+最新剩余压成：
+
+```text
+(ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn)
+OR (GlobalPDECorSparseTerminalExclusion
+    AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+    AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+```
+
+严格活动基仍需保留：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻改为：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+```
+
+该 packet 必须正向给出 declaration line、primitive rows、built-in signed
+word/coefficient pairing、actual source-domain entropy、fixed exact `(u,v)` fiber
+bound、same formal-unit exact-pair no-heavy/L2 能量账本，以及 no-downstream-recovery
+的命名回流分割。本步不是行/列命题无条件闭合；source-root、全局终端、direct PDEC
+作用域、高段模型、Rate 与 DStructure 仍未证明。

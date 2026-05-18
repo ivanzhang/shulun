@@ -1,0 +1,135 @@
+{
+  "acyclic_same_set_scope_match_proved": false,
+  "certificate_type": "prime_matrix_strict_ncblk_source_antiatom_frontier_sync_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "LatestPairEnergyFrontierImported",
+      "meaning": "上一轮 pair-energy 对角剥离后，直接主攻被钉为 NCBLK/source anti-atom。",
+      "proved": false,
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "closed": true,
+      "gate": "NCBLKDedupRouterImported",
+      "meaning": "既有 strict NCBLK 路由已说明该标签不是新无名终端；actual 失败会标准化为 moving atom 并回全局终端。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDAntiAtomNoGoPreserved",
+      "meaning": "generic WFD/formal Type/Fourier 反原子被 moving-delta 模型阻断，不能作为自足证明。",
+      "proved": true,
+      "remaining": "必须使用 actual acyclic source，或转外部谱线。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSourceSupportSeedSplitImported",
+      "meaning": "ExactUV/actual-source 支撑不是单个引理；它至少需要无环 pre-Cauchy seed 与 exact-pair 分散。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExactUVPairMassDispersionOrMaxAtomBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowCannotSupplySeed",
+      "meaning": "早期零行反例只给 unsigned CRT 覆盖/payment 数据，不能反向生成 signed pre-Cauchy source seed。",
+      "proved": true,
+      "remaining": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentIdentityTaxonomyClosed",
+      "meaning": "独立 pre-Cauchy 算术来源恒等式的合法来源类已穷尽；没有隐藏第四路线。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "MovingBlockReturnImported",
+      "meaning": "actual noncanonical moving-block spread 若有低维签名则进 PDEC/SAE/ColumnCRT；无签名则回早期零行终端包。",
+      "proved": true,
+      "remaining": "EarlyZeroTerminalExclusionPackage AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+    },
+    {
+      "closed": true,
+      "gate": "MovingAtomGlobalTerminalSyncImported",
+      "meaning": "strict moving-atom 回流已把 clean-core moving atom 接到全局 PDEC/sparse 终端与模型/DPRC 账本。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CommonSourcePacketStillOpen",
+      "meaning": "若继续正向构造 source root，仍需 common declaration packet；当前语料没有该 packet。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "SourceDeclarationDownstreamSplitImported",
+      "meaning": "common packet 的下游字段已同步为 built-in signed pairing 与 ExactUV entropy/fiber 两条子线。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NCBLKNoLongerBestNamedTarget",
+      "meaning": "继续把 NCBLK 当作主攻名会遮蔽真正首字段；当前应攻 forward source-root packet 或命名终端排斥。",
+      "proved": true,
+      "remaining": "ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步和压窄 NCBLK/source anti-atom 前沿；source-root、全局终端、PDEC scope、高段模型、Rate 与 DStructure 仍未证明。",
+      "proved": false,
+      "remaining": "((ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn) OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "dstructure_independent_gate_closed": false,
+  "empirical_absence_not_used": true,
+  "forward_source_root_packet_fields": [
+    "declaration line before Cauchy/payment",
+    "primitive summand rows with branch/sign/local-factor data",
+    "built-in signed word/coefficient pairing",
+    "actual source-domain entropy and fixed exact (u,v) fiber bound",
+    "same formal-unit exact-pair no-heavy or L2 energy ledger",
+    "no downstream recovery and named return partition"
+  ],
+  "forward_source_root_packet_proved": false,
+  "frontier_sync_only": true,
+  "global_pdec_sparse_terminal_exclusion_proved": false,
+  "hardpoint_after_router": "(ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn) OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)",
+  "hardpoint_before_router": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)",
+  "high_segment_model_gap_alpha043_c3_analytic_ledger_proved": false,
+  "ncblk_proved": false,
+  "next_direct_attack_target": "ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn",
+  "parallel_attack_targets": [
+    "GlobalPDECorSparseTerminalExclusion",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把上一轮 pair-energy 对角剥离留下的 NCBLK/source anti-atom 与仓库已有的 actual-source seed、假设零行 seed no-go、pre-Cauchy 来源分类、moving-block 回流和 source-declaration 下游同步合并。结论是：NCBLK/source anti-atom 仍未证明，但它也不应继续作为最深主攻名。generic 反原子路线已被 moving-delta 阻断；actual 路线必须先给出不从 downstream 反推的 forward pre-Cauchy source-root packet。若该 source-root 不能正向给出，既有分类把失败推回 moving-block/global PDEC-sparse 终端；并行仍保留 direct PDEC 同集作用域与高段模型余量。行/列命题仍未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.json": "9a0eb43daa02d6e29155b0b0a15b98778c0ad12c698cc75b6d3db8d689959d8d",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.json": "98673babcd5fc127e58a8f5bb1bb3b78236f770b332e937674a938dfdca50534",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-kuznetsov-dls-atom-router.json": "fb988aea08dcdf541574fa412e2e37254570b8ad688b010a6c0366c03c4e7270",
+    "docs/monograph/prime-matrix-strict-acyclic-ncblk-source-antiatom-router.json": "70b20d8ddca4337179a495286b7249b4ebda9790a65cede89225306711a9cb16",
+    "docs/monograph/prime-matrix-strict-moving-atom-to-global-terminal-router.json": "23ef7a5d03efcc2e2a138c6fe4a1c3930a8414837e12bdce1f933c8b42bc8c2d",
+    "docs/monograph/prime-matrix-strict-pair-energy-diagonal-peeling-terminal-reduction-router.json": "373321e8dd9c2aaac0e6565bada3a5273bc99fadda6345cd4a0cb54d194b7d5b",
+    "docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.json": "6f2a1790c735dacb3d3c3104dd6ae6469abe97a23853e073a57fb4990e4bf769",
+    "docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json": "d9e042ffccaaf050e72788abdb0a10a5776a3cb4d8a37fc949c9710a4a832f44",
+    "experiments/prime_matrix_strict_ncblk_source_antiatom_frontier_sync_router.py": "3c587ea3c9fae927eb06cc561152d3976aa61174414eb5e8e3c380fc39fa554b"
+  },
+  "status": "ncblk_source_antiatom_synced_to_forward_source_root_or_global_terminal_open",
+  "strict_active_basis_after_router": "((ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn) OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "terminal_gap_after_ncblk_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger"
+}

@@ -6288,3 +6288,40 @@ AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
 
 并行保留 `AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`、
 `HighSegmentModelGapAlpha043C3AnalyticLedger`、RatePreservation 与 DStructure/Rankin。
+
+## 150. Strict NCBLK/source anti-atom frontier sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_ncblk_source_antiatom_frontier_sync_router.py
+docs/monograph/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-router.md
+docs/monograph/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-router.json
+data/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-ledger.json
+```
+
+本步把 NCBLK/source anti-atom 与已有 source-root 链条同步。关键读数：
+
+```text
+ncblk_proved=false
+forward_source_root_packet_proved=false
+global_pdec_sparse_terminal_exclusion_proved=false
+high_segment_model_gap_alpha043_c3_analytic_ledger_proved=false
+row_column_unconditional_closed=false
+```
+
+因此最新前沿不再应写成单独攻击 NCBLK 名称，而应写成：
+
+```text
+(ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn)
+OR (GlobalPDECorSparseTerminalExclusion
+    AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+    AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+```
+
+这里的 formal-to-actual 含义是：`NCBLK` 若要成为 actual-load 矛盾，必须先有一个
+pre-Cauchy actual source-root packet 承载真实 source 质量；不能由早期零行的
+unsigned CRT 覆盖图、payment skeleton 或 generic WFD 模板反推出该 packet。若不能
+正向给出 packet，失败必须进入 global PDEC/sparse、direct PDEC scope 或外部谱/模型
+账本，而不能作为 hidden actual load 留在 `NCBLK` 名称下。
