@@ -16817,3 +16817,60 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 也没有证明 endpoint singleton、full-cycle mean、source-atom multiplicity-cap、bridge、
 amplitude、boundary 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把缺失单位见证从可移动对象压成 canonical 坐标见证或换槽缺陷。
+
+### 1.132 stable-ladder phase-residue exchange canonical-missing-unit-balance 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_missing_unit_balance_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-missing-unit-balance-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-missing-unit-balance-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-missing-unit-balance-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_canonical_missing_capacity_unit_witness_imported=true
+phase_residue_exchange_canonical_missing_unit_key_closed=true
+phase_residue_exchange_canonical_missing_unit_demand_indicator_closed=true
+phase_residue_exchange_canonical_missing_unit_capacity_indicator_closed=true
+phase_residue_exchange_canonical_missing_unit_face_value_closed=true
+phase_residue_exchange_canonical_missing_unit_cell_deficit_closed=true
+phase_residue_exchange_no_anonymous_canonical_missing_unit_compensation_closed=true
+phase_residue_exchange_canonical_missing_unit_unpaid_demand_cell_pdec_cap_proved=false
+phase_residue_exchange_canonical_missing_unit_compensation_mismatch_pdec_cap_proved=false
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_pdec_cap_proved=false
+phase_residue_exchange_unit_capacity_assignment_incidence_proved=false
+phase_residue_exchange_capacity_value_unit_integrality_proved=false
+phase_residue_exchange_boundary_equality_atom_exclusion_proved=false
+phase_residue_exchange_actual_object_incidence_predicate_proved=false
+linear_witness_existence_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：canonical 缺失单位已经不能换对象或换槽。
+令它的 canonical key 为 `k`，则 `u* in U_A` 给出 `I_A(k)=1`，
+`u* notin U_C` 给出 `I_C(k)=0`，且 signed amount 已单位化，所以同一
+canonical cell 上出现单位赤字 `I_A(k)-I_C(k)=1`。
+
+余额路由为：
+
+```text
+canonical key k
+I_A(k)=1
+I_C(k)=0
+unit_face_value=1
+
+if no legal same-object same-key compensator exists:
+  MaterializedCircuitCanonicalMissingUnitUnpaidDemandCellPDECCap
+otherwise if the compensator switches object/key/slot or lacks a named outlet:
+  MaterializedCircuitCanonicalMissingUnitCompensationMismatchPDECCap
+```
+
+本步没有证明 canonical unpaid demand cell PDEC/cap、没有证明 canonical
+compensation mismatch PDEC/cap、没有证明 missing-unit coordinate slot mismatch、
+没有证明 unit-capacity assignment incidence、capacity-value unit-integrality、
+actual-object incidence predicate，也没有排斥 boundary equality atom 或 endpoint
+并行出口；它只把 canonical 缺失单位压成同 key 的单位余额赤字。
