@@ -13804,3 +13804,69 @@ endpoint orbit full-cycle mean atom/SAE、source-atom multiplicity-cap PDEC/cap�
 signed occurrence unit imbalance PDEC/cap、bridge-cancellation PDEC/cap、
 amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE
 全局求和。行/列命题仍未无条件闭合。
+
+### 1.87 stable-ladder endpoint orbit residue-shadow dual-row phase-cell atom signed-core support-slice residue-fiber phase-word-slot source-atom multiplicity-fiber signed-unit incidence-cell 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_unit_incidence_cell_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-support-slice-residue-fiber-phase-word-slot-source-atom-multiplicity-fiber-signed-unit-incidence-cell-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-support-slice-residue-fiber-phase-word-slot-source-atom-multiplicity-fiber-signed-unit-incidence-cell-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-support-slice-residue-fiber-phase-word-slot-source-atom-multiplicity-fiber-signed-unit-incidence-cell-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_imbalance_imported=true
+source_atom_multiplicity_cap_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_model_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_quota_debt_allocation_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_overfull_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_pigeonhole_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_imbalance_packet_registered=true
+anonymous_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_imbalance_removed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_cap_pdec_cap_proved=false
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_imbalance_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+signed occurrence unit imbalance 已给出：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta}>d_{s,rho,omega,tau,alpha,mu,eta}
+```
+
+把该 unit 内部按有限实际 incidence cell `iota` 分解：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta}=sum_iota C_{s,rho,omega,tau,alpha,mu,eta,iota}
+d_{s,rho,omega,tau,alpha,mu,eta}=sum_iota d_{s,rho,omega,tau,alpha,mu,eta,iota}
+```
+
+如果每个 incidence cell 都满足
+`C_{s,rho,omega,tau,alpha,mu,eta,iota}<=d_{s,rho,omega,tau,alpha,mu,eta,iota}`，
+则该 signed unit 不可能超额；所以必有某个 `iota` 满足
+`C_{s,rho,omega,tau,alpha,mu,eta,iota}>d_{s,rho,omega,tau,alpha,mu,eta,iota}`。
+source-atom multiplicity-cap PDEC/cap 不在本步证明，继续作为并行出口。该
+incidence cell 若由 singleton、full-cycle mean、bridge、amplitude-depth、boundary flux
+或 sparse SAE 支付，则回流已有出口；否则留下实际 incidence-cell imbalance
+PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、incidence-cell imbalance PDEC/cap、bridge-cancellation
+PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
+它只把匿名 signed occurrence unit imbalance 压成 incidence-cell imbalance 包或
+mean/singleton/sparse/三出口。
