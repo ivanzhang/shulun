@@ -14563,3 +14563,39 @@ serialization 是这个字段向量的确定函数。若两条记录声称同 tu
 missing-unit slot mismatch、singleton Hall cut、cross-key return whitelist leak、
 payment graph/return whitelist、boundary equality、actual-object incidence predicate
 与 endpoint 并行出口。
+
+## 297. Stable-ladder phase-residue exchange canonical-payment-key-label-admission-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_key_label_admission_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_imported=true
+phase_residue_exchange_serialization_codec_lock_imported=true
+phase_residue_exchange_payment_admitted_key_formula_closed=true
+phase_residue_exchange_payment_external_label_erasure_closed=true
+phase_residue_exchange_payment_edge_admission_predicate_closed=true
+phase_residue_exchange_payment_return_whitelist_binding_closed=true
+phase_residue_exchange_payment_noncanonical_label_not_admitted_edge_closed=true
+phase_residue_exchange_noncanonical_label_to_whitelist_leak_closed=true
+phase_residue_exchange_no_independent_noncanonical_label_residue_closed=true
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_pdec_cap_proved=true
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：外部 key label 不决定 payment graph 的边。边只有在
+canonical key 公式、对象 gate 与 unit-capacity gate 同时通过时才入图；非规范
+标签若仍被当作 return 使用，就落入 cross-key return whitelist leak。
+
+本步没有闭合行/列命题；最新剩余为 missing-unit slot mismatch、singleton Hall cut、
+cross-key return whitelist leak、payment graph/return whitelist、boundary equality、
+actual-object incidence predicate 与 endpoint 并行出口。

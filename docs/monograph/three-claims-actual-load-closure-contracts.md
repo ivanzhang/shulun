@@ -17135,3 +17135,51 @@ missing-unit coordinate slot mismatch、actual-object incidence、unit assignmen
 本步没有证明 noncanonical key label residue、没有证明 missing-unit coordinate
 slot mismatch，也没有证明 singleton Hall cut、cross-key return whitelist leak、
 payment graph 全局闭合或 return whitelist；行/列命题仍未无条件闭合。
+
+### 1.138 stable-ladder phase-residue exchange canonical-payment-key-label-admission-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_key_label_admission_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-label-admission-lock-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_imported=true
+phase_residue_exchange_serialization_codec_lock_imported=true
+phase_residue_exchange_payment_admitted_key_formula_closed=true
+phase_residue_exchange_payment_external_label_erasure_closed=true
+phase_residue_exchange_payment_edge_admission_predicate_closed=true
+phase_residue_exchange_payment_return_whitelist_binding_closed=true
+phase_residue_exchange_payment_noncanonical_label_not_admitted_edge_closed=true
+phase_residue_exchange_noncanonical_label_to_whitelist_leak_closed=true
+phase_residue_exchange_no_independent_noncanonical_label_residue_closed=true
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_pdec_cap_proved=true
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：payment edge 的身份只来自 admitted key：
+
+```text
+admitted_key = H('canonical_payment_key', canonical_bytes(payment_tuple))
+admitted_edge = canonical_key_ok AND object_gate_ok AND unit_capacity_gate_ok
+
+if external key label differs from admitted_key:
+  edge is not admitted to the canonical graph
+  if it is still used as a return:
+    MaterializedCircuitCanonicalCrossKeyReturnWhitelistLeakPDECCap
+```
+
+因此 noncanonical key label residue 不能作为独立活动出口保留。外部标签被
+擦除；若它仍然产生跨 key return 作用，则它不是新的 key 自由度，而是
+canonical cross-key return whitelist leak。
+
+本步没有证明 missing-unit coordinate slot mismatch，也没有证明 singleton Hall cut、
+cross-key return whitelist leak、payment graph 全局闭合或 return whitelist；
+行/列命题仍未无条件闭合。
