@@ -10949,3 +10949,57 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 interior centroid phase-lock PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
 PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 interior centroid
 moment 压成内部质心相位锁定包或已命名三出口。
+
+## 231. Stable-ladder endpoint orbit locked phase-cell pressure frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_locked_phase_cell_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidPhaseLockPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_interior_centroid_phase_lock_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_locked_interior_phase_cell_model_closed=true
+endpoint_orbit_locked_phase_cell_finite_slot_closed=true
+endpoint_orbit_locked_phase_cell_actual_residue_word_closed=true
+endpoint_orbit_locked_phase_cell_sparse_or_stable_subsequence_closed=true
+endpoint_orbit_locked_phase_cell_column_pressure_packet_registered=true
+anonymous_interior_centroid_phase_lock_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_locked_interior_phase_cell_column_pressure_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：phase-lock 不能只停在“相位长期锁住”这一语义层。相位单元、符号、
+dyadic mass 档和 actual CRT residue word 组成有限槽位；若槽位不持久，则该分支是 sparse
+SAE。若槽位持久，则得到实际 residue word，在 CRT cylinder 中形成固定列或窄列族压力。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedInteriorPhaseCellColumnPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、locked interior
+phase-cell column pressure PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
+PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 interior centroid
+phase-lock 压成 locked column pressure 包或 sparse/atom/mean/三出口。

@@ -12573,3 +12573,83 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、static shelf interior centroid
 phase-lock PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.72 stable-ladder endpoint orbit locked phase-cell pressure 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_locked_phase_cell_pressure_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-phase-cell-pressure-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidPhaseLockPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_interior_centroid_phase_lock_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_locked_interior_phase_cell_model_closed=true
+endpoint_orbit_locked_phase_cell_finite_slot_closed=true
+endpoint_orbit_locked_phase_cell_actual_residue_word_closed=true
+endpoint_orbit_locked_phase_cell_sparse_or_stable_subsequence_closed=true
+endpoint_orbit_locked_phase_cell_column_pressure_packet_registered=true
+anonymous_interior_centroid_phase_lock_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_locked_interior_phase_cell_column_pressure_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+interior centroid phase-lock 若真实存在，说明 surviving mass 长期停在有限内部相位单元中。
+把相位单元、符号、dyadic mass 档和 actual CRT residue word 组成有限槽位：
+
+```text
+B_r = [eta+r*rho, eta+(r+1)*rho]
+omega = (phase_cell r, sign, dyadic_mass_band, actual_residue_word).
+```
+
+若没有任何槽位在无穷尺度上持续承载质量，则该分支进入 sparse scale-ladder SAE。若 sparse
+出口不支付，则无穷鸽巢给出持久 `omega`，特别是持久 actual residue word；它在 CRT cylinder
+中投影成固定列或窄列族，并形成 locked phase-cell column pressure。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidPhaseLockPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitInteriorCentroidPhaseLockImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterLockedPhaseCellLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterLockedPhaseCellLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterLockedPhaseCellLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterLockedPhaseCellLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterLockedPhaseCellLedger
+  AND StableLadderEndpointOrbitLockedInteriorPhaseCellModelLedger
+  AND StableLadderEndpointOrbitLockedPhaseCellFiniteSlotLedger
+  AND StableLadderEndpointOrbitLockedPhaseCellActualResidueWordLedger
+  AND StableLadderEndpointOrbitLockedPhaseCellSparseOrStableSubsequenceLedger
+  AND StableLadderEndpointOrbitLockedPhaseCellColumnPressurePacketLedger
+  AND NoAnonymousInteriorCentroidPhaseLockExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterLockedPhaseCellLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedInteriorPhaseCellColumnPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 interior centroid phase-lock 口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、locked interior phase-cell column pressure PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
