@@ -14331,3 +14331,62 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 multiplicity-cap PDEC/cap、phase-residue unit-defect critical-Hall-cut PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把 critical cut 的容量缺口压成单位缺口或 mean/singleton/sparse/三出口。
+
+### 1.95 stable-ladder phase-residue near-perfect matching circuit 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_near_perfect_matching_circuit_router.py
+data/prime-matrix-phase-residue-near-perfect-matching-circuit-ledger.json
+docs/monograph/prime-matrix-phase-residue-near-perfect-matching-circuit-router.md
+docs/monograph/prime-matrix-phase-residue-near-perfect-matching-circuit-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomUnitDefectCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_unit_defect_critical_hall_cut_imported=true
+phase_residue_every_single_deletion_hall_ok_closed=true
+phase_residue_every_single_deletion_perfect_matching_closed=true
+phase_residue_critical_cut_maximum_matching_size_closed=true
+phase_residue_boundary_double_cover_closed=true
+phase_residue_near_perfect_matching_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+|S_*|=|B_*|+1
+N_G(S_*\{s})=B_* for every s in S_*
+for every proper T subset S_*: |T|<=|N_G(T)|
+```
+
+任取 `s in S_*`。对任意 `U subset S_*\{s}`，`U` 仍是 `S_*` 的真子集，所以满足 Hall。
+又 `|S_*\{s}|=|B_*|`，因此由 Hall 定理得到：
+
+```text
+for every s in S_*: exists perfect matching M_s:S_*\{s}->B_*
+```
+
+于是整体最大匹配大小正好是 `|B_*|=|S_*|-1`，且每个源点都可作为唯一未匹配源点。
+此外若某个 `b in B_*` 只邻接唯一源点 `s`，删除 `s` 后无法覆盖 `b`，矛盾；所以每个边界槽
+至少由两个源点支撑。反例链剩余不再是任意单位缺口 cut，而是 near-perfect matching circuit。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomNearPerfectMatchingCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue near-perfect matching circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把单位缺口 cut 压成近完美匹配 circuit 或 mean/singleton/sparse/三出口。

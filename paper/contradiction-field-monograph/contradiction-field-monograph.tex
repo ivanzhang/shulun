@@ -16943,6 +16943,86 @@ docs/monograph/prime-matrix-phase-residue-unit-defect-critical-cut-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue near-perfect matching circuit ledger]
+The phase-residue unit-defect critical-Hall-cut outlet admits the following
+near-perfect matching circuit refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomUnitDefectCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueUnitDefectCriticalHallCutImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueUnitDefectMarginImportedLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalCutProperSubsetHallImportedForMatchingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalCutDeletionBoundarySaturationImportedForMatchingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEverySingleDeletionHallOKLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEverySingleDeletionPerfectMatchingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalCutMaximumMatchingSizeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEverySourceCanBeUnmatchedLedger\\
+AND StableLadderEndpointOrbitPhaseResidueBoundaryDoubleCoverLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNearPerfectMatchingCircuitPacketLedger\\
+AND NoAnonymousUnitDefectCriticalHallCutAfterMatchingCircuitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterNearPerfectMatchingCircuitLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomNearPerfectMatchingCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue near-perfect matching circuit ledger]
+All parallel outlets from the unit-defect critical-cut ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+Let \(S_\ast\) be the unit-defect critical cut and put
+\[
+  B_\ast=N_{G_\zeta}(S_\ast),\qquad |S_\ast|=|B_\ast|+1.
+\]
+The previous ledgers give both the proper-subset Hall condition
+\[
+  |T|\le |N_{G_\zeta}(T)|\qquad(T\subsetneq S_\ast)
+\]
+and the deletion-boundary saturation
+\[
+  N_{G_\zeta}(S_\ast\setminus\{s\})=B_\ast\qquad(s\in S_\ast).
+\]
+Fix \(s\in S_\ast\).  Every subset \(U\subseteq S_\ast\setminus\{s\}\) is a
+proper subset of \(S_\ast\), hence it satisfies Hall's inequality.  Since
+\(|S_\ast\setminus\{s\}|=|B_\ast|\), Hall's theorem gives a perfect matching
+\[
+  M_s:S_\ast\setminus\{s\}\longrightarrow B_\ast.
+\]
+Thus the maximum matching size of the critical cut is exactly
+\(|B_\ast|=|S_\ast|-1\), and every \(s\in S_\ast\) can be realized as the unique
+unmatched source token in some maximum matching.
+
+There is also a boundary-degree consequence.  If some \(b\in B_\ast\) had a
+unique neighbor \(s\) in \(S_\ast\), then
+\(b\notin N_{G_\zeta}(S_\ast\setminus\{s\})\), contradicting the deletion
+saturation above.  Hence every boundary slot is supported by at least two
+source tokens.
+
+Therefore a surviving unit-defect obstruction is not an anonymous one-unit
+capacity failure.  It is a near-perfect matching circuit: every single-source
+deletion is perfectly payable, the whole source side has exactly one extra
+token, and every boundary slot has redundant support.  If this circuit is paid
+by one of the named outlets it returns there; otherwise it is the explicit
+phase-residue near-perfect matching circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue near-perfect matching circuit PDEC/cap outlet, it does not prove
+the bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-near-perfect-matching-circuit-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
