@@ -11565,3 +11565,81 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步关闭的是匿名两端点势能差口径。剩余集中为 endpoint singleton atom/SAE、
 endpoint orbit full-cycle mean atom/SAE、endpoint orbit signed variation PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 219. stable-ladder endpoint orbit variation run/boundary 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_variation_run_boundary_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_signed_variation_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_variation_signed_side_choice_closed=true
+endpoint_orbit_positive_increment_edge_set_closed=true
+endpoint_orbit_variation_run_partition_closed=true
+endpoint_orbit_variation_run_boundary_budget_dichotomy_closed=true
+endpoint_orbit_increment_run_surplus_packet_registered=true
+endpoint_orbit_variation_boundary_flux_packet_registered=true
+anonymous_signed_variation_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_increment_run_surplus_sae_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出某个有向支撑 `K` 与符号 `sigma`：
+
+```text
+sum_{j in K}(sigma*Y_j)_+ >= G.
+```
+
+令正增量边集合：
+
+```text
+E_+={j in K: sigma*Y_j>0}.
+```
+
+把 `E_+` 分解为极大连续同符号增量 runs。给定边界预算 `B`，
+若 run 数 `b>B`，则登记为 variation boundary flux PDEC/cap。若 `b<=B`，
+则 pigeonhole 给出：
+
+```text
+exists h: sum_{j in R_h} sigma*Y_j >= G/B.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap
+  -> StableLadderEndpointOrbitSignedVariationImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterVariationRunBoundaryLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterVariationRunBoundaryLedger
+  AND StableLadderEndpointOrbitVariationSignedSideChoiceLedger
+  AND StableLadderEndpointOrbitPositiveIncrementEdgeSetLedger
+  AND StableLadderEndpointOrbitVariationRunPartitionLedger
+  AND StableLadderEndpointOrbitVariationRunBoundaryBudgetDichotomyLedger
+  AND StableLadderEndpointOrbitIncrementRunSurplusPacketLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxPacketLedger
+  AND NoAnonymousSignedVariationExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterVariationRunBoundaryLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 signed variation 口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、increment-run surplus SAE、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。

@@ -14502,6 +14502,63 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-pot
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit variation run--boundary reduction]
+The signed-variation outlet reduces to an increment-run surplus outlet or to a
+variation-boundary flux outlet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitSignedVariationImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterVariationRunBoundaryLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterVariationRunBoundaryLedger\\
+AND StableLadderEndpointOrbitVariationSignedSideChoiceLedger\\
+AND StableLadderEndpointOrbitPositiveIncrementEdgeSetLedger\\
+AND StableLadderEndpointOrbitVariationRunPartitionLedger\\
+AND StableLadderEndpointOrbitVariationRunBoundaryBudgetDichotomyLedger\\
+AND StableLadderEndpointOrbitIncrementRunSurplusPacketLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxPacketLedger\\
+AND NoAnonymousSignedVariationExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterVariationRunBoundaryLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit variation run--boundary ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, and the
+sparse scale-ladder SAE outlet are carried forward.  The signed-variation
+outlet gives a directed support \(K\), a sign \(\sigma\in\{\pm1\}\), and
+\[
+  \sum_{j\in K}(\sigma Y_j)_+\ge G .
+\]
+Let
+\[
+  E_+=\{j\in K:\sigma Y_j>0\}.
+\]
+Partition \(E_+\) into maximal consecutive runs \(R_1,\ldots,R_b\) along the
+directed orbit.  Given any boundary budget \(B\ge1\), there are two cases.  If
+\(b>B\), the packet has high sign-switch boundary flux and is registered as
+the variation-boundary flux PDEC/cap outlet.  If \(b\le B\), then by the
+pigeonhole principle one run satisfies
+\[
+  \sum_{j\in R_h}\sigma Y_j\ge G/B .
+\]
+This is the increment-run surplus outlet.  Thus the anonymous signed
+variation has been converted into a named long same-sign increment run or a
+named boundary-flux packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+increment-run surplus SAE outlet, it does not prove the variation-boundary
+flux PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

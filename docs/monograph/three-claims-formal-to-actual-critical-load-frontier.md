@@ -10221,3 +10221,61 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 signed variation PDEC/cap 或 sparse SAE 求和；它只把 arc endpoint-potential
 cap 压成轨道边增量 signed variation 包。
+
+## 219. Stable-ladder endpoint orbit variation run/boundary frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_variation_run_boundary_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-variation-run-boundary-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_signed_variation_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_variation_signed_side_choice_closed=true
+endpoint_orbit_positive_increment_edge_set_closed=true
+endpoint_orbit_variation_run_partition_closed=true
+endpoint_orbit_variation_run_boundary_budget_dichotomy_closed=true
+endpoint_orbit_increment_run_surplus_packet_registered=true
+endpoint_orbit_variation_boundary_flux_packet_registered=true
+anonymous_signed_variation_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_increment_run_surplus_sae_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：signed variation 不再作为最后硬点保留。把某一侧
+
+```text
+sum_{j in K}(sigma*Y_j)_+>=G
+```
+
+的正增量边分解为极大连续 runs。若 run 数超过预算 `B`，这是高切换边界通量；
+若 run 数不超过 `B`，则存在一个同符号增量 run 满足：
+
+```text
+sum_{j in R_h}sigma*Y_j>=G/B.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+increment-run surplus SAE、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
+它只把 signed variation cap 压成同符号增量 run 或边界通量二分。
