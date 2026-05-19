@@ -17173,6 +17173,78 @@ docs/monograph/prime-matrix-phase-residue-rooted-directed-exchange-path-router.m
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange toggle word ledger]
+The phase-residue rooted directed exchange path outlet admits the following
+exchange toggle word refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomRootedDirectedExchangePathCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueRootedDirectedExchangePathImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeToggleWordLedger\\
+AND StableLadderEndpointOrbitPhaseResidueRootedDirectedExchangePathImportedForToggleWordLedger\\
+AND StableLadderEndpointOrbitPhaseResidueAlternatingVertexWordNormalFormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeWordSourceDistinctnessLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeWordBoundaryDistinctnessLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeWordLocalPivotCellLedger\\
+AND StableLadderEndpointOrbitPhaseResidueOrderedToggleProductLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoInternalBoundaryReuseInToggleWordLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeToggleWordPacketLedger\\
+AND NoAnonymousRootedDirectedExchangePathAfterToggleWordLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeToggleWordLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeToggleWordCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange toggle word ledger]
+All parallel outlets from the rooted directed exchange path ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger gives, for every source \(s\), a simple root-directed
+alternating path from \(s\) to the base missing source \(s_0\).  Write this
+path as the finite alternating vertex word
+\[
+  P_s=(u_0=s,b_1,u_1,\ldots,b_r,u_r=s_0).
+\]
+Since the path is simple, the source vertices \(u_i\) are pairwise distinct
+inside the word, and the boundary vertices \(b_i\) are also pairwise distinct.
+Thus the same boundary payment slot cannot be internally replayed within one
+exchange word.
+
+Each two-step block
+\[
+  u_{i-1}\longrightarrow b_i\longrightarrow u_i
+\]
+is a local pivot cell: the edge \((u_{i-1},b_i)\) is the \(M_0\)-edge and the
+edge \((u_i,b_i)\) is the \(M_s\)-edge.  The local toggle replaces the former
+by the latter.  The whole path toggle is therefore the ordered finite product
+of these local pivots.
+
+Consequently a surviving rooted directed exchange path obstruction is not an
+anonymous directed path.  It carries an alternating vertex word, source and
+boundary distinctness, a list of local pivot cells, and an ordered toggle
+product.  If this exchange toggle word packet is paid by one of the named
+outlets it returns there; otherwise it is the explicit phase-residue exchange
+toggle word circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange toggle word circuit PDEC/cap outlet, it does not prove
+the bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap
+outlet, and it does not prove global summability of the sparse scale-ladder
+SAE outlet.  The row/column theorem remains open.  The certificate is recorded
+in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-toggle-word-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
