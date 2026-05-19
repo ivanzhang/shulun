@@ -19019,6 +19019,90 @@ docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange scalar-load unit-normalization ledger]
+The phase-residue exchange scalar-load outlet admits the following
+unit-normalization refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadImportedForUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadUnitGeneratorLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadUnitPairingLoadLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadUnitVariationLoadLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadUnitSaturationRatioLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadScaleFactorLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadDivFactorizationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadTotalWeightLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadNoResidualScaleFreedomLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadPDECCapReducedToUnitNormalizationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeScalarLoadUnitNormalizationPacketLedger\\
+AND NoAnonymousScalarLoadScaleAfterUnitNormalizationLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeScalarLoadUnitNormalizationLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadUnitNormalizationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange scalar-load unit-normalization ledger]
+All parallel outlets from the scalar-load ledger are carried forward:
+source-atom multiplicity cap, endpoint singleton atom, full-cycle mean atom,
+bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The scalar-load ledger supplies a single positive load \(A\) along the already
+fixed generator \(n_e=[r_0]-[r_\ast]\):
+\[
+  \operatorname{div}_K=A n_e,\qquad
+  \langle \operatorname{div}_K,\phi_K\rangle=A,\qquad
+  \frac12\left\|\operatorname{div}_K\right\|_1=A.
+\]
+Separate the unit shape from the magnitude by setting
+\[
+  u_e=n_e=[r_0]-[r_\ast].
+\]
+Because the active facet has \(\phi_K(r_0)-\phi_K(r_\ast)=1\), this unit shape
+has the two normalized readings
+\[
+  \langle u_e,\phi_K\rangle=1,\qquad
+  \frac12\left\|u_e\right\|_1=1.
+\]
+Therefore
+\[
+  \operatorname{div}_K=A u_e,\qquad
+  \operatorname{TotalWeight}=A,\qquad
+  A C_\Pi=W,
+\]
+and the unit saturation ratio is again \(1\).  Thus the remaining obstruction
+cannot hide in a scale convention, in a split of the load into several weights,
+or in a residual normalization parameter.  The only nondegenerate scalar
+quantity left is the total weight \(A\) on the fixed unit two-point certificate.
+
+If \(r_0=r_\ast\), or if \(A=0\), the unit shape or the positive scale
+degenerates and returns to the singleton/degenerate outlet.  Otherwise any
+unresolved obstruction must be the named scalar-load unit-normalization circuit
+PDEC/cap outlet or one of the parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange active-facet normal-cone ray-coordinate scalar-load
+unit-normalization circuit PDEC/cap outlet, it does not prove the
+bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+It also does not prove the existence of the linear phase/capacity witness; it
+only rewrites the imported scalar-load certificate as a unit-shape plus total
+weight certificate.  The row/column theorem remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
