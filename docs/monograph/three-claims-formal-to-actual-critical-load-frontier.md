@@ -11365,3 +11365,73 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 dual-row phase-cell atom imbalance PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
 PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 residue-shadow
 dual-row phase-cell imbalance 压成 atom imbalance 包或 mean/singleton/sparse/三出口。
+
+## 238. Stable-ladder endpoint orbit residue-shadow dual-row phase-cell atom signed-core frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_imbalance_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_model_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_decomposition_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_lower_bound_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_named_return_split_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_imbalance_packet_registered=true
+anonymous_residue_shadow_dual_row_phase_cell_atom_imbalance_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_imbalance_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：atom imbalance 仍可能把反号抵消和同号核心混在一起。固定
+`sigma=sign(h_a)`，写：
+
+```text
+sigma*h_a=C_plus-C_minus
+sigma*h_a>b_a
+```
+
+于是同号核心满足：
+
+```text
+C_plus>b_a+C_minus
+```
+
+若反号抵消 `C_minus` 是实质互付，则回到 bridge-cancellation；若不是，则 atom 的剩余压力
+已经是同号核心超过 quota 加抵消债的 signed-core imbalance。该核心若由 singleton、
+full-cycle mean、amplitude-depth、boundary flux 或 sparse SAE 支付，则回流已有出口；否则
+留下实际 residue-shadow dual-row phase-cell atom signed-core imbalance PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、residue-shadow
+dual-row phase-cell atom signed-core imbalance PDEC/cap、bridge-cancellation PDEC/cap、
+amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名
+residue-shadow dual-row phase-cell atom imbalance 压成 signed-core imbalance 包或
+mean/singleton/sparse/三出口。
