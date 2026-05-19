@@ -14680,6 +14680,73 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edg
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit long-drift dyadic plateau ledger]
+The endpoint-orbit long bounded-increment drift outlet admits the following
+non-cyclic dyadic refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitLongBoundedIncrementDriftImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterLongDriftDyadicPlateauLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterLongDriftDyadicPlateauLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterLongDriftDyadicPlateauLedger\\
+AND StableLadderEndpointOrbitLongDriftPositiveBoundedRunLedger\\
+AND StableLadderEndpointOrbitLongDriftDyadicAmplitudePartitionLedger\\
+AND StableLadderEndpointOrbitLongDriftAmplitudeDepthBudgetDichotomyLedger\\
+AND StableLadderEndpointOrbitLongDriftHeavyDyadicBandLedger\\
+AND StableLadderEndpointOrbitDyadicBandPlateauRunPartitionLedger\\
+AND StableLadderEndpointOrbitDyadicPlateauRunBoundaryDichotomyLedger\\
+AND StableLadderEndpointOrbitComparableAmplitudePlateauDriftPacketLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthPacketLedger\\
+AND NoAnonymousLongBoundedIncrementDriftExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterLongDriftDyadicPlateauLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit long-drift dyadic plateau ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+variation-boundary flux outlet, and the sparse scale-ladder SAE outlet are
+carried forward.  The long bounded-increment drift branch gives a consecutive
+run \(R\) such that
+\[
+  0<Z_j<\Lambda\qquad (j\in R),\qquad
+  \sum_{j\in R}Z_j\ge H .
+\]
+For \(l\ge0\), set
+\[
+  A_l=\{j\in R:2^{-(l+1)}\Lambda\le Z_j<2^{-l}\Lambda\}.
+\]
+Since \(R\) is finite, only finitely many \(A_l\) are nonempty.  Given a depth
+budget \(D\), if the number of nonempty dyadic bands is greater than \(D\),
+the packet is registered as an amplitude-depth PDEC/cap outlet.  Otherwise,
+by pigeonhole, some band satisfies
+\[
+  \sum_{j\in A_l}Z_j\ge H/D .
+\]
+Partition this heavy dyadic band into maximal consecutive plateau runs inside
+\(R\).  Given a plateau boundary budget \(B\), if the number of plateau runs is
+greater than \(B\), this is a boundary-flux outlet.  Otherwise some plateau run
+\(P_s\) satisfies
+\[
+  \sum_{j\in P_s}Z_j\ge H/(D B).
+\]
+All increments in \(P_s\) lie in the same dyadic band and are comparable within
+a factor less than two.  Thus the anonymous long bounded-increment drift outlet
+has been converted into a comparable-amplitude plateau drift, an amplitude-depth
+packet, or a boundary-flux packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+comparable-amplitude plateau drift PDEC/cap outlet, it does not prove the
+amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary flux
+PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-long-drift-dyadic-plateau-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

@@ -10417,3 +10417,74 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 long bounded-increment drift PDEC/cap、variation-boundary flux PDEC/cap 或
 sparse SAE 求和；它只把独立 edge-spike 出口吸收到已有的单点/均值出口。
+
+## 222. Stable-ladder endpoint orbit long-drift dyadic plateau frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_long_drift_dyadic_plateau_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-long-drift-dyadic-plateau-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-long-drift-dyadic-plateau-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-long-drift-dyadic-plateau-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_long_bounded_increment_drift_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_long_drift_positive_bounded_run_closed=true
+endpoint_orbit_long_drift_dyadic_amplitude_partition_closed=true
+endpoint_orbit_long_drift_amplitude_depth_budget_dichotomy_closed=true
+endpoint_orbit_long_drift_heavy_dyadic_band_closed=true
+endpoint_orbit_dyadic_band_plateau_run_partition_closed=true
+endpoint_orbit_dyadic_plateau_run_boundary_dichotomy_closed=true
+endpoint_orbit_comparable_amplitude_plateau_drift_packet_registered=true
+endpoint_orbit_amplitude_depth_packet_registered=true
+anonymous_long_bounded_increment_drift_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_comparable_amplitude_plateau_drift_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：long bounded drift 不是最后的匿名接口。它给出：
+
+```text
+0<Z_j<Lambda,  sum_{j in R}Z_j>=H.
+```
+
+按 dyadic 幅度层：
+
+```text
+A_l={j in R: 2^{-(l+1)}Lambda <= Z_j < 2^{-l}Lambda}.
+```
+
+若非空幅度层数超过预算 `D`，这是 amplitude-depth PDEC/cap；否则存在重层
+`A_l` 承载至少 `H/D`。再将该重层按连续 plateau runs 分解。若 plateau
+run 数超过 `B`，进入 variation-boundary flux；否则存在一个可比较幅度 plateau
+run 满足：
+
+```text
+sum_{j in P_s}Z_j>=H/(D*B).
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+comparable-amplitude plateau drift PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 long bounded
+drift 压成 dyadic plateau、amplitude-depth 或 boundary-flux 三分。
