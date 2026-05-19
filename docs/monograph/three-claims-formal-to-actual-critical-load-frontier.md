@@ -14448,3 +14448,41 @@ canonical singleton Hall cut defect。若跨 key 补偿声称同一 canonical ce
 本步没有闭合行/列命题；最新剩余为 singleton Hall cut defect、payment key
 injectivity defect、cross-key return whitelist leak、payment graph/return whitelist、
 boundary equality、actual-object incidence predicate 与 endpoint 并行出口。
+
+## 294. Stable-ladder phase-residue exchange canonical-payment-key-tuple-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_key_tuple_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-tuple-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-tuple-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-tuple-lock-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_payment_key_injectivity_defect_imported=true
+phase_residue_exchange_actual_object_canonical_hash_imported=true
+phase_residue_exchange_missing_unit_canonical_hash_imported=true
+phase_residue_exchange_payment_cell_tuple_schema_closed=true
+phase_residue_exchange_payment_key_defined_as_tuple_closed=true
+phase_residue_exchange_same_cell_projection_equality_closed=true
+phase_residue_exchange_cross_key_same_cell_trichotomy_closed=true
+phase_residue_exchange_no_anonymous_key_injectivity_defect_closed=true
+phase_residue_exchange_canonical_payment_key_tuple_alias_defect_pdec_cap_proved=false
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_pdec_cap_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`payment_key` 由 actual-object 七槽 hash 与
+missing-unit canonical hash 的 tuple 定义。跨 key 补偿若仍声称同一 canonical
+cell，就必须满足所有 tuple 投影逐槽相等；否则它不是同一 cell，并回流坐标
+槽位不一致。若投影相等但 key 仍不同，则剩余变成 key tuple alias defect。
+
+本步没有闭合行/列命题；最新剩余为 singleton Hall cut defect、key tuple alias
+defect、missing-unit slot mismatch、cross-key return whitelist leak、payment
+graph/return whitelist、boundary equality、actual-object incidence predicate 与 endpoint 并行出口。
