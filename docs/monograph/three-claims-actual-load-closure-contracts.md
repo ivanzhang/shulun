@@ -16925,3 +16925,60 @@ otherwise if a compensator uses another key:
 本步没有证明 canonical payment conservation defect、没有证明 canonical
 compensator key collision、没有证明 canonical payment graph 完全闭合，
 也没有证明 same-key payment edge obligation 或 return whitelist；行/列命题仍未无条件闭合。
+
+### 1.134 stable-ladder phase-residue exchange canonical-unit-payment-singleton-cut 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_unit_payment_singleton_cut_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-singleton-cut-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-singleton-cut-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-singleton-cut-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_canonical_payment_defect_or_collision_imported=true
+phase_residue_exchange_singleton_key_cut_closed=true
+phase_residue_exchange_singleton_cut_demand_one_closed=true
+phase_residue_exchange_singleton_cut_capacity_zero_closed=true
+phase_residue_exchange_singleton_cut_balance_closed=true
+phase_residue_exchange_same_key_capacity_edge_empty_on_cut_closed=true
+phase_residue_exchange_cross_key_collision_trichotomy_closed=true
+phase_residue_exchange_no_anonymous_payment_conservation_defect_closed=true
+phase_residue_exchange_named_return_boundary_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_payment_key_injectivity_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+phase_residue_exchange_canonical_unit_payment_graph_closed=false
+phase_residue_exchange_canonical_payment_return_whitelist_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：当前 payment defect/key collision 不再只是
+支付图中的匿名故障。取缺失 key `k` 的单点 Hall cut，有 `I_A(k)=1`
+且 `I_C(k)=0`，所以同 key 直接容量为空；若没有命名 return 离开该 cut，
+则保留显式 1 单位 Hall cut 缺口。若跨 key 补偿声称仍支付同一 canonical
+cell，则变成 key injectivity defect；若它不是同一 cell 又未进入白名单，
+则变成 cross-key return whitelist leak。
+
+单点 cut 路由为：
+
+```text
+singleton cut S={k}
+cut_demand = I_A(k)=1
+cut_capacity = I_C(k)=0
+
+if no named return leaves S:
+  MaterializedCircuitCanonicalUnitSingletonHallCutDefectPDECCap
+otherwise if a cross-key compensator claims the same canonical cell:
+  MaterializedCircuitCanonicalPaymentKeyInjectivityDefectPDECCap
+otherwise if a cross-key compensator is not whitelisted:
+  MaterializedCircuitCanonicalCrossKeyReturnWhitelistLeakPDECCap
+```
+
+本步没有证明 singleton Hall cut defect、没有证明 payment key injectivity
+defect、没有证明 cross-key return whitelist leak，也没有证明 payment graph
+全局闭合或 return whitelist；行/列命题仍未无条件闭合。
