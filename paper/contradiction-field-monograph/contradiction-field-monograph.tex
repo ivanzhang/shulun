@@ -16867,6 +16867,82 @@ docs/monograph/prime-matrix-phase-residue-critical-hall-cut-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue unit-defect critical-cut ledger]
+The phase-residue critical-Hall-cut outlet admits the following unit-defect
+refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueCriticalHallCutImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutProperSubsetHallOKImportedLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutSingletonCaseUnitDefectLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutSingleDeletionBoundLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutUnitMarginLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutSingleDeletionBoundarySaturationLedger\\
+AND NoMultiUnitPhaseResidueCriticalHallCutDefectLedger\\
+AND StableLadderEndpointOrbitPhaseResidueCriticalHallCutBoundaryRedundancyLedger\\
+AND StableLadderEndpointOrbitPhaseResidueUnitDefectCriticalHallCutPacketLedger\\
+AND NoAnonymousPhaseResidueCriticalHallCutAfterUnitDefectLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterUnitDefectCriticalCutLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomUnitDefectCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue unit-defect critical-cut ledger]
+All parallel outlets from the critical-Hall-cut ledger are carried forward:
+source-atom multiplicity cap, endpoint singleton atom, full-cycle mean atom,
+bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+Let \(S_\ast\) be the critical Hall cut and put
+\[
+  B_\ast=N_{G_\zeta}(S_\ast),\qquad
+  \Delta_\ast=|S_\ast|-|B_\ast|>0.
+\]
+The previous ledger gives
+\[
+  |T|\le |N_{G_\zeta}(T)|\qquad(T\subsetneq S_\ast).
+\]
+If \(|S_\ast|=1\), then the positive defect forces \(B_\ast=\emptyset\), so
+\(\Delta_\ast=1\).  If \(|S_\ast|\ge 2\), choose any \(s\in S_\ast\).  Since
+\(S_\ast\setminus\{s\}\) is a proper subset,
+\[
+  |S_\ast|-1
+  \le |N_{G_\zeta}(S_\ast\setminus\{s\})|
+  \le |B_\ast|
+  = |S_\ast|-\Delta_\ast.
+\]
+Thus \(\Delta_\ast\le 1\).  Since \(\Delta_\ast\) is a positive integer, one
+has \(\Delta_\ast=1\).  The same chain also gives equality
+\[
+  N_{G_\zeta}(S_\ast\setminus\{s\})=B_\ast
+  \qquad(s\in S_\ast),
+\]
+because the left-hand neighborhood is contained in \(B_\ast\) and has the same
+cardinality.
+
+Therefore no multi-unit capacity defect can remain hidden inside a critical
+Hall cut.  Any surviving critical-cut obstruction is a unit unpaid
+phase-residue token with a boundary that remains visible after deleting any
+single source token, or it returns to one of the named outlets above.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue unit-defect critical-Hall-cut PDEC/cap outlet, it does not prove
+the bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-unit-defect-critical-cut-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
