@@ -10343,3 +10343,77 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 increment edge-spike SAE、long bounded-increment drift PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把低切换
 increment-run surplus 压成单边大增量或长有界单调漂移二分。
+
+## 221. Stable-ladder endpoint orbit edge-spike mean/singleton frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_edge_spike_mean_singleton_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_increment_edge_spike_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_long_bounded_increment_drift_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_edge_spike_centered_load_expansion_closed=true
+endpoint_orbit_edge_spike_half_threshold_dichotomy_closed=true
+endpoint_orbit_edge_spike_singleton_atom_absorption_closed=true
+endpoint_orbit_edge_spike_full_cycle_mean_atom_absorption_closed=true
+anonymous_increment_edge_spike_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_long_bounded_increment_drift_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：edge-spike 并不是新的独立非循环终端。它给出
+
+```text
+sigma*Y_j>=Lambda,
+Y_j=X_j-mu.
+```
+
+因此：
+
+```text
+sigma*X_j-sigma*mu>=Lambda.
+```
+
+于是必然出现：
+
+```text
+sigma*X_j>=Lambda/2
+```
+
+或：
+
+```text
+-sigma*mu>=Lambda/2.
+```
+
+第一支是单点实际负载原子，第二支是整周期均值原子。故 edge-spike 被吸收到
+endpoint singleton atom/SAE 或 full-cycle mean atom/SAE；long bounded drift 与
+variation-boundary flux 仍是未闭合出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+long bounded-increment drift PDEC/cap、variation-boundary flux PDEC/cap 或
+sparse SAE 求和；它只把独立 edge-spike 出口吸收到已有的单点/均值出口。

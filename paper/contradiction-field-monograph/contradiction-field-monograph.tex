@@ -14621,6 +14621,65 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-inc
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit edge-spike mean--singleton ledger]
+The endpoint-orbit increment edge-spike outlet is absorbed by the named
+singleton and full-cycle mean outlets:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitIncrementEdgeSpikeImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterEdgeSpikeMeanSingletonLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterEdgeSpikeMeanSingletonLedger\\
+AND StableLadderEndpointOrbitLongBoundedIncrementDriftCarriedForwardAfterEdgeSpikeMeanSingletonLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterEdgeSpikeMeanSingletonLedger\\
+AND StableLadderEndpointOrbitEdgeSpikeCenteredLoadExpansionLedger\\
+AND StableLadderEndpointOrbitEdgeSpikeHalfThresholdDichotomyLedger\\
+AND StableLadderEndpointOrbitEdgeSpikeSingletonAtomAbsorptionLedger\\
+AND StableLadderEndpointOrbitEdgeSpikeFullCycleMeanAtomAbsorptionLedger\\
+AND NoAnonymousIncrementEdgeSpikeExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterEdgeSpikeMeanSingletonLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit edge-spike mean--singleton ledger]
+The long bounded-increment drift outlet, the variation-boundary flux outlet,
+and the sparse scale-ladder SAE outlet are carried forward.  The edge-spike
+branch gives an index \(j\), a sign \(\sigma\), and a threshold \(\Lambda>0\)
+such that
+\[
+  \sigma Y_j\ge \Lambda .
+\]
+Here \(Y_j\) is the centered point load used in the previous ledgers, so
+\[
+  Y_j=X_j-\mu ,
+\]
+where \(X_j\) is the uncentered signed point load and \(\mu\) is the full-cycle
+mean.  Hence
+\[
+  \sigma X_j-\sigma\mu\ge \Lambda .
+\]
+The elementary half-threshold dichotomy gives
+\[
+  \sigma X_j\ge \Lambda/2
+  \qquad\hbox{or}\qquad
+  -\sigma\mu\ge \Lambda/2 .
+\]
+In the first case the spike is already an endpoint singleton atom.  In the
+second case it is already a full-cycle mean atom.  Thus the edge-spike outlet
+does not remain as an independent anonymous terminal; it is absorbed by the
+two already named outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the long
+bounded-increment drift PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

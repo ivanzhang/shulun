@@ -11725,3 +11725,91 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 endpoint orbit full-cycle mean atom/SAE、increment edge-spike SAE、
 long bounded-increment drift PDEC/cap、variation-boundary flux PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 221. stable-ladder endpoint orbit edge-spike mean/singleton 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_edge_spike_mean_singleton_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-edge-spike-mean-singleton-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_increment_edge_spike_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_long_bounded_increment_drift_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_edge_spike_centered_load_expansion_closed=true
+endpoint_orbit_edge_spike_half_threshold_dichotomy_closed=true
+endpoint_orbit_edge_spike_singleton_atom_absorption_closed=true
+endpoint_orbit_edge_spike_full_cycle_mean_atom_absorption_closed=true
+anonymous_increment_edge_spike_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_long_bounded_increment_drift_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+edge-spike 支路给出某个边位 `j` 与符号 `sigma`：
+
+```text
+sigma*Y_j >= Lambda.
+```
+
+而上一层的增量是中心化点负载：
+
+```text
+Y_j=X_j-mu.
+```
+
+所以：
+
+```text
+sigma*X_j - sigma*mu >= Lambda.
+```
+
+于是半阈值二分给出：
+
+```text
+sigma*X_j >= Lambda/2
+or
+-sigma*mu >= Lambda/2.
+```
+
+第一支是 endpoint singleton atom；第二支是 full-cycle mean atom。因此
+increment edge-spike 不再作为独立出口保留，而并入已有的 singleton/full-cycle mean
+出口。long bounded-increment drift 与 variation-boundary flux 继续前传。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitIncrementEdgeSpikeImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterEdgeSpikeMeanSingletonLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterEdgeSpikeMeanSingletonLedger
+  AND StableLadderEndpointOrbitLongBoundedIncrementDriftCarriedForwardAfterEdgeSpikeMeanSingletonLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterEdgeSpikeMeanSingletonLedger
+  AND StableLadderEndpointOrbitEdgeSpikeCenteredLoadExpansionLedger
+  AND StableLadderEndpointOrbitEdgeSpikeHalfThresholdDichotomyLedger
+  AND StableLadderEndpointOrbitEdgeSpikeSingletonAtomAbsorptionLedger
+  AND StableLadderEndpointOrbitEdgeSpikeFullCycleMeanAtomAbsorptionLedger
+  AND NoAnonymousIncrementEdgeSpikeExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterEdgeSpikeMeanSingletonLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是独立 increment edge-spike 口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、long bounded-increment drift PDEC/cap、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。
