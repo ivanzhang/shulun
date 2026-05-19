@@ -17082,3 +17082,56 @@ label residue。
 没有证明 missing-unit coordinate slot mismatch，也没有证明 singleton Hall cut、
 cross-key return whitelist leak、payment graph 全局闭合或 return whitelist；
 行/列命题仍未无条件闭合。
+
+### 1.137 stable-ladder phase-residue exchange canonical-payment-serialization-codec-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_serialization_codec_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-serialization-codec-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-serialization-codec-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-serialization-codec-lock-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_canonical_payment_serialization_drift_imported=true
+phase_residue_exchange_alias_normalization_imported=true
+canonical_formal_unit_hash_stability_imported=true
+phase_residue_exchange_payment_tuple_field_vector_closed=true
+phase_residue_exchange_payment_field_tag_total_order_closed=true
+phase_residue_exchange_payment_scalar_encoding_closed=true
+phase_residue_exchange_payment_length_prefix_injective_codec_closed=true
+phase_residue_exchange_payment_null_sentinel_closed=true
+phase_residue_exchange_payment_codec_determinism_closed=true
+phase_residue_exchange_equal_field_vector_equal_bytes_closed=true
+phase_residue_exchange_serialization_drift_field_or_codec_dichotomy_closed=true
+phase_residue_exchange_no_independent_serialization_drift_closed=true
+phase_residue_exchange_canonical_payment_key_serialization_drift_pdec_cap_proved=true
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：canonical bytes 不再是可浮动的实现文本，而是
+payment tuple 字段向量上的确定编码：
+
+```text
+canonical_bytes = codec(field_vector(payment_tuple))
+
+if same tuple has two canonical byte strings:
+  if field vectors differ:
+    named slot/object/assignment exit
+  else:
+    impossible by deterministic canonical codec
+```
+
+因此 serialization drift 不能作为独立活动出口保留。若字段向量不同，它回流
+missing-unit coordinate slot mismatch、actual-object incidence、unit assignment
+等已有命名出口；若字段向量相同，则字段顺序、类型标签、长度前缀、唯一标量
+编码与空值哨兵强制同一字节串。
+
+本步没有证明 noncanonical key label residue、没有证明 missing-unit coordinate
+slot mismatch，也没有证明 singleton Hall cut、cross-key return whitelist leak、
+payment graph 全局闭合或 return whitelist；行/列命题仍未无条件闭合。
