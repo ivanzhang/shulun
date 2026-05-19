@@ -13159,3 +13159,65 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把 Kronecker stencil circuit 压成 signed CRT word pair
 或 mean/singleton/sparse/三出口。
+
+## 271. Stable-ladder phase-residue exchange signed CRT pair primitive atom frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_signed_crt_pair_primitive_atom_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-signed-crt-pair-primitive-atom-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-signed-crt-pair-primitive-atom-router.json
+data/prime-matrix-phase-residue-exchange-signed-crt-pair-primitive-atom-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeKroneckerStencilSignedCRTPairCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_kronecker_stencil_signed_crt_pair_imported=true
+phase_residue_exchange_signed_pair_support_size_closed=true
+phase_residue_exchange_signed_pair_positive_negative_atom_closed=true
+phase_residue_exchange_signed_pair_coefficient_balance_closed=true
+phase_residue_exchange_signed_pair_total_variation_closed=true
+phase_residue_exchange_signed_pair_flux_weight_packet_closed=true
+phase_residue_exchange_signed_pair_collision_or_singleton_exit_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_signed_crt_pair_primitive_atom_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`C_Pi(r0)=+1`、`C_Pi(r*)=-1`、`A C_Pi=W`
+不再保留为一般有限字典。非退化情形下，它被登记为二词 signed support primitive atom：
+
+```text
+support={r0,r*}
+coefficient(r0)=+1
+coefficient(r*)=-1
+support_size=2
+coefficient_sum=0
+total_variation=2
+flux_weights=(+A,-A)
+A C_Pi=W.
+```
+
+若 `r0=r*`，则正负系数消去并回流 singleton/degenerate 出口；否则有序方向保留为
+source -> root。匿名 signed CRT dictionary 口径被删除。
+
+因此若反例链继续存在，它必须在这个二词 primitive atom 上产生真实容量/相位矛盾，
+或回流 singleton、full-cycle mean、multiplicity cap、bridge、amplitude、
+boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeSignedCRTPairPrimitiveAtomCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange signed CRT pair primitive atom
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 signed CRT pair dictionary 压成 primitive atom
+或 mean/singleton/sparse/三出口。
