@@ -11226,3 +11226,79 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、axis-lobe weighted
 surplus PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未
 无条件闭合。
+
+## 215. stable-ladder endpoint orbit single-lobe 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_single_lobe_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_axis_lobe_weighted_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_two_lobe_surplus_decomposition_closed=true
+endpoint_orbit_half_threshold_loss_closed=true
+endpoint_orbit_single_lobe_sign_choice_closed=true
+endpoint_orbit_single_lobe_half_circle_support_closed=true
+endpoint_orbit_single_lobe_signed_surplus_packet_registered=true
+anonymous_axis_lobe_difference_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_single_lobe_signed_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+sum_a S_a*(w_a-v_a) >= L,  w_a>=0, v_a>=0.
+```
+
+记：
+
+```text
+A=sum_a S_a*w_a,
+B=sum_a S_a*v_a.
+```
+
+则 `A-B>=L`。若 `A>=L/2`，取 `W=w, eta=+1`；否则 `A<L/2`，必有
+`-B>L/2`，取 `W=v, eta=-1`。于是：
+
+```text
+sum_a eta*S_a*W_a >= L/2,
+0 <= W_a <= 1,
+supp(W) is one axis half-circle.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap
+  -> StableLadderEndpointOrbitAxisLobeWeightedSurplusImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterSingleLobeLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterSingleLobeLedger
+  AND StableLadderEndpointOrbitTwoLobeSurplusDecompositionLedger
+  AND StableLadderEndpointOrbitHalfThresholdLossLedger
+  AND StableLadderEndpointOrbitSingleLobeSignChoiceLedger
+  AND StableLadderEndpointOrbitSingleLobeHalfCircleSupportLedger
+  AND StableLadderEndpointOrbitSingleLobeSignedSurplusPacketLedger
+  AND NoAnonymousAxisLobeDifferenceExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterSingleLobeLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap
+```
+
+本步关闭的是匿名双叶片差异口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、single-lobe signed surplus PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

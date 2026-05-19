@@ -9972,3 +9972,66 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 axis-lobe weighted surplus PDEC/cap 或 sparse SAE 求和；它只把 standard
 first-harmonic cap 压成轴向半圆叶片加权盈余包。
+
+## 215. Stable-ladder endpoint orbit single-lobe frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_single_lobe_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-lobe-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitAxisLobeWeightedSurplusPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_axis_lobe_weighted_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_two_lobe_surplus_decomposition_closed=true
+endpoint_orbit_half_threshold_loss_closed=true
+endpoint_orbit_single_lobe_sign_choice_closed=true
+endpoint_orbit_single_lobe_half_circle_support_closed=true
+endpoint_orbit_single_lobe_signed_surplus_packet_registered=true
+anonymous_axis_lobe_difference_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_single_lobe_signed_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：axis-lobe 的双叶片差异不再作为最后硬点保留。把
+
+```text
+sum_a S_a*(w_a-v_a) >= L
+```
+
+写成 `A-B>=L`，其中：
+
+```text
+A=sum_a S_a*w_a,
+B=sum_a S_a*v_a.
+```
+
+于是 `A>=L/2` 或 `-B>=L/2`。因此存在单个半圆叶片 `W` 和符号 `eta`，使：
+
+```text
+sum_a eta*S_a*W_a >= L/2,
+0 <= W_a <= 1.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+single-lobe signed surplus PDEC/cap 或 sparse SAE 求和；它只把 axis-lobe
+weighted surplus cap 压成单叶片带符号盈余包。
