@@ -12324,3 +12324,87 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、static potential shelf bias
 PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.69 stable-ladder endpoint orbit static-shelf area-moment 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_static_shelf_area_moment_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticPotentialShelfBiasPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_static_potential_shelf_bias_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_static_shelf_bias_model_closed=true
+endpoint_orbit_static_shelf_area_lower_bound_closed=true
+endpoint_orbit_shelf_summation_by_parts_closed=true
+endpoint_orbit_shelf_endpoint_charge_return_closed=true
+endpoint_orbit_static_shelf_area_moment_packet_registered=true
+anonymous_static_potential_shelf_bias_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_static_shelf_area_moment_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+static potential shelf bias 给出低振荡、无深漂移、无早抵消的一侧势能地板：
+
+```text
+sigma*S(t) >= H/2 for t in I,  |I|=L>E.
+```
+
+因此强制矩形面积
+
+```text
+A(I)=sum_{t in I} sigma*S(t) >= H*L/2.
+```
+
+离散分部求和把 `A(I)` 写成端点收费与 triangular/sawtooth 权重下的增量矩。若端点收费
+已经解释该面积，则回流 bridge-cancellation、amplitude-depth 或 variation-boundary flux；
+否则剩余就是 static shelf area moment。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticPotentialShelfBiasPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitStaticPotentialShelfBiasImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterStaticShelfAreaLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterStaticShelfAreaLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterStaticShelfAreaLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterStaticShelfAreaLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterStaticShelfAreaLedger
+  AND StableLadderEndpointOrbitStaticShelfBiasModelLedger
+  AND StableLadderEndpointOrbitStaticShelfAreaLowerBoundLedger
+  AND StableLadderEndpointOrbitShelfSummationByPartsLedger
+  AND StableLadderEndpointOrbitShelfEndpointChargeReturnLedger
+  AND StableLadderEndpointOrbitStaticShelfAreaMomentPacketLedger
+  AND NoAnonymousStaticPotentialShelfBiasExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterStaticShelfAreaLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfAreaMomentPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 static potential shelf bias 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、static shelf area moment
+PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

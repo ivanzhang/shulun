@@ -10784,3 +10784,57 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 shelf bias PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 long potential shelf
 压成静态偏置包或已命名三出口。
+
+## 228. Stable-ladder endpoint orbit static-shelf area-moment frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_static_shelf_area_moment_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-area-moment-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticPotentialShelfBiasPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_static_potential_shelf_bias_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_static_shelf_bias_model_closed=true
+endpoint_orbit_static_shelf_area_lower_bound_closed=true
+endpoint_orbit_shelf_summation_by_parts_closed=true
+endpoint_orbit_shelf_endpoint_charge_return_closed=true
+endpoint_orbit_static_shelf_area_moment_packet_registered=true
+anonymous_static_potential_shelf_bias_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_static_shelf_area_moment_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：静态 shelf 不是只保留“偏置存在”的语义，而必须支付其矩形面积。
+从 `sigma*S(t)>=H/2` 得到 `A(I)>=H|I|/2`。分部求和把该面积拆成端点收费与加权增量矩。
+端点收费若足够大，已经是已有命名出口；若不够，则真实剩余为 static shelf area moment。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfAreaMomentPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、static shelf area
+moment PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 static potential shelf
+bias 压成面积矩包或已命名三出口。
