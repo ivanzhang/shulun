@@ -17033,3 +17033,52 @@ if cross-key compensator claims the same canonical cell:
 本步没有证明 key tuple alias defect、没有证明 missing-unit coordinate slot
 mismatch，也没有证明 singleton Hall cut defect、cross-key return whitelist leak、
 payment graph 全局闭合或 return whitelist；行/列命题仍未无条件闭合。
+
+### 1.136 stable-ladder phase-residue exchange canonical-payment-key-alias-normalization 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_key_alias_normalization_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_payment_key_tuple_alias_imported=true
+canonical_formal_unit_hash_stability_imported=true
+phase_residue_exchange_payment_key_domain_separator_closed=true
+phase_residue_exchange_payment_key_serialization_schema_closed=true
+phase_residue_exchange_equal_tuple_equal_serialization_closed=true
+phase_residue_exchange_payment_key_hash_formula_closed=true
+phase_residue_exchange_alias_normalization_trichotomy_closed=true
+phase_residue_exchange_no_anonymous_key_tuple_alias_closed=true
+phase_residue_exchange_canonical_payment_key_serialization_drift_pdec_cap_proved=false
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：key tuple alias 不再是独立数学出口。payment key
+被规范化为固定 domain separator 与 canonical tuple bytes 的 hash：
+
+```text
+payment_key = H('canonical_payment_key', canonical_bytes(payment_tuple))
+
+if same tuple has two keys:
+  if canonical_bytes differ:
+    MaterializedCircuitCanonicalPaymentKeySerializationDriftPDECCap
+  else:
+    MaterializedCircuitCanonicalPaymentNoncanonicalKeyLabelResiduePDECCap
+```
+
+若同一 tuple 产生不同规范字节串，剩余为 canonical payment key serialization
+drift；若规范字节串相同但记录仍携带另一个 key，则剩余为 noncanonical key
+label residue。
+
+本步没有证明 serialization drift、没有证明 noncanonical key label residue、
+没有证明 missing-unit coordinate slot mismatch，也没有证明 singleton Hall cut、
+cross-key return whitelist leak、payment graph 全局闭合或 return whitelist；
+行/列命题仍未无条件闭合。

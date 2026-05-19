@@ -14486,3 +14486,39 @@ cell，就必须满足所有 tuple 投影逐槽相等；否则它不是同一 ce
 本步没有闭合行/列命题；最新剩余为 singleton Hall cut defect、key tuple alias
 defect、missing-unit slot mismatch、cross-key return whitelist leak、payment
 graph/return whitelist、boundary equality、actual-object incidence predicate 与 endpoint 并行出口。
+
+## 295. Stable-ladder phase-residue exchange canonical-payment-key-alias-normalization frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_key_alias_normalization_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-key-alias-normalization-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_payment_key_tuple_alias_imported=true
+canonical_formal_unit_hash_stability_imported=true
+phase_residue_exchange_payment_key_domain_separator_closed=true
+phase_residue_exchange_payment_key_serialization_schema_closed=true
+phase_residue_exchange_equal_tuple_equal_serialization_closed=true
+phase_residue_exchange_payment_key_hash_formula_closed=true
+phase_residue_exchange_alias_normalization_trichotomy_closed=true
+phase_residue_exchange_no_anonymous_key_tuple_alias_closed=true
+phase_residue_exchange_canonical_payment_key_serialization_drift_pdec_cap_proved=false
+phase_residue_exchange_canonical_payment_noncanonical_key_label_residue_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：同 tuple 不同 key 必须解释为规范化失败，而不是
+新的支付自由度。若同一 payment tuple 有两个 key，则要么 canonical bytes
+已经漂移，要么某条支付边仍携带非规范外部标签。
+
+本步没有闭合行/列命题；最新剩余为 payment key serialization drift、
+noncanonical key label residue、missing-unit slot mismatch、singleton Hall cut、
+cross-key return whitelist leak、payment graph/return whitelist、boundary equality、
+actual-object incidence predicate 与 endpoint 并行出口。
