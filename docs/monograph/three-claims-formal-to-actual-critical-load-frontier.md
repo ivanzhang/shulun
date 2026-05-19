@@ -14636,3 +14636,43 @@ admitted payment edge。若它仍被计入容量，则是 assignment-incidence �
 本步没有闭合行/列命题；最新剩余为 assignment incidence、singleton Hall cut、
 cross-key return whitelist leak、payment graph/return whitelist、boundary equality、
 actual-object incidence predicate 与 endpoint 并行出口。
+
+## 299. Stable-ladder phase-residue exchange canonical-payment-assignment-incidence-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_assignment_incidence_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-assignment-incidence-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-assignment-incidence-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-assignment-incidence-lock-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_unit_capacity_assignment_incidence_imported=true
+phase_residue_exchange_same_cell_slot_admission_imported=true
+phase_residue_exchange_counted_capacity_unit_closed=true
+phase_residue_exchange_admitted_capacity_unit_predicate_closed=true
+phase_residue_exchange_capacity_unit_value_one_gate_closed=true
+phase_residue_exchange_assignment_actual_object_gate_closed=true
+phase_residue_exchange_assignment_same_cell_gate_closed=true
+phase_residue_exchange_assignment_whitelist_gate_closed=true
+phase_residue_exchange_assignment_partial_injection_closed=true
+phase_residue_exchange_bad_counted_unit_trichotomy_closed=true
+phase_residue_exchange_no_independent_assignment_incidence_closed=true
+phase_residue_exchange_unit_capacity_assignment_incidence_proved=true
+phase_residue_exchange_actual_object_incidence_predicate_proved=false
+phase_residue_exchange_capacity_value_unit_integrality_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：坏计数不能再作为独立容量来源。它要么违反对象谓词，
+要么违反一单位容量值，要么违反跨 key return whitelist；若这些 gate 都不失败，
+则该单位是 admitted assignment 的一部分，否则剔除后 singleton Hall cut 赤字继续存在。
+
+本步没有闭合行/列命题；最新剩余为 actual-object incidence、capacity integrality、
+singleton Hall cut、cross-key return whitelist leak、payment graph/return whitelist、
+boundary equality 与 endpoint 并行出口。
