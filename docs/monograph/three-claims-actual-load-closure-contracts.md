@@ -12732,3 +12732,83 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、locked column capacity defect PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.74 stable-ladder endpoint orbit locked-column residue-shadow 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_locked_column_residue_shadow_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-residue-shadow-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-residue-shadow-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-residue-shadow-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_locked_column_capacity_defect_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_locked_column_residue_shadow_model_closed=true
+endpoint_orbit_locked_column_residue_shadow_quota_closed=true
+endpoint_orbit_locked_column_overfull_shadow_pigeonhole_closed=true
+endpoint_orbit_locked_column_residue_shadow_named_return_split_closed=true
+endpoint_orbit_locked_column_residue_shadow_imbalance_packet_registered=true
+anonymous_locked_column_capacity_defect_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_locked_column_residue_shadow_imbalance_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+locked column capacity defect 给出固定列族 `C` 的容量超额。按 CRT residue shadow 分解：
+
+```text
+L(C)=sum_s L_s
+Q(C)=sum_s Q_s.
+```
+
+若所有 shadow 都满足 `|L_s|<=Q_s`，则总列族也不会超额；所以容量缺陷必给出至少一个
+overfull residue shadow。该 shadow 若退化为孤立点、整周期均值、反号互付、同号堆高或边界迁移，
+分别回流 singleton、full-cycle mean、bridge、amplitude 或 boundary；否则剩余就是真实
+locked column residue-shadow imbalance。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitLockedColumnCapacityDefectImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterLockedColumnResidueShadowLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterLockedColumnResidueShadowLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterLockedColumnResidueShadowLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterLockedColumnResidueShadowLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterLockedColumnResidueShadowLedger
+  AND StableLadderEndpointOrbitLockedColumnResidueShadowModelLedger
+  AND StableLadderEndpointOrbitLockedColumnResidueShadowQuotaLedger
+  AND StableLadderEndpointOrbitLockedColumnOverfullShadowPigeonholeLedger
+  AND StableLadderEndpointOrbitLockedColumnResidueShadowNamedReturnSplitLedger
+  AND StableLadderEndpointOrbitLockedColumnResidueShadowImbalancePacketLedger
+  AND NoAnonymousLockedColumnCapacityDefectExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterLockedColumnResidueShadowLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnResidueShadowImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 locked column capacity defect 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、locked column residue-shadow imbalance
+PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

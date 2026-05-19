@@ -15359,6 +15359,62 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-loc
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit locked-column residue-shadow ledger]
+The locked column capacity-defect outlet admits the following non-cyclic
+residue-shadow refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitLockedColumnCapacityDefectImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND StableLadderEndpointOrbitLockedColumnResidueShadowModelLedger\\
+AND StableLadderEndpointOrbitLockedColumnResidueShadowQuotaLedger\\
+AND StableLadderEndpointOrbitLockedColumnOverfullShadowPigeonholeLedger\\
+AND StableLadderEndpointOrbitLockedColumnResidueShadowNamedReturnSplitLedger\\
+AND StableLadderEndpointOrbitLockedColumnResidueShadowImbalancePacketLedger\\
+AND NoAnonymousLockedColumnCapacityDefectExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterLockedColumnResidueShadowLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnResidueShadowImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit locked-column residue-shadow ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+bridge-cancellation outlet, the amplitude-depth outlet, the variation-boundary
+flux outlet, and the sparse scale-ladder SAE outlet are carried forward.  A
+locked column capacity defect gives a column family \(C\) with
+\(|L(C)|>Q(C)\).  Decompose \(C\) into CRT residue shadows \(C_s\), and write
+\[
+  L(C)=\sum_s L_s,\qquad Q(C)=\sum_s Q_s.
+\]
+After fixing the sign of the excess, if every residue shadow satisfied
+\(|L_s|\le Q_s\), then the signed load of the whole column family would be
+bounded by the sum of the shadow quotas, contradicting the column capacity
+defect.  Hence at least one residue shadow is overfull.
+
+If that shadow degenerates to an isolated atom, it is carried by the singleton
+outlet.  If it only contributes a full-cycle mean component, it is carried by
+the full-cycle mean outlet.  If opposite shadow signs cancel, if one sign stacks
+across scales, or if the overfull shadow migrates through the shadow boundary,
+the packet returns respectively to bridge cancellation, amplitude depth, or
+variation-boundary flux.  If none of those named payments occurs, the remaining
+packet is an explicit locked column residue-shadow imbalance PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the locked
+column residue-shadow imbalance PDEC/cap outlet, it does not prove the
+bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-residue-shadow-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
