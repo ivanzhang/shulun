@@ -17542,6 +17542,77 @@ docs/monograph/prime-matrix-phase-residue-exchange-normalized-root-mean-dipole-r
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange root-source pair-average contrast ledger]
+The phase-residue exchange normalized root-mean dipole outlet admits the
+following root-source pair-average contrast refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeNormalizedRootMeanDipoleCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeNormalizedRootMeanDipoleImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalizedRootMeanDipoleImportedForPairAverageLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootSourcePairFanLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootSourcePairContrastFamilyLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeUniformPairWeightLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePairAverageContrastIdentityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootSourcePairUnitBalanceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousNonrootMeanAfterPairAverageLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootSourcePairAverageContrastPacketLedger\\
+AND NoAnonymousNormalizedRootMeanDipoleAfterPairAverageLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeRootSourcePairAverageContrastLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootSourcePairAverageContrastCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange root-source pair-average contrast ledger]
+All parallel outlets from the exchange normalized root-mean dipole ledger are
+carried forward: source-atom multiplicity cap, endpoint singleton atom,
+full-cycle mean atom, bridge cancellation, amplitude depth, variation-boundary
+flux, and sparse scale-ladder SAE.
+
+The previous ledger gives the normalized dipole
+\[
+  D=[s_0]-\frac{1}{|S_\ast|-1}\sum_{s\ne s_0}[s].
+\]
+The degenerate case \(|S_\ast|=1\) is already carried by the endpoint singleton
+atom/SAE outlet.  For \(|S_\ast|>1\), define the root-source pair contrast
+\[
+  e_s=[s_0]-[s]\qquad (s\ne s_0).
+\]
+Each \(e_s\) has one positive unit at the common root and one negative unit at
+the selected non-root source, hence has zero total coefficient.  Averaging these
+pair contrasts gives the exact identity
+\[
+  \frac{1}{|S_\ast|-1}\sum_{s\ne s_0} e_s
+  =
+  [s_0]-\frac{1}{|S_\ast|-1}\sum_{s\ne s_0}[s]
+  =D.
+\]
+Thus the non-root mean is not an anonymous cloud.  It is the uniform average of
+a named fan of root-source unit contrasts, with fixed weight
+\((|S_\ast|-1)^{-1}\) on every non-root source.
+
+If this root-source pair-average contrast packet is paid by one of the named
+outlets it returns there; otherwise it is the explicit phase-residue exchange
+root-source pair-average contrast circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange root-source pair-average contrast circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-root-source-pair-average-contrast-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
