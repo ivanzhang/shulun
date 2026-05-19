@@ -14071,3 +14071,71 @@ multiplicity-cap PDEC/cap、canonical-congruence-equation atom imbalance PDEC/ca
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
 PDEC/cap 或 sparse SAE 求和；它只把匿名 CRT-coordinate-atom imbalance 压成
 canonical equation imbalance 包或 mean/singleton/sparse/三出口。
+
+### 1.91 stable-ladder canonical-equation phase-residue-evaluation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_canonical_equation_phase_residue_evaluation_router.py
+data/prime-matrix-canonical-equation-phase-residue-evaluation-ledger.json
+docs/monograph/prime-matrix-canonical-equation-phase-residue-evaluation-router.md
+docs/monograph/prime-matrix-canonical-equation-phase-residue-evaluation-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+canonical_congruence_equation_atom_imbalance_imported=true
+source_atom_multiplicity_cap_carried_forward=true
+canonical_equation_phase_residue_evaluation_atom_model_closed=true
+canonical_equation_row_phase_closed=true
+canonical_equation_column_phase_closed=true
+canonical_equation_carrier_residue_evaluation_closed=true
+canonical_equation_phase_residue_evaluation_id_stability_closed=true
+canonical_equation_phase_residue_evaluation_quota_debt_allocation_closed=true
+canonical_equation_phase_residue_evaluation_atom_pigeonhole_closed=true
+canonical_equation_phase_residue_evaluation_atom_imbalance_packet_registered=true
+anonymous_canonical_congruence_equation_atom_imbalance_removed=true
+phase_residue_evaluation_atom_imbalance_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+canonical-congruence-equation atom imbalance 已给出：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}>d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}
+```
+
+把该 equation atom 内部的实际 CRT 相位评价固定为有限 phase-residue evaluation atom `zeta`：
+
+```text
+zeta=(evaluation_id,equation_id,q,a,row mod q,column mod q,N_{row,column,side} mod q,endpoint_side,orientation,phase_boundary_key)
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}=sum_zeta C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon,zeta}
+d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}=sum_zeta d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon,zeta}
+```
+
+如果每个 phase-residue evaluation atom 都满足
+`C_{...,epsilon,zeta}<=d_{...,epsilon,zeta}`，则该 canonical equation atom 不可能超额；
+所以必有某个 `zeta` 满足 `C_{...,epsilon,zeta}>d_{...,epsilon,zeta}`。source-atom
+multiplicity-cap PDEC/cap 不在本步证明，继续作为并行出口。该 phase-residue atom 若由
+singleton、full-cycle mean、bridge、amplitude-depth、boundary flux 或 sparse SAE 支付，
+则回流已有出口；否则留下实际 phase-residue-evaluation atom imbalance PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue-evaluation atom imbalance PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap 或 sparse SAE 求和；它只把匿名 canonical equation atom imbalance 压成
+phase-residue-evaluation imbalance 包或 mean/singleton/sparse/三出口。
