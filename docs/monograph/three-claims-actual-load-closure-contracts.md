@@ -14002,3 +14002,72 @@ multiplicity-cap PDEC/cap、CRT-coordinate-atom imbalance PDEC/cap、bridge-canc
 PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
 它只把匿名 primitive-witness imbalance 压成 CRT-coordinate-atom imbalance 包或
 mean/singleton/sparse/三出口。
+
+### 1.90 stable-ladder CRT-coordinate canonical-equation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_crt_coordinate_canonical_equation_router.py
+data/prime-matrix-crt-coordinate-canonical-equation-ledger.json
+docs/monograph/prime-matrix-crt-coordinate-canonical-equation-router.md
+docs/monograph/prime-matrix-crt-coordinate-canonical-equation-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+crt_coordinate_atom_imbalance_imported=true
+source_atom_multiplicity_cap_carried_forward=true
+crt_coordinate_canonical_congruence_equation_atom_model_closed=true
+crt_coordinate_canonical_congruence_equation_normal_form_closed=true
+crt_coordinate_canonical_congruence_equation_id_stability_closed=true
+crt_coordinate_canonical_congruence_equation_quota_debt_allocation_closed=true
+crt_coordinate_canonical_congruence_equation_atom_pigeonhole_closed=true
+crt_coordinate_canonical_congruence_equation_atom_imbalance_packet_registered=true
+anonymous_crt_coordinate_atom_imbalance_removed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_cap_pdec_cap_proved=false
+crt_coordinate_canonical_congruence_equation_atom_imbalance_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+CRT-coordinate-atom imbalance 已给出：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}>d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}
+```
+
+把该 coordinate atom 内部可能的同一同余方程多表示归一到有限 canonical congruence equation
+atom `epsilon`：
+
+```text
+epsilon=(equation_id,normal_form,row,column,carrier_prime q,residue a,endpoint_side,orientation,phase_boundary_key)
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}=sum_epsilon C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}
+d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}=sum_epsilon d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}
+```
+
+如果每个 canonical equation atom 都满足
+`C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}<=d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon}`，
+则该 CRT coordinate atom 不可能超额；所以必有某个 `epsilon` 满足
+`C_{...,chi,epsilon}>d_{...,chi,epsilon}`。source-atom multiplicity-cap PDEC/cap
+不在本步证明，继续作为并行出口。该 equation atom 若由 singleton、full-cycle mean、bridge、
+amplitude-depth、boundary flux 或 sparse SAE 支付，则回流已有出口；否则留下实际
+canonical-congruence-equation atom imbalance PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、canonical-congruence-equation atom imbalance PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap 或 sparse SAE 求和；它只把匿名 CRT-coordinate-atom imbalance 压成
+canonical equation imbalance 包或 mean/singleton/sparse/三出口。
