@@ -11386,3 +11386,100 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步关闭的是匿名连续叶片权重口径。剩余集中为 endpoint singleton atom/SAE、
 endpoint orbit full-cycle mean atom/SAE、single-arc signed surplus PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 217. stable-ladder endpoint orbit arc endpoint-potential 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_arc_endpoint_potential_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_single_arc_signed_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_arc_signed_load_sequence_closed=true
+endpoint_orbit_arc_mean_contribution_dichotomy_closed=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_centered_arc_surplus_closed=true
+endpoint_orbit_centered_prefix_potential_closed=true
+endpoint_orbit_arc_endpoint_potential_gap_closed=true
+endpoint_orbit_arc_endpoint_potential_packet_registered=true
+anonymous_single_arc_interior_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_arc_endpoint_potential_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出单弧包：
+
+```text
+sum_{a in A} X_a >= L,
+X_a=eta*S_a, A=[u,v) subset C_m.
+```
+
+令
+
+```text
+mu=(1/m) sum_{a in C_m} X_a,
+Y_a=X_a-mu.
+```
+
+则
+
+```text
+sum_{a in A} X_a = |A|*mu + sum_{a in A}Y_a.
+```
+
+若 `|A|*mu>=L/2`，因 `|A|<=m`，全周期均值满足 `m*mu>=L/2`，
+进入 full-cycle mean atom 出口。否则中心化弧差满足：
+
+```text
+sum_{a in A}Y_a >= L/2.
+```
+
+定义中心化前缀势能：
+
+```text
+F(0)=0, F(j+1)=F(j)+Y_j, F(m)=0.
+```
+
+对 `A=[u,v)` 有：
+
+```text
+sum_{a in A}Y_a = F(v)-F(u).
+```
+
+因此非均值支路强制两个弧端点之间存在至少 `L/2` 的势能差。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap
+  -> StableLadderEndpointOrbitSingleArcSignedSurplusImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterArcEndpointPotentialLedger
+  AND StableLadderEndpointOrbitArcSignedLoadSequenceLedger
+  AND StableLadderEndpointOrbitArcMeanContributionDichotomyLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterArcEndpointPotentialLedger
+  AND StableLadderEndpointOrbitCenteredArcSurplusLedger
+  AND StableLadderEndpointOrbitCenteredPrefixPotentialLedger
+  AND StableLadderEndpointOrbitArcEndpointPotentialGapLedger
+  AND StableLadderEndpointOrbitArcEndpointPotentialPacketLedger
+  AND NoAnonymousSingleArcInteriorSurplusExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterArcEndpointPotentialLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap
+```
+
+本步关闭的是匿名弧内部盈余口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、arc endpoint-potential PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

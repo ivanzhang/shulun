@@ -14371,6 +14371,77 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-sin
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit arc endpoint-potential reduction]
+The single-arc signed-surplus outlet reduces to either the full-cycle mean
+atom outlet or an endpoint-potential gap packet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitSingleArcSignedSurplusImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterArcEndpointPotentialLedger\\
+AND StableLadderEndpointOrbitArcSignedLoadSequenceLedger\\
+AND StableLadderEndpointOrbitArcMeanContributionDichotomyLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterArcEndpointPotentialLedger\\
+AND StableLadderEndpointOrbitCenteredArcSurplusLedger\\
+AND StableLadderEndpointOrbitCenteredPrefixPotentialLedger\\
+AND StableLadderEndpointOrbitArcEndpointPotentialGapLedger\\
+AND StableLadderEndpointOrbitArcEndpointPotentialPacketLedger\\
+AND NoAnonymousSingleArcInteriorSurplusExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterArcEndpointPotentialLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit arc endpoint-potential ledger]
+The endpoint singleton atom outlet and the sparse scale-ladder SAE outlet are
+carried forward.  The single-arc outlet has the form
+\[
+  \sum_{a\in A} X_a\ge L,\qquad X_a=\eta S_a,
+\]
+where \(A=[u,v)\) is a cyclic arc in \(C_m\).  Put
+\[
+  \mu=\frac{1}{m}\sum_{a\in C_m}X_a,\qquad Y_a=X_a-\mu .
+\]
+Then
+\[
+  \sum_{a\in A}X_a=|A|\mu+\sum_{a\in A}Y_a .
+\]
+If the mean contribution satisfies \(|A|\mu\ge L/2\), then, since
+\(|A|\le m\),
+\[
+  \sum_{a\in C_m}X_a=m\mu\ge L/2,
+\]
+and the packet is registered as a full-cycle mean atom outlet.  Otherwise the
+centered part satisfies
+\[
+  \sum_{a\in A}Y_a\ge L/2 .
+\]
+Define the centered prefix potential on a lift of the orbit by
+\[
+  F(0)=0,\qquad F(j+1)=F(j)+Y_j .
+\]
+Because \(\sum_{C_m}Y_a=0\), this potential is cyclic, \(F(m)=0\).  For the
+arc \(A=[u,v)\),
+\[
+  \sum_{a\in A}Y_a=F(v)-F(u).
+\]
+Thus the non-mean branch forces a pair of arc endpoints whose centered
+potential gap is at least \(L/2\).  The anonymous single-arc interior surplus
+has therefore been replaced by the named endpoint-potential PDEC/cap outlet,
+or by the full-cycle mean atom outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+endpoint-potential PDEC/cap outlet, and it does not prove global summability
+of the sparse scale-ladder SAE outlet.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

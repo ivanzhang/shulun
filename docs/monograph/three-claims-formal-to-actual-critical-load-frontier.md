@@ -10095,3 +10095,66 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 single-arc signed surplus PDEC/cap 或 sparse SAE 求和；它只把 single-lobe
 signed surplus cap 压成单弧 signed surplus 包。
+
+## 217. Stable-ladder endpoint orbit arc endpoint-potential frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_arc_endpoint_potential_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc-endpoint-potential-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_single_arc_signed_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_arc_signed_load_sequence_closed=true
+endpoint_orbit_arc_mean_contribution_dichotomy_closed=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_centered_arc_surplus_closed=true
+endpoint_orbit_centered_prefix_potential_closed=true
+endpoint_orbit_arc_endpoint_potential_gap_closed=true
+endpoint_orbit_arc_endpoint_potential_packet_registered=true
+anonymous_single_arc_interior_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_arc_endpoint_potential_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：单弧内部盈余不再作为最后硬点保留。把
+
+```text
+sum_{a in A}X_a >= L
+```
+
+写成全周期均值与中心化弧差：
+
+```text
+sum_{a in A}X_a = |A|*mu + sum_{a in A}(X_a-mu).
+```
+
+若均值项承担半数负载，则进入 full-cycle mean atom 出口。否则令
+`Y_a=X_a-mu`，中心化前缀势能 `F(j+1)=F(j)+Y_j` 满足：
+
+```text
+sum_{a in [u,v)}Y_a = F(v)-F(u) >= L/2.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+arc endpoint-potential PDEC/cap 或 sparse SAE 求和；它只把 single-arc
+signed surplus cap 压成 full-cycle mean atom 或端点势能差包。
