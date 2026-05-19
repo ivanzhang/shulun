@@ -10546,3 +10546,71 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 plateau-ramp potential PDEC/cap、amplitude-depth PDEC/cap、variation-boundary
 flux PDEC/cap 或 sparse SAE 求和；它只把匿名 comparable-amplitude plateau
 drift 压成短原子吸收或长单调 ramp potential。
+
+## 224. Stable-ladder endpoint orbit plateau-return mirror frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_plateau_return_mirror_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_plateau_ramp_potential_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_positive_plateau_ramp_imported_model_closed=true
+endpoint_orbit_full_cycle_zero_sum_return_obligation_closed=true
+endpoint_orbit_negative_return_mass_lower_bound_closed=true
+endpoint_orbit_return_mass_dyadic_amplitude_partition_closed=true
+endpoint_orbit_return_amplitude_depth_dichotomy_closed=true
+endpoint_orbit_heavy_return_dyadic_band_closed=true
+endpoint_orbit_return_plateau_run_partition_closed=true
+endpoint_orbit_return_run_boundary_dichotomy_closed=true
+endpoint_orbit_opposite_sign_plateau_ramp_pair_packet_registered=true
+anonymous_plateau_ramp_potential_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_opposite_sign_plateau_ramp_pair_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：真实正向 ramp 不能只作为局部增长存在。由于中心化负载整周期总和为零，
+任一正向 plateau-ramp：
+
+```text
+P consecutive,  Z_j=sigma*Y_j>0,  sum_{j in P}Z_j>=H0
+```
+
+都强制补弧支付同等负向 return mass：
+
+```text
+sum_{complement}(-sigma*Y_j)_+ >= H0.
+```
+
+对 return mass 作 dyadic/连续 run 分解后，若不是 amplitude-depth 或 boundary-flux，
+则存在一个负向 return plateau，与原正向 ramp 构成 opposite-sign mirror pair。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitOppositeSignPlateauRampPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+opposite-sign plateau-ramp pair PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 plateau-ramp
+potential 压成负向 return mirror、amplitude-depth 或 boundary-flux 三分。

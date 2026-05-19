@@ -11985,3 +11985,102 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、plateau-ramp
 potential PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.65 stable-ladder endpoint orbit plateau-return mirror 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_plateau_return_mirror_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_plateau_ramp_potential_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_positive_plateau_ramp_imported_model_closed=true
+endpoint_orbit_full_cycle_zero_sum_return_obligation_closed=true
+endpoint_orbit_negative_return_mass_lower_bound_closed=true
+endpoint_orbit_return_mass_dyadic_amplitude_partition_closed=true
+endpoint_orbit_return_amplitude_depth_dichotomy_closed=true
+endpoint_orbit_heavy_return_dyadic_band_closed=true
+endpoint_orbit_return_plateau_run_partition_closed=true
+endpoint_orbit_return_run_boundary_dichotomy_closed=true
+endpoint_orbit_opposite_sign_plateau_ramp_pair_packet_registered=true
+anonymous_plateau_ramp_potential_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_opposite_sign_plateau_ramp_pair_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+正向 plateau-ramp 给出：
+
+```text
+P consecutive,  Z_j=sigma*Y_j>0,  sum_{j in P}Z_j>=H0.
+```
+
+由于 `Y` 是中心化轨道负载：
+
+```text
+sum_cycle sigma*Y_j=0.
+```
+
+补弧上的负向 return mass
+
+```text
+W_j=(-sigma*Y_j)_+
+```
+
+必须满足 `sum W_j>=H0`。将 `W_j` 作 dyadic 幅度层与连续 run 分解：若非空层数
+超过 `D`，进入 amplitude-depth；若重层的 return run 数超过 `B`，进入
+variation-boundary flux；否则存在负向 return plateau `Q`：
+
+```text
+sum_{j in Q} W_j >= H0/(D*B).
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitPlateauRampPotentialImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPlateauReturnMirrorLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPlateauReturnMirrorLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPlateauReturnMirrorLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPlateauReturnMirrorLedger
+  AND StableLadderEndpointOrbitPositivePlateauRampImportedModelLedger
+  AND StableLadderEndpointOrbitFullCycleZeroSumReturnObligationLedger
+  AND StableLadderEndpointOrbitNegativeReturnMassLowerBoundLedger
+  AND StableLadderEndpointOrbitReturnMassDyadicAmplitudePartitionLedger
+  AND StableLadderEndpointOrbitReturnAmplitudeDepthDichotomyLedger
+  AND StableLadderEndpointOrbitHeavyReturnDyadicBandLedger
+  AND StableLadderEndpointOrbitReturnPlateauRunPartitionLedger
+  AND StableLadderEndpointOrbitReturnRunBoundaryDichotomyLedger
+  AND StableLadderEndpointOrbitOppositeSignPlateauRampPairPacketLedger
+  AND NoAnonymousPlateauRampPotentialExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPlateauReturnMirrorLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitOppositeSignPlateauRampPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 plateau-ramp potential 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、opposite-sign plateau-ramp
+pair PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

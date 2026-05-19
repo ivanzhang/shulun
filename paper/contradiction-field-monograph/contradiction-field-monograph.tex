@@ -14810,6 +14810,80 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-pla
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit plateau-return mirror ledger]
+The plateau-ramp potential outlet admits the following non-cyclic return-mirror
+refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPlateauRampPotentialImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPlateauReturnMirrorLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPlateauReturnMirrorLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPlateauReturnMirrorLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPlateauReturnMirrorLedger\\
+AND StableLadderEndpointOrbitPositivePlateauRampImportedModelLedger\\
+AND StableLadderEndpointOrbitFullCycleZeroSumReturnObligationLedger\\
+AND StableLadderEndpointOrbitNegativeReturnMassLowerBoundLedger\\
+AND StableLadderEndpointOrbitReturnMassDyadicAmplitudePartitionLedger\\
+AND StableLadderEndpointOrbitReturnAmplitudeDepthDichotomyLedger\\
+AND StableLadderEndpointOrbitHeavyReturnDyadicBandLedger\\
+AND StableLadderEndpointOrbitReturnPlateauRunPartitionLedger\\
+AND StableLadderEndpointOrbitReturnRunBoundaryDichotomyLedger\\
+AND StableLadderEndpointOrbitOppositeSignPlateauRampPairPacketLedger\\
+AND NoAnonymousPlateauRampPotentialExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPlateauReturnMirrorLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitOppositeSignPlateauRampPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit plateau-return mirror ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+amplitude-depth outlet, the variation-boundary flux outlet, and the sparse
+scale-ladder SAE outlet are carried forward.  The plateau-ramp branch gives a
+consecutive arc \(P\) and a sign \(\sigma\) such that
+\[
+  Z_j=\sigma Y_j>0\qquad (j\in P),
+  \qquad
+  \sum_{j\in P}Z_j\ge H_0 .
+\]
+Because \(Y\) is the centered orbit load, the full-cycle identity gives
+\[
+  \sum_{\hbox{\scriptsize cycle}}\sigma Y_j=0 .
+\]
+Thus the complementary arc must carry return mass.  With
+\[
+  W_j=(-\sigma Y_j)_+
+\]
+on the complement of \(P\), we have
+\[
+  \sum W_j\ge H_0 .
+\]
+
+Partition this return mass into dyadic amplitude bands.  Given a depth budget
+\(D\), if the number of nonempty return bands is greater than \(D\), the packet
+enters the amplitude-depth PDEC/cap outlet.  Otherwise one return band carries
+mass at least \(H_0/D\).  Partition that heavy return band into maximal
+consecutive return plateau runs.  Given a boundary budget \(B\), if the number
+of return runs is greater than \(B\), the packet enters the variation-boundary
+flux outlet.  Otherwise some negative return plateau \(Q\) satisfies
+\[
+  \sum_{j\in Q}W_j\ge H_0/(D B).
+\]
+Consequently a plateau-ramp potential cannot remain as a one-sided anonymous
+growth packet: it is either an amplitude-depth packet, a boundary-flux packet,
+or a paired positive-ramp/negative-return mirror packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+opposite-sign plateau-ramp pair PDEC/cap outlet, it does not prove the
+amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary flux
+PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-return-mirror-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
