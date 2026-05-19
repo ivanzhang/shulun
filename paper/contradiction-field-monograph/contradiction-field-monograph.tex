@@ -14559,6 +14559,68 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-var
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit increment-run amplitude drift ledger]
+The endpoint-orbit increment-run surplus outlet admits the following
+non-cyclic refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitIncrementRunSurplusImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterIncrementRunAmplitudeDriftLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterIncrementRunAmplitudeDriftLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterIncrementRunAmplitudeDriftLedger\\
+AND StableLadderEndpointOrbitIncrementRunSameSignCoordinateLedger\\
+AND StableLadderEndpointOrbitIncrementRunMassLowerBoundLedger\\
+AND StableLadderEndpointOrbitIncrementRunAmplitudeThresholdDichotomyLedger\\
+AND StableLadderEndpointOrbitIncrementEdgeSpikePacketLedger\\
+AND StableLadderEndpointOrbitLongBoundedIncrementDriftPacketLedger\\
+AND NoAnonymousIncrementRunSurplusExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterIncrementRunAmplitudeDriftLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit increment-run amplitude--drift ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+variation-boundary flux outlet, and the sparse scale-ladder SAE outlet are
+carried forward.  The low-boundary branch from the previous ledger gives a
+consecutive run \(R\) and a sign \(\sigma\) such that, with
+\[
+  Z_j=\sigma Y_j>0 \qquad (j\in R),
+\]
+one has
+\[
+  \sum_{j\in R} Z_j\ge H,\qquad H=G/B .
+\]
+Fix any amplitude threshold \(\Lambda>0\).  If
+\[
+  \max_{j\in R} Z_j\ge \Lambda ,
+\]
+then the packet contains a named increment edge-spike atom.  Otherwise
+\[
+  0<Z_j<\Lambda \qquad (j\in R),
+\]
+and the mass lower bound forces
+\[
+  |R|\ge H/\Lambda .
+\]
+For thresholds with large \(H/\Lambda\), this is a long bounded-increment
+monotone drift packet.  Thus the anonymous increment-run surplus outlet has
+been converted into either an increment edge-spike atom or a long
+bounded-increment drift packet, while the high-boundary variation-flux outlet
+remains a named carried-forward outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+increment edge-spike SAE outlet, it does not prove the long bounded-increment
+drift PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap
+outlet, and it does not prove global summability of the sparse scale-ladder
+SAE outlet.  The row/column theorem remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

@@ -10279,3 +10279,67 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 increment-run surplus SAE、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
 它只把 signed variation cap 压成同符号增量 run 或边界通量二分。
+
+## 220. Stable-ladder endpoint orbit increment-run amplitude/drift frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_increment_run_amplitude_drift_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_increment_run_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_increment_run_same_sign_coordinate_closed=true
+endpoint_orbit_increment_run_mass_lower_bound_closed=true
+endpoint_orbit_increment_run_amplitude_threshold_dichotomy_closed=true
+endpoint_orbit_increment_edge_spike_packet_registered=true
+endpoint_orbit_long_bounded_increment_drift_packet_registered=true
+anonymous_increment_run_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_increment_edge_spike_sae_proved=false
+endpoint_orbit_long_bounded_increment_drift_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：低切换 increment-run surplus 不再作为匿名出口保留。
+上一层给出连续同符号增量 run：
+
+```text
+Z_j=sigma*Y_j>0,  sum_{j in R}Z_j>=H,  H=G/B.
+```
+
+对任意幅度阈值 `Lambda`，若某边 `Z_j>=Lambda`，则进入单边大增量
+edge-spike atom；若所有边 `Z_j<Lambda`，则：
+
+```text
+|R|>=H/Lambda.
+```
+
+这把低切换大质量 run 改写为长的有界增量单调漂移支路。高切换
+variation-boundary flux 从上一层继续前传。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+increment edge-spike SAE、long bounded-increment drift PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把低切换
+increment-run surplus 压成单边大增量或长有界单调漂移二分。

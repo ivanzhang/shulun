@@ -11643,3 +11643,85 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 endpoint orbit full-cycle mean atom/SAE、increment-run surplus SAE、
 variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。
 行/列命题仍未无条件闭合。
+
+## 220. stable-ladder endpoint orbit increment-run amplitude/drift 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_increment_run_amplitude_drift_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-increment-run-amplitude-drift-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_increment_run_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_increment_run_same_sign_coordinate_closed=true
+endpoint_orbit_increment_run_mass_lower_bound_closed=true
+endpoint_orbit_increment_run_amplitude_threshold_dichotomy_closed=true
+endpoint_orbit_increment_edge_spike_packet_registered=true
+endpoint_orbit_long_bounded_increment_drift_packet_registered=true
+anonymous_increment_run_surplus_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_increment_edge_spike_sae_proved=false
+endpoint_orbit_long_bounded_increment_drift_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层低边界支路给出一个连续同符号增量 run `R`。令：
+
+```text
+Z_j=sigma*Y_j>0 for j in R,
+sum_{j in R}Z_j >= H,  H=G/B.
+```
+
+固定任意幅度阈值 `Lambda>0`。若：
+
+```text
+max_{j in R}Z_j >= Lambda,
+```
+
+则登记为单边大增量 edge-spike atom。否则所有 run 内增量都满足
+`0<Z_j<Lambda`，于是：
+
+```text
+|R| >= H/Lambda.
+```
+
+当阈值选择使 `H/Lambda` 很大时，这一支路就是长的有界增量单调漂移。
+上一层高切换 run 支路的 variation-boundary flux 继续前传。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementRunSurplusSAEOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitIncrementRunSurplusImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterIncrementRunAmplitudeDriftLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterIncrementRunAmplitudeDriftLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterIncrementRunAmplitudeDriftLedger
+  AND StableLadderEndpointOrbitIncrementRunSameSignCoordinateLedger
+  AND StableLadderEndpointOrbitIncrementRunMassLowerBoundLedger
+  AND StableLadderEndpointOrbitIncrementRunAmplitudeThresholdDichotomyLedger
+  AND StableLadderEndpointOrbitIncrementEdgeSpikePacketLedger
+  AND StableLadderEndpointOrbitLongBoundedIncrementDriftPacketLedger
+  AND NoAnonymousIncrementRunSurplusExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterIncrementRunAmplitudeDriftLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitIncrementEdgeSpikeSAEOrEndpointOrbitLongBoundedIncrementDriftPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 increment-run surplus 口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、increment edge-spike SAE、
+long bounded-increment drift PDEC/cap、variation-boundary flux PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
