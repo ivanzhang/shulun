@@ -14599,3 +14599,40 @@ canonical key 公式、对象 gate 与 unit-capacity gate 同时通过时才入�
 本步没有闭合行/列命题；最新剩余为 missing-unit slot mismatch、singleton Hall cut、
 cross-key return whitelist leak、payment graph/return whitelist、boundary equality、
 actual-object incidence predicate 与 endpoint 并行出口。
+
+## 298. Stable-ladder phase-residue exchange canonical-payment-same-cell-slot-admission frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_same_cell_slot_admission_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_imported=true
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_occurrences_removed=2
+phase_residue_exchange_key_label_admission_lock_imported=true
+phase_residue_exchange_same_cell_claim_requires_slot_vector_closed=true
+phase_residue_exchange_slot_vector_equality_gate_closed=true
+phase_residue_exchange_slot_mismatch_not_same_cell_edge_closed=true
+phase_residue_exchange_counted_slot_mismatch_assignment_incidence_closed=true
+phase_residue_exchange_uncounted_slot_mismatch_singleton_cut_closed=true
+phase_residue_exchange_no_independent_slot_mismatch_closed=true
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_pdec_cap_proved=true
+phase_residue_exchange_unit_capacity_assignment_incidence_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：槽位不一致的候选边不是同一 missing unit cell 的
+admitted payment edge。若它仍被计入容量，则是 assignment-incidence 失败；
+若不计入，单点 Hall cut 的 `demand=1, capacity=0` 赤字不变。
+
+本步没有闭合行/列命题；最新剩余为 assignment incidence、singleton Hall cut、
+cross-key return whitelist leak、payment graph/return whitelist、boundary equality、
+actual-object incidence predicate 与 endpoint 并行出口。

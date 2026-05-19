@@ -17183,3 +17183,55 @@ canonical cross-key return whitelist leak。
 本步没有证明 missing-unit coordinate slot mismatch，也没有证明 singleton Hall cut、
 cross-key return whitelist leak、payment graph 全局闭合或 return whitelist；
 行/列命题仍未无条件闭合。
+
+### 1.139 stable-ladder phase-residue exchange canonical-payment-same-cell-slot-admission 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_same_cell_slot_admission_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-same-cell-slot-admission-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_imported=true
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_occurrences_removed=2
+phase_residue_exchange_key_label_admission_lock_imported=true
+phase_residue_exchange_same_cell_claim_requires_slot_vector_closed=true
+phase_residue_exchange_slot_vector_equality_gate_closed=true
+phase_residue_exchange_slot_mismatch_not_same_cell_edge_closed=true
+phase_residue_exchange_counted_slot_mismatch_assignment_incidence_closed=true
+phase_residue_exchange_uncounted_slot_mismatch_singleton_cut_closed=true
+phase_residue_exchange_no_independent_slot_mismatch_closed=true
+phase_residue_exchange_missing_unit_coordinate_slot_mismatch_pdec_cap_proved=true
+phase_residue_exchange_unit_capacity_assignment_incidence_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：补偿边若声称支付同一 canonical missing unit cell，
+就必须逐槽相等：
+
+```text
+if compensator claims the same canonical missing unit cell:
+  require equal slot_vector(source, occurrence, CRT, congruence, endpoint, signed_amount)
+
+if slot_vector differs:
+  edge is not an admitted same-cell payment
+  if it is counted as capacity:
+    MaterializedCircuitUnitCapacityAssignmentIncidencePDECCap
+  else:
+    MaterializedCircuitCanonicalUnitSingletonHallCutDefectPDECCap
+```
+
+因此 missing-unit coordinate slot mismatch 不再是独立活动出口。错槽边要么
+不能补该 cell，单点 Hall cut 继续暴露；要么被错误计入容量，回流
+unit-capacity assignment incidence。
+
+本步没有证明 assignment incidence，也没有证明 singleton Hall cut、cross-key
+return whitelist leak、payment graph 全局闭合或 return whitelist；行/列命题仍未
+无条件闭合。
