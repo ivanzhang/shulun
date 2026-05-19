@@ -14309,6 +14309,68 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-sin
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit single-arc reduction]
+The single-lobe signed-surplus outlet reduces to a single-arc signed surplus
+packet.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitSingleLobeSignedSurplusImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterSingleArcLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterSingleArcLedger\\
+AND StableLadderEndpointOrbitSingleLobeLayerCakeIdentityLedger\\
+AND StableLadderEndpointOrbitLobeSuperlevelArcSupportLedger\\
+AND StableLadderEndpointOrbitLayerCakeArcPigeonholeLedger\\
+AND StableLadderEndpointOrbitSingleArcSignedSurplusPacketLedger\\
+AND NoAnonymousSingleLobeWeightExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterSingleArcLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit single-arc ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, and the
+sparse scale-ladder SAE outlet are carried forward.  The single-lobe outlet
+has the form
+\[
+  \sum_a \eta S_aW_a\ge L,\qquad 0\le W_a\le1 .
+\]
+The layer-cake identity gives, pointwise,
+\[
+  W_a=\int_0^1 \mathbf 1_{\{W_a\ge t\}}\,dt .
+\]
+Therefore
+\[
+  \sum_a \eta S_aW_a
+  =
+  \int_0^1
+  \sum_{a:W_a\ge t}\eta S_a\,dt .
+\]
+If every level set had signed mass below \(L\), the integral would be below
+\(L\).  Hence for some \(t\in[0,1]\),
+\[
+  \sum_{a:W_a\ge t}\eta S_a\ge L .
+\]
+Because \(W\) is a single trigonometric lobe supported on an axis half-circle,
+each nonempty superlevel set
+\[
+  A_t=\{a\bmod m:W_a\ge t\}
+\]
+is a cyclic arc inside that half-circle.  Thus the continuous lobe weight has
+been replaced by one explicit single-arc signed surplus packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+single-arc signed-surplus PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

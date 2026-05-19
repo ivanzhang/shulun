@@ -10035,3 +10035,63 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 single-lobe signed surplus PDEC/cap 或 sparse SAE 求和；它只把 axis-lobe
 weighted surplus cap 压成单叶片带符号盈余包。
+
+## 216. Stable-ladder endpoint orbit single-arc frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_single_arc_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_single_lobe_signed_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_single_lobe_layer_cake_identity_closed=true
+endpoint_orbit_lobe_superlevel_arc_support_closed=true
+endpoint_orbit_layer_cake_arc_pigeonhole_closed=true
+endpoint_orbit_single_arc_signed_surplus_packet_registered=true
+anonymous_single_lobe_weight_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_single_arc_signed_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：单叶片连续权重 `W` 不再作为最后硬点保留。由
+
+```text
+W_a=int_0^1 1_{W_a>=t} dt
+```
+
+得到：
+
+```text
+sum_a eta*S_a*W_a = int_0^1 sum_{a:W_a>=t} eta*S_a dt.
+```
+
+若加权和至少为 `L`，则某个超水平集弧段 `A_t={a:W_a>=t}` 满足：
+
+```text
+sum_{a in A_t} eta*S_a >= L.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+single-arc signed surplus PDEC/cap 或 sparse SAE 求和；它只把 single-lobe
+signed surplus cap 压成单弧 signed surplus 包。

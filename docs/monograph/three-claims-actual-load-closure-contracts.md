@@ -11302,3 +11302,87 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步关闭的是匿名双叶片差异口径。剩余集中为 endpoint singleton atom/SAE、
 endpoint orbit full-cycle mean atom/SAE、single-lobe signed surplus PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 216. stable-ladder endpoint orbit single-arc 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_single_arc_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-single-arc-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_single_lobe_signed_surplus_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_single_lobe_layer_cake_identity_closed=true
+endpoint_orbit_lobe_superlevel_arc_support_closed=true
+endpoint_orbit_layer_cake_arc_pigeonhole_closed=true
+endpoint_orbit_single_arc_signed_surplus_packet_registered=true
+anonymous_single_lobe_weight_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_single_arc_signed_surplus_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+sum_a eta*S_a*W_a >= L, 0 <= W_a <= 1.
+```
+
+用 layer-cake 恒等式：
+
+```text
+W_a=int_0^1 1_{W_a>=t} dt,
+H(t)=sum_{a: W_a>=t} eta*S_a.
+```
+
+于是：
+
+```text
+sum_a eta*S_a*W_a = int_0^1 H(t) dt.
+```
+
+若左侧至少为 `L`，则存在阈值 `t` 使 `H(t)>=L`。对单个三角半圆叶片，
+超水平集：
+
+```text
+A_t={a mod m: W_a>=t}
+```
+
+是同一轴向半圆内的循环弧，因此：
+
+```text
+sum_{a in A_t} eta*S_a >= L.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleLobeSignedSurplusPDECCap
+  -> StableLadderEndpointOrbitSingleLobeSignedSurplusImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterSingleArcLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterSingleArcLedger
+  AND StableLadderEndpointOrbitSingleLobeLayerCakeIdentityLedger
+  AND StableLadderEndpointOrbitLobeSuperlevelArcSupportLedger
+  AND StableLadderEndpointOrbitLayerCakeArcPigeonholeLedger
+  AND StableLadderEndpointOrbitSingleArcSignedSurplusPacketLedger
+  AND NoAnonymousSingleLobeWeightExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterSingleArcLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSingleArcSignedSurplusPDECCap
+```
+
+本步关闭的是匿名连续叶片权重口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、single-arc signed surplus PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
