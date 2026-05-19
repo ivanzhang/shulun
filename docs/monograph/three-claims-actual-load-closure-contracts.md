@@ -13935,3 +13935,70 @@ multiplicity-cap PDEC/cap、primitive-witness imbalance PDEC/cap、bridge-cancel
 PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
 它只把匿名 incidence-cell imbalance 压成 primitive-witness imbalance 包或
 mean/singleton/sparse/三出口。
+
+### 1.89 stable-ladder primitive-witness CRT-coordinate-atom 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_primitive_witness_crt_coordinate_atom_router.py
+data/prime-matrix-primitive-witness-crt-coordinate-atom-ledger.json
+docs/monograph/prime-matrix-primitive-witness-crt-coordinate-atom-router.md
+docs/monograph/prime-matrix-primitive-witness-crt-coordinate-atom-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_imbalance_imported=true
+source_atom_multiplicity_cap_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_crt_coordinate_atom_model_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_crt_coordinate_atom_quota_debt_allocation_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_overfull_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_crt_coordinate_atom_pigeonhole_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_crt_coordinate_atom_imbalance_packet_registered=true
+anonymous_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_imbalance_removed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_cap_pdec_cap_proved=false
+endpoint_orbit_residue_shadow_dual_row_phase_cell_atom_signed_core_support_slice_residue_fiber_phase_word_slot_source_atom_multiplicity_fiber_signed_occurrence_unit_incidence_cell_primitive_witness_crt_coordinate_atom_imbalance_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+primitive-witness imbalance 已给出：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa}>d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa}
+```
+
+把该 witness 内部按有限规范 CRT coordinate atom `chi` 分解；`chi` 记录实际行、列、载体素数
+`q`、同余残基 `a`、端点侧、方向，以及同余方程
+`N_{row,column,side} == a mod q`：
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa}=sum_chi C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}
+d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa}=sum_chi d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}
+```
+
+如果每个 CRT coordinate atom 都满足
+`C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}<=d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}`，
+则该 primitive witness 不可能超额；所以必有某个 `chi` 满足
+`C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}>d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi}`。
+source-atom multiplicity-cap PDEC/cap 不在本步证明，继续作为并行出口。该 coordinate atom
+若由 singleton、full-cycle mean、bridge、amplitude-depth、boundary flux 或 sparse SAE
+支付，则回流已有出口；否则留下实际 CRT-coordinate-atom imbalance PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、CRT-coordinate-atom imbalance PDEC/cap、bridge-cancellation
+PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
+它只把匿名 primitive-witness imbalance 压成 CRT-coordinate-atom imbalance 包或
+mean/singleton/sparse/三出口。
