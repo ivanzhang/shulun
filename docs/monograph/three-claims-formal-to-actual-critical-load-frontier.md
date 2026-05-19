@@ -13409,3 +13409,66 @@ cut-potential circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth 
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把局部 Kirchhoff cell 压成 cut-potential 配对证书
 或 mean/singleton/sparse/三出口。
+
+## 275. Stable-ladder phase-residue exchange cut-potential dual-norm frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_cut_potential_dual_norm_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-cut-potential-dual-norm-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-cut-potential-dual-norm-router.json
+data/prime-matrix-phase-residue-exchange-cut-potential-dual-norm-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointChargeKirchhoffCellCutPotentialCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_kirchhoff_cell_cut_potential_imported=true
+phase_residue_exchange_cut_potential_divergence_l1_norm_closed=true
+phase_residue_exchange_cut_potential_l_infinity_norm_closed=true
+phase_residue_exchange_cut_potential_holder_dual_bound_closed=true
+phase_residue_exchange_cut_potential_pairing_value_closed=true
+phase_residue_exchange_cut_potential_dual_norm_saturation_closed=true
+phase_residue_exchange_cut_potential_polar_sign_alignment_closed=true
+phase_residue_exchange_dual_norm_collision_or_singleton_exit_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_cut_potential_dual_norm_saturation_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`phi(r0)=+1/2`、`phi(r*)=-1/2` 与 `<div,phi>=A`
+不再保留为匿名势函数配对。非退化情形下，它被登记为对偶范数等号饱和：
+
+```text
+||div||_1=|+A|+|-A|=2A
+||phi||_infty=1/2
+||div||_1 ||phi||_infty=A
+<div,phi>=(+A)(+1/2)+(-A)(-1/2)=A
+<div,phi>=||div||_1 ||phi||_infty
+sign(div(r0))=sign(phi(r0))=+
+sign(div(r*))=sign(phi(r*))=-
+A C_Pi=W.
+```
+
+若 `r0=r*`，则势差与对偶质量退化并回流 singleton/degenerate 出口；否则有序方向由
+Hölder 等号条件中的极化符号对齐保留。匿名 cut-potential 口径被删除。
+
+因此若反例链继续存在，它必须在这个 dual-norm saturation 证书上产生真实容量/相位矛盾，
+或回流 singleton、full-cycle mean、multiplicity cap、bridge、amplitude、
+boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeCutPotentialDualNormSaturationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange cut-potential dual-norm saturation
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 cut-potential 配对压成 dual-norm saturation 证书
+或 mean/singleton/sparse/三出口。

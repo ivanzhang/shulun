@@ -18560,6 +18560,94 @@ docs/monograph/prime-matrix-phase-residue-exchange-kirchhoff-cell-cut-potential-
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange cut-potential dual-norm ledger]
+The phase-residue exchange Kirchhoff-cell cut-potential outlet admits the
+following \(L^1\)-\(L^\infty\) dual-norm saturation refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointChargeKirchhoffCellCutPotentialCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeKirchhoffCellCutPotentialImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialImportedForDualNormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialDivergenceL1NormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialLInfinityNormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialHolderDualBoundLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialPairingValueLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialDualNormSaturationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialPolarSignAlignmentLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialExtremalSupportLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeDualNormEqualsCutPotentialLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeDualNormCollisionOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeDualNormOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousCutPotentialAfterDualNormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCutPotentialDualNormPacketLedger\\
+AND NoAnonymousCutPotentialAfterDualNormLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeCutPotentialDualNormLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeCutPotentialDualNormSaturationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange cut-potential dual-norm ledger]
+All parallel outlets from the Kirchhoff-cell cut-potential ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger supplies
+\[
+  \phi_K(r_0)=\frac12,\qquad
+  \phi_K(r_\ast)=-\frac12,\qquad
+  \langle \operatorname{div}_K,\phi_K\rangle=A.
+\]
+Together with
+\[
+  \operatorname{div}_K(r_0)=+A,\qquad
+  \operatorname{div}_K(r_\ast)=-A,
+\]
+this gives the exact norm identities
+\[
+  \|\operatorname{div}_K\|_1=2A,\qquad
+  \|\phi_K\|_\infty=\frac12,\qquad
+  \|\operatorname{div}_K\|_1\|\phi_K\|_\infty=A.
+\]
+The direct pairing calculation is
+\[
+  \langle \operatorname{div}_K,\phi_K\rangle
+  =(+A)\frac12+(-A)\left(-\frac12\right)=A.
+\]
+Thus the \(L^1\)-\(L^\infty\) Holder bound is attained with equality.  The
+equality condition is named explicitly: the positive divergence sits at the
+positive potential extremum and the negative divergence sits at the negative
+potential extremum.  In the collision case \(r_0=r_\ast\), the potential gap
+and the polar certificate degenerate and the packet returns to the
+singleton/degenerate outlet.
+
+Thus the remaining packet is no longer an anonymous cut-potential pairing.  It
+is a dual-norm saturation certificate with named \(L^1\) divergence mass,
+named \(L^\infty\) potential radius, exact Holder equality, polar sign
+alignment, extremal support, and retained orientation.  Any remaining
+obstruction must be named as the cut-potential dual-norm saturation circuit
+PDEC/cap outlet or one of the parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange cut-potential dual-norm saturation circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+cut-potential as a named dual-norm saturation certificate.  The row/column
+theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-cut-potential-dual-norm-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
