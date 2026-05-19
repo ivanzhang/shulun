@@ -14662,3 +14662,58 @@ multiplicity-cap PDEC/cap、phase-residue exchange endpoint telescoping charge c
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把 exchange prefix defect ladder circuit 压成端点望远镜电荷 circuit
 或 mean/singleton/sparse/三出口。
+
+### 1.101 stable-ladder phase-residue exchange root-star charge 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_root_star_charge_router.py
+data/prime-matrix-phase-residue-exchange-root-star-charge-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-root-star-charge-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-root-star-charge-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointTelescopingChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_endpoint_telescoping_charge_imported=true
+phase_residue_exchange_common_root_endpoint_closed=true
+phase_residue_exchange_root_charge_multiplicity_closed=true
+phase_residue_exchange_root_star_total_charge_zero_closed=true
+phase_residue_exchange_root_star_charge_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层把每条交换路径压成端点电荷：
+
+```text
+c_s=[s0]-[s].
+```
+
+由于所有路径共用同一根点 `s0`，聚合所有 `s!=s0` 得到根星电荷场：
+
+```text
+C=sum_{s!=s0} c_s=(|S|-1)[s0]-sum_{s!=s0}[s].
+```
+
+根点承受 `|S|-1` 个正电荷，每个非根源点只贡献一次负电荷；总系数为
+`(|S|-1)-(|S|-1)=0`。本步不创造净量，只把匿名端点压力固定成唯一根星入射场。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootStarChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange root-star charge circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把 endpoint telescoping charge circuit 压成根星电荷 circuit
+或 mean/singleton/sparse/三出口。
