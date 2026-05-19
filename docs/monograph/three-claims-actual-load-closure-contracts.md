@@ -16214,3 +16214,88 @@ scalar-load unit-normalization unit-face-value circuit PDEC/cap、bridge-cancell
 amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
 也没有证明线性见证本身存在。它只把 unit-normalization 压成 price-one 支付证书
 或 mean/singleton/sparse/三出口。
+
+### 1.123 stable-ladder phase-residue exchange signed-amount-coordinate 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadUnitNormalizationUnitFaceValueCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_unit_face_value_imported=true
+phase_residue_exchange_signed_amount_coordinate_price_one_closed=true
+phase_residue_exchange_signed_amount_coordinate_positive_endpoint_atom_closed=true
+phase_residue_exchange_signed_amount_coordinate_negative_endpoint_atom_closed=true
+phase_residue_exchange_signed_amount_coordinate_signed_mass_closed=true
+phase_residue_exchange_signed_amount_coordinate_endpoint_mass_balance_closed=true
+phase_residue_exchange_signed_amount_coordinate_half_l1_equals_amount_closed=true
+phase_residue_exchange_signed_amount_coordinate_no_amount_slot_split_closed=true
+phase_residue_exchange_signed_amount_coordinate_no_orientation_flip_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+u_e=n_e=[r0]-[r*]
+<u_e,phi>=1
+||u_e||_1/2=1
+face_value=1
+C_Pi(r0)=+1
+C_Pi(r*)=-1
+C_Pi(other)=0
+amount=A>0
+payment_value=A
+W=A C_Pi
+capacity_multiplier=1
+denomination_split=0.
+```
+
+本步把 price-one 支付数量写成唯一二端点有符号质量坐标：
+
+```text
+positive_endpoint_atom=A delta_{r0}
+negative_endpoint_atom=A delta_{r*}
+signed_mass=W=A(delta_{r0}-delta_{r*})=A C_Pi
+positive_mass=A
+negative_mass=A
+net_mass=0
+||W||_1=2A
+||W||_1/2=A
+support={r0,r*}
+amount_slot_split=0
+orientation_flip=0
+anonymous_amount_pool=0.
+```
+
+若 `r0=r*` 或 `A=0`，则二端点有符号质量退化并回流 singleton/degenerate 出口；否则
+待支付对象就是同一 signed dictionary 上的唯一 amount 坐标。剩余压力不再是匿名 amount 池、
+多槽拆分或方向翻转，而是 signed-amount-coordinate circuit PDEC/cap 或已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadUnitNormalizationUnitFaceValueSignedAmountCoordinateCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange active-facet normal-cone ray-coordinate
+scalar-load unit-normalization unit-face-value signed-amount-coordinate circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；也没有证明线性见证本身存在。它只把 unit-face-value 压成
+二端点 signed-amount-coordinate 证书或 mean/singleton/sparse/三出口。
