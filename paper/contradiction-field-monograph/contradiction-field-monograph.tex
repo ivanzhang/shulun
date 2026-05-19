@@ -17923,6 +17923,83 @@ docs/monograph/prime-matrix-phase-residue-exchange-signed-root-source-half-gap-a
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange oriented root-source transport edge ledger]
+The phase-residue exchange signed root-source half-gap atom outlet admits the
+following oriented transport-edge refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeSignedRootSourceHalfGapAtomCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeSignedRootSourceHalfGapAtomImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSignedHalfGapAtomImportedForTransportEdgeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeFluxLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeBoundaryIdentityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeDivergenceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeMassConservationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeFluxLowerBoundLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousSignedAtomAfterTransportEdgeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeOrientedRootSourceTransportEdgePacketLedger\\
+AND NoAnonymousSignedRootSourceHalfGapAtomAfterTransportEdgeLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeOrientedRootSourceTransportEdgeLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeOrientedRootSourceTransportEdgeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange oriented root-source transport edge ledger]
+All parallel outlets from the signed root-source half-gap atom ledger are
+carried forward: source-atom multiplicity cap, endpoint singleton atom,
+full-cycle mean atom, bridge cancellation, amplitude depth, variation-boundary
+flux, and sparse scale-ladder SAE.
+
+The previous ledger supplies a signed atom
+\[
+  W=A([s_0]-[s_\ast]),\qquad
+  A\ge \frac{\left|\Lambda(D)\right|}{2},\qquad
+  \operatorname{mass}(W)=0.
+\]
+Orient a single edge from the source endpoint to the root endpoint,
+\[
+  e=s_\ast\to s_0,
+\]
+and assign it flux \(F=A\).  With the boundary convention
+\(\partial e=[s_0]-[s_\ast]\), one has
+\[
+  \partial(F e)=A([s_0]-[s_\ast])=W.
+\]
+Equivalently, the endpoint divergence is
+\[
+  \operatorname{div}(s_0)=+A,\qquad
+  \operatorname{div}(s_\ast)=-A,\qquad
+  \operatorname{div}(s_0)+\operatorname{div}(s_\ast)=0.
+\]
+Thus the remaining packet is no longer an anonymous signed atom.  It is a
+named source-to-root transport edge with positive flux \(F=A\), and the flux
+inherits the same lower bound \(F\ge |\Lambda(D)|/2\).
+
+If this transport-edge packet is paid by one of the named outlets it returns
+there; otherwise it is the explicit phase-residue exchange oriented
+root-source transport edge circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange oriented root-source transport edge circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+signed atom as a directed edge boundary.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-oriented-root-source-transport-edge-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
