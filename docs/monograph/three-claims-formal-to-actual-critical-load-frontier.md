@@ -10488,3 +10488,61 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 comparable-amplitude plateau drift PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 long bounded
 drift 压成 dyadic plateau、amplitude-depth 或 boundary-flux 三分。
+
+## 223. Stable-ladder endpoint orbit plateau-ramp frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_plateau_ramp_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_comparable_amplitude_plateau_drift_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_comparable_plateau_same_sign_load_closed=true
+endpoint_orbit_plateau_length_budget_dichotomy_closed=true
+endpoint_orbit_short_plateau_edge_spike_absorption_closed=true
+endpoint_orbit_long_plateau_monotone_ramp_packet_registered=true
+anonymous_comparable_amplitude_plateau_drift_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_plateau_ramp_potential_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：plateau drift 不再作为匿名出口保留。真实负载必须呈现为
+同一连续弧、同一符号、同一 dyadic 幅度层：
+
+```text
+Z_j=sigma*Y_j>0,  a<=Z_j<2a,  sum_{j in P_s}Z_j>=H0.
+```
+
+长度预算 `L0` 给出二分。短 plateau 满足 `max Z_j>=H0/L0`，由已归档的
+edge-spike 半阈值机制吸收到 singleton 或 full-cycle mean；长 plateau 则强制
+prefix potential 在连续弧上单调爬升至少 `H0`，成为 plateau-ramp potential 包。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+plateau-ramp potential PDEC/cap、amplitude-depth PDEC/cap、variation-boundary
+flux PDEC/cap 或 sparse SAE 求和；它只把匿名 comparable-amplitude plateau
+drift 压成短原子吸收或长单调 ramp potential。

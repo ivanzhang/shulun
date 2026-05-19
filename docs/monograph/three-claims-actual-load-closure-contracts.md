@@ -11906,3 +11906,82 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 endpoint orbit full-cycle mean atom/SAE、comparable-amplitude plateau drift PDEC/cap、
 amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，或 sparse scale-ladder
 SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.64 stable-ladder endpoint orbit plateau-ramp 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_plateau_ramp_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_comparable_amplitude_plateau_drift_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_comparable_plateau_same_sign_load_closed=true
+endpoint_orbit_plateau_length_budget_dichotomy_closed=true
+endpoint_orbit_short_plateau_edge_spike_absorption_closed=true
+endpoint_orbit_long_plateau_monotone_ramp_packet_registered=true
+anonymous_comparable_amplitude_plateau_drift_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_plateau_ramp_potential_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+plateau 支路被写成连续弧 `P_s` 上的真实同号负载：
+
+```text
+Z_j=sigma*Y_j>0,  a<=Z_j<2a,  sum_{j in P_s}Z_j>=H0.
+```
+
+给定长度预算 `L0`。若 `|P_s|<=L0`，则 `max Z_j>=H0/L0`，这是已归档
+edge-spike 机制的短原子，吸收到 endpoint singleton 或 full-cycle mean 出口。若
+`|P_s|>L0`，则 prefix potential
+
+```text
+S(t)=sum_{i<=t} sigma*Y_i
+```
+
+在 `P_s` 上单调爬升至少 `H0`，形成长 plateau-ramp potential 包。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitComparableAmplitudePlateauDriftImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPlateauRampLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPlateauRampLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPlateauRampLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPlateauRampLedger
+  AND StableLadderEndpointOrbitComparablePlateauSameSignLoadLedger
+  AND StableLadderEndpointOrbitPlateauLengthBudgetDichotomyLedger
+  AND StableLadderEndpointOrbitShortPlateauEdgeSpikeAbsorptionLedger
+  AND StableLadderEndpointOrbitLongPlateauMonotoneRampPacketLedger
+  AND NoAnonymousComparableAmplitudePlateauDriftExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPlateauRampLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 comparable-amplitude plateau drift 口径。剩余集中为 endpoint
+singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、plateau-ramp
+potential PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

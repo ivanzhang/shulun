@@ -14747,6 +14747,69 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-lon
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit plateau-ramp ledger]
+The comparable-amplitude plateau-drift outlet admits the following non-cyclic
+ramp refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitComparableAmplitudePlateauDriftPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitComparableAmplitudePlateauDriftImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPlateauRampLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPlateauRampLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPlateauRampLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPlateauRampLedger\\
+AND StableLadderEndpointOrbitComparablePlateauSameSignLoadLedger\\
+AND StableLadderEndpointOrbitPlateauLengthBudgetDichotomyLedger\\
+AND StableLadderEndpointOrbitShortPlateauEdgeSpikeAbsorptionLedger\\
+AND StableLadderEndpointOrbitLongPlateauMonotoneRampPacketLedger\\
+AND NoAnonymousComparableAmplitudePlateauDriftExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPlateauRampLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPlateauRampPotentialPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit plateau-ramp ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+amplitude-depth outlet, the variation-boundary flux outlet, and the sparse
+scale-ladder SAE outlet are carried forward.  The comparable-amplitude plateau
+branch gives a consecutive arc \(P_s\), a sign \(\sigma\), and a scale \(a>0\)
+such that
+\[
+  Z_j=\sigma Y_j>0,\qquad
+  a\le Z_j<2a\qquad (j\in P_s),
+  \qquad
+  \sum_{j\in P_s}Z_j\ge H_0 .
+\]
+Fix a length budget \(L_0\ge1\).  If \(|P_s|\le L_0\), then
+\[
+  \max_{j\in P_s}Z_j\ge H_0/L_0 .
+\]
+This is an edge-spike at the induced threshold.  By the already recorded
+centered-load expansion \(Y_j=X_j-\mu\) and the half-threshold dichotomy, this
+short-plateau branch is absorbed by the endpoint singleton atom outlet or by
+the full-cycle mean atom outlet.
+
+It remains to consider \(|P_s|>L_0\).  On this branch the prefix potential
+\[
+  S(t)=\sum_{i\le t}\sigma Y_i
+\]
+increases monotonically along the plateau arc and its total increase across
+\(P_s\) is at least \(H_0\).  Thus the anonymous comparable-amplitude plateau
+drift has been converted into a long monotone plateau-ramp potential packet.
+The next direct task is to exclude this ramp potential packet, or to show that
+it necessarily enters the already named amplitude-depth or boundary-flux
+controlled exits.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+plateau-ramp potential PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap
+outlet, and it does not prove global summability of the sparse scale-ladder SAE
+outlet.  The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-ramp-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
