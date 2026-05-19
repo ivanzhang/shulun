@@ -16874,3 +16874,54 @@ compensation mismatch PDEC/cap、没有证明 missing-unit coordinate slot misma
 没有证明 unit-capacity assignment incidence、capacity-value unit-integrality、
 actual-object incidence predicate，也没有排斥 boundary equality atom 或 endpoint
 并行出口；它只把 canonical 缺失单位压成同 key 的单位余额赤字。
+
+### 1.133 stable-ladder phase-residue exchange canonical-unit-payment-conservation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_unit_payment_conservation_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-conservation-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-conservation-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-unit-payment-conservation-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_canonical_unpaid_or_mismatch_imported=true
+phase_residue_exchange_canonical_unit_demand_key_closed=true
+phase_residue_exchange_canonical_unit_capacity_key_closed=true
+phase_residue_exchange_no_hidden_cross_key_payment_closed=true
+phase_residue_exchange_canonical_unit_payment_graph_closed=false
+phase_residue_exchange_same_key_payment_edge_obligation_proved=false
+phase_residue_exchange_canonical_payment_return_whitelist_proved=false
+phase_residue_exchange_canonical_unit_payment_conservation_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_unit_compensator_key_collision_pdec_cap_proved=false
+phase_residue_exchange_boundary_equality_atom_exclusion_proved=false
+phase_residue_exchange_actual_object_incidence_predicate_proved=false
+linear_witness_existence_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`unpaid demand cell` 与 `compensation mismatch`
+现在统一进入 canonical 单位支付图。直接支付必须来自同一 actual object、同一 key
+的容量边；非同 key 的补偿必须进入 boundary、bridge、assignment 或 slot-mismatch
+等已命名出口。未登记的跨 key 支付不能支付同一 canonical cell。
+
+支付守恒路由为：
+
+```text
+canonical key k
+I_A(k)=1
+I_C(k)=0
+
+if no same-object same-key capacity edge and no named return exists:
+  MaterializedCircuitCanonicalUnitPaymentConservationDefectPDECCap
+otherwise if a compensator uses another key:
+  MaterializedCircuitCanonicalUnitCompensatorKeyCollisionPDECCap
+```
+
+本步没有证明 canonical payment conservation defect、没有证明 canonical
+compensator key collision、没有证明 canonical payment graph 完全闭合，
+也没有证明 same-key payment edge obligation 或 return whitelist；行/列命题仍未无条件闭合。
