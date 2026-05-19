@@ -15233,3 +15233,80 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把有向输运边 circuit 压成单列 incidence 坐标
 或 mean/singleton/sparse/三出口。
+
+### 1.110 stable-ladder phase-residue exchange incidence-column Kronecker stencil 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_incidence_column_kronecker_stencil_router.py
+data/prime-matrix-phase-residue-exchange-incidence-column-kronecker-stencil-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-incidence-column-kronecker-stencil-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-incidence-column-kronecker-stencil-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeTransportEdgeIncidenceColumnCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_transport_edge_incidence_column_imported=true
+phase_residue_exchange_root_kronecker_delta_coordinate_closed=true
+phase_residue_exchange_source_kronecker_delta_coordinate_closed=true
+phase_residue_exchange_kronecker_delta_difference_stencil_closed=true
+phase_residue_exchange_kronecker_stencil_signed_coefficient_closed=true
+phase_residue_exchange_kronecker_stencil_endpoint_crt_coordinate_closed=true
+phase_residue_exchange_incidence_column_equals_kronecker_stencil_closed=true
+phase_residue_exchange_kronecker_stencil_flux_scaling_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_incidence_column_kronecker_stencil_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+b_e=[s0]-[s*]
+B[:,e]=b_e
+f_e=A
+Bf=A b_e=W.
+```
+
+本步删除矩阵列抽象，改写为端点单位坐标模板：
+
+```text
+delta_{s0}(v)=1 if v=s0, else 0
+delta_{s*}(v)=1 if v=s*, else 0
+k=delta_{s0}-delta_{s*}
+b_e=k
+A k=A(delta_{s0}-delta_{s*})=W.
+```
+
+两个端点继承上游 primitive witness CRT coordinate atom 的 residue word：
+
+```text
+root_crt_word=crt(s0)
+source_crt_word=crt(s*)
+stencil=(+1 at root_crt_word)+(-1 at source_crt_word).
+```
+
+因此 incidence column 不再是匿名 boundary-matrix column；剩余压力被压成两个命名 CRT
+端点单位坐标的符号差。若 `s0=s*`，模板为零并回流 singleton/degenerate 出口；否则
+保留两点 Kronecker signed stencil。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeIncidenceColumnKroneckerStencilCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange incidence-column Kronecker-stencil
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 incidence column circuit 压成 Kronecker endpoint stencil
+或 mean/singleton/sparse/三出口。

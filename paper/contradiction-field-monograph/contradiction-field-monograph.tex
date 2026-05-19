@@ -18074,6 +18074,86 @@ docs/monograph/prime-matrix-phase-residue-exchange-transport-edge-incidence-colu
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange incidence-column Kronecker stencil ledger]
+The phase-residue exchange transport-edge incidence-column outlet admits the
+following endpoint Kronecker-stencil refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeTransportEdgeIncidenceColumnCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeTransportEdgeIncidenceColumnImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeIncidenceColumnImportedForKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootKroneckerDeltaCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSourceKroneckerDeltaCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerDeltaDifferenceStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilSignedCoefficientLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilEndpointCRTCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootSourceCoordinateDistinctOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilZeroSumLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeIncidenceColumnEqualsKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilFluxScalingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousBoundaryMatrixColumnAfterKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeIncidenceColumnKroneckerStencilPacketLedger\\
+AND NoAnonymousTransportEdgeIncidenceColumnAfterKroneckerStencilLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeIncidenceColumnKroneckerStencilLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeIncidenceColumnKroneckerStencilCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange incidence-column Kronecker stencil ledger]
+All parallel outlets from the transport-edge incidence-column ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger supplies a single incidence column and flux coordinate
+\[
+  b_e=[s_0]-[s_\ast],\qquad B_{\cdot,e}=b_e,\qquad f_e=A,\qquad Bf=W.
+\]
+Remove the boundary-matrix-column abstraction by introducing endpoint unit
+coordinates
+\[
+  \delta_{s_0}(v)=1_{v=s_0},\qquad \delta_{s_\ast}(v)=1_{v=s_\ast}.
+\]
+Then
+\[
+  k=\delta_{s_0}-\delta_{s_\ast}=b_e
+\]
+as a coordinate vector, and the scaled stencil is
+\[
+  A k=A(\delta_{s_0}-\delta_{s_\ast})=A([s_0]-[s_\ast])=W.
+\]
+The two endpoints inherit the upstream primitive-witness CRT-coordinate atom:
+one may record this stencil as coefficient \(+1\) at the root CRT word
+\(\operatorname{crt}(s_0)\) and coefficient \(-1\) at the source CRT word
+\(\operatorname{crt}(s_\ast)\).  If \(s_0=s_\ast\), the stencil is zero and the
+packet returns to the singleton/degenerate outlet; otherwise it is a two-point
+signed Kronecker stencil with total coefficient sum zero.
+
+Thus the remaining packet is no longer an anonymous boundary-matrix column.  It
+is a named difference of two endpoint unit coordinates with inherited CRT
+words.  Any remaining obstruction must be named as the incidence-column
+Kronecker-stencil circuit PDEC/cap outlet or one of the parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange incidence-column Kronecker-stencil circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+incidence column as an endpoint Kronecker stencil.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-incidence-column-kronecker-stencil-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
