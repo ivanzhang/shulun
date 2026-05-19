@@ -11483,3 +11483,85 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步关闭的是匿名弧内部盈余口径。剩余集中为 endpoint singleton atom/SAE、
 endpoint orbit full-cycle mean atom/SAE、arc endpoint-potential PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 218. stable-ladder endpoint orbit potential-variation 归约
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_potential_variation_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap`。
+同步读数为：
+
+```text
+endpoint_orbit_arc_endpoint_potential_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_centered_potential_increment_closed=true
+endpoint_orbit_endpoint_gap_directed_arc_closed=true
+endpoint_orbit_positive_variation_lower_bound_closed=true
+endpoint_orbit_negative_variation_lower_bound_closed=true
+endpoint_orbit_signed_variation_packet_registered=true
+anonymous_endpoint_potential_gap_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_signed_variation_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出端点势能差：
+
+```text
+F(v)-F(u) >= G,
+G=L/2.
+```
+
+中心化边增量满足：
+
+```text
+Y_j=F(j+1)-F(j),
+sum_{j in C_m}Y_j=0.
+```
+
+令 `I=[u,v)`、`J=[v,u)`，则：
+
+```text
+sum_{j in I}Y_j = F(v)-F(u) >= G,
+sum_{j in J}Y_j = F(u)-F(v) <= -G.
+```
+
+因此有实际边增量的双向 variation 义务：
+
+```text
+sum_{j in I}(Y_j)_+ >= G,
+sum_{j in J}(Y_j)_- >= G.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap
+  -> StableLadderEndpointOrbitArcEndpointPotentialImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPotentialVariationLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPotentialVariationLedger
+  AND StableLadderEndpointOrbitCenteredPotentialIncrementLedger
+  AND StableLadderEndpointOrbitEndpointGapDirectedArcLedger
+  AND StableLadderEndpointOrbitPositiveVariationLowerBoundLedger
+  AND StableLadderEndpointOrbitNegativeVariationLowerBoundLedger
+  AND StableLadderEndpointOrbitSignedVariationPacketLedger
+  AND NoAnonymousEndpointPotentialGapExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPotentialVariationLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap
+```
+
+本步关闭的是匿名两端点势能差口径。剩余集中为 endpoint singleton atom/SAE、
+endpoint orbit full-cycle mean atom/SAE、endpoint orbit signed variation PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

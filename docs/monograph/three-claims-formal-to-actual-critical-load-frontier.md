@@ -10158,3 +10158,66 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
 arc endpoint-potential PDEC/cap 或 sparse SAE 求和；它只把 single-arc
 signed surplus cap 压成 full-cycle mean atom 或端点势能差包。
+
+## 218. Stable-ladder endpoint orbit potential-variation frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_potential_variation_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_arc_endpoint_potential_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_centered_potential_increment_closed=true
+endpoint_orbit_endpoint_gap_directed_arc_closed=true
+endpoint_orbit_positive_variation_lower_bound_closed=true
+endpoint_orbit_negative_variation_lower_bound_closed=true
+endpoint_orbit_signed_variation_packet_registered=true
+anonymous_endpoint_potential_gap_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_signed_variation_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：端点势能差不再作为最后硬点保留。若
+
+```text
+F(v)-F(u)>=G
+```
+
+且 `Y_j=F(j+1)-F(j)`，则沿弧 `I=[u,v)` 与补弧 `J=[v,u)` 有：
+
+```text
+sum_{j in I}Y_j>=G,
+sum_{j in J}Y_j<=-G.
+```
+
+所以实际边增量必须满足：
+
+```text
+sum_{j in I}(Y_j)_+>=G,
+sum_{j in J}(Y_j)_->=G.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、
+signed variation PDEC/cap 或 sparse SAE 求和；它只把 arc endpoint-potential
+cap 压成轨道边增量 signed variation 包。

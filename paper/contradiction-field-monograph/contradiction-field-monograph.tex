@@ -14442,6 +14442,66 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-arc
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit potential-variation reduction]
+The endpoint-potential outlet reduces to a signed-variation packet on actual
+orbit increments.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitArcEndpointPotentialPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderEndpointOrbitArcEndpointPotentialImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPotentialVariationLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPotentialVariationLedger\\
+AND StableLadderEndpointOrbitCenteredPotentialIncrementLedger\\
+AND StableLadderEndpointOrbitEndpointGapDirectedArcLedger\\
+AND StableLadderEndpointOrbitPositiveVariationLowerBoundLedger\\
+AND StableLadderEndpointOrbitNegativeVariationLowerBoundLedger\\
+AND StableLadderEndpointOrbitSignedVariationPacketLedger\\
+AND NoAnonymousEndpointPotentialGapExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPotentialVariationLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitSignedVariationPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit potential-variation ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, and the
+sparse scale-ladder SAE outlet are carried forward.  The endpoint-potential
+outlet has the form
+\[
+  F(v)-F(u)\ge G,\qquad G=L/2 .
+\]
+The centered potential increments are
+\[
+  Y_j=F(j+1)-F(j),\qquad \sum_{j\in C_m}Y_j=0 .
+\]
+Let \(I=[u,v)\) and \(J=[v,u)\) be the two directed cyclic arcs.  Then
+\[
+  \sum_{j\in I}Y_j=F(v)-F(u)\ge G
+\]
+and, by the zero total increment condition,
+\[
+  \sum_{j\in J}Y_j=F(u)-F(v)\le -G .
+\]
+Hence the positive variation on \(I\) and the negative variation on \(J\)
+obey
+\[
+  \sum_{j\in I}(Y_j)_+\ge G,\qquad
+  \sum_{j\in J}(Y_j)_-\ge G .
+\]
+Thus the anonymous two-endpoint potential gap has been converted into a
+signed-variation obligation carried by actual adjacent orbit increments.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+signed-variation PDEC/cap outlet, and it does not prove global summability of
+the sparse scale-ladder SAE outlet.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-potential-variation-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
