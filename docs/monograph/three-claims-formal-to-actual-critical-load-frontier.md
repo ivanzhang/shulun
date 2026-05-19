@@ -13536,3 +13536,66 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把 dual-norm saturation 压成 complementary-slackness 零间隙证书
 或 mean/singleton/sparse/三出口。
+
+## 277. Stable-ladder phase-residue exchange active-facet normal-cone frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_complementary_slackness_active_facet_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-complementary-slackness-active-facet-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-complementary-slackness-active-facet-router.json
+data/prime-matrix-phase-residue-exchange-complementary-slackness-active-facet-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeDualNormComplementarySlacknessCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_complementary_slackness_imported=true
+phase_residue_exchange_active_facet_dual_feasibility_closed=true
+phase_residue_exchange_active_facet_equality_closed=true
+phase_residue_exchange_active_facet_normal_vector_closed=true
+phase_residue_exchange_active_facet_normal_cone_closed=true
+phase_residue_exchange_active_facet_flow_normal_cone_membership_closed=true
+phase_residue_no_inactive_constraint_carries_flux_after_active_facet_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_complementary_slackness_active_facet_normal_cone_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`e=(r* -> r0)`、`primal_cost=dual_value=A`、`duality_gap=0`
+不再保留为匿名互补松弛口径。非退化情形下，它被登记为单个活跃约束面及其正法锥：
+
+```text
+dual_feasible_constraint: phi(r0)-phi(r*) <= 1
+active_constraint: phi(r0)-phi(r*) = 1
+n_e=[r0]-[r*]
+normal_cone(e)={lambda n_e: lambda>=0}
+div=A n_e
+div in normal_cone(e)
+gap=A(1-(phi(r0)-phi(r*)))=0
+inactive_constraint_with_A_positive => gap>0
+A C_Pi=W.
+```
+
+若 `r0=r*` 或 `A=0`，则法向量/法锥证书退化并回流 singleton/degenerate 出口；否则正法向量
+`[r0]-[r*]` 保留 source -> root 的有序方向。匿名 complementary slackness 口径被删除。
+
+因此若反例链继续存在，它必须在这个 active-facet normal-cone 证书上产生真实容量/相位矛盾，
+或回流 singleton、full-cycle mean、multiplicity cap、bridge、amplitude、
+boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeComplementarySlacknessActiveFacetNormalConeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange complementary-slackness active-facet
+normal-cone circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 complementary-slackness 零间隙压成 active-facet normal-cone 证书
+或 mean/singleton/sparse/三出口。

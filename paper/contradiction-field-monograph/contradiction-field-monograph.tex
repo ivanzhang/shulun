@@ -18748,6 +18748,110 @@ docs/monograph/prime-matrix-phase-residue-exchange-dual-norm-complementary-slack
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange active-facet normal-cone ledger]
+The phase-residue exchange complementary-slackness outlet admits the following
+single active-facet normal-cone refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeDualNormComplementarySlacknessCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeComplementarySlacknessImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeActiveFacetLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeComplementarySlacknessImportedForActiveFacetLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetDualFeasibilityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetEqualityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetNormalVectorLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetNormalConeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetFlowNormalConeMembershipLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetGapFormulaLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoInactiveConstraintCarriesFluxAfterActiveFacetLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetSaturatedSupportLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetEqualsComplementarySlacknessLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetCollisionOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousComplementarySlacknessAfterActiveFacetLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetNormalConePacketLedger\\
+AND NoAnonymousComplementarySlacknessAfterActiveFacetLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeActiveFacetLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeComplementarySlacknessActiveFacetNormalConeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange active-facet normal-cone ledger]
+All parallel outlets from the complementary-slackness ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger supplies the calibrated local edge
+\[
+  e=(r_\ast\to r_0),\qquad
+  \partial(Ae)=A([r_0]-[r_\ast])=\operatorname{div}_K,
+\]
+with unit cost and zero duality gap:
+\[
+  \operatorname{cost}(e)=1,\qquad
+  \phi_K(r_0)-\phi_K(r_\ast)=1,\qquad
+  \operatorname{PrimalCost}=\operatorname{DualValue}=A.
+\]
+Register the corresponding dual feasible constraint
+\[
+  \phi_K(r_0)-\phi_K(r_\ast)\le 1.
+\]
+Since the local nondegenerate branch has positive flux \(A>0\) and zero gap,
+this constraint is active:
+\[
+  \phi_K(r_0)-\phi_K(r_\ast)=1.
+\]
+The active facet has normal vector
+\[
+  n_e=[r_0]-[r_\ast],
+\]
+and its local normal cone is the positive ray
+\[
+  N_e=\{\lambda n_e:\lambda\ge 0\}.
+\]
+The imported divergence is exactly
+\[
+  \operatorname{div}_K=A n_e\in N_e.
+\]
+Equivalently, the complementary-slackness gap is the named nonnegative slack
+\[
+  A\bigl(1-(\phi_K(r_0)-\phi_K(r_\ast))\bigr)=0.
+\]
+If the constraint were strict while \(A>0\), this quantity would be positive,
+contradicting the imported zero-gap certificate.  Thus the nonzero local flux
+cannot be carried by an inactive dual constraint.  In the collision case
+\(r_0=r_\ast\), or in the zero-flux case, the normal vector and normal cone
+certificate degenerate and the packet returns to the singleton/degenerate
+outlet.
+
+Thus the remaining packet is no longer an anonymous complementary-slackness
+equality.  It is a single active Lipschitz facet with named normal vector,
+positive normal-cone membership, inactive-constraint exclusion, saturated
+support, and retained source-to-root orientation.  Any remaining obstruction
+must be named as the active-facet normal-cone circuit PDEC/cap outlet or one
+of the parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange complementary-slackness active-facet normal-cone circuit
+PDEC/cap outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it
+does not prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+complementary-slackness certificate as a named active-facet normal-cone
+certificate.  The row/column theorem remains open.  The certificate is recorded
+in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-complementary-slackness-active-facet-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
