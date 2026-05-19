@@ -12655,3 +12655,48 @@ multiplicity-cap PDEC/cap、phase-residue exchange root-star charge circuit PDEC
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把 endpoint telescoping charge circuit 压成 exchange root-star
 charge circuit 或 mean/singleton/sparse/三出口。
+
+## 261. Stable-ladder phase-residue exchange normalized root-mean dipole frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_normalized_root_mean_dipole_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-normalized-root-mean-dipole-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-normalized-root-mean-dipole-router.json
+data/prime-matrix-phase-residue-exchange-normalized-root-mean-dipole-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootStarChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_root_star_charge_imported=true
+phase_residue_exchange_root_mean_normalization_closed=true
+phase_residue_exchange_nonroot_mean_measure_closed=true
+phase_residue_exchange_normalized_root_mean_dipole_zero_mean_closed=true
+phase_residue_exchange_normalized_root_mean_dipole_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：根星电荷的主要容量形态不再是根点被 `|S|-1` 倍集中。
+对非退化情形除以 `|S|-1` 后，根星电荷等价于
+`D=[s0]-(1/(|S|-1))sum_{s!=s0}[s]`，也就是共同根点相对全部非根源点均值的零均值偶极。
+退化情形仍由 singleton atom/SAE 出口承接。
+
+因此若反例链继续存在，它必须在“根点相对非根均值偏差”的 normalized root-mean dipole
+circuit 中产生真实容量/相位矛盾，或回流 singleton、full-cycle mean、multiplicity cap、
+bridge、amplitude、boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeNormalizedRootMeanDipoleCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange normalized root-mean dipole circuit
+PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap 或 sparse SAE 求和；它只把 exchange root-star charge circuit 压成 normalized
+root-mean dipole circuit 或 mean/singleton/sparse/三出口。
