@@ -14676,3 +14676,42 @@ formal-to-actual 含义是：坏计数不能再作为独立容量来源。它要
 本步没有闭合行/列命题；最新剩余为 actual-object incidence、capacity integrality、
 singleton Hall cut、cross-key return whitelist leak、payment graph/return whitelist、
 boundary equality 与 endpoint 并行出口。
+
+## 300. Stable-ladder phase-residue exchange canonical-payment-capacity-unit-value-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_capacity_unit_value_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_capacity_value_unit_integrality_imported=true
+phase_residue_exchange_assignment_incidence_lock_imported=true
+phase_residue_exchange_signed_amount_unit_atom_closed=true
+phase_residue_exchange_unit_value_one_normalization_closed=true
+phase_residue_exchange_capacity_as_unit_indicator_sum_closed=true
+phase_residue_exchange_capacity_integer_sum_closed=true
+phase_residue_exchange_nonunit_value_actual_object_return_closed=true
+phase_residue_exchange_bad_unit_value_singleton_cut_closed=true
+phase_residue_exchange_no_independent_capacity_integrality_closed=true
+phase_residue_exchange_capacity_value_unit_integrality_proved=true
+phase_residue_exchange_actual_object_incidence_predicate_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：capacity value 只能由 admitted 0/1 unit indicators
+有限相加得到。非一单位 signed amount 不是新的容量自由度；它要么暴露
+actual-object incidence predicate 失败，要么在剔除后保留 singleton Hall cut
+的单位赤字。
+
+本步没有闭合行/列命题；最新剩余为 actual-object incidence、singleton Hall cut、
+cross-key return whitelist leak、payment graph/return whitelist、boundary equality
+与 endpoint 并行出口。

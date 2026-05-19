@@ -17289,3 +17289,55 @@ if a counted capacity unit fails a gate:
 本步没有证明 actual-object incidence、capacity integrality、singleton Hall cut、
 cross-key return whitelist leak、payment graph 全局闭合或 return whitelist；
 行/列命题仍未无条件闭合。
+
+### 1.141 stable-ladder phase-residue exchange canonical-payment-capacity-unit-value-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_capacity_unit_value_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-capacity-unit-value-lock-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_capacity_value_unit_integrality_imported=true
+phase_residue_exchange_assignment_incidence_lock_imported=true
+phase_residue_exchange_signed_amount_unit_atom_closed=true
+phase_residue_exchange_unit_value_one_normalization_closed=true
+phase_residue_exchange_capacity_as_unit_indicator_sum_closed=true
+phase_residue_exchange_capacity_integer_sum_closed=true
+phase_residue_exchange_nonunit_value_actual_object_return_closed=true
+phase_residue_exchange_bad_unit_value_singleton_cut_closed=true
+phase_residue_exchange_no_independent_capacity_integrality_closed=true
+phase_residue_exchange_capacity_value_unit_integrality_proved=true
+phase_residue_exchange_actual_object_incidence_predicate_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：admitted capacity value 不再是独立实数或未命名容量，
+而是 admitted unit indicators 的有限和：
+
+```text
+capacity_value = sum_{admitted units u} 1_u
+
+if a capacity unit has non-unit signed amount:
+  ActualObjectIncidencePredicatePDECCap
+else if the bad unit is removed from capacity:
+  CanonicalUnitSingletonHallCutDefectPDECCap
+```
+
+因此 capacity-value unit-integrality 不再是独立活动出口。通过 assignment
+incidence lock 的 admitted unit 已经带有 unit-value-one gate；每一项都是
+0/1 指示，有限和自动是非负整数。非一单位 signed amount 不能伪装成半个容量
+或多重容量，它只能回流 actual-object gate；剔除后同一 canonical cell 的
+singleton Hall cut 赤字仍然暴露。
+
+本步没有证明 actual-object incidence、singleton Hall cut、cross-key return
+whitelist leak、payment graph 全局闭合或 return whitelist；也没有排斥 boundary
+equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。
