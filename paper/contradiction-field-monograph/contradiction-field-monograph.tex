@@ -17318,6 +17318,85 @@ docs/monograph/prime-matrix-phase-residue-exchange-prefix-defect-ladder-router.m
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange endpoint telescoping charge ledger]
+The phase-residue exchange prefix defect ladder outlet admits the following
+endpoint telescoping charge refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangePrefixDefectLadderCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangePrefixDefectLadderImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePrefixDefectLadderImportedForEndpointChargeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePivotBoundaryOperatorLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeInternalSourceCancellationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeIdentityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePrefixChargeTelescopingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoInteriorAnonymousDebtAfterEndpointChargeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointTelescopingChargePacketLedger\\
+AND NoAnonymousExchangePrefixDefectLadderAfterEndpointTelescopingChargeLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeEndpointTelescopingChargeLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointTelescopingChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange endpoint telescoping charge ledger]
+All parallel outlets from the exchange prefix defect ladder ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger gives the alternating route
+\[
+  P_s=(u_0=s,b_1,u_1,\ldots,b_r,u_r=s_0)
+\]
+and its nested prefix defect ladder.  For the \(i\)-th local pivot
+\[
+  u_{i-1}\longrightarrow b_i\longrightarrow u_i
+\]
+define the source-side boundary operator
+\[
+  d_i=[u_i]-[u_{i-1}].
+\]
+This records the one-step transport of the missing-source state from
+\(u_{i-1}\) to \(u_i\).
+
+Every internal source \(u_i\) with \(1\le i<r\) appears with positive sign in
+\(d_i\) and with negative sign in \(d_{i+1}\).  Hence the internal source
+charges cancel in the sum:
+\[
+  \sum_{i=1}^r d_i=[u_r]-[u_0]=[s_0]-[s].
+\]
+The same computation on the first \(t\) pivots gives
+\[
+  \sum_{i=1}^t d_i=[u_t]-[u_0],
+\]
+which is exactly the prefix state transport already recorded by the prefix
+ladder.
+
+Consequently a surviving prefix defect ladder obstruction cannot hide a net
+charge at an interior source vertex.  Interior debt either cancels with the
+adjacent pivot, is paid by one of the named outlets, or is forced to the
+endpoint telescoping charge \([s_0]-[s]\).  If that endpoint charge packet is
+not paid by a named outlet, it is the explicit phase-residue exchange endpoint
+telescoping charge circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange endpoint telescoping charge circuit PDEC/cap outlet, it
+does not prove the bridge-cancellation PDEC/cap outlet, it does not prove the
+amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary flux
+PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-telescoping-charge-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

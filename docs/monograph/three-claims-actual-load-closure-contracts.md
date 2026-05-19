@@ -14602,3 +14602,63 @@ multiplicity-cap PDEC/cap、phase-residue exchange prefix defect ladder circuit 
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把 exchange toggle word circuit 压成前缀单位缺口 ladder circuit
 或 mean/singleton/sparse/三出口。
+
+### 1.100 stable-ladder phase-residue exchange endpoint telescoping charge 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_endpoint_telescoping_charge_router.py
+data/prime-matrix-phase-residue-exchange-endpoint-telescoping-charge-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-telescoping-charge-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-telescoping-charge-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangePrefixDefectLadderCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_prefix_defect_ladder_imported=true
+phase_residue_exchange_pivot_boundary_operator_closed=true
+phase_residue_exchange_internal_source_cancellation_closed=true
+phase_residue_exchange_endpoint_charge_identity_closed=true
+phase_residue_exchange_endpoint_telescoping_charge_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出前缀单位缺口 ladder：
+
+```text
+P_s=(u_0=s,b_1,u_1,...,b_r,u_r=s0).
+```
+
+本步把每个局部 pivot 的源侧边界写成：
+
+```text
+d_i=[u_i]-[u_{i-1}].
+```
+
+于是内部源点 `u_i` 在 `d_i` 中以正号出现，又在 `d_{i+1}` 中以负号出现，求和后相消：
+
+```text
+sum_{i=1}^r d_i=[u_r]-[u_0]=[s0]-[s].
+```
+
+任意前缀也满足 `sum_{i=1}^t d_i=[u_t]-[u_0]`，与前缀切换输运一致。未命名净债不能留在内部源点，只能回流已有出口或压到端点望远镜电荷。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointTelescopingChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange endpoint telescoping charge circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把 exchange prefix defect ladder circuit 压成端点望远镜电荷 circuit
+或 mean/singleton/sparse/三出口。
