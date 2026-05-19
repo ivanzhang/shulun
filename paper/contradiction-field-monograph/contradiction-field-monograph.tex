@@ -18852,6 +18852,91 @@ docs/monograph/prime-matrix-phase-residue-exchange-complementary-slackness-activ
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange normal-cone ray-coordinate ledger]
+The phase-residue exchange active-facet normal-cone outlet admits the following
+positive ray-coordinate refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeComplementarySlacknessActiveFacetNormalConeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetNormalConeImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeActiveFacetImportedForRayCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeRayGeneratorLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeRayCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConePositiveCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeUniqueCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeNoTransverseComponentLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeCoordinateBoundaryPairingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeCoordinateTotalVariationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRayCoordinateEqualsActiveFacetLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRayCoordinateCollisionOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRayCoordinateOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousActiveFacetAfterRayCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeNormalConeRayCoordinatePacketLedger\\
+AND NoAnonymousActiveFacetAfterRayCoordinateLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeNormalConeRayCoordinateLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange normal-cone ray-coordinate ledger]
+All parallel outlets from the active-facet normal-cone ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger supplies the active constraint and its normal cone:
+\[
+  \phi_K(r_0)-\phi_K(r_\ast)=1,\qquad
+  n_e=[r_0]-[r_\ast],\qquad
+  N_e=\{\lambda n_e:\lambda\ge 0\},
+\]
+together with
+\[
+  \operatorname{div}_K=A n_e\in N_e,\qquad A C_\Pi=W.
+\]
+In the nondegenerate branch \(r_0\ne r_\ast\) and \(A>0\).  The vector
+\(n_e\) has two-point support and is nonzero, so the one-dimensional cone
+\(N_e\) has a unique coordinate on this generator.  Consequently
+\[
+  \operatorname{div}_K=\lambda n_e,\qquad \lambda=A>0.
+\]
+There is no transverse normal-cone component: any element of \(N_e\) is already
+a scalar multiple of \(n_e\).  The coordinate also preserves the boundary
+pairing and total variation:
+\[
+  \langle \operatorname{div}_K,\phi_K\rangle
+    =\lambda(\phi_K(r_0)-\phi_K(r_\ast))=A,
+  \qquad
+  \left\|\operatorname{div}_K\right\|_1=2\lambda=2A.
+\]
+If \(r_0=r_\ast\), or if \(A=0\), the ray generator or its coordinate
+degenerates and the packet returns to the singleton/degenerate outlet.  Thus
+the remaining packet is no longer an anonymous active-facet normal cone.  It is
+a named positive ray-coordinate packet with generator \(n_e\), unique
+coordinate \(A\), no transverse component, retained source-to-root orientation,
+and the same signed CRT packet \(A C_\Pi=W\).
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange active-facet normal-cone ray-coordinate circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+active-facet normal-cone certificate as a named positive ray-coordinate
+certificate.  The row/column theorem remains open.  The certificate is recorded
+in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
