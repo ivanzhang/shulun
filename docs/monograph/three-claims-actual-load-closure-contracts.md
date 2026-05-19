@@ -14390,3 +14390,54 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 multiplicity-cap PDEC/cap、phase-residue near-perfect matching circuit PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把单位缺口 cut 压成近完美匹配 circuit 或 mean/singleton/sparse/三出口。
+
+### 1.96 stable-ladder phase-residue alternating exchange circuit 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_alternating_exchange_circuit_router.py
+data/prime-matrix-phase-residue-alternating-exchange-circuit-ledger.json
+docs/monograph/prime-matrix-phase-residue-alternating-exchange-circuit-router.md
+docs/monograph/prime-matrix-phase-residue-alternating-exchange-circuit-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomNearPerfectMatchingCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_near_perfect_matching_circuit_imported=true
+phase_residue_matching_symmetric_difference_graph_closed=true
+phase_residue_unique_source_defect_alternating_path_closed=true
+phase_residue_every_source_exchange_reachable_closed=true
+phase_residue_alternating_exchange_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出对每个 `s in S_*` 的完美删除匹配：
+
+```text
+M_s:S_*\{s}->B_*
+```
+
+任选基准缺失源点 `s0`，令 `M0=M_{s0}`。对任意 `s!=s0`，考察对称差
+`H_s=M0 Δ M_s`。由于 `M0` 与 `M_s` 都覆盖全部 `B_*`，每个边界槽在 `H_s` 中度数为
+`0` 或 `2`；源点侧除 `s` 与 `s0` 外度数为 `0` 或 `2`，而 `s` 与 `s0` 度数为 `1`。
+因此 `H_s` 分解为若干交替偶圈加一条端点为 `s` 与 `s0` 的交替开路径。
+
+这把剩余反例从“近完美匹配缺口”压成“所有源点都能交换到同一基准缺失源点”的
+alternating exchange circuit。新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomAlternatingExchangeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue alternating exchange circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把近完美匹配 circuit 压成交替交换 circuit 或 mean/singleton/sparse/三出口。
