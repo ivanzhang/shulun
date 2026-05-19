@@ -17098,6 +17098,81 @@ docs/monograph/prime-matrix-phase-residue-alternating-exchange-circuit-router.md
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue rooted directed exchange path ledger]
+The phase-residue alternating exchange circuit outlet admits the following
+rooted directed exchange path refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomAlternatingExchangeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueAlternatingExchangeCircuitImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootBaseMatchingImportedLedger\\
+AND StableLadderEndpointOrbitPhaseResidueAlternatingPathFamilyImportedForRootedDirectionLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePathM0MsEdgeColoringLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangePathRootOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueSimpleDirectedExchangePathNormalFormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeToggleTransferLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEverySourceRootReachableByDirectedExchangeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueRootedDirectedExchangePathPacketLedger\\
+AND NoAnonymousAlternatingExchangeCircuitAfterRootedDirectedPathLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterRootedDirectedExchangePathLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomRootedDirectedExchangePathCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue rooted directed exchange path ledger]
+All parallel outlets from the alternating exchange circuit ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger gives a base missing source \(s_0\), a base matching
+\(M_0=M_{s_0}\), and for every \(s\ne s_0\) an alternating path \(P_s\) from
+\(s\) to \(s_0\) inside \(M_0\triangle M_s\).  The edges of \(P_s\) have a
+canonical two-colouring: they are either \(M_0\)-only edges or \(M_s\)-only
+edges, and the colours alternate along the path.
+
+Orient the \(M_0\)-only edges from source to boundary and the \(M_s\)-only
+edges from boundary to source.  The endpoint \(s\) is incident to an
+\(M_0\)-only edge, while the endpoint \(s_0\) is incident to an \(M_s\)-only
+edge.  Hence the whole alternating path is directed from \(s\) to \(s_0\):
+\[
+  s\longrightarrow b_1\longrightarrow u_1\longrightarrow \cdots
+  \longrightarrow s_0 .
+\]
+If a repeated vertex is present, deleting the closed alternating subcycle
+leaves a simple directed alternating path with the same endpoints.  Thus every
+source token is root-reachable by a concrete directed exchange path.
+
+The same path records the matching transfer.  Toggling the path component by
+symmetric difference replaces the \(M_0\)-edges on that component by the
+\(M_s\)-edges, so the base missing-source state and the \(s\)-missing state are
+connected by an explicit exchange move.
+
+Therefore a surviving alternating exchange obstruction is not an unoriented
+exchange graph.  It carries a root, a two-coloured edge word, a root-directed
+path from every source, and an explicit toggle rule.  If this rooted directed
+exchange path packet is paid by one of the named outlets it returns there;
+otherwise it is the explicit phase-residue rooted directed exchange path
+circuit PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue rooted directed exchange path circuit PDEC/cap outlet, it does
+not prove the bridge-cancellation PDEC/cap outlet, it does not prove the
+amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary flux
+PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-rooted-directed-exchange-path-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

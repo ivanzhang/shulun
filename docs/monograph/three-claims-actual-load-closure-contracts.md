@@ -14441,3 +14441,59 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 multiplicity-cap PDEC/cap、phase-residue alternating exchange circuit PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把近完美匹配 circuit 压成交替交换 circuit 或 mean/singleton/sparse/三出口。
+
+### 1.97 stable-ladder phase-residue rooted directed exchange path 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_rooted_directed_exchange_path_router.py
+data/prime-matrix-phase-residue-rooted-directed-exchange-path-ledger.json
+docs/monograph/prime-matrix-phase-residue-rooted-directed-exchange-path-router.md
+docs/monograph/prime-matrix-phase-residue-rooted-directed-exchange-path-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomAlternatingExchangeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_alternating_exchange_circuit_imported=true
+phase_residue_exchange_path_m0_ms_edge_coloring_closed=true
+phase_residue_exchange_path_root_orientation_closed=true
+phase_residue_every_source_root_reachable_by_directed_exchange_closed=true
+phase_residue_rooted_directed_exchange_path_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出基准缺失源点 `s0`、基准匹配 `M0=M_{s0}`，以及每个 `s!=s0` 的交替路径 `P_s`。
+本步给 `P_s` 上的边加上来源色：
+
+```text
+M0-only, M_s-only
+```
+
+并按规则定向：
+
+```text
+M0-only: source -> boundary
+M_s-only: boundary -> source
+```
+
+于是每条路径都成为从 `s` 到 `s0` 的根向有向交替路径。沿 `P_s` 做对称差切换会把
+`M0` 在路径分量上的边替换为 `M_s` 的边，从而给出缺失源点状态之间的显式转移规则。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomRootedDirectedExchangePathCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue rooted directed exchange path circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把交替交换 circuit 压成根向有向交换路径 circuit 或 mean/singleton/sparse/三出口。
