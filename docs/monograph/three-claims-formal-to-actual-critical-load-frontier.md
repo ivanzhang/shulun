@@ -11173,3 +11173,66 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 dual-row pressure PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 locked column
 residue-shadow imbalance 压成 dual-row pressure 包或 mean/singleton/sparse/三出口。
+
+## 235. Stable-ladder endpoint orbit residue-shadow dual-row capacity frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_residue_shadow_dual_row_capacity_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-capacity-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-capacity-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-capacity-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_residue_shadow_dual_row_pressure_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_pressure_model_closed=true
+endpoint_orbit_residue_shadow_dual_row_window_closed=true
+endpoint_orbit_residue_shadow_dual_row_capacity_quota_closed=true
+endpoint_orbit_residue_shadow_dual_row_load_quota_dichotomy_closed=true
+endpoint_orbit_residue_shadow_dual_row_under_quota_return_closed=true
+endpoint_orbit_residue_shadow_dual_row_capacity_defect_packet_registered=true
+anonymous_residue_shadow_dual_row_pressure_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_residue_shadow_dual_row_capacity_defect_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：residue-shadow dual-row pressure 不能停在“对偶行有压力”的语义层。
+固定对偶行窗口 `R` 后，实际 signed load 与 CRT 行纤维容量为：
+
+```text
+H(R)=sum_{omega projects to R} signed_mass(omega)
+B(R)=local_CRT_allowed_row_fiber_count(R)*scale_weight.
+```
+
+若 `|H(R)|<=B(R)`，该窗口没有超出允许纤维容量，不能支付上一层强制压力，必须回到
+mean、singleton、sparse 或 bridge/amplitude/boundary。若 `|H(R)|>B(R)`，才是实际
+dual-row capacity defect。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、residue-shadow
+dual-row capacity defect PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
+PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 residue-shadow
+dual-row pressure 压成 capacity defect 包或 mean/singleton/sparse/三出口。
