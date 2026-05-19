@@ -12490,3 +12490,86 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、static shelf interior centroid
 moment PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.71 stable-ladder endpoint orbit static-shelf centroid phase-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_static_shelf_centroid_phase_lock_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidMomentPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_static_shelf_interior_centroid_moment_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_interior_centroid_coordinate_model_closed=true
+endpoint_orbit_interior_centroid_scale_window_closed=true
+endpoint_orbit_interior_centroid_drift_return_closed=true
+endpoint_orbit_interior_centroid_opposite_sign_bridge_return_closed=true
+endpoint_orbit_interior_centroid_same_sign_stack_return_closed=true
+endpoint_orbit_interior_centroid_phase_lock_packet_registered=true
+anonymous_static_shelf_interior_centroid_moment_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_static_shelf_interior_centroid_phase_lock_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+static shelf interior centroid moment 若真实存在，先把每个窗口的内部质心归一化为：
+
+```text
+m_j = sum_{t in K_j} w_j(t)*sigma_j*d_t
+c_j = sum_{t in K_j} t*w_j(t)*sigma_j*d_t / m_j
+theta_j = (c_j-a_j)/L_j in [eta,1-eta].
+```
+
+若 `theta_j` 在 stable ladder 窗口中持续显著漂移，则内部质量必须跨过相位切线，回流
+variation-boundary flux。若同相或邻近相位单元出现足量反号质量，则回流 bridge-cancellation。
+若同相同号质量持续堆高并超过势能预算，则回流 amplitude-depth。三类支付都不足时，剩余只能
+是持久内部质心相位锁定包。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidMomentPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitStaticShelfInteriorCentroidMomentImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterCentroidPhaseLockLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterCentroidPhaseLockLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterCentroidPhaseLockLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterCentroidPhaseLockLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterCentroidPhaseLockLedger
+  AND StableLadderEndpointOrbitInteriorCentroidCoordinateModelLedger
+  AND StableLadderEndpointOrbitInteriorCentroidScaleWindowLedger
+  AND StableLadderEndpointOrbitInteriorCentroidDriftReturnLedger
+  AND StableLadderEndpointOrbitInteriorCentroidOppositeSignBridgeReturnLedger
+  AND StableLadderEndpointOrbitInteriorCentroidSameSignStackReturnLedger
+  AND StableLadderEndpointOrbitInteriorCentroidPhaseLockPacketLedger
+  AND NoAnonymousStaticShelfInteriorCentroidMomentExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterCentroidPhaseLockLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidPhaseLockPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 static shelf interior centroid moment 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、static shelf interior centroid
+phase-lock PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。

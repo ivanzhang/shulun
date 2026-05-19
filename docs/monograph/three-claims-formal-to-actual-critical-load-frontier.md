@@ -10893,3 +10893,59 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 interior centroid moment PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
 PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 static shelf
 area moment 压成内部质心矩包或已命名三出口。
+
+## 230. Stable-ladder endpoint orbit static-shelf centroid phase-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_static_shelf_centroid_phase_lock_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-static-shelf-centroid-phase-lock-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidMomentPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_static_shelf_interior_centroid_moment_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_interior_centroid_coordinate_model_closed=true
+endpoint_orbit_interior_centroid_scale_window_closed=true
+endpoint_orbit_interior_centroid_drift_return_closed=true
+endpoint_orbit_interior_centroid_opposite_sign_bridge_return_closed=true
+endpoint_orbit_interior_centroid_same_sign_stack_return_closed=true
+endpoint_orbit_interior_centroid_phase_lock_packet_registered=true
+anonymous_static_shelf_interior_centroid_moment_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_static_shelf_interior_centroid_phase_lock_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：内部质心矩不是一个可停留的匿名口径。把每个窗口的质心转成
+`theta_j=(c_j-a_j)/L_j` 后，显著漂移会产生内部切线通量，反号同相会产生桥接抵消，同号同相
+持续堆高会产生幅深负债。若这些可支付出口全部不足，剩余就被迫成为“稳定内部相位单元中的
+长期锁定质量”。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitStaticShelfInteriorCentroidPhaseLockPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、static shelf
+interior centroid phase-lock PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
+PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 interior centroid
+moment 压成内部质心相位锁定包或已命名三出口。
