@@ -10667,3 +10667,63 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 phase-separated bipolar plateau pair PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 opposite-sign
 plateau pair 压成近接边界或相位分离双极包。
+
+## 226. Stable-ladder endpoint orbit bipolar-shelf frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_bipolar_shelf_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPhaseSeparatedBipolarPlateauPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_phase_separated_bipolar_plateau_pair_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_phase_separated_bipolar_pair_model_closed=true
+endpoint_orbit_bipolar_prefix_potential_coordinate_closed=true
+endpoint_orbit_bipolar_bridge_decomposition_closed=true
+endpoint_orbit_bridge_cancellation_or_shelf_dichotomy_closed=true
+endpoint_orbit_bridge_cancellation_packet_registered=true
+endpoint_orbit_long_potential_shelf_packet_registered=true
+anonymous_phase_separated_bipolar_plateau_pair_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_long_potential_shelf_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：相位分离的正负 plateau pair 仍然必须解释桥段上的势能过渡。
+在有向前缀势能
+
+```text
+S(t)=sum_{i<=t} sigma*Y_i
+```
+
+下，正 plateau 造成势能上升，负 plateau 造成势能回落。若桥段提前抵消半个高度，
+这是 bridge-cancellation；若不抵消，则长桥段上存在高位或低位 shelf。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongPotentialShelfPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、long potential
+shelf PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 phase-separated
+bipolar pair 压成 bridge cancellation 或 long potential shelf。

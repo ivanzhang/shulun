@@ -12163,3 +12163,82 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、phase-separated
 bipolar plateau pair PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
 PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.67 stable-ladder endpoint orbit bipolar-shelf 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_bipolar_shelf_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-bipolar-shelf-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPhaseSeparatedBipolarPlateauPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_phase_separated_bipolar_plateau_pair_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_phase_separated_bipolar_pair_model_closed=true
+endpoint_orbit_bipolar_prefix_potential_coordinate_closed=true
+endpoint_orbit_bipolar_bridge_decomposition_closed=true
+endpoint_orbit_bridge_cancellation_or_shelf_dichotomy_closed=true
+endpoint_orbit_bridge_cancellation_packet_registered=true
+endpoint_orbit_long_potential_shelf_packet_registered=true
+anonymous_phase_separated_bipolar_plateau_pair_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_long_potential_shelf_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+相位分离双极包给出正 plateau `P` 与负 plateau `Q`，且两个 cyclic gaps 均大于
+`E`。定义有向前缀势能：
+
+```text
+S(t)=sum_{i<=t} sigma*Y_i.
+```
+
+`P` 使 `S` 上升，`Q` 使 `S` 回落。若桥段在遇到相反 plateau 前已经抵消至少半个
+高度，则登记为 bridge-cancellation；否则势能在长桥段上保持至少半高度，形成
+long potential shelf。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPhaseSeparatedBipolarPlateauPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitPhaseSeparatedBipolarPlateauPairImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterBipolarShelfLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterBipolarShelfLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterBipolarShelfLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterBipolarShelfLedger
+  AND StableLadderEndpointOrbitPhaseSeparatedBipolarPairModelLedger
+  AND StableLadderEndpointOrbitBipolarPrefixPotentialCoordinateLedger
+  AND StableLadderEndpointOrbitBipolarBridgeDecompositionLedger
+  AND StableLadderEndpointOrbitBridgeCancellationOrShelfDichotomyLedger
+  AND StableLadderEndpointOrbitBridgeCancellationPacketLedger
+  AND StableLadderEndpointOrbitLongPotentialShelfPacketLedger
+  AND NoAnonymousPhaseSeparatedBipolarPlateauPairExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterBipolarShelfLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLongPotentialShelfPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 phase-separated bipolar pair 口径。剩余集中为 endpoint
+singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、long potential
+shelf PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
