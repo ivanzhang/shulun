@@ -16132,3 +16132,85 @@ scalar-load unit-normalization circuit PDEC/cap、bridge-cancellation PDEC/cap�
 amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
 也没有证明线性见证本身存在。它只把 scalar-load 压成单位形状加总权重证书
 或 mean/singleton/sparse/三出口。
+
+### 1.122 stable-ladder phase-residue exchange unit-face-value 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadUnitNormalizationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_scalar_load_unit_normalization_imported=true
+phase_residue_exchange_unit_face_value_unit_shape_closed=true
+phase_residue_exchange_unit_face_value_pairing_closed=true
+phase_residue_exchange_unit_face_value_variation_closed=true
+phase_residue_exchange_unit_face_value_one_closed=true
+phase_residue_exchange_unit_face_value_total_amount_closed=true
+phase_residue_exchange_unit_face_value_payment_value_closed=true
+phase_residue_exchange_unit_face_value_no_capacity_multiplier_closed=true
+phase_residue_exchange_unit_face_value_no_denomination_split_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+unit_div=n_e=[r0]-[r*]
+<unit_div,phi>=1
+||unit_div||_1/2=1
+unit_saturation_ratio=1
+scale_factor=A>0
+div=A*unit_div=A*n_e
+total_weight=A
+A C_Pi=W
+residual_scale_freedom=0.
+```
+
+本步把单位证书的容量面额固定为 1：
+
+```text
+u_e=n_e=[r0]-[r*]
+<u_e,phi>=1
+||u_e||_1/2=1
+face_value=1
+C_Pi(r0)=+1
+C_Pi(r*)=-1
+C_Pi(other)=0
+amount=A>0
+payment_value=amount*face_value=A
+W=A C_Pi
+capacity_multiplier=1
+denomination_split=0.
+```
+
+若 `r0=r*` 或 `A=0`，则单位面额证书退化并回流 singleton/degenerate 出口；否则
+待支付对象就是同一 price-one 单位证书上的数量 `A`。剩余压力不再是匿名容量面额、
+容量乘子或多面额拆分，而是 unit-face-value circuit PDEC/cap 或已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadUnitNormalizationUnitFaceValueCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange active-facet normal-cone ray-coordinate
+scalar-load unit-normalization unit-face-value circuit PDEC/cap、bridge-cancellation PDEC/cap、
+amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；
+也没有证明线性见证本身存在。它只把 unit-normalization 压成 price-one 支付证书
+或 mean/singleton/sparse/三出口。
