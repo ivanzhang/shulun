@@ -12745,3 +12745,48 @@ multiplicity-cap PDEC/cap、phase-residue exchange root-source pair-average cont
 circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把 normalized root-mean
 dipole circuit 压成 root-source pair-average contrast circuit 或 mean/singleton/sparse/三出口。
+
+## 263. Stable-ladder phase-residue exchange root-source pair witness localization frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_root_source_pair_witness_localization_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-router.json
+data/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootSourcePairAverageContrastCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_root_source_pair_average_contrast_imported=true
+phase_residue_exchange_pair_witness_mean_identity_closed=true
+phase_residue_exchange_average_to_single_pair_max_localization_closed=true
+phase_residue_exchange_named_single_pair_witness_closed=true
+phase_residue_exchange_root_source_pair_witness_localization_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：若一个线性相位/容量见证能检测成对平均异常，那么它不能只存在于
+平均整体上。设 `a_s=Lambda([s0]-[s])`，则 `Lambda(D)` 是这些 `a_s` 的均匀平均；
+定向后至少有一个命名源点 `s*` 满足 `sigma*a_s* >= |Lambda(D)|`。
+
+因此若反例链继续存在，它必须在一个命名 root-source pair 的见证定位 circuit 中产生真实
+容量/相位矛盾，或回流 singleton、full-cycle mean、multiplicity cap、bridge、amplitude、
+boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootSourcePairWitnessLocalizationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange root-source pair witness localization
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 root-source pair-average contrast circuit 压成单对见证定位 circuit
+或 mean/singleton/sparse/三出口。

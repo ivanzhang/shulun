@@ -14830,3 +14830,64 @@ multiplicity-cap PDEC/cap、phase-residue exchange root-source pair-average cont
 circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把 normalized root-mean
 dipole circuit 压成 root-source pair-average contrast circuit 或 mean/singleton/sparse/三出口。
+
+### 1.104 stable-ladder phase-residue exchange root-source pair witness localization 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_root_source_pair_witness_localization_router.py
+data/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-root-source-pair-witness-localization-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootSourcePairAverageContrastCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_root_source_pair_average_contrast_imported=true
+phase_residue_exchange_pair_witness_mean_identity_closed=true
+phase_residue_exchange_average_to_single_pair_max_localization_closed=true
+phase_residue_exchange_named_single_pair_witness_closed=true
+phase_residue_exchange_root_source_pair_witness_localization_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层把剩余压力固定为成对均匀平均：
+
+```text
+D=(1/(|S|-1))sum_{s!=s0} e_s,  e_s=[s0]-[s].
+```
+
+对任意导入的线性相位/容量见证 `Lambda`，定义 `a_s=Lambda(e_s)`。线性性给出：
+
+```text
+Lambda(D)=(1/(|S|-1))sum_{s!=s0} a_s.
+```
+
+令 `sigma=sign(Lambda(D))`。若平均见证非零，则有限平均不可能大于所有单项：
+
+```text
+max_{s!=s0} sigma*a_s >= sigma*Lambda(D)=|Lambda(D)|.
+```
+
+因此平均见证不能只由匿名整体承载；它可以定位到一个命名 root-source pair。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeRootSourcePairWitnessLocalizationCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange root-source pair witness localization
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 root-source pair-average contrast circuit 压成单对见证定位 circuit
+或 mean/singleton/sparse/三出口。
