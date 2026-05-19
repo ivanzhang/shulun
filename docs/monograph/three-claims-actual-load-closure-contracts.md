@@ -12812,3 +12812,81 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、locked column residue-shadow imbalance
 PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
 PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.75 stable-ladder endpoint orbit residue-shadow dual-row 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_residue_shadow_dual_row_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnResidueShadowImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_locked_column_residue_shadow_imbalance_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_map_closed=true
+endpoint_orbit_residue_shadow_dual_row_fiber_closed=true
+endpoint_orbit_residue_shadow_dual_row_average_return_closed=true
+endpoint_orbit_residue_shadow_dual_row_pressure_packet_registered=true
+anonymous_locked_column_residue_shadow_imbalance_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_residue_shadow_dual_row_pressure_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+locked column residue-shadow imbalance 是列方向的局部超额。CRT 对偶把该 shadow 投影为
+dual-row shadow，并保留 signed excess：
+
+```text
+s -> R_s
+E(R_s)=E(C_s).
+```
+
+若 `R_s` 没有真实行压力，列 shadow excess 会在行纤维平均中被吸收，回流
+full-cycle mean、singleton、sparse 或 bridge/amplitude/boundary。若不能吸收，则剩余就是
+residue-shadow dual-row pressure。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnResidueShadowImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitLockedColumnResidueShadowImbalanceImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterResidueShadowDualRowLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterResidueShadowDualRowLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterResidueShadowDualRowLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterResidueShadowDualRowLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterResidueShadowDualRowLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowMapLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowFiberLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowAverageReturnLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowPressurePacketLedger
+  AND NoAnonymousLockedColumnResidueShadowImbalanceExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterResidueShadowDualRowLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 locked column residue-shadow imbalance 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、residue-shadow dual-row pressure
+PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
