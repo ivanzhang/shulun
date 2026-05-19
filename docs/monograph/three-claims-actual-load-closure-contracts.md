@@ -12084,3 +12084,82 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、opposite-sign plateau-ramp
 pair PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.66 stable-ladder endpoint orbit plateau-pair phase 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_plateau_pair_phase_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-pair-phase-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-pair-phase-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-plateau-pair-phase-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitOppositeSignPlateauRampPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_opposite_sign_plateau_ramp_pair_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_opposite_sign_plateau_pair_model_closed=true
+endpoint_orbit_plateau_pair_cyclic_gap_decomposition_closed=true
+endpoint_orbit_plateau_pair_gap_budget_dichotomy_closed=true
+endpoint_orbit_near_contact_opposite_sign_boundary_packet_registered=true
+endpoint_orbit_phase_separated_bipolar_plateau_pair_packet_registered=true
+anonymous_opposite_sign_plateau_ramp_pair_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_phase_separated_bipolar_plateau_pair_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+镜像对被写成同一周期轨道上的两个不交连续弧：
+
+```text
+P: sigma*Y_j>0,
+Q: -sigma*Y_j>0.
+```
+
+两个弧决定两个 cyclic gaps `g1,g2`。给定 gap 预算 `E`：
+
+```text
+if min(g1,g2)<=E: near-contact opposite-sign boundary packet;
+if min(g1,g2)>E: phase-separated bipolar plateau pair.
+```
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitOppositeSignPlateauRampPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitOppositeSignPlateauRampPairImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPlateauPairPhaseLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPlateauPairPhaseLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPlateauPairPhaseLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPlateauPairPhaseLedger
+  AND StableLadderEndpointOrbitOppositeSignPlateauPairModelLedger
+  AND StableLadderEndpointOrbitPlateauPairCyclicGapDecompositionLedger
+  AND StableLadderEndpointOrbitPlateauPairGapBudgetDichotomyLedger
+  AND StableLadderEndpointOrbitNearContactOppositeSignBoundaryPacketLedger
+  AND StableLadderEndpointOrbitPhaseSeparatedBipolarPlateauPairPacketLedger
+  AND NoAnonymousOppositeSignPlateauRampPairExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterPlateauPairPhaseLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitPhaseSeparatedBipolarPlateauPairPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 opposite-sign plateau pair 口径。剩余集中为 endpoint
+singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、phase-separated
+bipolar plateau pair PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
+PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
