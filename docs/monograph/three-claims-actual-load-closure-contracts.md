@@ -12972,3 +12972,86 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 atom/SAE、endpoint orbit full-cycle mean atom/SAE、residue-shadow dual-row capacity defect
 PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
 PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.77 stable-ladder endpoint orbit residue-shadow dual-row phase-cell 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_residue_shadow_dual_row_phase_cell_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_residue_shadow_dual_row_capacity_defect_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_model_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_quota_closed=true
+endpoint_orbit_residue_shadow_dual_row_overfull_phase_cell_pigeonhole_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_named_return_split_closed=true
+endpoint_orbit_residue_shadow_dual_row_phase_cell_imbalance_packet_registered=true
+anonymous_residue_shadow_dual_row_capacity_defect_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_residue_shadow_dual_row_phase_cell_imbalance_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+residue-shadow dual-row capacity defect 已经落在某个对偶行窗口 `R` 上。把该窗口按 CRT
+phase-cell `theta` 分解：
+
+```text
+H(R)=sum_theta H_theta
+B(R)=sum_theta B_theta
+```
+
+若 `|H(R)|>B(R)`，固定符号后不可能每个 phase-cell 都满足 `|H_theta|<=B_theta`；
+否则加总后整个 `R` 也不超额。因此至少存在一个 overfull phase-cell。若该 cell
+退化为孤立点、整周期均值、反号互付、同号堆高或边界迁移，则分别回流 singleton、
+full-cycle mean、bridge、amplitude 或 boundary；否则剩余就是 residue-shadow
+dual-row phase-cell imbalance。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitResidueShadowDualRowCapacityDefectImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellModelLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellQuotaLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowOverfullPhaseCellPigeonholeLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellNamedReturnSplitLedger
+  AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellImbalancePacketLedger
+  AND NoAnonymousResidueShadowDualRowCapacityDefectExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterResidueShadowDualRowPhaseCellLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 residue-shadow dual-row capacity defect 口径。剩余集中为 endpoint
+singleton atom/SAE、endpoint orbit full-cycle mean atom/SAE、residue-shadow dual-row
+phase-cell imbalance PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap，或 sparse scale-ladder SAE 全局求和。行/列命题仍未
+无条件闭合。
