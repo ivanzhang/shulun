@@ -15983,3 +15983,76 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把 active-facet normal-cone 压成唯一正射线坐标证书
 或 mean/singleton/sparse/三出口。
+
+### 1.120 stable-ladder phase-residue exchange ray-coordinate scalar-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_normal_cone_ray_coordinate_imported=true
+phase_residue_exchange_ray_coordinate_positive_scalar_load_closed=true
+phase_residue_exchange_ray_coordinate_rank_one_support_closed=true
+phase_residue_exchange_ray_coordinate_scalar_pairing_equals_load_closed=true
+phase_residue_exchange_ray_coordinate_half_total_variation_equals_load_closed=true
+phase_residue_exchange_ray_coordinate_unit_saturation_ratio_closed=true
+phase_residue_exchange_ray_coordinate_no_residual_vector_geometry_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+n_e=[r0]-[r*]
+div=lambda n_e
+lambda=A>0
+transverse_component=0
+<div,phi>=A
+||div||_1=2A
+A C_Pi=W.
+```
+
+本步删除 ray-coordinate 黑箱口径，把非退化对象登记为单一正标量负载：
+
+```text
+scalar_load=A=lambda>0
+rank_one_generator=n_e=[r0]-[r*]
+pairing_load=<div,phi>=A
+variation_load=||div||_1/2=A
+unit_saturation_ratio=1
+residual_vector_geometry=0
+A C_Pi=W.
+```
+
+若 `r0=r*` 或 `A=0`，则 scalar load 退化并回流 singleton/degenerate 出口；否则
+所有几何自由度已冻结在同一生成元 `n_e` 上，待支付对象只剩一维正标量 `A`。
+剩余压力不再是匿名 ray-coordinate，而是 scalar-load circuit PDEC/cap 或已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeActiveFacetNormalConeRayCoordinateScalarLoadCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange active-facet normal-cone ray-coordinate
+scalar-load circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 ray-coordinate 压成唯一 scalar-load 支付证书
+或 mean/singleton/sparse/三出口。
