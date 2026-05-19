@@ -11003,3 +11003,57 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 phase-cell column pressure PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth
 PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 interior centroid
 phase-lock 压成 locked column pressure 包或 sparse/atom/mean/三出口。
+
+## 232. Stable-ladder endpoint orbit locked-column capacity frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_locked_column_capacity_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedInteriorPhaseCellColumnPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+endpoint_orbit_locked_phase_cell_column_pressure_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_locked_column_family_model_closed=true
+endpoint_orbit_locked_column_fiber_quota_closed=true
+endpoint_orbit_locked_column_load_quota_dichotomy_closed=true
+endpoint_orbit_locked_column_under_quota_return_closed=true
+endpoint_orbit_locked_column_capacity_defect_packet_registered=true
+anonymous_locked_phase_cell_column_pressure_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_locked_column_capacity_defect_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：固定列压力必须面对实际 CRT 纤维容量。令 `L(C)` 为固定列或窄列族
+承载的 signed load，`Q(C)` 为局部 CRT 允许类数给出的容量。未超额时它不能支付强制质量，只能
+回到均值、原子、稀疏或已命名三出口；超额时才是真正列容量缺陷。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、locked column
+capacity defect PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；它只把匿名 locked column pressure 压成
+capacity defect 包或 mean/singleton/sparse/三出口。

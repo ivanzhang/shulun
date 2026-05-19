@@ -12653,3 +12653,82 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 endpoint orbit full-cycle mean atom/SAE、locked interior phase-cell column pressure PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
 或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+### 1.73 stable-ladder endpoint orbit locked-column capacity 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_endpoint_orbit_locked_column_capacity_router.py
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-ledger.json
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-locked-column-capacity-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedInteriorPhaseCellColumnPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_locked_phase_cell_column_pressure_imported=true
+endpoint_singleton_atom_sae_carried_forward=true
+endpoint_orbit_full_cycle_mean_atom_carried_forward=true
+endpoint_orbit_bridge_cancellation_carried_forward=true
+endpoint_orbit_amplitude_depth_carried_forward=true
+endpoint_orbit_variation_boundary_flux_carried_forward=true
+endpoint_orbit_locked_column_family_model_closed=true
+endpoint_orbit_locked_column_fiber_quota_closed=true
+endpoint_orbit_locked_column_load_quota_dichotomy_closed=true
+endpoint_orbit_locked_column_under_quota_return_closed=true
+endpoint_orbit_locked_column_capacity_defect_packet_registered=true
+anonymous_locked_phase_cell_column_pressure_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+endpoint_singleton_atom_sae_proved=false
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_locked_column_capacity_defect_pdec_cap_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+locked phase-cell column pressure 给出固定列或窄列族 `C` 上的 signed load。登记：
+
+```text
+L(C)=sum_{omega projects to C} signed_mass(omega)
+Q(C)=local_CRT_allowed_fiber_count(C)*scale_weight.
+```
+
+若 `|L(C)| <= Q(C)`，列压力未超额，不能支付上一层强制锁定质量，必须回流
+full-cycle mean、singleton、sparse 或 bridge/amplitude/boundary。若 `|L(C)| > Q(C)`，
+固定列族超过 CRT 允许纤维容量，得到 locked column capacity defect。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedInteriorPhaseCellColumnPressurePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+  -> StableLadderEndpointOrbitLockedPhaseCellColumnPressureImportedLedger
+  AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterLockedColumnCapacityLedger
+  AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterLockedColumnCapacityLedger
+  AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterLockedColumnCapacityLedger
+  AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterLockedColumnCapacityLedger
+  AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterLockedColumnCapacityLedger
+  AND StableLadderEndpointOrbitLockedColumnFamilyModelLedger
+  AND StableLadderEndpointOrbitLockedColumnFiberQuotaLedger
+  AND StableLadderEndpointOrbitLockedColumnLoadQuotaDichotomyLedger
+  AND StableLadderEndpointOrbitLockedColumnUnderQuotaReturnLedger
+  AND StableLadderEndpointOrbitLockedColumnCapacityDefectPacketLedger
+  AND NoAnonymousLockedPhaseCellColumnPressureExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterLockedColumnCapacityLedger
+  AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitLockedColumnCapacityDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步关闭的是匿名 locked phase-cell column pressure 口径。剩余集中为 endpoint singleton
+atom/SAE、endpoint orbit full-cycle mean atom/SAE、locked column capacity defect PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap，
+或 sparse scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
