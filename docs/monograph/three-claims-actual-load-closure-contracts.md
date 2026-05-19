@@ -14203,3 +14203,65 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 multiplicity-cap PDEC/cap、phase-residue Hall-defect PDEC/cap、bridge-cancellation
 PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE
 求和；它只把匿名 phase-residue C>d 压成 Hall 供需缺陷包或 mean/singleton/sparse/三出口。
+
+### 1.93 stable-ladder phase-residue critical-Hall-cut 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_critical_hall_cut_router.py
+data/prime-matrix-phase-residue-critical-hall-cut-ledger.json
+docs/monograph/prime-matrix-phase-residue-critical-hall-cut-router.md
+docs/monograph/prime-matrix-phase-residue-critical-hall-cut-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomHallDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_hall_defect_imported=true
+phase_residue_hall_defect_finite_family_closed=true
+phase_residue_hall_defect_minimal_choice_closed=true
+phase_residue_hall_defect_connected_core_closed=true
+phase_residue_hall_defect_proper_subset_hall_ok_closed=true
+phase_residue_critical_hall_cut_boundary_closed=true
+phase_residue_critical_hall_cut_margin_closed=true
+phase_residue_critical_hall_cut_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+phase-residue Hall defect 给出非空有限缺陷族：
+
+```text
+F={S subset L_zeta: |S|>|N_G(S)|}
+```
+
+在 `F` 中按 `(|S|,-Delta_H(S),stable_hash(S))` 选取规范临界子集：
+
+```text
+S_*=argmin_{S in F} (|S|,-Delta_H(S),stable_hash(S))
+B_*=N_G(S_*)
+Delta_*=|S_*|-|B_*|>0
+for every proper T subset S_*: |T|<=|N_G(T)|
+```
+
+若 `S_*` 可分解为互不相连分量，则至少一个分量仍有正缺陷，违背最小性；所以可取连通
+critical core。于是剩余缺口不再是任意 Hall 失败，而是边界 `B_*` 明确、真子集 Hall 正常、
+缺陷量 `Delta_*` 不可再分的 phase-residue critical-Hall-cut PDEC/cap。已有出口若支付则回流；
+否则留下该 critical cut。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue critical-Hall-cut PDEC/cap、bridge-cancellation
+PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE
+求和；它只把任意 Hall defect 压成 critical cut 包或 mean/singleton/sparse/三出口。

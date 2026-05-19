@@ -12249,3 +12249,56 @@ SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointO
 multiplicity-cap PDEC/cap、phase-residue Hall-defect PDEC/cap、bridge-cancellation
 PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE
 求和；它只把匿名 phase-residue C>d 压成 Hall 供需缺陷包或 mean/singleton/sparse/三出口。
+
+## 252. Stable-ladder phase-residue critical-Hall-cut frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_critical_hall_cut_router.py
+docs/monograph/prime-matrix-phase-residue-critical-hall-cut-router.md
+docs/monograph/prime-matrix-phase-residue-critical-hall-cut-router.json
+data/prime-matrix-phase-residue-critical-hall-cut-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomHallDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_hall_defect_imported=true
+phase_residue_hall_defect_finite_family_closed=true
+phase_residue_hall_defect_minimal_choice_closed=true
+phase_residue_hall_defect_connected_core_closed=true
+phase_residue_hall_defect_proper_subset_hall_ok_closed=true
+phase_residue_critical_hall_cut_boundary_closed=true
+phase_residue_critical_hall_cut_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Hall defect 仍可能只是任意失败子集。现在把它规范化为临界 cut：
+
+```text
+F={S subset L_zeta: |S|>|N_G(S)|}
+S_*=argmin_{S in F} (|S|,-Delta_H(S),stable_hash(S))
+B_*=N_G(S_*)
+Delta_*=|S_*|-|B_*|>0
+for every proper T subset S_*: |T|<=|N_G(T)|
+```
+
+若 `S_*` 不连通，则某个连通分量仍有正缺陷，违反 `|S_*|` 最小性。因此可以把剩余压成连通、
+不可再分、边界明确的 phase-residue critical-Hall-cut。source-atom multiplicity-cap PDEC/cap
+不在本步证明，继续作为并行出口。该 critical cut 若由 singleton、full-cycle mean、bridge、
+amplitude-depth、boundary flux 或 sparse SAE 支付，则回流已有出口；否则留下实际
+critical-Hall-cut PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomCriticalHallCutPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue critical-Hall-cut PDEC/cap、bridge-cancellation
+PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE
+求和；它只把任意 Hall defect 压成 critical cut 包或 mean/singleton/sparse/三出口。
