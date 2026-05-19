@@ -18396,6 +18396,87 @@ docs/monograph/prime-matrix-phase-residue-exchange-primitive-atom-endpoint-charg
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange endpoint charge Kirchhoff cell ledger]
+The phase-residue exchange primitive atom endpoint-charge outlet admits the
+following local Kirchhoff-cell refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangePrimitiveAtomEndpointChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangePrimitiveAtomEndpointChargeImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeImportedForKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeLocalKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeRootPositiveDivergenceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeSourceNegativeDivergenceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeKirchhoffBalanceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargePositiveNegativeDivergenceEqualityLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeBoundaryVariationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKirchhoffCellEqualsEndpointChargePacketLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKirchhoffCellCollisionOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKirchhoffCellOrientationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousEndpointChargeAfterKirchhoffCellLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeEndpointChargeKirchhoffCellPacketLedger\\
+AND NoAnonymousEndpointChargePacketAfterKirchhoffCellLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeEndpointChargeKirchhoffCellLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointChargeKirchhoffCellCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange endpoint charge Kirchhoff cell ledger]
+All parallel outlets from the primitive atom endpoint-charge ledger are carried
+forward: source-atom multiplicity cap, endpoint singleton atom, full-cycle mean
+atom, bridge cancellation, amplitude depth, variation-boundary flux, and sparse
+scale-ladder SAE.
+
+The previous ledger supplies the ordered endpoint-charge packet
+\[
+  q_0=(r_0,+A),\qquad q_\ast=(r_\ast,-A),\qquad A C_\Pi=W.
+\]
+Rewrite this packet as a local CRT-word Kirchhoff cell \(K\).  In the
+nondegenerate case,
+\[
+  K=\{r_0,r_\ast\},\qquad
+  \operatorname{div}_K(r_0)=+A,\qquad
+  \operatorname{div}_K(r_\ast)=-A.
+\]
+The local conservation and boundary-variation identities are
+\[
+  \sum_{r\in K}\operatorname{div}_K(r)=0,\qquad
+  \operatorname{div}_K^+(K)=\operatorname{div}_K^-(K)=A,\qquad
+  \sum_{r\in K}|\operatorname{div}_K(r)|=2A.
+\]
+In the collision case \(r_0=r_\ast\), the two divergences cancel at the same
+CRT word and the packet returns to the singleton/degenerate outlet.  Otherwise
+the cell is exactly the endpoint-charge packet with its local divergence law
+named explicitly.  The source-to-root orientation is retained as metadata; the
+packet is not replaced by an anonymous unordered pair.
+
+Thus the remaining packet is no longer an anonymous endpoint-charge pair.  It
+is a two-point local Kirchhoff cell with named root/source divergences, zero
+total divergence, equal positive and negative divergence mass, fixed boundary
+variation, and retained orientation.  Any remaining obstruction must be named
+as the endpoint-charge Kirchhoff-cell circuit PDEC/cap outlet or one of the
+parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange endpoint charge Kirchhoff cell circuit PDEC/cap outlet,
+it does not prove the bridge-cancellation PDEC/cap outlet, it does not prove
+the amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary
+flux PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  It also does not prove the existence of the linear
+phase/capacity witness; it only rewrites the imported endpoint-charge packet as
+a named local Kirchhoff cell.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-charge-kirchhoff-cell-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

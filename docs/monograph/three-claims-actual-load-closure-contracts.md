@@ -15533,3 +15533,79 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把 primitive atom 压成 endpoint charge packet
 或 mean/singleton/sparse/三出口。
+
+### 1.114 stable-ladder phase-residue exchange endpoint charge Kirchhoff cell 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_endpoint_charge_kirchhoff_cell_router.py
+data/prime-matrix-phase-residue-exchange-endpoint-charge-kirchhoff-cell-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-charge-kirchhoff-cell-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-endpoint-charge-kirchhoff-cell-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangePrimitiveAtomEndpointChargeCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_primitive_atom_endpoint_charge_imported=true
+phase_residue_exchange_endpoint_charge_local_kirchhoff_cell_closed=true
+phase_residue_exchange_endpoint_charge_root_positive_divergence_closed=true
+phase_residue_exchange_endpoint_charge_source_negative_divergence_closed=true
+phase_residue_exchange_endpoint_charge_kirchhoff_balance_closed=true
+phase_residue_exchange_endpoint_charge_positive_negative_divergence_equality_closed=true
+phase_residue_exchange_endpoint_charge_boundary_variation_closed=true
+phase_residue_exchange_kirchhoff_cell_collision_or_singleton_exit_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_endpoint_charge_kirchhoff_cell_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+root_charge=(r0,+A)
+source_charge=(r*,-A)
+ordered_charge_pair=((r0,+A),(r*,-A))
+net_charge=+A-A=0
+positive_mass=A
+negative_mass=A
+absolute_flux=2A
+A C_Pi=W.
+```
+
+本步删除 endpoint charge 黑箱口径，把非退化对象登记为二点局部 Kirchhoff cell：
+
+```text
+K={r0,r*}
+div(r0)=+A
+div(r*)=-A
+sum_K div=0
+positive_divergence=A
+negative_divergence=A
+total_boundary_variation=2A
+A C_Pi=W.
+```
+
+若 `r0=r*`，则同点 `+A-A=0` 并回流 singleton/degenerate 出口；否则方向保留为
+source -> root。剩余压力不再是匿名 endpoint charge packet，而是 root/source 已命名、
+局部散度守恒、正负散度质量相等、边界总变差固定的 Kirchhoff cell。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeEndpointChargeKirchhoffCellCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange endpoint charge Kirchhoff cell
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 endpoint charge packet 压成局部 Kirchhoff cell
+或 mean/singleton/sparse/三出口。
