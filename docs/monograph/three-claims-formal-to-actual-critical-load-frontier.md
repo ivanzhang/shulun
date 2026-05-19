@@ -12532,3 +12532,44 @@ multiplicity-cap PDEC/cap、phase-residue exchange toggle word circuit PDEC/cap�
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
 或 sparse SAE 求和；它只把 rooted directed exchange path circuit 压成 exchange toggle word
 circuit 或 mean/singleton/sparse/三出口。
+
+## 258. Stable-ladder phase-residue exchange prefix defect ladder frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_prefix_defect_ladder_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-prefix-defect-ladder-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-prefix-defect-ladder-router.json
+data/prime-matrix-phase-residue-exchange-prefix-defect-ladder-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeToggleWordCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_exchange_toggle_word_imported=true
+phase_residue_exchange_prefix_unit_defect_identity_closed=true
+phase_residue_exchange_prefix_nested_ladder_closed=true
+phase_residue_exchange_prefix_toggle_state_transport_closed=true
+phase_residue_exchange_prefix_defect_ladder_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：切换词不是无序 pivot 列表。对每个前缀
+`U_t={u_0,...,u_t}`、`B_t={b_1,...,b_t}`，简单性强制 `|U_t|-|B_t|=1`。这些前缀按 `t` 嵌套，边界侧每一步只新增一个未复用槽，前缀切换把缺失源状态从 `u_0` 输运到 `u_t`。
+
+因此若反例链继续存在，它必须在“嵌套前缀单位缺口 ladder”中产生真实容量/相位矛盾，或回流 singleton、full-cycle mean、multiplicity cap、bridge、amplitude、boundary flux、sparse SAE 等已有出口。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangePrefixDefectLadderCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange prefix defect ladder circuit PDEC/cap、
+bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap
+或 sparse SAE 求和；它只把 exchange toggle word circuit 压成 exchange prefix defect ladder
+circuit 或 mean/singleton/sparse/三出口。
