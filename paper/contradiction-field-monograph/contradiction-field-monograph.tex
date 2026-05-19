@@ -18154,6 +18154,93 @@ docs/monograph/prime-matrix-phase-residue-exchange-incidence-column-kronecker-st
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange Kronecker-stencil signed CRT pair ledger]
+The phase-residue exchange incidence-column Kronecker-stencil outlet admits the
+following signed CRT word-pair refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeIncidenceColumnKroneckerStencilCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueExchangeIncidenceColumnKroneckerStencilImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilImportedForSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootCRTWordCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSourceCRTWordCoordinateLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeRootCanonicalCongruenceEquationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSourceCanonicalCongruenceEquationLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeOrderedRootSourceCRTWordPairLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSignedCRTWordPairSupportDictionaryLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSignedCRTWordPairCoefficientBalanceLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeCRTWordPairCollisionOrSingletonExitLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSignedCRTPairEqualsKroneckerStencilLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeSignedCRTPairFluxScalingLedger\\
+AND StableLadderEndpointOrbitPhaseResidueNoAnonymousKroneckerDeltaAfterSignedCRTPairLedger\\
+AND StableLadderEndpointOrbitPhaseResidueExchangeKroneckerStencilSignedCRTPairPacketLedger\\
+AND NoAnonymousIncidenceColumnKroneckerStencilAfterSignedCRTPairLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterExchangeKroneckerStencilSignedCRTPairLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeKroneckerStencilSignedCRTPairCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange Kronecker-stencil signed CRT pair ledger]
+All parallel outlets from the incidence-column Kronecker-stencil ledger are
+carried forward: source-atom multiplicity cap, endpoint singleton atom,
+full-cycle mean atom, bridge cancellation, amplitude depth,
+variation-boundary flux, and sparse scale-ladder SAE.
+
+The previous ledger supplies the endpoint stencil
+\[
+  k=\delta_{s_0}-\delta_{s_\ast},\qquad A k=W,
+\]
+and the upstream primitive-witness CRT-coordinate atom supplies endpoint CRT
+words.  Record them as
+\[
+  r_0=\operatorname{crt}(s_0),\qquad
+  r_\ast=\operatorname{crt}(s_\ast),\qquad
+  \Pi=(r_0,r_\ast).
+\]
+For every active prime coordinate \(p_i\), these words carry the canonical
+congruence equations
+\[
+  s_0\equiv (r_0)_i \pmod {p_i},\qquad
+  s_\ast\equiv (r_\ast)_i \pmod {p_i}.
+\]
+Define the finite signed CRT-word dictionary
+\[
+  C_\Pi(r_0)=+1,\qquad C_\Pi(r_\ast)=-1,\qquad
+  C_\Pi(r)=0\quad(r\notin\{r_0,r_\ast\}).
+\]
+If \(r_0=r_\ast\), the signed dictionary cancels and the packet returns to the
+singleton/degenerate outlet.  Otherwise \(C_\Pi\) is exactly the two-word signed
+support dictionary corresponding to the Kronecker stencil.  Hence
+\[
+  A C_\Pi=A(\delta_{s_0}-\delta_{s_\ast})=W.
+\]
+
+Thus the remaining packet is no longer an anonymous delta-function stencil.  It
+is a named ordered pair of CRT words with coefficients \(+1\) at the root word
+and \(-1\) at the source word.  Any remaining obstruction must be named as the
+Kronecker-stencil signed CRT pair circuit PDEC/cap outlet or one of the
+parallel outlets.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue exchange Kronecker-stencil signed CRT pair circuit PDEC/cap
+outlet, it does not prove the bridge-cancellation PDEC/cap outlet, it does not
+prove the amplitude-depth PDEC/cap outlet, it does not prove the
+variation-boundary flux PDEC/cap outlet, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  It also does not prove the
+existence of the linear phase/capacity witness; it only rewrites the imported
+Kronecker stencil as an ordered signed CRT word pair.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-kronecker-stencil-signed-crt-pair-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
