@@ -15026,3 +15026,75 @@ circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
 variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
 它只把 oriented root-source witness gap circuit 压成中心化两点 score dipole
 或 mean/singleton/sparse/三出口。
+
+### 1.107 stable-ladder phase-residue exchange signed root-source half-gap atom 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_signed_root_source_half_gap_atom_router.py
+data/prime-matrix-phase-residue-exchange-signed-root-source-half-gap-atom-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-signed-root-source-half-gap-atom-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-signed-root-source-half-gap-atom-router.json
+```
+
+本步继续攻击：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeCenteredRootSourceScoreDipoleCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_centered_root_source_score_dipole_imported=true
+phase_residue_exchange_half_gap_amplitude_closed=true
+phase_residue_exchange_half_gap_amplitude_lower_bound_closed=true
+phase_residue_exchange_root_positive_source_negative_support_closed=true
+phase_residue_exchange_signed_half_gap_atom_factorization_closed=true
+phase_residue_exchange_signed_half_gap_atom_zero_mass_closed=true
+phase_residue_exchange_signed_half_gap_atom_total_variation_closed=true
+linear_witness_existence_proved=false
+phase_residue_exchange_signed_root_source_half_gap_atom_circuit_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+上一层给出：
+
+```text
+U=G/2
+V=-G/2
+U+V=0
+G>=|Lambda(D)|.
+```
+
+本步定义半 gap 正幅度：
+
+```text
+A=G/2=U=-V.
+```
+
+于是中心化两点分数无损因式分解为：
+
+```text
+W=A([s0]-[s*])
+mass(W)=0
+TV(W)=2A=G
+A>=|Lambda(D)|/2.
+```
+
+因此 centered score dipole 中的不等幅端点表述不再匿名保留；剩余压力被压成一个正幅度乘固定
+root-positive/source-negative 符号原子。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomExchangeSignedRootSourceHalfGapAtomCircuitPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue exchange signed root-source half-gap atom
+circuit PDEC/cap、bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、
+variation-boundary flux PDEC/cap 或 sparse SAE 求和；也没有证明线性见证本身存在。
+它只把 centered root-source score dipole circuit 压成 signed half-gap atom
+或 mean/singleton/sparse/三出口。
