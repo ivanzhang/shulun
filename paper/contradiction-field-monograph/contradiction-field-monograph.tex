@@ -15923,6 +15923,77 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-res
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit residue-shadow dual-row phase-cell atom signed-core support-slice residue-fiber phase-word-slot ledger]
+The residue-shadow dual-row phase-cell atom signed-core support-slice
+residue-fiber phase-word imbalance outlet admits the following finite
+word-slot refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordImbalanceImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotModelLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotQuotaDebtAllocationLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreOverfullSupportSliceResidueFiberPhaseWordSlotPigeonholeLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotNamedReturnSplitLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotImbalancePacketLedger\\
+AND NoAnonymousResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordImbalanceExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit residue-shadow dual-row phase-cell atom signed-core support-slice residue-fiber phase-word-slot ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+bridge-cancellation outlet, the amplitude-depth outlet, the variation-boundary
+flux outlet, and the sparse scale-ladder SAE outlet are carried forward.  A
+phase-word imbalance packet gives, for one actual support slice \(s\), one
+actual residue fiber \(\rho\), and one actual phase word \(\omega\),
+\[
+  C_{s,\rho,\omega}>d_{s,\rho,\omega}.
+\]
+Partition this phase word into finitely many actual CRT word slots \(\tau\),
+and allocate the local quota plus cancellation debt over the same slots:
+\[
+  C_{s,\rho,\omega}=\sum_\tau C_{s,\rho,\omega,\tau},\qquad
+  d_{s,\rho,\omega}=\sum_\tau d_{s,\rho,\omega,\tau}.
+\]
+If every word slot satisfied
+\(C_{s,\rho,\omega,\tau}\le d_{s,\rho,\omega,\tau}\), then summing over
+\(\tau\) would give \(C_{s,\rho,\omega}\le d_{s,\rho,\omega}\),
+contradicting the imported phase-word imbalance.  Therefore some word slot
+satisfies
+\[
+  C_{s,\rho,\omega,\tau}>d_{s,\rho,\omega,\tau}.
+\]
+
+This overfull word slot is not left anonymous.  If it is a singleton atom or
+only a full-cycle mean atom, it returns to those outlets.  If it is paid by
+opposite-sign quota debt, by same-sign cross-scale stacking, or by boundary
+migration, it returns respectively to the bridge-cancellation,
+amplitude-depth, or variation-boundary flux outlets.  If none of these named
+returns pays the word slot, the remaining packet is the explicit
+residue-shadow dual-row phase-cell atom signed-core support-slice residue-fiber
+phase-word-slot imbalance PDEC/cap outlet.
+
+Thus phase-word imbalance is not an anonymous terminal.  It is either absorbed
+by existing exits or leaves an explicit phase-word-slot imbalance packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+phase-word-slot imbalance PDEC/cap outlet, it does not prove the
+bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-signed-core-support-slice-residue-fiber-phase-word-slot-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
