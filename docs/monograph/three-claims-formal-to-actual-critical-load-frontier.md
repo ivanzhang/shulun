@@ -12190,3 +12190,62 @@ multiplicity-cap PDEC/cap、phase-residue-evaluation atom imbalance PDEC/cap、
 bridge-cancellation PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux
 PDEC/cap 或 sparse SAE 求和；它只把匿名 canonical equation atom imbalance 压成
 phase-residue-evaluation imbalance 包或 mean/singleton/sparse/三出口。
+
+## 251. Stable-ladder phase-residue Hall-defect frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_hall_defect_router.py
+docs/monograph/prime-matrix-phase-residue-hall-defect-router.md
+docs/monograph/prime-matrix-phase-residue-hall-defect-router.json
+data/prime-matrix-phase-residue-hall-defect-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap`。
+同步结果：
+
+```text
+phase_residue_evaluation_atom_imbalance_imported=true
+phase_residue_load_token_ledger_closed=true
+phase_residue_quota_debt_slot_ledger_closed=true
+phase_residue_payment_graph_closed=true
+phase_residue_hall_defect_normal_form_closed=true
+phase_residue_hall_defect_pigeonhole_closed=true
+phase_residue_hall_defect_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：phase-residue atom 的超额仍可能只以 `C>d` 形式出现，而没有显式
+供需缺陷子集。已知
+
+```text
+C_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon,zeta}>d_{s,rho,omega,tau,alpha,mu,eta,iota,kappa,chi,epsilon,zeta}
+```
+
+同步展开为有限 Hall 图：
+
+```text
+G_zeta=(L_zeta,D_zeta,E_zeta)
+C_{...,zeta}=|L_zeta|, d_{...,zeta}=|D_zeta|
+edges preserve evaluation_id, side, orientation, and phase_boundary_key
+```
+
+若所有 `S subset L_zeta` 都满足 `|S|<=|N_G(S)|`，Hall 定理给出全匹配，从而
+`C_{...,zeta}<=d_{...,zeta}`。因此必有某个 `S` 满足
+`|S|>|N_G(S)|`，缺陷量为 `Delta_H(S)=|S|-|N_G(S)|>0`。source-atom
+multiplicity-cap PDEC/cap 不在本步证明，继续作为并行出口。该 Hall defect 若由 singleton、
+full-cycle mean、bridge、amplitude-depth、boundary flux 或 sparse SAE 支付，则回流已有出口；
+否则留下实际 phase-residue Hall-defect PDEC/cap。
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomHallDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap
+```
+
+本步没有证明 endpoint singleton atom/SAE、full-cycle mean atom/SAE、source-atom
+multiplicity-cap PDEC/cap、phase-residue Hall-defect PDEC/cap、bridge-cancellation
+PDEC/cap、amplitude-depth PDEC/cap、variation-boundary flux PDEC/cap 或 sparse SAE
+求和；它只把匿名 phase-residue C>d 压成 Hall 供需缺陷包或 mean/singleton/sparse/三出口。

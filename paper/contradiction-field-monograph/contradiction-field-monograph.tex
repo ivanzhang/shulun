@@ -16702,6 +16702,93 @@ docs/monograph/prime-matrix-canonical-equation-phase-residue-evaluation-router.m
 \end{proof}
 
 
+\begin{theorem}[Phase-residue Hall-defect ledger]
+The phase-residue-evaluation atom imbalance outlet admits the following finite
+Hall-defect refinement:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitPhaseResidueEvaluationAtomImbalanceImportedLedger\\
+AND StableLadderEndpointOrbitMultiplicityCapCarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationLoadTokenLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationQuotaDebtSlotLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationPaymentGraphLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationHallDefectNormalFormLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationHallDefectPigeonholeLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationHallDefectPacketLedger\\
+AND StableLadderEndpointOrbitPhaseResidueEvaluationHallDefectNamedReturnSplitLedger\\
+AND NoAnonymousPhaseResidueEvaluationImbalanceAfterHallDefectLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterPhaseResidueHallDefectLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCapOrEndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityFiberSignedOccurrenceUnitIncidenceCellPrimitiveWitnessCRTCoordinateAtomCanonicalCongruenceEquationAtomPhaseResidueEvaluationAtomHallDefectPDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue Hall-defect ledger]
+The source-atom multiplicity-cap outlet is carried forward as an independent
+PDEC/cap outlet.  The endpoint singleton atom outlet, the full-cycle mean atom
+outlet, the bridge-cancellation outlet, the amplitude-depth outlet, the
+variation-boundary flux outlet, and the sparse scale-ladder SAE outlet are also
+carried forward.
+
+A phase-residue-evaluation atom imbalance packet gives
+\[
+  C_{s,\rho,\omega,\tau,\alpha,\mu,\eta,\iota,\kappa,\chi,\epsilon,\zeta}>
+  d_{s,\rho,\omega,\tau,\alpha,\mu,\eta,\iota,\kappa,\chi,\epsilon,\zeta}.
+\]
+Expand the left side into a finite set \(L_\zeta\) of actual load tokens and the
+right side into a finite set \(D_\zeta\) of quota/debt slots.  Form the payment
+graph
+\[
+  G_\zeta=(L_\zeta,D_\zeta,E_\zeta),
+\]
+where an edge is allowed only when it preserves the evaluation identifier, the
+endpoint side, the orientation, and the phase-boundary key.  Thus a token cannot
+be paid by a slot from a different row-column phase, carrier-residue evaluation,
+side, orientation, or boundary phase.
+
+If every subset \(S\subseteq L_\zeta\) satisfied
+\[
+  |S|\le |N_{G_\zeta}(S)|,
+\]
+Hall's theorem would give an injective matching from all load tokens into the
+quota/debt slots.  This would imply
+\[
+  C_{s,\rho,\omega,\tau,\alpha,\mu,\eta,\iota,\kappa,\chi,\epsilon,\zeta}
+  \le
+  d_{s,\rho,\omega,\tau,\alpha,\mu,\eta,\iota,\kappa,\chi,\epsilon,\zeta},
+\]
+contradicting the imported phase-residue imbalance.  Therefore a Hall defect
+subset exists:
+\[
+  \exists S\subseteq L_\zeta:\qquad
+  \Delta_H(S)=|S|-|N_{G_\zeta}(S)|>0.
+\]
+
+This overfull Hall defect is not left anonymous.  If it is a singleton atom or
+only a full-cycle mean atom, it returns to those outlets.  If it is paid by
+opposite-sign quota debt, by same-sign cross-scale stacking, or by boundary
+migration, it returns respectively to the bridge-cancellation, amplitude-depth,
+or variation-boundary flux outlets.  If none of these named returns pays the
+defect, the remaining packet is the explicit phase-residue Hall-defect
+PDEC/cap outlet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+source-atom multiplicity-cap PDEC/cap outlet, it does not prove the
+phase-residue Hall-defect PDEC/cap outlet, it does not prove the
+bridge-cancellation PDEC/cap outlet, it does not prove the amplitude-depth
+PDEC/cap outlet, it does not prove the variation-boundary flux PDEC/cap outlet,
+and it does not prove global summability of the sparse scale-ladder SAE outlet.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-hall-defect-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
