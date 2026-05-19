@@ -15590,6 +15590,74 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-res
 \end{proof}
 
 
+\begin{theorem}[Stable-ladder endpoint orbit residue-shadow dual-row phase-cell atom ledger]
+The residue-shadow dual-row phase-cell imbalance outlet admits the following
+non-cyclic atom refinement inside a fixed CRT phase-cell:
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap\\
+\(\Rightarrow\) StableLadderEndpointOrbitResidueShadowDualRowPhaseCellImbalanceImportedLedger\\
+AND StableLadderEndpointSingletonAtomSAECarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND StableLadderEndpointOrbitFullCycleMeanAtomCarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND StableLadderEndpointOrbitBridgeCancellationCarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND StableLadderEndpointOrbitAmplitudeDepthCarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND StableLadderEndpointOrbitVariationBoundaryFluxCarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomModelLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomQuotaLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowOverfullPhaseCellAtomPigeonholeLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomNamedReturnSplitLedger\\
+AND StableLadderEndpointOrbitResidueShadowDualRowPhaseCellAtomImbalancePacketLedger\\
+AND NoAnonymousResidueShadowDualRowPhaseCellImbalanceExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterResidueShadowDualRowPhaseCellAtomLedger\\
+AND SparseScaleLadderSAESummabilityOrStableLadderEndpointSingletonAtomSAEOrEndpointOrbitFullCycleMeanAtomSAEOrEndpointOrbitResidueShadowDualRowPhaseCellAtomImbalancePDECCapOrEndpointOrbitBridgeCancellationPDECCapOrEndpointOrbitAmplitudeDepthPDECCapOrEndpointOrbitVariationBoundaryFluxPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Endpoint orbit residue-shadow dual-row phase-cell atom ledger]
+The endpoint singleton atom outlet, the full-cycle mean atom outlet, the
+bridge-cancellation outlet, the amplitude-depth outlet, the variation-boundary
+flux outlet, and the sparse scale-ladder SAE outlet are carried forward.  A
+residue-shadow dual-row phase-cell imbalance packet gives a fixed CRT
+phase-cell \(\theta\) with signed load exceeding its quota.  Partition
+\(\theta\) into actual residue/source atoms \(a\).  The load and quota
+decompose as
+\[
+  H_\theta=\sum_a h_{\theta,a},\qquad
+  B_\theta=\sum_a b_{\theta,a}.
+\]
+Let \(\sigma=\operatorname{sign}(H_\theta)\).  If every atom satisfied
+\(\sigma h_{\theta,a}\le b_{\theta,a}\), then summing over \(a\) would give
+\[
+  |H_\theta|=\sum_a \sigma h_{\theta,a}\le \sum_a b_{\theta,a}=B_\theta,
+\]
+contradicting the imported overfull phase-cell.  Hence at least one
+sign-aligned atom satisfies \(\sigma h_{\theta,a}>b_{\theta,a}\).
+
+This over-quota atom is not left anonymous.  If it is a singleton atom, it
+returns to the endpoint singleton outlet.  If it only records a full-cycle
+mean, it returns to the full-cycle mean outlet.  If the atom is paid by an
+opposite-sign atom, by same-sign amplitude stacking, or by boundary migration,
+it returns respectively to the bridge-cancellation, amplitude-depth, or
+variation-boundary flux outlets.  If none of these named returns pays the
+atom, the remaining packet is the explicit residue-shadow dual-row phase-cell
+atom imbalance PDEC/cap outlet.
+
+Thus residue-shadow dual-row phase-cell imbalance is not an anonymous terminal.
+It is either absorbed by existing exits or leaves an explicit atom imbalance
+packet.
+
+This theorem does not prove endpoint singleton atom/SAE summability, it does
+not prove the full-cycle mean atom/SAE outlet, it does not prove the
+residue-shadow dual-row phase-cell atom imbalance PDEC/cap outlet, it does not
+prove the bridge-cancellation PDEC/cap outlet, it does not prove the
+amplitude-depth PDEC/cap outlet, it does not prove the variation-boundary flux
+PDEC/cap outlet, and it does not prove global summability of the sparse
+scale-ladder SAE outlet.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-endpoint-orbit-residue-shadow-dual-row-phase-cell-atom-router.md.
+\end{quote}
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
