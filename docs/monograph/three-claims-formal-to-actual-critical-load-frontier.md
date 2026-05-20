@@ -15146,3 +15146,35 @@ cell 命中数受 `ceil(H/q)` 控制，固定 `q` 的全 residue 总量为 `H`�
 最新剩余为 endpoint actual demand、AP strict gap/dense table、sparse cell、
 低 carrier sparse、高 carrier rank-deficit、nonreplay、moving-pivot、endpoint
 singleton、full-cycle mean、source multiplicity 与 sparse SAE。
+
+## 315. Stable-ladder phase-residue exchange endpoint-pivot-actual-demand-source-cut frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_actual_demand_source_cut_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-actual-demand-source-cut-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-actual-demand-source-cut-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-actual-demand-source-cut-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_actual_demand_imported=true
+endpoint_unit_incidence_demand_closed=true
+endpoint_unit_demand_not_gap_sufficient=true
+endpoint_no_ap_envelope_recycling_guard=true
+endpoint_actual_demand_reduced_to_source_cut=true
+endpoint_release_mass_amplification_proved=false
+endpoint_low_carrier_payment_injection_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：endpoint actual-demand 下界被切到源侧。活跃 fixed-residue
+demand 至少给出一个 source-tagged endpoint incidence，但单位需求不足以超过 AP
+exact-envelope；必须证明源侧释放质量沿 endpoint orbit 放大，并且非循环注入同一
+低 carrier AP table。最新剩余为 release-mass amplification、low-carrier payment
+injection、AP strict gap/dense table、sparse cell、低 carrier sparse、高 carrier
+rank-deficit、nonreplay、moving-pivot、endpoint singleton、full-cycle mean、
+source multiplicity 与 sparse SAE。

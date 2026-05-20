@@ -20900,6 +20900,51 @@ docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange endpoint-pivot actual demand source cut]
+The endpoint pivot actual low-carrier row-incidence demand is reduced to a
+source-side amplification problem and a non-recycling payment-injection problem:
+\begin{quote}\scriptsize\ttfamily
+EndpointOrbitAlternatingCyclePivotPrimeActualLowCarrierRowIncidenceDemandLowerBound\\
+\(\Rightarrow\)
+StableLadderEndpointOrbitPivotPrimeActualDemandImportedForSourceCutLedger\\
+AND StableLadderEndpointOrbitPivotPrimeUnitIncidenceDemandLedger\\
+AND StableLadderEndpointOrbitPivotPrimeUnitDemandNotEnvelopeGapLedger\\
+AND StableLadderEndpointOrbitPivotPrimeNoAPEnvelopeRecyclingDemandGuardLedger\\
+AND StableLadderEndpointOrbitPivotPrimeReleaseMassAmplificationRouteLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierPaymentInjectionRouteLedger\\
+AND NoIndependentEndpointPivotPrimeActualDemandAfterSourceCutLedger.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange endpoint-pivot actual demand source cut]
+The previous theorem has already provided the AP exact envelope for a low
+carrier residue table.  Therefore the actual-demand lower bound cannot be
+deduced by saying that the envelope is nearly saturated; that would recycle
+the supply estimate as a demand estimate.
+
+If the endpoint fixed-residue demand branch is active, there is at least one
+source-tagged endpoint row/cell incidence.  This closes the unit incidence
+ledger, but it is not enough for a capacity contradiction: a single low carrier
+AP cell already has envelope large enough to accommodate one hit whenever it
+intersects the endpoint window.  Hence the remaining demand must come from
+source-side amplification along the endpoint orbit, not from a formal envelope
+count.
+
+The source-side amplification must also be injected non-cyclically into the
+same low carrier AP table.  If the source mass cannot amplify, the branch is
+accounted for by endpoint singleton, full-cycle mean, source-multiplicity, or
+sparse SAE exits.  If amplified pressure cannot be injected into the same AP
+table, it returns to dense-table PDEC, sparse-cell SAE, high-carrier rank
+deficit, or moving-pivot exits.
+
+This theorem does not prove source-side amplification, low-carrier payment
+injection, AP strict gap, dense-table exclusion, sparse-cell summability, or
+the other endpoint exits.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-actual-demand-source-cut-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
