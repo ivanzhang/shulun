@@ -17437,3 +17437,47 @@ any slot failure -> ActualObjectSlotMismatchPDECCap
 本步没有排斥 missing、duplicate 或 slot mismatch，也没有证明 singleton Hall cut、
 cross-key return whitelist leak、boundary equality atom 或 endpoint 并行出口。行/列命题
 仍未无条件闭合。
+
+### 1.144 stable-ladder phase-residue exchange canonical-payment-actual-object-admission-trichotomy 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_actual_object_admission_trichotomy_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_actual_object_admission_defects_imported=true
+phase_residue_exchange_actual_object_slot_mismatch_unification_imported=true
+phase_residue_exchange_assignment_incidence_lock_imported=true
+phase_residue_exchange_missing_object_not_admitted_capacity_closed=true
+phase_residue_exchange_slot_mismatch_not_same_cell_capacity_closed=true
+phase_residue_exchange_duplicate_object_collision_or_whitelist_closed=true
+phase_residue_exchange_bad_object_edge_removal_singleton_cut_closed=true
+phase_residue_exchange_no_independent_actual_object_admission_defect_closed=true
+phase_residue_exchange_actual_object_missing_field_pdec_cap_proved=true
+phase_residue_exchange_actual_object_duplicate_field_pdec_cap_proved=true
+phase_residue_exchange_actual_object_slot_mismatch_pdec_cap_proved=true
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：对象侧三分支不再是独立 capacity 出口：
+
+```text
+missing object   -> not admitted capacity -> singleton Hall cut
+slot mismatch    -> not same-cell admitted capacity -> singleton Hall cut
+duplicate object -> same-key duplicate adds no capacity, or cross-key whitelist leak
+```
+
+因此 actual-object admission 缺陷只会回到 singleton Hall cut 或 cross-key whitelist
+leak；它们不再作为独立活动出口保留。
+
+本步没有证明 singleton Hall cut 或 cross-key return whitelist leak，也没有排斥
+boundary equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。

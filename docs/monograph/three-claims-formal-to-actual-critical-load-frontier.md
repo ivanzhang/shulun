@@ -14785,3 +14785,39 @@ pairing 任一字段失败都不是新自由度，只是 canonical actual-object
 本步没有闭合行/列命题；最新剩余为 actual-object missing/duplicate/slot mismatch、
 singleton Hall cut、cross-key return whitelist leak、payment graph/return whitelist、
 boundary equality 与 endpoint 并行出口。
+
+## 303. Stable-ladder phase-residue exchange canonical-payment-actual-object-admission-trichotomy frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_actual_object_admission_trichotomy_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-admission-trichotomy-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_actual_object_admission_defects_imported=true
+phase_residue_exchange_actual_object_slot_mismatch_unification_imported=true
+phase_residue_exchange_assignment_incidence_lock_imported=true
+phase_residue_exchange_missing_object_not_admitted_capacity_closed=true
+phase_residue_exchange_slot_mismatch_not_same_cell_capacity_closed=true
+phase_residue_exchange_duplicate_object_collision_or_whitelist_closed=true
+phase_residue_exchange_bad_object_edge_removal_singleton_cut_closed=true
+phase_residue_exchange_no_independent_actual_object_admission_defect_closed=true
+phase_residue_exchange_actual_object_missing_field_pdec_cap_proved=true
+phase_residue_exchange_actual_object_duplicate_field_pdec_cap_proved=true
+phase_residue_exchange_actual_object_slot_mismatch_pdec_cap_proved=true
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：对象缺失或换槽意味着不存在同 cell admitted capacity；
+重对象若跨 key 作为 return 使用则是 whitelist leak，否则同 key 重复不增加容量。
+
+本步没有闭合行/列命题；最新剩余为 singleton Hall cut、cross-key return whitelist
+leak、payment graph/return whitelist、boundary equality 与 endpoint 并行出口。
