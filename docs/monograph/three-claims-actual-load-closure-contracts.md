@@ -17721,3 +17721,37 @@ pairing graph；若该图无交替环，则叶剥离必回到 endpoint singleton
 
 本步没有证明 alternating transport cycle、endpoint singleton、full-cycle mean、
 source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.151 stable-ladder phase-residue exchange endpoint-alternating-cycle-monodromy-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_monodromy_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_alternating_transport_cycle_imported=true
+endpoint_alternating_cycle_ordered_support_closed=true
+endpoint_alternating_cycle_signed_edge_incidence_closed=true
+endpoint_alternating_cycle_boundary_zero_closed=true
+endpoint_alternating_cycle_crt_phase_increment_word_closed=true
+endpoint_alternating_cycle_monodromy_dichotomy_closed=true
+endpoint_alternating_cycle_zero_monodromy_circulation_return_closed=true
+endpoint_alternating_cycle_reduced_to_nonzero_monodromy=true
+endpoint_alternating_cycle_monodromy_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：alternating transport cycle 已经不是匿名环出口。它被写成
+有序 CRT endpoint cycle、signed edge incidence 与相位增量词；零 monodromy 是边界为零
+的纯环流，不能形成 endpoint load defect。剩余只能是
+`EndpointOrbitSignedDepthFluxAlternatingCycleMonodromyPDECCap`。
+
+本步没有证明 nonzero monodromy、endpoint singleton、full-cycle mean、source
+multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。

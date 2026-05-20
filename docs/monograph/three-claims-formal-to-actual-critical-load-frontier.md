@@ -15003,3 +15003,30 @@ formal-to-actual 含义是：signed-depth/flux 整包已经被压成有限支撑
 无环情形被叶剥离送回 endpoint singleton、full-cycle mean 或 source multiplicity；
 因此最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、source multiplicity
 与 alternating transport cycle。
+
+## 310. Stable-ladder phase-residue exchange endpoint-alternating-cycle-monodromy-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_monodromy_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-monodromy-lock-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_alternating_transport_cycle_imported=true
+endpoint_alternating_cycle_ordered_support_closed=true
+endpoint_alternating_cycle_boundary_zero_closed=true
+endpoint_alternating_cycle_monodromy_dichotomy_closed=true
+endpoint_alternating_cycle_reduced_to_nonzero_monodromy=true
+endpoint_alternating_cycle_monodromy_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：交替输运环被锁成有序 CRT endpoint cycle 与相位增量词。
+零 monodromy 只是纯环流；非零 monodromy 是最新显式硬点。最新剩余为 sparse SAE、
+endpoint singleton、full-cycle mean、source multiplicity 与 nonzero monodromy。
