@@ -1,0 +1,478 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_first_edge_slab_frontier_router",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "edge_signed_multiplier_table_imported": true,
+  "edge_signed_multiplier_table_proved": false,
+  "edge_table_split_into_first_seed_and_internal_transition": true,
+  "empirical_absence_not_used_as_proof": true,
+  "first_edge_phi_fiber_formula_proved": true,
+  "first_edge_seed_fields": [
+    {
+      "field": "semiprime_edge_key",
+      "meaning": "第一边 `(p,1,q,q)`，对应真实 composite key `p*q` 与 q-rough tail fiber。"
+    },
+    {
+      "field": "first_seed_signed_value",
+      "meaning": "从 virtual unit 到 `q` 的 signed seed；不能从 Phi 的 prime row 或 payment 原像读取。"
+    },
+    {
+      "field": "q_rough_tail_fiber_lift",
+      "meaning": "同一 `(p,q)` seed 对所有 q-rough tail 的继续传输规则。"
+    },
+    {
+      "field": "source_trace_or_return_tag",
+      "meaning": "pre-Cauchy source trace、branch key、ExactUV 输出；失败时进入命名回流。"
+    }
+  ],
+  "first_edge_slab_frontier_router_closed": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "EdgeMultiplierTableTargetImported",
+      "meaning": "上一层已把 step update 压到逐 ordered edge signed multiplier 表。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "EdgeTableSplitsIntoFirstSeedAndInternalTransition",
+      "meaning": "每条 LPF path 唯一分成第一边 seed slab 与后续内部 prime-adjoin transitions。",
+      "proved": true,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FirstEdgePhiFiberFormula",
+      "meaning": "第一边 `(p,q)` 的 occurrence mass 精确为 Phi(floor(N/(p*q)),q)，即 q-rough tail fiber。",
+      "proved": true,
+      "remaining": "PhiLPFFirstEdgeQRoughContinuationFiberLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FirstEdgeSeedCannotBeRecoveredFromCounts",
+      "meaning": "Phi/LPF 只给 `(p,q)` 纤维大小；不赋 first seed signed value、branch trace 或 ExactUV。",
+      "proved": true,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionCannotBeRecoveredByDivision",
+      "meaning": "内部 transition 需要非零前缀或命名回流，不能用未知 pointwise signed value 作后验除法。",
+      "proved": true,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "FirstSeedTableCurrentCorpusProved",
+      "meaning": "当前材料没有为所有 semiprime first edges 提交 prepushforward signed seed 表。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "InternalPrimeAdjoinTransitionCurrentCorpusProved",
+      "meaning": "当前材料没有为所有内部 prime-adjoin edges 提交 signed local-factor transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyBothSlabs",
+      "meaning": "完整 branch trace 可同时给 first seed、内部 transition、return tag 与 ExactUV 字段。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplyBothSlabs",
+      "meaning": "atomic trace signed coefficient 公式可把两张表作为同一 trace 的字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed value table 仍是直接替代，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVStillParallelGate",
+      "meaning": "两张 edge 表即使存在，ExactUV source entropy/fiber 仍是并行门。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只把 edge multiplier 表拆成 first seed slab 与 internal transition；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "internal_transition_fields": [
+    {
+      "field": "internal_edge_key",
+      "meaning": "内部边 `(p,prefix,q,prefix*q)`，其中 `prefix>1` 且二者都在同一 owner bucket。"
+    },
+    {
+      "field": "signed_adjoin_multiplier",
+      "meaning": "乘入下一素因子 `q` 的 sign/local-factor/truncation 乘子。"
+    },
+    {
+      "field": "nonzero_predecessor_or_return",
+      "meaning": "若前缀 signed value 为零或 local factor 消失，必须给命名 return，而不是继续除法。"
+    },
+    {
+      "field": "path_product_compatibility",
+      "meaning": "first seed 与内部乘子相乘后，等于最终 support key 的 signed coefficient。"
+    }
+  ],
+  "next_direct_attack_targets": [
+    "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+  ],
+  "next_primary_attack_target": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+  "no_theorem_switch": true,
+  "paired_required_attack_target": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "逐 edge signed multiplier 表可严格拆成两个子表：第一边 `(p,1,q,q)` 的 semiprime signed seed slab，以及 `prefix>1` 的内部 prime-adjoin signed transition law。LPF/Phi 对第一边给出精确 q-rough continuation 纤维公式 `mass(p,q)=Phi(floor(N/(p*q)),q)`，但该公式只支付支撑和 occurrence mass，不产生 first seed signed value，也不产生内部 transition 的非零 local factor。因此下一直接主攻为 semiprime first-edge signed seed table；同时必须配套内部 prime-adjoin transition law，或改由逐点 signed table / branch trace / atomic trace 提供。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "retained_basis_after_router": "((PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_first_edge_slab_audit": [
+    {
+      "N": 30,
+      "distinct_first_edge_types": 10,
+      "failures": [],
+      "first_edge_occurrences": 19,
+      "first_edge_path_guard_holds": true,
+      "first_edge_phi_fiber_formula_holds": true,
+      "first_edge_phi_fiber_formula_sum": 19,
+      "formal_first_edge_occurrence_sign_shadow_bits": 19,
+      "formal_first_edge_occurrence_sign_shadow_log10": 5.71957,
+      "formal_first_seed_type_sign_shadow_bits": 10,
+      "formal_first_seed_type_sign_shadow_log10": 3.0103,
+      "formal_internal_transition_occurrence_sign_shadow_bits": 11,
+      "formal_internal_transition_occurrence_sign_shadow_log10": 3.31133,
+      "internal_edge_occurrences": 11,
+      "max_factor_depth": 3,
+      "mismatches": [],
+      "small_prime_layers": 3,
+      "support_keys": 19,
+      "top_first_edge_fibers": [
+        {
+          "fiber_mass": 7,
+          "p": 2,
+          "q": 2
+        },
+        {
+          "fiber_mass": 3,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 2,
+          "p": 3,
+          "q": 3
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 1,
+          "p": 3,
+          "q": 5
+        }
+      ],
+      "total_ordered_edge_occurrences": 30
+    },
+    {
+      "N": 100,
+      "distinct_first_edge_types": 34,
+      "failures": [],
+      "first_edge_occurrences": 74,
+      "first_edge_path_guard_holds": true,
+      "first_edge_phi_fiber_formula_holds": true,
+      "first_edge_phi_fiber_formula_sum": 74,
+      "formal_first_edge_occurrence_sign_shadow_bits": 74,
+      "formal_first_edge_occurrence_sign_shadow_log10": 22.27622,
+      "formal_first_seed_type_sign_shadow_bits": 34,
+      "formal_first_seed_type_sign_shadow_log10": 10.23502,
+      "formal_internal_transition_occurrence_sign_shadow_bits": 66,
+      "formal_internal_transition_occurrence_sign_shadow_log10": 19.86798,
+      "internal_edge_occurrences": 66,
+      "max_factor_depth": 5,
+      "mismatches": [],
+      "small_prime_layers": 4,
+      "support_keys": 74,
+      "top_first_edge_fibers": [
+        {
+          "fiber_mass": 25,
+          "p": 2,
+          "q": 2
+        },
+        {
+          "fiber_mass": 8,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 6,
+          "p": 3,
+          "q": 3
+        },
+        {
+          "fiber_mass": 3,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 2,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 2,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 13
+        }
+      ],
+      "total_ordered_edge_occurrences": 140
+    },
+    {
+      "N": 997,
+      "distinct_first_edge_types": 298,
+      "failures": [],
+      "first_edge_occurrences": 828,
+      "first_edge_path_guard_holds": true,
+      "first_edge_phi_fiber_formula_holds": true,
+      "first_edge_phi_fiber_formula_sum": 828,
+      "formal_first_edge_occurrence_sign_shadow_bits": 828,
+      "formal_first_edge_occurrence_sign_shadow_log10": 249.252836,
+      "formal_first_seed_type_sign_shadow_bits": 298,
+      "formal_first_seed_type_sign_shadow_log10": 89.706939,
+      "formal_internal_transition_occurrence_sign_shadow_bits": 1041,
+      "formal_internal_transition_occurrence_sign_shadow_log10": 313.372225,
+      "internal_edge_occurrences": 1041,
+      "max_factor_depth": 8,
+      "mismatches": [],
+      "small_prime_layers": 11,
+      "support_keys": 828,
+      "top_first_edge_fibers": [
+        {
+          "fiber_mass": 249,
+          "p": 2,
+          "q": 2
+        },
+        {
+          "fiber_mass": 83,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 55,
+          "p": 3,
+          "q": 3
+        },
+        {
+          "fiber_mass": 33,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 22,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 19,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 13,
+          "p": 3,
+          "q": 7
+        },
+        {
+          "fiber_mass": 13,
+          "p": 5,
+          "q": 5
+        }
+      ],
+      "total_ordered_edge_occurrences": 1869
+    },
+    {
+      "N": 5003,
+      "distinct_first_edge_types": 1366,
+      "failures": [],
+      "first_edge_occurrences": 4332,
+      "first_edge_path_guard_holds": true,
+      "first_edge_phi_fiber_formula_holds": true,
+      "first_edge_phi_fiber_formula_sum": 4332,
+      "formal_first_edge_occurrence_sign_shadow_bits": 4332,
+      "formal_first_edge_occurrence_sign_shadow_log10": 1304.061941,
+      "formal_first_seed_type_sign_shadow_bits": 1366,
+      "formal_first_seed_type_sign_shadow_log10": 411.206974,
+      "formal_internal_transition_occurrence_sign_shadow_bits": 6239,
+      "formal_internal_transition_occurrence_sign_shadow_log10": 1878.126143,
+      "internal_edge_occurrences": 6239,
+      "max_factor_depth": 11,
+      "mismatches": [],
+      "small_prime_layers": 19,
+      "support_keys": 4332,
+      "top_first_edge_fibers": [
+        {
+          "fiber_mass": 1250,
+          "p": 2,
+          "q": 2
+        },
+        {
+          "fiber_mass": 417,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 278,
+          "p": 3,
+          "q": 3
+        },
+        {
+          "fiber_mass": 167,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 111,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 95,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 67,
+          "p": 5,
+          "q": 5
+        },
+        {
+          "fiber_mass": 63,
+          "p": 3,
+          "q": 7
+        }
+      ],
+      "total_ordered_edge_occurrences": 10571
+    },
+    {
+      "N": 10000,
+      "distinct_first_edge_types": 2625,
+      "failures": [],
+      "first_edge_occurrences": 8770,
+      "first_edge_path_guard_holds": true,
+      "first_edge_phi_fiber_formula_holds": true,
+      "first_edge_phi_fiber_formula_sum": 8770,
+      "formal_first_edge_occurrence_sign_shadow_bits": 8770,
+      "formal_first_edge_occurrence_sign_shadow_log10": 2640.033062,
+      "formal_first_seed_type_sign_shadow_bits": 2625,
+      "formal_first_seed_type_sign_shadow_log10": 790.203739,
+      "formal_internal_transition_occurrence_sign_shadow_bits": 13216,
+      "formal_internal_transition_occurrence_sign_shadow_log10": 3978.412423,
+      "internal_edge_occurrences": 13216,
+      "max_factor_depth": 12,
+      "mismatches": [],
+      "small_prime_layers": 25,
+      "support_keys": 8770,
+      "top_first_edge_fibers": [
+        {
+          "fiber_mass": 2500,
+          "p": 2,
+          "q": 2
+        },
+        {
+          "fiber_mass": 833,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 556,
+          "p": 3,
+          "q": 3
+        },
+        {
+          "fiber_mass": 333,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 222,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 191,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 133,
+          "p": 5,
+          "q": 5
+        },
+        {
+          "fiber_mass": 127,
+          "p": 3,
+          "q": 7
+        }
+      ],
+      "total_ordered_edge_occurrences": 21986
+    }
+  ],
+  "semiprime_first_edge_signed_seed_table_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.json": "c4346bdf5a7500f4d6c50f9abd0255bd916ff288dcae000cd2caa87434f38392",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_first_edge_slab_frontier_router.py": "ec9445a3906d6d729b0dfeae076a81ed90518ae7f00aba0d759018736e5e37a5"
+  },
+  "status": "phi_lpf_edge_multiplier_table_split_into_first_seed_and_internal_transition_open",
+  "target_input_before_router": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+}

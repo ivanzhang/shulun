@@ -15724,6 +15724,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 332. Phi-LPF first-edge slab frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_first_edge_slab_frontier_router.py
+docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json
+data/prime-matrix-phi-lpf-first-edge-slab-frontier-ledger.json
+```
+
+同步结果：
+
+```text
+edge_signed_multiplier_table_imported=true
+edge_table_split_into_first_seed_and_internal_transition=true
+first_edge_phi_fiber_formula_proved=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+edge_signed_multiplier_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：edge multiplier 表不能再作为一个匿名黑箱。LPF ordered path
+固定后，每条路径先经过 semiprime first edge `(p,1,q,q)`，其 continuation fiber 精确由
+`Phi(floor(N/(p*q)),q)` 给出；之后才进入 `prefix>1` 的内部 prime-adjoin transition。
+这把无符号支撑质量和 signed 生成源分开：Phi 纤维公式只给每个 `(p,q)` 的 occurrence
+mass，不给 first seed signed value，也不保证内部 transition 的非零前缀。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn
+OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍是并行门。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

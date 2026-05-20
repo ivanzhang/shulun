@@ -5695,6 +5695,53 @@ PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+### 1.174 Phi-LPF first-edge slab frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_first_edge_slab_frontier_router.py
+data/prime-matrix-phi-lpf-first-edge-slab-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json
+```
+
+同步读数为：
+
+```text
+edge_signed_multiplier_table_imported=true
+edge_table_split_into_first_seed_and_internal_transition=true
+first_edge_phi_fiber_formula_proved=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+edge_signed_multiplier_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：逐 edge signed multiplier 表有一个强制 first/internal 分解。每条
+ordered LPF path 的第一边是 `(p,1,q,q)`，对应 semiprime composite `p*q` 和一个
+q-rough continuation fiber；后续边才是 `prefix>1` 的内部 prime-adjoin transition。
+第一边 occurrence mass 有精确 Phi 公式：
+
+```text
+mass_N(p,q)=Phi(floor(N/(p*q)),q)
+```
+
+样本 `N=10000` 中 first-edge 类型数为 `2625`，first-edge occurrence 数为 `8770`，
+internal transition occurrence 数为 `13216`，且 first-edge Phi 纤维公式总和正好等于
+support keys。这个公式只支付支撑/纤维质量，不给 semiprime first seed signed value，也
+不给内部 transition 的非零 local factor。
+
+因此最新直接主攻拆成：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍是逐点 signed value table、完整 branch trace 或 atomic trace。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

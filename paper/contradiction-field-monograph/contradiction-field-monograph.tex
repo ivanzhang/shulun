@@ -21623,6 +21623,42 @@ docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF first-edge slab frontier]
+The pre-pushforward edge multiplier table splits into a first-edge seed slab
+and an internal transition slab.  For an owner prime \(p\), if the least-prime
+factor word of a \(p\)-rough cofactor begins with \(q\), then the first edge is
+\[
+  (p,1,q,q),
+\]
+and the remaining tail is \(q\)-rough.  Hence the number of support keys whose
+first edge is \((p,q)\) is exactly
+\[
+  \Phi\!\left(\left\lfloor \frac{N}{pq}\right\rfloor,q\right).
+\]
+This closes the unsigned first-edge fiber ledger.  It does not give the
+semiprime first-edge signed seed, nor does it give the signed local transition
+for later edges with non-unit prefix.  Thus the current edge-table frontier is
+the pair consisting of a semiprime first-edge signed seed table and an internal
+prime-adjoin signed transition law.
+\end{theorem}
+\begin{proof}[Phi-LPF first-edge slab frontier]
+The ordered LPF word writes every support cofactor as \(m=q r\), where \(q\)
+is the least prime factor of \(m\), \(q\ge p\), and all prime factors of \(r\)
+are at least \(q\).  Conversely any \(q\)-rough \(r\le N/(pq)\) gives a unique
+support key \(pqr\) whose first edge is \((p,q)\).  This proves the stated
+Phi fiber formula and gives a disjoint first-edge slab decomposition.
+
+The formula is purely unsigned.  The signed seed attached to the semiprime
+edge cannot be read from the removed prime row, and an internal signed
+transition cannot be obtained by dividing unknown pointwise coefficients,
+because the predecessor may be zero or may have to return through a named
+exit.  The row/column theorem therefore remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
