@@ -17954,3 +17954,40 @@ source-tagged unit support。短支撑进入 endpoint singleton/full-cycle/sourc
 本步没有证明 bounded support SAE、long support mass-transfer、payment injection、
 AP strict gap、dense-table PDEC、sparse-cell SAE、高秩、nonreplay、moving-pivot
 或 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.158 stable-ladder phase-residue exchange endpoint-pivot-low-carrier-payment-injection-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_endpoint_pivot_low_carrier_payment_injection_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_low_carrier_payment_injection_imported=true
+endpoint_no_envelope_reuse_guard_imported=true
+endpoint_same_ap_table_key_tuple_closed=true
+endpoint_canonical_assignment_incidence_imported=true
+endpoint_no_hidden_cross_key_payment_imported=true
+endpoint_no_loss_return_accounting_imported=true
+endpoint_same_ap_table_payment_injection_lock_registered=true
+endpoint_payment_injection_reduced_to_lock=true
+endpoint_same_ap_table_payment_injection_lock_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：low-carrier payment injection 不再是匿名注入口。有效支付
+不能复用 AP envelope，必须落到同一 endpoint packet、pivot prime、residue、row AP
+class、窗口和 source atom 形成的 canonical same-AP-table key。跨 key 或跨表支付进入
+cross-table switch/PDEC 或 moving-pivot；同槽重复支付进入 duplicate-payment collision
+或 sparse SAE。
+
+本步没有证明同表 payment injection 存在或足量，也没有排斥 cross-table switch、
+duplicate collision、bounded support、long support mass-transfer、AP strict gap、
+dense-table、sparse-cell、高秩、nonreplay、moving-pivot 或 endpoint 并行出口。
+行/列命题仍未无条件闭合。

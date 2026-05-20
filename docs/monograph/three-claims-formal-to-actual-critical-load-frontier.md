@@ -15209,3 +15209,36 @@ endpoint singleton/full-cycle/source-multiplicity/sparse SAE，长支撑才可�
 low-carrier AP demand。最新剩余为 bounded support SAE、long support mass-transfer、
 payment injection、AP strict gap/dense table、sparse cell、高秩、nonreplay、
 moving-pivot 与 endpoint 并行出口。
+
+## 317. Stable-ladder phase-residue exchange endpoint-pivot-low-carrier-payment-injection-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_low_carrier_payment_injection_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-payment-injection-lock-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_low_carrier_payment_injection_imported=true
+endpoint_no_envelope_reuse_guard_imported=true
+endpoint_same_ap_table_key_tuple_closed=true
+endpoint_canonical_assignment_incidence_imported=true
+endpoint_no_hidden_cross_key_payment_imported=true
+endpoint_no_loss_return_accounting_imported=true
+endpoint_same_ap_table_payment_injection_lock_registered=true
+endpoint_payment_injection_reduced_to_lock=true
+endpoint_same_ap_table_payment_injection_lock_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：payment injection 被压成同表 canonical key 锁。合法注入必须
+来自 source-support actual unit，并保持同一 endpoint packet、`q`、residue、row AP
+class 与窗口；跨表改变进入 switch/PDEC 或 moving-pivot，同槽重复进入 collision 或
+sparse SAE。最新剩余为 same-AP-table injection lock、cross-table switch、
+duplicate collision、bounded support、long support mass-transfer、AP strict gap/dense
+table、sparse cell、高秩、nonreplay、moving-pivot 与 endpoint 并行出口。
