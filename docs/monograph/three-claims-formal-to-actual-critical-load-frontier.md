@@ -14918,3 +14918,33 @@ orbit 出口。
 
 本步没有闭合行/列命题；最新剩余为 endpoint singleton、source multiplicity、
 boundary equality、bridge/amplitude/variation 与 sparse 出口。
+
+## 307. Stable-ladder phase-residue exchange boundary-equality-critical-endpoint-projection frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_boundary_equality_critical_endpoint_projection_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_boundary_equality_atom_imported=true
+phase_residue_exchange_slack_sign_imported_for_boundary_equality=true
+phase_residue_exchange_boundary_equality_zero_slack_actual_object_closed=true
+phase_residue_exchange_boundary_equality_critical_facet_closed=true
+phase_residue_exchange_boundary_equality_first_variation_partition_closed=true
+phase_residue_exchange_no_independent_boundary_equality_atom_closed=true
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：零 slack 临界面必须转化为 endpoint critical exits，不能作为
+独立 boundary equality 出口停留。
+
+本步没有闭合行/列命题；最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、
+source multiplicity、bridge、amplitude-depth、variation-boundary flux。

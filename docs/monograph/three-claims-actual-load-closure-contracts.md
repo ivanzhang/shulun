@@ -17606,3 +17606,43 @@ signed/pairing change    -> full-cycle mean or amplitude-depth
 
 本步没有证明 source multiplicity、boundary equality、endpoint orbit 或 sparse SAE 出口。
 行/列命题仍未无条件闭合。
+
+### 1.148 stable-ladder phase-residue exchange boundary-equality-critical-endpoint-projection 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_boundary_equality_critical_endpoint_projection_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-boundary-equality-critical-endpoint-projection-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_boundary_equality_atom_imported=true
+phase_residue_exchange_slack_sign_imported_for_boundary_equality=true
+phase_residue_exchange_boundary_equality_zero_slack_actual_object_closed=true
+phase_residue_exchange_boundary_equality_critical_facet_closed=true
+phase_residue_exchange_boundary_equality_first_variation_partition_closed=true
+phase_residue_exchange_no_independent_boundary_equality_atom_closed=true
+endpoint_orbit_full_cycle_mean_atom_sae_proved=false
+endpoint_orbit_amplitude_depth_pdec_cap_proved=false
+endpoint_orbit_variation_boundary_flux_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`Sigma(O)=0` 只说明同一 actual object 落在 active facet 的临界面，
+不能当作严格矛盾，也不能作为匿名出口保留。它必须投影为：
+
+```text
+constant endpoint phase -> full-cycle mean atom
+nonzero amplitude depth -> amplitude-depth exit
+boundary sustaining flux -> variation-boundary flux exit
+```
+
+因此 boundary equality atom 不再作为独立活动出口保留。
+
+本步没有证明 full-cycle mean、amplitude-depth、variation-boundary flux、endpoint singleton、
+source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
