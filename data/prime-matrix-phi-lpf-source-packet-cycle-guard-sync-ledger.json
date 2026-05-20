@@ -1,6 +1,7 @@
 {
   "acyclic_noncanonical_terminal_return_well_founded_descent_proved": false,
   "acyclic_same_set_scope_match_for_direct_pdec_cap_proved": false,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
   "certificate_type": "prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router",
   "common_packet_self_proof_rejected_after_lpf": true,
   "counterexample_assumption_only": true,
@@ -27,6 +28,13 @@
       "meaning": "LPF/Phi 几何只固定 support 地址，不能把 common packet 当作非循环自证入口。",
       "proved": true,
       "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "NewPrimitiveExitDownstreamAlreadyImported",
+      "meaning": "既有 post-antisplit 收敛证书已把 NewPrimitive/terminal 出口吸收到 source-rank 与逐点核表。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
     },
     {
       "closed": true,
@@ -73,21 +81,23 @@
     {
       "closed": false,
       "gate": "RowColumnUnconditionalClosureReached",
-      "meaning": "本步只同步 LPF 回流后的 cycle guard，不证明新 signed 工件、terminal descent、PDEC scope、ExactUV 或 transport coherence。",
+      "meaning": "本步只同步 LPF 回流后的 cycle guard 和既有 post-antisplit 下游，不证明 alpha 发射、算术恒等式、rank/multiplicity、ExactUV 或 transport coherence。",
       "proved": false,
-      "remaining": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+      "remaining": "(AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows) OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
     }
   ],
-  "hardpoint_after_router": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+  "hardpoint_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows) OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+  "independent_noncircular_precauchy_arithmetic_identity_statement_proved": false,
   "lpf_unsigned_data_not_primitive_signed_artifact": true,
+  "new_primitive_exit_downstream_already_imported": true,
   "new_primitive_payload_or_trace_artifact_present": false,
-  "next_direct_attack_target": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+  "next_direct_attack_target": "AlphaRowAnchorPhaseEmissionFormulaLedger",
   "no_theorem_switch": true,
   "noncycle_exits": [
     {
       "exit": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
-      "role": "直接新增 primitive trace/payload signed 公式，打破 common packet 闭环。",
-      "status": "open"
+      "role": "直接新增 primitive trace/payload signed 公式；既有下游已要求它携带 source-rank/no-collapse 包。",
+      "status": "absorbed_open"
     },
     {
       "exit": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
@@ -110,13 +120,19 @@
       "status": "open"
     },
     {
+      "exit": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows",
+      "role": "既有 post-antisplit 收敛证书给出的当前共同逐点核表三原子。",
+      "status": "open"
+    },
+    {
       "exit": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
       "role": "若走递推 signed transport，仍需每步 local factor 更新与有序分解相容。",
       "status": "open"
     }
   ],
   "parallel_direct_attack_targets": [
-    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+    "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger",
+    "SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows",
     "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
     "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
     "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
@@ -124,19 +140,23 @@
   ],
   "phi_lpf_rough_cofactor_transport_coherence_proved": false,
   "phi_lpf_source_packet_cycle_guard_sync_closed": true,
-  "plain_conclusion": "LPF/Phi square-base route 把 source declaration 并回 common packet 后，不能继续把 common packet 当作非循环证明入口：既有 signed-lane cycle 已说明该 packet 会经 built-in pairing、branch trace、payload 与 origin identity 回到自身。Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，不产生 primitive signed payload/trace 公式。因此最新非循环主攻变为 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`；并行出口为 terminal descent、same-set PDEC scope、Phi-LPF pointwise signed value table、ExactUV entropy/fiber 与 transport step/coherence。",
+  "plain_conclusion": "LPF/Phi square-base route 把 source declaration 并回 common packet 后，不能继续把 common packet 当作非循环证明入口：既有 signed-lane cycle 已说明该 packet 会经 built-in pairing、branch trace、payload 与 origin identity 回到自身。Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，不产生 primitive signed payload/trace 公式。并且既有 post-antisplit 收敛证书已把 NewPrimitive/terminal 出口吸收到 source-rank/no-collapse 与逐点 primitive 核表。因此最新非循环主攻同步为 `AlphaRowAnchorPhaseEmissionFormulaLedger`；并行还需 pre-Cauchy 算术恒等式、同表 rank/multiplicity、same-set PDEC scope、Phi-LPF pointwise signed value table、ExactUV entropy/fiber 与 transport step/coherence。",
+  "pointwise_kernel_table_imported": true,
   "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
   "row_column_unconditional_closed": false,
   "same_theorem_target_preserved": true,
+  "same_unit_exact_uv_rank_multiplicity_certificate_proved": false,
   "signed_lane_cycle_imported": true,
   "source_hashes": {
     "docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.json": "3ce843ba5d0230fd98f027fcfd85230e2e348069f0886a027b5969a5215209a1",
     "docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.json": "aff83d09d39ccc932dbe3b23c954102c820d2b45ae72f7c9d50442e8a8c94dcd",
     "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-post-antisplit-source-rank-convergence-router.json": "3359bdbe51404005aec41ec0378840a4d114c235f20354ef488e2592e3f692c7",
     "docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json": "8ea074295bea6900bdb26efb22686da30430e22f94003d9362a25884788bf5d2",
     "docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json": "17e1966e5e4dad0a168abc867d451291be4991c999f28bfbaf494d5875447bf1",
-    "experiments/prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router.py": "06d5e9cd4ad6ee423d42abb5317100d786b4996c95275f96d9cf18adaaf3a9fb"
+    "experiments/prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router.py": "bd427f3b300e1f0c09b4e0addd3ae0b848af74ef2b6c38e2db7f1c6dd3b2c8df"
   },
+  "source_rank_package_imported": true,
   "square_base_reduction_to_common_packet_imported": true,
   "status": "phi_lpf_source_packet_self_proof_cycle_guarded_noncycle_exits_open"
 }

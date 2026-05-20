@@ -18403,7 +18403,9 @@ docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json
 square_base_reduction_to_common_packet_imported=true
 signed_lane_cycle_imported=true
 common_packet_self_proof_rejected_after_lpf=true
-lpf_unsigned_data_not_primitive_signed_artifact=true
+new_primitive_exit_downstream_already_imported=true
+pointwise_kernel_table_imported=true
+alpha_row_anchor_phase_emission_formula_proved=false
 new_primitive_payload_or_trace_artifact_present=false
 pointwise_phi_lpf_bucket_signed_value_table_proved=false
 row_column_unconditional_closed=false
@@ -18413,10 +18415,12 @@ actual-load 含义是：LPF/Phi route 回到 common packet 后，不能再把该
 证明入口。既有 signed-lane cycle 已给出闭环：
 `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket -> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows -> branch trace -> payload -> origin identity -> PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`。
 Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，不产生 primitive signed
-payload/trace 公式。
+payload/trace 公式。既有 post-antisplit 收敛证书又已把 `NewPrimitive...` 与 terminal descent
+吸收到 source-rank/no-collapse 和逐点 primitive 核表。
 
-因此最新非循环主攻为 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`。并行出口为
-`AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`、
+因此最新非循环主攻同步为 `AlphaRowAnchorPhaseEmissionFormulaLedger`。并行出口为
+`IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger`、
+`SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows`、
 `AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`、
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`、
 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`，

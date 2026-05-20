@@ -32,6 +32,7 @@ SQUARE_PACKET_CERT = DOCS / "prime-matrix-phi-lpf-square-base-source-packet-redu
 SIGNED_CYCLE_CERT = DOCS / "prime-matrix-strict-signed-lane-cycle-closure-router.json"
 POST_SOURCE_PDEC_CERT = DOCS / "prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json"
 TERMINAL_SYNC_CERT = DOCS / "prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.json"
+POST_ANTISPLIT_CONVERGENCE_CERT = DOCS / "prime-matrix-strict-post-antisplit-source-rank-convergence-router.json"
 POINTWISE_VALUE_CERT = DOCS / "prime-matrix-strict-pointwise-signed-alpha-value-table-router.json"
 
 COMMON_PACKET = "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
@@ -40,6 +41,11 @@ TERMINAL_DESCENT = "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertifica
 PDEC_SCOPE = "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
 EXACTUV_PAIR = "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
 POINTWISE_TABLE = "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+SOURCE_RANK_PACKAGE = "ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger"
+POINTWISE_KERNEL_TABLE = "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+ALPHA_ROW_ANCHOR = "AlphaRowAnchorPhaseEmissionFormulaLedger"
+PRECAUCHY_ARITH_ID = "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger"
+SAME_UNIT_RANK = "SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
 STEP_UPDATE = "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward"
 ORDERED_COHERENCE = "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
 
@@ -82,8 +88,8 @@ def noncycle_exit_rows() -> list[dict[str, str]]:
     return [
         {
             "exit": NEW_PRIMITIVE_ARTIFACT,
-            "role": "直接新增 primitive trace/payload signed 公式，打破 common packet 闭环。",
-            "status": "open",
+            "role": "直接新增 primitive trace/payload signed 公式；既有下游已要求它携带 source-rank/no-collapse 包。",
+            "status": "absorbed_open",
         },
         {
             "exit": TERMINAL_DESCENT,
@@ -106,6 +112,11 @@ def noncycle_exit_rows() -> list[dict[str, str]]:
             "status": "open",
         },
         {
+            "exit": f"{ALPHA_ROW_ANCHOR} AND {PRECAUCHY_ARITH_ID} AND {SAME_UNIT_RANK}",
+            "role": "既有 post-antisplit 收敛证书给出的当前共同逐点核表三原子。",
+            "status": "open",
+        },
+        {
             "exit": f"{STEP_UPDATE} AND {ORDERED_COHERENCE}",
             "role": "若走递推 signed transport，仍需每步 local factor 更新与有序分解相容。",
             "status": "open",
@@ -121,6 +132,7 @@ def source_hashes() -> dict[str, str]:
         SIGNED_CYCLE_CERT,
         POST_SOURCE_PDEC_CERT,
         TERMINAL_SYNC_CERT,
+        POST_ANTISPLIT_CONVERGENCE_CERT,
         POINTWISE_VALUE_CERT,
     ]
     return {str(path.relative_to(ROOT)): sha256(path) for path in paths if path.exists()}
@@ -131,6 +143,7 @@ def build_rows(
     signed_cycle: dict[str, Any],
     post_source_pdec: dict[str, Any],
     terminal_sync: dict[str, Any],
+    post_antisplit: dict[str, Any],
     pointwise_value: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 cycle guard 判定表。"""
@@ -157,6 +170,13 @@ def build_rows(
             True,
             "LPF/Phi 几何只固定 support 地址，不能把 common packet 当作非循环自证入口。",
             NEW_PRIMITIVE_ARTIFACT,
+        ),
+        row(
+            "NewPrimitiveExitDownstreamAlreadyImported",
+            post_antisplit.get("next_direct_attack_target") == ALPHA_ROW_ANCHOR,
+            False,
+            "既有 post-antisplit 收敛证书已把 NewPrimitive/terminal 出口吸收到 source-rank 与逐点核表。",
+            f"{ALPHA_ROW_ANCHOR} AND {PRECAUCHY_ARITH_ID} AND {SAME_UNIT_RANK}",
         ),
         row(
             "LPFUnsignedDataNotPrimitiveSignedArtifact",
@@ -204,8 +224,8 @@ def build_rows(
             "RowColumnUnconditionalClosureReached",
             False,
             False,
-            "本步只同步 LPF 回流后的 cycle guard，不证明新 signed 工件、terminal descent、PDEC scope、ExactUV 或 transport coherence。",
-            f"({NEW_PRIMITIVE_ARTIFACT} OR {TERMINAL_DESCENT} OR {PDEC_SCOPE} OR {POINTWISE_TABLE}) AND {EXACTUV_PAIR}",
+            "本步只同步 LPF 回流后的 cycle guard 和既有 post-antisplit 下游，不证明 alpha 发射、算术恒等式、rank/multiplicity、ExactUV 或 transport coherence。",
+            f"({ALPHA_ROW_ANCHOR} AND {PRECAUCHY_ARITH_ID} AND {SAME_UNIT_RANK}) OR {PDEC_SCOPE} OR {POINTWISE_TABLE}",
         ),
     ]
 
@@ -216,8 +236,9 @@ def build_certificate() -> dict[str, Any]:
     signed_cycle = load_json(SIGNED_CYCLE_CERT)
     post_source_pdec = load_json(POST_SOURCE_PDEC_CERT)
     terminal_sync = load_json(TERMINAL_SYNC_CERT)
+    post_antisplit = load_json(POST_ANTISPLIT_CONVERGENCE_CERT)
     pointwise_value = load_json(POINTWISE_VALUE_CERT)
-    rows = build_rows(square_packet, signed_cycle, post_source_pdec, terminal_sync, pointwise_value)
+    rows = build_rows(square_packet, signed_cycle, post_source_pdec, terminal_sync, post_antisplit, pointwise_value)
     return {
         "certificate_type": "prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router",
         "status": "phi_lpf_source_packet_self_proof_cycle_guarded_noncycle_exits_open",
@@ -229,8 +250,14 @@ def build_certificate() -> dict[str, Any]:
         "square_base_reduction_to_common_packet_imported": rows[0]["closed"],
         "signed_lane_cycle_imported": rows[1]["closed"],
         "common_packet_self_proof_rejected_after_lpf": rows[2]["closed"],
+        "new_primitive_exit_downstream_already_imported": rows[3]["closed"],
         "lpf_unsigned_data_not_primitive_signed_artifact": True,
         "new_primitive_payload_or_trace_artifact_present": False,
+        "source_rank_package_imported": post_antisplit.get("source_rank_package_atomized") is True,
+        "pointwise_kernel_table_imported": post_antisplit.get("all_internal_source_rank_routes_meet_at_pointwise_kernel_table") is True,
+        "alpha_row_anchor_phase_emission_formula_proved": False,
+        "independent_noncircular_precauchy_arithmetic_identity_statement_proved": False,
+        "same_unit_exact_uv_rank_multiplicity_certificate_proved": False,
         "acyclic_noncanonical_terminal_return_well_founded_descent_proved": False,
         "acyclic_same_set_scope_match_for_direct_pdec_cap_proved": False,
         "exactuv_entropy_fiber_pair_proved": False,
@@ -239,26 +266,28 @@ def build_certificate() -> dict[str, Any]:
         "row_column_unconditional_closed": False,
         "noncycle_exits": noncycle_exit_rows(),
         "gates": rows,
-        "next_direct_attack_target": NEW_PRIMITIVE_ARTIFACT,
+        "next_direct_attack_target": ALPHA_ROW_ANCHOR,
         "parallel_direct_attack_targets": [
-            TERMINAL_DESCENT,
+            PRECAUCHY_ARITH_ID,
+            SAME_UNIT_RANK,
             PDEC_SCOPE,
             POINTWISE_TABLE,
             EXACTUV_PAIR,
             f"{STEP_UPDATE} AND {ORDERED_COHERENCE}",
         ],
         "hardpoint_after_router": (
-            f"({NEW_PRIMITIVE_ARTIFACT} OR {TERMINAL_DESCENT} OR {PDEC_SCOPE} OR {POINTWISE_TABLE}) "
-            f"AND {EXACTUV_PAIR} AND {STEP_UPDATE} AND {ORDERED_COHERENCE}"
+            f"(({ALPHA_ROW_ANCHOR} AND {PRECAUCHY_ARITH_ID} AND {SAME_UNIT_RANK}) "
+            f"OR {PDEC_SCOPE} OR {POINTWISE_TABLE}) AND {EXACTUV_PAIR} AND {STEP_UPDATE} AND {ORDERED_COHERENCE}"
         ),
         "source_hashes": source_hashes(),
         "plain_conclusion": (
             "LPF/Phi square-base route 把 source declaration 并回 common packet 后，不能继续把 common packet "
             "当作非循环证明入口：既有 signed-lane cycle 已说明该 packet 会经 built-in pairing、branch trace、"
             "payload 与 origin identity 回到自身。Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，"
-            "不产生 primitive signed payload/trace 公式。因此最新非循环主攻变为 "
-            "`NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`；并行出口为 terminal descent、same-set PDEC scope、"
-            "Phi-LPF pointwise signed value table、ExactUV entropy/fiber 与 transport step/coherence。"
+            "不产生 primitive signed payload/trace 公式。并且既有 post-antisplit 收敛证书已把 NewPrimitive/terminal "
+            "出口吸收到 source-rank/no-collapse 与逐点 primitive 核表。因此最新非循环主攻同步为 "
+            "`AlphaRowAnchorPhaseEmissionFormulaLedger`；并行还需 pre-Cauchy 算术恒等式、同表 rank/multiplicity、"
+            "same-set PDEC scope、Phi-LPF pointwise signed value table、ExactUV entropy/fiber 与 transport step/coherence。"
         ),
     }
 
@@ -276,6 +305,9 @@ def render_markdown(cert: dict[str, Any]) -> str:
         f"square_base_reduction_to_common_packet_imported={fmt_bool(cert['square_base_reduction_to_common_packet_imported'])}",
         f"signed_lane_cycle_imported={fmt_bool(cert['signed_lane_cycle_imported'])}",
         f"common_packet_self_proof_rejected_after_lpf={fmt_bool(cert['common_packet_self_proof_rejected_after_lpf'])}",
+        f"new_primitive_exit_downstream_already_imported={fmt_bool(cert['new_primitive_exit_downstream_already_imported'])}",
+        f"pointwise_kernel_table_imported={fmt_bool(cert['pointwise_kernel_table_imported'])}",
+        f"alpha_row_anchor_phase_emission_formula_proved={fmt_bool(cert['alpha_row_anchor_phase_emission_formula_proved'])}",
         f"new_primitive_payload_or_trace_artifact_present={fmt_bool(cert['new_primitive_payload_or_trace_artifact_present'])}",
         f"pointwise_phi_lpf_bucket_signed_value_table_proved={fmt_bool(cert['pointwise_phi_lpf_bucket_signed_value_table_proved'])}",
         f"row_column_unconditional_closed={fmt_bool(cert['row_column_unconditional_closed'])}",

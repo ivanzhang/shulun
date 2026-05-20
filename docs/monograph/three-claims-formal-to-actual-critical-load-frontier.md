@@ -15591,7 +15591,9 @@ data/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-ledger.json
 square_base_reduction_to_common_packet_imported=true
 signed_lane_cycle_imported=true
 common_packet_self_proof_rejected_after_lpf=true
-lpf_unsigned_data_not_primitive_signed_artifact=true
+new_primitive_exit_downstream_already_imported=true
+pointwise_kernel_table_imported=true
+alpha_row_anchor_phase_emission_formula_proved=false
 new_primitive_payload_or_trace_artifact_present=false
 pointwise_phi_lpf_bucket_signed_value_table_proved=false
 row_column_unconditional_closed=false
@@ -15599,13 +15601,16 @@ row_column_unconditional_closed=false
 
 formal-to-actual 含义是：LPF/Phi 的 square-base 几何已经完成其职责；继续推进 common
 packet 会落入 signed-lane 自证闭环。非循环推进必须新增 signed 信息，或证明回流严格下降/
-同集 PDEC scope，而不是从 Phi support/capacity 反推 signed payload。
+同集 PDEC scope，而不是从 Phi support/capacity 反推 signed payload。既有 post-antisplit
+收敛证书已经把 NewPrimitive/terminal 出口吸收到 source-rank/no-collapse 与逐点 primitive
+核表，因此本层同步到更靠后的共同核表原子。
 
 当前真正非循环出口为：
 
 ```text
-NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
-OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
 OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 ```
