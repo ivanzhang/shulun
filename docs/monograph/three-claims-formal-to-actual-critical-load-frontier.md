@@ -15242,3 +15242,36 @@ class 与窗口；跨表改变进入 switch/PDEC 或 moving-pivot，同槽重复
 sparse SAE。最新剩余为 same-AP-table injection lock、cross-table switch、
 duplicate collision、bounded support、long support mass-transfer、AP strict gap/dense
 table、sparse cell、高秩、nonreplay、moving-pivot 与 endpoint 并行出口。
+
+## 318. Stable-ladder phase-residue exchange endpoint-pivot-duplicate-payment-slot-accounting frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_duplicate_payment_slot_accounting_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_duplicate_payment_imported=true
+endpoint_duplicate_same_canonical_slot_key_closed=true
+endpoint_duplicate_capacity_unit_value_imported=true
+endpoint_duplicate_assignment_partial_injection_imported=true
+endpoint_actual_object_duplicate_collision_imported=true
+endpoint_duplicate_count_not_new_capacity_closed=true
+endpoint_duplicate_payment_reduced_to_slot_accounting=true
+endpoint_duplicate_same_slot_multiplicity_cap_pdec_proved=false
+endpoint_duplicate_payment_sparse_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：同一 canonical slot 的重复支付不再能增加实际容量；第二个
+及以后的 source unit 必须转为同槽 source multiplicity cap/PDEC，或作为非持久重复
+进入 duplicate sparse SAE。最新剩余为 same AP table injection lock、cross-table
+switch、同槽 source multiplicity、duplicate sparse SAE、bounded/long support、
+AP strict gap/dense table、sparse cell、高秩、nonreplay、moving-pivot 与 endpoint
+并行出口。

@@ -17991,3 +17991,38 @@ cross-table switch/PDEC 或 moving-pivot；同槽重复支付进入 duplicate-pa
 duplicate collision、bounded support、long support mass-transfer、AP strict gap、
 dense-table、sparse-cell、高秩、nonreplay、moving-pivot 或 endpoint 并行出口。
 行/列命题仍未无条件闭合。
+
+### 1.159 stable-ladder phase-residue exchange endpoint-pivot-duplicate-payment-slot-accounting 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_endpoint_pivot_duplicate_payment_slot_accounting_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-duplicate-payment-slot-accounting-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_duplicate_payment_imported=true
+endpoint_duplicate_same_canonical_slot_key_closed=true
+endpoint_duplicate_capacity_unit_value_imported=true
+endpoint_duplicate_assignment_partial_injection_imported=true
+endpoint_actual_object_duplicate_collision_imported=true
+endpoint_duplicate_count_not_new_capacity_closed=true
+endpoint_duplicate_payment_reduced_to_slot_accounting=true
+endpoint_duplicate_same_slot_multiplicity_cap_pdec_proved=false
+endpoint_duplicate_payment_sparse_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：duplicate payment 不能作为新增 AP-table capacity。合法支付
+已经锁到 same-AP-table canonical slot，且 admitted slot 的容量值为一单位；同槽重复
+只会变成同槽 source multiplicity cap/PDEC，或非持久 duplicate sparse SAE。
+
+本步没有证明同槽 source multiplicity cap/PDEC，也没有证明 duplicate sparse SAE 求和。
+same AP table injection、cross-table switch、bounded/long support、strict gap、
+dense/sparse table、高秩、nonreplay、moving-pivot 与 endpoint 并行出口仍未排斥。
+行/列命题仍未无条件闭合。
