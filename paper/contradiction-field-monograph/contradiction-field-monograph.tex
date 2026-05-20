@@ -21322,6 +21322,51 @@ docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF signed transport reduction]
+Let \(p\) be the least-prime-factor owner bucket and let \(a_p(m)\) denote the
+still unproved prepushforward signed coefficient attached to the Phi-LPF key
+\((p,m)\).  The Phi recursion lifts to the signed layer only as a support
+partition:
+\[
+  \sum_{\substack{m\le x\\m>1\\m\;p\text{-rough}}} a_p(m)
+  =
+  \sum_{\substack{m\le x\\m>1\\m\;p^+\text{-rough}}} a_p(m)
+  +
+  \sum_{\substack{m'\le \lfloor x/p\rfloor\\m'\;p\text{-rough}}}
+    a_p(pm'),
+\]
+where \(p^+\) is the next prime after \(p\).  Hence Phi-LPF closes the signed
+sum domain and the finite partition, but a noncircular proof still needs a
+forward law for how the signed coefficient, orientation, local factor,
+\(\alpha/\delta\) side, branch key and return tag change under the rough
+cofactor multiplication \(m'\mapsto pm'\).  The next direct hard point is
+\begin{quote}\scriptsize\ttfamily
+PhiLPFRoughCofactorMultiplicationSignedTransportLaw\\
+BeforePushforward.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phi-LPF signed transport reduction]
+The unsigned Phi recursion partitions the \(p\)-rough cofactors into those not
+divisible by \(p\), which are \(p^+\)-rough, and those of the form \(pm'\) with
+\(m'\) again \(p\)-rough.  Multiplying an arbitrary already-defined coefficient
+function \(a_p\) by the characteristic functions of these two disjoint sets
+gives the displayed finite signed-sum identity.
+
+This identity is only a partition identity.  It does not determine the value
+of \(a_p(pm')\), nor does it determine the orientation parity, local-factor
+multiplier, branch transition, exact \((u,v)\), nonzero condition, or named
+return.  Therefore the earlier hard point
+\begin{quote}\scriptsize\ttfamily
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+\end{quote}
+is sharpened to either the rough-cofactor signed transport law above or an
+equivalent pointwise signed value table on the Phi-LPF support.  The
+row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

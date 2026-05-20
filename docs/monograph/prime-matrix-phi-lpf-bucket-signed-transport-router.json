@@ -1,0 +1,839 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_bucket_signed_transport_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiLPFSignedLawTargetImported",
+      "meaning": "上一层已把 signed kernel 的剩余压成 Phi-LPF bucket signed coefficient law。",
+      "proved": false,
+      "remaining": "PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRecursiveLPFSupportImported",
+      "meaning": "Phi/LPF 递推和 support bijection 已关闭无符号支撑与容量。",
+      "proved": true,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedCofactorSplitClosed",
+      "meaning": "对每个 owner prime `p`，cofactor 支撑按 `m` 是否被当前递推素数整除精确分裂。",
+      "proved": true,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedBucketSumPartitionClosedFormally",
+      "meaning": "任意已给定的 rowwise signed 系数 `a_p(m)` 都可沿同一分裂作有限求和；这是形式恒等式，不产生系数值。",
+      "proved": true,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiCountsDoNotDetermineSignedValues",
+      "meaning": "同一 Phi 支撑容量可承载大量 signed decorations；Phi 计数只给 domain，不给 orientation/local factor。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TransportLawIsFirstRecursiveSignedField",
+      "meaning": "若要把 Phi 递推升级为 signed 递推，第一字段必须说明 cofactor 乘法下 signed coefficient 如何传输。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFCandidateMapStillUnsigned",
+      "meaning": "LPF candidate-row map 给唯一候选行索引，但不输出 signed coefficient。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedValueTableStillOpen",
+      "meaning": "现有逐点 signed alpha value table 未闭合；Phi-LPF bucket 版本也未提交。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftAndPrimitiveExpressionStillOpen",
+      "meaning": "signed lift 与 primitive summand signed expression 均仍缺正向系数来源。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "NoDownstreamRecoveryImported",
+      "meaning": "旧 signed-source 路线会回到自身；不能用 payment、零行或 origin table 反推 signed transport。",
+      "proved": true,
+      "remaining": "fixed-point cut imported"
+    },
+    {
+      "closed": false,
+      "gate": "PhiLPFBucketSignedCoefficientLawCurrentCorpusProved",
+      "meaning": "当前材料尚未给出 cofactor signed transport law 或等价 rowwise signed coefficient table。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步没有证明 signed coefficient law、ExactUV fixed-key、终端排斥或三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    }
+  ],
+  "hardpoint_after_router": "(PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND PhiLPFBucketPrepushforwardSignedSumIdentity",
+  "next_direct_attack_target": "PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward",
+  "no_theorem_switch": true,
+  "noncircular_signed_coefficient_emission_kernel_proved": false,
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "phi_counts_determine_support_not_signed_values": true,
+  "phi_lpf_bucket_signed_coefficient_law_proved": false,
+  "phi_lpf_bucket_signed_transport_router_closed": true,
+  "phi_lpf_rough_cofactor_signed_transport_law_proved": false,
+  "phi_lpf_support_and_capacity_imported": true,
+  "plain_conclusion": "Phi/LPF 递推继续给出 signed law 的精确支撑分裂：每个 owner bucket `p` 中，p-rough cofactor 集合按是否含当前递推素因子分成 next-rough 部分和 `m=q*m'` 的回流部分。但这个分裂只移动 domain；要得到 signed 递推，必须正向给出 `a_p(q*m')` 的符号、local factor、alpha/delta side 和 branch 传输律。因而最新硬点从泛化 bucket signed law 收窄为 `PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward`，或等价提交逐 Phi-LPF bucket 的 signed value table。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_transport_audit": [
+    {
+      "N": 30,
+      "cofactor_split_identity_holds": true,
+      "layers": {
+        "2": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 7,
+          "next_prime": 3,
+          "nondivisible_next_rough_count": 7,
+          "phi_split_ok": true,
+          "phi_split_support_count": 14,
+          "support_count_phi_minus_one": 14,
+          "x_floor_N_over_p": 15
+        },
+        "3": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 2,
+          "next_prime": 5,
+          "nondivisible_next_rough_count": 2,
+          "phi_split_ok": true,
+          "phi_split_support_count": 4,
+          "support_count_phi_minus_one": 4,
+          "x_floor_N_over_p": 10
+        },
+        "5": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 7,
+          "nondivisible_next_rough_count": 0,
+          "phi_split_ok": true,
+          "phi_split_support_count": 1,
+          "support_count_phi_minus_one": 1,
+          "x_floor_N_over_p": 6
+        }
+      },
+      "same_capacity_sign_shadow_bits": 19,
+      "same_capacity_sign_shadow_log10": 5.71957,
+      "small_prime_layers": 3,
+      "total_divisible_preimage_keys": 10,
+      "total_nondivisible_next_rough_keys": 9,
+      "total_phi_lpf_support_keys": 19
+    },
+    {
+      "N": 100,
+      "cofactor_split_identity_holds": true,
+      "layers": {
+        "2": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 25,
+          "next_prime": 3,
+          "nondivisible_next_rough_count": 24,
+          "phi_split_ok": true,
+          "phi_split_support_count": 49,
+          "support_count_phi_minus_one": 49,
+          "x_floor_N_over_p": 50
+        },
+        "3": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 6,
+          "next_prime": 5,
+          "nondivisible_next_rough_count": 10,
+          "phi_split_ok": true,
+          "phi_split_support_count": 16,
+          "support_count_phi_minus_one": 16,
+          "x_floor_N_over_p": 33
+        },
+        "5": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 7,
+          "nondivisible_next_rough_count": 5,
+          "phi_split_ok": true,
+          "phi_split_support_count": 6,
+          "support_count_phi_minus_one": 6,
+          "x_floor_N_over_p": 20
+        },
+        "7": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 11,
+          "nondivisible_next_rough_count": 2,
+          "phi_split_ok": true,
+          "phi_split_support_count": 3,
+          "support_count_phi_minus_one": 3,
+          "x_floor_N_over_p": 14
+        }
+      },
+      "same_capacity_sign_shadow_bits": 74,
+      "same_capacity_sign_shadow_log10": 22.27622,
+      "small_prime_layers": 4,
+      "total_divisible_preimage_keys": 33,
+      "total_nondivisible_next_rough_keys": 41,
+      "total_phi_lpf_support_keys": 74
+    },
+    {
+      "N": 997,
+      "cofactor_split_identity_holds": true,
+      "layers": {
+        "11": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 13,
+          "nondivisible_next_rough_count": 19,
+          "phi_split_ok": true,
+          "phi_split_support_count": 20,
+          "support_count_phi_minus_one": 20,
+          "x_floor_N_over_p": 90
+        },
+        "13": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 17,
+          "nondivisible_next_rough_count": 15,
+          "phi_split_ok": true,
+          "phi_split_support_count": 16,
+          "support_count_phi_minus_one": 16,
+          "x_floor_N_over_p": 76
+        },
+        "17": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 19,
+          "nondivisible_next_rough_count": 9,
+          "phi_split_ok": true,
+          "phi_split_support_count": 10,
+          "support_count_phi_minus_one": 10,
+          "x_floor_N_over_p": 58
+        },
+        "19": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 23,
+          "nondivisible_next_rough_count": 7,
+          "phi_split_ok": true,
+          "phi_split_support_count": 8,
+          "support_count_phi_minus_one": 8,
+          "x_floor_N_over_p": 52
+        },
+        "2": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 249,
+          "next_prime": 3,
+          "nondivisible_next_rough_count": 248,
+          "phi_split_ok": true,
+          "phi_split_support_count": 497,
+          "support_count_phi_minus_one": 497,
+          "x_floor_N_over_p": 498
+        },
+        "23": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 29,
+          "nondivisible_next_rough_count": 5,
+          "phi_split_ok": true,
+          "phi_split_support_count": 6,
+          "support_count_phi_minus_one": 6,
+          "x_floor_N_over_p": 43
+        },
+        "29": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 31,
+          "nondivisible_next_rough_count": 1,
+          "phi_split_ok": true,
+          "phi_split_support_count": 2,
+          "support_count_phi_minus_one": 2,
+          "x_floor_N_over_p": 34
+        },
+        "3": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 55,
+          "next_prime": 5,
+          "nondivisible_next_rough_count": 110,
+          "phi_split_ok": true,
+          "phi_split_support_count": 165,
+          "support_count_phi_minus_one": 165,
+          "x_floor_N_over_p": 332
+        },
+        "31": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 37,
+          "nondivisible_next_rough_count": 0,
+          "phi_split_ok": true,
+          "phi_split_support_count": 1,
+          "support_count_phi_minus_one": 1,
+          "x_floor_N_over_p": 32
+        },
+        "5": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 13,
+          "next_prime": 7,
+          "nondivisible_next_rough_count": 53,
+          "phi_split_ok": true,
+          "phi_split_support_count": 66,
+          "support_count_phi_minus_one": 66,
+          "x_floor_N_over_p": 199
+        },
+        "7": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 6,
+          "next_prime": 11,
+          "nondivisible_next_rough_count": 31,
+          "phi_split_ok": true,
+          "phi_split_support_count": 37,
+          "support_count_phi_minus_one": 37,
+          "x_floor_N_over_p": 142
+        }
+      },
+      "same_capacity_sign_shadow_bits": 828,
+      "same_capacity_sign_shadow_log10": 249.252836,
+      "small_prime_layers": 11,
+      "total_divisible_preimage_keys": 330,
+      "total_nondivisible_next_rough_keys": 498,
+      "total_phi_lpf_support_keys": 828
+    },
+    {
+      "N": 5003,
+      "cofactor_split_identity_holds": true,
+      "layers": {
+        "11": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 10,
+          "next_prime": 13,
+          "nondivisible_next_rough_count": 93,
+          "phi_split_ok": true,
+          "phi_split_support_count": 103,
+          "support_count_phi_minus_one": 103,
+          "x_floor_N_over_p": 454
+        },
+        "13": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 6,
+          "next_prime": 17,
+          "nondivisible_next_rough_count": 73,
+          "phi_split_ok": true,
+          "phi_split_support_count": 79,
+          "support_count_phi_minus_one": 79,
+          "x_floor_N_over_p": 384
+        },
+        "17": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 2,
+          "next_prime": 19,
+          "nondivisible_next_rough_count": 55,
+          "phi_split_ok": true,
+          "phi_split_support_count": 57,
+          "support_count_phi_minus_one": 57,
+          "x_floor_N_over_p": 294
+        },
+        "19": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 23,
+          "nondivisible_next_rough_count": 48,
+          "phi_split_ok": true,
+          "phi_split_support_count": 49,
+          "support_count_phi_minus_one": 49,
+          "x_floor_N_over_p": 263
+        },
+        "2": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1250,
+          "next_prime": 3,
+          "nondivisible_next_rough_count": 1250,
+          "phi_split_ok": true,
+          "phi_split_support_count": 2500,
+          "support_count_phi_minus_one": 2500,
+          "x_floor_N_over_p": 2501
+        },
+        "23": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 29,
+          "nondivisible_next_rough_count": 38,
+          "phi_split_ok": true,
+          "phi_split_support_count": 39,
+          "support_count_phi_minus_one": 39,
+          "x_floor_N_over_p": 217
+        },
+        "29": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 31,
+          "nondivisible_next_rough_count": 29,
+          "phi_split_ok": true,
+          "phi_split_support_count": 30,
+          "support_count_phi_minus_one": 30,
+          "x_floor_N_over_p": 172
+        },
+        "3": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 278,
+          "next_prime": 5,
+          "nondivisible_next_rough_count": 555,
+          "phi_split_ok": true,
+          "phi_split_support_count": 833,
+          "support_count_phi_minus_one": 833,
+          "x_floor_N_over_p": 1667
+        },
+        "31": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 37,
+          "nondivisible_next_rough_count": 26,
+          "phi_split_ok": true,
+          "phi_split_support_count": 27,
+          "support_count_phi_minus_one": 27,
+          "x_floor_N_over_p": 161
+        },
+        "37": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 41,
+          "nondivisible_next_rough_count": 20,
+          "phi_split_ok": true,
+          "phi_split_support_count": 21,
+          "support_count_phi_minus_one": 21,
+          "x_floor_N_over_p": 135
+        },
+        "41": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 43,
+          "nondivisible_next_rough_count": 17,
+          "phi_split_ok": true,
+          "phi_split_support_count": 18,
+          "support_count_phi_minus_one": 18,
+          "x_floor_N_over_p": 122
+        },
+        "43": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 47,
+          "nondivisible_next_rough_count": 16,
+          "phi_split_ok": true,
+          "phi_split_support_count": 17,
+          "support_count_phi_minus_one": 17,
+          "x_floor_N_over_p": 116
+        },
+        "47": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 53,
+          "nondivisible_next_rough_count": 12,
+          "phi_split_ok": true,
+          "phi_split_support_count": 13,
+          "support_count_phi_minus_one": 13,
+          "x_floor_N_over_p": 106
+        },
+        "5": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 67,
+          "next_prime": 7,
+          "nondivisible_next_rough_count": 265,
+          "phi_split_ok": true,
+          "phi_split_support_count": 332,
+          "support_count_phi_minus_one": 332,
+          "x_floor_N_over_p": 1000
+        },
+        "53": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 59,
+          "nondivisible_next_rough_count": 8,
+          "phi_split_ok": true,
+          "phi_split_support_count": 9,
+          "support_count_phi_minus_one": 9,
+          "x_floor_N_over_p": 94
+        },
+        "59": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 61,
+          "nondivisible_next_rough_count": 6,
+          "phi_split_ok": true,
+          "phi_split_support_count": 7,
+          "support_count_phi_minus_one": 7,
+          "x_floor_N_over_p": 84
+        },
+        "61": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 67,
+          "nondivisible_next_rough_count": 4,
+          "phi_split_ok": true,
+          "phi_split_support_count": 5,
+          "support_count_phi_minus_one": 5,
+          "x_floor_N_over_p": 82
+        },
+        "67": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 71,
+          "nondivisible_next_rough_count": 2,
+          "phi_split_ok": true,
+          "phi_split_support_count": 3,
+          "support_count_phi_minus_one": 3,
+          "x_floor_N_over_p": 74
+        },
+        "7": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 27,
+          "next_prime": 11,
+          "nondivisible_next_rough_count": 163,
+          "phi_split_ok": true,
+          "phi_split_support_count": 190,
+          "support_count_phi_minus_one": 190,
+          "x_floor_N_over_p": 714
+        }
+      },
+      "same_capacity_sign_shadow_bits": 4332,
+      "same_capacity_sign_shadow_log10": 1304.061941,
+      "small_prime_layers": 19,
+      "total_divisible_preimage_keys": 1652,
+      "total_nondivisible_next_rough_keys": 2680,
+      "total_phi_lpf_support_keys": 4332
+    },
+    {
+      "N": 10000,
+      "cofactor_split_identity_holds": true,
+      "layers": {
+        "11": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 19,
+          "next_prime": 13,
+          "nondivisible_next_rough_count": 188,
+          "phi_split_ok": true,
+          "phi_split_support_count": 207,
+          "support_count_phi_minus_one": 207,
+          "x_floor_N_over_p": 909
+        },
+        "13": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 13,
+          "next_prime": 17,
+          "nondivisible_next_rough_count": 146,
+          "phi_split_ok": true,
+          "phi_split_support_count": 159,
+          "support_count_phi_minus_one": 159,
+          "x_floor_N_over_p": 769
+        },
+        "17": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 6,
+          "next_prime": 19,
+          "nondivisible_next_rough_count": 104,
+          "phi_split_ok": true,
+          "phi_split_support_count": 110,
+          "support_count_phi_minus_one": 110,
+          "x_floor_N_over_p": 588
+        },
+        "19": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 3,
+          "next_prime": 23,
+          "nondivisible_next_rough_count": 91,
+          "phi_split_ok": true,
+          "phi_split_support_count": 94,
+          "support_count_phi_minus_one": 94,
+          "x_floor_N_over_p": 526
+        },
+        "2": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 2500,
+          "next_prime": 3,
+          "nondivisible_next_rough_count": 2499,
+          "phi_split_ok": true,
+          "phi_split_support_count": 4999,
+          "support_count_phi_minus_one": 4999,
+          "x_floor_N_over_p": 5000
+        },
+        "23": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 29,
+          "nondivisible_next_rough_count": 75,
+          "phi_split_ok": true,
+          "phi_split_support_count": 76,
+          "support_count_phi_minus_one": 76,
+          "x_floor_N_over_p": 434
+        },
+        "29": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 31,
+          "nondivisible_next_rough_count": 58,
+          "phi_split_ok": true,
+          "phi_split_support_count": 59,
+          "support_count_phi_minus_one": 59,
+          "x_floor_N_over_p": 344
+        },
+        "3": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 556,
+          "next_prime": 5,
+          "nondivisible_next_rough_count": 1110,
+          "phi_split_ok": true,
+          "phi_split_support_count": 1666,
+          "support_count_phi_minus_one": 1666,
+          "x_floor_N_over_p": 3333
+        },
+        "31": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 37,
+          "nondivisible_next_rough_count": 55,
+          "phi_split_ok": true,
+          "phi_split_support_count": 56,
+          "support_count_phi_minus_one": 56,
+          "x_floor_N_over_p": 322
+        },
+        "37": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 41,
+          "nondivisible_next_rough_count": 45,
+          "phi_split_ok": true,
+          "phi_split_support_count": 46,
+          "support_count_phi_minus_one": 46,
+          "x_floor_N_over_p": 270
+        },
+        "41": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 43,
+          "nondivisible_next_rough_count": 40,
+          "phi_split_ok": true,
+          "phi_split_support_count": 41,
+          "support_count_phi_minus_one": 41,
+          "x_floor_N_over_p": 243
+        },
+        "43": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 47,
+          "nondivisible_next_rough_count": 36,
+          "phi_split_ok": true,
+          "phi_split_support_count": 37,
+          "support_count_phi_minus_one": 37,
+          "x_floor_N_over_p": 232
+        },
+        "47": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 53,
+          "nondivisible_next_rough_count": 32,
+          "phi_split_ok": true,
+          "phi_split_support_count": 33,
+          "support_count_phi_minus_one": 33,
+          "x_floor_N_over_p": 212
+        },
+        "5": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 133,
+          "next_prime": 7,
+          "nondivisible_next_rough_count": 533,
+          "phi_split_ok": true,
+          "phi_split_support_count": 666,
+          "support_count_phi_minus_one": 666,
+          "x_floor_N_over_p": 2000
+        },
+        "53": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 59,
+          "nondivisible_next_rough_count": 26,
+          "phi_split_ok": true,
+          "phi_split_support_count": 27,
+          "support_count_phi_minus_one": 27,
+          "x_floor_N_over_p": 188
+        },
+        "59": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 61,
+          "nondivisible_next_rough_count": 22,
+          "phi_split_ok": true,
+          "phi_split_support_count": 23,
+          "support_count_phi_minus_one": 23,
+          "x_floor_N_over_p": 169
+        },
+        "61": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 67,
+          "nondivisible_next_rough_count": 20,
+          "phi_split_ok": true,
+          "phi_split_support_count": 21,
+          "support_count_phi_minus_one": 21,
+          "x_floor_N_over_p": 163
+        },
+        "67": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 71,
+          "nondivisible_next_rough_count": 16,
+          "phi_split_ok": true,
+          "phi_split_support_count": 17,
+          "support_count_phi_minus_one": 17,
+          "x_floor_N_over_p": 149
+        },
+        "7": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 55,
+          "next_prime": 11,
+          "nondivisible_next_rough_count": 325,
+          "phi_split_ok": true,
+          "phi_split_support_count": 380,
+          "support_count_phi_minus_one": 380,
+          "x_floor_N_over_p": 1428
+        },
+        "71": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 73,
+          "nondivisible_next_rough_count": 14,
+          "phi_split_ok": true,
+          "phi_split_support_count": 15,
+          "support_count_phi_minus_one": 15,
+          "x_floor_N_over_p": 140
+        },
+        "73": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 79,
+          "nondivisible_next_rough_count": 11,
+          "phi_split_ok": true,
+          "phi_split_support_count": 12,
+          "support_count_phi_minus_one": 12,
+          "x_floor_N_over_p": 136
+        },
+        "79": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 83,
+          "nondivisible_next_rough_count": 8,
+          "phi_split_ok": true,
+          "phi_split_support_count": 9,
+          "support_count_phi_minus_one": 9,
+          "x_floor_N_over_p": 126
+        },
+        "83": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 89,
+          "nondivisible_next_rough_count": 7,
+          "phi_split_ok": true,
+          "phi_split_support_count": 8,
+          "support_count_phi_minus_one": 8,
+          "x_floor_N_over_p": 120
+        },
+        "89": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 97,
+          "nondivisible_next_rough_count": 5,
+          "phi_split_ok": true,
+          "phi_split_support_count": 6,
+          "support_count_phi_minus_one": 6,
+          "x_floor_N_over_p": 112
+        },
+        "97": {
+          "cofactor_split_ok": true,
+          "divisible_preimage_p_rough_count": 1,
+          "next_prime": 101,
+          "nondivisible_next_rough_count": 2,
+          "phi_split_ok": true,
+          "phi_split_support_count": 3,
+          "support_count_phi_minus_one": 3,
+          "x_floor_N_over_p": 103
+        }
+      },
+      "same_capacity_sign_shadow_bits": 8770,
+      "same_capacity_sign_shadow_log10": 2640.033062,
+      "small_prime_layers": 25,
+      "total_divisible_preimage_keys": 3302,
+      "total_nondivisible_next_rough_keys": 5468,
+      "total_phi_lpf_support_keys": 8770
+    }
+  ],
+  "signed_bucket_sum_partition_identity_proved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json": "735c6efd0580444f1b541b01a5a7184dff79497191657bb2da6bf0b6b1d3778f",
+    "docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.json": "c19cac4502bc4a62202e18d136493e2820c11590c92a20ba40f590c7aa7216b4",
+    "docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json": "d916331b1d8bea632d161cbe99fe4500813feb8333bf0463e4de5767bbf3a81c",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-signed-source-fixed-point-breaker-router.json": "a07743b021b11f13f19d791fc43d4268f551878c43f3340bd54664254311185f",
+    "experiments/prime_matrix_phi_lpf_bucket_signed_transport_router.py": "c29ed66b199f064eae5869317f5bd083a11a26f2685b855b2b32bfd1200511d8"
+  },
+  "status": "phi_lpf_signed_law_reduced_to_rough_cofactor_signed_transport_open",
+  "target_input_before_router": "PhiLPFBucketSignedCoefficientLawBeforePushforward",
+  "transport_law_fields": [
+    {
+      "field": "owner_bucket_prime",
+      "meaning": "外层 LPF owner prime `p`，即 candidate composite 的最小素因子。"
+    },
+    {
+      "field": "rough_cofactor_step",
+      "meaning": "Phi 递推中的 cofactor 乘法步 `m -> q*m`，特别是 `q=p_k`。"
+    },
+    {
+      "field": "signed_coefficient_transport",
+      "meaning": "正向给出 `a_p(q*m)` 与 `a_p(m)` 或原始 source row 的关系。"
+    },
+    {
+      "field": "orientation_parity_update",
+      "meaning": "cofactor 乘法对 orientation、奇偶分支和符号的更新规则。"
+    },
+    {
+      "field": "local_factor_multiplier",
+      "meaning": "乘入 `q` 后 local factor、截断因子、非零条件的更新。"
+    },
+    {
+      "field": "alpha_delta_side_branch_transition",
+      "meaning": "同一 key 在 alpha/delta 侧、branch key、ExactUV 输出中的传输。"
+    },
+    {
+      "field": "prepushforward_signed_sum_identity",
+      "meaning": "传输后的有限 signed 求和在 Phi/payment 推前前闭合。"
+    },
+    {
+      "field": "return_tag",
+      "meaning": "传输失败、零因子、符号冲突或后验依赖时的命名回流。"
+    },
+    {
+      "field": "no_downstream_recovery",
+      "meaning": "传输律不能读取 payment skeleton、零行覆盖、origin table 固定点或终端反推。"
+    }
+  ],
+  "unsigned_cofactor_split_identity_proved": true
+}

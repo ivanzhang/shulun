@@ -18236,3 +18236,44 @@ actual-load 含义是：noncircular signed coefficient kernel 中的无符号支
 对每个 Phi-LPF support key 正向赋 signed coefficient、sign/local factor、alpha/delta
 侧、branch key、`(u,v)` 输出与推前前求和恒等式。最新直接主攻变为
 `PhiLPFBucketSignedCoefficientLawBeforePushforward`。行/列命题仍未无条件闭合。
+
+### 1.166 Phi-LPF bucket signed transport 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bucket_signed_transport_router.py
+data/prime-matrix-phi-lpf-bucket-signed-transport-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.md
+docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+unsigned_cofactor_split_identity_proved=true
+signed_bucket_sum_partition_identity_proved=true
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：Phi 递推在 signed 场景中继续给出精确支撑分裂。对 owner prime
+`p` 和待证明系数 `a_p(m)`，
+
+```text
+sum_{m p-rough, 1<m<=x} a_p(m)
+  = sum_{m p_next-rough, 1<m<=x} a_p(m)
+    + sum_{m' p-rough, m'<=floor(x/p)} a_p(p*m')
+```
+
+这是有限求和恒等式，但它不生成 `a_p(p*m')` 的符号、local factor、branch 传输或
+alpha/delta 侧。`N=10000` 审计中 `8770` 个 Phi-LPF support keys 分裂为 `5468` 个
+next-rough 非整除项和 `3302` 个整除预像项。
+
+因此最新硬点从泛化 bucket signed law 收窄为
+`PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward`，等价并行入口为
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。

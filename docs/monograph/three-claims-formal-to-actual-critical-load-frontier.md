@@ -15488,3 +15488,47 @@ formal-to-actual 含义是：`NoncircularPreCauchySignedCoefficientEmissionKerne
 signed coefficient、sign/local factor、alpha/delta 侧、branch key、`(u,v)` 输出和推前前
 求和恒等式。不能再用 payment skeleton、早期零行覆盖或来源表固定点反推这些符号值。
 行/列命题仍未无条件闭合。
+
+## 325. Phi-LPF bucket signed transport frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_bucket_signed_transport_router.py
+docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.md
+docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.json
+data/prime-matrix-phi-lpf-bucket-signed-transport-ledger.json
+```
+
+同步结果：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+unsigned_cofactor_split_identity_proved=true
+signed_bucket_sum_partition_identity_proved=true
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Phi 递推可以在 signed 层保持同一支撑分裂，但只能作为有限求和
+的 domain identity。设 `a_p(m)` 是 LPF owner bucket `p` 上待证明的 Cauchy 前 signed
+coefficient，则 first split 给出
+
+```text
+sum_{m p-rough, 1<m<=x} a_p(m)
+  = sum_{m p_next-rough, 1<m<=x} a_p(m)
+    + sum_{m' p-rough, m'<=floor(x/p)} a_p(p*m')
+```
+
+这里第二项仍需要解释 `a_p(p*m')` 如何由同 formal-unit source row 正向生成。也就是说，
+Phi/LPF 已经支付 support/capacity 与 signed sum partition；真正未闭合的是 cofactor
+乘法下的 signed coefficient transport：orientation parity、local factor、alpha/delta side、
+branch key、ExactUV 输出、非零条件和回流标签。
+
+最新直接主攻为
+`PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward`；若不走递推传输，
+则必须直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。
