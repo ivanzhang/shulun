@@ -14948,3 +14948,30 @@ formal-to-actual 含义是：零 slack 临界面必须转化为 endpoint critica
 
 本步没有闭合行/列命题；最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、
 source multiplicity、bridge、amplitude-depth、variation-boundary flux。
+
+## 308. Stable-ladder phase-residue exchange endpoint-dynamic-signed-depth-flux-packet frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_dynamic_signed_depth_flux_packet_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_dynamic_bridge_amplitude_variation_imported=true
+phase_residue_exchange_boundary_equality_projection_imported_for_dynamic_packet=true
+endpoint_orbit_signed_depth_flux_decomposition_closed=true
+endpoint_orbit_no_independent_bridge_amplitude_variation_closed=true
+endpoint_orbit_signed_depth_flux_packet_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：endpoint 动态三出口被统一为 signed-depth/flux packet。
+
+本步没有闭合行/列命题；最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、
+source multiplicity 与 signed-depth/flux packet。

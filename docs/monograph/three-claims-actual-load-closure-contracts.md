@@ -17646,3 +17646,44 @@ boundary sustaining flux -> variation-boundary flux exit
 
 本步没有证明 full-cycle mean、amplitude-depth、variation-boundary flux、endpoint singleton、
 source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.149 stable-ladder phase-residue exchange endpoint-dynamic-signed-depth-flux-packet 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_dynamic_signed_depth_flux_packet_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-dynamic-signed-depth-flux-packet-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_dynamic_bridge_amplitude_variation_imported=true
+phase_residue_exchange_boundary_equality_projection_imported_for_dynamic_packet=true
+endpoint_orbit_dynamic_signed_endpoint_measure_closed=true
+endpoint_orbit_dynamic_packet_zero_mean_reduction_closed=true
+endpoint_orbit_signed_depth_flux_decomposition_closed=true
+endpoint_orbit_signed_depth_flux_packet_registered=true
+endpoint_orbit_no_independent_bridge_amplitude_variation_closed=true
+endpoint_orbit_signed_depth_flux_packet_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：boundary/payment 独立出口移除后，bridge cancellation、
+amplitude-depth 与 variation-boundary flux 都是同一个 endpoint signed-depth/flux 测度
+的三种投影：
+
+```text
+opposite-sign cancellation -> bridge component
+same-sign positive depth   -> amplitude-depth component
+boundary transport flux    -> variation-boundary component
+```
+
+因此三个 endpoint 动态出口不再作为三条并行独立出口保留，而是统一为
+`EndpointOrbitSignedDepthFluxPacketPDECCap`。
+
+本步没有证明 signed-depth/flux packet、endpoint singleton、full-cycle mean、
+source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
