@@ -1,0 +1,628 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_rough_cofactor_ordered_factorization_coherence_router",
+  "coherence_fields": [
+    {
+      "field": "owner_bucket_prime",
+      "meaning": "固定 LPF owner prime `p`。"
+    },
+    {
+      "field": "rough_cofactor",
+      "meaning": "`m` 为 p-rough 且 `p*m<=N` 的 Phi-LPF support cofactor。"
+    },
+    {
+      "field": "ordered_factor_word",
+      "meaning": "按最小素因子剥离得到的唯一非降素因子词 `q_1,...,q_t`，且每个 `q_i>=p`。"
+    },
+    {
+      "field": "prefix_support_path",
+      "meaning": "前缀 `q_1...q_j` 仍为 p-rough，且 `p*q_1...q_j<=N`，所以路径不离开 owner bucket。"
+    },
+    {
+      "field": "permutation_lock",
+      "meaning": "只采用非降 LPF 词，排除同一 cofactor 的排列重复路径。"
+    },
+    {
+      "field": "signed_update_not_included",
+      "meaning": "该一致性只给 path/order，不给 orientation、local factor 或 signed coefficient 更新。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiLPFSupportImported",
+      "meaning": "Phi/LPF ownership 已固定 owner bucket 与 p-rough support key。",
+      "proved": true,
+      "remaining": "support/capacity already paid"
+    },
+    {
+      "closed": true,
+      "gate": "TransportResidualImported",
+      "meaning": "旧 rough transport 还把 step local factor update 与 ordered coherence 合在一起。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrderedFactorWordExists",
+      "meaning": "对每个 p-rough cofactor `m`，算术基本定理给出唯一非降素因子词。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFPeelingPathUnique",
+      "meaning": "按最小素因子递次剥离与非降素因子词一致，因此没有路径选择自由。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixPathStaysInOwnerBucket",
+      "meaning": "每个前缀仍为 p-rough 且对应 `p*prefix<=p*m<=N`，不会跳出同一 owner bucket。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PermutationAmbiguityRemoved",
+      "meaning": "非降 LPF 词把同一 cofactor 的排列重复全部锁死。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrderedCoherenceCurrentCorpusProved",
+      "meaning": "ordered factorization coherence 是纯支撑/路径事实，已由 LPF 剥离和前缀保持性闭合。",
+      "proved": true,
+      "remaining": "ordered coherence removed from latest basis"
+    },
+    {
+      "closed": true,
+      "gate": "StepLocalFactorUpdateStillOpen",
+      "meaning": "有序路径不产生 signed coefficient、orientation parity 或 local factor 乘子。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseTableStillOpen",
+      "meaning": "若不走 step update，仍需直接提交逐 Phi-LPF key 的 signed value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只闭合 ordered coherence；未证明 signed local factor、ExactUV、seed cycle-cut、same-set PDEC、new joint 或三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND (PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)"
+    }
+  ],
+  "next_direct_attack_target": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward",
+  "no_theorem_switch": true,
+  "nonrecursive_breaker_alternatives": [
+    "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+  ],
+  "ordered_lpf_factorization_coherence_proved": true,
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "phi_lpf_rough_cofactor_ordered_factorization_coherence_router_closed": true,
+  "phi_lpf_support_and_capacity_imported": true,
+  "plain_conclusion": "Phi-LPF rough cofactor 的 ordered factorization coherence 是纯无符号路径事实：固定 owner prime `p` 后，每个 p-rough cofactor `m` 由最小素因子剥离得到唯一非降素因子词，所有前缀仍为 p-rough 且对应 composite `p*prefix` 仍在同一 owner bucket 内。因此 ordered coherence 可从最新剩余基中移除。但该路径事实不产生 signed coefficient、orientation parity 或 local factor 乘子；真正剩余为 `PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward`，或直接提交逐 Phi-LPF key signed value table，或进入 seed cycle-cut、same-set PDEC、new joint formula。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "retained_basis_after_router": "(PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rough_cofactor_ordered_factorization_coherence_proved": true,
+  "rough_cofactor_step_local_factor_update_law_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_ordered_coherence_audit": [
+    {
+      "N": 30,
+      "failures": [],
+      "layers": {
+        "2": {
+          "factor_steps": 24,
+          "max_factor_depth": 3,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 14
+        },
+        "3": {
+          "factor_steps": 5,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 4
+        },
+        "5": {
+          "factor_steps": 1,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 1
+        }
+      },
+      "max_factor_depth": 3,
+      "ordered_lpf_factorization_coherence_holds": true,
+      "small_prime_layers": 3,
+      "square_base_seed_keys": 3,
+      "total_ordered_factor_steps": 30,
+      "total_phi_lpf_support_keys": 19
+    },
+    {
+      "N": 100,
+      "failures": [],
+      "layers": {
+        "2": {
+          "factor_steps": 108,
+          "max_factor_depth": 5,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 49
+        },
+        "3": {
+          "factor_steps": 23,
+          "max_factor_depth": 3,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 16
+        },
+        "5": {
+          "factor_steps": 6,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 6
+        },
+        "7": {
+          "factor_steps": 3,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 3
+        }
+      },
+      "max_factor_depth": 5,
+      "ordered_lpf_factorization_coherence_holds": true,
+      "small_prime_layers": 4,
+      "square_base_seed_keys": 4,
+      "total_ordered_factor_steps": 140,
+      "total_phi_lpf_support_keys": 74
+    },
+    {
+      "N": 997,
+      "failures": [],
+      "layers": {
+        "11": {
+          "factor_steps": 20,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 20
+        },
+        "13": {
+          "factor_steps": 16,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 16
+        },
+        "17": {
+          "factor_steps": 10,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 10
+        },
+        "19": {
+          "factor_steps": 8,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 8
+        },
+        "2": {
+          "factor_steps": 1370,
+          "max_factor_depth": 8,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 497
+        },
+        "23": {
+          "factor_steps": 6,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 6
+        },
+        "29": {
+          "factor_steps": 2,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 2
+        },
+        "3": {
+          "factor_steps": 303,
+          "max_factor_depth": 5,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 165
+        },
+        "31": {
+          "factor_steps": 1,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 1
+        },
+        "5": {
+          "factor_steps": 90,
+          "max_factor_depth": 3,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 66
+        },
+        "7": {
+          "factor_steps": 43,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 37
+        }
+      },
+      "max_factor_depth": 8,
+      "ordered_lpf_factorization_coherence_holds": true,
+      "small_prime_layers": 11,
+      "square_base_seed_keys": 11,
+      "total_ordered_factor_steps": 1869,
+      "total_phi_lpf_support_keys": 828
+    },
+    {
+      "N": 5003,
+      "failures": [],
+      "layers": {
+        "11": {
+          "factor_steps": 123,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 103
+        },
+        "13": {
+          "factor_steps": 87,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 79
+        },
+        "17": {
+          "factor_steps": 58,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 57
+        },
+        "19": {
+          "factor_steps": 49,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 49
+        },
+        "2": {
+          "factor_steps": 7551,
+          "max_factor_depth": 11,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 2500
+        },
+        "23": {
+          "factor_steps": 39,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 39
+        },
+        "29": {
+          "factor_steps": 30,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 30
+        },
+        "3": {
+          "factor_steps": 1727,
+          "max_factor_depth": 6,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 833
+        },
+        "31": {
+          "factor_steps": 27,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 27
+        },
+        "37": {
+          "factor_steps": 21,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 21
+        },
+        "41": {
+          "factor_steps": 18,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 18
+        },
+        "43": {
+          "factor_steps": 17,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 17
+        },
+        "47": {
+          "factor_steps": 13,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 13
+        },
+        "5": {
+          "factor_steps": 528,
+          "max_factor_depth": 4,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 332
+        },
+        "53": {
+          "factor_steps": 9,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 9
+        },
+        "59": {
+          "factor_steps": 7,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 7
+        },
+        "61": {
+          "factor_steps": 5,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 5
+        },
+        "67": {
+          "factor_steps": 3,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 3
+        },
+        "7": {
+          "factor_steps": 259,
+          "max_factor_depth": 3,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 190
+        }
+      },
+      "max_factor_depth": 11,
+      "ordered_lpf_factorization_coherence_holds": true,
+      "small_prime_layers": 19,
+      "square_base_seed_keys": 19,
+      "total_ordered_factor_steps": 10571,
+      "total_phi_lpf_support_keys": 4332
+    },
+    {
+      "N": 10000,
+      "failures": [],
+      "layers": {
+        "11": {
+          "factor_steps": 263,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 207
+        },
+        "13": {
+          "factor_steps": 187,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 159
+        },
+        "17": {
+          "factor_steps": 119,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 110
+        },
+        "19": {
+          "factor_steps": 96,
+          "max_factor_depth": 2,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 94
+        },
+        "2": {
+          "factor_steps": 15567,
+          "max_factor_depth": 12,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 4999
+        },
+        "23": {
+          "factor_steps": 76,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 76
+        },
+        "29": {
+          "factor_steps": 59,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 59
+        },
+        "3": {
+          "factor_steps": 3601,
+          "max_factor_depth": 7,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 1666
+        },
+        "31": {
+          "factor_steps": 56,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 56
+        },
+        "37": {
+          "factor_steps": 46,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 46
+        },
+        "41": {
+          "factor_steps": 41,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 41
+        },
+        "43": {
+          "factor_steps": 37,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 37
+        },
+        "47": {
+          "factor_steps": 33,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 33
+        },
+        "5": {
+          "factor_steps": 1114,
+          "max_factor_depth": 4,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 666
+        },
+        "53": {
+          "factor_steps": 27,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 27
+        },
+        "59": {
+          "factor_steps": 23,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 23
+        },
+        "61": {
+          "factor_steps": 21,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 21
+        },
+        "67": {
+          "factor_steps": 17,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 17
+        },
+        "7": {
+          "factor_steps": 550,
+          "max_factor_depth": 3,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 380
+        },
+        "71": {
+          "factor_steps": 15,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 15
+        },
+        "73": {
+          "factor_steps": 12,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 12
+        },
+        "79": {
+          "factor_steps": 9,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 9
+        },
+        "83": {
+          "factor_steps": 8,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 8
+        },
+        "89": {
+          "factor_steps": 6,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 6
+        },
+        "97": {
+          "factor_steps": 3,
+          "max_factor_depth": 1,
+          "ordered_lpf_path_ok": true,
+          "square_base_keys": 1,
+          "support_keys": 3
+        }
+      },
+      "max_factor_depth": 12,
+      "ordered_lpf_factorization_coherence_holds": true,
+      "small_prime_layers": 25,
+      "square_base_seed_keys": 25,
+      "total_ordered_factor_steps": 21986,
+      "total_phi_lpf_support_keys": 8770
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.json": "8f696d3cb025e8d98790530763d5b87717c945b57c310f6d16f4c49711c8fdcb",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.json": "ae2cac674830906635ecbf85c8105659d16d70ef0592a9fd817eb625d4d51fcb",
+    "docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.json": "c19cac4502bc4a62202e18d136493e2820c11590c92a20ba40f590c7aa7216b4",
+    "docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json": "d916331b1d8bea632d161cbe99fe4500813feb8333bf0463e4de5767bbf3a81c",
+    "experiments/prime_matrix_phi_lpf_rough_cofactor_ordered_factorization_coherence_router.py": "240b94eccbf48df46fbc6bfcc4922eaa020b0eaf4f12ac4553535ef0880bb4b7"
+  },
+  "status": "phi_lpf_rough_cofactor_ordered_factorization_coherence_closed_step_update_open",
+  "target_input_before_router": "PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+  "unsigned_cofactor_split_imported": true
+}

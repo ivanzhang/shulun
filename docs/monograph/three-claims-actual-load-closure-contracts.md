@@ -5595,6 +5595,57 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+### 1.172 Phi-LPF rough cofactor ordered factorization coherence 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_rough_cofactor_ordered_factorization_coherence_router.py
+data/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.md
+docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+unsigned_cofactor_split_imported=true
+rough_cofactor_ordered_factorization_coherence_proved=true
+rough_cofactor_step_local_factor_update_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：固定 LPF owner prime `p` 后，每个 p-rough cofactor `m` 由最小素因子
+剥离得到唯一非降素因子词。每个前缀仍是 p-rough，且 `p*prefix<=p*m<=N`，所以路径不会
+离开同一 owner bucket；非降 LPF 词也排除了同一 cofactor 的排列重复路径。`N=10000`
+审计给出 `8770` 个 support keys、`21986` 个 ordered factor steps、最大深度 `12`，
+全部前缀一致性通过。
+
+因此 `PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward` 可从最新剩余基中
+移除。但这仍只是无符号路径事实，不产生 signed coefficient、orientation parity 或 local
+factor 乘子。最新直接主攻变为：
+
+```text
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+```
+
+并行仍需：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

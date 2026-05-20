@@ -21548,6 +21548,38 @@ docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF rough cofactor ordered factorization coherence]
+The ordered factorization coherence part of the Phi-LPF rough-cofactor
+transport obligation is a support-level consequence of least-prime-factor
+peeling.  Fix an owner prime \(p\).  Every \(p\)-rough cofactor \(m\) in the
+Phi-LPF support has a unique nondecreasing prime word
+\[
+  m=q_1q_2\cdots q_t,\qquad p\le q_1\le \cdots\le q_t,
+\]
+obtained by repeatedly removing the least prime factor.  Each prefix remains
+\(p\)-rough and satisfies \(p q_1\cdots q_j\le pm\le N\).  Hence the recursive
+rough-cofactor path stays in the same owner bucket and has no permutation
+ambiguity.
+\end{theorem}
+\begin{proof}[Phi-LPF rough cofactor ordered factorization coherence]
+Existence and uniqueness of the nondecreasing word are exactly the fundamental
+theorem of arithmetic written in least-prime-factor order.  Since \(m\) is
+\(p\)-rough, no factor \(q_j\) is below \(p\).  Products of factors all at least
+\(p\) are again \(p\)-rough, and every prefix product is bounded by the final
+cofactor \(m\), so its composite image remains inside the same Phi-LPF owner
+bucket.  This closes the ordered path/coherence field.
+
+This argument is intentionally unsigned.  It does not assign a signed
+coefficient, orientation parity, local factor multiplier, alpha/delta side, or
+ExactUV value.  Therefore the latest direct remaining transport input is the
+step local-factor update law, with the pointwise Phi-LPF signed value table and
+the non-circular seed/PDEC/new-joint exits still open.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

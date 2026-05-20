@@ -15583,6 +15583,57 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 330. Phi-LPF rough cofactor ordered factorization coherence frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_rough_cofactor_ordered_factorization_coherence_router.py
+docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.md
+docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.json
+data/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-ledger.json
+```
+
+同步结果：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+unsigned_cofactor_split_imported=true
+rough_cofactor_ordered_factorization_coherence_proved=true
+rough_cofactor_step_local_factor_update_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward`
+不是 signed 系数字段，而是 LPF 支撑路径字段。固定 owner prime `p` 和 p-rough cofactor
+`m` 后，最小素因子剥离给出唯一非降素因子词 `q_1,...,q_t`；每个前缀仍为 p-rough，
+且对应 composite `p*q_1...q_j` 仍在 `N` 内同一 owner bucket 中。因此递推路径没有
+排列歧义，也没有跨 bucket 换对象。
+
+本层闭合的是 ordered coherence；它不能给出 signed local factor 更新。最新保留基为：
+
+```text
+(PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻为：
+
+```text
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+```
+
+行/列命题仍未无条件闭合。
+
 ## 326. Phi-LPF signed transport unit-seed frontier
 
 新增文件
