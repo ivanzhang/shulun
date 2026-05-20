@@ -6754,6 +6754,50 @@ OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 并仍需合取 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`、
 模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.195 Phi-LPF latest new-payload source-atom alignment sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_payload_source_atom_alignment_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_new_payload_imported=true
+latest_unsigned_labels_cannot_pay_payload=true
+signed_lane_cycle_cut_carried=true
+strict_new_payload_alignment_imported=true
+latest_new_payload_reduced_to_source_rank_atom=true
+independent_new_payload_terminal_present=false
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+actual-load 含义是：latest
+`NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`
+不能作为 Phi-LPF 路线中的匿名新终点。若它不是 signed-lane 环内改名，就必须在
+Cauchy/Phi/payment 前携带同一 actual source-rank/no-collapse 三原子：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+样本 `N=10000` 中 latest trace-sync 仍给出 canonical edges `2600`、开放 signed slots
+`15600`、trace packets `2600`。最新直接主攻为 source-domain absolute entropy；并行仍需
+complete key、fixed-key ExactUV local multiplicity、terminal descent、PDEC scope、逐点 signed table、
+ExactUV、模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

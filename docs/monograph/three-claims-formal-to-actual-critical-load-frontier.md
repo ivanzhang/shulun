@@ -16825,6 +16825,48 @@ OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 并仍需合取 ExactUV source/fiber、模型余量、RatePreservation 与 DStructure/Rankin。
 行/列命题仍未无条件闭合。
 
+## 353. Phi-LPF latest new-payload source-atom alignment sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_payload_source_atom_alignment_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-payload-source-atom-alignment-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_new_payload_imported=true
+latest_unsigned_labels_cannot_pay_payload=true
+signed_lane_cycle_cut_carried=true
+strict_new_payload_alignment_imported=true
+latest_new_payload_reduced_to_source_rank_atom=true
+independent_new_payload_terminal_present=false
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+formal-to-actual 含义是：latest new-payload 出口已经与 strict source-atom alignment 对齐。
+LPF/Phi/Ferrers 的无符号字段与 trace-sync 的同 key 矩阵只给出输入域和命名 return；它们不能
+产生真正破环的 signed payload。若 new payload 是独立新工件，它必须携带：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+当前真正未闭合的是上述三原子包，首攻项为
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`；并行仍为 terminal descent、same-set PDEC、
+逐点 signed table、ExactUV、模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
