@@ -5982,6 +5982,48 @@ PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
 配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步只删除
 swap-symmetry 伪出口，不给出 edge-local signed formula。行/列命题仍未无条件闭合。
 
+### 1.180 Phi-LPF edge-local two-prime field-cut 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_edge_local_two_prime_field_cut_router.py
+data/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.md
+docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.json
+```
+
+同步读数为：
+
+```text
+edge_local_formula_target_imported=true
+edge_local_closed_unsigned_label_ledger_proved=true
+edge_label_bijection_proved=true
+lpf_bucket_product_fields_proved=true
+ferrers_rank_degree_fields_proved=true
+edge_atom_multiplicity_one_proved=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+edge_local_signed_interaction_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：edge-local formula-or-return 中由 LPF/Phi/Ferrers 可支付的部分已经
+全部固定为无符号 edge label。每条 canonical `(p,q)` edge 的 owner、product、LPF bucket、
+Ferrers row/column rank-degree 与 atom multiplicity 均闭合。样本 `N=10000` 中 canonical
+edges、unique labels 与 unique products 都是 `2600`，LPF/row degree/column degree/atom
+multiplicity 审计全部为 true。
+
+因此剩余不再是支撑或容量问题，而是逐 edge signed atom fields 或命名 return tag：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步
+不从 LPF/Phi/Ferrers label 推出 sign/local factor。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

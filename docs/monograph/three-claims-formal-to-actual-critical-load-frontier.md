@@ -16017,6 +16017,59 @@ AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 338. Phi-LPF edge-local two-prime field-cut frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_edge_local_two_prime_field_cut_router.py
+docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.md
+docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.json
+data/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-ledger.json
+```
+
+同步结果：
+
+```text
+edge_local_formula_target_imported=true
+edge_local_closed_unsigned_label_ledger_proved=true
+edge_label_bijection_proved=true
+lpf_bucket_product_fields_proved=true
+ferrers_rank_degree_fields_proved=true
+edge_atom_multiplicity_one_proved=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+edge_local_signed_interaction_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward`
+中所有 LPF/Ferrers 可读字段已经降为 closed unsigned edge label：
+
+```text
+owner_p, first_q, product_pq, lpf_bucket, ferrers_row_rank_and_degree,
+ferrers_column_rank_and_degree, edge_atom_multiplicity
+```
+
+这些字段不含 sign、local factor、orientation parity、alpha/delta side、ExactUV fixed
+pair 或 pre-Cauchy source row。样本 `N=10000` 中 canonical edges、unique labels 与
+unique products 均为 `2600`，LPF/row degree/column degree/atom multiplicity 均闭合。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

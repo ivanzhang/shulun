@@ -21831,6 +21831,39 @@ docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF edge-local two-prime field-cut frontier]
+The edge-local two-prime formula-or-return has no remaining unsigned support
+ambiguity.  For every canonical edge \((p,q)\), \(p<q\), the LPF/Ferrers
+ledger fixes the owner prime \(p\), the second prime \(q\), the product \(pq\),
+the LPF bucket, the row and column rank-degree data, and the fact that this
+product has exactly one pure-pair source atom.  For \(N=10000\), the certificate
+has \(2600\) canonical edges, \(2600\) unique edge labels, and \(2600\) unique
+products, with the LPF, row-degree, column-degree, and atom-multiplicity audits
+all closed.
+\end{theorem}
+\begin{proof}[Phi-LPF edge-local two-prime field-cut frontier]
+The no-swap theorem leaves only the canonical edge \((p,q)\).  Its product is
+\(pq\), and because \(p<q\), the least prime factor is \(p\).  The Ferrers
+support theorem gives the row rule \(p<q\le N/p\), so the row degree is
+\(\pi(\lfloor N/p\rfloor)-\pi(p)\).  For a fixed right prime \(q\), the
+admissible owners are the primes \(p<q\) with \(p\le N/q\), so the column
+degree is \(\pi(\min(q-1,\lfloor N/q\rfloor))\).  These formulae determine the
+closed edge label, and the product uniqueness of the LPF owner domain gives
+atom multiplicity one.
+
+This label is deliberately unsigned.  It contains no signed seed value, local
+factor, orientation parity, alpha/delta side, ExactUV fixed pair, return tag,
+or pre-Cauchy source row.  Thus the direct remaining hard point is
+\begin{quote}\scriptsize\ttfamily
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTag\\
+BeforePushforward.
+\end{quote}
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
