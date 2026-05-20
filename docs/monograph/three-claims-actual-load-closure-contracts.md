@@ -6845,6 +6845,53 @@ OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
 complete key、fixed-key ExactUV local multiplicity、same-set PDEC、逐点 signed table、ExactUV、
 模型余量、RatePreservation 与 DStructure/Rankin 仍独立开放。行/列命题仍未无条件闭合。
 
+### 1.197 Phi-LPF latest cycle-cut terminal unified sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_cyclecut_terminal_unified_sync_router.py
+data/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_cycle_or_terminal_exit_imported=true
+strict_unified_frontier_imported=true
+seed_cycle_cut_branch_saturated=true
+terminal_descent_macrocycle_detected=true
+pdec_scope_internal_saturation_imported=true
+new_joint_formula_reduced_to_declaration_line=true
+pre_cauchy_joint_declaration_line_proved=false
+joint_productive_field_basis_proved=false
+canonical_lock_proved=false
+independent_actual_source_bridge_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+actual-load 含义是：cycle-cut/terminal 二选一已经不是最新最深单点。cycle-cut 直接分支已饱和到
+PDEC 或 new joint；terminal descent 直攻脊柱形成 terminal-source-pair-joint-terminal 宏循环；
+same-set PDEC 内部分支也不再给自足非循环出口。因此最新第一生产性单点为：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+但该 declaration line 只是 joint 字段基的第一原子，仍需合取证明：
+
+```text
+JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+JointEmitterPrepushforwardWordCoefficientIdentityLedger
+JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+canonical-lock、independent source bridge、same-set PDEC/外部谱、complete/fixed-key、ExactUV、
+模型余量、RatePreservation 与 DStructure/Rankin 仍独立开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

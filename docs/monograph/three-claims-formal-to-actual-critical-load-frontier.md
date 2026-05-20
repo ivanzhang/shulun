@@ -16915,6 +16915,57 @@ AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
 fixed-key ExactUV local multiplicity、same-set PDEC、逐点 signed table、ExactUV、模型、Rate
 与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
 
+## 355. Phi-LPF latest cycle-cut terminal unified sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_cyclecut_terminal_unified_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-router.json
+data/prime-matrix-phi-lpf-latest-cyclecut-terminal-unified-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_cycle_or_terminal_exit_imported=true
+strict_unified_frontier_imported=true
+seed_cycle_cut_branch_saturated=true
+terminal_descent_macrocycle_detected=true
+pdec_scope_internal_saturation_imported=true
+new_joint_formula_reduced_to_declaration_line=true
+pre_cauchy_joint_declaration_line_proved=false
+joint_productive_field_basis_proved=false
+canonical_lock_proved=false
+independent_actual_source_bridge_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+formal-to-actual 含义是：latest source-entropy 下游给出的
+`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`
+不是终点。它与 strict cycle-cut/terminal/PDEC 统一前沿对齐后，cycle-cut 分支饱和到 PDEC
+或 new joint，terminal descent 是宏循环，same-set PDEC 内部分支也不能给自足非循环出口。
+
+因此当前内部第一生产性单点被压成：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+完整 joint 字段基仍为：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+canonical-lock、independent source bridge、same-set PDEC/外部谱、complete/fixed-key、ExactUV、
+模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
