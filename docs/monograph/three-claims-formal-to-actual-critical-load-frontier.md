@@ -15975,6 +15975,48 @@ AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 337. Phi-LPF two-prime ordered no-swap frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_two_prime_ordered_no_swap_router.py
+docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.md
+docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.json
+data/prime-matrix-phi-lpf-two-prime-ordered-no-swap-ledger.json
+```
+
+同步结果：
+
+```text
+two_prime_signed_kernel_target_imported=true
+lpf_owner_ordered_no_swap_identity_proved=true
+product_symmetry_signed_emission_proved=false
+edge_local_two_prime_signed_formula_proved=false
+two_prime_signed_interaction_kernel_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`p*q=q*p` 的整数乘法对称不产生第二个 pre-Cauchy source row。
+在 LPF owner domain 中，distinct semiprime product 只对应 canonical ordered edge
+`(p,q)` with `p<q`。反向 `(q,p)` 会让 owner 不是最小素因子，因此不属于同一
+source domain。样本 `N=10000` 中 ordered edges `2600`、unordered products `2600`、
+reverse edges `0`、duplicates `0`。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

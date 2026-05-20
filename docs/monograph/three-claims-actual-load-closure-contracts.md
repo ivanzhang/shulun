@@ -5945,6 +5945,43 @@ PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
 配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步不从
 Ferrers 支撑图推出 sign 或 local factor。行/列命题仍未无条件闭合。
 
+### 1.179 Phi-LPF two-prime ordered no-swap 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_two_prime_ordered_no_swap_router.py
+data/prime-matrix-phi-lpf-two-prime-ordered-no-swap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.md
+docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.json
+```
+
+同步读数为：
+
+```text
+two_prime_signed_kernel_target_imported=true
+lpf_owner_ordered_no_swap_identity_proved=true
+product_symmetry_signed_emission_proved=false
+edge_local_two_prime_signed_formula_proved=false
+two_prime_signed_interaction_kernel_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：two-prime signed kernel 不能从 `p*q=q*p` 的交换对称里取 sign。
+LPF owner source domain 只接纳 canonical ordered edge `(p,q)`，其中 `p<q`；
+reverse edge `(q,p)` 不属于同一 source domain，也不能作为 cancellation partner。
+样本 `N=10000` 中 ordered edges 为 `2600`，distinct unordered semiprime products 也是
+`2600`，reverse edges 为 `0`，duplicates 为 `0`。
+
+因此 product symmetry 在 signed kernel 之前已经被 LPF owner 顺序擦除。最新直接主攻为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+```
+
+配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步只删除
+swap-symmetry 伪出口，不给出 edge-local signed formula。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

@@ -1,0 +1,649 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_two_prime_ordered_no_swap_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "edge_local_two_prime_signed_formula_proved": false,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "TwoPrimeSignedKernelTargetImported",
+      "meaning": "上一层已把 pure atom 剩余压到 two-prime signed interaction kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFOwnerOrderedNoSwapIdentity",
+      "meaning": "每个 offdiagonal semiprime product 只有 canonical `(p,q)` source edge，没有 reverse edge。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ProductSymmetryCannotEmitSign",
+      "meaning": "`p*q=q*p` 不提供第二个 pre-Cauchy source row，不能定义 signed cancellation。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "EdgeLocalSignedFormulaCurrentCorpusProved",
+      "meaning": "当前语料没有为 canonical ordered edge `(p,q)` 提交 signed interaction formula 或 return。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "TwoPrimeSignedKernelCurrentCorpusProved",
+      "meaning": "no-swap 只删除交换伪出口，不证明 two-prime signed kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalOrientationParityStillOpen",
+      "meaning": "edge-local formula 仍需 orientation parity/branch side 同边绑定。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair/source entropy/fiber 与 return tag 仍是并行门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPairedGate",
+      "meaning": "tail lift 与完整 support key 的 signed compatibility 仍依赖 internal transition。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed table 仍可替代 edge-local formula，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyEdgeFormula",
+      "meaning": "完整 branch trace 可给 ordered edge 的 signed value、orientation、ExactUV 与 return tag。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplyEdgeFormula",
+      "meaning": "atomic trace signed coefficient 公式可把 edge-local formula 作为 trace 字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步不证明三命题无条件闭合；它只删除 two-prime kernel 的 swap-symmetry 伪出口。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    }
+  ],
+  "lpf_owner_ordered_no_swap_identity_proved": true,
+  "next_primary_attack_target": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward",
+  "no_theorem_switch": true,
+  "ordered_no_swap_fields": [
+    {
+      "field": "canonical_lpf_owner_order",
+      "meaning": "每个 distinct semiprime `p*q` 只进入 `(min(p,q),max(p,q))`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "reverse_edge_absence",
+      "meaning": "`(q,p)` 不属于同一 LPF owner source domain，不能用作 cancellation partner。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "product_symmetry_erased_before_signed_kernel",
+      "meaning": "`p*q=q*p` 只证明同一整数值，不产生第二个 signed source row。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "edge_local_signed_formula",
+      "meaning": "仍需为 canonical ordered edge `(p,q)` 正向给出 signed interaction formula 或 return。",
+      "status": "open_signed"
+    }
+  ],
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "two-prime signed kernel 不能从交换对称 `p*q=q*p` 中获得。LPF owner source domain 只接纳 canonical ordered edge `(p,q)` with `p<q`；reverse edge `(q,p)` 不在同一 source domain。于是 product symmetry 在 signed kernel 之前已经被 LPF owner 顺序擦除，剩余必须是 edge-local two-prime signed interaction formula 或命名 return。",
+  "product_symmetry_signed_emission_proved": false,
+  "retained_basis_after_router": "((PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_ordered_no_swap_audit": [
+    {
+      "N": 30,
+      "bad_lpf_owner_examples": [],
+      "duplicate_product_count": 0,
+      "edge_product_count": 7,
+      "formal_ordered_edge_sign_shadow_bits": 7,
+      "formal_ordered_edge_sign_shadow_log10": 2.10721,
+      "large_q_edge_share": 0.571428571429,
+      "large_q_edges": 4,
+      "lpf_owner_no_swap_identity_holds": true,
+      "missing_product_examples": [],
+      "ordered_edges": 7,
+      "reverse_edges_present": 0,
+      "reverse_present_examples": [],
+      "small_q_edge_share": 0.428571428571,
+      "small_q_edges": 3,
+      "tail_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "value": 15
+        },
+        {
+          "p": 3,
+          "q": 7,
+          "value": 21
+        }
+      ],
+      "top_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "value": 15
+        },
+        {
+          "p": 3,
+          "q": 7,
+          "value": 21
+        }
+      ],
+      "unordered_distinct_semiprime_products": 7
+    },
+    {
+      "N": 100,
+      "bad_lpf_owner_examples": [],
+      "duplicate_product_count": 0,
+      "edge_product_count": 30,
+      "formal_ordered_edge_sign_shadow_bits": 30,
+      "formal_ordered_edge_sign_shadow_log10": 9.0309,
+      "large_q_edge_share": 0.8,
+      "large_q_edges": 24,
+      "lpf_owner_no_swap_identity_holds": true,
+      "missing_product_examples": [],
+      "ordered_edges": 30,
+      "reverse_edges_present": 0,
+      "reverse_present_examples": [],
+      "small_q_edge_share": 0.2,
+      "small_q_edges": 6,
+      "tail_edge_products": [
+        {
+          "p": 3,
+          "q": 31,
+          "value": 93
+        },
+        {
+          "p": 5,
+          "q": 7,
+          "value": 35
+        },
+        {
+          "p": 5,
+          "q": 11,
+          "value": 55
+        },
+        {
+          "p": 5,
+          "q": 13,
+          "value": 65
+        },
+        {
+          "p": 5,
+          "q": 17,
+          "value": 85
+        },
+        {
+          "p": 5,
+          "q": 19,
+          "value": 95
+        },
+        {
+          "p": 7,
+          "q": 11,
+          "value": 77
+        },
+        {
+          "p": 7,
+          "q": 13,
+          "value": 91
+        }
+      ],
+      "top_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 2,
+          "q": 17,
+          "value": 34
+        },
+        {
+          "p": 2,
+          "q": 19,
+          "value": 38
+        },
+        {
+          "p": 2,
+          "q": 23,
+          "value": 46
+        }
+      ],
+      "unordered_distinct_semiprime_products": 30
+    },
+    {
+      "N": 997,
+      "bad_lpf_owner_examples": [],
+      "duplicate_product_count": 0,
+      "edge_product_count": 287,
+      "formal_ordered_edge_sign_shadow_bits": 287,
+      "formal_ordered_edge_sign_shadow_log10": 86.395609,
+      "large_q_edge_share": 0.808362369338,
+      "large_q_edges": 232,
+      "lpf_owner_no_swap_identity_holds": true,
+      "missing_product_examples": [],
+      "ordered_edges": 287,
+      "reverse_edges_present": 0,
+      "reverse_present_examples": [],
+      "small_q_edge_share": 0.191637630662,
+      "small_q_edges": 55,
+      "tail_edge_products": [
+        {
+          "p": 19,
+          "q": 43,
+          "value": 817
+        },
+        {
+          "p": 19,
+          "q": 47,
+          "value": 893
+        },
+        {
+          "p": 23,
+          "q": 29,
+          "value": 667
+        },
+        {
+          "p": 23,
+          "q": 31,
+          "value": 713
+        },
+        {
+          "p": 23,
+          "q": 37,
+          "value": 851
+        },
+        {
+          "p": 23,
+          "q": 41,
+          "value": 943
+        },
+        {
+          "p": 23,
+          "q": 43,
+          "value": 989
+        },
+        {
+          "p": 29,
+          "q": 31,
+          "value": 899
+        }
+      ],
+      "top_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 2,
+          "q": 17,
+          "value": 34
+        },
+        {
+          "p": 2,
+          "q": 19,
+          "value": 38
+        },
+        {
+          "p": 2,
+          "q": 23,
+          "value": 46
+        }
+      ],
+      "unordered_distinct_semiprime_products": 287
+    },
+    {
+      "N": 5003,
+      "bad_lpf_owner_examples": [],
+      "duplicate_product_count": 0,
+      "edge_product_count": 1347,
+      "formal_ordered_edge_sign_shadow_bits": 1347,
+      "formal_ordered_edge_sign_shadow_log10": 405.487404,
+      "large_q_edge_share": 0.873051224944,
+      "large_q_edges": 1176,
+      "lpf_owner_no_swap_identity_holds": true,
+      "missing_product_examples": [],
+      "ordered_edges": 1347,
+      "reverse_edges_present": 0,
+      "reverse_present_examples": [],
+      "small_q_edge_share": 0.126948775056,
+      "small_q_edges": 171,
+      "tail_edge_products": [
+        {
+          "p": 59,
+          "q": 79,
+          "value": 4661
+        },
+        {
+          "p": 59,
+          "q": 83,
+          "value": 4897
+        },
+        {
+          "p": 61,
+          "q": 67,
+          "value": 4087
+        },
+        {
+          "p": 61,
+          "q": 71,
+          "value": 4331
+        },
+        {
+          "p": 61,
+          "q": 73,
+          "value": 4453
+        },
+        {
+          "p": 61,
+          "q": 79,
+          "value": 4819
+        },
+        {
+          "p": 67,
+          "q": 71,
+          "value": 4757
+        },
+        {
+          "p": 67,
+          "q": 73,
+          "value": 4891
+        }
+      ],
+      "top_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 2,
+          "q": 17,
+          "value": 34
+        },
+        {
+          "p": 2,
+          "q": 19,
+          "value": 38
+        },
+        {
+          "p": 2,
+          "q": 23,
+          "value": 46
+        }
+      ],
+      "unordered_distinct_semiprime_products": 1347
+    },
+    {
+      "N": 10000,
+      "bad_lpf_owner_examples": [],
+      "duplicate_product_count": 0,
+      "edge_product_count": 2600,
+      "formal_ordered_edge_sign_shadow_bits": 2600,
+      "formal_ordered_edge_sign_shadow_log10": 782.677989,
+      "large_q_edge_share": 0.884615384615,
+      "large_q_edges": 2300,
+      "lpf_owner_no_swap_identity_holds": true,
+      "missing_product_examples": [],
+      "ordered_edges": 2600,
+      "reverse_edges_present": 0,
+      "reverse_present_examples": [],
+      "small_q_edge_share": 0.115384615385,
+      "small_q_edges": 300,
+      "tail_edge_products": [
+        {
+          "p": 83,
+          "q": 113,
+          "value": 9379
+        },
+        {
+          "p": 89,
+          "q": 97,
+          "value": 8633
+        },
+        {
+          "p": 89,
+          "q": 101,
+          "value": 8989
+        },
+        {
+          "p": 89,
+          "q": 103,
+          "value": 9167
+        },
+        {
+          "p": 89,
+          "q": 107,
+          "value": 9523
+        },
+        {
+          "p": 89,
+          "q": 109,
+          "value": 9701
+        },
+        {
+          "p": 97,
+          "q": 101,
+          "value": 9797
+        },
+        {
+          "p": 97,
+          "q": 103,
+          "value": 9991
+        }
+      ],
+      "top_edge_products": [
+        {
+          "p": 2,
+          "q": 3,
+          "value": 6
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "value": 10
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "value": 14
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "value": 22
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "value": 26
+        },
+        {
+          "p": 2,
+          "q": 17,
+          "value": 34
+        },
+        {
+          "p": 2,
+          "q": 19,
+          "value": 38
+        },
+        {
+          "p": 2,
+          "q": 23,
+          "value": 46
+        }
+      ],
+      "unordered_distinct_semiprime_products": 2600
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.json": "6ff12d29bab4ff0a9a9fad5794ecf6c74210ef7c51cee0c41b0f99ea1f2bab38",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_two_prime_ordered_no_swap_router.py": "224b900fc2b4d62afdc3220e57a0b2b252c8cf4d84979a3010ea1458e6c5e919"
+  },
+  "status": "phi_lpf_two_prime_signed_kernel_no_swap_symmetry_exit_removed",
+  "target_input_before_router": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+  "two_prime_ordered_no_swap_router_closed": true,
+  "two_prime_signed_interaction_kernel_proved": false,
+  "two_prime_signed_kernel_target_imported": true
+}

@@ -21800,6 +21800,37 @@ docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF two-prime ordered no-swap frontier]
+The two-prime signed interaction kernel cannot be obtained from the product
+symmetry \(pq=qp\).  In the LPF owner source domain, a distinct offdiagonal
+semiprime product has exactly one canonical edge \((p,q)\) with \(p<q\).  The
+reverse ordered edge \((q,p)\) is not in the same source domain, because \(q\)
+is not the least prime factor of \(pq\).  For \(N=10000\), the certificate has
+\(2600\) ordered edges, \(2600\) distinct unordered semiprime products, no
+reverse edges, and no duplicate products.
+\end{theorem}
+\begin{proof}[Phi-LPF two-prime ordered no-swap frontier]
+Let \(n=pq\) with \(p<q\) prime.  Its least prime factor is \(p\), so the LPF
+owner bucket records the source edge as \((p,q)\).  The reversed pair
+\((q,p)\) would place the same integer in owner bucket \(q\), but \(p<q\)
+divides \(n\), so \(q\) is not the least prime factor.  Thus the reversed edge
+is not an admissible pre-Cauchy source row.  Product commutativity only
+identifies the integer value; it does not provide a second signed source that
+could define or cancel the first one.
+
+This removes the swap-symmetry exit from the two-prime kernel.  The proof
+still must give an edge-local signed interaction formula, or a named return,
+for the canonical edge itself.  The next direct hard point is
+\begin{quote}\scriptsize\ttfamily
+PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturn\\
+BeforePushforward.
+\end{quote}
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
