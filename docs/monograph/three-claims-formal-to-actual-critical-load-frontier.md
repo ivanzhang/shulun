@@ -17521,6 +17521,57 @@ PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
 delta/pairing/nonzero 兄弟字段、Rate 与 DStructure 仍并行开放。LPF/Phi 桶恒等式只提供
 无符号桶容量边界，不生成 signed pre-Cauchy 权重。行/列命题仍未无条件闭合。
 
+## 367. Phi-LPF latest terminal saturation to new-joint sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_terminal_saturation_to_new_joint_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.json
+data/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_phi_lpf_terminal_gate_imported=true
+pdec_clean_kls_split_imported=true
+pdec_arm_scope_still_open=true
+clean_kls_kuznetsov_route_returns_terminal=true
+pdec_scope_branch_saturated_to_new_joint=true
+global_crt_saturation_agrees=true
+new_joint_obligation_imported=true
+old_joint_route_is_fixed_point=true
+terminal_descent_alternative_macrocycle=true
+lpf_phi_unsigned_boundary_retained=true
+new_explicit_joint_constructor_formula_artifact_present=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+formal-to-actual 含义是：上一节留下的 PDEC/CleanKLS 终端门继续饱和：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+-> AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+   OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+-> NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+这里的箭头不是证明箭头。Kuznetsov/DLS 线回到 strict acyclic 终端家族；PDEC scope
+线可作为新 scope 证书或外部 DIBFI 条件线，但在当前内部语料中不再给独立非循环出口。
+旧 joint constructor 展开会回到 signed-source 固定点，terminal descent 替代也已是宏循环。
+
+因此当前严格内部主攻更新为：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+并行仍需 ExactUV、fixed-key、signed row law、模型余量、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

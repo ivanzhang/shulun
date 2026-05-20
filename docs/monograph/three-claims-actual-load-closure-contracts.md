@@ -7416,6 +7416,59 @@ independent identity，最后回到 actual moving-block/NC-BLK，并由 moving-b
 RatePreservation 或 DStructure。LPF/Phi 桶恒等式继续只支付无符号 ownership、support
 和 capacity。行/列命题仍未无条件闭合。
 
+### 1.209 Phi-LPF latest terminal saturation to new-joint sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_terminal_saturation_to_new_joint_sync_router.py
+data/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_phi_lpf_terminal_gate_imported=true
+pdec_clean_kls_split_imported=true
+pdec_arm_scope_still_open=true
+clean_kls_kuznetsov_route_returns_terminal=true
+pdec_scope_branch_saturated_to_new_joint=true
+global_crt_saturation_agrees=true
+new_joint_obligation_imported=true
+old_joint_route_is_fixed_point=true
+terminal_descent_alternative_macrocycle=true
+lpf_phi_unsigned_boundary_retained=true
+new_explicit_joint_constructor_formula_artifact_present=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+actual-load 含义是：`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 也不是最新终点。
+它被 strict terminal hardpoint 证书二分为 same-set PDEC 作用域匹配或自足 Kuznetsov/DLS；
+Kuznetsov/DLS 继续回到 strict acyclic 终端家族，PDEC scope 分支在当前内部语料中饱和，
+所以严格内部破环点压成：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+PDEC scope 或外部 DIBFI 仍可作为新输入条件线，但不能登记为当前内部已证出口。最新严格内部基为：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
