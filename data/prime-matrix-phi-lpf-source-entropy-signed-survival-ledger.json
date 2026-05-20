@@ -1,0 +1,212 @@
+{
+  "actual_noncanonical_primitive_summand_signed_weight_expression_proved": false,
+  "candidate_capacity_audit_closed": true,
+  "candidate_rows_are_actual_signed_rows": false,
+  "certificate_type": "prime_matrix_phi_lpf_source_entropy_signed_survival_router",
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "SourceEntropyAtomImported",
+      "meaning": "source-domain entropy 已被拆成 signed row emitter、row-mass normalization 与 primitive row support 下界。",
+      "proved": false,
+      "remaining": "ActualPreCauchySourceDomainEntropyFromSignedRowsAndRowMassLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRecursiveLPFOwnershipImported",
+      "meaning": "LPF/Phi 桶恒等式已闭合：每个候选合数 row 有唯一 LPF owner，桶容量由 Phi(floor(N/p),p)-1 给出。",
+      "proved": true,
+      "remaining": "PhiLPFCandidateRowCapacityLowerBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFCandidateRowMapImported",
+      "meaning": "LPF ownership 已支付 alpha 侧候选 row 的非后验索引，并与 unsigned skeleton 兼容。",
+      "proved": true,
+      "remaining": "PhiLPFCandidateRowCapacityLowerBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CandidateCapacityAuditClosed",
+      "meaning": "样本审计只验证 Phi-LPF 候选容量恒等式；它不是全局 signed 支撑证明。",
+      "proved": true,
+      "remaining": "PhiLPFCandidateRowCapacityLowerBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CandidateRowsAreNotActualSignedRows",
+      "meaning": "候选 row 只有 owner/capacity/geometry，没有 signed weight、local factor、orientation 或 alpha/delta side。",
+      "proved": true,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SeedEmitterStillNeedsSignedLaw",
+      "meaning": "合法 seed 分支仍需逐 primitive row 的 signed coefficient law，才能把候选 row 转成 actual signed row。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedExpressionStillOpen",
+      "meaning": "逐行 signed weight formula 的最窄点是 actual primitive summand signed expression before pushforward。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "RowSupportSplitClosed",
+      "meaning": "primitive row support 下界可分成已闭合的候选容量与仍开放的非零 signed survival。",
+      "proved": false,
+      "remaining": "PhiLPFCandidateRowCapacityLowerBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "RowMassStillIndependent",
+      "meaning": "即使 signed rows 存活，仍需同一表内 row-mass normalization/no-heavy-row 账本。",
+      "proved": false,
+      "remaining": "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NewPayloadBridgeConsistent",
+      "meaning": "上一层 new-payload 桥接把首攻点压到 source-domain absolute entropy，本步给出其 LPF/Phi 支撑切分。",
+      "proved": false,
+      "remaining": "ActualPreCauchySourceDomainAbsoluteEntropyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillAlternative",
+      "meaning": "若不走 signed summand 表达式，只能提交逐点 Phi-LPF signed coefficient value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只关闭无符号候选容量和 signed-survival 的边界，不证明 signed 表达式、row-mass、complete key、fixed-key multiplicity 或最终晋级门。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    }
+  ],
+  "latest_retained_basis_after_router": "(ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate; parallel: CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_candidate_row_map_closed": true,
+  "next_primary_attack_target": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "parallel_attack_targets": [
+    "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+    "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+    "CompletePrimitiveEmitterKeyPartitionLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "phi_lpf_candidate_capacity_ledger_closed": true,
+  "plain_conclusion": "本步把 source-domain entropy 中的 primitive row support 下界切成两层：LPF/Phi 递推已经关闭无符号候选 row 容量，但候选 row 不是 actual signed row。要把候选容量变成源域绝对熵，仍需证明 Phi-LPF 支撑上足够多行获得非零 signed weight，并给出同一 formal unit 的 row-mass/no-heavy-row 账本。最新直接硬点因此压到 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`；行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "sample_capacity_audit": [
+    {
+      "N": 10,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 5,
+      "phi_lpf_candidate_rows": 5,
+      "pi_from_phi": 4,
+      "prime_count": 4,
+      "sqrt_floor": 3
+    },
+    {
+      "N": 30,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 19,
+      "phi_lpf_candidate_rows": 19,
+      "pi_from_phi": 10,
+      "prime_count": 10,
+      "sqrt_floor": 5
+    },
+    {
+      "N": 100,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 74,
+      "phi_lpf_candidate_rows": 74,
+      "pi_from_phi": 25,
+      "prime_count": 25,
+      "sqrt_floor": 10
+    },
+    {
+      "N": 997,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 828,
+      "phi_lpf_candidate_rows": 828,
+      "pi_from_phi": 168,
+      "prime_count": 168,
+      "sqrt_floor": 31
+    },
+    {
+      "N": 5003,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 4332,
+      "phi_lpf_candidate_rows": 4332,
+      "pi_from_phi": 670,
+      "prime_count": 670,
+      "sqrt_floor": 70
+    },
+    {
+      "N": 10000,
+      "actual_nonzero_signed_rows_known": false,
+      "candidate_capacity_identity_closed": true,
+      "composite_count": 8770,
+      "phi_lpf_candidate_rows": 8770,
+      "pi_from_phi": 1229,
+      "prime_count": 1229,
+      "sqrt_floor": 100
+    }
+  ],
+  "source_domain_absolute_entropy_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json": "735c6efd0580444f1b541b01a5a7184dff79497191657bb2da6bf0b6b1d3778f",
+    "docs/monograph/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-router.json": "1ab5e411f776ad878828c88627d7907ea6baf4b4be687daacee76977a993bde3",
+    "docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json": "d916331b1d8bea632d161cbe99fe4500813feb8333bf0463e4de5767bbf3a81c",
+    "docs/monograph/prime-matrix-strict-actual-source-domain-entropy-atom-router.json": "0eaacb65ce36ad81475e8fb8806bdd90570f24939b224d6f59c38262cf2374a9",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "experiments/prime_matrix_phi_lpf_source_entropy_signed_survival_router.py": "456c47c2f1670aa464e3667b4507faf7a71363410508f0f3572f06f6151ceb00"
+  },
+  "split_atoms": [
+    {
+      "atom": "PhiLPFCandidateRowCapacityLowerBoundLedger",
+      "role": "由 LPF 唯一 ownership 与 Phi 递推支付候选 row 容量；只说明可发射位置有多少。",
+      "status": "closed_unsigned"
+    },
+    {
+      "atom": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+      "role": "证明足够多候选 row 在同一 formal unit 中获得非零 signed weight，且没有局部因子归零或命名回流。",
+      "status": "open_signed"
+    },
+    {
+      "atom": "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+      "role": "在存活 signed rows 上证明总质量、单行上界、L2/no-heavy-row 与零权重回流。",
+      "status": "open_signed"
+    },
+    {
+      "atom": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+      "role": "给出每条 actual noncanonical primitive summand 的推前前 signed coefficient 表达式。",
+      "status": "open_formula"
+    }
+  ],
+  "status": "phi_lpf_candidate_capacity_closed_signed_survival_open",
+  "support_subatom_after_router": "PhiLPFCandidateRowCapacityLowerBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+  "support_subatom_before_router": "PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger",
+  "target_input_before_router": "ActualPreCauchySourceDomainAbsoluteEntropyLedger"
+}

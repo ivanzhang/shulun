@@ -21936,6 +21936,51 @@ as well as the ExactUV, model, rate-preservation, and D-structure/Rankin gates,
 remain open; no unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Phi-LPF candidate capacity versus signed source entropy]
+The Phi-recursive least-prime-factor ledger closes the unsigned candidate-row
+capacity part of the source-entropy problem, but it does not close actual
+signed source entropy.  The source-support atom splits as
+\[
+\begin{gathered}
+\texttt{PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger}\\
+\Longrightarrow
+\texttt{PhiLPFCandidateRowCapacityLowerBoundLedger}\\
+\qquad\text{and}\qquad
+\texttt{NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward}.
+\end{gathered}
+\]
+The first ledger is paid by LPF ownership and the \(\Phi\)-recursion; the
+second still requires a pre-pushforward signed summand expression and the
+same-formal-unit row-mass/no-heavy-row ledger.
+\end{theorem}
+\begin{proof}[Phi-LPF source entropy signed-survival frontier]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-source-entropy-\\
+signed-survival-router.md.
+\end{quote}
+The LPF bucket identity assigns every composite candidate to a unique least
+prime factor.  The \(\Phi\)-recursion gives the exact capacity
+\[
+  c_N(p)=\Phi(\lfloor N/p\rfloor,p)-1
+\]
+for the \(p\)-owner layer, and summing these capacities recovers the prime
+counting identity.  Thus the unsigned candidate support is no longer the
+missing object.
+
+However, an unsigned candidate row is not an actual signed row.  It carries no
+signed weight, local factor, orientation, alpha/delta side, or return tag.  To
+produce source-domain entropy, enough Phi-LPF candidate rows must survive as
+nonzero signed rows in the same formal unit, and their row masses must satisfy
+the normalization/no-heavy-row ledger.  The current direct missing formula is
+\begin{quote}\scriptsize\ttfamily
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward.
+\end{quote}
+This theorem therefore closes only the candidate-capacity side of the support
+ledger and keeps the signed survival and row-mass ledgers open.  No
+unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

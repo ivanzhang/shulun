@@ -16182,6 +16182,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 LPF/Phi 的精准桶与 Phi 递推继续作为无符号支撑、容量和 fiber 账本使用；它们不能单独推出
 signed coefficient 或 local factor。行/列命题仍未无条件闭合。
 
+## 341. Phi-LPF source entropy signed-survival frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_source_entropy_signed_survival_router.py
+docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.md
+docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.json
+data/prime-matrix-phi-lpf-source-entropy-signed-survival-ledger.json
+```
+
+同步结果：
+
+```text
+phi_lpf_candidate_capacity_ledger_closed=true
+lpf_candidate_row_map_closed=true
+candidate_capacity_audit_closed=true
+candidate_rows_are_actual_signed_rows=false
+nonzero_signed_row_survival_proved=false
+actual_noncanonical_primitive_summand_signed_weight_expression_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+source_domain_absolute_entropy_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+```
+
+formal-to-actual 含义是：LPF/Phi 桶公式已经给出完整的无符号候选容量，但 actual source
+entropy 要求的是同一 formal unit 中的非零 signed row 质量。候选容量只说明“可发射位置”；
+actual load 必须来自 signed coefficient 已经前推前给出的行。
+
+因此本层把 source entropy 的支撑子原子切成：
+
+```text
+PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+->
+PhiLPFCandidateRowCapacityLowerBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+其中 `PhiLPFCandidateRowCapacityLowerBoundLedger` 由 LPF 唯一 ownership 与 Phi 递推关闭；
+`NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward` 仍未证明，并依赖：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+这一步删除了“Phi 计数本身就是 source entropy”的伪出口。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

@@ -6109,6 +6109,51 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 `ActualPreCauchySourceDomainAbsoluteEntropyLedger`；ExactUV、模型、Rate 与 DStructure/Rankin
 仍独立开放。行/列命题仍未无条件闭合。
 
+### 1.183 Phi-LPF source entropy signed-survival 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_source_entropy_signed_survival_router.py
+data/prime-matrix-phi-lpf-source-entropy-signed-survival-ledger.json
+docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.md
+docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_candidate_capacity_ledger_closed=true
+lpf_candidate_row_map_closed=true
+candidate_capacity_audit_closed=true
+candidate_rows_are_actual_signed_rows=false
+nonzero_signed_row_survival_proved=false
+actual_noncanonical_primitive_summand_signed_weight_expression_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+source_domain_absolute_entropy_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+```
+
+actual-load 含义是：LPF/Phi 桶恒等式已经支付了无符号候选 row 容量。例如 `N=10000`
+时 Phi-LPF candidate rows 与合数数都为 `8770`，且 `pi(N)` 从 Phi 恒等式恢复为 `1229`。
+但这些候选 row 仍不是 actual signed rows；它们没有 signed weight、local factor、orientation
+或 alpha/delta side。
+
+因此 source-domain entropy 中的 support 下界被切成：
+
+```text
+PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+->
+PhiLPFCandidateRowCapacityLowerBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+第一项已由 LPF/Phi 关闭；第二项仍需要推前前 signed summand 表达式和同一 formal unit 的
+row-mass/no-heavy-row 账本。当前最窄点为
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
