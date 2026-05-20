@@ -16432,6 +16432,64 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
 
+## 346. Phi-LPF latest semiprime seed diagonal sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_semiprime_seed_diagonal_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-router.json
+data/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_first_seed_hardpoint_imported=true
+semiprime_diagonal_router_imported=true
+diagonal_offdiagonal_support_split_closed=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried_forward=true
+latest_basis_replaces_first_seed_with_offdiag_seed=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+formal-to-actual 含义是：最新 first-edge signed seed 缺口已经不需要同时视为 diagonal 与
+offdiagonal 未拆黑箱。LPF ordered seed 类型满足 `p<=q`，因此强制二分为：
+
+```text
+p=q   diagonal square-base seed
+p<q   offdiagonal ordered semiprime seed
+```
+
+diagonal `(p,p)` 已由 square-base route 证明没有私有 signed 出口；它回到 common source
+packet，而该 packet 在最新前沿中已经以 source 三原子形式被携带。于是最新 retained basis
+中可以把 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward` 替换为
+`PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`，并保留
+`PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward`。
+
+样本 `N=10000` 给出 first-edge seed types `2625`，其中 diagonal/offdiagonal types 为
+`25/2600`；occurrence mass 为 `3302/5468`。这些仍只是支撑与 occurrence 账本，不产生
+offdiagonal signed seed value、orientation、ExactUV return 或 internal transition。
+
+当前真正未闭合的是：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍为逐点 Phi-LPF signed table、完整 branch/atomic trace、seed cycle-cut、
+terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

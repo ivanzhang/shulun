@@ -1,0 +1,150 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "carried_source_packet_attack_target": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows",
+  "certificate_type": "prime_matrix_phi_lpf_latest_semiprime_seed_diagonal_sync_router",
+  "common_packet_cycle_guard_carried_forward": true,
+  "diagonal_offdiagonal_support_split_closed": true,
+  "diagonal_private_escape_removed": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestFirstSeedHardpointImported",
+      "meaning": "上一层最新 edge slab 同步已把 FIRST_SEED 登记为直接主攻点。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SemiprimeDiagonalRouterImported",
+      "meaning": "既有 semiprime seed diagonal/offdiagonal 证书可作为 FIRST_SEED 的直接下游。",
+      "proved": true,
+      "remaining": "PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalOffDiagonalSupportSplitClosed",
+      "meaning": "LPF/Phi first-edge seed 类型唯一分成 `p=q` diagonal 与 `p<q` offdiagonal。",
+      "proved": true,
+      "remaining": "PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalPrivateEscapeRemoved",
+      "meaning": "diagonal `(p,p)` 不再是独立 signed lane；它已回到 common source packet。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "CommonPacketCycleGuardCarriedForward",
+      "meaning": "common packet 不能用 signed-lane 固定点自证；最新前沿已把它携带为 source 三原子。",
+      "proved": true,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "LatestBasisReplacesFirstSeedWithOffdiagSeed",
+      "meaning": "在最新基中，FIRST_SEED 的 diagonal 义务由 source 三原子承接，新增 seed 缺口收窄到 offdiagonal 表。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalSeedStillOpen",
+      "meaning": "当前材料没有为所有 `p<q` ordered semiprime first edges 给出 signed seed 表。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPaired",
+      "meaning": "FIRST_SEED 收窄后，internal prime-adjoin transition 仍是同一递推路线的配套硬点。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行直接旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 FIRST_SEED 的 diagonal/offdiagonal 拆分；未证明 offdiagonal seed、internal transition、source 三原子、ExactUV、模型、Rate 或 DStructure。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "diagonal_occurrence_share": 0.376510832383,
+    "diagonal_offdiag_occurrence_partition_holds": true,
+    "diagonal_square_seed_occurrences": 3302,
+    "diagonal_square_seed_types": 25,
+    "diagonal_type_equals_small_prime_layers": true,
+    "diagonal_type_share": 0.009523809524,
+    "failures": [],
+    "first_edge_occurrences": 8770,
+    "first_edge_seed_types": 2625,
+    "formal_diagonal_type_sign_shadow_bits": 25,
+    "formal_diagonal_type_sign_shadow_log10": 7.52575,
+    "formal_offdiag_type_sign_shadow_bits": 2600,
+    "formal_offdiag_type_sign_shadow_log10": 782.677989,
+    "offdiag_occurrence_share": 0.623489167617,
+    "offdiag_type_share": 0.990476190476,
+    "offdiagonal_semiprime_seed_occurrences": 5468,
+    "offdiagonal_semiprime_seed_types": 2600,
+    "small_prime_layers": 25
+  },
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_basis_replaces_first_seed_with_offdiag_seed": true,
+  "latest_first_seed_hardpoint_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_primary_attack_target": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward",
+  "no_theorem_switch": true,
+  "offdiagonal_ordered_semiprime_signed_seed_table_proved": false,
+  "paired_required_attack_target": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把最新 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward` 接入既有 diagonal/offdiagonal 拆分。diagonal `(p,p)` 已由 square-base 线证明没有私有 signed 出口，并在最新前沿中由 base/source-packet 三原子承接；因此 FIRST_SEED 的新增 signed 缺口收窄为 `PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`。这一步仍不证明 offdiagonal signed seed，也不证明 internal prime-adjoin transition；行/列命题仍未无条件证明。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "semiprime_diagonal_router_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-router.json": "f23db224943dfd7522ad9358e661a67fe6579211eb09b7a3110964c286850f25",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json": "10b88bb8d80a793ab8ed16263cbe5efc4d47c72fdcc544ed7d97e559bda6788d",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "experiments/prime_matrix_phi_lpf_latest_semiprime_seed_diagonal_sync_router.py": "d9f684f8b23840cbce9a990009432f17d2af1d2ff6395a180b4a17184ef0035a"
+  },
+  "status": "phi_lpf_latest_semiprime_seed_synced_to_offdiag_and_source_atoms_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+      "meaning": "semiprime first-edge seed 类型按 `p=q` 与 `p<q` 唯一拆分。",
+      "to": "PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "from": "PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward",
+      "meaning": "diagonal `(p,p)` 是 square-base root；私有 signed 出口已移除，只能回到 common packet。",
+      "to": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "from": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "meaning": "common packet 的自证环已被切断；最新前沿已把其非循环需求携带为 source 三原子。",
+      "to": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "from": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+      "meaning": "在最新保留基中，FIRST_SEED 的 diagonal 义务被已有 source 三原子吸收，剩余新 seed 口是 offdiagonal 表。",
+      "to": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward plus carried source atoms"
+    }
+  ],
+  "target_input_before_router": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+}

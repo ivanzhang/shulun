@@ -6351,6 +6351,71 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 trace、新 joint、terminal descent、PDEC scope 进入受控出口。ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.188 Phi-LPF latest semiprime seed diagonal sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_semiprime_seed_diagonal_sync_router.py
+data/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-semiprime-seed-diagonal-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_first_seed_hardpoint_imported=true
+semiprime_diagonal_router_imported=true
+diagonal_offdiagonal_support_split_closed=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried_forward=true
+latest_basis_replaces_first_seed_with_offdiag_seed=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+actual-load 含义是：最新 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward`
+已经接入既有 diagonal/offdiagonal 拆分：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+->
+PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+diagonal `(p,p)` 正是 square-base root；既有 square-base/source-packet 线已排除其私有
+signed 出口。它回到 `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` 后，在最新前沿
+由 base/source-packet 三原子承接：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+因此 FIRST_SEED 的新增 signed 缺口不再是 diagonal 部分，而是 offdiagonal ordered semiprime
+seed table。`N=10000` 导入样本读数为 first-edge seed types `2625`，diagonal/offdiagonal
+types `25/2600`，occurrences `3302/5468`。
+
+最新递推剩余基更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍可直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`，或走完整 branch/atomic trace、
+seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
