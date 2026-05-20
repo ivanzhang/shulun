@@ -15873,6 +15873,61 @@ AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 335. Phi-LPF offdiagonal pure semiprime seed atom frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_offdiagonal_pure_semiprime_seed_atom_router.py
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.md
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.json
+data/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-ledger.json
+```
+
+同步结果：
+
+```text
+offdiagonal_source_tuple_signed_seed_target_imported=true
+pure_semiprime_pair_seed_atom_bijection_proved=true
+tail_nonunit_reduced_to_internal_transition_lift=true
+tail_lift_phi_minus_one_mass_formula_proved=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+offdiagonal_source_tuple_signed_seed_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：offdiagonal source tuple signed formula 的 first-seed 原子不能
+放在全部 q-rough tail 上。真实 first seed 是唯一的 pure pair
+
+```text
+(p,q,tail=1),  p<q,
+```
+
+而 `tail>1` 只是在该 pure pair 之后继续走 internal transition。于是每个 `(p,q)` 的
+continuation 质量是
+
+```text
+Phi(floor(N/(p*q)),q)-1.
+```
+
+样本 `N=10000` 中 `2600` 个 pure pair atoms 与 `2868` 个 tail-lift occurrences
+合成上一层 `5468` 个 offdiagonal occurrences。这一步进一步移除了“tail continuation
+也是新的 first seed”的误出口。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

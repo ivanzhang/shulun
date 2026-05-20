@@ -5849,6 +5849,58 @@ PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 并行替代仍是逐点 signed table、完整 branch trace、atomic trace、seed cycle-cut、
 same-set PDEC 或 new joint formula。行/列命题仍未无条件闭合。
 
+### 1.177 Phi-LPF offdiagonal pure semiprime seed atom 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_offdiagonal_pure_semiprime_seed_atom_router.py
+data/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.md
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.json
+```
+
+同步读数为：
+
+```text
+offdiagonal_source_tuple_signed_seed_target_imported=true
+pure_semiprime_pair_seed_atom_bijection_proved=true
+tail_nonunit_reduced_to_internal_transition_lift=true
+tail_lift_phi_minus_one_mass_formula_proved=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+offdiagonal_source_tuple_signed_seed_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：offdiagonal source tuple signed formula 仍可再拆一层。每个
+ordered type `(p,q), p<q` 恰有一个 `tail=1` 的 pure semiprime pair seed atom，即
+composite `p*q` 本身；所有 `tail>1` 的 q-rough continuation occurrence 不构成新的
+first seed，只能由同一 pure atom 加 internal prime-adjoin transition lift 支付。每个
+`(p,q)` 的 tail-lift mass 为：
+
+```text
+Phi(floor(N/(p*q)), q)-1.
+```
+
+样本 `N=10000` 中 pure atoms 为 `2600` 个，tail-lift occurrences 为 `2868` 个，
+合计仍为上一层 offdiagonal occurrences `5468`。因此最新直接主攻进一步收窄为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+本步没有给出 pure pair signed seed value；它只关闭 pure atom/tail lift 的无符号分解与
+`Phi-1` 质量公式。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

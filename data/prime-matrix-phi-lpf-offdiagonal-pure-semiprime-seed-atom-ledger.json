@@ -1,0 +1,409 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_offdiagonal_pure_semiprime_seed_atom_router",
+  "closed_unsigned_subledgers": [
+    "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward_unsigned_domain",
+    "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+  ],
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "OffDiagonalSourceTupleSignedFormulaTargetImported",
+      "meaning": "上一层已把 offdiagonal seed 的 signed 缺口压到 source tuple signed seed formula。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PureSemiprimePairSeedAtomBijection",
+      "meaning": "每个 offdiagonal type `(p,q)` 恰有一个 tail=1 pure semiprime seed atom。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TailNonunitNotNewFirstSeed",
+      "meaning": "`tail>1` occurrences 共享同一 first seed type，只增加 internal transition lift。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiMinusOneTailLiftMassFormula",
+      "meaning": "每个 `(p,q)` 的 tail-lift mass 为 `Phi(floor(N/(p*q)),q)-1`。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "PureSeedSignedValueCurrentCorpusProved",
+      "meaning": "当前语料没有给出 pure pair `(p,q)` 的 prepushforward signed seed atom。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TailLiftSignedCompatibilityNeedsInternalTransition",
+      "meaning": "tail lift 的 signed compatibility 仍依赖 internal prime-adjoin transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalOrientationParityStillOpen",
+      "meaning": "pure atom 仍需 orientation parity、branch side 与 local factor law。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair/source entropy/fiber 与 return tag 仍是并行门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed table 仍可替代 pure atom formula，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyPureAtom",
+      "meaning": "完整 branch trace 可给 pure atom signed value、orientation、ExactUV 和 return tag。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplyPureAtom",
+      "meaning": "atomic trace signed coefficient 公式可把 pure semiprime pair seed 作为 trace 字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": false,
+      "gate": "OffDiagonalSourceTupleSignedFormulaCurrentCorpusProved",
+      "meaning": "本步只把 source tuple signed formula 拆成 pure atom 与 tail lift，没有证明 signed formula。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步不证明三命题无条件闭合；它只把 offdiagonal signed formula 的 first-seed 原子定位到 pure semiprime pair。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "next_primary_attack_target": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward",
+  "no_theorem_switch": true,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "offdiagonal_pure_semiprime_seed_atom_router_closed": true,
+  "offdiagonal_source_tuple_signed_seed_formula_proved": false,
+  "offdiagonal_source_tuple_signed_seed_target_imported": true,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "offdiagonal source tuple signed seed formula 进一步强制拆成 pure semiprime pair `tail=1` seed atom 与 `tail>1` q-rough continuation lift。每个 ordered type `(p,q), p<q` 恰有一个 pure atom `p*q`；所有 tail 非单位 occurrence 不是新的 first seed，只能由同一 pure atom 加 internal transition lift 解释。剩余最新窄口因此变为 `PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward`，并仍需 orientation parity、ExactUV return、internal transition 与 common packet。",
+  "pure_semiprime_atom_fields": [
+    {
+      "field": "pure_pair_key",
+      "meaning": "ordered pair `(p,q)` with `p<q` and value `p*q`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "tail_identity_t_equals_1",
+      "meaning": "每个 offdiagonal type 的 first seed atom 是唯一 tail=1 occurrence。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "tail_lift_mass",
+      "meaning": "`Phi(floor(N/(p*q)),q)-1`，不是新 first seed，只能由 internal transition lift 处理。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "pure_pair_signed_value",
+      "meaning": "必须由 source tuple 在 pushforward 前正向发射。",
+      "status": "open_signed"
+    },
+    {
+      "field": "orientation_and_exactuv",
+      "meaning": "orientation parity、branch side、ExactUV fixed pair 与 return tag 仍未闭合。",
+      "status": "open_signed_exactuv"
+    }
+  ],
+  "pure_semiprime_pair_seed_atom_bijection_proved": true,
+  "pure_semiprime_pair_signed_seed_atom_proved": false,
+  "retained_basis_after_router": "((PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_pure_seed_atom_audit": [
+    {
+      "N": 30,
+      "failures": [],
+      "formal_pure_atom_sign_shadow_bits": 7,
+      "formal_pure_atom_sign_shadow_log10": 2.10721,
+      "formal_tail_lift_transition_shadow_bits": 2,
+      "formal_tail_lift_transition_shadow_log10": 0.60206,
+      "offdiagonal_seed_types": 7,
+      "offdiagonal_total_occurrences": 9,
+      "pure_atom_share_of_occurrences": 0.777777777778,
+      "pure_atom_type_bijection_holds": true,
+      "pure_semiprime_pair_seed_atoms": 7,
+      "small_prime_layers": 3,
+      "tail_lift_decomposition_holds": true,
+      "tail_lift_occurrences": 2,
+      "tail_lift_share_of_occurrences": 0.222222222222,
+      "top_tail_lifts": [
+        {
+          "p": 2,
+          "q": 3,
+          "tail_lift_mass": 2
+        }
+      ]
+    },
+    {
+      "N": 100,
+      "failures": [],
+      "formal_pure_atom_sign_shadow_bits": 30,
+      "formal_pure_atom_sign_shadow_log10": 9.0309,
+      "formal_tail_lift_transition_shadow_bits": 11,
+      "formal_tail_lift_transition_shadow_log10": 3.31133,
+      "offdiagonal_seed_types": 30,
+      "offdiagonal_total_occurrences": 41,
+      "pure_atom_share_of_occurrences": 0.731707317073,
+      "pure_atom_type_bijection_holds": true,
+      "pure_semiprime_pair_seed_atoms": 30,
+      "small_prime_layers": 4,
+      "tail_lift_decomposition_holds": true,
+      "tail_lift_occurrences": 11,
+      "tail_lift_share_of_occurrences": 0.268292682927,
+      "top_tail_lifts": [
+        {
+          "p": 2,
+          "q": 3,
+          "tail_lift_mass": 7
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "tail_lift_mass": 2
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "tail_lift_mass": 1
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "tail_lift_mass": 1
+        }
+      ]
+    },
+    {
+      "N": 997,
+      "failures": [],
+      "formal_pure_atom_sign_shadow_bits": 287,
+      "formal_pure_atom_sign_shadow_log10": 86.395609,
+      "formal_tail_lift_transition_shadow_bits": 211,
+      "formal_tail_lift_transition_shadow_log10": 63.517329,
+      "offdiagonal_seed_types": 287,
+      "offdiagonal_total_occurrences": 498,
+      "pure_atom_share_of_occurrences": 0.576305220884,
+      "pure_atom_type_bijection_holds": true,
+      "pure_semiprime_pair_seed_atoms": 287,
+      "small_prime_layers": 11,
+      "tail_lift_decomposition_holds": true,
+      "tail_lift_occurrences": 211,
+      "tail_lift_share_of_occurrences": 0.423694779116,
+      "top_tail_lifts": [
+        {
+          "p": 2,
+          "q": 3,
+          "tail_lift_mass": 82
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "tail_lift_mass": 32
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "tail_lift_mass": 21
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "tail_lift_mass": 18
+        },
+        {
+          "p": 3,
+          "q": 7,
+          "tail_lift_mass": 12
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "tail_lift_mass": 10
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "tail_lift_mass": 7
+        },
+        {
+          "p": 3,
+          "q": 11,
+          "tail_lift_mass": 6
+        }
+      ]
+    },
+    {
+      "N": 5003,
+      "failures": [],
+      "formal_pure_atom_sign_shadow_bits": 1347,
+      "formal_pure_atom_sign_shadow_log10": 405.487404,
+      "formal_tail_lift_transition_shadow_bits": 1333,
+      "formal_tail_lift_transition_shadow_log10": 401.272984,
+      "offdiagonal_seed_types": 1347,
+      "offdiagonal_total_occurrences": 2680,
+      "pure_atom_share_of_occurrences": 0.502611940299,
+      "pure_atom_type_bijection_holds": true,
+      "pure_semiprime_pair_seed_atoms": 1347,
+      "small_prime_layers": 19,
+      "tail_lift_decomposition_holds": true,
+      "tail_lift_occurrences": 1333,
+      "tail_lift_share_of_occurrences": 0.497388059701,
+      "top_tail_lifts": [
+        {
+          "p": 2,
+          "q": 3,
+          "tail_lift_mass": 416
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "tail_lift_mass": 166
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "tail_lift_mass": 110
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "tail_lift_mass": 94
+        },
+        {
+          "p": 3,
+          "q": 7,
+          "tail_lift_mass": 62
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "tail_lift_mass": 51
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "tail_lift_mass": 39
+        },
+        {
+          "p": 5,
+          "q": 7,
+          "tail_lift_mass": 37
+        }
+      ]
+    },
+    {
+      "N": 10000,
+      "failures": [],
+      "formal_pure_atom_sign_shadow_bits": 2600,
+      "formal_pure_atom_sign_shadow_log10": 782.677989,
+      "formal_tail_lift_transition_shadow_bits": 2868,
+      "formal_tail_lift_transition_shadow_log10": 863.354028,
+      "offdiagonal_seed_types": 2600,
+      "offdiagonal_total_occurrences": 5468,
+      "pure_atom_share_of_occurrences": 0.475493782004,
+      "pure_atom_type_bijection_holds": true,
+      "pure_semiprime_pair_seed_atoms": 2600,
+      "small_prime_layers": 25,
+      "tail_lift_decomposition_holds": true,
+      "tail_lift_occurrences": 2868,
+      "tail_lift_share_of_occurrences": 0.524506217996,
+      "top_tail_lifts": [
+        {
+          "p": 2,
+          "q": 3,
+          "tail_lift_mass": 832
+        },
+        {
+          "p": 2,
+          "q": 5,
+          "tail_lift_mass": 332
+        },
+        {
+          "p": 3,
+          "q": 5,
+          "tail_lift_mass": 221
+        },
+        {
+          "p": 2,
+          "q": 7,
+          "tail_lift_mass": 190
+        },
+        {
+          "p": 3,
+          "q": 7,
+          "tail_lift_mass": 126
+        },
+        {
+          "p": 2,
+          "q": 11,
+          "tail_lift_mass": 103
+        },
+        {
+          "p": 2,
+          "q": 13,
+          "tail_lift_mass": 79
+        },
+        {
+          "p": 5,
+          "q": 7,
+          "tail_lift_mass": 75
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json": "111cc0440f1f16e47cb791878a70f328fdff5122717efe007d08c0d704d62bfa",
+    "docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.json": "f9b2e9eaf8020cde5952237044a1d62308564951b9e00f4cf163ab46d5b62ccf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_offdiagonal_pure_semiprime_seed_atom_router.py": "87745abdfbead6bcc1a5c926fd4a57c14ef9310200a916cb3dce8c976a424e50"
+  },
+  "status": "phi_lpf_offdiagonal_source_tuple_signed_formula_split_to_pure_pair_atom_and_tail_lift_open",
+  "tail_lift_phi_minus_one_mass_formula_proved": true,
+  "tail_nonunit_reduced_to_internal_transition_lift": true,
+  "target_input_before_router": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+}

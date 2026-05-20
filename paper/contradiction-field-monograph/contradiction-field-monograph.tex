@@ -21727,6 +21727,44 @@ docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-rout
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF offdiagonal pure semiprime seed atom frontier]
+The offdiagonal source-tuple signed-seed formula has a forced first-atom
+split.  For every ordered type \((p,q)\) with \(p<q\), the unique pure
+semiprime pair atom is the tail-one occurrence
+\[
+  (p,q,1),\qquad \hbox{with value }pq.
+\]
+All nonunit-tail occurrences are continuations of this first atom, not new
+first seeds.  Their unsigned continuation mass for a fixed \((p,q)\) is
+\[
+  \Phi\!\left(\left\lfloor \frac{N}{pq}\right\rfloor,q\right)-1.
+\]
+For \(N=10000\), the certificate counts \(2600\) pure pair atoms and \(2868\)
+tail-lift occurrences, together recovering the \(5468\) offdiagonal
+occurrences of the previous tuple-field ledger.
+\end{theorem}
+\begin{proof}[Phi-LPF offdiagonal pure semiprime seed atom frontier]
+In the tuple-field ledger, an occurrence is \((p,q,t)\) with \(p<q\) and
+\(t\) \(q\)-rough.  The first seed is attached to the first edge from the
+unit cofactor to \(q\).  Hence the seed itself is represented by the unique
+tail-one tuple \((p,q,1)\).  If \(t>1\), the same first seed has already been
+chosen, and the remaining q-rough tail can only be accounted for by subsequent
+prime-adjoin transitions.  Subtracting the tail-one tuple from the Phi fiber
+gives the displayed \(\Phi-1\) continuation mass.
+
+This proves only the unsigned atom/tail split.  It does not provide the signed
+value of the pure pair atom, nor the orientation parity, ExactUV return, or
+internal transition law.  The next direct hard point is therefore
+\begin{quote}\scriptsize\ttfamily
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtom\\
+BeforePushforward.
+\end{quote}
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
