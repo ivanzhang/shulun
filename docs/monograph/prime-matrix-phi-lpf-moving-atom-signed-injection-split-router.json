@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_moving_atom_signed_injection_split_router",
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LPFPreimagePartitionImported",
+      "meaning": "上一层已删除无主/prime-row 前像，moving atom 若存在必须有 LPF-owned source-bucket 前像。",
+      "proved": true,
+      "remaining": "LPFMovingAtomSignedPreimageMassInjectionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedInjectionHasNoUnsignedRemainder",
+      "meaning": "signed 注入不再包含新的计数问题；无符号桶容量已支付，剩余全是 signed value、prepushforward identity 与质量归一化字段。",
+      "proved": true,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HalfMassSignLaneExtractionFiniteAlgebra",
+      "meaning": "若 exact prepushforward same-(u,v) signed sum identity 已给出，|sum w_e|>=T 立即推出正/负某一 sign-lane 的绝对质量至少 T/2。",
+      "proved": true,
+      "remaining": "PhiLPFMovingAtomPrepushforwardSameUVSignedSumIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "PrepushforwardSameUVIdentityCurrentCorpusProved",
+      "meaning": "当前语料没有给出每个 LPF bucket signed coefficient 到 final same-(u,v) atom 的逐点推前前恒等式。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedValueTableStillOpen",
+      "meaning": "逐点 Phi-LPF signed 表仍是直接非循环替代；沿现有来源链展开会回到 signed-source 固定点。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSurvivalAndRowMassStillOpen",
+      "meaning": "即使逐点表存在，还需证明足够多非零 signed rows、同 formal unit 总质量和 no-heavy-row/L2。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OriginTableSyncImportedButNotProof",
+      "meaning": "signed-survival/origin-table 同步说明该缺口会回到 primitive summand signed expression，而不是自动闭合。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "RatePacketStillParallel",
+      "meaning": "若 signed 注入走终端包路线，仍需 PDEC/CleanKLS 速率包、高段模型余量和 RatePreservation。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": false,
+      "gate": "SignedInjectionLedgerCurrentCorpusProved",
+      "meaning": "本层只把 signed 注入拆成逐点表/推前恒等式、半质量 sign-lane 和 row-mass；没有排斥 moving atom。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层不是三目标命题无条件闭合。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "half_mass_sign_lane_extraction_finite_algebra_closed": true,
+  "latest_retained_basis_after_router": "((PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR PhiLPFBucketSignedCoefficientLawBeforePushforward OR ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet)",
+  "lpf_preimage_partition_imported": true,
+  "next_primary_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "no_theorem_switch": true,
+  "parallel_primary_attack_targets": [
+    "PhiLPFBucketSignedCoefficientLawBeforePushforward",
+    "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+    "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步继续拆解 `LPFMovingAtomSignedPreimageMassInjectionLedger`。上一层已经把 moving atom 的无符号前像固定到 LPF-owned source buckets；因此 signed 注入本身没有新的计数自由度。若逐点推前前 same-(u,v) signed sum identity 已给出，则大原子到某一正/负 sign-lane 的半质量抽取是有限线性代数。当前真正缺口是正向提交逐点 Phi-LPF signed value table 或完整 bucket signed law，并配合同一 formal unit 的 signed survival 与 row-mass/no-heavy-row 账本。最新直接主攻同步为 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`；行/列命题仍未无条件闭合。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "prepushforward_same_uv_identity_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "signed_injection_has_no_unsigned_remainder": true,
+  "signed_injection_ledger_current_corpus_proved": false,
+  "signed_survival_and_row_mass_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-router.json": "1ece66b081f2c9870f908717c2a97ba5e897c363694c789c69519782a821dbeb",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-signed-survival-origin-table-sync-router.json": "2a1b6082621d0c9d8ddd1acfa69d12f9c3f3a38cebe422ba3d14b196661b5a30",
+    "docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.json": "073edf36be5e26306930db964a9a7920916efc6af78c1fb034a4a34f804189f7",
+    "docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.json": "65fb8bbd578b7dcc32c930fc86e8ea9b803d59b4d5773c589c44cfec90027e58",
+    "docs/monograph/prime-matrix-strict-rate-bearing-moving-atom-packet-dprc-sync-router.json": "f5135c99d7f964b3c5b29b81681512083ff8bcaca431ff71fda3f2606fa81b9a",
+    "experiments/prime_matrix_phi_lpf_moving_atom_signed_injection_split_router.py": "da178e1daf29235c9fbf8d35729d52d7150fedc41fa2b4c676670e6edc9ddcee"
+  },
+  "status": "phi_lpf_moving_atom_signed_injection_split_to_pointwise_table_open",
+  "strict_basis_after_router": "(PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "sync_chain": [
+    {
+      "from": "LPFMovingAtomSignedPreimageMassInjectionLedger",
+      "meaning": "signed 注入由逐点推前前恒等式加有限 sign-lane 半质量抽取组成。",
+      "to": "PhiLPFMovingAtomPrepushforwardSameUVSignedSumIdentity AND LPFMovingAtomHalfMassSignLaneExtractionLemma"
+    },
+    {
+      "from": "PhiLPFMovingAtomPrepushforwardSameUVSignedSumIdentity",
+      "meaning": "same-(u,v) 推前前恒等式必须由逐点 signed 表或完整 bucket signed law 正向给出。",
+      "to": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "from": "LPFMovingAtomHalfMassSignLaneExtractionLemma",
+      "meaning": "一旦恒等式给出，|sum w_e| 大迫使某一 sign-lane 至少承担一半绝对质量。",
+      "to": "closed finite algebra after identity"
+    },
+    {
+      "from": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR PhiLPFBucketSignedCoefficientLawBeforePushforward",
+      "meaning": "signed 值表还必须配合同 formal unit 非零存活、总质量和 no-heavy-row/L2。",
+      "to": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    }
+  ],
+  "target_input_before_router": "LPFMovingAtomSignedPreimageMassInjectionLedger"
+}

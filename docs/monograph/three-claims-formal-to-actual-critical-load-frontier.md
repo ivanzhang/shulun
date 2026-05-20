@@ -17209,6 +17209,47 @@ LPFMovingAtomSignedPreimageMassInjectionLedger
 并行仍保留逐点 Phi-LPF signed 表、signed survival/row-mass、PDEC/CleanKLS 速率包、高段模型余量、
 RatePreservation 和 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+## 361. Phi-LPF moving-atom signed-injection split frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_moving_atom_signed_injection_split_router.py
+docs/monograph/prime-matrix-phi-lpf-moving-atom-signed-injection-split-router.md
+docs/monograph/prime-matrix-phi-lpf-moving-atom-signed-injection-split-router.json
+data/prime-matrix-phi-lpf-moving-atom-signed-injection-split-ledger.json
+```
+
+同步结果：
+
+```text
+lpf_preimage_partition_imported=true
+signed_injection_has_no_unsigned_remainder=true
+half_mass_sign_lane_extraction_finite_algebra_closed=true
+prepushforward_same_uv_identity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+signed_survival_and_row_mass_proved=false
+signed_injection_ledger_current_corpus_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+formal-to-actual 含义是：`LPFMovingAtomSignedPreimageMassInjectionLedger` 不再是独立计数硬点。
+LPF-owned source buckets 已经给出无符号前像；一旦逐点 prepushforward same-`(u,v)` signed sum
+identity 存在，大原子的 sign-lane 半质量抽取就是有限代数。缺失的不是桶数量，而是逐点 signed
+coefficient/local factor/alpha-delta branch/推前前恒等式，以及同 formal unit 的 signed survival
+和 row-mass/no-heavy-row。
+
+因此最新直接主攻同步为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并行保留完整 bucket signed law、primitive summand signed expression、signed survival、row-mass、
+PDEC/CleanKLS 速率包、高段模型余量、RatePreservation 和 DStructure/Rankin。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
