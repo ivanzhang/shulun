@@ -6154,6 +6154,47 @@ row-mass/no-heavy-row 账本。当前最窄点为
 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+### 1.184 Phi-LPF signed-survival origin-table sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_signed_survival_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-signed-survival-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-signed-survival-origin-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-signed-survival-origin-table-sync-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_candidate_capacity_remains_closed=true
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+row_level_clean_core_origin_generation_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+actual-load 含义是：`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`
+不能停在“表达式”这个字段名上。要让 Phi-LPF 候选 row 成为 actual signed row，必须说明
+该 signed coefficient 从哪个 pre-Cauchy source tuple 正向产生；而既有 strict 来源恒等式证书
+已经把这个要求压到逐行 clean-core 原始生成表：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+->
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+->
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+LPF/Phi 精确桶继续关闭候选容量，但它不生成 signed coefficient origin。当前最窄点为逐行
+原始生成表；并行仍需 nonzero signed survival、row-mass/no-heavy-row、complete key、
+fixed-key ExactUV multiplicity、ExactUV 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
