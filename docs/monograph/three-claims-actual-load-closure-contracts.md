@@ -17566,3 +17566,43 @@ formal-to-actual 含义是：no-return Hall atom 已不再是 payment 图黑箱�
 本步没有证明 endpoint singleton atom SAE 或 source-atom multiplicity cap，也没有排斥
 cross-key return whitelist leak、boundary equality atom 或 endpoint 并行出口。行/列命题
 仍未无条件闭合。
+
+### 1.147 stable-ladder phase-residue exchange canonical-payment-cross-key-return-whitelist-slot-projection 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_cross_key_return_whitelist_slot_projection_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_cross_key_return_whitelist_leak_imported=true
+phase_residue_exchange_actual_object_slot_vector_imported_for_cross_key_return=true
+phase_residue_exchange_cross_key_return_unit_pair_closed=true
+phase_residue_exchange_cross_key_return_slot_change_partition_closed=true
+phase_residue_exchange_no_independent_cross_key_return_whitelist_leak_closed=true
+source_atom_multiplicity_cap_pdec_cap_proved=false
+phase_residue_exchange_boundary_equality_atom_exclusion_proved=false
+endpoint_orbit_bridge_cancellation_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：跨 key 非白名单 return 不能作为 payment 图匿名逃逸。
+actual-object slot vector 已固定；若它不是同一对象，则至少一个槽位变化：
+
+```text
+source/occurrence change -> source-atom multiplicity cap
+CRT/congruence change    -> boundary equality/CRT boundary
+phase endpoint change    -> bridge, amplitude-depth, or variation-boundary flux
+signed/pairing change    -> full-cycle mean or amplitude-depth
+```
+
+因此 cross-key return whitelist leak 不再作为独立活动出口保留。
+
+本步没有证明 source multiplicity、boundary equality、endpoint orbit 或 sparse SAE 出口。
+行/列命题仍未无条件闭合。

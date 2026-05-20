@@ -14887,3 +14887,34 @@ formal-to-actual 含义是：单点 no-return 缺口的 phase endpoint 与 signe
 
 本步没有闭合行/列命题；最新剩余为 endpoint singleton、source multiplicity、
 cross-key return whitelist leak、boundary equality 与 endpoint 并行出口。
+
+## 306. Stable-ladder phase-residue exchange canonical-payment-cross-key-return-whitelist-slot-projection frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_cross_key_return_whitelist_slot_projection_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-cross-key-return-whitelist-slot-projection-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_cross_key_return_whitelist_leak_imported=true
+phase_residue_exchange_actual_object_slot_vector_imported_for_cross_key_return=true
+phase_residue_exchange_cross_key_return_unit_pair_closed=true
+phase_residue_exchange_cross_key_return_slot_change_partition_closed=true
+phase_residue_exchange_no_independent_cross_key_return_whitelist_leak_closed=true
+source_atom_multiplicity_cap_pdec_cap_proved=false
+phase_residue_exchange_boundary_equality_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：跨 key 非白名单 return 必须表现为 actual-object slot vector
+的某一槽变化；这些变化已分别命名为 source multiplicity、boundary equality 或 endpoint
+orbit 出口。
+
+本步没有闭合行/列命题；最新剩余为 endpoint singleton、source multiplicity、
+boundary equality、bridge/amplitude/variation 与 sparse 出口。
