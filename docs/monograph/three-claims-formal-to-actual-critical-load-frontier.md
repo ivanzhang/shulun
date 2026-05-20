@@ -14855,3 +14855,35 @@ formal-to-actual 含义是：broad singleton Hall cut 的合法补偿空间被�
 
 本步没有闭合行/列命题；最新剩余为 no-return Hall atom、cross-key return whitelist
 leak、boundary equality 与 endpoint 并行出口。
+
+## 305. Stable-ladder phase-residue exchange canonical-payment-singleton-no-return-endpoint-projection frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_singleton_no_return_endpoint_projection_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_singleton_no_return_hall_atom_imported=true
+phase_residue_exchange_actual_object_field_packet_imported_for_no_return_projection=true
+phase_residue_exchange_no_return_singleton_unit_key_closed=true
+phase_residue_exchange_no_return_phase_endpoint_projection_closed=true
+phase_residue_exchange_no_return_signed_mass_unit_projection_closed=true
+phase_residue_exchange_no_return_source_multiplicity_gate_closed=true
+phase_residue_exchange_no_independent_singleton_no_return_hall_atom_closed=true
+endpoint_singleton_atom_sae_proved=false
+source_atom_multiplicity_cap_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：单点 no-return 缺口的 phase endpoint 与 signed mass 已锁定；
+它只能作为 endpoint singleton atom 或 source-atom multiplicity cap 继续存在。
+
+本步没有闭合行/列命题；最新剩余为 endpoint singleton、source multiplicity、
+cross-key return whitelist leak、boundary equality 与 endpoint 并行出口。

@@ -17528,3 +17528,41 @@ no legal named return -> CanonicalUnitSingletonNoReturnHallAtomPDECCap
 
 本步没有证明 no-return Hall atom，也没有排斥 cross-key return whitelist leak、
 boundary equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.146 stable-ladder phase-residue exchange canonical-payment-singleton-no-return-endpoint-projection 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_singleton_no_return_endpoint_projection_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-no-return-endpoint-projection-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_singleton_no_return_hall_atom_imported=true
+phase_residue_exchange_actual_object_field_packet_imported_for_no_return_projection=true
+phase_residue_exchange_no_return_singleton_unit_key_closed=true
+phase_residue_exchange_no_return_phase_endpoint_projection_closed=true
+phase_residue_exchange_no_return_signed_mass_unit_projection_closed=true
+phase_residue_exchange_no_return_source_multiplicity_gate_closed=true
+phase_residue_exchange_no_independent_singleton_no_return_hall_atom_closed=true
+endpoint_singleton_atom_sae_proved=false
+source_atom_multiplicity_cap_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：no-return Hall atom 已不再是 payment 图黑箱。actual-object
+字段包锁定 source、occurrence、phase endpoint 与 signed mass；投影到 endpoint 后，
+若无多 source/occurrence 补偿，就是 endpoint singleton atom SAE；若有多重补偿，
+则是 source-atom multiplicity cap。
+
+因此 payment 侧 no-return atom 不再作为独立活动出口保留。
+
+本步没有证明 endpoint singleton atom SAE 或 source-atom multiplicity cap，也没有排斥
+cross-key return whitelist leak、boundary equality atom 或 endpoint 并行出口。行/列命题
+仍未无条件闭合。
