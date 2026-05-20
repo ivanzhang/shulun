@@ -15774,6 +15774,47 @@ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍是并行门。行/列命题仍未
 无条件闭合。
 
+## 333. Phi-LPF semiprime seed diagonal frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_semiprime_seed_diagonal_frontier_router.py
+docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json
+data/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-ledger.json
+```
+
+同步结果：
+
+```text
+semiprime_first_edge_signed_seed_target_imported=true
+diagonal_offdiagonal_support_split_proved=true
+diagonal_square_base_private_signed_escape_removed=true
+diagonal_common_packet_signed_source_proved=false
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+semiprime_first_edge_signed_seed_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：first-edge semiprime seed 的 diagonal 部分已经不是新 signed
+逃逸口；`(p,p)` 被 square-base source packet reduction 送回 common pre-Cauchy source
+packet。剩余 signed 新口集中在 offdiagonal ordered semiprime seeds `(p,q), p<q`。
+Phi/LPF 给出这些 seed 类型和 occurrence 的精确分桶，但不提供它们的 sign、branch trace
+或 ExactUV 输出。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

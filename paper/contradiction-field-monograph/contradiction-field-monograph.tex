@@ -21659,6 +21659,33 @@ docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF semiprime seed diagonal frontier]
+The semiprime first-edge seed table has a forced diagonal/offdiagonal split.
+The diagonal first edges are exactly \((p,p)\), hence the square-base roots
+already handled by the square-base source-packet reduction.  They do not form a
+private signed source.  The offdiagonal first edges \((p,q)\), \(p<q\), remain
+the genuine semiprime first-seed signed table.  For \(N=10000\) the certificate
+counts \(25\) diagonal seed types and \(2600\) offdiagonal seed types, with
+occurrence mass \(3302+5468=8770\).
+\end{theorem}
+\begin{proof}[Phi-LPF semiprime seed diagonal frontier]
+Every first-edge seed has ordered prime pair \(p\le q\).  The equality case is
+\(p=q\), so it is exactly the square-base key \((p,p)\).  The previous
+square-base packet reduction proves that this key has no separate private
+signed escape; it must be supplied by the common pre-Cauchy source packet and
+its downstream signed/ExactUV fields.  The strict inequality case \(p<q\) is
+disjoint from that diagonal packet and therefore remains as an offdiagonal
+ordered semiprime seed table.
+
+This is again an unsigned support split.  It does not supply the offdiagonal
+signed seed values, does not close the common packet, and does not close the
+internal prime-adjoin transition law.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -1,0 +1,232 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_semiprime_seed_diagonal_frontier_router",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "diagonal_common_packet_signed_source_proved": false,
+  "diagonal_offdiagonal_support_split_proved": true,
+  "diagonal_square_base_private_signed_escape_removed": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "SemiprimeFirstSeedTargetImported",
+      "meaning": "上一层已把 first-edge slab 的 signed 缺口命名为 semiprime first-edge signed seed table。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalOffDiagonalSupportSplit",
+      "meaning": "semiprime first-edge seed 类型唯一分成 diagonal `p=q` 与 offdiagonal `p<q`。",
+      "proved": true,
+      "remaining": "PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalSquareBasePrivateEscapeAlreadyRemoved",
+      "meaning": "diagonal `(p,p)` 已由 square-base source packet reduction 证明没有私有 signed 出口。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalCommonPacketStillOpen",
+      "meaning": "diagonal square seed 回到 common packet；该 packet 仍不是已闭合 signed 来源。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": false,
+      "gate": "OffDiagonalSeedTableCurrentCorpusProved",
+      "meaning": "当前材料没有为所有 `p<q` ordered semiprime first edges 提交 signed seed 表。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "SemiprimeFirstSeedTableCurrentCorpusProved",
+      "meaning": "diagonal common packet 与 offdiagonal seed table 均未给出完整 signed first seed 表。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed value table 可替代 seed 表，但当前仍未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplySemiprimeSeed",
+      "meaning": "完整 branch trace 可为 diagonal/offdiagonal seed 同时给 signed value、return tag 与 ExactUV。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplySemiprimeSeed",
+      "meaning": "atomic trace signed coefficient 公式可把 semiprime seed 作为 trace 字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPairedGate",
+      "meaning": "即使 semiprime seed 表存在，内部 prime-adjoin transition law 仍是配套门。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVStillParallelGate",
+      "meaning": "seed/transition 表即使存在，ExactUV source entropy/fiber 仍是并行门。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只把 semiprime seed 拆成 diagonal common-packet 与 offdiagonal seed；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "next_primary_attack_target": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward",
+  "no_theorem_switch": true,
+  "offdiagonal_ordered_semiprime_signed_seed_table_proved": false,
+  "paired_required_attack_targets": [
+    "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "semiprime first-edge signed seed table 可按 `p=q` 与 `p<q` 强制拆分。diagonal `(p,p)` 正是 square-base root，既有证书已排除它的私有 signed 出口，但它回到 common pre-Cauchy source packet 后仍未闭合。offdiagonal `(p,q), p<q` 没有现成 signed seed 表。因而最新最窄主攻是 `PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`，同时仍需 diagonal common packet 和 internal prime-adjoin transition law。",
+  "retained_basis_after_router": "((PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_semiprime_seed_audit": [
+    {
+      "N": 30,
+      "diagonal_occurrence_share": 0.526315789474,
+      "diagonal_offdiag_occurrence_partition_holds": true,
+      "diagonal_square_seed_occurrences": 10,
+      "diagonal_square_seed_types": 3,
+      "diagonal_type_equals_small_prime_layers": true,
+      "diagonal_type_share": 0.3,
+      "failures": [],
+      "first_edge_occurrences": 19,
+      "first_edge_seed_types": 10,
+      "formal_diagonal_type_sign_shadow_bits": 3,
+      "formal_diagonal_type_sign_shadow_log10": 0.90309,
+      "formal_offdiag_type_sign_shadow_bits": 7,
+      "formal_offdiag_type_sign_shadow_log10": 2.10721,
+      "offdiag_occurrence_share": 0.473684210526,
+      "offdiag_type_share": 0.7,
+      "offdiagonal_semiprime_seed_occurrences": 9,
+      "offdiagonal_semiprime_seed_types": 7,
+      "small_prime_layers": 3
+    },
+    {
+      "N": 100,
+      "diagonal_occurrence_share": 0.445945945946,
+      "diagonal_offdiag_occurrence_partition_holds": true,
+      "diagonal_square_seed_occurrences": 33,
+      "diagonal_square_seed_types": 4,
+      "diagonal_type_equals_small_prime_layers": true,
+      "diagonal_type_share": 0.117647058824,
+      "failures": [],
+      "first_edge_occurrences": 74,
+      "first_edge_seed_types": 34,
+      "formal_diagonal_type_sign_shadow_bits": 4,
+      "formal_diagonal_type_sign_shadow_log10": 1.20412,
+      "formal_offdiag_type_sign_shadow_bits": 30,
+      "formal_offdiag_type_sign_shadow_log10": 9.0309,
+      "offdiag_occurrence_share": 0.554054054054,
+      "offdiag_type_share": 0.882352941176,
+      "offdiagonal_semiprime_seed_occurrences": 41,
+      "offdiagonal_semiprime_seed_types": 30,
+      "small_prime_layers": 4
+    },
+    {
+      "N": 997,
+      "diagonal_occurrence_share": 0.398550724638,
+      "diagonal_offdiag_occurrence_partition_holds": true,
+      "diagonal_square_seed_occurrences": 330,
+      "diagonal_square_seed_types": 11,
+      "diagonal_type_equals_small_prime_layers": true,
+      "diagonal_type_share": 0.036912751678,
+      "failures": [],
+      "first_edge_occurrences": 828,
+      "first_edge_seed_types": 298,
+      "formal_diagonal_type_sign_shadow_bits": 11,
+      "formal_diagonal_type_sign_shadow_log10": 3.31133,
+      "formal_offdiag_type_sign_shadow_bits": 287,
+      "formal_offdiag_type_sign_shadow_log10": 86.395609,
+      "offdiag_occurrence_share": 0.601449275362,
+      "offdiag_type_share": 0.963087248322,
+      "offdiagonal_semiprime_seed_occurrences": 498,
+      "offdiagonal_semiprime_seed_types": 287,
+      "small_prime_layers": 11
+    },
+    {
+      "N": 5003,
+      "diagonal_occurrence_share": 0.38134810711,
+      "diagonal_offdiag_occurrence_partition_holds": true,
+      "diagonal_square_seed_occurrences": 1652,
+      "diagonal_square_seed_types": 19,
+      "diagonal_type_equals_small_prime_layers": true,
+      "diagonal_type_share": 0.013909224012,
+      "failures": [],
+      "first_edge_occurrences": 4332,
+      "first_edge_seed_types": 1366,
+      "formal_diagonal_type_sign_shadow_bits": 19,
+      "formal_diagonal_type_sign_shadow_log10": 5.71957,
+      "formal_offdiag_type_sign_shadow_bits": 1347,
+      "formal_offdiag_type_sign_shadow_log10": 405.487404,
+      "offdiag_occurrence_share": 0.61865189289,
+      "offdiag_type_share": 0.986090775988,
+      "offdiagonal_semiprime_seed_occurrences": 2680,
+      "offdiagonal_semiprime_seed_types": 1347,
+      "small_prime_layers": 19
+    },
+    {
+      "N": 10000,
+      "diagonal_occurrence_share": 0.376510832383,
+      "diagonal_offdiag_occurrence_partition_holds": true,
+      "diagonal_square_seed_occurrences": 3302,
+      "diagonal_square_seed_types": 25,
+      "diagonal_type_equals_small_prime_layers": true,
+      "diagonal_type_share": 0.009523809524,
+      "failures": [],
+      "first_edge_occurrences": 8770,
+      "first_edge_seed_types": 2625,
+      "formal_diagonal_type_sign_shadow_bits": 25,
+      "formal_diagonal_type_sign_shadow_log10": 7.52575,
+      "formal_offdiag_type_sign_shadow_bits": 2600,
+      "formal_offdiag_type_sign_shadow_log10": 782.677989,
+      "offdiag_occurrence_share": 0.623489167617,
+      "offdiag_type_share": 0.990476190476,
+      "offdiagonal_semiprime_seed_occurrences": 5468,
+      "offdiagonal_semiprime_seed_types": 2600,
+      "small_prime_layers": 25
+    }
+  ],
+  "semiprime_first_edge_signed_seed_table_proved": false,
+  "semiprime_first_edge_signed_seed_target_imported": true,
+  "semiprime_seed_diagonal_frontier_router_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json": "111cc0440f1f16e47cb791878a70f328fdff5122717efe007d08c0d704d62bfa",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.json": "3ce843ba5d0230fd98f027fcfd85230e2e348069f0886a027b5969a5215209a1",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_semiprime_seed_diagonal_frontier_router.py": "7ac5f7e77e6797b815957f3999ba080f578e7fee1eb162059c6e9c2eb8973684"
+  },
+  "status": "phi_lpf_semiprime_first_seed_split_to_diagonal_common_packet_and_offdiag_seed_open",
+  "target_input_before_router": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+}

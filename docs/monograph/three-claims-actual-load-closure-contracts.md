@@ -5742,6 +5742,51 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 并行替代仍是逐点 signed value table、完整 branch trace 或 atomic trace。行/列命题仍未
 无条件闭合。
 
+### 1.175 Phi-LPF semiprime seed diagonal frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_semiprime_seed_diagonal_frontier_router.py
+data/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json
+```
+
+同步读数为：
+
+```text
+semiprime_first_edge_signed_seed_target_imported=true
+diagonal_offdiagonal_support_split_proved=true
+diagonal_square_base_private_signed_escape_removed=true
+diagonal_common_packet_signed_source_proved=false
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+semiprime_first_edge_signed_seed_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：semiprime first-edge seed 仍不是单一黑箱。diagonal `p=q` 正是
+square-base root `(p,p)`；既有 square-base source packet reduction 已经排除其私有 signed
+出口，但它回到 `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` 后仍未闭合。
+offdiagonal `p<q` 则是真正新的 ordered semiprime first-seed 表口。
+
+样本 `N=10000` 中 diagonal 类型 `25` 个、offdiagonal 类型 `2600` 个；occurrence 分解为
+`3302 + 5468 = 8770`。因此 diagonal 不是主要类型复杂度来源，最新最窄主攻为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+配套仍需：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍是逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
