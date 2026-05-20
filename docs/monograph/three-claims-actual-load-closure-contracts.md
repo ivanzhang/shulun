@@ -17755,3 +17755,33 @@ formal-to-actual 含义是：alternating transport cycle 已经不是匿名环�
 
 本步没有证明 nonzero monodromy、endpoint singleton、full-cycle mean、source
 multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.152 stable-ladder phase-residue exchange endpoint-alternating-cycle-pivot-phase-slip 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_pivot_phase_slip_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_alternating_cycle_monodromy_imported=true
+endpoint_alternating_cycle_monodromy_crt_vector_closed=true
+endpoint_alternating_cycle_nonzero_crt_coordinate_localized=true
+endpoint_alternating_cycle_pivot_prime_selected=true
+endpoint_alternating_cycle_monodromy_reduced_to_pivot_phase_slip=true
+endpoint_alternating_cycle_pivot_prime_phase_slip_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：nonzero monodromy 不再作为匿名整体出口。它在有限 CRT
+prime-coordinate 向量中至少有一个非零坐标；取最小非零素模坐标作为规范 pivot，
+最新硬点就是该 pivot prime 上的非零 phase-slip。
+
+本步没有证明 pivot phase-slip、endpoint singleton、full-cycle mean、source
+multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。

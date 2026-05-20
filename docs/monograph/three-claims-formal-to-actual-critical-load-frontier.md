@@ -15030,3 +15030,29 @@ row_column_unconditional_closed=false
 formal-to-actual 含义是：交替输运环被锁成有序 CRT endpoint cycle 与相位增量词。
 零 monodromy 只是纯环流；非零 monodromy 是最新显式硬点。最新剩余为 sparse SAE、
 endpoint singleton、full-cycle mean、source multiplicity 与 nonzero monodromy。
+
+## 311. Stable-ladder phase-residue exchange endpoint-alternating-cycle-pivot-phase-slip frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_pivot_phase_slip_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_alternating_cycle_monodromy_imported=true
+endpoint_alternating_cycle_monodromy_crt_vector_closed=true
+endpoint_alternating_cycle_nonzero_crt_coordinate_localized=true
+endpoint_alternating_cycle_monodromy_reduced_to_pivot_phase_slip=true
+endpoint_alternating_cycle_pivot_prime_phase_slip_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：非零 monodromy 已被定位到最小非零 CRT prime-coordinate
+的 pivot phase-slip。最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、
+source multiplicity 与 pivot prime phase-slip。
