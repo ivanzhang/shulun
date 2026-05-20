@@ -18026,3 +18026,38 @@ formal-to-actual 含义是：duplicate payment 不能作为新增 AP-table capac
 same AP table injection、cross-table switch、bounded/long support、strict gap、
 dense/sparse table、高秩、nonreplay、moving-pivot 与 endpoint 并行出口仍未排斥。
 行/列命题仍未无条件闭合。
+
+### 1.160 stable-ladder phase-residue exchange endpoint-pivot-duplicate-same-slot-multiplicity-cap-import 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_endpoint_pivot_duplicate_same_slot_multiplicity_cap_import_router.py
+data/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-ledger.json
+docs/monograph/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-router.md
+docs/monograph/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_duplicate_same_slot_multiplicity_imported=true
+endpoint_duplicate_same_slot_key_carries_source_atom=true
+endpoint_duplicate_extra_unit_same_source_atom_closed=true
+endpoint_duplicate_multiplicity_no_new_payment_capacity=true
+existing_source_atom_multiplicity_cap_imported=true
+endpoint_duplicate_same_slot_multiplicity_reduced_to_existing_cap=true
+source_atom_multiplicity_cap_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：duplicate same-slot source multiplicity 不再作为 endpoint
+专属独立出口。上一层 same canonical slot key 已固定 source-support atom；同槽额外
+source unit 不能增加 AP-table payment capacity，只能解释为该 source atom 的持久重数
+异常。因此该分支并入既有
+`EndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCap`。
+
+本步没有证明 source-atom multiplicity cap/PDEC，也没有证明 duplicate sparse SAE、
+same AP table injection、cross-table switch、bounded/long support、AP strict gap/dense
+table、sparse cell、高秩、nonreplay、moving-pivot 或 endpoint 并行出口。行/列命题
+仍未无条件闭合。

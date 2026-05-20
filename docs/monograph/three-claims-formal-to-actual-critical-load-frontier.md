@@ -15275,3 +15275,38 @@ formal-to-actual 含义是：同一 canonical slot 的重复支付不再能增�
 switch、同槽 source multiplicity、duplicate sparse SAE、bounded/long support、
 AP strict gap/dense table、sparse cell、高秩、nonreplay、moving-pivot 与 endpoint
 并行出口。
+
+## 319. Stable-ladder phase-residue exchange endpoint-pivot-duplicate-same-slot-multiplicity-cap-import frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_duplicate_same_slot_multiplicity_cap_import_router.py
+docs/monograph/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-router.md
+docs/monograph/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-router.json
+data/prime-matrix-endpoint-pivot-duplicate-same-slot-multiplicity-cap-import-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_duplicate_same_slot_multiplicity_imported=true
+endpoint_duplicate_same_slot_key_carries_source_atom=true
+endpoint_duplicate_extra_unit_same_source_atom_closed=true
+endpoint_duplicate_multiplicity_no_new_payment_capacity=true
+existing_source_atom_multiplicity_cap_imported=true
+endpoint_duplicate_same_slot_multiplicity_reduced_to_existing_cap=true
+source_atom_multiplicity_cap_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：duplicate same-slot multiplicity 被并入已有 source-atom
+multiplicity cap。same canonical slot key 已带 source atom 字段；同槽第二个及以后
+source unit 不能换成新 capacity，只能作为同一 source atom 的重数异常计费。因此旧出口
+`EndpointOrbitAlternatingCyclePivotPrimeDuplicateSameSlotSourceMultiplicityCapPDEC`
+被替换为
+`EndpointOrbitResidueShadowDualRowPhaseCellAtomSignedCoreSupportSliceResidueFiberPhaseWordSlotSourceAtomMultiplicityCapPDECCap`。
+最新剩余为 source-atom multiplicity cap、duplicate sparse SAE、same AP table
+injection、cross-table switch、bounded/long support、AP strict gap/dense table、
+sparse cell、高秩、nonreplay、moving-pivot、endpoint singleton、full-cycle mean 与
+sparse-scale SAE。
