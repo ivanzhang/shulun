@@ -21765,6 +21765,41 @@ docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF pure pair Ferrers support frontier]
+The unsigned support of the offdiagonal pure pair atoms is a Ferrers bipartite
+prime graph.  Its left vertices are the owner primes \(p\le \sqrt N\), its
+right vertices are primes \(q\), and
+\[
+  (p,q)\ \hbox{is an edge}\quad\Longleftrightarrow\quad p<q\le N/p.
+\]
+If \(p<r\), then the \(r\)-neighbourhood is contained in the \(p\)-neighbourhood.
+Consequently the edge count and all left and right degrees are fixed by the
+prime table and the values \(\lfloor N/p\rfloor\).  For \(N=10000\), the
+certificate has \(25\) left owner layers, \(668\) right prime vertices, and
+\(2600\) edges, with the Ferrers nesting and degree identities verified.
+\end{theorem}
+\begin{proof}[Phi-LPF pure pair Ferrers support frontier]
+The pure pair atom has value \(pq\), with \(p\) the LPF owner and \(q\) the
+strictly larger first rough prime.  The condition \(pq\le N\) is exactly
+\(q\le N/p\), so the displayed edge rule is equivalent to the previous pure
+atom ledger.  If \(p<r\), then any \(q\) adjacent to \(r\) satisfies
+\(q>r>p\) and \(q\le N/r<N/p\), hence it is adjacent to \(p\).  This proves the
+Ferrers nesting.  Summing the neighbour sizes over \(p\), or the right degrees
+over \(q\), gives the same edge count.
+
+This closes only support and degree accounting.  A Ferrers support graph does
+not emit signed seed values, local factors, orientation parity, or ExactUV
+return tags.  The remaining direct hard point is
+\begin{quote}\scriptsize\ttfamily
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernel\\
+BeforePushforward.
+\end{quote}
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

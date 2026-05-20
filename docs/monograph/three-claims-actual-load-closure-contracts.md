@@ -5901,6 +5901,50 @@ PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 本步没有给出 pure pair signed seed value；它只关闭 pure atom/tail lift 的无符号分解与
 `Phi-1` 质量公式。行/列命题仍未无条件闭合。
 
+### 1.178 Phi-LPF pure pair Ferrers support 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_pure_pair_ferrers_support_router.py
+data/prime-matrix-phi-lpf-pure-pair-ferrers-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.md
+docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.json
+```
+
+同步读数为：
+
+```text
+pure_pair_signed_atom_target_imported=true
+pure_pair_ferrers_support_rule_proved=true
+pure_pair_degree_ledger_proved=true
+support_graph_signed_kernel_emission_proved=false
+two_prime_signed_interaction_kernel_proved=false
+pure_semiprime_pair_signed_seed_atom_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：offdiagonal pure pair atom 的支撑已经完全显式化为二素数 Ferrers 图。
+左侧是 owner primes `p<=sqrt(N)`，右侧是 first primes `q`，边条件为：
+
+```text
+p<q<=N/p.
+```
+
+随着 `p` 增大，邻域 `N(p)={q prime: p<q<=N/p}` 嵌套下降；left/right degree 和总边数
+都由 prime table 与 `floor(N/p)` 机械决定。样本 `N=10000` 中 left owner layers 为
+`25`，right prime vertices 为 `668`，pure pair edges 为 `2600`，Ferrers 嵌套和度数
+恒等式均通过。
+
+因此 pure atom 剩余不再是支撑/度数/容量问题，而是每条 `(p,q)` 边上的 signed 交互：
+
+```text
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步不从
+Ferrers 支撑图推出 sign 或 local factor。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

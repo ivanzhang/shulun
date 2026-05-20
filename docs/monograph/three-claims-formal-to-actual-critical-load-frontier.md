@@ -15928,6 +15928,53 @@ AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 336. Phi-LPF pure pair Ferrers support frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_pure_pair_ferrers_support_router.py
+docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.md
+docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.json
+data/prime-matrix-phi-lpf-pure-pair-ferrers-support-ledger.json
+```
+
+同步结果：
+
+```text
+pure_pair_signed_atom_target_imported=true
+pure_pair_ferrers_support_rule_proved=true
+pure_pair_degree_ledger_proved=true
+support_graph_signed_kernel_emission_proved=false
+two_prime_signed_interaction_kernel_proved=false
+pure_semiprime_pair_signed_seed_atom_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：pure pair atom 的所有无符号支撑自由度已压成一个 Ferrers 图：
+
+```text
+L={p prime: p<=sqrt(N)},   R={q prime},   edge(p,q) iff p<q<=N/p.
+```
+
+若 `p<r`，则 `N(r) subset N(p)`，所以左邻域嵌套下降。edge count、left degree、
+right degree 都不是新的命题输入；它们由 prime table 和 `floor(N/p)` 逐项复算。
+样本 `N=10000` 中 `25` 个左层、`668` 个右顶点、`2600` 条边，度数和嵌套均一致。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

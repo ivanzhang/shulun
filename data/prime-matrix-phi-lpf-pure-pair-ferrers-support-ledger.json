@@ -1,0 +1,645 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_pure_pair_ferrers_support_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PurePairSignedAtomTargetImported",
+      "meaning": "上一层已把 latest seed 原子压到 offdiagonal pure semiprime pair。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairFerrersSupportRuleClosed",
+      "meaning": "pure pair 支撑等价于边条件 `p<q<=N/p`，左邻域按 `p` 递增嵌套下降。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairDegreeLedgerClosed",
+      "meaning": "edge count、left degrees、right degrees 均由 prime table 和 `floor(N/p)` 决定。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SupportGraphDoesNotEmitSignedKernel",
+      "meaning": "Ferrers 支撑只排除支撑/度数缺口；不产生每条边的 sign、orientation 或 local factor。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "TwoPrimeSignedInteractionKernelCurrentCorpusProved",
+      "meaning": "当前语料没有提交 `(p,q)` 两素数交互 signed kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalOrientationParityStillOpen",
+      "meaning": "两素数 kernel 即使存在，orientation parity/branch side 仍需同边绑定。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair/source entropy/fiber 与 return tag 仍是并行门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPairedGate",
+      "meaning": "tail lift 与完整 support key 的 signed compatibility 仍依赖 internal transition。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed table 仍可替代两素数 kernel，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyKernel",
+      "meaning": "完整 branch trace 可给每条 `(p,q)` 边的 signed kernel、orientation、ExactUV 与 return tag。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplyKernel",
+      "meaning": "atomic trace signed coefficient 公式可把两素数交互 kernel 作为 trace 字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": false,
+      "gate": "PurePairSignedAtomCurrentCorpusProved",
+      "meaning": "本步只关闭 pure pair 支撑图和度数账本，没有证明 signed seed atom。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步不证明三命题无条件闭合；它只把 pure atom 缺口压到两素数 signed interaction kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "next_primary_attack_target": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+  "no_theorem_switch": true,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "offdiagonal pure pair atom 的支撑已经完全退化为二素数 Ferrers 图：左侧 `p<=sqrt(N)`，右侧素数 `q`，边条件为 `p<q<=N/p`。随着 `p` 增大，邻域嵌套下降，left/right degree 与总边数全由 prime table 和 `floor(N/p)` 决定。因此 pure atom 剩余不再是支撑或度数问题，而是每条 `(p,q)` 边上的 two-prime signed interaction kernel、orientation parity、ExactUV return 与 internal transition。",
+  "pure_pair_degree_ledger_proved": true,
+  "pure_pair_ferrers_support_router_closed": true,
+  "pure_pair_ferrers_support_rule_proved": true,
+  "pure_pair_signed_atom_target_imported": true,
+  "pure_pair_support_fields": [
+    {
+      "field": "left_owner_prime",
+      "meaning": "`p <= sqrt(N)` 的 LPF owner layer。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "right_first_prime",
+      "meaning": "pure pair 的 second prime `q`，满足 `p<q<=N/p`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "ferrers_neighbor_rule",
+      "meaning": "`N(p)={q prime: p<q<=N/p}`，且 `p` 递增时邻域嵌套下降。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "degree_ledgers",
+      "meaning": "left/right degree 和 edge 总数完全由 prime tables 与 floor(N/p) 决定。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "two_prime_signed_interaction_value",
+      "meaning": "每条 `(p,q)` 边的 signed seed/local factor/orientation 仍未由支撑图产生。",
+      "status": "open_signed"
+    }
+  ],
+  "pure_semiprime_pair_signed_seed_atom_proved": false,
+  "retained_basis_after_router": "((PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_ferrers_support_audit": [
+    {
+      "N": 30,
+      "degree_sum_identity_holds": true,
+      "edge_formula_holds": true,
+      "edge_formula_sum": 7,
+      "empty_left_layers": 1,
+      "ferrers_failures": [],
+      "ferrers_nested_neighborhoods_hold": true,
+      "formal_edge_sign_shadow_bits": 7,
+      "formal_edge_sign_shadow_log10": 2.10721,
+      "left_owner_prime_layers": 3,
+      "max_left_degree": 5,
+      "max_right_degree": 2,
+      "min_nonzero_left_degree": 2,
+      "nonempty_left_layers": 2,
+      "pure_pair_edges": 7,
+      "right_prime_vertices": 5,
+      "tail_left_degrees": [
+        {
+          "degree": 5,
+          "p": 2
+        },
+        {
+          "degree": 2,
+          "p": 3
+        },
+        {
+          "degree": 0,
+          "p": 5
+        }
+      ],
+      "top_left_degrees": [
+        {
+          "degree": 5,
+          "p": 2
+        },
+        {
+          "degree": 2,
+          "p": 3
+        },
+        {
+          "degree": 0,
+          "p": 5
+        }
+      ],
+      "top_right_degrees": [
+        {
+          "degree": 2,
+          "q": 5
+        },
+        {
+          "degree": 2,
+          "q": 7
+        },
+        {
+          "degree": 1,
+          "q": 3
+        },
+        {
+          "degree": 1,
+          "q": 11
+        },
+        {
+          "degree": 1,
+          "q": 13
+        }
+      ]
+    },
+    {
+      "N": 100,
+      "degree_sum_identity_holds": true,
+      "edge_formula_holds": true,
+      "edge_formula_sum": 30,
+      "empty_left_layers": 0,
+      "ferrers_failures": [],
+      "ferrers_nested_neighborhoods_hold": true,
+      "formal_edge_sign_shadow_bits": 30,
+      "formal_edge_sign_shadow_log10": 9.0309,
+      "left_owner_prime_layers": 4,
+      "max_left_degree": 14,
+      "max_right_degree": 4,
+      "min_nonzero_left_degree": 2,
+      "nonempty_left_layers": 4,
+      "pure_pair_edges": 30,
+      "right_prime_vertices": 14,
+      "tail_left_degrees": [
+        {
+          "degree": 14,
+          "p": 2
+        },
+        {
+          "degree": 9,
+          "p": 3
+        },
+        {
+          "degree": 5,
+          "p": 5
+        },
+        {
+          "degree": 2,
+          "p": 7
+        }
+      ],
+      "top_left_degrees": [
+        {
+          "degree": 14,
+          "p": 2
+        },
+        {
+          "degree": 9,
+          "p": 3
+        },
+        {
+          "degree": 5,
+          "p": 5
+        },
+        {
+          "degree": 2,
+          "p": 7
+        }
+      ],
+      "top_right_degrees": [
+        {
+          "degree": 4,
+          "q": 11
+        },
+        {
+          "degree": 4,
+          "q": 13
+        },
+        {
+          "degree": 3,
+          "q": 7
+        },
+        {
+          "degree": 3,
+          "q": 17
+        },
+        {
+          "degree": 3,
+          "q": 19
+        },
+        {
+          "degree": 2,
+          "q": 5
+        },
+        {
+          "degree": 2,
+          "q": 23
+        },
+        {
+          "degree": 2,
+          "q": 29
+        }
+      ]
+    },
+    {
+      "N": 997,
+      "degree_sum_identity_holds": true,
+      "edge_formula_holds": true,
+      "edge_formula_sum": 287,
+      "empty_left_layers": 1,
+      "ferrers_failures": [],
+      "ferrers_nested_neighborhoods_hold": true,
+      "formal_edge_sign_shadow_bits": 287,
+      "formal_edge_sign_shadow_log10": 86.395609,
+      "left_owner_prime_layers": 11,
+      "max_left_degree": 93,
+      "max_right_degree": 10,
+      "min_nonzero_left_degree": 1,
+      "nonempty_left_layers": 10,
+      "pure_pair_edges": 287,
+      "right_prime_vertices": 93,
+      "tail_left_degrees": [
+        {
+          "degree": 9,
+          "p": 17
+        },
+        {
+          "degree": 7,
+          "p": 19
+        },
+        {
+          "degree": 5,
+          "p": 23
+        },
+        {
+          "degree": 1,
+          "p": 29
+        },
+        {
+          "degree": 0,
+          "p": 31
+        }
+      ],
+      "top_left_degrees": [
+        {
+          "degree": 93,
+          "p": 2
+        },
+        {
+          "degree": 65,
+          "p": 3
+        },
+        {
+          "degree": 43,
+          "p": 5
+        },
+        {
+          "degree": 30,
+          "p": 7
+        },
+        {
+          "degree": 19,
+          "p": 11
+        },
+        {
+          "degree": 15,
+          "p": 13
+        },
+        {
+          "degree": 9,
+          "p": 17
+        },
+        {
+          "degree": 7,
+          "p": 19
+        }
+      ],
+      "top_right_degrees": [
+        {
+          "degree": 10,
+          "q": 31
+        },
+        {
+          "degree": 9,
+          "q": 29
+        },
+        {
+          "degree": 9,
+          "q": 37
+        },
+        {
+          "degree": 9,
+          "q": 41
+        },
+        {
+          "degree": 9,
+          "q": 43
+        },
+        {
+          "degree": 8,
+          "q": 23
+        },
+        {
+          "degree": 8,
+          "q": 47
+        },
+        {
+          "degree": 7,
+          "q": 19
+        }
+      ]
+    },
+    {
+      "N": 5003,
+      "degree_sum_identity_holds": true,
+      "edge_formula_holds": true,
+      "edge_formula_sum": 1347,
+      "empty_left_layers": 0,
+      "ferrers_failures": [],
+      "ferrers_nested_neighborhoods_hold": true,
+      "formal_edge_sign_shadow_bits": 1347,
+      "formal_edge_sign_shadow_log10": 405.487404,
+      "left_owner_prime_layers": 19,
+      "max_left_degree": 366,
+      "max_right_degree": 19,
+      "min_nonzero_left_degree": 2,
+      "nonempty_left_layers": 19,
+      "pure_pair_edges": 1347,
+      "right_prime_vertices": 366,
+      "tail_left_degrees": [
+        {
+          "degree": 12,
+          "p": 47
+        },
+        {
+          "degree": 8,
+          "p": 53
+        },
+        {
+          "degree": 6,
+          "p": 59
+        },
+        {
+          "degree": 4,
+          "p": 61
+        },
+        {
+          "degree": 2,
+          "p": 67
+        }
+      ],
+      "top_left_degrees": [
+        {
+          "degree": 366,
+          "p": 2
+        },
+        {
+          "degree": 260,
+          "p": 3
+        },
+        {
+          "degree": 165,
+          "p": 5
+        },
+        {
+          "degree": 123,
+          "p": 7
+        },
+        {
+          "degree": 82,
+          "p": 11
+        },
+        {
+          "degree": 70,
+          "p": 13
+        },
+        {
+          "degree": 55,
+          "p": 17
+        },
+        {
+          "degree": 48,
+          "p": 19
+        }
+      ],
+      "top_right_degrees": [
+        {
+          "degree": 19,
+          "q": 71
+        },
+        {
+          "degree": 19,
+          "q": 73
+        },
+        {
+          "degree": 18,
+          "q": 67
+        },
+        {
+          "degree": 18,
+          "q": 79
+        },
+        {
+          "degree": 17,
+          "q": 61
+        },
+        {
+          "degree": 17,
+          "q": 83
+        },
+        {
+          "degree": 16,
+          "q": 59
+        },
+        {
+          "degree": 16,
+          "q": 89
+        }
+      ]
+    },
+    {
+      "N": 10000,
+      "degree_sum_identity_holds": true,
+      "edge_formula_holds": true,
+      "edge_formula_sum": 2600,
+      "empty_left_layers": 0,
+      "ferrers_failures": [],
+      "ferrers_nested_neighborhoods_hold": true,
+      "formal_edge_sign_shadow_bits": 2600,
+      "formal_edge_sign_shadow_log10": 782.677989,
+      "left_owner_prime_layers": 25,
+      "max_left_degree": 668,
+      "max_right_degree": 25,
+      "min_nonzero_left_degree": 2,
+      "nonempty_left_layers": 25,
+      "pure_pair_edges": 2600,
+      "right_prime_vertices": 668,
+      "tail_left_degrees": [
+        {
+          "degree": 11,
+          "p": 73
+        },
+        {
+          "degree": 8,
+          "p": 79
+        },
+        {
+          "degree": 7,
+          "p": 83
+        },
+        {
+          "degree": 5,
+          "p": 89
+        },
+        {
+          "degree": 2,
+          "p": 97
+        }
+      ],
+      "top_left_degrees": [
+        {
+          "degree": 668,
+          "p": 2
+        },
+        {
+          "degree": 468,
+          "p": 3
+        },
+        {
+          "degree": 300,
+          "p": 5
+        },
+        {
+          "degree": 221,
+          "p": 7
+        },
+        {
+          "degree": 150,
+          "p": 11
+        },
+        {
+          "degree": 130,
+          "p": 13
+        },
+        {
+          "degree": 100,
+          "p": 17
+        },
+        {
+          "degree": 91,
+          "p": 19
+        }
+      ],
+      "top_right_degrees": [
+        {
+          "degree": 25,
+          "q": 101
+        },
+        {
+          "degree": 25,
+          "q": 103
+        },
+        {
+          "degree": 24,
+          "q": 97
+        },
+        {
+          "degree": 24,
+          "q": 107
+        },
+        {
+          "degree": 24,
+          "q": 109
+        },
+        {
+          "degree": 23,
+          "q": 89
+        },
+        {
+          "degree": 23,
+          "q": 113
+        },
+        {
+          "degree": 22,
+          "q": 83
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.json": "608a8f088d6c14b5f3ffd1d5be01aef4555d0753e4ae7d70bcd2f986373dd315",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_pure_pair_ferrers_support_router.py": "4a1b9ea6207cb61bf9b23f6510918196c8805129e24daf1b5c27a80e6ca40e35"
+  },
+  "status": "phi_lpf_pure_pair_signed_atom_reduced_to_two_prime_signed_interaction_kernel_open",
+  "support_graph_signed_kernel_emission_proved": false,
+  "target_input_before_router": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward",
+  "two_prime_signed_interaction_kernel_proved": false
+}
