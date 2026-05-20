@@ -6655,6 +6655,58 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.193 Phi-LPF latest edge-local field-cut sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_edge_local_field_cut_sync_router.py
+data/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_edge_local_formula_imported=true
+field_cut_router_imported=true
+closed_unsigned_edge_label_ledger_synced=true
+edge_atom_multiplicity_one_synced=true
+lpf_phi_unsigned_scope_exhausted_for_edge_local=true
+latest_basis_replaces_edge_local_formula_with_signed_atom_fields=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+actual-load 含义是：最新
+`PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward`
+已接入 edge-local field-cut。LPF/Phi/Ferrers 已经支付每条 canonical `(p,q)` edge 的
+owner、first prime、product、rank/degree 与 multiplicity-one label。样本 `N=10000`
+中 canonical edges、labels 与 products 均为 `2600`，每条 edge 仍保留 `6` 个开放
+signed/return 字段。
+
+最新递推剩余基更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍可直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`，或走完整 branch/atomic trace、
+seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

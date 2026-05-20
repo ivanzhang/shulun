@@ -16729,6 +16729,57 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
 
+## 351. Phi-LPF latest edge-local field-cut sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_edge_local_field_cut_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-router.json
+data/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_edge_local_formula_imported=true
+field_cut_router_imported=true
+closed_unsigned_edge_label_ledger_synced=true
+edge_atom_multiplicity_one_synced=true
+lpf_phi_unsigned_scope_exhausted_for_edge_local=true
+latest_basis_replaces_edge_local_formula_with_signed_atom_fields=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+formal-to-actual 含义是：最新 edge-local signed interaction formula-or-return 的无符号
+部分已经全部落入 field-cut。对每条 canonical `(p,q)` edge，LPF/Phi/Ferrers 支付
+owner、first prime、product、rank/degree 与 multiplicity-one label；这些字段不能产生
+signed seed value、local factor、orientation、ExactUV return 或 pre-Cauchy source row。
+样本 `N=10000` 中 canonical edges、labels、products 均为 `2600`，每条 edge 仍有 `6`
+个开放 signed/return 字段。
+
+当前真正未闭合的是：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍为逐点 Phi-LPF signed table、完整 branch/atomic trace、seed cycle-cut、
+terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
