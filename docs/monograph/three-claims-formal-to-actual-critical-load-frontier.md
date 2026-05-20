@@ -17066,6 +17066,59 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 这一步只替换最新活动前沿，不证明新 payload/trace、terminal descent、PDEC scope、source entropy、
 fixed-pair fiber、模型、Rate 或 DStructure。行/列命题仍未无条件闭合。
 
+## 358. Phi-LPF latest trace-exit source-rank convergence sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_trace_exit_source_rank_convergence_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-trace-exit-source-rank-convergence-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-trace-exit-source-rank-convergence-sync-router.json
+data/prime-matrix-phi-lpf-latest-trace-exit-source-rank-convergence-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_trace_exit_imported=true
+latest_new_payload_source_atom_alignment_imported=true
+source_rank_package_atoms_carried=true
+post_antisplit_convergence_imported=true
+source_packet_guard_downstream_imported=true
+pointwise_kernel_frontier_imported=true
+alpha_row_anchor_phase_emission_formula_proved=false
+independent_noncircular_precauchy_arithmetic_identity_statement_proved=false
+same_unit_exact_uv_rank_multiplicity_certificate_proved=false
+exactuv_entropy_fiber_pair_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+formal-to-actual 含义是：latest trace-exit 得到的 `NewPrimitive...` 已被接到既有
+source-rank/no-collapse 与 pointwise-kernel 收敛前沿。它若要破 signed-lane 环，必须携带
+source entropy、complete key 与 fixed-key ExactUV local multiplicity；这些线又在同 formal-unit
+的逐 primitive alpha/delta 核表汇合。
+
+因此当前最新第一硬点为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+并行仍需：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+本层不证明这些并行门，也不关闭行/列命题。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
