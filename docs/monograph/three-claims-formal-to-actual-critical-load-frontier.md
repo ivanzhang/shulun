@@ -15533,6 +15533,56 @@ branch key、ExactUV 输出、非零条件和回流标签。
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 328. Phi-LPF pointwise signed value table frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_pointwise_signed_value_table_frontier_router.py
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json
+data/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-ledger.json
+```
+
+同步结果：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+bucket_signed_law_downstream_imported=true
+unit_seed_square_base_boundary_imported=true
+common_packet_self_proof_blocked=true
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+primitive_summand_signed_weight_expression_proved=false
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：LPF/Phi 精确筛法恒等式已把支撑、容量和 square-base/root 结构
+完全剥离，剩余不再是“有没有对应合数桶”的问题。真正缺口是逐 Phi-LPF key 的
+prepushforward signed value 表；该表若沿既有 signed-source/source-origin 展开，会回到
+固定点。因此它必须作为新工件直接提交，或转入 seed cycle-cut、same-set PDEC、
+new joint formula 三个破环口。
+
+最新保留基为：
+
+```text
+(PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 326. Phi-LPF signed transport unit-seed frontier
 
 新增文件

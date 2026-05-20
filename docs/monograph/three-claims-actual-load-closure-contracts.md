@@ -5536,6 +5536,65 @@ PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
 
 行/列命题仍未无条件闭合。
 
+### 1.171 Phi-LPF pointwise signed value table frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_pointwise_signed_value_table_frontier_router.py
+data/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_support_and_capacity_imported=true
+bucket_signed_law_downstream_imported=true
+unit_seed_square_base_boundary_imported=true
+common_packet_self_proof_blocked=true
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：Phi/LPF 已经支付 support、capacity、candidate-row 与 square-base/root
+字段。若要走 direct 旁路，必须把
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` 作为真正新的
+prepushforward signed value 工件提交，逐 `(p,m)` 给 signed coefficient、local factor、
+alpha/delta side、ExactUV 输出和求和恒等式。若沿现有 signed-source/source-origin 链展开，
+会回到已登记的非证明固定点。
+
+因此最新可攻输入保持为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+非循环破环替代为：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+同时仍需独立关闭：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
