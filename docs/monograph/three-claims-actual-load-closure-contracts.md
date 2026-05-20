@@ -18133,3 +18133,36 @@ fixed-key multiplicity、actual emitter source table、complete key partition �
 DStructure/Rankin 验收。最新直接主攻转为
 `ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`。行/列命题仍未
 无条件闭合。
+
+### 1.163 LPF candidate-row map alpha-rule 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_lpf_candidate_row_map_alpha_rule_router.py
+data/prime-matrix-lpf-candidate-row-map-alpha-rule-ledger.json
+docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.md
+docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json
+```
+
+同步读数为：
+
+```text
+alpha_side_primitive_rule_imported=true
+deterministic_alpha_map_gap_imported=true
+lpf_ownership_declaration_imported=true
+lpf_candidate_row_emission_map_closed=true
+pointwise_signed_alpha_value_table_proved=false
+primitive_summand_signed_weight_expression_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：LPF ownership 不只给素数计数恒等式，也给 alpha-side primitive
+rule 的非后验候选行索引。每个候选合数 row 由唯一最小素因子层 `p` 与 cofactor
+`m` 确定，并与已有 carry-shell、P 列锚、phase rule、layered-wheel unsigned skeleton
+兼容。
+
+本步没有证明这些 candidate rows 已是 actual signed alpha primitive rows。真正缺口仍是
+前推前逐行 signed summand 表达式、local factor、权重公式和失败回流。最新直接主攻为
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
+无条件闭合。

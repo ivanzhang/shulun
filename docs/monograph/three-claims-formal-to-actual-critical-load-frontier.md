@@ -15379,3 +15379,38 @@ ExactUV 局部重数控制。最新直接主攻为
 `ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`，并行仍需
 constructor domain、row emission、failure return、actual source table、complete key、
 fixed-key ExactUV、模型/Rate 与 DStructure/Rankin 验收。
+
+## 322. LPF candidate-row map alpha-rule frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_lpf_candidate_row_map_alpha_rule_router.py
+docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.md
+docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json
+data/prime-matrix-lpf-candidate-row-map-alpha-rule-ledger.json
+```
+
+同步结果：
+
+```text
+alpha_side_primitive_rule_imported=true
+deterministic_alpha_map_gap_imported=true
+lpf_ownership_declaration_imported=true
+lpf_candidate_row_emission_map_closed=true
+pointwise_signed_alpha_value_table_proved=false
+primitive_summand_signed_weight_expression_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`DeterministicAlphaPrimitiveRowEmissionMapLedger`
+被拆成 LPF ownership candidate-row map 与前推前 signed summand 表达式。前者已经由
+最小素因子唯一分桶支付：候选 row 不需要从 payment skeleton 或零行几何反推原像。
+后者仍未证明，因为 LPF candidate map 不赋 signed coefficient、orientation、local factor
+或 branch weight。
+
+最新直接主攻为
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。并行仍需
+alpha source tuple domain、coefficient formula、row `(u,v)`/key/sign/local-factor 输出、
+failure return、delta-side primitive rule、alpha/delta pairing、ExactUV fixed-key、
+模型/Rate 与 DStructure/Rankin 验收。
