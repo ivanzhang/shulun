@@ -18385,3 +18385,46 @@ entropy-fiber 下游字段正向给出。
 `PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward` 和
 `PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward` 仍开放。行/列命题仍未
 无条件闭合。
+
+### 1.170 Phi-LPF source packet cycle guard sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router.py
+data/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json
+```
+
+同步读数为：
+
+```text
+square_base_reduction_to_common_packet_imported=true
+signed_lane_cycle_imported=true
+common_packet_self_proof_rejected_after_lpf=true
+lpf_unsigned_data_not_primitive_signed_artifact=true
+new_primitive_payload_or_trace_artifact_present=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：LPF/Phi route 回到 common packet 后，不能再把该 packet 当作非循环
+证明入口。既有 signed-lane cycle 已给出闭环：
+`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket -> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows -> branch trace -> payload -> origin identity -> PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`。
+Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，不产生 primitive signed
+payload/trace 公式。
+
+因此最新非循环主攻为 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`。并行出口为
+`AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`、
+`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`、
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`、
+`ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`，
+以及：
+
+```text
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+行/列命题仍未无条件闭合。

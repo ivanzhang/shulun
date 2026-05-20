@@ -15574,6 +15574,52 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 329. Phi-LPF source packet cycle guard sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json
+data/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-ledger.json
+```
+
+同步结果：
+
+```text
+square_base_reduction_to_common_packet_imported=true
+signed_lane_cycle_imported=true
+common_packet_self_proof_rejected_after_lpf=true
+lpf_unsigned_data_not_primitive_signed_artifact=true
+new_primitive_payload_or_trace_artifact_present=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：LPF/Phi 的 square-base 几何已经完成其职责；继续推进 common
+packet 会落入 signed-lane 自证闭环。非循环推进必须新增 signed 信息，或证明回流严格下降/
+同集 PDEC scope，而不是从 Phi support/capacity 反推 signed payload。
+
+当前真正非循环出口为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并行仍需：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+行/列命题仍未无条件闭合。
+
 ## 328. Phi-LPF square-base source packet reduction frontier
 
 新增文件

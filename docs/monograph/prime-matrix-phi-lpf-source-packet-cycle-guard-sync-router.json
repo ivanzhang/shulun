@@ -1,0 +1,142 @@
+{
+  "acyclic_noncanonical_terminal_return_well_founded_descent_proved": false,
+  "acyclic_same_set_scope_match_for_direct_pdec_cap_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router",
+  "common_packet_self_proof_rejected_after_lpf": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "exactuv_entropy_fiber_pair_proved": false,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "SquareBaseReductionImported",
+      "meaning": "LPF/Phi square-base route 已把剩余 source declaration 并回 common packet。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLaneCycleImported",
+      "meaning": "common packet -> built-in pairing -> branch trace -> payload -> origin identity -> common packet 已形成闭环。",
+      "proved": true,
+      "remaining": "remove common packet self-proof"
+    },
+    {
+      "closed": true,
+      "gate": "CommonPacketSelfProofRejectedAfterLPF",
+      "meaning": "LPF/Phi 几何只固定 support 地址，不能把 common packet 当作非循环自证入口。",
+      "proved": true,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "LPFUnsignedDataNotPrimitiveSignedArtifact",
+      "meaning": "Phi/LPF 的 support/capacity/root 审计不产生 primitive signed payload 或 trace 公式。",
+      "proved": true,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDescentStillOpen",
+      "meaning": "terminal descent 可作为非循环替代，但当前统一前沿仍未给出 well-founded 下降证书。",
+      "proved": false,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "PDECScopeStillOpen",
+      "meaning": "same-set PDEC scope 分支可保留，但当前内部语料未证明同口径 scope match。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVStillIndependent",
+      "meaning": "ExactUV source entropy / fixed-pair fiber 不从 signed-lane cycle guard 或 LPF root 推出。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseBucketValueTableStillOpen",
+      "meaning": "直接逐点 signed value table 仍是绕开 common packet 闭环的并行入口。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TransportStepCoherenceStillOpen",
+      "meaning": "递推 signed transport 还缺 step local factor update 与 ordered factorization coherence。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 LPF 回流后的 cycle guard，不证明新 signed 工件、terminal descent、PDEC scope、ExactUV 或 transport coherence。",
+      "proved": false,
+      "remaining": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    }
+  ],
+  "hardpoint_after_router": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+  "lpf_unsigned_data_not_primitive_signed_artifact": true,
+  "new_primitive_payload_or_trace_artifact_present": false,
+  "next_direct_attack_target": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+  "no_theorem_switch": true,
+  "noncycle_exits": [
+    {
+      "exit": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+      "role": "直接新增 primitive trace/payload signed 公式，打破 common packet 闭环。",
+      "status": "open"
+    },
+    {
+      "exit": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+      "role": "不提交新公式时，把 signed-lane 回流改造成 well-founded strict terminal descent。",
+      "status": "open"
+    },
+    {
+      "exit": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+      "role": "提交同 formal unit、同坏窗集合、同推前口径的 same-set PDEC scope 证书。",
+      "status": "open"
+    },
+    {
+      "exit": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+      "role": "独立补足 source entropy 与 fixed exact pair fiber 控制。",
+      "status": "open"
+    },
+    {
+      "exit": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+      "role": "绕过递推 source packet，直接给 Phi-LPF support 上逐点 signed value table。",
+      "status": "open"
+    },
+    {
+      "exit": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+      "role": "若走递推 signed transport，仍需每步 local factor 更新与有序分解相容。",
+      "status": "open"
+    }
+  ],
+  "parallel_direct_attack_targets": [
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+    "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+    "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+  ],
+  "phi_lpf_rough_cofactor_transport_coherence_proved": false,
+  "phi_lpf_source_packet_cycle_guard_sync_closed": true,
+  "plain_conclusion": "LPF/Phi square-base route 把 source declaration 并回 common packet 后，不能继续把 common packet 当作非循环证明入口：既有 signed-lane cycle 已说明该 packet 会经 built-in pairing、branch trace、payload 与 origin identity 回到自身。Phi/LPF 当前只固定 support/capacity/root 与 prime-row guard，不产生 primitive signed payload/trace 公式。因此最新非循环主攻变为 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`；并行出口为 terminal descent、same-set PDEC scope、Phi-LPF pointwise signed value table、ExactUV entropy/fiber 与 transport step/coherence。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "signed_lane_cycle_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.json": "3ce843ba5d0230fd98f027fcfd85230e2e348069f0886a027b5969a5215209a1",
+    "docs/monograph/prime-matrix-strict-cyclecut-terminal-descent-unified-frontier-router.json": "aff83d09d39ccc932dbe3b23c954102c820d2b45ae72f7c9d50442e8a8c94dcd",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json": "8ea074295bea6900bdb26efb22686da30430e22f94003d9362a25884788bf5d2",
+    "docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json": "17e1966e5e4dad0a168abc867d451291be4991c999f28bfbaf494d5875447bf1",
+    "experiments/prime_matrix_phi_lpf_source_packet_cycle_guard_sync_router.py": "06d5e9cd4ad6ee423d42abb5317100d786b4996c95275f96d9cf18adaaf3a9fb"
+  },
+  "square_base_reduction_to_common_packet_imported": true,
+  "status": "phi_lpf_source_packet_self_proof_cycle_guarded_noncycle_exits_open"
+}
