@@ -17921,3 +17921,36 @@ fixed-residue demand 至少给出一个 source-tagged endpoint incidence，但�
 gap、dense-table PDEC、sparse-cell SAE、低 carrier sparse、高 carrier rank-deficit、
 nonreplay、moving-pivot、endpoint singleton、full-cycle mean、source multiplicity
 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.157 stable-ladder phase-residue exchange endpoint-pivot-release-mass-support-ladder 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_endpoint_pivot_release_mass_support_ladder_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_release_mass_amplification_imported=true
+endpoint_unit_release_not_amplification_closed=true
+endpoint_release_source_finite_support_closed=true
+endpoint_source_support_mass_ledger_closed=true
+endpoint_source_support_threshold_dichotomy_closed=true
+endpoint_release_mass_reduced_to_support_ladder=true
+endpoint_long_source_support_mass_transfer_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：release-mass amplification 不再是匿名出口。单位源点不能
+产生 AP envelope gap；释放质量只能来自 signed-depth/flux skeleton 的有限
+source-tagged unit support。短支撑进入 endpoint singleton/full-cycle/source-multiplicity
+或 sparse SAE；长支撑才可能转移为 low-carrier AP demand，转移失败则是 PDEC/SAE。
+
+本步没有证明 bounded support SAE、long support mass-transfer、payment injection、
+AP strict gap、dense-table PDEC、sparse-cell SAE、高秩、nonreplay、moving-pivot
+或 endpoint 并行出口。行/列命题仍未无条件闭合。

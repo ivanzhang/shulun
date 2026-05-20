@@ -15178,3 +15178,34 @@ exact-envelope；必须证明源侧释放质量沿 endpoint orbit 放大，并�
 injection、AP strict gap/dense table、sparse cell、低 carrier sparse、高 carrier
 rank-deficit、nonreplay、moving-pivot、endpoint singleton、full-cycle mean、
 source multiplicity 与 sparse SAE。
+
+## 316. Stable-ladder phase-residue exchange endpoint-pivot-release-mass-support-ladder frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_release_mass_support_ladder_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-release-mass-support-ladder-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_release_mass_amplification_imported=true
+endpoint_unit_release_not_amplification_closed=true
+endpoint_release_source_finite_support_closed=true
+endpoint_source_support_mass_ledger_closed=true
+endpoint_source_support_threshold_dichotomy_closed=true
+endpoint_release_mass_reduced_to_support_ladder=true
+endpoint_long_source_support_mass_transfer_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：release-mass amplification 被压成有限 source-support
+长短阶梯。单位 source incidence 不足以形成 AP envelope gap；短支撑必须进入
+endpoint singleton/full-cycle/source-multiplicity/sparse SAE，长支撑才可能转移为
+low-carrier AP demand。最新剩余为 bounded support SAE、long support mass-transfer、
+payment injection、AP strict gap/dense table、sparse cell、高秩、nonreplay、
+moving-pivot 与 endpoint 并行出口。
