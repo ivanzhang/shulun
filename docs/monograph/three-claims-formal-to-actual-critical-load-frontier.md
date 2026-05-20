@@ -17014,6 +17014,58 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 independent bridge、same-set PDEC/外部谱、complete/fixed-key、模型、Rate 与 DStructure 仍开放。
 行/列命题仍未无条件闭合。
 
+## 357. Phi-LPF latest built-in pairing trace sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_builtin_pairing_trace_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-router.json
+data/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_builtin_pairing_imported=true
+strict_builtin_pairing_frontier_imported=true
+global_branch_trace_frontier_aligned=true
+exact_atomic_joint_branch_trace_signed_coefficient_formula_proved=false
+signed_lane_cycle_imported=true
+branch_trace_self_proof_rejected=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_entropy_fiber_pair_imported=true
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+intermediate_primary_attack_target=ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+formal-to-actual 含义是：latest built-in pairing 必须先同步到 exact atomic branch trace；
+但 exact branch trace 不能靠现有 signed/payload 子线自证，因为它会沿 payload、origin identity
+和 common packet 回到 built-in pairing。该闭环只用于删除环内自证路线，不是全局矛盾。
+
+因此当前最新非循环主攻为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+并行出口为：
+
+```text
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+这一步只替换最新活动前沿，不证明新 payload/trace、terminal descent、PDEC scope、source entropy、
+fixed-pair fiber、模型、Rate 或 DStructure。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

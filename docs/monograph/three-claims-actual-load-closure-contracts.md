@@ -6939,6 +6939,68 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 两者当前均未证明。canonical-lock、independent bridge、same-set PDEC/外部谱、complete/fixed-key、
 模型余量、RatePreservation 与 DStructure/Rankin 仍独立开放。行/列命题仍未无条件闭合。
 
+### 1.199 Phi-LPF latest built-in pairing trace sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_builtin_pairing_trace_sync_router.py
+data/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_builtin_pairing_imported=true
+strict_builtin_pairing_frontier_imported=true
+odd_signed_data_not_generated_by_phi_lpf_buckets=true
+global_branch_trace_frontier_aligned=true
+exact_atomic_joint_branch_trace_signed_coefficient_formula_proved=false
+signed_lane_cycle_imported=true
+branch_trace_self_proof_rejected=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_entropy_fiber_pair_imported=true
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+registered_complete_primitive_emitter_key_partition_polylog_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+intermediate_primary_attack_target=ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+actual-load 含义是：上一层的
+`BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` 不是可直接闭合的最终节点。
+strict built-in pairing 前沿要求它由 Cauchy/Phi/payment 前的
+`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` 正向给出，因为 LPF/Phi 桶与
+unsigned skeleton 只支付支撑、容量、相位和 row 形状，不生成 signed coefficient 所需的
+orientation/local factor 奇数据。
+
+但 branch trace 不能沿当前 signed/payload 子线自证：已有闭环为
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+-> NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward
+-> PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+因此最新非循环主硬点从 built-in pairing/branch trace 环内节点推进为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+并行受控出口仍为 terminal descent、same-set PDEC，以及
+`ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`。
+其中 fixed-pair fiber 已进一步原子化为
+`RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger` 与
+`FixedKeyExactUVLocalMultiplicityO1Ledger`。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
