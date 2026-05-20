@@ -17341,3 +17341,54 @@ singleton Hall cut 赤字仍然暴露。
 本步没有证明 actual-object incidence、singleton Hall cut、cross-key return
 whitelist leak、payment graph 全局闭合或 return whitelist；也没有排斥 boundary
 equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.142 stable-ladder phase-residue exchange canonical-payment-actual-object-field-packet-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_actual_object_field_packet_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-field-packet-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-field-packet-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-field-packet-lock-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_actual_object_incidence_predicate_imported=true
+phase_residue_exchange_capacity_unit_value_lock_imported=true
+phase_residue_exchange_actual_object_predicate_router_imported=true
+phase_residue_exchange_actual_object_tuple_schema_imported=true
+phase_residue_exchange_actual_object_canonical_hash_imported=true
+phase_residue_exchange_actual_object_field_packet_partition_closed=true
+phase_residue_exchange_no_independent_actual_object_predicate_closed=true
+phase_residue_exchange_actual_object_incidence_predicate_proved=true
+phase_residue_exchange_actual_object_field_packet_exits_proved=false
+phase_residue_exchange_canonical_singleton_hall_cut_defect_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：actual object 不再是一个可匿名失败的黑箱谓词，而是
+canonical tuple/hash 上的字段包：
+
+```text
+actual_object = canonical_tuple(source, occurrence, CRT, congruence,
+                                phase, signed_mass, pairing)
+
+if actual object is missing or duplicated:
+  ActualObjectMissingFieldPDECCap or ActualObjectDuplicateFieldPDECCap
+else if any tuple field fails:
+  the matching ActualObject<Field>FieldPDECCap
+else:
+  actual-object incidence predicate is satisfied
+```
+
+因此 `ActualObjectIncidencePredicatePDECCap` 不再作为单一匿名出口保留。它被
+拆成 missing、duplicate、source、occurrence、CRT、congruence、phase、
+signed-mass 与 pairing 九个字段级出口。
+
+本步没有排斥这些字段级出口，也没有证明 singleton Hall cut、cross-key return
+whitelist leak、payment graph 全局闭合、return whitelist、boundary equality atom
+或 endpoint 并行出口。行/列命题仍未无条件闭合。
