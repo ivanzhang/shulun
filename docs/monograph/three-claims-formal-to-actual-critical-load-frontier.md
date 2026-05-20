@@ -16273,6 +16273,53 @@ LPF/Phi 桶恒等式仍只负责 closed unsigned candidate capacity。最新非�
 生成表；若该表仍缺失，则 Phi-LPF 候选容量不能升级成 actual signed source entropy。
 行/列命题仍未无条件闭合。
 
+## 343. Row-origin table Phi-LPF bucket signed-law sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_row_origin_table_phi_lpf_bucket_law_sync_router.py
+docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.md
+docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.json
+data/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-ledger.json
+```
+
+同步结果：
+
+```text
+row_level_origin_table_imported=true
+row_table_requires_seed_emitter=true
+signed_source_fixed_point_cut_imported=true
+noncircular_kernel_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+row_origin_table_reduced_to_phi_lpf_bucket_signed_law=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+formal-to-actual 含义是：`RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`
+不能继续被当作未拆开的黑箱。既有 row-level、signed-source fixed-point 与 support-stripped
+证书给出非循环同步链：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+->
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity
+->
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+->
+PhiLPFPrimitiveRowSupportAndCapacityLedger
+AND PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+其中 `PhiLPFPrimitiveRowSupportAndCapacityLedger` 已由 LPF ownership 和 Phi 递推关闭；最新
+真正硬点只剩桶级 signed coefficient law。该 law 必须在 Cauchy/payment 前对每个 `(p,m)`
+support key 正向给出 signed coefficient、sign/local factor、branch key 与推前前 alpha/delta
+求和恒等式。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

@@ -6195,6 +6195,48 @@ LPF/Phi 精确桶继续关闭候选容量，但它不生成 signed coefficient o
 原始生成表；并行仍需 nonzero signed survival、row-mass/no-heavy-row、complete key、
 fixed-key ExactUV multiplicity、ExactUV 与 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.185 Row-origin table Phi-LPF bucket signed-law sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_row_origin_table_phi_lpf_bucket_law_sync_router.py
+data/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-ledger.json
+docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.md
+docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.json
+```
+
+同步读数为：
+
+```text
+row_level_origin_table_imported=true
+row_table_requires_seed_emitter=true
+signed_source_fixed_point_cut_imported=true
+noncircular_kernel_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+row_origin_table_reduced_to_phi_lpf_bucket_signed_law=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+actual-load 含义是：逐行 clean-core origin table 的“找行、数行、归属 owner layer”部分已经由
+LPF/Phi 桶恒等式和 support-stripped signed-kernel 证书剥离。每个候选对象唯一落到
+`(p,m)`，其中 `p=LPF(pm)` 且 `m` 为 p-rough；但这个桶仍不含 signed coefficient、
+sign/local factor、branch key 或推前前求和恒等式。
+
+因此最新直接硬点进一步改写为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+这不是闭合，而是把 LPF/Phi 能支付的无符号支撑和容量从 signed 问题中清除。后续必须对每个
+Phi-LPF 桶正向给出 signed coefficient law，并继续同口径验证 row-mass/no-heavy-row、complete key、
+fixed-key ExactUV multiplicity、ExactUV 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
