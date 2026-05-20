@@ -17392,3 +17392,48 @@ signed-mass 与 pairing 九个字段级出口。
 本步没有排斥这些字段级出口，也没有证明 singleton Hall cut、cross-key return
 whitelist leak、payment graph 全局闭合、return whitelist、boundary equality atom
 或 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.143 stable-ladder phase-residue exchange canonical-payment-actual-object-slot-mismatch-unification 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_actual_object_slot_mismatch_unification_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_actual_object_named_field_exits_imported=true
+phase_residue_exchange_actual_object_field_packet_lock_imported=true
+phase_residue_exchange_actual_object_slot_mismatch_return_imported=true
+phase_residue_exchange_actual_object_slot_vector_closed=true
+phase_residue_exchange_actual_object_slot_mismatch_union_closed=true
+phase_residue_exchange_actual_object_field_failure_to_slot_mismatch_closed=true
+phase_residue_exchange_no_independent_actual_object_named_field_exits_closed=true
+phase_residue_exchange_actual_object_missing_field_pdec_cap_proved=false
+phase_residue_exchange_actual_object_duplicate_field_pdec_cap_proved=false
+phase_residue_exchange_actual_object_slot_mismatch_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：actual object 的七个谓词槽位失败不再各自作为独立出口；
+它们统一等价为同一个 canonical slot vector 的某槽不匹配：
+
+```text
+actual_object_slot_vector = (source, occurrence, CRT, congruence,
+                             phase, signed_mass, pairing)
+
+missing object   -> ActualObjectMissingFieldPDECCap
+duplicate object -> ActualObjectDuplicateFieldPDECCap
+any slot failure -> ActualObjectSlotMismatchPDECCap
+```
+
+因此 actual-object 字段硬点被压缩为三分支：缺对象、重对象、换槽。
+
+本步没有排斥 missing、duplicate 或 slot mismatch，也没有证明 singleton Hall cut、
+cross-key return whitelist leak、boundary equality atom 或 endpoint 并行出口。行/列命题
+仍未无条件闭合。

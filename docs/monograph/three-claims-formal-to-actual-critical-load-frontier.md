@@ -14751,3 +14751,37 @@ signed-mass/pairing 某个字段包失败。
 本步没有闭合行/列命题；最新剩余为 actual-object 字段包出口、singleton Hall cut、
 cross-key return whitelist leak、payment graph/return whitelist、boundary equality
 与 endpoint 并行出口。
+
+## 302. Stable-ladder phase-residue exchange canonical-payment-actual-object-slot-mismatch-unification frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_actual_object_slot_mismatch_unification_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-actual-object-slot-mismatch-unification-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_actual_object_named_field_exits_imported=true
+phase_residue_exchange_actual_object_field_packet_lock_imported=true
+phase_residue_exchange_actual_object_slot_mismatch_return_imported=true
+phase_residue_exchange_actual_object_slot_vector_closed=true
+phase_residue_exchange_actual_object_slot_mismatch_union_closed=true
+phase_residue_exchange_actual_object_field_failure_to_slot_mismatch_closed=true
+phase_residue_exchange_no_independent_actual_object_named_field_exits_closed=true
+phase_residue_exchange_actual_object_missing_field_pdec_cap_proved=false
+phase_residue_exchange_actual_object_duplicate_field_pdec_cap_proved=false
+phase_residue_exchange_actual_object_slot_mismatch_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：source、occurrence、CRT、congruence、phase、signed-mass、
+pairing 任一字段失败都不是新自由度，只是 canonical actual-object slot vector 的换槽。
+
+本步没有闭合行/列命题；最新剩余为 actual-object missing/duplicate/slot mismatch、
+singleton Hall cut、cross-key return whitelist leak、payment graph/return whitelist、
+boundary equality 与 endpoint 并行出口。
