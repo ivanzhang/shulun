@@ -17466,6 +17466,61 @@ PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
 并行仍需 `FixedKeyExactUVLocalMultiplicityO1Ledger`、signed row law、same-set PDEC/外部谱、
 模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+## 366. Phi-LPF latest pre-Cauchy alpha-terminal sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_precauchy_alpha_terminal_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-router.json
+data/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_source_table_imported=true
+strict_precauchy_to_constructor_imported=true
+constructor_to_explicit_alpha_delta_imported=true
+explicit_alpha_delta_to_alpha_side_imported=true
+alpha_side_to_deterministic_map_imported=true
+deterministic_map_to_anchor_phase_imported=true
+anchor_phase_to_signed_lift_imported=true
+signed_lift_to_weight_law_imported=true
+weight_law_to_independent_identity_imported=true
+identity_taxonomy_to_moving_block_imported=true
+moving_block_to_global_terminal_modelgap_imported=true
+lpf_phi_unsigned_only_boundary_retained=true
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+```
+
+formal-to-actual 含义是：latest source-table 层留下的 pre-Cauchy declaration 不是新的终点。
+沿 strict productive alpha-side 分支展开：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+-> ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter
+-> ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+-> ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger
+-> DeterministicAlphaPrimitiveRowEmissionMapLedger
+-> AlphaRowAnchorPhaseEmissionFormulaLedger
+-> AlphaFormulaSignedCoefficientLiftLedger
+-> AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger
+-> IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+-> ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+-> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+因此下一条最接近显式全局矛盾的 productive 分支主攻是
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`，模型余量、fixed-key ExactUV、signed row law、
+delta/pairing/nonzero 兄弟字段、Rate 与 DStructure 仍并行开放。LPF/Phi 桶恒等式只提供
+无符号桶容量边界，不生成 signed pre-Cauchy 权重。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

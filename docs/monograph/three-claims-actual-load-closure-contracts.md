@@ -7371,6 +7371,51 @@ registered complete key 与 fixed-key local multiplicity；其中 registered com
 `FixedKeyExactUVLocalMultiplicityO1Ledger`、signed row law、same-set PDEC/外部谱、模型、
 RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.208 Phi-LPF latest pre-Cauchy alpha-terminal sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_precauchy_alpha_terminal_sync_router.py
+data/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_source_table_imported=true
+strict_precauchy_to_constructor_imported=true
+constructor_to_explicit_alpha_delta_imported=true
+explicit_alpha_delta_to_alpha_side_imported=true
+alpha_side_to_deterministic_map_imported=true
+deterministic_map_to_anchor_phase_imported=true
+anchor_phase_to_signed_lift_imported=true
+signed_lift_to_weight_law_imported=true
+weight_law_to_independent_identity_imported=true
+identity_taxonomy_to_moving_block_imported=true
+moving_block_to_global_terminal_modelgap_imported=true
+lpf_phi_unsigned_only_boundary_retained=true
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+```
+
+actual-load 含义是：上一层留下的
+`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter` 沿 strict
+constructor/alpha 链继续下钻，会经过 actual constructor formula、explicit alpha/delta、
+alpha-side deterministic row、anchor/phase、signed lift、alpha signed weight law、
+independent identity，最后回到 actual moving-block/NC-BLK，并由 moving-block 路由压到
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger`。
+
+这只说明 productive alpha-side 分支已接入全局终端容量/模型余量门，不证明 pre-Cauchy
+声明本身，也不证明 delta/pairing/nonzero 兄弟字段、fixed-key ExactUV、signed row law、
+RatePreservation 或 DStructure。LPF/Phi 桶恒等式继续只支付无符号 ownership、support
+和 capacity。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
