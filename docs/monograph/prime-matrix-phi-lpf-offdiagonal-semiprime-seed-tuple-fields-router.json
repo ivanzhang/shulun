@@ -1,0 +1,475 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_offdiagonal_semiprime_seed_tuple_fields_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "OffDiagonalSeedTargetImported",
+      "meaning": "上一层已把最新窄口定位为 offdiagonal ordered semiprime first seed signed table。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalSourceTupleBijection",
+      "meaning": "每个 offdiagonal occurrence 唯一写成 `(p,q,t)`，其中 `p<q` 且 `t` 为 q-rough。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiTailFiberMassMatchesTupleLedger",
+      "meaning": "tuple occurrence 总数等于 `sum_{p<q} Phi(floor(N/(p*q)),q)`。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalQRoughTailFiberMassLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalAliasRemoved",
+      "meaning": "`q>p` 将 offdiagonal source tuple 与 square-base diagonal common packet 分离。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedTupleFieldsDoNotEmitSign",
+      "meaning": "LPF/Phi 字段只给 owner、first prime、tail 与容量；不含 signed seed 或 orientation parity。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "OffDiagonalSignedSeedFormulaCurrentCorpusProved",
+      "meaning": "当前语料尚未给出 `(p,q)` source tuple 的 prepushforward signed seed 公式。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "OffDiagonalOrientationParityCurrentCorpusProved",
+      "meaning": "当前语料尚未给出 offdiagonal seed 的 orientation parity、branch side 与 local factor law。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalExactUVReturnCurrentCorpusProved",
+      "meaning": "ExactUV fixed pair/source entropy/fiber 与 return tag 仍是并行门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPairedGate",
+      "meaning": "offdiagonal first seed 即使给出，tail 非单位 occurrence 仍需要内部 prime-adjoin transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillParallel",
+      "meaning": "逐点 signed table 仍可替代本 seed formula，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyTupleFields",
+      "meaning": "完整 branch trace 可一次给 source tuple、signed value、orientation、ExactUV 和 return tag。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplyTupleFields",
+      "meaning": "atomic trace signed coefficient 公式可把 offdiagonal seed 作为 trace 字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": false,
+      "gate": "OffDiagonalSeedTableCurrentCorpusProved",
+      "meaning": "本步只关闭 offdiagonal source tuple 的无符号字段账本，没有证明 signed seed table。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步不证明三命题无条件闭合；它只把 offdiagonal seed 缺口压到 signed formula/orientation/ExactUV 字段。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "next_primary_attack_target": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward",
+  "no_theorem_switch": true,
+  "offdiagonal_diagonal_alias_removed": true,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_ordered_semiprime_signed_seed_table_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "offdiagonal_phi_tail_fiber_mass_proved": true,
+  "offdiagonal_seed_target_imported": true,
+  "offdiagonal_semiprime_seed_tuple_fields_router_closed": true,
+  "offdiagonal_signed_seed_formula_proved": false,
+  "offdiagonal_source_tuple_bijection_proved": true,
+  "offdiagonal_tuple_fields": [
+    {
+      "field": "owner_prime_p",
+      "meaning": "LPF owner bucket；composite value 的最小素因子为 p。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "first_rough_prime_q",
+      "meaning": "cofactor value/p 的最小素因子，且严格 q>p。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "q_rough_tail_t",
+      "meaning": "tail t 满足所有素因子不小于 q；纤维质量由 Phi(floor(N/(p*q)),q) 支付。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "offdiagonal_type_key",
+      "meaning": "ordered pair (p,q)，不与 diagonal square-base packet 混同。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "signed_seed_value",
+      "meaning": "必须在 pushforward 前由 source tuple 正向给出，不能从 Phi 计数或 tail mass 反推。",
+      "status": "open_signed"
+    },
+    {
+      "field": "orientation_parity_branch_side",
+      "meaning": "alpha/delta side、orientation parity 与 branch trace 仍需独立字段。",
+      "status": "open_signed"
+    },
+    {
+      "field": "exactuv_fixed_pair_return_tag",
+      "meaning": "ExactUV fixed pair、source entropy/fiber 与失败 return tag 仍需并行证明。",
+      "status": "open_exactuv"
+    }
+  ],
+  "offdiagonal_unsigned_tuple_fields_closed": true,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "offdiagonal `(p,q), p<q` first seed 的无符号来源字段可以完全闭合：每个 occurrence 唯一写成 `(owner_p, first_q, q_rough_tail_t)`，且总质量等于 `sum Phi(floor(N/(p*q)),q)`。这排除了 diagonal/square-base alias，也把 Phi-LPF 的贡献精确限定为支撑、纤维和 tuple 字段。剩余不能从这些字段反推，而必须正向提交 offdiagonal source tuple 的 signed seed formula、orientation parity/branch side、ExactUV fixed pair/return tag，并配套 internal prime-adjoin transition。",
+  "retained_basis_after_router": "((PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_offdiagonal_tuple_audit": [
+    {
+      "N": 30,
+      "failures": [],
+      "formal_occurrence_orientation_shadow_bits": 9,
+      "formal_occurrence_orientation_shadow_log10": 2.70927,
+      "formal_type_sign_shadow_bits": 7,
+      "formal_type_sign_shadow_log10": 2.10721,
+      "max_tail": 5,
+      "mismatches": [],
+      "offdiagonal_phi_fiber_formula_sum": 9,
+      "offdiagonal_seed_types": 7,
+      "offdiagonal_tuple_occurrences": 9,
+      "pure_semiprime_tail1_occurrences": 7,
+      "small_prime_layers": 3,
+      "tail_nonunit_occurrences": 2,
+      "top_offdiagonal_fibers": [
+        {
+          "fiber_mass": 3,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 1,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 1,
+          "p": 3,
+          "q": 7
+        }
+      ],
+      "tuple_phi_bijection_holds": true
+    },
+    {
+      "N": 100,
+      "failures": [],
+      "formal_occurrence_orientation_shadow_bits": 41,
+      "formal_occurrence_orientation_shadow_log10": 12.34223,
+      "formal_type_sign_shadow_bits": 30,
+      "formal_type_sign_shadow_log10": 9.0309,
+      "max_tail": 15,
+      "mismatches": [],
+      "offdiagonal_phi_fiber_formula_sum": 41,
+      "offdiagonal_seed_types": 30,
+      "offdiagonal_tuple_occurrences": 41,
+      "pure_semiprime_tail1_occurrences": 30,
+      "small_prime_layers": 4,
+      "tail_nonunit_occurrences": 11,
+      "top_offdiagonal_fibers": [
+        {
+          "fiber_mass": 8,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 3,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 2,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 2,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 17
+        },
+        {
+          "fiber_mass": 1,
+          "p": 2,
+          "q": 19
+        }
+      ],
+      "tuple_phi_bijection_holds": true
+    },
+    {
+      "N": 997,
+      "failures": [],
+      "formal_occurrence_orientation_shadow_bits": 498,
+      "formal_occurrence_orientation_shadow_log10": 149.912938,
+      "formal_type_sign_shadow_bits": 287,
+      "formal_type_sign_shadow_log10": 86.395609,
+      "max_tail": 165,
+      "mismatches": [],
+      "offdiagonal_phi_fiber_formula_sum": 498,
+      "offdiagonal_seed_types": 287,
+      "offdiagonal_tuple_occurrences": 498,
+      "pure_semiprime_tail1_occurrences": 287,
+      "small_prime_layers": 11,
+      "tail_nonunit_occurrences": 211,
+      "top_offdiagonal_fibers": [
+        {
+          "fiber_mass": 83,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 33,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 22,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 19,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 13,
+          "p": 3,
+          "q": 7
+        },
+        {
+          "fiber_mass": 11,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 8,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 7,
+          "p": 3,
+          "q": 11
+        }
+      ],
+      "tuple_phi_bijection_holds": true
+    },
+    {
+      "N": 5003,
+      "failures": [],
+      "formal_occurrence_orientation_shadow_bits": 2680,
+      "formal_occurrence_orientation_shadow_log10": 806.760388,
+      "formal_type_sign_shadow_bits": 1347,
+      "formal_type_sign_shadow_log10": 405.487404,
+      "max_tail": 833,
+      "mismatches": [],
+      "offdiagonal_phi_fiber_formula_sum": 2680,
+      "offdiagonal_seed_types": 1347,
+      "offdiagonal_tuple_occurrences": 2680,
+      "pure_semiprime_tail1_occurrences": 1347,
+      "small_prime_layers": 19,
+      "tail_nonunit_occurrences": 1333,
+      "top_offdiagonal_fibers": [
+        {
+          "fiber_mass": 417,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 167,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 111,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 95,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 63,
+          "p": 3,
+          "q": 7
+        },
+        {
+          "fiber_mass": 52,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 40,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 38,
+          "p": 5,
+          "q": 7
+        }
+      ],
+      "tuple_phi_bijection_holds": true
+    },
+    {
+      "N": 10000,
+      "failures": [],
+      "formal_occurrence_orientation_shadow_bits": 5468,
+      "formal_occurrence_orientation_shadow_log10": 1646.032016,
+      "formal_type_sign_shadow_bits": 2600,
+      "formal_type_sign_shadow_log10": 782.677989,
+      "max_tail": 1665,
+      "mismatches": [],
+      "offdiagonal_phi_fiber_formula_sum": 5468,
+      "offdiagonal_seed_types": 2600,
+      "offdiagonal_tuple_occurrences": 5468,
+      "pure_semiprime_tail1_occurrences": 2600,
+      "small_prime_layers": 25,
+      "tail_nonunit_occurrences": 2868,
+      "top_offdiagonal_fibers": [
+        {
+          "fiber_mass": 833,
+          "p": 2,
+          "q": 3
+        },
+        {
+          "fiber_mass": 333,
+          "p": 2,
+          "q": 5
+        },
+        {
+          "fiber_mass": 222,
+          "p": 3,
+          "q": 5
+        },
+        {
+          "fiber_mass": 191,
+          "p": 2,
+          "q": 7
+        },
+        {
+          "fiber_mass": 127,
+          "p": 3,
+          "q": 7
+        },
+        {
+          "fiber_mass": 104,
+          "p": 2,
+          "q": 11
+        },
+        {
+          "fiber_mass": 80,
+          "p": 2,
+          "q": 13
+        },
+        {
+          "fiber_mass": 76,
+          "p": 5,
+          "q": 7
+        }
+      ],
+      "tuple_phi_bijection_holds": true
+    }
+  ],
+  "semiprime_first_edge_signed_seed_table_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json": "111cc0440f1f16e47cb791878a70f328fdff5122717efe007d08c0d704d62bfa",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json": "10b88bb8d80a793ab8ed16263cbe5efc4d47c72fdcc544ed7d97e559bda6788d",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "experiments/prime_matrix_phi_lpf_offdiagonal_semiprime_seed_tuple_fields_router.py": "b1c832e551e954a40557bbe5dcd4d37c84695b5773b8a53b928cf05128ebd486"
+  },
+  "status": "phi_lpf_offdiagonal_semiprime_seed_reduced_to_source_tuple_signed_formula_open",
+  "target_input_before_router": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+}

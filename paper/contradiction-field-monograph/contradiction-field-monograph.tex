@@ -21686,6 +21686,47 @@ docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF offdiagonal semiprime seed tuple-fields frontier]
+For every offdiagonal first seed \((p,q)\) with \(p<q\), the unsigned source
+fields are fixed before pushforward.  Each occurrence is uniquely represented
+as
+\[
+  (p,q,t),\qquad p<q,\qquad t\ \hbox{\(q\)-rough},
+\]
+and its composite value is \(pqt\).  Hence the occurrence mass for the ordered
+type \((p,q)\) is exactly
+\[
+  \Phi\!\left(\left\lfloor \frac{N}{pq}\right\rfloor,q\right).
+\]
+Thus the offdiagonal seed table has no remaining LPF/Phi support ambiguity:
+owner prime, first rough prime, tail fiber, and diagonal exclusion are closed.
+For \(N=10000\) the certificate counts \(2600\) offdiagonal seed types and
+\(5468\) tuple occurrences, split as \(2600\) tail-one occurrences and \(2868\)
+nonunit-tail occurrences.
+\end{theorem}
+\begin{proof}[Phi-LPF offdiagonal semiprime seed tuple-fields frontier]
+Given an offdiagonal first edge, the owner bucket supplies \(p\), while the
+least prime factor of the rough cofactor supplies the strict first prime \(q>p\).
+Writing the remaining cofactor as \(t\), the LPF order implies that all prime
+factors of \(t\) are at least \(q\).  Conversely any such \(q\)-rough \(t\le
+N/(pq)\) gives exactly one occurrence in the offdiagonal first-edge fiber.
+This proves both the tuple bijection and the displayed Phi mass formula.
+
+The closed fields are unsigned.  They do not emit the pre-pushforward signed
+seed value, the orientation parity or branch side, the local factor, the
+ExactUV fixed pair, or the return tag.  The next direct hard point is therefore
+\begin{quote}\scriptsize\ttfamily
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormula\\
+BeforePushforward,
+\end{quote}
+with the orientation, ExactUV, internal-transition, and common-packet gates
+remaining parallel.  The row/column theorem remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -5787,6 +5787,68 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 并行替代仍是逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
 或 new joint formula。行/列命题仍未无条件闭合。
 
+### 1.176 Phi-LPF offdiagonal semiprime seed tuple-fields 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_offdiagonal_semiprime_seed_tuple_fields_router.py
+data/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.md
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.json
+```
+
+同步读数为：
+
+```text
+offdiagonal_seed_target_imported=true
+offdiagonal_source_tuple_bijection_proved=true
+offdiagonal_phi_tail_fiber_mass_proved=true
+offdiagonal_unsigned_tuple_fields_closed=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：offdiagonal `p<q` first seed 的 LPF/Phi 部分已经不能再作为黑箱。
+每个 occurrence 唯一写成
+
+```text
+(owner_p, first_rough_prime_q, q_rough_tail_t),  p<q,
+```
+
+且总质量精确为
+
+```text
+sum_{p<q} Phi(floor(N/(p*q)), q).
+```
+
+样本 `N=10000` 中 offdiagonal 类型为 `2600` 个，tuple occurrences 为 `5468` 个，
+其中 `tail=1` 的纯 semiprime occurrence 为 `2600` 个，`tail>1` 的 continuation
+occurrence 为 `2868` 个。这个账本关闭的是 owner、first prime、tail、type key 与
+Phi fiber mass；它不产生 signed seed value、orientation parity、branch side、local factor
+或 ExactUV return tag。
+
+因此最新直接主攻变为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍是逐点 signed table、完整 branch trace、atomic trace、seed cycle-cut、
+same-set PDEC 或 new joint formula。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

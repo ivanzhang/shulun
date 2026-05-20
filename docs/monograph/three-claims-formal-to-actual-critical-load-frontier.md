@@ -15815,6 +15815,64 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 334. Phi-LPF offdiagonal semiprime seed tuple-fields frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_offdiagonal_semiprime_seed_tuple_fields_router.py
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.md
+docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.json
+data/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-ledger.json
+```
+
+同步结果：
+
+```text
+offdiagonal_seed_target_imported=true
+offdiagonal_source_tuple_bijection_proved=true
+offdiagonal_phi_tail_fiber_mass_proved=true
+offdiagonal_unsigned_tuple_fields_closed=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：offdiagonal seed 的无符号来源字段已闭合为唯一 tuple
+
+```text
+(owner_p, first_rough_prime_q, q_rough_tail_t),  p<q,
+```
+
+并满足 fiber identity
+
+```text
+occ_N(p,q)=Phi(floor(N/(p*q)),q).
+```
+
+因此 `PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`
+不再是一个未解析黑箱；其 LPF/Phi 可贡献的字段已经用完。剩余 signed 缺口必须是
+pushforward 前的 source tuple signed seed 公式、orientation parity/branch side、ExactUV
+fixed pair/return tag，以及 tail 非单位时的 internal transition。样本 `N=10000` 中
+offdiagonal 类型 `2600` 个、tuple occurrences `5468` 个，`tail=1/tail>1` 分解为
+`2600/2868`。
+
+当前真正未闭合的是：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+```
+
+并行替代仍为逐点 signed table、branch trace、atomic trace、seed cycle-cut、same-set PDEC
+或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
