@@ -6288,6 +6288,69 @@ AND PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。ExactUV、模型余量、
 RatePreservation 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.187 Phi-LPF latest edge multiplier slab sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_edge_multiplier_slab_sync_router.py
+data/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_transport_hardpoint_imported=true
+first_edge_slab_router_imported=true
+edge_multiplier_split_synced_to_latest_basis=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+edge_signed_multiplier_table_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+```
+
+actual-load 含义是：上一层最新 hardpoint `PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward`
+已接入既有 first-edge slab 证书。逐 edge signed multiplier 表不能继续作为未拆黑箱；LPF ordered
+path 把每条路径唯一拆成第一边 `(p,1,q,q)` 与后续 `prefix>1` 内部边：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+->
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+Phi 纤维公式只支付第一边 `(p,q)` 的 q-rough continuation mass：
+
+```text
+mass(p,q)=Phi(floor(N/(p*q)),q)
+```
+
+它不产生 signed seed、local factor、orientation、alpha/delta payload 或 ExactUV return。
+`N=10000` 导入样本读数为 support `8770`、first-edge occurrences `8770`、internal transition
+occurrences `13216`、first-edge types `2625`。
+
+因此最新递推剩余基更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍可直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`，或通过完整 branch/atomic
+trace、新 joint、terminal descent、PDEC scope 进入受控出口。ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

@@ -22116,6 +22116,46 @@ bypass.  ExactUV, model, rate, and D-structure gates remain independent.  No
 unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Phi-LPF latest edge multiplier slab sync]
+The latest rough-cofactor transport hard point
+\begin{quote}\scriptsize\ttfamily
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+\end{quote}
+is synchronized with the existing first-edge slab frontier.  In the latest
+basis it may be replaced by
+\begin{quote}\scriptsize\ttfamily
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward\\
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward.
+\end{quote}
+The first-edge fiber formula
+\[
+  \operatorname{mass}(p,q)=
+  \Phi\!\left(\left\lfloor\frac{N}{pq}\right\rfloor,q\right)
+\]
+pays only the unsigned \(q\)-rough continuation mass.  It does not emit the
+semiprime signed seed, the internal local-factor transition, orientation data,
+alpha/delta payload, or an ExactUV return.
+\end{theorem}
+\begin{proof}[Phi-LPF latest edge multiplier slab sync]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-latest-edge-\\
+multiplier-slab-sync-router.md.
+\end{quote}
+The preceding transport-stack theorem identifies the edge multiplier table as
+the active recursive signed edge factor.  The earlier first-edge slab theorem
+then applies to that exact factor: each LPF ordered path begins with the unique
+edge \((p,1,q,q)\), and all later edges have non-unit prefix.  Thus the edge
+table splits into the first-seed slab and the internal transition slab.
+
+This substitution only updates the latest frontier.  The Phi fiber formula
+counts the first-edge support keys, but it is unsigned.  It gives no signed
+coefficient, nonzero local factor, branch key, exact \((u,v)\), or return tag.
+The base/source-packet atoms, pointwise signed-table bypass, ExactUV, model,
+rate, and D-structure gates therefore remain open.  No unconditional
+row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

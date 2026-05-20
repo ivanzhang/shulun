@@ -16375,6 +16375,63 @@ AND PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 345. Phi-LPF latest edge multiplier slab sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_edge_multiplier_slab_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-router.json
+data/prime-matrix-phi-lpf-latest-edge-multiplier-slab-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_transport_hardpoint_imported=true
+first_edge_slab_router_imported=true
+edge_multiplier_split_synced_to_latest_basis=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+edge_signed_multiplier_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+```
+
+formal-to-actual 含义是：最新 transport-stack 中的逐 edge signed multiplier 表已经能接到
+既有 first-edge slab 拆解。固定 owner prime `p` 与 LPF ordered cofactor path 后，第一边
+必为 `(p,1,q,q)`，后续所有边才是 `prefix>1` 的 internal prime-adjoin transitions。因此：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+->
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+第一边的无符号 continuation mass 已由
+`Phi(floor(N/(p*q)),q)` 支付；样本 `N=10000` 给出 support `8770`、first occurrences
+`8770`、internal occurrences `13216`、first-edge types `2625`。但 Phi fiber 仍只给支撑和
+occurrence mass，不给 signed seed value、local factor、orientation、alpha/delta payload、
+ExactUV fixed pair 或 named return。
+
+当前真正未闭合的是：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行替代仍为逐点 Phi-LPF signed table、完整 branch/atomic trace、seed cycle-cut、
+terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

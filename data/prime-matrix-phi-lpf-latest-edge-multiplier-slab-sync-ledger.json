@@ -1,0 +1,203 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_edge_multiplier_slab_sync_router",
+  "edge_multiplier_split_synced_to_latest_basis": true,
+  "edge_signed_multiplier_table_proved": false,
+  "finite_evidence_not_used_as_global_proof": true,
+  "first_edge_phi_fiber_formula_imported": true,
+  "first_edge_slab_router_imported": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestTransportHardpointImported",
+      "meaning": "上一层最新 transport-stack 已把 bucket signed law 压到逐 edge signed multiplier 表。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FirstEdgeSlabRouterImported",
+      "meaning": "既有 first-edge slab 证书可作为最新 edge multiplier hardpoint 的直接下游。",
+      "proved": true,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "EdgeMultiplierSplitSyncedToLatestBasis",
+      "meaning": "最新保留基中的 edge multiplier 可替换为 first seed slab 与 internal transition 的合取。",
+      "proved": true,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FirstEdgePhiFiberFormulaImported",
+      "meaning": "第一边 `(p,q)` occurrence mass 已由 Phi(floor(N/(p*q)),q) 精确支付。",
+      "proved": true,
+      "remaining": "PhiLPFFirstEdgeQRoughContinuationFiberLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiFiberUnsignedOnlyGuard",
+      "meaning": "Phi fiber 是支撑/容量读数，不含 signed seed、local factor、orientation、alpha/delta 或 ExactUV payload。",
+      "proved": true,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SemiprimeFirstSeedStillOpen",
+      "meaning": "当前语料没有为所有 semiprime first edges 给出推前前 signed seed 表。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillOpen",
+      "meaning": "当前语料没有为所有 `prefix>1` 内部 prime-adjoin edges 给出 signed transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SemiprimeDiagonalDownstreamAvailable",
+      "meaning": "first seed 的下一层已可继续拆为 diagonal common packet 与 offdiagonal seed，但这不闭合 signed 表。",
+      "proved": false,
+      "remaining": "((PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "BaseSourcePacketAtomsCarriedForward",
+      "meaning": "edge slab 只替换 edge multiplier；base/source-packet 三原子仍保留在最新合取基中。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行直接旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只重接最新 hardpoint 与既有 slab 拆解；未证明 first seed、internal transition、source 三原子、ExactUV、模型、Rate 或 DStructure。",
+      "proved": false,
+      "remaining": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "distinct_first_edge_types": 2625,
+    "failures": [],
+    "first_edge_occurrences": 8770,
+    "first_edge_path_guard_holds": true,
+    "first_edge_phi_fiber_formula_holds": true,
+    "first_edge_phi_fiber_formula_sum": 8770,
+    "formal_first_edge_occurrence_sign_shadow_bits": 8770,
+    "formal_first_edge_occurrence_sign_shadow_log10": 2640.033062,
+    "formal_first_seed_type_sign_shadow_bits": 2625,
+    "formal_first_seed_type_sign_shadow_log10": 790.203739,
+    "formal_internal_transition_occurrence_sign_shadow_bits": 13216,
+    "formal_internal_transition_occurrence_sign_shadow_log10": 3978.412423,
+    "internal_edge_occurrences": 13216,
+    "max_factor_depth": 12,
+    "mismatches": [],
+    "small_prime_layers": 25,
+    "support_keys": 8770,
+    "top_first_edge_fibers": [
+      {
+        "fiber_mass": 2500,
+        "p": 2,
+        "q": 2
+      },
+      {
+        "fiber_mass": 833,
+        "p": 2,
+        "q": 3
+      },
+      {
+        "fiber_mass": 556,
+        "p": 3,
+        "q": 3
+      },
+      {
+        "fiber_mass": 333,
+        "p": 2,
+        "q": 5
+      },
+      {
+        "fiber_mass": 222,
+        "p": 3,
+        "q": 5
+      },
+      {
+        "fiber_mass": 191,
+        "p": 2,
+        "q": 7
+      },
+      {
+        "fiber_mass": 133,
+        "p": 5,
+        "q": 5
+      },
+      {
+        "fiber_mass": 127,
+        "p": 3,
+        "q": 7
+      }
+    ],
+    "total_ordered_edge_occurrences": 21986
+  },
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_transport_hardpoint_imported": true,
+  "next_edge_attack_targets": [
+    "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+  ],
+  "next_primary_attack_target": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+  "no_theorem_switch": true,
+  "paired_required_attack_target": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "parallel_source_packet_attack_target": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows",
+  "phi_fiber_unsigned_only_guard": true,
+  "plain_conclusion": "本步把最新 `PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward` 接入既有 first-edge slab 证书。edge multiplier 表不是最终黑箱；它按 LPF ordered path 唯一拆成 semiprime first-edge signed seed table 与 internal prime-adjoin signed transition law。Phi fiber 公式只支付第一边 `(p,q)` 的 q-rough continuation occurrence mass，不产生 signed seed、local factor、orientation 或 ExactUV payload。因此最新 edge 侧硬点是 first seed 与 internal transition 的合取，同时上一层 base/source-packet 三原子仍保留。行/列命题仍未无条件证明。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "semiprime_first_edge_signed_seed_table_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-first-edge-slab-frontier-router.json": "111cc0440f1f16e47cb791878a70f328fdff5122717efe007d08c0d704d62bfa",
+    "docs/monograph/prime-matrix-phi-lpf-latest-bucket-transport-stack-sync-router.json": "3ca2259fbb077b8fbe6e650a9b4dc499378d44cad38e752a40edab34b81a63cf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json": "10b88bb8d80a793ab8ed16263cbe5efc4d47c72fdcc544ed7d97e559bda6788d",
+    "experiments/prime_matrix_phi_lpf_latest_edge_multiplier_slab_sync_router.py": "2c09357e02fc01cd74c857c379e44827282a58716d73f8c46cee811d744a2364"
+  },
+  "status": "phi_lpf_latest_edge_multiplier_synced_to_first_edge_slab_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward",
+      "meaning": "逐 edge signed multiplier 表按 `prefix=1` 第一边与 `prefix>1` 内部边唯一拆分。",
+      "to": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "from": "PhiLPFFirstEdgeQRoughContinuationFiberLedger",
+      "meaning": "Phi-LPF 只支付第一边 q-rough continuation 的无符号 occurrence mass。",
+      "to": "mass(p,q)=Phi(floor(N/(p*q)),q)"
+    },
+    {
+      "from": "PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward",
+      "meaning": "semiprime first seed 仍需推前前 signed payload，不能由 Phi fiber 反推。",
+      "to": "signed seed value / branch key / ExactUV / named return"
+    },
+    {
+      "from": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+      "meaning": "内部 prime-adjoin transition 仍需非零前缀或命名回流，不能用未知终值后验除法。",
+      "to": "nonzero predecessor / signed local factor / path product compatibility"
+    }
+  ],
+  "target_input_before_router": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+}
