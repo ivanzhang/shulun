@@ -17785,3 +17785,37 @@ prime-coordinate 向量中至少有一个非零坐标；取最小非零素模坐
 
 本步没有证明 pivot phase-slip、endpoint singleton、full-cycle mean、source
 multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.153 stable-ladder phase-residue exchange endpoint-pivot-phase-slip-LCM-support-barrier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_pivot_phase_slip_lcm_support_barrier_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-lcm-support-barrier-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-lcm-support-barrier-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-lcm-support-barrier-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_pivot_phase_slip_imported=true
+endpoint_pivot_prime_phase_motion_formula_closed=true
+endpoint_pivot_fixed_set_lcm_replay_period_closed=true
+endpoint_pivot_support_width_registered=true
+endpoint_pivot_lcm_exceeds_support_no_fixed_replay=true
+endpoint_pivot_phase_slip_reduced_to_lcm_support_barrier=true
+endpoint_pivot_small_lcm_branch_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：pivot-prime phase-slip 不再作为匿名单出口保留。固定非零
+素模滑移若以同一 pivot 标签复现，replay 位移 `d` 必须满足 `q|d`；固定 pivot
+标签集则要求 `lcm(Lambda)|d`。若该 LCM 超过 endpoint cycle 的有限支撑宽度 `W`，
+则没有非零固定复现；若 `L<=W`，只剩小 LCM/ColumnCRT/PDEC 分支；逃避固定标签
+的情形登记为 moving-pivot PDEC/SAE。
+
+本步没有证明小 LCM pivot 分支、nonreplay sparse SAE、moving-pivot PDEC、
+endpoint singleton、full-cycle mean、source multiplicity 或 sparse SAE。
+行/列命题仍未无条件闭合。
