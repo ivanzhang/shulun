@@ -15085,3 +15085,32 @@ formal-to-actual 含义是：pivot-prime phase-slip 已被压成 LCM-support 屏
 若 LCM 超过有限支撑宽度，则没有固定复现；否则转入小 LCM/ColumnCRT/PDEC。
 最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、source multiplicity、
 endpoint pivot 小 LCM、nonreplay sparse 与 moving-pivot。
+
+## 313. Stable-ladder phase-residue exchange endpoint-pivot-small-LCM-rank-pressure frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_pivot_phase_slip_small_lcm_rank_pressure_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_pivot_small_lcm_imported=true
+endpoint_pivot_distinct_prime_product_law_closed=true
+endpoint_pivot_small_lcm_rank_pressure_closed=true
+endpoint_pivot_two_large_carrier_sqrt_barrier_closed=true
+endpoint_pivot_small_lcm_reduced_to_rank_pressure=true
+endpoint_pivot_low_carrier_fixed_residue_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：endpoint pivot small-LCM 已被压成 rank-pressure
+三分。`L<=W` 强制高 carrier 数满足 `r_B<=floor(log W/log B)`；取 `B=sqrt(W)`
+给出两个大 pivot carrier 不可同处一个 fixed small-LCM unit。最新剩余为 sparse SAE、
+endpoint singleton、full-cycle mean、source multiplicity、低 carrier fixed-residue、
+低 carrier sparse、高 carrier rank-deficit、nonreplay sparse 与 moving-pivot。

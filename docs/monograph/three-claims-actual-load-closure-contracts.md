@@ -17819,3 +17819,36 @@ formal-to-actual 含义是：pivot-prime phase-slip 不再作为匿名单出口�
 本步没有证明小 LCM pivot 分支、nonreplay sparse SAE、moving-pivot PDEC、
 endpoint singleton、full-cycle mean、source multiplicity 或 sparse SAE。
 行/列命题仍未无条件闭合。
+
+### 1.154 stable-ladder phase-residue exchange endpoint-pivot-small-LCM-rank-pressure 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_alternating_cycle_pivot_phase_slip_small_lcm_rank_pressure_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-small-lcm-rank-pressure-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_pivot_small_lcm_imported=true
+endpoint_pivot_distinct_prime_product_law_closed=true
+endpoint_pivot_small_lcm_rank_pressure_closed=true
+endpoint_pivot_two_large_carrier_sqrt_barrier_closed=true
+endpoint_pivot_small_lcm_reduced_to_rank_pressure=true
+endpoint_pivot_low_carrier_fixed_residue_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：endpoint pivot small-LCM 分支不再是宽口径
+ColumnCRT/PDEC 出口。固定 pivot 标签集满足 `L=lcm(Lambda)<=W`；对任意阈值
+`B>1`，高 carrier 数 `r_B` 满足 `r_B<=floor(log W/log B)`。特别地，两个
+`q>sqrt(W)` 的 pivot carrier 不能同处一个 fixed small-LCM unit。剩余压力必须
+进入低 carrier fixed-residue、低 carrier 非持久 sparse，或高 carrier 低秩容量缺口。
+
+本步没有证明低 carrier fixed-residue、低 carrier sparse、高 carrier rank-deficit、
+nonreplay sparse、moving-pivot、endpoint singleton、full-cycle mean、source
+multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
