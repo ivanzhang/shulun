@@ -6476,6 +6476,70 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.190 Phi-LPF latest offdiagonal pure-pair atom sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_offdiagonal_pure_pair_atom_sync_router.py
+data/prime-matrix-phi-lpf-latest-offdiagonal-pure-pair-atom-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-offdiagonal-pure-pair-atom-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-offdiagonal-pure-pair-atom-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_source_tuple_signed_formula_imported=true
+pure_pair_atom_router_imported=true
+pure_pair_atom_bijection_synced=true
+tail_lift_phi_minus_one_synced=true
+tail_lift_no_new_first_seed_closed=true
+latest_basis_replaces_tuple_formula_with_pure_atom=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+```
+
+actual-load 含义是：最新
+`PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward`
+已经接入 pure semiprime atom 拆解。每个 ordered type `(p,q), p<q` 的 first seed
+原子是唯一 tail=1 的 pure pair：
+
+```text
+(p,q,1), value=p*q.
+```
+
+所有 `tail>1` occurrence 都不是新的 first seed；它们只提供
+
+```text
+Phi(floor(N/(p*q)),q)-1
+```
+
+的 continuation lift 质量，并交给 internal prime-adjoin transition compatibility。样本
+`N=10000` 中 pure pair atoms 为 `2600`，tail lift 为 `2868`，合计 `5468`
+个 offdiagonal occurrences。
+
+最新递推剩余基更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍可直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`，或走完整 branch/atomic trace、
+seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

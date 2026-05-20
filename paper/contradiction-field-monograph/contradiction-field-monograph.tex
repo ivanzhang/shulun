@@ -22232,6 +22232,38 @@ routes, ExactUV, model, rate, and D-structure gates remain open.  No
 unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Phi-LPF latest offdiagonal pure-pair atom sync]
+The latest offdiagonal source-tuple signed seed formula has a forced first-atom
+synchronization.  Its first seed atom is the pure semiprime pair
+\[
+  (p,q,1),\qquad p<q,\qquad \hbox{value }pq,
+\]
+while every nonunit tail occurrence is a continuation lift with mass
+\[
+  \Phi\!\left(\left\lfloor \frac{N}{pq}\right\rfloor,q\right)-1.
+\]
+Thus the latest direct seed-side hard point is the pure-pair signed seed atom,
+not the full \(q\)-rough tail family.
+\end{theorem}
+\begin{proof}[Phi-LPF latest offdiagonal pure-pair atom sync]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-latest-\\
+offdiagonal-pure-pair-atom-sync-router.md.
+\end{quote}
+The previous latest synchronization reduces the offdiagonal seed table to the
+source tuple signed seed formula.  The pure-atom theorem applies to that input:
+for a fixed ordered type \((p,q)\), the unique tuple with tail \(t=1\) is the
+first seed atom.  If \(t>1\), the occurrence has already passed the first seed
+and belongs to the internal prime-adjoin continuation ledger.
+
+This closes only the unsigned atom location and the tail-lift mass formula.
+It does not produce the pure-pair signed value, orientation parity, branch side,
+local factor, ExactUV return tag, or the internal transition law.  The carried
+source atoms and the global ExactUV/model/rate/D-structure gates remain open.
+No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
