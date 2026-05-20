@@ -6707,6 +6707,53 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.194 Phi-LPF latest signed atom trace-sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_signed_atom_trace_sync_router.py
+data/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_signed_atom_fields_imported=true
+trace_sync_router_imported=true
+closed_unsigned_labels_carried=true
+same_trace_key_and_named_return_matrix_synced=true
+trace_self_proof_cycle_cut_synced=true
+latest_basis_replaces_signed_atom_fields_with_new_payload_or_exits=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+actual-load 含义是：最新
+`PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward`
+已接入 signed atom trace-sync。无符号 edge label 只给输入域，signed value、local factor、
+orientation、alpha/delta side、ExactUV fixed pair 与 source row 必须同属一个
+pre-Cauchy trace key；跨 key、缺失、冲突、零因子、超预算或后验读取均进入命名 return。
+样本 `N=10000` 中 canonical edges 为 `2600`，开放 signed slots 为 `15600`，
+trace packets 为 `2600`。
+
+最新递推剩余基更新为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并仍需合取 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`、
+模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

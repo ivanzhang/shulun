@@ -1,0 +1,185 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_latest_signed_atom_trace_sync_router",
+  "closed_routing_subledger": "PhiLPFEdgeLocalSignedAtomSameTraceKeyAndNamedReturnMatrixBeforePushforward",
+  "closed_unsigned_labels_carried": true,
+  "edge_local_signed_atom_fields_proved": false,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestSignedAtomFieldsImported",
+      "meaning": "上一层最新 field-cut 已把直接硬点定位到 signed atom fields 或 named return tag。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TraceSyncRouterImported",
+      "meaning": "既有 signed atom trace-sync 证书可直接作用在最新 signed atom fields 入口。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalSignedAtomSameTraceKeyAndNamedReturnMatrixBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ClosedUnsignedLabelsCarried",
+      "meaning": "无符号 edge label 只作为 trace-sync 输入域携带，不产生 signed payload。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SameTraceKeyAndNamedReturnMatrixSynced",
+      "meaning": "缺失、冲突、零因子、超预算或跨 key 读取均进入命名 return，不再是匿名出口。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalSignedAtomSameTraceKeyAndNamedReturnMatrixBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TraceSelfProofCycleCutSynced",
+      "meaning": "branch/atomic trace 不能在当前内部语料中自证 signed atom payload。",
+      "proved": true,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "LatestBasisReplacesSignedAtomFieldsWithNewPayloadOrExits",
+      "meaning": "最新 signed atom fields 被收窄为新 primitive payload/trace 或受控旁路出口。",
+      "proved": false,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "NewPrimitivePayloadStillOpen",
+      "meaning": "当前语料没有提交新 primitive atomic signed payload 或 trace formula 工件。",
+      "proved": false,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "EdgeLocalSignedAtomFieldsStillOpen",
+      "meaning": "trace-sync 关闭路由与 return 命名，不给 signed value/local factor 公式。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed table 仍是并行旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVPairStillRequired",
+      "meaning": "trace-sync 不替代 source entropy 与 ExactUV fiber 有界性。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 signed atom trace-sync；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    }
+  ],
+  "imported_largest_slot_sample": {
+    "N": 10000,
+    "canonical_edges": 2600,
+    "closed_unsigned_labels": 2600,
+    "field_slot_matrix_is_schema_only": true,
+    "open_signed_field_slots": 15600,
+    "open_signed_fields_per_edge": 6,
+    "same_trace_packets_required": 2600
+  },
+  "imported_return_matrix": [
+    {
+      "field": "same_trace_key",
+      "named_return": "SameTraceKeySplitPDEC",
+      "productive_input": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+      "same_key_requirement": "edge label、source row、signed value、local factor、orientation、ExactUV 必须属于同一 pre-Cauchy trace key。"
+    },
+    {
+      "field": "signed_seed_value",
+      "named_return": "MissingSignedAtomValueReturn OR SignedValueConflictPDEC",
+      "productive_input": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+      "same_key_requirement": "signed seed value 必须由同一 trace 的 payload 字段正向输出。"
+    },
+    {
+      "field": "local_factor_multiplier",
+      "named_return": "ZeroLocalFactorNamedReturn OR LocalFactorTraceMismatchPDEC",
+      "productive_input": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+      "same_key_requirement": "local factor 乘积必须与 signed value 和 truncation state 同源。"
+    },
+    {
+      "field": "orientation_parity",
+      "named_return": "OrientationBranchSideMismatchReturn",
+      "productive_input": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+      "same_key_requirement": "orientation parity 与 branch side 必须从同一 ordered branch operations 读取。"
+    },
+    {
+      "field": "alpha_delta_side",
+      "named_return": "AlphaDeltaSideMismatchReturn",
+      "productive_input": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+      "same_key_requirement": "alpha/delta payload 必须与 signed coefficient 的 formal unit 相同。"
+    },
+    {
+      "field": "exactuv_fixed_pair",
+      "named_return": "ExactUVMissingOrOverBudgetReturn",
+      "productive_input": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+      "same_key_requirement": "exact `(u,v)`、branch key 与 return tag 必须在 Cauchy/Phi/payment 前同步输出。"
+    },
+    {
+      "field": "pre_cauchy_source_row",
+      "named_return": "PreCauchySourceRowAbsentReturn",
+      "productive_input": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "same_key_requirement": "source row 必须先于 pushforward 登记；不能从下游 payment 或 fiber 反推。"
+    }
+  ],
+  "latest_basis_replaces_signed_atom_fields_with_new_payload_or_exits": true,
+  "latest_retained_basis_after_router": "((NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)",
+  "latest_signed_atom_fields_imported": true,
+  "new_primitive_payload_or_trace_artifact_present": false,
+  "next_primary_attack_target": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+    "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+  ],
+  "plain_conclusion": "本步把最新 `PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward` 接入 signed atom trace-sync。LPF/Phi/Ferrers 的无符号 label 只给出输入域；signed value、local factor、orientation、alpha/delta side、ExactUV fixed pair 与 source row 必须同属一个 pre-Cauchy trace key。匿名失败已被命名 return 矩阵吸收；当前最新生产性硬点收窄为新 primitive atomic signed payload/trace 工件，或 terminal descent、same-set PDEC、逐点 signed table 旁路，并仍需 ExactUV、模型、Rate 与 DStructure。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "same_trace_key_and_named_return_matrix_synced": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.json": "49ff41f39b92e54b9cb69a1af808b70115c23c8bc8ef08c0c1d329447e3c68cb",
+    "docs/monograph/prime-matrix-phi-lpf-latest-edge-local-field-cut-sync-router.json": "d23f9b7f42beecfd32ee511bcde2bbe06b574d02e2bbffffa2c78107b508a562",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "experiments/prime_matrix_phi_lpf_latest_signed_atom_trace_sync_router.py": "737b8c77f1d1e6cddd41f70314701dbfa143d3f434382b641f2e94f379455119"
+  },
+  "status": "phi_lpf_latest_signed_atom_fields_synced_to_trace_payload_frontier_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward",
+      "meaning": "逐 edge signed fields 必须落在同一 pre-Cauchy trace key；否则进入命名 split/PDEC return。",
+      "to": "PhiLPFEdgeLocalSignedAtomSameTraceKeyAndNamedReturnMatrixBeforePushforward"
+    },
+    {
+      "from": "PhiLPFEdgeLocalSignedAtomSameTraceKeyAndNamedReturnMatrixBeforePushforward",
+      "meaning": "命名 return 矩阵关闭匿名缺口后，生产性入口只剩新 primitive payload/trace 工件。",
+      "to": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "from": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward",
+      "meaning": "若不提交新 payload/trace，则只能走 terminal descent、same-set PDEC 或逐点 signed table 旁路。",
+      "to": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    }
+  ],
+  "target_input_before_router": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward",
+  "trace_self_proof_cycle_cut_synced": true,
+  "trace_sync_router_imported": true
+}

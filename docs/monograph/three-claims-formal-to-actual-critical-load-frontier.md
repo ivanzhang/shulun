@@ -16780,6 +16780,51 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 terminal descent、same-set PDEC 或 new joint formula；ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
 
+## 352. Phi-LPF latest signed atom trace-sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_signed_atom_trace_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-router.json
+data/prime-matrix-phi-lpf-latest-signed-atom-trace-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_signed_atom_fields_imported=true
+trace_sync_router_imported=true
+closed_unsigned_labels_carried=true
+same_trace_key_and_named_return_matrix_synced=true
+trace_self_proof_cycle_cut_synced=true
+latest_basis_replaces_signed_atom_fields_with_new_payload_or_exits=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+formal-to-actual 含义是：最新 signed atom fields 已被接入同 trace key 与命名 return
+矩阵。无符号 LPF/Phi/Ferrers label 不能产生 signed payload；真正可生产 signed value、
+local factor、orientation、alpha/delta side、ExactUV fixed pair 与 source row 的只能是同一
+pre-Cauchy trace key 上的新 payload/trace 工件。branch/atomic trace 自证环已被切掉，
+样本 `N=10000` 中开放 signed slots 为 `15600`。
+
+当前真正未闭合的是：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并仍需合取 ExactUV source/fiber、模型余量、RatePreservation 与 DStructure/Rankin。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
