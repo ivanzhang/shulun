@@ -1,0 +1,96 @@
+# Prime Matrix Phi-LPF pointwise signed table orientation-law sync 证书
+
+**状态：** `phi_lpf_pointwise_signed_table_synced_to_orientation_law_open`
+
+本步把最新 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` 接到已有 signed-value 深层路由。逐点表不是最终单点：它先压到逐行 signed alpha weight，再压到 primitive summand signed expression、pre-Cauchy origin identity 和 row-level clean-core 原始生成表；继续沿 signed slot/value-map 展开会回到 row-level 表固定点。真正非循环破坏输入必须是 pre-Cauchy signed coefficient 发射核，而该核的首个不可替代字段是 `PrimitiveOrientationLocalFactorProductLawBeforePushforward`。LPF/Phi 只给偶几何与容量，不能决定反变号取向。行/列命题仍未无条件闭合。
+
+```text
+latest_pointwise_phi_lpf_signed_table_imported=true
+pointwise_table_reduced_to_signed_alpha_weight=true
+signed_alpha_weight_reduced_to_primitive_summand_expression=true
+primitive_summand_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+signed_value_cycle_detected=true
+noncircular_emission_kernel_imported=true
+orientation_local_factor_law_imported_as_first_field=true
+orientation_local_factor_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+## 1. 同步链
+
+| from | to | meaning |
+| --- | --- | --- |
+| `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` | `PointwiseSignedAlphaValueTableBeforePushforward` | Phi-LPF 逐点 signed 表在 alpha 侧表现为逐点 signed alpha value table。 |
+| `PointwiseSignedAlphaValueTableBeforePushforward` | `PointwiseNonrecursiveSignedAlphaWeightFormula` | value table 的几何/收费字段只能验证，首要生成字段是 signed alpha weight。 |
+| `PointwiseNonrecursiveSignedAlphaWeightFormula` | `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` | signed alpha weight 必须由 primitive summand 级推前前 signed expression 给出。 |
+| `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` | `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward` | signed expression 必须给 pre-Cauchy source origin identity。 |
+| `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward` | `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands` | 来源恒等式等价于逐行 clean-core 原始生成表。 |
+| `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands` | `NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows` | row-level 内部 signed-source 链形成固定点，必须新增非循环发射核。 |
+| `NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows` | `PrimitiveOrientationLocalFactorProductLawBeforePushforward` | 非循环发射核的首个奇数据字段是 primitive orientation/local-factor 乘积律。 |
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| LatestPointwisePhiLPFSignedTableImported | `true` | `false` | moving-atom signed 注入拆分后，最新直接主攻是 Phi-LPF support 上的逐点 signed value table。 | PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward |
+| PointwiseTableReducedToSignedAlphaWeight | `true` | `false` | 既有 pointwise signed alpha value table 路由说明：Phi atom/收费/积分只验证已给定 signed weight，首缺口是逐行 signed alpha weight。 | PointwiseNonrecursiveSignedAlphaWeightFormula |
+| SignedAlphaWeightReducedToPrimitiveSummandExpression | `true` | `false` | 逐行 signed alpha weight 继续压到 actual noncanonical primitive summand 的推前前 signed expression。 | ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward |
+| PrimitiveSummandExpressionReducedToOriginIdentity | `true` | `false` | primitive summand 表达式本身不是证明；必须给 pre-Cauchy 来源恒等式。 | PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward |
+| OriginIdentityReducedToRowLevelGeneration | `true` | `false` | 来源恒等式等价于逐行 clean-core 原始 signed coefficient 生成表。 | RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands |
+| SignedValueCycleDetected | `true` | `true` | 从 row-level 表经 signed slot/value-map/source identity 又回到 row-level 表；该回路不能自证。 | NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows |
+| NoncircularEmissionKernelImported | `true` | `false` | signed-source fixed-point breaker 要求新增不读取下游 payment/来源表/早期零行覆盖的 pre-Cauchy signed coefficient 发射核。 | NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows |
+| OrientationLocalFactorLawImportedAsFirstField | `true` | `false` | row-level 非循环取向律路由把发射核的首个不可替代字段压成 orientation/local-factor 乘积律。 | PrimitiveOrientationLocalFactorProductLawBeforePushforward |
+| UnsignedLPFPhiCannotDetermineOrientation | `true` | `true` | LPF/Phi、P列锚、CRT skeleton、ExactUV support 都是偶几何数据；它们不能决定反变号 signed coefficient。 | PrimitiveOrientationLocalFactorProductLawBeforePushforward |
+| OrientationLocalFactorLawCurrentCorpusProved | `false` | `false` | 当前材料没有提交 Cauchy/Phi/payment 推前前的 primitive orientation 与 local-factor 乘积律。 | ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter AND ExactPrimitiveOrientationBitLaw AND ExactPrimitiveLocalFactorProductIdentity AND PrepushforwardSignedSumIdentity |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 本层只是把逐点 signed 表同步到更窄取向律，不是三目标命题无条件闭合。 | PrimitiveOrientationLocalFactorProductLawBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+
+## 3. strict 基
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 4. 最新保留基
+
+```text
+(PrimitiveOrientationLocalFactorProductLawBeforePushforward OR NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows OR RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+并行主攻：
+
+```text
+ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter
+ExactPrimitiveOrientationBitLaw
+ExactPrimitiveLocalFactorProductIdentity
+PrepushforwardSignedSumIdentity
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+行/列命题仍未无条件闭合。
+
+## 5. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_pointwise_signed_table_orientation_law_sync_router.py` | `0a5beee43c930235ba17a20cbbe7c4db913d4eb72b153e825c01f54a749faf63` |
+| `docs/monograph/prime-matrix-phi-lpf-moving-atom-signed-injection-split-router.json` | `6482075cf099f8a3f9a1b665ea2b5e3d9aadd2dbbc634f9f95e71409fdbd610a` |
+| `docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json` | `c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868` |
+| `docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json` | `c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c` |
+| `docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json` | `fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f` |
+| `docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json` | `b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff` |
+| `docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json` | `0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d` |
+| `docs/monograph/prime-matrix-strict-acyclic-signed-value-cycle-sync-router.json` | `d82b28bc6865f20ff1020fc548541f24b0d98773ceb5f5ae78e11bdd7f911efa` |
+| `docs/monograph/prime-matrix-strict-signed-source-fixed-point-breaker-router.json` | `a07743b021b11f13f19d791fc43d4268f551878c43f3340bd54664254311185f` |
+| `docs/monograph/prime-matrix-strict-row-level-noncircular-orientation-law-router.json` | `9c03e809ea7c2a1b9edc2863b065f3f93f1fa07d9487ec96753c6b140e62bfff` |

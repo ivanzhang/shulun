@@ -17250,6 +17250,50 @@ PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 PDEC/CleanKLS 速率包、高段模型余量、RatePreservation 和 DStructure/Rankin。行/列命题仍未
 无条件闭合。
 
+## 362. Phi-LPF pointwise signed table orientation-law sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_pointwise_signed_table_orientation_law_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-router.json
+data/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_pointwise_phi_lpf_signed_table_imported=true
+pointwise_table_reduced_to_signed_alpha_weight=true
+signed_alpha_weight_reduced_to_primitive_summand_expression=true
+primitive_summand_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+signed_value_cycle_detected=true
+noncircular_emission_kernel_imported=true
+orientation_local_factor_law_imported_as_first_field=true
+orientation_local_factor_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+formal-to-actual 含义是：最新逐点 Phi-LPF signed 表可沿既有 signed-value 路由继续压缩。该表的
+alpha 侧首要生成字段是 signed alpha weight；signed alpha weight 又必须来自 primitive summand
+推前前 signed expression；expression 必须给 pre-Cauchy origin identity；origin identity 等价于
+逐行 clean-core 原始生成表。继续用 signed slot/value-map/source identity 证明这张表会回到自身，
+所以这是固定点，不是证明。
+
+当前真正最窄字段为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+它要求在 Cauchy/Phi/payment 推前之前，对每条 actual noncanonical primitive row 正向给出
+orientation bit、local-factor product、truncation weight、非零条件和 prepushforward signed sum
+identity。LPF/Phi 的桶恒等式仍只提供偶几何和容量，不能生成这个反变号取向。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

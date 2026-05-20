@@ -7198,6 +7198,50 @@ PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 row-mass/no-heavy-row、PDEC/CleanKLS 速率包、高段模型余量、RatePreservation 和 DStructure/Rankin。
 行/列命题仍未无条件闭合。
 
+### 1.204 Phi-LPF pointwise signed table orientation-law sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_pointwise_signed_table_orientation_law_sync_router.py
+data/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_pointwise_phi_lpf_signed_table_imported=true
+pointwise_table_reduced_to_signed_alpha_weight=true
+signed_alpha_weight_reduced_to_primitive_summand_expression=true
+primitive_summand_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+signed_value_cycle_detected=true
+noncircular_emission_kernel_imported=true
+orientation_local_factor_law_imported_as_first_field=true
+orientation_local_factor_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+actual-load 含义是：逐点 Phi-LPF signed 表也不是最终硬点。沿已有 signed-value 深层路由，
+它先压到逐行 signed alpha weight，再压到 primitive summand signed expression、pre-Cauchy
+origin identity 和 row-level clean-core 原始生成表；继续沿 signed slot/value-map 展开会回到
+row-level 表固定点。
+
+真正非循环破环输入必须是不读取下游 payment、来源表或早期零行覆盖的 pre-Cauchy signed
+coefficient 发射核。该核的首个不可替代字段是：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+原因是 LPF/Phi、P 列锚、CRT skeleton 与 ExactUV support 都只给偶几何和容量；它们可以定位
+候选行，但不能决定 signed coefficient 的反变号取向。并行仍需 constructor line、orientation bit、
+local-factor product、prepushforward signed sum identity、signed survival、row-mass/no-heavy-row、
+RatePreservation、PDEC scope 和 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
