@@ -7287,6 +7287,49 @@ ActualPreCauchySourceDomainAbsoluteEntropyLedger
 `FixedKeyExactUVLocalMultiplicityO1Ledger`、terminal descent、same-set PDEC、外部谱输入、
 RatePreservation 和 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.206 Phi-LPF latest source-entropy to built-in pairing sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_source_entropy_to_builtin_pairing_sync_router.py
+data/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_source_entropy_imported=true
+source_entropy_downstream_cycle_imported=true
+source_entropy_raw_cycle_rejected=true
+cycle_cut_terminal_unified_imported=true
+terminal_and_pdec_not_internal_closure=true
+antisplit_downstream_imported=true
+ordinary_joint_declaration_route_rejected_as_fixed_point=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+builtin_pairing_trace_cycle_carried=true
+trace_exit_source_rank_convergence_carried=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：最新 `ActualPreCauchySourceDomainAbsoluteEntropyLedger`
+入口已接入既有 source-entropy downstream、cycle-cut/terminal unified 与 antisplit
+downstream 三段证书。LPF/Phi 桶恒等式已经固定无符号 support 与 capacity，但
+source entropy 的 signed 下游不能靠坐标-来源环自证；terminal descent 与 same-set
+PDEC 在当前内部语料中也不是自足闭合。
+
+因此最新 signed 主攻同步为
+`BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows`，ExactUV 并行主攻为
+`ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`。
+本层同时携带 built-in pairing 的 trace-cycle guard：若继续用 existing branch trace
+解释 built-in pairing，会回到 signed payload/source packet 环。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

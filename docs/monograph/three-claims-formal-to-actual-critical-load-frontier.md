@@ -17349,6 +17349,61 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 LPF/Phi 精准桶恒等式在这里只封闭无符号支撑归属，不生成 signed orientation。行/列命题仍未
 无条件闭合。
 
+## 364. Phi-LPF latest source-entropy to built-in pairing sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_source_entropy_to_builtin_pairing_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-router.json
+data/prime-matrix-phi-lpf-latest-source-entropy-to-builtin-pairing-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_source_entropy_imported=true
+source_entropy_downstream_cycle_imported=true
+source_entropy_raw_cycle_rejected=true
+cycle_cut_terminal_unified_imported=true
+terminal_and_pdec_not_internal_closure=true
+antisplit_downstream_imported=true
+ordinary_joint_declaration_route_rejected_as_fixed_point=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+builtin_pairing_trace_cycle_carried=true
+trace_exit_source_rank_convergence_carried=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：latest orientation/trace/payload/source-rank 层留下的
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger` 已经接入既有 source-entropy downstream、
+cycle-cut/terminal unified 与 antisplit downstream。source entropy 继续展开会进入 signed
+law、basis source、internal basis 与 basis alphabet 的坐标-来源环；该环只删除自证路线，
+不能作为证明。
+
+cycle-cut/terminal/PDEC 统一后，普通 joint declaration 仍会降到 constructor fixed point。
+因此非循环内部路线必须走 atomic antisplit rows，并把 signed 首缺口压到：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+ExactUV 并行门仍为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+本层不证明 built-in pairing、ExactUV entropy/fiber、complete/fixed-key、terminal/PDEC/外部谱、
+模型、Rate 或 DStructure。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
