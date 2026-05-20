@@ -14975,3 +14975,31 @@ formal-to-actual 含义是：endpoint 动态三出口被统一为 signed-depth/f
 
 本步没有闭合行/列命题；最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、
 source multiplicity 与 signed-depth/flux packet。
+
+## 309. Stable-ladder phase-residue exchange endpoint-signed-depth-flux-cycle-skeleton frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_signed_depth_flux_cycle_skeleton_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_orbit_signed_depth_flux_packet_imported=true
+endpoint_signed_depth_flux_finite_support_skeleton_closed=true
+endpoint_signed_depth_flux_zero_mean_balance_closed=true
+endpoint_signed_depth_flux_acyclic_leaf_return_closed=true
+endpoint_signed_depth_flux_packet_reduced_to_alternating_cycle=true
+endpoint_signed_depth_flux_alternating_transport_cycle_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：signed-depth/flux 整包已经被压成有限支撑图的交替输运环。
+无环情形被叶剥离送回 endpoint singleton、full-cycle mean 或 source multiplicity；
+因此最新剩余为 sparse SAE、endpoint singleton、full-cycle mean、source multiplicity
+与 alternating transport cycle。

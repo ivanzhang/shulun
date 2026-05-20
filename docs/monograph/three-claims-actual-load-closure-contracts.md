@@ -17687,3 +17687,37 @@ boundary transport flux    -> variation-boundary component
 
 本步没有证明 signed-depth/flux packet、endpoint singleton、full-cycle mean、
 source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.150 stable-ladder phase-residue exchange endpoint-signed-depth-flux-cycle-skeleton 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_endpoint_signed_depth_flux_cycle_skeleton_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-signed-depth-flux-cycle-skeleton-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_orbit_signed_depth_flux_packet_imported=true
+endpoint_signed_depth_flux_finite_support_skeleton_closed=true
+endpoint_signed_depth_flux_unit_atom_expansion_closed=true
+endpoint_signed_depth_flux_zero_mean_balance_closed=true
+endpoint_signed_depth_flux_pairing_graph_closed=true
+endpoint_signed_depth_flux_acyclic_leaf_return_closed=true
+endpoint_signed_depth_flux_packet_reduced_to_alternating_cycle=true
+endpoint_signed_depth_flux_alternating_transport_cycle_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`EndpointOrbitSignedDepthFluxPacketPDECCap` 不能继续作为
+匿名整包出口。finite CRT endpoint support 上的零均值 signed unit atoms 形成有限
+pairing graph；若该图无交替环，则叶剥离必回到 endpoint singleton、full-cycle mean
+或 source multiplicity。因此剩余非匿名硬点只能登记为
+`EndpointOrbitSignedDepthFluxAlternatingTransportCyclePDECCap`。
+
+本步没有证明 alternating transport cycle、endpoint singleton、full-cycle mean、
+source multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
