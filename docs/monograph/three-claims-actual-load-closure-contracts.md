@@ -7330,6 +7330,47 @@ PDEC 在当前内部语料中也不是自足闭合。
 本层同时携带 built-in pairing 的 trace-cycle guard：若继续用 existing branch trace
 解释 built-in pairing，会回到 signed payload/source packet 环。行/列命题仍未无条件闭合。
 
+### 1.207 Phi-LPF latest signed macrocycle ExactUV source-table sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_signed_macrocycle_exactuv_source_table_sync_router.py
+data/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-router.json
+```
+
+同步读数为：
+
+```text
+full_signed_macrocycle_closed_as_nonproof=true
+lpf_phi_unsigned_capacity_exhausted=true
+exactuv_atomization_imported=true
+fixed_pair_fiber_formal_inequality_closed=true
+registered_complete_key_reduced_to_source_table=true
+source_table_reduced_to_precauchy_declaration=true
+pre_cauchy_constructor_declaration_line_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+```
+
+actual-load 含义是：latest signed 路线已经形成完整诊断环：
+source entropy 到 built-in pairing，再经 trace/new payload、alpha/moving atom、
+pointwise signed table、orientation 回到 source entropy。这个环只能删除内部自证路线，
+不能证明 signed coefficient 或行/列命题。
+
+LPF/Phi 桶恒等式在本层已经耗尽无符号作用：它关闭 ownership、support 与 capacity，
+但不生成 actual pre-Cauchy source table。环外 ExactUV 侧同步为 signed row law、
+registered complete key 与 fixed-key local multiplicity；其中 registered complete key
+必须来自 `ActualNoncanonicalPrimitiveEmitterSourceTableLedger`，而 source table 的首行
+就是 `PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter`。
+
+因此最新主攻压到 pre-Cauchy constructor declaration line；并行保留
+`FixedKeyExactUVLocalMultiplicityO1Ledger`、signed row law、same-set PDEC/外部谱、模型、
+RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

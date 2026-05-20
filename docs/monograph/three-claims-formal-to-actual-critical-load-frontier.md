@@ -17404,6 +17404,68 @@ ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundL
 本层不证明 built-in pairing、ExactUV entropy/fiber、complete/fixed-key、terminal/PDEC/外部谱、
 模型、Rate 或 DStructure。行/列命题仍未无条件闭合。
 
+## 365. Phi-LPF latest signed macrocycle ExactUV source-table sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_signed_macrocycle_exactuv_source_table_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-router.json
+data/prime-matrix-phi-lpf-latest-signed-macrocycle-exactuv-source-table-sync-ledger.json
+```
+
+同步结果：
+
+```text
+source_entropy_to_builtin_imported=true
+builtin_to_new_primitive_trace_cycle_imported=true
+new_primitive_to_pointwise_kernel_imported=true
+alpha_frontier_to_moving_atom_imported=true
+moving_atom_unsigned_lpf_preimage_closed=true
+moving_atom_signed_injection_to_pointwise_table_imported=true
+pointwise_table_to_orientation_imported=true
+orientation_returns_to_source_entropy_imported=true
+full_signed_macrocycle_closed_as_nonproof=true
+lpf_phi_unsigned_capacity_exhausted=true
+exactuv_atomization_imported=true
+fixed_pair_fiber_formal_inequality_closed=true
+registered_complete_key_reduced_to_source_table=true
+source_table_reduced_to_precauchy_declaration=true
+pre_cauchy_constructor_declaration_line_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+```
+
+formal-to-actual 含义是：latest signed 路线已经闭成完整宏环：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+-> AlphaRowAnchorPhaseEmissionFormulaLedger
+-> IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+-> LPFMovingAtomSignedPreimageMassInjectionLedger
+-> PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+-> PrimitiveOrientationLocalFactorProductLawBeforePushforward
+-> ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+该宏环是自证删除证书，不是证明。LPF/Phi 精准桶恒等式只关闭无符号 ownership、support
+与 capacity；它不能生成 signed source table 或 fixed-key local multiplicity。
+
+ExactUV 侧继续原子化为 signed row law、registered complete key 与 fixed-key local
+multiplicity。fixed-pair fiber 的形式不等式已闭合，registered complete key 又必须来自
+actual noncanonical primitive emitter source table；该 source table 的首个生产性字段是：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+```
+
+并行仍需 `FixedKeyExactUVLocalMultiplicityO1Ledger`、signed row law、same-set PDEC/外部谱、
+模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
