@@ -6068,6 +6068,47 @@ NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
 same-trace-key 与 named return 路由，不给 signed value/local factor 公式。行/列命题仍未
 无条件闭合。
 
+### 1.182 Phi-LPF new-payload source-atom alignment sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_new_payload_source_atom_alignment_sync_router.py
+data/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-router.json
+```
+
+同步读数为：
+
+```text
+phi_lpf_trace_sync_imported=true
+unsigned_lpf_data_cannot_pay_signed_payload=true
+strict_new_payload_alignment_imported=true
+phi_lpf_new_payload_independent_terminal_present=false
+phi_lpf_new_payload_reduced_to_source_rank_atom=true
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`
+不能作为新的独立终点。LPF/Phi/Ferrers 已支付的是无符号 support/capacity/tuple/fiber
+标签；signed value、local factor、orientation 与 alpha/delta payload 仍必须来自同一
+pre-Cauchy actual source。若 new-payload 不是 signed-lane 环内改名，就必须提交：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+或转入 terminal descent、PDEC scope、逐点 signed table。当前第一直接主攻为
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`；ExactUV、模型、Rate 与 DStructure/Rankin
+仍独立开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

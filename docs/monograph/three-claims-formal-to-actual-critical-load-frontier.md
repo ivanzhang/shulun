@@ -16131,6 +16131,57 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 340. Phi-LPF new-payload source-atom alignment sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_new_payload_source_atom_alignment_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-router.json
+data/prime-matrix-phi-lpf-new-payload-source-atom-alignment-sync-ledger.json
+```
+
+同步结果：
+
+```text
+phi_lpf_trace_sync_imported=true
+unsigned_lpf_data_cannot_pay_signed_payload=true
+strict_new_payload_alignment_imported=true
+phi_lpf_new_payload_independent_terminal_present=false
+phi_lpf_new_payload_reduced_to_source_rank_atom=true
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+formal-to-actual 含义是：`NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact` 不能在
+Phi-LPF edge-local 线中保留为一个匿名新终点。它若只是 trace、payload、origin 或 common
+packet 的改名，就落回 signed-lane 自证环；若要成为真正的新工件，就必须在 Cauchy/Phi/payment
+前携带同一 actual source-rank/no-collapse 包。
+
+因此最新非循环基变为：
+
+```text
+((ActualPreCauchySourceDomainAbsoluteEntropyLedger
+  AND CompletePrimitiveEmitterKeyPartitionLedger
+  AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+ OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward)
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+LPF/Phi 的精准桶与 Phi 递推继续作为无符号支撑、容量和 fiber 账本使用；它们不能单独推出
+signed coefficient 或 local factor。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
