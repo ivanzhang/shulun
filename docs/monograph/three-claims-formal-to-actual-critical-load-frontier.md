@@ -16867,6 +16867,54 @@ AND FixedKeyExactUVLocalMultiplicityO1Ledger
 `ActualPreCauchySourceDomainAbsoluteEntropyLedger`；并行仍为 terminal descent、same-set PDEC、
 逐点 signed table、ExactUV、模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+## 354. Phi-LPF latest source-entropy downstream cycle sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_source_entropy_downstream_cycle_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-router.json
+data/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_source_entropy_imported=true
+phi_lpf_candidate_capacity_boundary_carried=true
+candidate_rows_are_actual_signed_rows=false
+source_entropy_atom_sends_to_signed_law=true
+source_entropy_downstream_edges_closed=true
+seed_coordinate_source_cycle_detected=true
+raw_cycle_counts_as_closure=false
+primitive_basis_and_coefficient_source_input_proved=false
+acyclic_terminal_descent_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+```
+
+formal-to-actual 含义是：latest new-payload/source-atom alignment 已把主攻点推到
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`。本层将其接入 strict source entropy
+downstream cycle guard，并同步携带 LPF/Phi 桶恒等式边界：候选容量已经由
+`PhiLPFCandidateRowCapacityLowerBoundLedger` 关闭，但候选 row 不是 actual signed row，不能
+自动支付 signed survival、row-mass 或推前前 signed coefficient。
+
+沿下游展开，source entropy 先进入 signed coefficient law，再进入 basis weight source、
+internal basis、basis alphabet，随后落入 signed 坐标-来源环。该环不能作为证明；若要继续
+非循环闭合，必须提交
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+```
+
+或走 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`。complete key、
+fixed-key ExactUV local multiplicity、same-set PDEC、逐点 signed table、ExactUV、模型、Rate
+与 DStructure/Rankin 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

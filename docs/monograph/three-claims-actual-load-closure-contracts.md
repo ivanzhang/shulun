@@ -6798,6 +6798,53 @@ AND FixedKeyExactUVLocalMultiplicityO1Ledger
 complete key、fixed-key ExactUV local multiplicity、terminal descent、PDEC scope、逐点 signed table、
 ExactUV、模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.196 Phi-LPF latest source-entropy downstream cycle sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_source_entropy_downstream_cycle_sync_router.py
+data/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-source-entropy-downstream-cycle-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_source_entropy_imported=true
+phi_lpf_candidate_capacity_boundary_carried=true
+candidate_rows_are_actual_signed_rows=false
+source_entropy_atom_sends_to_signed_law=true
+source_entropy_downstream_edges_closed=true
+seed_coordinate_source_cycle_detected=true
+raw_cycle_counts_as_closure=false
+primitive_basis_and_coefficient_source_input_proved=false
+acyclic_terminal_descent_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+```
+
+actual-load 含义是：LPF/Phi 桶恒等式继续只支付无符号候选容量。`N=10000` 的最大样本中
+candidate rows、合数数都为 `8770`，并从 Phi 恒等式恢复 `pi(N)=1229`；但这仍不是
+actual signed source entropy，因为候选 row 没有 signed weight、local factor、orientation 或
+alpha/delta side。
+
+因此 latest `ActualPreCauchySourceDomainAbsoluteEntropyLedger` 经 strict downstream 展开后，
+不能靠 LPF/Phi 候选容量自证，而是进入 signed coefficient law、basis weight source、internal
+basis 与 basis alphabet，最终触发 signed 坐标-来源环守卫。当前最窄主攻为：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+```
+
+complete key、fixed-key ExactUV local multiplicity、same-set PDEC、逐点 signed table、ExactUV、
+模型余量、RatePreservation 与 DStructure/Rankin 仍独立开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
