@@ -17167,6 +17167,48 @@ IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
 Phi-LPF signed 表、ExactUV entropy/fiber 与 rough-cofactor transport/coherence。行/列命题仍未
 无条件闭合。
 
+## 360. Phi-LPF moving-atom source-bucket preimage sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_moving_atom_source_bucket_preimage_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-router.json
+data/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_independent_moving_atom_frontier_imported=true
+lpf_phi_composite_ownership_identity_imported=true
+lpf_bucket_identity_sample_verified=true
+moving_atom_unsigned_source_preimage_partition_closed=true
+prime_row_leak_and_virtual_unit_preimage_blocked=true
+signed_mass_injection_proved=false
+rate_bearing_packet_exclusion_proved=false
+independent_nonterminal_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=LPFMovingAtomSignedPreimageMassInjectionLedger
+```
+
+formal-to-actual 含义是：LPF/Phi 精准桶恒等式已经足够关闭 moving atom 的无符号源前像问题。
+任一来自 composite source 的 clean-core moving atom，其推前前源支撑必须按唯一 `(p,m)` 桶分解；
+`p=LPF(pm)`，`m` 为 p-rough。Phi 公式中的 `m=1` 是 prime-row 修正，不是 composite source，
+所以 virtual-unit/prime-row leak 不能作为 moving atom 前像。
+
+本层没有证明 moving atom 排斥。真正剩余是从 final same-(u,v) 大原子向 LPF-owned 推前前源桶
+注入 signed 质量，并同步给出 signed coefficient、local factor、alpha/delta branch、no-heavy-row
+和速率保持。因此最新直接主攻变为：
+
+```text
+LPFMovingAtomSignedPreimageMassInjectionLedger
+```
+
+并行仍保留逐点 Phi-LPF signed 表、signed survival/row-mass、PDEC/CleanKLS 速率包、高段模型余量、
+RatePreservation 和 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

@@ -7111,6 +7111,50 @@ IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
 逐点 Phi-LPF signed 表、ExactUV entropy/fiber 与 rough-cofactor transport/coherence。行/列命题仍未
 无条件闭合。
 
+### 1.202 Phi-LPF moving-atom source-bucket preimage sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_moving_atom_source_bucket_preimage_sync_router.py
+data/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-moving-atom-source-bucket-preimage-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_independent_moving_atom_frontier_imported=true
+lpf_phi_composite_ownership_identity_imported=true
+lpf_bucket_identity_sample_verified=true
+moving_atom_unsigned_source_preimage_partition_closed=true
+prime_row_leak_and_virtual_unit_preimage_blocked=true
+signed_mass_injection_proved=false
+rate_bearing_packet_exclusion_proved=false
+independent_nonterminal_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=LPFMovingAtomSignedPreimageMassInjectionLedger
+```
+
+actual-load 含义是：新的 LPF/Phi 精准桶恒等式可以直接用于 moving atom 硬点，但只能关闭
+无符号源前像层。若 actual noncanonical clean-core moving atom 真实来自 composite source，则
+每个推前前源键都有唯一 LPF owner bucket `(p,m)`，其中 `p=LPF(pm)` 且 `m` 为 p-rough；
+Phi 递推给出这些桶的精确容量。`N=10000` 审计中桶和为 `8770`，与合数总数一致，并给出
+`pi(10000)=1229`。
+
+该层删除了两个伪出口：moving atom 不能作为无 owner 的匿名源对象存在；`m=1` 也只是 Phi
+公式中的 prime-row 修正，不是 composite moving-atom source，真实最小源桶从 `(p,p)` 开始。
+但这仍不产生 signed coefficient、local factor、alpha/delta branch 或同 formal unit 的 no-heavy-row
+质量注入。因此最新最窄主攻从 generic independent moving atom 排斥收窄为：
+
+```text
+LPFMovingAtomSignedPreimageMassInjectionLedger
+```
+
+并行仍需逐点 Phi-LPF signed 表、signed survival/row-mass、PDEC/CleanKLS 速率包、高段模型余量、
+RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
