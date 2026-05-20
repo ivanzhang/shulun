@@ -16070,6 +16070,67 @@ AND PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
 或 new joint formula；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍开放。
 行/列命题仍未无条件闭合。
 
+## 339. Phi-LPF edge-local signed atom trace-sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_edge_local_signed_atom_trace_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.json
+data/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-ledger.json
+```
+
+同步结果：
+
+```text
+signed_atom_fields_target_imported=true
+closed_unsigned_edge_labels_imported=true
+same_trace_key_requirement_closed=true
+named_return_matrix_closed=true
+atomic_trace_reduced_to_signed_payload=true
+signed_lane_cycle_imported=true
+signed_lane_self_proof_eliminated=true
+branch_trace_self_proof_eliminated=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：edge-local signed atom fields 已不再是 LPF/Phi 支撑问题。每条
+closed unsigned edge label 要成为 signed edge-local formula，必须绑定同一 pre-Cauchy
+trace key，并同时携带：
+
+```text
+signed value, local factor, orientation/branch side, alpha/delta payload,
+ExactUV fixed pair, pre-Cauchy source row, return tag
+```
+
+任一字段缺失、冲突、零因子、超预算或后验读取，都必须进入 named return/PDEC。样本
+`N=10000` 中 `2600` 个 edge trace packets 对应 `15600` 个开放 signed slots。
+
+现有 branch-trace/atomic-trace 路线已被 signed-lane cycle closure 标记为不能自证。因此
+当前真正未闭合的是：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并且仍需合取：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

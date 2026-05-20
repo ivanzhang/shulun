@@ -21864,6 +21864,38 @@ docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF edge-local signed atom trace-sync frontier]
+After the unsigned two-prime edge label is fixed, the remaining signed atom
+fields must all live on one pre-Cauchy trace key.  The signed value, local
+factor, orientation and branch side, alpha/delta payload, exact \((u,v)\), and
+source row cannot be assembled from separate downstream ledgers.  If any field
+is missing, inconsistent, zero, over budget, or read only after pushforward, the
+failure is a named return or PDEC exit, not an anonymous signed gap.  For
+\(N=10000\), the certificate records \(2600\) edge trace packets and \(15600\)
+open signed slots.
+\end{theorem}
+\begin{proof}[Phi-LPF edge-local signed atom trace-sync frontier]
+The preceding field-cut fixes the unsigned edge label.  A signed edge-local
+formula is stronger: it must attach the signed payload and all side data to the
+same source row before Cauchy/Phi/payment pushforward.  Thus the same trace key
+must carry the signed coefficient, the local-factor product, the orientation
+and alpha/delta side, the exact \((u,v)\) key, and the return tag.  If two of
+these fields come from different source keys, the asserted edge-local formula
+has split into a named same-key defect.  If a field is absent or zero, the
+return tag records that failure.
+
+The existing branch-trace and atomic-trace routes are not independent proofs in
+the current corpus: the signed-lane cycle has already synchronized them back to
+the payload/origin/common-packet loop.  Therefore the new direct input is a
+primitive atomic signed payload or trace artifact, with terminal descent,
+same-set PDEC scope, the pointwise signed table, ExactUV, model, rate, and
+D-structure gates remaining parallel.  The row/column theorem remains open.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

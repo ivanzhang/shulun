@@ -6024,6 +6024,50 @@ PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
 配套仍需 orientation parity、ExactUV return、internal transition 与 common packet。本步
 不从 LPF/Phi/Ferrers label 推出 sign/local factor。行/列命题仍未无条件闭合。
 
+### 1.181 Phi-LPF edge-local signed atom trace-sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_edge_local_signed_atom_trace_sync_router.py
+data/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-edge-local-signed-atom-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+signed_atom_fields_target_imported=true
+closed_unsigned_edge_labels_imported=true
+same_trace_key_requirement_closed=true
+named_return_matrix_closed=true
+atomic_trace_reduced_to_signed_payload=true
+signed_lane_cycle_imported=true
+signed_lane_self_proof_eliminated=true
+branch_trace_self_proof_eliminated=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：edge-local signed atom fields 必须在同一 pre-Cauchy trace key 上
+一次性给出 signed value、local factor、orientation/branch side、alpha/delta payload、
+ExactUV fixed pair 与 source row。若这些字段缺失、冲突、零因子、超预算或后验读取，
+则进入 named return/PDEC，而不是保留匿名 signed 缺口。样本 `N=10000` 中需要 `2600`
+个 edge trace packets，对应 `15600` 个开放 signed slots。
+
+现有 branch-trace/atomic-trace 线已经由 signed-lane cycle closure 证明不能自证。最新
+直接主攻为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+并行出口为 terminal descent、PDEC scope、逐点 signed table 与 ExactUV。该步只关闭
+same-trace-key 与 named return 路由，不给 signed value/local factor 公式。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
