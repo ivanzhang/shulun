@@ -15453,3 +15453,38 @@ branch weight。最新直接主攻保持为
 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`，并行仍需
 alpha/delta primitive rule、pairing、ExactUV fixed-key、模型/Rate、DStructure/Rankin 与
 endpoint 出口。
+
+## 324. Phi-LPF support-stripped signed kernel frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_support_stripped_signed_kernel_router.py
+docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.json
+data/prime-matrix-phi-lpf-support-stripped-signed-kernel-ledger.json
+```
+
+同步结果：
+
+```text
+phi_recursive_lpf_ownership_imported=true
+lpf_candidate_row_map_imported=true
+phi_lpf_support_bijection_proved=true
+support_and_capacity_components_closed=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+noncircular_signed_coefficient_emission_kernel_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`NoncircularPreCauchySignedCoefficientEmissionKernel`
+里的 support/capacity 部分不再是匿名缺口。Phi-LPF 账本给出唯一 support key
+`(p,m)`：`p` 是最小素因子，`m` 为 p-rough，且不同 key 对应不同合数 candidate。
+因此 primitive row 的无符号支撑和数量已经由
+`PhiLPFPrimitiveRowSupportAndCapacityLedger` 支付。
+
+真正剩余被压成
+`PhiLPFBucketSignedCoefficientLawBeforePushforward`：必须对每个 Phi-LPF key 正向给出
+signed coefficient、sign/local factor、alpha/delta 侧、branch key、`(u,v)` 输出和推前前
+求和恒等式。不能再用 payment skeleton、早期零行覆盖或来源表固定点反推这些符号值。
+行/列命题仍未无条件闭合。

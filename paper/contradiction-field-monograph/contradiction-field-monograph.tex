@@ -21282,6 +21282,46 @@ docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF support stripping for the signed kernel]
+The unsigned support and capacity part of the noncircular signed coefficient
+kernel is already determined by the Phi-recursive least-prime-factor ledger.
+For each \(N\), the primitive candidate support keys are
+\[
+  (p,m),\qquad p\le \sqrt N,\quad m\le \lfloor N/p\rfloor,\quad
+  m>1,\quad m\text{ has no prime factor below }p.
+\]
+The map \((p,m)\mapsto pm\) is a bijection from these keys to the composites up
+to \(N\).  Hence the remaining signed kernel problem is not support selection
+or capacity counting, but the following signed law on the already determined
+keys:
+\begin{quote}\scriptsize\ttfamily
+PhiLPFBucketSignedCoefficientLawBeforePushforward.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phi-LPF support stripping for the signed kernel]
+The previous Phi-recursive LPF theorem gives
+\[
+  c_N(p)=\Phi(\lfloor N/p\rfloor,p)-1
+\]
+for the \(p\)-layer.  The subtraction removes \(m=1\), so the remaining
+cofactors \(m>1\) give exactly the composite candidates owned by the
+least-prime-factor layer \(p\).  If a composite \(n\le N\) has least prime
+factor \(p\), then \(n=pm\), \(m\ge p\), and \(m\) is \(p\)-rough.  Conversely
+such a pair has least prime factor \(p\).  Thus the keys are disjoint and
+exhaust the unsigned support.
+
+Therefore a noncircular signed coefficient emission kernel cannot still treat
+row support, row capacity, or the \(p>\sqrt N\) zero-mass cutoff as open signed
+data.  What remains is the genuinely signed field: for every Phi-LPF support
+key one must give the signed coefficient, sign and local factor, alpha/delta
+side, branch key, exact \((u,v)\), named return tags, and the prepushforward
+sum identity.  This is precisely the new direct hard point displayed above.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

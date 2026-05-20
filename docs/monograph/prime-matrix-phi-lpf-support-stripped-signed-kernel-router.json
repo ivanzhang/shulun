@@ -1,0 +1,260 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_support_stripped_signed_kernel_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "NoncircularKernelImported",
+      "meaning": "现有非循环 kernel 路由已把 signed-source 固定点的第一入口钉到 pre-Cauchy declaration。",
+      "proved": false,
+      "remaining": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSourceFixedPointImported",
+      "meaning": "旧 signed-source 链已确认会从 row-level 表绕回自身，不能作为证明。",
+      "proved": true,
+      "remaining": "fixed-point cut imported"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRecursiveLPFOwnershipImported",
+      "meaning": "Phi 递推已证明 LPF rough-count 桶公式和素数计数恒等式。",
+      "proved": true,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFCandidateRowMapImported",
+      "meaning": "LPF ownership 已给 alpha-side candidate row 的非后验支撑索引。",
+      "proved": true,
+      "remaining": "LPFOwnershipAlphaCandidateRowEmissionMapLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiLPFSupportBijectionClosed",
+      "meaning": "每个合数 candidate 支撑键唯一写成 `(p,m)`，其中 `p=LPF(pm)` 且 `m` 为 p-rough；样本逐项验证。",
+      "proved": true,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SupportAndCapacityNoLongerSignedKernelGap",
+      "meaning": "行支撑、容量和 p>sqrt(N) 零质量已由 Phi-LPF 层支付，不能再混入 signed kernel 缺口。",
+      "proved": true,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveSummandSignedExpressionStillOpen",
+      "meaning": "signed expression 仍未证明；现在其无符号 support 子问题已剥离。",
+      "proved": false,
+      "remaining": "PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiLPFBucketSignedCoefficientLawStillOpen",
+      "meaning": "剩余必须对每个 Phi-LPF support key 正向赋 signed coefficient、local factor 和推前前求和恒等式。",
+      "proved": false,
+      "remaining": "PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "NoncircularKernelReducedToSignedLawOnPhiLPFBuckets",
+      "meaning": "非循环 signed kernel 被收窄为 Phi-LPF support 上的 signed coefficient law，而非找行或数行问题。",
+      "proved": false,
+      "remaining": "PhiLPFPrimitiveRowSupportAndCapacityLedger AND PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步没有证明 signed coefficient law、alpha/delta pairing、ExactUV fixed-key 或终端排斥。",
+      "proved": false,
+      "remaining": "PhiLPFBucketSignedCoefficientLawBeforePushforward"
+    }
+  ],
+  "hardpoint_after_router": "PhiLPFPrimitiveRowSupportAndCapacityLedger AND PhiLPFBucketSignedCoefficientLawBeforePushforward",
+  "hardpoint_before_router": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows",
+  "lpf_candidate_row_map_imported": true,
+  "next_direct_attack_target": "PhiLPFBucketSignedCoefficientLawBeforePushforward",
+  "no_theorem_switch": true,
+  "noncircular_signed_coefficient_emission_kernel_proved": false,
+  "phi_lpf_bucket_signed_coefficient_law_proved": false,
+  "phi_lpf_support_bijection_proved": true,
+  "phi_recursive_lpf_ownership_imported": true,
+  "plain_conclusion": "Phi/LPF 精确分桶把 noncircular signed kernel 中的无符号支撑、容量和候选行索引全部剥离。每个合数 candidate 支撑键唯一为 `(p,m)`，其中 `p` 是最小素因子、`m` 为 p-rough，容量为 `Phi(floor(N/p),p)-1`。因此最新缺口不再是找行、数行或证明粗数容量，而是对这些 Phi-LPF support keys 正向赋 signed coefficient、sign/local factor 和推前前 alpha/delta 求和恒等式。",
+  "primitive_summand_signed_weight_expression_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_support_audit": [
+    {
+      "N": 30,
+      "composite_count": 19,
+      "duplicate_keys": [],
+      "extra_phi": [],
+      "layer_count_sum": 19,
+      "layer_counts": {
+        "2": 14,
+        "3": 4,
+        "5": 1
+      },
+      "missing_from_phi": [],
+      "phi_lpf_support_key_count": 19,
+      "prime_count": 10,
+      "rough_failures": [],
+      "support_bijection_holds": true
+    },
+    {
+      "N": 100,
+      "composite_count": 74,
+      "duplicate_keys": [],
+      "extra_phi": [],
+      "layer_count_sum": 74,
+      "layer_counts": {
+        "2": 49,
+        "3": 16,
+        "5": 6,
+        "7": 3
+      },
+      "missing_from_phi": [],
+      "phi_lpf_support_key_count": 74,
+      "prime_count": 25,
+      "rough_failures": [],
+      "support_bijection_holds": true
+    },
+    {
+      "N": 997,
+      "composite_count": 828,
+      "duplicate_keys": [],
+      "extra_phi": [],
+      "layer_count_sum": 828,
+      "layer_counts": {
+        "11": 20,
+        "13": 16,
+        "17": 10,
+        "19": 8,
+        "2": 497,
+        "23": 6,
+        "29": 2,
+        "3": 165,
+        "31": 1,
+        "5": 66,
+        "7": 37
+      },
+      "missing_from_phi": [],
+      "phi_lpf_support_key_count": 828,
+      "prime_count": 168,
+      "rough_failures": [],
+      "support_bijection_holds": true
+    },
+    {
+      "N": 5003,
+      "composite_count": 4332,
+      "duplicate_keys": [],
+      "extra_phi": [],
+      "layer_count_sum": 4332,
+      "layer_counts": {
+        "11": 103,
+        "13": 79,
+        "17": 57,
+        "19": 49,
+        "2": 2500,
+        "23": 39,
+        "29": 30,
+        "3": 833,
+        "31": 27,
+        "37": 21,
+        "41": 18,
+        "43": 17,
+        "47": 13,
+        "5": 332,
+        "53": 9,
+        "59": 7,
+        "61": 5,
+        "67": 3,
+        "7": 190
+      },
+      "missing_from_phi": [],
+      "phi_lpf_support_key_count": 4332,
+      "prime_count": 670,
+      "rough_failures": [],
+      "support_bijection_holds": true
+    },
+    {
+      "N": 10000,
+      "composite_count": 8770,
+      "duplicate_keys": [],
+      "extra_phi": [],
+      "layer_count_sum": 8770,
+      "layer_counts": {
+        "11": 207,
+        "13": 159,
+        "17": 110,
+        "19": 94,
+        "2": 4999,
+        "23": 76,
+        "29": 59,
+        "3": 1666,
+        "31": 56,
+        "37": 46,
+        "41": 41,
+        "43": 37,
+        "47": 33,
+        "5": 666,
+        "53": 27,
+        "59": 23,
+        "61": 21,
+        "67": 17,
+        "7": 380,
+        "71": 15,
+        "73": 12,
+        "79": 9,
+        "83": 8,
+        "89": 6,
+        "97": 3
+      },
+      "missing_from_phi": [],
+      "phi_lpf_support_key_count": 8770,
+      "prime_count": 1229,
+      "rough_failures": [],
+      "support_bijection_holds": true
+    }
+  ],
+  "signed_law_fields": [
+    {
+      "field": "bucket_key",
+      "meaning": "LPF/Phi 已闭合的 `(p,m)` primitive row support key。"
+    },
+    {
+      "field": "signed_coefficient_value",
+      "meaning": "对该 key 的 Cauchy 前 signed coefficient 正向赋值。"
+    },
+    {
+      "field": "sign_local_factor",
+      "meaning": "sign、local factor、非零条件与失败回流标签。"
+    },
+    {
+      "field": "alpha_delta_side_and_branch_key",
+      "meaning": "该 key 属于 alpha/delta 哪侧、哪个 branch key、哪个 `(u,v)` 输出。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "对全部 Phi-LPF keys 的 signed 求和在推前前等于 actual alpha/delta 贡献。"
+    },
+    {
+      "field": "no_downstream_recovery",
+      "meaning": "赋值律不读取 payment skeleton、零行覆盖、来源恒等式或终端反推。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json": "735c6efd0580444f1b541b01a5a7184dff79497191657bb2da6bf0b6b1d3778f",
+    "docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json": "d916331b1d8bea632d161cbe99fe4500813feb8333bf0463e4de5767bbf3a81c",
+    "docs/monograph/prime-matrix-strict-noncircular-signed-coefficient-emission-kernel-router.json": "96d6dadbc5add815f8623295aae5ae519c0b5e44db556d85d657259db97a9773",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-signed-source-fixed-point-breaker-router.json": "a07743b021b11f13f19d791fc43d4268f551878c43f3340bd54664254311185f",
+    "experiments/prime_matrix_phi_lpf_support_stripped_signed_kernel_router.py": "eace123278eba8003829747f6caf4e0b24c8a5aa138a384dd54f5c88ce713386"
+  },
+  "status": "phi_lpf_support_closed_signed_bucket_law_open",
+  "support_and_capacity_components_closed": true
+}

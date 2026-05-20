@@ -18203,3 +18203,36 @@ actual-load 含义是：LPF ownership 现在有了用户给出的 rough-count �
 或 actual primitive summand 表达式；最新直接主攻保持为
 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+### 1.165 Phi-LPF support-stripped signed kernel 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_support_stripped_signed_kernel_router.py
+data/prime-matrix-phi-lpf-support-stripped-signed-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-support-stripped-signed-kernel-router.json
+```
+
+同步读数为：
+
+```text
+phi_recursive_lpf_ownership_imported=true
+lpf_candidate_row_map_imported=true
+phi_lpf_support_bijection_proved=true
+support_and_capacity_components_closed=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+noncircular_signed_coefficient_emission_kernel_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：noncircular signed coefficient kernel 中的无符号支撑、容量和候选行
+索引已被 Phi-LPF 层剥离。每个候选合数支撑键唯一为 `(p,m)`，其中 `p=LPF(pm)`，
+`m` 为 p-rough，且容量由 `Phi(floor(N/p),p)-1` 给出。`N=10000` 审计中支撑键数
+`8770` 与合数数 `8770` 一一对应。
+
+本层没有证明 signed coefficient。最新缺口不再是找行、数行或证明 rough 容量，而是
+对每个 Phi-LPF support key 正向赋 signed coefficient、sign/local factor、alpha/delta
+侧、branch key、`(u,v)` 输出与推前前求和恒等式。最新直接主攻变为
+`PhiLPFBucketSignedCoefficientLawBeforePushforward`。行/列命题仍未无条件闭合。
