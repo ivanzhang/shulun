@@ -15573,3 +15573,43 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 并行替代仍是直接提交
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+## 327. Phi-LPF square-base diagonal source frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_square_base_diagonal_source_router.py
+docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.md
+docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.json
+data/prime-matrix-phi-lpf-square-base-diagonal-source-ledger.json
+```
+
+同步结果：
+
+```text
+virtual_unit_not_composite_support_proved=true
+square_base_minimal_support_root_proved=true
+no_support_predecessor_below_square_base_proved=true
+virtual_seed_collapses_to_square_base_declaration=true
+square_base_diagonal_root_signed_source_declaration_proved=false
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：virtual-unit seed 不能作为独立 actual signed source。`(p,1)`
+只指向被 Phi 公式排除的 prime row；在 composite support 中，owner bucket `p` 的最小
+真实 rough cofactor 是 `m=p`，即 square-base key `(p,p)`。因此 seed 接口不再是
+“prime row 或 square-base 二选一”，而是必须在 square-base root 上正向声明 signed source。
+
+本层关闭的是 virtual-unit 独立出口和 square-base minimal-root 结构。真正未闭合的是：
+
+```text
+PhiLPFSquareBaseDiagonalRootSignedSourceDeclarationBeforePushforward
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+并行替代仍是直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。

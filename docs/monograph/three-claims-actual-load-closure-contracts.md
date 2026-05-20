@@ -18313,3 +18313,38 @@ square-base signed coefficient，并防止把 prime row `p` 后验偷换为 comp
 `PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficientBeforePushforward`；即使该 seed
 闭合，仍需 `PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward` 和
 `PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward`。行/列命题仍未无条件闭合。
+
+### 1.168 Phi-LPF square-base diagonal source 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_square_base_diagonal_source_router.py
+data/prime-matrix-phi-lpf-square-base-diagonal-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.md
+docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.json
+```
+
+同步读数为：
+
+```text
+virtual_unit_not_composite_support_proved=true
+square_base_minimal_support_root_proved=true
+no_support_predecessor_below_square_base_proved=true
+virtual_seed_collapses_to_square_base_declaration=true
+square_base_diagonal_root_signed_source_declaration_proved=false
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`(p,1)` 是 Phi-LPF 公式减掉的 prime row，不是 composite support。
+对 owner bucket `p`，不存在 `1<m<p` 且 `m` 为 `p`-rough 的真实 support cofactor；
+所以最小真实 support key 是 `(p,p)`。transport 中的 virtual-unit 只能作为这个
+square-base diagonal root 的声明前像出现，不能独立携带 composite signed coefficient。
+
+因此最新直接主攻从
+`PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficientBeforePushforward`
+收窄为
+`PhiLPFSquareBaseDiagonalRootSignedSourceDeclarationBeforePushforward`。仍需对 `(p,p)`
+在推前前提交 source tuple、basis word、signed coefficient、orientation/local factor、
+alpha/delta branch、ExactUV、prime-row leak guard 和 return tag。行/列命题仍未无条件闭合。

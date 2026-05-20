@@ -21404,6 +21404,40 @@ docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF square-base diagonal source]
+In the Phi-LPF signed transport seed interface, the virtual key \((p,1)\) is
+not a composite support row.  It is the prime row \(p\) removed by the
+\(-1\) in \(c_N(p)=\Phi(\lfloor N/p\rfloor,p)-1\).  Moreover, for an owner
+bucket \(p\), no integer \(m\) with \(1<m<p\) is \(p\)-rough.  Hence the first
+genuine composite support key is the square-base diagonal root \((p,p)\).
+The virtual unit can only be a predecessor of this root, not an independent
+signed source.  The next direct hard point is therefore
+\begin{quote}\scriptsize\ttfamily
+PhiLPFSquareBaseDiagonalRootSignedSourceDeclaration\\
+BeforePushforward.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phi-LPF square-base diagonal source]
+If \(1<m<p\), then the least prime factor of \(m\) is less than \(p\), so
+\(m\) is not \(p\)-rough.  Thus the composite support of the LPF owner bucket
+\(p\) has no real cofactor below \(p\).  The key \((p,p)\) is present whenever
+\(p\le \sqrt N\), since \(p^2\le N\) and \(p\) has no prime factor below
+\(p\).  Therefore the only predecessor below this support root is the virtual
+unit \((p,1)\), which refers to the prime row and cannot carry a composite
+signed coefficient.
+
+Consequently the earlier seed alternative is sharpened: a proof must provide,
+before pushforward, the source tuple, basis word, signed coefficient,
+orientation/local factor, alpha/delta branch, exact \((u,v)\), prime-row leak
+guard and return tag for the square-base root \((p,p)\).  This theorem does
+not prove that declaration, nor the rough-cofactor step update or ordered
+factorization coherence.  The row/column theorem remains open.  The certificate
+is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
