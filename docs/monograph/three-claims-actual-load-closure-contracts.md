@@ -18166,3 +18166,40 @@ rule 的非后验候选行索引。每个候选合数 row 由唯一最小素因�
 前推前逐行 signed summand 表达式、local factor、权重公式和失败回流。最新直接主攻为
 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+### 1.164 Phi-recursive LPF ownership 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_recursive_lpf_ownership_router.py
+data/prime-matrix-phi-recursive-lpf-ownership-ledger.json
+docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.md
+docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json
+```
+
+同步读数为：
+
+```text
+phi_rough_count_definition_proved=true
+phi_recursion_identity_proved=true
+phi_recursive_lpf_bucket_formula_proved=true
+prime_count_identity_from_phi_lpf_proved=true
+large_prime_layer_zero_mass_proved=true
+sample_audit_all_passed=true
+phi_recursive_ownership_to_signed_alpha_delta_lift_proved=false
+primitive_summand_signed_weight_expression_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：LPF ownership 现在有了用户给出的 rough-count 递推读数。定义
+`Phi(x,p)` 为 `1<=m<=x` 且所有素因子都不小于 `p` 的整数个数，包含 `m=1`。按是否
+被 `p_k` 整除分拆，得到
+`Phi(x,p_k)=Phi(x,p_{k+1})+Phi(floor(x/p_k),p_k)`；当 `p_k>x` 时只剩 `m=1`。
+因此 `p` 层新筛合数数为 `c_N(p)=Phi(floor(N/p),p)-1`，且 `p>sqrt(N)` 时自动为零。
+
+本层闭合的是无符号 ownership 容量递推。`N=10000` 审计给出 `pi(N)=1229`、合数桶和
+`8770`，与精确恒等式一致。它仍不产生 signed coefficient、orientation、local factor
+或 actual primitive summand 表达式；最新直接主攻保持为
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`。行/列命题仍未
+无条件闭合。

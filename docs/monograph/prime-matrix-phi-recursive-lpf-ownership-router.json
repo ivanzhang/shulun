@@ -1,0 +1,776 @@
+{
+  "certificate_type": "prime_matrix_phi_recursive_lpf_ownership_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_as_proof": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LPFOwnershipImported",
+      "meaning": "上一层已把合数按唯一最小素因子分桶，并关闭 pre-Cauchy unsigned ownership 字段。",
+      "proved": true,
+      "remaining": "LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRoughCountDefinitionClosed",
+      "meaning": "Phi(x,p) 定义为 1<=m<=x 且无小于 p 的素因子的 rough 计数，包含 m=1。",
+      "proved": true,
+      "remaining": "PhiRecursiveLPFOwnershipRoughCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRecursionIdentityClosed",
+      "meaning": "按是否被 p_k 整除分拆，得到 Phi(x,p_k)=Phi(x,p_{k+1})+Phi(floor(x/p_k),p_k)。",
+      "proved": true,
+      "remaining": "PhiRecursiveLPFOwnershipRoughCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFBucketEqualsPhiMinusOneClosed",
+      "meaning": "p 层新筛合数数 c(p)=Phi(floor(N/p),p)-1；减去的 1 是 cofactor m=1 对应的素数 p。",
+      "proved": true,
+      "remaining": "PhiRecursiveLPFOwnershipRoughCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeCountingIdentityFromPhiLPFClosed",
+      "meaning": "求和 p<=sqrt(N) 的 Phi 桶后得到 pi(N)=N-1-sum_p(Phi(floor(N/p),p)-1)。",
+      "proved": true,
+      "remaining": "PhiRecursiveLPFOwnershipRoughCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LargePrimeLayerZeroMassClosed",
+      "meaning": "当 p>sqrt(N) 时 floor(N/p)<p，Phi(floor(N/p),p)=1，故 c(p)=0。",
+      "proved": true,
+      "remaining": "PhiRecursiveLPFOwnershipRoughCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CandidateRowMapImported",
+      "meaning": "Phi 递推加强 LPF candidate-row map 的源计数，但不改变其 unsigned 性质。",
+      "proved": true,
+      "remaining": "LPFOwnershipAlphaCandidateRowEmissionMapLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PhiOwnershipDoesNotEmitSignedWeight",
+      "meaning": "Phi 递推只计算 rough ownership 容量；它不赋 orientation、signed coefficient、local factor 或 primitive summand。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveSummandSignedExpressionStillOpen",
+      "meaning": "逐行 signed primitive summand 表达式仍是 LPF/Phi 无符号层之后的真正硬点。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步没有证明 signed alpha/delta、pairing、ExactUV fixed-key、DStructure/Rankin 或 endpoint 排斥。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    }
+  ],
+  "hardpoint_after_router": "PhiRecursiveLPFOwnershipRoughCountLedger AND ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "hardpoint_before_router": "LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger",
+  "large_prime_layer_zero_mass_proved": true,
+  "lpf_candidate_row_map_imported": true,
+  "lpf_ownership_imported": true,
+  "next_direct_attack_target": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "no_theorem_switch": true,
+  "parallel_open_exits": [
+    "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger",
+    "AlphaPrimitiveCoefficientWeightFormulaLedger",
+    "AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger",
+    "AlphaPrimitiveRuleFailureNamedReturnLedger",
+    "ActualNoncanonicalDeltaSidePrimitiveRuleLedger",
+    "AlphaDeltaPrimitivePairingCompatibilityLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "phi_definition": "Phi(x,p)=#{1<=m<=x: every prime factor of m is >=p}, with m=1 included",
+  "phi_lpf_bucket_formula": "c_N(p)=Phi(floor(N/p),p)-1",
+  "phi_recursion_identity": "Phi(x,p_k)=Phi(x,p_{k+1})+Phi(floor(x/p_k),p_k)",
+  "phi_recursion_identity_proved": true,
+  "phi_recursive_lpf_bucket_formula_proved": true,
+  "phi_recursive_ownership_to_signed_alpha_delta_lift_proved": false,
+  "phi_rough_count_definition_proved": true,
+  "plain_conclusion": "Phi 递推把 LPF ownership 从集合分桶提升为可机械计算的 rough-count 账本。每个 p 层容量正是 Phi(floor(N/p),p)-1，p>sqrt(N) 自动为零，所以用户给出的 pi(N) 精确公式闭合。该层仍是无符号 ownership/容量层；它不生成 actual noncanonical primitive summand 的 signed 权重表达式。",
+  "prime_count_identity": "pi(N)=N-1-sum_{p<=sqrt(N)}(Phi(floor(N/p),p)-1)",
+  "prime_count_identity_from_phi_lpf_proved": true,
+  "primitive_summand_signed_weight_expression_proved": false,
+  "row_column_unconditional_closed": false,
+  "sample_audit": [
+    {
+      "N": 10,
+      "bucket_sum_from_phi": 5,
+      "buckets": {
+        "2": {
+          "c_phi_minus_one": 4,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 4,
+          "phi_direct": 5,
+          "phi_recursive": 5,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 5
+        },
+        "3": {
+          "c_phi_minus_one": 1,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 1,
+          "phi_direct": 2,
+          "phi_recursive": 2,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 3
+        }
+      },
+      "composite_count": 5,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 4,
+      "prime_count": 4,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 3
+    },
+    {
+      "N": 30,
+      "bucket_sum_from_phi": 19,
+      "buckets": {
+        "2": {
+          "c_phi_minus_one": 14,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 14,
+          "phi_direct": 15,
+          "phi_recursive": 15,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 15
+        },
+        "3": {
+          "c_phi_minus_one": 4,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 4,
+          "phi_direct": 5,
+          "phi_recursive": 5,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 10
+        },
+        "5": {
+          "c_phi_minus_one": 1,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 1,
+          "phi_direct": 2,
+          "phi_recursive": 2,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 6
+        }
+      },
+      "composite_count": 19,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 10,
+      "prime_count": 10,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 5
+    },
+    {
+      "N": 100,
+      "bucket_sum_from_phi": 74,
+      "buckets": {
+        "2": {
+          "c_phi_minus_one": 49,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 49,
+          "phi_direct": 50,
+          "phi_recursive": 50,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 50
+        },
+        "3": {
+          "c_phi_minus_one": 16,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 16,
+          "phi_direct": 17,
+          "phi_recursive": 17,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 33
+        },
+        "5": {
+          "c_phi_minus_one": 6,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 6,
+          "phi_direct": 7,
+          "phi_recursive": 7,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 20
+        },
+        "7": {
+          "c_phi_minus_one": 3,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 3,
+          "phi_direct": 4,
+          "phi_recursive": 4,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 14
+        }
+      },
+      "composite_count": 74,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 25,
+      "prime_count": 25,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 10
+    },
+    {
+      "N": 997,
+      "bucket_sum_from_phi": 828,
+      "buckets": {
+        "11": {
+          "c_phi_minus_one": 20,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 20,
+          "phi_direct": 21,
+          "phi_recursive": 21,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 90
+        },
+        "13": {
+          "c_phi_minus_one": 16,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 16,
+          "phi_direct": 17,
+          "phi_recursive": 17,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 76
+        },
+        "17": {
+          "c_phi_minus_one": 10,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 10,
+          "phi_direct": 11,
+          "phi_recursive": 11,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 58
+        },
+        "19": {
+          "c_phi_minus_one": 8,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 8,
+          "phi_direct": 9,
+          "phi_recursive": 9,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 52
+        },
+        "2": {
+          "c_phi_minus_one": 497,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 497,
+          "phi_direct": 498,
+          "phi_recursive": 498,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 498
+        },
+        "23": {
+          "c_phi_minus_one": 6,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 6,
+          "phi_direct": 7,
+          "phi_recursive": 7,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 43
+        },
+        "29": {
+          "c_phi_minus_one": 2,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 2,
+          "phi_direct": 3,
+          "phi_recursive": 3,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 34
+        },
+        "3": {
+          "c_phi_minus_one": 165,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 165,
+          "phi_direct": 166,
+          "phi_recursive": 166,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 332
+        },
+        "31": {
+          "c_phi_minus_one": 1,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 1,
+          "phi_direct": 2,
+          "phi_recursive": 2,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 32
+        },
+        "5": {
+          "c_phi_minus_one": 66,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 66,
+          "phi_direct": 67,
+          "phi_recursive": 67,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 199
+        },
+        "7": {
+          "c_phi_minus_one": 37,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 37,
+          "phi_direct": 38,
+          "phi_recursive": 38,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 142
+        }
+      },
+      "composite_count": 828,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 168,
+      "prime_count": 168,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 31
+    },
+    {
+      "N": 5003,
+      "bucket_sum_from_phi": 4332,
+      "buckets": {
+        "11": {
+          "c_phi_minus_one": 103,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 103,
+          "phi_direct": 104,
+          "phi_recursive": 104,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 454
+        },
+        "13": {
+          "c_phi_minus_one": 79,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 79,
+          "phi_direct": 80,
+          "phi_recursive": 80,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 384
+        },
+        "17": {
+          "c_phi_minus_one": 57,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 57,
+          "phi_direct": 58,
+          "phi_recursive": 58,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 294
+        },
+        "19": {
+          "c_phi_minus_one": 49,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 49,
+          "phi_direct": 50,
+          "phi_recursive": 50,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 263
+        },
+        "2": {
+          "c_phi_minus_one": 2500,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 2500,
+          "phi_direct": 2501,
+          "phi_recursive": 2501,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 2501
+        },
+        "23": {
+          "c_phi_minus_one": 39,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 39,
+          "phi_direct": 40,
+          "phi_recursive": 40,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 217
+        },
+        "29": {
+          "c_phi_minus_one": 30,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 30,
+          "phi_direct": 31,
+          "phi_recursive": 31,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 172
+        },
+        "3": {
+          "c_phi_minus_one": 833,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 833,
+          "phi_direct": 834,
+          "phi_recursive": 834,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 1667
+        },
+        "31": {
+          "c_phi_minus_one": 27,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 27,
+          "phi_direct": 28,
+          "phi_recursive": 28,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 161
+        },
+        "37": {
+          "c_phi_minus_one": 21,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 21,
+          "phi_direct": 22,
+          "phi_recursive": 22,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 135
+        },
+        "41": {
+          "c_phi_minus_one": 18,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 18,
+          "phi_direct": 19,
+          "phi_recursive": 19,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 122
+        },
+        "43": {
+          "c_phi_minus_one": 17,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 17,
+          "phi_direct": 18,
+          "phi_recursive": 18,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 116
+        },
+        "47": {
+          "c_phi_minus_one": 13,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 13,
+          "phi_direct": 14,
+          "phi_recursive": 14,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 106
+        },
+        "5": {
+          "c_phi_minus_one": 332,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 332,
+          "phi_direct": 333,
+          "phi_recursive": 333,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 1000
+        },
+        "53": {
+          "c_phi_minus_one": 9,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 9,
+          "phi_direct": 10,
+          "phi_recursive": 10,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 94
+        },
+        "59": {
+          "c_phi_minus_one": 7,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 7,
+          "phi_direct": 8,
+          "phi_recursive": 8,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 84
+        },
+        "61": {
+          "c_phi_minus_one": 5,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 5,
+          "phi_direct": 6,
+          "phi_recursive": 6,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 82
+        },
+        "67": {
+          "c_phi_minus_one": 3,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 3,
+          "phi_direct": 4,
+          "phi_recursive": 4,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 74
+        },
+        "7": {
+          "c_phi_minus_one": 190,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 190,
+          "phi_direct": 191,
+          "phi_recursive": 191,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 714
+        }
+      },
+      "composite_count": 4332,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 670,
+      "prime_count": 670,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 70
+    },
+    {
+      "N": 10000,
+      "bucket_sum_from_phi": 8770,
+      "buckets": {
+        "11": {
+          "c_phi_minus_one": 207,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 207,
+          "phi_direct": 208,
+          "phi_recursive": 208,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 909
+        },
+        "13": {
+          "c_phi_minus_one": 159,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 159,
+          "phi_direct": 160,
+          "phi_recursive": 160,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 769
+        },
+        "17": {
+          "c_phi_minus_one": 110,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 110,
+          "phi_direct": 111,
+          "phi_recursive": 111,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 588
+        },
+        "19": {
+          "c_phi_minus_one": 94,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 94,
+          "phi_direct": 95,
+          "phi_recursive": 95,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 526
+        },
+        "2": {
+          "c_phi_minus_one": 4999,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 4999,
+          "phi_direct": 5000,
+          "phi_recursive": 5000,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 5000
+        },
+        "23": {
+          "c_phi_minus_one": 76,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 76,
+          "phi_direct": 77,
+          "phi_recursive": 77,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 434
+        },
+        "29": {
+          "c_phi_minus_one": 59,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 59,
+          "phi_direct": 60,
+          "phi_recursive": 60,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 344
+        },
+        "3": {
+          "c_phi_minus_one": 1666,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 1666,
+          "phi_direct": 1667,
+          "phi_recursive": 1667,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 3333
+        },
+        "31": {
+          "c_phi_minus_one": 56,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 56,
+          "phi_direct": 57,
+          "phi_recursive": 57,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 322
+        },
+        "37": {
+          "c_phi_minus_one": 46,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 46,
+          "phi_direct": 47,
+          "phi_recursive": 47,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 270
+        },
+        "41": {
+          "c_phi_minus_one": 41,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 41,
+          "phi_direct": 42,
+          "phi_recursive": 42,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 243
+        },
+        "43": {
+          "c_phi_minus_one": 37,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 37,
+          "phi_direct": 38,
+          "phi_recursive": 38,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 232
+        },
+        "47": {
+          "c_phi_minus_one": 33,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 33,
+          "phi_direct": 34,
+          "phi_recursive": 34,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 212
+        },
+        "5": {
+          "c_phi_minus_one": 666,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 666,
+          "phi_direct": 667,
+          "phi_recursive": 667,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 2000
+        },
+        "53": {
+          "c_phi_minus_one": 27,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 27,
+          "phi_direct": 28,
+          "phi_recursive": 28,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 188
+        },
+        "59": {
+          "c_phi_minus_one": 23,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 23,
+          "phi_direct": 24,
+          "phi_recursive": 24,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 169
+        },
+        "61": {
+          "c_phi_minus_one": 21,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 21,
+          "phi_direct": 22,
+          "phi_recursive": 22,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 163
+        },
+        "67": {
+          "c_phi_minus_one": 17,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 17,
+          "phi_direct": 18,
+          "phi_recursive": 18,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 149
+        },
+        "7": {
+          "c_phi_minus_one": 380,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 380,
+          "phi_direct": 381,
+          "phi_recursive": 381,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 1428
+        },
+        "71": {
+          "c_phi_minus_one": 15,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 15,
+          "phi_direct": 16,
+          "phi_recursive": 16,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 140
+        },
+        "73": {
+          "c_phi_minus_one": 12,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 12,
+          "phi_direct": 13,
+          "phi_recursive": 13,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 136
+        },
+        "79": {
+          "c_phi_minus_one": 9,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 9,
+          "phi_direct": 10,
+          "phi_recursive": 10,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 126
+        },
+        "83": {
+          "c_phi_minus_one": 8,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 8,
+          "phi_direct": 9,
+          "phi_recursive": 9,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 120
+        },
+        "89": {
+          "c_phi_minus_one": 6,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 6,
+          "phi_direct": 7,
+          "phi_recursive": 7,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 112
+        },
+        "97": {
+          "c_phi_minus_one": 3,
+          "direct_bucket_ok": true,
+          "lpf_bucket_direct": 3,
+          "phi_direct": 4,
+          "phi_recursive": 4,
+          "recurrence_ok": true,
+          "x_floor_N_over_p": 103
+        }
+      },
+      "composite_count": 8770,
+      "lpf_bucket_sum_identity_holds": true,
+      "phi_recursion_identity_holds_on_buckets": true,
+      "phi_recursive_matches_direct_rough_count": true,
+      "pi_from_phi": 1229,
+      "prime_count": 1229,
+      "prime_count_identity_holds": true,
+      "sqrt_floor": 100
+    }
+  ],
+  "sample_audit_all_passed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json": "735c6efd0580444f1b541b01a5a7184dff79497191657bb2da6bf0b6b1d3778f",
+    "docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.json": "2857cbdeab08a400b1bce9099500290e8c59439ec11553ca0e5678335a5e6806",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "experiments/prime_matrix_phi_recursive_lpf_ownership_router.py": "46b7e75f0344cf3da63a1504d6c1ddb84052e3e3431c421a59ca165a3d81f581"
+  },
+  "status": "phi_recursive_lpf_ownership_closed_signed_summand_expression_open"
+}

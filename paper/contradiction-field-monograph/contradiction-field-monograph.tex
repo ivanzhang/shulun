@@ -21235,6 +21235,53 @@ docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-recursive LPF ownership]
+Let \(p_1=2,p_2=3,\ldots\) be the primes and define
+\[
+\Phi(x,p)=\#\{1\le m\le x:\text{ every prime factor of }m\text{ is at least }p\},
+\]
+with \(m=1\) included.  Then
+\[
+\Phi(x,p_k)=\Phi(x,p_{k+1})+\Phi(\lfloor x/p_k\rfloor,p_k).
+\]
+Consequently the number of composites newly owned by the \(p\)-layer up to
+\(N\) is
+\[
+c_N(p)=\Phi(\lfloor N/p\rfloor,p)-1,
+\]
+and
+\[
+\pi(N)=N-1-\sum_{p\le \sqrt N}\bigl(\Phi(\lfloor N/p\rfloor,p)-1\bigr).
+\]
+\end{theorem}
+\begin{proof}[Phi-recursive LPF ownership]
+The \(p_k\)-rough integers \(m\le x\) split into two disjoint classes.  If
+\(p_k\nmid m\), then all prime factors of \(m\) are at least \(p_{k+1}\).  If
+\(p_k\mid m\), write \(m=p_km'\); then \(m'\le \lfloor x/p_k\rfloor\) is again
+\(p_k\)-rough.  This proves the displayed recursion, with terminal value
+\(\Phi(x,p_k)=1\) when \(p_k>x\).
+
+For the sieve layer \(p\), a newly removed composite is exactly \(pm\le N\)
+where \(m\) is \(p\)-rough.  The rough cofactor \(m=1\) gives the prime \(p\)
+itself rather than a composite, so it is subtracted.  If \(p>\sqrt N\), then
+\(\lfloor N/p\rfloor<p\), hence \(\Phi(\lfloor N/p\rfloor,p)=1\) and the layer
+contributes zero.  Summing the disjoint least-prime-factor layers and removing
+them from \(2,\ldots,N\) gives the formula for \(\pi(N)\).
+
+This strengthens the unsigned LPF ownership ledger and the candidate-row source
+capacity ledger, but it still does not emit signed coefficients, orientations,
+local factors, or the primitive summand expression before pushforward.  The
+next direct hard point therefore remains
+\begin{quote}\scriptsize\ttfamily
+ActualNoncanonicalPrimitiveSummandSignedWeightExpression\\
+BeforePushforward.
+\end{quote}
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

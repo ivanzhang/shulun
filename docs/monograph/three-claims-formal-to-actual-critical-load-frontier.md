@@ -15414,3 +15414,42 @@ formal-to-actual 含义是：`DeterministicAlphaPrimitiveRowEmissionMapLedger`
 alpha source tuple domain、coefficient formula、row `(u,v)`/key/sign/local-factor 输出、
 failure return、delta-side primitive rule、alpha/delta pairing、ExactUV fixed-key、
 模型/Rate 与 DStructure/Rankin 验收。
+
+## 323. Phi-recursive LPF ownership frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_recursive_lpf_ownership_router.py
+docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.md
+docs/monograph/prime-matrix-phi-recursive-lpf-ownership-router.json
+data/prime-matrix-phi-recursive-lpf-ownership-ledger.json
+```
+
+同步结果：
+
+```text
+phi_rough_count_definition_proved=true
+phi_recursion_identity_proved=true
+phi_recursive_lpf_bucket_formula_proved=true
+prime_count_identity_from_phi_lpf_proved=true
+large_prime_layer_zero_mass_proved=true
+sample_audit_all_passed=true
+phi_recursive_ownership_to_signed_alpha_delta_lift_proved=false
+primitive_summand_signed_weight_expression_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`Phi(x,p)` 递推把 LPF ownership 从集合分桶提升为可机械计算的
+rough-count 账本。`Phi(x,p)` 计数 `1<=m<=x` 且无小于 `p` 的素因子的整数，包含
+`m=1`；相邻素数之间满足
+`Phi(x,p_k)=Phi(x,p_{k+1})+Phi(floor(x/p_k),p_k)`。于是
+`c_N(p)=Phi(floor(N/p),p)-1` 精确给出 `p` 层新筛合数数，求和后得到用户公式
+`pi(N)=N-1-sum_{p<=sqrt(N)}(Phi(floor(N/p),p)-1)`。
+
+这加强了 `LPFOwnershipAlphaCandidateRowEmissionMapLedger` 的源容量基础，但仍停留在
+unsigned ownership 层。它不能输出 signed coefficient、orientation、local factor 或
+branch weight。最新直接主攻保持为
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`，并行仍需
+alpha/delta primitive rule、pairing、ExactUV fixed-key、模型/Rate、DStructure/Rankin 与
+endpoint 出口。
