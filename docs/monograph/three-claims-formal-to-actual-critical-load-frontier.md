@@ -16320,6 +16320,61 @@ AND PhiLPFBucketSignedCoefficientLawBeforePushforward
 support key 正向给出 signed coefficient、sign/local factor、branch key 与推前前 alpha/delta
 求和恒等式。行/列命题仍未无条件闭合。
 
+## 344. Phi-LPF latest bucket transport-stack sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_bucket_transport_stack_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-bucket-transport-stack-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-bucket-transport-stack-sync-router.json
+data/prime-matrix-phi-lpf-latest-bucket-transport-stack-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_bucket_signed_law_imported=true
+bucket_transport_router_imported=true
+unit_seed_boundary_imported=true
+ordered_coherence_closed=true
+step_update_reduced_to_edge_multiplier=true
+square_base_private_escape_removed=true
+common_packet_cycle_guard_imported=true
+edge_signed_multiplier_table_proved=false
+pointwise_signed_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+formal-to-actual 含义是：桶级 signed law 的“递推闭合”不是由 Phi 计数给出的。Phi/LPF 给
+support 与 ordered path；若要让 signed law 沿 rough cofactor 递推，必须同时给出启动口径和
+每步 signed multiplier。既有证书同步为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+->
+PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+->
+PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficientBeforePushforward
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+其中 ordered coherence 已闭合；unit/square-base 私有 signed 出口已并回 common source-packet
+cycle guard；step update 已压成逐 ordered edge signed multiplier 表。因此最新递推剩余基为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+并行直接旁路仍是
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
