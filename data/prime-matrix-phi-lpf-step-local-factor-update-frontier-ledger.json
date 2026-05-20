@@ -1,0 +1,753 @@
+{
+  "actual_noncanonical_complete_branch_trace_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_step_local_factor_update_frontier_router",
+  "conditional_generators": [
+    "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn",
+    "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+  ],
+  "counterexample_assumption_only": true,
+  "edge_multiplier_fields": [
+    {
+      "field": "edge_key",
+      "meaning": "同一 owner bucket 内的有序边 `(p, prefix, q, prefix*q)`。"
+    },
+    {
+      "field": "source_tuple_or_trace_id",
+      "meaning": "该边所属的 pre-Cauchy actual source tuple 或 branch trace，不是推后 payment 原像。"
+    },
+    {
+      "field": "signed_multiplier_formula",
+      "meaning": "从 `a_p(prefix)` 到 `a_p(prefix*q)` 的 sign/local-factor/truncation 乘子。"
+    },
+    {
+      "field": "first_edge_policy",
+      "meaning": "`prefix=1` 的第一边也必须由同表正向给出，不得读取 Phi 中被减掉的 prime row。"
+    },
+    {
+      "field": "orientation_parity_increment",
+      "meaning": "乘入 `q` 对 orientation parity 与 signed coefficient 符号的增量规则。"
+    },
+    {
+      "field": "local_factor_nonzero_or_return",
+      "meaning": "local factor 非零、截断兼容；失败时进入命名回流。"
+    },
+    {
+      "field": "alpha_delta_branch_exactuv_transition",
+      "meaning": "同一边同步更新 alpha/delta side、branch key 和 exact `(u,v)` 输出。"
+    },
+    {
+      "field": "path_product_identity_before_pushforward",
+      "meaning": "沿 ordered edge 乘积在 Phi/payment 推前前等于该 support key 的 signed coefficient。"
+    },
+    {
+      "field": "no_downstream_recovery",
+      "meaning": "不得由 payment skeleton、零行覆盖、origin table 固定点或 terminal 反推恢复乘子。"
+    }
+  ],
+  "edge_signed_multiplier_table_proved": false,
+  "empirical_absence_not_used_as_proof": true,
+  "exact_atomic_joint_branch_trace_signed_coefficient_formula_proved": false,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "StepLocalFactorUpdateTargetImported",
+      "meaning": "上一层已把 ordered coherence 移除，最新直接缺口就是 step local factor update。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrderedLPFEdgePathImported",
+      "meaning": "LPF 最小素因子剥离已给出同一 owner bucket 内唯一 ordered edge path。",
+      "proved": true,
+      "remaining": "path/order already paid"
+    },
+    {
+      "closed": true,
+      "gate": "StepUpdateEquivalentToEdgeMultiplierTable",
+      "meaning": "路径固定后，step update 等价于在每条 ordered edge 上给 signed multiplier，并沿路径相乘。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FirstEdgeCannotUsePrimeRowLeak",
+      "meaning": "`prefix=1` 的第一边是 multiplier 表字段；不能把 Phi 公式排除的 prime row 当作 composite signed seed。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiLPFCountsDoNotDetermineMultipliers",
+      "meaning": "同一 support/order 可形式承载独立 edge sign decorations；LPF/Phi 只给 domain，不给奇 signed 数据。",
+      "proved": true,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteBranchTraceWouldSupplyMultipliers",
+      "meaning": "若 exact actual noncanonical branch trace 存在，orientation、local factor、branch key 与 return tag 可同 trace 给出。",
+      "proved": true,
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicTraceWouldSupplySameRowSignedValue",
+      "meaning": "若 atomic branch trace signed coefficient 公式存在，edge multiplier 与逐点 signed value 可作为同一 trace 的字段读取。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveOriginIdentityStillOpen",
+      "meaning": "primitive summand 的 signed coefficient 来源恒等式仍未给出，不能反向生成 edge multiplier。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVStillParallelGate",
+      "meaning": "即使 edge multiplier 表存在，ExactUV source entropy/fiber 或 bounded incidence 仍是并行门。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePhiLPFTableStillOpen",
+      "meaning": "直接提交逐 Phi-LPF key signed value table 仍是并行替代，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "EdgeMultiplierTableCurrentCorpusProved",
+      "meaning": "当前材料没有逐 ordered edge 的 signed multiplier、非零 local factor、branch/ExactUV 转移和推前前乘积恒等式表。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只把 step update 压成 edge multiplier 表；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    }
+  ],
+  "next_direct_attack_target": "PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward",
+  "no_theorem_switch": true,
+  "nonrecursive_breaker_alternatives": [
+    "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+  ],
+  "ordered_lpf_edge_path_imported": true,
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "phi_lpf_step_local_factor_update_frontier_router_closed": true,
+  "plain_conclusion": "ordered LPF path 已闭合后，`PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward` 不再是路径选择问题，而是逐 ordered edge 的 signed multiplier 表问题。对每条 `(p,prefix,q,prefix*q)` 边，必须正向给出 sign/local-factor/truncation 乘子、orientation parity 增量、alpha/delta branch 与 exact-UV 转移、非零或命名回流，以及沿路径乘积的推前前恒等式。`prefix=1` 的第一边也必须由该表给出，不能读取 Phi 中被排除的 prime row 或 payment 原像。因此最新直接主攻收窄为 `PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward`；条件生成器是 exact branch trace / atomic trace / primitive origin identity，并行替代仍是逐 Phi-LPF key signed value table。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "retained_basis_after_router": "(PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rough_cofactor_step_local_factor_update_law_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_step_update_audit": [
+    {
+      "N": 30,
+      "distinct_edge_transitions": 19,
+      "edge_path_identity_holds": true,
+      "failures": [],
+      "first_edge_steps": 19,
+      "formal_distinct_edge_sign_shadow_bits": 19,
+      "formal_distinct_edge_sign_shadow_log10": 5.71957,
+      "formal_edge_occurrence_sign_shadow_bits": 30,
+      "formal_edge_occurrence_sign_shadow_log10": 9.0309,
+      "internal_edge_steps": 11,
+      "layers": {
+        "2": {
+          "edge_path_ok": true,
+          "edge_steps": 24,
+          "first_edges": 14,
+          "internal_edges": 10,
+          "max_depth": 3,
+          "support_keys": 14
+        },
+        "3": {
+          "edge_path_ok": true,
+          "edge_steps": 5,
+          "first_edges": 4,
+          "internal_edges": 1,
+          "max_depth": 2,
+          "support_keys": 4
+        },
+        "5": {
+          "edge_path_ok": true,
+          "edge_steps": 1,
+          "first_edges": 1,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 1
+        }
+      },
+      "max_factor_depth": 3,
+      "small_prime_layers": 3,
+      "total_ordered_edge_steps": 30,
+      "total_phi_lpf_support_keys": 19
+    },
+    {
+      "N": 100,
+      "distinct_edge_transitions": 74,
+      "edge_path_identity_holds": true,
+      "failures": [],
+      "first_edge_steps": 74,
+      "formal_distinct_edge_sign_shadow_bits": 74,
+      "formal_distinct_edge_sign_shadow_log10": 22.27622,
+      "formal_edge_occurrence_sign_shadow_bits": 140,
+      "formal_edge_occurrence_sign_shadow_log10": 42.144199,
+      "internal_edge_steps": 66,
+      "layers": {
+        "2": {
+          "edge_path_ok": true,
+          "edge_steps": 108,
+          "first_edges": 49,
+          "internal_edges": 59,
+          "max_depth": 5,
+          "support_keys": 49
+        },
+        "3": {
+          "edge_path_ok": true,
+          "edge_steps": 23,
+          "first_edges": 16,
+          "internal_edges": 7,
+          "max_depth": 3,
+          "support_keys": 16
+        },
+        "5": {
+          "edge_path_ok": true,
+          "edge_steps": 6,
+          "first_edges": 6,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 6
+        },
+        "7": {
+          "edge_path_ok": true,
+          "edge_steps": 3,
+          "first_edges": 3,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 3
+        }
+      },
+      "max_factor_depth": 5,
+      "small_prime_layers": 4,
+      "total_ordered_edge_steps": 140,
+      "total_phi_lpf_support_keys": 74
+    },
+    {
+      "N": 997,
+      "distinct_edge_transitions": 828,
+      "edge_path_identity_holds": true,
+      "failures": [],
+      "first_edge_steps": 828,
+      "formal_distinct_edge_sign_shadow_bits": 828,
+      "formal_distinct_edge_sign_shadow_log10": 249.252836,
+      "formal_edge_occurrence_sign_shadow_bits": 1869,
+      "formal_edge_occurrence_sign_shadow_log10": 562.625062,
+      "internal_edge_steps": 1041,
+      "layers": {
+        "11": {
+          "edge_path_ok": true,
+          "edge_steps": 20,
+          "first_edges": 20,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 20
+        },
+        "13": {
+          "edge_path_ok": true,
+          "edge_steps": 16,
+          "first_edges": 16,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 16
+        },
+        "17": {
+          "edge_path_ok": true,
+          "edge_steps": 10,
+          "first_edges": 10,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 10
+        },
+        "19": {
+          "edge_path_ok": true,
+          "edge_steps": 8,
+          "first_edges": 8,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 8
+        },
+        "2": {
+          "edge_path_ok": true,
+          "edge_steps": 1370,
+          "first_edges": 497,
+          "internal_edges": 873,
+          "max_depth": 8,
+          "support_keys": 497
+        },
+        "23": {
+          "edge_path_ok": true,
+          "edge_steps": 6,
+          "first_edges": 6,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 6
+        },
+        "29": {
+          "edge_path_ok": true,
+          "edge_steps": 2,
+          "first_edges": 2,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 2
+        },
+        "3": {
+          "edge_path_ok": true,
+          "edge_steps": 303,
+          "first_edges": 165,
+          "internal_edges": 138,
+          "max_depth": 5,
+          "support_keys": 165
+        },
+        "31": {
+          "edge_path_ok": true,
+          "edge_steps": 1,
+          "first_edges": 1,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 1
+        },
+        "5": {
+          "edge_path_ok": true,
+          "edge_steps": 90,
+          "first_edges": 66,
+          "internal_edges": 24,
+          "max_depth": 3,
+          "support_keys": 66
+        },
+        "7": {
+          "edge_path_ok": true,
+          "edge_steps": 43,
+          "first_edges": 37,
+          "internal_edges": 6,
+          "max_depth": 2,
+          "support_keys": 37
+        }
+      },
+      "max_factor_depth": 8,
+      "small_prime_layers": 11,
+      "total_ordered_edge_steps": 1869,
+      "total_phi_lpf_support_keys": 828
+    },
+    {
+      "N": 5003,
+      "distinct_edge_transitions": 4332,
+      "edge_path_identity_holds": true,
+      "failures": [],
+      "first_edge_steps": 4332,
+      "formal_distinct_edge_sign_shadow_bits": 4332,
+      "formal_distinct_edge_sign_shadow_log10": 1304.061941,
+      "formal_edge_occurrence_sign_shadow_bits": 10571,
+      "formal_edge_occurrence_sign_shadow_log10": 3182.188084,
+      "internal_edge_steps": 6239,
+      "layers": {
+        "11": {
+          "edge_path_ok": true,
+          "edge_steps": 123,
+          "first_edges": 103,
+          "internal_edges": 20,
+          "max_depth": 2,
+          "support_keys": 103
+        },
+        "13": {
+          "edge_path_ok": true,
+          "edge_steps": 87,
+          "first_edges": 79,
+          "internal_edges": 8,
+          "max_depth": 2,
+          "support_keys": 79
+        },
+        "17": {
+          "edge_path_ok": true,
+          "edge_steps": 58,
+          "first_edges": 57,
+          "internal_edges": 1,
+          "max_depth": 2,
+          "support_keys": 57
+        },
+        "19": {
+          "edge_path_ok": true,
+          "edge_steps": 49,
+          "first_edges": 49,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 49
+        },
+        "2": {
+          "edge_path_ok": true,
+          "edge_steps": 7551,
+          "first_edges": 2500,
+          "internal_edges": 5051,
+          "max_depth": 11,
+          "support_keys": 2500
+        },
+        "23": {
+          "edge_path_ok": true,
+          "edge_steps": 39,
+          "first_edges": 39,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 39
+        },
+        "29": {
+          "edge_path_ok": true,
+          "edge_steps": 30,
+          "first_edges": 30,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 30
+        },
+        "3": {
+          "edge_path_ok": true,
+          "edge_steps": 1727,
+          "first_edges": 833,
+          "internal_edges": 894,
+          "max_depth": 6,
+          "support_keys": 833
+        },
+        "31": {
+          "edge_path_ok": true,
+          "edge_steps": 27,
+          "first_edges": 27,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 27
+        },
+        "37": {
+          "edge_path_ok": true,
+          "edge_steps": 21,
+          "first_edges": 21,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 21
+        },
+        "41": {
+          "edge_path_ok": true,
+          "edge_steps": 18,
+          "first_edges": 18,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 18
+        },
+        "43": {
+          "edge_path_ok": true,
+          "edge_steps": 17,
+          "first_edges": 17,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 17
+        },
+        "47": {
+          "edge_path_ok": true,
+          "edge_steps": 13,
+          "first_edges": 13,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 13
+        },
+        "5": {
+          "edge_path_ok": true,
+          "edge_steps": 528,
+          "first_edges": 332,
+          "internal_edges": 196,
+          "max_depth": 4,
+          "support_keys": 332
+        },
+        "53": {
+          "edge_path_ok": true,
+          "edge_steps": 9,
+          "first_edges": 9,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 9
+        },
+        "59": {
+          "edge_path_ok": true,
+          "edge_steps": 7,
+          "first_edges": 7,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 7
+        },
+        "61": {
+          "edge_path_ok": true,
+          "edge_steps": 5,
+          "first_edges": 5,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 5
+        },
+        "67": {
+          "edge_path_ok": true,
+          "edge_steps": 3,
+          "first_edges": 3,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 3
+        },
+        "7": {
+          "edge_path_ok": true,
+          "edge_steps": 259,
+          "first_edges": 190,
+          "internal_edges": 69,
+          "max_depth": 3,
+          "support_keys": 190
+        }
+      },
+      "max_factor_depth": 11,
+      "small_prime_layers": 19,
+      "total_ordered_edge_steps": 10571,
+      "total_phi_lpf_support_keys": 4332
+    },
+    {
+      "N": 10000,
+      "distinct_edge_transitions": 8770,
+      "edge_path_identity_holds": true,
+      "failures": [],
+      "first_edge_steps": 8770,
+      "formal_distinct_edge_sign_shadow_bits": 8770,
+      "formal_distinct_edge_sign_shadow_log10": 2640.033062,
+      "formal_edge_occurrence_sign_shadow_bits": 21986,
+      "formal_edge_occurrence_sign_shadow_log10": 6618.445485,
+      "internal_edge_steps": 13216,
+      "layers": {
+        "11": {
+          "edge_path_ok": true,
+          "edge_steps": 263,
+          "first_edges": 207,
+          "internal_edges": 56,
+          "max_depth": 2,
+          "support_keys": 207
+        },
+        "13": {
+          "edge_path_ok": true,
+          "edge_steps": 187,
+          "first_edges": 159,
+          "internal_edges": 28,
+          "max_depth": 2,
+          "support_keys": 159
+        },
+        "17": {
+          "edge_path_ok": true,
+          "edge_steps": 119,
+          "first_edges": 110,
+          "internal_edges": 9,
+          "max_depth": 2,
+          "support_keys": 110
+        },
+        "19": {
+          "edge_path_ok": true,
+          "edge_steps": 96,
+          "first_edges": 94,
+          "internal_edges": 2,
+          "max_depth": 2,
+          "support_keys": 94
+        },
+        "2": {
+          "edge_path_ok": true,
+          "edge_steps": 15567,
+          "first_edges": 4999,
+          "internal_edges": 10568,
+          "max_depth": 12,
+          "support_keys": 4999
+        },
+        "23": {
+          "edge_path_ok": true,
+          "edge_steps": 76,
+          "first_edges": 76,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 76
+        },
+        "29": {
+          "edge_path_ok": true,
+          "edge_steps": 59,
+          "first_edges": 59,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 59
+        },
+        "3": {
+          "edge_path_ok": true,
+          "edge_steps": 3601,
+          "first_edges": 1666,
+          "internal_edges": 1935,
+          "max_depth": 7,
+          "support_keys": 1666
+        },
+        "31": {
+          "edge_path_ok": true,
+          "edge_steps": 56,
+          "first_edges": 56,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 56
+        },
+        "37": {
+          "edge_path_ok": true,
+          "edge_steps": 46,
+          "first_edges": 46,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 46
+        },
+        "41": {
+          "edge_path_ok": true,
+          "edge_steps": 41,
+          "first_edges": 41,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 41
+        },
+        "43": {
+          "edge_path_ok": true,
+          "edge_steps": 37,
+          "first_edges": 37,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 37
+        },
+        "47": {
+          "edge_path_ok": true,
+          "edge_steps": 33,
+          "first_edges": 33,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 33
+        },
+        "5": {
+          "edge_path_ok": true,
+          "edge_steps": 1114,
+          "first_edges": 666,
+          "internal_edges": 448,
+          "max_depth": 4,
+          "support_keys": 666
+        },
+        "53": {
+          "edge_path_ok": true,
+          "edge_steps": 27,
+          "first_edges": 27,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 27
+        },
+        "59": {
+          "edge_path_ok": true,
+          "edge_steps": 23,
+          "first_edges": 23,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 23
+        },
+        "61": {
+          "edge_path_ok": true,
+          "edge_steps": 21,
+          "first_edges": 21,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 21
+        },
+        "67": {
+          "edge_path_ok": true,
+          "edge_steps": 17,
+          "first_edges": 17,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 17
+        },
+        "7": {
+          "edge_path_ok": true,
+          "edge_steps": 550,
+          "first_edges": 380,
+          "internal_edges": 170,
+          "max_depth": 3,
+          "support_keys": 380
+        },
+        "71": {
+          "edge_path_ok": true,
+          "edge_steps": 15,
+          "first_edges": 15,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 15
+        },
+        "73": {
+          "edge_path_ok": true,
+          "edge_steps": 12,
+          "first_edges": 12,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 12
+        },
+        "79": {
+          "edge_path_ok": true,
+          "edge_steps": 9,
+          "first_edges": 9,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 9
+        },
+        "83": {
+          "edge_path_ok": true,
+          "edge_steps": 8,
+          "first_edges": 8,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 8
+        },
+        "89": {
+          "edge_path_ok": true,
+          "edge_steps": 6,
+          "first_edges": 6,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 6
+        },
+        "97": {
+          "edge_path_ok": true,
+          "edge_steps": 3,
+          "first_edges": 3,
+          "internal_edges": 0,
+          "max_depth": 1,
+          "support_keys": 3
+        }
+      },
+      "max_factor_depth": 12,
+      "small_prime_layers": 25,
+      "total_ordered_edge_steps": 21986,
+      "total_phi_lpf_support_keys": 8770
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coherence-router.json": "f976e98574efb9522fb37341b9a8c62636a0903fd569f118e9059a361245acc4",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "experiments/prime_matrix_phi_lpf_step_local_factor_update_frontier_router.py": "40a5f90ca0bbb4295f8e4ea96e767e8a047b4ec1cb332cd3b67d97f8e606c4ea"
+  },
+  "status": "phi_lpf_step_local_factor_update_reduced_to_edge_signed_multiplier_table_open",
+  "step_update_reduced_to_edge_multiplier_table": true,
+  "target_input_before_router": "PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward"
+}

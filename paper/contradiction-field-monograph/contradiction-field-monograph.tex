@@ -21580,6 +21580,49 @@ docs/monograph/prime-matrix-phi-lpf-rough-cofactor-ordered-factorization-coheren
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF step local-factor update frontier]
+After the Phi-LPF ordered cofactor path has been fixed, the remaining
+step-update obligation is no longer an ordering or support problem.  It is
+equivalent to a pre-pushforward signed multiplier table on the ordered edges
+\[
+  (p,\mathrm{prefix},q,\mathrm{prefix}\cdot q)
+\]
+inside the same owner bucket.  Each edge must supply the signed
+local-factor/truncation multiplier, the orientation-parity increment, the
+alpha/delta branch update, the ExactUV transition, a nonzero-or-return tag, and
+the path-product identity giving the signed coefficient of the final Phi-LPF
+support key.
+
+Consequently the current direct frontier is
+\[
+  \mathrm{PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward}.
+\]
+The pointwise Phi-LPF signed value table remains a parallel direct input, and
+complete branch traces or primitive signed-origin identities remain conditional
+generators.  This is a reduction of the step-update interface, not an
+unconditional row/column proof.
+\end{theorem}
+\begin{proof}[Phi-LPF step local-factor update frontier]
+The preceding theorem gives a unique least-prime-factor word for every
+\(p\)-rough cofactor and proves that every prefix stays in the same owner
+bucket.  Once that word is fixed, any recursive signed transport law can only
+change from one prefix to the next by multiplying by an edge-local signed
+factor and by updating the accompanying orientation, branch, and ExactUV data.
+Thus a complete step-update law is the same data as such an edge table together
+with the identity that the ordered product of its edge multipliers gives the
+signed coefficient before pushforward.
+
+The Phi-LPF count and the least-prime-factor path do not determine this signed
+table.  In particular, the first edge with unit prefix cannot be recovered from
+the prime row removed by the Phi formula, and downstream payment or terminal
+capacity data cannot be used to reconstruct a pre-pushforward multiplier.  The
+router therefore records the precise new frontier and keeps the row/column
+theorem open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

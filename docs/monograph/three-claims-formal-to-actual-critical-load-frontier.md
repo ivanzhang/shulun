@@ -15675,6 +15675,55 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 331. Phi-LPF step local factor update frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_step_local_factor_update_frontier_router.py
+docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.json
+data/prime-matrix-phi-lpf-step-local-factor-update-frontier-ledger.json
+```
+
+同步结果：
+
+```text
+ordered_lpf_edge_path_imported=true
+step_update_reduced_to_edge_multiplier_table=true
+edge_signed_multiplier_table_proved=false
+rough_cofactor_step_local_factor_update_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：LPF ordered coherence 只固定每个 `p`-rough cofactor 的
+非降素因子路径，不携带 actual signed coefficient。路径固定后，step local-factor
+update 等价于一张逐 ordered edge 的 signed multiplier 表；第一边 `prefix=1` 也必须由
+这张表正向给出，不能读取 Phi 中被减掉的 prime row，也不能从 downstream payment 原像
+反推。
+
+当前层关闭的是路径/递推接口的定位问题。真正未闭合的是：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn
+OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+```
+
+并行仍需：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

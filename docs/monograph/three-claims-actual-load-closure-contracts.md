@@ -5646,6 +5646,55 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+### 1.173 Phi-LPF step local factor update frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_step_local_factor_update_frontier_router.py
+data/prime-matrix-phi-lpf-step-local-factor-update-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-step-local-factor-update-frontier-router.json
+```
+
+同步读数为：
+
+```text
+ordered_lpf_edge_path_imported=true
+step_update_reduced_to_edge_multiplier_table=true
+edge_signed_multiplier_table_proved=false
+rough_cofactor_step_local_factor_update_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：ordered LPF path 已经固定后，剩余不再是 cofactor 路径选择问题。
+对每个 owner bucket 内的边 `(p,prefix,q,prefix*q)`，必须在推前前正向给出 signed
+multiplier、orientation parity 增量、local factor 非零或命名回流、alpha/delta branch
+与 ExactUV 转移，并证明沿路径乘积就是该 Phi-LPF support key 的 signed coefficient。
+
+样本审计中 `N=10000` 给出 `8770` 个 support keys、`21986` 个 ordered edge occurrences、
+最大 LPF 深度 `12`。这些数字只验证支撑路径和字段容量；它们同时显示 distinct-edge 与
+edge-occurrence 两种 sign-shadow 自由度，不能从 LPF/Phi 无符号计数推出 signed 表。
+
+因此最新直接主攻收窄为：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+条件生成器为：
+
+```text
+ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn
+ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+并行替代仍是直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
