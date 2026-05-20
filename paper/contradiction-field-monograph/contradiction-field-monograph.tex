@@ -22264,6 +22264,36 @@ source atoms and the global ExactUV/model/rate/D-structure gates remain open.
 No unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Phi-LPF latest pure-pair Ferrers support sync]
+The latest pure-pair signed seed atom has a forced Ferrers support
+synchronization.  Its unsigned support is the bipartite prime graph with
+\[
+  p\le \sqrt N,\qquad q\ {\rm prime},\qquad p<q\le N/p.
+\]
+The left neighborhoods are nested as \(p\) increases, and the left degrees,
+right degrees, and edge count are determined by the prime table and
+\(\lfloor N/p\rfloor\).  The latest signed hard point is therefore the
+two-prime interaction signed kernel on those edges.
+\end{theorem}
+\begin{proof}[Phi-LPF latest pure-pair Ferrers support sync]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-latest-\\
+pure-pair-ferrers-support-sync-router.md.
+\end{quote}
+The preceding latest synchronization identifies the active input as the
+pure-pair atom.  The Ferrers support theorem applies to that input: the edge
+condition \(p<q\le N/p\) is exactly the condition that the pure pair \(pq\)
+lies in the \(N\)-truncated offdiagonal LPF bucket.  If \(p\) increases, the
+upper bound \(N/p\) decreases, so the right-neighborhoods are nested.
+
+This is a support and degree ledger only.  It fixes which two-prime edges are
+available, but does not give the signed kernel, orientation, local factor,
+ExactUV return tag, internal transition, or the carried source atoms.  The
+pointwise signed-table bypass and global ExactUV/model/rate/D-structure gates
+remain open.  No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
