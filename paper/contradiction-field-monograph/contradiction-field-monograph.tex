@@ -21367,6 +21367,43 @@ docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF signed transport unit seed]
+The rough-cofactor signed transport law cannot be started from the Phi count
+alone.  In the unsigned formula
+\[
+  c_N(p)=\Phi(\lfloor N/p\rfloor,p)-1,
+\]
+the subtracted unit cofactor \(m=1\) is the prime row \(p\), not a composite
+support key.  But in the signed transport split, the divisible branch contains
+the preimage \(m'=1\), which maps to the genuine composite key \((p,p)\), namely
+\(p^2\).  Thus any recursive signed transport proof must first provide either a
+virtual unit seed or the square-base signed coefficient for \((p,p)\), together
+with a guard forbidding prime-row leakage.  The next direct hard point is
+\begin{quote}\scriptsize\ttfamily
+PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficient\\
+BeforePushforward.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phi-LPF signed transport unit seed]
+The Phi-LPF support ledger excludes \(m=1\) because \(p\cdot 1=p\) is prime.
+For every \(p\le\sqrt N\), however, \(p\cdot p=p^2\le N\), and \(p\) is
+\(p\)-rough.  Hence the unit preimage in the transport recursion is not a
+support row itself, but it is exactly the predecessor of the first square-base
+support key \((p,p)\).
+
+Consequently a transport rule of the form \(a_p(qm)\) cannot bootstrap from the
+unsigned Phi count.  It must declare the square-base signed coefficient,
+orientation, local factor, nonzero condition and return tag before any later
+rough-prime step update can be meaningful.  Even after this seed is supplied,
+one still needs the step local-factor update law and the ordered-factorization
+coherence law, unless one instead submits the full pointwise signed value table
+on Phi-LPF support.  The row/column theorem remains open.  The certificate is
+recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

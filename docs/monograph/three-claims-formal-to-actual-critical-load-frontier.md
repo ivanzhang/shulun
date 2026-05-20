@@ -15532,3 +15532,44 @@ branch key、ExactUV 输出、非零条件和回流标签。
 则必须直接提交
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+## 326. Phi-LPF signed transport unit-seed frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_signed_transport_unit_seed_router.py
+docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.md
+docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.json
+data/prime-matrix-phi-lpf-signed-transport-unit-seed-ledger.json
+```
+
+同步结果：
+
+```text
+phi_minus_one_prime_row_guard_imported=true
+unit_preimage_square_seed_identity_proved=true
+unit_seed_or_square_base_signed_coefficient_proved=false
+rough_cofactor_step_local_factor_update_law_proved=false
+rough_cofactor_ordered_factorization_coherence_proved=false
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：signed transport 的第一字段不是一般 step update，而是启动种子。
+Phi 桶中的 `m=1` 被减去，因为它对应 prime row `p`；但 transport 整除分支中的
+`m'=1` 必须产生 `(p,p)` 这个 square-base composite key。因此没有 virtual-unit seed
+或 square-base signed coefficient，就无法正向生成 `a_p(p)`，后续 `a_p(qm)` 也没有
+递推起点。
+
+本层关闭的是 seed 必要性和 prime-row leak guard。真正未闭合的是：
+
+```text
+PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficientBeforePushforward
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+并行替代仍是直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。

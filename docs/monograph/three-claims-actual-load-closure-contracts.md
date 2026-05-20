@@ -18277,3 +18277,39 @@ next-rough 非整除项和 `3302` 个整除预像项。
 `PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward`，等价并行入口为
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+### 1.167 Phi-LPF signed transport unit-seed 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_signed_transport_unit_seed_router.py
+data/prime-matrix-phi-lpf-signed-transport-unit-seed-ledger.json
+docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.md
+docs/monograph/prime-matrix-phi-lpf-signed-transport-unit-seed-router.json
+```
+
+同步读数为：
+
+```text
+phi_minus_one_prime_row_guard_imported=true
+unit_preimage_square_seed_identity_proved=true
+unit_seed_or_square_base_signed_coefficient_proved=false
+rough_cofactor_step_local_factor_update_law_proved=false
+rough_cofactor_ordered_factorization_coherence_proved=false
+phi_lpf_rough_cofactor_signed_transport_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：Phi 公式中的 `-1` 不只是计数修正，也是 signed transport 的边界。
+`m=1` 在 `Phi(floor(N/p),p)` 中对应 prime row `p`，所以必须从 composite support 中排除；
+但 rough cofactor 乘法分支的 `m'=1` 又映到真实 composite key `(p,p)`，即 `p^2`。
+
+因此递推 signed transport 不能从 Phi 计数自动启动；它必须显式给出 virtual-unit seed 或
+square-base signed coefficient，并防止把 prime row `p` 后验偷换为 composite signed seed。
+`N=10000` 审计中有 `25` 个 square-base seeds 和 `8745` 个 non-square support keys。
+
+最新直接主攻为
+`PhiLPFUnitCofactorVirtualSeedOrSquareBaseSignedCoefficientBeforePushforward`；即使该 seed
+闭合，仍需 `PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward` 和
+`PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward`。行/列命题仍未无条件闭合。
