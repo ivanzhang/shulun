@@ -16966,6 +16966,54 @@ AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
 canonical-lock、independent source bridge、same-set PDEC/外部谱、complete/fixed-key、ExactUV、
 模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 356. Phi-LPF latest antisplit downstream sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_antisplit_downstream_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-antisplit-downstream-sync-router.json
+data/prime-matrix-phi-lpf-latest-antisplit-downstream-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_joint_declaration_imported=true
+strict_antisplit_downstream_imported=true
+ordinary_joint_declaration_synced_to_constructor=true
+ordinary_constructor_route_rejected_as_fixed_point=true
+antisplit_atomic_route_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：latest joint declaration line 继续沿 strict 反分裂下游同步。普通 joint
+declaration 会降到 explicit constructor；普通 constructor 已回到 signed-source 固定点，不能作为
+非循环证明。因此真正自足路线必须走 atomic rows 反分裂，并把 signed 首缺口压到：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+与此同时，ExactUV bounded incidence 并行门同步为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+当前最新内部下游基是 built-in pairing 与 ExactUV entropy/fiber 的合取。canonical-lock、
+independent bridge、same-set PDEC/外部谱、complete/fixed-key、模型、Rate 与 DStructure 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
