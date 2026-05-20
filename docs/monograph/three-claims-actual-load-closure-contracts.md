@@ -18348,3 +18348,40 @@ square-base diagonal root 的声明前像出现，不能独立携带 composite s
 `PhiLPFSquareBaseDiagonalRootSignedSourceDeclarationBeforePushforward`。仍需对 `(p,p)`
 在推前前提交 source tuple、basis word、signed coefficient、orientation/local factor、
 alpha/delta branch、ExactUV、prime-row leak guard 和 return tag。行/列命题仍未无条件闭合。
+
+### 1.169 Phi-LPF square-base source packet reduction 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_square_base_source_packet_reduction_router.py
+data/prime-matrix-phi-lpf-square-base-source-packet-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.md
+docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.json
+```
+
+同步读数为：
+
+```text
+lpf_root_and_prime_leak_fields_fixed=true
+declaration_field_map_complete=true
+no_square_base_private_signed_escape_proved=true
+pre_cauchy_actual_noncanonical_emitter_source_declaration_packet_proved=false
+built_in_signed_coefficient_pairing_closed_form_proved=false
+exactuv_entropy_fiber_pair_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`(p,p)` 的 diagonal-root key 与 prime-row leak guard 已由 Phi-LPF
+层固定；剩余的 source tuple、basis word、signed coefficient、orientation/local factor、
+ExactUV、推前前恒等式和 return tag 都不是 square-base 私有字段。它们必须由同一个
+`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket` 及其 built-in pairing / ExactUV
+entropy-fiber 下游字段正向给出。
+
+因此 square-base 专属硬点被剥离，最新直接主攻回到
+`PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`；下游 signed 子线为
+`BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows`，ExactUV 子线为
+`ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`。
+`PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward` 和
+`PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward` 仍开放。行/列命题仍未
+无条件闭合。

@@ -21438,6 +21438,38 @@ docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.md.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phi-LPF square-base source packet reduction]
+The square-base diagonal root does not create a private signed source lane.
+After the LPF root key \((p,p)\) and the prime-row leak guard for \((p,1)\)
+are fixed, every remaining field needed for a signed source declaration is a
+field of the common pre-Cauchy actual source declaration packet or one of its
+known downstream lanes.  Thus the square-base-specific hard point is reduced to
+\begin{quote}\scriptsize\ttfamily
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+\end{quote}
+together with the built-in signed pairing and ExactUV entropy/fiber subfields.
+\end{theorem}
+\begin{proof}[Phi-LPF square-base source packet reduction]
+The previous theorem supplies only the domain facts: the key is the first
+genuine composite support key in the LPF owner bucket, and the virtual unit is
+not a support row.  These facts determine the support address and forbid
+prime-row leakage, but they do not emit a source tuple, primitive basis word,
+signed coefficient, orientation/local factor, alpha/delta branch, exact
+\((u,v)\), prepushforward identity, or return tag.
+
+Those remaining fields are exactly the fields demanded by the common
+pre-Cauchy actual source declaration packet: declaration rows, primitive
+rows, basis-word/coefficient identity, prepushforward equality, ExactUV
+entropy/fiber control, no downstream recovery and named returns.  Hence
+square-base geometry removes no signed obligation by itself.  The current
+corpus still lacks the common packet, the built-in signed coefficient pairing
+closed form, and the ExactUV entropy/fiber pair; the row/column theorem remains
+open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

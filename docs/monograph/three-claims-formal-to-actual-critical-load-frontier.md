@@ -15574,6 +15574,49 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 328. Phi-LPF square-base source packet reduction frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_square_base_source_packet_reduction_router.py
+docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.md
+docs/monograph/prime-matrix-phi-lpf-square-base-source-packet-reduction-router.json
+data/prime-matrix-phi-lpf-square-base-source-packet-reduction-ledger.json
+```
+
+同步结果：
+
+```text
+lpf_root_and_prime_leak_fields_fixed=true
+declaration_field_map_complete=true
+no_square_base_private_signed_escape_proved=true
+pre_cauchy_actual_noncanonical_emitter_source_declaration_packet_proved=false
+built_in_signed_coefficient_pairing_closed_form_proved=false
+exactuv_entropy_fiber_pair_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：square-base root 的 LPF 几何字段已经是前置已固定字段；
+它不再提供新的 signed 生成自由度。若要为 `(p,p)` 生成 actual signed source，只能提交
+同一 common pre-Cauchy packet 中的 source tuple、primitive rows、basis-word/coefficient
+identity、prepushforward identity、ExactUV entropy/fiber 和 named return partition。
+
+本层关闭的是 square-base 私有 signed 出口。真正未闭合的是：
+
+```text
+PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket
+AND BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+并行替代仍是直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
+无条件闭合。
+
 ## 327. Phi-LPF square-base diagonal source frontier
 
 新增文件

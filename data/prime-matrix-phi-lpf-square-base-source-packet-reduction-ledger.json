@@ -1,0 +1,245 @@
+{
+  "built_in_signed_coefficient_pairing_closed_form_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_square_base_source_packet_reduction_router",
+  "counterexample_assumption_only": true,
+  "declaration_field_map_complete": true,
+  "downstream_direct_attack_target": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+  "empirical_absence_not_used_as_proof": true,
+  "exactuv_entropy_fiber_pair_proved": false,
+  "field_map": [
+    {
+      "common_packet_field": "declaration_line",
+      "meaning": "`(p,p)` 的 owner、cofactor 与 LPF support 准入已由 diagonal-root 审计固定。",
+      "source": "Phi-LPF square-base router",
+      "square_base_field": "diagonal_root_key",
+      "status": "fixed_by_lpf_root"
+    },
+    {
+      "common_packet_field": "declaration_line",
+      "meaning": "必须在 Cauchy/Phi/payment 前正向声明 actual noncanonical source tuple。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "actual_source_tuple",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "primitive_summand_rows",
+      "meaning": "basis word 不能由 LPF support、payment 或零行覆盖反推。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "primitive_basis_word",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "basis_word_signed_coefficient_identity",
+      "meaning": "signed coefficient 的首缺口是 atomic row 内置 word/coefficient pairing 闭式。",
+      "source": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+      "square_base_field": "signed_coefficient_value",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "primitive_summand_rows",
+      "meaning": "orientation parity、local factor 与非零条件必须随同 atomic row 正向给出。",
+      "source": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+      "square_base_field": "orientation_local_factor",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "fixed_exact_uv_fiber_bound",
+      "meaning": "ExactUV 与 branch refinement 仍需要 source entropy / fixed-pair fiber 子线。",
+      "source": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+      "square_base_field": "alpha_delta_branch_exactuv",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "alpha_delta_prepushforward_identity",
+      "meaning": "推前前恒等式必须属于同一 pre-Cauchy source row。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "prepushforward_identity",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "no_downstream_recovery",
+      "meaning": "`(p,1)` 已被排除为 prime row，禁止后验恢复为 composite signed source。",
+      "source": "Phi-LPF square-base router",
+      "square_base_field": "prime_row_leak_guard",
+      "status": "fixed_by_lpf_root"
+    },
+    {
+      "common_packet_field": "named_return_partition",
+      "meaning": "缺声明、符号冲突、local factor 为零或 fiber collapse 必须命名回流。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "return_tag",
+      "status": "open"
+    }
+  ],
+  "fixed_square_base_fields": [
+    {
+      "common_packet_field": "declaration_line",
+      "meaning": "`(p,p)` 的 owner、cofactor 与 LPF support 准入已由 diagonal-root 审计固定。",
+      "source": "Phi-LPF square-base router",
+      "square_base_field": "diagonal_root_key",
+      "status": "fixed_by_lpf_root"
+    },
+    {
+      "common_packet_field": "no_downstream_recovery",
+      "meaning": "`(p,1)` 已被排除为 prime row，禁止后验恢复为 composite signed source。",
+      "source": "Phi-LPF square-base router",
+      "square_base_field": "prime_row_leak_guard",
+      "status": "fixed_by_lpf_root"
+    }
+  ],
+  "gates": [
+    {
+      "closed": true,
+      "gate": "SquareBaseDeclarationTargetImported",
+      "meaning": "上一层已把 virtual-unit seed 压到 square-base root 的 source declaration。",
+      "proved": false,
+      "remaining": "PhiLPFSquareBaseDiagonalRootSignedSourceDeclarationBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFRootAndPrimeLeakFieldsFixed",
+      "meaning": "diagonal root key、最小真实 support 与 prime-row leak guard 已由 Phi-LPF 审计固定。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "DeclarationFieldMapComplete",
+      "meaning": "square-base declaration 的全部字段可分为已固定 LPF 字段与 common packet signed/source 字段。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "NoSquareBasePrivateSignedEscape",
+      "meaning": "`(p,p)` 没有独立于 common pre-Cauchy packet 的 signed coefficient 生成通道。",
+      "proved": true,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "CommonPacketStillOpen",
+      "meaning": "common source declaration packet 当前未证明，不能生成 square-base source tuple/rows/identity。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "closed": true,
+      "gate": "DownstreamBuiltInPairingStillOpen",
+      "meaning": "common packet 的 signed 子线仍需 built-in signed coefficient pairing 闭式。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVEntropyFiberStillOpen",
+      "meaning": "ExactUV 子线仍需 source entropy 与 fixed-pair polylog fiber bound。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveOriginIdentityStillOpen",
+      "meaning": "primitive summand 来源恒等式未证明，不能补足 square-base signed coefficient。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseBucketValueTableStillOpen",
+      "meaning": "若不走 common packet，则必须直接提交整个 Phi-LPF support 的逐点 signed value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SquareBaseDeclarationReducedToCommonPacket",
+      "meaning": "square-base 专属部分已剥离；剩余不再是 LPF 几何字段，而是 common source/signed packet 字段。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步没有证明 common packet、built-in pairing、ExactUV entropy/fiber、step update 或 ordered coherence。",
+      "proved": false,
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward"
+    }
+  ],
+  "hardpoint_after_router": "(PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket AND BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger) AND PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward",
+  "lpf_root_and_prime_leak_fields_fixed": true,
+  "next_direct_attack_target": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+  "no_square_base_private_signed_escape_proved": true,
+  "no_theorem_switch": true,
+  "open_common_packet_fields": [
+    {
+      "common_packet_field": "declaration_line",
+      "meaning": "必须在 Cauchy/Phi/payment 前正向声明 actual noncanonical source tuple。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "actual_source_tuple",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "primitive_summand_rows",
+      "meaning": "basis word 不能由 LPF support、payment 或零行覆盖反推。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "primitive_basis_word",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "basis_word_signed_coefficient_identity",
+      "meaning": "signed coefficient 的首缺口是 atomic row 内置 word/coefficient pairing 闭式。",
+      "source": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+      "square_base_field": "signed_coefficient_value",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "primitive_summand_rows",
+      "meaning": "orientation parity、local factor 与非零条件必须随同 atomic row 正向给出。",
+      "source": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+      "square_base_field": "orientation_local_factor",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "fixed_exact_uv_fiber_bound",
+      "meaning": "ExactUV 与 branch refinement 仍需要 source entropy / fixed-pair fiber 子线。",
+      "source": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+      "square_base_field": "alpha_delta_branch_exactuv",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "alpha_delta_prepushforward_identity",
+      "meaning": "推前前恒等式必须属于同一 pre-Cauchy source row。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "prepushforward_identity",
+      "status": "open"
+    },
+    {
+      "common_packet_field": "named_return_partition",
+      "meaning": "缺声明、符号冲突、local factor 为零或 fiber collapse 必须命名回流。",
+      "source": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "square_base_field": "return_tag",
+      "status": "open"
+    }
+  ],
+  "parallel_direct_attack_target": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "phi_lpf_rough_cofactor_ordered_factorization_coherence_proved": false,
+  "phi_lpf_rough_cofactor_step_local_factor_update_law_proved": false,
+  "plain_conclusion": "square-base diagonal root `(p,p)` 的 LPF 几何字段已经固定：它是最小真实 support root，且 `(p,1)` 只能作为 prime-row virtual predecessor。剩余的 source tuple、basis word、signed coefficient、orientation/local factor、ExactUV、prepushforward identity 与 return tag 都不是 square-base 私有字段，而是 common pre-Cauchy actual source declaration packet 及其 built-in pairing / ExactUV entropy-fiber 下游字段。因此当前最新硬点从 square-base 专属声明收窄回 `PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket`，并保留 step update、ordered coherence 与 pointwise value table 并行入口。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "pre_cauchy_actual_noncanonical_emitter_source_declaration_packet_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-square-base-diagonal-source-router.json": "ed0043e2cdc051382cb6a28f6383f79a397773ec5ee3e9ca1ba7f8df260f2fda",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-source-declaration-downstream-sync-router.json": "6f2a1790c735dacb3d3c3104dd6ae6469abe97a23853e073a57fb4990e4bf769",
+    "docs/monograph/prime-matrix-strict-source-declaration-payload-exactuv-unification-router.json": "d9e042ffccaaf050e72788abdb0a10a5776a3cb4d8a37fc949c9710a4a832f44",
+    "experiments/prime_matrix_phi_lpf_square_base_source_packet_reduction_router.py": "1f5d575e5f22695eb338317358abac2856e715d6ec47cf6ddd2cb6ad81cf7b6b"
+  },
+  "square_base_declaration_reduced_to_common_packet": true,
+  "square_base_source_packet_reduction_router_closed": true,
+  "status": "square_base_diagonal_source_reduced_to_common_source_packet_open",
+  "target_input_before_router": "PhiLPFSquareBaseDiagonalRootSignedSourceDeclarationBeforePushforward"
+}
