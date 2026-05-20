@@ -6416,6 +6416,66 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
 与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
 
+### 1.189 Phi-LPF latest offdiagonal seed tuple sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_offdiagonal_seed_tuple_sync_router.py
+data/prime-matrix-phi-lpf-latest-offdiagonal-seed-tuple-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-offdiagonal-seed-tuple-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-offdiagonal-seed-tuple-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_offdiagonal_seed_hardpoint_imported=true
+offdiagonal_tuple_fields_router_imported=true
+offdiagonal_source_tuple_bijection_synced=true
+offdiagonal_phi_tail_fiber_mass_synced=true
+offdiagonal_unsigned_tuple_fields_closed=true
+lpf_phi_unsigned_scope_exhausted_for_offdiag_seed=true
+latest_basis_replaces_offdiag_seed_with_tuple_payload=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+actual-load 含义是：最新
+`PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`
+已接入既有 tuple-fields 拆解。LPF/Phi 对这个入口能提供的全部信息是
+
+```text
+owner_p, first_rough_prime_q, q_rough_tail_t,  p<q,
+occ_N(p,q)=Phi(floor(N/(p*q)),q).
+```
+
+这些字段关闭了支撑、类型、tail 纤维与 occurrence 容量，但不产生 signed seed value、
+orientation parity、branch side、local factor 或 ExactUV return tag。样本 `N=10000`
+中 offdiagonal types 为 `2600`，tuple occurrences 与 Phi sum 同为 `5468`，tail
+`1/>1` 分解为 `2600/2868`。
+
+最新递推剩余基更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍可直接提交
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`，或走完整 branch/atomic trace、
+seed cycle-cut、terminal descent、PDEC scope 或 new joint。ExactUV、模型余量、RatePreservation
+与 DStructure/Rankin 仍是独立守门项。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
