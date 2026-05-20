@@ -15344,3 +15344,38 @@ exact-UV local multiplicity O(1) 同时成立。最新剩余为这三个源秩�
 duplicate sparse SAE、same AP table injection、cross-table switch、bounded/long
 support、AP strict gap/dense table、sparse cell、高秩、nonreplay、moving-pivot、
 endpoint singleton、full-cycle mean 与 sparse-scale SAE。
+
+## 321. LPF ownership sieve source declaration frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_lpf_ownership_sieve_source_declaration_router.py
+docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.md
+docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.json
+data/prime-matrix-lpf-ownership-sieve-source-declaration-ledger.json
+```
+
+同步结果：
+
+```text
+ascending_lpf_ownership_partition_proved=true
+prime_count_identity_from_lpf_ownership_proved=true
+quotient_condition_matches_user_sieve_proved=true
+lpf_ownership_unsigned_declaration_line_closed=true
+lpf_ownership_to_signed_alpha_delta_lift_proved=false
+explicit_alpha_delta_primitive_constructor_rule_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：用户提出的升序筛法公式已经被写成 LPF ownership 账本。
+每个合数由唯一最小素因子 `p` 归属到一个筛层，`p` 层的新筛集合等于
+`{p*m<=N: m>=p, m has no prime factor < p}`；这些集合不重叠且并为全部合数。
+因此 `pi(N)=N-1-sum_p LPF_p(N)` 是严格恒等式，不是统计猜测。
+
+该恒等式关闭的是 pre-Cauchy source declaration 的 unsigned ownership 字段。它不能
+直接产生 signed `alpha/delta` coefficient、orientation、local factor 或 fixed-key
+ExactUV 局部重数控制。最新直接主攻为
+`ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`，并行仍需
+constructor domain、row emission、failure return、actual source table、complete key、
+fixed-key ExactUV、模型/Rate 与 DStructure/Rankin 验收。

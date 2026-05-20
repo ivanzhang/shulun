@@ -18098,3 +18098,38 @@ source-rank/no-collapse 三原子。
 本步没有证明 actual emitter source table、complete key partition、fixed-key local
 multiplicity O(1)、duplicate sparse SAE、payment injection、cross-table switch 或其他
 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.162 LPF ownership sieve source declaration 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_lpf_ownership_sieve_source_declaration_router.py
+data/prime-matrix-lpf-ownership-sieve-source-declaration-ledger.json
+docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.md
+docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.json
+```
+
+同步读数为：
+
+```text
+ascending_lpf_ownership_partition_proved=true
+prime_count_identity_from_lpf_ownership_proved=true
+quotient_condition_matches_user_sieve_proved=true
+lpf_ownership_unsigned_declaration_line_closed=true
+lpf_ownership_to_signed_alpha_delta_lift_proved=false
+explicit_alpha_delta_primitive_constructor_rule_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：升序最小素因子筛给出严格非重叠 ownership。对任意 `N`，
+每个合数 `n<=N` 唯一落入 `p=LPF(n)` 的筛层；等价地，`p` 层新筛掉的数正是
+`p*m<=N`、`m>=p` 且 `m` 没有小于 `p` 的素因子的数。因此
+`pi(N)=N-1-sum_p LPF_p(N)` 是精确恒等式，并关闭 pre-Cauchy declaration line
+中的 unsigned ownership 字段。
+
+本步没有证明 signed `alpha/delta` primitive constructor rule、local factor、exact-UV
+fixed-key multiplicity、actual emitter source table、complete key partition 或
+DStructure/Rankin 验收。最新直接主攻转为
+`ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`。行/列命题仍未
+无条件闭合。

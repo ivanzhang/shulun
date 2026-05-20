@@ -21156,6 +21156,56 @@ docs/monograph/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridg
 \end{quote}
 \end{proof}
 
+\begin{theorem}[LPF ownership sieve source declaration]
+For every \(N\ge 2\), the ascending least-prime-factor sieve gives an exact
+ownership partition of the composites up to \(N\).  If \(p\le \sqrt N\) is prime,
+the new objects owned by the \(p\)-layer are exactly
+\begin{quote}\small
+\[
+\{pm\le N:\ m\ge p,\ \text{and }m\text{ has no prime factor }<p\}.
+\]
+\end{quote}
+Consequently
+\begin{quote}\small
+\[
+\pi(N)=N-1-\sum_{p\le \sqrt N}
+\#\{n\le N:\ n\text{ is composite and }{\rm lpf}(n)=p\}.
+\]
+\end{quote}
+Within the strict source-declaration chain this closes only the unsigned
+ownership field of the pre-Cauchy declaration line:
+\begin{quote}\tiny\ttfamily
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter\\
+\(\Rightarrow\)
+LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger\\
+AND ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter\\
+AND ConstructorDomainCleanCoreMembershipLedger\\
+AND ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger\\
+AND ConstructorFormulaFailureReturnTagsLedger\\
+AND SourceDeclarationNoDownstreamRecoveryAndNamedReturnLedger.
+\end{quote}
+\end{theorem}
+\begin{proof}[LPF ownership sieve source declaration]
+Every composite \(n\le N\) has a unique least prime factor \(p\le \sqrt n\le
+\sqrt N\).  Writing \(n=pm\), one has \(m\ge p\), and no prime below \(p\)
+divides \(m\).  Conversely, if \(m\ge p\), \(pm\le N\), and no smaller prime
+divides \(m\), then the least prime factor of \(pm\) is exactly \(p\).  Thus the
+sets displayed above are disjoint and their union is precisely the composite set
+in \([2,N]\).  Removing those composites from the \(N-1\) integers \(2,\ldots,N\)
+gives the displayed formula for \(\pi(N)\).
+
+This is a pre-Cauchy unsigned ownership declaration: it uses only divisibility
+and the ascending sieve order.  It does not emit a signed \(\alpha/\delta\)
+primitive coefficient, an orientation, a local factor, a complete key, or a
+fixed-key ExactUV multiplicity bound.  Those remain the next hard fields,
+starting with
+\(\texttt{ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter}\).
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-lpf-ownership-sieve-source-declaration-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
