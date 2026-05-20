@@ -17852,3 +17852,38 @@ ColumnCRT/PDEC 出口。固定 pivot 标签集满足 `L=lcm(Lambda)<=W`；对任
 本步没有证明低 carrier fixed-residue、低 carrier sparse、高 carrier rank-deficit、
 nonreplay sparse、moving-pivot、endpoint singleton、full-cycle mean、source
 multiplicity 或 sparse SAE。行/列命题仍未无条件闭合。
+
+### 1.155 stable-ladder phase-residue exchange endpoint-pivot-low-carrier-fixed-residue-AP-envelope 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_endpoint_pivot_low_carrier_fixed_residue_ap_table_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_pivot_low_carrier_fixed_residue_imported=true
+endpoint_pivot_boundary_carrier_degeneracy_closed=true
+endpoint_pivot_residue_to_row_ap_formula_closed=true
+endpoint_pivot_selected_table_exact_envelope_closed=true
+endpoint_pivot_low_carrier_fixed_residue_reduced_to_ap_envelope=true
+endpoint_pivot_actual_demand_lower_bound_proved=false
+endpoint_pivot_low_carrier_fixed_residue_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：endpoint pivot low-carrier fixed-residue 不再作为匿名
+ColumnCRT/PDEC 出口保留。对 `q<P`，固定 residue `a` 强制 endpoint 行坐标
+`t==-aP^{-1} mod q`，长度 `H` 的窗口内单 cell 至多给出 `ceil(H/q)` 个命中；
+固定 `q` 的全部 residue cell 总量精确为 `H`。`q=P` 的边界 carrier 不进入
+AP 公式，而退化到既有 ColumnCRT 或 endpoint singleton/source-multiplicity 出口。
+
+本步没有证明 endpoint actual demand 下界、AP strict gap、dense-table PDEC、
+sparse-cell SAE、低 carrier nonpersistent sparse、高 carrier rank-deficit、nonreplay、
+moving-pivot、endpoint singleton、full-cycle mean、source multiplicity 或 sparse SAE。
+行/列命题仍未无条件闭合。

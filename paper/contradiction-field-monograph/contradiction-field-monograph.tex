@@ -20845,6 +20845,61 @@ docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Phase-residue exchange endpoint-pivot low-carrier AP envelope]
+The endpoint pivot low-carrier fixed-residue branch is not an anonymous
+ColumnCRT outlet:
+\begin{quote}\scriptsize\ttfamily
+EndpointOrbitAlternatingCyclePivotPrimeLowCarrierFixedResidueColumnCRTPDECExclusion\\
+\(\Rightarrow\)
+StableLadderEndpointOrbitPivotPrimeLowCarrierFixedResidueImportedForAPEnvelopeLedger\\
+AND StableLadderEndpointOrbitPivotPrimeBoundaryCarrierDegeneratesToColumnCRTOrEndpointSingletonLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierResidueToRowAPFormulaLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierSingleResidueSharpEnvelopeLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierAllResiduesExactMassLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierSelectedTableExactEnvelopeLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowCarrierResidueTableFiniteLedger\\
+AND StableLadderEndpointOrbitPivotPrimeLowEffectiveModColumnCRTImportedLedger\\
+AND StableLadderEndpointOrbitPivotPrimeDenseLowCarrierResidueTableRouteLedger\\
+AND StableLadderEndpointOrbitPivotPrimeSparseLowCarrierResidueCellRouteLedger\\
+AND StableLadderEndpointOrbitPivotPrimeActualDemandLowerBoundStillOpenLedger\\
+AND NoIndependentEndpointPivotPrimeLowCarrierFixedResidueAfterAPEnvelopeLedger.
+\end{quote}
+\end{theorem}
+\begin{proof}[Phase-residue exchange endpoint-pivot low-carrier AP envelope]
+Let \(q\) be a low carrier pivot prime in the fixed-residue branch.  If \(q=P\),
+then \(P\) is not invertible modulo \(q\); this is a boundary carrier, so it is
+registered as a ColumnCRT boundary degeneration or as an already named endpoint
+singleton/source-multiplicity exit, not as an AP row-family.
+
+Assume \(q<P\).  In the endpoint support window write \(t\) for the normalized
+row/phase coordinate and \(H\) for the window length.  A fixed residue
+\(a\bmod q\) imposes
+\[
+  tP+a\equiv 0\pmod q .
+\]
+Since \((P,q)=1\), this is equivalent to the single arithmetic progression
+\[
+  t\equiv -aP^{-1}\pmod q .
+\]
+Thus a single cell \((q,a)\) contributes at most \(\lceil H/q\rceil\) points in
+the endpoint window.  For fixed \(q\), summing over all \(a\bmod q\) gives
+exactly \(H\), because each endpoint row selects one residue \(a\equiv -tP\pmod
+q\).  Hence any selected low-carrier residue table has the exact AP envelope
+obtained by summing these cell bounds, with the additional bound \(H\) times the
+number of active pivot primes.
+
+If such a low-dimensional table persistently approaches or exceeds the envelope
+needed by the counterexample chain, it is a dense residue-table PDEC/ColumnCRT
+route.  If the cells are nonpersistent or sparse, they enter endpoint sparse
+cell SAE accounting.  The remaining open work is to prove the endpoint actual
+demand lower bound, the strict AP-envelope gap or dense-table exclusion, and
+the sparse-cell SAE summability; the other endpoint exits also remain open.
+The row/column theorem remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

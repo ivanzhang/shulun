@@ -15114,3 +15114,35 @@ formal-to-actual 含义是：endpoint pivot small-LCM 已被压成 rank-pressure
 给出两个大 pivot carrier 不可同处一个 fixed small-LCM unit。最新剩余为 sparse SAE、
 endpoint singleton、full-cycle mean、source multiplicity、低 carrier fixed-residue、
 低 carrier sparse、高 carrier rank-deficit、nonreplay sparse 与 moving-pivot。
+
+## 314. Stable-ladder phase-residue exchange endpoint-pivot-low-carrier-fixed-residue-AP-envelope frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_endpoint_pivot_low_carrier_fixed_residue_ap_table_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-endpoint-alternating-cycle-pivot-phase-slip-low-carrier-fixed-residue-ap-table-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_pivot_low_carrier_fixed_residue_imported=true
+endpoint_pivot_boundary_carrier_degeneracy_closed=true
+endpoint_pivot_residue_to_row_ap_formula_closed=true
+endpoint_pivot_selected_table_exact_envelope_closed=true
+endpoint_pivot_low_carrier_fixed_residue_reduced_to_ap_envelope=true
+endpoint_pivot_actual_demand_lower_bound_proved=false
+endpoint_pivot_low_carrier_fixed_residue_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：低 carrier fixed-residue 分支被压成 endpoint AP-envelope
+接口。`q<P` 时，fixed residue 给出唯一行 AP 类 `t==-aP^{-1} mod q`，单
+cell 命中数受 `ceil(H/q)` 控制，固定 `q` 的全 residue 总量为 `H`。`q=P`
+边界项退化到已命名 ColumnCRT/endpoint singleton/source-multiplicity 出口。
+最新剩余为 endpoint actual demand、AP strict gap/dense table、sparse cell、
+低 carrier sparse、高 carrier rank-deficit、nonreplay、moving-pivot、endpoint
+singleton、full-cycle mean、source multiplicity 与 sparse SAE。
