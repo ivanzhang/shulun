@@ -18061,3 +18061,40 @@ source unit 不能增加 AP-table payment capacity，只能解释为该 source a
 same AP table injection、cross-table switch、bounded/long support、AP strict gap/dense
 table、sparse cell、高秩、nonreplay、moving-pivot 或 endpoint 并行出口。行/列命题
 仍未无条件闭合。
+
+### 1.161 source-atom multiplicity-cap ExactUV fixed-key bridge 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_source_atom_multiplicity_cap_exactuv_fixed_key_bridge_router.py
+data/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-ledger.json
+docs/monograph/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-router.md
+docs/monograph/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-router.json
+```
+
+同步读数为：
+
+```text
+source_atom_multiplicity_cap_imported=true
+source_atom_multiplicity_cap_packet_registered=true
+source_atom_multiplicity_same_source_key_field_closed=true
+exactuv_source_atom_implication_imported=true
+strict_source_atomization_imported=true
+actual_noncanonical_primitive_emitter_source_table_proved=false
+complete_primitive_emitter_key_partition_ledger_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_ledger_proved=false
+source_atom_multiplicity_cap_reduced_to_exactuv_fixed_key_atoms=true
+source_atom_multiplicity_cap_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：source-atom multiplicity cap 不再作为 endpoint 局部独立口径。
+同一 source atom 的大重数若要成为真实反例，必须先有 actual noncanonical primitive
+emitter source table，再有 complete key partition，最后由 fixed-key exact-UV local
+multiplicity O(1) 排斥固定 key 下的大原像坍缩。因此该 cap 被桥接到 ExactUV
+source-rank/no-collapse 三原子。
+
+本步没有证明 actual emitter source table、complete key partition、fixed-key local
+multiplicity O(1)、duplicate sparse SAE、payment injection、cross-table switch 或其他
+endpoint 并行出口。行/列命题仍未无条件闭合。

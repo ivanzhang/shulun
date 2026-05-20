@@ -15310,3 +15310,37 @@ source unit 不能换成新 capacity，只能作为同一 source atom 的重数�
 injection、cross-table switch、bounded/long support、AP strict gap/dense table、
 sparse cell、高秩、nonreplay、moving-pivot、endpoint singleton、full-cycle mean 与
 sparse-scale SAE。
+
+## 320. Source-atom multiplicity-cap ExactUV fixed-key bridge frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_source_atom_multiplicity_cap_exactuv_fixed_key_bridge_router.py
+docs/monograph/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-router.md
+docs/monograph/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-router.json
+data/prime-matrix-source-atom-multiplicity-cap-exactuv-fixed-key-bridge-ledger.json
+```
+
+同步结果：
+
+```text
+source_atom_multiplicity_cap_imported=true
+source_atom_multiplicity_cap_packet_registered=true
+source_atom_multiplicity_same_source_key_field_closed=true
+exactuv_source_atom_implication_imported=true
+strict_source_atomization_imported=true
+actual_noncanonical_primitive_emitter_source_table_proved=false
+complete_primitive_emitter_key_partition_ledger_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_ledger_proved=false
+source_atom_multiplicity_cap_reduced_to_exactuv_fixed_key_atoms=true
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：source-atom multiplicity cap 被桥接到 ExactUV
+source-rank/no-collapse 三原子。固定 source atom 大重数不再作为 endpoint 局部
+独立出口；它要求 actual emitter source table、complete key partition 与 fixed-key
+exact-UV local multiplicity O(1) 同时成立。最新剩余为这三个源秩原子，以及
+duplicate sparse SAE、same AP table injection、cross-table switch、bounded/long
+support、AP strict gap/dense table、sparse cell、高秩、nonreplay、moving-pivot、
+endpoint singleton、full-cycle mean 与 sparse-scale SAE。
