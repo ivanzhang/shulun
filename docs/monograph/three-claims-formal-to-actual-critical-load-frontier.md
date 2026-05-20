@@ -17294,6 +17294,61 @@ orientation bit、local-factor product、truncation weight、非零条件和 pre
 identity。LPF/Phi 的桶恒等式仍只提供偶几何和容量，不能生成这个反变号取向。行/列命题仍未
 无条件闭合。
 
+## 363. Phi-LPF orientation trace payload source-rank sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_orientation_trace_payload_source_rank_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-router.json
+data/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-ledger.json
+```
+
+同步结果：
+
+```text
+orientation_reduced_to_actual_branch_trace=true
+trace_payload_cycle_imported=true
+visible_trace_cannot_generate_odd_payload=true
+common_packet_need_imported=true
+new_primitive_artifact_aligned_to_source_rank=true
+source_rank_atom_package_imported=true
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+orientation_local_factor_law_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+formal-to-actual 含义是：当前 `PrimitiveOrientationLocalFactorProductLawBeforePushforward`
+若要成为非循环 signed 输入，必须来自 Cauchy/Phi/payment 前的 actual branch trace。
+但已有 trace cycle 审查显示，当前内部材料只给可见坐标 trace；signed payload 会回到
+row-level/source packet 闭环。新增 primitive payload/trace artifact 也不能只命名单个 payload，
+它必须证明 source rank/no-collapse 包。
+
+因此最新直接主攻同步为：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+并行剩余为：
+
+```text
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ExternalDIBFIKuznetsovDispersionTheoremMatch
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+LPF/Phi 精准桶恒等式在这里只封闭无符号支撑归属，不生成 signed orientation。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

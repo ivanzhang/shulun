@@ -7242,6 +7242,51 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 local-factor product、prepushforward signed sum identity、signed survival、row-mass/no-heavy-row、
 RatePreservation、PDEC scope 和 DStructure/Rankin。行/列命题仍未无条件闭合。
 
+### 1.205 Phi-LPF orientation trace payload source-rank sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_orientation_trace_payload_source_rank_sync_router.py
+data/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-orientation-trace-payload-source-rank-sync-router.json
+```
+
+同步读数为：
+
+```text
+orientation_reduced_to_actual_branch_trace=true
+trace_payload_cycle_imported=true
+visible_trace_cannot_generate_odd_payload=true
+common_packet_need_imported=true
+new_primitive_artifact_aligned_to_source_rank=true
+source_rank_atom_package_imported=true
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+orientation_local_factor_law_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+actual-load 含义是：`PrimitiveOrientationLocalFactorProductLawBeforePushforward` 的正确生成格式是
+actual noncanonical primitive branch trace；但仓库已有 trace 审查说明，可见坐标 trace 只能给
+anchor/phase/word-coordinate，signed payload 部分会回到 row-level/source packet 闭环。若新增
+真正 primitive payload/trace 工件，它必须带有 source-rank/no-collapse 包：source-domain
+entropy、complete key partition、fixed-key exact-UV local multiplicity。
+
+因此 LPF/Phi 桶恒等式在这一层已经完成“无符号支撑归属”职责，不能继续被当作 signed
+orientation 的来源。最新直接主攻切到：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+并行保留 `CompletePrimitiveEmitterKeyPartitionLedger`、
+`FixedKeyExactUVLocalMultiplicityO1Ledger`、terminal descent、same-set PDEC、外部谱输入、
+RatePreservation 和 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
