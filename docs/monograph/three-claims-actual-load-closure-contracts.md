@@ -7060,6 +7060,57 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 本步只完成前沿同步与旧出口吸收；alpha 发射、算术恒等式、rank/multiplicity、PDEC、逐点 signed 表、
 ExactUV、transport/coherence、模型、Rate 与 DStructure 仍未证明。行/列命题仍未无条件闭合。
 
+### 1.201 Phi-LPF latest alpha terminal three-atoms sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_alpha_terminal_three_atoms_sync_router.py
+data/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_alpha_frontier_imported=true
+alpha_three_leg_terminal_leaf_imported=true
+terminal_leaf_latest_noncycle_imported=true
+new_joint_trace_cycle_absorbed=true
+terminal_three_atoms_pinned=true
+independent_moving_atom_chosen_as_narrowest=true
+acyclic_terminal_canonical_lock_proved=false
+a1_clean_branch_canonical_source_admission_proved=false
+actual_noncanonical_clean_core_moving_atom_exclusion_proved=false
+independent_nonterminal_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+actual-load 含义是：上一层暴露的 `AlphaRowAnchorPhaseEmissionFormulaLedger` 已接入更深的
+post-antisplit alpha terminal leaf 与 post-alpha terminal-three-atoms 前沿。alpha/weight/rank
+三腿单独分攻会回到终端门、同表固定点或旧 joint constructor 固定点；new joint 继续下钻又被
+branch trace、signed payload 与 signed-lane cycle 吸收。
+
+删除这些自回流后，当前 strict 前沿压成三原子：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+其中最新最窄直接主攻为：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行仍需 canonical-lock、A1 admission、PDEC、ExactUV incidence、RatePreservation、DStructure/Rankin、
+逐点 Phi-LPF signed 表、ExactUV entropy/fiber 与 rough-cofactor transport/coherence。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

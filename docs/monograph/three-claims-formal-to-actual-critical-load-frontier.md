@@ -17119,6 +17119,54 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 
 本层不证明这些并行门，也不关闭行/列命题。
 
+## 359. Phi-LPF latest alpha terminal three-atoms sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_alpha_terminal_three_atoms_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-router.json
+data/prime-matrix-phi-lpf-latest-alpha-terminal-three-atoms-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_alpha_frontier_imported=true
+alpha_three_leg_terminal_leaf_imported=true
+terminal_leaf_latest_noncycle_imported=true
+new_joint_trace_cycle_absorbed=true
+terminal_three_atoms_pinned=true
+independent_moving_atom_chosen_as_narrowest=true
+acyclic_terminal_canonical_lock_proved=false
+a1_clean_branch_canonical_source_admission_proved=false
+actual_noncanonical_clean_core_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+formal-to-actual 含义是：latest alpha 首攻点不再作为当前最深单点停留。已有 post-antisplit
+alpha terminal leaf 证书说明 alpha/weight/rank 三腿分攻是固定点；post-alpha terminal leaf
+和 three-atoms 证书又把旧 new-joint/trace/payload 路线吸收到 signed-lane cycle，并把当前
+strict 前沿钉到：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+最新直接主攻为：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行仍保留 canonical-lock、A1 admission、PDEC、ExactUV incidence、Rate、DStructure、逐点
+Phi-LPF signed 表、ExactUV entropy/fiber 与 rough-cofactor transport/coherence。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
