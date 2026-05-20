@@ -14821,3 +14821,37 @@ formal-to-actual 含义是：对象缺失或换槽意味着不存在同 cell adm
 
 本步没有闭合行/列命题；最新剩余为 singleton Hall cut、cross-key return whitelist
 leak、payment graph/return whitelist、boundary equality 与 endpoint 并行出口。
+
+## 304. Stable-ladder phase-residue exchange canonical-payment-singleton-cut-return-admission-lock frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_singleton_cut_return_admission_lock_router.py
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-router.json
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-ledger.json
+```
+
+同步结果：
+
+```text
+phase_residue_exchange_singleton_hall_cut_defect_imported=true
+phase_residue_exchange_actual_object_admission_trichotomy_imported=true
+phase_residue_exchange_singleton_cut_router_imported=true
+phase_residue_exchange_singleton_return_admission_partition_closed=true
+phase_residue_exchange_same_key_return_no_new_capacity_closed=true
+phase_residue_exchange_cross_key_return_whitelist_gate_closed=true
+phase_residue_exchange_singleton_no_return_hall_atom_registered=true
+phase_residue_exchange_no_independent_broad_singleton_hall_cut_defect_closed=true
+phase_residue_exchange_canonical_singleton_no_return_hall_atom_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：broad singleton Hall cut 的合法补偿空间被完全分区；
+同 key 不增容，坏对象边已在 admission 层回流，跨 key 非白名单就是 whitelist leak。
+剩余真正新硬点是没有任何合法 return 的单点 Hall 原子。
+
+本步没有闭合行/列命题；最新剩余为 no-return Hall atom、cross-key return whitelist
+leak、boundary equality 与 endpoint 并行出口。

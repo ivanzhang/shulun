@@ -17481,3 +17481,50 @@ leak；它们不再作为独立活动出口保留。
 
 本步没有证明 singleton Hall cut 或 cross-key return whitelist leak，也没有排斥
 boundary equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。
+
+### 1.145 stable-ladder phase-residue exchange canonical-payment-singleton-cut-return-admission-lock 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phase_residue_exchange_active_facet_normal_cone_ray_coordinate_scalar_load_unit_normalization_unit_face_value_signed_amount_coordinate_phase_pairing_canonical_payment_singleton_cut_return_admission_lock_router.py
+data/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-ledger.json
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-router.md
+docs/monograph/prime-matrix-phase-residue-exchange-active-facet-normal-cone-ray-coordinate-scalar-load-unit-normalization-unit-face-value-signed-amount-coordinate-phase-pairing-canonical-payment-singleton-cut-return-admission-lock-router.json
+```
+
+同步读数为：
+
+```text
+phase_residue_exchange_singleton_hall_cut_defect_imported=true
+phase_residue_exchange_actual_object_admission_trichotomy_imported=true
+phase_residue_exchange_singleton_cut_router_imported=true
+phase_residue_exchange_singleton_cut_balance_imported=true
+phase_residue_exchange_same_key_capacity_empty_imported=true
+phase_residue_exchange_singleton_return_admission_partition_closed=true
+phase_residue_exchange_same_key_return_no_new_capacity_closed=true
+phase_residue_exchange_cross_key_return_whitelist_gate_closed=true
+phase_residue_exchange_legal_return_named_boundary_registered=true
+phase_residue_exchange_singleton_no_return_hall_atom_registered=true
+phase_residue_exchange_no_independent_broad_singleton_hall_cut_defect_closed=true
+phase_residue_exchange_canonical_singleton_no_return_hall_atom_pdec_cap_proved=false
+phase_residue_exchange_canonical_cross_key_return_whitelist_leak_pdec_cap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：旧 singleton-cut 证书给出单点 cut 的需求为 1、同 key
+容量为 0；actual-object admission 证书排除了坏对象边作为独立容量。于是任何补偿尝试只
+能落入四类：
+
+```text
+same-key duplicate -> no new capacity
+bad actual-object edge -> already routed by actual-object admission
+cross-key return not whitelisted -> cross-key whitelist leak
+no legal named return -> CanonicalUnitSingletonNoReturnHallAtomPDECCap
+```
+
+因此 broad singleton Hall cut 不再作为独立出口保留；它被压成 no-return Hall atom，
+或回到 cross-key whitelist leak、boundary equality/endpoint return 出口。
+
+本步没有证明 no-return Hall atom，也没有排斥 cross-key return whitelist leak、
+boundary equality atom 或 endpoint 并行出口。行/列命题仍未无条件闭合。
