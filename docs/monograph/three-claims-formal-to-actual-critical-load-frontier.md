@@ -18499,6 +18499,65 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 385. Phi-LPF latest constructor joint-declaration antisplit sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_joint_declaration_antisplit_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_joint_declaration_imported=true
+strict_antisplit_downstream_imported=true
+ordinary_joint_declaration_synced_to_constructor_rule=true
+ordinary_constructor_route_rejected_as_fixed_point=true
+antisplit_firewall_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+pre_cauchy_joint_declaration_line_proved=false
+atomic_antisplit_declaration_proved=false
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+formal-to-actual 含义是：joint declaration line 不能直接闭合 signed 信息。普通 declaration
+路线回到 fixed point；anti-split 路线把 atomic joint rows 的 signed 首缺口压到 built-in
+pairing。ExactUV entropy/fiber 仍是并行门，不由 built-in pairing 自动支付。
+
+最新直接主攻：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+完整剩余基为：
+
+```text
+((BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger)
+OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

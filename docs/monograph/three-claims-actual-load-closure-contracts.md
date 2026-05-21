@@ -8408,6 +8408,56 @@ AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
 canonical lock、independent bridge、PDEC/外部谱、terminal WFD、signed survival、
 row-mass、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.227 Phi-LPF latest constructor joint-declaration antisplit sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_joint_declaration_antisplit_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-joint-declaration-antisplit-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_constructor_joint_declaration_imported=true
+strict_antisplit_downstream_imported=true
+ordinary_joint_declaration_synced_to_constructor_rule=true
+ordinary_constructor_route_rejected_as_fixed_point=true
+antisplit_firewall_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+pre_cauchy_joint_declaration_line_proved=false
+atomic_antisplit_declaration_proved=false
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+actual-load 含义是：普通 joint declaration 只会同步到 explicit constructor rule，继续展开
+回到 signed-source 固定点；非循环路线必须走 anti-split atomic rows。atomic rows 的首个
+signed 缺口是每条 row 的 built-in signed coefficient/pairing 闭式。
+
+因此 latest 直接主攻推进为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+并行 ExactUV 门仍为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+canonical lock、independent bridge、PDEC/外部谱、signed survival、row-mass、模型、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
