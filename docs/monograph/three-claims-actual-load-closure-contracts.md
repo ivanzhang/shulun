@@ -22735,6 +22735,50 @@ NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
 terminal descent、same-set PDEC、逐点 Phi-LPF signed table、source 三原子、signed survival、
 row-mass/no-heavy-row、complete/fixed key 与 ExactUV 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.189 Phi-LPF latest constructor new-payload source-atom alignment rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_new_payload_source_atom_alignment_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_new_payload_imported=true
+existing_constructor_new_payload_alignment_reusable=true
+constructor_source_and_side_gates_carried=true
+unsigned_labels_cannot_pay_payload=true
+signed_lane_cycle_cut_carried=true
+strict_new_payload_alignment_imported=true
+new_payload_reduced_to_source_rank_atom=true
+independent_new_payload_terminal_present=false
+constructor_source_atoms_carried_forward=true
+constructor_row_mass_and_survival_still_open=true
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：new payload 若不是 signed-lane 环内改名或命名出口，就必须在
+Cauchy/Phi/payment 前声明同一 actual source object，并携带 source-domain entropy、
+complete key partition 与 fixed-key ExactUV local multiplicity。当前只完成对齐，不证明这些原子。
+
+最新直接主攻改为：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+source 三原子、row-mass/no-heavy-row、signed survival、complete key、fixed-key ExactUV local
+multiplicity、terminal descent、same-set PDEC 与逐点 Phi-LPF signed table 仍是并行硬门。
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
