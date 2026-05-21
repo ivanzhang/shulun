@@ -8458,6 +8458,62 @@ ExactUVMapFixedPairPolylogFiberBoundLedger
 canonical lock、independent bridge、PDEC/外部谱、signed survival、row-mass、模型、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.228 Phi-LPF latest constructor macrocycle cut signed-survival sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_macrocycle_cut_signed_survival_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-router.json
+```
+
+同步读数为：
+
+```text
+constructor_signed_macrocycle_closed=true
+constructor_macrocycle_self_proof_rejected=true
+signed_survival_gate_mandatory_in_latest_basis=true
+signed_survival_reduced_to_row_level_origin_table=true
+source_entropy_builtin_cycle_carried=true
+row_level_clean_core_origin_generation_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+actual-load 含义是：latest constructor anti-split 后的 built-in signed pairing 不能再
+作为非循环闭合口径。沿既有证书展开会得到宏循环：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+-> AlphaRowAnchorPhaseEmissionFormulaLedger
+-> IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+-> PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+-> PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+-> AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+-> PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+因此环内节点只能作为诊断，不能作为证明。删除该宏循环后，latest 385 保留基中仍
+强制存在的 signed-survival/row-mass 侧门成为可硬攻对象；既有 signed-survival 同步已把
+推前前 signed expression 压到逐行 clean-core 原始生成表。
+
+最新直接主攻：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+并行仍需 `NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward`、
+`SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger`、ExactUV entropy/fiber、
+complete/fixed key、terminal/PDEC/external 出口、模型、Rate 与 DStructure。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

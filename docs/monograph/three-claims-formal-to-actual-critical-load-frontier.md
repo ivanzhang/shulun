@@ -18558,6 +18558,50 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 386. Phi-LPF latest constructor macrocycle cut signed-survival sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_macrocycle_cut_signed_survival_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-macrocycle-cut-signed-survival-sync-ledger.json
+```
+
+同步结果：
+
+```text
+constructor_signed_macrocycle_closed=true
+constructor_macrocycle_self_proof_rejected=true
+signed_survival_gate_mandatory_in_latest_basis=true
+signed_survival_reduced_to_row_level_origin_table=true
+source_entropy_builtin_cycle_carried=true
+row_level_clean_core_origin_generation_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+formal-to-actual 含义是：latest constructor built-in pairing 继续展开后会回到
+constructor signed 宏循环，不是新的非循环闭合。宏循环为：
+
+```text
+BuiltIn -> NewPayload -> AlphaRow -> MovingAtom -> PointwiseSignedTable
+-> OriginIdentity -> Triad -> JointDeclaration -> BuiltIn
+```
+
+所以本层把环内回代从证明路径删除。当前可推进的实际 signed 侧门是：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+它仍只是 `NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward` 的前置表；row-mass、
+ExactUV entropy/fiber、complete/fixed key、terminal/PDEC/external 出口、模型、Rate 和
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
