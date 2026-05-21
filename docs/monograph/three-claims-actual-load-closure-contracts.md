@@ -8928,6 +8928,62 @@ AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyAri
 并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
 模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.237 Phi-LPF latest constructor edge-local field-cut sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_edge_local_formula_imported=true
+constructor_side_gates_carried=true
+field_cut_router_imported=true
+closed_unsigned_edge_label_ledger_synced=true
+edge_atom_multiplicity_one_synced=true
+lpf_phi_unsigned_scope_exhausted_for_edge_local=true
+constructor_side_gates_not_paid_by_field_cut=true
+latest_constructor_basis_replaces_edge_local_formula_with_signed_atom_fields=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+actual-load 含义是：constructor 最新 edge-local formula 中的无符号 edge label 已被
+LPF/Phi/Ferrers 支付。每条 canonical `(p,q)` edge 的 owner、first prime、product、
+row/column degree 与 multiplicity-one label 都已经固定；这些字段不能产生 signed seed、
+local factor、orientation、ExactUV return 或命名 return tag。
+
+因此新增最窄口为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
+模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

@@ -19010,6 +19010,63 @@ NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
 complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 395. Phi-LPF latest constructor edge-local field-cut sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_edge_local_formula_imported=true
+constructor_side_gates_carried=true
+field_cut_router_imported=true
+closed_unsigned_edge_label_ledger_synced=true
+edge_atom_multiplicity_one_synced=true
+lpf_phi_unsigned_scope_exhausted_for_edge_local=true
+constructor_side_gates_not_paid_by_field_cut=true
+latest_constructor_basis_replaces_edge_local_formula_with_signed_atom_fields=true
+signed_atom_field_table_proved=false
+orientation_parity_branch_side_proved=false
+exactuv_fixed_pair_return_tag_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+formal-to-actual 含义是：constructor 最新 edge-local formula 已完成无符号 field-cut。
+LPF/Phi/Ferrers 只支付 canonical edge 的 owner、first prime、product、rank/degree 与
+multiplicity-one label；它不支付 sign、local factor、orientation、ExactUV return 或
+source-row emission。
+
+新的 constructor 最新窄口为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+同时仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

@@ -1,0 +1,345 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_sync_router",
+  "closed_unsigned_edge_label_ledger_synced": true,
+  "closed_unsigned_subledger": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward",
+  "complete_primitive_emitter_key_partition_proved": false,
+  "constructor_side_gates_carried": true,
+  "constructor_side_gates_not_paid_by_field_cut": true,
+  "edge_atom_multiplicity_one_synced": true,
+  "exactuv_fixed_pair_return_tag_proved": false,
+  "field_cut_router_imported": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "fixed_key_exactuv_local_multiplicity_o1_proved": false,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestConstructorEdgeLocalFormulaImported",
+      "meaning": "上一层 constructor no-swap sync 已把直接硬点定位到 edge-local formula-or-return。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesCarried",
+      "meaning": "本层只替换 edge-local formula；signed survival、row-mass/no-heavy-row 与 key 账本仍是 constructor 侧门。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "FieldCutRouterImported",
+      "meaning": "既有 edge-local field-cut 证书可直接作用在 constructor 最新 edge-local 入口。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ClosedUnsignedEdgeLabelLedgerSynced",
+      "meaning": "owner、first q、product、LPF bucket 与 Ferrers rank/degree 字段同步闭合。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "EdgeAtomMultiplicityOneSynced",
+      "meaning": "每个 canonical product `pq` 只有一个 pure-pair source atom label。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFPhiUnsignedScopeExhaustedForEdgeLocal",
+      "meaning": "LPF/Phi/Ferrers 只支付无符号 label，不产生 sign、local factor、orientation 或 ExactUV return。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesNotPaidByFieldCut",
+      "meaning": "closed edge label 不包含 signed survival、primitive row mass、complete key 或 fixed-key multiplicity。",
+      "proved": true,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAtomsCarriedForward",
+      "meaning": "common packet 义务继续以 source 三原子携带，本步不证明这三原子。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "LatestConstructorBasisReplacesEdgeLocalFormulaWithSignedAtomFields",
+      "meaning": "constructor 最新 edge-local formula 被收窄为 signed atom fields 或命名 return tag。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedAtomFieldTableStillOpen",
+      "meaning": "当前语料没有提交逐 edge signed seed/local factor 表或命名 return tag 表。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrientationParityStillOpen",
+      "meaning": "orientation parity、branch side 与 alpha/delta 侧别仍是独立 signed 字段。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair、fiber 与 return tag 仍是独立门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPaired",
+      "meaning": "tail-lift 与完整 support key 的 signed compatibility 仍依赖 internal transition。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesStillOpen",
+      "meaning": "constructor 侧的 signed survival 与 same-unit row-mass/no-heavy-row 未被本 field-cut 证明。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 edge label field-cut；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    }
+  ],
+  "imported_closed_edge_fields": [
+    {
+      "field": "owner_p",
+      "meaning": "LPF owner prime，满足 `p <= sqrt(N)`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "first_q",
+      "meaning": "offdiagonal pure pair 的第二素数，满足 `p<q<=N/p`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "product_pq",
+      "meaning": "atom integer value `pq`，其最小素因子为 `p`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "ferrers_row_rank_and_degree",
+      "meaning": "row rank 与 degree `pi(floor(N/p))-pi(p)`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "ferrers_column_rank_and_degree",
+      "meaning": "column degree `pi(min(q-1,floor(N/q)))`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "edge_atom_multiplicity",
+      "meaning": "每个 canonical product `pq` 只有一个 pure atom label。",
+      "status": "closed_unsigned"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "atom_multiplicity_one_holds": true,
+    "canonical_edges": 2600,
+    "closed_unsigned_field_count_per_edge": 7,
+    "column_degree_failure_examples": [],
+    "column_degree_formula_holds": true,
+    "formal_sign_shadow_bits": 2600,
+    "formal_sign_shadow_log10": 782.677989,
+    "lpf_bucket_identity_holds": true,
+    "lpf_failure_examples": [],
+    "open_signed_field_count_per_edge": 6,
+    "row_degree_failure_examples": [],
+    "row_degree_formula_holds": true,
+    "sample_closed_edge_labels": [
+      {
+        "column_degree": 1,
+        "left_rank": 1,
+        "p": 2,
+        "product": 6,
+        "q": 3,
+        "q_prime_rank": 2,
+        "row_degree": 668
+      },
+      {
+        "column_degree": 2,
+        "left_rank": 1,
+        "p": 2,
+        "product": 10,
+        "q": 5,
+        "q_prime_rank": 3,
+        "row_degree": 668
+      },
+      {
+        "column_degree": 3,
+        "left_rank": 1,
+        "p": 2,
+        "product": 14,
+        "q": 7,
+        "q_prime_rank": 4,
+        "row_degree": 668
+      },
+      {
+        "column_degree": 4,
+        "left_rank": 1,
+        "p": 2,
+        "product": 22,
+        "q": 11,
+        "q_prime_rank": 5,
+        "row_degree": 668
+      },
+      {
+        "column_degree": 24,
+        "left_rank": 24,
+        "p": 89,
+        "product": 9523,
+        "q": 107,
+        "q_prime_rank": 28,
+        "row_degree": 5
+      },
+      {
+        "column_degree": 24,
+        "left_rank": 24,
+        "p": 89,
+        "product": 9701,
+        "q": 109,
+        "q_prime_rank": 29,
+        "row_degree": 5
+      },
+      {
+        "column_degree": 25,
+        "left_rank": 25,
+        "p": 97,
+        "product": 9797,
+        "q": 101,
+        "q_prime_rank": 26,
+        "row_degree": 2
+      },
+      {
+        "column_degree": 25,
+        "left_rank": 25,
+        "p": 97,
+        "product": 9991,
+        "q": 103,
+        "q_prime_rank": 27,
+        "row_degree": 2
+      }
+    ],
+    "unique_edge_labels": 2600,
+    "unique_products": 2600
+  },
+  "imported_open_signed_fields_or_returns": [
+    {
+      "field": "signed_seed_value",
+      "meaning": "canonical edge 自身的 signed atom 值。",
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "field": "local_factor_multiplier",
+      "meaning": "first-edge local factor 或 zero/return 标签。",
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "field": "orientation_parity",
+      "meaning": "同一 `(p,q)` 边上的 orientation parity 与 branch side。",
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "field": "alpha_delta_side",
+      "meaning": "alpha/delta 分支侧别和符号方向。",
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "field": "exactuv_fixed_pair",
+      "meaning": "edge-local ExactUV fixed pair、fiber 与 return tag。",
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "field": "pre_cauchy_source_row",
+      "meaning": "真正发出 signed coefficient 的 pre-Cauchy source row。",
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    }
+  ],
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_constructor_basis_replaces_edge_local_formula_with_signed_atom_fields": true,
+  "latest_constructor_edge_local_formula_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_phi_unsigned_scope_exhausted_for_edge_local": true,
+  "next_primary_attack_target": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "orientation_parity_branch_side_proved": false,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "parallel_constructor_side_gates": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把 constructor 最新 `PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward` 接入 edge-local field-cut。LPF/Phi/Ferrers 已经支付每条 canonical `(p,q)` edge 的 owner、first prime、product、rank/degree 与 multiplicity-one label；剩余不再是支撑、容量或交换对称，而是逐 edge 的 signed atom fields 或命名 return tag，并仍需 orientation、ExactUV return、internal transition、source 三原子、signed survival 与 row-mass/no-heavy-row 等 constructor 侧门。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "signed_atom_field_table_proved": false,
+  "source_atoms_carried_forward": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-edge-local-two-prime-field-cut-router.json": "d0a1d3722c1f082d0df922c9a3e9087773419b5e53c6fef669eb61a7321e914d",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-sync-router.json": "0c6ee05daf873e7545f9380fa351f5a44f5e4122b811e3fc18eb8f918dea2cf9",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_sync_router.py": "8ed288899531141abdd6d4340bda1fce7799d782f032e256a9868f8091c45b98"
+  },
+  "status": "phi_lpf_latest_constructor_edge_local_formula_synced_to_unsigned_field_cut_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward",
+      "meaning": "constructor edge-local formula 先剥离 LPF/Phi/Ferrers 无符号 edge label，剩余才是 signed atom fields 或命名 return。",
+      "to": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward"
+    },
+    {
+      "from": "PhiLPFEdgeLocalTwoPrimeClosedUnsignedEdgeLabelLedgerBeforePushforward",
+      "meaning": "这些字段由 LPF bucket、pure-pair Ferrers 支撑与 product label 唯一支付。",
+      "to": "closed owner p, first q, product pq, row/column degree, multiplicity one"
+    },
+    {
+      "from": "constructor carried side gates",
+      "meaning": "field-cut 只处理 edge label，不吸收 signed survival、row mass/no-heavy-row 或 key partition 义务。",
+      "to": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward, SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger, CompletePrimitiveEmitterKeyPartitionLedger, FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "from": "latest constructor carried source packet",
+      "meaning": "constructor no-swap 基底已经把 common packet 义务显式携带为 source 三原子。",
+      "to": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "from": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward",
+      "meaning": "constructor 最新 edge-local 入口被收窄为逐 edge signed fields/return 与配套字段。",
+      "to": "PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward plus PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward, PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward, PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward, constructor side gates, and carried source atoms"
+    }
+  ],
+  "target_input_before_router": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+}
