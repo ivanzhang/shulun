@@ -23132,6 +23132,62 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 PDEC scope、新 primitive/payload、外部 no-projection KZ、Rate、DStructure、
 complete/fixed key、signed survival 与 row-mass 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.198 Phi-LPF latest constructor common signed-table rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_signed_table_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_pairing_exactuv_triple_imported=true
+built_in_pairing_trace_exit_imported=true
+trace_exit_source_rank_convergence_imported=true
+exactuv_fiber_atomization_imported=true
+source_entropy_signed_rows_imported=true
+fixed_pair_fiber_complete_key_atomized=true
+complete_key_source_table_boundary_imported=true
+phi_lpf_recursive_unsigned_ownership_closed=true
+row_origin_reduced_to_bucket_signed_law=true
+common_same_formal_unit_signed_table_aligned=true
+threshold_finite_verification_boundary_preserved=true
+beta_sieve_sawtooth_tail_still_open=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+self_contained_beta_sieve_appendix_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：built-in pairing、source entropy 与 fixed-pair ExactUV 三个剩余负载
+已被重接到同一个 pre-Cauchy primitive-emitter 表。LPF/Phi 桶恒等式和递推公式严格
+关闭了无符号 ownership、support、capacity 与素数计数读数，但这些不能替代 signed
+coefficient、alpha anchor、row-mass/support、complete key 或 fixed-key multiplicity。
+
+最新直接主攻改为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+Actual source table、complete trace/key budget、sign/local refinement、PDEC/terminal/external
+旁路、Rate 与 DStructure 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

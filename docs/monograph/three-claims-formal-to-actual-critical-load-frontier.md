@@ -16971,6 +16971,65 @@ exact sawtooth。PDEC scope、新 primitive/payload、外部 no-projection KZ、
 DStructure、complete/fixed key、signed survival 与 row-mass 仍开放。行/列命题仍未
 无条件闭合。
 
+## 425. Phi-LPF latest constructor common signed-table rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_signed_table_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_pairing_exactuv_triple_imported=true
+built_in_pairing_trace_exit_imported=true
+trace_exit_source_rank_convergence_imported=true
+exactuv_fiber_atomization_imported=true
+source_entropy_signed_rows_imported=true
+fixed_pair_fiber_complete_key_atomized=true
+complete_key_source_table_boundary_imported=true
+phi_lpf_recursive_unsigned_ownership_closed=true
+row_origin_reduced_to_bucket_signed_law=true
+common_same_formal_unit_signed_table_aligned=true
+threshold_finite_verification_boundary_preserved=true
+beta_sieve_sawtooth_tail_still_open=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+self_contained_beta_sieve_appendix_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：latest constructor 的 built-in pairing、source entropy 与
+fixed-pair ExactUV 三线不再应作为三个互不相干的黑箱处理。built-in pairing 的环外出口
+必须携带 source-rank/no-collapse 并汇入逐 primitive 核表；source entropy 必须由
+signed rows、row-mass/no-heavy-row 和发射前支撑下界支付；fixed-pair ExactUV 必须由
+complete key polylog 分区和 fixed-key 局部 O(1) 重数支付。LPF/Phi 精准桶恒等式已经
+严格关闭无符号 owner/support/capacity、素数计数恒等式和 \(p>\sqrt N\) 零质量，但它
+不产生 signed coefficient、orientation/local factor、row mass 或 key multiplicity。
+
+最新直接主攻推进到同 formal unit 的共同表字段包：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+充分大阈值加有限验证仍只关闭有限桥；beta-sieve、99% 主系数、exact sawtooth、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
