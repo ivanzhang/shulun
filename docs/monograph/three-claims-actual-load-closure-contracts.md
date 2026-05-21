@@ -7604,6 +7604,69 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 LPF/Phi 桶恒等式仍只给无符号桶容量，不能生成 signed coefficient。行/列命题仍未无条件闭合。
 
+### 1.212 Phi-LPF latest current built-in pairing to branch trace sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_builtin_pairing_trace_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_latest_builtin_pairing_imported=true
+legacy_builtin_trace_router_same_target=true
+strict_builtin_frontier_imported=true
+odd_signed_data_boundary_imported=true
+global_branch_trace_frontier_aligned=true
+signed_lane_cycle_imported=true
+branch_trace_self_proof_rejected=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_entropy_fiber_pair_carried=true
+row_column_unconditional_closed=false
+intermediate_primary_attack_target=ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+actual-load 含义是：当前 latest 的
+`BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` 与既有 built-in trace 同步证书的输入
+目标完全相同，因此可以直接桥接到下游：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+```
+
+但是现有 branch trace 若沿 signed payload/origin/common packet 子线展开，会回到 signed-lane
+自证环。因此最新非循环主硬点不是环内 trace 名称，而是：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+受控出口保留为：
+
+```text
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+并行 ExactUV 门仍是：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+其中 fixed-pair fiber 已原子化为
+`RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger` 与
+`FixedKeyExactUVLocalMultiplicityO1Ledger`。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

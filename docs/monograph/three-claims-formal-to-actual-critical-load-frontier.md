@@ -17675,6 +17675,51 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 source-domain entropy 与 fixed-pair fiber bound。complete/fixed-key、signed row law、模型余量、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 370. Phi-LPF latest current built-in pairing to branch trace sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_builtin_pairing_trace_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-builtin-pairing-trace-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_latest_builtin_pairing_imported=true
+legacy_builtin_trace_router_same_target=true
+strict_builtin_frontier_imported=true
+global_branch_trace_frontier_aligned=true
+signed_lane_cycle_imported=true
+branch_trace_self_proof_rejected=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_entropy_fiber_pair_carried=true
+row_column_unconditional_closed=false
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：当前 latest built-in pairing 可以直接接到既有 branch trace 下游：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+```
+
+但 exact branch trace 的现有 signed/payload/origin/common packet 展开已经形成自证环。排除该环后，
+最新非循环硬点是：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+或者走受控出口 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` 与
+`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`。并行 ExactUV 仍需 source entropy/fixed
+fiber；fixed fiber 已进一步落到 complete key polylog 分区与 fixed-key O(1) 局部重数。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

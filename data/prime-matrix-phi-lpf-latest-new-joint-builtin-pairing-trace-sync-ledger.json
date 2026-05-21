@@ -1,0 +1,128 @@
+{
+  "actual_emitter_source_domain_entropy_proved": false,
+  "branch_trace_self_proof_rejected": true,
+  "certificate_type": "prime_matrix_phi_lpf_latest_new_joint_builtin_pairing_trace_sync_router",
+  "controlled_exit_targets": [
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+  ],
+  "counterexample_assumption_only": true,
+  "current_latest_builtin_pairing_imported": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "exactuv_entropy_fiber_pair_carried": true,
+  "fixed_key_exact_uv_local_multiplicity_o1_proved": false,
+  "frontier_sync_only": true,
+  "global_branch_trace_frontier_aligned": true,
+  "intermediate_primary_attack_target": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn",
+  "latest_noncycle_basis_after_sync": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "legacy_builtin_trace_router_same_target": true,
+  "missing_sources": [],
+  "new_primitive_payload_or_trace_artifact_present": false,
+  "next_primary_attack_target": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact",
+  "no_theorem_switch": true,
+  "odd_signed_data_boundary_imported": true,
+  "parallel_primary_attack_target": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+  "plain_conclusion": "本步把当前 latest `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows` 桥接到既有 built-in pairing/branch-trace 同步证书。内置 signed pairing 的直接前沿是 `ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn`；但该 trace 若沿现有 signed payload/origin/common packet 子线展开，会回到 signed-lane 自证环。因此最新非循环主硬点变成 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`，或受控出口 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`、`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`。并行 ExactUV 门仍是 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`，其中 fixed fiber 已原子化为 complete key 与 fixed-key 局部重数。行/列命题仍未无条件闭合。",
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CurrentLatestBuiltInPairingImported",
+      "meaning": "当前 latest new-joint/antisplit 下游已经把直接 signed 主攻压到 built-in pairing。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "LegacyBuiltInTraceRouterSameTarget",
+      "meaning": "既有 latest built-in trace 同步证书的输入目标与当前目标相同，可作为下游桥接证据。",
+      "proved": true,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "StrictBuiltInFrontierImported",
+      "meaning": "strict built-in frontier 将内置 signed pairing 压到 exact atomic branch trace。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "OddSignedDataBoundaryImported",
+      "meaning": "LPF/Phi unsigned bucket 与旧 signed-value/origin-table 路线不能生成取向/local factor 奇数据。",
+      "proved": true,
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalBranchTraceFrontierAligned",
+      "meaning": "global CRT 前沿同样把 new-joint/built-in pairing 侧压到 same-set PDEC 或 exact branch trace。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLaneCycleImported",
+      "meaning": "common packet、built-in pairing、branch trace、signed payload、origin identity 已形成自证环。",
+      "proved": true,
+      "remaining": "cycle is diagnostic, not proof"
+    },
+    {
+      "closed": true,
+      "gate": "BranchTraceSelfProofRejected",
+      "meaning": "branch trace 不能由环内 payload/origin/common packet 自证；必须新增 primitive trace/payload 或走受控出口。",
+      "proved": true,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "NewPrimitivePayloadOrTraceCurrentCorpusProved",
+      "meaning": "当前语料没有提交新 primitive atomic signed payload 或 trace formula 工件。",
+      "proved": false,
+      "remaining": "NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVEntropyFiberPairCarried",
+      "meaning": "当前并行 ExactUV 门与既有 trace 同步保持同一个 source entropy/fixed fiber 合取。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceEntropyStillSignedRowLaw",
+      "meaning": "actual source-domain entropy 仍下钻到 signed row law、row-mass normalization 与 row support。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FixedPairFiberAtomized",
+      "meaning": "fixed-pair fiber 已原子化为 complete key polylog 分区与 fixed-key O(1) 局部重数。",
+      "proved": false,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只把当前 latest built-in pairing 接到 branch-trace/闭环出口；没有得到无条件闭合。",
+      "proved": false,
+      "remaining": "(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_lane_cycle_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.json": "6437fc285617d3a363361ed354cbba400ab588ee7ea6f3cd8cbb07582d196084",
+    "docs/monograph/prime-matrix-phi-lpf-latest-builtin-pairing-trace-sync-router.json": "b12d1fc23b3b15f98e938024af2bf048332cbc3225d9209be0f7a34de7b358a6",
+    "docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-router.json": "78cda26ba38bcf8446f487c7c7f723e4b14766d2d66f4e8d788ba962c698441e",
+    "docs/monograph/prime-matrix-strict-actual-source-domain-entropy-atom-router.json": "0eaacb65ce36ad81475e8fb8806bdd90570f24939b224d6f59c38262cf2374a9",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-fixed-pair-fiber-bound-router.json": "ca413ebdcac1df1baf57319fbfe828d92bc272ef1b326215de5cd514316d49bd",
+    "docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json": "17e1966e5e4dad0a168abc867d451291be4991c999f28bfbaf494d5875447bf1",
+    "experiments/prime_matrix_phi_lpf_latest_new_joint_builtin_pairing_trace_sync_router.py": "62f6e8ee9b05cf9c65963dfd776b512baa41b7810f384c0279ed7c508f1d815e"
+  },
+  "status": "phi_lpf_latest_current_builtin_pairing_synced_to_branch_trace_cycle_exit_open",
+  "strict_builtin_frontier_imported": true
+}
