@@ -23432,6 +23432,44 @@ LPF composite endpoint delta < P-1.
 full-root uncovered positive。最新直接硬点仍回到 Q1/Q2 传输、seed/PDEC 作用域匹配、
 signed table 或外部短区间输入。行/列命题仍未无条件闭合。
 
+### 1.204 Phi-LPF strict-k endpoint bucket cancellation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_endpoint_bucket_cancellation_router.py
+data/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json
+```
+
+同步读数为：
+
+```text
+strict_k_endpoint_composite_mass_two_proved=true
+endpoint_lpf_owner_buckets_pinned=true
+closed_minus_internal_bucket_delta_equals_endpoint_owners_proved=true
+no_endpoint_slack_for_row_positivity_proved=true
+internal_row_composite_delta_inequality_proved=false
+full_root_uncovered_slot_positive_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：严格 `1<k<P` 时，闭区间 `[kP,kP+P]` 相比内部行只多两个端点，
+而这两个端点都是合数。逐 LPF 桶有精确抵消：
+
+```text
+Delta_closed_p-Delta_internal_p
+=1_{p=LPF(k)}+1_{p=LPF(k+1)}.
+```
+
+左端点 `kP` 支付给 `LPF(k)` 桶，右端点 `(k+1)P` 支付给 `LPF(k+1)` 桶；若
+`k+1=P`，右端点为 `P^2`，支付给 `P` 桶。因此闭区间多出的长度 `2` 被端点合数桶
+精确吃掉，没有形成新的素数正性余量。
+
+本层关闭的是端点余量捷径。当前硬点没有改变：仍需证明内部行 LPF 合数桶增量和
+`< P-1`，这仍等价于 full-root 未覆盖槽存在。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

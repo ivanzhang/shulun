@@ -1,0 +1,392 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_endpoint_bucket_cancellation_router",
+  "closed_minus_internal_bucket_delta_equals_endpoint_owners_proved": true,
+  "endpoint_lpf_owner_buckets_pinned": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_sweep": {
+    "all_endpoint_bucket_cancellations_verified": true,
+    "case_count": 1010,
+    "distinct_owner_endpoint_cases": 1010,
+    "failure_count": 0,
+    "failure_sample": [],
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 97,
+    "same_owner_endpoint_cases": 0
+  },
+  "frontier_sync_only": true,
+  "full_root_uncovered_slot_positive_proved": false,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "StrictKEndpointCompositeMassTwo",
+      "meaning": "当 1<k<P 时，闭区间 [kP,kP+P] 比内部行多出的两个端点都是合数。",
+      "proved": true,
+      "remaining": "endpoint composite mass is exactly two"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointLPFOwnerBucketsPinned",
+      "meaning": "左端点归入 LPF(k) 桶，右端点归入 LPF(k+1) 桶；若 k+1=P，则右端点归入 P 桶。",
+      "proved": true,
+      "remaining": "owner multiset {LPF(k), LPF(k+1)}"
+    },
+    {
+      "closed": true,
+      "gate": "ClosedMinusInternalBucketDeltaEqualsEndpointOwners",
+      "meaning": "闭区间 LPF 桶端点增量减去内部行增量，逐桶等于两个端点 owner 的计数。",
+      "proved": true,
+      "remaining": "bucket-level cancellation identity"
+    },
+    {
+      "closed": true,
+      "gate": "NoEndpointSlackForRowPositivity",
+      "meaning": "闭区间多出的长度 2 被两个端点合数桶精确吃掉，不能产生额外素数正性余量。",
+      "proved": true,
+      "remaining": "strict-k endpoint shortcut removed"
+    },
+    {
+      "closed": false,
+      "gate": "InternalRowCompositeDeltaInequalityStillNeeded",
+      "meaning": "要证明行内有素数，仍需内部行合数桶增量和小于 P-1。",
+      "proved": false,
+      "remaining": "same full-root uncovered-slot positivity"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层排除了端点余量捷径，但未证明内部行正性。",
+      "proved": false,
+      "remaining": "Q1/Q2 transport, seed/PDEC scope, signed table, Rate, DStructure"
+    }
+  ],
+  "identity": "Delta_closed_p-Delta_internal_p = 1_{p=LPF(k)} + 1_{p=LPF(k+1)} for [kP,kP+P], 1<k<P",
+  "internal_row_composite_delta_inequality_proved": false,
+  "no_endpoint_slack_for_row_positivity_proved": true,
+  "no_theorem_switch": true,
+  "plain_conclusion": "严格 1<k<P 时，闭区间 [kP,kP+P] 比内部行只多两个合数端点。Phi-LPF 桶差分逐桶显示，这两个端点分别支付给 LPF(k) 与 LPF(k+1) owner 桶；闭区间多出的长度 2 被合数桶增量精确抵消。因此端点差分没有隐藏正性余量，剩余仍是内部行 LPF 合数桶增量和小于 P-1。",
+  "prime_count_identity": "pi(kP+P)-pi(kP-1)=pi(kP+P-1)-pi(kP)",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_audits": [
+    {
+      "P": 5,
+      "closed_bucket_deltas": {
+        "2": 3,
+        "3": 1,
+        "5": 1
+      },
+      "closed_composite_delta_total": 5,
+      "closed_interval": [
+        20,
+        25
+      ],
+      "closed_length": 6,
+      "closed_minus_internal_bucket_deltas": {
+        "2": 1,
+        "5": 1
+      },
+      "closed_minus_internal_composite_delta_total": 2,
+      "closed_prime_count": 1,
+      "closed_prime_count_equals_internal": true,
+      "endpoint_bucket_difference_matches_owner_counts": true,
+      "endpoint_owner_bucket_counts": {
+        "2": 1,
+        "5": 1
+      },
+      "endpoint_values": [
+        {
+          "cofactor": 4,
+          "lpf_owner": 2,
+          "n": 20,
+          "name": "left"
+        },
+        {
+          "cofactor": 5,
+          "lpf_owner": 5,
+          "n": 25,
+          "name": "right"
+        }
+      ],
+      "internal_bucket_deltas": {
+        "2": 2,
+        "3": 1
+      },
+      "internal_composite_delta_total": 3,
+      "internal_interval": [
+        21,
+        24
+      ],
+      "internal_length": 4,
+      "internal_prime_count": 1,
+      "k": 4
+    },
+    {
+      "P": 11,
+      "closed_bucket_deltas": {
+        "2": 6,
+        "3": 2,
+        "5": 1,
+        "7": 1,
+        "11": 1
+      },
+      "closed_composite_delta_total": 11,
+      "closed_interval": [
+        110,
+        121
+      ],
+      "closed_length": 12,
+      "closed_minus_internal_bucket_deltas": {
+        "2": 1,
+        "11": 1
+      },
+      "closed_minus_internal_composite_delta_total": 2,
+      "closed_prime_count": 1,
+      "closed_prime_count_equals_internal": true,
+      "endpoint_bucket_difference_matches_owner_counts": true,
+      "endpoint_owner_bucket_counts": {
+        "2": 1,
+        "11": 1
+      },
+      "endpoint_values": [
+        {
+          "cofactor": 10,
+          "lpf_owner": 2,
+          "n": 110,
+          "name": "left"
+        },
+        {
+          "cofactor": 11,
+          "lpf_owner": 11,
+          "n": 121,
+          "name": "right"
+        }
+      ],
+      "internal_bucket_deltas": {
+        "2": 5,
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "internal_composite_delta_total": 9,
+      "internal_interval": [
+        111,
+        120
+      ],
+      "internal_length": 10,
+      "internal_prime_count": 1,
+      "k": 10
+    },
+    {
+      "P": 17,
+      "closed_bucket_deltas": {
+        "2": 9,
+        "3": 3,
+        "5": 1,
+        "7": 1,
+        "17": 1
+      },
+      "closed_composite_delta_total": 15,
+      "closed_interval": [
+        272,
+        289
+      ],
+      "closed_length": 18,
+      "closed_minus_internal_bucket_deltas": {
+        "2": 1,
+        "17": 1
+      },
+      "closed_minus_internal_composite_delta_total": 2,
+      "closed_prime_count": 3,
+      "closed_prime_count_equals_internal": true,
+      "endpoint_bucket_difference_matches_owner_counts": true,
+      "endpoint_owner_bucket_counts": {
+        "2": 1,
+        "17": 1
+      },
+      "endpoint_values": [
+        {
+          "cofactor": 16,
+          "lpf_owner": 2,
+          "n": 272,
+          "name": "left"
+        },
+        {
+          "cofactor": 17,
+          "lpf_owner": 17,
+          "n": 289,
+          "name": "right"
+        }
+      ],
+      "internal_bucket_deltas": {
+        "2": 8,
+        "3": 3,
+        "5": 1,
+        "7": 1
+      },
+      "internal_composite_delta_total": 13,
+      "internal_interval": [
+        273,
+        288
+      ],
+      "internal_length": 16,
+      "internal_prime_count": 3,
+      "k": 16
+    },
+    {
+      "P": 101,
+      "closed_bucket_deltas": {
+        "2": 51,
+        "3": 17,
+        "5": 6,
+        "7": 3,
+        "11": 3,
+        "13": 2,
+        "19": 2,
+        "23": 1,
+        "31": 1,
+        "37": 2,
+        "47": 1,
+        "53": 1,
+        "61": 1
+      },
+      "closed_composite_delta_total": 91,
+      "closed_interval": [
+        5050,
+        5151
+      ],
+      "closed_length": 102,
+      "closed_minus_internal_bucket_deltas": {
+        "2": 1,
+        "3": 1
+      },
+      "closed_minus_internal_composite_delta_total": 2,
+      "closed_prime_count": 11,
+      "closed_prime_count_equals_internal": true,
+      "endpoint_bucket_difference_matches_owner_counts": true,
+      "endpoint_owner_bucket_counts": {
+        "2": 1,
+        "3": 1
+      },
+      "endpoint_values": [
+        {
+          "cofactor": 50,
+          "lpf_owner": 2,
+          "n": 5050,
+          "name": "left"
+        },
+        {
+          "cofactor": 51,
+          "lpf_owner": 3,
+          "n": 5151,
+          "name": "right"
+        }
+      ],
+      "internal_bucket_deltas": {
+        "2": 50,
+        "3": 16,
+        "5": 6,
+        "7": 3,
+        "11": 3,
+        "13": 2,
+        "19": 2,
+        "23": 1,
+        "31": 1,
+        "37": 2,
+        "47": 1,
+        "53": 1,
+        "61": 1
+      },
+      "internal_composite_delta_total": 89,
+      "internal_interval": [
+        5051,
+        5150
+      ],
+      "internal_length": 100,
+      "internal_prime_count": 11,
+      "k": 50
+    },
+    {
+      "P": 101,
+      "closed_bucket_deltas": {
+        "2": 51,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1,
+        "101": 1
+      },
+      "closed_composite_delta_total": 90,
+      "closed_interval": [
+        10100,
+        10201
+      ],
+      "closed_length": 102,
+      "closed_minus_internal_bucket_deltas": {
+        "2": 1,
+        "101": 1
+      },
+      "closed_minus_internal_composite_delta_total": 2,
+      "closed_prime_count": 12,
+      "closed_prime_count_equals_internal": true,
+      "endpoint_bucket_difference_matches_owner_counts": true,
+      "endpoint_owner_bucket_counts": {
+        "2": 1,
+        "101": 1
+      },
+      "endpoint_values": [
+        {
+          "cofactor": 100,
+          "lpf_owner": 2,
+          "n": 10100,
+          "name": "left"
+        },
+        {
+          "cofactor": 101,
+          "lpf_owner": 101,
+          "n": 10201,
+          "name": "right"
+        }
+      ],
+      "internal_bucket_deltas": {
+        "2": 50,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1
+      },
+      "internal_composite_delta_total": 88,
+      "internal_interval": [
+        10101,
+        10200
+      ],
+      "internal_length": 100,
+      "internal_prime_count": 12,
+      "k": 100
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.json": "e0b7301c85ca5828aca8fc99ab225cbccc166f860ad2a62dfcbf7bfcda350e65",
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json": "29531aaae09ccded34fee1864cffa649834298d947fd7ba74637a85fd88c9b40",
+    "experiments/prime_matrix_phi_lpf_strict_k_endpoint_bucket_cancellation_router.py": "6d118e89e60ef03f42bd05f73df6e117d45e38c328297fd6630a39d8140bc7d3"
+  },
+  "status": "strict_k_endpoint_bucket_cancellation_closed_but_internal_row_positivity_open",
+  "strict_k_endpoint_composite_mass_two_proved": true,
+  "strict_k_range": "1<k<P"
+}

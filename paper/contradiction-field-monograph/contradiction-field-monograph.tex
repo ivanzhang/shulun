@@ -10779,6 +10779,56 @@ theorem remains open.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) endpoint bucket cancellation]
+In the setting of the preceding theorem, let \(\Delta_p^{\rm cl}\) be the
+Phi-LPF bucket increment for the closed interval \([kP,kP+P]\), and let
+\(\Delta_p^{\rm int}\) be the bucket increment for the internal interval
+\([kP+1,kP+P-1]\).  Then
+\[
+  \Delta_p^{\rm cl}-\Delta_p^{\rm int}
+  ={\bf 1}_{p=\operatorname{LPF}(k)}
+   +{\bf 1}_{p=\operatorname{LPF}(k+1)}.
+\]
+Consequently
+\[
+  \sum_p \Delta_p^{\rm cl}-\sum_p \Delta_p^{\rm int}=2.
+\]
+Thus the two extra positions in the closed interval are exactly paid for by
+the two endpoint composite owner buckets.  The closed interval length
+\(P+1\) supplies no extra prime-positive slack over the internal row length
+\(P-1\).  The remaining positivity condition is still
+\[
+  \sum_p\Delta_p^{\rm int}<P-1,
+\]
+equivalently the existence of a full-root uncovered row slot.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-\\
+bucket-cancellation-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+strict\_k\_endpoint\_composite\_mass\_two\_proved=true\\
+endpoint\_lpf\_owner\_buckets\_pinned=true\\
+closed\_minus\_internal\_bucket\_delta\_equals\_endpoint\_owners\_proved=true\\
+no\_endpoint\_slack\_for\_row\_positivity\_proved=true\\
+internal\_row\_composite\_delta\_inequality\_proved=false\\
+full\_root\_uncovered\_slot\_positive\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The left endpoint \(kP\) has least prime factor \(\operatorname{LPF}(k)\),
+since \(1<k<P\).  The right endpoint \((k+1)P\) has least prime factor
+\(\operatorname{LPF}(k+1)\), with the boundary case \(k+1=P\) giving the
+owner \(P\).  The LPF ownership identity assigns each endpoint to exactly its
+owner bucket and to no other bucket.  Removing the two endpoints therefore
+subtracts precisely these two bucket masses.  This is a useful accounting
+closure, but it does not prove the internal row inequality; the row/column
+theorem remains open.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

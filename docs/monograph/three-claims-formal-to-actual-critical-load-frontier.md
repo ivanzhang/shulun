@@ -17300,6 +17300,57 @@ sum_{p<=sqrt(kP+P-1)}
 精确计数与循环边界，不是无条件证明。下一步仍需 Q1/Q2 transport、seed/PDEC scope、
 signed table、Rate/DStructure 或外部短区间输入。行/列命题仍未无条件闭合。
 
+## 431. Phi-LPF strict-k endpoint bucket cancellation frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_endpoint_bucket_cancellation_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json
+data/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-ledger.json
+```
+
+同步结果：
+
+```text
+strict_k_endpoint_composite_mass_two_proved=true
+endpoint_lpf_owner_buckets_pinned=true
+closed_minus_internal_bucket_delta_equals_endpoint_owners_proved=true
+no_endpoint_slack_for_row_positivity_proved=true
+internal_row_composite_delta_inequality_proved=false
+full_root_uncovered_slot_positive_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层把 `1<k<P` 的闭区间端点差分化成内部行计数；本层进一步
+逐 LPF 桶检查端点是否藏有额外余量。结论是否定的。若
+
+```text
+Delta_closed_p=[kP,kP+P] 的第 p 个 LPF 桶增量
+Delta_internal_p=[kP+1,kP+P-1] 的第 p 个 LPF 桶增量,
+```
+
+则逐桶恒等式为
+
+```text
+Delta_closed_p-Delta_internal_p
+=1_{p=LPF(k)}+1_{p=LPF(k+1)}.
+```
+
+因为 `1<k<P`，两个端点 `kP` 与 `(k+1)P` 都是合数。左端点归入 `LPF(k)` 桶，
+右端点归入 `LPF(k+1)` 桶；当 `k+1=P` 时右端点是 `P^2`，归入 `P` 桶。于是闭区间
+多出的长度 `2` 被两个端点合数的 owner 桶精确吃掉。
+
+这排除了一个潜在捷径：不能把 `[kP,kP+P]` 的闭区间长度 `P+1` 当成比内部行 `P-1`
+多出的正性余量。端点 LPF 付款完全抵消该余量。剩余硬点仍是内部行不等式
+
+```text
+sum Delta_internal_p < P-1,
+```
+
+也就是 full-root 未覆盖槽存在。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
