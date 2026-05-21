@@ -16767,6 +16767,52 @@ PDEC 作用域匹配、joint rows、word/coefficient identity、no-downstream re
 source entropy/ExactUV、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate
 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 421. Phi-LPF latest constructor Kuznetsov/high-model rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_high_model_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_kuznetsov_high_model_pair_imported=true
+strict_kuznetsov_abcd_spine_imported=true
+kze_reduced_to_ncblk_antiatom=true
+constructor_kuznetsov_cycle_import_agrees=true
+strict_high_model_tail_update_imported=true
+kuznetsov_high_model_wide_pair_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+acyclic_ncblk_actual_block_nonconcentration_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+formal-to-actual 含义是：`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`
+不能作为 constructor 路线的独立无名出口。KZ-A/B/C/D 形式谱脊柱已经同步，真正未证的
+KZ-E 对数节省被 strict 原子路由压到
+`AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom`。同时
+`HighSegmentModelGapAlpha043C3AnalyticLedger` 被高段尾路由压到自足 beta-sieve 权重、
+99% 主系数误差与 exact sawtooth 余项界。
+
+最新直接主攻推进到：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+PDEC 作用域匹配、终端家族、nonrecursive breaker/new-joint、joint rows、source/ExactUV、
+signed survival、row-mass、complete/fixed key、Rate 与 DStructure 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -1,0 +1,90 @@
+# Prime Matrix Phi-LPF latest constructor Kuznetsov/high-model rebase sync 证书
+
+**状态：** `phi_lpf_latest_constructor_kuznetsov_high_model_rebased_open`
+
+本步把 latest constructor 的 `SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger` 接入 KZ-A--E 原子路由与高段模型尾段更新。KZ/DLS 不再作为独立无名出口，高段模型也不再停在单一黑箱；剩余是 acyclic NC-BLK/source anti-atom 与自足 beta-sieve/sawtooth 尾段包。
+
+```text
+latest_constructor_kuznetsov_high_model_pair_imported=true
+strict_kuznetsov_abcd_spine_imported=true
+kze_reduced_to_ncblk_antiatom=true
+constructor_kuznetsov_cycle_import_agrees=true
+strict_high_model_tail_update_imported=true
+kuznetsov_high_model_wide_pair_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+acyclic_ncblk_actual_block_nonconcentration_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+## 1. 同步链
+
+```text
+SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND (SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound)
+external KLS/DIBFI and standard beta-sieve imports remain conditional only
+```
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `LatestConstructorKuznetsovHighModelPairImported` | `true` | `false` | 上一层已把直接主攻钉到自足 Kuznetsov/DLS 大筛与高段模型余量。 | SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger |
+| `StrictKuznetsovABCDSpineImported` | `true` | `true` | KZ-A/B/C/D 形式谱脊柱已闭合；KZ-E 是唯一剩余谱节省门。 | KZ-E well-factorable dispersion log-saving |
+| `KZERReducedToNCBLKAntiAtom` | `true` | `false` | KZ-E 不能由裸谱大筛自动给出；自足剩余压到 acyclic NC-BLK/source anti-atom。 | AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom |
+| `ConstructorKuznetsovCycleImportAgrees` | `true` | `false` | constructor 专属旧同步也确认 KZ/DLS 不是独立无名出口，会回到终端家族或破环包。 | PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `StrictHighModelTailUpdateImported` | `true` | `true` | 高段模型余量已压到自足 beta-sieve 权重、99% 主系数误差和 exact sawtooth 余项界。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `SelfContainedBetaSieveAppendixStillOpen` | `false` | `false` | 严格自足 Rosser-Iwaniec lower weights 构造仍未证明。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix |
+| `BetaSieveMainCoefficient99StillOpen` | `false` | `false` | alpha=0.43, P>=100000 的 99% 主系数显式误差仍未证明。 | BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 |
+| `ExactSawtoothTenPercentStillOpen` | `false` | `false` | 权重固定后的 CRT residue-weighted floor/sawtooth 余项界仍未证明。 | ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `KuznetsovHighModelWidePairRemoved` | `true` | `false` | KZ/high-model 宽对已被替换为 NC-BLK/source anti-atom 与 beta-sieve/sawtooth 尾段包。 | AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只做非循环前沿精炼；未证明谱节省、beta-sieve、sawtooth 或三命题无条件闭合。 | ((AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND RatePreservationLedger_FOR_moving_atom_packet AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+
+## 3. 最新保留基
+
+```text
+((AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND RatePreservationLedger_FOR_moving_atom_packet AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+下一直接主攻：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+并行仍需：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+ExactResidueWeightedFloorSawtoothTenPercentBound
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+RatePreservationLedger_FOR_moving_atom_packet
+JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+JointEmitterPrepushforwardWordCoefficientIdentityLedger
+JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+行/列命题仍未无条件闭合。
+
+## 4. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_high_model_rebase_sync_router.py` | `2e05effb2ebd8da68000f9e8d191cb50a9d64452699511f03d48206a06db5776` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-router.json` | `f684124fa1796f4f547c9c5371925ddcd00543e5c45d53afb91bd971bedae730` |
+| `docs/monograph/prime-matrix-strict-acyclic-kuznetsov-dls-atom-router.json` | `fb988aea08dcdf541574fa412e2e37254570b8ad688b010a6c0366c03c4e7270` |
+| `docs/monograph/prime-matrix-strict-high-model-tail-update-router.json` | `d6607a2234fc89e719d25a5139982b032ae9a5da624857d8eaa87a2b25e2b52a` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-router.json` | `25244bbf9a7905c0beb446a91b011e530626b4f3f0cabcb5479e13ce4bf5154a` |

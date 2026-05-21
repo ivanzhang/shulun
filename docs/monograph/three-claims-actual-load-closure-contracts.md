@@ -22946,6 +22946,48 @@ PDEC 作用域匹配、joint rows、word/coefficient identity、no-downstream re
 source entropy/ExactUV、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate
 与 DStructure 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.194 Phi-LPF latest constructor Kuznetsov/high-model rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_high_model_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_kuznetsov_high_model_pair_imported=true
+strict_kuznetsov_abcd_spine_imported=true
+kze_reduced_to_ncblk_antiatom=true
+constructor_kuznetsov_cycle_import_agrees=true
+strict_high_model_tail_update_imported=true
+kuznetsov_high_model_wide_pair_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+acyclic_ncblk_actual_block_nonconcentration_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：KZ/DLS 手臂的 actual 负载不是“调用一个自足大筛黑箱”，而是必须支付
+KZ-E 的 acyclic NC-BLK/source anti-atom；高段模型负载也必须支付 beta-sieve 构造、
+99% 主系数与 sawtooth 三项。
+
+最新直接主攻改为：
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+PDEC 作用域匹配、终端家族、nonrecursive breaker/new-joint、joint rows、source/ExactUV、
+signed survival、row-mass、complete/fixed key、Rate 与 DStructure 仍是并行硬门。
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
