@@ -1,0 +1,325 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_endpoint_interval_difference_router",
+  "closed_interval_formula": "pi(B)-pi(A-1)=(B-A+1)-sum_{p<=sqrt(B)}[Phi(floor(B/p),p)-Phi(floor((A-1)/p),p)] for 2<=A<=B",
+  "counterexample_assumption_only": true,
+  "crt_aligned_prime_free_block_exists": true,
+  "crt_prime_free_block_sample": {
+    "P": 5,
+    "all_values_composite_by_witness": true,
+    "crt_modulus": 17017,
+    "endpoint_difference_audit": {
+      "a": 40830,
+      "b": 40835,
+      "composite_count_by_lpf_endpoint_difference": 6,
+      "formula_matches_direct": true,
+      "length": 6,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 3,
+          "left_phi": 20414,
+          "p": 2,
+          "right_phi": 20417
+        },
+        {
+          "delta": 1,
+          "left_phi": 6805,
+          "p": 3,
+          "right_phi": 6806
+        },
+        {
+          "delta": 1,
+          "left_phi": 2722,
+          "p": 5,
+          "right_phi": 2723
+        },
+        {
+          "delta": 1,
+          "left_phi": 1555,
+          "p": 7,
+          "right_phi": 1556
+        }
+      ],
+      "prime_count_by_endpoint_difference": 0,
+      "prime_count_direct": 0
+    },
+    "interior_crt_conditions": [
+      {
+        "forced_divisor": 7,
+        "k_mod_q": 4,
+        "r": 1
+      },
+      {
+        "forced_divisor": 11,
+        "k_mod_q": 4,
+        "r": 2
+      },
+      {
+        "forced_divisor": 13,
+        "k_mod_q": 2,
+        "r": 3
+      },
+      {
+        "forced_divisor": 17,
+        "k_mod_q": 6,
+        "r": 4
+      }
+    ],
+    "interval": [
+      40830,
+      40835
+    ],
+    "k": 8166,
+    "values": [
+      {
+        "composite": true,
+        "n": 40830,
+        "r": 0,
+        "witness_divisor": 5
+      },
+      {
+        "composite": true,
+        "n": 40831,
+        "r": 1,
+        "witness_divisor": 7
+      },
+      {
+        "composite": true,
+        "n": 40832,
+        "r": 2,
+        "witness_divisor": 11
+      },
+      {
+        "composite": true,
+        "n": 40833,
+        "r": 3,
+        "witness_divisor": 13
+      },
+      {
+        "composite": true,
+        "n": 40834,
+        "r": 4,
+        "witness_divisor": 17
+      },
+      {
+        "composite": true,
+        "n": 40835,
+        "r": 5,
+        "witness_divisor": 5
+      }
+    ]
+  },
+  "endpoint_difference_identity_proved": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "EndpointDifferenceIdentityClosed",
+      "meaning": "Pi(B)-Pi(A-1) 可写成长度减去所有 LPF 桶的 Phi 端点差分。",
+      "proved": true,
+      "remaining": "exact identity, not an asymptotic"
+    },
+    {
+      "closed": true,
+      "gate": "KPToKPPlusPFormulaClosed",
+      "meaning": "对闭区间 [kP,kP+P]，长度项为 P+1，合数项为 p<=sqrt(kP+P) 的 Phi 差分和。",
+      "proved": true,
+      "remaining": "P+1 - sum_p Delta_Phi_p"
+    },
+    {
+      "closed": true,
+      "gate": "MechanicalExactComputationAvailable",
+      "meaning": "给定 k,P 后可机械计算精确素数个数，并与直接筛一致。",
+      "proved": true,
+      "remaining": "finite endpoint computation"
+    },
+    {
+      "closed": false,
+      "gate": "IntervalPositivityFromIdentityAlone",
+      "meaning": "恒等式本身不提供 Delta_Phi 总和小于长度的全局不等式。",
+      "proved": false,
+      "remaining": "need upper bound on composite bucket increments"
+    },
+    {
+      "closed": false,
+      "gate": "UniversalPrimeInEveryAlignedInterval",
+      "meaning": "任意固定 P 都可用 CRT 构造某个 k，使 [kP,kP+P] 全为合数；因此该全称命题为假。",
+      "proved": false,
+      "remaining": "sample P=5 gives prime_count=0"
+    },
+    {
+      "closed": true,
+      "gate": "UsefulFiniteVerificationBoundary",
+      "meaning": "端点差分适合作为有限验证和局部审计工具；若要突破需另加平均、相位或容量不等式。",
+      "proved": false,
+      "remaining": "signed/phase lower bound still required"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只建立区间精确计数与 CRT 阻断；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "offdiagonal signed seed, internal transition, source/side gates, tail package"
+    }
+  ],
+  "half_open_kp_interval_formula": "pi(kP+P-1)-pi(kP-1)=P-sum_{p<=sqrt(kP+P-1)}[Phi(floor((kP+P-1)/p),p)-Phi(floor((kP-1)/p),p)]",
+  "interval_positivity_from_identity_alone_proved": false,
+  "kp_interval_formula": "pi(kP+P)-pi(kP-1)=P+1-sum_{p<=sqrt(kP+P)}[Phi(floor((kP+P)/p),p)-Phi(floor((kP-1)/p),p)]",
+  "kp_to_kp_plus_p_formula_proved": true,
+  "mechanical_exact_computation_available": true,
+  "no_theorem_switch": true,
+  "plain_conclusion": "Phi-LPF 精准桶恒等式可以直接用于两个端点求差，得到 [kP,kP+P] 内素数个数的精确公式。但这只是精确计数表达式；要推出区间内必有素数，还必须证明 LPF 合数桶端点增量之和小于区间长度。该正性不能由恒等式本身给出，而且任意固定 P 都存在 CRT 对齐的 [kP,kP+P] 全合数区间。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_intervals": [
+    {
+      "P": 5,
+      "endpoint_difference_audit": {
+        "a": 10,
+        "b": 15,
+        "composite_count_by_lpf_endpoint_difference": 4,
+        "formula_matches_direct": true,
+        "length": 6,
+        "nonzero_bucket_deltas": [
+          {
+            "delta": 3,
+            "left_phi": 4,
+            "p": 2,
+            "right_phi": 7
+          },
+          {
+            "delta": 1,
+            "left_phi": 2,
+            "p": 3,
+            "right_phi": 3
+          }
+        ],
+        "prime_count_by_endpoint_difference": 2,
+        "prime_count_direct": 2
+      },
+      "k": 2
+    },
+    {
+      "P": 7,
+      "endpoint_difference_audit": {
+        "a": 70,
+        "b": 77,
+        "composite_count_by_lpf_endpoint_difference": 6,
+        "formula_matches_direct": true,
+        "length": 8,
+        "nonzero_bucket_deltas": [
+          {
+            "delta": 4,
+            "left_phi": 34,
+            "p": 2,
+            "right_phi": 38
+          },
+          {
+            "delta": 1,
+            "left_phi": 12,
+            "p": 3,
+            "right_phi": 13
+          },
+          {
+            "delta": 1,
+            "left_phi": 2,
+            "p": 7,
+            "right_phi": 3
+          }
+        ],
+        "prime_count_by_endpoint_difference": 2,
+        "prime_count_direct": 2
+      },
+      "k": 10
+    },
+    {
+      "P": 11,
+      "endpoint_difference_audit": {
+        "a": 330,
+        "b": 341,
+        "composite_count_by_lpf_endpoint_difference": 10,
+        "formula_matches_direct": true,
+        "length": 12,
+        "nonzero_bucket_deltas": [
+          {
+            "delta": 6,
+            "left_phi": 164,
+            "p": 2,
+            "right_phi": 170
+          },
+          {
+            "delta": 2,
+            "left_phi": 55,
+            "p": 3,
+            "right_phi": 57
+          },
+          {
+            "delta": 1,
+            "left_phi": 22,
+            "p": 5,
+            "right_phi": 23
+          },
+          {
+            "delta": 1,
+            "left_phi": 7,
+            "p": 11,
+            "right_phi": 8
+          }
+        ],
+        "prime_count_by_endpoint_difference": 2,
+        "prime_count_direct": 2
+      },
+      "k": 30
+    },
+    {
+      "P": 13,
+      "endpoint_difference_audit": {
+        "a": 520,
+        "b": 533,
+        "composite_count_by_lpf_endpoint_difference": 12,
+        "formula_matches_direct": true,
+        "length": 14,
+        "nonzero_bucket_deltas": [
+          {
+            "delta": 7,
+            "left_phi": 259,
+            "p": 2,
+            "right_phi": 266
+          },
+          {
+            "delta": 2,
+            "left_phi": 87,
+            "p": 3,
+            "right_phi": 89
+          },
+          {
+            "delta": 1,
+            "left_phi": 8,
+            "p": 13,
+            "right_phi": 9
+          },
+          {
+            "delta": 1,
+            "left_phi": 5,
+            "p": 17,
+            "right_phi": 6
+          },
+          {
+            "delta": 1,
+            "left_phi": 1,
+            "p": 23,
+            "right_phi": 2
+          }
+        ],
+        "prime_count_by_endpoint_difference": 2,
+        "prime_count_direct": 2
+      },
+      "k": 40
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_phi_lpf_endpoint_interval_difference_router.py": "6f08a824ec8d29aebbb85a48054383ba401c6eba8bd780eb6a5f768483244610"
+  },
+  "status": "phi_lpf_endpoint_interval_difference_identity_closed_but_positivity_open",
+  "universal_prime_in_every_aligned_interval_proved": false
+}

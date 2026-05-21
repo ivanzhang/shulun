@@ -23341,6 +23341,47 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 逐点 signed table、PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题仍未
 无条件闭合。
 
+### 1.202 Phi-LPF endpoint interval difference 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_endpoint_interval_difference_router.py
+data/prime-matrix-phi-lpf-endpoint-interval-difference-ledger.json
+docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_difference_identity_proved=true
+kp_to_kp_plus_p_formula_proved=true
+mechanical_exact_computation_available=true
+interval_positivity_from_identity_alone_proved=false
+universal_prime_in_every_aligned_interval_proved=false
+crt_aligned_prime_free_block_exists=true
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：对任意 `2<=A<=B`，Phi-LPF 桶恒等式可端点相减，精确得到
+
+```text
+pi(B)-pi(A-1)
+=(B-A+1)-sum_{p<=sqrt(B)}[Phi(floor(B/p),p)-Phi(floor((A-1)/p),p)].
+```
+
+因此 `[kP,kP+P]` 的闭区间素数个数也有精确端点公式，长度项为 `P+1`。这能作为
+局部审计器和有限验证器；但它不是区间正性证明。要推出区间有素数，仍需证明 LPF 合数桶
+增量和小于区间长度。
+
+本层同时给出 CRT 阻断：任意固定 `P` 都可构造某个 `k` 使 `[kP,kP+P]` 全为合数。
+样本 `P=5,k=8166` 给出 `[40830,40835]`，端点差分和直接筛都得到素数个数 `0`。
+所以不能把该恒等式升级为“所有 `[kP,kP+P]` 都有素数”的全称命题。
+
+后续若沿此路推进，必须寻找 `sum Delta_Phi_p` 的额外结构性上界、平均相位机制或 signed
+payload/容量压力，而不是仅重复端点差分。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

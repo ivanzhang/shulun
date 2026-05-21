@@ -25300,6 +25300,56 @@ and the beta-sieve/sawtooth tail remain active.  No unconditional row/column
 theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Phi-LPF endpoint interval difference]
+For every interval \(2\le A\le B\), the Phi-LPF bucket identity gives the
+exact endpoint difference
+\[
+\pi(B)-\pi(A-1)
+=(B-A+1)
+-\sum_{p\le \sqrt B}
+\left(
+\Phi\!\left(\left\lfloor \frac{B}{p}\right\rfloor,p\right)
+-\Phi\!\left(\left\lfloor \frac{A-1}{p}\right\rfloor,p\right)
+\right).
+\]
+In particular, for the closed aligned interval \([kP,kP+P]\),
+\[
+\pi(kP+P)-\pi(kP-1)
+=P+1-\sum_{p\le \sqrt{kP+P}}
+\left(
+\Phi\!\left(\left\lfloor \frac{kP+P}{p}\right\rfloor,p\right)
+-\Phi\!\left(\left\lfloor \frac{kP-1}{p}\right\rfloor,p\right)
+\right).
+\]
+\end{theorem}
+\begin{proof}[Phi-LPF endpoint interval difference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-endpoint-\\
+interval-difference-router.md.
+\end{quote}
+The composite integers in \([A,B]\) are partitioned by their least prime
+factor.  For a fixed least prime factor \(p\), writing the integer as \(pm\)
+leaves a \(p\)-rough cofactor \(m\), so the number of such composites is
+\[
+\Phi\!\left(\left\lfloor \frac{B}{p}\right\rfloor,p\right)
+-\Phi\!\left(\left\lfloor \frac{A-1}{p}\right\rfloor,p\right).
+\]
+Summing over \(p\le\sqrt B\) counts every composite in the interval exactly
+once, and subtracting from the interval length gives the displayed prime
+count.
+
+This identity is exact and useful for local audit and finite verification, but
+it is not by itself a positivity theorem.  To prove that an interval contains
+a prime one still needs a structural upper bound on the summed LPF bucket
+increments.  In fact, for any fixed \(P\) a CRT construction can choose \(k\)
+so that every integer in \([kP,kP+P]\) is composite; the certificate records
+the sample \(P=5\), \(k=8166\), where \([40830,40835]\) contains no prime.
+Thus the endpoint formula must be paired with extra phase, capacity, or signed
+information before it can support a global contradiction.  No unconditional
+row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

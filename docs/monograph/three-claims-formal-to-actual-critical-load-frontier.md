@@ -17186,6 +17186,54 @@ LPF/Phi 桶恒等式仍只支付 owner/support/capacity；offdiagonal signed see
 source 三原子、row-mass/support、complete/fixed key、尾段、Rate 与 DStructure 仍未闭合。
 行/列命题仍未无条件闭合。
 
+## 429. Phi-LPF endpoint interval difference frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_endpoint_interval_difference_router.py
+docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.json
+data/prime-matrix-phi-lpf-endpoint-interval-difference-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_difference_identity_proved=true
+kp_to_kp_plus_p_formula_proved=true
+mechanical_exact_computation_available=true
+interval_positivity_from_identity_alone_proved=false
+universal_prime_in_every_aligned_interval_proved=false
+crt_aligned_prime_free_block_exists=true
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Phi-LPF 精准桶公式确实可以用于两个端点求差。对闭区间
+`2<=A<=B`，
+
+```text
+pi(B)-pi(A-1)
+=(B-A+1)-sum_{p<=sqrt(B)}[Phi(floor(B/p),p)-Phi(floor((A-1)/p),p)].
+```
+
+因此对闭区间 `[kP,kP+P]`，
+
+```text
+pi(kP+P)-pi(kP-1)
+=P+1-sum_{p<=sqrt(kP+P)}
+  [Phi(floor((kP+P)/p),p)-Phi(floor((kP-1)/p),p)].
+```
+
+这是精确值公式，不是误差估计；给定 `k,P` 后可以机械算出区间内素数个数。
+但它不能单独推出区间正性，因为还需要证明所有 LPF 合数桶端点增量之和小于区间长度。
+更强的是，任意固定 `P` 都可用 CRT 构造某个 `k`，使 `[kP,kP+P]` 全为合数。证书样本：
+`P=5,k=8166` 时 `[40830,40835]` 全为合数，端点差分和直接筛都给出素数个数 `0`。
+
+本层结论：端点差分公式是精确局部审计器和有限验证器；若要继续用于突破，必须额外加入
+平均相位、容量压力、signed payload 或 `sum Delta_Phi_p` 的结构性上界。它本身不闭合
+三命题。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
