@@ -16139,6 +16139,57 @@ factor、branch key 或 prepushforward alpha/delta 求和恒等式。PDEC scope�
 independent bridge、terminal WFD、direct pointwise table、ExactUV/key、harmonic/skeleton、
 Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题仍未无条件闭合。
 
+## 407. Phi-LPF latest constructor bucket transport-stack rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_bucket_transport_stack_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_bucket_signed_law_imported=true
+existing_transport_stack_imported=true
+step_update_edge_multiplier_imported=true
+source_packet_cycle_guard_imported=true
+signed_side_gates_carried=true
+bucket_transport_stack_rebased=true
+edge_signed_multiplier_table_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+independent_noncanonical_arithmetic_identity_proved=false
+same_unit_exactuv_rank_multiplicity_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+formal-to-actual 含义是：上一层最新 constructor kernel-bucket 证书得到的
+`PhiLPFBucketSignedCoefficientLawBeforePushforward` 已重新接到既有 transport stack。
+若不直接提交逐 Phi-LPF bucket signed value table，则 bucket signed law 必须经过
+rough-cofactor transport；ordered path、unit/square-base 边界和 common packet 自证环
+已经在旧证书中处理。
+
+最新窄口压为：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+并行 source 三原子仍为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、Rate、
+DStructure 与 constructor 兄弟字段仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

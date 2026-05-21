@@ -22365,6 +22365,57 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.180 Phi-LPF latest constructor bucket transport-stack rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_bucket_transport_stack_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_bucket_signed_law_imported=true
+existing_transport_stack_imported=true
+step_update_edge_multiplier_imported=true
+source_packet_cycle_guard_imported=true
+signed_side_gates_carried=true
+bucket_transport_stack_rebased=true
+edge_signed_multiplier_table_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+independent_noncanonical_arithmetic_identity_proved=false
+same_unit_exactuv_rank_multiplicity_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：新 kernel-bucket 层得到的
+`PhiLPFBucketSignedCoefficientLawBeforePushforward` 已重新接入既有 constructor transport-stack。
+若不直接给逐点 signed value table，则当前递推路线剩下逐 edge signed multiplier 表，
+以及 source-packet 三原子。
+
+最新直接主攻改为：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+并行保留：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+以及 PDEC scope、ExactUV/key、harmonic/skeleton、Rate、DStructure 与 constructor 兄弟字段。
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
