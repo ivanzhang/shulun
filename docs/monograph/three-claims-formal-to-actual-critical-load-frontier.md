@@ -16034,6 +16034,59 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 PDEC scope、canonical lock、independent bridge、ExactUV、key、Rate、DStructure 与 constructor
 兄弟字段仍开放。行/列命题仍未无条件闭合。
 
+## 405. Phi-LPF latest constructor row-level signed-source fixed-point sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_row_level_signed_source_fixed_point_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_row_level_target_imported=true
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+seed_coordinate_source_cycle_guard_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+row_level_coarse_target_removed=true
+row_level_clean_core_origin_generation_table_proved=false
+noncircular_signed_coefficient_emission_kernel_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+formal-to-actual 含义是：latest constructor 已经不能停在
+`RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`
+这个表名。strict row-level 证书说明，该表必须由无环 pre-Cauchy seed signed-row
+emitter 正向产生；但 signed-source fixed-point 证书与 seed coordinate/source guard
+显示，当前内部展开会沿 basis word、coordinate、assignment、value map 和 origin identity
+回到同一 row-level 表。
+
+因此 row-level 表名被删除为粗口，最新内部主攻同步为：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+constructor 线的 signed-side gate 相应改写为：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+PDEC scope、canonical lock、independent bridge、terminal WFD、direct pointwise table、ExactUV、
+key、harmonic/skeleton、Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题仍未
+无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -22311,3 +22311,56 @@ AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 PDEC same-set scope 仍作为条件性 scope/外部输入保留；source seed、harmonic、skeleton、
 ExactUV、complete/fixed key、Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题
 仍未无条件闭合。
+
+### 1.178 Phi-LPF latest constructor row-level signed-source fixed-point sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_row_level_signed_source_fixed_point_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-level-signed-source-fixed-point-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_row_level_target_imported=true
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+seed_coordinate_source_cycle_guard_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+row_level_coarse_target_removed=true
+row_level_clean_core_origin_generation_table_proved=false
+noncircular_signed_coefficient_emission_kernel_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：latest constructor 中的 row-level clean-core 表不是可接受的终端
+证明原子。strict row-level 路由把该表压到无环 pre-Cauchy seed signed-row emitter；
+signed-source fixed-point 路由和 seed coordinate/source cycle guard 显示，继续沿当前内部
+来源链展开会回到同一 row-level 表。该闭环不能作为 signed coefficient 来源证明。
+
+最新直接主攻改为：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+并行保留：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+HarmonicWindowAlpha043PGe3001Upper0850Ledger
+DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
