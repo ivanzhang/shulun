@@ -8984,6 +8984,62 @@ AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyAri
 并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
 模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.238 Phi-LPF latest constructor signed atom trace-sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_signed_atom_trace_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_signed_atom_fields_imported=true
+constructor_side_gates_carried=true
+trace_sync_router_imported=true
+closed_unsigned_labels_carried=true
+same_trace_key_and_named_return_matrix_synced=true
+constructor_source_atoms_carried_forward=true
+constructor_side_gates_not_paid_by_trace_sync=true
+trace_self_proof_cycle_cut_synced=true
+latest_constructor_basis_replaces_signed_atom_fields_with_new_payload_or_exits=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+actual-load 含义是：constructor signed atom fields 不能由无符号 edge label 后验推出。
+signed value、local factor、orientation/branch side、alpha/delta payload、ExactUV fixed pair
+与 source row 必须落在同一个 pre-Cauchy trace key 上；缺失、冲突、零因子、超预算或跨 key
+读取都进入 named return/PDEC。样本 `N=10000` 中仍是 `2600` 个 trace packets 与
+`15600` 个开放 signed slots。
+
+因此新增最窄口为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+配套仍需：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+并行仍需 terminal descent、same-set PDEC、逐点 signed table、ExactUV、模型、Rate 与
+DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
