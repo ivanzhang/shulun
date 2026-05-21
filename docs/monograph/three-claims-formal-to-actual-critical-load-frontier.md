@@ -19122,6 +19122,61 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 terminal descent、same-set PDEC、逐点 signed table、ExactUV、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 397. Phi-LPF latest constructor new-payload source-atom alignment sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_new_payload_source_atom_alignment_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-new-payload-source-atom-alignment-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_new_payload_imported=true
+constructor_source_and_side_gates_carried=true
+latest_unsigned_labels_cannot_pay_payload=true
+signed_lane_cycle_cut_carried=true
+strict_new_payload_alignment_imported=true
+latest_constructor_new_payload_reduced_to_source_rank_atom=true
+constructor_source_atoms_carried_forward=true
+constructor_row_mass_and_survival_still_open=true
+independent_new_payload_terminal_present=false
+actual_source_domain_entropy_proved=false
+complete_primitive_emitter_key_partition_proved=false
+fixed_key_exact_uv_local_multiplicity_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+formal-to-actual 含义是：constructor latest new-payload 若要成为真正新工件，必须落到
+actual source-rank/no-collapse 包，而不是作为未解析黑箱停留。无符号 LPF/Phi/Ferrers
+label 与同 trace-key return 矩阵只给出输入域和失败命名，不给 source-domain entropy。
+
+新的 constructor 最新窄口为：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+```
+
+同时仍需：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+terminal descent、same-set PDEC、逐点 signed table、ExactUV、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
