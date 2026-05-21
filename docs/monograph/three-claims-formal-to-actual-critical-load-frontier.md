@@ -16500,6 +16500,51 @@ orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin tra
 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 415. Phi-LPF latest constructor signed atom trace rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_signed_atom_trace_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_signed_atom_fields_imported=true
+existing_constructor_signed_atom_trace_reusable=true
+trace_sync_router_imported=true
+closed_unsigned_labels_carried=true
+same_trace_key_and_named_return_matrix_synced=true
+constructor_source_atoms_carried_forward=true
+constructor_side_gates_not_paid_by_trace_sync=true
+trace_self_proof_cycle_cut_synced=true
+signed_atom_trace_rebased=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward` 已接入
+signed atom trace-sync。无符号 edge label 只给输入域；signed value、local factor、
+orientation、alpha/delta side、ExactUV fixed pair 与 source row 必须同属一个
+pre-Cauchy trace key。匿名失败已被命名 return 矩阵吸收。
+
+最新直接主攻推进到：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+terminal descent、same-set PDEC、逐点 Phi-LPF signed table、source 三原子、signed survival、
+row-mass/no-heavy-row、complete/fixed key、ExactUV、模型、Rate 与 DStructure 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

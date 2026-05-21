@@ -22694,6 +22694,47 @@ PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
 三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.188 Phi-LPF latest constructor signed atom trace rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_signed_atom_trace_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-signed-atom-trace-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_signed_atom_fields_imported=true
+existing_constructor_signed_atom_trace_reusable=true
+trace_sync_router_imported=true
+closed_unsigned_labels_carried=true
+same_trace_key_and_named_return_matrix_synced=true
+constructor_source_atoms_carried_forward=true
+constructor_side_gates_not_paid_by_trace_sync=true
+trace_self_proof_cycle_cut_synced=true
+signed_atom_trace_rebased=true
+new_primitive_payload_or_trace_artifact_present=false
+edge_local_signed_atom_fields_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：signed atom fields 不能作为匿名字段停留。它们必须落在同一个
+pre-Cauchy trace key；缺失、冲突、零因子、超预算或跨 key 读取进入命名 return 矩阵。
+该矩阵只关闭路由，不给 signed value/local factor 公式。
+
+最新直接主攻改为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+terminal descent、same-set PDEC、逐点 Phi-LPF signed table、source 三原子、signed survival、
+row-mass/no-heavy-row、complete/fixed key 与 ExactUV 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
