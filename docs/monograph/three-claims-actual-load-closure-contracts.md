@@ -23188,6 +23188,58 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 Actual source table、complete trace/key budget、sign/local refinement、PDEC/terminal/external
 旁路、Rate 与 DStructure 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.199 Phi-LPF latest constructor common-table transport-stack rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_transport_stack_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+common_signed_table_imported=true
+bucket_transport_stack_imported=true
+signed_transport_split_imported=true
+step_update_reduced_to_edge_multiplier=true
+source_packet_cycle_guard_carried=true
+bucket_signed_law_removed_from_common_table=true
+tail_package_still_open=true
+edge_signed_multiplier_table_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+self_contained_beta_sieve_appendix_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：共同 signed-table 中的 bucket signed law 已被拆成 rough-cofactor
+transport stack。LPF/Phi 的递推只给 support split；signed 递推必须支付逐 ordered edge
+signed multiplier，或直接提交逐点 signed value table。square-base/common-packet 私有出口
+已回到 source 三原子，不能作为 bucket law 自证。
+
+最新直接主攻改为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+逐点 Phi-LPF signed table、PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题
+仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

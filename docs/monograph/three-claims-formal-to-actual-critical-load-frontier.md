@@ -17030,6 +17030,58 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 充分大阈值加有限验证仍只关闭有限桥；beta-sieve、99% 主系数、exact sawtooth、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 426. Phi-LPF latest constructor common-table transport-stack rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_transport_stack_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-common-table-transport-stack-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+common_signed_table_imported=true
+bucket_transport_stack_imported=true
+signed_transport_split_imported=true
+step_update_reduced_to_edge_multiplier=true
+source_packet_cycle_guard_carried=true
+bucket_signed_law_removed_from_common_table=true
+tail_package_still_open=true
+edge_signed_multiplier_table_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+self_contained_beta_sieve_appendix_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`PhiLPFBucketSignedCoefficientLawBeforePushforward` 这个粗名已经
+被拆开。Phi/LPF 递推只提供无符号 support split；如果不直接提交逐点 Phi-LPF signed
+value table，就必须沿 rough-cofactor transport 给出逐 ordered edge 的 signed multiplier 表。
+square-base/common-packet 私有出口已被 source-packet cycle guard 吸回 source 三原子。
+
+最新直接主攻推进到：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+逐点 signed value table 仍是直接旁路，但也必须同口径携带 source 三原子、row-mass/support
+和 complete/fixed key。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
