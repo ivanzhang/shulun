@@ -1,0 +1,93 @@
+# Prime Matrix Phi-LPF latest constructor common-table semiprime seed diagonal rebase sync 证书
+
+**状态：** `phi_lpf_latest_constructor_common_table_semiprime_seed_diagonal_rebased_open`
+
+本步把 latest constructor common-table 前沿中的 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward` 接入 diagonal/offdiagonal 拆分。diagonal `(p,p)` square-base lane 的私有 signed 出口已被移除，只能回到 source-packet 三原子；因此新增 signed 缺口收窄为 `PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`。internal transition、row-mass/support、complete/fixed key 与 beta-sieve/sawtooth 尾段仍保留。
+
+```text
+common_table_first_seed_imported=true
+existing_semiprime_diagonal_rebase_reusable=true
+semiprime_diagonal_router_imported=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried=true
+common_table_side_gates_carried=true
+tail_package_still_open=true
+semiprime_seed_diagonal_rebased=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+## 1. 同步链
+
+| from | to | meaning |
+| --- | --- | --- |
+| `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward` | `PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward` | semiprime first seed 按 p=q 与 p<q 唯一拆分。 |
+| `PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward` | `AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows` | diagonal square-base 不是私有 signed 出口，只能回到 common source-packet 三原子。 |
+| `common-table side gates` | `SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger` | 这一步只替换 FIRST_SEED，不支付 row-mass/support 或 key multiplicity。 |
+| `large-threshold plus finite verification` | `SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound` | 阈值与有限验证仍不能替代 beta-sieve/sawtooth 尾段。 |
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `CommonTableFirstSeedImported` | `true` | `false` | 上一层 common-table edge slab 已把主口压到 semiprime first-edge signed seed。 | PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward |
+| `ExistingSemiprimeDiagonalRebaseReusable` | `true` | `false` | 旧 constructor semiprime diagonal rebase 的目标输入相同，可在 common-table 前沿复用。 | PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows |
+| `SemiprimeDiagonalRouterImported` | `true` | `true` | semiprime diagonal frontier 给出 p=q 与 p<q 的无重叠拆分。 | PhiLPFDiagonalSquareBaseFirstSeedCommonPacketSourceBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward |
+| `DiagonalPrivateEscapeRemoved` | `true` | `true` | diagonal square-base lane 不生成独立 signed seed，只能回到 source 三原子。 | AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows |
+| `CommonPacketCycleGuardCarried` | `true` | `true` | common packet 自证环已切断，diagonal lane 不能自证 source atoms。 | AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows |
+| `CommonTableSideGatesCarried` | `true` | `false` | semiprime diagonal 只替换 FIRST_SEED；row-mass/support 与 key multiplicity 仍保留。 | SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+| `TailPackageStillOpen` | `true` | `false` | 充分大阈值和有限验证仍不能替代 beta-sieve、99% 主系数与 exact sawtooth。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `SemiprimeSeedDiagonalRebasedIntoCommonTable` | `true` | `false` | 最新 common-table FIRST_SEED 已同步为 offdiagonal seed 与 source 三原子。 | AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+| `OffDiagonalSeedCurrentCorpusProved` | `false` | `false` | 当前材料没有为 p<q ordered semiprime first edges 给出 signed seed table。 | PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward |
+| `InternalPrimeAdjoinTransitionStillPaired` | `true` | `false` | prefix>1 internal prime-adjoin transition 仍是同一 LPF signed 递推的配套硬点。 | PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本层只做 common-table semiprime diagonal rebase；未证明 offdiagonal seed、internal transition、source 三原子、row mass/support、key multiplicity 或尾段。 | (((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR (AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+
+## 3. 最新内部基
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 4. 保留条件基
+
+```text
+(((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR (AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+配套必需：
+
+```text
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行 source 三原子：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行共同表侧门：
+
+```text
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+行/列命题仍未无条件闭合。
+
+## 5. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_latest_constructor_common_table_semiprime_seed_diagonal_rebase_sync_router.py` | `d41ddb082c6bd7eecf4b1a6068f0ba5aa37027a9da1ea0b6d002a6567eaa00ad` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-router.json` | `c0786d1c99d56fd96f49114d25f0d4e19921605d5e7edd082f5ac8be6137365c` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-rebase-sync-router.json` | `c5438c99e29b137fa6be0f9392a34ce7908cc7b70edbaf2d5d535f3bd82f5600` |
+| `docs/monograph/prime-matrix-phi-lpf-semiprime-seed-diagonal-frontier-router.json` | `10b88bb8d80a793ab8ed16263cbe5efc4d47c72fdcc544ed7d97e559bda6788d` |
+| `docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json` | `9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b` |

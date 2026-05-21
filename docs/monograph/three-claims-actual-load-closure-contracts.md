@@ -23291,6 +23291,56 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 逐点 Phi-LPF signed value table 仍是直接旁路，但也必须携带同一 source/side-gate 口径。
 PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.201 Phi-LPF latest constructor common-table semiprime seed diagonal rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_semiprime_seed_diagonal_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+common_table_first_seed_imported=true
+existing_semiprime_diagonal_rebase_reusable=true
+semiprime_diagonal_router_imported=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried=true
+common_table_side_gates_carried=true
+tail_package_still_open=true
+semiprime_seed_diagonal_rebased=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：first seed 中的 diagonal `(p,p)` 不再是独立负载口，它已回到
+common source-packet 三原子；真正新增的 first-seed signed 负载是 `p<q` 的 offdiagonal
+ordered semiprime 表。这个拆分不支付 source 三原子、内部 transition、row-mass/support、
+complete/fixed key 或 beta-sieve/sawtooth。
+
+最新直接主攻改为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+逐点 signed table、PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题仍未
+无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -17135,6 +17135,57 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 row-mass/support、complete/fixed key、逐点 signed table 旁路、PDEC/terminal/external 旁路、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 428. Phi-LPF latest constructor common-table semiprime seed diagonal rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_semiprime_seed_diagonal_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+common_table_first_seed_imported=true
+existing_semiprime_diagonal_rebase_reusable=true
+semiprime_diagonal_router_imported=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried=true
+common_table_side_gates_carried=true
+tail_package_still_open=true
+semiprime_seed_diagonal_rebased=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：semiprime first seed 已按 `p=q` 与 `p<q` 唯一拆开。
+diagonal `(p,p)` 正是 square-base lane；既有证书已排除它作为私有 signed 出口，只能
+回到 common source-packet 三原子。因而新 signed 缺口不再是全部 semiprime first seed，
+而是 offdiagonal ordered semiprime first seed。
+
+最新直接主攻推进到：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+LPF/Phi 桶恒等式仍只支付 owner/support/capacity；offdiagonal signed seed、internal transition、
+source 三原子、row-mass/support、complete/fixed key、尾段、Rate 与 DStructure 仍未闭合。
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
