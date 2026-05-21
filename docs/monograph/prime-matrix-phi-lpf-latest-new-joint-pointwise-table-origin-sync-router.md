@@ -1,0 +1,94 @@
+# Prime Matrix Phi-LPF latest new-joint pointwise-table origin sync 证书
+
+**状态：** `phi_lpf_latest_new_joint_pointwise_table_synced_to_origin_identity_open`
+
+本步把 latest new-joint 的 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` 继续拆到最窄字段。逐点 signed 表不是 LPF/Phi support/capacity 的推论；它若要作为新工件闭合，首字段必须给 `PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow`，再给 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`，最终必须正向提交 `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward`。沿现有来源链展开则回到 signed 坐标-来源闭环，非循环破环出口保留 `AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput`、`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate` 或 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`。signed survival、row-mass、ExactUV、rough-cofactor transport/coherence、模型、Rate 和 DStructure 仍开放；行/列命题仍未无条件闭合。
+
+```text
+latest_pointwise_table_imported=true
+pointwise_frontier_imported=true
+pointwise_table_first_field_signed_weight_imported=true
+phi_lpf_signed_survival_boundary_imported=true
+primitive_expression_to_origin_identity_imported=true
+reverse_recovery_blocked_imported=true
+existing_expansion_hits_breaker_triad=true
+pointwise_signed_table_proved=false
+primitive_summand_origin_identity_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+## 1. 同步链
+
+| from | to | meaning |
+| --- | --- | --- |
+| `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` | `PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow` | 逐点 Phi-LPF signed value table 的首字段是逐 skeleton row 的 signed weight。 |
+| `PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow` | `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` | 逐行 signed weight 不能由字段名推出，必须给 primitive summand 推前前 signed expression。 |
+| `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` | `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward` | primitive summand expression 本身还不是来源证明，必须给 pre-Cauchy source tuple 来源恒等式。 |
+| `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward` | `AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` | 沿现有来源链继续展开会落入 signed 坐标-来源闭环；非循环出口只剩三类破环输入。 |
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | ---: | ---: | --- | --- |
+| `LatestPointwiseTableImported` | true | false | 刚提交的 latest moving-atom signed-table 层把直接主攻推进到逐点 Phi-LPF signed 表。 | PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward |
+| `PointwiseFrontierImported` | true | false | 逐点表不能由 LPF support/capacity 或 common packet 自证；必须作为推前前 signed 工件正向提交。 | PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `PointwiseTableFirstFieldIsSignedWeightImported` | true | false | strict 逐行 signed alpha weight 证书说明 value table 的首个可证明字段是 primitive summand signed expression。 | ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward |
+| `PhiLPFSignedSurvivalBoundaryImported` | true | false | LPF/Phi 候选容量已闭合，但候选 row 不是 actual signed row；signed survival 与 row-mass 仍独立开放。 | NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger |
+| `PrimitiveExpressionToOriginIdentityImported` | true | false | primitive signed expression 只有在给出 pre-Cauchy source tuple 来源恒等式后才是实际公式。 | PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward |
+| `ReverseRecoveryBlockedImported` | true | true | 零行覆盖、payment skeleton、canonical scoped 公式和外部谱估计都不能反向恢复 actual signed coefficient。 | PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward |
+| `ExistingExpansionHitsBreakerTriad` | true | false | 若来源恒等式沿现有 row-level/source-coordinate 链展开，会回到 signed 坐标-来源闭环。 | AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `PointwiseSignedTableCurrentCorpusProved` | false | false | 当前语料没有逐 Phi-LPF key 的 signed coefficient、local factor、alpha/delta side 与求和恒等式表。 | PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward |
+| `PrimitiveOriginIdentityCurrentCorpusProved` | false | false | 当前语料没有每个 actual primitive summand 的 signed coefficient 来源恒等式。 | PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward |
+| `RowColumnUnconditionalClosureReached` | false | false | 本层仍是前沿同步与最窄字段拆分，不是三目标命题无条件闭合。 | PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger |
+
+## 3. strict 基
+
+```text
+(PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR (AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+```
+
+## 4. 最新保留基
+
+```text
+((PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND (PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward) AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+并行主攻：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 5. 依赖哈希
+
+```json
+{
+  "experiments/prime_matrix_phi_lpf_latest_new_joint_pointwise_table_origin_sync_router.py": "bc0daef0619a7c0556b67352708ba16814530c640f84c372397c2ed7ff601ccb",
+  "docs/monograph/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-router.json": "b84b25caf559a0a3824ee1cbfeb147893b98d1786b1da9f1e3eb10e73c671ff0",
+  "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+  "docs/monograph/prime-matrix-phi-lpf-source-entropy-signed-survival-router.json": "073edf36be5e26306930db964a9a7920916efc6af78c1fb034a4a34f804189f7",
+  "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+  "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+  "docs/monograph/prime-matrix-strict-nonrecursive-breaker-latest-cycle-sync-router.json": "efaf74faa45fbd33a6a02f482fc1921c6bd2d4c0af2f998dc4e7507c1f221d89"
+}
+```

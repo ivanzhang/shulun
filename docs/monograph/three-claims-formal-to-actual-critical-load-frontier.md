@@ -17883,6 +17883,63 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 本层仍是前沿同步，不是逐点 signed 表、signed survival/row-mass、速率包或行/列命题的
 无条件证明。
 
+## 374. Phi-LPF latest new-joint pointwise-table origin sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_pointwise_table_origin_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_pointwise_table_imported=true
+pointwise_frontier_imported=true
+pointwise_table_first_field_signed_weight_imported=true
+phi_lpf_signed_survival_boundary_imported=true
+primitive_expression_to_origin_identity_imported=true
+reverse_recovery_blocked_imported=true
+existing_expansion_hits_breaker_triad=true
+pointwise_signed_table_proved=false
+primitive_summand_origin_identity_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+formal-to-actual 含义是：逐点 Phi-LPF signed 表作为 direct bypass 仍未证明；它不能从
+LPF/Phi 桶恒等式反推得到。既有逐行 signed alpha weight 与 primitive summand 证书说明，
+这张表的实际首字段会落到 pre-Cauchy source tuple 来源恒等式。
+
+因此最新直接硬点推进为：
+
+```text
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+并行保留：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层仍是最窄字段同步；来源恒等式、signed survival/row-mass、三破环出口与最终晋级门均未证明。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

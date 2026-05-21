@@ -7827,6 +7827,56 @@ AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 余量、Rate、DStructure、ExactUV 与 rough-cofactor transport/coherence。行/列命题仍未
 无条件闭合。
 
+### 1.216 Phi-LPF latest new-joint pointwise-table origin sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_pointwise_table_origin_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-pointwise-table-origin-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_pointwise_table_imported=true
+pointwise_frontier_imported=true
+pointwise_table_first_field_signed_weight_imported=true
+phi_lpf_signed_survival_boundary_imported=true
+primitive_expression_to_origin_identity_imported=true
+reverse_recovery_blocked_imported=true
+existing_expansion_hits_breaker_triad=true
+pointwise_signed_table_proved=false
+primitive_summand_origin_identity_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+actual-load 含义是：上一层留下的
+`PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward` 不能由 LPF/Phi
+support、capacity、candidate row 或 common source packet 自证。若这张表作为真正的新
+prepushforward signed 工件闭合，它的首字段必须给逐 skeleton row 的 signed weight，再给
+actual primitive summand 的 signed expression，最终正向提交：
+
+```text
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+零行覆盖、payment skeleton、canonical scoped 公式和外部谱估计都不能反向生成该来源恒等式。
+若继续沿现有 source-coordinate 链展开，会回到 signed 坐标-来源闭环；非循环破环出口保留：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+signed row 存活、同 formal unit row-mass/no-heavy-row、ExactUV、rough-cofactor
+transport/coherence、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
