@@ -22214,3 +22214,50 @@ DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
 ```
 
 以及 Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
+
+### 1.176 Phi-LPF latest constructor terminal-family saturation sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_family_saturation_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-router.json
+```
+
+同步读数为：
+
+```text
+constructor_terminal_family_target_imported=true
+strict_terminal_family_latest_saturation_imported=true
+nonrecursive_breaker_cycle_imported=true
+seed_cycle_cut_saturation_imported=true
+pdec_scope_branch_internal_saturation_imported=true
+global_crt_saturation_agrees=true
+constructor_terminal_family_unnamed_exit_removed=true
+strict_acyclic_terminal_family_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：constructor 线不能继续把
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily` 当作
+终端黑箱。strict 终端家族三手臂已经饱和：canonical-lock 只给 scoped canonical，
+direct PDEC 卡在 same-set scope，CleanKLS/DLS 回到终端循环；nonrecursive breaker 与
+seed-cycle-cut 继续展开也回到 signed-source 固定点。global CRT 饱和同步给出同一前沿。
+
+最新显式保留基为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+     OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND HarmonicWindowAlpha043PGe3001Upper0850Ledger
+AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部主攻转为 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`；PDEC same-set scope
+仍作为条件性 scope/外部输入保留。source seed、harmonic、skeleton、Rate、DStructure 与
+constructor 兄弟字段仍开放。行/列命题仍未无条件闭合。

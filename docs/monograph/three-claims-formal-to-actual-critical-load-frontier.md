@@ -15915,6 +15915,54 @@ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
 这仍不是终局证明；terminal family、nonrecursive breaker、new-joint、PDEC scope、harmonic、
 skeleton、Rate、DStructure 与 constructor 兄弟字段都仍开放。行/列命题仍未无条件闭合。
 
+## 403. Phi-LPF latest constructor terminal-family saturation sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_family_saturation_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-terminal-family-saturation-sync-ledger.json
+```
+
+同步结果：
+
+```text
+constructor_terminal_family_target_imported=true
+strict_terminal_family_latest_saturation_imported=true
+nonrecursive_breaker_cycle_imported=true
+seed_cycle_cut_saturation_imported=true
+pdec_scope_branch_internal_saturation_imported=true
+global_crt_saturation_agrees=true
+constructor_terminal_family_unnamed_exit_removed=true
+strict_acyclic_terminal_family_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+formal-to-actual 含义是：上一层 KZ/DLS 回流留下的
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily`
+不能继续作为 constructor 线的粗终端黑箱。strict 终端家族饱和证书已把三手臂全部展开：
+canonical-lock 只给 scoped canonical case，direct PDEC 卡在同集作用域匹配，CleanKLS/DLS
+回到终端循环。继续下钻 nonrecursive breaker 与 seed-cycle-cut，也回到 signed-source 固定点。
+
+因此 constructor 线的最新显式保留基压成：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+     OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND HarmonicWindowAlpha043PGe3001Upper0850Ledger
+AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部主攻现在是新的显式 joint alpha/delta 公式；PDEC same-set scope 仍可作为新的 scope
+证书或外部输入保留。source seed、harmonic、skeleton、Rate、DStructure 与 constructor
+兄弟字段仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
