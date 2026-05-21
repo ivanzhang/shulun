@@ -8610,6 +8610,57 @@ AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 complete/fixed key、ExactUV entropy/fiber、pointwise signed table、terminal/PDEC、模型、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.231 Phi-LPF latest constructor edge multiplier slab sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_multiplier_slab_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_transport_hardpoint_imported=true
+constructor_side_gates_carried=true
+first_edge_slab_router_imported=true
+edge_multiplier_split_synced_to_constructor_basis=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+```
+
+actual-load 含义是：逐 edge signed multiplier 也不是不可拆黑箱。LPF ordered path 把它唯一拆成
+第一边 semiprime signed seed slab 与 `prefix>1` 的 internal prime-adjoin transition。Phi fiber
+公式
+
+```text
+mass(p,q)=Phi(floor(N/(p*q)),q)
+```
+
+只支付第一边 `(p,q)` 的 q-rough continuation occurrence mass，不产生 signed seed value、
+local factor、orientation、ExactUV 或 return tag。
+
+最新 edge 侧主攻为：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍需 source-packet 三原子、`NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward`、
+`SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger`、complete/fixed key、
+ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

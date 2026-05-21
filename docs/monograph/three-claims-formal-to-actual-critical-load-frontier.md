@@ -18688,6 +18688,56 @@ AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 ExactUV、complete/fixed key、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 389. Phi-LPF latest constructor edge multiplier slab sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_multiplier_slab_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_transport_hardpoint_imported=true
+constructor_side_gates_carried=true
+first_edge_slab_router_imported=true
+edge_multiplier_split_synced_to_constructor_basis=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+```
+
+formal-to-actual 含义是：edge multiplier 的无符号路径已经由 LPF ordered factorization 固定。
+first-edge slab 只给第一边 q-rough fiber：
+
+```text
+mass(p,q)=Phi(floor(N/(p*q)),q)
+```
+
+这仍然只是 occurrence 质量，不是 signed seed 或 local-factor transition。真正未闭合的是：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
