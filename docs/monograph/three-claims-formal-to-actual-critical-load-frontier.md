@@ -18900,6 +18900,61 @@ NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
 complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 393. Phi-LPF latest constructor pure-pair Ferrers support sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_ferrers_support_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_pure_pair_atom_imported=true
+constructor_side_gates_carried=true
+ferrers_support_router_imported=true
+ferrers_support_rule_synced=true
+ferrers_degree_ledger_synced=true
+support_graph_signed_kernel_emission_proved=false
+latest_basis_replaces_pure_atom_with_two_prime_kernel=true
+two_prime_signed_interaction_kernel_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+formal-to-actual 含义是：constructor 最新 pure-pair atom 先剥离 Ferrers support。这个账本只
+说明哪些 `(p,q)` 边存在、左/右度数是多少、总边数是多少；它不能替代两素数 signed
+interaction kernel，也不能给 orientation parity、ExactUV return 或 local factor。
+
+新的 constructor 最新窄口为：
+
+```text
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+同时仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
