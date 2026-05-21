@@ -7779,6 +7779,54 @@ IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
 rough-cofactor transport/coherence、模型余量、Rate 与 DStructure/Rankin 验收。行/列命题仍未
 无条件闭合。
 
+### 1.215 Phi-LPF latest new-joint moving-atom signed-table sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_moving_atom_signed_table_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_new_joint_moving_atom_frontier_imported=true
+moving_atom_source_bucket_preimage_imported=true
+lpf_bucket_identity_sample_carried=true
+signed_injection_split_imported=true
+half_mass_finite_algebra_imported=true
+pointwise_signed_table_proved=false
+signed_survival_and_row_mass_proved=false
+latest_moving_atom_exclusion_after_signed_split_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+actual-load 含义是：上一层留下的
+`IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore` 可以直接接入
+已有 moving-atom 下游两层。LPF/Phi source-bucket preimage 证书已经删除无主 source、
+prime-row source 与 virtual-unit source escape；signed-injection split 又删除剩余 unsigned
+counting 自由度。因此 latest moving atom 线不再是独立自由终点，而是被同步到：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+这一步没有证明逐点 signed 表，也没有证明 signed row 非零存活或同 formal unit 质量归一化。
+若逐点表成立，还必须继续接：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+并行仍保留 bucket signed law、primitive signed expression、PDEC/CleanKLS 速率包、高段模型
+余量、Rate、DStructure、ExactUV 与 rough-cofactor transport/coherence。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

@@ -17827,6 +17827,62 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 本层仍是同步和前沿压缩；moving atom 独立非终端排斥、canonical-lock、A1 admission 与晋级门均未证明。
 行/列命题仍未无条件闭合。
 
+## 373. Phi-LPF latest new-joint moving-atom signed-table sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_moving_atom_signed_table_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-moving-atom-signed-table-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_new_joint_moving_atom_frontier_imported=true
+moving_atom_source_bucket_preimage_imported=true
+lpf_bucket_identity_sample_carried=true
+signed_injection_split_imported=true
+half_mass_finite_algebra_imported=true
+pointwise_signed_table_proved=false
+signed_survival_and_row_mass_proved=false
+latest_moving_atom_exclusion_after_signed_split_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+formal-to-actual 含义是：当前 latest moving-atom 硬点可同步进入已有 Phi-LPF moving-atom
+source-bucket 前像与 signed-injection split。前者删除无主、prime-row 与 virtual-unit
+source escape；后者把剩余问题压到同 formal unit 的 signed 表，而不是新的 unsigned
+计数出口。
+
+因此最新直接硬点推进为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并行保留：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+HighSegmentModelGapAlpha043C3AnalyticLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+本层仍是前沿同步，不是逐点 signed 表、signed survival/row-mass、速率包或行/列命题的
+无条件证明。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
