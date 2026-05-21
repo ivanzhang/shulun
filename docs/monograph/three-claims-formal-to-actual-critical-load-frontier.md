@@ -16375,6 +16375,47 @@ orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin tra
 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 412. Phi-LPF latest constructor pure-pair Ferrers support rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_ferrers_support_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_pure_pair_atom_imported=true
+existing_constructor_ferrers_reusable=true
+ferrers_support_router_imported=true
+ferrers_support_and_degree_ledger_closed=true
+ferrers_support_does_not_emit_signed_kernel=true
+source_atoms_carried_forward=true
+pure_pair_ferrers_support_rebased=true
+two_prime_signed_interaction_kernel_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward` 已接入 Ferrers support
+证书。pure pair 支撑由 `p<q<=N/p`、prime table 与 `floor(N/p)` 完全支付；left/right degree
+和 edge 总数都不是剩余 signed 信息。
+
+最新直接主攻推进到：
+
+```text
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
+Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

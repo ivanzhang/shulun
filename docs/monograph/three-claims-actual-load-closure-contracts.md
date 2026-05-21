@@ -22581,6 +22581,43 @@ PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
 配套必需仍为 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin
 transition、source 三原子、signed survival 与 row-mass/no-heavy-row。行/列命题仍未无条件闭合。
 
+### 1.185 Phi-LPF latest constructor pure-pair Ferrers support rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_ferrers_support_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_pure_pair_atom_imported=true
+existing_constructor_ferrers_reusable=true
+ferrers_support_router_imported=true
+ferrers_support_and_degree_ledger_closed=true
+ferrers_support_does_not_emit_signed_kernel=true
+source_atoms_carried_forward=true
+pure_pair_ferrers_support_rebased=true
+two_prime_signed_interaction_kernel_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：pure pair 的支撑/度数问题已被 Ferrers 图完全剥离。剩余不是 edge
+容量，而是每条 canonical `(p,q)` 边上的 signed interaction kernel。
+
+最新直接主攻改为：
+
+```text
+PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

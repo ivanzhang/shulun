@@ -1,0 +1,228 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_pure_pair_ferrers_support_rebase_sync_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward",
+  "counterexample_assumption_only": true,
+  "existing_constructor_ferrers_reusable": true,
+  "ferrers_support_and_degree_ledger_closed": true,
+  "ferrers_support_does_not_emit_signed_kernel": true,
+  "ferrers_support_router_imported": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestRebasedPurePairAtomImported",
+      "meaning": "上一层 rebase 已把最新 constructor 窄口压到 pure semiprime pair signed atom。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingConstructorFerrersReusable",
+      "meaning": "旧 constructor Ferrers 同步证书输入相同，可在新 rebase 前沿复用。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward AND PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FerrersSupportRouterImported",
+      "meaning": "Ferrers 证书把 pure pair atom 的无符号支撑剥离出来。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FerrersSupportAndDegreeLedgerClosed",
+      "meaning": "边条件 `p<q<=N/p`、嵌套邻域和 left/right degree 均由 prime table 决定。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPurePairFerrersSupportAndDegreeLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "FerrersSupportDoesNotEmitSignedKernel",
+      "meaning": "Ferrers 图只关闭支撑和度数，不产生 signed seed、orientation 或 local factor。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAtomsCarriedForward",
+      "meaning": "source 三原子仍作为 carried input 保留，不能由 Ferrers 支撑自证。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairFerrersSupportRebased",
+      "meaning": "最新 pure pair atom 已同步为 Ferrers support ledger 与 two-prime signed kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TwoPrimeSignedKernelStillOpen",
+      "meaning": "当前材料没有给出每条 `(p,q)` 边的 signed interaction kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrientationExactUVTransitionStillOpen",
+      "meaning": "orientation、ExactUV return 与 internal transition 仍是独立门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只做 rebase 同步；未证明 two-prime signed kernel、orientation、ExactUV、internal transition 或 source 三原子。",
+      "proved": false,
+      "remaining": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "degree_sum_identity_holds": true,
+    "edge_formula_holds": true,
+    "edge_formula_sum": 2600,
+    "empty_left_layers": 0,
+    "ferrers_failures": [],
+    "ferrers_nested_neighborhoods_hold": true,
+    "formal_edge_sign_shadow_bits": 2600,
+    "formal_edge_sign_shadow_log10": 782.677989,
+    "left_owner_prime_layers": 25,
+    "max_left_degree": 668,
+    "max_right_degree": 25,
+    "min_nonzero_left_degree": 2,
+    "nonempty_left_layers": 25,
+    "pure_pair_edges": 2600,
+    "right_prime_vertices": 668,
+    "tail_left_degrees": [
+      {
+        "degree": 11,
+        "p": 73
+      },
+      {
+        "degree": 8,
+        "p": 79
+      },
+      {
+        "degree": 7,
+        "p": 83
+      },
+      {
+        "degree": 5,
+        "p": 89
+      },
+      {
+        "degree": 2,
+        "p": 97
+      }
+    ],
+    "top_left_degrees": [
+      {
+        "degree": 668,
+        "p": 2
+      },
+      {
+        "degree": 468,
+        "p": 3
+      },
+      {
+        "degree": 300,
+        "p": 5
+      },
+      {
+        "degree": 221,
+        "p": 7
+      },
+      {
+        "degree": 150,
+        "p": 11
+      },
+      {
+        "degree": 130,
+        "p": 13
+      },
+      {
+        "degree": 100,
+        "p": 17
+      },
+      {
+        "degree": 91,
+        "p": 19
+      }
+    ],
+    "top_right_degrees": [
+      {
+        "degree": 25,
+        "q": 101
+      },
+      {
+        "degree": 25,
+        "q": 103
+      },
+      {
+        "degree": 24,
+        "q": 97
+      },
+      {
+        "degree": 24,
+        "q": 107
+      },
+      {
+        "degree": 24,
+        "q": 109
+      },
+      {
+        "degree": 23,
+        "q": 89
+      },
+      {
+        "degree": 23,
+        "q": 113
+      },
+      {
+        "degree": 22,
+        "q": 83
+      }
+    ]
+  },
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_rebased_pure_pair_atom_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "missing_sources": [],
+  "next_primary_attack_target": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "parallel_constructor_side_gates": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把最新 rebase 后的 constructor `PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward` 接入 Ferrers support 证书。pure pair 支撑和 degree 已由 `p<q<=N/p`、prime table 与 `floor(N/p)` 完全支付；剩余不再是容量问题，而是每条 `(p,q)` 边上的 `PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward`。",
+  "pure_pair_ferrers_support_rebased": true,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "source_atoms_carried_forward": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-router.json": "a71bdb861877413ce3c1971679a6038253709075965f29e909667731ddb8363c",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-sync-router.json": "ea6cb0d17c81863843e33d2deb20bfb6e4de86f96566e41dc636a1b9051a6799",
+    "docs/monograph/prime-matrix-phi-lpf-pure-pair-ferrers-support-router.json": "6ff12d29bab4ff0a9a9fad5794ecf6c74210ef7c51cee0c41b0f99ea1f2bab38",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_ferrers_support_rebase_sync_router.py": "2356c0b2f824c3c1bf7ba824cf3a663664f40fc7e04999ec2d88c41f8bf983b8"
+  },
+  "status": "phi_lpf_latest_constructor_pure_pair_ferrers_support_rebased_open",
+  "target_input_before_router": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward",
+  "two_prime_signed_interaction_kernel_proved": false
+}
