@@ -22779,6 +22779,46 @@ source 三原子、row-mass/no-heavy-row、signed survival、complete key、fixe
 multiplicity、terminal descent、same-set PDEC 与逐点 Phi-LPF signed table 仍是并行硬门。
 行/列命题仍未无条件闭合。
 
+### 1.190 Phi-LPF latest constructor source-entropy payload-loop cut rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_source_entropy_payload_loop_cut_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_source_entropy_imported=true
+existing_constructor_payload_loop_cut_reusable=true
+source_entropy_atom_boundary_carried=true
+phi_lpf_candidate_capacity_still_unsigned=true
+strict_source_entropy_downstream_to_cycle_or_terminal=true
+cycle_or_terminal_unified_to_joint_declaration=true
+constructor_upstream_joint_to_payload_chain_imported=true
+constructor_payload_source_entropy_loop_detected=true
+raw_constructor_payload_loop_counts_as_closure=false
+fresh_joint_declaration_outside_loop_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：source entropy 不能通过 constructor payload 回环自证。若 source entropy
+展开后回到同一 joint declaration，而该 declaration 又被用于产生 payload/source entropy，
+则这只是一条依赖环，不是非循环证明。
+
+最新直接主攻改为：
+
+```text
+FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop
+```
+
+canonical-lock、independent source bridge、same-set PDEC、逐点 Phi-LPF signed table、
+complete/fixed key、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

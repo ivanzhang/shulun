@@ -16591,6 +16591,51 @@ source 三原子、row-mass/no-heavy-row、signed survival、complete key、fixe
 multiplicity、terminal descent、same-set PDEC、逐点 Phi-LPF signed table、ExactUV、模型、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 417. Phi-LPF latest constructor source-entropy payload-loop cut rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_source_entropy_payload_loop_cut_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_source_entropy_imported=true
+existing_constructor_payload_loop_cut_reusable=true
+source_entropy_atom_boundary_carried=true
+phi_lpf_candidate_capacity_still_unsigned=true
+strict_source_entropy_downstream_to_cycle_or_terminal=true
+cycle_or_terminal_unified_to_joint_declaration=true
+constructor_upstream_joint_to_payload_chain_imported=true
+constructor_payload_source_entropy_loop_detected=true
+raw_constructor_payload_loop_counts_as_closure=false
+fresh_joint_declaration_outside_loop_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger` 沿 strict source-entropy downstream 与
+cycle-cut/terminal/PDEC 统一前沿展开后，会回到
+`PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple`。
+该 joint declaration 又是 constructor 上游推出 built-in pairing、new payload 与 source entropy
+的入口，因此当前 constructor 内部路线形成 payload/source-entropy 自证环，不能作为非循环闭合。
+
+最新直接主攻推进到：
+
+```text
+FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop
+```
+
+canonical-lock、independent source bridge、same-set PDEC、逐点 Phi-LPF signed table、complete/fixed
+key、signed survival、row-mass/no-heavy-row、ExactUV、模型、Rate 与 DStructure 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
