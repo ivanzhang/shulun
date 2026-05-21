@@ -18378,6 +18378,65 @@ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 ExactUV、rough-cofactor transport/coherence、模型、Rate 与 DStructure 仍开放。行/列命题
 仍未无条件闭合。
 
+## 383. Phi-LPF latest constructor origin-cyclecut sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_origin_cyclecut_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-origin-cyclecut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-origin-cyclecut-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-origin-cyclecut-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_origin_identity_imported=true
+general_origin_cyclecut_router_imported=true
+origin_identity_to_row_table_imported=true
+row_table_to_signed_emitter_imported=true
+reverse_unsigned_and_source_loop_routes_blocked=true
+coordinate_source_cycle_guard_imported=true
+latest_nonrecursive_breaker_triad_imported=true
+primitive_summand_origin_identity_proved=false
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+formal-to-actual 含义是：primitive summand origin identity 不是新的自由原子；它必须展开为
+row-level origin generation table，再由 acyclic seed signed-row emitter 生成。现有 signed
+coordinate/source 展开只回到闭环，所以 constructor 口径不能把这个环当成证明。
+
+最新直接主攻：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+完整剩余基为：
+
+```text
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate)
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
