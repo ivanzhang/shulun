@@ -22618,6 +22618,43 @@ PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
 三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.186 Phi-LPF latest constructor two-prime no-swap rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_two_prime_no_swap_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_two_prime_kernel_imported=true
+existing_constructor_no_swap_reusable=true
+no_swap_router_imported=true
+lpf_owner_ordered_no_swap_closed=true
+product_symmetry_does_not_emit_signed_kernel=true
+source_atoms_carried_forward=true
+two_prime_no_swap_rebased=true
+edge_local_two_prime_signed_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：two-prime signed kernel 的交换对称伪出口已移除。`pq=qp` 不能给第二条
+pre-Cauchy signed source row；剩余必须在 canonical `(p,q)` edge 上给出 signed formula 或 named return。
+
+最新直接主攻改为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
