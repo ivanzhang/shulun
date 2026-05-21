@@ -18155,6 +18155,63 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 same-set PDEC、ExactUV entropy/fiber、complete/fixed-key、模型、Rate 与 DStructure 仍未证明。
 行/列命题仍未无条件闭合。
 
+## 379. Phi-LPF latest constructor trace source-rank sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_trace_source_rank_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-ledger.json
+```
+
+同步结果：
+
+```text
+constructor_trace_exit_imported=true
+controlled_exit_basis_carried=true
+prior_trace_source_rank_absorber_imported=true
+latest_new_payload_source_atom_alignment_imported=true
+post_antisplit_convergence_imported=true
+lpf_phi_unsigned_bucket_no_signed_shortcut=true
+pointwise_kernel_frontier_imported=true
+exactuv_entropy_fiber_pair_carried=true
+row_column_unconditional_closed=false
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+formal-to-actual 含义是：constructor trace 口径下的 `NewPrimitive...` 出口已经和既有
+trace-exit/source-rank absorber 对齐；它不是新的独立闭合点，而是必须提交 source-rank/
+no-collapse 三原子，随后进入同 formal-unit 的逐点 primitive alpha/delta 核表。
+
+LPF/Phi 桶恒等式关闭的是无符号 owner/support/capacity/root 账本，不生成 signed payload。
+因此 latest 直接主攻推进为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+完整剩余基为：
+
+```text
+((AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+OR (PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward))
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

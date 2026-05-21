@@ -8097,6 +8097,64 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 fixed-pair fiber 仍需 complete key polylog 分区与 fixed-key O(1) 局部重数。模型、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.221 Phi-LPF latest constructor trace source-rank sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_trace_source_rank_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-trace-source-rank-sync-router.json
+```
+
+同步读数为：
+
+```text
+constructor_trace_exit_imported=true
+controlled_exit_basis_carried=true
+prior_trace_source_rank_absorber_imported=true
+latest_new_payload_source_atom_alignment_imported=true
+post_antisplit_convergence_imported=true
+lpf_phi_unsigned_bucket_no_signed_shortcut=true
+pointwise_kernel_frontier_imported=true
+exactuv_entropy_fiber_pair_carried=true
+alpha_row_anchor_phase_emission_formula_proved=false
+independent_noncircular_precauchy_arithmetic_identity_statement_proved=false
+same_unit_exact_uv_rank_multiplicity_certificate_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+actual-load 含义是：上一层 constructor built-in trace 删除了 branch-trace/payload/origin/
+common-packet 自证环后，剩余的 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`
+不能作为新的悬空终点。既有 source-atom alignment 与 post-antisplit 收敛证书已经说明：
+若该 new payload 不是环内改名，就必须携带 actual pre-Cauchy source-rank/no-collapse 包；
+该包进一步在同 formal-unit 的逐 primitive alpha/delta 核表上汇合。
+
+LPF/Phi 的最小素因子桶恒等式在这里提供的是 owner、support、capacity 与 root 账本，
+不能从无符号桶反推出 primitive signed payload 或 trace formula。因此 latest 非循环主攻
+推进为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+并行仍需：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
