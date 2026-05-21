@@ -1,0 +1,295 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_two_prime_no_swap_sync_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward",
+  "constructor_side_gates_carried": true,
+  "edge_local_two_prime_signed_formula_proved": false,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestConstructorTwoPrimeKernelImported",
+      "meaning": "上一层 constructor Ferrers sync 已把直接硬点定位到 two-prime signed interaction kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesCarried",
+      "meaning": "本层只替换 two-prime kernel；signed survival 与 row-mass/no-heavy-row 仍是 constructor 侧门。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoSwapRouterImported",
+      "meaning": "既有 ordered no-swap 证书可直接作用在 constructor 最新 two-prime kernel 入口。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "LPFOwnerOrderedNoSwapSynced",
+      "meaning": "每个 semiprime product 只有 canonical `(p,q)` source edge，没有 reverse `(q,p)` source edge。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ProductSymmetryCannotEmitSignedKernel",
+      "meaning": "`p*q=q*p` 只是同一整数值，不提供第二个 pre-Cauchy signed source row。",
+      "proved": true,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAtomsCarriedForward",
+      "meaning": "common packet 义务继续以 source 三原子携带，本步不证明这三原子。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "LatestBasisReplacesTwoPrimeKernelWithEdgeLocalFormula",
+      "meaning": "constructor 最新 two-prime kernel 被收窄为 canonical edge-local signed formula 或命名 return。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "EdgeLocalFormulaStillOpen",
+      "meaning": "当前语料没有为 canonical ordered edge `(p,q)` 提交 signed interaction formula 或 return。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TwoPrimeSignedKernelStillOpen",
+      "meaning": "no-swap 只删除交换伪出口，不证明 two-prime signed kernel。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrientationParityStillOpen",
+      "meaning": "edge-local formula 仍需 orientation parity、branch side 与 local factor law。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair、source entropy/fiber 与 return tag 仍是独立门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPaired",
+      "meaning": "tail-lift 与完整 support key 的 signed compatibility 仍依赖 internal transition。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 constructor ordered no-swap 剥离；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "bad_lpf_owner_examples": [],
+    "duplicate_product_count": 0,
+    "edge_product_count": 2600,
+    "formal_ordered_edge_sign_shadow_bits": 2600,
+    "formal_ordered_edge_sign_shadow_log10": 782.677989,
+    "large_q_edge_share": 0.884615384615,
+    "large_q_edges": 2300,
+    "lpf_owner_no_swap_identity_holds": true,
+    "missing_product_examples": [],
+    "ordered_edges": 2600,
+    "reverse_edges_present": 0,
+    "reverse_present_examples": [],
+    "small_q_edge_share": 0.115384615385,
+    "small_q_edges": 300,
+    "tail_edge_products": [
+      {
+        "p": 83,
+        "q": 113,
+        "value": 9379
+      },
+      {
+        "p": 89,
+        "q": 97,
+        "value": 8633
+      },
+      {
+        "p": 89,
+        "q": 101,
+        "value": 8989
+      },
+      {
+        "p": 89,
+        "q": 103,
+        "value": 9167
+      },
+      {
+        "p": 89,
+        "q": 107,
+        "value": 9523
+      },
+      {
+        "p": 89,
+        "q": 109,
+        "value": 9701
+      },
+      {
+        "p": 97,
+        "q": 101,
+        "value": 9797
+      },
+      {
+        "p": 97,
+        "q": 103,
+        "value": 9991
+      }
+    ],
+    "top_edge_products": [
+      {
+        "p": 2,
+        "q": 3,
+        "value": 6
+      },
+      {
+        "p": 2,
+        "q": 5,
+        "value": 10
+      },
+      {
+        "p": 2,
+        "q": 7,
+        "value": 14
+      },
+      {
+        "p": 2,
+        "q": 11,
+        "value": 22
+      },
+      {
+        "p": 2,
+        "q": 13,
+        "value": 26
+      },
+      {
+        "p": 2,
+        "q": 17,
+        "value": 34
+      },
+      {
+        "p": 2,
+        "q": 19,
+        "value": 38
+      },
+      {
+        "p": 2,
+        "q": 23,
+        "value": 46
+      }
+    ],
+    "unordered_distinct_semiprime_products": 2600
+  },
+  "imported_ordered_no_swap_fields": [
+    {
+      "field": "canonical_lpf_owner_order",
+      "meaning": "每个 distinct semiprime `p*q` 只进入 `(min(p,q),max(p,q))`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "reverse_edge_absence",
+      "meaning": "`(q,p)` 不属于同一 LPF owner source domain，不能用作 cancellation partner。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "product_symmetry_erased_before_signed_kernel",
+      "meaning": "`p*q=q*p` 只证明同一整数值，不产生第二个 signed source row。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "edge_local_signed_formula",
+      "meaning": "仍需为 canonical ordered edge `(p,q)` 正向给出 signed interaction formula 或 return。",
+      "status": "open_signed"
+    }
+  ],
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_basis_replaces_two_prime_kernel_with_edge_local_formula": true,
+  "latest_constructor_two_prime_kernel_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_owner_ordered_no_swap_synced": true,
+  "next_primary_attack_target": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward",
+  "no_swap_router_imported": true,
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "parallel_constructor_side_gates": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把 constructor 最新 `PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward` 接入 ordered no-swap 拆解。LPF owner source domain 只保留 canonical ordered edge `(p,q)`，`p<q`；交换对称 `p*q=q*p` 在 signed source 前已经被擦除，不能供应反向 signed row 或 cancellation partner。因此最新 hardpoint 收窄为 edge-local two-prime signed interaction formula 或命名 return，并仍需 orientation、ExactUV return、internal transition、source 三原子、signed survival 与 row-mass/no-heavy-row。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "product_symmetry_signed_emission_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "source_atoms_carried_forward": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-ferrers-support-sync-router.json": "ea6cb0d17c81863843e33d2deb20bfb6e4de86f96566e41dc636a1b9051a6799",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "docs/monograph/prime-matrix-phi-lpf-two-prime-ordered-no-swap-router.json": "68844af913e21b39317b6f47244070c96d3c5e4b630a00b1a0c7a029f66148f6",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_two_prime_no_swap_sync_router.py": "8388b88c283840f02d6336fb4e00f6eecf0cc6cf8948ab5e3de5dde23d283be7"
+  },
+  "status": "phi_lpf_latest_constructor_two_prime_kernel_synced_to_ordered_no_swap_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+      "meaning": "constructor two-prime kernel 先剥离 LPF owner canonical order；交换对称不能供应 signed kernel。",
+      "to": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward AND PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward"
+    },
+    {
+      "from": "PhiLPFOffDiagonalTwoPrimeOrderedLPFOwnerNoSwapSymmetryLedgerBeforePushforward",
+      "meaning": "`p*q=q*p` 在 signed source 前已被 LPF owner 顺序擦除。",
+      "to": "closed canonical edge (p,q), p<q, with no reverse source row"
+    },
+    {
+      "from": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "meaning": "no-swap 不处理 common packet；该义务仍由 source 三原子携带。",
+      "to": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "from": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+      "meaning": "constructor 最新 two-prime kernel 被收窄为 canonical edge-local signed interaction formula 或命名 return。",
+      "to": "PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward plus PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward, PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward, PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward, SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger, signed survival, and carried source atoms"
+    }
+  ],
+  "target_input_before_router": "PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward",
+  "two_prime_signed_interaction_kernel_proved": false
+}

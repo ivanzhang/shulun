@@ -8873,6 +8873,61 @@ AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyAri
 并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
 模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.236 Phi-LPF latest constructor two-prime no-swap sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_two_prime_no_swap_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-two-prime-no-swap-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_two_prime_kernel_imported=true
+constructor_side_gates_carried=true
+no_swap_router_imported=true
+lpf_owner_ordered_no_swap_synced=true
+product_symmetry_signed_emission_proved=false
+latest_basis_replaces_two_prime_kernel_with_edge_local_formula=true
+edge_local_two_prime_signed_formula_proved=false
+two_prime_signed_interaction_kernel_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+```
+
+actual-load 含义是：`pq=qp` 的整数交换对称不是 source-domain 对称。LPF owner 在 signed
+source 前已经把 offdiagonal semiprime 固定为 canonical ordered edge `(p,q), p<q`；反向
+`(q,p)` 不存在于同一个 LPF owner source domain，不能供应第二条 signed row 或 cancellation
+partner。
+
+因此新增最窄口为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
+模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
