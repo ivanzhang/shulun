@@ -18050,6 +18050,57 @@ AND JointConstructorFormulaFailureReturnTagsLedger
 complete/fixed-key、signed survival/row-mass、terminal/canonical/independent bridge、
 模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 377. Phi-LPF latest new-joint constructor anti-split downstream sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_antisplit_downstream_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_imported=true
+ordinary_constructor_fixed_point_imported=true
+antisplit_atomic_route_imported=true
+atomic_rows_to_builtin_pairing_imported=true
+exactuv_entropy_fiber_parallel_imported=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：显式 constructor 的普通展开路线不是非循环证明，而是：
+
+```text
+ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> alpha-side / same-row / row-level signed-source fixed point
+```
+
+删除该固定点后，productive 路线必须走 anti-split atomic rows，并进一步压到：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+并行 ExactUV 主攻保持为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+本层关闭的是 constructor 名称停留与普通展开误出口；built-in pairing、source entropy、fixed
+fiber、complete/fixed-key、signed survival/row-mass、terminal/PDEC/外部谱、模型、Rate 与
+DStructure 仍未证明。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

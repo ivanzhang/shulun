@@ -7990,6 +7990,59 @@ AND JointConstructorFormulaFailureReturnTagsLedger
 ExactUV、complete/fixed-key、signed survival/row-mass、terminal/canonical/independent bridge、
 模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.219 Phi-LPF latest new-joint constructor anti-split downstream sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_antisplit_downstream_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-antisplit-downstream-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_imported=true
+ordinary_constructor_fixed_point_imported=true
+antisplit_atomic_route_imported=true
+atomic_rows_to_builtin_pairing_imported=true
+exactuv_entropy_fiber_parallel_imported=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+actual-load 含义是：上一层钉出的显式 joint constructor rule 不能沿普通 alpha-side/same-row/
+row-level 展开路线自证；该路线已回到 signed-source 固定点。要避免这个固定点，constructor
+必须改写为 anti-split atomic rows：
+
+```text
+NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+-> AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+因此 latest signed 主攻进一步收窄为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+但 built-in pairing 不支付 ExactUV。并行硬点仍是：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+完整保留基还包含 complete/fixed-key、signed survival/row-mass、terminal/canonical/independent
+bridge、PDEC/外部谱、模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
