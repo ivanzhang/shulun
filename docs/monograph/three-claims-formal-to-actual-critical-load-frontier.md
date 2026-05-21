@@ -15862,6 +15862,59 @@ Kuznetsov/DLS 大筛原子；模型余量账本删除了 `P<2003` 有限段，�
 这不是终端证明：Kuznetsov/DLS、同集 PDEC scope、harmonic window、rough skeleton、
 Rate 与 DStructure 仍开放；constructor 兄弟字段也仍开放。行/列命题仍未无条件闭合。
 
+## 402. Phi-LPF latest constructor Kuznetsov terminal-cycle sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_terminal_cycle_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-ledger.json
+```
+
+同步结果：
+
+```text
+constructor_kuznetsov_arm_imported=true
+strict_kuznetsov_terminal_sync_imported=true
+ncblk_return_to_terminal_family_imported=true
+model_gap_tail_factorization_carried=true
+constructor_kuznetsov_independent_exit_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+strict_acyclic_terminal_family_proved=false
+tail_harmonic_upper_0850_proved=false
+tail_skeleton_lower_401_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+```
+
+formal-to-actual 含义是：上一层把 constructor 首攻钉到
+`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks` 后，本层继续沿既有
+strict KZ/DLS 终端同步往下查。结果是 KZ-A/B/C/D 形式谱脊柱可以同步，但 KZ-E 会转成
+acyclic NC-BLK/source anti-atom；该对象又不能独立停留，会回到 moving atom/global terminal。
+
+因此 KZ/DLS 不是新的独立终端出口。constructor 线的显式 KZ 手臂回流为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+AND HarmonicWindowAlpha043PGe3001Upper0850Ledger
+AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+并行破环/替代仍为：
+
+```text
+NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+这仍不是终局证明；terminal family、nonrecursive breaker、new-joint、PDEC scope、harmonic、
+skeleton、Rate、DStructure 与 constructor 兄弟字段都仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -1,0 +1,88 @@
+# Prime Matrix Phi-LPF latest constructor Kuznetsov terminal-cycle sync 证书
+
+**状态：** `phi_lpf_latest_constructor_kuznetsov_arm_synced_to_terminal_cycle_open`
+
+本步直接攻击 constructor terminal split 后的 KZ/DLS 手臂。strict KZ/DLS 证书已经显示：KZ-A/B/C/D 形式谱脊柱可同步，但 KZ-E 转成 acyclic NC-BLK/source anti-atom，该对象又回到 strict acyclic terminal family 与模型账本。因此在 constructor 语境下，`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks` 不能作为新的独立无名终端；最新显式剩余回到 terminal family、nonrecursive breaker/new-joint、PDEC scope 以及 harmonic-window/rough-skeleton 模型尾账本。行/列命题仍未无条件闭合。
+
+```text
+constructor_kuznetsov_arm_imported=true
+strict_kuznetsov_terminal_sync_imported=true
+ncblk_return_to_terminal_family_imported=true
+model_gap_tail_factorization_carried=true
+constructor_kuznetsov_independent_exit_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+strict_acyclic_terminal_family_proved=false
+tail_harmonic_upper_0850_proved=false
+tail_skeleton_lower_401_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+```
+
+## 1. 同步链
+
+```text
+SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+KZ-A/B/C/D spine + KZ-E
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `ConstructorKuznetsovArmImported` | `true` | `false` | 上一层 constructor terminal split 把首攻钉到自足 Kuznetsov/DLS 大筛手臂。 | SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks |
+| `StrictKuznetsovTerminalSyncImported` | `true` | `false` | strict KZ/DLS 同步显示 KZ-A/B/C/D 已到位，但 KZ-E 回到 NC-BLK/source anti-atom 和终端家族。 | AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND ExplicitModelGapAndFiniteDPRCLedger |
+| `KuznetsovDLSTheoremStillUnproved` | `true` | `false` | 本层没有证明自足 Kuznetsov/DLS log-saving 不等式，只删除其无名终端解释。 | SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks |
+| `NCBLKReturnToTerminalFamilyImported` | `true` | `true` | KZ-E 失败转成 acyclic NC-BLK/source anti-atom；该对象不能独立停留，又回到 moving atom/global terminal。 | PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily |
+| `ModelGapTailFactorizationCarried` | `true` | `false` | KZ 回流中的模型账本继续沿上一层拆成 harmonic-window 与 rough-skeleton 尾账本。 | HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger |
+| `PDECScopeArmStillParallel` | `true` | `false` | PDEC scope 手臂没有被 KZ 回流证明或排除，仍作为并行开放输入保留。 | AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate |
+| `TerminalSaturationAgreesWithNewJointBreaker` | `true` | `false` | 既有 Phi-LPF terminal saturation 同步也确认：KZ 线回终端，PDEC scope 线在内部语料中压到 new-joint。 | NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `ConstructorKuznetsovIndependentExitRemoved` | `true` | `false` | constructor 语境下，KZ/DLS 不能作为新的独立主攻出口；继续推进必须攻击终端家族/破环包/模型尾账本。 | AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `TailInputsStillOpen` | `true` | `false` | 调和窗口上界与动态粗骨架下界仍未解析证明。 | HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger |
+| `ConstructorSiblingFieldsStillParallel` | `true` | `false` | 本层不处理 joint rows、identity、return、ExactUV/source entropy、signed mass 与 key ledgers。 | JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本层只识别 KZ 回流循环，没有排除终端家族、破环包或模型尾账本。 | (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND RatePreservationLedger_FOR_moving_atom_packet AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+
+## 3. 最新保留基
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND RatePreservationLedger_FOR_moving_atom_packet AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+下一直接主攻：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+```
+
+并行仍需：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+HarmonicWindowAlpha043PGe3001Upper0850Ledger
+DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+RatePreservationLedger_FOR_moving_atom_packet
+JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+JointEmitterPrepushforwardWordCoefficientIdentityLedger
+JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+行/列命题仍未无条件闭合。
+
+## 4. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_terminal_cycle_sync_router.py` | `15c80faf0fc1480d70db20c6b371e57ebb4b9e295da3cb70a5377f848c573b29` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-router.json` | `7a277a266017604f17d19b8e39b4d303ca20f5e4c3cb05fe1512bd1cf2eaf569` |
+| `docs/monograph/prime-matrix-strict-kuznetsov-dls-terminal-sync-router.json` | `ac1c3264c5130a87e0f43e77ad6f7c201a4a7efd7942f686e317161c2cddbfa2` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.json` | `71c86bde660683a0413acbf0d34308265488761e2d90351eff8c7b6cb62923bf` |

@@ -22164,3 +22164,53 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 `SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`，并行保留
 PDEC scope、harmonic、skeleton、Rate、DStructure 与 constructor 兄弟字段。行/列命题
 仍未无条件闭合。
+
+### 1.175 Phi-LPF latest constructor Kuznetsov terminal-cycle sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_kuznetsov_terminal_cycle_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-terminal-cycle-sync-router.json
+```
+
+同步读数为：
+
+```text
+constructor_kuznetsov_arm_imported=true
+strict_kuznetsov_terminal_sync_imported=true
+ncblk_return_to_terminal_family_imported=true
+model_gap_tail_factorization_carried=true
+constructor_kuznetsov_independent_exit_removed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+strict_acyclic_terminal_family_proved=false
+tail_harmonic_upper_0850_proved=false
+tail_skeleton_lower_401_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：constructor terminal split 中的 KZ/DLS 手臂不再是独立主攻黑箱。
+strict KZ/DLS 同步显示：KZ-A/B/C/D 只关闭形式谱脊柱，KZ-E 会转成 acyclic
+NC-BLK/source anti-atom，并回到 strict acyclic terminal family 与模型账本。结合上一层
+模型余量因子化，该回流携带 harmonic-window 与 rough-skeleton 两张尾账本。
+
+最新直接主攻改为：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+```
+
+并行保留：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+HarmonicWindowAlpha043PGe3001Upper0850Ledger
+DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+```
+
+以及 Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
