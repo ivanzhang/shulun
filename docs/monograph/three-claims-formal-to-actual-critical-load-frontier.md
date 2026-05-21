@@ -15675,6 +15675,56 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 398. Phi-LPF latest constructor source-entropy payload-loop cut sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_source_entropy_payload_loop_cut_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_source_entropy_imported=true
+source_entropy_atom_boundary_carried=true
+phi_lpf_candidate_capacity_still_unsigned=true
+strict_source_entropy_downstream_to_cycle_or_terminal=true
+cycle_or_terminal_unified_to_joint_declaration=true
+constructor_upstream_joint_to_payload_chain_imported=true
+constructor_payload_source_entropy_loop_detected=true
+raw_constructor_payload_loop_counts_as_closure=false
+fresh_joint_declaration_outside_loop_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop
+```
+
+formal-to-actual 含义是：上一层 constructor new-payload 若要成为真正工件，必须支付
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`。但该接口沿 strict source-entropy
+downstream 展开到 cycle-cut/terminal，再由统一前沿回到
+`PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple`。
+这个 joint declaration 正是当前 constructor 上游已经用于推出 built-in pairing、new payload
+和 source entropy 的入口。
+
+因此当前 constructor 内部链形成：
+
+```text
+joint declaration
+-> built-in pairing
+-> new payload
+-> source entropy
+-> cycle/terminal
+-> joint declaration
+```
+
+这不是矛盾闭合，而是一个必须切掉的自证环。新的非循环主攻是提交不经过该 payload
+回环的新鲜独立 joint declaration line，或走 canonical-lock、independent source bridge、
+same-set PDEC/外部谱、逐点 signed table、ExactUV、complete/fixed-key、signed survival
+与 row-mass/no-heavy-row 等开放出口。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

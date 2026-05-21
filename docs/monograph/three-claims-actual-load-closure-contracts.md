@@ -21993,3 +21993,45 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 ```
 
 行/列命题仍未无条件闭合。
+
+### 1.171 Phi-LPF latest constructor source-entropy payload-loop cut 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_source_entropy_payload_loop_cut_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-source-entropy-payload-loop-cut-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_source_entropy_imported=true
+source_entropy_atom_boundary_carried=true
+phi_lpf_candidate_capacity_still_unsigned=true
+strict_source_entropy_downstream_to_cycle_or_terminal=true
+cycle_or_terminal_unified_to_joint_declaration=true
+constructor_upstream_joint_to_payload_chain_imported=true
+constructor_payload_source_entropy_loop_detected=true
+raw_constructor_payload_loop_counts_as_closure=false
+fresh_joint_declaration_outside_loop_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：constructor latest source-entropy 不是新的可停终点。若沿现有 strict
+downstream 继续推进，它会先落到 cycle-cut/terminal，再回到 joint declaration line；而该
+joint declaration 已经是当前 constructor 上游生成 built-in pairing 与 new payload 的入口。
+
+因此现有内部链只给出一个 payload/source-entropy 回环：
+
+```text
+joint declaration -> built-in pairing -> new payload
+-> source entropy -> cycle/terminal -> joint declaration
+```
+
+这个回环不能支付 actual load，也不能替代 source-domain entropy。非循环路线必须提交不经
+该回环的新鲜独立 joint declaration，或走 canonical-lock、independent source bridge、
+PDEC/外部谱、逐点 signed table、ExactUV、complete/fixed-key、signed survival 与
+row-mass/no-heavy-row 等开放出口。行/列命题仍未无条件闭合。
