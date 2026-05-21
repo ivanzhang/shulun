@@ -23240,6 +23240,57 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 逐点 Phi-LPF signed table、PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题
 仍未无条件闭合。
 
+### 1.200 Phi-LPF latest constructor common-table edge multiplier slab rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_edge_multiplier_slab_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+common_table_transport_edge_multiplier_imported=true
+latest_edge_multiplier_slab_reusable=true
+first_edge_slab_router_imported=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard_imported=true
+common_table_side_gates_carried=true
+tail_package_still_open=true
+edge_multiplier_slab_rebased=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：common-table transport stack 给出的 edge multiplier 已被接入
+first-edge slab。第一边容量由 LPF/Phi 精确支付，但它仍是 unsigned occurrence mass；
+signed seed、内部 prime-adjoin local factor、source 三原子、row-mass/support、complete/fixed
+key 与 beta-sieve/sawtooth 尾段必须继续作为真实负载保留。两次“充分大阈值加有限验证”
+尝试仍只关闭有限桥，不替代这些结构性输入。
+
+最新直接主攻改为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+逐点 Phi-LPF signed value table 仍是直接旁路，但也必须携带同一 source/side-gate 口径。
+PDEC/terminal/external 旁路、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

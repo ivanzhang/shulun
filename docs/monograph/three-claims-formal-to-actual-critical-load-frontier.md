@@ -17082,6 +17082,59 @@ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawt
 逐点 signed value table 仍是直接旁路，但也必须同口径携带 source 三原子、row-mass/support
 和 complete/fixed key。行/列命题仍未无条件闭合。
 
+## 427. Phi-LPF latest constructor common-table edge multiplier slab rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_common_table_edge_multiplier_slab_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-common-table-edge-multiplier-slab-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+common_table_transport_edge_multiplier_imported=true
+latest_edge_multiplier_slab_reusable=true
+first_edge_slab_router_imported=true
+first_edge_phi_fiber_formula_imported=true
+phi_fiber_unsigned_only_guard_imported=true
+common_table_side_gates_carried=true
+tail_package_still_open=true
+edge_multiplier_slab_rebased=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：latest constructor common-table 里的逐 edge multiplier
+也不是终端黑箱。LPF ordered path 强制把它拆成第一边 semiprime signed seed table 与
+内部 prime-adjoin signed transition law。Phi/LPF 的精确 first-edge 纤维公式只支付
+`Phi(floor(N/(p*q)),q)` 的 q-rough continuation 容量，不产生 signed seed、local factor、
+row mass、key multiplicity 或 ExactUV payload。
+
+最新直接主攻推进到：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+下一最窄内部口是 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward`，但它必须与
+`PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward` 同时保留；source 三原子、
+row-mass/support、complete/fixed key、逐点 signed table 旁路、PDEC/terminal/external 旁路、
+Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
