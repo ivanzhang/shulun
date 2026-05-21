@@ -17626,6 +17626,55 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 
 这些输入仍未证明，且 fixed-key、signed row law、模型余量、Rate 与 DStructure 仍并行开放。行/列命题仍未无条件闭合。
 
+## 369. Phi-LPF latest new-joint antisplit downstream sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_downstream_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_antisplit_atom_imported=true
+strict_antisplit_downstream_edges_imported=true
+antisplit_firewall_to_atomic_rows_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：反分裂目标继续下钻为：
+
+```text
+NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+-> AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing
+-> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+这条边不是证明边；它说明若要真正构造反分裂同排行，就必须给出 atomic rows 的内置
+signed coefficient/pairing 闭式，且不能退回 signed-value/origin-table 固定点。
+
+并行 ExactUV 门被拆为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+因此最新直接主攻是 `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows`，并行主攻是
+source-domain entropy 与 fixed-pair fiber bound。complete/fixed-key、signed row law、模型余量、
+Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

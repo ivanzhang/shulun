@@ -1,0 +1,147 @@
+{
+  "actual_emitter_source_domain_entropy_proved": false,
+  "antisplit_firewall_to_atomic_rows_imported": true,
+  "atomic_antisplit_declaration_proved": false,
+  "atomic_rows_reduced_to_builtin_pairing": true,
+  "built_in_signed_pairing_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_new_joint_antisplit_downstream_sync_router",
+  "complete_primitive_emitter_key_partition_proved": false,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "exactuv_entropy_fiber_split_imported": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "fixed_key_exact_uv_local_multiplicity_o1_proved": false,
+  "frontier_sync_only": true,
+  "latest_antisplit_atom_imported": true,
+  "latest_internal_basis_after_sync": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_retained_basis_after_sync": "((BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger) OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "missing_sources": [],
+  "next_primary_attack_target": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+  "no_theorem_switch": true,
+  "non_split_actual_joint_formula_proved": false,
+  "parallel_primary_attack_target": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+  "plain_conclusion": "本步把 latest 反分裂原子 `NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection` 接入 strict 下游。反分裂同排行若要避免旧 split 固定点，必须升级为 `AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing`；而 atomic rows 的首个 signed 缺口是 `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows`。并行 ExactUV 门同步为 `ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger`。这些输入当前均未证明，complete/fixed-key、模型余量、Rate 与 DStructure 仍开放，行/列命题未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "retained_alternative_targets": [
+    "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+    "IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop",
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LatestAntiSplitAtomImported",
+      "meaning": "上一层 latest new-joint 同步已经把主攻压到反分裂同排原子，并确认有 strict 下游可继续追击。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "StrictAntiSplitDownstreamEdgesImported",
+      "meaning": "strict 下游同步边覆盖 NonSplit -> atomic rows -> built-in pairing，以及 ExactUV -> entropy/fiber。",
+      "proved": true,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AntiSplitFirewallToAtomicRowsImported",
+      "meaning": "反分裂 firewall 表明普通 declaration 不够，必须提交 atomic pre-Cauchy rows 声明。",
+      "proved": false,
+      "remaining": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicRowsReducedToBuiltInPairing",
+      "meaning": "atomic rows 的 row skeleton、防回退 firewall 已有；缺口集中到每行 built-in signed pairing 闭式。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "SignedOriginTableLoopBlocked",
+      "meaning": "旧 signed-value/origin-table 路线被登记为回到 signed-source 固定点，不能替代 built-in pairing。",
+      "proved": true,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVEntropyFiberSplitImported",
+      "meaning": "ExactUV bounded multiplicity 已拆为 source-domain entropy 与 fixed-pair polylog fiber bound 两个账本。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BuiltInPairingCurrentCorpusProved",
+      "meaning": "当前语料没有每条 atomic joint row 的 signed coefficient 闭式值及 word/coefficient 同源证明。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": false,
+      "gate": "EntropyFiberCurrentCorpusProved",
+      "meaning": "当前语料没有证明 actual source-domain entropy 与 fixed exact-pair polylog fiber bound 的合取。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalAndTerminalAlternativesRetained",
+      "meaning": "canonical-lock、independent bridge、same-set PDEC 与外部谱仍作为独立输入保留。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    },
+    {
+      "closed": true,
+      "gate": "ModelRateDStructureStillParallel",
+      "meaning": "complete/fixed-key、模型余量、RatePreservation 与 DStructure/Rankin 仍未由 built-in pairing 自动推出。",
+      "proved": false,
+      "remaining": "CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只是把反分裂原子同步到 built-in pairing 与 ExactUV entropy/fiber；没有得到无条件闭合。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_origin_table_loop_blocked": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-router.json": "8bfd13a8b9edfd7cf3643fc82cb08fe6fc35669bafe0c56580deeaf58c468b56",
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-antisplit-joint-declaration-firewall-router.json": "dd12ca2ff0316f1833578addbaeeecb1319e6f513604cd485b2291487b663d77",
+    "docs/monograph/prime-matrix-strict-atomic-joint-rows-builtin-pairing-router.json": "fa7ad8fc05db9226702248fe8cca0f6870ae51e50afa0a3161cefa3235c6587b",
+    "docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.json": "72261ef1a6ba980a674636e9ec70064a59d827009b4fde0ae7acf06801c9d90e",
+    "experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_downstream_sync_router.py": "827018c54cf76ac2e1580c7ed28912f186e20d03d6c3ed3a52e0b76b7e10e530"
+  },
+  "status": "phi_lpf_latest_new_joint_antisplit_synced_to_builtin_pairing_open",
+  "strict_antisplit_downstream_edges_imported": true,
+  "sync_edges": [
+    {
+      "from": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection",
+      "meaning": "反分裂同排行必须内置 rows formula、word/coefficient pairing、prepushforward identity 与 split firewall。",
+      "to": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing"
+    },
+    {
+      "from": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing",
+      "meaning": "atomic rows 的 signed 首缺口是每行内置 coefficient/pairing 闭式。",
+      "to": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "from": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+      "meaning": "bounded ExactUV incidence 拆成 source-domain entropy 与 fixed exact-pair fiber bound。",
+      "to": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "from": "retained alternatives",
+      "meaning": "canonical-lock、independent bridge、same-set PDEC 与外部谱仍是独立保留输入。",
+      "to": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ]
+}

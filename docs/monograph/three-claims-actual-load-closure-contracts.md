@@ -7537,6 +7537,73 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+### 1.211 Phi-LPF latest new-joint antisplit downstream sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_downstream_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-downstream-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_antisplit_atom_imported=true
+strict_antisplit_downstream_edges_imported=true
+antisplit_firewall_to_atomic_rows_imported=true
+atomic_rows_reduced_to_builtin_pairing=true
+signed_origin_table_loop_blocked=true
+exactuv_entropy_fiber_split_imported=true
+non_split_actual_joint_formula_proved=false
+atomic_antisplit_declaration_proved=false
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+actual-load 含义是：反分裂同排原子若要避免旧 split 固定点，不能停在
+`NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection` 这个名称上，而必须
+给出 atomic pre-Cauchy rows：
+
+```text
+AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing
+```
+
+已有 atomic rows 证书继续把 signed 缺口压到每行内置配对闭式：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+并行 ExactUV 门同步为：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+最新严格内部基为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+LPF/Phi 桶恒等式仍只给无符号桶容量，不能生成 signed coefficient。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
