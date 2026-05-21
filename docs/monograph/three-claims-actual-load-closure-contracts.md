@@ -22364,3 +22364,56 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 ```
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
+
+### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_noncircular_kernel_bucket_signed_law_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_noncircular_kernel_target_imported=true
+strict_kernel_first_field_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+unsigned_phi_lpf_bucket_cannot_emit_signed_coefficient=true
+noncircular_kernel_coarse_target_removed=true
+noncircular_signed_coefficient_emission_kernel_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：latest constructor 的 noncircular signed emission kernel 现在被接到
+Phi-LPF support-stripped 证书。LPF/Phi 已经支付每个 `(p,m)` 桶的 owner、候选支撑、
+容量和大素数零质量；剩余不再是找行或数行，而是对这些桶正向赋 signed coefficient、
+sign/local factor、branch key 与 prepushforward alpha/delta 求和恒等式。
+
+最新直接主攻改为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+并行保留：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+HarmonicWindowAlpha043PGe3001Upper0850Ledger
+DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+```
+
+以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。

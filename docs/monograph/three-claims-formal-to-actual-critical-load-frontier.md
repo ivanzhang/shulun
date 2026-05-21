@@ -16087,6 +16087,58 @@ PDEC scope、canonical lock、independent bridge、terminal WFD、direct pointwi
 key、harmonic/skeleton、Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题仍未
 无条件闭合。
 
+## 406. Phi-LPF latest constructor noncircular kernel bucket signed-law sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_noncircular_kernel_bucket_signed_law_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_noncircular_kernel_target_imported=true
+strict_kernel_first_field_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+unsigned_phi_lpf_bucket_cannot_emit_signed_coefficient=true
+noncircular_kernel_coarse_target_removed=true
+noncircular_signed_coefficient_emission_kernel_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+formal-to-actual 含义是：latest constructor 的非循环 signed emission kernel 不能继续作为
+未拆粗口。strict kernel 纪律要求 Cauchy 前 actual noncanonical emitter declaration，且不得
+读取 downstream payment/Phi、row table 或零行覆盖。Phi-LPF 支撑剥离证书已经把其中的
+找行、数行、owner layer 和大素数零质量全部支付到最小素因子桶 `(p,m)`。
+
+因此 constructor 线的 signed-side gate 进一步改写为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+最新内部主攻为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+这一步只说明 LPF/Phi 精确桶已经完成无符号支撑职责；它不生成 signed coefficient、sign/local
+factor、branch key 或 prepushforward alpha/delta 求和恒等式。PDEC scope、canonical lock、
+independent bridge、terminal WFD、direct pointwise table、ExactUV/key、harmonic/skeleton、
+Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
