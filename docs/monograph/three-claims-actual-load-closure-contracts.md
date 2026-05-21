@@ -23084,6 +23084,54 @@ AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRoss
 PDEC scope、新 primitive/payload、外部 no-projection KZ、Rate、DStructure 与
 source/ExactUV 相关账本仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.197 Phi-LPF latest constructor cycle-cut/antisplit downstream rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_cyclecut_antisplit_downstream_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-cyclecut-antisplit-downstream-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-cyclecut-antisplit-downstream-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-cyclecut-antisplit-downstream-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_seed_cyclecut_imported=true
+seed_cycle_cut_branch_saturated=true
+cyclecut_terminal_unified_to_joint_declaration=true
+ordinary_joint_route_rejected_by_antisplit_downstream=true
+atomic_rows_reduced_to_builtin_pairing=true
+exactuv_entropy_fiber_split_imported=true
+threshold_finite_verification_boundary_preserved=true
+beta_sieve_sawtooth_tail_still_open=true
+latest_internal_route_reduced_to_builtin_pairing_and_exactuv=true
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+self_contained_beta_sieve_appendix_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：seed cycle-cut 负载已经被下游化。普通 joint declaration 不是
+新的非循环来源类；要避免 signed-source 固定点，必须给出反分裂 atomic rows 内置的
+signed coefficient/pairing 闭式，并同时支付 ExactUV 的 source entropy / fixed fiber
+并行门。高阈值加有限验证仍只关闭有限桥，不能替代尾段 beta-sieve/sawtooth。
+
+最新直接主攻改为：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+PDEC scope、新 primitive/payload、外部 no-projection KZ、Rate、DStructure、
+complete/fixed key、signed survival 与 row-mass 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
