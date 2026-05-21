@@ -7730,6 +7730,55 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 LPF/Phi 桶恒等式在这里仍只提供 support/capacity/root 账本，不能生成 signed payload 或
 alpha row 发射公式。行/列命题仍未无条件闭合。
 
+### 1.214 Phi-LPF latest new-joint alpha terminal three-atoms sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_alpha_terminal_three_atoms_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_new_joint_alpha_frontier_imported=true
+legacy_alpha_terminal_same_target_imported=true
+alpha_local_frontier_terminal_synced=true
+terminal_three_atoms_pinned=true
+new_joint_trace_cycle_still_absorbed=true
+independent_moving_atom_chosen_as_narrowest=true
+acyclic_terminal_canonical_lock_proved=false
+a1_clean_branch_canonical_source_admission_proved=false
+independent_nonterminal_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+actual-load 含义是：`AlphaRowAnchorPhaseEmissionFormulaLedger` 的 unsigned 局部分支已经被
+既有 alpha-row 证书同步到终端容量/模型门；signed 分支不能自证，继续回流到终端结构。若再走
+旧 joint/new joint/branch trace/payload 线，会重新进入已删除的 signed-lane 自证环。
+
+删除这些自回流后，当前 strict 终端前沿压成三原子：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+其中最贴近 actual-load 相位异常、也是当前直接主攻的是：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行仍保留 canonical-lock、A1 admission、same-set PDEC、ExactUV、逐点 signed 表、
+rough-cofactor transport/coherence、模型余量、Rate 与 DStructure/Rankin 验收。行/列命题仍未
+无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

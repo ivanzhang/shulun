@@ -17773,6 +17773,60 @@ PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 这仍是非循环前沿同步，不是 alpha row 发射公式、算术恒等式、rank/multiplicity 或 ExactUV
 的证明。行/列命题仍未无条件闭合。
 
+## 372. Phi-LPF latest new-joint alpha terminal three-atoms sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_alpha_terminal_three_atoms_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-alpha-terminal-three-atoms-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_new_joint_alpha_frontier_imported=true
+legacy_alpha_terminal_same_target_imported=true
+alpha_local_frontier_terminal_synced=true
+terminal_three_atoms_pinned=true
+new_joint_trace_cycle_still_absorbed=true
+independent_moving_atom_chosen_as_narrowest=true
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+formal-to-actual 含义是：当前 new-joint latest 的 alpha row 前沿可直接接入已有
+alpha-terminal 三原子证书。alpha 局部几何只关闭 unsigned skeleton、carry-shell 和 phase
+兼容；signed lift 与 anchor-overload 分支回到终端容量/模型门。旧 joint/new joint/trace/payload
+路线则回到 signed-lane 自证环。
+
+因此最新直接硬点推进为：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行保留：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层仍是同步和前沿压缩；moving atom 独立非终端排斥、canonical-lock、A1 admission 与晋级门均未证明。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
