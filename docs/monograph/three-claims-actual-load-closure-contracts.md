@@ -8261,6 +8261,56 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 
 行/列命题仍未无条件闭合。
 
+### 1.224 Phi-LPF latest constructor pointwise-origin sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_pointwise_origin_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_constructor_pointwise_table_imported=true
+general_pointwise_origin_router_imported=true
+pointwise_frontier_imported=true
+pointwise_table_first_field_signed_weight_imported=true
+primitive_expression_to_origin_identity_imported=true
+reverse_recovery_blocked_imported=true
+existing_expansion_hits_breaker_triad=true
+pointwise_signed_table_proved=false
+primitive_summand_origin_identity_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+actual-load 含义是：LPF/Phi 桶恒等式只支付 owner、support、capacity 与 root，不支付
+signed coefficient、local factor 或 orientation。constructor 链上的逐点 signed 表若要
+闭合，必须先给逐 skeleton row 的 signed weight，再给 primitive summand signed
+expression，最终正向提交每个 actual primitive summand 的来源恒等式。
+
+因此 latest 直接主攻推进为：
+
+```text
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+非循环破环并行出口仍为：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+signed survival、row-mass、ExactUV、rough-cofactor transport/coherence、模型、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

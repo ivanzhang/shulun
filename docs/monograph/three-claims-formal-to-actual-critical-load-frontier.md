@@ -18325,6 +18325,59 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward)
 
 行/列命题仍未无条件闭合。
 
+## 382. Phi-LPF latest constructor pointwise-origin sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_pointwise_origin_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-pointwise-origin-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_pointwise_table_imported=true
+general_pointwise_origin_router_imported=true
+pointwise_frontier_imported=true
+pointwise_table_first_field_signed_weight_imported=true
+primitive_expression_to_origin_identity_imported=true
+reverse_recovery_blocked_imported=true
+existing_expansion_hits_breaker_triad=true
+pointwise_signed_table_proved=false
+primitive_summand_origin_identity_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+formal-to-actual 含义是：constructor moving-atom 口径已进入逐点 signed 表，但逐点表不是
+LPF/Phi support/capacity 的推论。它必须拆成 signed weight、primitive summand signed
+expression，并最终给出 pre-Cauchy source tuple 的 origin identity。现有来源展开会回到
+signed-source 固定点，所以不能作为非循环证明。
+
+最新直接主攻：
+
+```text
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+完整剩余基为：
+
+```text
+(PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger)
+OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+ExactUV、rough-cofactor transport/coherence、模型、Rate 与 DStructure 仍开放。行/列命题
+仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
