@@ -22988,6 +22988,52 @@ PDEC 作用域匹配、终端家族、nonrecursive breaker/new-joint、joint row
 signed survival、row-mass、complete/fixed key、Rate 与 DStructure 仍是并行硬门。
 行/列命题仍未无条件闭合。
 
+### 1.195 Phi-LPF latest constructor post-KZ-E source-admission rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_post_kze_source_admission_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_ncblk_tail_imported=true
+strict_ncblk_to_source_root_imported=true
+forward_source_root_terminal_cycle_imported=true
+post_source_root_pdec_saturation_imported=true
+post_pdec_new_joint_noncycle_imported=true
+post_new_joint_kz_nocycle_imported=true
+post_kze_source_admission_imported=true
+phi_lpf_unsigned_bucket_discipline_preserved=true
+high_model_tail_beta_sawtooth_reapplied=true
+latest_internal_route_reduced_to_a1_source_admission=true
+a1_clean_branch_canonical_source_admission_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：KZ-E/no-cycle 侧已经不能继续停在 `NCBLK/source anti-atom`
+大名。当前内部链经 source-root、PDEC scope、new-joint 和 KZ no-cycle 饱和后，落到
+`A1CleanBranchCanonicalSourceAdmission`；同时高段模型负载继续落在自足 beta-sieve
+构造、99% 主系数和 exact sawtooth 三项上。LPF/Phi 桶恒等式只提供无符号分桶与容量
+纪律，不能替代 signed source 或 canonical source admission。
+
+最新直接主攻改为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+外部 no-projection KZ、direct PDEC scope、新 joint、KZ-E direct、Phi-LPF signed table、
+Rate、DStructure 与 source/ExactUV 相关账本仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

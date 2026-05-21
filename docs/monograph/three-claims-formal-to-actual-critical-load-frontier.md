@@ -16813,6 +16813,56 @@ PDEC 作用域匹配、终端家族、nonrecursive breaker/new-joint、joint row
 signed survival、row-mass、complete/fixed key、Rate 与 DStructure 仍开放。
 行/列命题仍未无条件闭合。
 
+## 422. Phi-LPF latest constructor post-KZ-E source-admission rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_post_kze_source_admission_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_ncblk_tail_imported=true
+strict_ncblk_to_source_root_imported=true
+forward_source_root_terminal_cycle_imported=true
+post_source_root_pdec_saturation_imported=true
+post_pdec_new_joint_noncycle_imported=true
+post_new_joint_kz_nocycle_imported=true
+post_kze_source_admission_imported=true
+phi_lpf_unsigned_bucket_discipline_preserved=true
+high_model_tail_beta_sawtooth_reapplied=true
+latest_internal_route_reduced_to_a1_source_admission=true
+a1_clean_branch_canonical_source_admission_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+formal-to-actual 含义是：上一层留下的 `NCBLK/source anti-atom + 高段尾包`
+不能作为 latest constructor 的最终无名硬点。strict source-root、PDEC、new-joint、
+KZ no-cycle 与 post-KZ-E source-bridge 链显示，当前内部非循环 KZ-E 方向若不接受外部
+no-projection DI/BFI/Kuznetsov 证书，就必须证明
+`A1CleanBranchCanonicalSourceAdmission`。LPF/Phi 桶恒等式在本层只作为无符号
+owner/support/capacity 纪律使用：它能排除从 bucket 容量反推 signed source 的捷径，
+但不能生成 canonical source admission。
+
+最新直接主攻推进到：
+
+```text
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+条件保留线包括外部 no-projection KZ、direct PDEC scope、新 joint、KZ-E direct、
+Phi-LPF signed bucket table。beta-sieve 附录、99% 主系数、exact sawtooth、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

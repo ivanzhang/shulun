@@ -1,0 +1,113 @@
+# Prime Matrix Phi-LPF latest constructor post-KZ-E source-admission rebase sync 证书
+
+**状态：** `phi_lpf_latest_constructor_post_kze_source_admission_rebased_open`
+
+本步把 latest constructor 的 NCBLK/source anti-atom 与 beta-sieve/sawtooth 尾包继续接入 strict source-root、PDEC、new-joint、KZ no-cycle 和 post-KZ-E direct source-bridge 链。LPF/Phi 桶恒等式在这里作为无符号 owner/support/capacity 纪律使用：它排除了从 bucket 容量反推 signed source 的捷径。剩余的内部非循环首口是 A1 clean branch canonical source admission，并且仍需支付自足 beta-sieve、99% 主系数和 exact sawtooth 尾段。
+
+```text
+latest_constructor_ncblk_tail_imported=true
+strict_ncblk_to_source_root_imported=true
+forward_source_root_terminal_cycle_imported=true
+post_source_root_pdec_saturation_imported=true
+post_pdec_new_joint_noncycle_imported=true
+post_new_joint_kz_nocycle_imported=true
+post_kze_source_admission_imported=true
+phi_lpf_unsigned_bucket_discipline_preserved=true
+high_model_tail_beta_sawtooth_reapplied=true
+latest_internal_route_reduced_to_a1_source_admission=true
+a1_clean_branch_canonical_source_admission_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+## 1. 同步链
+
+```text
+AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn OR named terminal return
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound
+```
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `LatestConstructorNCBLKAndTailImported` | `true` | `false` | 上一层已把 constructor 的 KZ/high-model 对压成 NCBLK/source anti-atom 与 beta-sieve/sawtooth 尾包。 | AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `NCBLKFrontierToSourceRootImported` | `true` | `false` | strict NCBLK/source anti-atom 前沿显示 actual 路线必须先给出 forward source-root packet 或命名回流。 | ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn |
+| `ForwardSourceRootTerminalCycleImported` | `true` | `true` | 当前语料中的 source-root 内部路线回到终端容量环，不能作为非循环闭合。 | AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse |
+| `PostSourceRootPDECSaturationImported` | `true` | `false` | direct PDEC 作用域在当前内部材料中已攻到饱和边界，若不新增 PDEC 证书则转入 new-joint 破环口。 | NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
+| `PostPDECNewJointCycleImported` | `true` | `false` | 旧 new-joint/branch-trace/signed-payload 路线回到 signed-lane/source-rank 循环。 | NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse |
+| `PostNewJointKZNoCycleGateImported` | `true` | `false` | 非循环 KZ/DLS 门禁止复用 NCBLK/source-root，因此旧 KZ-E 投影路线不能计入闭合。 | AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection |
+| `PostKZEDirectSourceBridgeImported` | `true` | `false` | KZ-E direct no-projection 内部路线若不接受外部 no-projection 定理，就压到 clean A1 分支 canonical source admission。 | A1CleanBranchCanonicalSourceAdmission |
+| `PhiLPFUnsignedBucketDisciplinePreserved` | `true` | `true` | LPF/Phi 桶恒等式已支付 owner、支撑与容量；它不能从无符号 bucket 反推出 signed source。 | A1CleanBranchCanonicalSourceAdmission OR PhiLPFBucketSignedCoefficientLawBeforePushforward |
+| `HighModelTailReappliedAfterKZEBridge` | `true` | `true` | source-admission 只处理 KZ-E/no-cycle 侧；高段模型仍必须支付 beta-sieve、99% 主系数和 sawtooth 尾包。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `LatestInternalRouteReducedToA1SourceAdmission` | `true` | `false` | latest constructor 的当前内部非循环链已重接到 A1 clean branch canonical source admission 加高段尾包。 | A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| `A1SourceAdmissionStillOpen` | `true` | `false` | canonical 分支来源锁只在证明当前 clean A1 反例分支准入 RIW/Buchstab source 后可用；当前尚未证明。 | A1CleanBranchCanonicalSourceAdmission |
+| `StrictBetaSieveSawtoothTailStillOpen` | `true` | `false` | 自足 beta-sieve 附录、99% 主系数误差与 exact sawtooth 余项界仍未证明。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只做 latest constructor 的非循环链 rebase；没有证明 source admission、beta-sieve/sawtooth、Rate 或 DStructure。 | ((A1CleanBranchCanonicalSourceAdmission OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse OR PhiLPFBucketSignedCoefficientLawBeforePushforward) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+
+## 3. 最新内部基
+
+```text
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 4. 保留条件基
+
+```text
+((A1CleanBranchCanonicalSourceAdmission OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection OR NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse OR PhiLPFBucketSignedCoefficientLawBeforePushforward) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+下一直接主攻：
+
+```text
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+并行仍需：
+
+```text
+ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicKZEWellFactorableDispersionLogSavingWithoutNCBLKProjection
+NonCircularSelfContainedKuznetsovDLSLargeSieveWithoutNCBLKSourceRootReuse
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+ExactResidueWeightedFloorSawtoothTenPercentBound
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+JointEmitterPrepushforwardWordCoefficientIdentityLedger
+JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+行/列命题仍未无条件闭合。
+
+## 5. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_latest_constructor_post_kze_source_admission_rebase_sync_router.py` | `b0bd32f6146f357a8fe0d5ab30cf384b36016f021df254da9e8fee0a1a7589d3` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-kuznetsov-high-model-rebase-sync-router.json` | `abf6db34e5e091d6bbdfdaf2df82ecc1e440f75e7200e70ba408c4ac8c48de4e` |
+| `docs/monograph/prime-matrix-strict-ncblk-source-antiatom-frontier-sync-router.json` | `11d509967f5a92a50caed11e4ed4aa65a2cbaea07eaa99217c2e93391cda60d5` |
+| `docs/monograph/prime-matrix-strict-forward-source-root-terminal-cycle-sync-router.json` | `223f7e68d259298177cb2eb4afd3bc6c0f8f7c696f37633ba1cca7407ac07395` |
+| `docs/monograph/prime-matrix-strict-post-source-root-pdec-scope-saturation-sync-router.json` | `8ea074295bea6900bdb26efb22686da30430e22f94003d9362a25884788bf5d2` |
+| `docs/monograph/prime-matrix-strict-post-pdec-new-joint-noncycle-sync-router.json` | `b399e75cd4c9aba64d2566b9d05f961d504cddb416a1d3f6fabb53e4126bca62` |
+| `docs/monograph/prime-matrix-strict-post-new-joint-kz-nocycle-gate-sync-router.json` | `daf08ea0d88fb2c0729398c4a59702b9a59e46efb38aae7fe9e2f369e99633d6` |
+| `docs/monograph/prime-matrix-strict-post-kze-direct-source-bridge-sync-router.json` | `cec3c0ff75b87992f6544ceee97015142de6d2545521e3197d6ee7a996ab62d4` |
+| `docs/monograph/prime-matrix-strict-high-model-tail-update-router.json` | `d6607a2234fc89e719d25a5139982b032ae9a5da624857d8eaa87a2b25e2b52a` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-noncircular-kernel-bucket-signed-law-sync-router.json` | `38daa9f5a040d5fad3d28a8f43dc506c89e46439a40dd11ec22716b493e41291` |
