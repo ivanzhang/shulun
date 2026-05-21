@@ -10695,6 +10695,90 @@ barrier classification, not a final unconditional closure.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF \(1<k<P\) row interval difference]
+Fix an odd prime \(P\) and \(1<k<P\).  The Phi-LPF endpoint identity
+applies to the closed interval \([kP,kP+P]\):
+\[
+  \pi(kP+P)-\pi(kP-1)
+  =P+1-\sum_{p\le \sqrt{kP+P}}
+  \left(\Phi\!\left(\left\lfloor \frac{kP+P}{p}\right\rfloor,p\right)
+  -\Phi\!\left(\left\lfloor \frac{kP-1}{p}\right\rfloor,p\right)\right).
+\]
+Since both endpoints \(kP\) and \(kP+P=(k+1)P\) are composite multiples of
+\(P\), this closed interval count is exactly the internal row count
+\[
+  \pi(kP+P)-\pi(kP-1)=\pi(kP+P-1)-\pi(kP).
+\]
+For the actual internal row
+\[
+  I_k=\{kP+a:1\le a<P\},
+\]
+the corresponding exact formula is
+\[
+  \pi(kP+P-1)-\pi(kP)
+  =(P-1)-\sum_{p\le \sqrt{kP+P-1}}
+  \left(\Phi\!\left(\left\lfloor \frac{kP+P-1}{p}\right\rfloor,p\right)
+  -\Phi\!\left(\left\lfloor \frac{kP}{p}\right\rfloor,p\right)\right).
+\]
+The Phi recurrence
+\[
+  \Phi(x,p_j)=\Phi(x,p_{j+1})+
+  \Phi\!\left(\left\lfloor \frac{x}{p_j}\right\rfloor,p_j\right)
+\]
+computes each bucket endpoint exactly.  Since \(1<k<P\) and \(1\le a<P\), every
+row slot satisfies \(kP+a<P^2\).  Hence a slot of \(I_k\) uncovered by all
+primes \(q\le\sqrt{kP+P-1}\) is a prime, and conversely every prime slot is
+uncovered.  The endpoint-difference identity therefore gives an exact value
+for the number of row primes, but its positivity is precisely the inequality
+\[
+  \sum_{p\le \sqrt{kP+P-1}}
+  \left(\Phi\!\left(\left\lfloor \frac{kP+P-1}{p}\right\rfloor,p\right)
+  -\Phi\!\left(\left\lfloor \frac{kP}{p}\right\rfloor,p\right)\right)
+  <P-1.
+\]
+This inequality is not supplied by the identity itself; it is equivalent to
+the full-root uncovered-slot, hence row-prime, positive statement.  The
+previous CRT aligned prime-free sample for \(P=5,k=8166\) is not applicable to
+this \(1<k<P\) row problem.  The remaining non-circular basis is still
+\begin{quote}\scriptsize\ttfamily
+(AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn\\
+\phantom{(}OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput\\
+\phantom{(}OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)\\
+AND HighSegmentModelGapAlpha043C3AnalyticLedger\\
+AND RatePreservationLedger\_FOR\_moving\_atom\_packet\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-\\
+difference-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+k\_less\_p\_endpoint\_difference\_identity\_proved=true\\
+strict\_k\_closed\_interval\_equals\_internal\_row\_proved=true\\
+internal\_row\_formula\_proved=true\\
+phi\_recurrence\_computes\_bucket\_deltas=true\\
+inside\_p\_square\_prime\_uncovered\_equivalence\_proved=true\\
+previous\_crt\_prime\_free\_block\_not\_applicable=true\\
+interval\_positivity\_from\_identity\_alone\_proved=false\\
+full\_root\_uncovered\_slot\_positive\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The positive information is the exact localization of what Phi-LPF does in
+the \(1<k<P\) row setting.  It turns the closed interval count into the same
+mechanical endpoint difference as the internal row count, and it proves that
+full-root uncovered slots and row primes are the same objects below \(P^2\).
+It also prevents importing the earlier
+\(k>P\) CRT prime-free block as a counterexample to this row target.  What it
+does not provide is the strict upper bound on the composite bucket increment
+sum.  That bound remains the row-prime content itself, so the row/column
+theorem remains open.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

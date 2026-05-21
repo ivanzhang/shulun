@@ -17234,6 +17234,72 @@ pi(kP+P)-pi(kP-1)
 平均相位、容量压力、signed payload 或 `sum Delta_Phi_p` 的结构性上界。它本身不闭合
 三命题。行/列命题仍未无条件闭合。
 
+## 430. Phi-LPF 1<k<P row interval difference frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_k_less_p_row_interval_difference_router.py
+docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json
+data/prime-matrix-phi-lpf-k-less-p-row-interval-difference-ledger.json
+```
+
+同步结果：
+
+```text
+k_less_p_endpoint_difference_identity_proved=true
+strict_k_closed_interval_equals_internal_row_proved=true
+internal_row_formula_proved=true
+phi_recurrence_computes_bucket_deltas=true
+inside_p_square_prime_uncovered_equivalence_proved=true
+previous_crt_prime_free_block_not_applicable=true
+interval_positivity_from_identity_alone_proved=false
+full_root_uncovered_slot_positive_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：用户强调的 `1<k<P` 需要与上一层一般 `[kP,kP+P]`
+分开处理。闭区间端点差分仍然成立：
+
+```text
+pi(kP+P)-pi(kP-1)
+=P+1-sum_{p<=sqrt(kP+P)}
+  [Phi(floor((kP+P)/p),p)-Phi(floor((kP-1)/p),p)].
+```
+
+在严格 `1<k<P` 口径下，两个端点 `kP` 与 `kP+P=(k+1)P` 都是合数倍，因此
+
+```text
+pi(kP+P)-pi(kP-1)=pi(kP+P-1)-pi(kP).
+```
+
+所以闭区间端点差分给出的素数数目，恰好就是内部区间 `I_k={kP+a:1<=a<P}` 的素数数目：
+
+```text
+pi(kP+P-1)-pi(kP)
+=(P-1)-sum_{p<=sqrt(kP+P-1)}
+  [Phi(floor((kP+P-1)/p),p)-Phi(floor(kP/p),p)].
+```
+
+Phi 递推 `Phi(x,p_j)=Phi(x,p_{j+1})+Phi(floor(x/p_j),p_j)` 可机械计算这些桶端点。
+证书样本的递推值与 LPF 直接计数一致。
+
+本层的新精确信息是：当 `1<k<P` 且 `1<=a<P` 时，`kP+a<P^2`。因此内部行中未被任何
+`q<=sqrt(kP+P-1)` 覆盖的槽与素数槽完全等价。上一层 CRT 零素数样本
+`P=5,k=8166` 满足 `k>P`，不能用于否定本层 `1<k<P` 目标。
+
+剩余硬点也因此更清楚：要证明该行有素数，必须证明
+
+```text
+sum_{p<=sqrt(kP+P-1)}
+  [Phi(floor((kP+P-1)/p),p)-Phi(floor(kP/p),p)] < P-1.
+```
+
+但这正等价于 full-root 未覆盖槽存在，也就是 row-prime 正性本身。故本层关闭的是
+精确计数与循环边界，不是无条件证明。下一步仍需 Q1/Q2 transport、seed/PDEC scope、
+signed table、Rate/DStructure 或外部短区间输入。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

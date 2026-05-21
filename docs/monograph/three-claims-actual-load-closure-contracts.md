@@ -23382,6 +23382,56 @@ pi(B)-pi(A-1)
 后续若沿此路推进，必须寻找 `sum Delta_Phi_p` 的额外结构性上界、平均相位机制或 signed
 payload/容量压力，而不是仅重复端点差分。行/列命题仍未无条件闭合。
 
+### 1.203 Phi-LPF 1<k<P row interval difference 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_k_less_p_row_interval_difference_router.py
+data/prime-matrix-phi-lpf-k-less-p-row-interval-difference-ledger.json
+docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json
+```
+
+同步读数为：
+
+```text
+k_less_p_endpoint_difference_identity_proved=true
+strict_k_closed_interval_equals_internal_row_proved=true
+internal_row_formula_proved=true
+phi_recurrence_computes_bucket_deltas=true
+inside_p_square_prime_uncovered_equivalence_proved=true
+previous_crt_prime_free_block_not_applicable=true
+interval_positivity_from_identity_alone_proved=false
+full_root_uncovered_slot_positive_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：对用户最新强调的 `1<k<P`，端点差分可直接给出闭区间
+`[kP,kP+P]` 的精确素数数目。此时两个端点 `kP` 与 `kP+P=(k+1)P`
+都是合数倍，所以闭区间素数数目恰等于内部区间 `I_k={kP+a:1<=a<P}` 的素数数目。
+内部行的精确公式为
+
+```text
+pi(kP+P-1)-pi(kP)
+=(P-1)-sum_{p<=sqrt(kP+P-1)}
+  [Phi(floor((kP+P-1)/p),p)-Phi(floor(kP/p),p)].
+```
+
+由于 `1<k<P`，内部槽全部落在 `P^2` 以下。于是 full-root 未覆盖槽与素数槽完全等价。
+因此本层将正性硬点规范为：
+
+```text
+LPF composite endpoint delta < P-1.
+```
+
+这不是由恒等式自动给出的不等式；它等价于 row-prime 正性本身。上一层 CRT 全合数样本
+`P=5,k=8166` 满足 `k>P`，不能用于否定该 `1<k<P` 行区间目标。
+
+本层关闭的是 `1<k<P` 端点差分、闭区间等于内部行、内部行公式、Phi 递推机械计算和 full-root 等价；未关闭的是
+full-root uncovered positive。最新直接硬点仍回到 Q1/Q2 传输、seed/PDEC 作用域匹配、
+signed table 或外部短区间输入。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

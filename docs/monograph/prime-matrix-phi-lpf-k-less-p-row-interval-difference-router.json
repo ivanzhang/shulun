@@ -1,0 +1,558 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_k_less_p_row_interval_difference_router",
+  "closed_equals_internal_row_for_1_less_k_less_p": true,
+  "closed_kp_interval_formula_for_1_less_k_less_p": "pi(kP+P)-pi(kP-1)=P+1-sum_{p<=sqrt(kP+P)}[Phi(floor((kP+P)/p),p)-Phi(floor((kP-1)/p),p)]",
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_sweep": {
+    "all_full_root_uncovered_equals_prime_slots": true,
+    "all_internal_rows_positive_in_finite_sweep": true,
+    "case_count": 1010,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 97,
+    "minimum_cases_sample": [
+      {
+        "P": 3,
+        "a": 7,
+        "b": 8,
+        "k": 2,
+        "prime_count": 1
+      },
+      {
+        "P": 5,
+        "a": 21,
+        "b": 24,
+        "k": 4,
+        "prime_count": 1
+      },
+      {
+        "P": 7,
+        "a": 22,
+        "b": 27,
+        "k": 3,
+        "prime_count": 1
+      },
+      {
+        "P": 11,
+        "a": 111,
+        "b": 120,
+        "k": 10,
+        "prime_count": 1
+      },
+      {
+        "P": 13,
+        "a": 118,
+        "b": 129,
+        "k": 9,
+        "prime_count": 1
+      },
+      {
+        "P": 17,
+        "a": 205,
+        "b": 220,
+        "k": 12,
+        "prime_count": 1
+      },
+      {
+        "P": 19,
+        "a": 286,
+        "b": 303,
+        "k": 15,
+        "prime_count": 1
+      }
+    ],
+    "minimum_prime_count": 1
+  },
+  "frontier_sync_only": true,
+  "full_root_uncovered_slot_positive_proved": false,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "KLessPEndpointDifferenceIdentityClosed",
+      "meaning": "端点差分恒等式对任意 2<=A<=B 成立，因此也适用于 1<k<P 的 [kP,kP+P]。",
+      "proved": true,
+      "remaining": "exact identity"
+    },
+    {
+      "closed": true,
+      "gate": "StrictKClosedEqualsInternalRow",
+      "meaning": "当 1<k<P 时，kP 与 kP+P=(k+1)P 都是合数端点，闭区间素数数目等于内部行素数数目。",
+      "proved": true,
+      "remaining": "endpoints contribute zero primes"
+    },
+    {
+      "closed": true,
+      "gate": "InternalRowFormulaClosed",
+      "meaning": "对 I_k={kP+a:1<=a<P}，素数数目等于 P-1 减去 full-root LPF 桶端点增量和。",
+      "proved": true,
+      "remaining": "pi(kP+P-1)-pi(kP)"
+    },
+    {
+      "closed": true,
+      "gate": "PhiRecurrenceComputesBucketDeltas",
+      "meaning": "Phi 递推可机械计算每个桶端点值，样本与 LPF 直接计数一致。",
+      "proved": true,
+      "remaining": "recurrence, not asymptotic"
+    },
+    {
+      "closed": true,
+      "gate": "InsidePSquarePrimeUncoveredEquivalence",
+      "meaning": "因为 1<k<P 且 1<=a<P，所以 kP+a<P^2；full-root 未覆盖槽等价于素数槽。",
+      "proved": true,
+      "remaining": "uncovered iff prime"
+    },
+    {
+      "closed": false,
+      "gate": "PreviousCRTPrimeFreeBlockApplicableToKLessP",
+      "meaning": "上一层 P=5,k=8166 的全合数闭区间样本满足 k>P，不能否定 k<P 行区间目标。",
+      "proved": false,
+      "remaining": "need k<P-specific argument"
+    },
+    {
+      "closed": false,
+      "gate": "IntervalPositivityFromIdentityAlone",
+      "meaning": "要推出行内有素数，仍需证明 LPF 合数桶增量和小于 P-1。",
+      "proved": false,
+      "remaining": "composite bucket delta < row length"
+    },
+    {
+      "closed": false,
+      "gate": "FullRootUncoveredSlotPositiveProved",
+      "meaning": "正性就是 full-root 未覆盖槽存在；这与 row-prime 目标等价，不能作为内部黑箱。",
+      "proved": false,
+      "remaining": "noncircular short-interval input still missing"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只把 1<k<P 的 Phi-LPF 行差分完全规范化；未证明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "Q1/Q2 transport, seed/PDEC scope, signed table, Rate, DStructure"
+    }
+  ],
+  "inside_p_square_prime_uncovered_equivalence_proved": true,
+  "internal_row_formula_proved": true,
+  "internal_row_interval_formula": "pi(kP+P-1)-pi(kP)=(P-1)-sum_{p<=sqrt(kP+P-1)}[Phi(floor((kP+P-1)/p),p)-Phi(floor(kP/p),p)]",
+  "interval_positivity_from_identity_alone_proved": false,
+  "k_less_p_endpoint_difference_identity_proved": true,
+  "no_theorem_switch": true,
+  "phi_recurrence": "Phi(x,p_j)=Phi(x,p_{j+1})+Phi(floor(x/p_j),p_j)",
+  "phi_recurrence_computes_bucket_deltas": true,
+  "plain_conclusion": "对 1<k<P，Phi-LPF 端点差分能直接用于闭区间 [kP,kP+P]。由于两个端点 kP 与 (k+1)P 都是合数倍，闭区间素数数目恰等于内部行 I_k={kP+a:1<=a<P} 的素数数目。它给出逐行素数个数的精确值。但要证明该值为正，必须证明 LPF 合数桶端点增量和小于 P-1；在 1<k<P 时这等价于 full-root 未覆盖槽存在，也就是行内已有素数。因此本层是精确计数闭合和循环边界定位，不是行/列命题的无条件闭合。",
+  "positive_row_condition": "sum_{p<=sqrt(kP+P-1)}[Phi(floor((kP+P-1)/p),p)-Phi(floor(kP/p),p)] < P-1",
+  "previous_crt_prime_free_block_not_applicable": true,
+  "recurrence_sample": {
+    "P": 17,
+    "all_bucket_recurrence_matches_lpf_count": true,
+    "bucket_rows": [
+      {
+        "delta": 8,
+        "left_phi_recurrence": 136,
+        "left_phi_spf": 136,
+        "left_x": 136,
+        "p": 2,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 144,
+        "right_phi_spf": 144,
+        "right_x": 144
+      },
+      {
+        "delta": 3,
+        "left_phi_recurrence": 45,
+        "left_phi_spf": 45,
+        "left_x": 90,
+        "p": 3,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 48,
+        "right_phi_spf": 48,
+        "right_x": 96
+      },
+      {
+        "delta": 1,
+        "left_phi_recurrence": 18,
+        "left_phi_spf": 18,
+        "left_x": 54,
+        "p": 5,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 19,
+        "right_phi_spf": 19,
+        "right_x": 57
+      },
+      {
+        "delta": 1,
+        "left_phi_recurrence": 10,
+        "left_phi_spf": 10,
+        "left_x": 38,
+        "p": 7,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 11,
+        "right_phi_spf": 11,
+        "right_x": 41
+      },
+      {
+        "delta": 0,
+        "left_phi_recurrence": 6,
+        "left_phi_spf": 6,
+        "left_x": 24,
+        "p": 11,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 6,
+        "right_phi_spf": 6,
+        "right_x": 26
+      },
+      {
+        "delta": 0,
+        "left_phi_recurrence": 4,
+        "left_phi_spf": 4,
+        "left_x": 20,
+        "p": 13,
+        "recurrence_matches_lpf_count": true,
+        "right_phi_recurrence": 4,
+        "right_phi_spf": 4,
+        "right_x": 22
+      }
+    ],
+    "interval": [
+      273,
+      288
+    ],
+    "k": 16
+  },
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_closed_kp_intervals": [
+    {
+      "P": 5,
+      "a": 20,
+      "b": 25,
+      "closed_count_equals_internal_row_count": true,
+      "closed_interval": [
+        20,
+        25
+      ],
+      "composite_count_by_lpf_endpoint_difference": 5,
+      "formula_matches_direct": true,
+      "internal_interval": [
+        21,
+        24
+      ],
+      "internal_prime_count": 1,
+      "k": 4,
+      "left_endpoint_is_composite_multiple_of_P": true,
+      "length": 6,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 3,
+          "left_phi": 9,
+          "p": 2,
+          "right_phi": 12
+        },
+        {
+          "delta": 1,
+          "left_phi": 3,
+          "p": 3,
+          "right_phi": 4
+        },
+        {
+          "delta": 1,
+          "left_phi": 1,
+          "p": 5,
+          "right_phi": 2
+        }
+      ],
+      "positive_from_identity_condition": "5 < 6",
+      "prime_count_by_endpoint_difference": 1,
+      "prime_count_direct": 1,
+      "right_endpoint_is_composite_multiple_of_P": true,
+      "root_bound": 5
+    },
+    {
+      "P": 11,
+      "a": 110,
+      "b": 121,
+      "closed_count_equals_internal_row_count": true,
+      "closed_interval": [
+        110,
+        121
+      ],
+      "composite_count_by_lpf_endpoint_difference": 11,
+      "formula_matches_direct": true,
+      "internal_interval": [
+        111,
+        120
+      ],
+      "internal_prime_count": 1,
+      "k": 10,
+      "left_endpoint_is_composite_multiple_of_P": true,
+      "length": 12,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 6,
+          "left_phi": 54,
+          "p": 2,
+          "right_phi": 60
+        },
+        {
+          "delta": 2,
+          "left_phi": 18,
+          "p": 3,
+          "right_phi": 20
+        },
+        {
+          "delta": 1,
+          "left_phi": 7,
+          "p": 5,
+          "right_phi": 8
+        },
+        {
+          "delta": 1,
+          "left_phi": 4,
+          "p": 7,
+          "right_phi": 5
+        },
+        {
+          "delta": 1,
+          "left_phi": 1,
+          "p": 11,
+          "right_phi": 2
+        }
+      ],
+      "positive_from_identity_condition": "11 < 12",
+      "prime_count_by_endpoint_difference": 1,
+      "prime_count_direct": 1,
+      "right_endpoint_is_composite_multiple_of_P": true,
+      "root_bound": 11
+    }
+  ],
+  "sample_internal_rows": [
+    {
+      "P": 5,
+      "a": 21,
+      "b": 24,
+      "composite_count_by_lpf_endpoint_difference": 3,
+      "formula_matches_direct": true,
+      "full_root_uncovered_equals_prime_slots": true,
+      "inside_p_square": true,
+      "k": 4,
+      "length": 4,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 2,
+          "left_phi": 10,
+          "p": 2,
+          "right_phi": 12
+        },
+        {
+          "delta": 1,
+          "left_phi": 3,
+          "p": 3,
+          "right_phi": 4
+        }
+      ],
+      "positive_from_identity_condition": "3 < 4",
+      "prime_count_by_endpoint_difference": 1,
+      "prime_count_direct": 1,
+      "prime_slots": [
+        3
+      ],
+      "root_bound": 4,
+      "row_internal_interval": [
+        21,
+        24
+      ],
+      "row_prime_positive": true,
+      "uncovered_slots_by_full_root": [
+        3
+      ]
+    },
+    {
+      "P": 11,
+      "a": 111,
+      "b": 120,
+      "composite_count_by_lpf_endpoint_difference": 9,
+      "formula_matches_direct": true,
+      "full_root_uncovered_equals_prime_slots": true,
+      "inside_p_square": true,
+      "k": 10,
+      "length": 10,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 5,
+          "left_phi": 55,
+          "p": 2,
+          "right_phi": 60
+        },
+        {
+          "delta": 2,
+          "left_phi": 18,
+          "p": 3,
+          "right_phi": 20
+        },
+        {
+          "delta": 1,
+          "left_phi": 7,
+          "p": 5,
+          "right_phi": 8
+        },
+        {
+          "delta": 1,
+          "left_phi": 4,
+          "p": 7,
+          "right_phi": 5
+        }
+      ],
+      "positive_from_identity_condition": "9 < 10",
+      "prime_count_by_endpoint_difference": 1,
+      "prime_count_direct": 1,
+      "prime_slots": [
+        3
+      ],
+      "root_bound": 10,
+      "row_internal_interval": [
+        111,
+        120
+      ],
+      "row_prime_positive": true,
+      "uncovered_slots_by_full_root": [
+        3
+      ]
+    },
+    {
+      "P": 101,
+      "a": 10101,
+      "b": 10200,
+      "composite_count_by_lpf_endpoint_difference": 88,
+      "formula_matches_direct": true,
+      "full_root_uncovered_equals_prime_slots": true,
+      "inside_p_square": true,
+      "k": 100,
+      "length": 100,
+      "nonzero_bucket_deltas": [
+        {
+          "delta": 50,
+          "left_phi": 5050,
+          "p": 2,
+          "right_phi": 5100
+        },
+        {
+          "delta": 17,
+          "left_phi": 1683,
+          "p": 3,
+          "right_phi": 1700
+        },
+        {
+          "delta": 7,
+          "left_phi": 673,
+          "p": 5,
+          "right_phi": 680
+        },
+        {
+          "delta": 4,
+          "left_phi": 385,
+          "p": 7,
+          "right_phi": 389
+        },
+        {
+          "delta": 2,
+          "left_phi": 210,
+          "p": 11,
+          "right_phi": 212
+        },
+        {
+          "delta": 1,
+          "left_phi": 161,
+          "p": 13,
+          "right_phi": 162
+        },
+        {
+          "delta": 1,
+          "left_phi": 113,
+          "p": 17,
+          "right_phi": 114
+        },
+        {
+          "delta": 1,
+          "left_phi": 78,
+          "p": 23,
+          "right_phi": 79
+        },
+        {
+          "delta": 1,
+          "left_phi": 61,
+          "p": 29,
+          "right_phi": 62
+        },
+        {
+          "delta": 1,
+          "left_phi": 28,
+          "p": 53,
+          "right_phi": 29
+        },
+        {
+          "delta": 1,
+          "left_phi": 22,
+          "p": 61,
+          "right_phi": 23
+        },
+        {
+          "delta": 1,
+          "left_phi": 18,
+          "p": 67,
+          "right_phi": 19
+        },
+        {
+          "delta": 1,
+          "left_phi": 14,
+          "p": 73,
+          "right_phi": 15
+        }
+      ],
+      "positive_from_identity_condition": "88 < 100",
+      "prime_count_by_endpoint_difference": 12,
+      "prime_count_direct": 12,
+      "prime_slots": [
+        3,
+        11,
+        33,
+        39,
+        41,
+        51,
+        59,
+        63,
+        69,
+        77,
+        81,
+        93
+      ],
+      "root_bound": 100,
+      "row_internal_interval": [
+        10101,
+        10200
+      ],
+      "row_prime_positive": true,
+      "uncovered_slots_by_full_root": [
+        3,
+        11,
+        33,
+        39,
+        41,
+        51,
+        59,
+        63,
+        69,
+        77,
+        81,
+        93
+      ]
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json": "80ae10c28cd1700bb3e5fb1280198a2332468800f9ea8e306dd8d699a22716f6",
+    "docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.json": "e0b7301c85ca5828aca8fc99ab225cbccc166f860ad2a62dfcbf7bfcda350e65",
+    "docs/monograph/prime-matrix-row-gap-supply-phase-cycle-cut-router.json": "6b5c87084ccd8da64c98664cffddfec39cb616129b00181d3694d998510f184f",
+    "docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json": "29531aaae09ccded34fee1864cffa649834298d947fd7ba74637a85fd88c9b40",
+    "experiments/prime_matrix_phi_lpf_k_less_p_row_interval_difference_router.py": "f5cad0501648497c364ca49d4348123149f51e22213de208e197205b020da261"
+  },
+  "status": "k_less_p_phi_lpf_row_interval_difference_closed_but_row_positivity_open",
+  "strict_k_closed_interval_equals_internal_row_proved": true,
+  "strict_k_range": "1<k<P"
+}
