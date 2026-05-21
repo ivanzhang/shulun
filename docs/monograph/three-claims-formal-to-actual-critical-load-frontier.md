@@ -17994,6 +17994,62 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层仍是非循环前沿同步；三破环口、terminal WFD 和最终晋级门均未证明。
 
+## 376. Phi-LPF latest new-joint triad constructor sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_triad_constructor_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_triad_imported=true
+seed_cycle_cut_saturation_imported=true
+pdec_scope_internal_saturation_imported=true
+strict_unified_declaration_line_imported=true
+joint_emitter_field_atom_imported=true
+declaration_constructor_sync_imported=true
+antisplit_boundary_carried=true
+explicit_joint_alpha_delta_constructor_rule_proved=false
+joint_constructor_field_basis_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+```
+
+formal-to-actual 含义是：当前三破环口继续收窄为一个 constructor 单点：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+-> PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+```
+
+第一箭头来自 cycle-cut/PDEC/new-joint 统一前沿与 PDEC 内部分支饱和；第二箭头来自 joint
+declaration/constructor 同步。这里仍不是证明箭头：它只说明若要破掉已登记的
+signed-source 自证环，就必须正向写出显式 joint alpha/delta primitive constructor rule。
+
+完整未闭合字段基为：
+
+```text
+ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+AND JointConstructorDomainCleanCoreMembershipAndSameSourceTupleLedger
+AND JointConstructorFormulaEmitsBasisWordUVKeySignLocalFactorCoefficientRowsLedger
+AND SameFormalUnitPreCauchyTimestampLockLedger
+AND NoncanonicalJointDeclarationNoCanonicalOrExternalLeakLedger
+AND JointConstructorFormulaFailureReturnTagsLedger
+```
+
+该规则还必须兼容 anti-split 同排行边界，不能回到旧 split alpha/delta 路线。ExactUV、
+complete/fixed-key、signed survival/row-mass、terminal/canonical/independent bridge、
+模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

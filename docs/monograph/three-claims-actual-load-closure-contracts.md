@@ -7923,6 +7923,73 @@ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 terminal WFD、signed survival/row-mass、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题
 仍未无条件闭合。
 
+### 1.218 Phi-LPF latest new-joint triad constructor sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_triad_constructor_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-triad-constructor-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_triad_imported=true
+seed_cycle_cut_saturation_imported=true
+pdec_scope_internal_saturation_imported=true
+strict_unified_declaration_line_imported=true
+joint_emitter_field_atom_imported=true
+declaration_constructor_sync_imported=true
+antisplit_boundary_carried=true
+explicit_joint_alpha_delta_constructor_rule_proved=false
+joint_constructor_field_basis_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+```
+
+actual-load 含义是：上一层留下的三破环口不再是三个彼此独立的宽口。已有 strict
+统一前沿给出：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+  -> AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+     OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  -> NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+     OR ExternalDIBFIKuznetsovDispersionTheoremMatch
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+  -> PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+而 joint declaration 仍只是入口声明，不是公式本身。已有 declaration/constructor 同步继续把
+第一生产性单点压到：
+
+```text
+ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+```
+
+该 constructor 必须在同一 actual noncanonical source tuple 上给出 clean-core 定义域、basis
+word、signed coefficient、exact `(u,v)`、branch key、sign/local factor、pre-Cauchy
+时间戳、no-leak 纪律与失败回流标签；并且不能退回旧 split alpha/delta 路线，必须携带
+anti-split 同排行约束。
+
+最新完整 constructor 字段基为：
+
+```text
+ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+AND JointConstructorDomainCleanCoreMembershipAndSameSourceTupleLedger
+AND JointConstructorFormulaEmitsBasisWordUVKeySignLocalFactorCoefficientRowsLedger
+AND SameFormalUnitPreCauchyTimestampLockLedger
+AND NoncanonicalJointDeclarationNoCanonicalOrExternalLeakLedger
+AND JointConstructorFormulaFailureReturnTagsLedger
+```
+
+ExactUV、complete/fixed-key、signed survival/row-mass、terminal/canonical/independent bridge、
+模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
