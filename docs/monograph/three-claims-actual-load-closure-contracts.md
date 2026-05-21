@@ -7877,6 +7877,52 @@ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 signed row 存活、同 formal unit row-mass/no-heavy-row、ExactUV、rough-cofactor
 transport/coherence、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.217 Phi-LPF latest new-joint origin-identity cycle-cut sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_origin_identity_cyclecut_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_origin_identity_imported=true
+origin_identity_to_row_table_imported=true
+row_table_to_signed_emitter_imported=true
+reverse_and_unsigned_routes_blocked=true
+coordinate_source_cycle_guard_imported=true
+latest_nonrecursive_breaker_triad_imported=true
+primitive_summand_origin_identity_proved=false
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+actual-load 含义是：`PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward`
+不是新的无下游终点。它等价于提交逐 actual noncanonical primitive summand 的
+clean-core 原始生成表；该表又必须由无环 pre-Cauchy source seed 自带 signed row emitter
+和推前前求和恒等式正向生成。formal-unit 容器、unsigned skeleton、零行覆盖、payment
+反推与 source-loop 都不能生成这个 signed origin。
+
+继续沿当前语料展开 signed row emitter，会进入已登记的 signed 坐标-来源闭环；该环不能作为
+证明。因此 latest 非循环主攻同步为三破环口：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+terminal WFD、signed survival/row-mass、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题
+仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

@@ -17940,6 +17940,60 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层仍是最窄字段同步；来源恒等式、signed survival/row-mass、三破环出口与最终晋级门均未证明。
 
+## 375. Phi-LPF latest new-joint origin-identity cycle-cut sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_origin_identity_cyclecut_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-origin-identity-cyclecut-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_origin_identity_imported=true
+origin_identity_to_row_table_imported=true
+row_table_to_signed_emitter_imported=true
+reverse_and_unsigned_routes_blocked=true
+coordinate_source_cycle_guard_imported=true
+latest_nonrecursive_breaker_triad_imported=true
+primitive_summand_origin_identity_proved=false
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+next_primary_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput_OR_AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+formal-to-actual 含义是：来源恒等式若不作为全新无环工件正向给出，就必须落到逐行
+clean-core 原始生成表；该表再落到无环 seed signed-row emitter。现有展开链已经被坐标-来源
+环守卫判定为闭合依赖环，不能作为证明。
+
+因此最新直接硬点推进为：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+并行保留：
+
+```text
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层仍是非循环前沿同步；三破环口、terminal WFD 和最终晋级门均未证明。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
