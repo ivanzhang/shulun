@@ -22077,3 +22077,47 @@ strict 自足来源，剩余 actual 内容是
 该 moving-block/NC-BLK 输入仍未证明；同时 joint rows、word/coefficient identity、
 prepushforward identity 与 no-downstream return ledger 仍是并行硬点。行/列命题仍未
 无条件闭合。
+
+### 1.173 Phi-LPF latest constructor moving-block terminal sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-router.json
+```
+
+同步读数为：
+
+```text
+fresh_joint_moving_block_input_imported=true
+strict_actual_moving_block_router_imported=true
+global_pdec_sparse_split_imported=true
+precauchy_alpha_terminal_sync_agrees=true
+constructor_moving_block_unnamed_exit_removed=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+actual-load 含义是：constructor fresh-joint 路线不能把
+`ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn` 继续保留为
+独立黑箱。strict moving-block 路由已经把该输入接到命名终端：有登记低维签名时进入
+PDEC/SAE/ColumnCRT/sparse，未登记签名时进入早期零行终端包；全局拆分再把该包压到
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`。moving-block 专属 DPRC 兼容门可删除，但
+`ExplicitModelGapAndFiniteDPRCLedger` 仍是独立账本。
+
+因此最新直接主攻从 moving-block/NC-BLK 本体收窄为：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+并行仍需 joint rows、word/coefficient identity、no-downstream return、ExactUV/source
+entropy、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure。
+行/列命题仍未无条件闭合。

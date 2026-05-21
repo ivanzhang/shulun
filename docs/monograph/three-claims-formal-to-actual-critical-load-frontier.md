@@ -15768,6 +15768,50 @@ ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
 identity、prepushforward identity 与 no-downstream return ledger 仍需逐项闭合。行/列命题
 仍未无条件闭合。
 
+## 400. Phi-LPF latest constructor moving-block terminal sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+fresh_joint_moving_block_input_imported=true
+strict_actual_moving_block_router_imported=true
+global_pdec_sparse_split_imported=true
+precauchy_alpha_terminal_sync_agrees=true
+constructor_moving_block_unnamed_exit_removed=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+formal-to-actual 含义是：上一层留下的 constructor moving-block/NC-BLK 不再能作为新的
+无名 actual-load 黑箱。已有 strict moving-block 路由显示：有低维签名则进
+PDEC/SAE/ColumnCRT/sparse 终端，无签名则进早期零行终端包；全局 terminal split
+进一步把后者接到：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+因此 constructor fresh-joint 路线的最新硬点已经与 pre-Cauchy alpha-terminal 路线对齐：
+它不再是 `ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`
+本身，而是 PDEC/CleanKLS 容量门与模型余量账本。
+
+同时仍需并行闭合 joint rows formula、word/coefficient identity、no-downstream return、
+ExactUV/source entropy、signed survival、row-mass/no-heavy-row、complete/fixed key、
+Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
