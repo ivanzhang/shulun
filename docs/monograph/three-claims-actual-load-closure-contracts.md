@@ -8514,6 +8514,48 @@ RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiv
 complete/fixed key、terminal/PDEC/external 出口、模型、Rate 与 DStructure。行/列命题仍未
 无条件闭合。
 
+### 1.229 Phi-LPF latest constructor row-origin bucket-law sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_row_origin_bucket_law_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_row_origin_table_imported=true
+row_table_requires_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+row_origin_bucket_sync_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+row_origin_table_reduced_to_phi_lpf_bucket_signed_law=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+actual-load 含义是：逐行 clean-core 原始生成表不能由 signed-source 固定点自证。切断
+固定点后，它先要求 noncircular pre-Cauchy signed coefficient kernel；LPF/Phi 桶恒等式
+已经把该 kernel 的无符号支撑、owner layer 与容量全部剥离为 `(p,m)` 桶。
+
+因此 latest 直接主攻从 row-level 表推进为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+也就是说，剩余不再是找行或数行，而是必须对每个 LPF owner support key 正向给出
+signed coefficient、sign/local factor、alpha/delta side、branch key、exact `(u,v)` 和
+推前前求和恒等式。row-mass、signed-survival、ExactUV、complete/fixed key、terminal/PDEC、
+模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

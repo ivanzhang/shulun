@@ -18602,6 +18602,45 @@ RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiv
 ExactUV entropy/fiber、complete/fixed key、terminal/PDEC/external 出口、模型、Rate 和
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 387. Phi-LPF latest constructor row-origin bucket-law sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_row_origin_bucket_law_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-row-origin-bucket-law-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_row_origin_table_imported=true
+row_table_requires_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+row_origin_bucket_sync_imported=true
+phi_lpf_support_stripping_imported=true
+phi_lpf_support_and_capacity_closed=true
+row_origin_table_reduced_to_phi_lpf_bucket_signed_law=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+formal-to-actual 含义是：row-level origin table 的 signed-source 固定点被切断后，LPF/Phi
+已经支付所有无符号支撑与容量。当前真正未闭合的是桶级 signed law：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+```
+
+该 law 必须在 Cauchy/Phi/payment 前为每个 `(p,m)` support key 生成 signed coefficient、
+sign/local factor、branch key 与推前前 alpha/delta 求和恒等式。row-mass、signed survival、
+ExactUV、complete/fixed key、terminal/PDEC、模型、Rate 与 DStructure 仍开放。行/列命题仍未
+无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
