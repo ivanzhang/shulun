@@ -22035,3 +22035,45 @@ joint declaration -> built-in pairing -> new payload
 该回环的新鲜独立 joint declaration，或走 canonical-lock、independent source bridge、
 PDEC/外部谱、逐点 signed table、ExactUV、complete/fixed-key、signed survival 与
 row-mass/no-heavy-row 等开放出口。行/列命题仍未无条件闭合。
+
+### 1.172 Phi-LPF latest constructor fresh-joint identity taxonomy 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_fresh_joint_identity_taxonomy_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-router.json
+```
+
+同步读数为：
+
+```text
+fresh_joint_declaration_imported=true
+strict_joint_field_atom_imported=true
+freshness_deletes_constructor_antisplit_route=true
+declaration_line_requires_independent_arithmetic_identity=true
+identity_statement_taxonomy_imported=true
+fresh_joint_declaration_reduced_to_moving_block=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+joint_emitter_rows_formula_proved=false
+joint_word_coefficient_identity_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：fresh joint declaration 不能只是旧 declaration line 的改名。fresh 条件
+已经删除 constructor 内部的
+
+```text
+joint declaration -> built-in pairing -> payload
+```
+
+旧路线，所以剩余 declaration line 必须作为独立 noncanonical pre-Cauchy 算术恒等式陈述
+进入。既有 strict 独立恒等式分类进一步说明：canonical、generic、AP/external 都不能填充
+strict 自足来源，剩余 actual 内容是
+`ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`。
+
+该 moving-block/NC-BLK 输入仍未证明；同时 joint rows、word/coefficient identity、
+prepushforward identity 与 no-downstream return ledger 仍是并行硬点。行/列命题仍未
+无条件闭合。

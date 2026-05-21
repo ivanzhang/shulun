@@ -15725,6 +15725,49 @@ joint declaration
 same-set PDEC/外部谱、逐点 signed table、ExactUV、complete/fixed-key、signed survival
 与 row-mass/no-heavy-row 等开放出口。行/列命题仍未无条件闭合。
 
+## 399. Phi-LPF latest constructor fresh-joint identity taxonomy sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_fresh_joint_identity_taxonomy_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-sync-ledger.json
+```
+
+同步结果：
+
+```text
+fresh_joint_declaration_imported=true
+strict_joint_field_atom_imported=true
+freshness_deletes_constructor_antisplit_route=true
+declaration_line_requires_independent_arithmetic_identity=true
+identity_statement_taxonomy_imported=true
+fresh_joint_declaration_reduced_to_moving_block=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+joint_emitter_rows_formula_proved=false
+joint_word_coefficient_identity_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+```
+
+formal-to-actual 含义是：fresh joint declaration 不是旧 declaration line 的重命名。fresh
+条件禁止再次使用 constructor 内部的 joint declaration -> built-in pairing -> payload 路线。
+因此该 declaration line 若要成立，必须作为独立 noncanonical pre-Cauchy 算术恒等式陈述
+进入。
+
+既有 strict 独立恒等式分类已经说明：canonical/generic/AP/external 都不能填 strict 自足来源；
+剩余实际内容是：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+```
+
+该 moving-block/NC-BLK 输入仍未证明；并且即使它成立，joint rows formula、word/coefficient
+identity、prepushforward identity 与 no-downstream return ledger 仍需逐项闭合。行/列命题
+仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
