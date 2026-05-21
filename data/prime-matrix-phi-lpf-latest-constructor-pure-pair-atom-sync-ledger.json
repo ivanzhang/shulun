@@ -1,0 +1,260 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_pure_pair_atom_sync_router",
+  "closed_unsigned_subledgers": [
+    "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward_unsigned_domain",
+    "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+  ],
+  "constructor_side_gates_carried": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestConstructorSourceTupleSignedFormulaImported",
+      "meaning": "上一层 constructor tuple sync 已把直接硬点定位到 source tuple signed seed formula。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesCarried",
+      "meaning": "本层只替换 source tuple formula；signed survival 与 row-mass/no-heavy-row 仍是 constructor 侧门。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairAtomRouterImported",
+      "meaning": "既有 pure semiprime atom 证书可直接作用在 constructor 最新 source tuple formula 入口。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairAtomBijectionSynced",
+      "meaning": "每个 ordered type `(p,q), p<q` 恰有一个 tail=1 pure pair seed atom。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TailLiftPhiMinusOneSynced",
+      "meaning": "tail continuation 质量为 `Phi(floor(N/(p*q)),q)-1`。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "TailLiftNoNewFirstSeedClosed",
+      "meaning": "tail>1 occurrence 不是新 first seed，只能作为同一 pure atom 的 internal transition lift。",
+      "proved": true,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAtomsCarriedForward",
+      "meaning": "common packet 义务继续以 source 三原子携带，本步不证明这三原子。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "LatestBasisReplacesTupleFormulaWithPureAtom",
+      "meaning": "constructor 最新 source tuple formula 被收窄为 pure-pair signed atom 与 tail-lift/internal-transition 配套。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PurePairSignedAtomStillOpen",
+      "meaning": "LPF/Phi 和 tail=1 定位不给 pure pair 的 signed seed value。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrientationParityStillOpen",
+      "meaning": "pure atom 仍需 orientation parity、branch side 与 local factor law。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair、source entropy/fiber 与 return tag 仍是独立门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPaired",
+      "meaning": "tail-lift compatibility 仍依赖 internal prime-adjoin signed transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 constructor pure-pair atom 拆解；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "failures": [],
+    "formal_pure_atom_sign_shadow_bits": 2600,
+    "formal_pure_atom_sign_shadow_log10": 782.677989,
+    "formal_tail_lift_transition_shadow_bits": 2868,
+    "formal_tail_lift_transition_shadow_log10": 863.354028,
+    "offdiagonal_seed_types": 2600,
+    "offdiagonal_total_occurrences": 5468,
+    "pure_atom_share_of_occurrences": 0.475493782004,
+    "pure_atom_type_bijection_holds": true,
+    "pure_semiprime_pair_seed_atoms": 2600,
+    "small_prime_layers": 25,
+    "tail_lift_decomposition_holds": true,
+    "tail_lift_occurrences": 2868,
+    "tail_lift_share_of_occurrences": 0.524506217996,
+    "top_tail_lifts": [
+      {
+        "p": 2,
+        "q": 3,
+        "tail_lift_mass": 832
+      },
+      {
+        "p": 2,
+        "q": 5,
+        "tail_lift_mass": 332
+      },
+      {
+        "p": 3,
+        "q": 5,
+        "tail_lift_mass": 221
+      },
+      {
+        "p": 2,
+        "q": 7,
+        "tail_lift_mass": 190
+      },
+      {
+        "p": 3,
+        "q": 7,
+        "tail_lift_mass": 126
+      },
+      {
+        "p": 2,
+        "q": 11,
+        "tail_lift_mass": 103
+      },
+      {
+        "p": 2,
+        "q": 13,
+        "tail_lift_mass": 79
+      },
+      {
+        "p": 5,
+        "q": 7,
+        "tail_lift_mass": 75
+      }
+    ]
+  },
+  "imported_pure_atom_fields": [
+    {
+      "field": "pure_pair_key",
+      "meaning": "ordered pair `(p,q)` with `p<q` and value `p*q`。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "tail_identity_t_equals_1",
+      "meaning": "每个 offdiagonal type 的 first seed atom 是唯一 tail=1 occurrence。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "tail_lift_mass",
+      "meaning": "`Phi(floor(N/(p*q)),q)-1`，不是新 first seed，只能由 internal transition lift 处理。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "pure_pair_signed_value",
+      "meaning": "必须由 source tuple 在 pushforward 前正向发射。",
+      "status": "open_signed"
+    },
+    {
+      "field": "orientation_and_exactuv",
+      "meaning": "orientation parity、branch side、ExactUV fixed pair 与 return tag 仍未闭合。",
+      "status": "open_signed_exactuv"
+    }
+  ],
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_basis_replaces_tuple_formula_with_pure_atom": true,
+  "latest_constructor_source_tuple_signed_formula_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_primary_attack_target": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "parallel_constructor_side_gates": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把 constructor 最新 `PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward` 接入 pure semiprime atom 拆解。每个 ordered type `(p,q), p<q` 的 first seed 原子是唯一 `tail=1` pure pair `p*q`；`tail>1` 的 Phi 质量为 `Phi(floor(N/(p*q)),q)-1`，只能作为 internal transition lift，而不是新 first seed。剩余直接硬点收窄为 pure pair signed seed atom，并仍需 orientation、ExactUV return、internal transition、source 三原子、signed survival 与 row-mass/no-heavy-row。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "pure_pair_atom_bijection_synced": true,
+  "pure_pair_atom_router_imported": true,
+  "pure_semiprime_pair_signed_seed_atom_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "source_atoms_carried_forward": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-router.json": "b39a5e6b837ce8f8c1734aa3035fb723748fd31d2c5e64efa4e6efbc3cea78c8",
+    "docs/monograph/prime-matrix-phi-lpf-offdiagonal-pure-semiprime-seed-atom-router.json": "608a8f088d6c14b5f3ffd1d5be01aef4555d0753e4ae7d70bcd2f986373dd315",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_atom_sync_router.py": "cbefedfb984f90ba0ca38db793980ca63f2fe21e6f5b43c3c599d1c100b0a9a3"
+  },
+  "status": "phi_lpf_latest_constructor_source_tuple_synced_to_pure_pair_atom_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward",
+      "meaning": "constructor source tuple signed formula 的 first-seed 部分强制落到 tail=1 pure pair；tail>1 是 continuation lift。",
+      "to": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward AND PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward"
+    },
+    {
+      "from": "PhiLPFOffDiagonalQRoughTailLiftInternalTransitionCompatibilityBeforePushforward",
+      "meaning": "`Phi(floor(N/(p*q)),q)-1` 的 tail-lift 质量不是新 first seed，只能交给 internal transition compatibility。",
+      "to": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "from": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "meaning": "pure-pair 路线中的 common packet 义务在 constructor 最新基中仍由 source 三原子携带。",
+      "to": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "from": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward",
+      "meaning": "constructor 最新 source tuple formula 被收窄为 pure-pair signed atom 与配套 signed/ExactUV/transition/source 字段。",
+      "to": "PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward plus PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward, PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward, PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward, SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger, signed survival, and carried source atoms"
+    }
+  ],
+  "tail_lift_no_new_first_seed_closed": true,
+  "tail_lift_phi_minus_one_synced": true,
+  "target_input_before_router": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+}
