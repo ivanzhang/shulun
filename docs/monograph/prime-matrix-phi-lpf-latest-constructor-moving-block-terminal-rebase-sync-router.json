@@ -1,0 +1,155 @@
+{
+  "absorbed_to": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+  "actual_noncanonical_moving_block_spread_ncb_lk_proved": false,
+  "actual_source_domain_entropy_and_exactuv_pair_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_rebase_sync_router",
+  "constructor_moving_block_unnamed_exit_removed": true,
+  "counterexample_assumption_only": true,
+  "counterexample_branch_guard_preserved": true,
+  "current_materialized_terminal_frontier_exhausted": true,
+  "direct_unconditional_contradiction_found": false,
+  "existing_constructor_moving_block_terminal_reusable": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "finite_evidence_not_used_as_global_proof": true,
+  "fixed_key_exact_uv_local_multiplicity_o1_proved": false,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestRebasedFreshJointMovingBlockInputImported",
+      "meaning": "上一层 rebase 已把 constructor fresh joint declaration 压到 actual moving-block/NC-BLK。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingConstructorMovingBlockTerminalReusable",
+      "meaning": "旧 constructor moving-block terminal 同步输入相同，可在新 rebase 前沿复用。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StrictActualMovingBlockRouterImported",
+      "meaning": "strict moving-block 路由已说明该输入不能作为无名终端停留。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本层只在反例链内部同步，不用真实零行缺席或有限数值现象作全局证明。",
+      "proved": true,
+      "remaining": "命名终端、模型账本或并行开放字段。"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalPDECSparseSplitImported",
+      "meaning": "moving-block 的 global PDEC/sparse terminal 已经由全局拆分回到 PDEC/CleanKLS 容量门。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMaterializedTerminalFrontierExhausted",
+      "meaning": "当前已物化 PDEC/sparse 前沿清零；这只是当前材料边界，不是未来 family 的不存在性证明。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyAlphaTerminalSyncAgrees",
+      "meaning": "latest pre-Cauchy alpha productive 分支也把 moving-block 回接到同一 PDEC/CleanKLS 与模型账本。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorMovingBlockUnnamedExitRemoved",
+      "meaning": "constructor fresh-joint 路线不能把 moving-block/NC-BLK 作为新的独立黑箱。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ModelGapLedgerRetained",
+      "meaning": "moving-block 专属 DPRC 兼容门可删除，但显式模型余量与有限 DPRC 账本仍需证明。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorJointRowsIdentityReturnStillParallel",
+      "meaning": "本层只替换 moving-block 原子；joint rows、word/coefficient identity 与 no-downstream return ledger 仍未证明。",
+      "proved": false,
+      "remaining": "JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceExactUVAndSignedMassStillParallel",
+      "meaning": "source entropy/ExactUV、signed survival、row-mass、complete/fixed key 仍不是 moving-block 路由的结论。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "RateDStructureStillParallel",
+      "meaning": "Rate preservation 与 DStructure/Tail-log4/finite Rankin 独立验收门继续保留。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只做 rebase 同步；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger) OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "global_pdec_sparse_split_imported": true,
+  "joint_emitter_no_downstream_named_return_ledger_proved": false,
+  "joint_emitter_rows_formula_proved": false,
+  "joint_word_coefficient_identity_proved": false,
+  "latest_rebased_fresh_joint_moving_block_input_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger) OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "missing_sources": [],
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+  "next_primary_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "parallel_attack_targets": [
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "JointEmitterPrimitiveSummandRowsFormulaBeforePushforward",
+    "JointEmitterPrepushforwardWordCoefficientIdentityLedger",
+    "JointEmitterNoDownstreamRecoveryAndNamedReturnLedger",
+    "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+    "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "CompletePrimitiveEmitterKeyPartitionLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "本步把最新 rebase 后的 `ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn` 接入 strict moving-block 终端路由。该输入不能作为新的无名黑箱；全局拆分把它压到 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`，同时 `ExplicitModelGapAndFiniteDPRCLedger` 仍独立保留。",
+  "precauchy_alpha_terminal_sync_agrees": true,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-router.json": "96c0ddb0422ebe7c7094628dafdf6c37776db5bbbc4528b8d9837d3f0e966f74",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-sync-router.json": "3f3ac9568f2d039437ca3a2bd7581658d1418a7caf3335891e78c09f71077613",
+    "docs/monograph/prime-matrix-phi-lpf-latest-precauchy-alpha-terminal-sync-router.json": "b29335cbb7c029994260284c3e3c6c07e896329a51ca8446ec60b832ca6b8357",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_rebase_sync_router.py": "9a01e66e019cbec420d4ad68c195416c41ca83c5f8cda9888e8af267c5cc5605"
+  },
+  "status": "phi_lpf_latest_constructor_moving_block_terminal_rebased_open",
+  "strict_actual_moving_block_router_imported": true,
+  "structural_chain": [
+    "FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop",
+    "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn",
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "target_input_before_router": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+}

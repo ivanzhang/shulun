@@ -22859,6 +22859,48 @@ ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
 joint rows、identity、return ledger、complete/fixed key、signed survival 与 row-mass/no-heavy-row
 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.192 Phi-LPF latest constructor moving-block terminal rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_fresh_joint_moving_block_input_imported=true
+existing_constructor_moving_block_terminal_reusable=true
+strict_actual_moving_block_router_imported=true
+global_pdec_sparse_split_imported=true
+precauchy_alpha_terminal_sync_agrees=true
+constructor_moving_block_unnamed_exit_removed=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：constructor fresh-joint 路线不能把 moving-block/NC-BLK 当成新的
+匿名出口。旧 constructor moving-block terminal、strict actual moving-block 路由、global
+PDEC/sparse split 与 pre-Cauchy alpha-terminal 同步层已经把这个输入统一压到
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`，同时保留
+`ExplicitModelGapAndFiniteDPRCLedger`。
+
+最新直接主攻改为：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+joint rows、word/coefficient identity、no-downstream return、source entropy/ExactUV、
+signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure 仍是并行硬门。
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

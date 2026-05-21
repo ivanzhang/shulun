@@ -16678,6 +16678,50 @@ ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
 joint rows formula、word/coefficient identity、no-downstream return ledger、signed survival、row-mass、
 complete/fixed key、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 419. Phi-LPF latest constructor moving-block terminal rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_moving_block_terminal_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-moving-block-terminal-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_fresh_joint_moving_block_input_imported=true
+existing_constructor_moving_block_terminal_reusable=true
+strict_actual_moving_block_router_imported=true
+global_pdec_sparse_split_imported=true
+precauchy_alpha_terminal_sync_agrees=true
+constructor_moving_block_unnamed_exit_removed=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+pdec_cap_or_internal_clean_kls_large_sieve_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+formal-to-actual 含义是：上一层留下的
+`ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`
+不能作为 constructor fresh-joint 路线的新无名终端。strict moving-block 路由、旧 constructor
+moving-block terminal 证书、global PDEC/sparse terminal split 与 pre-Cauchy alpha-terminal
+同步层给出同一结论：moving-block/NC-BLK 必须继续落到 PDEC/CleanKLS 容量门，并同时保留显式模型余量与有限
+DPRC 账本。
+
+最新直接主攻推进到：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+joint rows、word/coefficient identity、no-downstream return、source entropy/ExactUV、
+signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure 仍开放。
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
