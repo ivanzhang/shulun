@@ -16722,6 +16722,51 @@ joint rows、word/coefficient identity、no-downstream return、source entropy/E
 signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure 仍开放。
 行/列命题仍未无条件闭合。
 
+## 420. Phi-LPF latest constructor terminal hardpoint/high-model rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_hardpoint_high_model_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_terminal_pair_imported=true
+strict_pdec_clean_kls_terminal_split_imported=true
+explicit_model_gap_finite_high_split_imported=true
+finite_dprc_segment_closed=true
+moving_block_dprc_compatibility_closed=true
+wide_terminal_model_pair_removed=true
+direct_pdec_scope_match_proved=false
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+high_segment_model_gap_alpha043_c3_analytic_ledger_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger
+```
+
+formal-to-actual 含义是：宽口径
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger`
+不再作为最新 constructor 前沿的无名硬点保留。strict PDEC/CleanKLS 终端硬点路由把前半拆成
+`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate` 或
+`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`；strict global scope
+把模型账本拆成已闭合的 `P<2003` 有限 DPRC 段与仍开放的
+`HighSegmentModelGapAlpha043C3AnalyticLedger`。
+
+最新直接主攻推进到：
+
+```text
+SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger
+```
+
+PDEC 作用域匹配、joint rows、word/coefficient identity、no-downstream return、
+source entropy/ExactUV、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate
+与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

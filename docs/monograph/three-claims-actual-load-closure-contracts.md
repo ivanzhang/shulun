@@ -22901,6 +22901,51 @@ joint rows、word/coefficient identity、no-downstream return、source entropy/E
 signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure 仍是并行硬门。
 行/列命题仍未无条件闭合。
 
+### 1.193 Phi-LPF latest constructor terminal hardpoint/high-model rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_hardpoint_high_model_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-high-model-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_terminal_pair_imported=true
+strict_pdec_clean_kls_terminal_split_imported=true
+explicit_model_gap_finite_high_split_imported=true
+finite_dprc_segment_closed=true
+moving_block_dprc_compatibility_closed=true
+wide_terminal_model_pair_removed=true
+direct_pdec_scope_match_proved=false
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+high_segment_model_gap_alpha043_c3_analytic_ledger_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：当前 actual 负载不再是宽泛的 PDEC/CleanKLS 加模型账本组合，而是
+两个可审查终端手臂和一个高段模型余量：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+```
+
+最新直接主攻改为：
+
+```text
+SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks AND HighSegmentModelGapAlpha043C3AnalyticLedger
+```
+
+PDEC 作用域匹配、joint rows、word/coefficient identity、no-downstream return、
+source entropy/ExactUV、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate
+与 DStructure 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
