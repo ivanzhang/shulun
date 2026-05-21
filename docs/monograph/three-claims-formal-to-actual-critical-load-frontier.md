@@ -18101,6 +18101,60 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 fiber、complete/fixed-key、signed survival/row-mass、terminal/PDEC/外部谱、模型、Rate 与
 DStructure 仍未证明。行/列命题仍未无条件闭合。
 
+## 378. Phi-LPF latest new-joint constructor built-in trace sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_builtin_trace_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_builtin_pairing_imported=true
+generic_builtin_trace_same_target_imported=true
+strict_builtin_frontier_imported=true
+branch_trace_payload_frontier_imported=true
+signed_lane_cycle_guard_imported=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_parallel_carried=true
+row_column_unconditional_closed=false
+intermediate_primary_attack_target=ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+formal-to-actual 含义是：built-in pairing 的直接 trace 路线不是闭合证明，而是通向已登记
+signed-lane 自证环：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+-> signed-lane cycle
+```
+
+删除该环后，latest 非循环主攻推进为：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+并行门仍是：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+本层关闭的是 branch-trace 自证误出口；new primitive payload/trace、terminal descent、
+same-set PDEC、ExactUV entropy/fiber、complete/fixed-key、模型、Rate 与 DStructure 仍未证明。
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

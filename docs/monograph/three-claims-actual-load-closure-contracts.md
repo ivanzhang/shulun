@@ -8043,6 +8043,60 @@ AND ExactUVMapFixedPairPolylogFiberBoundLedger
 完整保留基还包含 complete/fixed-key、signed survival/row-mass、terminal/canonical/independent
 bridge、PDEC/外部谱、模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.220 Phi-LPF latest new-joint constructor built-in trace sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_builtin_trace_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-builtin-trace-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_builtin_pairing_imported=true
+generic_builtin_trace_same_target_imported=true
+strict_builtin_frontier_imported=true
+branch_trace_payload_frontier_imported=true
+signed_lane_cycle_guard_imported=true
+new_primitive_payload_or_trace_artifact_present=false
+exactuv_parallel_carried=true
+row_column_unconditional_closed=false
+intermediate_primary_attack_target=ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+next_primary_attack_target=NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+parallel_primary_attack_target=ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+actual-load 含义是：constructor 口径下的 latest built-in pairing 与既有 built-in trace 证书
+输入完全一致，因此可直接导入：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+-> signed-lane cycle
+```
+
+删除这个 trace/payload/origin/common packet 自证环后，当前非循环主攻不再是 branch trace
+名称，而是：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+受控出口仍为 terminal descent 与 same-set PDEC；并行 ExactUV 主攻保持：
+
+```text
+ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+fixed-pair fiber 仍需 complete key polylog 分区与 fixed-key O(1) 局部重数。模型、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
