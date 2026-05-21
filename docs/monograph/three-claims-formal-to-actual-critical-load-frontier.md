@@ -16331,6 +16331,50 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
 harmonic/skeleton、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 411. Phi-LPF latest constructor pure-pair atom rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_atom_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_source_tuple_signed_formula_imported=true
+existing_constructor_pure_pair_reusable=true
+pure_pair_atom_router_imported=true
+pure_pair_atom_bijection_synced=true
+tail_lift_phi_minus_one_synced=true
+tail_lift_no_new_first_seed_closed=true
+source_atoms_carried_forward=true
+pure_pair_atom_rebased=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward` 已接入既有
+pure-pair atom 证书。`tail=1` 是每个 ordered `(p,q)` 的唯一 pure semiprime first seed atom；
+`tail>1` 的质量为 `Phi(floor(N/(p*q)),q)-1`，不是新 first seed，只能进入 internal transition
+lift。
+
+最新直接主攻推进到：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
+Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

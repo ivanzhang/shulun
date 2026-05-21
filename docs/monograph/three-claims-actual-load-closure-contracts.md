@@ -22542,6 +22542,45 @@ PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
 配套必需仍为 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin
 transition、source 三原子、signed survival 与 row-mass/no-heavy-row。行/列命题仍未无条件闭合。
 
+### 1.184 Phi-LPF latest constructor pure-pair atom rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_pure_pair_atom_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-pure-pair-atom-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_source_tuple_signed_formula_imported=true
+existing_constructor_pure_pair_reusable=true
+pure_pair_atom_router_imported=true
+pure_pair_atom_bijection_synced=true
+tail_lift_phi_minus_one_synced=true
+tail_lift_no_new_first_seed_closed=true
+source_atoms_carried_forward=true
+pure_pair_atom_rebased=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：source tuple signed formula 的 first-seed 部分已经收窄到唯一
+`tail=1` pure semiprime pair atom；所有 `tail>1` occurrence 不是新 first seed，而是
+internal transition lift。
+
+最新直接主攻改为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+```
+
+配套必需仍为 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin
+transition、source 三原子、signed survival 与 row-mass/no-heavy-row。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
