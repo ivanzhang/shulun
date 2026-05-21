@@ -18212,6 +18212,66 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 380. Phi-LPF latest constructor alpha terminal three-atoms sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_alpha_terminal_three_atoms_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_alpha_frontier_imported=true
+legacy_alpha_terminal_same_target_imported=true
+alpha_local_frontier_terminal_synced=true
+terminal_three_atoms_pinned=true
+new_joint_trace_cycle_still_absorbed=true
+independent_moving_atom_chosen_as_narrowest=true
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+formal-to-actual 含义是：constructor-alpha 前沿不能在 alpha 局部公式内闭合；unsigned
+几何分支只给 carry-shell/phase 形状，signed-lift 和 overload 分支回到终端容量、模型与
+DStructure 门。new joint/trace/payload 逆路也已被 signed-lane cycle 删除。
+
+因此当前 strict 三原子为：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR A1CleanBranchCanonicalSourceAdmission
+OR ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+最新最窄直接主攻：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行主攻仍包括：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+ExplicitModelGapAndFiniteDPRCLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

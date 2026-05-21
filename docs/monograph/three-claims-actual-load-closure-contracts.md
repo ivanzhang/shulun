@@ -8155,6 +8155,57 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 
 行/列命题仍未无条件闭合。
 
+### 1.222 Phi-LPF latest constructor alpha terminal three-atoms sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_alpha_terminal_three_atoms_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-alpha-terminal-three-atoms-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_constructor_alpha_frontier_imported=true
+legacy_alpha_terminal_same_target_imported=true
+alpha_local_frontier_terminal_synced=true
+terminal_three_atoms_pinned=true
+new_joint_trace_cycle_still_absorbed=true
+independent_moving_atom_chosen_as_narrowest=true
+acyclic_terminal_canonical_lock_proved=false
+a1_clean_branch_canonical_source_admission_proved=false
+independent_nonterminal_moving_atom_exclusion_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+actual-load 含义是：constructor 口径的 alpha row anchor/phase 前沿与已有 latest
+alpha-terminal 三原子前沿输入相同。alpha 局部公式中 unsigned carry-shell、source tuple 和
+phase-wheel 分支已经同步到几何/终端账本；signed-lift 与 overload 分支不能在局部闭合，
+会回流到终端容量/模型门。若再回到 new joint/branch trace/payload，也会进入已删除的
+signed-lane 自证环。
+
+因此当前 strict 前沿压成三原子：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR A1CleanBranchCanonicalSourceAdmission
+OR ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+其中最窄直接主攻为：
+
+```text
+IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
+```
+
+并行仍保留 canonical-lock、A1 admission、same-set PDEC、ExactUV 有界重数、逐点 Phi-LPF
+signed 表、ExactUV entropy/fiber、rough-cofactor transport/coherence、模型、Rate 与
+DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
