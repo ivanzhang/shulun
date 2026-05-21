@@ -22655,6 +22655,45 @@ PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
 三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.187 Phi-LPF latest constructor edge-local field-cut rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_edge_local_formula_imported=true
+existing_constructor_field_cut_reusable=true
+field_cut_router_imported=true
+closed_unsigned_edge_fields_exhausted=true
+unsigned_label_does_not_emit_signed_atom=true
+source_atoms_carried_forward=true
+edge_local_field_cut_rebased=true
+signed_atom_field_table_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：edge-local formula 中的无符号字段已经被 field-cut 剥离。
+每条 canonical `(p,q)` edge 的 owner、product、LPF bucket、Ferrers rank/degree 与
+multiplicity-one label 均已支付；剩余不是边标签容量，而是 signed atom fields 或 named
+return tag。
+
+最新直接主攻改为：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

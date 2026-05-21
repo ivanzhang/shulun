@@ -16457,6 +16457,49 @@ orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin tra
 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
 Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 414. Phi-LPF latest constructor edge-local field-cut rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_local_field_cut_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-edge-local-field-cut-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_edge_local_formula_imported=true
+existing_constructor_field_cut_reusable=true
+field_cut_router_imported=true
+closed_unsigned_edge_fields_exhausted=true
+unsigned_label_does_not_emit_signed_atom=true
+source_atoms_carried_forward=true
+edge_local_field_cut_rebased=true
+signed_atom_field_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward` 已接入
+edge-local field-cut 证书。canonical edge 的 owner、product、LPF bucket、Ferrers
+rank/degree 与 multiplicity-one label 都已由无符号账本支付；这些 closed unsigned
+fields 不会生成 signed value、local factor、orientation、ExactUV return 或 source-row
+coefficient。
+
+最新直接主攻推进到：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin transition、source
+三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、
+Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
