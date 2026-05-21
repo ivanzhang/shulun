@@ -18272,6 +18272,59 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 381. Phi-LPF latest constructor moving-atom signed-table sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_moving_atom_signed_table_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_moving_atom_frontier_imported=true
+moving_atom_source_bucket_preimage_imported=true
+lpf_bucket_identity_sample_carried=true
+signed_injection_split_imported=true
+half_mass_finite_algebra_imported=true
+pointwise_signed_table_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+formal-to-actual 含义是：moving atom 的 unsigned source preimage 已被 LPF ownership 和
+Phi 递推固定；真正的 actual-load 缺口不再是“有没有桶”，而是桶上逐点 signed value、
+非零 signed row 存活、同 formal unit row-mass/no-heavy-row 与速率型终端包。
+
+最新直接主攻：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+完整剩余基为：
+
+```text
+((PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR PhiLPFBucketSignedCoefficientLawBeforePushforward
+OR ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward)
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger)
+OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet)
+OR ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+OR (PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward)
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

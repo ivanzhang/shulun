@@ -8206,6 +8206,61 @@ IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore
 signed 表、ExactUV entropy/fiber、rough-cofactor transport/coherence、模型、Rate 与
 DStructure。行/列命题仍未无条件闭合。
 
+### 1.223 Phi-LPF latest constructor moving-atom signed-table sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_moving_atom_signed_table_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-moving-atom-signed-table-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_constructor_moving_atom_frontier_imported=true
+moving_atom_source_bucket_preimage_imported=true
+lpf_bucket_identity_sample_carried=true
+signed_injection_split_imported=true
+half_mass_finite_algebra_imported=true
+pointwise_signed_table_proved=false
+signed_survival_and_row_mass_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+actual-load 含义是：constructor 口径的 independent moving atom 不是无主漂移点。LPF/Phi
+源桶前像已经删除无主、prime-row 与 virtual-unit source escape；若 clean-core moving atom
+来自 actual composite source，它必须有唯一 LPF-owned `(p,m)` 前像。signed-injection split
+进一步删除剩余 unsigned counting 自由度：真正缺口变成同 formal unit 上的逐点 signed 表
+或完整 bucket signed law。
+
+因此 latest 直接主攻推进为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+```
+
+并行仍需：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+HighSegmentModelGapAlpha043C3AnalyticLedger
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
