@@ -18437,6 +18437,68 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+## 384. Phi-LPF latest constructor triad-unified sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_triad_unified_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_constructor_triad_imported=true
+strict_unified_frontier_imported=true
+seed_cycle_cut_branch_saturated_imported=true
+pdec_scope_internal_saturation_imported=true
+new_joint_reduced_to_declaration_line_imported=true
+joint_field_basis_still_open=true
+terminal_wfd_parallel_macrocycle_imported=true
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+pre_cauchy_joint_declaration_line_proved=false
+joint_productive_field_basis_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+formal-to-actual 含义是：三破环口被 strict 统一前沿消去为一个更窄的生产性单点。cycle-cut
+分支不再给内部自足闭合，PDEC scope 不再给内部自足闭合，new-joint 必须提交 pre-Cauchy
+joint declaration line。
+
+最新直接主攻：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+完整剩余基为：
+
+```text
+((PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger)
+OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughExactUVPairEnergyOrJointConstructorLoop
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

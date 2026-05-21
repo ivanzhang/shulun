@@ -8356,6 +8356,58 @@ NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 terminal WFD、signed survival、row-mass、ExactUV、模型、Rate 与 DStructure 仍开放。
 行/列命题仍未无条件闭合。
 
+### 1.226 Phi-LPF latest constructor triad-unified sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_constructor_triad_unified_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-constructor-triad-unified-sync-router.json
+```
+
+同步读数为：
+
+```text
+current_constructor_triad_imported=true
+strict_unified_frontier_imported=true
+seed_cycle_cut_branch_saturated_imported=true
+pdec_scope_internal_saturation_imported=true
+new_joint_reduced_to_declaration_line_imported=true
+joint_field_basis_still_open=true
+terminal_wfd_parallel_macrocycle_imported=true
+seed_cycle_cut_input_proved=false
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+pre_cauchy_joint_declaration_line_proved=false
+joint_productive_field_basis_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+actual-load 含义是：constructor 三破环口不能作为黑箱终点。seed cycle-cut 内部分支已
+饱和到 PDEC 或 new-joint；same-set PDEC 内部分支已饱和到 new-joint 或外部谱；而
+new-joint 的第一生产性字段是 Cauchy/payment 前联合 declaration line。
+
+因此 latest 直接主攻推进为：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+```
+
+完整 joint 字段基仍为：
+
+```text
+PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+canonical lock、independent bridge、PDEC/外部谱、terminal WFD、signed survival、
+row-mass、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
