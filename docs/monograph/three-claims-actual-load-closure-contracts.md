@@ -22819,6 +22819,46 @@ FreshIndependentPreCauchyJointDeclarationLineOutsideConstructorPayloadLoop
 canonical-lock、independent source bridge、same-set PDEC、逐点 Phi-LPF signed table、
 complete/fixed key、signed survival 与 row-mass/no-heavy-row 仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.191 Phi-LPF latest constructor fresh-joint identity taxonomy rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_fresh_joint_identity_taxonomy_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_fresh_joint_declaration_imported=true
+existing_fresh_joint_identity_taxonomy_reusable=true
+strict_joint_field_atom_imported=true
+freshness_deletes_constructor_antisplit_route=true
+declaration_line_requires_independent_arithmetic_identity=true
+identity_statement_taxonomy_imported=true
+fresh_joint_declaration_reduced_to_moving_block=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+joint_emitter_rows_formula_proved=false
+joint_word_coefficient_identity_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：fresh joint declaration 的“独立性”不是免费新对象；它必须落入
+independent pre-Cauchy identity taxonomy。当前分类把剩余推到
+`ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`，但不证明该输入。
+
+最新直接主攻改为：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+```
+
+joint rows、identity、return ledger、complete/fixed key、signed survival 与 row-mass/no-heavy-row
+仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -16636,6 +16636,48 @@ canonical-lock、independent source bridge、same-set PDEC、逐点 Phi-LPF sign
 key、signed survival、row-mass/no-heavy-row、ExactUV、模型、Rate 与 DStructure 仍开放。
 行/列命题仍未无条件闭合。
 
+## 418. Phi-LPF latest constructor fresh-joint identity taxonomy rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_fresh_joint_identity_taxonomy_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-fresh-joint-identity-taxonomy-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_fresh_joint_declaration_imported=true
+existing_fresh_joint_identity_taxonomy_reusable=true
+strict_joint_field_atom_imported=true
+freshness_deletes_constructor_antisplit_route=true
+declaration_line_requires_independent_arithmetic_identity=true
+identity_statement_taxonomy_imported=true
+fresh_joint_declaration_reduced_to_moving_block=true
+actual_noncanonical_moving_block_spread_ncb_lk_proved=false
+joint_emitter_rows_formula_proved=false
+joint_word_coefficient_identity_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+```
+
+formal-to-actual 含义是：fresh declaration 不能作为新的匿名黑箱停留。fresh 条件删除
+constructor joint-declaration -> built-in -> payload 旧路线后，若 declaration line 要成立，
+必须作为独立 noncanonical pre-Cauchy 算术恒等式陈述进入；既有 strict 分类把该剩余压到
+actual noncanonical moving-block spread/NC-BLK。
+
+最新直接主攻推进到：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+```
+
+joint rows formula、word/coefficient identity、no-downstream return ledger、signed survival、row-mass、
+complete/fixed key、ExactUV、模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
