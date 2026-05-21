@@ -16863,6 +16863,61 @@ A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWei
 Phi-LPF signed bucket table。beta-sieve 附录、99% 主系数、exact sawtooth、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 423. Phi-LPF latest constructor post-source-admission macrocycle rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_post_source_admission_macrocycle_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_a1_source_admission_imported=true
+a1_source_admission_absorbed_as_branch_boundary=true
+canonical_branch_statement_coverage_imported=true
+post_source_admission_macrocycle_imported=true
+outside_cycle_break_basis_imported=true
+threshold_finite_verification_boundary_preserved=true
+ten_percent_tail_still_needs_beta_and_sawtooth=true
+latest_internal_route_reduced_to_outside_cycle_break=true
+acyclic_seed_cycle_cut_primitive_basis_and_coefficient_source_input_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+formal-to-actual 含义是：`A1CleanBranchCanonicalSourceAdmission` 已被吸收为 scoped
+分支边界纪律。canonical RIW/Buchstab 分支内部链条已闭合，但 generic/noncanonical
+宽口径不能被静默升级；沿 A1/T1/signed-lift/PDEC/new-joint/KZ/KZ-E 继续下钻只形成宏循环。
+因此非循环推进必须提交循环外输入：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+```
+
+关于“充分大阈值证明后再做有限验证”的两次路线：本层保留其正确边界。它们可用于关闭
+已登记有限桥或把有限段从活动前沿移除，但不能替代 \(P\ge 100000\) 尾段所需的
+自足 Rosser-Iwaniec beta-sieve 构造、99% 主系数误差与 exact sawtooth 余项界。
+
+最新直接主攻推进到：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+PDEC scope、新 primitive/payload、外部 no-projection KZ、Rate、DStructure 与
+source/ExactUV 相关账本仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

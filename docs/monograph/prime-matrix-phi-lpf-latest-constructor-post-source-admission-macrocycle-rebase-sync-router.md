@@ -1,0 +1,99 @@
+# Prime Matrix Phi-LPF latest constructor post-source-admission macrocycle rebase sync 证书
+
+**状态：** `phi_lpf_latest_constructor_post_source_admission_macrocycle_rebased_open`
+
+本步把 latest constructor 的 A1 source-admission 前沿接入 strict post-source-admission macrocycle 与 source-admission branch absorption。A1 准入只是一条 scoped 分支边界；继续沿内部链下钻会回到 A1/PDEC/new-joint/KZ/KZ-E 宏循环。非循环推进必须提交循环外输入：seed cycle-cut primitive source、direct PDEC same-set scope、新 joint/payload 工件，或外部 no-projection KZ/DI/BFI。高阈值加有限验证只吸收有限桥；P>=100000 尾段仍需自足 beta-sieve、99% 主系数和 exact sawtooth。
+
+```text
+latest_constructor_a1_source_admission_imported=true
+a1_source_admission_absorbed_as_branch_boundary=true
+canonical_branch_statement_coverage_imported=true
+post_source_admission_macrocycle_imported=true
+outside_cycle_break_basis_imported=true
+threshold_finite_verification_boundary_preserved=true
+ten_percent_tail_still_needs_beta_and_sawtooth=true
+latest_internal_route_reduced_to_outside_cycle_break=true
+acyclic_seed_cycle_cut_primitive_basis_and_coefficient_source_input_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+next_direct_attack_target=AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+## 1. 同步链
+
+```text
+A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound
+A1CanonicalSourceBranchStatementAndCoverage
+A1/PDEC/new-joint/KZ/KZ-E macrocycle
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound
+```
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `LatestConstructorA1SourceAdmissionImported` | `true` | `false` | 上一层 latest constructor 已把 KZ-E/no-cycle 内部路线压到 A1 clean branch canonical source admission。 | A1CleanBranchCanonicalSourceAdmission |
+| `A1SourceAdmissionAbsorbedAsBranchBoundary` | `true` | `true` | A1 source admission 只是 canonical/generic 分支陈述边界，不能作为独立全局排斥原子。 | canonical branch scoped; generic/noncanonical branch still active |
+| `CanonicalBranchStatementCoverageImported` | `true` | `true` | canonical RIW/Buchstab 分支内部链条已闭合；generic WFD 宽口径仍只能外部化或回流。 | NoFurtherInternalGapForCanonicalSourceBranch; generic branch external/PDEC-SAE |
+| `PostSourceAdmissionMacrocycleImported` | `true` | `true` | A1 source-admission 深挖后回到 A1/PDEC/new-joint/KZ/KZ-E 宏循环；它不是下降量。 | AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY |
+| `OutsideCycleBreakBasisImported` | `true` | `false` | 继续无条件化必须提交循环外输入，而不是在 A1/PDEC/KZ 宏循环内重命名。 | AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY |
+| `ThresholdFiniteVerificationBoundaryPreserved` | `true` | `true` | 高阈值加有限验证只关闭已登记有限桥；P>=100000 尾段仍落到 beta-sieve/sawtooth 自足包。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `TenPercentTailStillNeedsBetaAndSawtooth` | `true` | `false` | 10% 主项包和有限验证不能替代 Rosser-Iwaniec lower weights、99% 系数与 exact sawtooth 余项。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound |
+| `LatestInternalRouteReducedToOutsideCycleBreak` | `true` | `false` | latest constructor 的当前内部非循环主攻已从 A1 admission 改写为循环外 seed/PDEC/payload/external-KZ 输入加尾包。 | (AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| `SeedCycleCutStillOpen` | `true` | `false` | 首选破环输入 AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput 当前尚未证明。 | AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只同步并排除 A1/PDEC/KZ 宏循环伪出口；没有证明循环外输入、beta-sieve/sawtooth、Rate 或 DStructure。 | ((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY OR A1CleanBranchCanonicalSourceAdmission) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger |
+
+## 3. 最新内部基
+
+```text
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 4. 保留条件基
+
+```text
+((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY OR A1CleanBranchCanonicalSourceAdmission) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward AND JointEmitterPrepushforwardWordCoefficientIdentityLedger AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+下一直接主攻：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+并行仍需：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+ExactResidueWeightedFloorSawtoothTenPercentBound
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+JointEmitterPrepushforwardWordCoefficientIdentityLedger
+JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+行/列命题仍未无条件闭合。
+
+## 5. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_phi_lpf_latest_constructor_post_source_admission_macrocycle_rebase_sync_router.py` | `6ab0a70bfb6896c57dfa217e3ce1639acba1ae34e7d98a42c40c3c8cce4f7bf6` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-kze-source-admission-rebase-sync-router.json` | `e8928e6838cc554f264de190d6c09c3181f5f618485dc403c8c544c469c70857` |
+| `docs/monograph/prime-matrix-strict-post-source-admission-macrocycle-sync-router.json` | `da9326ecac2e9c560da7b933d976ff50b88d16852626afbc84e127f6d8d97b4b` |
+| `docs/monograph/prime-matrix-strict-source-admission-branch-absorption-router.json` | `ff738635e2f712ebb777170a718e8775362847a92b7e29c4933da438fd7d64d6` |
+| `docs/monograph/prime-matrix-triad-a1-branch-statement-coverage-router.json` | `570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234` |
+| `docs/monograph/prime-matrix-strict-high-model-tail-update-router.json` | `d6607a2234fc89e719d25a5139982b032ae9a5da624857d8eaa87a2b25e2b52a` |

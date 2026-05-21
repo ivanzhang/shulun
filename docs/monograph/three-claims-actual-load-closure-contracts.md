@@ -23034,6 +23034,56 @@ A1CleanBranchCanonicalSourceAdmission AND SelfContainedRosserIwaniecBetaSieveWei
 外部 no-projection KZ、direct PDEC scope、新 joint、KZ-E direct、Phi-LPF signed table、
 Rate、DStructure 与 source/ExactUV 相关账本仍是并行硬门。行/列命题仍未无条件闭合。
 
+### 1.196 Phi-LPF latest constructor post-source-admission macrocycle rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_post_source_admission_macrocycle_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-post-source-admission-macrocycle-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_a1_source_admission_imported=true
+a1_source_admission_absorbed_as_branch_boundary=true
+canonical_branch_statement_coverage_imported=true
+post_source_admission_macrocycle_imported=true
+outside_cycle_break_basis_imported=true
+threshold_finite_verification_boundary_preserved=true
+ten_percent_tail_still_needs_beta_and_sawtooth=true
+latest_internal_route_reduced_to_outside_cycle_break=true
+acyclic_seed_cycle_cut_primitive_basis_and_coefficient_source_input_proved=false
+self_contained_beta_sieve_appendix_proved=false
+beta_sieve_main_coefficient_99_proved=false
+exact_residue_weighted_floor_sawtooth_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：A1 source admission 不是一个能独立关闭反例链的负载原子，而是
+canonical/generic 分支陈述边界。继续沿内部链推进会回到 A1/PDEC/new-joint/KZ/KZ-E
+宏循环；因此最新 actual 负载必须落在循环外破口：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+```
+
+高阈值加有限验证的路线只允许关闭有限桥或已登记有限段；严格自足尾段仍需 beta-sieve
+构造、99% 主系数和 exact sawtooth。最新直接主攻改为：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+```
+
+PDEC scope、新 primitive/payload、外部 no-projection KZ、Rate、DStructure 与
+source/ExactUV 相关账本仍是并行硬门。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
