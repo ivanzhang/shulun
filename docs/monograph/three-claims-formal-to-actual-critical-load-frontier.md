@@ -18738,6 +18738,56 @@ AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 390. Phi-LPF latest constructor semiprime seed diagonal sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_semiprime_seed_diagonal_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_first_seed_hardpoint_imported=true
+constructor_side_gates_carried=true
+semiprime_diagonal_router_imported=true
+diagonal_offdiagonal_support_split_closed=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried_forward=true
+latest_basis_replaces_first_seed_with_offdiag_seed=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+formal-to-actual 含义是：`p=q` diagonal seed 不是新的 signed 生成自由度；它已并回 common
+source packet，并由 source-packet 三原子携带。剩余新增 seed 口为 offdiagonal 表：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+同时仍需：
+
+```text
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
