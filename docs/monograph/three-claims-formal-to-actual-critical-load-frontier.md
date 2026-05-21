@@ -17720,6 +17720,59 @@ NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
 `AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate`。并行 ExactUV 仍需 source entropy/fixed
 fiber；fixed fiber 已进一步落到 complete key polylog 分区与 fixed-key O(1) 局部重数。行/列命题仍未无条件闭合。
 
+## 371. Phi-LPF latest new-joint trace-exit source-rank sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_trace_exit_source_rank_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-trace-exit-source-rank-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-trace-exit-source-rank-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-trace-exit-source-rank-sync-ledger.json
+```
+
+同步结果：
+
+```text
+current_new_joint_trace_exit_imported=true
+controlled_trace_exits_carried=true
+latest_new_payload_source_atom_alignment_imported=true
+older_trace_exit_convergence_same_absorber_imported=true
+post_antisplit_convergence_imported=true
+source_packet_guard_confirms_no_lpf_signed_shortcut=true
+pointwise_kernel_frontier_imported=true
+exactuv_entropy_fiber_pair_carried=true
+row_column_unconditional_closed=false
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+formal-to-actual 含义是：当前 new-joint trace-exit 的 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`
+没有形成新的无名终端。若它是真正的新 primitive signed 工件，就必须提交 actual source-rank/no-collapse
+包；而已有 source-atom 与 post-antisplit 收敛证书已经把该包下压到同 formal-unit 的逐点
+primitive alpha/delta 核表。
+
+因此最新直接硬点从 new payload 名称推进为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+```
+
+并行硬点为：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
+PhiLPFRoughCofactorStepLocalFactorUpdateLawBeforePushforward
+PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
+```
+
+这仍是非循环前沿同步，不是 alpha row 发射公式、算术恒等式、rank/multiplicity 或 ExactUV
+的证明。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
