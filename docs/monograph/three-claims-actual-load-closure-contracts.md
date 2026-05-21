@@ -8556,6 +8556,60 @@ signed coefficient、sign/local factor、alpha/delta side、branch key、exact `
 推前前求和恒等式。row-mass、signed-survival、ExactUV、complete/fixed key、terminal/PDEC、
 模型、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+### 1.230 Phi-LPF latest constructor bucket transport-stack sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_bucket_transport_stack_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_bucket_law_imported=true
+constructor_side_gates_carried=true
+bucket_transport_router_imported=true
+unit_seed_boundary_imported=true
+ordered_coherence_closed=true
+step_update_reduced_to_edge_multiplier=true
+square_base_private_escape_removed=true
+common_packet_cycle_guard_imported=true
+edge_signed_multiplier_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+pointwise_signed_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+actual-load 含义是：constructor row-origin 后得到的 `PhiLPFBucketSignedCoefficientLawBeforePushforward`
+不是终点。若不直接提交逐点 signed table，它必须进入 rough-cofactor signed transport。
+LPF ordered path 与 square-base 私有出口已经关闭；真正未闭合的是逐 edge signed multiplier、
+source-packet 三原子，以及同一 formal unit 的 signed survival 和 row-mass/no-heavy-row。
+
+最新直接主攻推进为：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+并行仍需：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+complete/fixed key、ExactUV entropy/fiber、pointwise signed table、terminal/PDEC、模型、Rate 与
+DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

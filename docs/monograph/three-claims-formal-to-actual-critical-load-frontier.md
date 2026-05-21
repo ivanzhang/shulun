@@ -18641,6 +18641,53 @@ sign/local factor、branch key 与推前前 alpha/delta 求和恒等式。row-ma
 ExactUV、complete/fixed key、terminal/PDEC、模型、Rate 与 DStructure 仍开放。行/列命题仍未
 无条件闭合。
 
+## 388. Phi-LPF latest constructor bucket transport-stack sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_bucket_transport_stack_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-bucket-transport-stack-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_bucket_law_imported=true
+constructor_side_gates_carried=true
+bucket_transport_router_imported=true
+unit_seed_boundary_imported=true
+ordered_coherence_closed=true
+step_update_reduced_to_edge_multiplier=true
+square_base_private_escape_removed=true
+common_packet_cycle_guard_imported=true
+edge_signed_multiplier_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+pointwise_signed_table_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+```
+
+formal-to-actual 含义是：LPF/Phi 桶恒等式只支付 support/capacity，不能产生 signed coefficient。
+constructor-latest bucket signed law 若走递推路线，就必须经过 rough-cofactor transport；
+ordered coherence 和 square-base 私有出口已剥离，剩余是逐 edge signed multiplier 与
+source-packet 三原子：
+
+```text
+PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+同时 `NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward` 与
+`SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger` 仍是 constructor 侧强制门。
+ExactUV、complete/fixed key、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
