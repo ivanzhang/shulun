@@ -1,0 +1,168 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_emitter_source_domain_entropy_proved": false,
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "antisplit_fields_imported": true,
+  "antisplit_joint_formula_proved": false,
+  "antisplit_joint_formula_target_imported": true,
+  "built_in_signed_pairing_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_new_joint_antisplit_atom_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "fixed_key_exact_uv_local_multiplicity_o1_proved": false,
+  "frontier_sync_only": true,
+  "known_antisplit_downstream_available": true,
+  "known_downstream_basis_after_antisplit": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+  "latest_new_joint_target_imported": true,
+  "lpf_phi_unsigned_boundary_retained": true,
+  "missing_sources": [],
+  "next_downstream_attack_target_after_antisplit": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+  "next_primary_attack_target": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection",
+  "no_theorem_switch": true,
+  "non_split_actual_joint_formula_proved": false,
+  "old_split_formula_route_is_nonproof_cycle": true,
+  "old_split_formula_route_synced": true,
+  "parallel_attack_targets": [
+    "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+    "ActualEmitterSourceDomainEntropyLedger",
+    "ExactUVMapFixedPairPolylogFiberBoundLedger",
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把 latest Phi-LPF terminal saturation 留下的 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 接到 strict new-joint 反分裂原子证书。旧 alpha/delta、alpha-side、row-level、signed-source 展开已经同步为固定点，不能作为非循环证明；因此真实最窄原子压成 `NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection`。该原子必须在 alpha-side 投影前同一行同时给出 primitive basis word、signed coefficient、alpha/delta pairing、exact `(u,v)`、branch key、sign/local factor、prepushforward identity 和 no-split 证书。LPF/Phi 桶恒等式仍只提供无符号 support/capacity，当前语料未给出该反分裂公式，行/列命题仍未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LatestNewJointTargetImported",
+      "meaning": "上一层 Phi-LPF latest 终端饱和已把严格内部主攻压成 new-joint 公式工件。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalObligationImported",
+      "meaning": "new-joint 义务证书确认当前没有已提交的显式 joint formula 工件。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "OldSplitFormulaRouteSynced",
+      "meaning": "沿旧 actual constructor、explicit alpha/delta、alpha-side、anchor/phase、signed lift 展开已全部同步。",
+      "proved": false,
+      "remaining": "old split route"
+    },
+    {
+      "closed": true,
+      "gate": "OldSplitFormulaRouteIsNonproofCycle",
+      "meaning": "旧分裂路线回到 row-level/signed-source 固定点，不能登记为非循环证明。",
+      "proved": true,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "AntisplitJointFormulaTargetImported",
+      "meaning": "真正的新公式必须在 alpha-side 投影前同一行同时给出 primitive word 与 signed coefficient。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "AntiSplitFieldsImported",
+      "meaning": "反分裂字段合同已列出 source tuple、word/coefficient、alpha/delta payload、exact UV、prepushforward identity 与 no-split 证书。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "LPFPhiUnsignedBoundaryStillUnsigned",
+      "meaning": "LPF/Phi 精准桶恒等式仍只支付无符号 ownership/support/capacity，不能生成 signed joint coefficient。",
+      "proved": true,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": false,
+      "gate": "NonSplitFormulaCurrentCorpusProved",
+      "meaning": "当前仓库没有不经 alpha-side/row-level/signed-source 分裂的同排 primitive word/coefficient 公式。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "KnownAntiSplitDownstreamAvailable",
+      "meaning": "若继续下钻，已有 strict 下游会把反分裂原子压到 atomic rows、built-in pairing 与 ExactUV entropy/fiber。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVEntropyFiberStillParallel",
+      "meaning": "ExactUV incidence 仍是并行门；其下游 source-domain entropy 与 fixed-pair fiber bound 未由反分裂公式自动给出。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ModelRateDStructureStillParallel",
+      "meaning": "模型余量、RatePreservation 与 DStructure/Rankin 独立验收仍保持开放。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只把 latest new-joint 主线同步到反分裂原子；没有得到无条件全局矛盾。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND FixedKeyExactUVLocalMultiplicityO1Ledger AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-latest-terminal-saturation-to-new-joint-sync-router.json": "71c86bde660683a0413acbf0d34308265488761e2d90351eff8c7b6cb62923bf",
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-antisplit-joint-declaration-firewall-router.json": "dd12ca2ff0316f1833578addbaeeecb1319e6f513604cd485b2291487b663d77",
+    "docs/monograph/prime-matrix-strict-atomic-joint-rows-builtin-pairing-router.json": "fa7ad8fc05db9226702248fe8cca0f6870ae51e50afa0a3161cefa3235c6587b",
+    "docs/monograph/prime-matrix-strict-cyclecut-unified-antisplit-downstream-sync-router.json": "72261ef1a6ba980a674636e9ec70064a59d827009b4fde0ae7acf06801c9d90e",
+    "docs/monograph/prime-matrix-strict-explicit-joint-constructor-direct-attack-router.json": "7124b422ea771e65f65319b24363e617b947c3a3b3e041af5e3cb168b192ff8b",
+    "docs/monograph/prime-matrix-strict-new-joint-formula-antisplit-atom-router.json": "3d469a4d75bef80450fca102700a378ef1e1ec210dd05299cea59d50e13f5004",
+    "docs/monograph/prime-matrix-strict-new-joint-formula-terminal-obligation-router.json": "1db15fd070caa0101e4af1921587d03cbdb8ca5eb28ffdf394094207954ca882",
+    "experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_atom_sync_router.py": "5b4fcdb7797d7bc0352d60d98b9202d4b8a2b8dd3e13be6e410737346a71edb1"
+  },
+  "status": "phi_lpf_latest_new_joint_synced_to_antisplit_atom_open",
+  "strict_internal_basis_after_sync": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND FixedKeyExactUVLocalMultiplicityO1Ledger AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "sync_chain": [
+    {
+      "from": "Phi-LPF latest terminal saturation frontier",
+      "to": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "from": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
+      "to": "old split alpha/delta route OR antisplit joint row formula"
+    },
+    {
+      "from": "old split alpha/delta route",
+      "to": "row-level/signed-source fixed point"
+    },
+    {
+      "from": "antisplit joint row formula",
+      "to": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "from": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection",
+      "to": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing -> BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "from": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+      "to": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    }
+  ],
+  "terminal_obligation_imported": true
+}

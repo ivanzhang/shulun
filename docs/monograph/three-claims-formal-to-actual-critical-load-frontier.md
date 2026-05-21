@@ -17572,6 +17572,60 @@ NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
 
 并行仍需 ExactUV、fixed-key、signed row law、模型余量、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+## 368. Phi-LPF latest new-joint to antisplit atom sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_atom_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-router.json
+data/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_new_joint_target_imported=true
+terminal_obligation_imported=true
+old_split_formula_route_synced=true
+old_split_formula_route_is_nonproof_cycle=true
+antisplit_joint_formula_target_imported=true
+lpf_phi_unsigned_boundary_retained=true
+non_split_actual_joint_formula_proved=false
+known_antisplit_downstream_available=true
+row_column_unconditional_closed=false
+next_primary_attack_target=NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+```
+
+formal-to-actual 含义是：new-joint 的旧拆分路线不能再作为证明路线：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+-> old split alpha/delta route
+-> row-level/signed-source fixed point
+```
+
+因此最新非循环主攻必须改为反分裂同排原子：
+
+```text
+NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+```
+
+它要求在 alpha-side 投影前同一行生成 primitive word、signed coefficient、
+alpha/delta payload、exact `(u,v)`、key/local factor、prepushforward identity 与 no-split
+证书。LPF/Phi 桶恒等式只给无符号 support/capacity，不给 signed coefficient。
+
+已有下游表明该反分裂原子若继续追击，会压到 built-in pairing 与 ExactUV entropy/fiber：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+这些输入仍未证明，且 fixed-key、signed row law、模型余量、Rate 与 DStructure 仍并行开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件

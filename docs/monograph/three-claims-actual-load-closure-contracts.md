@@ -7469,6 +7469,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+### 1.210 Phi-LPF latest new-joint to antisplit atom sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_new_joint_antisplit_atom_sync_router.py
+data/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-new-joint-antisplit-atom-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_new_joint_target_imported=true
+terminal_obligation_imported=true
+old_split_formula_route_synced=true
+old_split_formula_route_is_nonproof_cycle=true
+antisplit_joint_formula_target_imported=true
+antisplit_fields_imported=true
+lpf_phi_unsigned_boundary_retained=true
+non_split_actual_joint_formula_proved=false
+known_antisplit_downstream_available=true
+built_in_signed_pairing_proved=false
+actual_emitter_exact_uv_bounded_multiplicity_incidence_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+rate_preservation_ledger_proved=false
+dstructure_independent_gate_closed=false
+row_column_unconditional_closed=false
+next_primary_attack_target=NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+```
+
+actual-load 含义是：上一层留下的
+`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 不能沿旧 alpha/delta、
+alpha-side、row-level、signed-source 链自证；该链已经同步为固定点。因此真正的下一硬点是
+反分裂同排公式：
+
+```text
+NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+```
+
+这个公式必须在 alpha-side 投影前同一行同时给出 primitive basis word、signed
+coefficient、alpha/delta pairing、exact `(u,v)`、branch key、sign/local factor、
+prepushforward identity 与 no-split 证书。LPF/Phi 桶恒等式继续只支付无符号
+ownership、support 和 capacity，不能生成 signed joint coefficient。
+
+已有 strict 下游说明，如果该反分裂原子继续展开，会进入：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+```
+
+但这些仍未证明。最新严格内部基为：
+
+```text
+NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件
