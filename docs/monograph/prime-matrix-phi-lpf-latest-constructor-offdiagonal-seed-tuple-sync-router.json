@@ -1,0 +1,268 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_sync_router",
+  "closed_unsigned_subledger": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward",
+  "constructor_side_gates_carried": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LatestConstructorOffDiagonalSeedHardpointImported",
+      "meaning": "上一层 constructor semiprime seed diagonal sync 已把新增 seed 口定位到 offdiagonal 表。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSideGatesCarried",
+      "meaning": "本层只剥离 OFFDIAG_SEED 的无符号 tuple 字段；signed survival 与 row-mass/no-heavy-row 仍是 constructor 侧门。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalTupleFieldsRouterImported",
+      "meaning": "既有 tuple-fields 证书可直接作用在 constructor 最新 offdiagonal seed 入口。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalSourceTupleBijectionSynced",
+      "meaning": "每个 offdiagonal occurrence 唯一写成 `(owner_p, first_q, q_rough_tail_t)`。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PhiTailFiberMassSynced",
+      "meaning": "`sum_{p<q} Phi(floor(N/(p*q)),q)` 正好支付 tuple occurrence 质量。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalQRoughTailFiberMassLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFPhiUnsignedScopeExhausted",
+      "meaning": "LPF/Phi 桶恒等式已用尽：它只给支撑、tuple 字段和容量，不能产生 signed coefficient。",
+      "proved": true,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAtomsCarriedForward",
+      "meaning": "diagonal/common packet 义务在 constructor 最新基中仍以 source 三原子携带，尚未由本步证明。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "LatestBasisReplacesOffdiagSeedWithTuplePayload",
+      "meaning": "constructor 最新 offdiagonal seed 表被收窄为 source tuple signed formula 与配套字段。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OffDiagonalSignedFormulaStillOpen",
+      "meaning": "当前语料没有给出 prepushforward source tuple signed seed 公式。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OrientationParityStillOpen",
+      "meaning": "orientation parity、branch side 与 local factor 仍不能由 LPF/Phi 字段推出。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVReturnStillOpen",
+      "meaning": "ExactUV fixed pair、source entropy/fiber 与 return tag 仍是独立门。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "InternalTransitionStillPaired",
+      "meaning": "tail 非单位 continuation 仍要求 internal prime-adjoin signed transition law。",
+      "proved": false,
+      "remaining": "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedTableStillParallel",
+      "meaning": "逐点 Phi-LPF signed value table 仍是并行旁路，但当前未证明。",
+      "proved": false,
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步只同步 constructor offdiagonal seed 的 tuple-fields 剥离；未证明三命题无条件闭合。",
+      "proved": false,
+      "remaining": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    }
+  ],
+  "imported_largest_sample": {
+    "N": 10000,
+    "failures": [],
+    "formal_occurrence_orientation_shadow_bits": 5468,
+    "formal_occurrence_orientation_shadow_log10": 1646.032016,
+    "formal_type_sign_shadow_bits": 2600,
+    "formal_type_sign_shadow_log10": 782.677989,
+    "max_tail": 1665,
+    "mismatches": [],
+    "offdiagonal_phi_fiber_formula_sum": 5468,
+    "offdiagonal_seed_types": 2600,
+    "offdiagonal_tuple_occurrences": 5468,
+    "pure_semiprime_tail1_occurrences": 2600,
+    "small_prime_layers": 25,
+    "tail_nonunit_occurrences": 2868,
+    "top_offdiagonal_fibers": [
+      {
+        "fiber_mass": 833,
+        "p": 2,
+        "q": 3
+      },
+      {
+        "fiber_mass": 333,
+        "p": 2,
+        "q": 5
+      },
+      {
+        "fiber_mass": 222,
+        "p": 3,
+        "q": 5
+      },
+      {
+        "fiber_mass": 191,
+        "p": 2,
+        "q": 7
+      },
+      {
+        "fiber_mass": 127,
+        "p": 3,
+        "q": 7
+      },
+      {
+        "fiber_mass": 104,
+        "p": 2,
+        "q": 11
+      },
+      {
+        "fiber_mass": 80,
+        "p": 2,
+        "q": 13
+      },
+      {
+        "fiber_mass": 76,
+        "p": 5,
+        "q": 7
+      }
+    ],
+    "tuple_phi_bijection_holds": true
+  },
+  "imported_tuple_fields": [
+    {
+      "field": "owner_prime_p",
+      "meaning": "LPF owner bucket；composite value 的最小素因子为 p。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "first_rough_prime_q",
+      "meaning": "cofactor value/p 的最小素因子，且严格 q>p。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "q_rough_tail_t",
+      "meaning": "tail t 满足所有素因子不小于 q；纤维质量由 Phi(floor(N/(p*q)),q) 支付。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "offdiagonal_type_key",
+      "meaning": "ordered pair (p,q)，不与 diagonal square-base packet 混同。",
+      "status": "closed_unsigned"
+    },
+    {
+      "field": "signed_seed_value",
+      "meaning": "必须在 pushforward 前由 source tuple 正向给出，不能从 Phi 计数或 tail mass 反推。",
+      "status": "open_signed"
+    },
+    {
+      "field": "orientation_parity_branch_side",
+      "meaning": "alpha/delta side、orientation parity 与 branch trace 仍需独立字段。",
+      "status": "open_signed"
+    },
+    {
+      "field": "exactuv_fixed_pair_return_tag",
+      "meaning": "ExactUV fixed pair、source entropy/fiber 与失败 return tag 仍需并行证明。",
+      "status": "open_exactuv"
+    }
+  ],
+  "independent_noncanonical_arithmetic_identity_proved": false,
+  "internal_prime_adjoin_signed_transition_law_proved": false,
+  "latest_basis_replaces_offdiag_seed_with_tuple_payload": true,
+  "latest_constructor_offdiagonal_seed_hardpoint_imported": true,
+  "latest_retained_basis_after_router": "((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_phi_unsigned_scope_exhausted_for_offdiag_seed": true,
+  "next_primary_attack_target": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "offdiagonal_exactuv_fixed_pair_return_ledger_proved": false,
+  "offdiagonal_orientation_parity_law_proved": false,
+  "offdiagonal_phi_tail_fiber_mass_synced": true,
+  "offdiagonal_signed_seed_formula_proved": false,
+  "offdiagonal_source_tuple_bijection_synced": true,
+  "offdiagonal_tuple_fields_router_imported": true,
+  "offdiagonal_unsigned_tuple_fields_closed": true,
+  "paired_required_attack_targets": [
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "parallel_constructor_side_gates": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+  "parallel_direct_bypass": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "plain_conclusion": "本步把 constructor 最新 `PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward` 接入既有 tuple-fields 证书。LPF/Phi 桶恒等式已关闭 offdiagonal source tuple 的 owner、first rough prime、q-rough tail 与 Phi fiber mass；因此 offdiagonal seed 口不再是未解析黑箱。剩余不能由 LPF/Phi 反推，必须正向提交 source tuple signed seed formula、orientation parity/branch side、ExactUV fixed pair/return tag，并保留 internal transition、source 三原子、signed survival 与 row-mass/no-heavy-row。",
+  "pointwise_phi_lpf_bucket_signed_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exactuv_rank_multiplicity_proved": false,
+  "source_atoms_carried_forward": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exactuv-fiber-latest-noncycle-sync-router.json": "657649a5067934b15c9a8847c27e297f01aac84bc9b1cef77ca2377c2a7ef8cf",
+    "docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-sync-router.json": "f4495092313510b650081cab21a641b9ee06342a392fb83012cd3f89ad38c274",
+    "docs/monograph/prime-matrix-phi-lpf-offdiagonal-semiprime-seed-tuple-fields-router.json": "f9b2e9eaf8020cde5952237044a1d62308564951b9e00f4cf163ab46d5b62ccf",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-source-packet-cycle-guard-sync-router.json": "9e344cf591570de1916132778441e76bc05d6c6b72e5a1cae11366dc8e965f9b",
+    "experiments/prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_sync_router.py": "51cb205c8ea135a25e6cfe2c54d90ee79f8cdc4b13f2b8fd5831bdfffa19260d"
+  },
+  "status": "phi_lpf_latest_constructor_offdiagonal_seed_synced_to_tuple_fields_open",
+  "sync_chain": [
+    {
+      "from": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward",
+      "meaning": "constructor 最新 offdiagonal seed 黑箱拆成无符号 tuple 字段和仍开放的 signed/trace/ExactUV 字段。",
+      "to": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward AND PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward"
+    },
+    {
+      "from": "PhiLPFOffDiagonalSemiprimeSourceTupleFieldLedgerBeforePushforward",
+      "meaning": "LPF/Phi 在此处只支付 owner、first rough prime、tail 纤维和 occurrence 容量。",
+      "to": "closed owner_p, first_q, q_rough_tail_t and Phi tail fiber mass"
+    },
+    {
+      "from": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket",
+      "meaning": "diagonal/common packet 义务继续由 source 三原子携带；本层不把 common packet 当作自证终点。",
+      "to": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "from": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward",
+      "meaning": "剥去 LPF/Phi 无符号层后，constructor 最新基只保留真正 signed/ExactUV/source 义务。",
+      "to": "PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward plus PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward, SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger, signed survival and carried source atoms"
+    }
+  ],
+  "target_input_before_router": "PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward"
+}

@@ -8708,6 +8708,62 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure。行/列命题仍未
 无条件闭合。
 
+### 1.233 Phi-LPF latest constructor offdiagonal seed tuple sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_constructor_offdiagonal_seed_hardpoint_imported=true
+constructor_side_gates_carried=true
+offdiagonal_tuple_fields_router_imported=true
+offdiagonal_source_tuple_bijection_synced=true
+offdiagonal_phi_tail_fiber_mass_synced=true
+offdiagonal_unsigned_tuple_fields_closed=true
+lpf_phi_unsigned_scope_exhausted_for_offdiag_seed=true
+latest_basis_replaces_offdiag_seed_with_tuple_payload=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+actual-load 含义是：constructor 最新 `offdiagonal seed` 不再作为黑箱保留。LPF/Phi
+桶恒等式已经精确支付 `owner_p`、`first_q`、`q_rough_tail_t` 与 `Phi` tail fiber
+mass；这些是 occurrence 支撑与容量字段，不包含 signed coefficient、orientation
+parity、branch side 或 ExactUV return tag。
+
+因此新增最窄口为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行仍需 signed survival、complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、
+模型、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-alpha terminal leaf latest noncycle sync router
 
 新增文件

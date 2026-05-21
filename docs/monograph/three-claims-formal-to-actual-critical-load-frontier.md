@@ -18788,6 +18788,62 @@ AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
 仍开放。行/列命题仍未无条件闭合。
 
+## 391. Phi-LPF latest constructor offdiagonal seed tuple sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_constructor_offdiagonal_seed_hardpoint_imported=true
+constructor_side_gates_carried=true
+offdiagonal_tuple_fields_router_imported=true
+offdiagonal_source_tuple_bijection_synced=true
+offdiagonal_phi_tail_fiber_mass_synced=true
+offdiagonal_unsigned_tuple_fields_closed=true
+lpf_phi_unsigned_scope_exhausted_for_offdiag_seed=true
+latest_basis_replaces_offdiag_seed_with_tuple_payload=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+formal-to-actual 含义是：LPF/Phi 桶恒等式只能把 offdiagonal occurrence 读成
+`(owner_p, first_q, q_rough_tail_t)`，并以 `sum_{p<q} Phi(floor(N/(p*q)),q)`
+支付 tail fiber mass。这个无符号账本切断了“从容量反推 signed seed”的跳步。
+
+新的 constructor 最新窄口为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+同时仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+complete/fixed key、ExactUV、pointwise signed table、terminal/PDEC、模型、Rate 与 DStructure
+仍开放。行/列命题仍未无条件闭合。
+
 ## 329. Phi-LPF source packet cycle guard sync frontier
 
 新增文件
