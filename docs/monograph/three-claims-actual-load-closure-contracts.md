@@ -22459,6 +22459,50 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 并行仍保留 source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
 harmonic/skeleton、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.182 Phi-LPF latest constructor semiprime seed diagonal rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_semiprime_seed_diagonal_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-semiprime-seed-diagonal-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_first_seed_imported=true
+existing_constructor_semiprime_diagonal_reusable=true
+semiprime_diagonal_router_imported=true
+diagonal_private_escape_removed=true
+common_packet_cycle_guard_carried_forward=true
+semiprime_seed_diagonal_rebased=true
+offdiagonal_ordered_semiprime_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：最新 constructor first seed 窄口已经重新接入 diagonal/offdiagonal
+拆分。diagonal `(p,p)` 不再作为私有 signed lane 计入，它被 source-packet 三原子承接；
+剩余新增 seed-side signed 义务只在 `p<q` offdiagonal ordered semiprime first edges 上。
+
+最新直接主攻改为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+配套必需仍为：
+
+```text
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍保留 source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
+harmonic/skeleton、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
