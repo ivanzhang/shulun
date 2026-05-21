@@ -22416,6 +22416,49 @@ SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
 以及 PDEC scope、ExactUV/key、harmonic/skeleton、Rate、DStructure 与 constructor 兄弟字段。
 行/列命题仍未无条件闭合。
 
+### 1.181 Phi-LPF latest constructor edge multiplier slab rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_edge_multiplier_slab_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-edge-multiplier-slab-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_edge_multiplier_imported=true
+existing_constructor_edge_slab_reusable=true
+first_edge_slab_router_imported=true
+phi_fiber_unsigned_only_guard_imported=true
+edge_multiplier_slab_rebased=true
+semiprime_first_edge_signed_seed_table_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：最新 constructor edge multiplier 窄口已重新接入 first-edge slab。
+edge multiplier 表不能继续停在未拆黑箱；它按 `prefix=1` 第一边和 `prefix>1` 内部边
+拆成 first semiprime seed 与 internal transition 两张 signed 表。
+
+最新直接主攻改为：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+```
+
+配套必需：
+
+```text
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍保留 source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
+harmonic/skeleton、Rate 与 DStructure。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
