@@ -22261,3 +22261,53 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 内部主攻转为 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`；PDEC same-set scope
 仍作为条件性 scope/外部输入保留。source seed、harmonic、skeleton、Rate、DStructure 与
 constructor 兄弟字段仍开放。行/列命题仍未无条件闭合。
+
+### 1.177 Phi-LPF latest constructor terminal new-joint macrocycle sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_new_joint_macrocycle_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-router.json
+```
+
+同步读数为：
+
+```text
+terminal_family_new_joint_target_imported=true
+new_joint_to_declaration_line_imported=true
+declaration_antisplit_to_builtin_imported=true
+builtin_macrocycle_cut_imported=true
+source_payload_loop_carried=true
+mandatory_signed_side_gate_imported=true
+new_joint_coarse_artifact_removed=true
+row_level_clean_core_origin_generation_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：terminal-family saturation 后的 new-joint 粗原子已被接入现有
+constructor new-joint 下游。new-joint 先压到 pre-Cauchy joint declaration line，再经
+anti-split 下游压到 built-in signed pairing；built-in 继续展开会进入
+built-in/payload/alpha/moving/signed-table/origin/triad/declaration 的 signed 宏循环。
+source-entropy/payload 线也回到 declaration 环，不能作为证明。
+
+最新内部主攻压为：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+且必须同时保留：
+
+```text
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+PDEC same-set scope 仍作为条件性 scope/外部输入保留；source seed、harmonic、skeleton、
+ExactUV、complete/fixed key、Rate、DStructure 与 constructor 兄弟字段仍开放。行/列命题
+仍未无条件闭合。

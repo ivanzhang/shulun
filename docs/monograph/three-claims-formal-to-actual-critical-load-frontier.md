@@ -15963,6 +15963,77 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 证书或外部输入保留。source seed、harmonic、skeleton、Rate、DStructure 与 constructor
 兄弟字段仍开放。行/列命题仍未无条件闭合。
 
+## 404. Phi-LPF latest constructor terminal new-joint macrocycle sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_new_joint_macrocycle_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-terminal-new-joint-macrocycle-sync-ledger.json
+```
+
+同步结果：
+
+```text
+terminal_family_new_joint_target_imported=true
+new_joint_to_declaration_line_imported=true
+declaration_antisplit_to_builtin_imported=true
+builtin_macrocycle_cut_imported=true
+source_payload_loop_carried=true
+mandatory_signed_side_gate_imported=true
+new_joint_coarse_artifact_removed=true
+row_level_clean_core_origin_generation_table_proved=false
+nonzero_signed_row_survival_proved=false
+same_formal_unit_row_mass_normalization_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+formal-to-actual 含义是：上一层留下的
+`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 不能作为换名后的自由出口。
+已有 constructor new-joint 下游显示：new-joint 的第一生产性字段是 pre-Cauchy joint
+declaration line；普通 declaration 回到 signed-source 固定点，anti-split 路线压到
+built-in signed pairing。再沿 built-in 下钻会形成
+
+```text
+built-in pairing
+-> new payload
+-> alpha kernel
+-> moving atom
+-> pointwise signed table
+-> origin identity
+-> triad
+-> joint declaration
+-> built-in pairing
+```
+
+的 constructor signed 宏循环。source-entropy/payload 线也已登记为
+`declaration -> payload -> source entropy -> declaration` 自证环。
+
+因此本层删除 new-joint 粗原子，把内部主攻压到：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+并在 constructor 线中保留：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+     OR row-level/signed-side gate)
+AND HarmonicWindowAlpha043PGe3001Upper0850Ledger
+AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+PDEC scope、canonical lock、independent bridge、ExactUV、key、Rate、DStructure 与 constructor
+兄弟字段仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
