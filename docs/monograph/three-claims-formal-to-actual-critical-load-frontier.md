@@ -16278,6 +16278,59 @@ PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
 survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、harmonic/skeleton、Rate 与
 DStructure 仍开放。行/列命题仍未无条件闭合。
 
+## 410. Phi-LPF latest constructor offdiagonal seed tuple rebase sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_rebase_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-ledger.json
+```
+
+同步结果：
+
+```text
+latest_rebased_offdiagonal_seed_imported=true
+existing_constructor_offdiagonal_tuple_reusable=true
+offdiagonal_tuple_fields_router_imported=true
+offdiagonal_source_tuple_bijection_synced=true
+offdiagonal_phi_tail_fiber_mass_synced=true
+lpf_phi_unsigned_scope_exhausted_for_offdiag_seed=true
+source_atoms_carried_forward=true
+offdiagonal_seed_tuple_rebased=true
+offdiagonal_signed_seed_formula_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+formal-to-actual 含义是：最新 rebase 后的
+`PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward` 已接入既有
+tuple-fields 证书。LPF/Phi 桶恒等式关闭了 owner prime、first rough prime、`q`-rough tail
+与 Phi tail-fiber mass 的无符号账；它不能推出 signed seed、orientation parity、branch side
+或 ExactUV return。
+
+最新直接主攻推进到：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+配套仍需：
+
+```text
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
+harmonic/skeleton、Rate 与 DStructure 仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

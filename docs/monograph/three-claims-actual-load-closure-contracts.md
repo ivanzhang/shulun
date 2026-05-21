@@ -22503,6 +22503,45 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 并行仍保留 source 三原子、signed survival、row-mass/no-heavy-row、PDEC scope、ExactUV/key、
 harmonic/skeleton、Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+### 1.183 Phi-LPF latest constructor offdiagonal seed tuple rebase sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_offdiagonal_seed_tuple_rebase_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-offdiagonal-seed-tuple-rebase-sync-router.json
+```
+
+同步读数为：
+
+```text
+latest_rebased_offdiagonal_seed_imported=true
+existing_constructor_offdiagonal_tuple_reusable=true
+offdiagonal_tuple_fields_router_imported=true
+offdiagonal_source_tuple_bijection_synced=true
+offdiagonal_phi_tail_fiber_mass_synced=true
+lpf_phi_unsigned_scope_exhausted_for_offdiag_seed=true
+source_atoms_carried_forward=true
+offdiagonal_seed_tuple_rebased=true
+offdiagonal_signed_seed_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：offdiagonal seed 不再是未解析 signed 黑箱。LPF/Phi 已经穷尽其能给出的
+无符号内容：`owner p`、`first rough q`、`q`-rough tail、Phi tail-fiber mass。剩余必须是
+推前前正向给出的 signed seed formula，不能从桶容量后验反推。
+
+最新直接主攻改为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
+配套必需仍为 orientation/branch-side、offdiagonal ExactUV return、internal prime-adjoin
+transition、source 三原子、signed survival 与 row-mass/no-heavy-row。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
