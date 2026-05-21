@@ -22121,3 +22121,46 @@ AND ExplicitModelGapAndFiniteDPRCLedger
 并行仍需 joint rows、word/coefficient identity、no-downstream return、ExactUV/source
 entropy、signed survival、row-mass/no-heavy-row、complete/fixed key、Rate 与 DStructure。
 行/列命题仍未无条件闭合。
+
+### 1.174 Phi-LPF latest constructor terminal hardpoint split sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_hardpoint_split_sync_router.py
+data/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-router.json
+```
+
+同步读数为：
+
+```text
+constructor_terminal_gate_imported=true
+pdec_clean_kls_split_imported=true
+explicit_model_gap_finite_ledger_split_imported=true
+high_segment_model_gap_factorization_imported=true
+terminal_hardpoint_split_sync_closed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+tail_harmonic_upper_0850_proved=false
+tail_skeleton_lower_401_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：constructor 终端混合硬点不应继续停在粗标签
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger`。
+已登记的 strict 证书把它拆成：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks)
+AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger
+     AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+有限 DPRC 段已经删除；高段模型余量还缺调和窗口上界和粗骨架下界。PDEC/CleanKLS
+侧还缺同集作用域匹配或自足 Kuznetsov/DLS 大筛。当前最直接主攻为
+`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`，并行保留
+PDEC scope、harmonic、skeleton、Rate、DStructure 与 constructor 兄弟字段。行/列命题
+仍未无条件闭合。

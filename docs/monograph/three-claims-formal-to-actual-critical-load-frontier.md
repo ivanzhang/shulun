@@ -15812,6 +15812,56 @@ AND ExplicitModelGapAndFiniteDPRCLedger
 ExactUV/source entropy、signed survival、row-mass/no-heavy-row、complete/fixed key、
 Rate 与 DStructure。行/列命题仍未无条件闭合。
 
+## 401. Phi-LPF latest constructor terminal hardpoint split sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_latest_constructor_terminal_hardpoint_split_sync_router.py
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-router.json
+data/prime-matrix-phi-lpf-latest-constructor-terminal-hardpoint-split-sync-ledger.json
+```
+
+同步结果：
+
+```text
+constructor_terminal_gate_imported=true
+pdec_clean_kls_split_imported=true
+explicit_model_gap_finite_ledger_split_imported=true
+high_segment_model_gap_factorization_imported=true
+terminal_hardpoint_split_sync_closed=true
+self_contained_kuznetsov_dls_large_sieve_inequality_proved=false
+tail_harmonic_upper_0850_proved=false
+tail_skeleton_lower_401_proved=false
+row_column_unconditional_closed=false
+next_primary_attack_target=SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks
+```
+
+formal-to-actual 含义是：constructor 线刚得到的
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+已经可以同步到更具体的终端硬点：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks)
+AND HarmonicWindowAlpha043PGe3001Upper0850Ledger
+AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+其中 PDEC/CleanKLS 终端门被 strict hardpoint router 拆成同集 PDEC 作用域匹配与自足
+Kuznetsov/DLS 大筛原子；模型余量账本删除了 `P<2003` 有限段，并把高段账本因子化为
+`H<=0.850` 的调和窗口上界与 `S>=401` 的动态粗骨架下界。
+
+这不是终端证明：Kuznetsov/DLS、同集 PDEC scope、harmonic window、rough skeleton、
+Rate 与 DStructure 仍开放；constructor 兄弟字段也仍开放。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
