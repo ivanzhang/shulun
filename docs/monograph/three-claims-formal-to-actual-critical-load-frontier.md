@@ -23385,3 +23385,58 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 外部无黑箱线仍独立保留 `ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`、actual source
 capacity 新定理或新 automorphic/dispersion 证明。
+
+## 330K. Two replacement lines source-root/no-cycle sync frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_root_nocycle_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.json
+data/prime-matrix-two-replacement-lines-source-root-nocycle-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_source_root_nocycle_reduced_to_a1_pdec_rate_dstructure_open
+source_root_active_after_sync=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一节留下的 `ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn`
+不能继续作为独立非循环出口。strict source-root 终端环已经把该支路同步到
+direct PDEC scope 或 non-NCBLK/source-root KZ/DLS；direct PDEC scope 在当前内部语料中
+仍缺同口径 scope 证书，KZ no-cycle 则进一步压到 KZ-E direct no-projection，最后在自足
+路线中压到 `A1CleanBranchCanonicalSourceAdmission`。
+
+最新内部实际承重门更新为：
+
+```text
+((A1CleanBranchCanonicalSourceAdmission
+  OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+最新直接主攻：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部引理版仍是条件闭合；无黑箱外部版仍需同对象 FullS theorem-match、actual source
+capacity 新定理或新 automorphic/dispersion 证明。

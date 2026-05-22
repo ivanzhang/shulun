@@ -1004,3 +1004,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步只删除解析尾段旧硬点；它不替代 FullS theorem-match，也不产生 DStructure/Rankin
 独立验收事件。
+
+## 24. Source-root/no-cycle 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_root_nocycle_sync_router.py
+data/prime-matrix-two-replacement-lines-source-root-nocycle-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.json
+```
+
+本层把上一节内部线中保留的 `source-root / terminal alternative`
+继续同步到已有 strict source-root 终端环、direct PDEC scope 饱和、
+KZ no-cycle 与 KZ-E source-bridge 证书。结论是：
+`ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn` 不应继续作为
+两条替代线的活动证明原子。内部自足线的 source-root 支路被替换为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+并仍需携带：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版的条件闭合口径保持为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此 FI/DI/BFI/Kuznetsov/Maynard 只能作为待匹配来源方向，不能只按名称引用。
+必须逐项匹配同一个 completed full-S non-AP WFD 对象、权重、窗口、模数范围、
+投影限制、de-completion 与端点误差预算，以及所需的固定 `log^{-A}` 节省。

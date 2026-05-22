@@ -22365,6 +22365,77 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.182 Two replacement lines source-root/no-cycle sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_root_nocycle_sync_router.py
+data/prime-matrix-two-replacement-lines-source-root-nocycle-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-root-nocycle-sync-router.json
+```
+
+同步读数为：
+
+```text
+source_root_active_after_sync=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：rate-bearing Mertens 尾段闭合后，内部线不应继续把
+`ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn` 当作活动证明原子。
+后续 strict 证书已经显示 source-root 自足支路回到 signed/source-rank/alpha 终端环；
+direct PDEC scope 支路在当前内部语料中饱和但未证明；KZ no-cycle 支路在禁止
+NCBLK/source-root 复用后压到 KZ-E direct no-projection，并进一步压到 A1 clean branch
+canonical source admission。
+
+最新内部自足线收窄为：
+
+```text
+((A1CleanBranchCanonicalSourceAdmission
+  OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+     OR PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+     OR NoFurtherCanonicalSourceTerminalPromotionGap)
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版条件基仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层只删除旧 source-root 活动标签；它不证明 A1 source admission、same-set PDEC、
+rate-bearing PDEC、RatePreservation 或 DStructure/Rankin。
+
 ### 1.180 Two replacement lines B3 deep sync 更新
 
 新增机器证书：
