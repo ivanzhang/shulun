@@ -1,0 +1,584 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_punctured_endpoint_difference_router",
+  "definitions": {
+    "DeltaPhi_half(P,k)": "Phi((k+1)P-1,p_half(P))-Phi(kP,p_half(P))",
+    "F(P,k)": "reciprocal forest hole set of high-prime semiprime slots",
+    "identity": "pi((k+1)P-1)-pi(kP)=DeltaPhi_half(P,k)-|F(P,k)|",
+    "p_half(P)": "least prime > P/2"
+  },
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-router.json": "8a608720597fccf43d673d046fecabc255493974f2a8441d4b3b14a3bb759e4e",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.json": "9db4d90a17cdd1c8e1730e6b8d5d86caa454ea43951ddc4c3ce713a09acf373f",
+    "docs/monograph/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-router.json": "10da31e36ce24880aa1c9ae6014f8d9434a0b16d5217ea9105a7f3fe42585719"
+  },
+  "finite_audit": {
+    "all_endpoint_difference_identities_hold": true,
+    "endpoint_difference_failure_count": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 1009,
+    "maximum_forest_hole_profile": {
+      "P": 953,
+      "row": {
+        "P": 953,
+        "delta_phi_half": 80,
+        "delta_phi_minus_forest": 56,
+        "direct_prime_count": 56,
+        "endpoint_difference_identity_holds": true,
+        "forest_hole_count": 24,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 943,
+        "p_half": 479
+      }
+    },
+    "minimum_margin_profile": {
+      "P": 11,
+      "row": {
+        "P": 11,
+        "delta_phi_half": 2,
+        "delta_phi_minus_forest": 1,
+        "direct_prime_count": 1,
+        "endpoint_difference_identity_holds": true,
+        "forest_hole_count": 1,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 10,
+        "p_half": 7
+      }
+    },
+    "prime_base_count": 165,
+    "sample_profiles": [
+      {
+        "P": 11,
+        "all_endpoint_difference_identities_hold": true,
+        "endpoint_difference_failure_count": 0,
+        "maximum_forest_hole_row": {
+          "P": 11,
+          "delta_phi_half": 3,
+          "delta_phi_minus_forest": 2,
+          "direct_prime_count": 2,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 1,
+          "in_bhp_remaining_high_band": false,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 4,
+          "p_half": 7
+        },
+        "minimum_margin_row": {
+          "P": 11,
+          "delta_phi_half": 2,
+          "delta_phi_minus_forest": 1,
+          "direct_prime_count": 1,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 1,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 10,
+          "p_half": 7
+        },
+        "sample_rows": [
+          {
+            "P": 11,
+            "delta_phi_half": 3,
+            "delta_phi_minus_forest": 3,
+            "direct_prime_count": 3,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 2,
+            "p_half": 7
+          },
+          {
+            "P": 11,
+            "delta_phi_half": 4,
+            "delta_phi_minus_forest": 4,
+            "direct_prime_count": 4,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 9,
+            "p_half": 7
+          },
+          {
+            "P": 11,
+            "delta_phi_half": 2,
+            "delta_phi_minus_forest": 1,
+            "direct_prime_count": 1,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 1,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 10,
+            "p_half": 7
+          }
+        ],
+        "strict_row_count": 9
+      },
+      {
+        "P": 101,
+        "all_endpoint_difference_identities_hold": true,
+        "endpoint_difference_failure_count": 0,
+        "maximum_forest_hole_row": {
+          "P": 101,
+          "delta_phi_half": 17,
+          "delta_phi_minus_forest": 12,
+          "direct_prime_count": 12,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 5,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 68,
+          "p_half": 53
+        },
+        "minimum_margin_row": {
+          "P": 101,
+          "delta_phi_half": 8,
+          "delta_phi_minus_forest": 7,
+          "direct_prime_count": 7,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 1,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 73,
+          "p_half": 53
+        },
+        "sample_rows": [
+          {
+            "P": 101,
+            "delta_phi_half": 16,
+            "delta_phi_minus_forest": 16,
+            "direct_prime_count": 16,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 2,
+            "p_half": 53
+          },
+          {
+            "P": 101,
+            "delta_phi_half": 9,
+            "delta_phi_minus_forest": 9,
+            "direct_prime_count": 9,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 24,
+            "p_half": 53
+          },
+          {
+            "P": 101,
+            "delta_phi_half": 12,
+            "delta_phi_minus_forest": 12,
+            "direct_prime_count": 12,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 25,
+            "p_half": 53
+          },
+          {
+            "P": 101,
+            "delta_phi_half": 14,
+            "delta_phi_minus_forest": 12,
+            "direct_prime_count": 12,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 2,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 66,
+            "p_half": 53
+          },
+          {
+            "P": 101,
+            "delta_phi_half": 16,
+            "delta_phi_minus_forest": 12,
+            "direct_prime_count": 12,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 4,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 100,
+            "p_half": 53
+          }
+        ],
+        "strict_row_count": 99
+      },
+      {
+        "P": 257,
+        "all_endpoint_difference_identities_hold": true,
+        "endpoint_difference_failure_count": 0,
+        "maximum_forest_hole_row": {
+          "P": 257,
+          "delta_phi_half": 31,
+          "delta_phi_minus_forest": 22,
+          "direct_prime_count": 22,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 9,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 233,
+          "p_half": 131
+        },
+        "minimum_margin_row": {
+          "P": 257,
+          "delta_phi_half": 23,
+          "delta_phi_minus_forest": 18,
+          "direct_prime_count": 18,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 5,
+          "in_bhp_remaining_high_band": false,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 138,
+          "p_half": 131
+        },
+        "sample_rows": [
+          {
+            "P": 257,
+            "delta_phi_half": 39,
+            "delta_phi_minus_forest": 39,
+            "direct_prime_count": 39,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 2,
+            "p_half": 131
+          },
+          {
+            "P": 257,
+            "delta_phi_half": 24,
+            "delta_phi_minus_forest": 24,
+            "direct_prime_count": 24,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 63,
+            "p_half": 131
+          },
+          {
+            "P": 257,
+            "delta_phi_half": 27,
+            "delta_phi_minus_forest": 27,
+            "direct_prime_count": 27,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 64,
+            "p_half": 131
+          },
+          {
+            "P": 257,
+            "delta_phi_half": 31,
+            "delta_phi_minus_forest": 27,
+            "direct_prime_count": 27,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 4,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 152,
+            "p_half": 131
+          },
+          {
+            "P": 257,
+            "delta_phi_half": 29,
+            "delta_phi_minus_forest": 23,
+            "direct_prime_count": 23,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 6,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 256,
+            "p_half": 131
+          }
+        ],
+        "strict_row_count": 255
+      },
+      {
+        "P": 1009,
+        "all_endpoint_difference_identities_hold": true,
+        "endpoint_difference_failure_count": 0,
+        "maximum_forest_hole_row": {
+          "P": 1009,
+          "delta_phi_half": 89,
+          "delta_phi_minus_forest": 70,
+          "direct_prime_count": 70,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 19,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 729,
+          "p_half": 509
+        },
+        "minimum_margin_row": {
+          "P": 1009,
+          "delta_phi_half": 66,
+          "delta_phi_minus_forest": 52,
+          "direct_prime_count": 52,
+          "endpoint_difference_identity_holds": true,
+          "forest_hole_count": 14,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "in_upper_band": true,
+          "k": 905,
+          "p_half": 509
+        },
+        "sample_rows": [
+          {
+            "P": 1009,
+            "delta_phi_half": 128,
+            "delta_phi_minus_forest": 128,
+            "direct_prime_count": 128,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 2,
+            "p_half": 509
+          },
+          {
+            "P": 1009,
+            "delta_phi_half": 87,
+            "delta_phi_minus_forest": 87,
+            "direct_prime_count": 87,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "in_upper_band": false,
+            "k": 251,
+            "p_half": 509
+          },
+          {
+            "P": 1009,
+            "delta_phi_half": 85,
+            "delta_phi_minus_forest": 85,
+            "direct_prime_count": 85,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 0,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 252,
+            "p_half": 509
+          },
+          {
+            "P": 1009,
+            "delta_phi_half": 80,
+            "delta_phi_minus_forest": 71,
+            "direct_prime_count": 71,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 9,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 523,
+            "p_half": 509
+          },
+          {
+            "P": 1009,
+            "delta_phi_half": 89,
+            "delta_phi_minus_forest": 70,
+            "direct_prime_count": 70,
+            "endpoint_difference_identity_holds": true,
+            "forest_hole_count": 19,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "in_upper_band": true,
+            "k": 1008,
+            "p_half": 509
+          }
+        ],
+        "strict_row_count": 1007
+      }
+    ]
+  },
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiHalfEndpointDifferenceIdentityClosed",
+      "meaning": "Delta Phi_half 精确等于 half-primorial survivor 数。",
+      "proved": true,
+      "remaining": "exact Phi-LPF endpoint count"
+    },
+    {
+      "closed": true,
+      "gate": "ForestHoleSubtractionIdentityClosed",
+      "meaning": "strict 行素数数精确等于 Delta Phi_half 减去 reciprocal forest holes。",
+      "proved": true,
+      "remaining": "exact punctured endpoint identity"
+    },
+    {
+      "closed": true,
+      "gate": "ShadowFreeAndUpperBandUnifiedByEndpointDifference",
+      "meaning": "shadow-free 是 forest_holes=0；upper-band 是 forest_holes>0 的同一端点差公式。",
+      "proved": true,
+      "remaining": "unified endpoint formulation"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteSweepEndpointIdentityMatchesPrimeCount",
+      "meaning": "有限审计确认端点差等式与直接素数计数一致，但不作为全局证明。",
+      "proved": true,
+      "remaining": "finite audit only"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointDifferenceDominatesForestHolesProved",
+      "meaning": "尚未证明所有剩余特殊相位都有 Delta Phi_half>forest_holes。",
+      "proved": false,
+      "remaining": "PuncturedPhiEndpointDifferencePositiveOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedPositiveCoreProved",
+      "meaning": "本层只把剩余口写成 Phi-LPF 两端点差正性，不证明三目标命题。",
+      "proved": false,
+      "remaining": "PuncturedPhiEndpointDifferencePositiveOrPDEC"
+    }
+  ],
+  "large_sample_audit": {
+    "all_sampled_endpoint_margins_positive": true,
+    "large_samples_are_evidence_not_global_proof": true,
+    "minimum_sample_endpoint_margin": 4385,
+    "sample_count": 10,
+    "sample_seeds": [
+      100000,
+      300000
+    ],
+    "samples": [
+      {
+        "P": 100003,
+        "delta_phi_half": 8013,
+        "delta_phi_minus_forest": 8013,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": true,
+        "in_upper_band": false,
+        "k": 2,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 100003,
+        "delta_phi_half": 4626,
+        "delta_phi_minus_forest": 4626,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": true,
+        "in_upper_band": false,
+        "k": 24999,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 100003,
+        "delta_phi_half": 4623,
+        "delta_phi_minus_forest": 4623,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 25000,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 100003,
+        "delta_phi_half": 4661,
+        "delta_phi_minus_forest": 4542,
+        "forest_hole_count": 119,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 33406,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 100003,
+        "delta_phi_half": 4900,
+        "delta_phi_minus_forest": 4385,
+        "forest_hole_count": 515,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 100002,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 300007,
+        "delta_phi_half": 22178,
+        "delta_phi_minus_forest": 22178,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": true,
+        "in_upper_band": false,
+        "k": 2,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 300007,
+        "delta_phi_half": 12614,
+        "delta_phi_minus_forest": 12614,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": true,
+        "in_upper_band": false,
+        "k": 75000,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 300007,
+        "delta_phi_half": 12535,
+        "delta_phi_minus_forest": 12535,
+        "forest_hole_count": 0,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 75001,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 300007,
+        "delta_phi_half": 12626,
+        "delta_phi_minus_forest": 12426,
+        "forest_hole_count": 200,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 90261,
+        "positive_endpoint_margin": true
+      },
+      {
+        "P": 300007,
+        "delta_phi_half": 13238,
+        "delta_phi_minus_forest": 11966,
+        "forest_hole_count": 1272,
+        "in_shadow_free_subband": false,
+        "in_upper_band": true,
+        "k": 300006,
+        "positive_endpoint_margin": true
+      }
+    ]
+  },
+  "next_direct_attack_target": "PuncturedPhiEndpointDifferencePositiveOrPDEC",
+  "plain_conclusion": "当前 strict-k 剩余被写成单一 Phi-LPF 端点差：行素数数等于半筛 Phi 两端点差 减去 reciprocal forest holes。反例必须满足 DeltaPhi_half(P,k)<=|F(P,k)|；这就是 punctured phase 的端点计数正性版本。",
+  "status": "strict_k_prime_count_equals_phi_half_endpoint_difference_minus_forest_holes"
+}

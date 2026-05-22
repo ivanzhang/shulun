@@ -18796,6 +18796,54 @@ PuncturedHalfPrimorialForestPhaseAvoidanceOrPDEC.
 
 本层只关闭等价转换和有限审计；不证明 punctured special phase 全局避让，也不证明三目标命题。
 
+## 458. Phi-LPF punctured endpoint difference frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_difference_router.py
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-difference-router.json
+data/prime-matrix-phi-lpf-punctured-endpoint-difference-ledger.json
+```
+
+同步结果：
+
+```text
+status=strict_k_prime_count_equals_phi_half_endpoint_difference_minus_forest_holes
+max_prime=1009
+all_endpoint_difference_identities_hold=true
+minimum_sample_endpoint_margin=4385
+next_direct_attack_target=PuncturedPhiEndpointDifferencePositiveOrPDEC
+```
+
+formal-to-actual 含义是：令 `p_half(P)` 为大于 `P/2` 的第一个素数，
+
+```text
+DeltaPhi_half(P,k)=Phi((k+1)P-1,p_half(P))-Phi(kP,p_half(P)).
+```
+
+则 strict 行的素数数目精确为：
+
+```text
+pi((k+1)P-1)-pi(kP)=DeltaPhi_half(P,k)-|F(P,k)|.
+```
+
+这里 `F(P,k)` 是 upper-band 的 reciprocal forest holes。shadow-free 是 `|F|=0`，
+upper-band 是同一公式中 `|F|>0` 的情形。反例必须满足：
+
+```text
+DeltaPhi_half(P,k)<=|F(P,k)|.
+```
+
+当前统一最窄口改写为 Phi-LPF 两端点差正性：
+
+```text
+PuncturedPhiEndpointDifferencePositiveOrPDEC.
+```
+
+本层仍不证明端点差全局正性，也不证明三目标命题。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -24774,6 +24774,49 @@ PuncturedHalfPrimorialForestPhaseAvoidanceOrPDEC
 
 该层不证明特殊相位避让，只把两个剩余口合并为一个 punctured covered-block 问题。
 
+### 1.243 Phi-LPF punctured endpoint difference 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_difference_router.py
+data/prime-matrix-phi-lpf-punctured-endpoint-difference-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-difference-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-difference-router.json
+```
+
+同步读数为：
+
+```text
+status=strict_k_prime_count_equals_phi_half_endpoint_difference_minus_forest_holes
+max_prime=1009
+all_endpoint_difference_identities_hold=true
+endpoint_difference_failure_count=0
+all_sampled_endpoint_margins_positive=true
+minimum_sample_endpoint_margin=4385
+```
+
+actual-load 含义是：统一剩余现在可直接写为 Phi-LPF 两端点差与 forest holes 的差：
+
+```text
+DeltaPhi_half(P,k)=Phi((k+1)P-1,p_half(P))-Phi(kP,p_half(P))
+pi((k+1)P-1)-pi(kP)=DeltaPhi_half(P,k)-|F(P,k)|.
+```
+
+因此任何反例都必须满足：
+
+```text
+DeltaPhi_half(P,k)<=|F(P,k)|
+```
+
+最新直接主攻口为：
+
+```text
+PuncturedPhiEndpointDifferencePositiveOrPDEC
+```
+
+该层只关闭端点差恒等式，不证明所有特殊相位下的端点差正性。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
