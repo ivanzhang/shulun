@@ -17404,6 +17404,75 @@ PositiveSaturationDefectForStrictKInternalLPFOwnerPartition.
 
 该正缺陷仍等价于 full-root 未覆盖槽存在，即 row-prime 内容本身。行/列命题仍未无条件闭合。
 
+## 433. Phi-LPF strict-k raw rejection balance frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_raw_rejection_balance_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.json
+data/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-ledger.json
+```
+
+同步结果：
+
+```text
+raw_incidence_owner_rejection_partition_proved=true
+prime_count_equals_rejection_excess_proved=true
+zero_row_iff_exact_raw_rejection_balance_proved=true
+raw_capacity_only_contradiction_rejected=true
+positive_rejection_excess_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：owner 饱和可继续拆成 raw incidence 与 LPF rejection 的严格账本。
+在内部行 `I_k={kP+a:1<=a<P}` 中，先数所有根内素数 `p<=sqrt(kP+P-1)` 的原始命中：
+
+```text
+RawTotal = #{(a,p): 1<=a<P, p | kP+a, p<=sqrt(kP+P-1)}.
+```
+
+每个原始命中要么是该槽的 LPF-owner 命中，要么是已经被更小素因子负责的 rejected hit。因此
+
+```text
+RawTotal=OwnerMass+RejectionMass.
+```
+
+结合上一层
+
+```text
+row_prime_count=(P-1)-OwnerMass
+```
+
+得到新的精确等价式：
+
+```text
+row_prime_count=RejectionMass-(RawTotal-(P-1)).
+```
+
+于是零行反例不只是 owner 桶全饱和，而是
+
+```text
+RejectionMass = RawTotal-(P-1).
+```
+
+也就是 LPF rejection 精确吃掉 raw incidence 的全部超容量。真实有素数的行满足严格失衡：
+
+```text
+RejectionMass > RawTotal-(P-1).
+```
+
+本层排除了 raw capacity 直接矛盾：原始命中总量超过行长并不矛盾，因为超出的命中可以由
+非 owner rejection 吸收。当前最窄硬点改写为：
+
+```text
+PositiveRejectionExcessForStrictKRawLPFIncidence.
+```
+
+这仍等价于 full-root 未覆盖槽存在，但它把下一步非循环入口定位为 signed/transport 型严格
+失衡定理，而不是单纯容量比较。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

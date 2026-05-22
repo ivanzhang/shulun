@@ -23515,6 +23515,63 @@ PositiveSaturationDefectForStrictKInternalLPFOwnerPartition.
 
 这仍等价于 full-root 未覆盖槽存在，不能作为内部黑箱。行/列命题仍未无条件闭合。
 
+### 1.206 Phi-LPF strict-k raw rejection balance 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_raw_rejection_balance_router.py
+data/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.json
+```
+
+同步读数为：
+
+```text
+raw_incidence_owner_rejection_partition_proved=true
+prime_count_equals_rejection_excess_proved=true
+zero_row_iff_exact_raw_rejection_balance_proved=true
+raw_capacity_only_contradiction_rejected=true
+positive_rejection_excess_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：严格 `1<k<P` 的内部行已经从 Phi-LPF owner 饱和进一步拆成
+raw incidence 与 LPF rejection 两股 actual 质量。令
+
+```text
+RawTotal = sum_p #{a: p | kP+a, p<=sqrt(kP+P-1)}
+RejectionMass = #{raw hits whose p is not LPF(kP+a)}
+```
+
+则逐项分解给出：
+
+```text
+RawTotal=OwnerMass+RejectionMass
+row_prime_count=RejectionMass-(RawTotal-(P-1)).
+```
+
+因此零行反例等价于临界平衡：
+
+```text
+RejectionMass = RawTotal-(P-1).
+```
+
+真实正缺陷则等价于严格失衡：
+
+```text
+RejectionMass > RawTotal-(P-1).
+```
+
+本层说明 raw capacity 超过行长本身不构成矛盾；超容量可以由非 owner 命中吸收。最新最窄硬点为：
+
+```text
+PositiveRejectionExcessForStrictKRawLPFIncidence.
+```
+
+这仍等价于 full-root 未覆盖槽存在，但接口更接近 signed/transport 失衡证明。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

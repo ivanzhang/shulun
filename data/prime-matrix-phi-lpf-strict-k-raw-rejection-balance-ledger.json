@@ -1,0 +1,1305 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_raw_rejection_balance_router",
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_sweep": {
+    "all_raw_rejection_balance_identities_verified": true,
+    "case_count": 1010,
+    "failure_count": 0,
+    "failure_sample": [],
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 97,
+    "maximum_raw_surplus_case": {
+      "P": 97,
+      "k": 62,
+      "raw_surplus": 78
+    },
+    "minimum_rejection_excess_cases": [
+      {
+        "P": 3,
+        "excess": 1,
+        "k": 2
+      },
+      {
+        "P": 5,
+        "excess": 1,
+        "k": 4
+      },
+      {
+        "P": 7,
+        "excess": 1,
+        "k": 3
+      },
+      {
+        "P": 11,
+        "excess": 1,
+        "k": 10
+      },
+      {
+        "P": 13,
+        "excess": 1,
+        "k": 9
+      },
+      {
+        "P": 17,
+        "excess": 1,
+        "k": 12
+      },
+      {
+        "P": 19,
+        "excess": 1,
+        "k": 15
+      }
+    ],
+    "minimum_rejection_excess_over_raw_surplus": 1,
+    "zero_rows_found_in_finite_sweep": []
+  },
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "RawIncidenceOwnerRejectionPartition",
+      "meaning": "根内原始命中逐项分成 LPF-owner 命中与非 owner 拒绝命中。",
+      "proved": true,
+      "remaining": "raw incidence ledger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeCountEqualsRejectionExcess",
+      "meaning": "行内素数数目等于 LPF 拒绝量减去原始命中相对行长的超容量。",
+      "proved": true,
+      "remaining": "prime_count = rejection - raw_surplus"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowIffExactRawRejectionBalance",
+      "meaning": "零行反例等价于 rejection_total 与 raw_surplus_over_row 精确相等。",
+      "proved": true,
+      "remaining": "zero row exact balance"
+    },
+    {
+      "closed": true,
+      "gate": "RawCapacityOnlyContradictionRejected",
+      "meaning": "原始命中容量通常超过行长；超容量可被非 owner 拒绝吸收，不能单独推出正性。",
+      "proved": true,
+      "remaining": "need strict rejection excess"
+    },
+    {
+      "closed": false,
+      "gate": "PositiveRejectionExcessProved",
+      "meaning": "尚未证明每条严格行都有 rejection_total > raw_surplus_over_row。",
+      "proved": false,
+      "remaining": "same full-root uncovered-slot positivity"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只把正缺陷改写为 raw/rejection 失衡；未排除精确平衡。",
+      "proved": false,
+      "remaining": "Q1/Q2 transport, seed/PDEC scope, signed table, Rate, DStructure"
+    }
+  ],
+  "identity": "RawTotal=OwnerMass+RejectionMass, row_prime_count=RejectionMass-(RawTotal-(P-1))",
+  "no_theorem_switch": true,
+  "plain_conclusion": "严格 1<k<P 的内部行中，若先数所有根内素数的原始命中，再把非 LPF-owner 的命中作为已由更小素因子筛掉的拒绝量，则行内素数数目精确等于拒绝量超过原始超容量的差。零行反例因此不是普通容量饱和，而是 raw surplus 与 LPF rejection 的精确临界平衡。",
+  "positive_rejection_excess_proved": false,
+  "prime_count_equals_rejection_excess_proved": true,
+  "raw_capacity_only_contradiction_rejected": true,
+  "raw_incidence_owner_rejection_partition_proved": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_audits": [
+    {
+      "P": 5,
+      "composite_slots_sample": [
+        1,
+        2,
+        4
+      ],
+      "inside_p_square": true,
+      "internal_interval": [
+        21,
+        24
+      ],
+      "k": 4,
+      "length": 4,
+      "max_raw_hits_on_slot": 2,
+      "owner_counts": {
+        "2": 2,
+        "3": 1
+      },
+      "owner_total": 3,
+      "positive_defect_iff_rejection_strictly_exceeds_raw_surplus": true,
+      "prime_count": 1,
+      "prime_equals_rejection_minus_raw_surplus": true,
+      "prime_slots_sample": [
+        3
+      ],
+      "raw_counts": {
+        "2": 2,
+        "3": 2
+      },
+      "raw_equals_owner_plus_rejection": true,
+      "raw_incidence_total": 4,
+      "raw_surplus_over_row": 0,
+      "rejection_counts": {
+        "3": 1
+      },
+      "rejection_excess_over_raw_surplus": 1,
+      "rejection_total": 1,
+      "root_bound": 4,
+      "root_prime_count": 2,
+      "slot_rows_sample": [
+        {
+          "is_prime": false,
+          "n": 21,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 1
+        },
+        {
+          "is_prime": false,
+          "n": 22,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 2
+        },
+        {
+          "is_prime": true,
+          "n": 23,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 3
+        },
+        {
+          "is_prime": false,
+          "n": 24,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 4
+        }
+      ],
+      "zero_row_iff_rejection_equals_raw_surplus": true
+    },
+    {
+      "P": 11,
+      "composite_slots_sample": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "inside_p_square": true,
+      "internal_interval": [
+        111,
+        120
+      ],
+      "k": 10,
+      "length": 10,
+      "max_raw_hits_on_slot": 3,
+      "owner_counts": {
+        "2": 5,
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "owner_total": 9,
+      "positive_defect_iff_rejection_strictly_exceeds_raw_surplus": true,
+      "prime_count": 1,
+      "prime_equals_rejection_minus_raw_surplus": true,
+      "prime_slots_sample": [
+        3
+      ],
+      "raw_counts": {
+        "2": 5,
+        "3": 4,
+        "5": 2,
+        "7": 2
+      },
+      "raw_equals_owner_plus_rejection": true,
+      "raw_incidence_total": 13,
+      "raw_surplus_over_row": 3,
+      "rejection_counts": {
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "rejection_excess_over_raw_surplus": 1,
+      "rejection_total": 4,
+      "root_bound": 10,
+      "root_prime_count": 4,
+      "slot_rows_sample": [
+        {
+          "is_prime": false,
+          "n": 111,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 1
+        },
+        {
+          "is_prime": false,
+          "n": 112,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            7
+          ],
+          "rejected_hits": [
+            7
+          ],
+          "slot": 2
+        },
+        {
+          "is_prime": true,
+          "n": 113,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 3
+        },
+        {
+          "is_prime": false,
+          "n": 114,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 4
+        },
+        {
+          "is_prime": false,
+          "n": 115,
+          "owner": 5,
+          "raw_hits": [
+            5
+          ],
+          "rejected_hits": [],
+          "slot": 5
+        },
+        {
+          "is_prime": false,
+          "n": 116,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 6
+        },
+        {
+          "is_prime": false,
+          "n": 117,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 7
+        },
+        {
+          "is_prime": false,
+          "n": 118,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 8
+        },
+        {
+          "is_prime": false,
+          "n": 119,
+          "owner": 7,
+          "raw_hits": [
+            7
+          ],
+          "rejected_hits": [],
+          "slot": 9
+        },
+        {
+          "is_prime": false,
+          "n": 120,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3,
+            5
+          ],
+          "rejected_hits": [
+            3,
+            5
+          ],
+          "slot": 10
+        }
+      ],
+      "zero_row_iff_rejection_equals_raw_surplus": true
+    },
+    {
+      "P": 17,
+      "composite_slots_sample": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "inside_p_square": true,
+      "internal_interval": [
+        273,
+        288
+      ],
+      "k": 16,
+      "length": 16,
+      "max_raw_hits_on_slot": 3,
+      "owner_counts": {
+        "2": 8,
+        "3": 3,
+        "5": 1,
+        "7": 1
+      },
+      "owner_total": 13,
+      "positive_defect_iff_rejection_strictly_exceeds_raw_surplus": true,
+      "prime_count": 3,
+      "prime_equals_rejection_minus_raw_surplus": true,
+      "prime_slots_sample": [
+        5,
+        9,
+        11
+      ],
+      "raw_counts": {
+        "2": 8,
+        "3": 6,
+        "5": 3,
+        "7": 3,
+        "11": 2,
+        "13": 2
+      },
+      "raw_equals_owner_plus_rejection": true,
+      "raw_incidence_total": 24,
+      "raw_surplus_over_row": 8,
+      "rejection_counts": {
+        "3": 3,
+        "5": 2,
+        "7": 2,
+        "11": 2,
+        "13": 2
+      },
+      "rejection_excess_over_raw_surplus": 3,
+      "rejection_total": 11,
+      "root_bound": 16,
+      "root_prime_count": 6,
+      "slot_rows_sample": [
+        {
+          "is_prime": false,
+          "n": 273,
+          "owner": 3,
+          "raw_hits": [
+            3,
+            7,
+            13
+          ],
+          "rejected_hits": [
+            7,
+            13
+          ],
+          "slot": 1
+        },
+        {
+          "is_prime": false,
+          "n": 274,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 2
+        },
+        {
+          "is_prime": false,
+          "n": 275,
+          "owner": 5,
+          "raw_hits": [
+            5,
+            11
+          ],
+          "rejected_hits": [
+            11
+          ],
+          "slot": 3
+        },
+        {
+          "is_prime": false,
+          "n": 276,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 4
+        },
+        {
+          "is_prime": true,
+          "n": 277,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 5
+        },
+        {
+          "is_prime": false,
+          "n": 278,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 6
+        },
+        {
+          "is_prime": false,
+          "n": 279,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 7
+        },
+        {
+          "is_prime": false,
+          "n": 280,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            5,
+            7
+          ],
+          "rejected_hits": [
+            5,
+            7
+          ],
+          "slot": 8
+        },
+        {
+          "is_prime": true,
+          "n": 281,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 9
+        },
+        {
+          "is_prime": false,
+          "n": 282,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 10
+        },
+        {
+          "is_prime": true,
+          "n": 283,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 11
+        },
+        {
+          "is_prime": false,
+          "n": 284,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 12
+        },
+        {
+          "is_prime": false,
+          "n": 285,
+          "owner": 3,
+          "raw_hits": [
+            3,
+            5
+          ],
+          "rejected_hits": [
+            5
+          ],
+          "slot": 13
+        },
+        {
+          "is_prime": false,
+          "n": 286,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            11,
+            13
+          ],
+          "rejected_hits": [
+            11,
+            13
+          ],
+          "slot": 14
+        },
+        {
+          "is_prime": false,
+          "n": 287,
+          "owner": 7,
+          "raw_hits": [
+            7
+          ],
+          "rejected_hits": [],
+          "slot": 15
+        },
+        {
+          "is_prime": false,
+          "n": 288,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 16
+        }
+      ],
+      "zero_row_iff_rejection_equals_raw_surplus": true
+    },
+    {
+      "P": 101,
+      "composite_slots_sample": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "inside_p_square": true,
+      "internal_interval": [
+        5051,
+        5150
+      ],
+      "k": 50,
+      "length": 100,
+      "max_raw_hits_on_slot": 4,
+      "owner_counts": {
+        "2": 50,
+        "3": 16,
+        "5": 6,
+        "7": 3,
+        "11": 3,
+        "13": 2,
+        "19": 2,
+        "23": 1,
+        "31": 1,
+        "37": 2,
+        "47": 1,
+        "53": 1,
+        "61": 1
+      },
+      "owner_total": 89,
+      "positive_defect_iff_rejection_strictly_exceeds_raw_surplus": true,
+      "prime_count": 11,
+      "prime_equals_rejection_minus_raw_surplus": true,
+      "prime_slots_sample": [
+        1,
+        9,
+        27,
+        31,
+        37,
+        49,
+        51,
+        57,
+        63,
+        69,
+        97
+      ],
+      "raw_counts": {
+        "2": 50,
+        "3": 33,
+        "5": 20,
+        "7": 14,
+        "11": 9,
+        "13": 8,
+        "17": 5,
+        "19": 6,
+        "23": 4,
+        "29": 3,
+        "31": 4,
+        "37": 3,
+        "41": 2,
+        "43": 2,
+        "47": 2,
+        "53": 2,
+        "59": 2,
+        "61": 2,
+        "67": 1,
+        "71": 1
+      },
+      "raw_equals_owner_plus_rejection": true,
+      "raw_incidence_total": 173,
+      "raw_surplus_over_row": 73,
+      "rejection_counts": {
+        "3": 17,
+        "5": 14,
+        "7": 11,
+        "11": 6,
+        "13": 6,
+        "17": 5,
+        "19": 4,
+        "23": 3,
+        "29": 3,
+        "31": 3,
+        "37": 1,
+        "41": 2,
+        "43": 2,
+        "47": 1,
+        "53": 1,
+        "59": 2,
+        "61": 1,
+        "67": 1,
+        "71": 1
+      },
+      "rejection_excess_over_raw_surplus": 11,
+      "rejection_total": 84,
+      "root_bound": 71,
+      "root_prime_count": 20,
+      "slot_rows_sample": [
+        {
+          "is_prime": true,
+          "n": 5051,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 1
+        },
+        {
+          "is_prime": false,
+          "n": 5052,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 2
+        },
+        {
+          "is_prime": false,
+          "n": 5053,
+          "owner": 31,
+          "raw_hits": [
+            31
+          ],
+          "rejected_hits": [],
+          "slot": 3
+        },
+        {
+          "is_prime": false,
+          "n": 5054,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            7,
+            19
+          ],
+          "rejected_hits": [
+            7,
+            19
+          ],
+          "slot": 4
+        },
+        {
+          "is_prime": false,
+          "n": 5055,
+          "owner": 3,
+          "raw_hits": [
+            3,
+            5
+          ],
+          "rejected_hits": [
+            5
+          ],
+          "slot": 5
+        },
+        {
+          "is_prime": false,
+          "n": 5056,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 6
+        },
+        {
+          "is_prime": false,
+          "n": 5057,
+          "owner": 13,
+          "raw_hits": [
+            13
+          ],
+          "rejected_hits": [],
+          "slot": 7
+        },
+        {
+          "is_prime": false,
+          "n": 5058,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 8
+        },
+        {
+          "is_prime": true,
+          "n": 5059,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 9
+        },
+        {
+          "is_prime": false,
+          "n": 5060,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            5,
+            11,
+            23
+          ],
+          "rejected_hits": [
+            5,
+            11,
+            23
+          ],
+          "slot": 10
+        },
+        {
+          "is_prime": false,
+          "n": 5061,
+          "owner": 3,
+          "raw_hits": [
+            3,
+            7
+          ],
+          "rejected_hits": [
+            7
+          ],
+          "slot": 11
+        },
+        {
+          "is_prime": false,
+          "n": 5062,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 12
+        },
+        {
+          "is_prime": false,
+          "n": 5063,
+          "owner": 61,
+          "raw_hits": [
+            61
+          ],
+          "rejected_hits": [],
+          "slot": 13
+        },
+        {
+          "is_prime": false,
+          "n": 5064,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 14
+        },
+        {
+          "is_prime": false,
+          "n": 5065,
+          "owner": 5,
+          "raw_hits": [
+            5
+          ],
+          "rejected_hits": [],
+          "slot": 15
+        },
+        {
+          "is_prime": false,
+          "n": 5066,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            17
+          ],
+          "rejected_hits": [
+            17
+          ],
+          "slot": 16
+        },
+        {
+          "is_prime": false,
+          "n": 5067,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 17
+        },
+        {
+          "is_prime": false,
+          "n": 5068,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            7
+          ],
+          "rejected_hits": [
+            7
+          ],
+          "slot": 18
+        }
+      ],
+      "zero_row_iff_rejection_equals_raw_surplus": true
+    },
+    {
+      "P": 101,
+      "composite_slots_sample": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "inside_p_square": true,
+      "internal_interval": [
+        10101,
+        10200
+      ],
+      "k": 100,
+      "length": 100,
+      "max_raw_hits_on_slot": 4,
+      "owner_counts": {
+        "2": 50,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1
+      },
+      "owner_total": 88,
+      "positive_defect_iff_rejection_strictly_exceeds_raw_surplus": true,
+      "prime_count": 12,
+      "prime_equals_rejection_minus_raw_surplus": true,
+      "prime_slots_sample": [
+        3,
+        11,
+        33,
+        39,
+        41,
+        51,
+        59,
+        63,
+        69,
+        77,
+        81,
+        93
+      ],
+      "raw_counts": {
+        "2": 50,
+        "3": 34,
+        "5": 20,
+        "7": 15,
+        "11": 9,
+        "13": 8,
+        "17": 6,
+        "19": 5,
+        "23": 4,
+        "29": 3,
+        "31": 4,
+        "37": 3,
+        "41": 2,
+        "43": 3,
+        "47": 3,
+        "53": 2,
+        "59": 1,
+        "61": 2,
+        "67": 2,
+        "71": 1,
+        "73": 1,
+        "79": 2,
+        "83": 1,
+        "89": 1,
+        "97": 1
+      },
+      "raw_equals_owner_plus_rejection": true,
+      "raw_incidence_total": 183,
+      "raw_surplus_over_row": 83,
+      "rejection_counts": {
+        "3": 17,
+        "5": 13,
+        "7": 11,
+        "11": 7,
+        "13": 7,
+        "17": 5,
+        "19": 5,
+        "23": 3,
+        "29": 2,
+        "31": 4,
+        "37": 3,
+        "41": 2,
+        "43": 3,
+        "47": 3,
+        "53": 1,
+        "59": 1,
+        "61": 1,
+        "67": 1,
+        "71": 1,
+        "79": 2,
+        "83": 1,
+        "89": 1,
+        "97": 1
+      },
+      "rejection_excess_over_raw_surplus": 12,
+      "rejection_total": 95,
+      "root_bound": 100,
+      "root_prime_count": 25,
+      "slot_rows_sample": [
+        {
+          "is_prime": false,
+          "n": 10101,
+          "owner": 3,
+          "raw_hits": [
+            3,
+            7,
+            13,
+            37
+          ],
+          "rejected_hits": [
+            7,
+            13,
+            37
+          ],
+          "slot": 1
+        },
+        {
+          "is_prime": false,
+          "n": 10102,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 2
+        },
+        {
+          "is_prime": true,
+          "n": 10103,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 3
+        },
+        {
+          "is_prime": false,
+          "n": 10104,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 4
+        },
+        {
+          "is_prime": false,
+          "n": 10105,
+          "owner": 5,
+          "raw_hits": [
+            5,
+            43,
+            47
+          ],
+          "rejected_hits": [
+            43,
+            47
+          ],
+          "slot": 5
+        },
+        {
+          "is_prime": false,
+          "n": 10106,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            31
+          ],
+          "rejected_hits": [
+            31
+          ],
+          "slot": 6
+        },
+        {
+          "is_prime": false,
+          "n": 10107,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 7
+        },
+        {
+          "is_prime": false,
+          "n": 10108,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            7,
+            19
+          ],
+          "rejected_hits": [
+            7,
+            19
+          ],
+          "slot": 8
+        },
+        {
+          "is_prime": false,
+          "n": 10109,
+          "owner": 11,
+          "raw_hits": [
+            11
+          ],
+          "rejected_hits": [],
+          "slot": 9
+        },
+        {
+          "is_prime": false,
+          "n": 10110,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3,
+            5
+          ],
+          "rejected_hits": [
+            3,
+            5
+          ],
+          "slot": 10
+        },
+        {
+          "is_prime": true,
+          "n": 10111,
+          "owner": null,
+          "raw_hits": [],
+          "rejected_hits": [],
+          "slot": 11
+        },
+        {
+          "is_prime": false,
+          "n": 10112,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            79
+          ],
+          "rejected_hits": [
+            79
+          ],
+          "slot": 12
+        },
+        {
+          "is_prime": false,
+          "n": 10113,
+          "owner": 3,
+          "raw_hits": [
+            3
+          ],
+          "rejected_hits": [],
+          "slot": 13
+        },
+        {
+          "is_prime": false,
+          "n": 10114,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            13
+          ],
+          "rejected_hits": [
+            13
+          ],
+          "slot": 14
+        },
+        {
+          "is_prime": false,
+          "n": 10115,
+          "owner": 5,
+          "raw_hits": [
+            5,
+            7,
+            17
+          ],
+          "rejected_hits": [
+            7,
+            17
+          ],
+          "slot": 15
+        },
+        {
+          "is_prime": false,
+          "n": 10116,
+          "owner": 2,
+          "raw_hits": [
+            2,
+            3
+          ],
+          "rejected_hits": [
+            3
+          ],
+          "slot": 16
+        },
+        {
+          "is_prime": false,
+          "n": 10117,
+          "owner": 67,
+          "raw_hits": [
+            67
+          ],
+          "rejected_hits": [],
+          "slot": 17
+        },
+        {
+          "is_prime": false,
+          "n": 10118,
+          "owner": 2,
+          "raw_hits": [
+            2
+          ],
+          "rejected_hits": [],
+          "slot": 18
+        }
+      ],
+      "zero_row_iff_rejection_equals_raw_surplus": true
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json": "80ae10c28cd1700bb3e5fb1280198a2332468800f9ea8e306dd8d699a22716f6",
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json": "dbd0f06356306594afff56e4a199bdc4b27c7eb43688825b17cfd189ca8efa1c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.json": "d0b1755f1ba90db1c954b73254aad74aef846825e80dc38b7a128638e7550b6c",
+    "docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json": "29531aaae09ccded34fee1864cffa649834298d947fd7ba74637a85fd88c9b40",
+    "experiments/prime_matrix_phi_lpf_strict_k_raw_rejection_balance_router.py": "3fe9295a5d5e330d3d6783d2aa12348da3b25a02fb8fd643b2d80e2d0de617af"
+  },
+  "status": "strict_k_raw_rejection_balance_identity_closed_but_strict_excess_open",
+  "strict_k_range": "1<k<P",
+  "zero_row_condition": "zero row iff RejectionMass=RawTotal-(P-1), positive row iff RejectionMass>RawTotal-(P-1)",
+  "zero_row_iff_exact_raw_rejection_balance_proved": true
+}

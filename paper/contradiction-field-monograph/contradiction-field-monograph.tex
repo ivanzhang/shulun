@@ -10884,6 +10884,63 @@ slot problem, so the row/column theorem remains open.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) raw rejection balance]
+In the same strict row \(I_k=\{kP+a:1\le a<P\}\), let
+\[
+  R(k)=\#\{(a,p):1\le a<P,\ p\le\sqrt{kP+P-1},\ p\mid kP+a\}
+\]
+be the total raw root-prime incidence.  Let \(O(k)=\sum_p M_p(k)\) be the
+LPF-owner mass from the preceding theorem, and let \(E(k)\) be the number of
+raw incidences whose prime \(p\) is not the least prime factor of the same
+slot.  Then
+\[
+  R(k)=O(k)+E(k).
+\]
+Consequently the row-prime count has the exact signed form
+\[
+  \#\{a:\ kP+a\hbox{ is prime}\}
+  =E(k)-\bigl(R(k)-(P-1)\bigr).
+\]
+Thus a zero row is equivalent to the critical raw/rejection balance
+\[
+  E(k)=R(k)-(P-1),
+\]
+while a positive row is equivalent to the strict imbalance
+\[
+  E(k)>R(k)-(P-1).
+\]
+Raw incidence capacity alone therefore gives no contradiction: its excess over
+the row length can be absorbed exactly by non-owner LPF rejections.  The
+remaining non-circular input is a proof of strict rejection excess, not merely
+a raw capacity estimate.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-raw-\\
+rejection-balance-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+raw\_incidence\_owner\_rejection\_partition\_proved=true\\
+prime\_count\_equals\_rejection\_excess\_proved=true\\
+zero\_row\_iff\_exact\_raw\_rejection\_balance\_proved=true\\
+raw\_capacity\_only\_contradiction\_rejected=true\\
+positive\_rejection\_excess\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+Every raw incidence is either the LPF-owner incidence of its slot or a hit by
+a larger prime factor after a smaller factor has already owned the slot.  This
+gives \(R(k)=O(k)+E(k)\).  Substituting the preceding owner identity
+\(\#\mathrm{PrimeSlots}=P-1-O(k)\) gives the displayed signed balance.  The
+certificate narrows the zero-row obstruction to an exact raw/rejection
+critical point, but it does not prove the strict inequality
+\(E(k)>R(k)-(P-1)\).  That inequality is still the full-root uncovered-slot
+problem in another exact coordinate system, so the row/column theorem remains
+open.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
