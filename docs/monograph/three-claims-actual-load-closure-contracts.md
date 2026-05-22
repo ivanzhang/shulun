@@ -23470,6 +23470,51 @@ Delta_closed_p-Delta_internal_p
 本层关闭的是端点余量捷径。当前硬点没有改变：仍需证明内部行 LPF 合数桶增量和
 `< P-1`，这仍等价于 full-root 未覆盖槽存在。行/列命题仍未无条件闭合。
 
+### 1.205 Phi-LPF strict-k internal owner saturation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_internal_owner_saturation_router.py
+data/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.json
+```
+
+同步读数为：
+
+```text
+internal_phi_bucket_equals_lpf_owner_partition_proved=true
+owner_residue_equation_pinned=true
+saturation_defect_equals_prime_count_proved=true
+zero_row_iff_owner_saturation_proved=true
+positive_saturation_defect_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：严格 `1<k<P` 的内部行已经被 Phi-LPF 完全转成 actual owner 账本。
+第 `p` 个 Phi 桶端点增量等于内部行中 LPF owner 为 `p` 的槽数。于是
+
+```text
+row_prime_count=(P-1)-sum_p Delta_internal_p
+               =P-1-sum_p OwnerMass_p.
+```
+
+每个 owner 桶还带有具体相位方程：
+
+```text
+a == -kP mod p,
+(kP+a)/p is p-rough.
+```
+
+所以零行反例不再是匿名覆盖，而是 LPF-owner 桶对 `P-1` 个内部槽的完全饱和。当前最窄硬点为：
+
+```text
+PositiveSaturationDefectForStrictKInternalLPFOwnerPartition.
+```
+
+这仍等价于 full-root 未覆盖槽存在，不能作为内部黑箱。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

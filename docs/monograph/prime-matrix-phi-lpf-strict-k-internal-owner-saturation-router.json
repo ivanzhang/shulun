@@ -1,0 +1,791 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_internal_owner_saturation_router",
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_sweep": {
+    "all_owner_saturation_identities_verified": true,
+    "case_count": 1010,
+    "failure_count": 0,
+    "failure_sample": [],
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 97,
+    "minimum_saturation_defect": 1,
+    "minimum_saturation_defect_cases": [
+      {
+        "P": 3,
+        "k": 2,
+        "saturation_defect": 1
+      },
+      {
+        "P": 5,
+        "k": 4,
+        "saturation_defect": 1
+      },
+      {
+        "P": 7,
+        "k": 3,
+        "saturation_defect": 1
+      },
+      {
+        "P": 11,
+        "k": 10,
+        "saturation_defect": 1
+      },
+      {
+        "P": 13,
+        "k": 9,
+        "saturation_defect": 1
+      },
+      {
+        "P": 17,
+        "k": 12,
+        "saturation_defect": 1
+      },
+      {
+        "P": 19,
+        "k": 15,
+        "saturation_defect": 1
+      }
+    ],
+    "zero_rows_found_in_finite_sweep": []
+  },
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "InternalPhiBucketEqualsLPFOwnerPartition",
+      "meaning": "内部行的 Phi 桶端点增量逐桶等于直接 LPF-owner 分桶计数。",
+      "proved": true,
+      "remaining": "exact owner ledger"
+    },
+    {
+      "closed": true,
+      "gate": "OwnerResidueEquationPinned",
+      "meaning": "若槽 a 归入 owner p，则 a == -kP mod p 且 (kP+a)/p 为 p-rough。",
+      "proved": true,
+      "remaining": "CRT residue plus rough cofactor"
+    },
+    {
+      "closed": true,
+      "gate": "SaturationDefectEqualsPrimeCount",
+      "meaning": "P-1 减去 owner 桶总质量，正是内部行素数数目。",
+      "proved": true,
+      "remaining": "defect = row prime count"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowIffOwnerSaturation",
+      "meaning": "零行反例等价于 LPF-owner 桶完全饱和 P-1 个内部槽。",
+      "proved": true,
+      "remaining": "zero row means no saturation defect"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityOnlyContradictionRejected",
+      "meaning": "owner 桶容量或样本正缺口不排除全饱和；仍需证明饱和缺陷为正。",
+      "proved": true,
+      "remaining": "need non-circular lower bound"
+    },
+    {
+      "closed": false,
+      "gate": "PositiveSaturationDefectProved",
+      "meaning": "尚未证明每个 1<k<P 内部行的饱和缺陷为正。",
+      "proved": false,
+      "remaining": "full-root uncovered-slot positivity"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层只把零行反例改写成 owner 饱和条件；未排除该条件。",
+      "proved": false,
+      "remaining": "Q1/Q2 transport, seed/PDEC scope, signed table, Rate, DStructure"
+    }
+  ],
+  "identity": "row_prime_count=(P-1)-sum_p Delta_internal_p=P-1-sum_p OwnerMass_p",
+  "internal_phi_bucket_equals_lpf_owner_partition_proved": true,
+  "no_theorem_switch": true,
+  "owner_residue_equation_pinned": true,
+  "plain_conclusion": "严格 1<k<P 的内部行中，Phi-LPF 桶端点增量不是近似量，而是直接 LPF-owner 分桶计数。行内素数数目等于 P-1 减去所有 owner 桶质量。因此零行反例被精确改写为 owner 桶全饱和；剩余硬点是证明饱和缺陷始终为正。",
+  "positive_saturation_defect_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_audits": [
+    {
+      "P": 5,
+      "composite_count": 3,
+      "direct_lpf_owner_counts": {
+        "2": 2,
+        "3": 1
+      },
+      "inside_p_square": true,
+      "internal_interval": [
+        21,
+        24
+      ],
+      "k": 4,
+      "length": 4,
+      "owner_residue_rows": [
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 2,
+          "residue_a_mod_owner": 0,
+          "slot_count": 2,
+          "slots_sample": [
+            2,
+            4
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 3,
+          "residue_a_mod_owner": 1,
+          "slot_count": 1,
+          "slots_sample": [
+            1
+          ]
+        }
+      ],
+      "phi_bucket_deltas": {
+        "2": 2,
+        "3": 1
+      },
+      "phi_deltas_equal_direct_owner_counts": true,
+      "prime_count": 1,
+      "prime_slots_sample": [
+        3
+      ],
+      "root_bound": 4,
+      "saturation_defect": 1,
+      "saturation_defect_equals_prime_count": true,
+      "zero_row_iff_owner_saturation": true
+    },
+    {
+      "P": 11,
+      "composite_count": 9,
+      "direct_lpf_owner_counts": {
+        "2": 5,
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "inside_p_square": true,
+      "internal_interval": [
+        111,
+        120
+      ],
+      "k": 10,
+      "length": 10,
+      "owner_residue_rows": [
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 2,
+          "residue_a_mod_owner": 0,
+          "slot_count": 5,
+          "slots_sample": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 3,
+          "residue_a_mod_owner": 1,
+          "slot_count": 2,
+          "slots_sample": [
+            1,
+            7
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 5,
+          "residue_a_mod_owner": 0,
+          "slot_count": 1,
+          "slots_sample": [
+            5
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 7,
+          "residue_a_mod_owner": 2,
+          "slot_count": 1,
+          "slots_sample": [
+            9
+          ]
+        }
+      ],
+      "phi_bucket_deltas": {
+        "2": 5,
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "phi_deltas_equal_direct_owner_counts": true,
+      "prime_count": 1,
+      "prime_slots_sample": [
+        3
+      ],
+      "root_bound": 10,
+      "saturation_defect": 1,
+      "saturation_defect_equals_prime_count": true,
+      "zero_row_iff_owner_saturation": true
+    },
+    {
+      "P": 17,
+      "composite_count": 13,
+      "direct_lpf_owner_counts": {
+        "2": 8,
+        "3": 3,
+        "5": 1,
+        "7": 1
+      },
+      "inside_p_square": true,
+      "internal_interval": [
+        273,
+        288
+      ],
+      "k": 16,
+      "length": 16,
+      "owner_residue_rows": [
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 2,
+          "residue_a_mod_owner": 0,
+          "slot_count": 8,
+          "slots_sample": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 3,
+          "residue_a_mod_owner": 1,
+          "slot_count": 3,
+          "slots_sample": [
+            1,
+            7,
+            13
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 5,
+          "residue_a_mod_owner": 3,
+          "slot_count": 1,
+          "slots_sample": [
+            3
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 7,
+          "residue_a_mod_owner": 1,
+          "slot_count": 1,
+          "slots_sample": [
+            15
+          ]
+        }
+      ],
+      "phi_bucket_deltas": {
+        "2": 8,
+        "3": 3,
+        "5": 1,
+        "7": 1
+      },
+      "phi_deltas_equal_direct_owner_counts": true,
+      "prime_count": 3,
+      "prime_slots_sample": [
+        5,
+        9,
+        11
+      ],
+      "root_bound": 16,
+      "saturation_defect": 3,
+      "saturation_defect_equals_prime_count": true,
+      "zero_row_iff_owner_saturation": true
+    },
+    {
+      "P": 101,
+      "composite_count": 89,
+      "direct_lpf_owner_counts": {
+        "2": 50,
+        "3": 16,
+        "5": 6,
+        "7": 3,
+        "11": 3,
+        "13": 2,
+        "19": 2,
+        "23": 1,
+        "31": 1,
+        "37": 2,
+        "47": 1,
+        "53": 1,
+        "61": 1
+      },
+      "inside_p_square": true,
+      "internal_interval": [
+        5051,
+        5150
+      ],
+      "k": 50,
+      "length": 100,
+      "owner_residue_rows": [
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 2,
+          "residue_a_mod_owner": 0,
+          "slot_count": 50,
+          "slots_sample": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 3,
+          "residue_a_mod_owner": 2,
+          "slot_count": 16,
+          "slots_sample": [
+            5,
+            11,
+            17,
+            23,
+            29,
+            35,
+            41,
+            47,
+            53,
+            59,
+            65,
+            71
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 5,
+          "residue_a_mod_owner": 0,
+          "slot_count": 6,
+          "slots_sample": [
+            15,
+            25,
+            45,
+            55,
+            75,
+            85
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 7,
+          "residue_a_mod_owner": 4,
+          "slot_count": 3,
+          "slots_sample": [
+            39,
+            67,
+            81
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 11,
+          "residue_a_mod_owner": 10,
+          "slot_count": 3,
+          "slots_sample": [
+            21,
+            43,
+            87
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 13,
+          "residue_a_mod_owner": 7,
+          "slot_count": 2,
+          "slots_sample": [
+            7,
+            33
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 19,
+          "residue_a_mod_owner": 4,
+          "slot_count": 2,
+          "slots_sample": [
+            61,
+            99
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 23,
+          "residue_a_mod_owner": 10,
+          "slot_count": 1,
+          "slots_sample": [
+            79
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 31,
+          "residue_a_mod_owner": 3,
+          "slot_count": 1,
+          "slots_sample": [
+            3
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 37,
+          "residue_a_mod_owner": 19,
+          "slot_count": 2,
+          "slots_sample": [
+            19,
+            93
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 47,
+          "residue_a_mod_owner": 26,
+          "slot_count": 1,
+          "slots_sample": [
+            73
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 53,
+          "residue_a_mod_owner": 38,
+          "slot_count": 1,
+          "slots_sample": [
+            91
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 61,
+          "residue_a_mod_owner": 13,
+          "slot_count": 1,
+          "slots_sample": [
+            13
+          ]
+        }
+      ],
+      "phi_bucket_deltas": {
+        "2": 50,
+        "3": 16,
+        "5": 6,
+        "7": 3,
+        "11": 3,
+        "13": 2,
+        "19": 2,
+        "23": 1,
+        "31": 1,
+        "37": 2,
+        "47": 1,
+        "53": 1,
+        "61": 1
+      },
+      "phi_deltas_equal_direct_owner_counts": true,
+      "prime_count": 11,
+      "prime_slots_sample": [
+        1,
+        9,
+        27,
+        31,
+        37,
+        49,
+        51,
+        57,
+        63,
+        69,
+        97
+      ],
+      "root_bound": 71,
+      "saturation_defect": 11,
+      "saturation_defect_equals_prime_count": true,
+      "zero_row_iff_owner_saturation": true
+    },
+    {
+      "P": 101,
+      "composite_count": 88,
+      "direct_lpf_owner_counts": {
+        "2": 50,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1
+      },
+      "inside_p_square": true,
+      "internal_interval": [
+        10101,
+        10200
+      ],
+      "k": 100,
+      "length": 100,
+      "owner_residue_rows": [
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 2,
+          "residue_a_mod_owner": 0,
+          "slot_count": 50,
+          "slots_sample": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 3,
+          "residue_a_mod_owner": 1,
+          "slot_count": 17,
+          "slots_sample": [
+            1,
+            7,
+            13,
+            19,
+            25,
+            31,
+            37,
+            43,
+            49,
+            55,
+            61,
+            67
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 5,
+          "residue_a_mod_owner": 0,
+          "slot_count": 7,
+          "slots_sample": [
+            5,
+            15,
+            35,
+            45,
+            65,
+            75,
+            95
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 7,
+          "residue_a_mod_owner": 1,
+          "slot_count": 4,
+          "slots_sample": [
+            29,
+            57,
+            71,
+            99
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 11,
+          "residue_a_mod_owner": 9,
+          "slot_count": 2,
+          "slots_sample": [
+            9,
+            53
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 13,
+          "residue_a_mod_owner": 1,
+          "slot_count": 1,
+          "slots_sample": [
+            27
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 17,
+          "residue_a_mod_owner": 15,
+          "slot_count": 1,
+          "slots_sample": [
+            83
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 23,
+          "residue_a_mod_owner": 20,
+          "slot_count": 1,
+          "slots_sample": [
+            89
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 29,
+          "residue_a_mod_owner": 21,
+          "slot_count": 1,
+          "slots_sample": [
+            21
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 53,
+          "residue_a_mod_owner": 23,
+          "slot_count": 1,
+          "slots_sample": [
+            23
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 61,
+          "residue_a_mod_owner": 26,
+          "slot_count": 1,
+          "slots_sample": [
+            87
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 67,
+          "residue_a_mod_owner": 17,
+          "slot_count": 1,
+          "slots_sample": [
+            17
+          ]
+        },
+        {
+          "all_slots_have_owner": true,
+          "all_slots_satisfy_residue": true,
+          "owner": 73,
+          "residue_a_mod_owner": 47,
+          "slot_count": 1,
+          "slots_sample": [
+            47
+          ]
+        }
+      ],
+      "phi_bucket_deltas": {
+        "2": 50,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1
+      },
+      "phi_deltas_equal_direct_owner_counts": true,
+      "prime_count": 12,
+      "prime_slots_sample": [
+        3,
+        11,
+        33,
+        39,
+        41,
+        51,
+        59,
+        63,
+        69,
+        77,
+        81,
+        93
+      ],
+      "root_bound": 100,
+      "saturation_defect": 12,
+      "saturation_defect_equals_prime_count": true,
+      "zero_row_iff_owner_saturation": true
+    }
+  ],
+  "saturation_defect_equals_prime_count_proved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json": "80ae10c28cd1700bb3e5fb1280198a2332468800f9ea8e306dd8d699a22716f6",
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json": "dbd0f06356306594afff56e4a199bdc4b27c7eb43688825b17cfd189ca8efa1c",
+    "docs/monograph/prime-matrix-short-interval-rough-residue-barrier-router.json": "29531aaae09ccded34fee1864cffa649834298d947fd7ba74637a85fd88c9b40",
+    "experiments/prime_matrix_phi_lpf_strict_k_internal_owner_saturation_router.py": "8c79653d03fd532b00476827488f4116c6299816531551efa8991bb9cf1a89db"
+  },
+  "status": "strict_k_internal_owner_saturation_identity_closed_but_positive_defect_open",
+  "strict_k_range": "1<k<P",
+  "zero_row_condition": "zero row iff sum_p OwnerMass_p=P-1 iff LPF-owner buckets saturate every internal slot",
+  "zero_row_iff_owner_saturation_proved": true
+}

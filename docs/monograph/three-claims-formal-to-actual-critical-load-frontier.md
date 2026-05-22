@@ -17351,6 +17351,59 @@ sum Delta_internal_p < P-1,
 
 也就是 full-root 未覆盖槽存在。行/列命题仍未无条件闭合。
 
+## 432. Phi-LPF strict-k internal owner saturation frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_internal_owner_saturation_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.json
+data/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-ledger.json
+```
+
+同步结果：
+
+```text
+internal_phi_bucket_equals_lpf_owner_partition_proved=true
+owner_residue_equation_pinned=true
+saturation_defect_equals_prime_count_proved=true
+zero_row_iff_owner_saturation_proved=true
+positive_saturation_defect_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：端点余量被抵消后，内部行的 Phi-LPF 桶端点增量不只是计算工具，
+而是逐桶等于直接 LPF-owner 分桶：
+
+```text
+row_prime_count
+=(P-1)-sum_p Delta_internal_p
+=P-1-sum_p OwnerMass_p.
+```
+
+若内部槽 `a` 由 owner `p` 负责，则它满足
+
+```text
+a == -kP mod p,
+(kP+a)/p is p-rough.
+```
+
+因此零行反例被精确改写为：
+
+```text
+sum_p OwnerMass_p=P-1,
+```
+
+也就是 LPF-owner 桶完全饱和内部行的每一个槽。样本正缺陷、Mertens 密度或 raw capacity
+都不能替代证明。当前硬点进一步压成：
+
+```text
+PositiveSaturationDefectForStrictKInternalLPFOwnerPartition.
+```
+
+该正缺陷仍等价于 full-root 未覆盖槽存在，即 row-prime 内容本身。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

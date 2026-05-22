@@ -10829,6 +10829,61 @@ theorem remains open.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) internal owner saturation]
+In the strict \(1<k<P\) row
+\[
+  I_k=\{kP+a:1\le a<P\},
+\]
+the Phi-LPF internal bucket increment equals the direct LPF-owner partition.
+If \(M_p(k)\) denotes the number of slots \(a\) for which
+\(\operatorname{LPF}(kP+a)=p\), then
+\[
+  \Delta_p^{\rm int}=M_p(k)
+\]
+for every prime \(p\le \sqrt{kP+P-1}\).  Hence
+\[
+  \#\{a:\ kP+a\hbox{ is prime}\}
+  =(P-1)-\sum_p\Delta_p^{\rm int}
+  =(P-1)-\sum_p M_p(k).
+\]
+Moreover, a slot assigned to owner \(p\) satisfies the explicit owner equation
+\[
+  a\equiv -kP\pmod p,\qquad (kP+a)/p\hbox{ is }p\hbox{-rough}.
+\]
+Therefore a zero row is equivalent to exact LPF-owner saturation:
+\[
+  \sum_p M_p(k)=P-1.
+\]
+The unresolved point is the strict positive saturation defect
+\[
+  P-1-\sum_p M_p(k)>0.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-internal-\\
+owner-saturation-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+internal\_phi\_bucket\_equals\_lpf\_owner\_partition\_proved=true\\
+owner\_residue\_equation\_pinned=true\\
+saturation\_defect\_equals\_prime\_count\_proved=true\\
+zero\_row\_iff\_owner\_saturation\_proved=true\\
+positive\_saturation\_defect\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The Phi-LPF identity counts a composite \(kP+a\) once, in the bucket of its
+least prime factor.  Conversely, a direct LPF-owner assignment has precisely
+the same bucket key and rough cofactor condition.  Since \(kP+a<P^2\), the
+unassigned slots are exactly the prime slots.  Thus the certificate closes
+the owner accounting and the zero-row equivalence.  It does not prove that the
+saturation defect is always positive; that remains the full-root uncovered
+slot problem, so the row/column theorem remains open.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
