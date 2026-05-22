@@ -23823,6 +23823,58 @@ OR PrimeSquareUpperCollarPrimeInput.
 
 行/列命题仍未无条件闭合。
 
+### 1.212 Phi-LPF strict-k row high-prime payment support 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_row_high_prime_payment_support_router.py
+data/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-router.json
+```
+
+同步读数为：
+
+```text
+general_capacity_deficit_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：对任意 `1<k<P`，若行内槽位 `n=mr` 有素因子 `r>P` 且不是素数槽，
+则
+
+```text
+m<n/P<k+1, hence 2<=m<=k.
+```
+
+所以行级 high-prime 分裂为：
+
+```text
+P-1=H_1(k,P)+sum_{2<=m<=k}H_m(k,P)+S_k(P)
+H_1(k,P)=pi((k+1)P-1)-pi(kP)
+H_m(k,P)=pi(floor(((k+1)P-1)/m))-pi(floor(kP/m)), 2<=m<=k.
+```
+
+`H_1(k,P)` 是目标素数槽；`2<=m<=k` 是低载体支付；`S_k(P)` 是全部素因子 `<=P`
+的 smooth 合数槽。正性等价于容量缺口：
+
+```text
+sum_{2<=m<=k}H_m(k,P)+S_k(P)<=P-2.
+```
+
+有限审计到 `P<=1009` 的 `76797` 个 strict 行全部正，但不作为全局证明。该审计还显示：
+顶行是最大 carrier 支撑，但低 k 行可能有更高的 `P`-smooth 比例。因此剩余接口拆成：
+
+```text
+StrictKLowCarrierPaymentCapacityDeficit
+OR StrictKPSmoothCapacityDeficit
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

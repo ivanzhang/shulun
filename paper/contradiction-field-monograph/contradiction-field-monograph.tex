@@ -11216,6 +11216,55 @@ current corpus has not proved this capacity deficit globally.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-row high-prime payment support]
+Fix an odd prime \(P\) and \(1<k<P\).  For the row
+\[
+  I_{k,P}=\{kP+a:1\le a<P\},
+\]
+if \(n=mr\in I_{k,P}\) has a prime factor \(r>P\), then
+\[
+  m=\frac{n}{r}<\frac{(k+1)P}{P}=k+1.
+\]
+Thus either \(m=1\), which is the prime-slot case, or \(2\le m\le k\).  Hence
+\[
+  P-1=H_1(k,P)+\sum_{2\le m\le k}H_m(k,P)+S_k(P),
+\]
+where
+\[
+  H_1(k,P)=\pi((k+1)P-1)-\pi(kP),
+\]
+\[
+  H_m(k,P)=
+  \pi\!\left(\left\lfloor\frac{(k+1)P-1}{m}\right\rfloor\right)
+  -\pi\!\left(\left\lfloor\frac{kP}{m}\right\rfloor\right)
+  \qquad(2\le m\le k),
+\]
+and \(S_k(P)\) counts row slots all of whose prime factors are at most \(P\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-\\
+high-prime-payment-support-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+general\_capacity\_deficit\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The support bound follows from \(n<(k+1)P\).  Since \(n<P^2\), a row slot has
+at most one prime factor \(>P\).  Therefore the cases \(m=1\), \(2\le m\le k\),
+and no factor \(>P\) are disjoint and exhaustive.  The target positivity is
+\(H_1(k,P)\ge1\), so this route still requires
+\[
+  \sum_{2\le m\le k}H_m(k,P)+S_k(P)\le P-2.
+\]
+The finite audit finds no failure through \(P\le1009\), but that audit only
+checks the implementation scale.  It does not prove the global strict-row
+capacity deficit.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

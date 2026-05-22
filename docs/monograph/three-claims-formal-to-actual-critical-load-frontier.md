@@ -17782,6 +17782,64 @@ OR PrimeSquareUpperCollarPrimeInput.
 
 行/列命题仍未无条件闭合。
 
+## 439. Phi-LPF strict-k row high-prime payment support frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_row_high_prime_payment_support_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-router.json
+data/prime-matrix-phi-lpf-strict-k-row-high-prime-payment-support-ledger.json
+```
+
+同步结果：
+
+```text
+general_capacity_deficit_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：任意 strict 行
+
+```text
+I_{k,P}={kP+a:1<=a<P}, 1<k<P
+```
+
+中的 high-prime payment 支撑可以从顶行的 `2<=m<P` 精确缩成：
+
+```text
+If n=mr in I_{k,P} and r>P, then m<n/P<k+1, hence m<=k.
+```
+
+于是行级分裂为：
+
+```text
+P-1=H_1(k,P)+sum_{2<=m<=k}H_m(k,P)+S_k(P)
+H_1(k,P)=pi((k+1)P-1)-pi(kP)
+H_m(k,P)=pi(floor(((k+1)P-1)/m))-pi(floor(kP/m)), 2<=m<=k
+S_k(P)=# row slots with all prime factors <=P.
+```
+
+目标正性是 `H_1(k,P)>=1`。因此需要证明容量缺口：
+
+```text
+sum_{2<=m<=k}H_m(k,P)+S_k(P)<=P-2.
+```
+
+有限审计到 `P<=1009` 的 `76797` 个 strict 行全部正、分裂恒等式全部通过。读数显示：
+顶行 `k=P-1` 是最大 carrier 支撑硬核，但不总是最大 payment 比例；低 k 行可能由
+`P`-smooth 合数槽主导。该有限现象不作为全局证明。最新剩余接口为：
+
+```text
+StrictKLowCarrierPaymentCapacityDeficit
+OR StrictKPSmoothCapacityDeficit
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
