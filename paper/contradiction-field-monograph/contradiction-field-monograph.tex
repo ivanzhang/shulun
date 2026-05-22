@@ -11555,6 +11555,60 @@ prove the remaining source-window/\(P\)-smooth anti-tiling inequality.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) smooth owner quotient-window law]
+Fix a prime \(P\) and \(1<k<P\).  Let \(S_P(k)\) denote the number of composite
+entries \(n\in\{kP+a:1\le a<P\}\) whose prime factors are all at most \(P\).
+Then
+\[
+S_P(k)=
+\sum_{p\le\sqrt{(k+1)P-1}}
+\#\left\{\,q:
+\left\lfloor\frac{kP}{p}\right\rfloor<q\le
+\left\lfloor\frac{(k+1)P-1}{p}\right\rfloor,
+\operatorname{lpf}(q)\ge p,
+\operatorname{gpf}(q)\le P
+\,\right\},
+\]
+where \(\operatorname{lpf}\) and \(\operatorname{gpf}\) are respectively the
+least and greatest prime factors, with the condition \(q\ge p\) implicit in
+\(\operatorname{lpf}(q)\ge p\).  Consequently the strict row value is the exact
+dual-window difference
+\[
+  N_P(k)=(P-1)-B_P(k)-S_P(k),
+  \qquad
+  N_P(k)\ge1\Longleftrightarrow B_P(k)+S_P(k)\le P-2 .
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+Every \(P\)-smooth composite row entry \(n\) has a unique least prime factor
+\(p\), and then \(n=pq\).  The row condition is exactly the displayed quotient
+window for \(q\).  Minimality of \(p\) gives \(\operatorname{lpf}(q)\ge p\),
+while \(P\)-smoothness gives \(\operatorname{gpf}(q)\le P\).  Conversely, any
+pair \((p,q)\) counted by the displayed window produces a row entry \(pq\)
+whose least prime factor is \(p\) and whose greatest prime factor is at most
+\(P\).  The owner \(p\) is unique, so the sum has no double counting.  Combining
+this with the preceding high-prime Beatty source-window theorem gives the
+dual-window value.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-smooth-owner-\\
+quotient-window-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_dual\_quotient\_window\_identities\_hold=true\\
+strict\_row\_count=6227\\
+minimum\_prime\_count=1\\
+finite\_evidence\_not\_used\_as\_global\_proof=true.
+\end{quote}
+The finite audit through \(P\le257\) verifies the direct slot split, the
+high-prime Beatty windows, the smooth owner windows, and the dual formula on
+\(6227\) strict rows.  This closes the smooth source-domain accounting; it does
+not prove the remaining dual-window anti-tiling inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

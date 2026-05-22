@@ -24208,6 +24208,67 @@ P=1009, k=1008, payment=670, nonempty_windows=368, max_source_row=504.
 它关闭的是 payment 源行与源窗口选择自由；未证明这些源窗口供给与 `P`-smooth 槽不能
 共同铺满目标行。行/列命题仍未无条件闭合。
 
+### 1.219 Phi-LPF strict-k smooth owner quotient-window 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_smooth_owner_quotient_window_router.py
+data/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-router.json
+```
+
+同步读数为：
+
+```text
+all_dual_quotient_window_identities_hold=true
+strict_row_count=6227
+minimum_prime_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+actual-load 含义是：`P`-smooth 合数槽也不再是黑箱容量项。若 `n=pq` 落在
+`[kP+1,(k+1)P-1]` 且 `p` 是最小素因子，则 `q` 必须落在 owner prime `p` 的商窗口：
+
+```text
+S_P(k)=sum_{p<=sqrt((k+1)P-1)} #{ q :
+  floor(kP/p)<q<=floor(((k+1)P-1)/p),
+  least_prime_factor(q)>=p,
+  greatest_prime_factor(q)<=P }.
+```
+
+结合上一层 high-prime Beatty/Euclidean source windows，strict 行素数个数成为双窗口
+精确值：
+
+```text
+N_P(k)=(P-1)-B_P(k)-S_P(k),
+N_P(k)>=1 iff B_P(k)+S_P(k)<=P-2.
+```
+
+有限审计到 `P<=257` 验证 direct slots、Beatty high-prime 槽、smooth owner 商窗口与
+dual formula 完全一致。最大 smooth 样本为：
+
+```text
+P=257, k=2, N=39, B=21, S=196, fill=0.847656.
+```
+
+最接近双窗口铺满样本仍为：
+
+```text
+P=59, k=42, N=3, B=40, S=15, fill=0.948276.
+```
+
+本层关闭的是 smooth 槽源域的 quotient-window 口径；剩余硬点不是“能否计数”，而是：
+
+```text
+DualWindowAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

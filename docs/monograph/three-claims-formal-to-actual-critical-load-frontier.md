@@ -18199,6 +18199,67 @@ OR SqrtGapInputAfterX.
 
 本层关闭的是 payment 源窗口选择自由，不是 strict 行正性的无条件证明。
 
+## 446. Phi-LPF strict-k smooth owner quotient-window frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_smooth_owner_quotient_window_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-router.json
+data/prime-matrix-phi-lpf-strict-k-smooth-owner-quotient-window-ledger.json
+```
+
+同步结果：
+
+```text
+all_dual_quotient_window_identities_hold=true
+strict_row_count=6227
+minimum_prime_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+formal-to-actual 含义是：`P`-smooth 槽也被推回确定的 LPF-owner 商窗口。若 `p` 是
+目标槽 `n=pq` 的最小素因子，则
+
+```text
+floor(kP/p)<q<=floor(((k+1)P-1)/p),
+least_prime_factor(q)>=p,
+greatest_prime_factor(q)<=P.
+```
+
+因此
+
+```text
+S_P(k)=sum_{p<=sqrt((k+1)P-1)} #{ admissible q in the p-owner window }.
+```
+
+与上一层
+
+```text
+B_P(k)=sum_{2<=m<=k} #{ prime r in the Euclidean Beatty source window }
+```
+
+合并后，strict 行正性完全等价于双窗口未铺满：
+
+```text
+N_P(k)=(P-1)-B_P(k)-S_P(k),
+N_P(k)>=1 iff B_P(k)+S_P(k)<=P-2.
+```
+
+有限审计显示最大 smooth 样本为 `P=257,k=2,N=39,B=21,S=196`；最接近铺满样本为
+`P=59,k=42,N=3,B=40,S=15,fill=0.948276`。
+
+最新剩余接口改名并收窄为：
+
+```text
+DualWindowAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+本层关闭的是 smooth source-domain 口径，不是 strict 行正性的无条件证明。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
