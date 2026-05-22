@@ -24731,6 +24731,49 @@ UpperBandForestShadowSaturationExclusionOrPDEC
 也就是要证明这片有序森林边集不能刚好饱和全部 half-rough survivor；若能饱和，则必须
 登记为显式森林饱和 PDEC。该层不关闭全局行/列命题。
 
+### 1.242 Phi-LPF punctured half-primorial forest phase 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_half_primorial_forest_phase_router.py
+data/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-router.json
+```
+
+同步读数为：
+
+```text
+status=shadow_free_and_upper_band_reduced_to_punctured_half_primorial_forest_phase
+max_prime=1009
+all_punctured_phase_identities_hold=true
+punctured_phase_failure_count=0
+saturation_row_count=0
+sample_saturation_row_count=0
+```
+
+actual-load 含义是：行内素数槽不再分 shadow-free 与 upper-band 两个对象，而统一写成
+
+```text
+{1<=t<P: gcd(kP+t,M_half(P))=1 and t not in F(P,k)}.
+```
+
+其中 `F(P,k)` 是 upper-band 的 reciprocal forest hole set；shadow-free lane 则是
+`F(P,k)=empty`。若某行失败，则全部 half-primorial survivors 必须落入这片森林孔：
+
+```text
+{t: gcd(kP+t,M_half(P))=1} subset F(P,k)
+```
+
+最新统一剩余为：
+
+```text
+PuncturedHalfPrimorialForestPhaseAvoidanceOrPDEC
+```
+
+该层不证明特殊相位避让，只把两个剩余口合并为一个 punctured covered-block 问题。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -18746,6 +18746,56 @@ UpperBandForestShadowSaturationExclusionOrPDEC.
 
 本层不证明森林饱和不可能，也不证明三目标命题。
 
+## 457. Phi-LPF punctured half-primorial forest phase frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_half_primorial_forest_phase_router.py
+docs/monograph/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-router.json
+data/prime-matrix-phi-lpf-punctured-half-primorial-forest-phase-ledger.json
+```
+
+同步结果：
+
+```text
+status=shadow_free_and_upper_band_reduced_to_punctured_half_primorial_forest_phase
+max_prime=1009
+all_punctured_phase_identities_hold=true
+saturation_row_count=0
+minimum_sample_prime_slots=4385
+next_direct_attack_target=PuncturedHalfPrimorialForestPhaseAvoidanceOrPDEC
+```
+
+formal-to-actual 含义是：设
+
+```text
+M_half(P)=prod_{q<=P/2, q prime} q,
+F(P,k)={t: t=qm-kP, q,m prime, P/2<q<=m<2P, kP<qm<(k+1)P}.
+```
+
+则行内素数槽精确等于
+
+```text
+{1<=t<P: gcd(kP+t,M_half(P))=1 and t not in F(P,k)}.
+```
+
+因此 shadow-free 子带是 `F(P,k)=empty` 的零孔特例；upper-band 是有序森林孔特例。
+若行失败，则所有半 primorial survivor 必须全部落入 forest holes：
+
+```text
+{t: gcd(kP+t,M_half(P))=1} subset F(P,k).
+```
+
+两个剩余口统一为：
+
+```text
+PuncturedHalfPrimorialForestPhaseAvoidanceOrPDEC.
+```
+
+本层只关闭等价转换和有限审计；不证明 punctured special phase 全局避让，也不证明三目标命题。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
