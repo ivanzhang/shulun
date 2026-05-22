@@ -1056,3 +1056,41 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 因此 FI/DI/BFI/Kuznetsov/Maynard 只能作为待匹配来源方向，不能只按名称引用。
 必须逐项匹配同一个 completed full-S non-AP WFD 对象、权重、窗口、模数范围、
 投影限制、de-completion 与端点误差预算，以及所需的固定 `log^{-A}` 节省。
+
+## 25. A1 source-admission 吸收后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_admission_absorption_sync_router.py
+data/prime-matrix-two-replacement-lines-source-admission-absorption-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-source-admission-absorption-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-admission-absorption-sync-router.json
+```
+
+本层把上一节内部线中的 `A1CleanBranchCanonicalSourceAdmission` 继续同步到
+strict source-admission branch absorption 与 post-source-admission macrocycle。A1 准入
+是 scoped 分支陈述：canonical RIW/Buchstab 分支可内部处理，但 generic/noncanonical
+分支仍必须外部化或回流。把它作为独立 OR 终端会把分支边界误当全局矛盾。
+
+最新内部自足线删除 A1 活动标签，改写为：
+
+```text
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+条件外部 KZ 支路可替换其中的循环外 payload 为：
+
+```text
+ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
+```
+
+但这仍只是条件输入；无黑箱外部版仍保留上一节的 FullS theorem-match / source-capacity /
+new-dispersion 三择一边界。

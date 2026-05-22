@@ -23440,3 +23440,57 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 外部引理版仍是条件闭合；无黑箱外部版仍需同对象 FullS theorem-match、actual source
 capacity 新定理或新 automorphic/dispersion 证明。
+
+## 330L. Two replacement lines A1 source-admission absorption frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_admission_absorption_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-source-admission-absorption-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-admission-absorption-sync-router.json
+data/prime-matrix-two-replacement-lines-source-admission-absorption-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_a1_source_admission_absorbed_to_outside_cycle_break_open
+a1_source_admission_active_after_sync=false
+source_root_active_after_sync=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`A1CleanBranchCanonicalSourceAdmission` 不是数值正性引理，
+也不是全局排斥原子。它只是 canonical/generic 分支边界；canonical RIW/Buchstab 分支可接入
+内部链条，generic/noncanonical 分支仍需外部化或回流。继续在 A1/PDEC/new-joint/KZ/KZ-E
+宏循环内改名不会产生下降量。
+
+最新内部实际承重门更新为：
+
+```text
+((AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+  OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+最新直接主攻：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层没有证明循环外输入、rate-bearing PDEC、RatePreservation 或 DStructure/Rankin。
