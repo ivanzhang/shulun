@@ -17840,6 +17840,63 @@ OR SqrtGapInputAfterX.
 
 行/列命题仍未无条件闭合。
 
+## 440. Phi-LPF strict-k row load phase tradeoff frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_row_load_phase_tradeoff_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-router.json
+data/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-ledger.json
+```
+
+同步结果：
+
+```text
+anti_cosaturation_inequality_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层容量缺口可归一化成两股负载的反同相问题。定义
+
+```text
+lambda(k,P)=sum_{2<=m<=k}H_m(k,P)/(P-1)
+sigma(k,P)=S_k(P)/(P-1)
+eta(k,P)=H_1(k,P)/(P-1).
+```
+
+则每个 strict 行满足精确恒等式：
+
+```text
+lambda(k,P)+sigma(k,P)+eta(k,P)=1.
+```
+
+目标正性等价于：
+
+```text
+H_1(k,P)>=1
+iff lambda(k,P)+sigma(k,P)<=1-1/(P-1).
+```
+
+因此问题不再是 Phi-LPF 公式是否精确；公式已经精确。真正硬点是证明 low-carrier payment
+负载 `lambda` 与 `P`-smooth 合数负载 `sigma` 不能同相饱和到 `1`。
+
+有限审计 `P<=1009`、`76797` 个 strict 行显示：`lambda` 峰值出现在高相位
+`P=37,k=36`，`sigma` 峰值出现在低相位 `P=863,k=2`，最大 `lambda+sigma`
+样本为 `P=571,k=438`，约 `0.952632`。同时没有发现 `lambda>=0.70` 且
+`sigma>=0.70` 的同行样本。该证据仅定位结构，不替代全局证明。
+
+最新剩余接口为：
+
+```text
+GlobalPaymentSmoothAntiCoSaturationInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

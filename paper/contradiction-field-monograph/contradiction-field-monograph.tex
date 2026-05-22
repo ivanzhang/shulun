@@ -11265,6 +11265,48 @@ capacity deficit.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-row load-phase tradeoff]
+For \(1<k<P\), define normalized row loads
+\[
+  \lambda(k,P)=\frac{\sum_{2\le m\le k}H_m(k,P)}{P-1},\qquad
+  \sigma(k,P)=\frac{S_k(P)}{P-1},\qquad
+  \eta(k,P)=\frac{H_1(k,P)}{P-1}.
+\]
+Then
+\[
+  \lambda(k,P)+\sigma(k,P)+\eta(k,P)=1.
+\]
+Moreover
+\[
+  H_1(k,P)\ge1
+  \quad\Longleftrightarrow\quad
+  \lambda(k,P)+\sigma(k,P)\le 1-\frac{1}{P-1}.
+\]
+Thus the strict-row Phi-LPF positivity problem is equivalent, in these
+variables, to excluding co-saturation of the low-carrier payment load
+\(\lambda\) and the \(P\)-smooth composite load \(\sigma\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-\\
+load-phase-tradeoff-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+anti\_cosaturation\_inequality\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The identity is the normalized form of the preceding high-prime payment support
+split.  The equivalence follows because \(H_1(k,P)\) is an integer.  The finite
+audit through \(P\le1009\) shows a phase separation: the largest payment load
+in the sweep occurs near the top phase, while the largest smooth load occurs at
+very small \(k/P\).  It also finds no row with both loads at least \(0.70\).
+These are finite diagnostics only.  The present corpus does not prove the
+global anti-co-saturation inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

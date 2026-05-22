@@ -23875,6 +23875,54 @@ OR SqrtGapInputAfterX.
 
 行/列命题仍未无条件闭合。
 
+### 1.213 Phi-LPF strict-k row load phase tradeoff 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_row_load_phase_tradeoff_router.py
+data/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-router.json
+```
+
+同步读数为：
+
+```text
+anti_cosaturation_inequality_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：将 strict 行容量缺口写成归一化负载：
+
+```text
+lambda(k,P)=sum_{2<=m<=k}H_m(k,P)/(P-1)
+sigma(k,P)=S_k(P)/(P-1)
+eta(k,P)=H_1(k,P)/(P-1)
+lambda(k,P)+sigma(k,P)+eta(k,P)=1.
+```
+
+于是
+
+```text
+H_1(k,P)>=1
+iff lambda(k,P)+sigma(k,P)<=1-1/(P-1).
+```
+
+这把剩余硬点压成 global anti-co-saturation：低载体 high-prime payment 与 `P`-smooth
+合数槽不能同相饱和。有限审计 `P<=1009` 的 `76797` 行显示 payment 峰值在高相位，
+smooth 峰值在低相位，最大总合数负载约 `0.952632`；但这只是有限结构证据。
+
+最新接口为：
+
+```text
+GlobalPaymentSmoothAntiCoSaturationInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
