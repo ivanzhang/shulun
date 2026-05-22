@@ -1,0 +1,729 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_top_row_half_rough_semiprime_shadow_router",
+  "status": "top_row_prime_count_equals_half_rough_survivor_excess_over_reciprocal_semiprime_shadow",
+  "definitions": {
+    "R_half": "#{1<=r<P: gcd(P^2-r, product_{q<=P/2} q)=1}",
+    "T_shadow": "sum_{P/2<q<P, q prime} #{m prime: floor((P^2-P)/q)<m<=floor((P^2-1)/q)}",
+    "identity": "pi(P^2-1)-pi(P^2-P)=R_half(P)-T_shadow(P)"
+  },
+  "structural_reason": {
+    "low_sieve_cut": "q<=P/2",
+    "composite_residual_lpf": "P/2<q<P",
+    "quotient_range": "P<m<2P",
+    "quotient_prime_for_P_ge_11": "if m were composite, all its prime factors would be >=q>P/2, forcing m>=q^2>2P",
+    "small_primes_checked_directly": [
+      5,
+      7
+    ],
+    "per_high_q_candidate_bound": "floor window length < 2, so at most two m candidates per q"
+  },
+  "finite_sweep": {
+    "max_prime": 5003,
+    "prime_base_count": 668,
+    "all_half_rough_identities_hold": true,
+    "identity_failure_count": 0,
+    "minimum_half_rough_minus_shadow": 1,
+    "minimum_margin_rows": [
+      {
+        "P": 5,
+        "slot_count": 4,
+        "low_prime_cutoff": 2,
+        "low_prime_count": 1,
+        "high_prime_count": 1,
+        "half_rough_survivor_count": 2,
+        "semiprime_shadow_count": 1,
+        "half_rough_minus_shadow": 1,
+        "direct_top_prime_count": 1,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 1,
+        "rough_r_prefix": [
+          2,
+          4
+        ],
+        "shadow_prefix": [
+          {
+            "q": 3,
+            "m": 7,
+            "r": 4
+          }
+        ],
+        "top_prime_prefix": [
+          23
+        ]
+      },
+      {
+        "P": 11,
+        "slot_count": 10,
+        "low_prime_cutoff": 5,
+        "low_prime_count": 3,
+        "high_prime_count": 1,
+        "half_rough_survivor_count": 2,
+        "semiprime_shadow_count": 1,
+        "half_rough_minus_shadow": 1,
+        "direct_top_prime_count": 1,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 1,
+        "rough_r_prefix": [
+          2,
+          8
+        ],
+        "shadow_prefix": [
+          {
+            "q": 7,
+            "m": 17,
+            "r": 2
+          }
+        ],
+        "top_prime_prefix": [
+          113
+        ]
+      }
+    ],
+    "max_shadow_ratio_row": {
+      "P": 37,
+      "slot_count": 36,
+      "low_prime_cutoff": 18,
+      "low_prime_count": 7,
+      "high_prime_count": 4,
+      "half_rough_survivor_count": 6,
+      "semiprime_shadow_count": 4,
+      "half_rough_minus_shadow": 2,
+      "direct_top_prime_count": 2,
+      "identity_holds": true,
+      "shadow_entries_have_prime_factors": true,
+      "shadow_entries_in_top_row": true,
+      "max_candidates_per_high_q": 2,
+      "two_candidate_high_q_count": 4,
+      "rough_r_prefix": [
+        2,
+        6,
+        8,
+        12,
+        20,
+        36
+      ],
+      "shadow_prefix": [
+        {
+          "q": 19,
+          "m": 71,
+          "r": 20
+        },
+        {
+          "q": 23,
+          "m": 59,
+          "r": 12
+        },
+        {
+          "q": 29,
+          "m": 47,
+          "r": 6
+        },
+        {
+          "q": 31,
+          "m": 43,
+          "r": 36
+        }
+      ],
+      "top_prime_prefix": [
+        1367,
+        1361
+      ]
+    },
+    "sample_rows": [
+      {
+        "P": 5,
+        "slot_count": 4,
+        "low_prime_cutoff": 2,
+        "low_prime_count": 1,
+        "high_prime_count": 1,
+        "half_rough_survivor_count": 2,
+        "semiprime_shadow_count": 1,
+        "half_rough_minus_shadow": 1,
+        "direct_top_prime_count": 1,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 1,
+        "rough_r_prefix": [
+          2,
+          4
+        ],
+        "shadow_prefix": [
+          {
+            "q": 3,
+            "m": 7,
+            "r": 4
+          }
+        ],
+        "top_prime_prefix": [
+          23
+        ]
+      },
+      {
+        "P": 7,
+        "slot_count": 6,
+        "low_prime_cutoff": 3,
+        "low_prime_count": 2,
+        "high_prime_count": 1,
+        "half_rough_survivor_count": 2,
+        "semiprime_shadow_count": 0,
+        "half_rough_minus_shadow": 2,
+        "direct_top_prime_count": 2,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 1,
+        "two_candidate_high_q_count": 0,
+        "rough_r_prefix": [
+          2,
+          6
+        ],
+        "shadow_prefix": [],
+        "top_prime_prefix": [
+          47,
+          43
+        ]
+      },
+      {
+        "P": 11,
+        "slot_count": 10,
+        "low_prime_cutoff": 5,
+        "low_prime_count": 3,
+        "high_prime_count": 1,
+        "half_rough_survivor_count": 2,
+        "semiprime_shadow_count": 1,
+        "half_rough_minus_shadow": 1,
+        "direct_top_prime_count": 1,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 1,
+        "rough_r_prefix": [
+          2,
+          8
+        ],
+        "shadow_prefix": [
+          {
+            "q": 7,
+            "m": 17,
+            "r": 2
+          }
+        ],
+        "top_prime_prefix": [
+          113
+        ]
+      },
+      {
+        "P": 17,
+        "slot_count": 16,
+        "low_prime_cutoff": 8,
+        "low_prime_count": 4,
+        "high_prime_count": 2,
+        "half_rough_survivor_count": 3,
+        "semiprime_shadow_count": 0,
+        "half_rough_minus_shadow": 3,
+        "direct_top_prime_count": 3,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 2,
+        "rough_r_prefix": [
+          6,
+          8,
+          12
+        ],
+        "shadow_prefix": [],
+        "top_prime_prefix": [
+          283,
+          281,
+          277
+        ]
+      },
+      {
+        "P": 101,
+        "slot_count": 100,
+        "low_prime_cutoff": 50,
+        "low_prime_count": 15,
+        "high_prime_count": 10,
+        "half_rough_survivor_count": 16,
+        "semiprime_shadow_count": 4,
+        "half_rough_minus_shadow": 12,
+        "direct_top_prime_count": 12,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 4,
+        "rough_r_prefix": [
+          8,
+          14,
+          20,
+          24,
+          32,
+          38,
+          42,
+          50,
+          54,
+          60,
+          62,
+          68,
+          78,
+          84,
+          90,
+          98
+        ],
+        "shadow_prefix": [
+          {
+            "q": 53,
+            "m": 191,
+            "r": 78
+          },
+          {
+            "q": 61,
+            "m": 167,
+            "r": 14
+          },
+          {
+            "q": 67,
+            "m": 151,
+            "r": 84
+          },
+          {
+            "q": 73,
+            "m": 139,
+            "r": 54
+          }
+        ],
+        "top_prime_prefix": [
+          10193,
+          10181,
+          10177,
+          10169,
+          10163,
+          10159,
+          10151,
+          10141,
+          10139,
+          10133,
+          10111,
+          10103
+        ]
+      },
+      {
+        "P": 257,
+        "slot_count": 256,
+        "low_prime_cutoff": 128,
+        "low_prime_count": 31,
+        "high_prime_count": 23,
+        "half_rough_survivor_count": 29,
+        "semiprime_shadow_count": 6,
+        "half_rough_minus_shadow": 23,
+        "direct_top_prime_count": 23,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 11,
+        "rough_r_prefix": [
+          2,
+          6,
+          8,
+          12,
+          20,
+          36,
+          42,
+          56,
+          66,
+          68,
+          86,
+          92,
+          98,
+          110,
+          120,
+          122
+        ],
+        "shadow_prefix": [
+          {
+            "q": 131,
+            "m": 503,
+            "r": 156
+          },
+          {
+            "q": 149,
+            "m": 443,
+            "r": 42
+          },
+          {
+            "q": 199,
+            "m": 331,
+            "r": 180
+          },
+          {
+            "q": 211,
+            "m": 313,
+            "r": 6
+          },
+          {
+            "q": 233,
+            "m": 283,
+            "r": 110
+          },
+          {
+            "q": 251,
+            "m": 263,
+            "r": 36
+          }
+        ],
+        "top_prime_prefix": [
+          66047,
+          66041,
+          66037,
+          66029,
+          65993,
+          65983,
+          65981,
+          65963,
+          65957,
+          65951,
+          65929,
+          65927,
+          65921,
+          65899,
+          65881,
+          65867
+        ]
+      },
+      {
+        "P": 1009,
+        "slot_count": 1008,
+        "low_prime_cutoff": 504,
+        "low_prime_count": 96,
+        "high_prime_count": 72,
+        "half_rough_survivor_count": 89,
+        "semiprime_shadow_count": 19,
+        "half_rough_minus_shadow": 70,
+        "direct_top_prime_count": 70,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 29,
+        "rough_r_prefix": [
+          24,
+          30,
+          44,
+          54,
+          60,
+          62,
+          74,
+          84,
+          114,
+          122,
+          128,
+          140,
+          144,
+          158,
+          192,
+          200
+        ],
+        "shadow_prefix": [
+          {
+            "q": 509,
+            "m": 1999,
+            "r": 590
+          },
+          {
+            "q": 547,
+            "m": 1861,
+            "r": 114
+          },
+          {
+            "q": 569,
+            "m": 1789,
+            "r": 140
+          },
+          {
+            "q": 587,
+            "m": 1733,
+            "r": 810
+          },
+          {
+            "q": 599,
+            "m": 1699,
+            "r": 380
+          },
+          {
+            "q": 601,
+            "m": 1693,
+            "r": 588
+          },
+          {
+            "q": 631,
+            "m": 1613,
+            "r": 278
+          },
+          {
+            "q": 643,
+            "m": 1583,
+            "r": 212
+          },
+          {
+            "q": 653,
+            "m": 1559,
+            "r": 54
+          },
+          {
+            "q": 701,
+            "m": 1451,
+            "r": 930
+          },
+          {
+            "q": 727,
+            "m": 1399,
+            "r": 1008
+          },
+          {
+            "q": 797,
+            "m": 1277,
+            "r": 312
+          },
+          {
+            "q": 823,
+            "m": 1237,
+            "r": 30
+          },
+          {
+            "q": 827,
+            "m": 1231,
+            "r": 44
+          },
+          {
+            "q": 839,
+            "m": 1213,
+            "r": 374
+          },
+          {
+            "q": 853,
+            "m": 1193,
+            "r": 452
+          }
+        ],
+        "top_prime_prefix": [
+          1018057,
+          1018021,
+          1018019,
+          1018007,
+          1017997,
+          1017959,
+          1017953,
+          1017923,
+          1017889,
+          1017881,
+          1017859,
+          1017857,
+          1017851,
+          1017847,
+          1017827,
+          1017817
+        ]
+      },
+      {
+        "P": 5003,
+        "slot_count": 5002,
+        "low_prime_cutoff": 2501,
+        "low_prime_count": 367,
+        "high_prime_count": 302,
+        "half_rough_survivor_count": 330,
+        "semiprime_shadow_count": 49,
+        "half_rough_minus_shadow": 281,
+        "direct_top_prime_count": 281,
+        "identity_holds": true,
+        "shadow_entries_have_prime_factors": true,
+        "shadow_entries_in_top_row": true,
+        "max_candidates_per_high_q": 2,
+        "two_candidate_high_q_count": 113,
+        "rough_r_prefix": [
+          2,
+          50,
+          68,
+          90,
+          128,
+          146,
+          152,
+          156,
+          168,
+          192,
+          198,
+          222,
+          240,
+          252,
+          276,
+          278
+        ],
+        "shadow_prefix": [
+          {
+            "q": 2539,
+            "m": 9857,
+            "r": 3086
+          },
+          {
+            "q": 2551,
+            "m": 9811,
+            "r": 2148
+          },
+          {
+            "q": 2557,
+            "m": 9787,
+            "r": 4650
+          },
+          {
+            "q": 2657,
+            "m": 9419,
+            "r": 3726
+          },
+          {
+            "q": 2659,
+            "m": 9413,
+            "r": 842
+          },
+          {
+            "q": 2671,
+            "m": 9371,
+            "r": 68
+          },
+          {
+            "q": 2677,
+            "m": 9349,
+            "r": 2736
+          },
+          {
+            "q": 2693,
+            "m": 9293,
+            "r": 3960
+          },
+          {
+            "q": 2753,
+            "m": 9091,
+            "r": 2486
+          },
+          {
+            "q": 2777,
+            "m": 9013,
+            "r": 908
+          },
+          {
+            "q": 2803,
+            "m": 8929,
+            "r": 2022
+          },
+          {
+            "q": 2837,
+            "m": 8821,
+            "r": 4832
+          },
+          {
+            "q": 2843,
+            "m": 8803,
+            "r": 3080
+          },
+          {
+            "q": 2851,
+            "m": 8779,
+            "r": 1080
+          },
+          {
+            "q": 2861,
+            "m": 8747,
+            "r": 4842
+          },
+          {
+            "q": 2879,
+            "m": 8693,
+            "r": 2862
+          }
+        ],
+        "top_prime_prefix": [
+          25029959,
+          25029881,
+          25029857,
+          25029853,
+          25029841,
+          25029817,
+          25029811,
+          25029769,
+          25029733,
+          25029731,
+          25029689,
+          25029677,
+          25029673,
+          25029647,
+          25029619,
+          25029611
+        ]
+      }
+    ],
+    "finite_evidence_not_used_as_global_proof": true
+  },
+  "decision_rows": [
+    {
+      "gate": "HalfRoughSplitIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "顶行素数数精确等于避开 q<=P/2 的平方相位幸存量减去 reciprocal prime-semiprime shadow。",
+      "remaining": "exact identity"
+    },
+    {
+      "gate": "CompositeHalfRoughForcesTwoPrimeShadow",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 P^2-r 避开所有 q<=P/2 且仍合成，则其 LPF q 在 (P/2,P)，商 m 在 (P,2P) 且为素数。",
+      "remaining": "none for structural split"
+    },
+    {
+      "gate": "EachHighQHasAtMostTwoReciprocalCandidates",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 q in (P/2,P)，m 的 reciprocal window 长度为 P/q<2，因此每个 q 至多给两个候选 m。",
+      "remaining": "candidate count only; prime filtering remains"
+    },
+    {
+      "gate": "FiniteSweepIdentityMatchesDirectPrimeCount",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限审计确认 R_{1/2}-T_{1/2} 与直接顶行素数计数一致，但不作为全局证明。",
+      "remaining": "finite audit only"
+    },
+    {
+      "gate": "HalfRoughExcessProvedUniformly",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明所有尾段素数 P 都满足 R_{1/2}(P)>T_{1/2}(P)。",
+      "remaining": "HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow"
+    },
+    {
+      "gate": "UnifiedPositiveCoreProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "本层只把顶行尾段硬点压成 half-rough excess；没有证明 strict 全行正性。",
+      "remaining": "SquarePhaseTailLongBlockPDECExclusion OR HalfRoughExcess"
+    }
+  ],
+  "unified_positive_core_proved": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow OR SquarePhaseTailLongBlockPDECExclusion",
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.json": "8ab6da3a1ad8bb73f3b4511f503c5914984cfeb1d8b62e05dcb63ce41ea6b381",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.json": "3ebb0f9350f9f3fd7b67ef5b4bf6d3cc407462439520a5e06e4a810b6f208489",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.json": "6180246c2e8eae53ef5b16c3731190746c95a781e528a85d08188efbc328ee6c",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json": "328ee462d76cb6213f976eee33133885f20109157d16cf80d236ae27d78d8993"
+  }
+}

@@ -11818,6 +11818,71 @@ lower bound, or a genuine global square-root-scale short-interval theorem.
 \end{proof}
 
 
+\begin{theorem}[Top-row half-rough semiprime shadow]
+For a prime \(P\), define
+\[
+  R_{1/2}(P)
+  =
+  \#\left\{1\le r<P:
+  \gcd\!\left(P^2-r,\prod_{q\le P/2}q\right)=1\right\},
+\]
+where \(q\) runs over primes, and define the reciprocal semiprime shadow
+\[
+  T_{1/2}(P)
+  =
+  \sum_{\substack{P/2<q<P\\ q\ {\rm prime}}}
+  \#\left\{m\ {\rm prime}:
+  \left\lfloor \frac{P^2-P}{q}\right\rfloor
+  <m\le
+  \left\lfloor \frac{P^2-1}{q}\right\rfloor
+  \right\}.
+\]
+Then
+\[
+  \pi(P^2-1)-\pi(P^2-P)=R_{1/2}(P)-T_{1/2}(P).
+\]
+Consequently the prime-indexed Oppermann-left top row is positive exactly when
+the half-rough survivor count strictly exceeds this reciprocal semiprime
+shadow.
+\end{theorem}
+\begin{proof}[Status and reference]
+The half-rough survivor set consists of the top-row entries \(P^2-r\) not
+divisible by any prime \(q\le P/2\).  Such a survivor is either prime or
+composite.  If it is composite, its least prime factor \(q\) must satisfy
+\(P/2<q<P\), since \(P^2-r<P^2\).  Write \(P^2-r=qm\).  The top-row
+inequality \(P^2-P<P^2-r<P^2\) gives
+\[
+  \frac{P^2-P}{q}<m<\frac{P^2}{q},
+\]
+and because \(q<P\) and \(q>P/2\), this puts \(m\) in \((P,2P)\).  For
+\(P\ge11\), \(m\) cannot be composite: all prime factors of \(m\) would be at
+least \(q>P/2\), forcing \(m\ge q^2>2P\).  The small prime bases are checked
+directly in the finite audit.  Thus every composite half-rough survivor is
+counted exactly once by the displayed \(T_{1/2}\), and every term of
+\(T_{1/2}\) gives a composite top-row survivor.  Subtracting the shadow from
+the half-rough survivor set leaves precisely the prime top-row entries.
+
+For each fixed \(q\in(P/2,P)\), the admissible \(m\)-window has length \(P/q<2\),
+so the shadow is a sparse reciprocal prime-pair graph, not a full LPF tree.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-top-row-half-\\
+rough-semiprime-shadow-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=5003\\
+all\_half\_rough\_identities\_hold=true\\
+minimum\_half\_rough\_minus\_shadow=1\\
+P=5003:\ R\_1/2=330,\ T\_1/2=49,\ direct\_top\_primes=281.
+\end{quote}
+This theorem is an exact reduction.  It does not prove the uniform inequality
+\(R_{1/2}(P)>T_{1/2}(P)\) in the infinite tail, but it makes the next hard point
+the named
+\(\texttt{HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow}\).
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

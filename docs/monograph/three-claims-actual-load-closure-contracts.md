@@ -24477,6 +24477,56 @@ OR genuine sqrt-scale theorem beyond 10^18.
 
 行/列命题仍未无条件闭合。
 
+### 1.224 Phi-LPF top-row half-rough semiprime shadow 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_top_row_half_rough_semiprime_shadow_router.py
+data/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-ledger.json
+docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.md
+docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.json
+```
+
+同步读数为：
+
+```text
+max_prime=5003
+prime_base_count=668
+all_half_rough_identities_hold=true
+minimum_half_rough_minus_shadow=1
+max_shadow_ratio_sample=P=37, R=6, T=4
+```
+
+actual-load 含义是：顶行尾段的低筛全覆盖可以再切一刀。定义
+
+```text
+R_1/2(P)=#{1<=r<P: gcd(P^2-r, product_{q<=P/2} q)=1}
+T_1/2(P)=sum_{P/2<q<P, q prime}
+  #{m prime: floor((P^2-P)/q)<m<=floor((P^2-1)/q)}.
+```
+
+则精确恒等式为：
+
+```text
+pi(P^2-1)-pi(P^2-P)=R_1/2(P)-T_1/2(P).
+```
+
+证明读法：避开所有 `q<=P/2` 的合数 `P^2-r`，其最小素因子必在 `(P/2,P)`；
+写成 `P^2-r=qm` 后，商 `m` 落在 `(P,2P)` 且必须为素数。对每个固定
+`q in (P/2,P)`，`m` 的 reciprocal window 长度 `<2`，所以每个 `q` 至多给两个候选。
+
+因此最新顶行尾段硬点进一步收缩为：
+
+```text
+HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow:
+  R_1/2(P)>T_1/2(P) for every remaining prime P.
+```
+
+若失败，则失败不是匿名 LPF 树铺满，而是 `(P/2,P)` 与 `(P,2P)` 的 reciprocal
+prime-semiprime shadow 铺满 half-rough survivor，应登记为 square-phase/semiprime-shadow
+PDEC。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

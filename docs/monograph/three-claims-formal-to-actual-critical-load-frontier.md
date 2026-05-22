@@ -18453,6 +18453,66 @@ OR genuine sqrt-scale theorem beyond 10^18.
 本层仍不证明 `UnifiedPositiveCore`；它只把有限初段归档并把无限尾段压成平方相位
 特殊长覆盖块。
 
+## 451. Phi-LPF top-row half-rough semiprime shadow frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_top_row_half_rough_semiprime_shadow_router.py
+docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.md
+docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.json
+data/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-ledger.json
+```
+
+同步结果：
+
+```text
+max_prime=5003
+all_half_rough_identities_hold=true
+minimum_half_rough_minus_shadow=1
+P=5003: R_1/2=330, T_1/2=49, direct_top_primes=281
+```
+
+formal-to-actual 含义是：顶行 `PrimeIndexedOppermannLeftHalf` 的无限尾段可以改写成
+half-rough excess。设
+
+```text
+R_1/2(P)=#{1<=r<P: gcd(P^2-r, product_{q<=P/2} q)=1}
+T_1/2(P)=sum_{P/2<q<P, q prime}
+  #{m prime: floor((P^2-P)/q)<m<=floor((P^2-1)/q)}.
+```
+
+则：
+
+```text
+N_top(P)=pi(P^2-1)-pi(P^2-P)=R_1/2(P)-T_1/2(P).
+```
+
+这不是新猜想，而是同一对象的更窄坐标：`R_1/2` 是平方相位在 `q<=P/2`
+之后仍幸存的槽数，`T_1/2` 是所有可能把这些幸存槽解释为合数的 reciprocal
+prime-semiprime shadow。因为剩余合数只能形如
+
+```text
+P^2-r=q*m,  P/2<q<P,  P<m<2P,  q,m both prime,
+```
+
+证明顶行正性等价于证明：
+
+```text
+R_1/2(P)>T_1/2(P).
+```
+
+最新真剩余接口更新为：
+
+```text
+HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow
+OR SquarePhaseTailLongBlockPDECExclusion
+OR genuine sqrt-scale theorem beyond 10^18.
+```
+
+本层仍不证明 `UnifiedPositiveCore`；它把尾段反例从完整 LPF 铺满压缩成 reciprocal
+semiprime shadow 铺满 half-rough survivor。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
