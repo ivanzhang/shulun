@@ -11447,6 +11447,62 @@ not prove the remaining Beatty/smooth anti-tiling inequality.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) endpoint Beatty--smooth exact value]
+For \(1<k<P\), let
+\[
+  N_P(k)=\pi((k+1)P-1)-\pi(kP).
+\]
+Then \(N_P(k)\) is the number of primes in the closed interval
+\([kP,kP+P]\), because the two endpoints \(kP\) and \((k+1)P\) are composite.
+The Phi-LPF endpoint difference and the Beatty payment source map give the
+same exact value:
+\[
+  N_P(k)
+  =(P-1)-\sum_{p\le\sqrt{(k+1)P-1}}
+  \left[
+  \Phi\!\left(\left\lfloor\frac{(k+1)P-1}{p}\right\rfloor,p\right)
+  -\Phi\!\left(\left\lfloor\frac{kP}{p}\right\rfloor,p\right)
+  \right]
+\]
+and
+\[
+  N_P(k)=(P-1)-B_P(k)-S_P(k),
+\]
+where \(B_P(k)\) is the Beatty near-multiple high-prime payment count and
+\(S_P(k)\) is the number of \(P\)-smooth composite slots in the row.  Hence
+\[
+  N_P(k)\ge1
+  \quad\Longleftrightarrow\quad
+  B_P(k)+S_P(k)\le P-2.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-\\
+beatty-smooth-value-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_endpoint\_beatty\_smooth\_value\_identities\_hold=true\\
+all\_rows\_positive\_in\_finite\_sweep=true\\
+minimum\_prime\_count=1\\
+finite\_evidence\_not\_used\_as\_global\_proof=true.
+\end{quote}
+The first displayed formula is the LPF bucket endpoint difference on the
+internal row \(\{kP+a:1\le a<P\}\).  Because all row entries are below
+\(P^2\), every composite row entry either has all prime factors at most \(P\),
+contributing to \(S_P(k)\), or has a unique high-prime factor \(r>P\).  The
+preceding Beatty source-map theorem identifies the latter slots exactly with
+\(B_P(k)\).  Thus the composite bucket delta equals \(B_P(k)+S_P(k)\), giving
+the exact value.  The finite audit through \(P\le257\) verifies these identities
+on \(6227\) strict rows; its closest sampled fill is \(P=59,k=42\), where
+\(N_P(k)=3\), \(B_P(k)=40\), and \(S_P(k)=15\).  This is an exact coordinate
+reduction, not a proof of the remaining global Beatty/smooth anti-tiling
+inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

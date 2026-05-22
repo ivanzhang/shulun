@@ -18089,6 +18089,61 @@ OR SqrtGapInputAfterX.
 本层关闭的是 payment 源表选择自由，不是 strict 行正性的无条件证明。行/列命题仍未
 无条件闭合。
 
+## 444. Phi-LPF strict-k endpoint Beatty-smooth exact value frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_endpoint_beatty_smooth_value_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-router.json
+data/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-ledger.json
+```
+
+同步结果：
+
+```text
+all_endpoint_beatty_smooth_value_identities_hold=true
+all_rows_positive_in_finite_sweep=true
+minimum_prime_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+formal-to-actual 含义是：`1<k<P` 的 `[kP,kP+P]` 端点差已经不只是可计算，
+而是可同 Beatty 源像和 `P`-smooth 槽合并成同一个精确值坐标。由于
+`kP` 与 `(k+1)P` 均为合数倍，
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP)
+      =(P-1)-sum_{p<=sqrt((k+1)P-1)}
+        [Phi(floor(((k+1)P-1)/p),p)-Phi(floor(kP/p),p)]
+      =(P-1)-B_P(k)-S_P(k).
+```
+
+这里 `B_P(k)` 是 Beatty 近倍数 high-prime payment 槽数，`S_P(k)` 是 `P`-smooth
+槽数。有限审计到 `P<=257` 验证端点差、LPF owner 桶、Beatty payment 槽和 `P`-smooth
+槽分解一致。最接近铺满样本：
+
+```text
+P=59, k=42, N_P(k)=3, B_P(k)=40, S_P(k)=15, B+S=55, P-1=58.
+```
+
+因此当前正性硬点被完全规范为：
+
+```text
+N_P(k)>=1 iff B_P(k)+S_P(k)<=P-2.
+```
+
+最新剩余接口为：
+
+```text
+BeattySmoothAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+本层关闭的是 strict-k 端点差精确值坐标，不是 strict 行正性的无条件证明。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

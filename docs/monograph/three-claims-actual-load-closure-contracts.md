@@ -24105,6 +24105,53 @@ OR SqrtGapInputAfterX.
 本层排除了 payment 源表选择自由，但尚未证明 Beatty 近倍数源像不能与 `P`-smooth 槽完美
 铺满；行/列命题仍未无条件闭合。
 
+### 1.217 Phi-LPF strict-k endpoint Beatty-smooth exact value 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_endpoint_beatty_smooth_value_router.py
+data/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-beatty-smooth-value-router.json
+```
+
+同步读数为：
+
+```text
+all_endpoint_beatty_smooth_value_identities_hold=true
+all_rows_positive_in_finite_sweep=true
+minimum_prime_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+actual-load 含义是：用户要求的 `[kP,kP+P]` 端点差计数已经同最新 Beatty 源表合并成
+一条精确值公式。对 `1<k<P`，端点 `kP,(k+1)P` 均为合数倍，故
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP)
+      =(P-1)-sum_{p<=sqrt((k+1)P-1)}
+        [Phi(floor(((k+1)P-1)/p),p)-Phi(floor(kP/p),p)]
+      =(P-1)-B_P(k)-S_P(k).
+```
+
+其中 `B_P(k)` 是 Beatty 近倍数 high-prime payment 源像，`S_P(k)` 是 `P`-smooth
+合数槽。有限审计到 `P<=257` 验证端点差、LPF 合数桶、Beatty payment 槽和 `P`-smooth
+槽分解完全一致；最接近铺满的样本是：
+
+```text
+P=59, k=42, N_P(k)=3, B_P(k)=40, S_P(k)=15, B+S=55, P-1=58.
+```
+
+因此正性被压成唯一不等式：
+
+```text
+N_P(k)>=1  iff  B_P(k)+S_P(k)<=P-2.
+```
+
+本层关闭的是“端点差能否算出区间素数个数”的问题；未证明的是全局 Beatty/smooth
+反铺满不等式。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
