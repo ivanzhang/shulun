@@ -10941,6 +10941,67 @@ open.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) short-interval exponent barrier]
+The Phi-LPF endpoint difference gives an exact count for the interval
+\([kP,kP+P]\) when \(1<k<P\).  If one tries to supply the remaining positivity
+from a general short-interval theorem of the form
+\[
+  [x,x+C x^\theta]\hbox{ contains a prime}
+\]
+for all sufficiently large \(x\), then applying it at \(x=kP\) inside the row
+interval requires
+\[
+  P\ge C(kP)^\theta.
+\]
+Equivalently,
+\[
+  k\le C^{-1/\theta}P^{(1-\theta)/\theta}.
+\]
+Thus every fixed exponent \(\theta>1/2\) covers only the lower part of the
+strict range \(1<k<P\).  The top band
+\[
+  C^{-1/\theta}P^{(1-\theta)/\theta}<k<P
+\]
+remains an infinite family as \(P\to\infty\).  Finite verification below a
+threshold cannot remove this asymptotic top band.  Therefore the pure
+short-interval lane would need a square-root-scale input with effective
+constant at most \(1\),
+\[
+  [x,x+\sqrt{x}]\hbox{ contains a prime}
+\]
+in the required aligned range, or else the proof must return to the structural
+strict-imbalance problem
+\[
+  \operatorname{PositiveRejectionExcessForStrictKRawLPFIncidence}.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-short-\\
+interval-exponent-barrier-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+endpoint\_difference\_available=true\\
+theta\_greater\_than\_half\_barrier\_proved=true\\
+finite\_verification\_plus\_theta\_gt\_half\_cannot\_close\_all\_large\_p=true\\
+sqrt\_scale\_input\_needed\_for\_pure\_short\_interval\_lane=true\\
+sqrt\_scale\_input\_available\_in\_current\_corpus=false\\
+positive\_rejection\_excess\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The calculation is only exponent arithmetic, but it is decisive for this
+route.  The row interval has length \(P\), while \(x=kP\).  A theorem with
+length \(C x^\theta\) fits inside the row only on the displayed \(k\)-range.
+For \(\theta>1/2\), the exponent \((1-\theta)/\theta\) is strictly less than
+one, so the uncovered top band has unbounded size.  The certificate therefore
+does not prove row positivity; it rules out a common attempted closure by
+threshold plus finite verification unless a genuine square-root-scale interval
+input is supplied.  The row/column theorem remains open.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

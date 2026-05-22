@@ -1,0 +1,195 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_short_interval_exponent_barrier_router",
+  "endpoint_difference_available": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_verification_plus_theta_gt_half_cannot_close_all_large_p": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiLPFStrictKEndpointDifferenceAlreadyClosed",
+      "meaning": "Phi-LPF 已给出 [kP,kP+P] 与内部行的精确端点差分。",
+      "proved": true,
+      "remaining": "use as exact count, not positivity"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaGreaterThanHalfCoversOnlyLowK",
+      "meaning": "若外部输入只保证 [x,x+C x^theta] 内有素数且 theta>1/2，则常数不改覆盖指数。",
+      "proved": true,
+      "remaining": "k <= const * P^((1-theta)/theta)"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteVerificationPlusThetaGreaterThanHalfCannotCloseAllLargeP",
+      "meaning": "任何固定 theta>1/2 留下随 P 增长的顶端 k 带；有限验证不能覆盖无限顶端带。",
+      "proved": true,
+      "remaining": "top band k near P"
+    },
+    {
+      "closed": true,
+      "gate": "SquareRootScaleInputIdentifiedAsNecessaryForThisLane",
+      "meaning": "要靠纯短区间输入覆盖所有 1<k<P，至少需要 sqrt(x) 尺度且常数不超过 1。",
+      "proved": true,
+      "remaining": "Legendre-scale or structural substitute"
+    },
+    {
+      "closed": false,
+      "gate": "SquareRootScaleInputAvailableInCurrentCorpus",
+      "meaning": "当前语料没有无条件 sqrt-scale strict row 素数输入。",
+      "proved": false,
+      "remaining": "PositiveRejectionExcess or external Legendre-scale theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层关闭的是阈值+有限验证路线的指数适配，不是行/列命题。",
+      "proved": false,
+      "remaining": "signed/transport strict imbalance or square-root interval theorem"
+    }
+  ],
+  "interval": "[kP,kP+P]",
+  "main_calculation": "P >= C*(kP)^theta implies k <= C^(-1/theta)*P^((1-theta)/theta)",
+  "no_theorem_switch": true,
+  "plain_conclusion": "Phi-LPF 端点差分可以精确给出 strict 1<k<P 行的素数个数，但若尝试用充分大阈值后的普通短区间素数定理来直接推出正性，任何 theta>1/2 的长度只覆盖低 k<=P^((1-theta)/theta)；顶端 k 接近 P 的无限带仍未覆盖。因此该路线要完全闭合，必须输入 sqrt-scale 常数<=1 的短区间定理，或者回到 raw/rejection 的结构性严格失衡证明。",
+  "positive_rejection_excess_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_scale_rows": [
+    {
+      "P_scale": 1000000,
+      "covered_fraction_approx": 0.2682695795279726,
+      "covered_k_approx": 268269,
+      "theta_name": "theta_0_525",
+      "total_strict_k_approx": 1000000,
+      "uncovered_fraction_approx": 0.7317304204720274
+    },
+    {
+      "P_scale": 1000000,
+      "covered_fraction_approx": 0.5817091329374361,
+      "covered_k_approx": 581709,
+      "theta_name": "theta_0_51",
+      "total_strict_k_approx": 1000000,
+      "uncovered_fraction_approx": 0.4182908670625639
+    },
+    {
+      "P_scale": 1000000,
+      "covered_fraction_approx": 0.9944901360855173,
+      "covered_k_approx": 994490,
+      "theta_name": "theta_0_5001",
+      "total_strict_k_approx": 1000000,
+      "uncovered_fraction_approx": 0.0055098639144827155
+    },
+    {
+      "P_scale": 1000000000000,
+      "covered_fraction_approx": 0.07196856730011522,
+      "covered_k_approx": 71968567300,
+      "theta_name": "theta_0_525",
+      "total_strict_k_approx": 1000000000000,
+      "uncovered_fraction_approx": 0.9280314326998848
+    },
+    {
+      "P_scale": 1000000000000,
+      "covered_fraction_approx": 0.3383855153428237,
+      "covered_k_approx": 338385515342,
+      "theta_name": "theta_0_51",
+      "total_strict_k_approx": 1000000000000,
+      "uncovered_fraction_approx": 0.6616144846571763
+    },
+    {
+      "P_scale": 1000000000000,
+      "covered_fraction_approx": 0.9890106307713906,
+      "covered_k_approx": 989010630771,
+      "theta_name": "theta_0_5001",
+      "total_strict_k_approx": 1000000000000,
+      "uncovered_fraction_approx": 0.01098936922860938
+    },
+    {
+      "P_scale": 1000000000000000000000000,
+      "covered_fraction_approx": 0.005179474679231213,
+      "covered_k_approx": 5179474679231212945408,
+      "theta_name": "theta_0_525",
+      "total_strict_k_approx": 1000000000000000000000000,
+      "uncovered_fraction_approx": 0.9948205253207688
+    },
+    {
+      "P_scale": 1000000000000000000000000,
+      "covered_fraction_approx": 0.11450475699382835,
+      "covered_k_approx": 114504756993828348493824,
+      "theta_name": "theta_0_51",
+      "total_strict_k_approx": 1000000000000000000000000,
+      "uncovered_fraction_approx": 0.8854952430061717
+    },
+    {
+      "P_scale": 1000000000000000000000000,
+      "covered_fraction_approx": 0.9781420277788241,
+      "covered_k_approx": 978142027778824108769280,
+      "theta_name": "theta_0_5001",
+      "total_strict_k_approx": 1000000000000000000000000,
+      "uncovered_fraction_approx": 0.021857972221175914
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json": "dbd0f06356306594afff56e4a199bdc4b27c7eb43688825b17cfd189ca8efa1c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.json": "d0b1755f1ba90db1c954b73254aad74aef846825e80dc38b7a128638e7550b6c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.json": "59bf235653fb8aef057ba81b7e3e42132d7b8bf1b15283671e52330a9cb6ad0d",
+    "docs/monograph/prime-matrix-strict-brun-titchmarsh-short-interval-input-router.json": "81123122d305deb41ea3e2da5e3da01b7638a99f0137194b9abdd0cc3eb3f8c2",
+    "experiments/prime_matrix_phi_lpf_strict_k_short_interval_exponent_barrier_router.py": "2197be5c8edfff1c264bc2998df5a55a8c606445f2f94379ecf0b7857052854d"
+  },
+  "sqrt_scale_input_available_in_current_corpus": false,
+  "sqrt_scale_input_needed_for_pure_short_interval_lane": true,
+  "status": "strict_k_phi_lpf_endpoint_difference_short_interval_exponent_barrier_closed",
+  "strict_k_range": "1<k<P",
+  "theta_greater_than_half_barrier_proved": true,
+  "theta_rows": [
+    {
+      "asymptotic_all_strict_k_rows_covered": false,
+      "condition_constant_one": "P >= (kP)^theta iff k <= P^((1-theta)/theta)",
+      "covered_k_exponent_decimal": "0.904761904762",
+      "covered_k_exponent_fraction": "19/21",
+      "label": "Baker-Harman-Pintz 型 theta=0.525 量级",
+      "name": "theta_0_525",
+      "needed_statement": "theta<=1/2, or a separate structural top-band argument",
+      "theta_decimal": "0.525000000000",
+      "theta_fraction": "21/40",
+      "top_band_k_near_p_remains": true
+    },
+    {
+      "asymptotic_all_strict_k_rows_covered": false,
+      "condition_constant_one": "P >= (kP)^theta iff k <= P^((1-theta)/theta)",
+      "covered_k_exponent_decimal": "0.960784313725",
+      "covered_k_exponent_fraction": "49/51",
+      "label": "任意固定 theta=0.51 示例",
+      "name": "theta_0_51",
+      "needed_statement": "theta<=1/2, or a separate structural top-band argument",
+      "theta_decimal": "0.510000000000",
+      "theta_fraction": "51/100",
+      "top_band_k_near_p_remains": true
+    },
+    {
+      "asymptotic_all_strict_k_rows_covered": false,
+      "condition_constant_one": "P >= (kP)^theta iff k <= P^((1-theta)/theta)",
+      "covered_k_exponent_decimal": "0.999600079984",
+      "covered_k_exponent_fraction": "4999/5001",
+      "label": "非常接近 1/2 的 theta=0.5001 示例",
+      "name": "theta_0_5001",
+      "needed_statement": "theta<=1/2, or a separate structural top-band argument",
+      "theta_decimal": "0.500100000000",
+      "theta_fraction": "5001/10000",
+      "top_band_k_near_p_remains": true
+    },
+    {
+      "asymptotic_all_strict_k_rows_covered": true,
+      "condition_constant_one": "P >= sqrt(kP) covers all strict k<P when the constant is <=1",
+      "covered_k_exponent_decimal": "1.000000000000",
+      "covered_k_exponent_fraction": "1/1",
+      "label": "平方根尺度 theta=1/2 临界口径",
+      "name": "theta_0_5",
+      "needed_statement": "sqrt-scale interval with constant <=1",
+      "theta_decimal": "0.500000000000",
+      "theta_fraction": "1/2",
+      "top_band_k_near_p_remains": false
+    }
+  ]
+}

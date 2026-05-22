@@ -23572,6 +23572,59 @@ PositiveRejectionExcessForStrictKRawLPFIncidence.
 
 这仍等价于 full-root 未覆盖槽存在，但接口更接近 signed/transport 失衡证明。行/列命题仍未无条件闭合。
 
+### 1.207 Phi-LPF strict-k short interval exponent barrier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_short_interval_exponent_barrier_router.py
+data/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_difference_available=true
+theta_greater_than_half_barrier_proved=true
+finite_verification_plus_theta_gt_half_cannot_close_all_large_p=true
+sqrt_scale_input_needed_for_pure_short_interval_lane=true
+sqrt_scale_input_available_in_current_corpus=false
+positive_rejection_excess_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：Phi-LPF 端点差分已经把 `[kP,kP+P]` 的素数计数精确化；如果后续尝试
+用外部短区间素数存在定理来供给正性，则 `x=kP` 与目标长度 `P` 给出指数适配：
+
+```text
+P >= C*(kP)^theta
+=> k <= C^(-1/theta)*P^((1-theta)/theta).
+```
+
+任意固定 `theta>1/2` 都有 `(1-theta)/theta<1`，只能覆盖低 `k` 段，留下随 `P`
+增长的顶端带：
+
+```text
+P^((1-theta)/theta) < k < P.
+```
+
+所以“充分大阈值以上一般证明 + 有限验证”若依赖 `theta>1/2` 的普通短区间输入，不能闭合
+全部 strict `1<k<P` 行。纯短区间路线需要平方根尺度：
+
+```text
+theta=1/2 and C<=1
+```
+
+当前语料没有该无条件输入。最新主攻仍是结构性严格失衡：
+
+```text
+PositiveRejectionExcessForStrictKRawLPFIncidence
+```
+
+或等价的 external/internal Legendre-scale square-root interval theorem。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -17473,6 +17473,77 @@ PositiveRejectionExcessForStrictKRawLPFIncidence.
 这仍等价于 full-root 未覆盖槽存在，但它把下一步非循环入口定位为 signed/transport 型严格
 失衡定理，而不是单纯容量比较。行/列命题仍未无条件闭合。
 
+## 434. Phi-LPF strict-k short interval exponent barrier frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_short_interval_exponent_barrier_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.json
+data/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_difference_available=true
+theta_greater_than_half_barrier_proved=true
+finite_verification_plus_theta_gt_half_cannot_close_all_large_p=true
+sqrt_scale_input_needed_for_pure_short_interval_lane=true
+sqrt_scale_input_available_in_current_corpus=false
+positive_rejection_excess_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Phi-LPF 端点差分已能精确给出 strict `1<k<P` 的行内素数个数；
+若把剩余正性转交给“充分大阈值以上短区间素数存在 + 有限验证”路线，则长度适配为：
+
+```text
+x=kP,  target length=P.
+```
+
+若外部输入只有
+
+```text
+[x, x + C x^theta] contains a prime
+```
+
+则要让该输入落入 `[kP,kP+P]`，必须有：
+
+```text
+P >= C*(kP)^theta
+=> k <= C^(-1/theta)*P^((1-theta)/theta).
+```
+
+因此任意固定 `theta>1/2` 都只覆盖低 `k` 幂次段：
+
+```text
+k <= const * P^alpha,  alpha=(1-theta)/theta<1.
+```
+
+顶端带
+
+```text
+P^alpha < k < P
+```
+
+随 `P` 无界增长，不能用有限验证替代。即使 `theta` 极接近 `1/2`，只要仍大于 `1/2`，
+该顶端带仍是无限族。纯短区间路线要覆盖全部 strict 行，至少需要：
+
+```text
+theta=1/2 with constant C<=1
+```
+
+或更强输入。当前语料没有这个无条件平方根尺度短区间定理。因此这层把“充分大阈值+有限验证”
+尝试的失败原因严格定位：它不是 Phi-LPF 端点差分失败，而是正性输入尺度不够。最新非循环入口仍是：
+
+```text
+PositiveRejectionExcessForStrictKRawLPFIncidence
+```
+
+或提交外部/内部 Legendre-scale 平方根短区间定理。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
