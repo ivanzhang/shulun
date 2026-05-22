@@ -867,3 +867,39 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 时条件闭合；无黑箱外部版仍未闭合。
+
+## 20. 最新真剩余同步后的外部输入边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_latest_true_remainder_sync_router.py
+data/prime-matrix-two-replacement-lines-latest-true-remainder-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.json
+```
+
+本层把上一节的 `ExternalDIBFIKuznetsovDispersionTheoremMatch` 继续替换为可审稿的真剩余。
+`prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router` 已经逐项筛查普通短区间、FI、
+BFI、DI/Kuznetsov、Maynard 与 FullS-KLS-ext；`prime-matrix-fulls-theorem-match-true-remainder-cut-router`
+进一步删除 `APSourceLift` 与 generic source anti-atom。无黑箱外部版因此不是“再引用
+DI/BFI/Kuznetsov 名称”，而是：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部引理版仍只在接受如下完整包时条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该条件闭合不等于从 DI/BFI 主来源逐行推出，也不删除 DStructure/Rankin 独立验收门。若要
+改写成无黑箱主来源版，必须逐项证明同一个 completed full-S non-AP WFD 对象、`c`-dependent
+completed residue weights、well-factorable `lambda_c`、smooth `omega_h`、无 AP-source lift、
+无中心化/投影偷渡、de-completion 与端点误差预算，以及任意固定 `log^{-A}` 节省。

@@ -23136,3 +23136,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 这一步只同步当前真前沿；没有证明上述内部基，也没有完成外部 theorem-match。
+
+## 330G. Two replacement lines latest true remainder sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_latest_true_remainder_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.json
+data/prime-matrix-two-replacement-lines-latest-true-remainder-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_latest_true_remainders_synced_open
+latest_external_primary_attack_target=ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+latest_internal_primary_attack_target=AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：深终端后的两个标签仍不是终点。
+
+外部线已经由 Full-S theorem-match matrix 与 true-remainder cut 压到：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+接受外部引理时，只得到如下条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部线中，offdiagonal seed 的无符号 LPF/Phi/Ferrers labels 已全部剥离；trace/new-payload/source-entropy
+路线形成 constructor payload 自证环，fresh joint declaration 又压到 actual moving-block/NC-BLK。
+自足 Kuznetsov/DLS 路线的 KZ-A--D 形式谱层已尽，KZ-E 回到 acyclic NC-BLK/source anti-atom；
+高段模型余量仍需自足 beta-sieve、99% 主系数误差和 exact sawtooth。
+
+最新内部真剩余是：
+
+```text
+((AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+  OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+ AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+ AND ExactResidueWeightedFloorSawtoothTenPercentBound)
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层删除的是粗标签和自证环，不是无条件证明。Phi-LPF 端点差和 LPF 桶恒等式仍只给组合精确计数，
+不能推出 signed coefficient、KZ-E log-saving 或短区间正性。

@@ -25481,6 +25481,82 @@ internal self-contained:
 
 目标命题仍未无条件闭合。
 
+### 1.254 两条替代线最新真剩余同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_latest_true_remainder_sync_router.py
+data/prime-matrix-two-replacement-lines-latest-true-remainder-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-latest-true-remainder-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_latest_true_remainders_synced_open
+latest_external_primary_attack_target=ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+latest_internal_primary_attack_target=AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的两个粗前沿继续下钻。
+
+外部线中，`ExternalDIBFIKuznetsovDispersionTheoremMatch` 已接入 Full-S non-AP WFD
+theorem-match 矩阵与 true-remainder cut。普通 FI/DI/BFI/Maynard 名称仍不能替代本文对象；
+无黑箱版必须证明：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若接受外部引理，外部引理版只在下列合同下条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部线中，`PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward`
+经 tuple/pure-pair/Ferrers/no-swap/edge-local/trace/new-payload/source-entropy 展开后，payload
+与 source-entropy 回到 joint declaration 的自证环已被切掉；fresh joint declaration 再由
+identity taxonomy 压到 moving-block/NC-BLK，随后进入 PDEC/CleanKLS 与模型账本。继续走自足
+Kuznetsov/DLS 时，KZ-A--D 已关闭但 KZ-E well-factorable dispersion log-saving 回到
+acyclic NC-BLK/source anti-atom；高段模型余量还必须携带自足 beta-sieve/sawtooth 包。
+
+因此最新内部自足基为：
+
+```text
+((AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom
+  OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+ AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+ AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+ AND ExactResidueWeightedFloorSawtoothTenPercentBound)
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+Phi-LPF/CRT/Eratosthenes 精确计数在这里仍只支付无符号 support/capacity，不能支付 KZ-E、
+NC-BLK/source anti-atom、signed survival、row-mass 或 beta-sieve/sawtooth。目标命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
