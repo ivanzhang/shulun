@@ -22944,3 +22944,54 @@ AND SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
 
 本层因此把“继续硬攻”的目标固定为两个非循环定理输入，而不是继续重排 Phi-LPF、CRT 或
 Eratosthenes 等价恒等式。
+
+## 330D. Two replacement lines after RNRS/ExactUV sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_after_rnrs_exactuv_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.json
+data/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_lines_synced_rkslog_closed_exactuv_and_completed_kls_open
+previous_internal_rks_log_open_superseded=true
+rks_log_author_side_closed=true
+latest_internal_self_contained_math_input=ExactCleanCoreFullSNonAPWFDSourceEntropy
+latest_internal_support_form=ActualNoncanonicalExactUVSupportLowerBound
+latest_internal_layer_transfer_input=CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+latest_external_no_blackbox_input=ModulusDependentCompletedFullSKLSInput OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：RNRS/Rudnev 倒数能量链已经把 RKS-log/TL4-L 回填闭合，所以
+`SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving` 不再是最新内部主攻点。当前内部
+自足线的源侧标准形是：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+```
+
+它的支撑版本是：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+```
+
+进一步压缩后需要证明：
+
+```text
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+这要求 actual clean-core exact 层承认足够多 Buchstab products，证明这些 products 在
+alpha/delta 系数中非零并贡献绝对支撑，并把 thin 或 layer-rejected 块送入命名回流。
+
+外部无黑箱线的标准形同步为 completed、modulus-dependent Full-S KLS 输入；这不是泛称 DI/BFI，
+而是必须保持 `c`-dependent completed residue weights、无 AP-source lift、无隐藏投影损失和
+de-completion 误差预算的同一对象。

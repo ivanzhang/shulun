@@ -25284,6 +25284,66 @@ complete key 与 fixed-key multiplicity 细包。第二项是 DStructure/Rankin 
 
 因此本层关闭的是两条替代线的任务边界，不是目标命题的当前语料库无条件闭合。
 
+### 1.251 RNRS 回填后的两条替代线 ExactUV 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_after_rnrs_exactuv_sync_router.py
+data/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_lines_synced_rkslog_closed_exactuv_and_completed_kls_open
+previous_internal_rks_log_open_superseded=true
+rks_log_author_side_closed=true
+latest_internal_self_contained_math_input=ExactCleanCoreFullSNonAPWFDSourceEntropy
+latest_internal_support_form=ActualNoncanonicalExactUVSupportLowerBound
+latest_internal_layer_transfer_input=CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层把内部线写成
+
+```text
+FineSignedSourcePackage
+AND SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
+```
+
+但仓库已有后续 RNRS/Rudnev 回填证书，关闭了 RKS-log/Tail-log4-L 作者侧解析核心。因此最新
+内部自足线不应继续主攻 RKS-log，而应回到源侧 ExactUV/source entropy：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+ActualNoncanonicalExactUVSupportLowerBound
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+这一步同步了“真剩余”的位置：普通 squarefree 计数、K4/K6 incidence、canonical 支撑偷渡和
+RKS-log 都不是当前最新阻断；真正要证明的是 clean-core exact 层承认足够多 Buchstab products、
+actual 系数非零转移，以及 thin/rejected/path-overbudget 块的命名回流。
+
+外部无黑箱线也同步为标准形：
+
+```text
+ModulusDependentCompletedFullSKLSInput
+OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+外部引理版仍只在接受
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+时条件闭合；当前语料库仍不能删去这些输入。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

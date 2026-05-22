@@ -752,3 +752,46 @@ SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
 其目标是 prime modulus 下倒数 Kloosterman 双/多线性固定对数节省，覆盖 RKS/BG 低谱账本所需的
 `e_P(xi/(mn))` 相位与 Vaughan/RKS divisor-bounded 系数。Baker 单频率素变量估计不能替代该
 coherent frequency average。
+
+## 17. RNRS 回填后的 completed KLS 与 ExactUV 边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_after_rnrs_exactuv_sync_router.py
+data/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-after-rnrs-exactuv-sync-router.json
+```
+
+本证书同步了一个重要边界：RKS-log/RNRS 作者侧解析输入已经由仓库后续证书闭合，因此内部
+自足线的最新 hardpoint 不再是 BG/RKS-log，而是 ExactUV/source entropy。外部无黑箱线的
+标准形也进一步固定为：
+
+```text
+ModulusDependentCompletedFullSKLSInput
+OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+这里的 `ModulusDependentCompletedFullSKLSInput` 必须保留以下项目：
+
+1. full-S non-AP WFD 完成型对象；
+2. `c`-dependent completed residue weights；
+3. well-factorable modulus weights；
+4. 不退回 APSourceLift 或 AP discrepancy；
+5. 无中心化/投影隐藏损失；
+6. de-completion 与端点误差保存；
+7. 任意固定 `log^{-A}` 节省，并能穿过下游 loss ledger。
+
+内部自足线同步为：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+ActualNoncanonicalExactUVSupportLowerBound
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+因此后续若继续走 FI/DI/BFI/Maynard/自守 L 函数路线，应优先尝试证明 completed KLS 标准形；
+若走内部路线，应优先证明 clean-core exact 层承认、非零转移和 thin-return，而不是继续重攻
+已经由 RNRS 回填的 RKS-log。
