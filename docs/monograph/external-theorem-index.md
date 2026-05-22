@@ -705,3 +705,50 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 内部自足版不得把 restricted Phi-LPF 端点差当作正性黑箱；它必须提交 signed-source 细包和
 `SelfContainedDStructureTailLog4FiniteRankinProofPackage`。
+
+## 16. 两条替代线的外部主来源与内部 RKS-log 边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_attack_router.py
+data/prime-matrix-two-replacement-lines-terminal-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.json
+```
+
+本证书把 FI/DI/BFI/Maynard/自守 L 函数方向重新登记为逐项 theorem-match，而不是名称引用。
+外部无黑箱线的目标对象为：
+
+```text
+W_full(C,S,H), C≈P/log^O(P), S≈P, H<=P/log^O(P),
+well-factorable lambda_c, divisor-bounded beta_s, smooth omega_h,
+c-dependent completed residue weights,
+non-AP, uncentered, no hidden projection, no AP-source lift,
+NaturalWFDScale/log^A(P) saving for every fixed A.
+```
+
+当前判定：
+
+1. BFI 1986 Theorem 10 和 Maynard 后续大模数结果属于 AP / well-factorable residue-class
+   分布；没有 APSourceLift 时不能直接覆盖 full-S non-AP WFD。
+2. DI/Kuznetsov 谱大筛是新证明的核心技术模板，但它从完成后的 Kloosterman 平均和给定系数
+   出发；`c`-dependent completed weights、无投影 de-completion 和 arbitrary `log^{-A}`
+   保存仍未逐项证明。
+3. FI parity-breaking 可作为 Type-II/奇偶屏障突破的技术范型，但不是当前 `W_full` 的直接定理。
+4. 因此外部无黑箱线仍为：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+内部自足线的 DStructure/Rankin 替代包被压到 Tail-log4/RKS-log 解析原子：
+
+```text
+SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
+```
+
+其目标是 prime modulus 下倒数 Kloosterman 双/多线性固定对数节省，覆盖 RKS/BG 低谱账本所需的
+`e_P(xi/(mn))` 相位与 Vaughan/RKS divisor-bounded 系数。Baker 单频率素变量估计不能替代该
+coherent frequency average。

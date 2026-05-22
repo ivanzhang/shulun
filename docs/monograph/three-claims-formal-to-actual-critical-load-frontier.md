@@ -22887,3 +22887,60 @@ full Rankin pass-or-return ledger with downstream returns
 
 四项全交前，`SelfContainedDStructureTailLog4FiniteRankinProofPackage` 仍为 open；四项全交后，
 也仍要与 signed-source / actual-source 分支共同使用，不能单独推出 strict row 正性。
+
+## 330C. Two replacement lines terminal attack frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_attack_router.py
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.json
+data/prime-matrix-two-replacement-lines-terminal-attack-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_pinned_external_primary_and_internal_rkslog_open
+external_lemma_conditional_closure.closed_under_inputs=true
+no_blackbox_external_line.closed=false
+internal_self_contained_line.closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：两条替代线不再允许用口号式引用。外部无黑箱线的 exact target 是
+full-S non-AP WFD Kloosterman-large-sieve 估计：
+
+```text
+C≈P/log^O(P), S≈P, H<=P/log^O(P),
+well-factorable lambda_c, divisor-bounded beta_s,
+c-dependent completed residue weights,
+no AP-source lift, no centering/projection loss,
+NaturalWFDScale/log^A(P) for every fixed A.
+```
+
+现有 BFI AP 定理、DI/Kuznetsov 谱模板、Maynard AP 大模数结果和 FI parity-breaking
+技术都没有直接逐项匹配这个 uncentered no-projection non-AP 对象。真正外部无黑箱剩余是：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+内部自足线的 DStructure/Rankin 替代包也不再是四个等权硬点；D/AB 壳、有限验证与
+Rankin pass-or-return 可作为作者侧证据包处理，真正未内联的解析原子是：
+
+```text
+SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
+```
+
+但完整内部自足行/列闭合还必须同时交付：
+
+```text
+FineSignedSourcePackage
+AND SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
+```
+
+本层因此把“继续硬攻”的目标固定为两个非循环定理输入，而不是继续重排 Phi-LPF、CRT 或
+Eratosthenes 等价恒等式。

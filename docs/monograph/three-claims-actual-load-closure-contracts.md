@@ -25229,6 +25229,61 @@ AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
 这一步完成的是作者侧剩余分类和可执行替代包拆分；它不声称独立接受已经发生，也不把
 DStructure/Rankin 晋级门从条件定理中删除。
 
+### 1.250 两条替代线终端硬攻更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_attack_router.py
+data/prime-matrix-two-replacement-lines-terminal-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-attack-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_pinned_external_primary_and_internal_rkslog_open
+external_lemma_conditional_closure.closed_under_inputs=true
+no_blackbox_external_line.closed=false
+internal_self_contained_line.closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：外部引理版仍可严格写成条件闭合包
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+但无黑箱外部主来源版不能只引用 FI/DI/BFI/Maynard/自守 L 函数名称。新的证书把它固定为
+逐项 theorem-match 任务：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+其中新自守/dispersion 证明必须同时完成 completion 无投影损失、`c`-dependent completed
+residue weights 的谱大筛、non-AP well-factorable 转移、de-completion 端点误差预算和任意
+固定 `log^{-A}` 常数强度。
+
+内部自足线也被压到两个实际合取项：
+
+```text
+FineSignedSourcePackage
+AND SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving
+```
+
+第一项是同一 formal unit 的 pre-Cauchy signed emitter、ExactUV rank/multiplicity、
+Phi-LPF offdiagonal semiprime seed、internal prime-adjoin transition、row mass/support、
+complete key 与 fixed-key multiplicity 细包。第二项是 DStructure/Rankin 自足替代包中
+真正未内联的 Tail-log4/RKS-log 低谱解析原子：prime modulus 下倒数 Kloosterman
+双/多线性固定对数节省。Baker 单频率素变量估计不能替代该 coherent d/frequency average。
+
+因此本层关闭的是两条替代线的任务边界，不是目标命题的当前语料库无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
