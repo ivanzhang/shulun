@@ -1208,3 +1208,60 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 外部引理版和无黑箱外部版仍保持上一节边界；本层没有证明 FullS theorem-match、
 new automorphic/dispersion proof 或 DStructure/Rankin 独立验收。
+
+## 28. Terminal-leaf/source-bridge 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_leaf_source_bridge_sync_router.py
+data/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.json
+```
+
+本层继续把上一节的三输入核表旧前沿接到既有 strict 证书：
+
+```text
+pointwise kernel triad
+-> NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn
+-> terminal leaf firewall
+-> AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+   OR actual source bridge
+```
+
+同步后，内部自足线不能再把三输入核表或旧 joint-alpha 路径当作新出口。
+最新内部实际承重门为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR A1CleanBranchCanonicalSourceAdmission
+ OR ExactCleanCoreFullSNonAPWFDSourceEntropy)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版仍只是条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此 FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\) 函数方向若要继续推进，
+必须逐项匹配上述同对象 FullS/actual-source 输入；不能只把旧 kernel
+三输入改名为外部谱输入。

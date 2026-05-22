@@ -23618,3 +23618,66 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本层没有证明核表三输入；它只是把 source-rank/terminal 粗口同步到同一个 actual-load 对象。
+
+## 330O. Two replacement lines terminal-leaf/source-bridge frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_leaf_source_bridge_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.json
+data/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_terminal_leaf_source_bridge_synced_open
+kernel_triad_standalone_active_after_sync=false
+old_joint_constructor_route_active_after_sync=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：三输入核表仍是 actual-load 对象的字段约束，
+但不能作为独立闭合点。三腿分攻形成固定点；非递归逐点表若不提交新 joint
+constructor 公式，也会回到终端叶子。当前终端叶子再被压到 canonical-lock 或
+actual source bridge，后者的具体原子是：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+OR ExactCleanCoreFullSNonAPWFDSourceEntropy
+```
+
+最新内部实际承重门更新为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR A1CleanBranchCanonicalSourceAdmission
+ OR ExactCleanCoreFullSNonAPWFDSourceEntropy)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+这一步比上一层更窄：`AlphaRowAnchorPhaseEmissionFormulaLedger`、
+`IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger` 与
+`SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows` 不再作为三条可分开硬攻的出口；
+它们必须被同一张非递归 primitive source table 一次性支付，否则返回 terminal/source 固定点。
+
+外部引理版保持条件闭合，外部无黑箱版仍需：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+OR NewAutomorphicDispersionProof
+```
+
+并继续携带 DStructure/Rankin 独立验收门。本层没有推出目标命题的无条件矛盾。

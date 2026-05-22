@@ -22365,6 +22365,79 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_terminal_leaf_source_bridge_sync_router.py
+data/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-terminal-leaf-source-bridge-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_terminal_leaf_source_bridge_synced_open
+kernel_triad_standalone_active_after_sync=false
+old_joint_constructor_route_active_after_sync=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 source-rank/terminal 三输入核表不是最终新变量。
+既有 strict 三腿同步显示 alpha、weight、rank 分攻会回到同一个 primitive source
+table 或 PDEC/CleanKLS 终端门；非递归核表若没有新的 actual joint constructor
+公式，又经 joint-alpha/same-row/row-level 表返回终端叶子。当前终端叶子已经压到：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR NoncanonicalFullSComplementLegalClosureMode
+```
+
+noncanonical legal mode 再被 actual-source bridge 证书过滤为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+OR ExactCleanCoreFullSNonAPWFDSourceEntropy
+```
+
+因此两条替代线的内部实际承重门更新为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR A1CleanBranchCanonicalSourceAdmission
+ OR ExactCleanCoreFullSNonAPWFDSourceEntropy)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+最新直接主攻原子：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+A1CleanBranchCanonicalSourceAdmission
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部引理版仍只在 `AcceptedFullSKLSExtExternalContract AND
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 下条件闭合；无黑箱外部版
+仍需同对象 FullS theorem-match、actual source capacity 新定理或新的 automorphic/dispersion
+证明。本层没有证明上述原子，只删除三输入核表和旧 joint constructor 路径的伪出口。
+
 ### 1.256 两条替代线 seed/payload 饱和同步更新
 
 新增机器证书：
