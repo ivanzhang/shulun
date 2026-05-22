@@ -24370,6 +24370,60 @@ UnifiedPositiveCore:
 证明双窗口反铺满、证明 raw/rejection 严格失衡、或输入 sqrt-scale prime-gap 定理，
 本质上都是证明这个单核。行/列命题仍未无条件闭合。
 
+### 1.222 Phi-LPF strict-k top-row Oppermann alignment 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_oppermann_alignment_router.py
+data/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.json
+```
+
+同步读数为：
+
+```text
+all_prime_bases_left_half_positive=true
+all_prime_bases_right_half_positive=true
+prime_base_count=669
+minimum_left_oppermann_count=1
+minimum_right_oppermann_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+actual-load 含义是：`UnifiedPositiveCore` 的最坏顶行 `k=P-1` 不只是“Legendre 型”
+短区间，而是 Oppermann 左半窗在素数底上的精确特例：
+
+```text
+k=P-1:
+N_top(P)=pi(P^2-1)-pi(P^2-P).
+
+Oppermann-left at n=P:
+prime in (P^2-P, P^2).
+```
+
+这比 Legendre 在 `((P-1)^2,P^2)` 内存在素数更靠右；Legendre 允许素数落在
+`((P-1)^2,P^2-P]`，因此不能推出顶行正性。完整 Oppermann 猜想会关闭该子核，
+但它不是已知定理；已知通用短区间指数在 `X=P^2` 上仍给出长于 `P` 的窗口。
+
+因此当前最坏子核可写成：
+
+```text
+PrimeIndexedOppermannLeftHalf(P):
+  pi(P^2-1)-pi(P^2-P)>=1 for every prime P.
+```
+
+下一步不应把 Legendre/有限验证当作闭合输入；真正非循环口仍是：
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+OR SquarePhaseRoughSurvivorUniformLowerBound
+OR a genuine Oppermann-left/sqrt-scale theorem.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -1,0 +1,237 @@
+{
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.json": "6180246c2e8eae53ef5b16c3731190746c95a781e528a85d08188efbc328ee6c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.json": "d1a4c61c54b866038f6263dd795dad16f3d486faf53a9fcbaa45e0ae2228f058",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.json": "f203a0d971a15e543b30bf22eb2bfea0b62524939af19781cf0ae23d4b92446d",
+    "docs/monograph/prime-matrix-prime-base-exponent-half-barrier-router.json": "37d15f13627b753f3c8c322e7836e888f06f1824212537a1fe87e77b58880aee",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.md": "804d2a5a03928e8effc65757870788aefe1dcee4f4efb8dcb9c1a0fc8edbf52b"
+  },
+  "exact_alignment": {
+    "legendre_interval_for_n_P_minus_1": "((P-1)^2,P^2), strictly larger and does not force the upper half",
+    "oppermann_left_half": "for n=P, Oppermann-left is (P(P-1),P^2)",
+    "strict_top_row": "k=P-1 gives (P^2-P,P^2)"
+  },
+  "external_references": [
+    {
+      "name": "Research in Number Theory 2024 Legendre verification article",
+      "role": "states Legendre and notes Oppermann subsumes it; finite verification is not a proof of Oppermann-left",
+      "url": "https://link.springer.com/article/10.1007/s40993-024-00589-4"
+    },
+    {
+      "name": "Baker-Harman-Pintz 2001",
+      "role": "generic prime-gap exponent remains above square-root scale after X=P^2 specialization",
+      "url": "https://doi.org/10.1112/plms/83.3.532"
+    },
+    {
+      "name": "Runbo Li arXiv:2308.04458",
+      "role": "improved generic exponent still gives P^1.04 at X=P^2, longer than P",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "finite_sweep": {
+    "all_prime_bases_left_half_positive": true,
+    "all_prime_bases_right_half_positive": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "left_failures": [],
+    "max_prime": 5003,
+    "minimum_left_cases": [
+      {
+        "P": 3,
+        "left_first": 7,
+        "left_is_top_row": true,
+        "left_last": 7,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 2,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 11,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 5,
+        "left_first": 23,
+        "left_is_top_row": true,
+        "left_last": 23,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 3,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 29,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 11,
+        "left_first": 113,
+        "left_is_top_row": true,
+        "left_last": 113,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 5,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 127,
+        "right_oppermann_count": 2
+      }
+    ],
+    "minimum_left_oppermann_count": 1,
+    "minimum_right_cases": [
+      {
+        "P": 3,
+        "left_first": 7,
+        "left_is_top_row": true,
+        "left_last": 7,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 2,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 11,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 5,
+        "left_first": 23,
+        "left_is_top_row": true,
+        "left_last": 23,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 3,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 29,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 7,
+        "left_first": 43,
+        "left_is_top_row": true,
+        "left_last": 47,
+        "left_oppermann_count": 2,
+        "legendre_restricted_count": 4,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 53,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 17,
+        "left_first": 277,
+        "left_is_top_row": true,
+        "left_last": 283,
+        "left_oppermann_count": 3,
+        "legendre_restricted_count": 7,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 293,
+        "right_oppermann_count": 1
+      }
+    ],
+    "minimum_right_oppermann_count": 1,
+    "prime_base_count": 669,
+    "right_failures": [],
+    "sample_rows": [
+      {
+        "P": 5,
+        "left_first": 23,
+        "left_is_top_row": true,
+        "left_last": 23,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 3,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 29,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 11,
+        "left_first": 113,
+        "left_is_top_row": true,
+        "left_last": 113,
+        "left_oppermann_count": 1,
+        "legendre_restricted_count": 5,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 127,
+        "right_oppermann_count": 2
+      },
+      {
+        "P": 17,
+        "left_first": 277,
+        "left_is_top_row": true,
+        "left_last": 283,
+        "left_oppermann_count": 3,
+        "legendre_restricted_count": 7,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 293,
+        "right_oppermann_count": 1
+      },
+      {
+        "P": 101,
+        "left_first": 10103,
+        "left_is_top_row": true,
+        "left_last": 10193,
+        "left_oppermann_count": 12,
+        "legendre_restricted_count": 23,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 10211,
+        "right_oppermann_count": 11
+      },
+      {
+        "P": 499,
+        "left_first": 248509,
+        "left_is_top_row": true,
+        "left_last": 248987,
+        "left_oppermann_count": 44,
+        "legendre_restricted_count": 88,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 249017,
+        "right_oppermann_count": 40
+      },
+      {
+        "P": 5003,
+        "left_first": 25025041,
+        "left_is_top_row": true,
+        "left_last": 25029959,
+        "left_oppermann_count": 281,
+        "legendre_restricted_count": 569,
+        "legendre_would_not_force_left_half": true,
+        "right_first": 25030013,
+        "right_oppermann_count": 282
+      }
+    ]
+  },
+  "gates": [
+    {
+      "closed": true,
+      "gate": "TopRowEqualsPrimeIndexedOppermannLeftHalf",
+      "meaning": "k=P-1 顶行正性正是 Oppermann 左半窗 (P^2-P,P^2) 在素数底 P 上的特例。",
+      "proved": true,
+      "remaining": "exact alignment"
+    },
+    {
+      "closed": true,
+      "gate": "FullOppermannWouldCloseTopRow",
+      "meaning": "完整 Oppermann 猜想会同时关闭 P^2 左右两个长度 P 半窗，但它不是已知定理。",
+      "proved": false,
+      "remaining": "Oppermann remains conjectural"
+    },
+    {
+      "closed": true,
+      "gate": "LegendreDoesNotForceTopHalf",
+      "meaning": "Legendre 只要求 ((P-1)^2,P^2) 内有素数，可能落在下半段，不能推出 (P^2-P,P^2) 非空。",
+      "proved": true,
+      "remaining": "need Oppermann-left strength"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteLegendreVerificationDoesNotCloseGlobalTopRow",
+      "meaning": "Legendre 的有限计算验证只给有限范围且不是左半窗定理，不能作为全局证明。",
+      "proved": true,
+      "remaining": "finite audit only"
+    },
+    {
+      "closed": false,
+      "gate": "KnownExternalTheoremsCloseTopRow",
+      "meaning": "当前接入的无条件外部短区间定理没有达到每个素数平方端点长度 P 的半窗强度。",
+      "proved": false,
+      "remaining": "sqrt-scale or square-phase proof"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedPositiveCoreProved",
+      "meaning": "本层只把最坏子核命名为 prime-indexed Oppermann-left；未证明单核正性。",
+      "proved": false,
+      "remaining": "SquarePhaseSpecialPhaseLongBlockPDECExclusion OR SquarePhaseRoughSurvivorUniformLowerBound"
+    }
+  ],
+  "plain_conclusion": "strict 顶行的真实硬点不是 Legendre，而是 Oppermann 左半窗的素数底特例。完整 Oppermann 可关闭该子核，但它是猜想；Legendre 及其有限验证不强制素数落在上半段。当前非循环突破必须直接证明 square-phase 特殊相位不能形成长度 P-1 的低筛全覆盖，或把该全覆盖登记并排斥为 PDEC/SAE/ColumnCRT。",
+  "status": "top_row_identified_as_prime_indexed_oppermann_left_half"
+}

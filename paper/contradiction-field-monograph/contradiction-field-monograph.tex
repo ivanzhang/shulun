@@ -11700,6 +11700,54 @@ amounts to proving the same integer \(N_P(k)\) is positive.
 \end{proof}
 
 
+\begin{theorem}[Top row and prime-indexed Oppermann left half]
+The least-slack strict row \(k=P-1\) is exactly the left Oppermann half-window
+at the prime base \(n=P\):
+\[
+  N_{\rm top}(P)=\pi(P^2-1)-\pi(P^2-P).
+\]
+Thus top-row positivity is the assertion that \((P^2-P,P^2)\) contains a
+prime.  This is stronger than merely applying Legendre's interval
+\(((P-1)^2,P^2)\), because a Legendre prime may lie in the lower subinterval
+\[
+  ((P-1)^2,P^2-P].
+\]
+Consequently neither Legendre-type finite verification nor the usual
+\(X^\theta\), \(\theta>1/2\), prime-gap inputs close the top row.  The correct
+named subcore is
+\[
+  \pi(P^2-1)-\pi(P^2-P)\ge1\qquad(P\ {\rm prime}),
+\]
+or, equivalently, exclusion of a square-phase low-sieve full cover of all
+\(r=1,\ldots,P-1\) in \(P^2-r\).
+\end{theorem}
+\begin{proof}[Status and reference]
+Substituting \(k=P-1\) in the strict-row formula gives the displayed count.
+The interval \((P^2-P,P^2)\) is exactly \((n^2-n,n^2)\) at \(n=P\).  Since
+\((P-1)^2=P^2-2P+1<P^2-P\), the Legendre interval is strictly larger on the
+left and does not force a prime in the upper half.  Known generic prime-gap
+exponents remain longer than \(P\) after setting \(X=P^2\), so they also do not
+close this half-window.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-\\
+oppermann-alignment-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_prime\_bases\_left\_half\_positive=true\\
+all\_prime\_bases\_right\_half\_positive=true\\
+prime\_base\_count=669\\
+minimum\_left\_oppermann\_count=1\\
+finite\_evidence\_not\_used\_as\_global\_proof=true.
+\end{quote}
+This finite audit is only structural evidence.  The theorem identifies the
+true top-row subcore; it does not prove Oppermann's half-window or the
+row/column theorem unconditionally.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

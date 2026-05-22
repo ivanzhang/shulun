@@ -18360,6 +18360,47 @@ UnifiedPositiveCore
   OR via external/internal sqrt-scale prime-gap input.
 ```
 
+## 449. Phi-LPF strict-k top-row Oppermann alignment frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_oppermann_alignment_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.json
+data/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-ledger.json
+```
+
+同步结果：
+
+```text
+all_prime_bases_left_half_positive=true
+all_prime_bases_right_half_positive=true
+prime_base_count=669
+minimum_left_oppermann_count=1
+minimum_right_oppermann_count=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+formal-to-actual 含义是：最坏顶行 `k=P-1` 与 Oppermann 左半窗完全对齐：
+
+```text
+N_top(P)=pi(P^2-1)-pi(P^2-P).
+```
+
+这正是 `n=P` 的 `(n^2-n,n^2)`。完整 Oppermann 猜想会关闭该子核；Legendre
+只保证 `((P-1)^2,P^2)` 某处有素数，不能强制落在上半窗；有限验证只给有限范围。
+
+最新剩余接口进一步尖化为：
+
+```text
+PrimeIndexedOppermannLeftHalf(P)
+  OR SquarePhaseSpecialPhaseLongBlockPDECExclusion
+  OR SquarePhaseRoughSurvivorUniformLowerBound.
+```
+
+本层仍不证明 `UnifiedPositiveCore`，只禁止把 Legendre/有限验证误登记为顶行闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
