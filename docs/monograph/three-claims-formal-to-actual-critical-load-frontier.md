@@ -17897,6 +17897,73 @@ OR SqrtGapInputAfterX.
 
 行/列命题仍未无条件闭合。
 
+## 441. Phi-LPF strict-k Dusart interval bridge frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_dusart_interval_bridge_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-dusart-interval-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-dusart-interval-bridge-router.json
+data/prime-matrix-phi-lpf-strict-k-dusart-interval-bridge-ledger.json
+```
+
+同步结果：
+
+```text
+dusart_covers_all_strict_rows=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：外部 Dusart 2010 输入可作为显式低 k 桥。使用：
+
+```text
+for x>=396738, [x, x+x/(25 log^2 x)] contains at least one prime.
+```
+
+对 strict 行取 `x=kP`。若
+
+```text
+kP>=396738
+AND k<=25 log^2(kP),
+```
+
+则 `x/(25 log^2 x)<=P`，而两个端点 `kP,(k+1)P` 都为合数，所以 Dusart 给出的素数落在
+`(kP,(k+1)P)` 内。阈值以下 `kP<396738` 的行由有限桥验证：
+
+```text
+checked_rows=257198
+finite_bridge_verified=true.
+```
+
+覆盖审计扩到 `P<=10007` 后显示：
+
+```text
+union_closed_ratio=0.968923
+first_prime_with_uncovered_row=8101
+last_prime_all_rows_closed_in_sample=8093.
+```
+
+第一个未被 Dusart+有限桥覆盖的样本是顶行：
+
+```text
+P=8101, k=8100.
+```
+
+这说明 Dusart 输入非常有用，但尺度是 `x/log^2 x`，在 `k~P` 时约为
+`P^2/log^2(P^2)`，仍大于行长 `P`。因此它不能替代 `sqrt(x)` 尺度输入，也不能单独闭合全部
+`1<k<P`。
+
+最新剩余接口保持为：
+
+```text
+GlobalPaymentSmoothAntiCoSaturationInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

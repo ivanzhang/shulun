@@ -11307,6 +11307,51 @@ global anti-co-saturation inequality.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) Dusart interval bridge]
+Assume the external Dusart 2010 interval input
+\[
+  x\ge396738
+  \quad\Longrightarrow\quad
+  [x,x+x/(25\log^2 x)]\ \hbox{contains a prime}.
+\]
+For a strict row \(1<k<P\), put \(x=kP\).  If
+\[
+  kP\ge396738
+  \qquad\hbox{and}\qquad
+  k\le25\log^2(kP),
+\]
+then \(H_1(k,P)=\pi((k+1)P-1)-\pi(kP)\ge1\).  The rows with
+\(kP<396738\) are separately covered by the finite bridge certificate.
+Consequently Dusart closes the finite-threshold and low-\(k\)
+logarithmic band, but it does not close all strict rows \(1<k<P\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-dusart-\\
+interval-bridge-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+dusart\_covers\_all\_strict\_rows=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The only external analytic input is Dusart's
+\texttt{arXiv:1002.0442} interval theorem, not reproved here.  If the
+displayed inequality holds, then \(x/(25\log^2 x)\le P\), so the Dusart prime
+lies in \([kP,(k+1)P]\).  Both endpoints are composite, since \(1<k<P\);
+hence the prime lies in the open row interval and contributes to
+\(H_1(k,P)\).  The finite bridge verifies \(257198\) rows below
+\(kP=396738\).  A sample audit through \(P\le10007\) closes about
+\(0.968923\) of strict rows by the finite bridge, the direct Dusart
+\(\pi\)-endpoint estimate, or the Dusart interval condition, but the first
+uncovered sampled row is \(P=8101,k=8100\).  Near \(k\sim P\), the Dusart
+length has scale \(P^2/\log^2(P^2)\), which can exceed the row length \(P\).
+Thus the remaining global input is still a square-root-scale gap theorem or
+an internal anti-co-saturation/rejection-excess inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
