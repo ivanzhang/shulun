@@ -18977,6 +18977,58 @@ Capacity-only LPF/Phi rewriting
 PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC.
 ```
 
+## 461. H_P/Cramer-local route reset frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_hp_cramer_local_route_reset_router.py
+docs/monograph/prime-matrix-hp-cramer-local-route-reset-router.md
+docs/monograph/prime-matrix-hp-cramer-local-route-reset-router.json
+data/prime-matrix-hp-cramer-local-route-reset-ledger.json
+```
+
+同步结果：
+
+```text
+status=hp_cramer_local_route_reset_after_parity_barrier_review
+review_core_accepted=true
+hp_direct_unconditional_closure_claim_allowed=false
+current_frontier_after_reset=ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+```
+
+formal-to-actual 含义是：更强评审已经吸收。`H_P` 的最坏 strict 顶端带满足
+
+```text
+k≈P, x=kP≈P^2, target interval length P≈sqrt(x).
+```
+
+这就是 Legendre/Cramer-local 短区间尺度。Phi-LPF、LPF bucket、CRT wheel、
+Eratosthenes 筛等价公式仍然有价值，但它们只构成精确 reduction library 和反例结构定位。
+在无新带符号取消、无 sqrt-scale 外部输入、无 special square-phase 下界的情况下，继续在
+这些无符号等价公式内部重命名接口不能产生 `N_P(k)>=1`。
+
+因此被降级或排除的路线为：
+
+```text
+Phi-LPF/Eratosthenes capacity rewriting -> demoted to reduction library
+finite verification + theta>1/2 -> rejected as global closure
+direct H_P unconditional closure claim -> not allowed
+```
+
+后续主攻路线重置为：
+
+```text
+Exact external theorem-match
+OR DI/BFI/Kuznetsov self-contained appendix
+OR automorphic L-functions / trace formula
+OR genuinely new special square-phase structural lower bound
+```
+
+FI/DI/BFI/Maynard/自守工具被保留为高风险高回报技术族；现有仓库没有 ready-made theorem
+直接覆盖 `H_P` 主命题。下一步必须写出精确 theorem-match checklist：变量、权重、模数范围、
+窗口、平滑/投影、误差保存、常数和目标对象逐项验收。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

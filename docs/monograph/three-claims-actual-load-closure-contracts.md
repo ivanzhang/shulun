@@ -24929,6 +24929,47 @@ Capacity-only LPF/Phi rewriting
 PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
 ```
 
+### 1.246 H_P/Cramer-local route reset 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_hp_cramer_local_route_reset_router.py
+data/prime-matrix-hp-cramer-local-route-reset-ledger.json
+docs/monograph/prime-matrix-hp-cramer-local-route-reset-router.md
+docs/monograph/prime-matrix-hp-cramer-local-route-reset-router.json
+```
+
+同步读数为：
+
+```text
+status=hp_cramer_local_route_reset_after_parity_barrier_review
+review_core_accepted=true
+hp_direct_unconditional_closure_claim_allowed=false
+current_frontier_after_reset=ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+```
+
+actual-load 含义是：`H_P` 的最坏 strict 顶端带为
+
+```text
+k≈P, x=kP≈P^2, target interval length P≈sqrt(x)
+```
+
+即 Legendre/Cramer-local 短区间尺度。此前 Phi-LPF/LPF/Eratosthenes/CRT 的所有无符号精确
+恒等式都保留为 reduction library，但不再允许被记为 `H_P` 正性闭合。直接宣称
+`H_P` 主命题无条件闭合被禁止。
+
+后续主攻口重置为：
+
+```text
+ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+```
+
+因此 FI/DI/BFI/Maynard/自守 L 函数方向不是“引用一个现成名字即可闭合”，而是必须逐项完成
+theorem-match：当前对象、权重、窗口、模数范围、平滑/投影、误差保存、常数强度都要精确匹配。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
