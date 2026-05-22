@@ -18307,6 +18307,59 @@ OR SqrtGapInputAfterX.
 其中 `SqrtGapInputAfterX` 必须达到右侧 `H(x)<=sqrt(x)` 量级，或被内部
 `B_P(k)+S_P(k)<=P-2` 双窗口反铺满替代。
 
+## 448. Phi-LPF strict-k unified positive core frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_unified_positive_core_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.json
+data/prime-matrix-phi-lpf-strict-k-unified-positive-core-ledger.json
+```
+
+同步结果：
+
+```text
+all_four_coordinate_identities_hold=true
+strict_row_count=6228
+minimum_positive_core_value=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+formal-to-actual 含义是：strict 行正性的多个剩余名称已经归并为同一个整数：
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP)
+      =(P-1)-B_P(k)-S_P(k)
+      =(P-1)-OwnerMass
+      =RejectionMass-(RawTotal-(P-1)).
+```
+
+并且：
+
+```text
+N_P(k)>=1 iff next_prime(kP)<(k+1)P.
+```
+
+所以 `DualWindowAntiTilingInequality`、`PositiveRejectionExcessForStrictKRawLPFIncidence`
+和 `SqrtGapInputAfterX` 不应继续被当成三个可分别绕开的硬点。它们是同一
+`UnifiedPositiveCore` 的三种可证明入口：
+
+```text
+UnifiedPositiveCore:
+  for every prime P and every 1<k<P, N_P(k)>=1.
+```
+
+最新剩余接口因此收缩为：
+
+```text
+UnifiedPositiveCore
+  via internal dual-window anti-tiling
+  OR via internal raw/rejection strict excess
+  OR via external/internal sqrt-scale prime-gap input.
+```
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

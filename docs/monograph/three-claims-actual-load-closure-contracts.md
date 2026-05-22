@@ -24316,6 +24316,60 @@ OR SqrtGapInputAfterX.
 若走外部路线，需要 Legendre 强度的右侧短区间输入 `H(x)<=sqrt(x)` 并配合有限验证；
 否则必须从 Phi-LPF 双窗口反铺满结构内部突破。行/列命题仍未无条件闭合。
 
+### 1.221 Phi-LPF strict-k unified positive core 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_unified_positive_core_router.py
+data/prime-matrix-phi-lpf-strict-k-unified-positive-core-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.json
+```
+
+同步读数为：
+
+```text
+all_four_coordinate_identities_hold=true
+strict_row_count=6228
+minimum_positive_core_value=1
+finite_evidence_not_used_as_global_proof=true
+```
+
+actual-load 含义是：当前前沿中的 `DualWindowAntiTilingInequality`、
+`PositiveRejectionExcessForStrictKRawLPFIncidence` 与 `SqrtGapInputAfterX`
+不是三个独立剩余，而是同一整数的三种坐标。对 `1<k<P`，令
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP).
+```
+
+已有等价统一为：
+
+```text
+N_P(k)=(P-1)-B_P(k)-S_P(k)
+      =(P-1)-OwnerMass
+      =RejectionMass-(RawTotal-(P-1)).
+N_P(k)>=1 iff next_prime(kP)<(k+1)P.
+```
+
+样本核对：
+
+```text
+P=59, k=42: N=dual=owner_defect=rejection_excess=3, B=40, S=15.
+P=1009, k=1008: N=dual=owner_defect=rejection_excess=70, B=670, S=268.
+```
+
+因此当前真剩余收缩为单核：
+
+```text
+UnifiedPositiveCore:
+  N_P(k)>=1 for every prime P and every 1<k<P.
+```
+
+证明双窗口反铺满、证明 raw/rejection 严格失衡、或输入 sqrt-scale prime-gap 定理，
+本质上都是证明这个单核。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

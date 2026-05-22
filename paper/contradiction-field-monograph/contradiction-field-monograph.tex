@@ -11649,6 +11649,57 @@ theorem, or an internal proof of the dual-window anti-tiling inequality
 \end{proof}
 
 
+\begin{theorem}[Unified positive core for strict \(k\)]
+For a prime \(P\) and \(1<k<P\), the following four quantities are the same
+integer:
+\[
+\begin{aligned}
+N_P(k)
+&=\pi((k+1)P-1)-\pi(kP)\\
+&=(P-1)-B_P(k)-S_P(k)\\
+&=(P-1)-{\rm OwnerMass}\\
+&={\rm RejectionMass}-({\rm RawTotal}-(P-1)).
+\end{aligned}
+\]
+Moreover
+\[
+  N_P(k)\ge1\quad\Longleftrightarrow\quad
+  {\rm next\_prime}(kP)<(k+1)P .
+\]
+Thus the dual-window anti-tiling inequality, the raw/rejection strict-excess
+statement, the owner-saturation defect, and the aligned square-root gap
+exclusion are not independent hard points; they are four coordinate systems
+for the same strict-row positive core.
+\end{theorem}
+\begin{proof}[Status and reference]
+The first equality is the definition of the strict row prime count.  The
+second is the Phi-LPF endpoint difference after splitting composite slots into
+high-prime Beatty windows and \(P\)-smooth owner windows.  The third is the LPF
+owner saturation identity: every composite row slot has exactly one least-prime
+owner and every prime row slot has none.  The fourth follows by partitioning
+raw root-prime incidences into the owner incidence and rejected non-owner
+incidences.  Finally, the row endpoints \(kP\) and \((k+1)P\) are composite
+because \(1<k<P\), so \(N_P(k)\ge1\) is exactly the assertion that the next
+prime after \(kP\) arrives before \((k+1)P\).
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-unified-\\
+positive-core-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_four\_coordinate\_identities\_hold=true\\
+strict\_row\_count=6228\\
+minimum\_positive\_core\_value=1\\
+finite\_evidence\_not\_used\_as\_global\_proof=true.
+\end{quote}
+This theorem does not prove the core positive for all \(P,k\).  It removes a
+false branching of the frontier: proving any of the named remaining statements
+amounts to proving the same integer \(N_P(k)\) is positive.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
