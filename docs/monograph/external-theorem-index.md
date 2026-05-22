@@ -1265,3 +1265,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 因此 FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\) 函数方向若要继续推进，
 必须逐项匹配上述同对象 FullS/actual-source 输入；不能只把旧 kernel
 三输入改名为外部谱输入。
+
+## 29. Alpha-return/source-bridge 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_alpha_return_bridge_sync_router.py
+data/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-router.json
+```
+
+本层继续导入 `strict-terminal-atoms-to-alpha-return-bridge-sync`。它把上一节的
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+OR ExactCleanCoreFullSNonAPWFDSourceEntropy
+```
+
+重分类为 scoped canonical 分支或 alpha-return 回边。同步后，内部自足线的活动前沿为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步不新增外部定理引用；它只说明若使用 FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\)
+函数方向，外部输入必须真正命中 FullS/actual-source 对象，而不是命中已经被判为回边的
+alpha/pointwise 表展开。

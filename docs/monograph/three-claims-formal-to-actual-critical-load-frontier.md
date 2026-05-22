@@ -23681,3 +23681,57 @@ OR NewAutomorphicDispersionProof
 ```
 
 并继续携带 DStructure/Rankin 独立验收门。本层没有推出目标命题的无条件矛盾。
+
+## 330P. Two replacement lines alpha-return/source-bridge frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_alpha_return_bridge_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-router.json
+data/prime-matrix-two-replacement-lines-alpha-return-bridge-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_alpha_return_bridge_synced_open
+source_admission_standalone_active_after_sync=false
+exact_entropy_standalone_active_after_sync=false
+alpha_return_route_counts_as_descent=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`A1CleanBranchCanonicalSourceAdmission` 与
+`ExactCleanCoreFullSNonAPWFDSourceEntropy` 仍然不是 final actual-load 矛盾。前者是 scoped
+canonical 分支账本；后者如果沿现有 post-Mertens/kernel/pointwise/nonrecursive 路径推进，
+会回到 terminal leaf 与 alpha-return 回边。
+
+因此最新内部实际承重门为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+新的最窄内部非循环路线只剩三类：
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
+```
+
+并行仍需 actual exact-UV incidence、Rate 与 DStructure/Rankin。本层没有证明三类任一项，
+只是把 source-admission 与 exact-entropy 的回边关系显式化，防止继续在已知等价接口之间循环。
