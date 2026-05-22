@@ -18026,6 +18026,69 @@ OR SqrtGapInputAfterX.
 
 本层关闭的是 payment 来源环，不是 strict 行正性的无条件证明。行/列命题仍未无条件闭合。
 
+## 443. Phi-LPF strict-k payment Beatty source-map frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_payment_beatty_source_map_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-payment-beatty-source-map-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-payment-beatty-source-map-router.json
+data/prime-matrix-phi-lpf-strict-k-payment-beatty-source-map-ledger.json
+```
+
+同步结果：
+
+```text
+all_hm_counts_match_beatty_source_map=true
+beatty_smooth_anti_tiling_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的 lower-half payment source injection 不是任意注入，
+而是一张由余数 `kP mod r` 唯一决定的 Beatty 近倍数源表。对 `1<k<P`，源素数 `r>P`
+能支付目标行当且仅当
+
+```text
+P<r<=floor(((k+1)P-1)/2), r prime
+m=floor(kP/r)+1
+a=m*r-kP=r-(kP mod r)
+1<=a<P.
+```
+
+于是有精确等式：
+
+```text
+sum_{2<=m<=k} H_m(k,P)
+= #{prime r>P: r-(kP mod r) lies in [1,P-1]}.
+```
+
+有限审计：
+
+```text
+max_prime=257
+strict_row_count=6227
+all_hm_counts_match_beatty_source_map=true.
+```
+
+并额外确认 `P=571,k=438` 与 `P=1009,k=1008` 的 `H_m` payment 与 Beatty source
+count 分别同为 `382` 与 `670`。因此零行反例进一步被压成
+
+```text
+all slots = image(Beatty near-multiple prime sources) union P-smooth slots.
+```
+
+最新剩余接口为：
+
+```text
+BeattySmoothAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+本层关闭的是 payment 源表选择自由，不是 strict 行正性的无条件证明。行/列命题仍未
+无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -1,0 +1,601 @@
+{
+  "beatty_smooth_anti_tiling_proved": false,
+  "canonical_map": {
+    "carrier": "m=floor(kP/r)+1",
+    "payment_condition": "1<=a<P",
+    "slot": "a=m*r-kP=r-(kP mod r)",
+    "source_range": "P<r<=floor(((k+1)P-1)/2), r prime"
+  },
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_payment_beatty_source_map_router",
+  "finite_sweep": {
+    "all_hm_counts_match_beatty_source_map": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_payment": {
+      "cases": [
+        {
+          "P": 257,
+          "k": 244,
+          "max_slot": 255,
+          "payment": 171,
+          "source_upper": 31482
+        },
+        {
+          "P": 257,
+          "k": 248,
+          "max_slot": 256,
+          "payment": 171,
+          "source_upper": 31996
+        }
+      ],
+      "value": 171
+    },
+    "max_prime": 257,
+    "max_slot_ratio": {
+      "cases": [
+        {
+          "P": 5,
+          "k": 2,
+          "max_slot": 4,
+          "payment": 1,
+          "source_upper": 7
+        },
+        {
+          "P": 7,
+          "k": 4,
+          "max_slot": 6,
+          "payment": 2,
+          "source_upper": 17
+        },
+        {
+          "P": 11,
+          "k": 5,
+          "max_slot": 10,
+          "payment": 4,
+          "source_upper": 32
+        },
+        {
+          "P": 11,
+          "k": 6,
+          "max_slot": 10,
+          "payment": 4,
+          "source_upper": 38
+        },
+        {
+          "P": 11,
+          "k": 7,
+          "max_slot": 10,
+          "payment": 5,
+          "source_upper": 43
+        },
+        {
+          "P": 13,
+          "k": 2,
+          "max_slot": 12,
+          "payment": 2,
+          "source_upper": 19
+        },
+        {
+          "P": 13,
+          "k": 3,
+          "max_slot": 12,
+          "payment": 2,
+          "source_upper": 25
+        },
+        {
+          "P": 13,
+          "k": 8,
+          "max_slot": 12,
+          "payment": 5,
+          "source_upper": 58
+        }
+      ],
+      "value": 1.0
+    },
+    "mismatch_rows": [],
+    "prime_count": 53,
+    "sample_rows": [
+      {
+        "P": 11,
+        "beatty_payment_count": 7,
+        "counts_match": true,
+        "hm_payment_count": 7,
+        "k": 10,
+        "max_slot": 9,
+        "min_slot": 1,
+        "sample_sources": [
+          {
+            "m": 9,
+            "n": 117,
+            "r": 13,
+            "residue_kP_mod_r": 6,
+            "slot": 7,
+            "source_row": 1
+          },
+          {
+            "m": 7,
+            "n": 119,
+            "r": 17,
+            "residue_kP_mod_r": 8,
+            "slot": 9,
+            "source_row": 1
+          },
+          {
+            "m": 6,
+            "n": 114,
+            "r": 19,
+            "residue_kP_mod_r": 15,
+            "slot": 4,
+            "source_row": 1
+          },
+          {
+            "m": 5,
+            "n": 115,
+            "r": 23,
+            "residue_kP_mod_r": 18,
+            "slot": 5,
+            "source_row": 2
+          },
+          {
+            "m": 4,
+            "n": 116,
+            "r": 29,
+            "residue_kP_mod_r": 23,
+            "slot": 6,
+            "source_row": 2
+          },
+          {
+            "m": 3,
+            "n": 111,
+            "r": 37,
+            "residue_kP_mod_r": 36,
+            "slot": 1,
+            "source_row": 3
+          },
+          {
+            "m": 2,
+            "n": 118,
+            "r": 59,
+            "residue_kP_mod_r": 51,
+            "slot": 8,
+            "source_row": 5
+          }
+        ],
+        "source_upper": 60
+      },
+      {
+        "P": 101,
+        "beatty_payment_count": 56,
+        "counts_match": true,
+        "hm_payment_count": 56,
+        "k": 50,
+        "max_slot": 100,
+        "min_slot": 2,
+        "sample_sources": [
+          {
+            "m": 50,
+            "n": 5150,
+            "r": 103,
+            "residue_kP_mod_r": 3,
+            "slot": 100,
+            "source_row": 1
+          },
+          {
+            "m": 48,
+            "n": 5136,
+            "r": 107,
+            "residue_kP_mod_r": 21,
+            "slot": 86,
+            "source_row": 1
+          },
+          {
+            "m": 47,
+            "n": 5123,
+            "r": 109,
+            "residue_kP_mod_r": 36,
+            "slot": 73,
+            "source_row": 1
+          },
+          {
+            "m": 45,
+            "n": 5085,
+            "r": 113,
+            "residue_kP_mod_r": 78,
+            "slot": 35,
+            "source_row": 1
+          },
+          {
+            "m": 40,
+            "n": 5080,
+            "r": 127,
+            "residue_kP_mod_r": 97,
+            "slot": 30,
+            "source_row": 1
+          },
+          {
+            "m": 39,
+            "n": 5109,
+            "r": 131,
+            "residue_kP_mod_r": 72,
+            "slot": 59,
+            "source_row": 1
+          },
+          {
+            "m": 37,
+            "n": 5069,
+            "r": 137,
+            "residue_kP_mod_r": 118,
+            "slot": 19,
+            "source_row": 1
+          },
+          {
+            "m": 37,
+            "n": 5143,
+            "r": 139,
+            "residue_kP_mod_r": 46,
+            "slot": 93,
+            "source_row": 1
+          },
+          {
+            "m": 34,
+            "n": 5066,
+            "r": 149,
+            "residue_kP_mod_r": 133,
+            "slot": 16,
+            "source_row": 1
+          },
+          {
+            "m": 34,
+            "n": 5134,
+            "r": 151,
+            "residue_kP_mod_r": 67,
+            "slot": 84,
+            "source_row": 1
+          }
+        ],
+        "source_upper": 2575
+      },
+      {
+        "P": 101,
+        "beatty_payment_count": 60,
+        "counts_match": true,
+        "hm_payment_count": 60,
+        "k": 100,
+        "max_slot": 98,
+        "min_slot": 2,
+        "sample_sources": [
+          {
+            "m": 99,
+            "n": 10197,
+            "r": 103,
+            "residue_kP_mod_r": 6,
+            "slot": 97,
+            "source_row": 1
+          },
+          {
+            "m": 95,
+            "n": 10165,
+            "r": 107,
+            "residue_kP_mod_r": 42,
+            "slot": 65,
+            "source_row": 1
+          },
+          {
+            "m": 93,
+            "n": 10137,
+            "r": 109,
+            "residue_kP_mod_r": 72,
+            "slot": 37,
+            "source_row": 1
+          },
+          {
+            "m": 90,
+            "n": 10170,
+            "r": 113,
+            "residue_kP_mod_r": 43,
+            "slot": 70,
+            "source_row": 1
+          },
+          {
+            "m": 80,
+            "n": 10160,
+            "r": 127,
+            "residue_kP_mod_r": 67,
+            "slot": 60,
+            "source_row": 1
+          },
+          {
+            "m": 74,
+            "n": 10138,
+            "r": 137,
+            "residue_kP_mod_r": 99,
+            "slot": 38,
+            "source_row": 1
+          },
+          {
+            "m": 73,
+            "n": 10147,
+            "r": 139,
+            "residue_kP_mod_r": 92,
+            "slot": 47,
+            "source_row": 1
+          },
+          {
+            "m": 68,
+            "n": 10132,
+            "r": 149,
+            "residue_kP_mod_r": 117,
+            "slot": 32,
+            "source_row": 1
+          },
+          {
+            "m": 67,
+            "n": 10117,
+            "r": 151,
+            "residue_kP_mod_r": 134,
+            "slot": 17,
+            "source_row": 1
+          },
+          {
+            "m": 62,
+            "n": 10106,
+            "r": 163,
+            "residue_kP_mod_r": 157,
+            "slot": 6,
+            "source_row": 1
+          }
+        ],
+        "source_upper": 5100
+      },
+      {
+        "P": 571,
+        "beatty_payment_count": 382,
+        "counts_match": true,
+        "hm_payment_count": 382,
+        "k": 438,
+        "max_slot": 567,
+        "min_slot": 1,
+        "sample_sources": [
+          {
+            "m": 434,
+            "n": 250418,
+            "r": 577,
+            "residue_kP_mod_r": 257,
+            "slot": 320,
+            "source_row": 1
+          },
+          {
+            "m": 427,
+            "n": 250649,
+            "r": 587,
+            "residue_kP_mod_r": 36,
+            "slot": 551,
+            "source_row": 1
+          },
+          {
+            "m": 422,
+            "n": 250246,
+            "r": 593,
+            "residue_kP_mod_r": 445,
+            "slot": 148,
+            "source_row": 1
+          },
+          {
+            "m": 418,
+            "n": 250382,
+            "r": 599,
+            "residue_kP_mod_r": 315,
+            "slot": 284,
+            "source_row": 1
+          },
+          {
+            "m": 417,
+            "n": 250617,
+            "r": 601,
+            "residue_kP_mod_r": 82,
+            "slot": 519,
+            "source_row": 1
+          },
+          {
+            "m": 408,
+            "n": 250104,
+            "r": 613,
+            "residue_kP_mod_r": 607,
+            "slot": 6,
+            "source_row": 1
+          },
+          {
+            "m": 406,
+            "n": 250502,
+            "r": 617,
+            "residue_kP_mod_r": 213,
+            "slot": 404,
+            "source_row": 1
+          },
+          {
+            "m": 397,
+            "n": 250507,
+            "r": 631,
+            "residue_kP_mod_r": 222,
+            "slot": 409,
+            "source_row": 1
+          },
+          {
+            "m": 391,
+            "n": 250631,
+            "r": 641,
+            "residue_kP_mod_r": 108,
+            "slot": 533,
+            "source_row": 1
+          },
+          {
+            "m": 389,
+            "n": 250127,
+            "r": 643,
+            "residue_kP_mod_r": 614,
+            "slot": 29,
+            "source_row": 1
+          }
+        ],
+        "source_upper": 125334
+      },
+      {
+        "P": 1009,
+        "beatty_payment_count": 670,
+        "counts_match": true,
+        "hm_payment_count": 670,
+        "k": 1008,
+        "max_slot": 1007,
+        "min_slot": 1,
+        "sample_sources": [
+          {
+            "m": 1005,
+            "n": 1018065,
+            "r": 1013,
+            "residue_kP_mod_r": 20,
+            "slot": 993,
+            "source_row": 1
+          },
+          {
+            "m": 999,
+            "n": 1017981,
+            "r": 1019,
+            "residue_kP_mod_r": 110,
+            "slot": 909,
+            "source_row": 1
+          },
+          {
+            "m": 997,
+            "n": 1017937,
+            "r": 1021,
+            "residue_kP_mod_r": 156,
+            "slot": 865,
+            "source_row": 1
+          },
+          {
+            "m": 987,
+            "n": 1017597,
+            "r": 1031,
+            "residue_kP_mod_r": 506,
+            "slot": 525,
+            "source_row": 1
+          },
+          {
+            "m": 985,
+            "n": 1017505,
+            "r": 1033,
+            "residue_kP_mod_r": 600,
+            "slot": 433,
+            "source_row": 1
+          },
+          {
+            "m": 979,
+            "n": 1017181,
+            "r": 1039,
+            "residue_kP_mod_r": 930,
+            "slot": 109,
+            "source_row": 1
+          },
+          {
+            "m": 970,
+            "n": 1017530,
+            "r": 1049,
+            "residue_kP_mod_r": 591,
+            "slot": 458,
+            "source_row": 1
+          },
+          {
+            "m": 968,
+            "n": 1017368,
+            "r": 1051,
+            "residue_kP_mod_r": 755,
+            "slot": 296,
+            "source_row": 1
+          },
+          {
+            "m": 959,
+            "n": 1017499,
+            "r": 1061,
+            "residue_kP_mod_r": 634,
+            "slot": 427,
+            "source_row": 1
+          },
+          {
+            "m": 957,
+            "n": 1017291,
+            "r": 1063,
+            "residue_kP_mod_r": 844,
+            "slot": 219,
+            "source_row": 1
+          }
+        ],
+        "source_upper": 509040
+      }
+    ],
+    "sieve_prime_for_large_samples": 1009,
+    "strict_row_count": 6227
+  },
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "UniqueCarrierForSourcePrimeClosed",
+      "meaning": "固定源素数 r>P 时，区间 (kP/r,((k+1)P-1)/r] 长度小于 1，因此至多一个 carrier。",
+      "proved": true,
+      "remaining": "unique carrier"
+    },
+    {
+      "closed": true,
+      "gate": "BeattyCarrierFormulaClosed",
+      "meaning": "若存在 carrier，则必为 m=floor(kP/r)+1。",
+      "proved": true,
+      "remaining": "canonical carrier"
+    },
+    {
+      "closed": true,
+      "gate": "NearMultipleResidueCriterionClosed",
+      "meaning": "payment 槽位为 a=r-(kP mod r)，且 payment 当且仅当 1<=a<P。",
+      "proved": true,
+      "remaining": "near-multiple source criterion"
+    },
+    {
+      "closed": true,
+      "gate": "HmPaymentEqualsBeattySourceCountClosed",
+      "meaning": "sum_{2<=m<=k} H_m(k,P) 等于满足近倍数准则的下半源素数个数。",
+      "proved": true,
+      "remaining": "exact source-table equality"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowReducedToBeattySourcePlusSmoothTiling",
+      "meaning": "零行反设等价于 Beatty 近倍数源像与 P-smooth 槽铺满全部行槽。",
+      "proved": true,
+      "remaining": "Beatty-source image + smooth = all slots"
+    },
+    {
+      "closed": false,
+      "gate": "BeattySmoothAntiTilingProved",
+      "meaning": "当前语料尚未证明 Beatty 近倍数源像不能与 P-smooth 槽完美铺满。",
+      "proved": false,
+      "remaining": "Beatty smooth anti-tiling inequality"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层规范化 payment 源表，但不证明 strict 行正性。",
+      "proved": false,
+      "remaining": "anti-tiling, rejection excess, or sqrt-scale input"
+    }
+  ],
+  "no_theorem_switch": true,
+  "plain_conclusion": "low-carrier payment 的下半源注入可被完全规范成唯一 Beatty 近倍数映射：源素数 r>P 是否支付目标行，只取决于 kP mod r 是否落在 r-P+1 到 r-1 的尾段。因此零行反例必须由这张近倍数源像与 P-smooth 槽完美铺满；当前层未证明该Beatty/smooth 反铺满不等式。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-low-carrier-lower-half-source-cut-router.json": "5b9dc9505da45b6bece3b4e96849a10a16ac232a1a4611ecfc6e8ad47858e903",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.json": "59bf235653fb8aef057ba81b7e3e42132d7b8bf1b15283671e52330a9cb6ad0d",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-row-load-phase-tradeoff-router.json": "f4869e5f3736b22201d744255942b3cd84f317f7fdec6173c24dfcd987ba3a9f",
+    "experiments/prime_matrix_phi_lpf_strict_k_payment_beatty_source_map_router.py": "cde49329bd1dfa224a189e670b72a659a349545b64822a02af5573ab46a5f03c"
+  },
+  "status": "strict_k_low_carrier_payment_rewritten_as_unique_beatty_near_multiple_source_map",
+  "strict_k_range": "1<k<P"
+}

@@ -11399,6 +11399,54 @@ proved.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) payment Beatty source map]
+In the strict row \(1<k<P\), the low-carrier high-prime payment relation is a
+unique near-multiple source map.  A source prime \(r>P\) can pay the target row
+only in the range
+\[
+  P<r\le\left\lfloor\frac{(k+1)P-1}{2}\right\rfloor .
+\]
+For such an \(r\), the only possible carrier is
+\[
+  m=\left\lfloor\frac{kP}{r}\right\rfloor+1,
+  \qquad
+  a=mr-kP=r-(kP\bmod r).
+\]
+It pays a row slot if and only if \(1\le a<P\).  Consequently
+\[
+  \sum_{2\le m\le k} H_m(k,P)
+  =
+  \#\{\,r>P:\ r\ {\rm prime},\ r-(kP\bmod r)\in[1,P-1]\,\}.
+\]
+Thus a zero strict row would have to be a perfect tiling by the image of this
+Beatty near-multiple prime-source map together with the \(P\)-smooth slots.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-payment-\\
+beatty-source-map-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_hm\_counts\_match\_beatty\_source\_map=true\\
+beatty\_smooth\_anti\_tiling\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The carrier uniqueness is the same row-width argument as in the lower-half
+source cut: for fixed \(r>P\), two distinct carriers differ by at least
+\(r>P\), while the open row has width \(P-1\).  Therefore any payment carrier
+must be the first integer above \(kP/r\), namely
+\(\lfloor kP/r\rfloor+1\).  The displayed residue criterion is just the
+condition \(kP<mr<(k+1)P\) written as \(1\le mr-kP<P\).
+The finite audit through \(P\le257\) checks \(6227\) strict rows and verifies
+the equality between the \(H_m\)-payment count and the Beatty source count;
+larger sample rows \(P=571,k=438\) and \(P=1009,k=1008\) give matching counts
+\(382\) and \(670\).  This removes payment source-table freedom, but it does
+not prove the remaining Beatty/smooth anti-tiling inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
