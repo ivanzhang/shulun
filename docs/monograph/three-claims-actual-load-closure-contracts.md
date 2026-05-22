@@ -23679,6 +23679,57 @@ SqrtGapInputAfterXOrPositiveRejectionExcessForStrictKRawLPFIncidence.
 
 行/列命题仍未无条件闭合。
 
+### 1.209 Phi-LPF strict-k top row square collar 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_square_collar_router.py
+data/prime-matrix-phi-lpf-strict-k-top-row-square-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.json
+```
+
+同步读数为：
+
+```text
+top_row_necessary_hard_core_identified=true
+top_row_minimal_sqrt_slack_proved=true
+top_row_positive_proved_in_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：正性最尖锐的必要检查来自 `k=P-1` 顶行：
+
+```text
+N_top(P)=pi(P^2-1)-pi(P^2-P)
+        =P-1-sum_{q<P}
+          [Phi(floor((P^2-1)/q),q)-Phi(floor((P^2-P)/q),q)].
+```
+
+因此任何全 strict 行正性证明，必须至少证明 prime-square 上边界 collar：
+
+```text
+pi(P^2-1)-pi(P^2-P)>=1
+```
+
+对所有素数 `P` 成立。该行还是 `sqrt(kP)<P` 余量最小的位置：
+
+```text
+P-sqrt(P(P-1))=P/(P+sqrt(P(P-1))) in (1/2,1).
+```
+
+有限审计 `P<=5003` 没有发现空顶行，最小顶行素数数为 `1`，但这只是实现口径审计。
+当前语料没有无条件证明该 collar 输入。最新剩余接口为：
+
+```text
+PrimeSquareUpperCollarPrimeInput
+OR SqrtGapInputAfterX
+OR PositiveRejectionExcessForStrictKRawLPFIncidence.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

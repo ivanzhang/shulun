@@ -17615,6 +17615,72 @@ SqrtGapInputAfterXOrPositiveRejectionExcessForStrictKRawLPFIncidence.
 
 行/列命题仍未无条件闭合。
 
+## 436. Phi-LPF strict-k top row square collar frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_square_collar_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.json
+data/prime-matrix-phi-lpf-strict-k-top-row-square-collar-ledger.json
+```
+
+同步结果：
+
+```text
+top_row_necessary_hard_core_identified=true
+top_row_minimal_sqrt_slack_proved=true
+top_row_positive_proved_in_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：在 strict `1<k<P` 的全部行里，顶行 `k=P-1` 给出必要硬核。
+此时
+
+```text
+I_{P-1}={P^2-P+a:1<=a<P}
+       =(P^2-P,P^2)
+```
+
+而 Phi-LPF 端点差分专化为：
+
+```text
+N_top(P)=pi(P^2-1)-pi(P^2-P)
+        =P-1-sum_{q<P}
+          [Phi(floor((P^2-1)/q),q)-Phi(floor((P^2-P)/q),q)].
+```
+
+因此全 strict 行正性必须先证明：
+
+```text
+pi(P^2-1)-pi(P^2-P)>=1
+```
+
+对所有素数 `P` 成立。该顶行也是平方根尺度余量最小的行，因为 `P-sqrt(kP)` 随 `k`
+增大而减小，且
+
+```text
+P-sqrt(P(P-1))=P/(P+sqrt(P(P-1))) in (1/2,1).
+```
+
+所以顶行正性是 prime-square 上边界 collar 输入：
+
+```text
+PrimeSquareUpperCollarPrimeInput.
+```
+
+有限审计到 `P<=5003` 没有发现顶行空段，但这不能替代全局证明。该层说明 Phi-LPF 递推若要推出
+正性，至少必须在顶行解决这个 square-collar 硬核；当前语料尚未无条件闭合。并行出口仍是：
+
+```text
+SqrtGapInputAfterX
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR PrimeSquareUpperCollarPrimeInput plus remaining-row proof.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

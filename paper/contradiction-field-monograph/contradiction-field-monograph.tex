@@ -11058,6 +11058,58 @@ template and the exact obstruction, but not an unconditional proof of
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) top-row square collar]
+Among the strict rows \(1<k<P\), the top row \(k=P-1\) is the prime-square
+upper collar
+\[
+  I_{P-1}=(P^2-P,P^2).
+\]
+The Phi-LPF endpoint formula specializes to
+\[
+  N_{\rm top}(P)=\pi(P^2-1)-\pi(P^2-P)
+\]
+and equivalently
+\[
+  N_{\rm top}(P)
+  =P-1-\sum_{q<P}
+    \left(\Phi\!\left(\left\lfloor \frac{P^2-1}{q}\right\rfloor,q\right)
+    -\Phi\!\left(\left\lfloor \frac{P^2-P}{q}\right\rfloor,q\right)\right).
+\]
+Thus any proof of positivity for all strict rows must in particular prove
+\[
+  \pi(P^2-1)-\pi(P^2-P)\ge 1
+\]
+for every prime \(P\).  This top row is also the least-slack square-root row:
+the quantity \(P-\sqrt{kP}\) decreases with \(k\), and at \(k=P-1\)
+\[
+  P-\sqrt{P(P-1)}
+  =\frac{P}{P+\sqrt{P(P-1)}}\in(1/2,1).
+\]
+Hence the top row isolates the prime-square upper-collar hard core of the
+strict Phi-LPF positivity problem.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-\\
+square-collar-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+top\_row\_necessary\_hard\_core\_identified=true\\
+top\_row\_minimal\_sqrt\_slack\_proved=true\\
+top\_row\_positive\_proved\_in\_current\_corpus=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The identities follow by setting \(k=P-1\) in the strict row endpoint formula.
+The square-root slack statement is the elementary monotonicity of
+\(\sqrt{kP}\) in \(k\).  The finite audit finds no empty top row in the
+checked range, but the present corpus does not prove the global collar input
+\(\pi(P^2-1)-\pi(P^2-P)\ge1\).  Therefore this theorem extracts a necessary
+hard core; it does not close the row/column theorem.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
