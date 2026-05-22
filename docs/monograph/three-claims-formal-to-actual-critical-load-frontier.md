@@ -18844,6 +18844,139 @@ PuncturedPhiEndpointDifferencePositiveOrPDEC.
 
 本层仍不证明端点差全局正性，也不证明三目标命题。
 
+## 459. Phi-LPF punctured endpoint parity capacity frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_parity_capacity_router.py
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-router.json
+data/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-ledger.json
+```
+
+同步结果：
+
+```text
+status=forest_holes_bounded_by_reciprocal_integer_windows_minus_forced_even_candidates
+max_prime=1009
+row_count=76789
+closed_by_integer_window_capacity_count=60813
+closed_by_parity_ceiling_count=76788
+parity_not_closed_count=1
+parity_failure_count=0
+parity_tie_count=1
+minimum_sample_delta_minus_parity_ceiling=1769
+next_direct_attack_target=PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
+```
+
+formal-to-actual 含义是：在上一层
+
+```text
+prime_count(P,k)=DeltaPhi_half(P,k)-|F(P,k)|
+```
+
+之上，对每个 high prime `q in (P/2,P)` 的 reciprocal 短窗 `I_q(P,k)` 建立纯容量上界。
+令
+
+```text
+W_int(P,k)=sum_q |I_q(P,k)|
+E_even(P,k)=#{(q,m): m in I_q(P,k), m even, m>2}
+C_par(P,k)=W_int(P,k)-E_even(P,k).
+```
+
+因为偶数 `m>2` 不可能成为 high-prime semiprime 的第二素因子，
+
+```text
+|F(P,k)| <= C_par(P,k).
+```
+
+所以新的非循环充分条件是：
+
+```text
+DeltaPhi_half(P,k)>C_par(P,k).
+```
+
+有限审计到 `P<=1009` 时，该 strict parity inequality 直接闭合 76788 行，只剩
+`P=19,k=15` 的等号基例；该基例的真实读数为 `Delta=3, C_par=3, holes=2,
+primes=1`，因此有限基例本身闭合。大尺度抽样只作证据，不作全局证明。
+
+当前最窄口从“端点差正性”进一步压缩为：
+
+```text
+PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC.
+```
+
+若该奇偶容量不等式失败，反例必须让 odd reciprocal candidates 几乎全部成为 prime-pair
+holes；也就是一个显式的 reciprocal prime-pair saturation/PDEC 出口。本层仍不证明全局
+奇偶容量不等式，也不证明三目标命题。
+
+## 460. Phi-LPF combinatorial exactness parity-barrier review frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_combinatorial_exactness_parity_barrier_review_router.py
+docs/monograph/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-router.md
+docs/monograph/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-router.json
+data/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-ledger.json
+```
+
+同步结果：
+
+```text
+status=review_absorbed_phi_lpf_exactness_is_not_positivity
+accepted_review_core=true
+numeric_update=BHP 0.525 has a newer 0.52 arXiv refinement, but both remain >1/2
+current_frontier_after_review=PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
+unconditional_target_closure_reached=false
+```
+
+formal-to-actual 含义是：外部评审指出的核心问题成立，必须作为硬约束吸收。Phi-LPF/LPF
+桶恒等式是组合精确：
+
+```text
+N_P(k)=DeltaPhi_half(P,k)-|F(P,k)|
+```
+
+但它本身不是素数正性下界。要推出 `N_P(k)>=1`，必须另行证明
+
+```text
+DeltaPhi_half(P,k)>|F(P,k)|
+```
+
+或更强的奇偶容量版本
+
+```text
+DeltaPhi_half(P,k)>C_par(P,k).
+```
+
+在最坏顶端带 `k≈P` 中，`x=kP≈P^2` 而目标长度是 `P≈sqrt(x)`。BHP `0.525`
+或更新的 `0.52` 级普通短区间输入在 `X=P^2` 上仍给出 `P^1.05` 或 `P^1.04`
+量级，不能推出长度 `P` 内的素数。线性筛下界在该尺度处也处在奇偶屏障区间，不能从无符号
+LPF 容量账本直接产生正性。
+
+因此后续非循环路线被收窄为三类：
+
+```text
+External sqrt-scale short interval input
+OR Special square-phase/CRT structural lower bound
+OR Signed transport / dispersion source route
+```
+
+被排除为闭合路线的是：
+
+```text
+Finite verification after theta>1/2
+Capacity-only LPF/Phi rewriting
+```
+
+本层是路线校正和防错证书，不证明三目标命题。当前最窄口仍为：
+
+```text
+PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC.
+```
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

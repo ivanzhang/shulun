@@ -24817,6 +24817,118 @@ PuncturedPhiEndpointDifferencePositiveOrPDEC
 
 该层只关闭端点差恒等式，不证明所有特殊相位下的端点差正性。
 
+### 1.244 Phi-LPF punctured endpoint parity capacity 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_parity_capacity_router.py
+data/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-router.md
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-parity-capacity-router.json
+```
+
+同步读数为：
+
+```text
+status=forest_holes_bounded_by_reciprocal_integer_windows_minus_forced_even_candidates
+max_prime=1009
+row_count=76789
+closed_by_integer_window_capacity_count=60813
+closed_by_parity_ceiling_count=76788
+parity_not_closed_count=1
+parity_failure_count=0
+parity_tie_count=1
+parity_ties_have_direct_prime=true
+minimum_sample_delta_minus_parity_ceiling=1769
+```
+
+actual-load 含义是：对上一层 forest holes 作 reciprocal capacity 上界。令
+
+```text
+W_int(P,k)=sum_{P/2<q<P, q prime} |I_q(P,k)|
+E_even(P,k)=#{(q,m): m in I_q(P,k), m even, m>2}
+C_par(P,k)=W_int(P,k)-E_even(P,k).
+```
+
+由于偶数 `m>2` 不可能是素数，
+
+```text
+|F(P,k)|<=C_par(P,k).
+```
+
+因此只要
+
+```text
+DeltaPhi_half(P,k)>C_par(P,k)
+```
+
+即可得到该行素数数为正。有限审计到 `P<=1009` 时 strict parity inequality 只剩
+`P=19,k=15` 一个等号基例，且该基例真实 `holes=2<Delta=3`、`primes=1`。
+
+最新直接主攻口为：
+
+```text
+PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
+```
+
+该层不证明全局 parity endpoint capacity inequality；若不等式失败，必须提交
+odd reciprocal candidates 的 prime-pair saturation 证书或 PDEC。
+
+### 1.245 Phi-LPF combinatorial exactness parity-barrier review 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_combinatorial_exactness_parity_barrier_review_router.py
+data/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-ledger.json
+docs/monograph/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-router.md
+docs/monograph/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-router.json
+```
+
+同步读数为：
+
+```text
+status=review_absorbed_phi_lpf_exactness_is_not_positivity
+accepted_review_core=true
+current_frontier_after_review=PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
+```
+
+actual-load 含义是：Claude 评审中“Phi-LPF 精确性是组合精确，不是解析正性”的核心判断
+被吸收为硬约束。LPF/Phi 桶公式仍是有效精确恒等式，但不能再把
+
+```text
+N_P(k)=DeltaPhi_half(P,k)-|F(P,k)|
+```
+
+或
+
+```text
+N_P(k)>=DeltaPhi_half(P,k)-C_par(P,k)
+```
+
+误读为正性证明。若要闭合 strict 行，必须提供新的正性来源：
+
+```text
+External sqrt-scale short interval input
+OR Special square-phase/CRT structural lower bound
+OR Signed transport / dispersion source route
+```
+
+明确排除为闭合路线：
+
+```text
+Finite verification after theta>1/2
+Capacity-only LPF/Phi rewriting
+```
+
+数值上，BHP `0.525` 已有 `0.52` 级更新记录，但仍大于 `1/2`，所以对 `k≈P` 的
+`sqrt(x)` 目标尺度不产生闭合。当前主攻口保持为：
+
+```text
+PuncturedParityEndpointCapacityInequalityOrReciprocalPrimePairSaturationPDEC
+```
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

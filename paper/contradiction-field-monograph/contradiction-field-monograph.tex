@@ -12231,6 +12231,115 @@ PuncturedPhiEndpointDifferencePositiveOrPDEC.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Punctured endpoint parity-capacity bound]
+For a prime \(P\), \(1<k<P\), and a high prime \(q\in(P/2,P)\), put
+\[
+  I_q(P,k)=
+  \left[
+    \max\left(q,\left\lfloor \frac{kP}{q}\right\rfloor+1\right),
+    \left\lfloor \frac{(k+1)P-1}{q}\right\rfloor
+  \right]\cap{\bf Z}.
+\]
+Let
+\[
+  W_{\rm int}(P,k)=\sum_{P/2<q<P}|I_q(P,k)|
+\]
+and let \(E_{\rm even}(P,k)\) be the number of pairs \((q,m)\), with
+\(q\) prime in \((P/2,P)\) and \(m\in I_q(P,k)\), for which \(m>2\) is even.
+Set
+\[
+  C_{\rm par}(P,k)=W_{\rm int}(P,k)-E_{\rm even}(P,k).
+\]
+Then
+\[
+  |F(P,k)|\le C_{\rm par}(P,k).
+\]
+Consequently
+\[
+  \Delta\Phi_{1/2}(P,k)>C_{\rm par}(P,k)
+  \quad\Longrightarrow\quad
+  \pi((k+1)P-1)-\pi(kP)>0.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The reciprocal-window theorem shows that every forest hole is represented by
+a pair \((q,m)\) with \(q\) prime in \((P/2,P)\), \(m\in I_q(P,k)\), and
+\(m\) prime.  The first bound \(|F(P,k)|\le W_{\rm int}(P,k)\) is therefore
+pure containment.  If \(m>2\) is even, it cannot be prime, hence each such
+candidate may be deleted from the prime-candidate ceiling.  This gives
+\(|F(P,k)|\le C_{\rm par}(P,k)\).  Combining with the preceding exact endpoint
+identity gives the displayed positivity implication.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-punctured-\\
+endpoint-parity-capacity-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=forest\_holes\_bounded\_by\_reciprocal\_integer\_windows\_minus\_forced\_even\_candidates\\
+max\_prime=1009\\
+row\_count=76789\\
+closed\_by\_parity\_ceiling\_count=76788\\
+parity\_not\_closed\_count=1\\
+parity\_failure\_count=0\\
+minimum\_sample\_delta\_minus\_parity\_ceiling=1769.
+\end{quote}
+The lone finite equality case in this audit is \(P=19,k=15\), where the direct
+row has one prime.  This is a capacity narrowing, not a global proof of
+\(\Delta\Phi_{1/2}>C_{\rm par}\).  The remaining interface is
+\begin{quote}\scriptsize\ttfamily
+PuncturedParityEndpointCapacityInequalityOr\\
+ReciprocalPrimePairSaturationPDEC.
+\end{quote}
+\end{proof}
+
+\begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
+The Phi--LPF identities above are combinatorially exact identities for
+\(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for
+\(N_P(k)\).  In the top strict band \(k\asymp P\), the row starts at
+\(x=kP\asymp P^2\) and has length \(P\asymp\sqrt{x}\).  Therefore any closure
+that proceeds only by an ordinary short-interval theorem
+\([x,x+x^\theta]\) requires \(\theta\le1/2\) with an admissible constant.
+Known unconditional inputs of Baker--Harman--Pintz \(0.525\) type, and the
+newer \(0.52\) type refinement recorded in the review certificate, remain
+above this square-root scale and leave an infinite top \(k\)-band.
+
+Thus the non-circular continuation after the parity-capacity bound is not
+another unsigned rewriting of the same count.  It must supply one of the
+following genuinely new inputs: a square-root-scale interval theorem on the
+relevant endpoints, a special square-phase/CRT structural lower bound proving
+\(\Delta\Phi_{1/2}(P,k)>C_{\rm par}(P,k)\), or a signed transport/dispersion
+estimate that breaks the linear-sieve parity obstruction.  Without such an
+input, the remaining object is a reciprocal prime-pair saturation PDEC.
+\end{proposition}
+\begin{proof}[Status and reference]
+The assertion is a route-control statement.  The exact identities express the
+row prime count as a survivor term minus a hole term; positivity is equivalent
+to proving that the survivor term dominates.  The exponent calculation
+\[
+  P\ge C(kP)^\theta
+  \quad\Longrightarrow\quad
+  k\le C^{-1/\theta}P^{(1-\theta)/\theta}
+\]
+shows that every fixed \(\theta>1/2\) leaves \(k\) near \(P\) uncovered for
+arbitrarily large \(P\).  The review certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-combinatorial-\\
+exactness-parity-barrier-review-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=review\_absorbed\_phi\_lpf\_exactness\_is\_not\_positivity\\
+accepted\_review\_core=true\\
+current\_frontier\_after\_review=\\
+PuncturedParityEndpointCapacityInequalityOr\\
+ReciprocalPrimePairSaturationPDEC.
+\end{quote}
+This proposition deliberately does not prove the row/column theorem; it fixes
+the admissible proof obligations after the Phi--LPF exact-count phase.
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
