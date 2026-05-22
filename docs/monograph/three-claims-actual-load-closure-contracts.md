@@ -22413,6 +22413,49 @@ AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043
 本层因此只缩小 beta-sieve 子包；source-root、PDEC/CleanKLS、FullS theorem-match 与
 DStructure/Rankin 仍是实际承重门。
 
+### 1.181 Two replacement lines rate-bearing Mertens closed sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rate_tail_mertens_closed_sync_router.py
+data/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_rate_tail_mertens_closed_terminal_gates_open
+strict_self_contained_mertens_tail_proved=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：后续 strict rate-bearing Mertens 证书已经把自足 Mertens 尾段解析包
+移出活动剩余。具体导入：
+
+```text
+DirectInternalDusartThetaPNTEnvelopeClosed
+UnsmoothedChebyshevPerronExplicitFormulaConstantSelfContainedClosedC12128
+SelfContainedMeisselMertensB1EulerProductIntervalClosedRadius2eMinus6At20000
+```
+
+因此两条替代线当前不再需要把
+`SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000` 或
+`SelfContainedMeisselMertensConstantIntervalLedgerAt20000` 作为真剩余硬点。最新承重门为：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部无黑箱线仍需同对象 FullS theorem-match、actual source capacity 新定理或新的
+automorphic/dispersion 证明。行/列命题仍未无条件闭合。
+
 ### 1.247 Full-S non-AP WFD theorem-match matrix 更新
 
 新增机器证书：

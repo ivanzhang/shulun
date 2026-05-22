@@ -23339,3 +23339,49 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 无黑箱外部线仍需 same-object FullS non-AP WFD theorem-match、actual source capacity
 新定理或新 automorphic/dispersion 证明；B=3 同步不删除这些门。
+
+## 330J. Two replacement lines rate-bearing Mertens closed frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rate_tail_mertens_closed_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.json
+data/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_rate_tail_mertens_closed_terminal_gates_open
+strict_self_contained_mertens_tail_proved=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一节保留的自足显式 PNT/Mertens 尾段旧标签已经被后续
+strict rate-bearing Mertens 语料关闭。`DirectInternalDusartThetaPNTEnvelopeLedger`、
+非平滑 Perron 常数层与 Meissel-Mertens B1 区间均已自足导入。
+
+最新内部实际承重门更新为：
+
+```text
+((ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn)
+ OR terminal/source alternative)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+最新直接主攻：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部无黑箱线仍独立保留 `ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`、actual source
+capacity 新定理或新 automorphic/dispersion 证明。

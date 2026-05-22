@@ -966,3 +966,41 @@ AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000
 外部无黑箱主线仍保持上一节的 FullS-KLS/no-projection theorem-match 边界；B=3
 Mertens 同步只缩小内部 beta-sieve 子包，不替代 FullS theorem-match、source-root、
 PDEC/CleanKLS 或 DStructure/Rankin。
+
+## 23. Rate-bearing Mertens 尾段闭合同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rate_tail_mertens_closed_sync_router.py
+data/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rate-tail-mertens-closed-sync-router.json
+```
+
+后续 strict rate-bearing Mertens 同步表明，直接内部 Dusart theta/PNT 包络、
+非平滑 Perron 常数层与 Meissel-Mertens B1 区间均已由自足证书导入；因此
+`SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000` 和
+`SelfContainedMeisselMertensConstantIntervalLedgerAt20000` 不再是两条替代线的活动硬点。
+
+外部线不变：
+
+```text
+((AcceptedFullSKLSExtExternalContract)
+ OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部线压缩为：
+
+```text
+source-root / terminal alternative
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步只删除解析尾段旧硬点；它不替代 FullS theorem-match，也不产生 DStructure/Rankin
+独立验收事件。
