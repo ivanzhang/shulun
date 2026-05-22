@@ -22995,3 +22995,72 @@ alpha/delta 系数中非零并贡献绝对支撑，并把 thin 或 layer-rejecte
 外部无黑箱线的标准形同步为 completed、modulus-dependent Full-S KLS 输入；这不是泛称 DI/BFI，
 而是必须保持 `c`-dependent completed residue weights、无 AP-source lift、无隐藏投影损失和
 de-completion 误差预算的同一对象。
+
+## 330E. Two replacement lines exact-layer/completed-KLS attack frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_exact_layer_completed_kls_attack_router.py
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.json
+data/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_reduced_to_origin_ledger_and_c_dependent_completed_spectral_input_open
+latest_internal_minimal_author_task=CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+latest_external_no_blackbox_task=CDependentResidueWeightSpectralCancellationInput OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof
+no_blackbox_external_version_closed=false
+internal_self_contained_version_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：内部线的 formal 支撑、路径或 WFD 分解仍不是 actual load。要把
+ExactUV/source entropy 变成真实非零支撑，必须在 Cauchy 前给出 clean-core `alpha/delta` 的
+原始生成表：
+
+```text
+same formal unit
+complete summand list
+branch key and u/v map
+sign and local factor
+polylog path budget
+nonzero/sign split
+thin/rejected/missing-source named return
+```
+
+这一步把
+
+```text
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+下钻为
+
+```text
+CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn
+CleanCorePreCauchyCoefficientSourceLawAndReturn
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+```
+
+外部无黑箱线中，full-S completion 已经把 `s` 长度问题排除；真剩余是 completed residue 权重
+
+```text
+B_{c,x}=sum_k beta_{x+k c}
+```
+
+依赖模数 `c` 且未中心化。点态 Weil+L2、普通大筛、平坦 residue 假设、APSourceLift 或投影
+中心化都不能替代该输入。真正外部无黑箱目标是：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+外部引理版仍只是在接受 `AcceptedFullSKLSExtExternalContract` 与
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 时条件闭合。当前语料库仍不能声明
+行/列命题无条件闭合。

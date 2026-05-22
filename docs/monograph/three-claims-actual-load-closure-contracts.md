@@ -25344,6 +25344,61 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 时条件闭合；当前语料库仍不能删去这些输入。
 
+### 1.252 两条替代线 exact-layer/completed-KLS 深攻更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_exact_layer_completed_kls_attack_router.py
+data/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.json
+```
+
+同步读数为：
+
+```text
+latest_internal_minimal_author_task=CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+latest_external_no_blackbox_task=CDependentResidueWeightSpectralCancellationInput OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof
+no_blackbox_external_version_closed=false
+internal_self_contained_version_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：内部线中的 `CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn`
+现在被拆到 pre-Cauchy 原始生成账本。必须在 Cauchy、Type/Fourier、completion 与
+pushforward 前列出同一 formal unit 中的 actual `alpha/delta` summand、branch key、`u/v`
+map、符号和 local factor；并证明 polylog path budget、同 key 非零/无抵消、thin/rejected/
+missing-source 的命名回流。普通 squarefree 数量、K4/K6 incidence、canonical 来源模板和
+generic WFD 都不能替代这张 actual 生成表。
+
+外部无黑箱线也进一步从 `ModulusDependentCompletedFullSKLSInput` 收窄为：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+```
+
+该输入必须处理完成后出现的 `B_{c,x}=sum_k beta_{x+k c}`，即依赖模数 `c` 的未中心化 residue
+权重；同时保留 well-factorable `lambda_c`、`c,h` 谱/dispersion 平均、无 APSourceLift、无
+中心化/投影偷渡、de-completion 和端点误差预算，以及任意固定 `log^{-A}` 节省。
+
+最新两条替代线因此变成：
+
+```text
+external lemma version:
+  conditionally closed only under AcceptedFullSKLSExtExternalContract
+  AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+
+no-blackbox external version:
+  CDependentResidueWeightSpectralCancellationInput
+  OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+  OR NewAutomorphicDispersionProof
+
+internal self-contained version:
+  CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+  AND final promotion gate or self-contained replacement
+```
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

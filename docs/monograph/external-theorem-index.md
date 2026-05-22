@@ -795,3 +795,41 @@ CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
 因此后续若继续走 FI/DI/BFI/Maynard/自守 L 函数路线，应优先尝试证明 completed KLS 标准形；
 若走内部路线，应优先证明 clean-core exact 层承认、非零转移和 thin-return，而不是继续重攻
 已经由 RNRS 回填的 RKS-log。
+
+## 18. exact-layer/completed-KLS 深攻后的外部输入边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_exact_layer_completed_kls_attack_router.py
+data/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.json
+```
+
+外部无黑箱线现在应写成如下精确审稿对象：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+```
+
+该对象不是普通 DI、BFI、FI 或 Maynard 定理名称的直接替换。它必须逐项匹配：
+
+| 核查项 | 本文对象 | 必须保持的条件 |
+| --- | --- | --- |
+| 完成后权重 | `B_{c,x}=sum_k beta_{x+k c}` | 允许依赖模数 `c`，不得假设 residue 平坦或已中心化 |
+| 模数/频率平均 | well-factorable `lambda_c` 与 smooth `omega_h` | 谱/dispersion 平均必须同时作用在 `c,h` 族上 |
+| 目标对象 | full-S non-AP WFD | 不得退回 APSourceLift、AP discrepancy 或投影中心化目标 |
+| 误差账本 | gcd、smoothing、endpoint、de-completion | 必须全部进入 `B(A)`，并保留下游 loss ledger |
+| 强度 | `NaturalWFDScale/log^A(P)` | 对每个固定 `A>0` 有可选择的参数余量 |
+
+若外部文献不能直接给出这一 completed、模数依赖、no-projection 版本，则外部无黑箱版仍只能写为：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+外部引理版可以继续使用 `AcceptedFullSKLSExtExternalContract`，但必须保留
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`；这不是作者侧可自行删除的数学输入。
