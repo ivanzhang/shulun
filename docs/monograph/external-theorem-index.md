@@ -525,3 +525,58 @@ PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
 ```
 
 不能单独闭合行/列命题。
+
+## Full-S non-AP WFD theorem-match 矩阵
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_fulls_nonap_wfd_theorem_match_matrix_router.py
+data/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-ledger.json
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.md
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.json
+```
+
+本证书把 `H_P`/full-S 外部解析输入固定为逐项 theorem-match，而不是引用名称。当前目标对象为：
+
+```text
+W_full(C,S,H)=sum_{c~C} lambda_c sum_{0<|h|<=H} omega_h
+              sum_{s~S,(s,c)=1} beta_s e_c(a_h s + b_h bar{s})
+X≈P^2, C≈P/log^O P, S≈P, H<=P/log^O P
+boundary=non-AP, uncentered, no hidden projection, no AP-source lift
+required_strength=NaturalWFDScale/log^A P for every A>0
+```
+
+逐项核查列为：
+
+```text
+object, weights, window, moduli, smoothing_projection, saving_strength, conclusion
+```
+
+当前判定：
+
+1. BHP/Li 普通短区间输入不匹配 full-S WFD 对象，且 `theta>1/2` 不覆盖 `x≈P^2` 的长度 `P≈sqrt(x)` 顶端带。
+2. Friedlander-Iwaniec 只作为 parity-breaking 技术范型；其 `x^2+y^4` 特殊对象不等于当前 full-S non-AP WFD 窗口。
+3. BFI AP 定理只有在另证 `APSourceLift` 后才可用；它本身不是未中心化、无投影的 non-AP WFD 结论。
+4. DI/Kuznetsov 谱工具在相位/模数/频率上部分匹配，但尚未给出当前 `c`-dependent completed weights 的 ready-made corollary。
+5. Maynard/GPY 的结论类型与每个 `sqrt` 窗非空性不匹配；仓库已有 Maynard-S compression no-go。
+6. `FullS-KLS-ext` 与当前对象逐项匹配，但只能作为新的外部黑箱合同，不能登记为已由 DI/BFI 原文推出。
+7. 新自守/dispersion 证明路线对象匹配，但仍缺任意 `log^{-A}` 节省和最终结论。
+
+因此最新外部输入纪律为：
+
+```text
+ReadyMadePrimarySourceMatchFound=false
+PrimarySourceDerivationClosed=false
+UnconditionalHPClosureReached=false
+```
+
+真正剩余是：
+
+```text
+FullSNonAPWFDKLSTheoremInput
+OR APSourceLift
+OR NCBLKActualBlockNonConcentration
+```
+
+任何 FI/DI/BFI/Maynard/自守 L 函数方向的后续推进，都必须先填满上述七列，而不能只登记为“标准深定理可用”。

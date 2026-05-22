@@ -15675,6 +15675,52 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
 
+## 329. Full-S non-AP WFD theorem-match matrix frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_fulls_nonap_wfd_theorem_match_matrix_router.py
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.md
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.json
+data/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-ledger.json
+```
+
+同步结果：
+
+```text
+status=fulls_nonap_wfd_primary_sources_screened_exact_contract_or_new_theorem_remains
+ready_made_primary_source_match_found=false
+primary_source_derivation_closed=false
+unconditional_hp_closure_reached=false
+next_direct_attack_target=FullSNonAPWFDKLSTheoremInput OR APSourceLift OR NCBLKActualBlockNonConcentration
+```
+
+formal-to-actual 含义是：`H_P` 顶端 strict 带已经被确认处在
+`x≈P^2, length≈P≈sqrt(x)` 的 Cramer-local 尺度；Phi-LPF/LPF/CRT 公式只提供精确
+组合表达，不提供正性。新的外部解析方向必须逐项匹配当前 full-S non-AP WFD 对象：
+
+```text
+object, weights, window, moduli, smoothing_projection, saving_strength, conclusion
+```
+
+矩阵结论是：BHP/Li 普通短区间、Friedlander-Iwaniec 特殊 parity-breaking 模型、
+BFI AP 定理、DI/Kuznetsov 谱模板、Maynard/GPY 小间隔工具均不能直接关闭当前
+未中心化、无隐藏投影、无 AP-source lift 的 full-S non-AP WFD 目标。`FullS-KLS-ext`
+与目标逐项匹配，但只能作为新外部黑箱合同；若要求从主来源推出，仍需
+`DIBFIPrimarySourceSpecializationProof` 或新的自守/dispersion 证明。
+
+当前直接主攻口被收缩为：
+
+```text
+FullSNonAPWFDKLSTheoremInput
+OR APSourceLift
+OR NCBLKActualBlockNonConcentration
+```
+
+本层关闭的是“只引用 FI/DI/BFI/Maynard/自守 L 函数名称即可闭合”的误路线。行/列命题、
+`H_P` 和三目标命题仍未无条件闭合。
+
 ## 398. Phi-LPF latest constructor source-entropy payload-loop cut sync frontier
 
 新增文件

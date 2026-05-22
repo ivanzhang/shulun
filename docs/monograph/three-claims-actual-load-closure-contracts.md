@@ -22365,6 +22365,61 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.247 Full-S non-AP WFD theorem-match matrix 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_fulls_nonap_wfd_theorem_match_matrix_router.py
+data/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-ledger.json
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.md
+docs/monograph/prime-matrix-fulls-nonap-wfd-theorem-match-matrix-router.json
+```
+
+同步读数为：
+
+```text
+status=fulls_nonap_wfd_primary_sources_screened_exact_contract_or_new_theorem_remains
+candidate_count=7
+ready_made_primary_source_match_found=false
+next_direct_attack_target=FullSNonAPWFDKLSTheoremInput OR APSourceLift OR NCBLKActualBlockNonConcentration
+```
+
+actual-load 含义是：从 `H_P` route reset 之后，外部解析输入不再允许用粗标签登记为闭合。
+当前对象已经钉死为 full-S non-AP uncentered no-projection WFD：
+
+```text
+W_full(C,S,H)=sum_{c~C} lambda_c sum_{0<|h|<=H} omega_h
+              sum_{s~S,(s,c)=1} beta_s e_c(a_h s + b_h bar{s})
+X≈P^2, C≈P/log^O P, S≈P, H<=P/log^O P
+required_strength=NaturalWFDScale/log^A P for every A>0
+```
+
+因此 FI/DI/BFI/Maynard/自守 L 函数方向必须逐项支付：
+
+```text
+object
+weights
+window
+moduli
+smoothing_projection
+saving_strength
+conclusion
+```
+
+本层筛查后，BHP/Li、FI、BFI、DI/Kuznetsov、Maynard/GPY 都不能直接作为当前对象的
+ready-made 定理。`FullS-KLS-ext` 是唯一逐项匹配的外部合同，但它不是已由主来源推出的
+结论，只能作为新黑箱输入或待证明定理。若不接受该黑箱，则剩余仍是：
+
+```text
+FullSNonAPWFDKLSTheoremInput
+OR APSourceLift
+OR NCBLKActualBlockNonConcentration
+```
+
+这把“外部深定理路线”从名称引用收缩成审稿级接口。它没有证明 `H_P` 或行/列命题无条件
+闭合。
+
 ### 1.180 Phi-LPF latest constructor bucket transport-stack rebase sync 更新
 
 新增机器证书：
