@@ -22761,3 +22761,38 @@ AND PhiLPFRoughCofactorOrderedFactorizationCoherenceBeforePushforward
 并行替代仍是直接提交
 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`。行/列命题仍未
 无条件闭合。
+
+## 330. External/internal dual-closure hardpoint frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_dual_closure_external_internal_hardpoint_router.py
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.md
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.json
+data/prime-matrix-dual-closure-external-internal-hardpoint-ledger.json
+```
+
+同步结果：
+
+```text
+external_lemma_version_logically_closed_under_package=true
+external_lemma_unconditional_from_current_corpus=false
+internal_self_contained_closed_from_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Phi-LPF/LPF 的端点差和桶恒等式仍是精确计数工具，不是短区间正性。
+外部引理版可以在以下包下条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+但当前仓库没有独立接受最终晋级包，因此不能删除条件。内部自足版仍必须证明
+clean-core moving atom 排斥及其 signed-source/constructor 细化包，并且还要给出
+`SelfContainedDStructureTailLog4FiniteRankinProofPackage`。最新硬点不再是继续重排
+Phi-LPF 计数公式，而是提交同 formal unit 的 pre-Cauchy signed emitter、offdiagonal
+semiprime first seed signed table、internal prime-adjoin signed transition table、row mass/support、
+complete key 与 fixed-key multiplicity 账本。

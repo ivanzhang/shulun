@@ -620,3 +620,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 - 或完全避开外部谱定理，直接证明 `ActualNoncanonicalFullSFactorSupportCapacityTheoremInput`。
 
 两者都不能省略最终的 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 晋级验收。
+
+## 外部引理版 / 内部自足版双闭合边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_dual_closure_external_internal_hardpoint_router.py
+data/prime-matrix-dual-closure-external-internal-hardpoint-ledger.json
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.md
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.json
+```
+
+该证书把“外部引理版”和“内部自足版”分开登记，避免把条件闭合误读为无条件闭合。
+
+外部引理版的严格闭合包为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+在这个包被接受时，外部引理版的反例链无剩余数学出口。但当前语料库尚未独立接受最终
+DStructure/Tail-log4/finite Rankin 晋级包，所以它仍不是当前仓库的无条件定理。
+
+无黑箱外部主来源版仍需：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+内部自足版的高层硬点为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+继续展开 source 侧后，当前最实在的 signed-source 表输入为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+Phi-LPF/LPF 端点差公式继续保留为精确计数和有限审计工具，但不作为短区间正性的外部引理。

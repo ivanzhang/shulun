@@ -25076,6 +25076,48 @@ OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
 因此 FI/DI/BFI/Maynard/自守 L 函数方向不是“引用一个现成名字即可闭合”，而是必须逐项完成
 theorem-match：当前对象、权重、窗口、模数范围、平滑/投影、误差保存、常数强度都要精确匹配。
 
+### 1.247 外部引理版 / 内部自足版双闭合合同更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_dual_closure_external_internal_hardpoint_router.py
+data/prime-matrix-dual-closure-external-internal-hardpoint-ledger.json
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.md
+docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.json
+```
+
+同步读数为：
+
+```text
+external_lemma_version_logically_closed_under_package=true
+external_lemma_unconditional_from_current_corpus=false
+internal_self_contained_closed_from_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：外部引理版与内部自足版使用不同闭合包，不能互相偷换。外部引理版的条件闭合合同为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若两项都作为外部引理/独立验收输入接受，则反例链没有剩余数学出口。当前仓库没有把最终
+DStructure/Tail-log4/finite Rankin 晋级包升级为无条件内部证明，因此不能称为当前语料库的
+无条件闭合。
+
+内部自足版的合同为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+source 侧细化硬点为同 formal unit 的 pre-Cauchy signed emitter、offdiagonal semiprime first seed
+signed table、internal prime-adjoin signed transition、row mass/support、complete key 与 fixed-key
+multiplicity。Phi-LPF 端点差公式只给 exact count，不能作为 positivity contract。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
