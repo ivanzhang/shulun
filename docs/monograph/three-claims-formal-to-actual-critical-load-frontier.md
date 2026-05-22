@@ -18559,6 +18559,59 @@ AND P^(19/21)<k<P.
 平方边界带仍需要对应的 Phi-LPF excess、semiprime-shadow PDEC 排斥，或真正
 `sqrt(x)` 尺度且常数不超过 1 的外部短区间定理。本层仍不证明三目标命题无条件闭合。
 
+## 453. Phi-LPF strict-k half-rough shadow band split frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_half_rough_shadow_band_split_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.json
+data/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-ledger.json
+```
+
+同步结果：
+
+```text
+max_prime=1009
+all_half_rough_shadow_identities_hold=true
+identity_failure_count=0
+next_direct_attack_target=HalfRoughSurvivorExistenceInShadowFreeHighBand OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow
+```
+
+formal-to-actual 含义是：上一层留下的高 `k` 平方边界带不再需要完整 LPF 树。
+对 `1<k<P`，定义
+
+```text
+R_half(P,k)=#{1<=t<P: gcd(kP+t, product_{q<=P/2} q)=1}
+T_half(P,k)=#{q,m prime: P/2<q<=m<2P, kP<qm<(k+1)P}.
+```
+
+则有精确恒等式：
+
+```text
+pi((k+1)P-1)-pi(kP)=R_half(P,k)-T_half(P,k).
+```
+
+结构读法是：若 `kP+t` 避开所有 `q<=P/2` 但仍合成，则它的最小素因子
+`q` 在 `(P/2,P)`，商 `m<2P` 且必须为素数；用 `q<=m` 避免双计数。
+另外，当
+
+```text
+4*((k+1)P-1)<=P^2
+```
+
+时，整行低于 `P^2/4`，任何 `q,m>P/2` 的 shadow 都不可能出现，所以
+`T_half(P,k)=0`。因此 BHP bulk 后的真剩余进一步拆成：
+
+```text
+HalfRoughSurvivorExistenceInShadowFreeHighBand
+OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow.
+```
+
+本层仍不证明 `UnifiedPositiveCore`；它只把高 `k` 反例从完整 LPF 铺满压到
+half-rough survivor 非空或 two-prime shadow excess。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

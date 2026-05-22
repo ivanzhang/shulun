@@ -24567,6 +24567,52 @@ AND P^(19/21)<k<P.
 对应 Phi-LPF excess、semiprime-shadow PDEC 排斥，或 `sqrt(x)` 尺度常数不超过 1
 的外部短区间定理。行/列命题仍未无条件闭合。
 
+### 1.226 Phi-LPF strict-k half-rough shadow band split 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_half_rough_shadow_band_split_router.py
+data/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.json
+```
+
+同步读数为：
+
+```text
+max_prime=1009
+prime_base_count=165
+all_half_rough_shadow_identities_hold=true
+identity_failure_count=0
+```
+
+actual-load 含义是：对任意 `1<k<P`，令
+
+```text
+R_half(P,k)=#{1<=t<P: gcd(kP+t, product_{q<=P/2} q)=1}
+T_half(P,k)=#{q,m prime: P/2<q<=m<2P, kP<qm<(k+1)P}.
+```
+
+则 strict 行素数个数精确为：
+
+```text
+pi((k+1)P-1)-pi(kP)=R_half(P,k)-T_half(P,k).
+```
+
+证明机制是：避开 `q<=P/2` 的合数必须有 LPF `q in (P/2,P)`，商 `m<2P`
+且为素数；`q<=m` 给出唯一 shadow 对。若整行低于 `P^2/4`，即
+`4*((k+1)P-1)<=P^2`，则双素数 shadow 不存在。
+
+因此高 `k` 平方边界带被进一步拆成：
+
+```text
+HalfRoughSurvivorExistenceInShadowFreeHighBand
+OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow
+```
+
+本层仍未证明这些 survivor/excess 下界；行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

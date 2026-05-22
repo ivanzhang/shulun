@@ -1,0 +1,991 @@
+{
+  "definitions": {
+    "R_half(P,k)": "#{1<=t<P: gcd(kP+t, product_{q<=P/2} q)=1}",
+    "T_half(P,k)": "#{q,m prime: P/2<q<=m<2P, kP<qm<(k+1)P}",
+    "identity": "pi((k+1)P-1)-pi(kP)=R_half(P,k)-T_half(P,k)",
+    "shadow_free_condition": "4*((k+1)P-1)<=P^2 implies T_half(P,k)=0"
+  },
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-router.json": "f3f48c40a68ca892665fdc763803d616619ac104127aebb783f7f921c6fcbf54",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.json": "8ab6da3a1ad8bb73f3b4511f503c5914984cfeb1d8b62e05dcb63ce41ea6b381",
+    "docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.json": "c5ca8b97bf9f6dc2c5abaec3dd7f4ba612a3996df98696b3b01167e2b076f936"
+  },
+  "finite_audit": {
+    "all_half_rough_shadow_identities_hold": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "identity_failure_count": 0,
+    "max_prime": 1009,
+    "minimum_high_band_margin_profile": {
+      "P": 11,
+      "bhp_remaining_high_band_first_k": 9,
+      "minimum_margin_in_bhp_remaining_high_band": 1
+    },
+    "minimum_margin_profile": {
+      "P": 11,
+      "minimum_margin_all_strict_rows": 1,
+      "minimum_margin_rows": [
+        {
+          "P": 11,
+          "direct_prime_count": 1,
+          "identity_holds": true,
+          "in_bhp_remaining_high_band": true,
+          "in_shadow_free_subband": false,
+          "k": 10,
+          "rough_minus_shadow": 1,
+          "rough_survivor_count": 2,
+          "semiprime_shadow_count": 1
+        }
+      ]
+    },
+    "prime_base_count": 165,
+    "sample_profiles": [
+      {
+        "P": 11,
+        "all_identities_hold": true,
+        "bhp_remaining_high_band_first_k": 9,
+        "high_band_row_count": 2,
+        "identity_failure_count": 0,
+        "minimum_margin_all_strict_rows": 1,
+        "minimum_margin_in_bhp_remaining_high_band": 1,
+        "minimum_margin_rows": [
+          {
+            "P": 11,
+            "direct_prime_count": 1,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 10,
+            "rough_minus_shadow": 1,
+            "rough_survivor_count": 2,
+            "semiprime_shadow_count": 1
+          }
+        ],
+        "sample_rows": [
+          {
+            "P": 11,
+            "direct_prime_count": 3,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "k": 2,
+            "rough_minus_shadow": 3,
+            "rough_survivor_count": 3,
+            "semiprime_shadow_count": 0
+          },
+          {
+            "P": 11,
+            "direct_prime_count": 4,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 9,
+            "rough_minus_shadow": 4,
+            "rough_survivor_count": 4,
+            "semiprime_shadow_count": 0
+          },
+          {
+            "P": 11,
+            "direct_prime_count": 1,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 10,
+            "rough_minus_shadow": 1,
+            "rough_survivor_count": 2,
+            "semiprime_shadow_count": 1
+          }
+        ],
+        "shadow_free_cap_k": 1,
+        "shadow_free_row_count": 0,
+        "shadow_prefix": [
+          {
+            "k": 4,
+            "m": 7,
+            "n": 49,
+            "q": 7,
+            "t": 5
+          },
+          {
+            "k": 8,
+            "m": 13,
+            "n": 91,
+            "q": 7,
+            "t": 3
+          },
+          {
+            "k": 10,
+            "m": 17,
+            "n": 119,
+            "q": 7,
+            "t": 9
+          }
+        ],
+        "strict_row_count": 9
+      },
+      {
+        "P": 101,
+        "all_identities_hold": true,
+        "bhp_remaining_high_band_first_k": 66,
+        "high_band_row_count": 35,
+        "identity_failure_count": 0,
+        "minimum_margin_all_strict_rows": 7,
+        "minimum_margin_in_bhp_remaining_high_band": 7,
+        "minimum_margin_rows": [
+          {
+            "P": 101,
+            "direct_prime_count": 7,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 73,
+            "rough_minus_shadow": 7,
+            "rough_survivor_count": 8,
+            "semiprime_shadow_count": 1
+          }
+        ],
+        "sample_rows": [
+          {
+            "P": 101,
+            "direct_prime_count": 16,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "k": 2,
+            "rough_minus_shadow": 16,
+            "rough_survivor_count": 16,
+            "semiprime_shadow_count": 0
+          },
+          {
+            "P": 101,
+            "direct_prime_count": 12,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 66,
+            "rough_minus_shadow": 12,
+            "rough_survivor_count": 14,
+            "semiprime_shadow_count": 2
+          },
+          {
+            "P": 101,
+            "direct_prime_count": 12,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 100,
+            "rough_minus_shadow": 12,
+            "rough_survivor_count": 16,
+            "semiprime_shadow_count": 4
+          }
+        ],
+        "shadow_free_cap_k": 24,
+        "shadow_free_row_count": 23,
+        "shadow_prefix": [
+          {
+            "k": 27,
+            "m": 53,
+            "n": 2809,
+            "q": 53,
+            "t": 82
+          },
+          {
+            "k": 30,
+            "m": 59,
+            "n": 3127,
+            "q": 53,
+            "t": 97
+          },
+          {
+            "k": 32,
+            "m": 61,
+            "n": 3233,
+            "q": 53,
+            "t": 1
+          },
+          {
+            "k": 35,
+            "m": 67,
+            "n": 3551,
+            "q": 53,
+            "t": 16
+          },
+          {
+            "k": 37,
+            "m": 71,
+            "n": 3763,
+            "q": 53,
+            "t": 26
+          },
+          {
+            "k": 38,
+            "m": 73,
+            "n": 3869,
+            "q": 53,
+            "t": 31
+          },
+          {
+            "k": 41,
+            "m": 79,
+            "n": 4187,
+            "q": 53,
+            "t": 46
+          },
+          {
+            "k": 43,
+            "m": 83,
+            "n": 4399,
+            "q": 53,
+            "t": 56
+          },
+          {
+            "k": 46,
+            "m": 89,
+            "n": 4717,
+            "q": 53,
+            "t": 71
+          },
+          {
+            "k": 50,
+            "m": 97,
+            "n": 5141,
+            "q": 53,
+            "t": 91
+          },
+          {
+            "k": 54,
+            "m": 103,
+            "n": 5459,
+            "q": 53,
+            "t": 5
+          },
+          {
+            "k": 56,
+            "m": 107,
+            "n": 5671,
+            "q": 53,
+            "t": 15
+          },
+          {
+            "k": 57,
+            "m": 109,
+            "n": 5777,
+            "q": 53,
+            "t": 20
+          },
+          {
+            "k": 59,
+            "m": 113,
+            "n": 5989,
+            "q": 53,
+            "t": 30
+          },
+          {
+            "k": 66,
+            "m": 127,
+            "n": 6731,
+            "q": 53,
+            "t": 65
+          },
+          {
+            "k": 68,
+            "m": 131,
+            "n": 6943,
+            "q": 53,
+            "t": 75
+          }
+        ],
+        "strict_row_count": 99
+      },
+      {
+        "P": 257,
+        "all_identities_hold": true,
+        "bhp_remaining_high_band_first_k": 152,
+        "high_band_row_count": 105,
+        "identity_failure_count": 0,
+        "minimum_margin_all_strict_rows": 18,
+        "minimum_margin_in_bhp_remaining_high_band": 18,
+        "minimum_margin_rows": [
+          {
+            "P": 257,
+            "direct_prime_count": 18,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": false,
+            "k": 138,
+            "rough_minus_shadow": 18,
+            "rough_survivor_count": 23,
+            "semiprime_shadow_count": 5
+          },
+          {
+            "P": 257,
+            "direct_prime_count": 18,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 182,
+            "rough_minus_shadow": 18,
+            "rough_survivor_count": 23,
+            "semiprime_shadow_count": 5
+          },
+          {
+            "P": 257,
+            "direct_prime_count": 18,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 242,
+            "rough_minus_shadow": 18,
+            "rough_survivor_count": 25,
+            "semiprime_shadow_count": 7
+          }
+        ],
+        "sample_rows": [
+          {
+            "P": 257,
+            "direct_prime_count": 39,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "k": 2,
+            "rough_minus_shadow": 39,
+            "rough_survivor_count": 39,
+            "semiprime_shadow_count": 0
+          },
+          {
+            "P": 257,
+            "direct_prime_count": 27,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 152,
+            "rough_minus_shadow": 27,
+            "rough_survivor_count": 31,
+            "semiprime_shadow_count": 4
+          },
+          {
+            "P": 257,
+            "direct_prime_count": 23,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 256,
+            "rough_minus_shadow": 23,
+            "rough_survivor_count": 29,
+            "semiprime_shadow_count": 6
+          }
+        ],
+        "shadow_free_cap_k": 63,
+        "shadow_free_row_count": 62,
+        "shadow_prefix": [
+          {
+            "k": 66,
+            "m": 131,
+            "n": 17161,
+            "q": 131,
+            "t": 199
+          },
+          {
+            "k": 69,
+            "m": 137,
+            "n": 17947,
+            "q": 131,
+            "t": 214
+          },
+          {
+            "k": 70,
+            "m": 139,
+            "n": 18209,
+            "q": 131,
+            "t": 219
+          },
+          {
+            "k": 75,
+            "m": 149,
+            "n": 19519,
+            "q": 131,
+            "t": 244
+          },
+          {
+            "k": 76,
+            "m": 151,
+            "n": 19781,
+            "q": 131,
+            "t": 249
+          },
+          {
+            "k": 80,
+            "m": 157,
+            "n": 20567,
+            "q": 131,
+            "t": 7
+          },
+          {
+            "k": 83,
+            "m": 163,
+            "n": 21353,
+            "q": 131,
+            "t": 22
+          },
+          {
+            "k": 85,
+            "m": 167,
+            "n": 21877,
+            "q": 131,
+            "t": 32
+          },
+          {
+            "k": 88,
+            "m": 173,
+            "n": 22663,
+            "q": 131,
+            "t": 47
+          },
+          {
+            "k": 91,
+            "m": 179,
+            "n": 23449,
+            "q": 131,
+            "t": 62
+          },
+          {
+            "k": 92,
+            "m": 181,
+            "n": 23711,
+            "q": 131,
+            "t": 67
+          },
+          {
+            "k": 97,
+            "m": 191,
+            "n": 25021,
+            "q": 131,
+            "t": 92
+          },
+          {
+            "k": 98,
+            "m": 193,
+            "n": 25283,
+            "q": 131,
+            "t": 97
+          },
+          {
+            "k": 100,
+            "m": 197,
+            "n": 25807,
+            "q": 131,
+            "t": 107
+          },
+          {
+            "k": 101,
+            "m": 199,
+            "n": 26069,
+            "q": 131,
+            "t": 112
+          },
+          {
+            "k": 107,
+            "m": 211,
+            "n": 27641,
+            "q": 131,
+            "t": 142
+          }
+        ],
+        "strict_row_count": 255
+      },
+      {
+        "P": 1009,
+        "all_identities_hold": true,
+        "bhp_remaining_high_band_first_k": 523,
+        "high_band_row_count": 486,
+        "identity_failure_count": 0,
+        "minimum_margin_all_strict_rows": 52,
+        "minimum_margin_in_bhp_remaining_high_band": 52,
+        "minimum_margin_rows": [
+          {
+            "P": 1009,
+            "direct_prime_count": 52,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 905,
+            "rough_minus_shadow": 52,
+            "rough_survivor_count": 66,
+            "semiprime_shadow_count": 14
+          }
+        ],
+        "sample_rows": [
+          {
+            "P": 1009,
+            "direct_prime_count": 128,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": false,
+            "in_shadow_free_subband": true,
+            "k": 2,
+            "rough_minus_shadow": 128,
+            "rough_survivor_count": 128,
+            "semiprime_shadow_count": 0
+          },
+          {
+            "P": 1009,
+            "direct_prime_count": 71,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 523,
+            "rough_minus_shadow": 71,
+            "rough_survivor_count": 80,
+            "semiprime_shadow_count": 9
+          },
+          {
+            "P": 1009,
+            "direct_prime_count": 70,
+            "identity_holds": true,
+            "in_bhp_remaining_high_band": true,
+            "in_shadow_free_subband": false,
+            "k": 1008,
+            "rough_minus_shadow": 70,
+            "rough_survivor_count": 89,
+            "semiprime_shadow_count": 19
+          }
+        ],
+        "shadow_free_cap_k": 251,
+        "shadow_free_row_count": 250,
+        "shadow_prefix": [
+          {
+            "k": 256,
+            "m": 509,
+            "n": 259081,
+            "q": 509,
+            "t": 777
+          },
+          {
+            "k": 262,
+            "m": 521,
+            "n": 265189,
+            "q": 509,
+            "t": 831
+          },
+          {
+            "k": 263,
+            "m": 523,
+            "n": 266207,
+            "q": 509,
+            "t": 840
+          },
+          {
+            "k": 272,
+            "m": 541,
+            "n": 275369,
+            "q": 509,
+            "t": 921
+          },
+          {
+            "k": 275,
+            "m": 547,
+            "n": 278423,
+            "q": 509,
+            "t": 948
+          },
+          {
+            "k": 280,
+            "m": 557,
+            "n": 283513,
+            "q": 509,
+            "t": 993
+          },
+          {
+            "k": 284,
+            "m": 563,
+            "n": 286567,
+            "q": 509,
+            "t": 11
+          },
+          {
+            "k": 287,
+            "m": 569,
+            "n": 289621,
+            "q": 509,
+            "t": 38
+          },
+          {
+            "k": 288,
+            "m": 571,
+            "n": 290639,
+            "q": 509,
+            "t": 47
+          },
+          {
+            "k": 291,
+            "m": 577,
+            "n": 293693,
+            "q": 509,
+            "t": 74
+          },
+          {
+            "k": 296,
+            "m": 587,
+            "n": 298783,
+            "q": 509,
+            "t": 119
+          },
+          {
+            "k": 299,
+            "m": 593,
+            "n": 301837,
+            "q": 509,
+            "t": 146
+          },
+          {
+            "k": 302,
+            "m": 599,
+            "n": 304891,
+            "q": 509,
+            "t": 173
+          },
+          {
+            "k": 303,
+            "m": 601,
+            "n": 305909,
+            "q": 509,
+            "t": 182
+          },
+          {
+            "k": 306,
+            "m": 607,
+            "n": 308963,
+            "q": 509,
+            "t": 209
+          },
+          {
+            "k": 309,
+            "m": 613,
+            "n": 312017,
+            "q": 509,
+            "t": 236
+          }
+        ],
+        "strict_row_count": 1007
+      }
+    ],
+    "sample_rows_compact": [
+      {
+        "P": 11,
+        "direct_prime_count": 3,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": false,
+        "k": 2,
+        "rough_minus_shadow": 3,
+        "rough_survivor_count": 3,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 11,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 9,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 11,
+        "direct_prime_count": 1,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 10,
+        "rough_minus_shadow": 1,
+        "rough_survivor_count": 2,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 13,
+        "direct_prime_count": 3,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 3,
+        "rough_survivor_count": 3,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 13,
+        "direct_prime_count": 2,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 11,
+        "rough_minus_shadow": 2,
+        "rough_survivor_count": 2,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 13,
+        "direct_prime_count": 3,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 12,
+        "rough_minus_shadow": 3,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 17,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 17,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 13,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 17,
+        "direct_prime_count": 3,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 16,
+        "rough_minus_shadow": 3,
+        "rough_survivor_count": 3,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 19,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 19,
+        "direct_prime_count": 1,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 15,
+        "rough_minus_shadow": 1,
+        "rough_survivor_count": 3,
+        "semiprime_shadow_count": 2
+      },
+      {
+        "P": 19,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 18,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 23,
+        "direct_prime_count": 5,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 5,
+        "rough_survivor_count": 5,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 23,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 18,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 23,
+        "direct_prime_count": 3,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 22,
+        "rough_minus_shadow": 3,
+        "rough_survivor_count": 4,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 29,
+        "direct_prime_count": 7,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 7,
+        "rough_survivor_count": 7,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 29,
+        "direct_prime_count": 6,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 22,
+        "rough_minus_shadow": 6,
+        "rough_survivor_count": 6,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 29,
+        "direct_prime_count": 5,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 28,
+        "rough_minus_shadow": 5,
+        "rough_survivor_count": 6,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 31,
+        "direct_prime_count": 6,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 6,
+        "rough_survivor_count": 6,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 31,
+        "direct_prime_count": 5,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 23,
+        "rough_minus_shadow": 5,
+        "rough_survivor_count": 6,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 31,
+        "direct_prime_count": 4,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 30,
+        "rough_minus_shadow": 4,
+        "rough_survivor_count": 5,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 37,
+        "direct_prime_count": 8,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": false,
+        "in_shadow_free_subband": true,
+        "k": 2,
+        "rough_minus_shadow": 8,
+        "rough_survivor_count": 8,
+        "semiprime_shadow_count": 0
+      },
+      {
+        "P": 37,
+        "direct_prime_count": 6,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 27,
+        "rough_minus_shadow": 6,
+        "rough_survivor_count": 7,
+        "semiprime_shadow_count": 1
+      },
+      {
+        "P": 37,
+        "direct_prime_count": 2,
+        "identity_holds": true,
+        "in_bhp_remaining_high_band": true,
+        "in_shadow_free_subband": false,
+        "k": 36,
+        "rough_minus_shadow": 2,
+        "rough_survivor_count": 6,
+        "semiprime_shadow_count": 4
+      }
+    ]
+  },
+  "gates": [
+    {
+      "closed": true,
+      "gate": "StrictKHalfRoughShadowIdentityClosed",
+      "meaning": "对每个 1<k<P，N_P(k) 精确等于 q<=P/2 后的 half-rough survivor 减去 q,m>P/2 的双素数 shadow。",
+      "proved": true,
+      "remaining": "exact identity"
+    },
+    {
+      "closed": true,
+      "gate": "CompositeHalfRoughSurvivorForcesTwoPrimeShadow",
+      "meaning": "若 kP+t 避开所有 q<=P/2 且仍合成，则其 LPF q 在 (P/2,P)，商 m<2P 且必须为素数。",
+      "proved": true,
+      "remaining": "none for structural split"
+    },
+    {
+      "closed": true,
+      "gate": "BHPRemainingHighBandShadowFreeSubbandSeparated",
+      "meaning": "当整行位于 P^2/4 以下时，q,m>P/2 的 shadow 不可能出现；该子带只剩 half-rough survivor 非空性。",
+      "proved": true,
+      "remaining": "HalfRoughSurvivorExistenceInShadowFreeHighBand"
+    },
+    {
+      "closed": true,
+      "gate": "UpperSquareBandReducedToSemiprimeShadowExcess",
+      "meaning": "在 P^2/4 以上的高 k 带，失败必须表现为双素数 shadow 吃掉全部 half-rough survivor excess。",
+      "proved": true,
+      "remaining": "HighKHalfRoughSurvivorExcessOverTwoPrimeShadow"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteSweepIdentityMatchesDirectPrimeCount",
+      "meaning": "有限审计确认 exact identity 与直接素数计数一致，但不作为全局证明。",
+      "proved": true,
+      "remaining": "finite audit only"
+    },
+    {
+      "closed": false,
+      "gate": "HighKSquareBandPositivityProved",
+      "meaning": "本层没有证明 half-rough survivor 非空性或 shadow excess 的全局下界。",
+      "proved": false,
+      "remaining": "HalfRoughSurvivorExistenceInShadowFreeHighBand OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedPositiveCoreProved",
+      "meaning": "本层继续压缩非循环剩余，但不证明三目标命题无条件闭合。",
+      "proved": false,
+      "remaining": "sqrt-scale theorem or structural high-k half-rough excess"
+    }
+  ],
+  "next_direct_attack_target": "HalfRoughSurvivorExistenceInShadowFreeHighBand OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow",
+  "plain_conclusion": "高 k 平方边界带现在不再需要完整 LPF 树。每一行的素数数等于 half-rough survivor 减去唯一的 q,m>P/2 双素数 shadow。低于 P^2/4 的剩余子带 shadow 为零，只需证明 half-rough survivor 非空；高于 P^2/4 的子带则变成 survivor 严格多于 two-prime shadow。",
+  "status": "strict_k_prime_count_equals_half_rough_survivor_excess_over_two_prime_shadow"
+}

@@ -11926,6 +11926,55 @@ interval theorem, a structural Phi--LPF excess, or a semiprime-shadow/PDEC
 exclusion.
 \end{proof}
 
+\begin{theorem}[Strict-\(k\) half-rough shadow band split]
+Let \(P\) be prime and \(1<k<P\).  Define
+\[
+  R_{1/2}(P,k)
+  =
+  \#\left\{1\le t<P:
+  \gcd\!\left(kP+t,\prod_{q\le P/2}q\right)=1\right\},
+\]
+where \(q\) runs over primes, and
+\[
+  T_{1/2}(P,k)
+  =
+  \#\left\{(q,m):
+  q,m\ {\rm prime},\ P/2<q\le m<2P,\ kP<qm<(k+1)P\right\}.
+\]
+Then
+\[
+  \pi((k+1)P-1)-\pi(kP)=R_{1/2}(P,k)-T_{1/2}(P,k).
+\]
+Moreover, if \(4((k+1)P-1)\le P^2\), then \(T_{1/2}(P,k)=0\).
+\end{theorem}
+\begin{proof}[Status and reference]
+Any composite survivor counted by \(R_{1/2}(P,k)\) has least prime factor
+\(q>P/2\).  Since the number is below \(P^2\), this \(q\) is also below \(P\).
+Writing \(kP+t=qm\), one has \(m<2P\).  For \(P\ge 11\), \(m\) cannot be
+composite, because all its prime factors would be at least \(q>P/2\), forcing
+\(m\ge q^2>P^2/4>2P\).  Taking \(q\le m\) gives a unique two-prime shadow
+representative for every composite half-rough survivor, and every such shadow
+is composite and survives the \(q\le P/2\) deletion.  Subtraction leaves exactly
+the primes in the row.  If \(4((k+1)P-1)\le P^2\), the whole row lies at or below
+\(P^2/4\), while every product of two primes \(>P/2\) is strictly larger than
+\(P^2/4\), so the shadow is empty.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-\\
+shadow-band-split-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=1009\\
+all\_half\_rough\_shadow\_identities\_hold=true\\
+identity\_failure\_count=0\\
+next=HalfRoughSurvivorExistenceInShadowFreeHighBand\\
+\phantom{next=}OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow.
+\end{quote}
+This is still a reduction, not a proof of the final positive core.
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
