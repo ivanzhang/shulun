@@ -22365,6 +22365,54 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.180 Two replacement lines B3 deep sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_b3_deep_sync_router.py
+data/prime-matrix-two-replacement-lines-b3-deep-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_b3_discrete_synced_to_mertens_pnt_and_dstructure_open
+b3_external_mertens_version_reaches_dstructure_gate=true
+b3_self_contained_discrete_error_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层列出的
+`B3DiscretePrimeSumUniformErrorPGe100000` 不再是最新可审查原子。它已经被仓库内
+B=3 深层证书替换为两种口径：
+
+```text
+external Mertens:
+DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted
+AND B3RosserFaceDictionaryClosedAlpha043
+AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043
+
+self-contained Mertens:
+B3LowPrimeStepFiniteLedgerXLt286PGe100000
+AND B3FinitePrimeReciprocalStepLedger286To10371PGe100000
+AND B3FinitePrimeReciprocalStepLedger10372To19999PGe100000
+AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed
+AND SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000
+AND B3RosserFaceDictionaryClosedAlpha043
+AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043
+```
+
+接受外部 Dusart/Mertens 定理时，B=3 解析链已经推进到
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。若不接受外部 Mertens
+尾段，则自足路线必须证明显式零点自由区/theta 包络和 Meissel-Mertens 常数区间。
+本层因此只缩小 beta-sieve 子包；source-root、PDEC/CleanKLS、FullS theorem-match 与
+DStructure/Rankin 仍是实际承重门。
+
 ### 1.247 Full-S non-AP WFD theorem-match matrix 更新
 
 新增机器证书：

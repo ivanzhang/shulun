@@ -23280,3 +23280,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 外部线不变：接受外部引理只给条件闭合；无黑箱外部版仍需同对象 FullS-KLS/no-projection
 theorem-match、actual source capacity 新定理或新的 automorphic/dispersion 证明。
+
+## 330I. Two replacement lines B3 deep sync frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_b3_deep_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.json
+data/prime-matrix-two-replacement-lines-b3-deep-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_b3_discrete_synced_to_mertens_pnt_and_dstructure_open
+b3_external_mertens_version_reaches_dstructure_gate=true
+b3_self_contained_discrete_error_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`B3DiscretePrimeSumUniformErrorPGe100000` 被更新为更深的
+B=3 解析分支，而不是继续作为最新粗标签。
+
+外部 Mertens 版：
+
+```text
+(DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted
+ AND B3RosserFaceDictionaryClosedAlpha043
+ AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+完全自足版：
+
+```text
+B3LowPrimeStepFiniteLedgerXLt286PGe100000
+AND B3FinitePrimeReciprocalStepLedger286To10371PGe100000
+AND B3FinitePrimeReciprocalStepLedger10372To19999PGe100000
+AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed
+AND SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000
+AND B3RosserFaceDictionaryClosedAlpha043
+AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043
+```
+
+最新直接主攻因此调整为：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+SelfContainedMeisselMertensConstantIntervalLedgerAt20000
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve or strict same-set PDEC scope
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部线仍需 same-object FullS non-AP WFD theorem-match、actual source capacity
+新定理或新 automorphic/dispersion 证明；B=3 同步不删除这些门。

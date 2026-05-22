@@ -929,3 +929,40 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 `ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`、actual source support/capacity 新定理，
 或新的自守/dispersion 证明。内部的 beta-sieve 和 sawtooth 原子化不能替代该外部 theorem-match，
 也不能删除 DStructure/Rankin 独立验收门。
+
+## 22. B=3 离散误差深同步后的外部/自足边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_b3_deep_sync_router.py
+data/prime-matrix-two-replacement-lines-b3-deep-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-b3-deep-sync-router.json
+```
+
+本层只替换内部 beta-sieve 的粗原子
+`B3DiscretePrimeSumUniformErrorPGe100000`。仓库已有的 B=3 深层链说明：
+离散素和误差先压成 Stieltjes prime-word 账本与交错边界余项；prime-harmonic/Mertens
+包络再压成有限阶梯与显式 reciprocal-prime Mertens 尾段；接受 Dusart/Rosser-Schoenfeld
+型外部显式定理后，20000 锚点与 delay-kernel BV 乘子把 B=3 边界变差的一百分点预算关闭。
+因此外部 Mertens 版的 B=3 分支已经到：
+
+```text
+(DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted
+ AND B3RosserFaceDictionaryClosedAlpha043
+ AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这仍不是无条件闭合，因为最后一项仍是独立验收门。若坚持完全自足，则不能引用
+Dusart 尾段，必须内联：
+
+```text
+SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000
+AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000
+```
+
+外部无黑箱主线仍保持上一节的 FullS-KLS/no-projection theorem-match 边界；B=3
+Mertens 同步只缩小内部 beta-sieve 子包，不替代 FullS theorem-match、source-root、
+PDEC/CleanKLS 或 DStructure/Rankin。
