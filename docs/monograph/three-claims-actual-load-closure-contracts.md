@@ -22426,6 +22426,56 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 `AcceptedFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`；
 后者仍需同对象 FullS theorem-match、actual source-capacity 新定理或 new automorphic/dispersion proof。
 
+### 1.257 两条替代线 source-rank/terminal 核表同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_sourcerank_terminal_kernel_sync_router.py
+data/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_sourcerank_terminal_synced_to_pointwise_kernel_open
+source_rank_coarse_package_active_after_sync=false
+terminal_descent_standalone_active_after_sync=false
+pointwise_kernel_triad_required=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+本层把 source-rank/no-collapse 三原子和 terminal descent 的下游统一到同一
+formal-unit 逐 primitive alpha/delta 核表：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+最新内部实际承重门更新为：
+
+```text
+((AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+  OR (AlphaRowAnchorPhaseEmissionFormulaLedger
+      AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+      AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+  OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+这一步只把粗包改为同一实际变量表，不证明 alpha row 发射公式、pre-Cauchy 算术恒等式、
+同表 rank/multiplicity、same-set PDEC、new-joint、rate 或 DStructure。
+
 ### 1.182 Two replacement lines source-root/no-cycle sync 更新
 
 新增机器证书：

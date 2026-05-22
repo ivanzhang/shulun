@@ -23555,3 +23555,66 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本层没有证明上述原子；它只阻止 seed/payload 两个旧标签继续作为非循环证明出口。
+
+## 330N. Two replacement lines source-rank/terminal kernel frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_sourcerank_terminal_kernel_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.json
+data/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_sourcerank_terminal_synced_to_pointwise_kernel_open
+source_rank_coarse_package_active_after_sync=false
+terminal_descent_standalone_active_after_sync=false
+pointwise_kernel_triad_required=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：source-domain entropy、complete key、fixed-key ExactUV
+local multiplicity 与 terminal descent 都不能继续作为互不相干的粗名。它们要求同一个
+actual pre-Cauchy primitive row 表；该共同对象被压成逐 primitive alpha/delta 核表三输入：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+最新内部实际承重门更新为：
+
+```text
+((AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+  OR (AlphaRowAnchorPhaseEmissionFormulaLedger
+      AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+      AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+  OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+最新直接主攻：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+AlphaRowAnchorPhaseEmissionFormulaLedger
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层没有证明核表三输入；它只是把 source-rank/terminal 粗口同步到同一个 actual-load 对象。

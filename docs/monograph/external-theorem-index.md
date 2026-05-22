@@ -1161,3 +1161,50 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 无黑箱外部版仍需同对象 FullS theorem-match、actual source-capacity 新定理或
 new automorphic/dispersion proof。FI/DI/BFI/Kuznetsov/Maynard 方向仍必须逐项匹配
 当前 completed full-S non-AP WFD 对象、权重、窗口、模数范围、投影与误差预算。
+
+## 27. Source-rank/terminal 核表同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_sourcerank_terminal_kernel_sync_router.py
+data/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-sourcerank-terminal-kernel-sync-router.json
+```
+
+本层把 source-rank/no-collapse 三原子与 terminal descent 下游接到同一
+formal-unit 逐 primitive alpha/delta 核表。于是：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+不再作为粗包活动口保留；`AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate`
+也不再作为 standalone 出口。两者共同压到：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+最新内部线为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR (AlphaRowAnchorPhaseEmissionFormulaLedger
+     AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+     AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版和无黑箱外部版仍保持上一节边界；本层没有证明 FullS theorem-match、
+new automorphic/dispersion proof 或 DStructure/Rankin 独立验收。
