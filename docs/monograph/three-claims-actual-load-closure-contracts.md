@@ -23730,6 +23730,53 @@ OR PositiveRejectionExcessForStrictKRawLPFIncidence.
 
 行/列命题仍未无条件闭合。
 
+### 1.210 Phi-LPF strict-k top row perfect tiling 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_perfect_tiling_router.py
+data/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.json
+```
+
+同步读数为：
+
+```text
+perfect_tiling_excluded_globally=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：顶行正性现在等价于排除 LPF 合数桶的完整铺满。对
+
+```text
+T_P={P^2-P+a:1<=a<P}
+B_q(P)=Phi(floor((P^2-1)/q),q)-Phi(floor((P^2-P)/q),q)
+```
+
+有
+
+```text
+N_top(P)=P-1-sum_{q<P} B_q(P)
+N_top(P)=0 iff sum_{q<P} B_q(P)=P-1
+N_top(P)>=1 iff sum_{q<P} B_q(P)<=P-2.
+```
+
+端点差分版 Phi 递推只把这些合数负载继续拆成有序粗因子树；它保留精确计数，
+但不自动生成未铺满槽。Sylvester-Schur 型连续乘积输入也只说明有大素因子泄出：
+如果顶行没有素数槽，则该大素因子必须由某个 `2<=m<P` 的小载体支付。
+
+因此最新剩余接口变成：
+
+```text
+LowCarrierHighPrimePaymentInjection
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR PrimeSquareUpperCollarPrimeInput.
+```
+
+有限审计没有发现 perfect tiling，但不作为全局证明。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

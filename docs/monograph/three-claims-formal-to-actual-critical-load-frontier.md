@@ -17681,6 +17681,55 @@ OR PrimeSquareUpperCollarPrimeInput plus remaining-row proof.
 
 行/列命题仍未无条件闭合。
 
+## 437. Phi-LPF strict-k top row perfect tiling frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_perfect_tiling_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-router.json
+data/prime-matrix-phi-lpf-strict-k-top-row-perfect-tiling-ledger.json
+```
+
+同步结果：
+
+```text
+perfect_tiling_excluded_globally=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：顶行 square-collar 正性已经可写成一个精确 LPF 铺满排除问题。令
+
+```text
+T_P={P^2-P+a:1<=a<P}
+B_q(P)=Phi(floor((P^2-1)/q),q)-Phi(floor((P^2-P)/q),q).
+```
+
+则
+
+```text
+N_top(P)=P-1-sum_{q<P} B_q(P)
+N_top(P)=0 iff sum_{q<P} B_q(P)=P-1
+N_top(P)>=1 iff sum_{q<P} B_q(P)<=P-2.
+```
+
+所以 Phi-LPF 递推本身没有额外正项；它只是把同一批合数槽位继续拆成更深的有序粗因子树。
+若要从端点差分推出正性，必须排除 LPF 合数桶对全部 `P-1` 个顶行槽位的 perfect tiling。
+
+经典 Sylvester-Schur 连续乘积输入在这里的落点也被固定：`P-1` 个连续顶行槽位的乘积有素因子
+`r>P-1`；又因顶行槽位都不被 `P` 整除，所以若出现该因子则 `r>P`。但在“顶行无素数”假设下，
+`r` 只会被某个 `2<=m<P` 的小载体承载，并不直接给出矛盾。这把剩余硬点送回：
+
+```text
+LowCarrierHighPrimePaymentInjection
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR PrimeSquareUpperCollarPrimeInput.
+```
+
+有限审计到 `P<=5003` 没有发现 perfect LPF tiling，最大合数铺满比例样本为 `P=4253` 时约
+`0.948495`。这只是实现口径审计，不替代全局证明。行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -11110,6 +11110,65 @@ hard core; it does not close the row/column theorem.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF top-row perfect-tiling reduction]
+Let
+\[
+  T_P=\{P^2-P+a:1\le a<P\}
+\]
+and, for primes \(q<P\),
+\[
+  B_q(P)=
+  \Phi\!\left(\left\lfloor \frac{P^2-1}{q}\right\rfloor,q\right)
+  -\Phi\!\left(\left\lfloor \frac{P^2-P}{q}\right\rfloor,q\right).
+\]
+Then
+\[
+  N_{\rm top}(P)=P-1-\sum_{q<P}B_q(P).
+\]
+Consequently
+\[
+  N_{\rm top}(P)=0\quad\Longleftrightarrow\quad
+  \sum_{q<P}B_q(P)=P-1,
+\]
+and
+\[
+  N_{\rm top}(P)\ge1\quad\Longleftrightarrow\quad
+  \sum_{q<P}B_q(P)\le P-2.
+\]
+Thus the exact Phi-LPF endpoint difference reduces top-row positivity to
+excluding a perfect LPF tiling of all \(P-1\) top-row slots by composite
+buckets.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-\\
+perfect-tiling-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+perfect\_tiling\_excluded\_globally=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The displayed equivalences are immediate from the top-row Phi-LPF formula.
+Writing \(\Delta_j(A,B)=\Phi(B,p_j)-\Phi(A,p_j)\), the recursion gives
+\[
+  \Delta_j(A,B)=\Delta_{j+1}(A,B)
+  +\Phi\!\left(\left\lfloor\frac{B}{p_j}\right\rfloor,p_j\right)
+  -\Phi\!\left(\left\lfloor\frac{A}{p_j}\right\rfloor,p_j\right),
+\]
+so the endpoint recursion only decomposes the same composite load into deeper
+rough-factor branches.  It does not by itself produce an unfilled prime slot.
+The Sylvester--Schur consecutive-product input also stops at a named payment
+interface: the \(P-1\) consecutive top-row slots have a prime factor
+\(r>P-1\), and no top-row slot is divisible by \(P\), hence \(r>P\).  If the
+top row has no prime slot, that large factor is carried by some cofactor
+\(2\le m<P\), which is a low-carrier high-prime payment rather than a
+contradiction.  The current corpus has not globally excluded the perfect-tiling
+case.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
