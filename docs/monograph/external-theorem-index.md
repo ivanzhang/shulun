@@ -1094,3 +1094,70 @@ ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY
 
 但这仍只是条件输入；无黑箱外部版仍保留上一节的 FullS theorem-match / source-capacity /
 new-dispersion 三择一边界。
+
+## 26. Seed/payload 饱和后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_payload_saturation_sync_router.py
+data/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.json
+```
+
+本层继续同步 strict seed-cycle-cut、signed-lane cycle、new primitive payload/source-atom
+alignment 与 preterminal source-rank atomization。结论是：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+```
+
+不能再作为两条替代线的独立活动 OR；它已经饱和到：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+同时：
+
+```text
+NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+```
+
+若不只是 signed-lane 环内改名，必须实例化为 pre-Cauchy atomic signed payload/trace，
+并进一步支付 source-rank/no-collapse 三原子：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+因此最新内部真剩余为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR (ActualPreCauchySourceDomainAbsoluteEntropyLedger
+     AND CompletePrimitiveEmitterKeyPartitionLedger
+     AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+ OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版仍只是：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需同对象 FullS theorem-match、actual source-capacity 新定理或
+new automorphic/dispersion proof。FI/DI/BFI/Kuznetsov/Maynard 方向仍必须逐项匹配
+当前 completed full-S non-AP WFD 对象、权重、窗口、模数范围、投影与误差预算。

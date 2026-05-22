@@ -23494,3 +23494,64 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本层没有证明循环外输入、rate-bearing PDEC、RatePreservation 或 DStructure/Rankin。
+
+## 330M. Two replacement lines seed/payload saturation frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_payload_saturation_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.json
+data/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_seed_payload_saturated_to_pdec_newjoint_sourcerank_rate_dstructure_open
+seed_cycle_cut_active_after_sync=false
+new_joint_payload_active_as_standalone_after_sync=false
+new_atomic_payload_contract_required=true
+source_rank_package_required_for_payload=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`seed-cycle-cut` 与 `outside signed-lane payload`
+不能再作为裸活动标签。前者已经饱和为 same-set PDEC 或 new-joint 公式；后者必须先给出
+actual pre-Cauchy atomic signed payload/trace，再支付 source-domain entropy、complete key
+与 fixed-key ExactUV 局部重数。否则它们只是把同一 actual-load 缺口迁移到另一个等价接口。
+
+最新内部实际承重门更新为：
+
+```text
+((AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+  OR (ActualPreCauchySourceDomainAbsoluteEntropyLedger
+      AND CompletePrimitiveEmitterKeyPartitionLedger
+      AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+  OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+  OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+最新直接主攻：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+CompletePrimitiveEmitterKeyPartitionLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层没有证明上述原子；它只阻止 seed/payload 两个旧标签继续作为非循环证明出口。

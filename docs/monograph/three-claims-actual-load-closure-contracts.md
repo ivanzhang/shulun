@@ -22365,6 +22365,67 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.256 两条替代线 seed/payload 饱和同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_payload_saturation_sync_router.py
+data/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-payload-saturation-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_seed_payload_saturated_to_pdec_newjoint_sourcerank_rate_dstructure_open
+seed_cycle_cut_active_after_sync=false
+new_joint_payload_active_as_standalone_after_sync=false
+new_atomic_payload_contract_required=true
+source_rank_package_required_for_payload=true
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+本层删除两个伪独立出口。`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput`
+已经由 strict seed-cycle-cut 饱和证书压回：
+
+```text
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+`NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle` 若不是 signed-lane/source-declaration
+闭环内的重命名，就必须正向给出 pre-Cauchy atomic signed payload/trace，并支付：
+
+```text
+ActualPreCauchySourceDomainAbsoluteEntropyLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+最新内部实际承重门更新为：
+
+```text
+((AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+  OR (ActualPreCauchySourceDomainAbsoluteEntropyLedger
+      AND CompletePrimitiveEmitterKeyPartitionLedger
+      AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+  OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+  OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+ AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版和无黑箱外部版没有升级。前者仍依赖
+`AcceptedFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`；
+后者仍需同对象 FullS theorem-match、actual source-capacity 新定理或 new automorphic/dispersion proof。
+
 ### 1.182 Two replacement lines source-root/no-cycle sync 更新
 
 新增机器证书：
