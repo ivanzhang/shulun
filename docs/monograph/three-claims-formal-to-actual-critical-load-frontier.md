@@ -23794,3 +23794,58 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 外部引理版仍为条件闭合，无黑箱外部版仍需同对象 FullS/actual-source theorem-match。
 本层只把粗名换成可审查真接口，没有证明目标命题无条件闭合。
+
+## 330R. Two replacement lines canonical exact-certificate frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_canonical_exact_certificate_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.json
+data/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_canonical_exact_certificate_synced_open
+canonical_lock_standalone_active_after_sync=false
+canonical_exact_certificate_proved=false
+new_actual_source_entropy_theorem_proved=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`canonical-lock` 仍是 formal label，不是 actual-load
+矛盾。它只有在同一 seed、同一 finite factor map、同一 source、同一 pushforward 集合、
+且无 noncanonical payload 残留时，才能晋级为 exact canonical branch。五项证书为：
+
+```text
+AcyclicSeedCanonicalBranchAdmissionBeforeCauchy
+AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity
+AND AcyclicSeedNoSourceReplacementOrPayloadCreation
+AND TerminalCertificateSameSetPushforwardIdentity
+AND NoNoncanonicalPayloadSurvivesCanonicalProjection
+```
+
+任一项缺失，canonical-lock 不能作为 proof outlet；裸 direct PDEC/CleanKLS 标签也不是
+非循环证明。最新内部实际承重门更新为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicCanonicalExactSameSetPromotionCertificate
+ OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+这一步继续防止在已知等价接口间循环转换；目标命题仍未无条件闭合。

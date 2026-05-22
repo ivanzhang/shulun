@@ -89,4 +89,4 @@ AcceptedFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedger
 | `docs/monograph/prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json` | `1fc50ba815f27922f23758ed4799dc2f3e88293050b98961acef8703a283e4b9` |
 | `docs/monograph/prime-matrix-strict-new-joint-formula-terminal-obligation-router.json` | `1db15fd070caa0101e4af1921587d03cbdb8ca5eb28ffdf394094207954ca882` |
 | `docs/monograph/prime-matrix-dstructure-rankin-author-remainder-split-router.json` | `76b64234307bf057c865b20478520022f755d4232dd99462a57e4bcc2d9421d2` |
-| `paper/contradiction-field-monograph/contradiction-field-monograph.tex` | `ac470fe08f39b0d18fa557cd8a43ea272436451236842bde0e60e1813b4f32b0` |
+| `paper/contradiction-field-monograph/contradiction-field-monograph.tex` | `77bd2d771eba4e8f3f4749a7732c6a5f3c7e0238d80270b09a57a8ad3d584c0a` |

@@ -22556,6 +22556,67 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 仍需同对象 FullS theorem-match、actual source capacity 新定理或新的
 automorphic/dispersion 证明。本层没有证明上述任一硬门。
 
+### 1.261 两条替代线 canonical exact-certificate 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_canonical_exact_certificate_sync_router.py
+data/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_canonical_exact_certificate_synced_open
+canonical_lock_standalone_active_after_sync=false
+canonical_exact_certificate_proved=false
+new_actual_source_entropy_theorem_proved=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`AcyclicTerminalCanonicalLockToCanonicalSourceBoundary`
+不能再作为单个终端标签。它只允许两种非循环解释：
+
+```text
+AcyclicCanonicalExactSameSetPromotionCertificate
+OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+```
+
+其中 exact same-set 晋级证书是五项合取：
+
+```text
+AcyclicSeedCanonicalBranchAdmissionBeforeCauchy
+AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity
+AND AcyclicSeedNoSourceReplacementOrPayloadCreation
+AND TerminalCertificateSameSetPushforwardIdentity
+AND NoNoncanonicalPayloadSurvivesCanonicalProjection
+```
+
+任一账本缺失时，canonical-lock 不能晋级；direct PDEC/CleanKLS 裸标签也会回流，
+必须回到新的 actual clean-core source entropy 定理。同步后的内部实际承重门为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicCanonicalExactSameSetPromotionCertificate
+ OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+本层没有证明 exact same-set 五项证书、新 actual-source entropy 定理或其他并行硬门。
+
 ### 1.256 两条替代线 seed/payload 饱和同步更新
 
 新增机器证书：

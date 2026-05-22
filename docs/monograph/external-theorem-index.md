@@ -1365,3 +1365,59 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 因此本层只是删除 `independent bridge` 粗名出口；不是任何外部深定理的新增
 theorem-match，也不是目标命题的无条件闭合。
+
+## 31. Canonical exact-certificate 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_canonical_exact_certificate_sync_router.py
+data/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-canonical-exact-certificate-sync-router.json
+```
+
+本层同样不新增外部定理引用。它把
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+```
+
+同步到 strict canonical-lock nonrecursive exit 证书：
+
+```text
+AcyclicCanonicalExactSameSetPromotionCertificate
+OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+```
+
+其中 exact same-set certificate 由五项账本组成：
+
+```text
+AcyclicSeedCanonicalBranchAdmissionBeforeCauchy
+AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity
+AND AcyclicSeedNoSourceReplacementOrPayloadCreation
+AND TerminalCertificateSameSetPushforwardIdentity
+AND NoNoncanonicalPayloadSurvivesCanonicalProjection
+```
+
+FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\) 函数方向仍只能作用于同对象
+FullS/actual-source theorem-match，不能替代这五项 same-set 账本，也不能替代新的
+actual-source entropy 定理。
+
+外部引理版仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层只删除 `canonical-lock` 粗名出口；不构成新的外部引理闭合。
