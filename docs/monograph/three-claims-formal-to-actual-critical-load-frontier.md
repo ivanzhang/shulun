@@ -18513,6 +18513,52 @@ OR genuine sqrt-scale theorem beyond 10^18.
 本层仍不证明 `UnifiedPositiveCore`；它把尾段反例从完整 LPF 铺满压缩成 reciprocal
 semiprime shadow 铺满 half-rough survivor。
 
+## 452. Phi-LPF strict-k external bulk square-band partition frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_external_bulk_square_band_partition_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-router.json
+data/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-ledger.json
+```
+
+同步结果：
+
+```text
+status=strict_k_external_bulk_covered_remaining_forced_to_high_k_square_band
+bhp_strict_k_exponent=19/21
+finite_sqrt_initial_segment=kP<=10^18
+top_row_interface=HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow
+```
+
+formal-to-actual 含义是：`[kP,kP+P]`、`1<k<P` 的 Phi-LPF 端点差分已经是精确
+计数对象
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP).
+```
+
+外部引理路线现在分成三层：有限 sqrt-gap 输入清掉 `kP<=10^18`；Dusart 2010
+显式区间只覆盖 `k<=25 log^2(kP)` 的低 `k` 带；Baker--Harman--Pintz 的
+`x^(21/40)` 输入若代入 `x=kP`，只给
+
+```text
+P >= (kP)^(21/40) iff k <= P^(19/21).
+```
+
+因此在这些外部 bulk 之后，任何尚未处理的反例必须落入
+
+```text
+x=kP>10^18
+AND P^(19/21)<k<P.
+```
+
+顶行 `k=P-1` 已由上一层进一步压成 `R_1/2(P)>T_1/2(P)`。一般高 `k`
+平方边界带仍需要对应的 Phi-LPF excess、semiprime-shadow PDEC 排斥，或真正
+`sqrt(x)` 尺度且常数不超过 1 的外部短区间定理。本层仍不证明三目标命题无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

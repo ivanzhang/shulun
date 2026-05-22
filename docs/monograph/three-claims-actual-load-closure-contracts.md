@@ -24527,6 +24527,46 @@ HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow:
 prime-semiprime shadow 铺满 half-rough survivor，应登记为 square-phase/semiprime-shadow
 PDEC。行/列命题仍未无条件闭合。
 
+### 1.225 Phi-LPF strict-k external bulk square-band partition 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_external_bulk_square_band_partition_router.py
+data/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-square-band-partition-router.json
+```
+
+同步读数为：
+
+```text
+status=strict_k_external_bulk_covered_remaining_forced_to_high_k_square_band
+bhp_strict_k_exponent=19/21
+finite_sqrt_initial_segment=kP<=10^18
+remaining_high_k_band=P^(19/21)<k<P
+```
+
+actual-load 含义是：Phi-LPF/LPF 桶公式已经能精确计算
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP),  1<k<P.
+```
+
+但正性来源不能由当前已接入的外部短区间结果全域支付。有限 sqrt-gap 输入清掉
+`kP<=10^18`；Dusart 2010 只给显式 log-band `k<=25 log^2(kP)`；BHP 的
+`x^(21/40)` 渐近输入只给 `k<=P^(19/21)` 的 bulk。于是剩余反例被强制进入：
+
+```text
+x=kP>10^18
+AND P^(19/21)<k<P.
+```
+
+这把“端点差分求正”从全域问题压缩成高 `k` 平方边界带问题。顶行已经有
+`HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow` 接口；一般高 `k` 带仍需
+对应 Phi-LPF excess、semiprime-shadow PDEC 排斥，或 `sqrt(x)` 尺度常数不超过 1
+的外部短区间定理。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

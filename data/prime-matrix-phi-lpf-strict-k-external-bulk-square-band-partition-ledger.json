@@ -1,0 +1,134 @@
+{
+  "bhp_strict_k_exponent": "19/21",
+  "bhp_theta": "21/40",
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.json": "762c7de91c70ae99628279eb52aa2b5a94185e4d5ed2c32921f08ce6f0133881",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.json": "8ab6da3a1ad8bb73f3b4511f503c5914984cfeb1d8b62e05dcb63ce41ea6b381",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.json": "9c8b4ae328fe2254bf81e16e4f058921efc6c3ea616a97f196a42482151dd028",
+    "docs/monograph/prime-matrix-phi-lpf-top-row-half-rough-semiprime-shadow-router.json": "c5ca8b97bf9f6dc2c5abaec3dd7f4ba612a3996df98696b3b01167e2b076f936"
+  },
+  "external_inputs": [
+    {
+      "name": "finite sqrt-gap input",
+      "source": "https://link.springer.com/article/10.1007/s00208-023-02574-1 Lemma 2.7; uses Oliveira e Silva--Herzog--Pardi prime-gap computation, https://doi.org/10.1090/S0025-5718-2013-02787-1",
+      "strict_k_effect": "closes every strict row with kP<=10^18",
+      "usable_range": "117<=x<=10^18, plus direct small-x audit in the repository"
+    },
+    {
+      "name": "Dusart 2010",
+      "source": "https://arxiv.org/abs/1002.0442",
+      "strict_k_effect": "covers k<=25 log^2(kP)",
+      "usable_statement": "for x>396738, an interval of length x/(25 log^2 x) suffices"
+    },
+    {
+      "name": "Baker--Harman--Pintz 2001",
+      "source": "https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/difference-between-consecutive-primes-ii/2EF13261B3B25458A25F41ED74AA2FC2",
+      "strict_k_effect": "with constant-one exponent arithmetic, covers k<=P^(19/21); threshold is asymptotic, not an explicit finite ledger",
+      "usable_statement": "for sufficiently large x, [x,x+x^(21/40)] contains primes"
+    }
+  ],
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiLPFEndpointDifferenceImportedForAllStrictRows",
+      "meaning": "对 1<k<P，Phi-LPF 端点差分已经给出 N_P(k)=pi((k+1)P-1)-pi(kP) 的精确计数对象。",
+      "proved": true,
+      "remaining": "positivity source still needed"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteSqrtInitialSegmentClosed",
+      "meaning": "已接入有限 sqrt-gap 输入：kP<=10^18 的 strict 行由外部有限引理和小 x 直接核查覆盖。",
+      "proved": true,
+      "remaining": "x>10^18"
+    },
+    {
+      "closed": true,
+      "gate": "DusartExplicitLogBandPartitionClosed",
+      "meaning": "Dusart 2010 的显式区间可覆盖 k<=25 log^2(kP) 的低 k 带；这是可验证 log-band，不触及顶端平方边界。",
+      "proved": true,
+      "remaining": "k beyond explicit logarithmic band"
+    },
+    {
+      "closed": true,
+      "gate": "BHPAsymptoticBulkBandPartitionClosed",
+      "meaning": "Baker--Harman--Pintz 的 x^(21/40) 短区间若用于 x=kP，则覆盖 k<=P^(19/21) 的 bulk 子带。",
+      "proved": true,
+      "remaining": "asymptotic threshold and high-k band"
+    },
+    {
+      "closed": true,
+      "gate": "RemainingRowsForcedIntoHighKSquareBand",
+      "meaning": "排除有限 sqrt 初段、Dusart log-band 和 BHP bulk 后，任何剩余反例必须满足 x>10^18 且 P^(19/21)<k<P。",
+      "proved": true,
+      "remaining": "P^(19/21)<k<P, especially top row k=P-1"
+    },
+    {
+      "closed": true,
+      "gate": "TopBandConvertedToHalfRoughSemiprimeShadow",
+      "meaning": "顶行 k=P-1 已进一步化为 R_{1/2}(P)>T_{1/2}(P) 的 half-rough semiprime-shadow excess。",
+      "proved": true,
+      "remaining": "general high-k band still needs analogous excess"
+    },
+    {
+      "closed": false,
+      "gate": "HighKSquareBandPositivityProved",
+      "meaning": "尚未证明高 k 平方边界带的 Phi-LPF 端点差分恒为正，也未证明 top-row half-rough excess 的全局下界。",
+      "proved": false,
+      "remaining": "HighKSquareBandPhiLPFExcess OR HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedPositiveCoreProved",
+      "meaning": "本层是分区和剩余定位，不是三目标命题的无条件闭合。",
+      "proved": false,
+      "remaining": "sqrt-scale theorem, high-k structural excess, or semiprime-shadow PDEC exclusion"
+    }
+  ],
+  "interval": {
+    "Phi_LPF_role": "exact endpoint count; positivity must come from an external short interval theorem or internal excess",
+    "strict_range": "1<k<P",
+    "target": "pi((k+1)P-1)-pi(kP)>0",
+    "x": "kP"
+  },
+  "plain_conclusion": "Phi-LPF 端点差分已经能精确计算 [kP,kP+P] 的素数个数；外部引理路线现在被分成三块：有限 sqrt 初段、Dusart 显式 log-band、BHP 渐近 bulk。它们之后的真剩余不是全域未知，而是 x>10^18 且 P^(19/21)<k<P 的平方边界高 k 带；顶行已经进一步压成 half-rough semiprime-shadow excess。",
+  "samples": [
+    {
+      "P_scale": 1000000000,
+      "bhp_asymptotic_bulk_k_cap_constant_one": 138949549,
+      "bhp_bulk_fraction": 0.138949549,
+      "bhp_remaining_top_band_fraction": 0.86105045,
+      "bhp_remaining_top_band_size": 861050450,
+      "dusart_explicit_log_band_k_cap": 23711,
+      "finite_sqrt_k_cap_from_x_le_1e18": 999999999
+    },
+    {
+      "P_scale": 1000000000000,
+      "bhp_asymptotic_bulk_k_cap_constant_one": 71968567300,
+      "bhp_bulk_fraction": 0.0719685673,
+      "bhp_remaining_top_band_fraction": 0.928031432699,
+      "bhp_remaining_top_band_size": 928031432699,
+      "dusart_explicit_log_band_k_cap": 36351,
+      "finite_sqrt_k_cap_from_x_le_1e18": 1000000
+    },
+    {
+      "P_scale": 1000000000000000000,
+      "bhp_asymptotic_bulk_k_cap_constant_one": 19306977288832504,
+      "bhp_bulk_fraction": 0.019306977288832503,
+      "bhp_remaining_top_band_fraction": 0.9806930227111675,
+      "bhp_remaining_top_band_size": 980693022711167495,
+      "dusart_explicit_log_band_k_cap": 69143,
+      "finite_sqrt_k_cap_from_x_le_1e18": 1
+    },
+    {
+      "P_scale": 1000000000000000000000000,
+      "bhp_asymptotic_bulk_k_cap_constant_one": 5179474679231212945408,
+      "bhp_bulk_fraction": 0.005179474679231213,
+      "bhp_remaining_top_band_fraction": 0.9948205253207688,
+      "bhp_remaining_top_band_size": 994820525320768787054591,
+      "dusart_explicit_log_band_k_cap": 111846,
+      "finite_sqrt_k_cap_from_x_le_1e18": 0
+    }
+  ],
+  "status": "strict_k_external_bulk_covered_remaining_forced_to_high_k_square_band"
+}

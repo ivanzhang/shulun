@@ -11882,6 +11882,50 @@ the named
 \(\texttt{HalfRoughSurvivorExcessOverReciprocalSemiprimeShadow}\).
 \end{proof}
 
+\begin{theorem}[Strict-\(k\) external bulk and square-band partition]
+For \(x=kP\) with \(1<k<P\), the Phi--LPF endpoint difference gives the exact
+count
+\[
+  N_P(k)=\pi((k+1)P-1)-\pi(kP).
+\]
+The finite square-root input closes the initial segment \(kP\le 10^{18}\).
+Dusart's explicit interval closes only the logarithmic subband
+\[
+  k\le 25\log^2(kP),
+\]
+and the Baker--Harman--Pintz \(x^{21/40}\) input, when its asymptotic threshold
+is available, closes the bulk subband
+\[
+  P\ge (kP)^{21/40}\quad\Longleftrightarrow\quad k\le P^{19/21}.
+\]
+Therefore any strict-\(k\) counterexample not already handled by these external
+arms must lie in the high square-edge band
+\[
+  kP>10^{18},\qquad P^{19/21}<k<P.
+\]
+The top row \(k=P-1\) has the sharper half-rough semiprime-shadow interface
+\(R_{1/2}(P)>T_{1/2}(P)\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-bulk-\\
+square-band-partition-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=strict\_k\_external\_bulk\_covered\_remaining\_forced\_to\_high\_k\_square\_band\\
+bhp\_strict\_k\_exponent=19/21\\
+finite\_sqrt\_initial\_segment=kP<=10\string^18\\
+remaining\_high\_k\_band=P\string^(19/21)<k<P.
+\end{quote}
+This is a partition theorem, not a closure theorem.  It shows that the present
+external-route residue is no longer all strict rows, but the named high-\(k\)
+square band; closing that band still requires a genuine square-root-scale short
+interval theorem, a structural Phi--LPF excess, or a semiprime-shadow/PDEC
+exclusion.
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
