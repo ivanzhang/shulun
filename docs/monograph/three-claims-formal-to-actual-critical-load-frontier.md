@@ -18655,6 +18655,55 @@ HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC.
 
 本层仍不关闭 upper-band 的 two-prime shadow excess，也不证明三目标命题。
 
+## 455. Phi-LPF upper-band two-prime shadow excess frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_upper_band_two_prime_shadow_excess_router.py
+docs/monograph/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-router.md
+docs/monograph/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-router.json
+data/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-ledger.json
+```
+
+同步结果：
+
+```text
+status=upper_band_two_prime_shadow_reduced_to_sparse_reciprocal_prime_pair_windows
+max_prime=1009
+all_reciprocal_window_identities_hold=true
+large_sample_count=10
+all_sampled_upper_rows_have_positive_margin=true
+next_direct_attack_target=UpperBandReciprocalPrimePairShadowSaturationOrPDEC AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling
+```
+
+formal-to-actual 含义是：对 upper square band
+
+```text
+4*((k+1)P-1)>P^2
+```
+
+上一层的 two-prime shadow 可精确写成高素数 `q in (P/2,P)` 上的倒数短窗：
+
+```text
+I_q(P,k)=[max(q, floor(kP/q)+1), floor(((k+1)P-1)/q)] intersect Z,
+T_half(P,k)=sum_{P/2<q<P, q prime} #{m in I_q(P,k): m prime}.
+```
+
+因为 `|I_q(P,k)|<=2`，upper-band 的 actual shadow load 不是完整 LPF 树，而是
+每个 `q` 至多两个候选 `m` 的 reciprocal prime-pair 图。若行失败，则必须是这些
+稀疏短窗素数点真实饱和并吃掉全部 half-rough survivor，或进入 half-rough floor /
+reciprocal prime-pair ceiling 的命名 PDEC。
+
+当前 upper-band 直接口为：
+
+```text
+UpperBandReciprocalPrimePairShadowSaturationOrPDEC
+AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling.
+```
+
+本层只关闭短窗公式和有限审计；不证明 upper-band 正性，也不证明三目标命题。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -24655,6 +24655,47 @@ HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC
 
 该层只关闭等价转换和有限审计，不关闭全局行/列命题。
 
+### 1.240 Phi-LPF upper-band two-prime shadow excess 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_upper_band_two_prime_shadow_excess_router.py
+data/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-ledger.json
+docs/monograph/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-router.md
+docs/monograph/prime-matrix-phi-lpf-upper-band-two-prime-shadow-excess-router.json
+```
+
+同步读数为：
+
+```text
+status=upper_band_two_prime_shadow_reduced_to_sparse_reciprocal_prime_pair_windows
+max_prime=1009
+all_reciprocal_window_identities_hold=true
+identity_failure_count=0
+sample_seeds=[100000, 300000]
+all_sampled_upper_rows_have_positive_margin=true
+```
+
+actual-load 含义是：upper-band 中的 shadow 质量可以逐 `q` 写成短窗素数点数。
+对每个 `q in (P/2,P)`，
+
+```text
+I_q(P,k)=[max(q, floor(kP/q)+1), floor(((k+1)P-1)/q)] intersect Z
+```
+
+且 `|I_q(P,k)|<=2`。因此 `T_half(P,k)` 是一个 sparse reciprocal prime-pair
+actual load，而不是 formal LPF envelope。若正性失败，则失败必须表现为：
+
+```text
+UpperBandReciprocalPrimePairShadowSaturationOrPDEC
+AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling
+```
+
+也就是说，要么证明同一 row convention 下 half-rough survivor floor 严格超过
+reciprocal prime-pair shadow ceiling，要么把持续饱和登记为显式 PDEC/SAE。该层不关闭
+全局行/列命题。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

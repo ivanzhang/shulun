@@ -12015,6 +12015,70 @@ half-primorial Jacobsthal bound at this scale, or a special-phase avoidance/PDEC
 argument.
 \end{proof}
 
+\begin{theorem}[Upper-band reciprocal two-prime shadow]
+Let \(P\) be prime and \(1<k<P\).  In the upper square band
+\[
+  4((k+1)P-1)>P^2,
+\]
+the two-prime shadow from the strict-\(k\) half-rough split has the exact
+reciprocal-window form
+\[
+  T_{1/2}(P,k)
+  =
+  \sum_{\substack{P/2<q<P\\ q\ {\rm prime}}}
+  \#\{m\in I_q(P,k):m\ {\rm prime}\},
+\]
+where
+\[
+  I_q(P,k)
+  =
+  \left[
+    \max\!\left(q,\left\lfloor\frac{kP}{q}\right\rfloor+1\right),
+    \left\lfloor\frac{(k+1)P-1}{q}\right\rfloor
+  \right]\cap{\mathbb Z}.
+\]
+Moreover \(|I_q(P,k)|\le2\) for every such \(q\).  Hence an upper-band row
+failure is exactly a sparse reciprocal prime-pair saturation of the half-rough
+survivors, or a named half-rough-floor / reciprocal-shadow-ceiling defect.
+\end{theorem}
+\begin{proof}[Status and reference]
+The previous half-rough split counts composite survivors by products
+\(qm\) with \(P/2<q\le m<2P\) and
+\[
+  kP<qm<(k+1)P .
+\]
+For a fixed \(q\), this inequality is equivalent to
+\[
+  \left\lfloor\frac{kP}{q}\right\rfloor+1
+  \le m\le
+  \left\lfloor\frac{(k+1)P-1}{q}\right\rfloor .
+\]
+The unique representative convention \(q\le m\) supplies the additional lower
+cutoff \(m\ge q\), giving the displayed \(I_q(P,k)\).  Its real length is
+strictly less than \(P/q<2\), so it contains at most two integers.  Filtering
+those at-most-two candidates by primality gives the actual two-prime shadow.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-upper-band-two-\\
+prime-shadow-excess-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=upper\_band\_two\_prime\_shadow\_reduced\_to\_sparse\_reciprocal\_prime\_pair\_windows\\
+max\_prime=1009\\
+all\_reciprocal\_window\_identities\_hold=true\\
+identity\_failure\_count=0\\
+all\_sampled\_upper\_rows\_have\_positive\_margin=true.
+\end{quote}
+This theorem is still a reduction.  It does not prove the required uniform
+inequality \(R_{1/2}(P,k)>T_{1/2}(P,k)\); the remaining named interface is
+\begin{quote}\scriptsize\ttfamily
+UpperBandReciprocalPrimePairShadowSaturationOrPDEC\\
+AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
