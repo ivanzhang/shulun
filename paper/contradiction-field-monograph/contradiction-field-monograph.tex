@@ -11503,6 +11503,58 @@ inequality.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) Beatty Euclidean source-window law]
+The Beatty payment term \(B_P(k)\) admits an equivalent Euclidean quotient
+source-window expansion.  Fix \(1<k<P\) and a carrier \(2\le m\le k\).  Write
+\[
+  j=\left\lfloor\frac{k}{m}\right\rfloor,\qquad k=mj+t,\qquad 0\le t<m,
+\]
+and write a source prime as \(r=jP+b\).  Then
+\[
+  kP<mr<(k+1)P
+  \quad\Longleftrightarrow\quad
+  tP<mb<(t+1)P,
+\]
+or equivalently
+\[
+  \left\lfloor\frac{tP}{m}\right\rfloor+1
+  \le b\le
+  \left\lfloor\frac{(t+1)P-1}{m}\right\rfloor .
+\]
+Therefore
+\[
+  B_P(k)=
+  \sum_{2\le m\le k}
+  \#\{\,r=jP+b:\ r\ {\rm prime},\ b\ {\rm lies\ in\ the\ above\ window}\,\}.
+\]
+In particular \(j\le\lfloor k/2\rfloor\), so the earlier lower-half source cut
+is a consequence of this quotient-source law.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-beatty-\\
+euclidean-source-window-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_hm\_counts\_match\_quotient\_source\_windows=true\\
+all\_source\_rows\_in\_lower\_half=true\\
+finite\_evidence\_not\_used\_as\_global\_proof=true.
+\end{quote}
+The equivalence follows by substituting \(k=mj+t\) and \(r=jP+b\):
+\[
+  mr=mjP+mb=(k-t)P+mb,
+\]
+so \(kP<mr<(k+1)P\) is exactly \(tP<mb<(t+1)P\).  Integer \(b\) then lies in
+the displayed window.  Since \(m\ge2\), \(j=\lfloor k/m\rfloor\le\lfloor
+k/2\rfloor\).  The finite audit through \(P\le1009\) verifies that summing
+these source-window prime counts reproduces the \(H_m\)-payment count on
+\(76797\) strict rows.  This refines the payment source table; it does not
+prove the remaining source-window/\(P\)-smooth anti-tiling inequality.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

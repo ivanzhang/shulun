@@ -18144,6 +18144,61 @@ OR SqrtGapInputAfterX.
 
 本层关闭的是 strict-k 端点差精确值坐标，不是 strict 行正性的无条件证明。
 
+## 445. Phi-LPF strict-k Beatty Euclidean source-window frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_beatty_euclidean_source_window_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-router.json
+data/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-ledger.json
+```
+
+同步结果：
+
+```text
+all_hm_counts_match_quotient_source_windows=true
+all_source_rows_in_lower_half=true
+finite_evidence_not_used_as_global_proof=true
+```
+
+formal-to-actual 含义是：Beatty payment 不仅由 `kP mod r` 决定，还可按 carrier
+`m` 写成早期源行的一个短有理窗口。设
+
+```text
+j=floor(k/m), k=mj+t, 0<=t<m, r=jP+b.
+```
+
+则
+
+```text
+kP < mr < (k+1)P
+iff tP < m b < (t+1)P
+iff floor(tP/m)+1 <= b <= floor(((t+1)P-1)/m).
+```
+
+因此
+
+```text
+B_P(k)=sum_{2<=m<=k} #{ prime r=jP+b in the corresponding source window }.
+```
+
+有限审计到 `P<=1009` 验证 `H_m` payment 与商源行窗口计数完全一致。最大 payment
+样本为 `P=1009,k=968,payment=685`；最大非空源窗口数样本为
+`P=1009,k=1008,nonempty_windows=368`。下半源切口现在成为 `j=floor(k/m)<=floor(k/2)`
+的直接推论。
+
+最新剩余接口仍为：
+
+```text
+BeattySmoothAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+本层关闭的是 payment 源窗口选择自由，不是 strict 行正性的无条件证明。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

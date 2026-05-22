@@ -24152,6 +24152,62 @@ N_P(k)>=1  iff  B_P(k)+S_P(k)<=P-2.
 本层关闭的是“端点差能否算出区间素数个数”的问题；未证明的是全局 Beatty/smooth
 反铺满不等式。行/列命题仍未无条件闭合。
 
+### 1.218 Phi-LPF strict-k Beatty Euclidean source-window 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_beatty_euclidean_source_window_router.py
+data/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-beatty-euclidean-source-window-router.json
+```
+
+同步读数为：
+
+```text
+all_hm_counts_match_quotient_source_windows=true
+all_source_rows_in_lower_half=true
+finite_evidence_not_used_as_global_proof=true
+```
+
+actual-load 含义是：Beatty payment 源表还能继续展开成欧几里得商源行窗口。若
+目标行为 `k`、carrier 为 `m`，写
+
+```text
+j=floor(k/m), k=mj+t, 0<=t<m, r=jP+b.
+```
+
+则 payment 条件等价于
+
+```text
+tP < m b < (t+1)P,
+floor(tP/m)+1 <= b <= floor(((t+1)P-1)/m).
+```
+
+所以
+
+```text
+B_P(k)=sum_{2<=m<=k} #{ prime r=jP+b in the corresponding source window }.
+```
+
+有限审计到 `P<=1009` 验证该商源行窗口计数与 `H_m` payment 完全一致。最大 payment
+样本为：
+
+```text
+P=1009, k=968, payment=685, nonempty_windows=357, max_source_row=484.
+```
+
+最大非空源窗口数样本为：
+
+```text
+P=1009, k=1008, payment=670, nonempty_windows=368, max_source_row=504.
+```
+
+本层把“下半源”细化为确定的早期源行短窗口供给问题：`j=floor(k/m)<=floor(k/2)`。
+它关闭的是 payment 源行与源窗口选择自由；未证明这些源窗口供给与 `P`-smooth 槽不能
+共同铺满目标行。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
