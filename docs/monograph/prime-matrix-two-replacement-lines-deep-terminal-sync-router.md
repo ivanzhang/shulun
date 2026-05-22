@@ -1,0 +1,117 @@
+# Prime Matrix 两条替代线深终端同步证书
+
+**状态：** `two_replacement_lines_synced_to_deep_terminal_basis_open`
+
+## 1. 结论
+
+本层把 exact-layer/completed-KLS 后的两条替代线继续接入仓库已有最深前沿。外部线中，c-dependent completed residue 谱输入若不作为外部定理接受，会经 NC-BLK、exact source entropy、支撑/容量包回到 source anti-atom；generic 自足反原子已被反例模型排除，所以无黑箱外部版的非循环目标只能是同对象 ExternalDIBFIKuznetsovDispersionTheoremMatch。内部线中，clean-core 原始生成账本继续被 row-origin/Phi-LPF 证书压到 bucket signed law，并在 common-table rebase 后收窄到 offdiagonal semiprime first-seed signed table、internal prime-adjoin transition、source 三原子、row-mass/support、complete/fixed-key 与 beta-sieve/sawtooth 尾段。Phi-LPF 的精确性只支付无符号 ownership/capacity，不能推出 signed coefficient 或短区间正性。本层不声明无条件闭合。
+
+```text
+latest_no_blackbox_external_target=ExternalDIBFIKuznetsovDispersionTheoremMatch
+latest_internal_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+no_blackbox_external_version_closed=false
+internal_self_contained_version_closed=false
+row_column_unconditional_closed=false
+```
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| ExactLayerCompletedKLSFrontierImported | `true` | `true` | 上一层已把内部线压到 clean-core 原始生成账本，把外部线压到 c-dependent completed residue 谱输入。 | 继续向下同步，不在旧接口处循环。 |
+| CDependentResidueReducedToNCBLKOrExternal | `true` | `false` | c-dependent residue 权重经有限 Fourier/BWFD/BSC/KFLS 接入 NC-BLK 或外部 DI/BFI/Kuznetsov。 | NCBLKActualBlockNonConcentrationOrExternalDIBFI |
+| NCBLKAlignedToExactEntropyOrExternal | `true` | `false` | NC-BLK 不能静默借 canonical branch；自足路线必须证明 full-S non-AP exact source entropy。 | ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov |
+| ExactEntropyMergedIntoSourceAntiAtom | `true` | `false` | exact source entropy 经支撑/容量包合并为最终 source capacity measure 无 moving same-(u,v) atom。 | FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov |
+| GenericSourceAntiAtomRejected | `true` | `false` | generic full-S 自足反原子已被 moving-delta 模型反证；不能把形式 WFD 当成反原子证明。 | AddStrengthenedActualSourceAntiAtomTheorem OR ExternalDIBFIKuznetsovDispersionTheoremMatch |
+| ExternalNoBlackBoxTheoremMatchPinned | `true` | `false` | 若不新增 source 反原子定理，无黑箱外部线必须给同对象 no-projection DI/BFI/Kuznetsov 定理匹配。 | ExternalDIBFIKuznetsovDispersionTheoremMatch |
+| OriginLedgerReducedToPhiLPFBucketSignedLaw | `true` | `false` | clean-core row-origin 表不能从来源环自证；LPF/Phi 只支付无符号 support/capacity，剩余是 bucket signed law。 | PhiLPFBucketSignedCoefficientLawBeforePushforward |
+| SignedLaneSelfProofCycleCut | `true` | `true` | common packet、built-in pairing、branch trace、payload、origin identity 已形成闭环，环内节点不能再当证明。 | NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR terminal descent OR PDEC scope |
+| CommonSignedTableRebased | `true` | `false` | built-in pairing、source entropy 与 fixed-pair ExactUV 已合流为同 formal unit pre-Cauchy primitive-emitter 表。 | AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFBucketSignedCoefficientLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| SemiprimeSeedDiagonalRebased | `true` | `false` | first-edge signed seed 表继续按 p=q/p<q 拆分；diagonal 私有 signed 出口已移除。 | AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth |
+| PhiLPFExactnessScopePinned | `true` | `true` | Phi-LPF 恒等式是组合精确和无符号 ownership/capacity 账本；它不产生 signed coefficient 或短区间正性。 | signed table, row mass, key multiplicity, beta-sieve/sawtooth |
+| PromotionAndTailGatesCarried | `true` | `false` | beta-sieve/sawtooth 尾段、RatePreservation 与 DStructure/Rankin 独立验收仍需保留。 | SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 本层只做深终端同步和循环切断；没有证明外部定理匹配、内部 signed 表、尾段或晋级门。 | not closed |
+
+## 3. 外部无黑箱线
+
+深同步链条：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+NCBLKActualBlockNonConcentrationOrExternalDIBFI
+ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov
+FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov
+FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov
+```
+
+`ExternalDIBFIKuznetsovDispersionTheoremMatch` 必须逐项匹配：
+
+- `same full-S non-AP WFD object after completion`
+- `c-dependent completed residue weights B_{c,x}=sum_k beta_{x+k c}`
+- `well-factorable lambda_c and smooth omega_h over c,h`
+- `no APSourceLift, no silent canonical source import, no centering/projection loss`
+- `gcd, smoothing, endpoint, and de-completion losses inside B(A)`
+- `NaturalWFDScale/log^A(P) saving for every fixed A`
+
+## 4. 内部自足线
+
+深同步链条：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+最新内部基：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+保留条件基：
+
+```text
+(((AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR (AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY) AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 5. 状态快照
+
+| field | value |
+| --- | --- |
+| `previous_status` | `two_replacement_lines_reduced_to_origin_ledger_and_c_dependent_completed_spectral_input_open` |
+| `cdep_status` | `c_dependent_residue_spectral_input_reduced_to_kfls_ncblk_or_external_open` |
+| `ncblk_status` | `ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open` |
+| `exact_entropy_status` | `exact_full_s_source_entropy_reduced_to_factor_support_package_open` |
+| `source_antiatom_status` | `full_s_support_capacity_reduced_to_source_antiatom_or_external_open` |
+| `actual_source_status` | `actual_source_antiatom_lane_requires_new_axiom_or_spectral_input` |
+| `final_open_status` | `final_open_input_current_attack_reduced_to_exact_entropy_or_external_plus_referee_open` |
+| `row_origin_status` | `row_origin_table_reduced_to_phi_lpf_bucket_signed_law_open` |
+| `signed_cycle_status` | `strict_signed_lane_cycle_closed_self_proof_eliminated_global_open` |
+| `common_table_status` | `phi_lpf_latest_constructor_common_signed_table_rebased_open` |
+| `semiprime_rebase_status` | `phi_lpf_latest_constructor_common_table_semiprime_seed_diagonal_rebased_open` |
+
+## 6. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `docs/monograph/claim-status-table.md` | `17aa30c1a9b2de4610e4cfaca4428c94c71a9e44b3c3d5caba06877e239ce2a6` |
+| `docs/monograph/external-theorem-index.md` | `d2034af7ed0b8e339f2bf5d76b3cf5b5958fc385318dc8480e29245f7a3f1e24` |
+| `docs/monograph/prime-matrix-actual-source-antiatom-lane-audit-router.json` | `c28fff2e1fdb4da76e5abe8c8689a5c5acecb2f91868c47a4117bc1796e24776` |
+| `docs/monograph/prime-matrix-final-open-input-current-attack-router.json` | `75b70b201b9ca46d4b7dd7d88341fe1c1e3b7df992f19017fb592eb97a74bde9` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-signed-table-rebase-sync-router.json` | `550ff3cfdc7ff79c22964bbc5e8c858f48e38f9d9ea85cbee47a53ba42124e10` |
+| `docs/monograph/prime-matrix-phi-lpf-latest-constructor-common-table-semiprime-seed-diagonal-rebase-sync-router.json` | `7c90cefd76b19ca09ed9c251e34da564fae62fcc0464922d9bd1fb5762d301a8` |
+| `docs/monograph/prime-matrix-row-origin-table-phi-lpf-bucket-law-sync-router.json` | `65fb8bbd578b7dcc32c930fc86e8ea9b803d59b4d5773c589c44cfec90027e58` |
+| `docs/monograph/prime-matrix-strict-signed-lane-cycle-closure-router.json` | `17e1966e5e4dad0a168abc867d451291be4991c999f28bfbaf494d5875447bf1` |
+| `docs/monograph/prime-matrix-triad-a1-dibfi-c-dependent-residue-spectral-reduction-router.json` | `6a720ca520c5652928da6b14bd8c314c28396791e9c16c24a75cf5755980898c` |
+| `docs/monograph/prime-matrix-triad-a1-dibfi-exact-full-s-source-entropy-reduction-router.json` | `728b7afab5a9458bc19eb2bc92d973eb254a7e489559a589963372d0cd7fbed1` |
+| `docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json` | `de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66` |
+| `docs/monograph/prime-matrix-triad-a1-dibfi-ncblk-branch-alignment-router.json` | `3006ac19a18cf8402ca96b39b084a98424095983c116453ed451e9b3b31710b1` |
+| `docs/monograph/prime-matrix-two-replacement-lines-exact-layer-completed-kls-attack-router.json` | `1497b5ddbb92c801b099e45e3bc77cbd627044bb067716b61a2a7529cf1f3e52` |
+| `docs/monograph/three-claims-actual-load-closure-contracts.md` | `8bee43fcfb36420664d62394ec2d20d93416b88c8fdcc16ef7b8ab87111038ba` |
+| `docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md` | `4847b8bfb1d9f038f4ee1e5c203366c5d41efda0d87ac53219021515023b557f` |
+| `experiments/prime_matrix_two_replacement_lines_deep_terminal_sync_router.py` | `65d887c3dedbec3a1d6b0c9159c6a49d93cf31f80281a2a51469a43faf446c9c` |
+| `paper/contradiction-field-monograph/contradiction-field-monograph.tex` | `9487a7f737e10337edee8f058b1a06186248305dcc6a32a9bb0e99cdaafe5c35` |

@@ -25399,6 +25399,88 @@ internal self-contained version:
   AND final promotion gate or self-contained replacement
 ```
 
+### 1.253 两条替代线深终端同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_deep_terminal_sync_router.py
+data/prime-matrix-two-replacement-lines-deep-terminal-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_synced_to_deep_terminal_basis_open
+latest_no_blackbox_external_target=ExternalDIBFIKuznetsovDispersionTheoremMatch
+latest_internal_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+no_blackbox_external_version_closed=false
+internal_self_contained_version_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一节的 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn`
+不是最终内部原子。它在既有 row-origin/Phi-LPF 证书中继续下钻为：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+-> NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+-> PhiLPFBucketSignedCoefficientLawBeforePushforward
+-> PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+并且必须并行保留：
+
+```text
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AlphaRowAnchorPhaseEmissionFormulaLedger
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+Phi-LPF 精确桶恒等式在此只支付最小素因子 ownership、无符号 support/capacity 与
+`p>sqrt(N)` 零质量；它不能产生 signed coefficient、orientation/local factor、row mass、
+complete key、fixed-key multiplicity，也不能把端点差正性变成非循环短区间证明。
+
+外部线中，`CDependentResidueWeightSpectralCancellationInput` 若不作为外部定理接受，会经
+NC-BLK、exact source entropy、support/capacity package 回到 source anti-atom。generic
+self-contained anti-atom 已被反例模型排除，所以无黑箱外部版的非循环目标是同对象
+`ExternalDIBFIKuznetsovDispersionTheoremMatch`，必须保留 completed full-S non-AP WFD、
+`c`-dependent residue weights、no-projection/no-centering、de-completion 误差和任意
+`log^{-A}` saving。
+
+本层因此更新真剩余为：
+
+```text
+external no-blackbox:
+  ExternalDIBFIKuznetsovDispersionTheoremMatch
+  AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+
+internal self-contained:
+  AlphaRowAnchorPhaseEmissionFormulaLedger
+  AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+  AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+  AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+  AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+  AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+  AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+  AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+  AND FixedKeyExactUVLocalMultiplicityO1Ledger
+  AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+  AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+  AND ExactResidueWeightedFloorSawtoothTenPercentBound
+  AND RatePreservationLedger_FOR_moving_atom_packet
+  AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+目标命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

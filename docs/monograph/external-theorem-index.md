@@ -833,3 +833,37 @@ OR NewAutomorphicDispersionProof
 
 外部引理版可以继续使用 `AcceptedFullSKLSExtExternalContract`，但必须保留
 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`；这不是作者侧可自行删除的数学输入。
+
+## 19. 两条替代线深终端同步后的外部输入边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_deep_terminal_sync_router.py
+data/prime-matrix-two-replacement-lines-deep-terminal-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.json
+```
+
+深同步后的无黑箱外部线不再停在旧的 `CDependentResidueWeightSpectralCancellationInput`
+标签。若不把该输入作为外部定理接受，它经有限 Fourier/BWFD/BSC/KFLS 进入
+`NCBLKActualBlockNonConcentrationOrExternalDIBFI`，再对齐到 exact source entropy、
+support/capacity package 与 source anti-atom。由于 generic self-contained anti-atom
+已被 moving-delta 模型反证，真正非循环外部目标固定为：
+
+```text
+ExternalDIBFIKuznetsovDispersionTheoremMatch
+```
+
+该 theorem-match 仍必须保持 section 18 的全部对象条件：full-S non-AP WFD、`c`-dependent
+completed residue weights、well-factorable `lambda_c`、smooth `omega_h`、无 APSourceLift、
+无中心化/投影偷渡、de-completion 与端点误差预算，以及任意固定 `log^{-A}` 节省。
+
+外部引理版仍只在接受
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+时条件闭合；无黑箱外部版仍未闭合。

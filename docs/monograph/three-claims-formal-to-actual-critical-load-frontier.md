@@ -23064,3 +23064,75 @@ OR NewAutomorphicDispersionProof
 外部引理版仍只是在接受 `AcceptedFullSKLSExtExternalContract` 与
 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 时条件闭合。当前语料库仍不能声明
 行/列命题无条件闭合。
+
+## 330F. Two replacement lines deep terminal sync frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_deep_terminal_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-deep-terminal-sync-router.json
+data/prime-matrix-two-replacement-lines-deep-terminal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_synced_to_deep_terminal_basis_open
+latest_no_blackbox_external_target=ExternalDIBFIKuznetsovDispersionTheoremMatch
+latest_internal_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+no_blackbox_external_version_closed=false
+internal_self_contained_version_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一节的两个旧接口都继续下钻。
+
+外部线：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+-> NCBLKActualBlockNonConcentrationOrExternalDIBFI
+-> ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov
+-> FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov
+```
+
+generic source anti-atom 已被 moving-delta 模型排除，不能作为自足闭合捷径。因此无黑箱外部
+frontier 变成同对象 no-projection DI/BFI/Kuznetsov theorem-match，而不是再把
+`CDependentResidueWeightSpectralCancellationInput` 改名。
+
+内部线：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+-> RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+-> NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+-> PhiLPFBucketSignedCoefficientLawBeforePushforward
+-> PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+```
+
+同时必须带上 internal prime-adjoin signed transition、source 三原子、row-mass/support、
+complete/fixed-key、beta-sieve/sawtooth、RatePreservation 与 DStructure/Rankin。Phi-LPF 精确
+计数在这里只关闭无符号 support/capacity，不提供 signed coefficient 或短区间正性。
+
+最新非循环内部基为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix
+AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000
+AND ExactResidueWeightedFloorSawtoothTenPercentBound
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步只同步当前真前沿；没有证明上述内部基，也没有完成外部 theorem-match。
