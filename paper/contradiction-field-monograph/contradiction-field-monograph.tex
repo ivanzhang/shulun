@@ -27153,12 +27153,59 @@ count.
 This identity is exact and useful for local audit and finite verification, but
 it is not by itself a positivity theorem.  To prove that an interval contains
 a prime one still needs a structural upper bound on the summed LPF bucket
-increments.  In fact, for any fixed \(P\) a CRT construction can choose \(k\)
-so that every integer in \([kP,kP+P]\) is composite; the certificate records
-the sample \(P=5\), \(k=8166\), where \([40830,40835]\) contains no prime.
-Thus the endpoint formula must be paired with extra phase, capacity, or signed
+increments.  In the unrestricted aligned-interval problem, a CRT construction
+can choose \(k\) so that every integer in \([kP,kP+P]\) is composite; the
+certificate records the sample \(P=5\), \(k=8166\), where \([40830,40835]\)
+contains no prime.  This sample is outside the strict row range \(1<k<P\), and
+therefore cannot be used as a counterexample to the strict row problem.  Thus
+the endpoint formula must be paired with extra phase, capacity, or signed
 information before it can support a global contradiction.  No unconditional
 row/column theorem is claimed here.
+\end{proof}
+
+\begin{theorem}[Strict \(1<k<P\) endpoint correction and author residue]
+The unrestricted CRT prime-free sample in the endpoint-difference ledger does
+not apply to the strict row domain \(1<k<P\).  In that strict domain,
+\[
+\pi(kP+P)-\pi(kP-1)=\pi(kP+P-1)-\pi(kP),
+\]
+because the endpoints \(kP\) and \((k+1)P\) are composite.  Hence the strict
+row count is the exact Phi--LPF endpoint difference
+\[
+\pi(kP+P-1)-\pi(kP)
+=(P-1)-\sum_{p\le\sqrt{kP+P-1}}\Delta\Phi_p .
+\]
+The positivity of this integer is still open in the present corpus: it is
+equivalent to \(\sum \Delta\Phi_p<P-1\), equivalently to the existence of a
+full-root uncovered slot, equivalently to a prime in the strict row.
+\end{theorem}
+\begin{proof}[Strict \(1<k<P\) endpoint correction and author residue]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-\\
+author-residue-router.md.
+\end{quote}
+It imports the strict row endpoint-difference certificate and the final
+external/internal closure split.  The CRT sample has \(P=5\) and \(k=8166\), so
+\(1<k<P\) is false.  Therefore it is only an unrestricted warning.  For
+strict rows, every point \(kP+a\), \(1\le a<P\), lies below \(P^2\).  If such a
+point has no prime divisor at most \(\sqrt{kP+P-1}\), then it cannot be
+composite and must be prime.  Thus the full-root uncovered-slot condition is
+not an extra consequence of the Phi--LPF identity; it is the strict row prime
+assertion itself.
+
+The same certificate records a finite sweep up to \(P\le 2003\), with all
+strict rows positive and minimum prime count \(1\).  This is a regression and
+structure audit, not an infinite-tail proof.  Consequently the author-side
+ordinary work for the external-lemma version is sealed, while the remaining
+non-author input is
+\(\texttt{DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance}\).
+The no-black-box external version still requires an exact primary-source
+FullS non-AP WFD KLS theorem match, or a new automorphic/dispersion proof for
+the same object.  The self-contained version still requires the signed-source
+fine package and
+\(\texttt{SelfContainedDStructureTailLog4FiniteRankinProofPackage}\).  No
+unconditional row/column theorem is promoted by this correction.
 \end{proof}
 
 

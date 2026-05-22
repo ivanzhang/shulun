@@ -673,3 +673,35 @@ AND FixedKeyExactUVLocalMultiplicityO1Ledger
 ```
 
 Phi-LPF/LPF 端点差公式继续保留为精确计数和有限审计工具，但不作为短区间正性的外部引理。
+
+## 15. `1<k<P` 端点差修正后的外部输入边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_k_less_p_endpoint_correction_author_residue_router.py
+data/prime-matrix-k-less-p-endpoint-correction-author-residue-ledger.json
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.md
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.json
+```
+
+该证书修正一个容易误用的边界：`P=5,k=8166` 的 CRT 全合数样本满足 `k>P`，所以不能
+用于否定 restricted row 目标 `1<k<P`。对 restricted row，Phi-LPF 端点差已经给出精确
+计数，且闭区间端点不贡献素数；但正性仍等价于 strict row 内存在 full-root 未覆盖槽。
+
+因此外部输入边界保持为：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+```
+
+外部引理版若使用 `AcceptedFullSKLSExtExternalContract`，仍必须同时保留最终晋级门：
+
+```text
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+内部自足版不得把 restricted Phi-LPF 端点差当作正性黑箱；它必须提交 signed-source 细包和
+`SelfContainedDStructureTailLog4FiniteRankinProofPackage`。

@@ -25118,6 +25118,74 @@ source 侧细化硬点为同 formal unit 的 pre-Cauchy signed emitter、offdiag
 signed table、internal prime-adjoin signed transition、row mass/support、complete key 与 fixed-key
 multiplicity。Phi-LPF 端点差公式只给 exact count，不能作为 positivity contract。
 
+### 1.248 1<k<P 端点差修正与作者侧剩余清单更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_k_less_p_endpoint_correction_author_residue_router.py
+data/prime-matrix-k-less-p-endpoint-correction-author-residue-ledger.json
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.md
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.json
+```
+
+同步读数为：
+
+```text
+status=k_less_p_endpoint_correction_closed_author_residue_pinned
+previous_crt_sample_in_strict_domain=false
+strict_k_formula_status=exact_count_closed_positivity_open
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层 unrestricted 端点差证书中的 `P=5,k=8166` 全合数 CRT 样本
+满足 `k>P`，所以它不能用于否定 restricted row 目标 `1<k<P`。restricted row 的专门
+证书已经证明：在 `1<k<P` 时，闭区间 `[kP,kP+P]` 的两个端点 `kP` 与 `(k+1)P`
+均为合数，因此闭区间素数数目等于内部行
+
+```text
+{kP+a: 1<=a<P}
+```
+
+的素数数目，并且 Phi-LPF 端点差给出精确整数值：
+
+```text
+pi(kP+P)-pi(kP-1)=pi(kP+P-1)-pi(kP)
+                 =(P-1)-sum_{p<=sqrt(kP+P-1)} DeltaPhi_p.
+```
+
+但这一步仍不能作为非循环正性证明。正性恰好等价于
+
+```text
+sum_{p<=sqrt(kP+P-1)} DeltaPhi_p < P-1
+iff full-root uncovered slot exists
+iff the row contains a prime.
+```
+
+有限审计到 `P<=2003`、`case_count=278445` 时所有 strict rows 均为正且
+`minimum_prime_count=1`，但该读数只作为结构证据和回归测试，不作为无限尾段证明。
+
+作者侧剩余被固定为三类：
+
+```text
+external lemma version ordinary author-side remainder: none
+external lemma version non-author remainder:
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+
+no-blackbox external version author-side remainder:
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof
+
+self-contained version author-side remainder:
+FineSignedSourcePackage
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+其中 `FineSignedSourcePackage` 是同 formal unit 的 alpha-row anchor、pre-Cauchy
+arithmetic identity、ExactUV rank multiplicity、offdiagonal semiprime signed seed、
+internal prime-adjoin signed transition、row-mass/no-heavy-row、primitive support、
+complete key partition 与 fixed-key local multiplicity 组合包。当前层只修正越界判断和
+作者侧剩余分类；不把 restricted Phi-LPF 端点差升级为行/列命题的无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

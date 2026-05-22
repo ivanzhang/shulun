@@ -22796,3 +22796,57 @@ clean-core moving atom 排斥及其 signed-source/constructor 细化包，并且
 Phi-LPF 计数公式，而是提交同 formal unit 的 pre-Cauchy signed emitter、offdiagonal
 semiprime first seed signed table、internal prime-adjoin signed transition table、row mass/support、
 complete key 与 fixed-key multiplicity 账本。
+
+## 330A. Strict k endpoint correction and author-residue frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_k_less_p_endpoint_correction_author_residue_router.py
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.md
+docs/monograph/prime-matrix-k-less-p-endpoint-correction-author-residue-router.json
+data/prime-matrix-k-less-p-endpoint-correction-author-residue-ledger.json
+```
+
+同步结果：
+
+```text
+status=k_less_p_endpoint_correction_closed_author_residue_pinned
+previous_crt_sample_in_strict_domain=false
+strict_k_formula_status=exact_count_closed_positivity_open
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：unrestricted 端点差证书中的 `P=5,k=8166` 样本不在
+`1<k<P` 的 strict row 域内。它只能作为“一般 `[kP,kP+P]` 断言不成立”的警示，
+不能作为 strict row 目标的反例或阻断证据。
+
+在 strict row 域内，已经闭合的是端点差精确计数：
+
+```text
+pi(kP+P)-pi(kP-1)=pi(kP+P-1)-pi(kP)
+                 =(P-1)-sum_{p<=sqrt(kP+P-1)} DeltaPhi_p.
+```
+
+仍未闭合的是该整数的正性。因为 `1<k<P` 且 `1<=a<P` 时 `kP+a<P^2`，
+full-root 未覆盖槽与行内素数槽完全等价，所以
+
+```text
+sum DeltaPhi_p < P-1
+```
+
+不是 Phi-LPF 恒等式内部的额外余量，而是 strict row prime 目标本身。有限扫描到
+`P<=2003` 没有零素数行，只能作为证据，不作为全局证明。
+
+作者侧下一步因此没有新的 ordinary external-lemma 证明任务；该版本剩余是非作者侧
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。若要求无黑箱外部主来源版，
+作者侧必须提交
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof.
+```
+
+若要求内部自足版，则必须提交 signed-source 细包与
+`SelfContainedDStructureTailLog4FiniteRankinProofPackage`，而不是继续重排 Phi-LPF
+端点差公式。

@@ -1,0 +1,201 @@
+{
+  "certificate_type": "prime_matrix_k_less_p_endpoint_correction_author_residue_router",
+  "external_lemma_author_side_remaining": [],
+  "external_lemma_non_author_remaining": [
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "finite_sweep": {
+    "all_rows_positive": true,
+    "case_count": 278445,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 2003,
+    "minimum_prime_count": 1,
+    "minimum_rows_sample": [
+      {
+        "P": 3,
+        "interval": [
+          7,
+          8
+        ],
+        "k": 2,
+        "prime_count": 1
+      },
+      {
+        "P": 5,
+        "interval": [
+          21,
+          24
+        ],
+        "k": 4,
+        "prime_count": 1
+      },
+      {
+        "P": 7,
+        "interval": [
+          22,
+          27
+        ],
+        "k": 3,
+        "prime_count": 1
+      },
+      {
+        "P": 11,
+        "interval": [
+          111,
+          120
+        ],
+        "k": 10,
+        "prime_count": 1
+      },
+      {
+        "P": 13,
+        "interval": [
+          118,
+          129
+        ],
+        "k": 9,
+        "prime_count": 1
+      },
+      {
+        "P": 17,
+        "interval": [
+          205,
+          220
+        ],
+        "k": 12,
+        "prime_count": 1
+      },
+      {
+        "P": 19,
+        "interval": [
+          286,
+          303
+        ],
+        "k": 15,
+        "prime_count": 1
+      }
+    ],
+    "prime_count_distribution_low": {
+      "1": 7,
+      "10": 175,
+      "2": 17,
+      "3": 36,
+      "4": 59,
+      "5": 68,
+      "6": 87,
+      "7": 105,
+      "8": 153,
+      "9": 157
+    },
+    "zero_row_count": 0,
+    "zero_rows_sample": []
+  },
+  "internal_self_contained_author_remaining": [
+    "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows AND PhiLPFOffDiagonalOrderedSemiprimeFirstSeedSignedTableBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "SelfContainedDStructureTailLog4FiniteRankinProofPackage"
+  ],
+  "no_blackbox_external_author_remaining": [
+    "ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR NewAutomorphicDispersionProof"
+  ],
+  "plain_conclusion": "对 1<k<P 的 restricted row，上一层 P=5,k=8166 的 CRT 全合数样本确实越界，不能作为该目标的反例或阻断证据。restricted 端点差公式已经严格落地，并且闭区间计数等于内部行计数。但 Phi-LPF 恒等式仍只给 exact count；要证明正性，必须证明合数桶端点增量和小于 P-1，这在 k<P 行内等价于存在 full-root 未覆盖槽，也就是等价于行内有素数。因此此前判断需要修正为：CRT 样例只阻断 unrestricted 断言；restricted 目标仍开放，不能由 Phi-LPF 恒等式单独非循环闭合。外部引理版作者侧证据包已封装，剩余是非作者侧独立接受；内部自足版仍需 signed-source 细包与自足 DStructure/Rankin 替代包。",
+  "previous_crt_sample": {
+    "P": 5,
+    "in_strict_domain_1_lt_k_lt_P": false,
+    "interval": [
+      40830,
+      40835
+    ],
+    "k": 8166
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousCRTPrimeFreeSampleOutOfStrictDomain",
+      "meaning": "上一层 P=5,k=8166 的 CRT 全合数样本满足 k>P，不能用于否定 1<k<P 行区间目标。",
+      "proved_or_accepted": true,
+      "remaining": "use only as unrestricted-interval warning"
+    },
+    {
+      "closed": true,
+      "gate": "KLessPEndpointDifferenceImported",
+      "meaning": "1<k<P 专门证书已经给出闭区间与内部行的 Phi-LPF 端点差公式。",
+      "proved_or_accepted": true,
+      "remaining": "exact count, not positivity"
+    },
+    {
+      "closed": true,
+      "gate": "ClosedIntervalEqualsInternalRow",
+      "meaning": "1<k<P 时 kP 与 (k+1)P 都是合数端点，闭区间素数数目等于内部行素数数目。",
+      "proved_or_accepted": true,
+      "remaining": "endpoints contribute zero primes"
+    },
+    {
+      "closed": true,
+      "gate": "InsidePSquareUncoveredIffPrime",
+      "meaning": "对 1<=a<P，有 kP+a<P^2；若无根内素因子则不能为合数，只能为素数。",
+      "proved_or_accepted": true,
+      "remaining": "uncovered slot positivity is exactly row-prime positivity"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteStrictKSweepPositive",
+      "meaning": "有限审计到 P<=2003 未发现 1<k<P 零素数行。",
+      "proved_or_accepted": true,
+      "remaining": "finite evidence only"
+    },
+    {
+      "closed": false,
+      "gate": "StrictKPositivityFromPhiLPFIdentityAlone",
+      "meaning": "Phi-LPF 端点差给精确值；正性仍需证明合数桶增量和 < P-1。",
+      "proved_or_accepted": false,
+      "remaining": "noncircular positive input"
+    },
+    {
+      "closed": false,
+      "gate": "StrictKGlobalClosureFromCurrentCorpus",
+      "meaning": "当前材料没有从端点差恒等式推出所有 1<k<P 行内正性。",
+      "proved_or_accepted": false,
+      "remaining": "FullS/KLS, signed-source, or special square-phase structural lower bound"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalLemmaAuthorSideTasksDone",
+      "meaning": "外部 KLS 合同版中，作者侧可合法完成的条件链和证据包已封装。",
+      "proved_or_accepted": true,
+      "remaining": "non-author independent acceptance remains"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinIndependentAcceptanceStillAbsent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 晋级包边界闭合，但当前没有独立接受事件。",
+      "proved_or_accepted": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedReplacementTasksStillOpen",
+      "meaning": "若要求内部自足闭合，仍需 signed-source 细包和自足晋级证明包。",
+      "proved_or_accepted": false,
+      "remaining": "FineSignedSourcePackage AND SelfContainedDStructureTailLog4FiniteRankinProofPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2a4683ac1b8ab47e10451505d11366f23c33efdd5b62fec52fe1ff4676b52ef7",
+    "docs/monograph/external-theorem-index.md": "c8350b5b60dabeead4c875419e833a92d9ed3e157b203f5d22da8eda0eca064b",
+    "docs/monograph/prime-matrix-author-side-closure-task-completion-router.json": "1a15dfe0778a3ae9acf77c9db9cfa544f056d32da2be09b1079883a7123177b8",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-dual-closure-external-internal-hardpoint-router.json": "5095631438e220314abc03c41253a9fafd7e5a8f239d5ae414fc99f02e7e8034",
+    "docs/monograph/prime-matrix-final-guard-gate-completion-verdict-router.json": "629cb763afb5d0c3ac9d1096f0e46437e47773036244173f58a6598a7b461d0a",
+    "docs/monograph/prime-matrix-phi-lpf-endpoint-interval-difference-router.json": "e0b7301c85ca5828aca8fc99ab225cbccc166f860ad2a62dfcbf7bfcda350e65",
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "f3cf5e1ec2419229a74cffae06d03bc21b5cb65d1db4f63c55386b1090692d50",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "f758788daa5daa21930c8b24681cc5ab378c0cf29863a297585e61280b230e24",
+    "experiments/prime_matrix_k_less_p_endpoint_correction_author_residue_router.py": "5709128779991e586b8f68492203671cbd87ad51c6dbda6d5253829aab1cf8fc",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "62abe48320955af540ee2663d23cc57da57736319b1931084fc29f06f670310b"
+  },
+  "status": "k_less_p_endpoint_correction_closed_author_residue_pinned",
+  "strict_domain": "P prime and 1<k<P",
+  "strict_k_formula_status": "exact_count_closed_positivity_open",
+  "strict_k_positive_iff": "sum_{p<=sqrt(kP+P-1)} DeltaPhi_p < P-1 iff a full-root uncovered slot exists iff the row contains a prime"
+}
