@@ -23777,6 +23777,52 @@ OR PrimeSquareUpperCollarPrimeInput.
 
 有限审计没有发现 perfect tiling，但不作为全局证明。行/列命题仍未无条件闭合。
 
+### 1.211 Phi-LPF strict-k top row high-prime payment split 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_high_prime_payment_split_router.py
+data/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-router.json
+```
+
+同步读数为：
+
+```text
+low_carrier_payment_capacity_exceeded=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：顶行槽位按 high-prime 因子精确分裂为：
+
+```text
+P-1 = H_1(P)+sum_{2<=m<P}H_m(P)+S_P(P)
+H_1(P)=pi(P^2-1)-pi(P^2-P)
+H_m(P)=pi(floor((P^2-1)/m))-pi(floor((P^2-P)/m)), 2<=m<P.
+```
+
+目标正性是 `H_1(P)>=1`。低载体高素数 payment 是 `2<=m<P` 部分，`S_P(P)` 是
+全部素因子 `<=P` 的 smooth 合数槽。Sylvester-Schur 在 `H_1(P)=0` 的反设下只给
+`sum_{2<=m<P}H_m(P)>=1`，不产生 `H_1(P)>=1`。
+
+因此剩余硬点变成容量缺口：
+
+```text
+sum_{2<=m<P}H_m(P)+S_P(P) <= P-2.
+```
+
+当前语料没有无条件证明该容量缺口。最新接口为：
+
+```text
+LowCarrierPaymentCapacityDeficit
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR PrimeSquareUpperCollarPrimeInput.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

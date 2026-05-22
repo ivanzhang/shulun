@@ -11169,6 +11169,53 @@ case.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF top-row high-prime payment split]
+For the top row \(P^2-P<n<P^2\), define
+\[
+  H_1(P)=\pi(P^2-1)-\pi(P^2-P),
+\]
+and, for \(2\le m<P\),
+\[
+  H_m(P)=
+  \pi\!\left(\left\lfloor\frac{P^2-1}{m}\right\rfloor\right)
+  -\pi\!\left(\left\lfloor\frac{P^2-P}{m}\right\rfloor\right).
+\]
+Let \(S_P(P)\) be the number of top-row composite slots all of whose prime
+factors are at most \(P\).  Then
+\[
+  P-1=H_1(P)+\sum_{2\le m<P}H_m(P)+S_P(P).
+\]
+The target top-row positivity is exactly \(H_1(P)\ge1\).  The terms \(H_m(P)\)
+with \(2\le m<P\) are low-carrier high-prime payments, not prime slots.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-\\
+high-prime-payment-split-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+low\_carrier\_payment\_capacity\_exceeded=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+Every top-row slot either is prime, has a unique prime factor \(r>P\) with
+cofactor \(m=n/r<P\), or has all prime factors at most \(P\).  These cases are
+disjoint and give the displayed identity.  The Sylvester--Schur input, under
+the contrary assumption \(H_1(P)=0\), only forces
+\[
+  \sum_{2\le m<P}H_m(P)\ge1.
+\]
+It does not force \(H_1(P)\ge1\).  A closure proof must therefore show a
+capacity deficit
+\[
+  \sum_{2\le m<P}H_m(P)+S_P(P)\le P-2,
+\]
+or return to the previously named positive-rejection/prime-collar input.  The
+current corpus has not proved this capacity deficit globally.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

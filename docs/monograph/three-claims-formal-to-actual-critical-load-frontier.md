@@ -17730,6 +17730,58 @@ OR PrimeSquareUpperCollarPrimeInput.
 有限审计到 `P<=5003` 没有发现 perfect LPF tiling，最大合数铺满比例样本为 `P=4253` 时约
 `0.948495`。这只是实现口径审计，不替代全局证明。行/列命题仍未无条件闭合。
 
+## 438. Phi-LPF strict-k top row high-prime payment split frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_top_row_high_prime_payment_split_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-router.json
+data/prime-matrix-phi-lpf-strict-k-top-row-high-prime-payment-split-ledger.json
+```
+
+同步结果：
+
+```text
+low_carrier_payment_capacity_exceeded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：顶行 high-prime 泄出有一个精确分裂：
+
+```text
+P-1 = H_1(P)+sum_{2<=m<P}H_m(P)+S_P(P)
+H_1(P)=pi(P^2-1)-pi(P^2-P)
+H_m(P)=pi(floor((P^2-1)/m))-pi(floor((P^2-P)/m)), 2<=m<P
+S_P(P)=# top-row composite slots with all prime factors <=P.
+```
+
+这里 `H_1(P)` 正是目标素数槽；`2<=m<P` 的 `H_m(P)` 是大素数因子被小载体支付，
+而不是未铺满槽。Sylvester-Schur 连续乘积输入在反设 `H_1(P)=0` 下只推出：
+
+```text
+sum_{2<=m<P}H_m(P)>=1,
+```
+
+并不推出 `H_1(P)>=1`。因此它不能单独闭合顶行正性；还需要证明
+低载体 payment 与 `P`-smooth 合数槽不能合计铺满全部顶行：
+
+```text
+sum_{2<=m<P}H_m(P)+S_P(P) <= P-2.
+```
+
+有限审计到 `P<=5003` 的分裂恒等式全部成立，最小 `H_1(P)` 为 `1`，但这不替代全局证明。
+最新剩余接口为：
+
+```text
+LowCarrierPaymentCapacityDeficit
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR PrimeSquareUpperCollarPrimeInput.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件
