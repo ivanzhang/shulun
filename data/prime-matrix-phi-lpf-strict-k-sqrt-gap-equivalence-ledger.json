@@ -1,0 +1,276 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_sqrt_gap_equivalence_router",
+  "endpoint_difference_exact_integer_value_proved": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_sweep": {
+    "all_finite_rows_have_prime": true,
+    "case_count": 21346,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 499,
+    "minimum_cases": [
+      {
+        "P": 3,
+        "k": 2,
+        "row_prime_count": 1
+      },
+      {
+        "P": 5,
+        "k": 4,
+        "row_prime_count": 1
+      },
+      {
+        "P": 7,
+        "k": 3,
+        "row_prime_count": 1
+      },
+      {
+        "P": 11,
+        "k": 10,
+        "row_prime_count": 1
+      },
+      {
+        "P": 13,
+        "k": 9,
+        "row_prime_count": 1
+      },
+      {
+        "P": 17,
+        "k": 12,
+        "row_prime_count": 1
+      },
+      {
+        "P": 19,
+        "k": 15,
+        "row_prime_count": 1
+      }
+    ],
+    "minimum_row_prime_count": 1,
+    "per_prime_min_tail_sample": [
+      {
+        "P": 443,
+        "min_row_prime_count": 27,
+        "sample_k": [
+          408
+        ]
+      },
+      {
+        "P": 449,
+        "min_row_prime_count": 27,
+        "sample_k": [
+          196
+        ]
+      },
+      {
+        "P": 457,
+        "min_row_prime_count": 28,
+        "sample_k": [
+          395,
+          425
+        ]
+      },
+      {
+        "P": 461,
+        "min_row_prime_count": 27,
+        "sample_k": [
+          392
+        ]
+      },
+      {
+        "P": 463,
+        "min_row_prime_count": 26,
+        "sample_k": [
+          390
+        ]
+      },
+      {
+        "P": 467,
+        "min_row_prime_count": 29,
+        "sample_k": [
+          375,
+          387
+        ]
+      },
+      {
+        "P": 479,
+        "min_row_prime_count": 28,
+        "sample_k": [
+          377
+        ]
+      },
+      {
+        "P": 487,
+        "min_row_prime_count": 29,
+        "sample_k": [
+          371
+        ]
+      },
+      {
+        "P": 491,
+        "min_row_prime_count": 28,
+        "sample_k": [
+          368
+        ]
+      },
+      {
+        "P": 499,
+        "min_row_prime_count": 29,
+        "sample_k": [
+          362
+        ]
+      }
+    ],
+    "zero_rows_found": []
+  },
+  "finite_verification_residual": "The remaining rows under that hypothesis satisfy kP<X0; since k>=2, only P<X0/2 must be checked.",
+  "finite_verification_template_after_sqrt_gap_input_proved": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "PhiLPFExactIntegerValueAvailable",
+      "meaning": "Phi-LPF 端点差分给出 strict 行素数数目的精确整数值。",
+      "proved": true,
+      "remaining": "exact count only"
+    },
+    {
+      "closed": true,
+      "gate": "GEOneEquivalentToPositiveRejectionExcess",
+      "meaning": "该整数 >=1 等价于 raw/rejection 严格失衡。",
+      "proved": true,
+      "remaining": "PositiveRejectionExcessForStrictKRawLPFIncidence"
+    },
+    {
+      "closed": true,
+      "gate": "GEOneEquivalentToAlignedSqrtGapExclusion",
+      "meaning": "行值 >=1 等价于没有完整 P 网格行被连续素数间隙覆盖。",
+      "proved": true,
+      "remaining": "aligned sqrt-scale prime-gap exclusion"
+    },
+    {
+      "closed": true,
+      "gate": "SqrtGapInputWouldCloseLargeRows",
+      "meaning": "若 x 后 sqrt(x) 内总有素数，则因 sqrt(kP)<P，所有充分大 strict 行闭合。",
+      "proved": true,
+      "remaining": "finite verification below threshold"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteVerificationTemplateIdentified",
+      "meaning": "若 sqrt-gap 输入从 X0 起成立，则仅需有限验证 kP<X0 的行。",
+      "proved": true,
+      "remaining": "depends on unproved sqrt-gap input"
+    },
+    {
+      "closed": false,
+      "gate": "SqrtGapInputProvedInCurrentCorpus",
+      "meaning": "当前语料没有无条件证明 x 后 sqrt(x) 内总有素数。",
+      "proved": false,
+      "remaining": "external/internal square-root prime-gap theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层给出 >=1 的等价和条件闭合模板，不给出无条件正性。",
+      "proved": false,
+      "remaining": "sqrt-gap input or structural rejection-excess proof"
+    }
+  ],
+  "ge_one_condition": "N_P(k)>=1 iff next_prime(kP)<(k+1)P",
+  "ge_one_equivalent_to_aligned_sqrt_gap_exclusion_proved": true,
+  "ge_one_equivalent_to_positive_rejection_excess_proved": true,
+  "no_theorem_switch": true,
+  "phi_lpf_count_formula": "N_P(k)=pi((k+1)P-1)-pi(kP)",
+  "plain_conclusion": "Phi-LPF 端点差分确实给出 strict 1<k<P 行的精确素数个数。要把该值证明为 >=1，等价于排除一个 P 网格对齐的平方根尺度素数荒漠，也等价于证明 raw/rejection 的严格正失衡。若未来给出 x 后 sqrt(x) 内必有素数的输入，则充分大部分立即闭合，剩余可有限验证；当前该 sqrt-gap 输入仍未证明。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_audits": [
+    {
+      "P": 5,
+      "conditional_sqrt_gap_would_fit": true,
+      "ge_one": true,
+      "internal_interval": [
+        21,
+        24
+      ],
+      "k": 4,
+      "p_minus_sqrt_x": 0.5278640450004204,
+      "row_prime_count": 1,
+      "sqrt_x": 4.47213595499958,
+      "sqrt_x_lt_p": true,
+      "x": 20
+    },
+    {
+      "P": 11,
+      "conditional_sqrt_gap_would_fit": true,
+      "ge_one": true,
+      "internal_interval": [
+        111,
+        120
+      ],
+      "k": 10,
+      "p_minus_sqrt_x": 0.5119115182984846,
+      "row_prime_count": 1,
+      "sqrt_x": 10.488088481701515,
+      "sqrt_x_lt_p": true,
+      "x": 110
+    },
+    {
+      "P": 17,
+      "conditional_sqrt_gap_would_fit": true,
+      "ge_one": true,
+      "internal_interval": [
+        273,
+        288
+      ],
+      "k": 16,
+      "p_minus_sqrt_x": 0.5075774975293577,
+      "row_prime_count": 3,
+      "sqrt_x": 16.492422502470642,
+      "sqrt_x_lt_p": true,
+      "x": 272
+    },
+    {
+      "P": 101,
+      "conditional_sqrt_gap_would_fit": true,
+      "ge_one": true,
+      "internal_interval": [
+        5051,
+        5150
+      ],
+      "k": 50,
+      "p_minus_sqrt_x": 29.93664798224053,
+      "row_prime_count": 11,
+      "sqrt_x": 71.06335201775947,
+      "sqrt_x_lt_p": true,
+      "x": 5050
+    },
+    {
+      "P": 101,
+      "conditional_sqrt_gap_would_fit": true,
+      "ge_one": true,
+      "internal_interval": [
+        10101,
+        10200
+      ],
+      "k": 100,
+      "p_minus_sqrt_x": 0.5012437887911005,
+      "row_prime_count": 12,
+      "sqrt_x": 100.4987562112089,
+      "sqrt_x_lt_p": true,
+      "x": 10100
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-k-less-p-row-interval-difference-router.json": "fda512a55d40c2b2e3dbac432b0bcff1c47efd7bea9e5b96e9bb291804214316",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-endpoint-bucket-cancellation-router.json": "dbd0f06356306594afff56e4a199bdc4b27c7eb43688825b17cfd189ca8efa1c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-internal-owner-saturation-router.json": "d0b1755f1ba90db1c954b73254aad74aef846825e80dc38b7a128638e7550b6c",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-raw-rejection-balance-router.json": "59bf235653fb8aef057ba81b7e3e42132d7b8bf1b15283671e52330a9cb6ad0d",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.json": "9c8b4ae328fe2254bf81e16e4f058921efc6c3ea616a97f196a42482151dd028",
+    "experiments/prime_matrix_phi_lpf_strict_k_sqrt_gap_equivalence_router.py": "4b5dcda97a5e657276ff439b9bbd10432af1bdf9bb92ad54bbf2322ba1463113"
+  },
+  "sqrt_gap_conditional": "If every x>=X0 has a prime in (x,x+sqrt(x)], then all strict rows with kP>=X0 have N_P(k)>=1 because sqrt(kP)<P.",
+  "sqrt_gap_input_proved_in_current_corpus": false,
+  "sqrt_gap_input_would_close_all_large_strict_rows": true,
+  "status": "strict_k_phi_lpf_ge_one_reduced_to_sqrt_gap_or_rejection_excess",
+  "strict_k_range": "1<k<P"
+}

@@ -11002,6 +11002,62 @@ input is supplied.  The row/column theorem remains open.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) square-root gap equivalence]
+For \(1<k<P\), the Phi-LPF endpoint difference gives the exact integer
+\[
+  N_P(k)=\pi((k+1)P-1)-\pi(kP).
+\]
+Since the two endpoints \(kP\) and \((k+1)P\) are composite, the desired
+positivity is exactly
+\[
+  N_P(k)\ge 1
+  \quad\Longleftrightarrow\quad
+  \operatorname{nextprime}(kP)<(k+1)P.
+\]
+Equivalently, no consecutive-prime gap may cover the whole \(P\)-grid row
+\((kP,(k+1)P)\).  In the raw/rejection coordinates of the preceding strict
+Phi-LPF certificates, the same condition is
+\[
+  E(k)>R(k)-(P-1).
+\]
+Moreover, if one had a square-root prime-gap input
+\[
+  \forall x\ge X_0\quad \exists r\ {\rm prime}\quad x<r\le x+\sqrt{x},
+\]
+then all strict rows with \(kP\ge X_0\) would close, because
+\[
+  \sqrt{kP}<P\qquad(1<k<P).
+\]
+The remaining rows would satisfy \(kP<X_0\), hence \(P<X_0/2\), and would be a
+finite verification problem.  Thus the threshold-plus-finite-verification
+route is valid only after a genuine square-root-scale prime-gap theorem has
+been supplied.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-sqrt-\\
+gap-equivalence-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+endpoint\_difference\_exact\_integer\_value\_proved=true\\
+ge\_one\_equivalent\_to\_positive\_rejection\_excess\_proved=true\\
+ge\_one\_equivalent\_to\_aligned\_sqrt\_gap\_exclusion\_proved=true\\
+sqrt\_gap\_input\_would\_close\_all\_large\_strict\_rows=true\\
+finite\_verification\_template\_after\_sqrt\_gap\_input\_proved=true\\
+sqrt\_gap\_input\_proved\_in\_current\_corpus=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The equivalence is immediate from the endpoint cancellation and the exact
+Phi-LPF count.  The conditional closure follows from the strict inequality
+\(\sqrt{kP}<P\).  What is not present in the current corpus is the square-root
+prime-gap input itself.  Therefore the theorem gives the correct closure
+template and the exact obstruction, but not an unconditional proof of
+\(N_P(k)\ge1\) for all strict rows.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

@@ -17544,6 +17544,77 @@ PositiveRejectionExcessForStrictKRawLPFIncidence
 
 或提交外部/内部 Legendre-scale 平方根短区间定理。行/列命题仍未无条件闭合。
 
+## 435. Phi-LPF strict-k sqrt gap equivalence frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_sqrt_gap_equivalence_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-router.json
+data/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-ledger.json
+```
+
+同步结果：
+
+```text
+endpoint_difference_exact_integer_value_proved=true
+ge_one_equivalent_to_positive_rejection_excess_proved=true
+ge_one_equivalent_to_aligned_sqrt_gap_exclusion_proved=true
+sqrt_gap_input_would_close_all_large_strict_rows=true
+finite_verification_template_after_sqrt_gap_input_proved=true
+sqrt_gap_input_proved_in_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：Phi-LPF 不只给出实数近似，而给出 exact integer：
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP).
+```
+
+由于 strict `1<k<P` 时两个端点 `kP` 和 `(k+1)P` 都是合数，所求 `>=1` 等价于：
+
+```text
+N_P(k)>=1
+<=> next_prime(kP)<(k+1)P
+<=> P 网格行 (kP,(k+1)P) 不被连续素数间隙完整覆盖。
+```
+
+结合 raw/rejection 层，也等价于：
+
+```text
+RejectionMass > RawTotal-(P-1).
+```
+
+这给出最清楚的阈值+有限验证模板。若存在输入：
+
+```text
+forall x>=X0, exists prime r with x<r<=x+sqrt(x),
+```
+
+则对所有 `kP>=X0` 的 strict 行，因为
+
+```text
+sqrt(kP)<P,
+```
+
+必有 `r<kP+P`，从而 `N_P(k)>=1`。剩余行满足 `kP<X0`，又因 `k>=2`，只需有限检查：
+
+```text
+P<X0/2.
+```
+
+所以“充分大阈值一般证明 + 有限验证”的正确闭合形式已经明确：关键不是 Phi-LPF 计数，
+而是无条件平方根尺度 prime-gap 输入。当前语料尚未证明该输入，因此本层仍不构成无条件闭合。
+最新并行硬点保持为：
+
+```text
+SqrtGapInputAfterXOrPositiveRejectionExcessForStrictKRawLPFIncidence.
+```
+
+行/列命题仍未无条件闭合。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

@@ -23625,6 +23625,60 @@ PositiveRejectionExcessForStrictKRawLPFIncidence
 
 或等价的 external/internal Legendre-scale square-root interval theorem。行/列命题仍未无条件闭合。
 
+### 1.208 Phi-LPF strict-k sqrt gap equivalence 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_sqrt_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-sqrt-gap-equivalence-router.json
+```
+
+同步读数为：
+
+```text
+endpoint_difference_exact_integer_value_proved=true
+ge_one_equivalent_to_positive_rejection_excess_proved=true
+ge_one_equivalent_to_aligned_sqrt_gap_exclusion_proved=true
+sqrt_gap_input_would_close_all_large_strict_rows=true
+finite_verification_template_after_sqrt_gap_input_proved=true
+sqrt_gap_input_proved_in_current_corpus=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：strict 行端点差分给出的 exact value 是
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP).
+```
+
+目标 `N_P(k)>=1` 与两个已经定位的出口等价：
+
+```text
+N_P(k)>=1
+<=> next_prime(kP)<(k+1)P
+<=> RejectionMass > RawTotal-(P-1).
+```
+
+因此 `>=1` 不是 Phi-LPF 恒等式内部自动给出的符号，而是一个对齐平方根尺度 prime-gap
+排除，或 raw/rejection 严格失衡。若未来证明：
+
+```text
+forall x>=X0, exists prime r with x<r<=x+sqrt(x),
+```
+
+则所有 `kP>=X0` 的 strict 行立刻闭合，因为 `sqrt(kP)<P`。剩余 `kP<X0` 的行只需
+有限检查，且 `k>=2` 给出 `P<X0/2`。当前语料没有该无条件 sqrt-gap 输入，所以本层是
+条件闭合模板和等价定位，不是无条件证明。最新剩余为：
+
+```text
+SqrtGapInputAfterXOrPositiveRejectionExcessForStrictKRawLPFIncidence.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
