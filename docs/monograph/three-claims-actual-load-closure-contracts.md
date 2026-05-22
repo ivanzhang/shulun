@@ -23985,6 +23985,64 @@ OR SqrtGapInputAfterX.
 
 行/列命题仍未无条件闭合。
 
+### 1.215 Phi-LPF strict-k low-carrier lower-half source-cut 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_low_carrier_lower_half_source_cut_router.py
+data/prime-matrix-phi-lpf-strict-k-low-carrier-lower-half-source-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-low-carrier-lower-half-source-cut-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-low-carrier-lower-half-source-cut-router.json
+```
+
+同步读数为：
+
+```text
+all_payment_sources_in_lower_half=true
+lower_half_payment_smooth_anti_tiling_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 low-carrier high-prime payment 不是当前行自反馈。
+若 `n=mr` 落在 strict 行 `kP<n<(k+1)P`，其中 `2<=m<=k` 且 `r>P` 为素数，则
+
+```text
+kP/m < r <= ((k+1)P-1)/m
+m>=2 => r < ((k+1)P)/2 < kP
+floor(r/P) <= floor(k/2).
+```
+
+因此每个 payment prime source 都来自当前目标行左侧的下半行源，而不是当前行、近顶端行
+或未来行。并且固定目标行内，一个源素数 `r>P` 至多对应一个 carrier `m`；否则相邻
+carrier 的乘积差至少为 `r>P`，超过行宽 `P-1`。
+
+有限审计到 `P<=1009` 为：
+
+```text
+strict_row_count=76797
+rows_with_low_carrier_payment=76795
+max_low_carrier_payment=685 at P=1009,k=968
+max_source_ratio=0.5
+```
+
+这把零行反设进一步压成：
+
+```text
+all row slots = image(lower-half prime source injection) union P-smooth slots.
+```
+
+所以新的非循环接口是：
+
+```text
+LowerHalfPaymentSmoothAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+本层排除了 payment 来源环，但尚未证明下半源注入像与 `P`-smooth 槽不能完美铺满；行/列
+命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

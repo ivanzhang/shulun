@@ -11352,6 +11352,53 @@ an internal anti-co-saturation/rejection-excess inequality.
 \end{proof}
 
 
+\begin{theorem}[Phi-LPF strict-\(k\) low-carrier lower-half source cut]
+In the strict row \(1<k<P\), every low-carrier high-prime payment slot is
+sourced from the lower half of the earlier \(P\)-rows.  More precisely, if
+\[
+  kP< n=mr < (k+1)P,\qquad 2\le m\le k,\qquad r>P\ {\rm prime},
+\]
+then
+\[
+  \frac{kP}{m}<r\le\frac{(k+1)P-1}{m}
+  \quad\hbox{and hence}\quad
+  r<\frac{(k+1)P}{2}<kP.
+\]
+Consequently, writing \(j=\lfloor r/P\rfloor\), one has
+\[
+  1\le j\le\lfloor k/2\rfloor.
+\]
+For a fixed target row \((P,k)\), the same source prime \(r>P\) can pay at
+most one slot, because two different carriers would move by at least \(r>P\),
+which is larger than the row width \(P-1\).  Thus a zero row would have to be
+a perfect tiling by an acyclic lower-half prime-source injection together with
+the \(P\)-smooth slots.
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-low-carrier-\\
+lower-half-source-cut-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+all\_payment\_sources\_in\_lower\_half=true\\
+lower\_half\_payment\_smooth\_anti\_tiling\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The displayed source interval follows by dividing the row inequalities by
+\(m\).  Since \(m\ge2\) and \(k>1\), we have
+\(((k+1)P)/2<kP\).  The source row bound follows immediately.  If a single
+source prime \(r\) admitted two carriers \(m_1<m_2\) into the same target row,
+then \((m_2-m_1)r\ge r>P\), while two numbers in the row differ by at most
+\(P-1\), a contradiction.  The finite audit through \(P\le1009\) verifies the
+same bound on \(76797\) strict rows and finds maximum source ratio \(0.5\).
+This removes a payment source loop, but the remaining anti-tiling inequality
+between the lower-half injection image and the \(P\)-smooth slots is not yet
+proved.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
