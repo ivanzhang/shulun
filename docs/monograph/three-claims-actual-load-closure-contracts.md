@@ -22420,6 +22420,57 @@ OR NCBLKActualBlockNonConcentration
 这把“外部深定理路线”从名称引用收缩成审稿级接口。它没有证明 `H_P` 或行/列命题无条件
 闭合。
 
+### 1.248 Full-S theorem-match 真剩余切割更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_fulls_theorem_match_true_remainder_cut_router.py
+data/prime-matrix-fulls-theorem-match-true-remainder-cut-ledger.json
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.md
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.json
+```
+
+同步读数为：
+
+```text
+status=ap_lift_filtered_ncblk_expanded_true_remainder_external_or_actual_source_core_open
+unconditional_closure_reached=false
+current_true_remainder_basis=(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+actual-load 含义是：`FullSNonAPWFDKLSTheoremInput OR APSourceLift OR
+NCBLKActualBlockNonConcentration` 里的三个标签不能平级保留。`APSourceLift` 已由 no-go
+账本过滤；当前 non-AP actual object 不能静默回提为 BFI AP-source discrepancy。
+`NCBLK` 也已经展开为 actual noncanonical full-S 源的精确支撑/容量核心，而不是新的谱黑箱。
+
+被删除的伪剩余为：
+
+```text
+APSourceLift
+generic FullS WFD anti-atom
+NCBLK as an opaque terminal name
+```
+
+最新无黑箱/主来源逐项版真剩余为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若接受外部黑箱合同，则条件版为：
+
+```text
+AcceptedFullSKLSExt
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步把最新活动硬点从三个标签收缩到两条数学输入线与一个独立晋级门。它没有证明
+`ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`，也没有证明 actual noncanonical 源的
+支撑/容量定理。
+
 ### 1.180 Phi-LPF latest constructor bucket transport-stack rebase sync 更新
 
 新增机器证书：

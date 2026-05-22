@@ -580,3 +580,43 @@ OR NCBLKActualBlockNonConcentration
 ```
 
 任何 FI/DI/BFI/Maynard/自守 L 函数方向的后续推进，都必须先填满上述七列，而不能只登记为“标准深定理可用”。
+
+## Full-S theorem-match 后的真剩余切割
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_fulls_theorem_match_true_remainder_cut_router.py
+data/prime-matrix-fulls-theorem-match-true-remainder-cut-ledger.json
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.md
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.json
+```
+
+该证书把 theorem-match 矩阵的三口结果进一步切成真正可攻的输入基：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部黑箱条件版为：
+
+```text
+AcceptedFullSKLSExt
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+切割规则：
+
+1. `APSourceLift` 已被 no-go 证书过滤；它不能作为当前 non-AP、未中心化、无投影对象的活动外部引用路线。
+2. `NCBLKActualBlockNonConcentration` 不再作为黑箱终端保留；它展开为 actual noncanonical full-S 源的支撑/容量核心。
+3. generic full-S WFD 反原子被 moving-delta 模型反证，不能作为自足证明。
+4. `FullS-KLS-ext` 可以作为外部黑箱合同，但仍不是 DI/BFI/Maynard 主来源逐项推出的结论。
+
+因此，后续外部定理核查有两条合法任务：
+
+- 精确证明或引用 `ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`；
+- 或完全避开外部谱定理，直接证明 `ActualNoncanonicalFullSFactorSupportCapacityTheoremInput`。
+
+两者都不能省略最终的 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 晋级验收。

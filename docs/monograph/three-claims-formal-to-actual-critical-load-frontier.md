@@ -15721,6 +15721,57 @@ OR NCBLKActualBlockNonConcentration
 本层关闭的是“只引用 FI/DI/BFI/Maynard/自守 L 函数名称即可闭合”的误路线。行/列命题、
 `H_P` 和三目标命题仍未无条件闭合。
 
+## 330. Full-S theorem-match true remainder cut frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_fulls_theorem_match_true_remainder_cut_router.py
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.md
+docs/monograph/prime-matrix-fulls-theorem-match-true-remainder-cut-router.json
+data/prime-matrix-fulls-theorem-match-true-remainder-cut-ledger.json
+```
+
+同步结果：
+
+```text
+status=ap_lift_filtered_ncblk_expanded_true_remainder_external_or_actual_source_core_open
+unconditional_closure_reached=false
+current_true_remainder_basis=(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+formal-to-actual 含义是：上一层 theorem-match 输出的
+
+```text
+FullSNonAPWFDKLSTheoremInput OR APSourceLift OR NCBLKActualBlockNonConcentration
+```
+
+不是三个同等真剩余。已有 no-go 证书已经排除 `APSourceLift` 作为当前 non-AP、
+未中心化、无投影对象的活动捷径；若新增上游 AP source identity，那本身已经是新定理输入。
+`NCBLKActualBlockNonConcentration` 也不能继续保留为黑箱名：沿 BWFD/BSC/KFLS、branch
+alignment、exact entropy、support range 与 source anti-atom 账本，它被展开为 actual
+noncanonical full-S 源的精确因子支撑与 Type/Fourier 容量兼容。generic full-S WFD
+反原子已被 moving-delta 模型反证，所以必须是 actual-source theorem，而不是形式 WFD
+模板定理。
+
+因此最新真剩余基为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若明确接受外部黑箱合同，则对应条件版为：
+
+```text
+AcceptedFullSKLSExt
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层的突破是删除伪剩余并把 `NCBLK` 展开到 actual source 支撑/容量核心；它仍不证明
+`H_P`、行/列命题或三目标命题无条件闭合。
+
 ## 398. Phi-LPF latest constructor source-entropy payload-loop cut sync frontier
 
 新增文件
