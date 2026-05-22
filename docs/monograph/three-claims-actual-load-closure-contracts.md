@@ -25557,6 +25557,78 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 Phi-LPF/CRT/Eratosthenes 精确计数在这里仍只支付无符号 support/capacity，不能支付 KZ-E、
 NC-BLK/source anti-atom、signed survival、row-mass 或 beta-sieve/sawtooth。目标命题仍未无条件闭合。
 
+### 1.255 两条替代线原子化硬包同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_atomized_hard_package_router.py
+data/prime-matrix-two-replacement-lines-atomized-hard-package-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.md
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_atomized_to_source_root_discrete_error_terminal_scope_open
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+本层把内部 hard package 的粗名继续替换为可直接审查的原子：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+B3DiscretePrimeSumUniformErrorPGe100000
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve or strict same-set PDEC scope
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+具体进展：
+
+- `AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom` 不再是最佳主攻名；
+  actual 路线必须先给出不从 downstream 反推的 forward pre-Cauchy source-root packet，
+  或进入 global terminal/PDEC-scope。
+- beta-sieve 侧，finite lower weight word rule、支撑、符号、`d<P` 与 lower-bound dominance
+  已闭合；99% 主系数现在只剩 `B3DiscretePrimeSumUniformErrorPGe100000`。
+- 连续 B=3 主项余量已闭合：`alpha=0.43` 时 `s=1/alpha` 位于 `2<s<3`，连续线性下界筛
+  公式给出 1% 误差余量。
+- exact sawtooth 已压成二次圆弧，再压成有符号近平方条带；该条带失败无独立第四出口，
+  进入 global PDEC/sparse terminal，canonical 分支中可被 `NoFurtherCanonicalSourceTerminalPromotionGap`
+  吸收，strict noncanonical 分支仍需同口径终端/PDEC/KLS。
+
+最新内部原子化基为：
+
+```text
+((ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn)
+ OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+ OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+ OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND (B3DiscretePrimeSumUniformErrorPGe100000
+     OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043
+     OR StandardRosserIwaniecBetaSieveTheoremImportAccepted)
+AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+     OR ExternalWellFactorableSawtoothDispersionBoundAlpha043
+     OR NoFurtherCanonicalSourceTerminalPromotionGap)
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部线仍为 FullS-KLS/no-projection theorem-match 或外部合同边界；本层不宣称目标命题无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

@@ -903,3 +903,29 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 改写成无黑箱主来源版，必须逐项证明同一个 completed full-S non-AP WFD 对象、`c`-dependent
 completed residue weights、well-factorable `lambda_c`、smooth `omega_h`、无 AP-source lift、
 无中心化/投影偷渡、de-completion 与端点误差预算，以及任意固定 `log^{-A}` 节省。
+
+## 21. 原子化硬包后的外部/条件边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_atomized_hard_package_router.py
+data/prime-matrix-two-replacement-lines-atomized-hard-package-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.md
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.json
+```
+
+本层没有改变外部输入的基本边界，但把内部 hard package 的若干尾段子原子继续压窄。外部线仍为：
+
+```text
+((AcceptedFullSKLSExtExternalContract)
+ OR ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+其中 `AcceptedFullSKLSExtExternalContract` 是条件外部引理版；若走无黑箱版，仍需
+`ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch`、actual source support/capacity 新定理，
+或新的自守/dispersion 证明。内部的 beta-sieve 和 sawtooth 原子化不能替代该外部 theorem-match，
+也不能删除 DStructure/Rankin 独立验收门。

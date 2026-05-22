@@ -23208,3 +23208,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层删除的是粗标签和自证环，不是无条件证明。Phi-LPF 端点差和 LPF 桶恒等式仍只给组合精确计数，
 不能推出 signed coefficient、KZ-E log-saving 或短区间正性。
+
+## 330H. Two replacement lines atomized hard package frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_two_replacement_lines_atomized_hard_package_router.py
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.md
+docs/monograph/prime-matrix-two-replacement-lines-atomized-hard-package-router.json
+data/prime-matrix-two-replacement-lines-atomized-hard-package-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_atomized_to_source_root_discrete_error_terminal_scope_open
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一节的 `NCBLK/source anti-atom`、`beta-sieve`、`sawtooth`
+三个包继续拆成 actual source-root、离散素和误差、近平方终端作用域。
+
+已闭合的子字段：
+
+```text
+BetaSieveLowerWeightRecursiveConstructionLedger
+BetaSieveLowerBoundDominanceProof
+B3ContinuousBetaSieveCoefficientSurplusAlpha043
+Exact floor -> quadratic arc -> near-square strip normal form
+```
+
+仍未闭合的直接原子：
+
+```text
+ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn
+B3DiscretePrimeSumUniformErrorPGe100000
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve or strict same-set PDEC scope
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+最新内部原子化基为：
+
+```text
+((ForwardAcyclicPreCauchySourceRootPacketOrNamedReturn)
+ OR (GlobalPDECorSparseTerminalExclusion AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+ OR (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND HighSegmentModelGapAlpha043C3AnalyticLedger)
+ OR NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND (B3DiscretePrimeSumUniformErrorPGe100000
+     OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043
+     OR StandardRosserIwaniecBetaSieveTheoremImportAccepted)
+AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+     OR ExternalWellFactorableSawtoothDispersionBoundAlpha043
+     OR NoFurtherCanonicalSourceTerminalPromotionGap)
+AND JointEmitterPrimitiveSummandRowsFormulaBeforePushforward
+AND JointEmitterPrepushforwardWordCoefficientIdentityLedger
+AND JointEmitterNoDownstreamRecoveryAndNamedReturnLedger
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部线不变：接受外部引理只给条件闭合；无黑箱外部版仍需同对象 FullS-KLS/no-projection
+theorem-match、actual source capacity 新定理或新的 automorphic/dispersion 证明。
