@@ -11609,6 +11609,46 @@ not prove the remaining dual-window anti-tiling inequality.
 \end{proof}
 
 
+\begin{theorem}[External short-interval bridge for strict \(k\)]
+Let \(x=kP\) with \(1<k<P\).  Any external theorem of the form
+``there is a prime in \([x,x+H(x)]\) for \(x\ge X_0\)'' proves positivity of
+the strict row \([kP,kP+P]\) precisely on the subrange where
+\[
+  kP\ge X_0,\qquad H(kP)\le P=\frac{x}{k}.
+\]
+For Dusart's explicit 2010 interval \(H(x)=x/(25\log^2 x)\), this gives only
+the logarithmic carrier band
+\[
+  k\le 25\log^2(kP)
+\]
+above the explicit threshold.  For the Baker--Harman--Pintz exponent
+\(H(x)=x^{0.525}\), this gives only
+\[
+  k\le x^{0.475}.
+\]
+Since the strict condition \(k<P\) allows \(k\) to approach \(x^{1/2}\), these
+known unconditional gap inputs do not close all strict rows.
+\end{theorem}
+\begin{proof}[Status and reference]
+The bridge criterion is immediate: a prime in \([x,x+H(x)]\) lies in the row
+interval once \(H(x)\le P\).  Substituting \(x=kP\) gives the displayed
+conditions.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-\\
+gap-bridge-router.md.
+\end{quote}
+It records that Dusart 2010 covers the explicit logarithmic \(k\)-band, while
+the Baker--Harman--Pintz \(0.525\) gap exponent covers only the
+\(k\le x^{0.475}\) exponent band.  Boundary samples with \(k=P-1\) already show
+that these bands do not reach the \(k\approx P\approx\sqrt{x}\) edge.  Thus the
+remaining non-circular input is either a genuine square-root-scale interval
+theorem, or an internal proof of the dual-window anti-tiling inequality
+\[
+  B_P(k)+S_P(k)\le P-2 .
+\]
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows

@@ -18260,6 +18260,53 @@ OR SqrtGapInputAfterX.
 
 本层关闭的是 smooth source-domain 口径，不是 strict 行正性的无条件证明。
 
+## 447. Phi-LPF strict-k external gap bridge frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_external_gap_bridge_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.json
+data/prime-matrix-phi-lpf-strict-k-external-gap-bridge-ledger.json
+```
+
+formal-to-actual 含义是：外部短区间引理可精确桥接到 strict 行，但桥接条件是
+
+```text
+H(kP)<=P=x/k.
+```
+
+当前筛查：
+
+```text
+Dusart 2010: [x,x+x/(25 log^2 x)] for x>396738
+  => covers only k<=25 log^2(kP).
+Baker-Harman-Pintz 2001: [x,x+x^0.525] for large x
+  => covers only k<=x^0.475.
+strict range: k<P, so k may approach x^0.5.
+```
+
+代表边界：
+
+```text
+P=1009, k=1008, Dusart direct coverage=true, BHP coverage=false.
+P=10007, k=10006, Dusart direct coverage=false, BHP coverage=false.
+P=1000003, k=1000002, Dusart direct coverage=false, BHP coverage=false.
+```
+
+因此 known external-gap route 目前不能关闭全部 strict 行；它只给出可合并的子带。
+最新剩余接口保持为：
+
+```text
+DualWindowAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+其中 `SqrtGapInputAfterX` 必须达到右侧 `H(x)<=sqrt(x)` 量级，或被内部
+`B_P(k)+S_P(k)<=P-2` 双窗口反铺满替代。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

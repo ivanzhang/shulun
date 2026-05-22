@@ -24269,6 +24269,53 @@ OR SqrtGapInputAfterX.
 
 行/列命题仍未无条件闭合。
 
+### 1.220 Phi-LPF strict-k external gap bridge 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_external_gap_bridge_router.py
+data/prime-matrix-phi-lpf-strict-k-external-gap-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.json
+```
+
+本层把外部短区间引理精确接入 strict 行。设 `x=kP`，目标长度为 `P=x/k`。
+任一外部定理若给出 `[x,x+H(x)]` 内有素数，则可用于本行当且仅当：
+
+```text
+H(kP)<=P.
+```
+
+筛查读数为：
+
+```text
+Dusart 2010: H=x/(25 log^2 x), x>396738, covers k<=25 log^2(kP).
+Baker-Harman-Pintz 2001: H=x^0.525 for large x, covers k<=x^0.475.
+strict range: k<P, hence k can approach x^0.5.
+```
+
+边界样本显示：
+
+```text
+P=1009, k=1008: Dusart direct coverage=true, BHP coverage=false.
+P=10007, k=10006: Dusart direct coverage=false, BHP coverage=false.
+P=1000003, k=1000002: Dusart direct coverage=false, BHP coverage=false.
+```
+
+actual-load 含义是：外部引理路线不是无效，但目前可接入的无条件短区间成果只覆盖
+低 `k` 对数带或 `k<=x^0.475` 指数带，不能覆盖 `k≈P≈sqrt(x)` 的最坏边界。因此
+当前真剩余被精确定位为：
+
+```text
+DualWindowAntiTilingInequality
+OR PositiveRejectionExcessForStrictKRawLPFIncidence
+OR SqrtGapInputAfterX.
+```
+
+若走外部路线，需要 Legendre 强度的右侧短区间输入 `H(x)<=sqrt(x)` 并配合有限验证；
+否则必须从 Phi-LPF 双窗口反铺满结构内部突破。行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
