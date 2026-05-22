@@ -22850,3 +22850,40 @@ OR NewAutomorphicDispersionProof.
 若要求内部自足版，则必须提交 signed-source 细包与
 `SelfContainedDStructureTailLog4FiniteRankinProofPackage`，而不是继续重排 Phi-LPF
 端点差公式。
+
+## 330B. DStructure/Rankin author-remainder split frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_dstructure_rankin_author_remainder_split_router.py
+docs/monograph/prime-matrix-dstructure-rankin-author-remainder-split-router.md
+docs/monograph/prime-matrix-dstructure-rankin-author-remainder-split-router.json
+data/prime-matrix-dstructure-rankin-author-remainder-split-ledger.json
+```
+
+同步结果：
+
+```text
+status=dstructure_rankin_author_remainder_split_closed_self_contained_replacement_open
+external_lemma_author_side_remaining=none
+external_lemma_non_author_remaining=DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：DStructure/Rankin 最新真剩余不是另一个 Phi-LPF、CRT 或容量
+重写接口。外部引理版中，作者侧 ordinary dossier 已封装；仍未发生的是独立接受事件。
+因此该路线的条件不能由作者侧继续操作删除。
+
+作者侧能继续做的只是替代证明包。无黑箱外部路线需要精确主来源 theorem-match 或新的
+automorphic/dispersion 证明。内部自足路线需要把最终晋级门拆成四项并逐项证明：
+
+```text
+DStructure/Structured-EHPD definitions and A/B reduction
+Tail-log4 BG/RKS or replacement adapter with exact constants
+finite verification reproducible archive
+full Rankin pass-or-return ledger with downstream returns
+```
+
+四项全交前，`SelfContainedDStructureTailLog4FiniteRankinProofPackage` 仍为 open；四项全交后，
+也仍要与 signed-source / actual-source 分支共同使用，不能单独推出 strict row 正性。

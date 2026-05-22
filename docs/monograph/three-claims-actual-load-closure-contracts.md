@@ -25186,6 +25186,49 @@ internal prime-adjoin signed transition、row-mass/no-heavy-row、primitive supp
 complete key partition 与 fixed-key local multiplicity 组合包。当前层只修正越界判断和
 作者侧剩余分类；不把 restricted Phi-LPF 端点差升级为行/列命题的无条件闭合。
 
+### 1.249 DStructure/Rankin 作者侧剩余拆分更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_dstructure_rankin_author_remainder_split_router.py
+data/prime-matrix-dstructure-rankin-author-remainder-split-ledger.json
+docs/monograph/prime-matrix-dstructure-rankin-author-remainder-split-router.md
+docs/monograph/prime-matrix-dstructure-rankin-author-remainder-split-router.json
+```
+
+同步读数为：
+
+```text
+status=dstructure_rankin_author_remainder_split_closed_self_contained_replacement_open
+external_lemma_author_side_remaining=none
+external_lemma_non_author_remaining=DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：外部 FullS-KLS 合同版的作者侧普通证明任务已经归零；剩余的
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 是非作者侧独立接受事件。
+作者侧不能通过继续归档或自审把它改成 `PASS`。若要删除这个条件，只剩两条作者侧替代路线。
+
+无黑箱外部主来源版必须提交：
+
+```text
+ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+内部自足版必须把最终晋级门替换为四个自足子包的合取：
+
+```text
+SelfContainedDStructureStructuredEHPDDefinitionsAndABReductionProof
+AND SelfContainedTailLog4BGOrRKSTailAdapterWithExactTheoremNumbersAndConstants
+AND ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
+AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
+```
+
+这一步完成的是作者侧剩余分类和可执行替代包拆分；它不声称独立接受已经发生，也不把
+DStructure/Rankin 晋级门从条件定理中删除。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
