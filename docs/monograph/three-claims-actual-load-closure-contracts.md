@@ -22498,6 +22498,64 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 independent source bridge、ExactUV incidence、Rate 或 DStructure；它只删除 A1/source-entropy
 两个会回流的 standalone 标签。
 
+### 1.260 两条替代线 source-identity/antiatom 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_identity_antiatom_sync_router.py
+data/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.json
+```
+
+同步读数为：
+
+```text
+status=two_replacement_lines_source_identity_antiatom_synced_open
+independent_bridge_standalone_active_after_sync=false
+source_identity_proved=false
+strengthened_antiatom_proved=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 `IndependentActualSourceBridgeNotFactoredThroughAlphaReturn`
+不能再作为粗名出口。若它要成为非循环证明，必须在 downstream alpha/ExactUV/pair-energy
+回边前提交下列二者之一：
+
+```text
+ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+OR FullSNonAPStrengthenedSourceAntiAtomForActualSource
+```
+
+第一项要求实际 full-S non-AP 源在 Cauchy、dispersion、payment 推前前已经等于
+canonical RIW/Buchstab 决策树源。第二项要求 actual final capacity measure 满足强化
+source anti-atom。Phi-LPF/CRT/Eratosthenes 桶恒等式只给无符号支撑与容量精确性，
+不能支付 signed/moving source anti-atom，也不能自动给 source identity。
+
+最新内部实际承重门为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版仍只在 `AcceptedFullSKLSExtExternalContract` 与
+`DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 下条件闭合；无黑箱外部版
+仍需同对象 FullS theorem-match、actual source capacity 新定理或新的
+automorphic/dispersion 证明。本层没有证明上述任一硬门。
+
 ### 1.256 两条替代线 seed/payload 饱和同步更新
 
 新增机器证书：

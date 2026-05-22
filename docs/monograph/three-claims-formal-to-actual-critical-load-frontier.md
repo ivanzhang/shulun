@@ -23735,3 +23735,62 @@ OR IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
 
 并行仍需 actual exact-UV incidence、Rate 与 DStructure/Rankin。本层没有证明三类任一项，
 只是把 source-admission 与 exact-entropy 的回边关系显式化，防止继续在已知等价接口之间循环。
+
+## 330Q. Two replacement lines source-identity/antiatom frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_identity_antiatom_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.json
+data/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_source_identity_antiatom_synced_open
+independent_bridge_standalone_active_after_sync=false
+source_identity_proved=false
+strengthened_antiatom_proved=false
+external_lemma_version_closed_conditionally=true
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`independent actual-source bridge` 仍是过粗标签。
+若它没有在 alpha-return、ExactUV、pair-energy 或 old joint constructor 路径中回流，
+其实际非循环内容被 strict outside-loop 证书压成：
+
+```text
+ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+OR FullSNonAPStrengthenedSourceAntiAtomForActualSource
+```
+
+这一步特别排除两种循环替代：
+
+```text
+Phi-LPF/CRT unsigned exact counting => strengthened source antiatom
+downstream terminal/payment absence => pre-Cauchy source identity
+```
+
+前者只支付 support/capacity，不支付 signed moving atom；后者是从结论侧回推来源。
+因此最新内部实际承重门更新为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+ OR AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+外部引理版仍为条件闭合，无黑箱外部版仍需同对象 FullS/actual-source theorem-match。
+本层只把粗名换成可审查真接口，没有证明目标命题无条件闭合。

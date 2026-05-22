@@ -1317,3 +1317,51 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步不新增外部定理引用；它只说明若使用 FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\)
 函数方向，外部输入必须真正命中 FullS/actual-source 对象，而不是命中已经被判为回边的
 alpha/pointwise 表展开。
+
+## 30. Source-identity/antiatom 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_source_identity_antiatom_sync_router.py
+data/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-source-identity-antiatom-sync-router.json
+```
+
+本层不新增外部定理引用。它把上一节的
+
+```text
+IndependentActualSourceBridgeNotFactoredThroughAlphaReturn
+```
+
+同步到 strict outside-loop 攻击证书中的两个真实非循环接口：
+
+```text
+ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+OR FullSNonAPStrengthenedSourceAntiAtomForActualSource
+```
+
+含义是：若不接受外部 FullS-KLS 合同，则外部无黑箱路线仍必须证明同对象
+FullS theorem-match、actual source capacity 新定理，或新的 automorphic/dispersion
+证明；不能把 FI/DI/BFI/Kuznetsov/Maynard 的名称直接替换成 source identity 或
+strengthened antiatom。
+
+外部引理版仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此本层只是删除 `independent bridge` 粗名出口；不是任何外部深定理的新增
+theorem-match，也不是目标命题的无条件闭合。
