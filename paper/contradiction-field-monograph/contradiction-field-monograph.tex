@@ -12079,6 +12079,58 @@ AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Upper-band reciprocal shadow graph forest]
+In the setting of the preceding theorem, form the bipartite graph whose left
+vertices are primes \(q\in(P/2,P)\), whose right vertices are prime candidates
+\(m\in[q,2P)\), and whose edges are the pairs \((q,m)\) with
+\[
+  kP<qm<(k+1)P .
+\]
+This reciprocal shadow graph has degree at most two on each side and is
+ordered non-crossing.  In particular it is a forest.  Therefore an upper-band
+counterexample cannot be produced by a cyclic shadow feedback; it must be a
+forest-shadow saturation of all half-rough survivors, or a named PDEC.
+\end{theorem}
+\begin{proof}[Status and reference]
+The degree bound is the reciprocal-window bound in both directions.  For fixed
+\(q\), the admissible \(m\)-interval has length \(<P/q<2\).  For fixed \(m\),
+the admissible \(q\)-interval has length \(<P/m\le P/q<2\) because \(m\ge q\).
+Thus both sides have degree at most two.
+
+If two edges crossed in the ordered sense, say \(q_1<q_2\) but \(m_1<m_2\),
+then
+\[
+  q_2m_2-q_1m_1
+  =
+  (q_2-q_1)m_2+q_1(m_2-m_1)>P,
+\]
+since all involved primes exceed \(P/2\) and distinct odd primes differ by at
+least \(2\).  Two such products cannot both lie in the same interval of length
+\(P\).  Hence the graph is non-crossing.  If a cycle existed, take the smallest
+\(q_0\) on the cycle and let its two cycle-neighbours be \(m_a<m_b\).  Any edge
+from another \(q>q_0\) to a vertex \(m>m_a\) would cross the edge
+\((q_0,m_a)\), so \(m_b\) cannot have the second incident edge required by the
+cycle.  This contradiction proves that the graph is a forest.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-upper-band-\\
+reciprocal-graph-structure-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=upper\_band\_reciprocal\_shadow\_graph\_reduced\_to\_ordered\_degree\_two\_forest\\
+max\_prime=1009\\
+all\_upper\_rows\_have\_forest\_shadow\_graph=true\\
+graph\_structure\_failure\_count=0\\
+all\_sampled\_graphs\_are\_forests=true.
+\end{quote}
+This still does not prove row positivity.  The remaining upper-band interface is
+\begin{quote}\scriptsize\ttfamily
+UpperBandForestShadowSaturationExclusionOrPDEC.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT

@@ -18704,6 +18704,48 @@ AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling.
 
 本层只关闭短窗公式和有限审计；不证明 upper-band 正性，也不证明三目标命题。
 
+## 456. Phi-LPF upper-band reciprocal graph structure frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_upper_band_reciprocal_graph_structure_router.py
+docs/monograph/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-router.md
+docs/monograph/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-router.json
+data/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-ledger.json
+```
+
+同步结果：
+
+```text
+status=upper_band_reciprocal_shadow_graph_reduced_to_ordered_degree_two_forest
+max_prime=1009
+all_upper_rows_have_forest_shadow_graph=true
+graph_structure_failure_count=0
+all_sampled_graphs_are_forests=true
+next_direct_attack_target=UpperBandForestShadowSaturationExclusionOrPDEC
+```
+
+formal-to-actual 含义是：upper-band 的 reciprocal prime-pair shadow 可看成二部图，
+边为同一行内的 `(q,m)`。固定 `q` 或固定 `m` 时，对侧窗口长度都小于 `2`，所以两侧
+度数至多二。若 `q1<q2` 且 `m1<m2` 两条边同时存在，则
+
+```text
+q2*m2-q1*m1 >= (q2-q1)*m2 + q1*(m2-m1) > P,
+```
+
+与二者落在同一长度 `P` 行矛盾。因此 shadow 图有序无交叉；取任一假想环中最小的
+`q0`，它的较大邻点不可能再接到第二个 `q`，故环不存在。反例不能依靠循环反馈放大
+shadow，只能是森林边集真实饱和全部 half-rough survivor。
+
+当前 upper-band 最新窄口为：
+
+```text
+UpperBandForestShadowSaturationExclusionOrPDEC.
+```
+
+本层不证明森林饱和不可能，也不证明三目标命题。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

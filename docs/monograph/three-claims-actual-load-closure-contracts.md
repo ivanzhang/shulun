@@ -24696,6 +24696,41 @@ AND UpperBandHalfRoughFloorOrReciprocalPrimePairCeiling
 reciprocal prime-pair shadow ceiling，要么把持续饱和登记为显式 PDEC/SAE。该层不关闭
 全局行/列命题。
 
+### 1.241 Phi-LPF upper-band reciprocal graph structure 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_upper_band_reciprocal_graph_structure_router.py
+data/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-router.md
+docs/monograph/prime-matrix-phi-lpf-upper-band-reciprocal-graph-structure-router.json
+```
+
+同步读数为：
+
+```text
+status=upper_band_reciprocal_shadow_graph_reduced_to_ordered_degree_two_forest
+max_prime=1009
+all_upper_rows_have_forest_shadow_graph=true
+graph_structure_failure_count=0
+all_sampled_degrees_at_most_two=true
+all_sampled_graphs_are_forests=true
+```
+
+actual-load 含义是：upper-band 的 reciprocal shadow 图两侧度数均不超过二，并且边按
+`q` 增大、`m` 减小的方向有序无交叉。任何假想环取最小 `q0` 后都会被其较小邻点
+阻断，因此没有循环反馈可放大 shadow load。
+
+最新剩余改写为：
+
+```text
+UpperBandForestShadowSaturationExclusionOrPDEC
+```
+
+也就是要证明这片有序森林边集不能刚好饱和全部 half-rough survivor；若能饱和，则必须
+登记为显式森林饱和 PDEC。该层不关闭全局行/列命题。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：
