@@ -18612,6 +18612,49 @@ OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow.
 本层仍不证明 `UnifiedPositiveCore`；它只把高 `k` 反例从完整 LPF 铺满压到
 half-rough survivor 非空或 two-prime shadow excess。
 
+## 454. Phi-LPF shadow-free half-primorial phase frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_shadow_free_half_primorial_phase_router.py
+docs/monograph/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-router.json
+data/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-ledger.json
+```
+
+同步结果：
+
+```text
+status=shadow_free_lane_reduced_to_half_primorial_special_phase_avoidance
+large_sample_rows_have_survivor=true
+small_period_max_run_less_than_P_minus_1=true
+next_direct_attack_target=HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC
+```
+
+formal-to-actual 含义是：对 shadow-free 子带，令
+
+```text
+M_half(P)=prod_{q<=P/2, q prime} q.
+```
+
+由于 `4*((k+1)P-1)<=P^2` 时 two-prime shadow 为空，行正性无损等价于
+
+```text
+exists 1<=t<P such that gcd(kP+t, M_half(P))=1.
+```
+
+并且该 survivor 自动为素数。于是 shadow-free 失败当且仅当特殊相位
+`kP+1 mod M_half(P)` 在 half-primorial 周期中启动一个长度 `P-1` 的低筛覆盖块。
+全周期上界 `max covered run < P-1` 会闭合该子带；若全周期 Jacobsthal 上界不可得，
+剩余就是：
+
+```text
+HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC.
+```
+
+本层仍不关闭 upper-band 的 two-prime shadow excess，也不证明三目标命题。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

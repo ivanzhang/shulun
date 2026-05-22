@@ -1,0 +1,410 @@
+{
+  "definitions": {
+    "M_half(P)": "product of primes q<=P/2",
+    "coprime_hit": "exists t in [1,P-1] with gcd(kP+t,M_half(P))=1",
+    "phase_start": "kP+1 mod M_half(P)",
+    "shadow_free_condition": "4*((k+1)P-1)<=P^2"
+  },
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-half-rough-shadow-band-split-router.json": "9db4d90a17cdd1c8e1730e6b8d5d86caa454ea43951ddc4c3ce713a09acf373f",
+    "docs/monograph/prime-matrix-primorial-jacobsthal-central-block-router.json": "35ae489251780714fd8168bb39108b636a4882d967acd642f4c24a6a046fbcfb",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json": "328ee462d76cb6213f976eee33133885f20109157d16cf80d236ae27d78d8993"
+  },
+  "full_period_audit": {
+    "all_scanned_half_primorial_periods_have_max_run_less_than_P_minus_1": true,
+    "max_full_period_prime": 43,
+    "period_scan_is_small_and_not_global_proof": true,
+    "profile_count": 10,
+    "profiles": [
+      {
+        "P": 11,
+        "half_primorial": 30,
+        "half_primorial_prime_count": 3,
+        "low_cutoff": 5,
+        "max_covered_run_length": 5,
+        "max_run_end_mod_M": 6,
+        "max_run_start_mod_M": 2,
+        "row_length_P_minus_1": 10,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 13,
+        "half_primorial": 30,
+        "half_primorial_prime_count": 3,
+        "low_cutoff": 6,
+        "max_covered_run_length": 5,
+        "max_run_end_mod_M": 6,
+        "max_run_start_mod_M": 2,
+        "row_length_P_minus_1": 12,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 17,
+        "half_primorial": 210,
+        "half_primorial_prime_count": 4,
+        "low_cutoff": 8,
+        "max_covered_run_length": 9,
+        "max_run_end_mod_M": 10,
+        "max_run_start_mod_M": 2,
+        "row_length_P_minus_1": 16,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 19,
+        "half_primorial": 210,
+        "half_primorial_prime_count": 4,
+        "low_cutoff": 9,
+        "max_covered_run_length": 9,
+        "max_run_end_mod_M": 10,
+        "max_run_start_mod_M": 2,
+        "row_length_P_minus_1": 18,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 23,
+        "half_primorial": 2310,
+        "half_primorial_prime_count": 5,
+        "low_cutoff": 11,
+        "max_covered_run_length": 13,
+        "max_run_end_mod_M": 126,
+        "max_run_start_mod_M": 114,
+        "row_length_P_minus_1": 22,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 29,
+        "half_primorial": 30030,
+        "half_primorial_prime_count": 6,
+        "low_cutoff": 14,
+        "max_covered_run_length": 21,
+        "max_run_end_mod_M": 9460,
+        "max_run_start_mod_M": 9440,
+        "row_length_P_minus_1": 28,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 31,
+        "half_primorial": 30030,
+        "half_primorial_prime_count": 6,
+        "low_cutoff": 15,
+        "max_covered_run_length": 21,
+        "max_run_end_mod_M": 9460,
+        "max_run_start_mod_M": 9440,
+        "row_length_P_minus_1": 30,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 37,
+        "half_primorial": 510510,
+        "half_primorial_prime_count": 7,
+        "low_cutoff": 18,
+        "max_covered_run_length": 25,
+        "max_run_end_mod_M": 217152,
+        "max_run_start_mod_M": 217128,
+        "row_length_P_minus_1": 36,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 41,
+        "half_primorial": 9699690,
+        "half_primorial_prime_count": 8,
+        "low_cutoff": 20,
+        "max_covered_run_length": 33,
+        "max_run_end_mod_M": 60076,
+        "max_run_start_mod_M": 60044,
+        "row_length_P_minus_1": 40,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      },
+      {
+        "P": 43,
+        "half_primorial": 9699690,
+        "half_primorial_prime_count": 8,
+        "low_cutoff": 21,
+        "max_covered_run_length": 33,
+        "max_run_end_mod_M": 60076,
+        "max_run_start_mod_M": 60044,
+        "row_length_P_minus_1": 42,
+        "uniform_period_bound_closes_all_phases_for_this_P": true
+      }
+    ]
+  },
+  "gates": [
+    {
+      "closed": true,
+      "gate": "ShadowFreeSurvivorEqualsHalfPrimorialCoprimeHit",
+      "meaning": "在 shadow-free 子带，R_half(P,k)>0 等价于区间 kP+1..kP+P-1 命中一个与 M_{<=P/2} 互素的 residue。",
+      "proved": true,
+      "remaining": "exact equivalence"
+    },
+    {
+      "closed": true,
+      "gate": "ShadowFreeSurvivorIsPrime",
+      "meaning": "由于整行低于 P^2/4，任意 q,m>P/2 的合成 shadow 不存在；half-rough survivor 必为素数。",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "UniformHalfPrimorialJacobsthalWouldCloseShadowFreeLane",
+      "meaning": "若 half-primorial 周期中最大低筛覆盖块长度 < P-1，则所有 shadow-free 行自动闭合。",
+      "proved": true,
+      "remaining": "needs uniform half-primorial bound"
+    },
+    {
+      "closed": true,
+      "gate": "SpecialRowPhaseAvoidanceIdentified",
+      "meaning": "即使没有全周期 Jacobsthal 上界，也只需排斥特殊相位 kP+1 命中长度 P-1 覆盖块。",
+      "proved": true,
+      "remaining": "HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteAuditSupportsButDoesNotProve",
+      "meaning": "有限行审计与小周期扫描均正常，但不作为全局证明。",
+      "proved": true,
+      "remaining": "finite evidence only"
+    },
+    {
+      "closed": false,
+      "gate": "ShadowFreeLaneClosedGlobally",
+      "meaning": "尚未证明 uniform half-primorial Jacobsthal bound 或特殊相位避让。",
+      "proved": false,
+      "remaining": "HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedPositiveCoreProved",
+      "meaning": "本层只把 shadow-free 子带压成半 primorial 特殊相位问题，不证明三目标命题。",
+      "proved": false,
+      "remaining": "upper-band shadow excess still open"
+    }
+  ],
+  "large_sample_audit": {
+    "all_sampled_rows_have_survivor": true,
+    "large_samples_are_evidence_not_global_proof": true,
+    "rows": [
+      {
+        "P": 3000017,
+        "first_survivor_values": [
+          2174598322669,
+          2174598322727,
+          2174598322733,
+          2174598322739,
+          2174598322811,
+          2174598322859,
+          2174598322873,
+          2174598322927
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 105344,
+        "has_overlap": true,
+        "high_lower": 724862,
+        "interval": [
+          2174598322655,
+          2174601322670
+        ],
+        "k": 724862,
+        "low_prime_count": 114156,
+        "shadow_free_cap": 750003,
+        "shadow_free_condition_holds": true
+      },
+      {
+        "P": 3000017,
+        "first_survivor_values": [
+          2212308536359,
+          2212308536371,
+          2212308536393,
+          2212308536401,
+          2212308536489,
+          2212308536497,
+          2212308536521,
+          2212308536651
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 105760,
+        "has_overlap": true,
+        "high_lower": 724862,
+        "interval": [
+          2212308536345,
+          2212311536360
+        ],
+        "k": 737432,
+        "low_prime_count": 114156,
+        "shadow_free_cap": 750003,
+        "shadow_free_condition_holds": true
+      },
+      {
+        "P": 3000017,
+        "first_survivor_values": [
+          2250021750167,
+          2250021750199,
+          2250021750209,
+          2250021750269,
+          2250021750281,
+          2250021750289,
+          2250021750337,
+          2250021750359
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 106056,
+        "has_overlap": true,
+        "high_lower": 724862,
+        "interval": [
+          2250021750052,
+          2250024750067
+        ],
+        "k": 750003,
+        "low_prime_count": 114156,
+        "shadow_free_cap": 750003,
+        "shadow_free_condition_holds": true
+      },
+      {
+        "P": 5000011,
+        "first_survivor_values": [
+          5753667658051,
+          5753667658129,
+          5753667658133,
+          5753667658283,
+          5753667658327,
+          5753667658351,
+          5753667658441,
+          5753667658447
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 170776,
+        "has_overlap": true,
+        "high_lower": 1150731,
+        "interval": [
+          5753667658042,
+          5753672658051
+        ],
+        "k": 1150731,
+        "low_prime_count": 183072,
+        "shadow_free_cap": 1250001,
+        "shadow_free_condition_holds": true
+      },
+      {
+        "P": 5000011,
+        "first_survivor_values": [
+          6001843204031,
+          6001843204067,
+          6001843204081,
+          6001843204103,
+          6001843204111,
+          6001843204117,
+          6001843204127,
+          6001843204141
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 170171,
+        "has_overlap": true,
+        "high_lower": 1150731,
+        "interval": [
+          6001843204027,
+          6001848204036
+        ],
+        "k": 1200366,
+        "low_prime_count": 183072,
+        "shadow_free_cap": 1250001,
+        "shadow_free_condition_holds": true
+      },
+      {
+        "P": 5000011,
+        "first_survivor_values": [
+          6250018750021,
+          6250018750037,
+          6250018750067,
+          6250018750097,
+          6250018750109,
+          6250018750163,
+          6250018750189,
+          6250018750219
+        ],
+        "first_survivors_prime_checked": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "half_rough_survivor_count": 169983,
+        "has_overlap": true,
+        "high_lower": 1150731,
+        "interval": [
+          6250018750012,
+          6250023750021
+        ],
+        "k": 1250001,
+        "low_prime_count": 183072,
+        "shadow_free_cap": 1250001,
+        "shadow_free_condition_holds": true
+      }
+    ],
+    "sample_count": 6,
+    "sample_seeds": [
+      3000000,
+      5000000
+    ]
+  },
+  "next_direct_attack_target": "HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC",
+  "plain_conclusion": "shadow-free 子带的正性已经无损转为半 primorial 特殊相位避让：行失败当且仅当相位 kP+1 在 M_{<=P/2} 周期中启动一个长度 P-1 的低筛覆盖块。全周期 Jacobsthal 上界会立即闭合该子带；若全周期上界不可得，剩余就是特殊行相位避让或 PDEC。",
+  "row_phase_audit": {
+    "all_shadow_free_high_rows_have_survivor": true,
+    "audited_shadow_free_high_rows": 0,
+    "failure_count": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 1009,
+    "minimum_rows": [],
+    "minimum_survivor_count": null,
+    "sample_rows": []
+  },
+  "status": "shadow_free_lane_reduced_to_half_primorial_special_phase_avoidance"
+}

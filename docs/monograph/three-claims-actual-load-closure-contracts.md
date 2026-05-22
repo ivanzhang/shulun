@@ -24613,6 +24613,48 @@ OR HighKHalfRoughSurvivorExcessOverTwoPrimeShadow
 
 本层仍未证明这些 survivor/excess 下界；行/列命题仍未无条件闭合。
 
+### 1.227 Phi-LPF shadow-free half-primorial phase 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_shadow_free_half_primorial_phase_router.py
+data/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-shadow-free-half-primorial-phase-router.json
+```
+
+同步读数为：
+
+```text
+status=shadow_free_lane_reduced_to_half_primorial_special_phase_avoidance
+sample_seeds=[3000000, 5000000]
+all_sampled_rows_have_survivor=true
+all_scanned_half_primorial_periods_have_max_run_less_than_P_minus_1=true
+```
+
+actual-load 含义是：shadow-free 子带中，two-prime shadow 已经为空，所以只需命中
+一个半 primorial 互素 residue。设
+
+```text
+M_half(P)=prod_{q<=P/2, q prime} q.
+```
+
+则正性等价于：
+
+```text
+exists 1<=t<P such that gcd(kP+t, M_half(P))=1.
+```
+
+若失败，则特殊相位 `kP+1 mod M_half(P)` 启动长度 `P-1` 的低筛覆盖块。全周期
+half-primorial Jacobsthal 上界会闭合该 lane；没有该上界时，最新真剩余为：
+
+```text
+HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC
+```
+
+该层只关闭等价转换和有限审计，不关闭全局行/列命题。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

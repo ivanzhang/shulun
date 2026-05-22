@@ -11975,6 +11975,46 @@ next=HalfRoughSurvivorExistenceInShadowFreeHighBand\\
 This is still a reduction, not a proof of the final positive core.
 \end{proof}
 
+\begin{theorem}[Shadow-free half-primorial special phase]
+Let
+\[
+  M_{1/2}(P)=\prod_{\substack{q\le P/2\\ q\ {\rm prime}}}q .
+\]
+In the shadow-free subband \(4((k+1)P-1)\le P^2\), the strict row is positive
+if and only if
+\[
+  \exists\,1\le t<P\quad \gcd(kP+t,M_{1/2}(P))=1.
+\]
+Equivalently, a failure in this subband is exactly the assertion that the
+special phase \(kP+1\bmod M_{1/2}(P)\) starts a covered block of length \(P-1\)
+in the half-primorial period.
+\end{theorem}
+\begin{proof}[Status and reference]
+The previous theorem gives \(T_{1/2}(P,k)=0\) in the stated subband.  Thus a
+row prime is the same object as a half-rough survivor after deleting all primes
+\(q\le P/2\), which is precisely a residue coprime to \(M_{1/2}(P)\).  Since the
+whole row lies below \(P^2/4\), any such survivor is automatically prime: a
+composite with no prime factor \(\le P/2\) would be a product of at least two
+factors \(>P/2\), hence would exceed \(P^2/4\).  The residue formulation follows
+by reducing the interval \(kP+1,\ldots,kP+P-1\) modulo \(M_{1/2}(P)\).
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-shadow-free-half-\\
+primorial-phase-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+status=shadow\_free\_lane\_reduced\_to\_half\_primorial\_special\_phase\_avoidance\\
+all\_sampled\_rows\_have\_survivor=true\\
+all\_scanned\_half\_primorial\_periods\_have\_max\_run\_less\_than\_P\_minus\_1=true\\
+next=HalfPrimorialSpecialPhaseAvoidsLongCoveredBlockOrPDEC.
+\end{quote}
+The finite scans are evidence only.  Global closure still needs either a
+half-primorial Jacobsthal bound at this scale, or a special-phase avoidance/PDEC
+argument.
+\end{proof}
+
 
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
