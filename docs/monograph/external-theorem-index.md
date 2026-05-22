@@ -162,6 +162,28 @@
   - 严格自足 Backlund 解析包的当前证据文件为
     `docs/monograph/prime-matrix-backlund-common-envelope-internal-closure-router.md`。
 
+## 8B. 有限 sqrt-gap 计算输入
+
+- **来源**：Erdős, P. L.; Harcos, G.; Kharel, S. R.; Maga, P.; Mezei, T. R.; Toroczkai, Z.,
+  *The sequence of prime gaps is graphic*, Mathematische Annalen 388, 2195--2215, 2024,
+  Lemma 2.7, DOI `10.1007/s00208-023-02574-1`.
+- **底层计算来源**：Oliveira e Silva, T.; Herzog, S.; Pardi, S.,
+  *Empirical verification of the even Goldbach conjecture and computation of prime gaps up to*
+  `4*10^18`, Mathematics of Computation 83, 2033--2060, 2014,
+  DOI `10.1090/S0025-5718-2013-02787-1`.
+- **状态**：`required-finite-bridge` for the finite strict-k Phi-LPF segment; not an infinite-tail theorem.
+- **用于**：`Phi-LPF strict-k finite sqrt square-phase tail` 层。若 `x=kP` 且 `1<k<P`，
+  则 `sqrt(x)<P`；外部 Lemma 2.7 的 `117<=x<=10^18` 区间素数存在性推出
+  `N_P(k)=pi((k+1)P-1)-pi(kP)>=1`。
+- **当前有限覆盖**：
+  - `x<117` 的 strict 行由脚本直接核查；
+  - `117<=kP<=10^18` 的 strict 行由有限 sqrt-gap 输入覆盖；
+  - 顶行 `x=P^2-P` 因此覆盖到最大素数底 `P<=999999937`。
+- **不能替代**：
+  - 不能证明 `x>10^18` 的无限尾段；
+  - 不能替代 `SquarePhaseTailLongBlockPDECExclusion`；
+  - 不能替代真正的全局 `H(x)<=sqrt(x)` 短区间定理。
+
 ## 9. 不能误用的输入
 
 | 输入 | 不能替代什么 | 原因 |
@@ -175,6 +197,7 @@
 | Legendre 有限验证 | `k=P-1` 顶行正性 | Legendre 只保证 `((P-1)^2,P^2)` 内某处有素数；顶行需要更右侧的 `(P^2-P,P^2)`。 |
 | Oppermann 猜想 | 无条件证明 | 完整 Oppermann 会关闭顶行左半窗和平方右半窗，但当前只能作为未证强输入或条件定理假设。 |
 | BHP/Li 通用短区间指数 | 长度 `P` 的平方端点窗口 | 在 `X=P^2` 下分别给 `P^1.05`、`P^1.04` 级窗口，仍长于目标 `P`。 |
+| 有限 sqrt-gap 计算输入 | 无限尾段 strict 行正性 | 它只覆盖 `kP<=10^18`，顶行只到素数底 `P<=999999937`。 |
 
 ## 10. 下一步核查任务
 

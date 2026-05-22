@@ -18401,6 +18401,58 @@ PrimeIndexedOppermannLeftHalf(P)
 
 本层仍不证明 `UnifiedPositiveCore`，只禁止把 Legendre/有限验证误登记为顶行闭合。
 
+## 450. Phi-LPF strict-k finite sqrt square-phase tail frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_finite_sqrt_square_phase_tail_router.py
+docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.json
+data/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-ledger.json
+```
+
+同步结果：
+
+```text
+external_range=[117, 1000000000000000000]
+small_checked_row_count=49
+all_small_rows_positive=true
+largest_prime_base_with_top_row_start_le_x_max=999999937
+```
+
+formal-to-actual 含义是：`UnifiedPositiveCore` 的有限初段可以借外部
+sqrt-gap 计算输入真正关闭。对 `x=kP`、`1<k<P`，`sqrt(x)<P`，所以已发表的
+有限输入 `117<=x<=10^18` 时 `[x,x+sqrt(x)]` 有素数，直接给出
+
+```text
+N_P(k)=pi((k+1)P-1)-pi(kP)>=1.
+```
+
+阈值以下由脚本直接核查。于是任何 formal-to-actual 反例链都必须满足：
+
+```text
+kP>10^18.
+```
+
+最坏顶行的尾段等价形式为：
+
+```text
+P>999999937
+AND [1,P-1] fully covered by r == P^2 mod q for primes q<P.
+```
+
+因此当前真剩余接口不是有限验证，而是：
+
+```text
+SquarePhaseTailLongBlockPDECExclusion
+OR SquarePhaseRoughSurvivorUniformLowerBound
+OR genuine sqrt-scale theorem beyond 10^18.
+```
+
+本层仍不证明 `UnifiedPositiveCore`；它只把有限初段归档并把无限尾段压成平方相位
+特殊长覆盖块。
+
 ## 331. Phi-LPF step local factor update frontier
 
 新增文件

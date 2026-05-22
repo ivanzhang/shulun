@@ -24424,6 +24424,59 @@ OR a genuine Oppermann-left/sqrt-scale theorem.
 
 行/列命题仍未无条件闭合。
 
+### 1.223 Phi-LPF strict-k finite sqrt square-phase tail 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_strict_k_finite_sqrt_square_phase_tail_router.py
+data/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-ledger.json
+docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.md
+docs/monograph/prime-matrix-phi-lpf-strict-k-finite-sqrt-square-phase-tail-router.json
+```
+
+同步读数为：
+
+```text
+external_range=[117, 1000000000000000000]
+small_checked_row_count=49
+all_small_rows_positive=true
+top_row_integer_base_bound=1000000000
+largest_prime_base_with_top_row_start_le_x_max=999999937
+```
+
+actual-load 含义是：对 `x=kP` 且 `1<k<P`，有 `sqrt(x)<P`。因此外部有限
+sqrt-gap 输入
+
+```text
+117<=x<=10^18 => [x,x+sqrt(x)] contains a prime
+```
+
+可直接推出所有 `kP<=10^18` 的 strict 行正性；`x<117` 的 49 个 strict 行由脚本
+直接核查。顶行 `x=P^2-P` 因此被有限覆盖到素数底：
+
+```text
+P<=999999937.
+```
+
+这一步清掉的是巨大有限初段，不是无限尾段。顶行尾段失败已经精确转写为：
+
+```text
+N_top(P)=0
+iff for every 1<=r<P, gcd(P^2-r, product_{q<P} q)>1
+iff [1,P-1] is covered by residue classes r == P^2 mod q, q<P.
+```
+
+所以当前最坏剩余不再是“是否还要做有限验证”，而是：
+
+```text
+SquarePhaseTailLongBlockPDECExclusion
+OR SquarePhaseRoughSurvivorUniformLowerBound
+OR genuine sqrt-scale theorem beyond 10^18.
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.179 Phi-LPF latest constructor noncircular kernel bucket signed-law sync 更新
 
 新增机器证书：

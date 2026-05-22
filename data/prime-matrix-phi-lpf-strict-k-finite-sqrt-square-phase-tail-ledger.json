@@ -1,0 +1,721 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_strict_k_finite_sqrt_square_phase_tail_router",
+  "status": "finite_sqrt_gap_initial_segment_closed_tail_routed_to_square_phase_full_cover",
+  "finite_sqrt_external_input": {
+    "source": "Erdos-Harcos-Kharel-Maga-Mezei-Toroczkai, Math. Ann. 388 (2024), Lemma 2.7",
+    "statement_used": "for every x in [117, 10^18], [x, x+sqrt(x)] contains a prime",
+    "computational_source": "Oliveira e Silva-Herzog-Pardi prime-gap computation up to 4*10^18",
+    "url": "https://link.springer.com/article/10.1007/s00208-023-02574-1",
+    "finite_evidence_not_used_beyond_declared_range": true
+  },
+  "bridge": {
+    "strict_x": "x=kP",
+    "strict_range": "1<k<P",
+    "sqrt_x_less_than_P": true,
+    "consequence": "prime in [x,x+sqrt(x)] implies pi((k+1)P-1)-pi(kP)>=1"
+  },
+  "small_direct_audit": {
+    "small_x_limit": 116,
+    "checked_row_count": 49,
+    "all_small_rows_positive": true,
+    "small_row_failures": [],
+    "minimum_small_row_prime_count": 1,
+    "sample_small_rows": [
+      {
+        "P": 5,
+        "k": 2,
+        "x": 10,
+        "prime_count": 2,
+        "first_prime": 11
+      },
+      {
+        "P": 5,
+        "k": 3,
+        "x": 15,
+        "prime_count": 2,
+        "first_prime": 17
+      },
+      {
+        "P": 5,
+        "k": 4,
+        "x": 20,
+        "prime_count": 1,
+        "first_prime": 23
+      },
+      {
+        "P": 7,
+        "k": 2,
+        "x": 14,
+        "prime_count": 2,
+        "first_prime": 17
+      },
+      {
+        "P": 7,
+        "k": 3,
+        "x": 21,
+        "prime_count": 1,
+        "first_prime": 23
+      },
+      {
+        "P": 7,
+        "k": 4,
+        "x": 28,
+        "prime_count": 2,
+        "first_prime": 29
+      },
+      {
+        "P": 7,
+        "k": 5,
+        "x": 35,
+        "prime_count": 2,
+        "first_prime": 37
+      },
+      {
+        "P": 7,
+        "k": 6,
+        "x": 42,
+        "prime_count": 2,
+        "first_prime": 43
+      },
+      {
+        "P": 11,
+        "k": 2,
+        "x": 22,
+        "prime_count": 3,
+        "first_prime": 23
+      },
+      {
+        "P": 11,
+        "k": 3,
+        "x": 33,
+        "prime_count": 3,
+        "first_prime": 37
+      },
+      {
+        "P": 11,
+        "k": 4,
+        "x": 44,
+        "prime_count": 2,
+        "first_prime": 47
+      },
+      {
+        "P": 11,
+        "k": 5,
+        "x": 55,
+        "prime_count": 2,
+        "first_prime": 59
+      }
+    ]
+  },
+  "top_row_threshold": {
+    "x_max": 1000000000000000000,
+    "top_row_integer_base_bound": 1000000000,
+    "largest_prime_base_with_top_row_start_le_x_max": 999999937,
+    "top_row_start_at_largest_prime_base": 999999873000004032,
+    "top_row_end_at_largest_prime_base": 999999874000003968,
+    "finite_sqrt_gap_length": 999999936,
+    "strict_row_length_P": 999999937
+  },
+  "top_row_square_phase_equivalence": {
+    "N_top_zero": "pi(P^2-1)-pi(P^2-P)=0",
+    "equivalent_full_cover": "for every 1<=r<P, gcd(P^2-r, product_{q<P} q)>1",
+    "residue_word": "r == P^2 mod q for some prime q<P",
+    "named_tail": "SquarePhaseTailLongBlockPDECExclusion"
+  },
+  "top_row_cover_samples": [
+    {
+      "P": 5,
+      "interval": [
+        21,
+        24
+      ],
+      "slot_count": 4,
+      "prime_count": 1,
+      "first_prime": 23,
+      "full_low_sieve_cover": false,
+      "square_phase_cover_statement": "r in [1,P-1] is covered iff r == P^2 mod q for some q<P",
+      "owner_counts": {
+        "2": 2,
+        "3": 1
+      },
+      "owner_word_prefix": [
+        {
+          "r": 1,
+          "n": 24,
+          "owner": 2
+        },
+        {
+          "r": 3,
+          "n": 22,
+          "owner": 2
+        },
+        {
+          "r": 4,
+          "n": 21,
+          "owner": 3
+        }
+      ],
+      "survivor_prefix": [
+        {
+          "r": 2,
+          "n": 23
+        }
+      ]
+    },
+    {
+      "P": 11,
+      "interval": [
+        111,
+        120
+      ],
+      "slot_count": 10,
+      "prime_count": 1,
+      "first_prime": 113,
+      "full_low_sieve_cover": false,
+      "square_phase_cover_statement": "r in [1,P-1] is covered iff r == P^2 mod q for some q<P",
+      "owner_counts": {
+        "2": 5,
+        "3": 2,
+        "5": 1,
+        "7": 1
+      },
+      "owner_word_prefix": [
+        {
+          "r": 1,
+          "n": 120,
+          "owner": 2
+        },
+        {
+          "r": 2,
+          "n": 119,
+          "owner": 7
+        },
+        {
+          "r": 3,
+          "n": 118,
+          "owner": 2
+        },
+        {
+          "r": 4,
+          "n": 117,
+          "owner": 3
+        },
+        {
+          "r": 5,
+          "n": 116,
+          "owner": 2
+        },
+        {
+          "r": 6,
+          "n": 115,
+          "owner": 5
+        },
+        {
+          "r": 7,
+          "n": 114,
+          "owner": 2
+        },
+        {
+          "r": 9,
+          "n": 112,
+          "owner": 2
+        },
+        {
+          "r": 10,
+          "n": 111,
+          "owner": 3
+        }
+      ],
+      "survivor_prefix": [
+        {
+          "r": 8,
+          "n": 113
+        }
+      ]
+    },
+    {
+      "P": 17,
+      "interval": [
+        273,
+        288
+      ],
+      "slot_count": 16,
+      "prime_count": 3,
+      "first_prime": 283,
+      "full_low_sieve_cover": false,
+      "square_phase_cover_statement": "r in [1,P-1] is covered iff r == P^2 mod q for some q<P",
+      "owner_counts": {
+        "2": 8,
+        "3": 3,
+        "5": 1,
+        "7": 1
+      },
+      "owner_word_prefix": [
+        {
+          "r": 1,
+          "n": 288,
+          "owner": 2
+        },
+        {
+          "r": 2,
+          "n": 287,
+          "owner": 7
+        },
+        {
+          "r": 3,
+          "n": 286,
+          "owner": 2
+        },
+        {
+          "r": 4,
+          "n": 285,
+          "owner": 3
+        },
+        {
+          "r": 5,
+          "n": 284,
+          "owner": 2
+        },
+        {
+          "r": 7,
+          "n": 282,
+          "owner": 2
+        },
+        {
+          "r": 9,
+          "n": 280,
+          "owner": 2
+        },
+        {
+          "r": 10,
+          "n": 279,
+          "owner": 3
+        },
+        {
+          "r": 11,
+          "n": 278,
+          "owner": 2
+        },
+        {
+          "r": 13,
+          "n": 276,
+          "owner": 2
+        },
+        {
+          "r": 14,
+          "n": 275,
+          "owner": 5
+        },
+        {
+          "r": 15,
+          "n": 274,
+          "owner": 2
+        },
+        {
+          "r": 16,
+          "n": 273,
+          "owner": 3
+        }
+      ],
+      "survivor_prefix": [
+        {
+          "r": 6,
+          "n": 283
+        },
+        {
+          "r": 8,
+          "n": 281
+        },
+        {
+          "r": 12,
+          "n": 277
+        }
+      ]
+    },
+    {
+      "P": 101,
+      "interval": [
+        10101,
+        10200
+      ],
+      "slot_count": 100,
+      "prime_count": 12,
+      "first_prime": 10193,
+      "full_low_sieve_cover": false,
+      "square_phase_cover_statement": "r in [1,P-1] is covered iff r == P^2 mod q for some q<P",
+      "owner_counts": {
+        "2": 50,
+        "3": 17,
+        "5": 7,
+        "7": 4,
+        "11": 2,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1,
+        "53": 1,
+        "61": 1,
+        "67": 1,
+        "73": 1
+      },
+      "owner_word_prefix": [
+        {
+          "r": 1,
+          "n": 10200,
+          "owner": 2
+        },
+        {
+          "r": 2,
+          "n": 10199,
+          "owner": 7
+        },
+        {
+          "r": 3,
+          "n": 10198,
+          "owner": 2
+        },
+        {
+          "r": 4,
+          "n": 10197,
+          "owner": 3
+        },
+        {
+          "r": 5,
+          "n": 10196,
+          "owner": 2
+        },
+        {
+          "r": 6,
+          "n": 10195,
+          "owner": 5
+        },
+        {
+          "r": 7,
+          "n": 10194,
+          "owner": 2
+        },
+        {
+          "r": 9,
+          "n": 10192,
+          "owner": 2
+        },
+        {
+          "r": 10,
+          "n": 10191,
+          "owner": 3
+        },
+        {
+          "r": 11,
+          "n": 10190,
+          "owner": 2
+        },
+        {
+          "r": 12,
+          "n": 10189,
+          "owner": 23
+        },
+        {
+          "r": 13,
+          "n": 10188,
+          "owner": 2
+        },
+        {
+          "r": 14,
+          "n": 10187,
+          "owner": 61
+        },
+        {
+          "r": 15,
+          "n": 10186,
+          "owner": 2
+        },
+        {
+          "r": 16,
+          "n": 10185,
+          "owner": 3
+        },
+        {
+          "r": 17,
+          "n": 10184,
+          "owner": 2
+        }
+      ],
+      "survivor_prefix": [
+        {
+          "r": 8,
+          "n": 10193
+        },
+        {
+          "r": 20,
+          "n": 10181
+        },
+        {
+          "r": 24,
+          "n": 10177
+        },
+        {
+          "r": 32,
+          "n": 10169
+        },
+        {
+          "r": 38,
+          "n": 10163
+        },
+        {
+          "r": 42,
+          "n": 10159
+        },
+        {
+          "r": 50,
+          "n": 10151
+        },
+        {
+          "r": 60,
+          "n": 10141
+        },
+        {
+          "r": 62,
+          "n": 10139
+        },
+        {
+          "r": 68,
+          "n": 10133
+        },
+        {
+          "r": 90,
+          "n": 10111
+        },
+        {
+          "r": 98,
+          "n": 10103
+        }
+      ]
+    },
+    {
+      "P": 257,
+      "interval": [
+        65793,
+        66048
+      ],
+      "slot_count": 256,
+      "prime_count": 23,
+      "first_prime": 66047,
+      "full_low_sieve_cover": false,
+      "square_phase_cover_statement": "r in [1,P-1] is covered iff r == P^2 mod q for some q<P",
+      "owner_counts": {
+        "2": 128,
+        "3": 43,
+        "5": 17,
+        "7": 10,
+        "11": 5,
+        "13": 3,
+        "17": 2,
+        "19": 4,
+        "23": 2,
+        "29": 2,
+        "31": 1,
+        "37": 1,
+        "41": 2,
+        "43": 1,
+        "59": 1,
+        "67": 1,
+        "71": 1,
+        "101": 1,
+        "103": 1,
+        "107": 1,
+        "131": 1,
+        "149": 1,
+        "199": 1,
+        "211": 1,
+        "233": 1,
+        "251": 1
+      },
+      "owner_word_prefix": [
+        {
+          "r": 1,
+          "n": 66048,
+          "owner": 2
+        },
+        {
+          "r": 3,
+          "n": 66046,
+          "owner": 2
+        },
+        {
+          "r": 4,
+          "n": 66045,
+          "owner": 3
+        },
+        {
+          "r": 5,
+          "n": 66044,
+          "owner": 2
+        },
+        {
+          "r": 6,
+          "n": 66043,
+          "owner": 211
+        },
+        {
+          "r": 7,
+          "n": 66042,
+          "owner": 2
+        },
+        {
+          "r": 9,
+          "n": 66040,
+          "owner": 2
+        },
+        {
+          "r": 10,
+          "n": 66039,
+          "owner": 3
+        },
+        {
+          "r": 11,
+          "n": 66038,
+          "owner": 2
+        },
+        {
+          "r": 13,
+          "n": 66036,
+          "owner": 2
+        },
+        {
+          "r": 14,
+          "n": 66035,
+          "owner": 5
+        },
+        {
+          "r": 15,
+          "n": 66034,
+          "owner": 2
+        },
+        {
+          "r": 16,
+          "n": 66033,
+          "owner": 3
+        },
+        {
+          "r": 17,
+          "n": 66032,
+          "owner": 2
+        },
+        {
+          "r": 18,
+          "n": 66031,
+          "owner": 7
+        },
+        {
+          "r": 19,
+          "n": 66030,
+          "owner": 2
+        }
+      ],
+      "survivor_prefix": [
+        {
+          "r": 2,
+          "n": 66047
+        },
+        {
+          "r": 8,
+          "n": 66041
+        },
+        {
+          "r": 12,
+          "n": 66037
+        },
+        {
+          "r": 20,
+          "n": 66029
+        },
+        {
+          "r": 56,
+          "n": 65993
+        },
+        {
+          "r": 66,
+          "n": 65983
+        },
+        {
+          "r": 68,
+          "n": 65981
+        },
+        {
+          "r": 86,
+          "n": 65963
+        },
+        {
+          "r": 92,
+          "n": 65957
+        },
+        {
+          "r": 98,
+          "n": 65951
+        },
+        {
+          "r": 120,
+          "n": 65929
+        },
+        {
+          "r": 122,
+          "n": 65927
+        }
+      ]
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "FiniteSqrtGapBridgeCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 x=kP 且 1<k<P，有 sqrt(x)<P；因此 [x,x+sqrt(x)] 内有素数会推出 strict 行正性。",
+      "remaining": "criterion only"
+    },
+    {
+      "gate": "PublishedFiniteSqrtGapClosesInitialSegment",
+      "closed": true,
+      "proved": true,
+      "meaning": "外部 Lemma 2.7 给出 117<=x<=10^18 时 [x,x+sqrt(x)] 有素数，阈值以下 strict 行由直接有限核查覆盖。",
+      "remaining": "x>10^18 tail"
+    },
+    {
+      "gate": "PrimeIndexedTopRowFiniteReachIdentified",
+      "closed": true,
+      "proved": true,
+      "meaning": "顶行 x=P^2-P 的外部有限覆盖达到 P<=999999937；这清掉巨大有限初段但不触及无限尾段。",
+      "remaining": "prime bases P>999999937"
+    },
+    {
+      "gate": "TopRowFailureEquivalentToMinusSquarePhaseFullCover",
+      "closed": true,
+      "proved": true,
+      "meaning": "N_top(P)=0 等价于每个 r=1..P-1 都满足 P^2-r 被某个 q<P 整除，即 r==P^2 mod q 的低筛禁类全覆盖。",
+      "remaining": "exclude special-phase full cover"
+    },
+    {
+      "gate": "FiniteBridgePlusGenericGapTheoremsCloseInfiniteTail",
+      "closed": false,
+      "proved": false,
+      "meaning": "Dusart/BHP 等通用输入在 x>10^18 的 sqrt-edge 仍长于 P 或只覆盖低 k 子带。",
+      "remaining": "sqrt-scale theorem or structural square-phase proof"
+    },
+    {
+      "gate": "UnifiedPositiveCoreProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "本层只清理有限初段并把尾段反例锁到平方相位长覆盖块；没有证明所有 P,k 的正性。",
+      "remaining": "SquarePhaseTailLongBlockPDECExclusion OR SquarePhaseRoughSurvivorUniformLowerBound"
+    }
+  ],
+  "unified_positive_core_proved": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "SquarePhaseTailLongBlockPDECExclusion OR SquarePhaseRoughSurvivorUniformLowerBound OR genuine sqrt-scale theorem beyond 10^18",
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-unified-positive-core-router.json": "f203a0d971a15e543b30bf22eb2bfea0b62524939af19781cf0ae23d4b92446d",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-oppermann-alignment-router.json": "3ebb0f9350f9f3fd7b67ef5b4bf6d3cc407462439520a5e06e4a810b6f208489",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json": "328ee462d76cb6213f976eee33133885f20109157d16cf80d236ae27d78d8993",
+    "docs/monograph/prime-matrix-primorial-jacobsthal-central-block-router.json": "35ae489251780714fd8168bb39108b636a4882d967acd642f4c24a6a046fbcfb",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-external-gap-bridge-router.json": "762c7de91c70ae99628279eb52aa2b5a94185e4d5ed2c32921f08ce6f0133881"
+  }
+}

@@ -11748,6 +11748,76 @@ row/column theorem unconditionally.
 \end{proof}
 
 
+\begin{theorem}[Finite sqrt-gap bridge and square-phase tail]
+Let \(P\) be prime and \(1<k<P\), and put \(x=kP\).  Since
+\(\sqrt{x}<P\), any theorem guaranteeing a prime in
+\([x,x+\sqrt{x}]\) gives
+\[
+  N_P(k)=\pi((k+1)P-1)-\pi(kP)\ge1.
+\]
+Using the finite sqrt-gap input
+\[
+  117\le x\le 10^{18}
+  \quad\Longrightarrow\quad
+  [x,x+\sqrt{x}]\hbox{ contains a prime},
+\]
+the strict rows with \(kP\le10^{18}\) are therefore closed, after a direct
+finite check of the rows with \(kP<117\).  For the top row
+\(x=P^2-P\), this finite bridge reaches every prime base
+\[
+  P\le 999999937.
+\]
+Beyond this range the same top-row failure is exactly the square-phase low
+sieve full cover
+\[
+  N_{\rm top}(P)=0
+  \Longleftrightarrow
+  \forall\,1\le r<P,\quad
+  \gcd\!\left(P^2-r,\prod_{q<P}q\right)>1,
+\]
+equivalently the interval \(1\le r<P\) is covered by the residue classes
+\[
+  r\equiv P^2\pmod q,\qquad q<P,\ q\ {\rm prime}.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The bridge inequality \(\sqrt{kP}<P\) is immediate from \(k<P\).  Hence a
+prime in \([x,x+\sqrt{x}]\) lies before \((k+1)P\); because the endpoints are
+composite in the strict range, this is exactly positivity of the Phi--LPF
+endpoint difference.  The finite sqrt-gap input is Lemma 2.7 of
+Erdos--Harcos--Kharel--Maga--Mezei--Toroczkai, based on the computed prime-gap
+tables of Oliveira e Silva--Herzog--Pardi.  The direct subthreshold audit
+checks \(49\) strict rows and finds minimum prime count \(1\).  Solving
+\(P^2-P\le10^{18}\) gives integer bound \(P\le10^9\), and the largest prime
+base not exceeding that bound is \(999999937\).
+
+The last equivalence is the same least-prime-factor ownership identity applied
+to the top row \(P^2-P<n<P^2\).  If no top-row entry is prime, then each
+\(P^2-r\) has a least prime factor \(q<P\), because \(P^2-r<P^2\).  Conversely,
+if every \(P^2-r\) is divisible by some \(q<P\), no top-row entry is prime.
+For each fixed \(q\), this divisibility is exactly
+\(r\equiv P^2\pmod q\).  Thus the remaining infinite tail is not a finite
+verification problem; it is the named square-phase special long-cover problem.
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-strict-k-finite-\\
+sqrt-square-phase-tail-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+external\_range=[117,1000000000000000000]\\
+small\_checked\_row\_count=49\\
+all\_small\_rows\_positive=true\\
+largest\_prime\_base\_with\_top\_row\_start\_le\_x\_max=999999937.
+\end{quote}
+This theorem closes only the declared finite segment.  The row/column theorem
+still requires
+\(\texttt{SquarePhaseTailLongBlockPDECExclusion}\), a uniform rough-survivor
+lower bound, or a genuine global square-root-scale short-interval theorem.
+\end{proof}
+
+
 \begin{theorem}[Q1/Q2 transport latest non-circular synchronization]
 The adjacent-prime \(Q_1,Q_2\) transport branch is not an independent pure-CRT
 terminal for the row/column proof.  The existing \(Q_2\)-stage ladder shows
