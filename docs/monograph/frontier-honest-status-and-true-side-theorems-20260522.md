@@ -3283,6 +3283,86 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13J：Phi-LPF q-support row-averaged additive-k hole-class phase decomposition 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_class_phase_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-audit.md
+```
+
+本层继续下钻 `S_H`。completion hole 的 product-cell 长度 `<2`；若存在唯一
+奇候选且它是奇合数、`LPF>=7`，则该数自动是 residual LPF cofactor，不可能
+是 hole。故 `S_H` 精确分解为五类：
+
+```text
+S_H = S_empty + S_even + S_prime + S_lpf3 + S_lpf5
+```
+
+### Q13J.1 有限审计
+
+有限实现 `P<=1009,h=1` 给出：
+
+```text
+q_bucket_count_total=6020
+hole_count_total=1302951
+classified_hole_count_total=1302951
+counts_match_previous_correction_phase=true
+hole_class_identity_verified=true
+max_class_identity_error=9.664e-14
+forbidden_class_count_total=0
+only_empty_even_prime_lpf3_lpf5_classes_seen=true
+count_empty_cell_total=0
+count_even_singleton_total=373676
+count_odd_candidate_prime_total=355919
+count_odd_candidate_lpf3_total=409713
+count_odd_candidate_lpf5_total=163643
+sum_abs_even_singleton_sum_h1=178003.033657
+sum_abs_odd_candidate_prime_sum_h1=61696.864692
+sum_abs_odd_candidate_lpf3_sum_h1=65968.241426
+sum_abs_odd_candidate_lpf5_sum_h1=30865.060099
+dominant_hole_phase_class_bucket_counts_h1={"even_singleton":5166,"none":100,"odd_candidate_lpf3":200,"odd_candidate_lpf5":189,"odd_candidate_prime":365}
+class_phase_control_closed=false
+```
+
+### Q13J.2 诚实边界
+
+本层真推进是删除“hole correction 黑箱残差”的粗标签，把它压成五个显式
+局部 packet。它仍没有证明任何一个 packet 的统一相消或吸收；尤其有限诊断中
+偶 singleton packet 在大多数 q-bucket 成为主导相位包。
+
+最新最窄口：
+
+```text
+FiveClassHolePhaseCancellationOrAbsorption
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+hole_class_partition_closed=true
+odd_hole_prime_or_small_lpf_reduction_closed=true
+hole_class_phase_identity_closed=true
+five_class_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

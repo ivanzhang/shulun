@@ -33147,6 +33147,78 @@ row-averaged-additive-k-completion-correction-phase-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Five local classes for the hole correction}
+
+\begin{theorem}[Five-class decomposition of the completion-hole phase]
+For each \(k\in{\mathcal H}_{P,q}\), consider the product cell
+\(I_{P,k}(q)\).  Since \(q>P/2\), this cell has length \(<2\).  Hence
+the hole is of one of the following local types:
+\[
+  \text{empty cell},\qquad
+  \text{even singleton},\qquad
+  \text{odd prime candidate},\qquad
+  \text{odd candidate with LPF }3,\qquad
+  \text{odd candidate with LPF }5.
+\]
+Consequently the hole-correction phase has the exact decomposition
+\[
+  S_H(h)
+  =
+  S_{\emptyset}(h)+S_{\rm even}(h)+S_{\rm prime}(h)
+  +S_{3}(h)+S_{5}(h),
+\]
+where each term is the same additive character \(e(hPk/q)\) restricted
+to the corresponding local class of holes.
+\end{theorem}
+\begin{proof}
+The cell length bound follows from the defining inequalities
+\[
+  kP<qm<(k+1)P
+\]
+and \(q>P/2\).  Thus \(I_{P,k}(q)\) contains either no integer, a single
+even integer, or a single odd integer.  In the last case call the odd
+candidate \(m\).  If \(m\) is a composite odd integer with least prime
+factor \(r\ge 7\), then \(m=r\beta\), \(\beta\ge r\), and every prime
+factor of \(\beta\) is at least \(r\).  This is exactly the residual LPF
+cofactor condition.  Such an \(m\) would put \(k=\lfloor qm/P\rfloor\)
+back into \({\mathcal K}_{P,q}\), contradicting \(k\in{\mathcal H}_{P,q}\).
+Therefore an odd candidate hole is either prime or has least prime
+factor \(3\) or \(5\).  The displayed phase identity is just the disjoint
+partition of \({\mathcal H}_{P,q}\) into these local classes.
+\end{proof}
+
+\begin{remark}[Finite class ledger]
+The audit up to \(P\le 1009\) verifies the class identity with maximum
+numerical error \(9.664\cdot 10^{-14}\).  The \(1302951\) holes split as
+\[
+  0\ \text{empty},\quad
+  373676\ \text{even singletons},\quad
+  355919\ \text{prime candidates},\quad
+  409713\ \text{LPF }3,\quad
+  163643\ \text{LPF }5.
+\]
+No residual-candidate or other forbidden hole appears.  For \(h=1\), the
+dominant class by q-bucket is usually the even singleton packet
+(\(5166\) of \(6020\) buckets).  This is a structural refinement, not a
+cancellation theorem.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+FiveClassHolePhaseCancellationOrAbsorption\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-hole-class-phase-decomposition-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

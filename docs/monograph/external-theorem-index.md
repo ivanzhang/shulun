@@ -3123,6 +3123,97 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61J. Phi-LPF q-support row-averaged additive-k hole-class phase decomposition 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_class_phase_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-class-phase-decomposition-audit.md
+```
+
+本层把上一节的 completion-hole correction `S_H` 继续拆成局部相位包。每个
+hole 的 product-cell 长度 `<2`，所以它要么是 empty cell，要么是 even
+singleton，要么有唯一奇候选 `m`。若这个奇候选是奇合数且 `LPF(m)>=7`，
+则写作 `m=r*beta` 后自动满足 `beta>=r` 且 `LPF(beta)>=r`，因此它就是
+residual LPF cofactor，不可能是 hole。于是奇候选 hole 只能是：
+
+```text
+prime candidate
+LPF=3 candidate
+LPF=5 candidate
+```
+
+因此
+
+```text
+S_H = S_empty + S_even + S_prime + S_lpf3 + S_lpf5
+```
+
+是精确同对象 correction 分解。
+
+有限审计读数（`h=1` 相位诊断）：
+
+```text
+max_prime=1009
+P_value_count=165
+q_bucket_count_total=6020
+hole_count_total=1302951
+classified_hole_count_total=1302951
+counts_match_previous_correction_phase=true
+hole_class_identity_verified=true
+max_class_identity_error=9.664e-14
+forbidden_class_count_total=0
+only_empty_even_prime_lpf3_lpf5_classes_seen=true
+count_empty_cell_total=0
+count_even_singleton_total=373676
+count_odd_candidate_prime_total=355919
+count_odd_candidate_lpf3_total=409713
+count_odd_candidate_lpf5_total=163643
+sum_abs_empty_cell_sum_h1=0.000000
+sum_abs_even_singleton_sum_h1=178003.033657
+sum_abs_odd_candidate_prime_sum_h1=61696.864692
+sum_abs_odd_candidate_lpf3_sum_h1=65968.241426
+sum_abs_odd_candidate_lpf5_sum_h1=30865.060099
+dominant_hole_phase_class_bucket_counts_h1={"even_singleton":5166,"none":100,"odd_candidate_lpf3":200,"odd_candidate_lpf5":189,"odd_candidate_prime":365}
+class_phase_control_closed=false
+```
+
+外部前沿影响：FKMS trace-function、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright unbalanced convolution/Kloosterman fractions
+与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 参数估计，仍需要先
+把五类 packet 中的某一类嵌入 trace/Kloosterman/Type-II/convolution 支撑；
+五类分解本身还不是相消定理。
+
+新的最新最窄口：
+
+```text
+FiveClassHolePhaseCancellationOrAbsorption
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+hole_class_partition_closed=true
+odd_hole_prime_or_small_lpf_reduction_closed=true
+hole_class_phase_identity_closed=true
+five_class_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：
