@@ -29149,6 +29149,86 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\section{Prime-Square \(P^2\pm1\) Sandwich Audit}
+
+\begin{externalstatement}[\(P^2\pm1\) endpoints do not localize \(0.52\) to half-scale]
+Applying a pointwise short-interval theorem with exponent \(0.52\) at the two
+adjacent endpoints \(X=P^2-1\) and \(X=P^2+1\) does not force a prime into
+either inner half-scale window
+\[
+  (P^2-P,P^2),\qquad (P^2,P^2+P).
+\]
+Indeed
+\[
+  (P^2\pm1)^{0.52}=P^{1.04}\bigl(1+O(P^{-2})\bigr),
+\]
+and the absolute change caused by the \(\pm1\) shift is only
+\(O(P^{-0.96})\).  Thus the endpoint shift changes phase, not the power scale.
+\end{externalstatement}
+
+\begin{proof}
+For fixed \(\theta=0.52\),
+\[
+  (P^2\pm1)^\theta
+  =P^{2\theta}\left(1\pm P^{-2}\right)^\theta
+  =P^{1.04}\left(1+O(P^{-2})\right).
+\]
+The difference between \((P^2\pm1)^\theta\) and \(P^{1.04}\) is
+\(O(P^{1.04-2})=O(P^{-0.96})\), while the target length is \(P\).
+
+Consequently the right endpoint theorem gives at best a container of the form
+\[
+  (P^2+1,\ P^2+1+(P^2+1)^{0.52}],
+\]
+not the subinterval \((P^2,P^2+P)\).  A guaranteed prime may still lie in the
+outer tail
+\[
+  [P^2+P,\ P^2+P^{1.04}+O(1)].
+\]
+Similarly, a left endpoint theorem gives a container ending at \(P^2-1\), but
+the guaranteed prime may lie in
+\[
+  [P^2-P^{1.04}+O(1),\ P^2-P].
+\]
+Thus the endpoint applications provide thick containers only.  To deduce a
+prime in the inner \(P\)-window one would need an additional outer-tail
+exclusion or a lower bound for primes in the container that exceeds an upper
+bound for primes in the outer tail.  Current Brun--Titchmarsh type bounds
+leave the outer-tail capacity on the order of \(P^{1.04}/\log P\), so the
+single-prime lower bound from a short-interval theorem cannot win.
+\end{proof}
+
+\begin{remark}[\(P^2\pm1\) residual basis]
+The factorization \(P^2-1=(P-1)(P+1)\) concerns the endpoint itself and does
+not determine where the next or previous prime in a \(P^{1.04}\)-thick
+container lies.  The endpoint \(P^2+1\) supplies the same square-adjacent phase
+information already recorded by the square-phase routers, and \(P\nmid
+P^2\pm r\) for \(1\le r<P\) removes only the local \(q=P\) obstruction.  The
+new certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.md.
+\end{quote}
+After this audit the non-cyclic residual basis is
+\begin{quote}\scriptsize\ttfamily
+PM1OuterTailExclusionForTheta052Containers\\
+OR PrimeSquareNearestPrimeWithinPOnAtLeastOneSide\\
+OR TwoSidedSquarePhaseInnerWindowLocalization\\
+OR SquarePhaseSpecialPhaseLongBlockPDECExclusion\\
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC\\
+OR ExactExternalSqrtScaleOrGridTransferredThetaHalfSecondMoment\\
+OR NewSameObjectSignedDispersionOrAutomorphicProof.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+pm1\_sandwich\_halfscale\_closed=false\\
+pm1\_sandwich\_no\_go\_closed=true\\
+prime\_square\_halfscale\_auto\_drop\_closed=false\\
+external\_lemma\_version\_unconditional\_closed=false\\
+internal\_self\_contained\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Parity-Breaking Candidate Source Audit}
 
 \begin{externalstatement}[Five-gate audit for parity-breaking candidates]

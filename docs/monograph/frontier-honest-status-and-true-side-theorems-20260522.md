@@ -2233,3 +2233,104 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 V：Prime-square `P^2±1` sandwich 审计（2026-05-23 第二十轮）
+
+本轮审计更强的夹击想法：
+
+```text
+Use the x^0.52 theorem at X=P^2-1 and X=P^2+1.
+Can the two endpoint applications force a prime into distance P from P^2?
+```
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_square_pm1_sandwich_audit.py
+data/prime-matrix-prime-square-pm1-sandwich-ledger.json
+docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json
+docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.md
+```
+
+核心尺度计算：
+
+```text
+(P^2±1)^theta = P^(2theta)(1+O(P^-2))
+theta=0.52
+(P^2±1)^0.52 = P^1.04(1+O(P^-2))
+absolute ±1 length change = O(P^-0.96)
+target halfscale = P
+```
+
+所以 `P^2-1` 与 `P^2+1` 的特殊端点不改变 `0.52 -> 1.04` 的幂指数。
+夹击只能得到两个厚容器：
+
+```text
+right container: (P^2+1, P^2+1+(P^2+1)^0.52]
+target right:    (P^2, P^2+P)
+open outer tail: [P^2+P, P^2+P^1.04+O(1)]
+
+left container:  [P^2-1-(P^2-1)^0.52, P^2-1)
+target left:     (P^2-P, P^2)
+open outer tail: [P^2-P^1.04+O(1), P^2-P]
+```
+
+短区间输入只给：
+
+```text
+large_container_lower_bound_from_short_interval=at_least_one_prime
+```
+
+但外尾段长度为：
+
+```text
+outer_tail_length=P^1.04-P
+```
+
+其 Brun--Titchmarsh 型容量仍是：
+
+```text
+P^1.04/log P
+```
+
+因此没有办法仅凭容器内至少一个素数，排除该素数全部落在外尾段。
+要让夹击路线成功，必须新增：
+
+```text
+PM1OuterTailExclusionForTheta052Containers
+OR container prime lower bound > outer-tail prime upper bound
+```
+
+因子结构诊断：
+
+```text
+P^2-1=(P-1)(P+1) only factors the endpoint itself.
+P^2+1 gives square-adjacent phase, already covered by square-phase routers.
+P coprime to P^2±r removes q=P only, not the q<P cover residues.
+```
+
+新剩余基为：
+
+```text
+PM1OuterTailExclusionForTheta052Containers
+OR PrimeSquareNearestPrimeWithinPOnAtLeastOneSide
+OR TwoSidedSquarePhaseInnerWindowLocalization
+OR SquarePhaseSpecialPhaseLongBlockPDECExclusion
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+OR ExactExternalSqrtScaleOrGridTransferredThetaHalfSecondMoment
+OR NewSameObjectSignedDispersionOrAutomorphicProof
+```
+
+本层是真推进，因为它删除了一个自然但不充分的夹击出口，并把剩余压成
+`PM1OuterTailExclusion` 或真正的平方相位内窗定位。
+
+```text
+pm1_sandwich_halfscale_closed=false
+pm1_sandwich_no_go_closed=true
+prime_square_halfscale_auto_drop_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```

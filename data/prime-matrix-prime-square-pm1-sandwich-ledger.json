@@ -1,0 +1,179 @@
+{
+  "certificate_type": "prime_matrix_prime_square_pm1_sandwich_audit",
+  "count_obstruction": {
+    "available_now": false,
+    "brun_titchmarsh_tail_capacity_order": "P^1.04/log P",
+    "large_container_lower_bound_from_short_interval": "at_least_one_prime",
+    "needed_count_dominance": "container prime lower bound > outer-tail prime upper bound",
+    "outer_tail_length": "P^1.04-P",
+    "why_counting_does_not_close": "one guaranteed prime in the thick container can all lie in the outer tail; available upper bounds do not make the outer tail empty"
+  },
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "PM1ShiftChangesTheta052Scale",
+      "meaning": "±1 changes (P^2)^0.52 only by O(P^-0.96), not by a power of P",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointSandwichLocalizesPrimeIntoPWindow",
+      "meaning": "the endpoint theorem gives thick containers, not inner P-window localization",
+      "proved": false,
+      "remaining": "PM1OuterTailExclusion OR count dominance"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointFactorStructureForcesHalfscale",
+      "meaning": "factorization of P^2-1 and square adjacency of P^2+1 do not imply a prime in the first P slots",
+      "proved": false,
+      "remaining": "PrimeSquareSpecialPhaseNoOuterTailTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteBoundaryPromotedToProof",
+      "meaning": "finite scans remain evidence only",
+      "proved": false,
+      "remaining": "global proof for all sufficiently large prime P"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "neither H_P nor the external/internal versions are unconditionally closed",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_snapshot": [
+    {
+      "form": "prime in [x-x^0.52,x] for all sufficiently large x",
+      "name": "Runbo Li arXiv:2308.04458v8",
+      "status": "frontier preprint as verified on 2026-05-23",
+      "url": "https://arxiv.org/abs/2308.04458"
+    },
+    {
+      "form": "published pointwise short-interval exponent 0.525",
+      "name": "Baker-Harman-Pintz 2001",
+      "status": "published baseline"
+    }
+  ],
+  "factor_structure_diagnostic": [
+    {
+      "closes_halfscale": false,
+      "effect": "endpoint factorization does not constrain where the next or previous prime inside a P^1.04 container lies",
+      "structure": "P^2-1=(P-1)(P+1)"
+    },
+    {
+      "closes_halfscale": false,
+      "effect": "gives fixed quadratic/square phase residues already captured by the square-phase routers",
+      "structure": "P^2+1 square-adjacent phase"
+    },
+    {
+      "closes_halfscale": false,
+      "effect": "removes the q=P local obstruction but leaves all q<P square-phase cover residues",
+      "structure": "P is coprime to P^2±r for 1<=r<P"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "new_residual_basis": [
+    "PM1OuterTailExclusionForTheta052Containers",
+    "PrimeSquareNearestPrimeWithinPOnAtLeastOneSide",
+    "TwoSidedSquarePhaseInnerWindowLocalization",
+    "SquarePhaseSpecialPhaseLongBlockPDECExclusion",
+    "PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC",
+    "ExactExternalSqrtScaleOrGridTransferredThetaHalfSecondMoment",
+    "NewSameObjectSignedDispersionOrAutomorphicProof"
+  ],
+  "pm1_sandwich_halfscale_closed": false,
+  "pm1_sandwich_no_go_closed": true,
+  "pm1_shift_analysis": {
+    "after_specialization": "P^1.04 * (1 + O(P^-2))",
+    "formula": "(P^2±1)^theta = P^(2theta) * (1 + O(P^-2))",
+    "pm1_shift_absolute_change": "O(P^(2theta-2)) = O(P^-0.96)",
+    "pm1_shift_changes_exponent": false,
+    "target_halfscale": "P",
+    "theta": 0.52
+  },
+  "prime_square_halfscale_auto_drop_closed": false,
+  "row_column_unconditional_closed": false,
+  "sandwich_windows": [
+    {
+      "guaranteed_container": "(P^2+1, P^2+1+(P^2+1)^0.52]",
+      "localizes_to_inner_window": false,
+      "model": "right endpoint from P^2+1",
+      "open_outer_tail": "[P^2+P, P^2+P^1.04+O(1)]",
+      "target_inner_window": "(P^2, P^2+P)"
+    },
+    {
+      "guaranteed_container": "[P^2-1-(P^2-1)^0.52, P^2-1)",
+      "localizes_to_inner_window": false,
+      "model": "left endpoint from P^2-1",
+      "open_outer_tail": "[P^2-P^1.04+O(1), P^2-P]",
+      "target_inner_window": "(P^2-P, P^2)"
+    },
+    {
+      "guaranteed_container": "(P^2-1, P^2-1+(P^2-1)^0.52]",
+      "localizes_to_inner_window": false,
+      "model": "forward theorem at P^2-1",
+      "open_outer_tail": "[P^2+P, P^2+P^1.04+O(1)]",
+      "target_inner_window": "(P^2, P^2+P)"
+    },
+    {
+      "guaranteed_container": "[P^2+1-(P^2+1)^0.52, P^2+1)",
+      "localizes_to_inner_window": false,
+      "model": "backward theorem at P^2+1",
+      "open_outer_tail": "[P^2-P^1.04+O(1), P^2-P]",
+      "target_inner_window": "(P^2-P, P^2)"
+    }
+  ],
+  "scale_samples": [
+    {
+      "(P^2+1)^0.52/P": 1.202804,
+      "(P^2-1)^0.52/P": 1.202682,
+      "P": 101,
+      "left_outer_tail_estimate": 20,
+      "right_outer_tail_estimate": 20
+    },
+    {
+      "(P^2+1)^0.52/P": 1.31873,
+      "(P^2-1)^0.52/P": 1.318729,
+      "P": 1009,
+      "left_outer_tail_estimate": 322,
+      "right_outer_tail_estimate": 322
+    },
+    {
+      "(P^2+1)^0.52/P": 1.584895,
+      "(P^2-1)^0.52/P": 1.584895,
+      "P": 100003,
+      "left_outer_tail_estimate": 58491,
+      "right_outer_tail_estimate": 58491
+    },
+    {
+      "(P^2+1)^0.52/P": 1.737801,
+      "(P^2-1)^0.52/P": 1.737801,
+      "P": 1000003,
+      "left_outer_tail_estimate": 737803,
+      "right_outer_tail_estimate": 737803
+    }
+  ],
+  "short_answer": "no; the ±1 endpoints give P^1.04-thick containers and do not force the guaranteed primes into the inner P-windows",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "5c71b3801d9de2603c7720195e5c4a9285c3ca3f86ba1680f6a71192dea66e40",
+    "docs/monograph/external-theorem-index.md": "d51db1ef1f84cb1b491c0ffa7192046c3c2cc46a3377c9d496bd7797c8249eb5",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "a73b90a8c06cae58ab21ff3c15f7d30b0318c3889654dd37cfb1430395d44a37",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "docs/monograph/prime-matrix-hp-cramer-local-route-reset-router.md": "2c0b0c762fb0401b1c34972c00d3f45bc2d5fdc12e45327caec8924a9426339b",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json": "4dcd74175d9c2ee211e586f7aaa9ddc300763c9b84ef668db8e92f4c63b4191b",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.md": "27247fe2824993658470651edb264f55915bb08a0039b3be58fcc6242ef30474",
+    "docs/monograph/prime-matrix-prime-square-pm-layered-wheel-alignment-router.md": "d9ebce17d5a9aa5a09722adbfff264622e87429f7deade6d80c399b81c732c58",
+    "docs/monograph/prime-matrix-square-phase-jacobsthal-special-phase-router.md": "147f48a38015180c28c6d985670ec3160d66d78c986e9a8c3f9a4c6be60ad3a1",
+    "experiments/prime_matrix_prime_square_pm1_sandwich_audit.py": "1b8e56531afd37e2a10cd0d4ac311a12d0b5b6a38ddcd244cf294a6221a25aac",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "111e1193b78b83c63a101c85484545ae84a74f1c073b35e1002c281f0d58ea4d"
+  },
+  "square_phase_attack_surface_identified": true,
+  "status": "pm1_sandwich_does_not_localize_theta052_to_halfscale",
+  "user_question": "Can applying the x^0.52 theorem at X=P^2-1 and X=P^2+1 sandwich a prime into distance P from P^2?"
+}

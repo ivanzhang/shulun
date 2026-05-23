@@ -2472,3 +2472,65 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 52. Prime-square `P^2±1` sandwich 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_square_pm1_sandwich_audit.py
+data/prime-matrix-prime-square-pm1-sandwich-ledger.json
+docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json
+docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.md
+```
+
+本层审计更强的夹击想法：对 `X=P^2-1` 与 `X=P^2+1` 同时应用
+`x^0.52` 短区间素数输入，能否把素数压进 `P^2` 两侧长度 `P` 的半窗。
+
+尺度展开为：
+
+```text
+(P^2±1)^theta = P^(2theta)(1+O(P^-2))
+theta=0.52
+(P^2±1)^0.52 = P^1.04(1+O(P^-2))
+absolute ±1 length change = O(P^-0.96)
+```
+
+因此 `±1` 只改变端点相位，不改变指数。夹击得到的是：
+
+```text
+right container: (P^2+1, P^2+1+(P^2+1)^0.52]
+target right:    (P^2, P^2+P)
+open outer tail: [P^2+P, P^2+P^1.04+O(1)]
+
+left container:  [P^2-1-(P^2-1)^0.52, P^2-1)
+target left:     (P^2-P, P^2)
+open outer tail: [P^2-P^1.04+O(1), P^2-P]
+```
+
+单个短区间定理只给容器内 `at_least_one_prime`。外尾段长度仍为
+`P^1.04-P`，Brun--Titchmarsh 型容量仍有 `P^1.04/log P` 量级；它不为空，
+所以无法推出保证素数落入内侧长度 `P` 的半窗。
+
+新的剩余基为：
+
+```text
+PM1OuterTailExclusionForTheta052Containers
+OR PrimeSquareNearestPrimeWithinPOnAtLeastOneSide
+OR TwoSidedSquarePhaseInnerWindowLocalization
+OR SquarePhaseSpecialPhaseLongBlockPDECExclusion
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+OR ExactExternalSqrtScaleOrGridTransferredThetaHalfSecondMoment
+OR NewSameObjectSignedDispersionOrAutomorphicProof
+```
+
+边界状态：
+
+```text
+pm1_sandwich_halfscale_closed=false
+pm1_sandwich_no_go_closed=true
+prime_square_halfscale_auto_drop_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
