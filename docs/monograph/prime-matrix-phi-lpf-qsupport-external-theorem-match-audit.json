@@ -1,0 +1,232 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_external_theorem_match_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "QSupportExternalFrontierInventoryUpdatedThroughWright2026",
+      "meaning": "The current external candidates now include Wright 2026 partially fixed-modulus trilinear Kloosterman fractions.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "DirectNameCitationToKloostermanTypeIIRejected",
+      "meaning": "None of the external names directly estimates the present q-support reciprocal phase.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "CompletionObligationSharpenedToConvolutionBridge",
+      "meaning": "The vague completion gate is refined to a bilinear/trilinear convolution bridge with external hypotheses.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "QSupportToCompletedBilinearOrTrilinearKloostermanConvolutionWithSWFactor",
+      "meaning": "Construct the same-object convolution representation and verify the equidistribution/Siegel-Walfisz factor.",
+      "proved": false,
+      "remaining": "new bridge theorem"
+    },
+    {
+      "closed": false,
+      "gate": "PointwisePKUniformTransferFromExternalAverageEstimate",
+      "meaning": "Transfer an external averaged Kloosterman/Type-II theorem to every fixed P,k row without zero-exception leakage.",
+      "proved": false,
+      "remaining": "uniform transfer ledger"
+    }
+  ],
+  "current_object": {
+    "denominator": "prime q in (P/2,P)",
+    "not_a_completed_external_form": "No current ledger gives mn≡a mod q bilinear/trilinear convolution with a Siegel-Walfisz factor.",
+    "phase_sum": "sum_{q in S(P,k)} e(h*kP/q)",
+    "support": "S(P,k) is the actual Phi-LPF residual q-support after complete leaf phase collapse"
+  },
+  "direct_external_closure_available": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_match_completed": true,
+  "external_theorem_match_table": [
+    {
+      "current_object": "prime-q support reciprocal phase sum_{q in S(P,k)} e(h*kP/q)",
+      "directly_closes": false,
+      "input_shape": "trilinear Kloosterman fractions / unbalanced convolution, including partially fixed moduli",
+      "missing_bridge": "QSupportToCompletedTrilinearKloostermanFractionWithSWFactor",
+      "requires": "completed mn≡a mod q convolution, dyadic M,N,Q ranges, and an equidistributed/Siegel-Walfisz factor",
+      "source": "Wright 2026 arXiv:2604.25177",
+      "source_url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "current_object": "0/1 q-support predicate times e(h*kP/q)",
+      "directly_closes": false,
+      "input_shape": "general bilinear forms with Kloosterman sums modulo arbitrary q",
+      "missing_bridge": "QSupportToBilinearKloostermanFormWithAdmissibleCoefficients",
+      "requires": "bilinear Kloosterman form with admissible coefficient norms",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "current_object": "prime denominator q with object-specific support predicate",
+      "directly_closes": false,
+      "input_shape": "Type-II Kloosterman sums with composite moduli",
+      "missing_bridge": "PrimeQSupportToCompositeModulusTypeIIOrganisation",
+      "requires": "Type-II organisation over composite moduli and non-abelian amplification input",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "current_object": "floor-defined LPF q-support, not a completed smooth/square-free parameter sum",
+      "directly_closes": false,
+      "input_shape": "Kloosterman sums parametrised by square-free and smooth integers",
+      "missing_bridge": "QSupportLPFPredicateToCompletedSmoothSquarefreeParameterFamily",
+      "requires": "completed square-free/smooth parameter family",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "current_object": "q-support phase after parity-class linear sieve reductions",
+      "directly_closes": false,
+      "input_shape": "prime-producing sieve framework with Type-I/II hypotheses",
+      "missing_bridge": "ObjectSpecificQSupportTypeITypeIIInputLedger",
+      "requires": "object-specific Type-I and Type-II information before the sieve conclusion",
+      "source": "Ford--Maynard 2024 arXiv:2407.14368",
+      "source_url": "https://arxiv.org/abs/2407.14368"
+    }
+  ],
+  "finite_audit": {
+    "active_qsupport_row_count": 52697,
+    "completed_mn_congruence_representation_available": false,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_prime": 1009,
+    "max_prime_q_count": 73,
+    "max_support_q_count": 23,
+    "missing_completed_mn_congruence_rows": 76954,
+    "missing_siegel_walfisz_factor_rows": 76954,
+    "missing_type_ii_dyadic_range_rows": 76954,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "all_support_q_in_prime_dyadic_P_over_2_to_P": true,
+        "has_completed_mn_congruence_representation": false,
+        "has_siegel_walfisz_factor_certificate": false,
+        "has_type_ii_dyadic_ranges_certificate": false,
+        "hk_mod_samples": "q=71,kPmodq=18,phase=e(h*kP/q)",
+        "k": 100,
+        "phase_denominator_family": "prime q in (P/2,P)",
+        "phase_numerator_family": "h*k*P modulo q",
+        "prime_q_count": 10,
+        "support_density_denom": 10,
+        "support_density_numer": 1,
+        "support_q_count": 1,
+        "support_q_max": 71,
+        "support_q_min": 71
+      },
+      {
+        "P": 257,
+        "all_support_q_in_prime_dyadic_P_over_2_to_P": true,
+        "has_completed_mn_congruence_representation": false,
+        "has_siegel_walfisz_factor_certificate": false,
+        "has_type_ii_dyadic_ranges_certificate": false,
+        "hk_mod_samples": "q=137,kPmodq=32,phase=e(h*kP/q); q=151,kPmodq=107,phase=e(h*kP/q); q=193,kPmodq=172,phase=e(h*kP/q)",
+        "k": 256,
+        "phase_denominator_family": "prime q in (P/2,P)",
+        "phase_numerator_family": "h*k*P modulo q",
+        "prime_q_count": 23,
+        "support_density_denom": 23,
+        "support_density_numer": 3,
+        "support_q_count": 3,
+        "support_q_max": 193,
+        "support_q_min": 137
+      },
+      {
+        "P": 971,
+        "all_support_q_in_prime_dyadic_P_over_2_to_P": true,
+        "has_completed_mn_congruence_representation": false,
+        "has_siegel_walfisz_factor_certificate": false,
+        "has_type_ii_dyadic_ranges_certificate": false,
+        "hk_mod_samples": "q=491,kPmodq=15,phase=e(h*kP/q); q=503,kPmodq=438,phase=e(h*kP/q); q=523,kPmodq=405,phase=e(h*kP/q); q=541,kPmodq=517,phase=e(h*kP/q); q=557,kPmodq=389,phase=e(h*kP/q); q=601,kPmodq=144,phase=e(h*kP/q)",
+        "k": 936,
+        "phase_denominator_family": "prime q in (P/2,P)",
+        "phase_numerator_family": "h*k*P modulo q",
+        "prime_q_count": 71,
+        "support_density_denom": 71,
+        "support_density_numer": 23,
+        "support_q_count": 23,
+        "support_q_max": 929,
+        "support_q_min": 491
+      },
+      {
+        "P": 1009,
+        "all_support_q_in_prime_dyadic_P_over_2_to_P": true,
+        "has_completed_mn_congruence_representation": false,
+        "has_siegel_walfisz_factor_certificate": false,
+        "has_type_ii_dyadic_ranges_certificate": false,
+        "hk_mod_samples": "q=563,kPmodq=294,phase=e(h*kP/q); q=577,kPmodq=398,phase=e(h*kP/q); q=617,kPmodq=256,phase=e(h*kP/q); q=647,kPmodq=635,phase=e(h*kP/q); q=743,kPmodq=648,phase=e(h*kP/q); q=761,kPmodq=376,phase=e(h*kP/q)",
+        "k": 1008,
+        "phase_denominator_family": "prime q in (P/2,P)",
+        "phase_numerator_family": "h*k*P modulo q",
+        "prime_q_count": 72,
+        "support_density_denom": 72,
+        "support_density_numer": 9,
+        "support_q_count": 9,
+        "support_q_max": 991,
+        "support_q_min": 563
+      }
+    ],
+    "siegel_walfisz_factor_certificate_available": false,
+    "support_is_prime_denominator_dyadic_family": true,
+    "total_prime_q_instances": 3874554,
+    "total_qsupport_instances": 299977,
+    "type_ii_dyadic_ranges_certificate_available": false
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "QSupportToCompletedBilinearOrTrilinearKloostermanConvolutionWithSWFactor",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "q_support_convolution_bridge_closed": false,
+  "q_support_phase_saving_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9ab0ed9b50ac59eb7d4b3d3a7d00408bcc388944285b958bd7213cb1b4f0919c",
+    "docs/monograph/external-theorem-index.md": "15017ffed1b86fdb6b1dc968125848547f73b5fff7ec5295ab31759b89662979",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "a9cb5204de935383058e257a71dc5883b9e284dfc4418d1ecc220d22ac6f3a71",
+    "docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.json": "0803e05dc11dd0dd915fe44b117b1290e029ec95dc5e5d4d8cad3c76153b91b9",
+    "docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.json": "4ef03e80896b965cdb5526ad2c6df53a3754823850e0a07f19dd8adb275c936d",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_qsupport_external_theorem_match_audit.py": "e4f20af72578c127e6cb81f070c1354955b540a50b15cfc7baaf8f91e69f7e77",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "30fa479f8e23166852210ed50a200ab13d5b80c2f6219a6a8465161669eba7e2"
+  },
+  "status": "external_theorem_match_completed_direct_closure_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "QSupportExternalTheoremMatchAndBridgeObligation",
+      "frontier_before": [
+        "PrimeQSupportSetReciprocalPhaseSavingBeyondParity",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "after leaf phase collapse, the only realistic non-cyclic advance is to theorem-match the q-support phase against current Kloosterman/Type-II inputs"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "no faster external theorem-match than the current q-support phase interface"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "not a Kloosterman/Type-II q-support interface"
+    }
+  ]
+}

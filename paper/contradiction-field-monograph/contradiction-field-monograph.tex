@@ -31848,6 +31848,67 @@ leaf-phase-collapse-audit.md.
 \end{quote}
 \end{remark}
 
+\section{External theorem match for the prime-q support phase}
+
+\begin{proposition}[Fastest current non-cyclic target]
+Among the current three coauthored frontier lines, the fastest
+non-cyclic continuation after complete leaf phase collapse is the
+row/column Phi--LPF prime-\(q\) support phase.  Its present object is
+\[
+  \sum_{q\in S(P,k)} e(hkP/q),
+\]
+where \(q\) ranges over primes in \((P/2,P)\) and \(S(P,k)\) is the
+actual residual support produced by the Phi--LPF construction.
+\end{proposition}
+
+\begin{theorem}[Direct external-name closure is not available]
+The current external Kloosterman and Type-II candidates do not, by
+name alone, prove cancellation for
+\[
+  \sum_{q\in S(P,k)} e(hkP/q).
+\]
+Wright's 2026 trilinear Kloosterman-fraction input, the
+Milićević--Qin--Wu bilinear Kloosterman input, Pascadi's composite
+modulus Type-II input, the Shao--Shparlinski--Wijaya smooth or
+square-free parameter input, and the Ford--Maynard Type-I/II sieve
+framework all require an additional same-object bridge.  That bridge
+must convert the present \(0/1\) prime-\(q\) support predicate into a
+completed bilinear or trilinear Kloosterman convolution with the
+required coefficient, dyadic-range, and Siegel--Walfisz-type
+hypotheses, and it must transfer the resulting averaged estimate back
+to every fixed row \((P,k)\).
+\end{theorem}
+\begin{proof}
+The previous section reduced every complete leaf phase to
+\(e(hkP/q)\).  Thus the remaining information is the actual support
+set \(S(P,k)\), not an already completed Kloosterman family.  The
+listed external inputs estimate completed or organised bilinear,
+trilinear, composite-modulus, smooth-parameter, or Type-I/II families.
+No certificate in the present manuscript supplies the missing
+same-object conversion, the Siegel--Walfisz factor, or the uniform
+fixed-\((P,k)\) transfer.  Therefore those theorems remain candidate
+inputs, but none directly closes the Phi--LPF support phase.
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after theorem matching]
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+QSupportToCompletedBilinearOrTrilinearKloostermanConvolutionWithSWFactor\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+external lemma version and the internal self-contained version both
+remain open until the same-object convolution bridge, fixed-row
+transfer, and prime-\(q\) support phase saving are proved.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+external-theorem-match-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

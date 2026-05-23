@@ -2081,6 +2081,97 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 59. Phi-LPF q-support external theorem match 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_external_theorem_match_audit.py
+data/prime-matrix-phi-lpf-qsupport-external-theorem-match-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.md
+```
+
+上一层已经证明完整叶子相位塌缩为：
+
+```text
+e(-hD/q)=e(h*kP/q)
+```
+
+因此本层的真实对象是：
+
+```text
+sum_{q in S(P,k)} e(h*kP/q)
+q prime in (P/2,P)
+S(P,k)=actual Phi-LPF residual q-support
+```
+
+本轮选择合著稿三个命题中最快可推进的行/列 Phi-LPF 线，逐项匹配当前
+q-support reciprocal phase 与最新 Kloosterman/Type-II 外部候选：
+
+```text
+Wright 2026 arXiv:2604.25177:
+  trilinear Kloosterman fractions / partially fixed moduli.
+  requires completed mn=a mod q convolution, dyadic ranges, and SW factor.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  arbitrary-q bilinear Kloosterman forms.
+  requires bilinear Kloosterman form with admissible coefficient norms.
+
+Pascadi 2025 arXiv:2511.08445:
+  Type-II Kloosterman sums with composite moduli.
+  requires composite-modulus Type-II organisation.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  Kloosterman sums parametrised by square-free and smooth integers.
+  requires completed square-free/smooth parameter family.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  prime-producing sieve framework with Type-I/II hypotheses.
+  requires object-specific Type-I and Type-II inputs.
+```
+
+有限接口审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_qsupport_row_count=52697
+total_prime_q_instances=3874554
+total_qsupport_instances=299977
+max_prime_q_count=73
+max_support_q_count=23
+completed_mn_congruence_representation_available=false
+siegel_walfisz_factor_certificate_available=false
+type_ii_dyadic_ranges_certificate_available=false
+```
+
+结论：这些外部定理都是有用候选，但没有一个可按名称直接估计当前
+`0/1` q-support 谓词乘以 `e(h*kP/q)` 的逐行对象。本轮关闭的是
+direct-name-citation 伪出口，并把 completion 门精确化为同对象桥。
+
+新的最新最窄口：
+
+```text
+QSupportToCompletedBilinearOrTrilinearKloostermanConvolutionWithSWFactor
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+external_theorem_match_completed=true
+direct_external_closure_available=false
+q_support_convolution_bridge_closed=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65. Phi-LPF reciprocal graph Kloosterman gateway 审计
 
 新增证书：

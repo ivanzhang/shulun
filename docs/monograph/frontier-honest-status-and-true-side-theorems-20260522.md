@@ -1755,6 +1755,116 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q5：Phi-LPF q-support external theorem match 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_external_theorem_match_audit.py
+data/prime-matrix-phi-lpf-qsupport-external-theorem-match-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.md
+```
+
+本轮继续选择合著稿三命题中最快可推进的行/列 Phi-LPF。完整叶子相位已经
+塌缩为：
+
+```text
+e(-hD/q)=e(h*kP/q)
+```
+
+所以当前真实对象不是内部 LPF 因子树，而是：
+
+```text
+sum_{q in S(P,k)} e(h*kP/q)
+q prime in (P/2,P)
+S(P,k)=actual Phi-LPF residual q-support
+```
+
+### Q5.1 有限接口审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_qsupport_row_count=52697
+total_prime_q_instances=3874554
+total_qsupport_instances=299977
+max_support_q_count=23
+```
+
+但所有行都仍缺同对象外部接口：
+
+```text
+completed_mn_congruence_representation_available=false
+siegel_walfisz_factor_certificate_available=false
+type_ii_dyadic_ranges_certificate_available=false
+```
+
+### Q5.2 外部 theorem-match
+
+最新外部候选被逐项匹配：
+
+```text
+Wright 2026 arXiv:2604.25177:
+  useful for trilinear Kloosterman fractions with partially fixed moduli,
+  but needs a completed convolution and SW factor.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  useful for arbitrary-q bilinear Kloosterman forms,
+  but needs admissible bilinear coefficients.
+
+Pascadi 2025 arXiv:2511.08445:
+  useful for Type-II composite-modulus Kloosterman sums,
+  but not direct for the present prime-q support predicate.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  useful for square-free/smooth parameter families,
+  but needs completion from the floor-defined LPF q-support.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  useful as a prime-producing sieve framework,
+  but only after object-specific Type-I/II estimates are proved.
+```
+
+因此本层推进的诚实结论是：
+
+```text
+external_theorem_match_completed=true
+direct_external_closure_available=false
+```
+
+### Q5.3 最新最窄口
+
+上一层的粗口
+
+```text
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+被压成：
+
+```text
+QSupportToCompletedBilinearOrTrilinearKloostermanConvolutionWithSWFactor
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+q_support_convolution_bridge_closed=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q5：Phi-LPF weight extraction norm closure 审计（2026-05-23）
 
 新增证书：
