@@ -30738,6 +30738,78 @@ source.  No unconditional row/column closure follows from the
 Kloosterman gateway audit.
 \end{proof}
 
+\section{Sawtooth reciprocal tail gateway}
+
+\begin{proposition}[Unweighted reciprocal phase benchmark]
+Consider the unweighted model sum
+\[
+  S(A;N)=\sum_{N<n\le 2N} e(A/n),
+  \qquad A=hkP,\qquad N=P .
+\]
+The classical second derivative estimate gives
+\[
+  S(A;N)\ll \sqrt{A/N}+\sqrt{N^3/A}
+       = \sqrt{hk}+\frac{P}{\sqrt{hk}},
+\]
+up to an absolute constant.  Moreover, if the high-\(q\) reciprocal
+graph is nonempty, then \(q,m>P/2\) forces \(qm>P^2/4\), and hence
+\(k+1>P/4\).  Thus the active rows are \(P\)-scale.  For
+\(h\le H=(\log P)^B\), the unweighted finite sawtooth modes have
+power saving against the trivial \(P\)-scale total, while the Vaaler
+tail contributes \(O(P/H)\).
+\end{proposition}
+
+\begin{remark}[What this does and does not close]
+This removes the unweighted real-reciprocal phase as the main
+obstruction inside
+\[
+  \texttt{SawtoothTailLogSavingForThinReciprocalFibres}.
+\]
+It does not close the Phi--LPF problem.  The actual object has a prime
+\(q\), the constraint \(m=ra\in I_q(P,k)\), \(r={\rm LPF}(m)\ge 7\),
+and an \(r\)-rough quotient \(a\).  None of these weights is present in
+the unweighted second-derivative model.
+\end{remark}
+
+\begin{externalstatement}[Current external match for the sawtooth gate]
+The relevant external tools now separate cleanly.  The classical
+second derivative estimate matches the unweighted real phase \(e(A/u)\).
+DFI, Bettin--Chandee, and Wright remain relevant only after an
+inverse-fraction or dispersion completion.  The 2025/2026
+Shao--Shparlinski--Wijaya results on Kloosterman sums over square-free
+and smooth integers are useful frontier evidence for weighted
+Kloosterman parameters, but they work after finite-field Kloosterman
+completion; they do not directly estimate the real reciprocal phase
+\(e(A/q)\) with prime-\(q\) and Phi--LPF row weights.
+\end{externalstatement}
+
+\begin{theorem}[Sawtooth gate compression]
+The sawtooth tail gate is not closed, but it is now compressed to
+\begin{quote}\scriptsize\ttfamily
+PrimeQLPFShellWeightedReciprocalPhaseSaving\\
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII\\
+AND UniformFiniteHTruncationWithHPolylog.
+\end{quote}
+In particular, the unweighted reciprocal-phase benchmark is closed,
+whereas the weighted Phi--LPF sawtooth phase is still open.
+\end{theorem}
+\begin{proof}[Status and reference]
+The first assertion is the preceding second-derivative calculation and
+the elementary comparability \(k+1>P/4\) on active high-\(q\) rows.
+The Vaaler truncation bookkeeping is deterministic once the total
+thin-fibre weight is \(O(P)\).  The missing part is cancellation for
+the finite Fourier modes against the prime-\(q\), LPF-shell, and rough
+quotient weights.  This is precisely the named weighted reciprocal
+phase saving above.  The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-sawtooth-\\
+reciprocal-tail-gateway-audit.md.
+\end{quote}
+It records the finite unweighted prime-\(q\) diagnostics and the
+external theorem-match table.  No unconditional row/column closure
+follows.
+\end{proof}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

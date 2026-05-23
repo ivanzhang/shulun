@@ -1,0 +1,238 @@
+{
+  "analytic_benchmark": {
+    "active_row_comparability": "if the high-q reciprocal graph is nonempty, then q,m>P/2 forces k+1>P/4, so k is P-scale away from finitely many edge rows",
+    "active_row_polylog_h_consequence": "for active rows and h<=H=(log P)^B, finite unweighted sawtooth modes contribute O(P^(1/2)H^(1/2)) and truncation tail O(P/H)",
+    "classical_second_derivative_bound": "S(A;N) << sqrt(A/N)+sqrt(N^3/A)",
+    "model_sum": "S(A;N)=sum_{N<n<=2N} e(A/n), A=h*k*P, N=P",
+    "phase": "e(h*k*P/u)",
+    "row_scale_substitution": "S << sqrt(h*k)+P/sqrt(h*k)",
+    "unweighted_log_saving_conclusion": "unweighted endpoint benchmark gives arbitrary log saving versus P for sufficiently large P"
+  },
+  "certificate_type": "prime_matrix_phi_lpf_sawtooth_reciprocal_tail_gateway_audit",
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_match_table": [
+    {
+      "matched_to_phi_lpf_weighted_object": false,
+      "matched_to_unweighted_benchmark": true,
+      "remaining": "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+      "source": "classical van der Corput/Kusmin-Landau second derivative estimate",
+      "useful_part": "handles the unweighted real reciprocal phase e(A/u)"
+    },
+    {
+      "matched_to_phi_lpf_weighted_object": false,
+      "matched_to_unweighted_benchmark": false,
+      "remaining": "ReciprocalGraphToKloostermanCompletionIdentity",
+      "source": "Duke-Friedlander-Iwaniec 1997",
+      "useful_part": "bilinear Kloosterman fractions after inverse-modulus completion"
+    },
+    {
+      "matched_to_phi_lpf_weighted_object": false,
+      "matched_to_unweighted_benchmark": false,
+      "remaining": "CompletedKloostermanMeanForPrimeQAndLPFShellWeights",
+      "source": "Bettin-Chandee 2015/2018 and Wright 2026",
+      "useful_part": "trilinear Kloosterman fractions and partially fixed-moduli dispersion"
+    },
+    {
+      "matched_to_phi_lpf_weighted_object": false,
+      "matched_to_unweighted_benchmark": false,
+      "remaining": "finite-field Kloosterman completion plus prime-q/LPF-shell transfer",
+      "source": "Shao-Shparlinski-Wijaya 2025/2026, sums of Kloosterman sums over square-free and smooth integers",
+      "useful_part": "power savings for finite-field Kloosterman sums with square-free or smooth parameters"
+    }
+  ],
+  "finite_unweighted_prime_q_benchmark": {
+    "rows": [
+      {
+        "P": 101,
+        "actual_abs_sum": 2.503802,
+        "actual_over_trivial": 0.25038,
+        "h": 4,
+        "k": 50,
+        "trivial_q_count": 10,
+        "vdc_surrogate": 21.283914
+      },
+      {
+        "P": 101,
+        "actual_abs_sum": 6.877629,
+        "actual_over_trivial": 0.687763,
+        "h": 5,
+        "k": 97,
+        "trivial_q_count": 10,
+        "vdc_surrogate": 26.608889
+      },
+      {
+        "P": 101,
+        "actual_abs_sum": 3.290356,
+        "actual_over_trivial": 0.329036,
+        "h": 8,
+        "k": 100,
+        "trivial_q_count": 10,
+        "vdc_surrogate": 31.85516
+      },
+      {
+        "P": 257,
+        "actual_abs_sum": 5.707668,
+        "actual_over_trivial": 0.248159,
+        "h": 6,
+        "k": 128,
+        "trivial_q_count": 23,
+        "vdc_surrogate": 36.986502
+      },
+      {
+        "P": 257,
+        "actual_abs_sum": 8.317348,
+        "actual_over_trivial": 0.361624,
+        "h": 3,
+        "k": 245,
+        "trivial_q_count": 23,
+        "vdc_surrogate": 36.590471
+      },
+      {
+        "P": 257,
+        "actual_abs_sum": 5.707668,
+        "actual_over_trivial": 0.248159,
+        "h": 3,
+        "k": 256,
+        "trivial_q_count": 23,
+        "vdc_surrogate": 36.986502
+      },
+      {
+        "P": 509,
+        "actual_abs_sum": 11.601397,
+        "actual_over_trivial": 0.276224,
+        "h": 6,
+        "k": 254,
+        "trivial_q_count": 42,
+        "vdc_surrogate": 52.076873
+      },
+      {
+        "P": 509,
+        "actual_abs_sum": 11.800893,
+        "actual_over_trivial": 0.280974,
+        "h": 5,
+        "k": 485,
+        "trivial_q_count": 42,
+        "vdc_surrogate": 59.580513
+      },
+      {
+        "P": 509,
+        "actual_abs_sum": 11.601397,
+        "actual_over_trivial": 0.276224,
+        "h": 3,
+        "k": 508,
+        "trivial_q_count": 42,
+        "vdc_surrogate": 52.076873
+      },
+      {
+        "P": 1009,
+        "actual_abs_sum": 8.543936,
+        "actual_over_trivial": 0.118666,
+        "h": 7,
+        "k": 504,
+        "trivial_q_count": 72,
+        "vdc_surrogate": 76.384368
+      },
+      {
+        "P": 1009,
+        "actual_abs_sum": 10.125208,
+        "actual_over_trivial": 0.140628,
+        "h": 4,
+        "k": 961,
+        "trivial_q_count": 72,
+        "vdc_surrogate": 78.274194
+      },
+      {
+        "P": 1009,
+        "actual_abs_sum": 14.440694,
+        "actual_over_trivial": 0.200565,
+        "h": 6,
+        "k": 1008,
+        "trivial_q_count": 72,
+        "vdc_surrogate": 90.743228
+      }
+    ],
+    "sample_evidence_not_global_proof": true,
+    "weights_omitted": "LPF shell and rough cofactor weights are intentionally omitted in this diagnostic benchmark"
+  },
+  "frontier_verified_date": "2026-05-23",
+  "gates": [
+    {
+      "closed": true,
+      "gate": "DeterministicSawtoothEndpointIdentity",
+      "meaning": "floor endpoint 产生 psi(kP/u) 与有限 Fourier 相位 e(h*kP/u)。",
+      "proved": true,
+      "remaining": "identity closed; cancellation not included"
+    },
+    {
+      "closed": true,
+      "gate": "VaalerTruncationTailWithThinTotalWeight",
+      "meaning": "若总权重为 O(P)，取 H=(log P)^B 时，截断尾项为 O(P/(log P)^B)。",
+      "proved": true,
+      "remaining": "tail bookkeeping closed after choosing B"
+    },
+    {
+      "closed": true,
+      "gate": "ActiveHighQRowsHavePScaleK",
+      "meaning": "若 high-q reciprocal window 非空，则 q,m>P/2 迫使 qm>P^2/4，从而 k+1>P/4。",
+      "proved": true,
+      "remaining": "active sawtooth rows are P-scale"
+    },
+    {
+      "closed": true,
+      "gate": "UnweightedReciprocalPhaseVanDerCorputBenchmark",
+      "meaning": "对 sum_{n≈P} e(h*kP/n)，二阶导数估计给 O(sqrt(hk)+P/sqrt(hk))；active rows 与 h≤log^B P 时给幂节省。",
+      "proved": true,
+      "remaining": "only an unweighted interval benchmark"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+      "meaning": "真实对象是 prime q 与 LPF-shell/rough cofactor 权重，不是无权连续区间。",
+      "proved": false,
+      "remaining": "need weighted reciprocal phase saving uniformly in P,k,h"
+    },
+    {
+      "closed": false,
+      "gate": "SawtoothTailLogSavingForThinReciprocalFibres",
+      "meaning": "无权 benchmark 已闭合，但带权 finite-h 相位和仍未闭合。",
+      "proved": false,
+      "remaining": "PrimeQLPFShellWeightedReciprocalPhaseSaving"
+    }
+  ],
+  "internal_self_contained_closed": false,
+  "new_narrowest_sawtooth_mouth": [
+    "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+    "AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII",
+    "AND UniformFiniteHTruncationWithHPolylog"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prior_metrics": {
+    "finite_max_prime": 1009,
+    "finite_row_count": 76789,
+    "finite_total_R30": 299977,
+    "gateway_status": "reciprocal_graph_kloosterman_gateway_identified_not_closed",
+    "latest_narrowest_mouth": [
+      "ReciprocalGraphToKloostermanCompletionIdentity",
+      "AND CompletedKloostermanMeanForPrimeQAndLPFShellWeights",
+      "AND SawtoothTailLogSavingForThinReciprocalFibres"
+    ],
+    "lpf_tail_status": "lpf_tail_reduced_to_same_row_reciprocal_graph_typeii_obligation",
+    "one_point_qr_fiber": true,
+    "thin_q_fiber": true,
+    "thin_reverse_fiber": true
+  },
+  "row_column_unconditional_closed": false,
+  "selected_fastest_gate": "SawtoothTailLogSavingForThinReciprocalFibres",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "5ac3ecb5a428d8c6430f7b2b17075dadc192d0320a53bb6a1f4d57d50d0cb7a1",
+    "docs/monograph/external-theorem-index.md": "6c9f58d08950d4d7f991f35e3a79859d95a138a5fd2e0ebb8dff93c8c465dc85",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f92d8191fe87141c0e6528ea51408620e979cffd8174c87ebbb4ade7b6f9edc2",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.json": "1cdbe972f4c6fd4a505cb45ea926f4afbd332290d20750a8d03623ca42163bf2",
+    "experiments/prime_matrix_phi_lpf_sawtooth_reciprocal_tail_gateway_audit.py": "1118b24e8df5c7216f08cb25eebfaee26ec2160c04438bae45cf90659587cccc",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "4e7d5ef03f9264a4ef36288b0c7c5bafed912a9ce304e91a087452fc2dc1be66"
+  },
+  "status": "sawtooth_reciprocal_tail_split_unweighted_closed_weighted_open",
+  "unweighted_sawtooth_benchmark_closed": true,
+  "weighted_sawtooth_phi_lpf_closed": false
+}

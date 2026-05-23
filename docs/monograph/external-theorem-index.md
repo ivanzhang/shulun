@@ -2740,6 +2740,88 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sawtooth_reciprocal_tail_gateway_audit.py
+data/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-audit.json
+docs/monograph/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-audit.md
+```
+
+本层在三个最新原子门中选择最快可推进的
+
+```text
+SawtoothTailLogSavingForThinReciprocalFibres
+```
+
+并把它拆成无权基准与真实带权对象两层。endpoint floor/sawtooth 给出
+倒数相位
+
+```text
+e(h*k*P/u)
+```
+
+对无权模型
+
+```text
+S(A;N)=sum_{N<n<=2N} e(A/n), A=h*k*P, N=P
+```
+
+经典 van der Corput/Kusmin--Landau 二阶导数估计给
+
+```text
+S(A;N) << sqrt(A/N)+sqrt(N^3/A)
+       = sqrt(h*k)+P/sqrt(h*k).
+```
+
+当 high-q reciprocal graph 非空时，`q,m>P/2` 迫使 `k+1>P/4`，所以活动行
+处在 `P` 尺度。取 `H=(log P)^B` 后，无权 finite sawtooth modes 贡献
+`O(P^(1/2)H^(1/2))`，截断尾项为 `O(P/H)`，因此无权 endpoint benchmark
+已有任意对数节省余量。
+
+外部定理匹配：
+
+```text
+classical second-derivative estimate:
+  matches unweighted real reciprocal phase;
+  does not handle prime-q/LPF-shell weights.
+
+Duke--Friedlander--Iwaniec 1997:
+  bilinear Kloosterman fractions after inverse-modulus completion;
+  still needs ReciprocalGraphToKloostermanCompletionIdentity.
+
+Bettin--Chandee 2015/2018 and Wright 2026:
+  trilinear Kloosterman fractions and partially fixed-moduli dispersion;
+  still need CompletedKloostermanMeanForPrimeQAndLPFShellWeights.
+
+Shao--Shparlinski--Wijaya 2025/2026:
+  square-free/smooth Kloosterman sum power savings;
+  useful frontier input after finite-field completion, but not a direct theorem
+  for the real phase e(A/q) with prime q and LPF-shell row weights.
+```
+
+最新 sawtooth 最窄口：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+AND UniformFiniteHTruncationWithHPolylog
+```
+
+状态边界：
+
+```text
+unweighted_sawtooth_benchmark_closed=true
+weighted_sawtooth_phi_lpf_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

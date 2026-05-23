@@ -3700,3 +3700,94 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q3：Phi-LPF sawtooth reciprocal tail gateway 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sawtooth_reciprocal_tail_gateway_audit.py
+data/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-audit.json
+docs/monograph/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-audit.md
+```
+
+本轮在上一层三个原子门中先攻最快可推进的 sawtooth 门：
+
+```text
+SawtoothTailLogSavingForThinReciprocalFibres
+```
+
+### Q3.1 无权倒数相位已不是主硬点
+
+endpoint floor/sawtooth 给出的基本相位是
+
+```text
+e(h*k*P/u).
+```
+
+对无权模型
+
+```text
+S(A;N)=sum_{N<n<=2N} e(A/n), A=h*k*P, N=P
+```
+
+经典二阶导数估计给
+
+```text
+S(A;N) << sqrt(A/N)+sqrt(N^3/A)
+       = sqrt(h*k)+P/sqrt(h*k).
+```
+
+若 high-q reciprocal graph 非空，则 `q,m>P/2` 迫使 `k+1>P/4`，活动行处于
+`P` 尺度。因此在 `h<=H=(log P)^B` 的 Fourier 模式下，无权 finite modes
+给 `O(P^(1/2)H^(1/2))`，Vaaler 截断尾项给 `O(P/H)`。这已经能提供无权
+endpoint benchmark 的任意对数节省。
+
+### Q3.2 真实剩余权重仍未闭合
+
+Phi-LPF 对象不是无权连续区间。真实相位和带有：
+
+```text
+q prime
+m=r*a in I_q(P,k)
+r=LPF(m)>=7
+a is r-rough
+```
+
+现有外部输入的匹配状态：
+
+```text
+DFI 1997:
+  useful for bilinear inverse-fraction Kloosterman sums, but needs completion.
+
+Bettin--Chandee and Wright 2026:
+  useful for trilinear/partially fixed-moduli dispersion, but still not a fixed-row theorem.
+
+Shao--Shparlinski--Wijaya 2025/2026:
+  useful for square-free/smooth Kloosterman sums over finite fields,
+  but not directly for the real reciprocal phase e(A/q) with prime-q and LPF-shell row weights.
+```
+
+### Q3.3 最新最窄口
+
+本层把 sawtooth 门从一个粗标签压成：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+AND UniformFiniteHTruncationWithHPolylog
+```
+
+状态边界：
+
+```text
+unweighted_sawtooth_benchmark_closed=true
+weighted_sawtooth_phi_lpf_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
