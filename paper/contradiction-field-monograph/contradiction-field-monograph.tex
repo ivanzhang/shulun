@@ -32595,6 +32595,83 @@ complementary-pair-radial-tensor-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Coupling radial pair kernels to the actual reciprocal phase}
+
+\begin{theorem}[Radial pair coupled floor-reciprocal normal form]
+Let \(W=W_P\), and let \(m=r\beta\) be a residual rough cofactor in the
+reverse graph.  Define
+\[
+  L_m=\max\{P/2+1,\lfloor kP/m\rfloor+1\},
+  \qquad
+  U_m=\min\{P-1,m,\lfloor((k+1)P-1)/m\rfloor\}.
+\]
+Let \(Q_{P,k}(m)\) be the least odd integer in \([L_m,U_m]\), if it
+exists.  Then the actual prime-\(q\) reciprocal phase atoms are exactly
+the terms
+\[
+  {\bf 1}_{(Q_{P,k}(m),W)=1}\,
+  e\!\left(\frac{hkP}{Q_{P,k}(m)}\right)
+\]
+over residual \(m\) for which \(Q_{P,k}(m)\) exists.  Moreover
+\[
+  {\bf 1}_{(Q,W)=1}
+  =
+  \frac{\varphi(W)}{W}
+  \sum_{\{d,W/d\}}
+  \left[
+    \mu(d)\frac{c_d(Q)}{\varphi(d)}
+    +
+    \mu(W/d)\frac{c_{W/d}(Q)}{\varphi(W/d)}
+  \right],
+\]
+where the sum is over unordered complementary conductor pairs.
+\end{theorem}
+\begin{proof}
+The reverse selector window has length at most two in the previously
+proved fixed-cofactor normal form.  Hence it has at most one odd
+candidate.  Since \(Q_{P,k}(m)<P\), the condition that this odd
+candidate is prime is equivalent to its avoiding every prime
+\(\ell\le\sqrt{P-1}\), namely \((Q_{P,k}(m),W_P)=1\).  Therefore each
+selected atom carries exactly the displayed denominator
+\(Q_{P,k}(m)\) and phase \(e(hkP/Q_{P,k}(m))\).
+
+The Ramanujan expansion of the dynamic unit class gives
+\[
+  {\bf 1}_{(Q,W)=1}
+  =
+  \frac{\varphi(W)}{W}\sum_{d\mid W}\mu(d)\frac{c_d(Q)}{\varphi(d)}.
+\]
+Grouping the divisor \(d\) with its complementary divisor \(W/d\)
+gives the unordered-pair formula.  This is only a regrouping of the
+exact selector, so it changes neither the selected atoms nor their
+reciprocal phases.
+\end{proof}
+
+\begin{remark}[The completed trace bridge is still missing]
+The coupled normal form closes the deterministic question of how the
+radial pair kernels meet the actual phase.  It does not provide
+cancellation.  The denominator remains the floor-defined
+\(Q_{P,k}(m)\), and the weights are radial divisor-lattice kernels.
+Thus the present object is still not a completed Kloosterman,
+trace-function, or Type-II family.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+FloorRadialReciprocalPhaseToTraceFamilyBridge\\
+AND UniformCancellationAcrossCoupledFloorRadialPairKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+radial-pair-coupled-phase-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

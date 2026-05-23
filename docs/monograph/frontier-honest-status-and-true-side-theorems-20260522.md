@@ -2684,6 +2684,94 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13C：Phi-LPF q-support radial pair coupled phase 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_radial_pair_coupled_phase_audit.py
+data/prime-matrix-phi-lpf-qsupport-radial-pair-coupled-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-radial-pair-coupled-phase-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-radial-pair-coupled-phase-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已把互补配对核压成 radial two-cylinder
+tensor。本层把它与 actual q-support reciprocal phase 精确耦合。固定
+`m=r*beta` 后，令 `Q_{P,k}(m)` 为 reverse window 中唯一奇候选，则：
+
+```text
+actual atom = 1_{gcd(Q_{P,k}(m),W_P)=1} * e(h*k*P/Q_{P,k}(m)).
+```
+
+并且：
+
+```text
+1_{gcd(Q,W_P)=1}
+= phi(W_P)/W_P * sum_{unordered {d,W_P/d}} K_d(Q).
+```
+
+### Q13C.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_actual_phase_atoms=299977
+total_coupled_selected_phase_atoms=299977
+actual_phase_atoms_equal_coupled_phase_atoms=true
+missing_actual_phase_atoms_total=0
+extra_coupled_phase_atoms_total=0
+windows_with_odd_candidate_total=951378
+local_coupled_identity_checked_total=951378
+local_coupled_identity_mismatch_total=0
+paired_kernel_identity_sample_checked_total=27
+paired_kernel_identity_sample_mismatch_total=0
+max_complementary_pair_kernels_per_candidate=1024
+max_full_ramanujan_divisor_terms_per_candidate=2048
+max_full_additive_modes_per_candidate=200560490130
+phase_denominator_is_floor_defined_Q_odd=true
+direct_trace_or_kloosterman_family_available=false
+```
+
+代表性现象：在最大样本层，单个候选需要最多 `1024` 个互补 pair kernels
+或 `2048` 个 Ramanujan divisor terms；耦合后的 denominator 仍是 floor-defined
+`Q_{P,k}(m)`，不是外部 Kloosterman/trace 定理可直接读取的变量。
+
+### Q13C.2 诚实边界
+
+本层真推进是关闭“radial pair kernel 是否已经耦合到 actual reciprocal
+phase”的确定性问题。剩余不是耦合本身，而是把 floor-radial real reciprocal
+phase 完成到同对象 trace/Kloosterman/Type-II family，并证明相消。
+
+最新最窄口：
+
+```text
+FloorRadialReciprocalPhaseToTraceFamilyBridge
+AND UniformCancellationAcrossCoupledFloorRadialPairKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+radial_pair_coupled_phase_normal_form_closed=true
+complementary_pair_grouped_ramanujan_selector_identity_closed=true
+floor_denominator_phase_ledger_closed=true
+direct_trace_family_from_coupled_floor_radial_phase_rejected=true
+floor_radial_reciprocal_phase_to_trace_family_bridge_closed=false
+uniform_cancellation_across_coupled_floor_radial_pair_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
