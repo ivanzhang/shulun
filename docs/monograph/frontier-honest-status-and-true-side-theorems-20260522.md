@@ -2072,6 +2072,102 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q8：Phi-LPF q-support floor prime LPF selector 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_floor_prime_lpf_selector_audit.py
+data/prime-matrix-phi-lpf-qsupport-floor-prime-lpf-selector-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-prime-lpf-selector-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-prime-lpf-selector-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层 fixed-cofactor reverse selector 给出窗口：
+
+```text
+L=max(P/2+1, floor(kP/m)+1)
+U=min(P-1, m, floor(((k+1)P-1)/m)).
+```
+
+因为窗口至多两个连续整数，唯一可能奇候选为：
+
+```text
+Q_odd=L if L is odd, else L+1.
+```
+
+因此 prime-q selector 精确化为：
+
+```text
+selected iff Q_odd<=U and LPF(Q_odd)=Q_odd.
+```
+
+### Q8.1 有限审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_actual_support_terms=299977
+total_lpf_prime_selector_terms=299977
+actual_equals_lpf_prime_selector_terms=true
+missing_actual_terms_total=0
+extra_lpf_prime_selector_terms_total=0
+max_reverse_window_size=2
+max_odd_count_per_reverse_window=1
+max_prime_count_per_reverse_window=1
+windows_with_odd_candidate_total=951378
+odd_prime_selected_total=299977
+bad_lpf_prime_test_total=0
+bad_prime_multiplicity_total=0
+```
+
+选择器分布：
+
+```text
+empty_window=7273864
+even_singleton_rejected=835050
+odd_composite_lpf_rejected=651401
+odd_prime_selected=299977
+```
+
+### Q8.2 诚实边界
+
+本层真推进是把 floor-defined prime selector 写成唯一奇候选加 LPF 素性测试；
+它关闭的是确定性选择器原子化，不是 completed Kloosterman bridge。外部
+Wright/MQW/Pascadi/Ford--Maynard 类型定理仍缺 completed convolution、
+admissible coefficients、Type-II organisation 或 object-specific Type-I/II
+hypotheses。
+
+最新最窄口：
+
+```text
+OddCandidateLPFPrimeSelectorToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+floor_prime_selector_atomized=true
+unique_odd_candidate_formula_closed=true
+prime_lpf_test_atomized=true
+actual_equals_lpf_prime_selector_graph=true
+floor_prime_selector_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q5：Phi-LPF weight extraction norm closure 审计（2026-05-23）
 
 新增证书：

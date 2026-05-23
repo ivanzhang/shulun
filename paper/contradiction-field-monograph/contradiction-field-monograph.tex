@@ -32059,6 +32059,83 @@ reverse-prime-selector-completion-bridge-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Floor prime selector as a unique odd LPF test}
+
+\begin{theorem}[Reverse floor-prime selector is an LPF primality atom]
+Fix \(P,k\) and a rough cofactor \(m=r\beta\) from the preceding
+reverse-selector normal form.  Put
+\[
+  L=\max(P/2+1,\lfloor kP/m\rfloor+1),\qquad
+  U=\min(P-1,m,\lfloor((k+1)P-1)/m\rfloor).
+\]
+Define
+\[
+  Q_{\rm odd}(P,k,m)=
+  \begin{cases}
+    L, & L\ {\rm odd},\\
+    L+1, & L\ {\rm even},
+  \end{cases}
+\]
+and regard it as undefined if \(Q_{\rm odd}>U\).  Then the reverse
+prime selector chooses a value if and only if \(Q_{\rm odd}\) is
+defined and
+\[
+  \operatorname{LPF}(Q_{\rm odd})=Q_{\rm odd}.
+\]
+In that case the chosen prime is exactly \(Q_{\rm odd}\).
+\end{theorem}
+\begin{proof}
+The preceding reverse-window theorem gives \(U-L<2\) after clipping,
+so the window contains at most two consecutive integers.  Hence it
+contains at most one odd integer, and that integer is precisely the
+displayed \(Q_{\rm odd}\) when \(Q_{\rm odd}\le U\).  Every admissible
+prime \(q\) lies above \(P/2>2\), hence is odd.  Therefore any selected
+prime must be this unique odd integer.  Finally, for an integer
+\(n>1\), \(n\) is prime exactly when its least prime factor is \(n\)
+itself.  Applying this with \(n=Q_{\rm odd}\) proves the equivalence.
+\end{proof}
+
+\begin{corollary}[Actual support equals the LPF-prime selector graph]
+The prime-\(q\) support after fixing \(m=r\beta\) is obtained by the
+single pointwise rule
+\[
+  (P,k,m)\mapsto Q_{\rm odd}(P,k,m)
+\]
+followed by the primality test
+\[
+  \operatorname{LPF}(Q_{\rm odd})=Q_{\rm odd}.
+\]
+Thus the remaining phase is
+\[
+  e(hkP/Q_{\rm odd}(P,k,r\beta))
+\]
+on the selected atoms and is absent otherwise.
+\end{corollary}
+
+\begin{remark}[LPF atomization is not completion]
+This closes the deterministic floor-prime selector ambiguity: the
+selector is a unique odd candidate plus an LPF primality test.  It does
+not turn the pointwise selector into a completed Kloosterman family.
+A completion would still have to preserve the same object while
+handling the rough \(\beta\)-weights and the fixed-row \(P,k\)
+uniformity.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+OddCandidateLPFPrimeSelectorToCompletedKloostermanConvolutionBridge\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+floor-prime-lpf-selector-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
