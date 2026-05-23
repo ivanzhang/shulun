@@ -2168,6 +2168,93 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 63. Phi-LPF q-support dynamic sqrt-sieve selector 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_dynamic_sqrt_sieve_selector_audit.py
+data/prime-matrix-phi-lpf-qsupport-dynamic-sqrt-sieve-selector-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-sqrt-sieve-selector-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-sqrt-sieve-selector-audit.md
+```
+
+上一层把 prime-q selector 写成：
+
+```text
+selected iff Q_odd<=U and LPF(Q_odd)=Q_odd.
+```
+
+本层继续原子化。因为 `Q_odd<P`，素性等价于动态 sqrt-sieve：
+
+```text
+selected iff Q_odd exists and Q_odd mod ell != 0
+for every prime ell<=sqrt(P-1).
+```
+
+每个被拒绝的奇合数候选由其最小小素数因子唯一分桶。这把 LPF 素性门
+改写成有限 CRT 排除族，但动态上限 `sqrt(P)` 是目标素性选择的一部分，
+不是固定 finite wheel。
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+total_actual_support_terms=299977
+total_sqrt_sieve_selector_terms=299977
+actual_equals_sqrt_sieve_selector_terms=true
+missing_actual_terms_total=0
+extra_sqrt_sieve_selector_terms_total=0
+max_reverse_window_size=2
+max_odd_count_per_reverse_window=1
+max_dynamic_sqrt_sieve_prime_count=11
+windows_with_odd_candidate_total=951378
+sqrt_sieve_survivor_selected_total=299977
+bad_sieve_survivor_not_prime_total=0
+```
+
+拒绝分桶：
+
+```text
+ell=3:316468, ell=5:126802, ell=7:73656, ell=11:41695,
+ell=13:35245, ell=17:26918, ell=19:19798, ell=23:10019,
+ell=29:759, ell=31:41
+```
+
+外部前沿影响：Wright 2026、Milićević--Qin--Wu 2025、Pascadi 2025 仍需要
+completed/unbalanced convolution、bilinear coefficient families 或 Type-II
+Kloosterman organisation；它们不直接估计这个动态小素数排除 selector。
+Dong--Robles--Zeindler 2026 `arXiv:2601.00292` 已撤回，不能作为外部输入。
+
+新的最新最窄口：
+
+```text
+DynamicSqrtSieveSelectorToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dynamic_sqrt_sieve_selector_atomized=true
+prime_lpf_selector_equals_dynamic_sqrt_sieve=true
+odd_composite_rejection_partition_closed=true
+actual_equals_dynamic_sqrt_sieve_selector_graph=true
+fixed_finite_wheel_suffices_for_prime_selector=false
+dynamic_sqrt_sieve_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF q-support external theorem match 审计
 
 新增证书：

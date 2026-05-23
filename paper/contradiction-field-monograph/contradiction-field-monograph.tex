@@ -32136,6 +32136,70 @@ floor-prime-lpf-selector-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dynamic sqrt-sieve form of the floor prime selector}
+
+\begin{theorem}[LPF-prime selector equals a dynamic sqrt-sieve]
+In the notation of the preceding theorem, suppose \(Q_{\rm odd}\) is
+defined.  Since \(P/2<Q_{\rm odd}<P\), the condition
+\[
+  \operatorname{LPF}(Q_{\rm odd})=Q_{\rm odd}
+\]
+is equivalent to
+\[
+  Q_{\rm odd}\not\equiv0\pmod{\ell}
+  \qquad\hbox{for every prime }\ell\le\sqrt{P-1}.
+\]
+Consequently the fixed-cofactor prime selector is exactly the dynamic
+\(\sqrt P\)-sieve selector on the single candidate \(Q_{\rm odd}\).
+\end{theorem}
+\begin{proof}
+If \(Q_{\rm odd}\) is composite, it has a prime divisor
+\(\ell\le\sqrt{Q_{\rm odd}}\).  Since \(Q_{\rm odd}<P\), this divisor
+satisfies \(\ell\le\sqrt{P-1}\), and the displayed congruence fails.
+Conversely, if a prime \(\ell\le\sqrt{P-1}\) divides \(Q_{\rm odd}\),
+then \(Q_{\rm odd}\) is composite because \(Q_{\rm odd}>P/2>2\).
+Thus surviving all these residue exclusions is equivalent to
+primality, hence to the LPF identity above.
+\end{proof}
+
+\begin{corollary}[Odd composite candidates have a unique sieve bucket]
+Every rejected odd candidate \(Q_{\rm odd}\) is assigned to the unique
+least prime \(\ell\le\sqrt{P-1}\) dividing \(Q_{\rm odd}\).  Hence the
+selector splits into disjoint outcomes:
+\[
+  \hbox{empty window},\qquad
+  \hbox{even singleton},\qquad
+  \ell\hbox{-rejection},\qquad
+  \sqrt P\hbox{-sieve survivor}.
+\]
+\end{corollary}
+
+\begin{remark}[Dynamic sieve is exact, not a fixed-wheel proof]
+This is another deterministic compression of the same object.  It
+shows that the remaining primality selector is a finite CRT exclusion
+family, but the family grows with \(\sqrt P\).  A fixed finite wheel
+leaves rough composite survivors and therefore cannot replace this
+dynamic selector without reintroducing the original prime-selection
+problem.  The Kloosterman frontier still requires a same-object bridge
+from this dynamic sieve selector to a completed convolution, together
+with the rough-\(\beta\) and fixed-row uniformity inputs.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+DynamicSqrtSieveSelectorToCompletedKloostermanConvolutionBridge\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+dynamic-sqrt-sieve-selector-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
