@@ -2979,6 +2979,110 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q15：Phi-LPF complete rough factor tree closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_complete_rough_factor_tree_closure_audit.py
+data/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.md
+```
+
+上一层已经把 residual rough quotient 拆成 semiprime-alpha 与 second-LPF
+两个相位单元。本层继续递归到底：每条 R30 residual cofactor 唯一写成
+
+```text
+m=p1*p2*...*pt
+7<=p1<=p2<=...<=pt.
+```
+
+对任一真前缀 `G_j=p1*...*pj`，剩余商 `A_j=m/G_j` 是唯一候选：
+
+```text
+A_j=floor(kP/(q*G_j))+1
+P/(q*G_j)<2/G_j<=2/7<1.
+```
+
+本层关闭：
+
+```text
+CompleteRoughFactorTreeNormalForm
+EveryPrefixRoughQuotientSingleton
+DeterministicLPFDescentExhausted
+```
+
+### Q15.1 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+predicted_complete_leaf_total=299977
+max_factor_depth_observed=3
+depth_totals={2:274812,3:25165}
+max_prefix_interval_points=1
+prefix_interval_unique_for_every_prefix=true
+predicted_complete_leaves_equal_actual_edges=true
+complete_factorization_valid=true
+all_prefix_formulas_verified=true
+all_predicted_displacements_in_1_to_Pminus1=true
+bad_prefix_formula_total=0
+bad_prefix_interval_total=0
+bad_displacement_total=0
+bad_factorization_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自唯一分解、最小素因子递降和
+`P/(q*G_j)<1`。
+
+### Q15.2 外部前沿匹配
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550,
+Pascadi 2025 arXiv:2511.08445,
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  still candidate inputs only after a valid completion/Kloosterman bridge
+  from the complete rough-factor leaves.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  useful prime-producing sieve guidance, but still requires object-specific
+  Type-I/II estimates for these exact leaves.
+```
+
+### Q15.3 最新最窄口
+
+从上一层：
+
+```text
+PrimeQIteratedRoughQuotientTwoCellPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQCompleteRoughFactorTreeLeafPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+complete_rough_factor_tree_closed=true
+deterministic_lpf_descent_exhausted=true
+complete_leaf_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

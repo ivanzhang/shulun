@@ -31693,6 +31693,91 @@ quotient-second-lpf-split-closure-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Complete rough factor tree closure}
+
+\begin{proposition}[Next deterministic complete-tree gate]
+After the second-LPF split, the next deterministic subgate is
+\[
+  \texttt{CompleteRoughFactorTreeAndPrefixSingletons}.
+\]
+It exhausts the purely factor-theoretic LPF descent.  It is still not a
+phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Complete rough factor tree normal form]
+Let \((q,m)\) be a residual edge in the \(30\)-wheel survivor cell.  Then
+\[
+  m=p_1p_2\cdots p_t,\qquad
+  7\le p_1\le p_2\le\cdots\le p_t,\qquad t\ge2,
+\]
+is its unique complete rough-prime factor chain.  For every proper
+prefix
+\[
+  G_j=p_1p_2\cdots p_j,\qquad 1\le j<t,
+\]
+the suffix \(A_j=m/G_j\) is the unique possible integer and is given by
+\[
+  A_j=\left\lfloor \frac{kP}{qG_j}\right\rfloor+1.
+\]
+\end{theorem}
+\begin{proof}
+The existence and uniqueness of the displayed nondecreasing prime
+factor chain is the ordinary unique factorization theorem, together
+with the residual condition \({\rm LPF}(m)\ge7\) and the fact that
+\(m\) is composite.
+
+Fix a proper prefix \(G_j\).  Since the edge condition is
+\[
+  kP<qm<(k+1)P,
+\]
+the suffix \(A_j=m/G_j\) must lie in
+\[
+  \frac{kP}{qG_j}<A_j<\frac{(k+1)P}{qG_j}.
+\]
+This real interval has length
+\[
+  \frac{P}{qG_j}< \frac{2}{G_j}\le \frac{2}{7}<1,
+\]
+because \(q>P/2\) and \(G_j\ge p_1\ge7\).  Hence it contains at most
+one integer.  The least integer strictly larger than \(kP/(qG_j)\) is
+\[
+  \left\lfloor \frac{kP}{qG_j}\right\rfloor+1,
+\]
+which proves the formula.
+\end{proof}
+
+\begin{corollary}[Deterministic LPF descent is exhausted]
+Further splitting by least prime factors only reveals deeper prefixes
+of the same complete factor chain.  No additional deterministic
+quotient branch remains after the complete rough factor tree has been
+formed.
+\end{corollary}
+
+\begin{remark}[Updated true remaining mouth after the complete tree]
+The residual object is now a set of complete rough-prime leaves with
+matched displacement
+\[
+  D=qm-kP
+\]
+and phase \(e(-hD/q)\).  The current row/column sawtooth branch is
+reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQCompleteRoughFactorTreeLeafPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is signed cancellation or separation over the complete
+rough-factor leaves, or an exact completion to an external
+Kloosterman/Vaughan Type-II estimate without losing pointwise control
+in \(P,k\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-complete-\\
+rough-factor-tree-closure-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

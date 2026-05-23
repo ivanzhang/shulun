@@ -3923,6 +3923,103 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 78. Phi-LPF complete rough factor tree closure 审计
+
+本层继续选择行/列 Phi-LPF 的最快可闭合子门：
+
+```text
+experiments/prime_matrix_phi_lpf_complete_rough_factor_tree_closure_audit.py
+data/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.md
+```
+
+上一层把 residual object 压成 semiprime-alpha 与 second-LPF 两个相位单元。
+本层不再停在二级商，而是把每条 R30 residual cofactor 完整写成：
+
+```text
+m=p1*p2*...*pt
+7<=p1<=p2<=...<=pt
+```
+
+对每个真前缀 `G_j=p1*...*pj`，剩余商 `A_j=m/G_j` 满足唯一公式：
+
+```text
+A_j=floor(kP/(q*G_j))+1
+P/(q*G_j)<2/G_j<=2/7<1
+```
+
+因此本层关闭：
+
+```text
+CompleteRoughFactorTreeNormalForm
+EveryPrefixRoughQuotientSingleton
+DeterministicLPFDescentExhausted
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+predicted_complete_leaf_total=299977
+max_factor_depth_observed=3
+depth_totals={2:274812,3:25165}
+max_prefix_interval_points=1
+prefix_interval_unique_for_every_prefix=true
+predicted_complete_leaves_equal_actual_edges=true
+complete_factorization_valid=true
+all_prefix_formulas_verified=true
+all_predicted_displacements_in_1_to_Pminus1=true
+bad_prefix_formula_total=0
+bad_prefix_interval_total=0
+bad_displacement_total=0
+bad_factorization_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  candidate target only after completing complete rough-factor leaves to
+  a genuine bilinear Kloosterman family.
+
+Pascadi 2025 arXiv:2511.08445:
+  possible Type-II technology only after reorganising the leaf tree into
+  composite-modulus Type-II sums.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  relevant only after replacing the pointwise floor-suffix graph by a
+  completed square-free/smooth parameter family.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  prime-producing sieve guidance, but it requires object-specific
+  Type-I/II inputs for these exact leaves.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQCompleteRoughFactorTreeLeafPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+complete_rough_factor_tree_closed=true
+deterministic_lpf_descent_exhausted=true
+complete_leaf_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

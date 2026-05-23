@@ -1,0 +1,338 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_complete_rough_factor_tree_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "CompleteRoughFactorTreeNormalForm",
+      "meaning": "Every residual cofactor is written as one nondecreasing rough-prime leaf chain.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "EveryPrefixRoughQuotientSingleton",
+      "meaning": "For every fixed prime-q and proper factor prefix, the remaining suffix interval has length <1.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "DeterministicLPFDescentExhausted",
+      "meaning": "Further LPF splitting only reveals later leaves of the same complete factor tree.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQCompleteRoughFactorTreeLeafPhaseSaving",
+      "meaning": "Prove signed cancellation/separation over the complete rough-factor leaves.",
+      "proved": false,
+      "remaining": "complete leaf phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the leaf tree to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "complete_factor_tree_theorem": {
+    "interval_reason": "P/(q*G_j)<2/G_j<=2/7<1, and the bound only improves with depth.",
+    "normal_form": "Every R30 residual edge has a unique complete rough prime factor chain m=p1*...*pt with 7<=p1<=...<=pt.",
+    "not_enough": "The remaining hard point is signed phase saving over the complete rough-factor leaves or an exact completion to external Kloosterman/Vaughan Type-II form.",
+    "phase": "Each leaf keeps D=q*m-kP and phase e(-hD/q); no deterministic LPF split remains.",
+    "prefix_singleton": "For each proper prefix G_j=p1*...*pj, the suffix A_j=m/G_j is the unique integer floor(kP/(q*G_j))+1."
+  },
+  "complete_leaf_phase_saving_closed": false,
+  "complete_rough_factor_tree_closed": true,
+  "deterministic_lpf_descent_exhausted": true,
+  "external_frontier_match_table": [
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "does not supply the missing completion from q, factor-chain leaves, and floor suffixes to standard Kloosterman sums",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550",
+      "useful_part": "candidate target after completing complete rough-factor leaves to a genuine bilinear Kloosterman family",
+      "verified_status": "power-saving estimates for general bilinear Kloosterman forms modulo arbitrary q"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "near-prime/prime-q fixed-row leaf phases are not yet its input family",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445",
+      "useful_part": "candidate technology if the leaf tree is reorganised into composite-modulus Type-II sums",
+      "verified_status": "Type-II Kloosterman sums with composite moduli via non-abelian amplification"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "the complete rough-factor tree remains a pointwise floor-suffix graph",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113",
+      "useful_part": "possible comparison after replacing LPF leaves by completed smooth/square-free parameter sums",
+      "verified_status": "Kloosterman sums over square-free and smooth integer parameters"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "the required Type-II estimates for these exact leaves are not produced automatically",
+      "source": "Ford--Maynard 2024 arXiv:2407.14368",
+      "source_url": "https://arxiv.org/abs/2407.14368",
+      "useful_part": "conceptual guide for what a successful source package must prove",
+      "verified_status": "prime-producing sieve framework requiring object-specific Type-I/II inputs"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_predicted_displacements_in_1_to_Pminus1": true,
+    "all_prefix_formulas_verified": true,
+    "bad_displacement_total": 0,
+    "bad_factorization_total": 0,
+    "bad_prefix_formula_total": 0,
+    "bad_prefix_interval_total": 0,
+    "complete_factorization_valid": true,
+    "depth_totals": {
+      "2": 274812,
+      "3": 25165
+    },
+    "extra_edge_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "first_factor_totals": {
+      "11": 52080,
+      "13": 44104,
+      "17": 34414,
+      "19": 29723,
+      "23": 22368,
+      "29": 11815,
+      "31": 6916,
+      "37": 1559,
+      "41": 262,
+      "43": 36,
+      "7": 96700
+    },
+    "k_range": "1<=k<P in this implementation audit",
+    "leaf_signature_top20": {
+      "11*67": 3160,
+      "11*71": 3169,
+      "11*73": 3115,
+      "13*53": 3159,
+      "13*59": 3182,
+      "13*61": 3139,
+      "17*41": 3157,
+      "17*43": 3151,
+      "17*47": 3133,
+      "19*37": 3173,
+      "19*41": 3178,
+      "23*29": 3134,
+      "23*31": 3161,
+      "7*101": 3148,
+      "7*103": 3165,
+      "7*107": 3173,
+      "7*109": 3204,
+      "7*113": 3145,
+      "7*7*17": 3114,
+      "7*97": 3162
+    },
+    "max_factor_depth_observed": 3,
+    "max_prefix_interval_points": 1,
+    "max_prime": 1009,
+    "missing_edge_total": 0,
+    "predicted_complete_leaf_total": 299977,
+    "predicted_complete_leaves_equal_actual_edges": true,
+    "prefix_interval_unique_for_every_prefix": true,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_displacement_count": 0,
+        "bad_factorization_count": 0,
+        "bad_prefix_formula_count": 0,
+        "bad_prefix_interval_count": 0,
+        "depth_counter": {
+          "2": 1
+        },
+        "extra_edge_count": 0,
+        "first_factor_counter": {
+          "11": 1
+        },
+        "k": 100,
+        "leaf_signature_counter": {
+          "11*13": 1
+        },
+        "max_depth": 2,
+        "max_prefix_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_leaf_edge_count": 1,
+        "samples": "q=71,m=143,D=53,factors=11*13,prefixes=depth=1,G=11,next_or_suffix=13,candidate=13"
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_displacement_count": 0,
+        "bad_factorization_count": 0,
+        "bad_prefix_formula_count": 0,
+        "bad_prefix_interval_count": 0,
+        "depth_counter": {
+          "2": 3
+        },
+        "extra_edge_count": 0,
+        "first_factor_counter": {
+          "11": 1,
+          "13": 1,
+          "19": 1
+        },
+        "k": 256,
+        "leaf_signature_counter": {
+          "11*31": 1,
+          "13*37": 1,
+          "19*23": 1
+        },
+        "max_depth": 2,
+        "max_prefix_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_leaf_edge_count": 3,
+        "samples": "q=151,m=437,D=195,factors=19*23,prefixes=depth=1,G=19,next_or_suffix=23,candidate=23 | q=193,m=341,D=21,factors=11*31,prefixes=depth=1,G=11,next_or_suffix=31,candidate=31 | q=137,m=481,D=105,factors=13*37,prefixes=depth=1,G=13,next_or_suffix=37,candidate=37"
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_displacement_count": 0,
+        "bad_factorization_count": 0,
+        "bad_prefix_formula_count": 0,
+        "bad_prefix_interval_count": 0,
+        "depth_counter": {
+          "2": 21,
+          "3": 2
+        },
+        "extra_edge_count": 0,
+        "first_factor_counter": {
+          "11": 4,
+          "13": 2,
+          "17": 6,
+          "19": 1,
+          "23": 2,
+          "37": 1,
+          "41": 1,
+          "7": 6
+        },
+        "k": 936,
+        "leaf_signature_counter": {
+          "11*107": 1,
+          "11*11*11": 1,
+          "11*131": 1,
+          "11*89": 1,
+          "13*113": 1,
+          "13*139": 1,
+          "17*109": 1,
+          "17*59": 1,
+          "17*61": 1,
+          "17*73": 1,
+          "17*79": 1,
+          "17*89": 1,
+          "19*59": 1,
+          "23*43": 1,
+          "23*71": 1,
+          "37*47": 1,
+          "41*41": 1,
+          "7*13*13": 1,
+          "7*157": 1,
+          "7*163": 1,
+          "7*173": 1,
+          "7*193": 1,
+          "7*199": 1
+        },
+        "max_depth": 3,
+        "max_prefix_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_leaf_edge_count": 23,
+        "samples": "q=673,m=1351,D=367,factors=7*193,prefixes=depth=1,G=7,next_or_suffix=193,candidate=193 | q=677,m=1343,D=355,factors=17*79,prefixes=depth=1,G=17,next_or_suffix=79,candidate=79 | q=919,m=989,D=35,factors=23*43,prefixes=depth=1,G=23,next_or_suffix=43,candidate=43 | q=523,m=1739,D=641,factors=37*47,prefixes=depth=1,G=37,next_or_suffix=47,candidate=47 | q=683,m=1331,D=217,factors=11*11*11,prefixes=depth=1,G=11,next_or_suffix=121,candidate=121;depth=2,G=121,next_or_suffix=11,candidate=11 | q=491,m=1853,D=967,factors=17*109,prefixes=depth=1,G=17,next_or_suffix=109,candidate=109"
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_displacement_count": 0,
+        "bad_factorization_count": 0,
+        "bad_prefix_formula_count": 0,
+        "bad_prefix_interval_count": 0,
+        "depth_counter": {
+          "2": 8,
+          "3": 1
+        },
+        "extra_edge_count": 0,
+        "first_factor_counter": {
+          "11": 1,
+          "13": 2,
+          "17": 1,
+          "23": 1,
+          "31": 1,
+          "37": 1,
+          "41": 1,
+          "7": 1
+        },
+        "k": 1008,
+        "leaf_signature_counter": {
+          "11*11*13": 1,
+          "13*139": 1,
+          "13*79": 1,
+          "17*97": 1,
+          "23*47": 1,
+          "31*37": 1,
+          "37*37": 1,
+          "41*43": 1,
+          "7*191": 1
+        },
+        "max_depth": 3,
+        "max_prefix_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_leaf_edge_count": 9,
+        "samples": "q=991,m=1027,D=685,factors=13*79,prefixes=depth=1,G=13,next_or_suffix=79,candidate=79 | q=941,m=1081,D=149,factors=23*47,prefixes=depth=1,G=23,next_or_suffix=47,candidate=47 | q=743,m=1369,D=95,factors=37*37,prefixes=depth=1,G=37,next_or_suffix=37,candidate=37 | q=617,m=1649,D=361,factors=17*97,prefixes=depth=1,G=17,next_or_suffix=97,candidate=97 | q=761,m=1337,D=385,factors=7*191,prefixes=depth=1,G=7,next_or_suffix=191,candidate=191 | q=887,m=1147,D=317,factors=31*37,prefixes=depth=1,G=31,next_or_suffix=37,candidate=37"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQCompleteRoughFactorTreeLeafPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c31b34d7012efafa27c9bf5755c2aca3f94b5ff6a2da06a65dce088508ee5343",
+    "docs/monograph/external-theorem-index.md": "e93fd7c7f49598e5a8b8e6c95281053b9228cc34e0e7e296da9426fdcecdec59",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "d6f1f4b0385c76b4ef13c351cfce00fda714550339c82b070c82a93158a55de6",
+    "docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.json": "e03c5fe6e82cf8468cd60676b987ccd076e131d4a5a3dc67e6bfcd791d5d900e",
+    "docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.json": "d9fbf6d3e7a23cd838cbe0a501baf6b44754b122d002546198b00ace6d1fa275",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_complete_rough_factor_tree_closure_audit.py": "359f4bcfab34107c0b7dab8a50103dbb989e06117fa10b4e278bc067582d1829",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "df4b7c6a0ecc54e983dc7e0506d6765612907056034e93d30affe1d0ffbf9626"
+  },
+  "status": "complete_rough_factor_tree_closed_leaf_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "CompleteRoughFactorTreeAndPrefixSingletons",
+      "frontier_before": [
+        "PrimeQIteratedRoughQuotientTwoCellPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "the two-cell iterated quotient graph still has deterministic LPF recursion; all fixed-prefix suffixes are singleton intervals"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "no faster deterministic closure than exhausting the current Phi-LPF LPF recursion"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "not a same-object LPF recursion gate"
+    }
+  ]
+}
