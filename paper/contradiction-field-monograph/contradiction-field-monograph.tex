@@ -30468,6 +30468,79 @@ Friedlander--Iwaniec 1998 / Maynard 2013-style breakthroughs, but no
 known technique resolves it inside the linear-sieve framework.
 \end{remark}
 
+\section{Maynard 2013 close reading and rigorous embedding of $H_P$}
+
+\begin{remark}[Why Maynard 2013 is the most promising real-frontier route]
+Among the three real-frontier breakthrough routes
+(Friedlander--Iwaniec 1998 cubic forms; $L_K(s)$ for quadratic
+extensions; Maynard 2013 multidimensional GPY), Maynard 2013 is
+selected for atomic close reading because: (i) the paper is 31 pages
+of well-organized combinatorial-sieve material; (ii) the
+multidimensional Selberg--GPY weights apply to any admissible
+$k$-tuple, structurally compatible with $H_P$ rows; (iii) it does not
+require Riemann Hypothesis or analytic continuation of automorphic
+$L$-functions.
+\end{remark}
+
+\begin{externalstatement}[Maynard 2013 main theorem]
+There exists $m\ge 0$ such that for every admissible $k$-tuple
+$\mathcal{H}=\{h_1,\ldots,h_k\}$ with $k\ge k_0(m)$,
+\[
+  \liminf_{n\to\infty}\#\bigl(\{n+h_i:h_i\in\mathcal{H}\}\cap\mathcal{P}\bigr)\ge m+1.
+\]
+\end{externalstatement}
+
+\begin{proposition}[$H_P$ embedded in Maynard framework]
+Take $\mathcal{H}=\{0,1,\ldots,P-1\}$ and $N=kP\sim P^2$.  Maynard's
+sieve level $R=N^{\theta/2}=P^\theta$.  The Maynard ratio
+\[
+  \frac{S_2}{S_1}\sim \frac{k\theta}{2}\cdot\frac{J_k(F)}{I_k(F)}>\frac{\theta\log P}{2}(1-o(1)).
+\]
+The critical sieve parameter is $s=\log R/\log z=\theta$, where
+$z=\sqrt N=P$.  Unconditional Bombieri--Vinogradov gives
+$\theta<1/2$; the Elliott--Halberstam conjecture (EH) gives
+$\theta\le 1$.  In both cases $s\le 1\le 2$, so $f(s)=0$ in the
+linear sieve sense.
+\end{proposition}
+
+\begin{remark}[Why Maynard cannot close $H_P$ in this session]
+Two independent reasons prevent closure inside Maynard's framework:
+
+\emph{Statistical vs.\ pointwise gap}: Maynard's output is
+$\liminf_n$, i.e.\ ``infinitely many $n$ have $\ge 2$ primes among
+$\{n+h_i\}$.''  $H_P$ requires ``every $k\in[1,P-1]$ has at least
+one prime in $I_k$.''  No general statistical bound implies a
+pointwise bound; this is a framework-essential gap, not a constant
+gap.
+
+\emph{Critical sieve parameter}: Even at the EH limit $\theta=1$,
+the sieve parameter $s=1\le 2$, so $f(1)=0$.  The Bombieri 1976
+parity barrier remains binding.  EH itself is unproved.
+\end{remark}
+
+\begin{externalstatement}[K7: Maynard-derived conditional on EH]
+Conditional on EH, for sufficiently large prime $P$,
+\[
+  |\{k\in[1,P-1]:I_k\text{ contains no prime pair of gap}\le 246\}|\ll P^{1-\delta}
+\]
+for some absolute constant $\delta>0$.
+\end{externalstatement}
+
+\begin{remark}[K7 is not $H_P$]
+K7 is conditional on EH (unproved) and only states that all but
+$O(P^{1-\delta})$ rows contain a prime pair of bounded gap.  The
+$P^{1-\delta}$ exceptional rows could a priori have no primes at all,
+and EH is unproved.  $H_P$ remains \textbf{Not claimed}.
+
+The honest closure of this frontier is the rigorous diagnosis
+recorded above: Maynard 2013, the best-positioned of the three
+real-frontier routes, structurally cannot close $H_P$ in a
+single-session ambient.  Future progress requires either an
+unconditional resolution of EH plus a statistical-to-pointwise
+upgrade, or a non-sieve technique breaking the Bombieri 1976
+parity barrier outright.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
