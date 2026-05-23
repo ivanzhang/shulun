@@ -2081,6 +2081,106 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61. Phi-LPF adjacent-coprime parity-trap 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_adjacent_coprime_parity_trap_audit.py
+data/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.json
+docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.md
+```
+
+本层审计相邻互质与商相邻互质是否能把 `30-wheel` 后的 LPF tail residual
+转成素数支付通道。设 residual 候选为：
+
+```text
+n=q*m
+m=r*a
+r=LPF(m)
+```
+
+因为 `m` 已通过 `30-wheel`，所以 `m` 没有 `2,3,5` 因子；若 `m` 合成，则
+`r>=7`。又 `q>P/2` 为奇素数，所以：
+
+```text
+q,m,r,a are odd
+qm±1, m±1, a±1 are even and >2
+```
+
+于是相邻互质恒等式虽然成立：
+
+```text
+gcd(qm,qm±1)=1
+gcd(m,m±1)=1
+gcd(a,a±1)=1
+```
+
+但这些相邻数全部被奇偶性强迫为合数。商相邻提升也离开本行：
+
+```text
+q*r*(a±1)=q*r*a ± q*r
+q*r > (P/2)*7 > P
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+active_residual_row_count=52697
+total_R30=299977
+total_same_row_adjacent_slots=595083
+total_same_row_adjacent_prime_shadows=0
+total_cofactor_adjacent_prime_shadows=0
+total_quotient_adjacent_prime_shadows=0
+total_quotient_lift_inside_row=0
+all_active_adjacent_coprime_but_even_composite=true
+```
+
+代表行：
+
+```text
+P=971, k=936
+R30=23
+same_row_adjacent_slots=44
+same_row_adjacent_prime_shadows=0
+cofactor_checked=46
+quotient_checked=46
+quotient_lift_inside=0
+```
+
+大样本 `P=100003,300007` 抽样：
+
+```text
+sample_count=10
+active_residual_row_count=6
+total_R30=10782
+total_same_row_adjacent_prime_shadows=0
+total_quotient_lift_inside_row=0
+all_active_adjacent_coprime_but_even_composite=true
+```
+
+这是真推进：它把一个看似有用的“互质相邻支付”通道精确判定为奇偶陷阱。
+Ford--Maynard 型 prime-producing sieve 框架仍然相关，但它需要与对象匹配的
+Type-I/Type-II 或双线性输入；单纯相邻互质既不破奇偶，在 `30-wheel`
+residual 上还直接给出偶合数。
+
+状态边界：
+
+```text
+adjacent_coprime_identity_closed=true
+post30_adjacent_parity_trap_closed=true
+quotient_adjacent_lift_leaves_row_closed=true
+adjacent_coprime_prime_payment_proved=false
+external_prime_producing_sieve_applies_directly=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 60. Phi-LPF LPF shell decrement 审计
 
 新增证书：

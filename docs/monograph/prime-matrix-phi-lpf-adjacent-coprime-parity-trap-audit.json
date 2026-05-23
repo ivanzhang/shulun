@@ -1,0 +1,201 @@
+{
+  "adjacent_coprime_identity_closed": true,
+  "adjacent_coprime_prime_payment_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_adjacent_coprime_parity_trap_audit",
+  "definitions": {
+    "adjacent_coprime": "gcd(x,x±1)=1",
+    "lpf_quotient": "m=r*a, r=LPF(m), r>=7",
+    "parity_trap": "q,m,r,a are odd; n±1,m±1,a±1 are even >2",
+    "quotient_lift": "q*r*(a±1)=n±q*r with q*r>P",
+    "residual_object": "30-wheel rough-composite residual candidate n=q*m"
+  },
+  "external_frontier_note": "Prime-producing sieve frameworks such as Ford--Maynard are relevant only after Type-I/II or bilinear information is supplied for the exact reciprocal-window object.",
+  "external_lemma_version_unconditional_closed": false,
+  "external_prime_producing_sieve_applies_directly": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_active_adjacent_coprime_but_even_composite": true,
+    "failure_rows": [],
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_adjacent_slot_row": {
+      "P": 971,
+      "R30": 23,
+      "cofactor_checked": 46,
+      "k": 936,
+      "quotient_checked": 46,
+      "quotient_lift_inside": 0,
+      "same_row_prime_shadows": 0,
+      "same_row_slots": 44
+    },
+    "max_prime": 1009,
+    "max_residual_row": {
+      "P": 971,
+      "R30": 23,
+      "cofactor_checked": 46,
+      "k": 936,
+      "quotient_checked": 46,
+      "quotient_lift_inside": 0,
+      "same_row_prime_shadows": 0,
+      "same_row_slots": 44
+    },
+    "row_count": 76789,
+    "sample_rows": [
+      {
+        "P": 29,
+        "R30": 1,
+        "cofactor_checked": 2,
+        "k": 28,
+        "quotient_checked": 2,
+        "quotient_lift_inside": 0,
+        "same_row_prime_shadows": 0,
+        "same_row_slots": 2
+      },
+      {
+        "P": 101,
+        "R30": 1,
+        "cofactor_checked": 2,
+        "k": 100,
+        "quotient_checked": 2,
+        "quotient_lift_inside": 0,
+        "same_row_prime_shadows": 0,
+        "same_row_slots": 2
+      },
+      {
+        "P": 257,
+        "R30": 3,
+        "cofactor_checked": 6,
+        "k": 256,
+        "quotient_checked": 6,
+        "quotient_lift_inside": 0,
+        "same_row_prime_shadows": 0,
+        "same_row_slots": 6
+      },
+      {
+        "P": 971,
+        "R30": 23,
+        "cofactor_checked": 46,
+        "k": 936,
+        "quotient_checked": 46,
+        "quotient_lift_inside": 0,
+        "same_row_prime_shadows": 0,
+        "same_row_slots": 44
+      },
+      {
+        "P": 1009,
+        "R30": 9,
+        "cofactor_checked": 18,
+        "k": 1008,
+        "quotient_checked": 18,
+        "quotient_lift_inside": 0,
+        "same_row_prime_shadows": 0,
+        "same_row_slots": 18
+      }
+    ],
+    "total_R30": 299977,
+    "total_cofactor_adjacent_prime_shadows": 0,
+    "total_quotient_adjacent_prime_shadows": 0,
+    "total_quotient_lift_inside_row": 0,
+    "total_same_row_adjacent_prime_shadows": 0,
+    "total_same_row_adjacent_slots": 595083
+  },
+  "frontier_verified_date": "2026-05-23",
+  "gates": [
+    {
+      "closed": true,
+      "gate": "AdjacentCoprimeIdentityClosed",
+      "meaning": "对 n=qm、cofactor m 与 quotient a=m/LPF(m)，相邻数与原数互质。",
+      "proved": true,
+      "remaining": "gcd(x,x±1)=1"
+    },
+    {
+      "closed": true,
+      "gate": "Post30WheelAdjacentParityTrapClosed",
+      "meaning": "30-wheel residual 中 q,m,r,a 全为奇数且 r>=7，所以 n±1、m±1、a±1 全是大于 2 的偶数合数。",
+      "proved": true,
+      "remaining": "adjacent coprime does not imply prime"
+    },
+    {
+      "closed": true,
+      "gate": "QuotientAdjacentLiftLeavesRow",
+      "meaning": "商相邻提升的步长为 q*LPF(m)>P，不能同时留在同一长度 P 行内。",
+      "proved": true,
+      "remaining": "quotient-adjacent same-row transfer closed false"
+    },
+    {
+      "closed": false,
+      "gate": "AdjacentCoprimePrimePaymentProved",
+      "meaning": "相邻互质路线在 30-wheel residual 上给出 0 个同排相邻素数影子。",
+      "proved": false,
+      "remaining": "PrimeCountDominatesLPFTailShellSum still required"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalPrimeProducingSieveAppliesDirectly",
+      "meaning": "Ford--Maynard 型 prime-producing sieve 需要 Type-I/II 输入；本文尚无 reciprocal-window 同对象 Type-II 包。",
+      "proved": false,
+      "remaining": "same-object bilinear/dispersion theorem required"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层不证明 H_P、外部引理版或内部自足版无条件闭合。",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "internal_self_contained_closed": false,
+  "large_sample_audit": {
+    "active_residual_row_count": 6,
+    "all_active_adjacent_coprime_but_even_composite": true,
+    "failure_rows": [],
+    "large_samples_are_evidence_not_global_proof": true,
+    "max_adjacent_slot_row": {
+      "P": 300007,
+      "R30": 3213,
+      "cofactor_checked": 6426,
+      "k": 300006,
+      "quotient_checked": 6426,
+      "quotient_lift_inside": 0,
+      "same_row_prime_shadows": 0,
+      "same_row_slots": 6373
+    },
+    "max_residual_row": {
+      "P": 300007,
+      "R30": 3213,
+      "cofactor_checked": 6426,
+      "k": 300006,
+      "quotient_checked": 6426,
+      "quotient_lift_inside": 0,
+      "same_row_prime_shadows": 0,
+      "same_row_slots": 6373
+    },
+    "row_count": 10,
+    "sample_count": 10,
+    "sample_rows": [],
+    "sample_seeds": [
+      100000,
+      300000
+    ],
+    "total_R30": 10782,
+    "total_cofactor_adjacent_prime_shadows": 0,
+    "total_quotient_adjacent_prime_shadows": 0,
+    "total_quotient_lift_inside_row": 0,
+    "total_same_row_adjacent_prime_shadows": 0,
+    "total_same_row_adjacent_slots": 21394
+  },
+  "next_direct_attack_target": "PrimeCountDominatesLPFTailShellSum OR same-object Type-II signed dispersion OR square-phase endpoint lower bound",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "post30_adjacent_parity_trap_closed": true,
+  "quotient_adjacent_lift_leaves_row_closed": true,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c3a4c7769d5b39a47bd590d3a398ccc0ce45ac70587745c0aed9fc075e6894f8",
+    "docs/monograph/external-theorem-index.md": "2e021942032b14bbe0a5f4c497bcb0f82dca830e4be7af2ec4347c5caf5b2aed",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "7a63966f709bca6ca4b505cb7a8e03458de3beeb42a8d24b2ec35a90c09c908d",
+    "docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.json": "222183794d5de930940980e7b616f7ddda3ccde6bdff782a6d5c8aa22e6d9f5a",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.json": "a5a1b831d9c0948ea8ef47939789e47f23dbde1d2d4a9d625e2652064640401a",
+    "experiments/prime_matrix_phi_lpf_adjacent_coprime_parity_trap_audit.py": "863859f547710bd4a648d6c1bdf93d1a2655873e109a28bcecc235a609dda940",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "6b811068a14085d0678d8368a842a2c5999c5630c65a19cc52292df3cda156f6"
+  },
+  "status": "adjacent_coprime_and_quotient_adjacent_routes_trapped_by_parity_after_30_wheel"
+}

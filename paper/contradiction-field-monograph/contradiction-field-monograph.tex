@@ -12647,6 +12647,72 @@ weighted, pointwise, same-row dominance statement.  No unconditional
 row/column closure follows from the shell ledger alone.
 \end{proof}
 
+\begin{theorem}[Adjacent-coprime parity trap after the \(30\)-wheel]
+Let \(n=qm\) be a \(30\)-wheel rough-composite residual candidate in the
+reciprocal-window ledger.  Put \(r={\rm LPF}(m)\) and \(m=ra\).  Then
+\[
+  q,\ m,\ r,\ a
+\]
+are all odd, and \(r\ge7\).  Hence the adjacent-coprime identities
+\[
+  (qm,qm\pm1)=1,\qquad (m,m\pm1)=1,\qquad (a,a\pm1)=1
+\]
+do not create a prime channel: every integer \(qm\pm1\), \(m\pm1\), and
+\(a\pm1\) occurring here is even and larger than \(2\), hence composite.
+Moreover the quotient-adjacent lift
+\[
+  q r(a\pm1)=qra\pm qr
+\]
+cannot stay in the same row, because \(q>P/2\) and \(r\ge7\), so \(qr>P\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The \(30\)-wheel residual has already removed all cofactor candidates divisible
+by \(2,3,\) or \(5\).  Thus a composite residual cofactor \(m\) has
+\({\rm LPF}(m)=r\ge7\), and \(m,r\) are odd.  Since \(a=m/r\), the quotient
+\(a\) is odd.  Also \(q\in(P/2,P)\) is an odd prime in the strict rows under
+discussion.  Therefore \(qm\), \(m\), and \(a\) are odd.  Their adjacent
+integers are even.  The lower adjacent values are also larger than \(2\):
+\(m-1\ge6\), \(a-1\ge6\), and \(qm-1>2\).  Hence all these adjacent integers
+are composite despite being coprime to their source.
+
+For the quotient lift, changing \(a\) to \(a\pm1\) changes \(qra\) by
+\(\pm qr\).  Since \(q>P/2\) and \(r\ge7\), this displacement is larger than
+the row length \(P\).  Thus the quotient-adjacent object cannot be a same-row
+prime payment.
+
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-adjacent-\\
+coprime-parity-trap-audit.md.
+\end{quote}
+It records, for \(P\le1009\),
+\begin{quote}\scriptsize\ttfamily
+active\_residual\_row\_count=52697\\
+total\_R30=299977\\
+total\_same\_row\_adjacent\_slots=595083\\
+total\_same\_row\_adjacent\_prime\_shadows=0\\
+total\_cofactor\_adjacent\_prime\_shadows=0\\
+total\_quotient\_adjacent\_prime\_shadows=0\\
+total\_quotient\_lift\_inside\_row=0.
+\end{quote}
+For the maximum residual row in the finite audit, \(P=971,k=936\), one has
+\[
+  R_{30}=23,\qquad
+  \hbox{same-row adjacent slots}=44,\qquad
+  \hbox{adjacent prime shadows}=0.
+\]
+This closes the direct adjacent-coprime and quotient-adjacent-coprime payment
+routes.  A Ford--Maynard style prime-producing sieve remains relevant only if
+one supplies a matching Type-I/Type-II or bilinear theorem for the present
+reciprocal-window object.  The remaining hard input is still
+\begin{quote}\scriptsize\ttfamily
+PrimeCountDominatesLPFTailShellSum\\
+OR same-object Type-II signed dispersion\\
+OR square-phase endpoint lower bound.
+\end{quote}
+No unconditional row/column closure follows from adjacent coprimality alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for

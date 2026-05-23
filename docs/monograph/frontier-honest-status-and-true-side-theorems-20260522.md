@@ -1976,6 +1976,94 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AE：Phi-LPF adjacent-coprime parity-trap 审计（2026-05-23 第二十九轮）
+
+本轮审计用户提示中的相邻互质与商相邻互质路线。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_adjacent_coprime_parity_trap_audit.py
+data/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.json
+docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.md
+```
+
+设 `30-wheel` residual 候选为：
+
+```text
+n=q*m
+m=r*a
+r=LPF(m)
+```
+
+由于 `m` 已避开 `2,3,5` 且合成，`r>=7`；又 `q>P/2` 为奇素数，因此
+`q,m,r,a` 全为奇数。相邻互质恒等式确实成立：
+
+```text
+gcd(qm,qm±1)=1
+gcd(m,m±1)=1
+gcd(a,a±1)=1
+```
+
+但它们全部落入奇偶陷阱：
+
+```text
+qm±1, m±1, a±1 are even and >2
+```
+
+商相邻提升也不能留在同一行：
+
+```text
+q*r*(a±1)=q*r*a ± q*r
+q*r > (P/2)*7 > P
+```
+
+有限审计：
+
+```text
+max_prime=1009
+row_count=76789
+active_residual_row_count=52697
+total_R30=299977
+total_same_row_adjacent_slots=595083
+total_same_row_adjacent_prime_shadows=0
+total_cofactor_adjacent_prime_shadows=0
+total_quotient_adjacent_prime_shadows=0
+total_quotient_lift_inside_row=0
+all_active_adjacent_coprime_but_even_composite=true
+```
+
+代表最大 residual 行：
+
+| P | k | R30 | same-row adjacent slots | adjacent prime shadows | cofactor checked | quotient checked | quotient lifts inside row |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 971 | 936 | 23 | 44 | 0 | 46 | 46 | 0 |
+
+这是真推进：相邻互质/商相邻互质不是一个待尝试黑箱，而是被 `30-wheel`
+后的奇偶结构直接反杀。继续突破仍必须进入：
+
+```text
+PrimeCountDominatesLPFTailShellSum
+OR same-object Type-II signed dispersion
+OR square-phase endpoint lower bound
+```
+
+Ford--Maynard 型 prime-producing sieve 框架仍然说明“破奇偶需要更强双线性输入”，
+但单纯相邻互质不能替代该输入。
+
+```text
+adjacent_coprime_identity_closed=true
+post30_adjacent_parity_trap_closed=true
+quotient_adjacent_lift_leaves_row_closed=true
+adjacent_coprime_prime_payment_proved=false
+external_prime_producing_sieve_applies_directly=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：
