@@ -23948,3 +23948,40 @@ AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
 或新 automorphic/dispersion 证明；内部自足版还要支付 six-field/source/canonical 前端以及
 ExactUV、模型、PDEC/CleanKLS 与 Rate。FullS、six-field 与 DStructure 三者互不代偿。
 本层关闭的是共同核边界，目标命题仍未无条件闭合。
+
+## 330U. Two replacement lines RKS-log final atom frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_final_atom_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.json
+data/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_rks_log_final_atom_synced_unconditional_open
+common_kernel_compressed_to_rks_log=true
+rankin_subledger_active_obstruction=false
+structured_ehpd_author_interface_active_obstruction=false
+external_theorem_version_author_math_closed_if_inputs_accepted=true
+external_theorem_version_unconditional_promotion_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：共同核的当前最窄数学原子不是 Rankin 账本，也不是 Structured-EHPD
+接口，而是 Tail-log4 低谱的倒数 Kloosterman 固定对数节省：
+
+```text
+MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks
+OR BakerFrequencyLargeSieveOrDBGAverageReplacement
+```
+
+外部定理版在接受 FullS-KLS-ext 与 EXT-BG/RKS 固定对数节省时，作者侧数学输入闭合；
+严格自足版必须重证上述 RKS-log/Baker-DB 原子。Burgess 乘法角色和、FullS 谱闭合、
+six-field source 生成与 EXT-BG 接受均不能相互代偿。本层关闭最终原子定位，
+目标命题仍未无条件闭合。

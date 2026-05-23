@@ -1584,3 +1584,44 @@ AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
 
 禁止代偿：FullS theorem-match 不支付 six-field/source/ExactUV/model/rate；six-field/source
 不支付 FullS-KLS 谱估计；DStructure/Rankin 自足包也不支付任一前端，它只是两条绝对路线的共同尾门。
+
+## 35. 两条替代线 RKS-log 最终原子
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_final_atom_sync_router.py
+data/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.json
+```
+
+本层不新增外部定理；它把共同核继续下钻到 Tail-log4 低谱的 RKS-log 原子。
+Structured-EHPD 作者侧接口、finite Rankin pass-or-return、Tail-log4 smooth/mid 与参数账本
+均不再是当前最窄点。
+
+外部引理条件版仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部定理替代版可写为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND AcceptEXTBGForRKSLogFixedSaving
+AND AuthorSideStructuredEHPDInterfaceAuditClosed
+AND ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
+AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
+```
+
+严格自足版必须重证：
+
+```text
+MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks
+OR BakerFrequencyLargeSieveOrDBGAverageReplacement
+```
+
+禁止误用：Burgess 乘法角色和不能替代 RKS-log 加性倒数相位；EXT-BG 接受也不能当成自足重证。

@@ -22404,6 +22404,41 @@ ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
 SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
 ```
 
+### 1.181 two replacement lines RKS-log final atom 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_final_atom_sync_router.py
+data/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-final-atom-sync-router.json
+```
+
+同步读数为：
+
+```text
+common_kernel_compressed_to_rks_log=true
+rankin_subledger_active_obstruction=false
+structured_ehpd_author_interface_active_obstruction=false
+external_theorem_version_author_math_closed_if_inputs_accepted=true
+external_theorem_version_unconditional_promotion_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：DStructure/Rankin 共同尾门已压到 Tail-log4 低谱 RKS-log 原子。
+Rankin pass-or-return 与 Structured-EHPD 作者侧接口不再承载当前缺口；严格自足版必须
+正向证明：
+
+```text
+MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks
+OR BakerFrequencyLargeSieveOrDBGAverageReplacement
+```
+
+该原子只处理 RKS/Tail-log4 加性倒数相位，不支付内部 source 前端、ExactUV、模型、
+PDEC/CleanKLS 或 Rate。
+
 ### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
 
 新增机器证书：
