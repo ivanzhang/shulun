@@ -2306,6 +2306,131 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q10：Phi-LPF parity selected branch phase closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_selected_branch_phase_closure_audit.py
+data/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.md
+```
+
+上一层已经把 matched displacement phase 压成 q 侧 lower/upper floor-residue
+branch。本层进一步关闭：
+
+```text
+TwoPointFloorWindowParitySelector
+SingletonBothBranchConsistency
+```
+
+### Q10.1 二点窗口的奇偶选择器
+
+cap 去除后写：
+
+```text
+L=floor(kP/q)+1
+U=floor(((k+1)P-1)/q)
+```
+
+因为 `P/q<2`，每条 residual edge 的 floor window 满足：
+
+```text
+U-L in {0,1}.
+```
+
+若 `U=L`，该边同时是 lower 与 upper，两个 branch 公式给出同一 `d`。
+若 `U=L+1`，两个端点连续；而 residual cofactor 满足 `LPF(m)>=7`，
+故 `m` 为奇数。因此：
+
+```text
+lower branch iff L is odd
+upper branch iff U is odd
+```
+
+LPF 条件在这里只负责“是否存在 residual edge”，不再给端点侧选择留下自由度。
+
+### Q10.2 相位公式
+
+选择器确定后，相位仍是上一层两个余数公式：
+
+```text
+lower: d=q-(kP mod q)
+upper: d=P-1-(((k+1)P-1) mod q)
+```
+
+因此后续相位问题可以写成 parity-selected floor-residue branch phase，而不是
+带未定端点选择的 branch phase。
+
+### Q10.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+width_totals={singleton_width_0:91496, two_point_width_1:208481}
+actual_branch_totals={lower:104807, upper:103674, both:91496}
+predicted_branch_totals={lower:104807, upper:103674, both:91496}
+all_edges_width_zero_or_one=true
+all_two_point_branches_parity_selected=true
+all_residual_cofactors_odd=true
+all_branch_phase_formulas_verified=true
+all_singleton_branch_formulas_consistent=true
+bad_width_total=0
+bad_parity_total=0
+bad_prediction_total=0
+bad_phase_formula_total=0
+bad_singleton_formula_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自二点窗口和奇偶端点选择。
+
+### Q10.4 外部前沿匹配
+
+```text
+Euler 2-wheel parity plus floor-window algebra:
+  closes this normal-form gate.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  remain candidate inputs only after completion to a genuine Kloosterman
+  or Vaughan Type-II object; they do not estimate the fixed-row
+  parity-selected branch phase directly.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv, hence recorded only as a near-miss and not as an
+  admissible external theorem.
+```
+
+### Q10.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQParitySelectedFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+parity_selected_branch_normal_form_closed=true
+parity_selected_branch_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

@@ -3337,6 +3337,115 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 73. Phi-LPF parity selected branch phase closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_selected_branch_phase_closure_audit.py
+data/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的端点侧选择子门：
+
+```text
+TwoPointFloorWindowParitySelector
+SingletonBothBranchConsistency
+```
+
+上一层已把 q 侧候选端点写为：
+
+```text
+L=floor(kP/q)+1
+U=floor(((k+1)P-1)/q)
+```
+
+并去除了 boundary cap。由于 `P/q<2`，每条 residual edge 上有：
+
+```text
+U-L in {0,1}.
+```
+
+若 `U=L`，该边是 singleton，同时属于 lower/upper，且两个余数公式给同一
+`d`。若 `U=L+1`，两个端点连续；而 `LPF(m)>=7` 强制 residual cofactor
+`m` 为奇数，所以端点侧选择由奇偶性唯一决定：
+
+```text
+lower branch iff L is odd
+upper branch iff U is odd
+```
+
+相位公式仍为：
+
+```text
+lower: d=q-(kP mod q)
+upper: d=P-1-(((k+1)P-1) mod q)
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+width_totals={singleton_width_0:91496, two_point_width_1:208481}
+actual_branch_totals={lower:104807, upper:103674, both:91496}
+predicted_branch_totals={lower:104807, upper:103674, both:91496}
+all_edges_width_zero_or_one=true
+all_two_point_branches_parity_selected=true
+all_residual_cofactors_odd=true
+all_branch_phase_formulas_verified=true
+all_singleton_branch_formulas_consistent=true
+bad_width_total=0
+bad_parity_total=0
+bad_prediction_total=0
+bad_phase_formula_total=0
+bad_singleton_formula_total=0
+```
+
+外部前沿匹配：
+
+```text
+Euler 2-wheel parity plus floor-window algebra:
+  closes this endpoint-side selection gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  bilinear Kloosterman estimates remain useful only after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  non-abelian amplification is not a pointwise fixed-row branch-phase theorem.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman sums still need finite-field completion first.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  Kloosterman-fraction bilinear-form near miss is withdrawn on arXiv and
+  cannot be cited as a valid external input.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQParitySelectedFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+parity_selected_branch_normal_form_closed=true
+parity_selected_branch_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

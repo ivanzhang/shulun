@@ -31241,6 +31241,69 @@ The 2026 Kloosterman-fraction near-miss arXiv:2601.00292 is recorded
 only as withdrawn and is not used as an external input.
 \end{remark}
 
+\section{Parity-selected branch phase closure}
+
+\begin{proposition}[Next deterministic branch selector gate]
+After the floor-residue branch normal form is established, the next
+deterministic subgate is
+\[
+  \texttt{TwoPointFloorWindowParitySelector}.
+\]
+It removes the last endpoint-side choice in two-point \(q\)-windows.
+It is not a phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Two-point floor windows are parity selected]
+Let \((q,m)\) be a residual edge and set
+\[
+  L=\left\lfloor \frac{kP}{q}\right\rfloor+1,\qquad
+  U=\left\lfloor \frac{(k+1)P-1}{q}\right\rfloor .
+\]
+After the boundary-cap exclusions above, \(m\in\{L,U\}\), and on every
+residual edge
+\[
+  U-L\in\{0,1\}.
+\]
+If \(U=L\), then the edge is simultaneously lower and upper, and the
+two floor-residue formulae give the same \(d=qm-kP\).  If \(U=L+1\),
+then the edge is lower exactly when \(L\) is odd, and upper exactly when
+\(U\) is odd.
+\end{theorem}
+\begin{proof}
+The real product interval has length \(P/q<2\).  Since a residual edge
+exists, the integer floor window is nonempty; hence it contains either
+one point or two consecutive points, so \(U-L\in\{0,1\}\).
+
+If \(U=L\), the unique endpoint is both lower and upper.  Both formulae
+compute the same integer \(d=qm-kP\), so there is no branch ambiguity.
+
+If \(U=L+1\), the two candidates are consecutive integers.  A residual
+cofactor has least prime factor at least \(7\), hence is odd.  Therefore
+only the odd one of the two consecutive endpoints can be the residual
+cofactor.  This proves the lower/upper parity selector.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-parity-\\
+selected-branch-phase-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after parity selection]
+The endpoint side in every two-point floor window is now deterministic:
+the LPF condition decides whether the odd endpoint is a residual
+cofactor, but not which side it would occupy.  The current row/column
+sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQParitySelectedFloorResidueBranchPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is cancellation for the parity-selected branch phase, or
+a completion to an external Kloosterman/Vaughan Type-II estimate without
+losing pointwise control in \(P,k\).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

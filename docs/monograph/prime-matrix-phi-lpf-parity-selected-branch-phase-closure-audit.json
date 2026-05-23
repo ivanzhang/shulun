@@ -1,0 +1,234 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_parity_selected_branch_phase_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "TwoPointFloorWindowParitySelector",
+      "meaning": "When U=L+1, the residual endpoint is the unique odd endpoint.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "SingletonBothBranchConsistency",
+      "meaning": "When U=L, lower and upper residue formulae agree on the same displacement d.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQParitySelectedFloorResidueBranchPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation after replacing branch choice by the parity selector.",
+      "proved": false,
+      "remaining": "parity-selected branch phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the parity-selected branch graph to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "endpoint selection is deterministic, but cancellation over selected q remains open",
+      "source": "Euler 2-wheel parity plus floor-window algebra",
+      "useful_part": "closes endpoint-side selection in every two-point q-window"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "the parity-selected branch is not yet a completed bilinear Kloosterman sum",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "power-saving bilinear Kloosterman estimates for arbitrary moduli"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "does not estimate this fixed-row prime-q branch phase directly",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "Type-II Kloosterman sums with composite moduli via non-abelian amplification"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "still requires a completion identity from floor residues to Kloosterman sums",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums parametrised by square-free and smooth integers"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "withdrawn on arXiv; cannot be cited as a valid external input",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "useful_part": "Kloosterman-fraction bilinear-form near miss"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_branch_totals": {
+      "both": 91496,
+      "lower": 104807,
+      "upper": 103674
+    },
+    "all_branch_phase_formulas_verified": true,
+    "all_edges_width_zero_or_one": true,
+    "all_residual_cofactors_odd": true,
+    "all_singleton_branch_formulas_consistent": true,
+    "all_two_point_branches_parity_selected": true,
+    "bad_parity_total": 0,
+    "bad_phase_formula_total": 0,
+    "bad_prediction_total": 0,
+    "bad_singleton_formula_total": 0,
+    "bad_width_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_prime": 1009,
+    "predicted_branch_totals": {
+      "both": 91496,
+      "lower": 104807,
+      "upper": 103674
+    },
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "bad_parity_count": 0,
+        "bad_phase_formula_count": 0,
+        "bad_prediction_count": 0,
+        "bad_singleton_formula_count": 0,
+        "bad_width_count": 0,
+        "branch_both": 1,
+        "branch_lower": 0,
+        "branch_upper": 0,
+        "edge_count_R30": 1,
+        "k": 100,
+        "predicted_both": 1,
+        "predicted_lower": 0,
+        "predicted_upper": 0,
+        "sample_edges": "q=71,m=143,L=143,U=143,branch=both,pred=both,d=53",
+        "width_0_singleton_edges": 1,
+        "width_1_two_point_edges": 0
+      },
+      {
+        "P": 257,
+        "bad_parity_count": 0,
+        "bad_phase_formula_count": 0,
+        "bad_prediction_count": 0,
+        "bad_singleton_formula_count": 0,
+        "bad_width_count": 0,
+        "branch_both": 0,
+        "branch_lower": 2,
+        "branch_upper": 1,
+        "edge_count_R30": 3,
+        "k": 256,
+        "predicted_both": 0,
+        "predicted_lower": 2,
+        "predicted_upper": 1,
+        "sample_edges": "q=137,m=481,L=481,U=482,branch=lower,pred=lower,d=105; q=151,m=437,L=436,U=437,branch=upper,pred=upper,d=195; q=193,m=341,L=341,U=342,branch=lower,pred=lower,d=21",
+        "width_0_singleton_edges": 0,
+        "width_1_two_point_edges": 3
+      },
+      {
+        "P": 971,
+        "bad_parity_count": 0,
+        "bad_phase_formula_count": 0,
+        "bad_prediction_count": 0,
+        "bad_singleton_formula_count": 0,
+        "bad_width_count": 0,
+        "branch_both": 11,
+        "branch_lower": 4,
+        "branch_upper": 8,
+        "edge_count_R30": 23,
+        "k": 936,
+        "predicted_both": 11,
+        "predicted_lower": 4,
+        "predicted_upper": 8,
+        "sample_edges": "q=491,m=1853,L=1852,U=1853,branch=upper,pred=upper,d=967; q=503,m=1807,L=1807,U=1808,branch=lower,pred=lower,d=65; q=523,m=1739,L=1738,U=1739,branch=upper,pred=upper,d=641; q=541,m=1681,L=1680,U=1681,branch=upper,pred=upper,d=565; q=557,m=1633,L=1632,U=1633,branch=upper,pred=upper,d=725",
+        "width_0_singleton_edges": 11,
+        "width_1_two_point_edges": 12
+      },
+      {
+        "P": 1009,
+        "bad_parity_count": 0,
+        "bad_phase_formula_count": 0,
+        "bad_prediction_count": 0,
+        "bad_singleton_formula_count": 0,
+        "bad_width_count": 0,
+        "branch_both": 4,
+        "branch_lower": 4,
+        "branch_upper": 1,
+        "edge_count_R30": 9,
+        "k": 1008,
+        "predicted_both": 4,
+        "predicted_lower": 4,
+        "predicted_upper": 1,
+        "sample_edges": "q=563,m=1807,L=1807,U=1808,branch=lower,pred=lower,d=269; q=577,m=1763,L=1763,U=1764,branch=lower,pred=lower,d=179; q=617,m=1649,L=1649,U=1650,branch=lower,pred=lower,d=361; q=647,m=1573,L=1572,U=1573,branch=upper,pred=upper,d=659; q=743,m=1369,L=1369,U=1370,branch=lower,pred=lower,d=95",
+        "width_0_singleton_edges": 4,
+        "width_1_two_point_edges": 5
+      }
+    ],
+    "total_edges_R30": 299977,
+    "width_totals": {
+      "singleton_width_0": 91496,
+      "two_point_width_1": 208481
+    }
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQParitySelectedFloorResidueBranchPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "parity_selected_branch_normal_form_closed": true,
+  "parity_selected_branch_phase_saving_closed": false,
+  "parity_selected_branch_theorem": {
+    "floor_window": "After cap removal, L=floor(kP/q)+1 and U=floor(((k+1)P-1)/q), with U-L in {0,1} on every edge.",
+    "not_enough": "Parity selects the endpoint side but gives no cancellation over the remaining LPF-selected prime q set.",
+    "phase_formula": "The selected branch phase uses d=q-(kP mod q) on lower and d=P-1-(((k+1)P-1) mod q) on upper.",
+    "singleton": "If U=L, the edge is simultaneously lower and upper and both residue formulae give the same d.",
+    "two_point_selector": "If U=L+1, the residual cofactor is odd, so the edge is lower exactly when L is odd and upper exactly when U is odd."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "f678767009cb013180b594f249171db3f03a42afea920075b86f8dad457614e0",
+    "docs/monograph/external-theorem-index.md": "b19dd5ea380712640169f6331eb3025c926a9aa160679ed767d3cececa4ce616",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "73a3a9b0131d08a43c73363318b5035a293b9710b4b063fffb3e080ffe6ec585",
+    "docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.json": "80c39bcf0c0627ab0b94323d4a85069969caeca6a2e5a12e1505506342b8bf99",
+    "docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.json": "c5e0c6bdd6312c35bba20b49cf14e761fecd326daa6a069d3919d27788ce6330",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_parity_selected_branch_phase_closure_audit.py": "b78b93a1d34605ed3b5aea328d8ffb0015e35a83949a44ca550e1de3ee5515d6",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "bb50b4535962f4d8cb76e5d1fb781fc916e0544ee335dcdca64e9cc45faabb13"
+  },
+  "status": "parity_selected_branch_normal_form_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "PrimeQParitySelectedFloorResidueBranchNormalForm",
+      "frontier_before": [
+        "PrimeQFloorResidueBranchPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "two-point floor windows plus LPF>=7 oddness determine the branch; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable parity-selected branch gate"
+    }
+  ]
+}
