@@ -2162,6 +2162,89 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 60. Phi-LPF full Ramanujan spectrum obstruction 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_full_ramanujan_spectrum_obstruction_audit.py
+data/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-audit.md
+```
+
+本层继续处理上一节留下的：
+
+```text
+UniformRamanujanModeCancellationOrTruncation
+```
+
+结论是：精确 truncation 分支被关闭。对
+
+```text
+f_W(n)=1_{gcd(n,W_P)=1}
+```
+
+其加性 Fourier 系数为：
+
+```text
+fhat(a)=c_{W_P}(a)/W_P
+c_W(a)=prod_{ell|W, ell|a}(ell-1) prod_{ell|W, ell not|a}(-1)
+```
+
+因为 `W_P` 平方自由，每个局部因子都是 `ell-1` 或 `-1`，所以每个
+`a mod W_P` 的 Fourier 系数都非零。故精确重建需要全部 `W_P` 个模式，
+任何 proper additive-mode truncation 都改变同对象 selector。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+max_full_additive_frequency_count=200560490130
+max_ramanujan_divisor_terms=2048
+max_sqrt_sieve_prime_count=11
+max_l1_norm=27179089920/86822723
+bad_frequency_count_total=0
+bad_nonzero_frequency_total=0
+bad_l1_formula_total=0
+bad_l2_parseval_total=0
+proper_exact_mode_truncation_possible_for_any_P=false
+```
+
+外部前沿影响：新增核对 Fouvry--Kowalski--Michel--Sawin 2025
+`arXiv:2511.09459` 的 trace-function 双线性技术；它与 Wright 2026、
+Milićević--Qin--Wu 2025、Pascadi 2025、Shao--Shparlinski--Wijaya 2024
+一样，只有在本文 full `W_P` 动态谱被包装成可用 trace/Kloosterman/Type-II
+系数族之后才可能接入。撤回的 `arXiv:2601.00292` 仍不可引用。
+
+新的最新最窄口：
+
+```text
+DynamicFullRamanujanSpectrumToUsableKloostermanCompletionBridge
+AND UniformCancellationAcrossFullDynamicRamanujanSpectrum
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+full_ramanujan_spectrum_obstruction_closed=true
+additive_fourier_full_support_proved=true
+exact_mode_truncation_rejected=true
+full_spectrum_cancellation_closed=false
+usable_kloosterman_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

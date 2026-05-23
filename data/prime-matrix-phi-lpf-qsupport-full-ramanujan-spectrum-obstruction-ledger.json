@@ -1,0 +1,372 @@
+{
+  "additive_fourier_full_support_proved": true,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_full_ramanujan_spectrum_obstruction_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "AdditiveFourierFullSupportForPrimorialUnitSelector",
+      "meaning": "For squarefree W_P every additive Fourier coefficient c_{W_P}(a)/W_P is nonzero.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ExactRamanujanModeTruncationRejected",
+      "meaning": "No proper subset of additive modes can reproduce the exact W_P-unit selector.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "RamanujanSpectrumL1L2Ledger",
+      "meaning": "The full-spectrum L1 and Parseval L2 ledgers are explicit and match product formulas.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "UniformCancellationAcrossFullDynamicRamanujanSpectrum",
+      "meaning": "Prove cancellation after keeping the full W_P dynamic frequency spectrum.",
+      "proved": false,
+      "remaining": "new full-spectrum cancellation theorem"
+    },
+    {
+      "closed": false,
+      "gate": "DynamicFullRamanujanSpectrumToUsableKloostermanCompletionBridge",
+      "meaning": "Organise the full dynamic spectrum into a same-object completed Kloosterman or Type-II family.",
+      "proved": false,
+      "remaining": "new completion bridge"
+    },
+    {
+      "closed": false,
+      "gate": "RoughBetaSiegelWalfiszUniformityOrReplacement",
+      "meaning": "Supply the equidistribution/SW factor or an object-specific replacement for rough beta weights.",
+      "proved": false,
+      "remaining": "rough beta uniformity input"
+    }
+  ],
+  "current_object": {
+    "additive_fourier_coefficient": "fhat(a)=c_{W_P}(a)/W_P",
+    "exact_truncation_conclusion": "any proper additive-mode truncation changes the selector",
+    "full_support": "c_{W_P}(a)!=0 for every a mod W_P",
+    "squarefree_coefficient": "c_W(a)=prod_{ell|W, ell|a}(ell-1) prod_{ell|W, ell not|a}(-1)",
+    "unit_selector": "f_W(n)=1_{gcd(n,W_P)=1} on Z/W_PZ"
+  },
+  "exact_mode_truncation_rejected": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_implication": {
+    "Dong_Robles_Zeindler_2026_arXiv_2601_00292": "withdrawn; not usable as an external input",
+    "Fouvry_Kowalski_Michel_Sawin_2025_arXiv_2511_09459": "bilinear trace-function technology is relevant after sheaf/trace-family packaging, but the current full W_P spectrum lacks that packaging",
+    "Milicevic_Qin_Wu_2025_arXiv_2511_07550": "arbitrary-q bilinear Kloosterman estimates still require admissible bilinear ranges and coefficients",
+    "Pascadi_2025_arXiv_2511_08445": "composite-modulus amplification still needs Type-II organisation beyond raw dynamic Fourier support",
+    "Shao_Shparlinski_Wijaya_2024_arXiv_2411_12113": "smooth/squarefree Kloosterman parameter sums are adjacent but do not estimate this pointwise P,k full-spectrum selector",
+    "Wright_2026_arXiv_2604_25177": "trilinear Kloosterman fractions still need a completed coefficient family; full W_P spectrum is not already organised"
+  },
+  "finite_audit": {
+    "P_value_count": 165,
+    "all_exact_fourier_supports_full": true,
+    "bad_frequency_count_total": 0,
+    "bad_l1_formula_total": 0,
+    "bad_l2_parseval_total": 0,
+    "bad_nonzero_frequency_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_full_additive_frequency_count": 200560490130,
+    "max_l1_norm": "27179089920/86822723",
+    "max_prime": 1009,
+    "max_ramanujan_divisor_terms": 2048,
+    "max_sqrt_sieve_prime_count": 11,
+    "previous_primorial_unit_rejected_total": 651401,
+    "previous_primorial_unit_selected_total": 299977,
+    "previous_ramanujan_identity_checked_total": 951378,
+    "previous_ramanujan_identity_mismatch_total": 0,
+    "proper_exact_mode_truncation_possible_for_any_P": false,
+    "sample_rows": [
+      {
+        "P": 101,
+        "W_P": 210,
+        "all_frequencies_nonzero": true,
+        "frequency_count_sum": 210,
+        "full_additive_frequency_count": 210,
+        "l1_norm": "128/35",
+        "l1_norm_matches_product_formula": true,
+        "l2_norm_squared": "8/35",
+        "l2_norm_squared_matches_parseval": true,
+        "max_abs_cW": 48,
+        "max_abs_normalized_coefficient": "8/35",
+        "min_abs_cW": 1,
+        "min_abs_normalized_coefficient": "1/210",
+        "minimum_exact_modes_for_exact_fourier_selector": 210,
+        "nonzero_frequency_count": 210,
+        "phi_W": 48,
+        "proper_exact_truncation_possible": false,
+        "ramanujan_divisor_terms": 16,
+        "sample_gcd_buckets": [
+          {
+            "abs_cW": 1,
+            "frequency_count": 48,
+            "g": 1
+          },
+          {
+            "abs_cW": 1,
+            "frequency_count": 48,
+            "g": 2
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 24,
+            "g": 3
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 12,
+            "g": 5
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 24,
+            "g": 6
+          },
+          {
+            "abs_cW": 6,
+            "frequency_count": 8,
+            "g": 7
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 12,
+            "g": 10
+          },
+          {
+            "abs_cW": 6,
+            "frequency_count": 8,
+            "g": 14
+          }
+        ],
+        "sqrt_sieve_prime_count": 4,
+        "unit_density": "8/35"
+      },
+      {
+        "P": 257,
+        "W_P": 30030,
+        "all_frequencies_nonzero": true,
+        "frequency_count_sum": 30030,
+        "full_additive_frequency_count": 30030,
+        "l1_norm": "12288/1001",
+        "l1_norm_matches_product_formula": true,
+        "l2_norm_squared": "192/1001",
+        "l2_norm_squared_matches_parseval": true,
+        "max_abs_cW": 5760,
+        "max_abs_normalized_coefficient": "192/1001",
+        "min_abs_cW": 1,
+        "min_abs_normalized_coefficient": "1/30030",
+        "minimum_exact_modes_for_exact_fourier_selector": 30030,
+        "nonzero_frequency_count": 30030,
+        "phi_W": 5760,
+        "proper_exact_truncation_possible": false,
+        "ramanujan_divisor_terms": 64,
+        "sample_gcd_buckets": [
+          {
+            "abs_cW": 1,
+            "frequency_count": 5760,
+            "g": 1
+          },
+          {
+            "abs_cW": 1,
+            "frequency_count": 5760,
+            "g": 2
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 2880,
+            "g": 3
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 1440,
+            "g": 5
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 2880,
+            "g": 6
+          },
+          {
+            "abs_cW": 6,
+            "frequency_count": 960,
+            "g": 7
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 1440,
+            "g": 10
+          },
+          {
+            "abs_cW": 10,
+            "frequency_count": 576,
+            "g": 11
+          }
+        ],
+        "sqrt_sieve_prime_count": 6,
+        "unit_density": "192/1001"
+      },
+      {
+        "P": 971,
+        "W_P": 200560490130,
+        "all_frequencies_nonzero": true,
+        "frequency_count_sum": 200560490130,
+        "full_additive_frequency_count": 200560490130,
+        "l1_norm": "27179089920/86822723",
+        "l1_norm_matches_product_formula": true,
+        "l2_norm_squared": "13271040/86822723",
+        "l2_norm_squared_matches_parseval": true,
+        "max_abs_cW": 30656102400,
+        "max_abs_normalized_coefficient": "13271040/86822723",
+        "min_abs_cW": 1,
+        "min_abs_normalized_coefficient": "1/200560490130",
+        "minimum_exact_modes_for_exact_fourier_selector": 200560490130,
+        "nonzero_frequency_count": 200560490130,
+        "phi_W": 30656102400,
+        "proper_exact_truncation_possible": false,
+        "ramanujan_divisor_terms": 2048,
+        "sample_gcd_buckets": [
+          {
+            "abs_cW": 1,
+            "frequency_count": 30656102400,
+            "g": 1
+          },
+          {
+            "abs_cW": 1,
+            "frequency_count": 30656102400,
+            "g": 2
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 15328051200,
+            "g": 3
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 7664025600,
+            "g": 5
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 15328051200,
+            "g": 6
+          },
+          {
+            "abs_cW": 6,
+            "frequency_count": 5109350400,
+            "g": 7
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 7664025600,
+            "g": 10
+          },
+          {
+            "abs_cW": 10,
+            "frequency_count": 3065610240,
+            "g": 11
+          }
+        ],
+        "sqrt_sieve_prime_count": 11,
+        "unit_density": "13271040/86822723"
+      },
+      {
+        "P": 1009,
+        "W_P": 200560490130,
+        "all_frequencies_nonzero": true,
+        "frequency_count_sum": 200560490130,
+        "full_additive_frequency_count": 200560490130,
+        "l1_norm": "27179089920/86822723",
+        "l1_norm_matches_product_formula": true,
+        "l2_norm_squared": "13271040/86822723",
+        "l2_norm_squared_matches_parseval": true,
+        "max_abs_cW": 30656102400,
+        "max_abs_normalized_coefficient": "13271040/86822723",
+        "min_abs_cW": 1,
+        "min_abs_normalized_coefficient": "1/200560490130",
+        "minimum_exact_modes_for_exact_fourier_selector": 200560490130,
+        "nonzero_frequency_count": 200560490130,
+        "phi_W": 30656102400,
+        "proper_exact_truncation_possible": false,
+        "ramanujan_divisor_terms": 2048,
+        "sample_gcd_buckets": [
+          {
+            "abs_cW": 1,
+            "frequency_count": 30656102400,
+            "g": 1
+          },
+          {
+            "abs_cW": 1,
+            "frequency_count": 30656102400,
+            "g": 2
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 15328051200,
+            "g": 3
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 7664025600,
+            "g": 5
+          },
+          {
+            "abs_cW": 2,
+            "frequency_count": 15328051200,
+            "g": 6
+          },
+          {
+            "abs_cW": 6,
+            "frequency_count": 5109350400,
+            "g": 7
+          },
+          {
+            "abs_cW": 4,
+            "frequency_count": 7664025600,
+            "g": 10
+          },
+          {
+            "abs_cW": 10,
+            "frequency_count": 3065610240,
+            "g": 11
+          }
+        ],
+        "sqrt_sieve_prime_count": 11,
+        "unit_density": "13271040/86822723"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-23",
+  "full_ramanujan_spectrum_obstruction_closed": true,
+  "full_spectrum_cancellation_closed": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DynamicFullRamanujanSpectrumToUsableKloostermanCompletionBridge",
+    "AND UniformCancellationAcrossFullDynamicRamanujanSpectrum",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after the dynamic Ramanujan expansion, the fastest non-cyclic continuation is to decide whether exact mode truncation is possible",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "39ae9b4efd813eacf58e62ffe8e06db5774cecc8ccd048abdf6f4bd1581d6488",
+    "docs/monograph/external-theorem-index.md": "38e97581e33c005f0be7c72392a9313772ca3b3ab6d972400f3790085295213e",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "ae93849160ca1a0241448b89ab001d3080e4c545db06d96bd1d3c15434a60b1a",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-audit.json": "de71600de9cf3020c3ade2d6735a17588627fc5a5365562ff945af1f13c9c6a1",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.json": "2002448ff69ce3c26a7b0911e4348951ac4aedef5de94a7dbe60d6d9732f6e6c",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.json": "e6936bbdce216ed8cd3ba420879c5c8185cbb11cce55ab221f2d7ab33cd204ed",
+    "experiments/prime_matrix_phi_lpf_qsupport_full_ramanujan_spectrum_obstruction_audit.py": "0b87448d913a4cbf5386497b645671b629ff01df7a62ba6d344a90ed38d39bec",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "ae9e2a50de5b920a5cbde0d1f5fa8dde29e8f3a4c9935ced0c40e025ea2cc18d"
+  },
+  "status": "full_ramanujan_spectrum_obstruction_closed_exact_truncation_rejected",
+  "usable_kloosterman_completion_bridge_closed": false
+}

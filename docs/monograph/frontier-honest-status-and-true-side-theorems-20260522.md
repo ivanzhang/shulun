@@ -2349,6 +2349,93 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q12：Phi-LPF q-support full Ramanujan spectrum obstruction 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_full_ramanujan_spectrum_obstruction_audit.py
+data/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层最新口含：
+
+```text
+UniformRamanujanModeCancellationOrTruncation
+```
+
+本层把它拆成“精确截断”和“完整谱抵消”两部分，并关闭精确截断：
+
+```text
+f_W(n)=1_{gcd(n,W_P)=1},  fhat(a)=c_{W_P}(a)/W_P.
+```
+
+平方自由 `W_P` 上：
+
+```text
+c_W(a)=prod_{ell|W,ell|a}(ell-1) prod_{ell|W,ell not|a}(-1),
+```
+
+故每个 `a mod W_P` 的 Fourier 系数都非零。任何 proper additive-mode
+truncation 都会改变 selector。
+
+### Q12.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+P_value_count=165
+max_full_additive_frequency_count=200560490130
+max_ramanujan_divisor_terms=2048
+max_sqrt_sieve_prime_count=11
+bad_frequency_count_total=0
+bad_nonzero_frequency_total=0
+bad_l1_formula_total=0
+bad_l2_parseval_total=0
+all_exact_fourier_supports_full=true
+proper_exact_mode_truncation_possible_for_any_P=false
+```
+
+### Q12.2 诚实边界
+
+本层真推进是排除“只取少量 Ramanujan/additive 模式仍精确同对象”的捷径。
+它没有证明完整动态谱上的抵消；因此奇偶性障碍仍未突破。新增核对的
+Fouvry--Kowalski--Michel--Sawin 2025 trace-function 双线性定理，以及
+Wright 2026、MQW 2025、Pascadi 2025、Shao--Shparlinski--Wijaya 2024
+都仍需先把本文 full `W_P` 动态谱包装成同对象 trace/Kloosterman/Type-II
+系数族。
+
+最新最窄口：
+
+```text
+DynamicFullRamanujanSpectrumToUsableKloostermanCompletionBridge
+AND UniformCancellationAcrossFullDynamicRamanujanSpectrum
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+full_ramanujan_spectrum_obstruction_closed=true
+additive_fourier_full_support_proved=true
+exact_mode_truncation_rejected=true
+full_spectrum_cancellation_closed=false
+usable_kloosterman_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

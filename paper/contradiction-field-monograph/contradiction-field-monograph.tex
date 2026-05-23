@@ -32321,6 +32321,66 @@ dynamic-ramanujan-unit-expansion-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Full Fourier support of the dynamic unit selector}
+
+\begin{theorem}[No exact Ramanujan mode truncation]
+Let \(W=W_P\) be squarefree and define
+\[
+  f_W(n)=1_{\gcd(n,W)=1}
+\]
+on \({\bf Z}/W{\bf Z}\).  Its additive Fourier coefficients are
+\[
+  \widehat f_W(a)=\frac{1}{W}c_W(a).
+\]
+Moreover, for every \(a\bmod W\),
+\[
+  c_W(a)=
+  \prod_{\substack{\ell\mid W\\ \ell\mid a}}(\ell-1)
+  \prod_{\substack{\ell\mid W\\ \ell\nmid a}}(-1),
+\]
+so \(\widehat f_W(a)\ne0\) for every \(a\bmod W\).  Hence any exact
+additive Fourier representation of \(f_W\) uses all \(W\) modes; no
+proper mode truncation reproduces the same selector.
+\end{theorem}
+\begin{proof}
+The Fourier coefficient formula is the standard orthogonality identity
+for the Ramanujan sum:
+\[
+  \sum_{\substack{n\bmod W\\ (n,W)=1}} e(-an/W)=c_W(a).
+\]
+For squarefree \(W\), multiplicativity reduces \(c_W(a)\) to the
+displayed product of the prime local sums.  Every local factor is
+either \(\ell-1\) or \(-1\), so the product is never zero.  Therefore
+the Fourier support is all of \({\bf Z}/W{\bf Z}\).  Omitting any
+frequency changes a nonzero Fourier coefficient, and by uniqueness of
+finite Fourier expansion changes the function.
+\end{proof}
+
+\begin{remark}[The truncation exit is closed, the cancellation exit is not]
+For the dynamic primorial selector the exact number of additive modes is
+\(W_P\), not \(2^{\omega(W_P)}\).  The divisor-level Ramanujan form is
+compact, but opening it to additive characters gives full support.
+Thus the previous alternative
+\texttt{UniformRamanujanModeCancellationOrTruncation} narrows to full
+dynamic-spectrum cancellation: exact truncation is unavailable.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+DynamicFullRamanujanSpectrumToUsableKloostermanCompletionBridge\\
+AND UniformCancellationAcrossFullDynamicRamanujanSpectrum\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+full-ramanujan-spectrum-obstruction-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
