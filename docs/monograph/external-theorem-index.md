@@ -3665,6 +3665,139 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 76. Phi-LPF wheel30 composite LPF descent closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_wheel30_composite_lpf_descent_closure_audit.py
+data/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.md
+```
+
+本层继续选择行/列 Phi-LPF 的最快可闭合子门：
+
+```text
+Wheel30CompositeLPFDescentUniqueRoughQuotient
+FixedPrimeQSmallRQuotientIntervalSingleton
+ResidualAsPrimeQSmallRoughQuotientCandidateGraph
+```
+
+上一层已经把 residual cell 精确定位为 `30`-wheel survivor 的 composite
+部分。本层对每条 residual 写：
+
+```text
+omega=r*a
+r=LPF(omega)
+7<=r<=sqrt(2P-1)
+a>=r
+LPF(a)>=r
+```
+
+固定 prime `q in (P/2,P)` 与 prime `r>=7` 后，商 `a` 必须满足：
+
+```text
+kP < q*r*a < (k+1)P.
+```
+
+该实区间长度为：
+
+```text
+P/(q*r) < 2/r < 1.
+```
+
+所以至多一个整数商，唯一候选为：
+
+```text
+alpha_{P,k}(q,r)=floor(kP/(q*r))+1.
+```
+
+于是 residual edge 等价于：
+
+```text
+alpha<=floor(((k+1)P-1)/(q*r))
+alpha>=r
+q<=r*alpha<=2P-1
+LPF(alpha)>=r
+```
+
+相位变成：
+
+```text
+D(q,r)=q*r*alpha_{P,k}(q,r)-kP
+e(h*kP/q)=e(-h*D(q,r)/q).
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_lpf_r_row_instances=638542
+total_qr_pair_instances=34664566
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+predicted_total_triples=299977
+reason_totals_on_qr={no_integer_quotient:31685737, quotient_below_lpf:894284, residual_lpf_descent_triple:299977, quotient_not_r_rough:918968, cofactor_clip_fail:865600}
+lpf_r_bucket_totals={7:96700, 11:52080, 13:44104, 17:34414, 19:29723, 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+distinct_lpf_r_count=11
+max_lpf_r_seen=43
+max_quotient_interval_points=1
+max_reverse_m_multiplicity=1
+quotient_interval_unique_for_each_qr=true
+predicted_edges_equal_actual_edges=true
+predicted_triples_equal_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_predicted_triples_have_lpf_descent=true
+reverse_m_multiplicity_le_1=true
+bad_quotient_interval_total=0
+bad_displacement_total=0
+bad_lpf_descent_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  relevant only after the (q,r,alpha) graph is completed to a genuine
+  bilinear Kloosterman form.
+
+Pascadi 2025 arXiv:2511.08445:
+  possible Type-II completion technology, but not a pointwise estimate
+  for this prime-q/small-r rough quotient graph.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  relevant only after a finite-field/completion bridge; the present alpha
+  graph is not already their square-free/smooth parameter family.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv v2 and usable only as a near-miss diagnostic.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQSmallRoughQuotientCandidatePhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+wheel30_composite_lpf_descent_closed=true
+rough_quotient_graph_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

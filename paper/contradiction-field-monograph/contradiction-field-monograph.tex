@@ -31481,6 +31481,120 @@ external Kloosterman/Vaughan Type-II estimate without losing pointwise
 control in \(P,k\).
 \end{remark}
 
+\section{Wheel-30 composite LPF descent closure}
+
+\begin{proposition}[Next deterministic LPF descent gate]
+After the \(30\)-wheel composite survivor partition, the next
+deterministic subgate is
+\[
+  \texttt{Wheel30CompositeLPFDescentUniqueRoughQuotient}.
+\]
+It replaces the composite part of the unique odd-candidate map by a
+prime \(q\), small least-prime-factor \(r\), and rough quotient
+candidate.  It is still not a phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Unique rough quotient for fixed \(q,r\)]
+Let \(q\in(P/2,P)\) be prime and let \(r\ge 7\) be prime.  Define
+\[
+  \alpha_{P,k}(q,r)
+  =
+  \left\lfloor \frac{kP}{qr}\right\rfloor+1.
+\]
+If \(a\) is an integer satisfying
+\[
+  kP < qra < (k+1)P,
+\]
+then \(a=\alpha_{P,k}(q,r)\).  In particular, for fixed \(q,r\) there
+is at most one possible quotient \(a\).
+\end{theorem}
+\begin{proof}
+The real interval for \(a\) has length
+\[
+  \frac{(k+1)P-kP}{qr}=\frac{P}{qr}< \frac{2}{r}<1.
+\]
+Therefore it contains at most one integer.  The least integer strictly
+larger than \(kP/(qr)\) is
+\(\lfloor kP/(qr)\rfloor+1\), proving the claim.
+\end{proof}
+
+\begin{theorem}[Residual edges as a prime-\(q\), small-\(r\) rough quotient graph]
+For a residual edge over \(q\), write \(m=\omega_{P,k}(q)\).  Then
+\[
+  m=r a,\qquad r={\rm LPF}(m),\qquad
+  7\le r\le \sqrt{2P-1},\qquad
+  a\ge r,\qquad {\rm LPF}(a)\ge r.
+\]
+Conversely, for primes \(q\in(P/2,P)\) and
+\[
+  7\le r\le\sqrt{2P-1},
+\]
+put \(\alpha=\alpha_{P,k}(q,r)\).  Then \(q\) contributes a residual
+edge with least prime factor \(r\) if and only if
+\[
+  \alpha\le
+  \left\lfloor \frac{(k+1)P-1}{qr}\right\rfloor,\qquad
+  \alpha\ge r,\qquad
+  q\le r\alpha\le 2P-1,\qquad
+  {\rm LPF}(\alpha)\ge r.
+\]
+On this edge,
+\[
+  D(q,r)=qr\alpha-kP,\qquad 1\le D(q,r)<P,
+\]
+and
+\[
+  e(hkP/q)=e(-hD(q,r)/q)
+\]
+for every integer \(h\).
+\end{theorem}
+\begin{proof}
+Let \(m=\omega_{P,k}(q)\) be residual.  By the previous partition,
+\(m\) is composite and has least prime factor at least \(7\).  Put
+\(r={\rm LPF}(m)\) and \(a=m/r\).  Since \(r\) is the least prime factor
+of a composite integer, \(a\ge r\) and \(r^2\le m\le 2P-1\), giving
+\(r\le\sqrt{2P-1}\).  Also no prime below \(r\) divides \(a\), so
+\({\rm LPF}(a)\ge r\).  The product-window condition
+\[
+  kP<qm< (k+1)P
+\]
+becomes \(kP<qra<(k+1)P\), hence \(a=\alpha_{P,k}(q,r)\) by the
+previous theorem.
+
+Conversely, assume the displayed conditions for \(q,r,\alpha\).  Let
+\(m=r\alpha\).  The upper bound on \(\alpha\) and the definition of
+\(\alpha\) give
+\[
+  kP<qm=q r\alpha <(k+1)P.
+\]
+The clipping inequalities give \(q\le m\le 2P-1\).  Since
+\(\alpha\ge r\) and \({\rm LPF}(\alpha)\ge r\), the least prime factor
+of \(m=r\alpha\) is \(r\ge7\), so \(m\) is exactly a residual
+cofactor.  The displacement and phase identity are the matched
+displacement identity applied to this \(m\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-wheel30-\\
+composite-lpf-descent-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after LPF descent]
+The residual object is now a \(0/1\) graph on prime \(q\), small prime
+\(r\le\sqrt{2P-1}\), and the unique rough quotient
+\(\alpha_{P,k}(q,r)\).  The current row/column sawtooth branch is
+reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQSmallRoughQuotientCandidatePhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is cancellation or signed separation on this rough
+quotient graph, or a completion to an external Kloosterman/Vaughan
+Type-II estimate without losing pointwise control in \(P,k\).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

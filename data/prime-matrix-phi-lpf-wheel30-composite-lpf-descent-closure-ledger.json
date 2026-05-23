@@ -1,0 +1,304 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_wheel30_composite_lpf_descent_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "Wheel30CompositeLPFDescentUniqueRoughQuotient",
+      "meaning": "Every residual wheel-30 composite survivor is uniquely r*a with r=LPF and a r-rough.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "FixedPrimeQSmallRQuotientIntervalSingleton",
+      "meaning": "For fixed q and r, the quotient interval has length <1 and has at most one integer alpha.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ResidualAsPrimeQSmallRoughQuotientCandidateGraph",
+      "meaning": "Residual edges are exactly the 0/1 graph of prime q, small prime r, and the unique rough quotient alpha.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQSmallRoughQuotientCandidatePhaseSaving",
+      "meaning": "Prove cancellation or signed separation over the resulting prime-q/small-r rough-quotient graph.",
+      "proved": false,
+      "remaining": "rough quotient graph phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the rough-quotient graph phase to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "the present phase still has a floor-defined rough quotient and a fixed-row LPF predicate",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550",
+      "useful_part": "a target theorem after turning the (q,r,alpha) graph into a genuine bilinear Kloosterman form",
+      "verified_status": "power-saving bilinear Kloosterman estimates modulo arbitrary q"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "does not estimate the pointwise prime-q/small-r graph directly",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445",
+      "useful_part": "candidate completion technology if the rough quotient graph is reorganised into composite-modulus Type-II sums",
+      "verified_status": "non-abelian amplification for Type-II Kloosterman sums with composite moduli"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "rough quotient candidates are neither their square-free/smooth parameter family nor already completed Kloosterman sums",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113",
+      "useful_part": "relevant to arithmetic-function-twisted Kloosterman sums after a completion bridge",
+      "verified_status": "Kloosterman sums parametrised by square-free and smooth integers; journal version appeared online in 2025"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "withdrawn papers cannot be used as an admissible external theorem",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "source_url": "https://arxiv.org/abs/2601.00292",
+      "useful_part": "near-miss diagnostic only",
+      "verified_status": "withdrawn on arXiv v2 after a missing factor was reported"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_predicted_displacements_in_1_to_Pminus1": true,
+    "all_predicted_triples_have_lpf_descent": true,
+    "bad_displacement_total": 0,
+    "bad_lpf_descent_total": 0,
+    "bad_quotient_interval_total": 0,
+    "distinct_lpf_r_count": 11,
+    "extra_edge_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "lpf_r_bucket_totals": {
+      "11": 52080,
+      "13": 44104,
+      "17": 34414,
+      "19": 29723,
+      "23": 22368,
+      "29": 11815,
+      "31": 6916,
+      "37": 1559,
+      "41": 262,
+      "43": 36,
+      "7": 96700
+    },
+    "max_lpf_r_seen": 43,
+    "max_prime": 1009,
+    "max_quotient_interval_points": 1,
+    "max_reverse_m_multiplicity": 1,
+    "max_sample_alpha_seen": 283,
+    "missing_edge_total": 0,
+    "predicted_edges_equal_actual_edges": true,
+    "predicted_total_edges_R30": 299977,
+    "predicted_total_triples": 299977,
+    "predicted_triples_equal_edges": true,
+    "quotient_interval_unique_for_each_qr": true,
+    "reason_totals_on_qr": {
+      "cofactor_clip_fail": 865600,
+      "no_integer_quotient": 31685737,
+      "quotient_below_lpf": 894284,
+      "quotient_not_r_rough": 918968,
+      "residual_lpf_descent_triple": 299977
+    },
+    "reverse_m_multiplicity_le_1": true,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_displacement_count": 0,
+        "bad_lpf_descent_count": 0,
+        "bad_quotient_interval_count": 0,
+        "extra_edge_count": 0,
+        "k": 100,
+        "max_quotient_interval_points": 1,
+        "max_reverse_m_multiplicity": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 1,
+        "predicted_triple_count": 1,
+        "q_count": 10,
+        "qr_pair_count": 30,
+        "r_bucket_counter": {
+          "11": 1
+        },
+        "r_count": 3,
+        "reason_counter_on_qr": {
+          "no_integer_quotient": 27,
+          "quotient_below_lpf": 1,
+          "quotient_not_r_rough": 1,
+          "residual_lpf_descent_triple": 1
+        },
+        "sample_descent_triples": "q=71,r=11,a=13,m=143,d=53"
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_displacement_count": 0,
+        "bad_lpf_descent_count": 0,
+        "bad_quotient_interval_count": 0,
+        "extra_edge_count": 0,
+        "k": 256,
+        "max_quotient_interval_points": 1,
+        "max_reverse_m_multiplicity": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 3,
+        "predicted_triple_count": 3,
+        "q_count": 23,
+        "qr_pair_count": 115,
+        "r_bucket_counter": {
+          "11": 1,
+          "13": 1,
+          "19": 1
+        },
+        "r_count": 5,
+        "reason_counter_on_qr": {
+          "no_integer_quotient": 101,
+          "quotient_below_lpf": 1,
+          "quotient_not_r_rough": 10,
+          "residual_lpf_descent_triple": 3
+        },
+        "sample_descent_triples": "q=137,r=13,a=37,m=481,d=105; q=151,r=19,a=23,m=437,d=195; q=193,r=11,a=31,m=341,d=21"
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_displacement_count": 0,
+        "bad_lpf_descent_count": 0,
+        "bad_quotient_interval_count": 0,
+        "extra_edge_count": 0,
+        "k": 936,
+        "max_quotient_interval_points": 1,
+        "max_reverse_m_multiplicity": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 23,
+        "predicted_triple_count": 23,
+        "q_count": 71,
+        "qr_pair_count": 781,
+        "r_bucket_counter": {
+          "11": 4,
+          "13": 2,
+          "17": 6,
+          "19": 1,
+          "23": 2,
+          "37": 1,
+          "41": 1,
+          "7": 6
+        },
+        "r_count": 11,
+        "reason_counter_on_qr": {
+          "no_integer_quotient": 710,
+          "quotient_below_lpf": 8,
+          "quotient_not_r_rough": 40,
+          "residual_lpf_descent_triple": 23
+        },
+        "sample_descent_triples": "q=491,r=17,a=109,m=1853,d=967; q=503,r=13,a=139,m=1807,d=65; q=523,r=37,a=47,m=1739,d=641; q=541,r=41,a=41,m=1681,d=565; q=557,r=23,a=71,m=1633,d=725"
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_displacement_count": 0,
+        "bad_lpf_descent_count": 0,
+        "bad_quotient_interval_count": 0,
+        "extra_edge_count": 0,
+        "k": 1008,
+        "max_quotient_interval_points": 1,
+        "max_reverse_m_multiplicity": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 9,
+        "predicted_triple_count": 9,
+        "q_count": 72,
+        "qr_pair_count": 792,
+        "r_bucket_counter": {
+          "11": 1,
+          "13": 2,
+          "17": 1,
+          "23": 1,
+          "31": 1,
+          "37": 1,
+          "41": 1,
+          "7": 1
+        },
+        "r_count": 11,
+        "reason_counter_on_qr": {
+          "no_integer_quotient": 731,
+          "quotient_below_lpf": 9,
+          "quotient_not_r_rough": 43,
+          "residual_lpf_descent_triple": 9
+        },
+        "sample_descent_triples": "q=563,r=13,a=139,m=1807,d=269; q=577,r=41,a=43,m=1763,d=179; q=617,r=17,a=97,m=1649,d=361; q=647,r=11,a=143,m=1573,d=659; q=743,r=37,a=37,m=1369,d=95"
+      }
+    ],
+    "total_lpf_r_row_instances": 638542,
+    "total_prime_q_instances": 3874554,
+    "total_qr_pair_instances": 34664566
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQSmallRoughQuotientCandidatePhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "lpf_descent_theorem": {
+    "edge_equivalence": "A residual edge is exactly a prime pair (q,r) with alpha<=floor(((k+1)P-1)/(q*r)), alpha>=r, q<=r*alpha<=2P-1, and LPF(alpha)>=r.",
+    "factorization": "residual omega=r*a with r=LPF(omega), 7<=r<=sqrt(2P-1), a>=r, LPF(a)>=r.",
+    "normal_form": "The residual q-subset becomes a sparse prime-q/small-prime-r rough-quotient candidate graph with 0/1 coefficients.",
+    "not_enough": "The remaining hard point is cancellation or signed separation on this rough-quotient graph.",
+    "phase": "The residual phase is e(-hD(q,r)/q), D(q,r)=q*r*alpha_{P,k}(q,r)-kP.",
+    "unique_quotient_candidate": "For fixed (q,r), alpha=floor(kP/(q*r))+1 is the only possible quotient because P/(q*r)<2/r<1."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "rough_quotient_graph_phase_saving_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9e37200c4b76ebed7edccedf0d380393c71b0d6086ef223554ec48757bb7d0c8",
+    "docs/monograph/external-theorem-index.md": "11ccb5f43f79ddee19746449ffb0384cf9d6ecf3892c6894e89f0bcc3532b9d9",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "12589cc05c81224f9e1dceb933441897c5eebd4991056e26db3a9fcbd18b6065",
+    "docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-lpf-partition-closure-audit.json": "2f9035a8c1848e7601916bb62ae27ec152bad27c05720d1818ec9a3b25972188",
+    "docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.json": "2ef55175cbb1f049b8193f88c79e790a321d54855b6e5a15c84fd51e9af479b7",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_wheel30_composite_lpf_descent_closure_audit.py": "370c57873993ccb4abb575051a67561cb6b59786f6c8d2030111260dafc8e688",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2a5c1bd40222eb8c376dab9865840dc302c4ff142a4a69f1d1b5e96da449d19b"
+  },
+  "status": "wheel30_composite_lpf_descent_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "Wheel30CompositeLPFDescentUniqueRoughQuotient",
+      "frontier_before": [
+        "PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "the composite survivor has an immediate least-prime-factor descent with a unique quotient candidate for each (q,r)"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "slower than the deterministic LPF descent now available inside the Phi-LPF branch"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable wheel-30 composite descent gate"
+    }
+  ],
+  "wheel30_composite_lpf_descent_closed": true
+}

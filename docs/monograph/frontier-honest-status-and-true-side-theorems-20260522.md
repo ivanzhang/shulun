@@ -2692,6 +2692,151 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13：Phi-LPF wheel30 composite LPF descent closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_wheel30_composite_lpf_descent_closure_audit.py
+data/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.md
+```
+
+上一层已经把 residual cell 精确定位为 `30`-wheel survivor 的 composite
+部分。本层关闭：
+
+```text
+Wheel30CompositeLPFDescentUniqueRoughQuotient
+FixedPrimeQSmallRQuotientIntervalSingleton
+ResidualAsPrimeQSmallRoughQuotientCandidateGraph
+```
+
+### Q13.1 LPF 递降
+
+若 `omega_{P,k}(q)` 是 residual composite，则：
+
+```text
+omega=r*a
+r=LPF(omega)
+7<=r<=sqrt(2P-1)
+a>=r
+LPF(a)>=r
+```
+
+反过来，固定 prime `q in (P/2,P)` 与 prime `r>=7` 后，商 `a` 必须满足：
+
+```text
+kP < q*r*a < (k+1)P.
+```
+
+该商区间长度为：
+
+```text
+P/(q*r) < 2/r < 1.
+```
+
+所以至多一个整数商；唯一候选为：
+
+```text
+alpha_{P,k}(q,r)=floor(kP/(q*r))+1.
+```
+
+于是 residual edge 等价于：
+
+```text
+alpha<=floor(((k+1)P-1)/(q*r))
+alpha>=r
+q<=r*alpha<=2P-1
+LPF(alpha)>=r
+```
+
+### Q13.2 相位对象
+
+在该三元图上：
+
+```text
+D(q,r)=q*r*alpha_{P,k}(q,r)-kP
+phase=e(-h*D(q,r)/q).
+```
+
+这一步把 composite 判断从 `omega(q)` 黑箱推进到 prime `q`、小 LPF `r`
+与唯一 rough quotient `alpha` 的 `0/1` 图。它仍不提供相位抵消。
+
+### Q13.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_lpf_r_row_instances=638542
+total_qr_pair_instances=34664566
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+predicted_total_triples=299977
+reason_totals_on_qr={no_integer_quotient:31685737, quotient_below_lpf:894284, residual_lpf_descent_triple:299977, quotient_not_r_rough:918968, cofactor_clip_fail:865600}
+lpf_r_bucket_totals={7:96700, 11:52080, 13:44104, 17:34414, 19:29723, 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+distinct_lpf_r_count=11
+max_lpf_r_seen=43
+max_quotient_interval_points=1
+max_reverse_m_multiplicity=1
+quotient_interval_unique_for_each_qr=true
+predicted_edges_equal_actual_edges=true
+predicted_triples_equal_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_predicted_triples_have_lpf_descent=true
+reverse_m_multiplicity_le_1=true
+bad_quotient_interval_total=0
+bad_displacement_total=0
+bad_lpf_descent_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自 `P/(q*r)<1` 与最小素因子
+分解。
+
+### Q13.4 外部前沿匹配
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550,
+Pascadi 2025 arXiv:2511.08445,
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  still candidate inputs only after a valid completion/Kloosterman bridge.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv v2; near-miss diagnostic only.
+```
+
+### Q13.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQSmallRoughQuotientCandidatePhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+wheel30_composite_lpf_descent_closed=true
+rough_quotient_graph_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial
