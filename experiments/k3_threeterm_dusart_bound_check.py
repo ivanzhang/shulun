@@ -3,7 +3,7 @@ K3'''' three-term Dusart-enhanced bound check.
 
 Verifies the K3'''' explicit inequality (Appendix H):
 
-    |E(P)| < 3P/4 - P/(8 log P) - 0.05625 P / log^2 P
+    |E(P)| < 3P/4 - P/(8 log P) - 0.1125 P / log^2 P
                                             for every prime P >= 180.
 
 Uses Dusart 2010 three-term lower bound for pi(x):
@@ -87,7 +87,7 @@ def main() -> None:
                 col_exc += 1
 
         pi_P2 = pi_of(P * P)
-        # Dusart 2010 three-term: pi(x) >= x/log(x) * (1 + 1/log(x) + 1.8/log^2(x))
+        # Dusart 2010 三项：pi(x) >= x/log(x) * (1 + 1/log(x) + 1.8/log^2(x))
         log_P2 = 2 * log(P)
         dusart3 = (P * P / log_P2) * (1 + 1 / log_P2 + 1.8 / (log_P2 * log_P2))
         ok_d3 = pi_P2 >= dusart3
@@ -95,7 +95,7 @@ def main() -> None:
             all_ok_dusart3 = False
 
         bound_K3_4primes = (
-            3 * P / 4.0 - P / (8 * log(P)) - 0.05625 * P / (log(P) ** 2)
+            3 * P / 4.0 - P / (8 * log(P)) - 0.1125 * P / (log(P) ** 2)
         )
 
         ok_row = row_exc < bound_K3_4primes

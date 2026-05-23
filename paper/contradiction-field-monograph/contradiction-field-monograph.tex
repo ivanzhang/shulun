@@ -29048,8 +29048,10 @@ Expand $\mathrm{Li}(x) = (x/\log x) \sum_{k\ge 0} k!/\log^k x$ to order
 $k=2$.  At $x=P^2$ the $k=2$ contribution is
 $(P^2/(2\log P))\cdot 2/(4\log^2 P)=P^2/(4\log^3 P)$.  Hence
 $\pi(P^2)-\pi(P)=\frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+\frac{P^2}{4\log^3 P}+O(P^2/\log^4 P)$.
-Trivial $N_P(k)\le P$ then yields the stated bound.  Still no sieve
-input; the expansion is internal to PNT.
+The subtracted \(\pi(P)=O(P/\log P)\) is absorbed in the
+\(O(P^2/\log^4 P)\) term for sufficiently large \(P\).  Trivial
+\(N_P(k)\le P\) then yields the stated bound.  Still no sieve input; the
+expansion is internal to PNT.
 \end{proof}
 
 \begin{provedstatement}[K3*-trivial-three-term-Li]
@@ -29086,7 +29088,8 @@ on the $H_P$ exception sets.  They split into two parallel chains:
 \[
   |E(P)|,\ |E^*(P)|\le
   P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}
-  +O\!\Bigl(\frac{P}{\log^3 P}\Bigr).
+  -\frac{P}{4\log^3 P}
+  +O\!\Bigl(\frac{P}{\log^4 P}\Bigr).
 \]
 
 \emph{External-lemma chain} (PNT + Brun--Titchmarsh + Dusart 2010):

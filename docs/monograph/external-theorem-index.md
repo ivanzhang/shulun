@@ -1916,10 +1916,10 @@ pi(x) >= x/log x * (1 + 1/log x + 1.8/log^2 x),  x >= 32299
 
 ```text
 K3'''':
-|E(P)| < 3P/4 - P/(8 log P) - 0.05625 P/log^2 P,  P>=180
+|E(P)| < 3P/4 - P/(8 log P) - 0.1125 P/log^2 P,  P>=180
 
 K3*-three-term:
-|E*(P)| < 3P/4 - P/(8 log P) - 0.05625 P/log^2 P,  P>=180
+|E*(P)| < 3P/4 - P/(8 log P) - 0.1125 P/log^2 P,  P>=180
 ```
 
 数值核对 `P in [180,500]` 全部通过：
@@ -1933,6 +1933,93 @@ all_pass_K3*-3term=true
 这是真实的外部显式 PNT 常数推进；但主项仍为 `3P/4`，所以不关闭目标命题。它与
 Baker-Harman-Pintz 连续空行块界合并后给出新的分布刚性：例外行即使存在，也不能聚成
 长度超过 `P^(0.05+eps)` 的连续块，同时总量满足上述三项 K3'''' 上界。
+
+## 43. K3'''' 系数自审纠错与 Dusart 上界常数收紧
+
+新增文件：
+
+```text
+experiments/k3_quadruple_prime_corrected_check.py
+docs/k3_quadruple_prime_corrected_check_run_20260523.txt
+```
+
+逐行重算 Dusart 三项贡献：
+
+```text
+0.225 P^2/log^3 P * logP/(2P) = 0.1125 P/log^2 P
+```
+
+因此早期 `0.05625` 系数是因子 2 算术偏差。修正后：
+
+```text
+K3''''-corrected:
+|E(P)| < 3P/4 - P/(8 log P) - 0.1125 P/log^2 P,  P>=180
+
+K3*-three-term-corrected:
+|E*(P)| < 3P/4 - P/(8 log P) - 0.1125 P/log^2 P,  P>=180
+
+K3-united-three-term-corrected:
+|E(P)|+|E*(P)| < 3P/2 - P/(4 log P) - 0.225 P/log^2 P,  P>=180
+```
+
+另引入 Dusart 2010 上界 `pi(x)<=x/(log x-1.1)`，对 `P>=60184` 得到行方向精确常数项：
+
+```text
+|E(P)| <= 3P/4 - P/(8 log P) - 0.1125P/log^2 P
+          - 1 + logP/(2(logP-1.1)).
+```
+
+数值核对 `P in [180,500]`：
+
+```text
+all_pass_K3''''_corrected_row=true
+all_pass_K3''''_corrected_col=true
+```
+
+这是真实非循环纠错与常数推进；主项仍为 `3P/4`，所以不关闭目标命题。
+
+## 44. K3-trivial-three-term-Li 内部自足三项加强
+
+新增文件：
+
+```text
+experiments/k3_trivial_three_term_li_check.py
+docs/k3_trivial_three_term_li_check_run_20260523.txt
+```
+
+用 `Li(x)` 的标准渐近展开
+
+```text
+Li(x) = x/log x * (1 + 1/log x + 2!/log^2 x + ...)
+```
+
+代入 `x=P^2` 后，第三项给出
+
+```text
+P^2/(2 log P) * 2/(4 log^2 P) = P^2/(4 log^3 P).
+```
+
+因此内部自足版推进为：
+
+```text
+K3-trivial-three-term-Li:
+|E(P)| <= P - P/(2 log P) - P/(4 log^2 P) - P/(4 log^3 P)
+          + O(P/log^4 P).
+
+K3*-trivial-three-term-Li:
+|E*(P)| <= P - P/(2 log P) - P/(4 log^2 P) - P/(4 log^3 P)
+           + O(P/log^4 P).
+```
+
+数值审计 `P in [100,500]`：
+
+```text
+all_pass_K3-trivial-3term-Li_row=true
+all_pass_K3-trivial-3term-Li_col=true
+```
+
+这是 PNT-only 内部链的真实三项推进；但主项仍为 `P`，弱于外部 sieve 链的 `3P/4`，
+所以不关闭目标命题。
 
 ## 41. 2026-05-23 最新外部前沿版本核验与转换门槛
 

@@ -1,15 +1,14 @@
-"""
-K3-trivial-three-term-Li internal self-contained bound check.
+"""K3-trivial-three-term-Li 内部自足三项展开数值审计。
 
-Verifies the K3-trivial-three-term-Li inequality (Appendix M):
+用法示例：
+  python3 experiments/k3_trivial_three_term_li_check.py --pmax 500
+
+核对 K3-trivial-three-term-Li 渐近上界（附录 N）：
 
     |E(P)| <= P - P/(2 log P) - P/(4 log^2 P) - P/(4 log^3 P) + O(P/log^4 P)
 
-This uses only PNT internal information (Li(x) asymptotic expansion +
-de la Vallee-Poussin 1899 remainder), no sieve.
-
-Run:
-    python3 k3_trivial_three_term_li_check.py --pmax 500
+这里仅使用 PNT 内部信息：Li(x) 渐近展开与 de la Vallee-Poussin 1899
+余项；不引入 sieve 输入。脚本只做有限数值审计，不能替代渐近证明。
 """
 from __future__ import annotations
 import argparse
@@ -61,14 +60,14 @@ def main() -> None:
         if P > args.pmax:
             break
 
-        # row exceptions
+        # 行例外：第 k 行区间 (kP, (k+1)P] 没有素数。
         row_exc = 0
         for k in range(1, P):
             c = pi_of((k + 1) * P) - pi_of(k * P)
             if c == 0:
                 row_exc += 1
 
-        # column exceptions
+        # 列例外：固定 residue j mod P 的方阵列中没有素数。
         col_exc = 0
         for j in range(1, P):
             has_prime = False
@@ -84,7 +83,7 @@ def main() -> None:
         bound_enh = P - P / (2 * lp) - P / (4 * lp * lp)
         bound_3term = bound_enh - P / (4 * lp ** 3)
 
-        # Allow small O(P/log^4 P) slack for big-O term
+        # 给渐近 O(P/log^4 P) 项预留有限审计余量。
         slack = P / (lp ** 4) + 1
 
         ok_row = row_exc <= bound_3term + slack

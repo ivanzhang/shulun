@@ -1484,9 +1484,9 @@ all_pass_K3''''_corrected_col = True
 
 ---
 
-## 附录 M：K3-trivial-three-term-Li 与 K3-united 修正同步（2026-05-23 第十二轮）
+## 附录 N：K3-trivial-three-term-Li 与 K3-united 修正同步（2026-05-23 第十二轮）
 
-### M.1 内部自足版的 Li(x) 三项精化
+### N.1 内部自足版的 Li(x) 三项精化
 
 附录 K 的 K3-trivial-enhanced 用 $\mathrm{Li}(x)$ 的二项展开。
 **Li(x) 渐近的标准展开**（仍 PNT 内部）：
@@ -1511,7 +1511,7 @@ $$
 dlVP 1899 余项 $\pi(x)=\mathrm{Li}(x)+O(x e^{-c\sqrt{\log x}})$，余项是亚多项式衰减，
 在 $1/\log^k P$ 任意阶下都吸收为零。
 
-### M.2 定理 K3-trivial-three-term-Li
+### N.2 定理 K3-trivial-three-term-Li
 
 **陈述**：对充分大素数 $P$，
 $$
@@ -1523,6 +1523,8 @@ $$
 $$
 \pi(P^2)-\pi(P)=\frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+\frac{P^2}{4\log^3 P}+O(P^2/\log^4 P).
 $$
+
+其中被减去的 $\pi(P)=O(P/\log P)$ 对充分大 $P$ 可吸收到 $O(P^2/\log^4 P)$ 中。
 
 平凡 $N_P(k)\le P$。求和分解（同 K3-trivial 框架）：
 
@@ -1542,16 +1544,16 @@ $$
 
 **状态**：`Proved-in-text + PNT-only`（仍内部自足，不引入任何外部 sieve）。
 
-### M.3 K3*-trivial-three-term-Li（列方向）
+### N.3 K3*-trivial-three-term-Li（列方向）
 
 **陈述**：对充分大素数 $P$，
 $$
 |E^*(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}-\frac{P}{4\log^3 P}+O\!\Bigl(\frac{P}{\log^4 P}\Bigr).
 $$
 
-**证明**：与 M.2 同构。$\sum_j M_P(j)=\pi(P^2)-1$，$M_P(j)\le P$。∎
+**证明**：与 N.2 同构。$\sum_j M_P(j)=\pi(P^2)-1$，$M_P(j)\le P$。∎
 
-### M.4 内部自足版三阶链
+### N.4 内部自足版三阶链
 
 | 定理 | 上界 | 节省项 |
 |---|---|---|
@@ -1559,11 +1561,11 @@ $$
 | K3-trivial-enhanced | $P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}+O(P/\log^3 P)$ | + 二阶 |
 | **K3-trivial-three-term-Li** | $P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}-\frac{P}{4\log^3 P}+O(P/\log^4 P)$ | + 三阶 |
 
-每层都用 Li(x) 一阶展开增加项——纯 PNT 内部，不引入任何外部输入。
+每层都用 Li(x) 逐阶展开增加项——纯 PNT 内部，不引入任何外部输入。
 
-### M.5 K3-united-three-term 修正同步
+### N.5 K3-united-three-term 修正同步
 
-附录 L 修正了 K3'''' 系数 $0.05625\to 0.1125$。
+附录 M 修正了 K3'''' 系数 $0.05625\to 0.1125$。
 **K3-united-three-term 应同步纠正**（因子 2）：
 
 **陈述（修正版）**：对每个素数 $P\ge 180$，
@@ -1576,16 +1578,16 @@ $$
 
 **节省**：联合 $\log^2 P$ 阶减项从 $0.1125 \to 0.225$（**翻倍**）。
 
-### M.6 修正后所有联合上界（$P=4999$ 数值）
+### N.6 修正后所有联合上界（$P=4999$ 数值）
 
 | 联合定理 | 公式 | $P=4999$ 数值上界 |
 |---|---|---|
 | K3-united | $3P/2-P/(4\log P)$ | $7351.6$ |
-| K3-united-three-term（**修正**）| $3P/2-P/(4\log P)-0.225P/\log^2 P$ | $7314.4$ |
+| K3-united-three-term（**修正**）| $3P/2-P/(4\log P)-0.225P/\log^2 P$ | $7336.3$ |
 | 实际 $\|E\|+\|E^*\|$ | $0+0=0$ | $0$ |
 | H_P 需要 | $0$ | $0$ |
 
-### M.7 黎曼/欧拉/高斯式的真正美学
+### N.7 黎曼/欧拉/高斯式的真正美学
 
 经过本轮逐行精读+原子化纠错，K-系列升级链已经达到：
 
