@@ -1866,6 +1866,112 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+---
+
+## 附录 Q6：Phi-LPF boolean q-projection closure 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boolean_q_projection_closure_audit.py
+data/prime-matrix-phi-lpf-boolean-q-projection-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boolean-q-projection-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-boolean-q-projection-closure-audit.md
+```
+
+bounded coefficient 抽取后，本轮继续比较合著稿三命题：
+
+```text
+Prime Matrix row/column Phi-LPF:
+  fastest gate = PrimeQBooleanProjectionForLPFShellResidual
+
+two-point sieve / prime-pair line:
+  frontier = BMD=>TLI without hidden denominator/parity gap
+
+RH contradiction-field line:
+  frontier = IndependentRefereeAcceptanceOfAllRHControlledExits
+```
+
+因此本轮仍选择行/列 Phi-LPF。新闭合的是 prime-q 投影 multiplicity 门，
+不是相位抵消门。
+
+### Q6.1 布尔投影闭合
+
+上一层给出：
+
+```text
+0 <= b(q) <= #I_q(P,k) <= 2
+```
+
+本层进一步证明：
+
+```text
+q>P/2 => I_q(P,k) has at most two integers
+if there are two, they are consecutive
+m composite and LPF(m)>=7 => m is odd
+two consecutive integers contain at most one odd integer
+therefore b_{P,k}(q) in {0,1}
+```
+
+这把 finite sawtooth modes 的 LPF 权重从 bounded multiplicity prime sequence
+压成一个 prime-q 布尔子集 `Q_{P,k}`。
+
+### Q6.2 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_R30=299977
+max_window_size_seen=2
+total_two_point_windows=876803
+total_two_point_windows_with_residual=208481
+max_projected_q_weight_seen=1
+all_projected_q_weights_boolean=true
+violation_count=0
+```
+
+有限审计只验证实现和账本一致性；全局闭合来自 two-point window 与 parity 论证。
+
+### Q6.3 外部前沿匹配
+
+```text
+Classical parity/2-wheel observation:
+  closes the q-projected multiplicity gate.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  remain useful Kloosterman-frontier candidates only after completion;
+  they do not estimate the fixed-row boolean prime-q real reciprocal phase directly.
+```
+
+### Q6.4 最新最窄口
+
+从上一层两口：
+
+```text
+PrimeQBoundedLPFCoefficientReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQBooleanSubsetReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+prime_q_boolean_projection_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

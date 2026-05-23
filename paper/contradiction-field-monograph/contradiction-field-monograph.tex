@@ -30951,6 +30951,61 @@ the sharper phase/completion problem left after deterministic finite
 truncation and bounded coefficient extraction have both been removed.
 \end{remark}
 
+\section{Boolean prime-q projection closure}
+
+\begin{proposition}[Next deterministic prime-q gate]
+After the LPF-shell weights have been extracted with bounded norm, the
+next fully deterministic subgate is
+\[
+  \texttt{PrimeQBooleanProjectionForLPFShellResidual}.
+\]
+It is again on the row/column Phi--LPF line.  The two-point sieve and
+RH fronts do not have an equally small deterministic gate at this
+stage.  This gate sharpens the projected coefficient but does not
+prove any exponential-sum cancellation.
+\end{proposition}
+
+\begin{theorem}[Projected LPF residual coefficients are Boolean]
+For every prime \(q\in(P/2,P)\), define
+\[
+  b_{P,k}(q)
+   =\#\{m\in I_q(P,k):m\ {\rm composite},\ {\rm LPF}(m)\ge 7\}.
+\]
+Then
+\[
+  b_{P,k}(q)\in\{0,1\}.
+\]
+Consequently the finite sawtooth modes reduce to exponential sums over
+a subset \(Q_{P,k}\subset\{q:P/2<q<P,\ q\ {\rm prime}\}\), rather than
+over a prime sequence with multiplicity.
+\end{theorem}
+\begin{proof}
+The reciprocal window \(I_q(P,k)\) has at most two integer points
+because \(P/q<2\).  If two points occur, they are consecutive
+integers.  On the other hand, every residual cofactor counted by
+\(b_{P,k}(q)\) is composite and has least prime factor at least \(7\);
+in particular it is odd.  Two consecutive integers contain at most one
+odd integer.  Hence at most one point of \(I_q(P,k)\) can be counted.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-boolean-\\
+q-projection-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after Boolean projection]
+The current row/column sawtooth branch is now reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQBooleanSubsetReciprocalPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This sharpening uses the elementary \(2\)-wheel parity obstruction in a
+positive way: it removes double prime-\(q\) multiplicity.  It still does
+not break the global Phi--LPF parity barrier, because cancellation over
+the resulting prime subset \(Q_{P,k}\) remains unproved.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

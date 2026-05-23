@@ -1,0 +1,186 @@
+{
+  "boolean_projection_theorem": {
+    "boolean_projection": "Therefore b_{P,k}(q)=# {m in I_q(P,k): m composite, LPF(m)>=7} belongs to {0,1}.",
+    "not_enough": "Boolean coefficients alone do not prove cancellation; a prime-q subset reciprocal phase theorem or a completion theorem is still needed.",
+    "phase_reduction": "Finite sawtooth modes reduce to sums over a subset Q_{P,k} of primes q in (P/2,P), not to a multi-weighted prime sequence.",
+    "residual_parity": "If m is composite and LPF(m)>=7, then m is odd and coprime to 2,3,5.",
+    "window_bound": "For q>P/2, I_q(P,k) has at most two integers; if two occur they are consecutive."
+  },
+  "certificate_type": "prime_matrix_phi_lpf_boolean_q_projection_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimeQBooleanProjectionForLPFShellResidual",
+      "meaning": "The projected LPF residual coefficient b_{P,k}(q) is 0 or 1, not merely bounded by 2.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "NoDoubleMultiplicityPrimeQNoise",
+      "meaning": "Two-point reciprocal windows cannot contribute two LPF residual cofactors because one of two consecutive integers is even.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQBooleanSubsetReciprocalPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation for sum_{q in Q_{P,k}} e(hkP/q).",
+      "proved": false,
+      "remaining": "boolean prime-q subset reciprocal phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the same-row boolean subset phase to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "removes double weights only; does not estimate exponential sums over the resulting prime subset",
+      "source": "Classical parity/2-wheel observation",
+      "useful_part": "closes the q-projected multiplicity gate because residual m are odd"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "requires inverse/Kloosterman completion, not merely boolean q-coefficients",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "arbitrary-modulus bilinear Kloosterman power savings for a later completed form"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "not a fixed-row real reciprocal phase theorem",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "composite-modulus Type-II Kloosterman amplification"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "useful after finite-field completion, not direct for Q_{P,k} prime subsets",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums over square-free and smooth parameters"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_projected_q_weights_boolean": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_prime": 1009,
+    "max_projected_q_weight_seen": 1,
+    "max_window_size_seen": 2,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "R30": 1,
+        "k": 100,
+        "max_projected_q_weight": 1,
+        "max_window_size": 2,
+        "parity_blocked_double_residual": true,
+        "projected_q_weight_boolean": true,
+        "q_count": 10,
+        "sample_q_residuals": "q=71:m=143",
+        "two_point_windows": 4,
+        "two_point_windows_with_residual": 0
+      },
+      {
+        "P": 257,
+        "R30": 3,
+        "k": 256,
+        "max_projected_q_weight": 1,
+        "max_window_size": 2,
+        "parity_blocked_double_residual": true,
+        "projected_q_weight_boolean": true,
+        "q_count": 23,
+        "sample_q_residuals": "q=137:m=481; q=151:m=437; q=193:m=341",
+        "two_point_windows": 11,
+        "two_point_windows_with_residual": 3
+      },
+      {
+        "P": 971,
+        "R30": 23,
+        "k": 936,
+        "max_projected_q_weight": 1,
+        "max_window_size": 2,
+        "parity_blocked_double_residual": true,
+        "projected_q_weight_boolean": true,
+        "q_count": 71,
+        "sample_q_residuals": "q=491:m=1853; q=503:m=1807; q=523:m=1739; q=541:m=1681; q=557:m=1633",
+        "two_point_windows": 27,
+        "two_point_windows_with_residual": 12
+      },
+      {
+        "P": 1009,
+        "R30": 9,
+        "k": 1008,
+        "max_projected_q_weight": 1,
+        "max_window_size": 2,
+        "parity_blocked_double_residual": true,
+        "projected_q_weight_boolean": true,
+        "q_count": 72,
+        "sample_q_residuals": "q=563:m=1807; q=577:m=1763; q=617:m=1649; q=647:m=1573; q=743:m=1369",
+        "two_point_windows": 29,
+        "two_point_windows_with_residual": 5
+      }
+    ],
+    "total_R30": 299977,
+    "total_two_point_windows": 876803,
+    "total_two_point_windows_with_residual": 208481,
+    "violation_count": 0
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQBooleanSubsetReciprocalPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prime_q_boolean_projection_closed": true,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "5c70b60e56f547517723731df202285f9305ed400dff39817210b5ec1204fb3a",
+    "docs/monograph/external-theorem-index.md": "884e490255218a4221c771957788426ce285f5ad08e2435db96232f4725a3e68",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "30fc8c80aa1e73d05fc62f518c88f5cd4dca6e3521cdf8cb9c9a34824a5fb2eb",
+    "docs/monograph/prime-matrix-phi-lpf-finite-h-truncation-closure-audit.json": "2d14f60c70eae8811ea0af290aa62b01ac77acbc46aa6a89c4057e6d6f07ec74",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.json": "d0ef19513f1ca9d68671f22802466b93e7cda0598e98870421dbb415bfae6dea",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_boolean_q_projection_closure_audit.py": "4aef98ab37b8d667e928194fc78a30e79ec8f840aac67e90fec27a588e0b3a7e",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "4af15b49e2688c7e473ee2d24c040230f292f0bf61deff90ff16c1e84ae336e2"
+  },
+  "status": "prime_q_lpf_projection_boolean_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "PrimeQBooleanProjectionForLPFShellResidual",
+      "frontier_before": [
+        "PrimeQBoundedLPFCoefficientReciprocalPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "pure parity plus thin-window sharpening after bounded coefficient extraction; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable prime-q projection gate"
+    }
+  ],
+  "weighted_reciprocal_phase_saving_closed": false
+}
