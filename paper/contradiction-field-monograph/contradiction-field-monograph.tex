@@ -31006,6 +31006,63 @@ not break the global Phi--LPF parity barrier, because cancellation over
 the resulting prime subset \(Q_{P,k}\) remains unproved.
 \end{remark}
 
+\section{Reciprocal matching graph closure}
+
+\begin{proposition}[Next deterministic reciprocal graph gate]
+After the prime-\(q\) projection is Boolean, the next deterministic
+subgate is
+\[
+  \texttt{ReciprocalResidualGraphIsPartialMatching}.
+\]
+It again belongs to the row/column Phi--LPF line.  It sharpens the
+support geometry of the residual graph, but it is not a replacement
+for a prime-\(q\) reciprocal phase estimate.
+\end{proposition}
+
+\begin{theorem}[The residual reciprocal graph is a partial matching]
+Let \(G_{P,k}\) be the bipartite graph whose left vertices are primes
+\(q\in(P/2,P)\), whose right vertices are residual cofactors \(m\),
+and whose edges are the pairs
+\[
+  kP<qm<(k+1)P,\qquad
+  m\in I_q(P,k),\qquad
+  m\ {\rm composite},\qquad {\rm LPF}(m)\ge 7.
+\]
+Then every left vertex and every right vertex has degree at most
+\(1\).  Hence \(G_{P,k}\) is a partial matching.
+\end{theorem}
+\begin{proof}
+The left degree bound is the Boolean prime-\(q\) projection theorem
+above.  For the right degree bound, fix a residual cofactor \(m\).
+The possible integer \(q\)'s lie in
+\[
+  \frac{kP}{m}<q<\frac{(k+1)P}{m},
+\]
+with the additional restrictions \(P/2<q<P\), \(q\le m\), and \(q\)
+prime.  Since residual edges have \(m>P/2\), this interval has length
+\(P/m<2\).  Thus it contains at most two integers, and if two occur
+they are consecutive.  But \(q>P/2>2\), so any prime \(q\) is odd;
+two consecutive integers cannot both be odd primes.  Therefore at most
+one prime \(q\) can connect to the fixed \(m\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-matching-\\
+graph-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after matching closure]
+The current row/column sawtooth branch is now reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQMatchingSubsetReciprocalPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This removes bidirectional multiplicity from the reciprocal residual
+graph.  The hard point is still a phase/completion theorem for a moving
+matched prime subset, not a closed unconditional Phi--LPF proof.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

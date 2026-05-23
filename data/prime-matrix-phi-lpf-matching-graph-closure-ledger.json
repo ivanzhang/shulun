@@ -1,0 +1,191 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_matching_graph_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "ReversePrimeQFiberBooleanForResidualM",
+      "meaning": "For each residual cofactor m, at most one prime q in (P/2,P) can satisfy kP<qm<(k+1)P.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ReciprocalResidualGraphIsPartialMatching",
+      "meaning": "Combining q-side and m-side booleanity, the residual graph has degree at most 1 on both sides.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQMatchingSubsetReciprocalPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation for the matched prime subset sum over Q_{P,k}.",
+      "proved": false,
+      "remaining": "matching subset reciprocal phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the same-row matching graph to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "turns the graph into a matching only; no exponential-sum cancellation follows",
+      "source": "Classical parity and twin-prime exception observation",
+      "useful_part": "two consecutive integers above 2 cannot both be prime"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "requires inverse/Kloosterman completion of the matching graph",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "arbitrary-modulus bilinear Kloosterman power savings for later completed matching sums"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "not a pointwise fixed-row real reciprocal matching theorem",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "composite-modulus Type-II Kloosterman amplification"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "useful after finite-field completion, not direct for the real reciprocal matching graph",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums over square-free and smooth parameters"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_rows_matching_graph": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_m_degree_seen": 1,
+    "max_prime": 1009,
+    "max_q_degree_seen": 1,
+    "max_reverse_q_window_size_seen": 2,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "distinct_m_vertices": 1,
+        "distinct_q_vertices": 1,
+        "edge_count_R30": 1,
+        "k": 100,
+        "matching_graph": true,
+        "max_m_degree": 1,
+        "max_q_degree": 1,
+        "max_reverse_q_window_size": 1,
+        "sample_edges": "q=71,m=143",
+        "two_point_reverse_windows_on_edges": 0,
+        "two_point_reverse_windows_with_residual": 0
+      },
+      {
+        "P": 257,
+        "distinct_m_vertices": 3,
+        "distinct_q_vertices": 3,
+        "edge_count_R30": 3,
+        "k": 256,
+        "matching_graph": true,
+        "max_m_degree": 1,
+        "max_q_degree": 1,
+        "max_reverse_q_window_size": 1,
+        "sample_edges": "q=137,m=481; q=151,m=437; q=193,m=341",
+        "two_point_reverse_windows_on_edges": 0,
+        "two_point_reverse_windows_with_residual": 0
+      },
+      {
+        "P": 971,
+        "distinct_m_vertices": 23,
+        "distinct_q_vertices": 23,
+        "edge_count_R30": 23,
+        "k": 936,
+        "matching_graph": true,
+        "max_m_degree": 1,
+        "max_q_degree": 1,
+        "max_reverse_q_window_size": 1,
+        "sample_edges": "q=491,m=1853; q=503,m=1807; q=523,m=1739; q=541,m=1681; q=557,m=1633",
+        "two_point_reverse_windows_on_edges": 0,
+        "two_point_reverse_windows_with_residual": 0
+      },
+      {
+        "P": 1009,
+        "distinct_m_vertices": 9,
+        "distinct_q_vertices": 9,
+        "edge_count_R30": 9,
+        "k": 1008,
+        "matching_graph": true,
+        "max_m_degree": 1,
+        "max_q_degree": 1,
+        "max_reverse_q_window_size": 1,
+        "sample_edges": "q=563,m=1807; q=577,m=1763; q=617,m=1649; q=647,m=1573; q=743,m=1369",
+        "two_point_reverse_windows_on_edges": 0,
+        "two_point_reverse_windows_with_residual": 0
+      }
+    ],
+    "total_edges_R30": 299977,
+    "total_two_point_reverse_windows_on_edges": 36191,
+    "violation_count": 0
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQMatchingSubsetReciprocalPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "matching_theorem": {
+    "m_reverse_window": "For fixed residual m>P/2, possible q lie in an integer interval of length P/m<2.",
+    "matching_conclusion": "The residual (q,m) graph has maximum degree 1 on both sides; it is a partial matching.",
+    "not_enough": "A matching graph still does not imply cancellation for sum_{q in Q_{P,k}} e(hkP/q); completion/dispersion remains open.",
+    "phase_reduction": "The finite sawtooth object is a sum over matched edges q<->m, equivalently over a prime subset Q_{P,k} with a unique residual cofactor map m(q).",
+    "prime_parity": "If two integer q candidates are present, they are consecutive; since q>P/2>2 and q is prime, at most one can be prime.",
+    "q_side": "Previous gate gives each q at most one residual cofactor m."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reciprocal_residual_graph_matching_closed": true,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "18526148dff0e497dddc61f2b3a28915b7058282295255425154cddd18a8694b",
+    "docs/monograph/external-theorem-index.md": "25e1e16d758caa36e22d40a18ccb5d2045d43f576edd05101bec5e0ab2cb7e95",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "3832d9fe40b44350e15bdaca4421041bfbb1b1565ab141f14a32eb933cb1f03f",
+    "docs/monograph/prime-matrix-phi-lpf-boolean-q-projection-closure-audit.json": "816fc3e4abbed9e378a10952b3d13d3c5e3c3930ac44779fce69523d84b580cb",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.json": "d0ef19513f1ca9d68671f22802466b93e7cda0598e98870421dbb415bfae6dea",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_matching_graph_closure_audit.py": "da3a165e9e5f362ae2fb95eda7fee7fe0e0b26c054dc6c4e3e6ce9094cbf8122",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "40dc2ac7335484c9bf9d22c604ee6d7313ebaed1e9fac7ce9f96ba498411f775"
+  },
+  "status": "reciprocal_graph_is_matching_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "ReciprocalResidualGraphIsPartialMatching",
+      "frontier_before": [
+        "PrimeQBooleanSubsetReciprocalPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "reverse-fibre parity sharpening after boolean q-projection; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable reciprocal graph fibre gate"
+    }
+  ],
+  "weighted_reciprocal_phase_saving_closed": false
+}

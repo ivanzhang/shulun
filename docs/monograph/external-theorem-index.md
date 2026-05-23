@@ -3061,6 +3061,86 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 70. Phi-LPF matching graph closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_matching_graph_closure_audit.py
+data/prime-matrix-phi-lpf-matching-graph-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-matching-graph-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-matching-graph-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的反向纤维子门：
+
+```text
+ReversePrimeQFiberBooleanForResidualM
+ReciprocalResidualGraphIsPartialMatching
+```
+
+上一层已经证明 prime-q 侧投影是布尔的。本层再证明 residual cofactor 侧
+也是布尔：
+
+```text
+fixed residual m>P/2
+possible q lie in an integer interval of length P/m<2
+if two integer q candidates are present, they are consecutive
+q>P/2>2 and q prime => at most one candidate is prime
+```
+
+因此 `(q,m)` residual graph 两侧最大度均为 `1`，是部分匹配。有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+max_q_degree_seen=1
+max_m_degree_seen=1
+max_reverse_q_window_size_seen=2
+total_two_point_reverse_windows_on_edges=36191
+all_rows_matching_graph=true
+violation_count=0
+```
+
+外部前沿匹配：
+
+```text
+Classical parity/twin-prime exception observation:
+  closes only the graph matching gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  arbitrary-modulus Kloosterman estimates remain useful only after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  composite-modulus Kloosterman amplification is not a pointwise fixed-row
+  real reciprocal matching theorem.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman sums need finite-field completion first.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQMatchingSubsetReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+reciprocal_residual_graph_matching_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
