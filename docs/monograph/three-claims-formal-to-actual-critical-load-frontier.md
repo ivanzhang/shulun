@@ -24035,3 +24035,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层不把 RNRS 版本调和伪装成目标命题证明；ExactUV/source、FullS theorem-match、
 模型、PDEC/CleanKLS、Rate 和独立验收门仍在 frontier 上。
+
+## 330W. Two replacement lines ExactUV/source noncycle frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_exactuv_source_noncycle_frontier_router.py
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.json
+data/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_exactuv_source_frontier_reduced_to_seed_and_moving_atom_open
+rks_log_current_active_obstruction=false
+exactuv_entropy_layer_labels_are_ordered_interfaces=true
+source_loop_cut_closed=true
+acyclic_seed_current_corpus_proved=false
+moving_atom_exclusion_current_corpus_proved=false
+latest_internal_source_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：ExactUV/source 相关标签已被排序成一条非循环链，而非并列的
+等价命题池：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+-> ActualNoncanonicalExactUVSupportLowerBound
+-> CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+-> CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+```
+
+继续沿旧 origin/constructor/formula/emitter 路线会回到 origin ledger，自证闭环已切断。
+因此当前内部源侧真剩余为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+无黑箱外部版仍需同对象谱/来源输入：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof
+ OR CDependentResidueWeightSpectralCancellationInput
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层没有证明无环源种子、moving atom 排斥、模型余量、PDEC/CleanKLS、Rate 或 DStructure；
+目标命题仍未无条件闭合。

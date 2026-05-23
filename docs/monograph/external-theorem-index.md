@@ -1679,3 +1679,63 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层不把 RNRS 回填误写为目标命题闭合：ExactUV/source、FullS theorem-match、
 模型、PDEC/CleanKLS、Rate 与独立验收门仍需另行支付。
+
+## 37. 两条替代线 ExactUV/source 非循环前沿
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_exactuv_source_noncycle_frontier_router.py
+data/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.json
+```
+
+本层不新增外部定理引用；它把 RKS/RNRS 调和后的 ExactUV/source 三标签做非循环下钻。
+同步读数为：
+
+```text
+rks_log_current_active_obstruction=false
+exactuv_entropy_layer_labels_are_ordered_interfaces=true
+source_loop_cut_closed=true
+acyclic_seed_current_corpus_proved=false
+moving_atom_exclusion_current_corpus_proved=false
+latest_internal_source_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+row_column_unconditional_closed=false
+```
+
+含义：`ExactCleanCoreFullSNonAPWFDSourceEntropy`、`ActualNoncanonicalExactUVSupportLowerBound`
+和 `CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn` 是同一源侧链条的连续接口，不是
+三个可循环替换的证明。该链经 clean-core 原始生成账本继续下钻后，旧
+`origin ledger -> constructor -> formula -> emitter -> origin ledger` 路径形成来源闭环，不能
+当作证明。
+
+当前内部源侧标准形为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+若坚持 ExactUV/pair-mass 路线，独立输入为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
+```
+
+无黑箱外部版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof
+ OR CDependentResidueWeightSpectralCancellationInput
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+外部引理版仍只是 `AcceptedFullSKLSExtExternalContract AND
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 条件闭合；本层不支付无环源种子、
+moving atom 排斥、模型、PDEC/CleanKLS、Rate 或 DStructure 门。

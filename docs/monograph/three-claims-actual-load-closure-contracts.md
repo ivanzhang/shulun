@@ -22482,6 +22482,64 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 条件闭合；�
 FullS theorem-match、actual source capacity 或新 dispersion 证明。本层不支付 ExactUV/source、
 模型、PDEC/CleanKLS、Rate 或独立验收门。
 
+### 1.183 two replacement lines ExactUV/source noncycle frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_exactuv_source_noncycle_frontier_router.py
+data/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.md
+docs/monograph/prime-matrix-two-replacement-lines-exactuv-source-noncycle-frontier-router.json
+```
+
+同步读数为：
+
+```text
+rks_log_current_active_obstruction=false
+exactuv_entropy_layer_labels_are_ordered_interfaces=true
+source_loop_cut_closed=true
+acyclic_seed_current_corpus_proved=false
+moving_atom_exclusion_current_corpus_proved=false
+latest_internal_source_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：Exact entropy、ExactUV support 与 clean-core layer transfer 不是三份
+可相互替代的付款凭证，而是同一源侧链条的不同深度。该链下钻到 clean-core origin ledger
+后，旧 constructor/formula/emitter 路线会回到 origin ledger，形成来源闭环。闭环只能登记为
+禁止路线，不能支付 actual signed source。
+
+当前内部源侧实际承重核为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+```
+
+若通过 ExactUV/pair-mass 证明 exact entropy，还需独立输入：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed
+```
+
+内部自足全局基仍保留：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND ActualNoncanonicalCleanCoreMovingAtomExclusion
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+本层不证明上述源种子或 moving atom 排斥；它只删除 ExactUV/source 标签循环。
+
 ### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
 
 新增机器证书：
