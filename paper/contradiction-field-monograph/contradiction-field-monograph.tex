@@ -32258,6 +32258,69 @@ dynamic-primorial-unit-selector-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Ramanujan expansion of the dynamic unit class}
+
+\begin{theorem}[Dynamic unit class has an exact Ramanujan expansion]
+Let \(W=W_P\) be the squarefree primorial modulus in the preceding
+section.  For every integer \(n\),
+\[
+  1_{\gcd(n,W)=1}
+  =
+  \frac{\varphi(W)}{W}
+  \sum_{d\mid W}\frac{\mu(d)}{\varphi(d)}\,c_d(n),
+\]
+where
+\[
+  c_d(n)=\sum_{\substack{a\bmod d\\ (a,d)=1}} e(an/d)
+\]
+is the Ramanujan sum.  Equivalently, since \(W\) is squarefree, the
+right hand side factors as the product over primes \(\ell\mid W\) of
+\[
+  \frac{\ell-1}{\ell}
+  \left(1-\frac{c_\ell(n)}{\ell-1}\right).
+\]
+\end{theorem}
+\begin{proof}
+For a prime \(\ell\), \(c_\ell(n)=\ell-1\) if \(\ell\mid n\), and
+\(c_\ell(n)=-1\) otherwise.  Hence the displayed local factor is \(0\)
+when \(\ell\mid n\), and \(1\) otherwise.  Multiplying over the
+prime factors of the squarefree \(W\) gives \(1_{\gcd(n,W)=1}\).  The
+divisor-sum formula is the multiplicative expansion of the same local
+identity, using the multiplicativity of Ramanujan sums and of
+\(\mu(d)/\varphi(d)\) on squarefree divisors of \(W\).
+\end{proof}
+
+\begin{remark}[Why this is still not a completed Kloosterman input]
+Opening all Ramanujan sums gives exactly
+\[
+  \sum_{d\mid W_P}\varphi(d)=W_P
+\]
+additive modes.  Thus the exact expansion is a genuine CRT
+normal form, but it is not a usable analytic completion by itself:
+the number of modes is the dynamic primorial \(W_P\), and the phase
+after expansion still contains the reciprocal factor
+\(e(hkP/Q_{\rm odd})\) attached to the same thin product-window
+selector.  Therefore this step identifies the exact mode family that a
+future Kloosterman or Type-II bridge must control; it does not supply
+that bridge.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+DynamicRamanujanUnitExpansionToUsableKloostermanCompletionBridge\\
+AND UniformRamanujanModeCancellationOrTruncation\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+dynamic-ramanujan-unit-expansion-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

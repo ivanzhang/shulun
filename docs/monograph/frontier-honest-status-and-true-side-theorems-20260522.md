@@ -2262,6 +2262,93 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q11：Phi-LPF q-support dynamic Ramanujan unit expansion 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_dynamic_ramanujan_unit_expansion_audit.py
+data/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层把 prime selector 合并为动态 primorial
+单位类：
+
+```text
+selected iff gcd(Q_odd,W_P)=1.
+```
+
+本层把该单位类精确写成 Ramanujan 展开：
+
+```text
+1_{(n,W)=1}=phi(W)/W * sum_{d|W} mu(d)c_d(n)/phi(d)
+c_d(n)=sum_{a mod d, (a,d)=1} e(a*n/d)
+```
+
+平方自由 `W_P` 上，该式等价于逐 `ell|W_P` 的局部乘积；若完全打开
+所有 Ramanujan sums，则加性字符模式数为：
+
+```text
+sum_{d|W_P} phi(d)=W_P.
+```
+
+### Q11.1 有限审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_ramanujan_identity_row_count=56196
+ramanujan_product_identity_checked_total=951378
+ramanujan_product_identity_mismatch_total=0
+ramanujan_divisor_sum_sample_checked_total=111
+ramanujan_divisor_sum_sample_mismatch_total=0
+primorial_unit_selected_total=299977
+primorial_unit_rejected_total=651401
+max_dynamic_primorial_modulus=200560490130
+max_ramanujan_divisor_terms_per_candidate=2048
+max_full_additive_character_modes_per_candidate=200560490130
+```
+
+### Q11.2 诚实边界
+
+本层真推进是把动态 CRT 单位类写成精确 Ramanujan 加性字符族，并把完全打开
+后的模式规模固定为审稿对象。它仍不是 completed Kloosterman family：模式族
+随 `W_P` 增长，且展开后的相位仍含同一 thin product-window 上的
+`e(h*kP/Q_odd)`。因此 Wright/MQW/Pascadi 类外部定理仍需新的同对象
+completion bridge 与模式控制输入。
+
+最新最窄口：
+
+```text
+DynamicRamanujanUnitExpansionToUsableKloostermanCompletionBridge
+AND UniformRamanujanModeCancellationOrTruncation
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dynamic_ramanujan_unit_expansion_closed=true
+ramanujan_product_identity_globally_proved=true
+full_additive_mode_count_ledger_closed=true
+usable_kloosterman_completion_bridge_closed=false
+uniform_ramanujan_mode_cancellation_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

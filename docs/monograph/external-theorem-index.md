@@ -2081,6 +2081,87 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_dynamic_ramanujan_unit_expansion_audit.py
+data/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.md
+```
+
+本层继续从动态 primorial 单位类
+
+```text
+selected iff gcd(Q_odd,W_P)=1
+```
+
+下钻到 Ramanujan 加性字符正规形：
+
+```text
+1_{(n,W)=1}=phi(W)/W * sum_{d|W} mu(d)c_d(n)/phi(d)
+c_d(n)=sum_{a mod d, (a,d)=1} e(a*n/d)
+```
+
+平方自由 `W_P` 上，该式等价于逐素数局部乘积；完全打开所有 `c_d`
+后，模式数精确为：
+
+```text
+sum_{d|W_P} phi(d)=W_P
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_ramanujan_identity_row_count=56196
+ramanujan_product_identity_checked_total=951378
+ramanujan_product_identity_mismatch_total=0
+ramanujan_divisor_sum_sample_checked_total=111
+ramanujan_divisor_sum_sample_mismatch_total=0
+primorial_unit_selected_total=299977
+primorial_unit_rejected_total=651401
+max_dynamic_primorial_modulus=200560490130
+max_dynamic_primorial_prime_count=11
+max_ramanujan_divisor_terms_per_candidate=2048
+max_full_additive_character_modes_per_candidate=200560490130
+```
+
+外部前沿影响：Wright 2026、Milićević--Qin--Wu 2025 与 Pascadi 2025
+仍可作为未来 Kloosterman/Type-II 组织的候选技术源，但它们没有直接处理
+这个随 `P` 增长的 `W_P` Ramanujan 模式族；撤回的 `arXiv:2601.00292`
+仍不可引用。
+
+新的最新最窄口：
+
+```text
+DynamicRamanujanUnitExpansionToUsableKloostermanCompletionBridge
+AND UniformRamanujanModeCancellationOrTruncation
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dynamic_ramanujan_unit_expansion_closed=true
+ramanujan_product_identity_globally_proved=true
+full_additive_mode_count_ledger_closed=true
+usable_kloosterman_completion_bridge_closed=false
+uniform_ramanujan_mode_cancellation_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

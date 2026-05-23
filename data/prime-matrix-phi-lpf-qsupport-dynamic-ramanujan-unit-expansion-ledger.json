@@ -1,0 +1,420 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_dynamic_ramanujan_unit_expansion_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimorialUnitRamanujanExpansionIdentity",
+      "meaning": "The W_P-unit selector has the exact Ramanujan divisor expansion.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "RamanujanLocalProductFactorization",
+      "meaning": "For squarefree W_P the expansion factors into prime-local tests and equals the gcd selector.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "FullAdditiveOpeningModeCountLedger",
+      "meaning": "Opening all Ramanujan sums gives exactly sum_{d|W_P}phi(d)=W_P additive modes.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "DynamicRamanujanUnitExpansionToUsableKloostermanCompletionBridge",
+      "meaning": "Turn the dynamic Ramanujan-mode expansion into a same-object completed Kloosterman or Type-II family.",
+      "proved": false,
+      "remaining": "new bridge theorem"
+    },
+    {
+      "closed": false,
+      "gate": "UniformRamanujanModeCancellationOrTruncation",
+      "meaning": "Control or truncate the W_P dynamic additive modes without changing the selector.",
+      "proved": false,
+      "remaining": "mode cancellation/truncation theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RoughBetaSiegelWalfiszUniformityOrReplacement",
+      "meaning": "Supply the equidistribution/SW factor or an object-specific replacement for rough beta weights.",
+      "proved": false,
+      "remaining": "rough beta uniformity input"
+    }
+  ],
+  "current_object": {
+    "dynamic_primorial": "W_P=product_{ell prime, ell<=sqrt(P-1)} ell",
+    "full_additive_opening": "c_d(n)=sum_{a mod d, (a,d)=1} e(a*n/d), so total modes sum_{d|W}phi(d)=W",
+    "local_factor": "for ell|W, local factor is (ell-1)/ell*(1-c_ell(n)/(ell-1))",
+    "phase_after_expansion": "e(h*kP/Q_odd) multiplied by dynamic Ramanujan modes e(a*Q_odd/d)",
+    "ramanujan_expansion": "1_{(n,W)=1}=phi(W)/W * sum_{d|W} mu(d)c_d(n)/phi(d)",
+    "unit_selector": "1_{gcd(Q_odd,W_P)=1}"
+  },
+  "dynamic_ramanujan_unit_expansion_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_implication": {
+    "Dong_Robles_Zeindler_2026_arXiv_2601_00292": "withdrawn; not usable as an external input",
+    "Milicevic_Qin_Wu_2025_arXiv_2511_07550": "bilinear Kloosterman estimates still need admissible bilinear coefficient families after completion",
+    "Pascadi_2025_arXiv_2511_08445": "composite-modulus amplification still needs Type-II organisation, not a raw W_P-mode expansion",
+    "Wright_2026_arXiv_2604_25177": "trilinear Kloosterman fractions do not provide the dynamic Ramanujan-mode completion for W_P unit classes"
+  },
+  "finite_audit": {
+    "active_ramanujan_identity_row_count": 56196,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_dynamic_primorial_modulus": 200560490130,
+    "max_dynamic_primorial_prime_count": 11,
+    "max_full_additive_character_modes_per_candidate": 200560490130,
+    "max_full_additive_mode_l1": "27179089920/86822723",
+    "max_full_additive_mode_l1_float": 313.0412060446434,
+    "max_prime": 1009,
+    "max_ramanujan_divisor_terms_per_candidate": 2048,
+    "primorial_unit_rejected_total": 651401,
+    "primorial_unit_selected_total": 299977,
+    "ramanujan_divisor_sum_sample_checked_total": 111,
+    "ramanujan_divisor_sum_sample_mismatch_total": 0,
+    "ramanujan_product_identity_checked_total": 951378,
+    "ramanujan_product_identity_mismatch_total": 0,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "dynamic_primorial_modulus": 210,
+        "dynamic_primorial_prime_count": 4,
+        "full_additive_character_modes": 210,
+        "full_additive_mode_l1": "128/35",
+        "k": 100,
+        "ramanujan_divisor_sum_sample_checked": 3,
+        "ramanujan_divisor_sum_sample_mismatch": 0,
+        "ramanujan_divisor_terms": 16,
+        "ramanujan_product_identity_checked": 3,
+        "ramanujan_product_identity_mismatch": 0,
+        "sample_ramanujan_atoms": [
+          {
+            "Q_odd": 85,
+            "beta": 17,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 5,
+            "local_product": "0",
+            "m": 119,
+            "r": 7
+          },
+          {
+            "Q_odd": 71,
+            "beta": 13,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 143,
+            "r": 11
+          },
+          {
+            "Q_odd": 63,
+            "beta": 23,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 21,
+            "local_product": "0",
+            "m": 161,
+            "r": 7
+          }
+        ],
+        "selector_cases": {
+          "empty_window": 3,
+          "even_singleton_rejected": 3,
+          "primorial_nonunit_rejected_by_3": 1,
+          "primorial_nonunit_rejected_by_5": 1,
+          "primorial_unit_selected": 1
+        },
+        "unit_rejected": 2,
+        "unit_selected": 1
+      },
+      {
+        "P": 257,
+        "dynamic_primorial_modulus": 30030,
+        "dynamic_primorial_prime_count": 6,
+        "full_additive_character_modes": 30030,
+        "full_additive_mode_l1": "12288/1001",
+        "k": 256,
+        "ramanujan_divisor_sum_sample_checked": 8,
+        "ramanujan_divisor_sum_sample_mismatch": 0,
+        "ramanujan_divisor_terms": 64,
+        "ramanujan_product_identity_checked": 8,
+        "ramanujan_product_identity_mismatch": 0,
+        "sample_ramanujan_atoms": [
+          {
+            "Q_odd": 255,
+            "beta": 37,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 15,
+            "local_product": "0",
+            "m": 259,
+            "r": 7
+          },
+          {
+            "Q_odd": 219,
+            "beta": 43,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 3,
+            "local_product": "0",
+            "m": 301,
+            "r": 7
+          },
+          {
+            "Q_odd": 207,
+            "beta": 29,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 3,
+            "local_product": "0",
+            "m": 319,
+            "r": 11
+          },
+          {
+            "Q_odd": 193,
+            "beta": 31,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 341,
+            "r": 11
+          },
+          {
+            "Q_odd": 175,
+            "beta": 29,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 35,
+            "local_product": "0",
+            "m": 377,
+            "r": 13
+          }
+        ],
+        "selector_cases": {
+          "empty_window": 21,
+          "even_singleton_rejected": 8,
+          "primorial_nonunit_rejected_by_3": 4,
+          "primorial_nonunit_rejected_by_5": 1,
+          "primorial_unit_selected": 3
+        },
+        "unit_rejected": 5,
+        "unit_selected": 3
+      },
+      {
+        "P": 971,
+        "dynamic_primorial_modulus": 200560490130,
+        "dynamic_primorial_prime_count": 11,
+        "full_additive_character_modes": 200560490130,
+        "full_additive_mode_l1": "27179089920/86822723",
+        "k": 936,
+        "ramanujan_divisor_sum_sample_checked": 49,
+        "ramanujan_divisor_sum_sample_mismatch": 0,
+        "ramanujan_divisor_terms": 2048,
+        "ramanujan_product_identity_checked": 49,
+        "ramanujan_product_identity_mismatch": 0,
+        "sample_ramanujan_atoms": [
+          {
+            "Q_odd": 935,
+            "beta": 139,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 935,
+            "local_product": "0",
+            "m": 973,
+            "r": 7
+          },
+          {
+            "Q_odd": 929,
+            "beta": 89,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 979,
+            "r": 11
+          },
+          {
+            "Q_odd": 919,
+            "beta": 43,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 989,
+            "r": 23
+          },
+          {
+            "Q_odd": 907,
+            "beta": 59,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 1003,
+            "r": 17
+          },
+          {
+            "Q_odd": 903,
+            "beta": 53,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 21,
+            "local_product": "0",
+            "m": 1007,
+            "r": 19
+          }
+        ],
+        "selector_cases": {
+          "empty_window": 101,
+          "even_singleton_rejected": 36,
+          "primorial_nonunit_rejected_by_11": 1,
+          "primorial_nonunit_rejected_by_13": 1,
+          "primorial_nonunit_rejected_by_19": 1,
+          "primorial_nonunit_rejected_by_23": 1,
+          "primorial_nonunit_rejected_by_29": 1,
+          "primorial_nonunit_rejected_by_3": 13,
+          "primorial_nonunit_rejected_by_5": 4,
+          "primorial_nonunit_rejected_by_7": 4,
+          "primorial_unit_selected": 23
+        },
+        "unit_rejected": 26,
+        "unit_selected": 23
+      },
+      {
+        "P": 1009,
+        "dynamic_primorial_modulus": 200560490130,
+        "dynamic_primorial_prime_count": 11,
+        "full_additive_character_modes": 200560490130,
+        "full_additive_mode_l1": "27179089920/86822723",
+        "k": 1008,
+        "ramanujan_divisor_sum_sample_checked": 51,
+        "ramanujan_divisor_sum_sample_mismatch": 0,
+        "ramanujan_divisor_terms": 2048,
+        "ramanujan_product_identity_checked": 51,
+        "ramanujan_product_identity_mismatch": 0,
+        "sample_ramanujan_atoms": [
+          {
+            "Q_odd": 991,
+            "beta": 79,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 1027,
+            "r": 13
+          },
+          {
+            "Q_odd": 981,
+            "beta": 61,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 3,
+            "local_product": "0",
+            "m": 1037,
+            "r": 17
+          },
+          {
+            "Q_odd": 963,
+            "beta": 151,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 3,
+            "local_product": "0",
+            "m": 1057,
+            "r": 7
+          },
+          {
+            "Q_odd": 943,
+            "beta": 83,
+            "divisor_sum": "0",
+            "expected_unit": 0,
+            "gcd_Q_W": 23,
+            "local_product": "0",
+            "m": 1079,
+            "r": 13
+          },
+          {
+            "Q_odd": 941,
+            "beta": 47,
+            "divisor_sum": "1",
+            "expected_unit": 1,
+            "gcd_Q_W": 1,
+            "local_product": "1",
+            "m": 1081,
+            "r": 23
+          }
+        ],
+        "selector_cases": {
+          "empty_window": 103,
+          "even_singleton_rejected": 39,
+          "primorial_nonunit_rejected_by_11": 3,
+          "primorial_nonunit_rejected_by_13": 2,
+          "primorial_nonunit_rejected_by_17": 1,
+          "primorial_nonunit_rejected_by_19": 2,
+          "primorial_nonunit_rejected_by_23": 1,
+          "primorial_nonunit_rejected_by_3": 21,
+          "primorial_nonunit_rejected_by_5": 6,
+          "primorial_nonunit_rejected_by_7": 6,
+          "primorial_unit_selected": 9
+        },
+        "unit_rejected": 42,
+        "unit_selected": 9
+      }
+    ],
+    "selector_case_totals": {
+      "empty_window": 7273864,
+      "even_singleton_rejected": 835050,
+      "primorial_nonunit_rejected_by_11": 41695,
+      "primorial_nonunit_rejected_by_13": 35245,
+      "primorial_nonunit_rejected_by_17": 26918,
+      "primorial_nonunit_rejected_by_19": 19798,
+      "primorial_nonunit_rejected_by_23": 10019,
+      "primorial_nonunit_rejected_by_29": 759,
+      "primorial_nonunit_rejected_by_3": 316468,
+      "primorial_nonunit_rejected_by_31": 41,
+      "primorial_nonunit_rejected_by_5": 126802,
+      "primorial_nonunit_rejected_by_7": 73656,
+      "primorial_unit_selected": 299977
+    }
+  },
+  "frontier_verified_date": "2026-05-23",
+  "full_additive_mode_count_ledger_closed": true,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DynamicRamanujanUnitExpansionToUsableKloostermanCompletionBridge",
+    "AND UniformRamanujanModeCancellationOrTruncation",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "q_support_phase_saving_closed": false,
+  "ramanujan_divisor_sum_sample_audited": true,
+  "ramanujan_product_identity_finitely_audited": true,
+  "ramanujan_product_identity_globally_proved": true,
+  "reason_chosen": "the fastest non-cyclic continuation after the primorial unit selector is the exact Ramanujan additive-character expansion and its mode ledger",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9c7813315ba08139f015f5a3886a95b27cb9576d9e9f0fbd6c294279b6be21cc",
+    "docs/monograph/external-theorem-index.md": "2d0fb52e081c3032d173f3c8bd6d8f83754697360816f9749935006b3737e904",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "87afb1b46c3997d00510961239bed26adc92189f0bb57b53379e2eb341ef3565",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-audit.json": "de71600de9cf3020c3ade2d6735a17588627fc5a5365562ff945af1f13c9c6a1",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-sqrt-sieve-selector-audit.json": "e415e23bd5ba4be03cf9ac15d440ef0d56187f20bbeb076c11dab5e3c55bd81b",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.json": "e6936bbdce216ed8cd3ba420879c5c8185cbb11cce55ab221f2d7ab33cd204ed",
+    "experiments/prime_matrix_phi_lpf_qsupport_dynamic_ramanujan_unit_expansion_audit.py": "6a4fa479dc5459712d6a252feda3700fcd9c4c142941eb30f183ca788baac7a9",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "ca4d047140c09f067952afdfffe2e0150bf03ec9d506a442f361df7cf99b5307"
+  },
+  "status": "dynamic_ramanujan_unit_expansion_closed_usable_kloosterman_bridge_open",
+  "uniform_ramanujan_mode_cancellation_closed": false,
+  "usable_kloosterman_completion_bridge_closed": false
+}
