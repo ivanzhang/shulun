@@ -1,0 +1,332 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_unique_odd_candidate_lpf_partition_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "UniqueOddCandidateFiveWayLPFPartition",
+      "meaning": "Each prime q falls in exactly one of no-candidate, prime, LPF=3, LPF=5, or residual composite LPF>=7.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "LPFResidualAsWheel30CompositeSurvivor",
+      "meaning": "The residual cell is exactly the composite part of the unique odd candidate with gcd(omega,30)=1.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "CandidatePhaseFourTermExactDecomposition",
+      "meaning": "The candidate phase sum splits exactly into prime, LPF=3, LPF=5, and residual terms.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving",
+      "meaning": "Prove cancellation or positivity control for the composite wheel-30 survivor q-subset.",
+      "proved": false,
+      "remaining": "wheel-30 survivor prime/composite separation theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the omega(q) survivor phase to an external DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "does not supply the missing prime/composite split inside the wheel-30 survivor q-subset",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550",
+      "useful_part": "candidate input after a completion from omega(q) phases to bilinear Kloosterman sums",
+      "verified_status": "submitted 2025-11-10; bilinear Kloosterman sums modulo arbitrary q"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "the present q-moduli are prime and the LPF partition is a fixed-row subset problem",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445",
+      "useful_part": "candidate external Type-II source after a valid completion identity",
+      "verified_status": "submitted 2025-11-11; Type-II Kloosterman sums with composite moduli"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "requires a prior finite-field/completion bridge from omega(q) to their parameter family",
+      "source": "Shao--Shparlinski--Wijaya 2024 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113",
+      "useful_part": "possible comparison source for arithmetic-function-twisted Kloosterman sums",
+      "verified_status": "submitted 2024-11-18; Kloosterman sums over square-free and smooth parameters"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "withdrawn papers cannot be used as valid external input",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "source_url": "https://arxiv.org/abs/2601.00292",
+      "useful_part": "near-miss diagnostic only",
+      "verified_status": "withdrawn on arXiv v2 after a missing factor was reported"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_candidate_displacements_in_1_to_Pminus1": true,
+    "bad_candidate_displacement_total": 0,
+    "bad_candidate_partition_total": 0,
+    "bad_candidate_total": 0,
+    "bad_five_way_partition_total": 0,
+    "bad_small_lpf_partition_total": 0,
+    "bad_wheel30_split_total": 0,
+    "branch_totals_on_candidates": {
+      "both": 390129,
+      "lower": 440801,
+      "upper": 436002
+    },
+    "candidate_partition_exhaustive": true,
+    "candidate_partition_total": 1266932,
+    "extra_edge_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "five_way_partition_exhaustive": true,
+    "five_way_partition_total": 3874554,
+    "forced_composite_by_30wheel_total": 592571,
+    "forced_composite_identity_verified": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_odd_candidates_per_q": 1,
+    "max_prime": 1009,
+    "missing_edge_total": 0,
+    "predicted_total_edges_R30": 299977,
+    "prime_candidate_total": 374384,
+    "reason_totals": {
+      "no_odd_candidate": 2607622,
+      "prime": 374384,
+      "residual_lpf_ge_7_composite": 299977,
+      "small_lpf_3": 423339,
+      "small_lpf_5": 169232
+    },
+    "residual_cell_equals_actual_edges": true,
+    "residual_lpf_ge_7_composite_total": 299977,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_candidate_count": 0,
+        "bad_candidate_displacement_count": 0,
+        "bad_candidate_partition_count": 0,
+        "bad_five_way_partition_count": 0,
+        "bad_small_lpf_partition_count": 0,
+        "bad_wheel30_split_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 3,
+          "lower": 2,
+          "upper": 2
+        },
+        "extra_edge_count": 0,
+        "forced_composite_by_30wheel_count": 2,
+        "k": 100,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 7,
+        "predicted_edge_count_R30": 1,
+        "q_count": 10,
+        "reason_counter": {
+          "no_odd_candidate": 3,
+          "prime": 4,
+          "residual_lpf_ge_7_composite": 1,
+          "small_lpf_3": 2
+        },
+        "sample_residual_edges": "q=71,omega=143,branch=both,d=53,lpf=11",
+        "wheel30_survivor_candidate_count": 5,
+        "window_width_counter": {
+          "0": 6,
+          "1": 4
+        }
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_candidate_count": 0,
+        "bad_candidate_displacement_count": 0,
+        "bad_candidate_partition_count": 0,
+        "bad_five_way_partition_count": 0,
+        "bad_small_lpf_partition_count": 0,
+        "bad_wheel30_split_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 5,
+          "lower": 4,
+          "upper": 7
+        },
+        "extra_edge_count": 0,
+        "forced_composite_by_30wheel_count": 7,
+        "k": 256,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 16,
+        "predicted_edge_count_R30": 3,
+        "q_count": 23,
+        "reason_counter": {
+          "no_odd_candidate": 7,
+          "prime": 6,
+          "residual_lpf_ge_7_composite": 3,
+          "small_lpf_3": 4,
+          "small_lpf_5": 3
+        },
+        "sample_residual_edges": "q=137,omega=481,branch=lower,d=105,lpf=13; q=151,omega=437,branch=upper,d=195,lpf=19; q=193,omega=341,branch=lower,d=21,lpf=11",
+        "wheel30_survivor_candidate_count": 9,
+        "window_width_counter": {
+          "0": 12,
+          "1": 11
+        }
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_candidate_count": 0,
+        "bad_candidate_displacement_count": 0,
+        "bad_candidate_partition_count": 0,
+        "bad_five_way_partition_count": 0,
+        "bad_small_lpf_partition_count": 0,
+        "bad_wheel30_split_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 22,
+          "lower": 12,
+          "upper": 15
+        },
+        "extra_edge_count": 0,
+        "forced_composite_by_30wheel_count": 14,
+        "k": 936,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 49,
+        "predicted_edge_count_R30": 23,
+        "q_count": 71,
+        "reason_counter": {
+          "no_odd_candidate": 22,
+          "prime": 12,
+          "residual_lpf_ge_7_composite": 23,
+          "small_lpf_3": 6,
+          "small_lpf_5": 8
+        },
+        "sample_residual_edges": "q=491,omega=1853,branch=upper,d=967,lpf=17; q=503,omega=1807,branch=lower,d=65,lpf=13; q=523,omega=1739,branch=upper,d=641,lpf=37; q=541,omega=1681,branch=upper,d=565,lpf=41; q=557,omega=1633,branch=upper,d=725,lpf=23",
+        "wheel30_survivor_candidate_count": 35,
+        "window_width_counter": {
+          "-1": 1,
+          "0": 43,
+          "1": 27
+        }
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_candidate_count": 0,
+        "bad_candidate_displacement_count": 0,
+        "bad_candidate_partition_count": 0,
+        "bad_five_way_partition_count": 0,
+        "bad_small_lpf_partition_count": 0,
+        "bad_wheel30_split_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 25,
+          "lower": 14,
+          "upper": 15
+        },
+        "extra_edge_count": 0,
+        "forced_composite_by_30wheel_count": 26,
+        "k": 1008,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 54,
+        "predicted_edge_count_R30": 9,
+        "q_count": 72,
+        "reason_counter": {
+          "no_odd_candidate": 18,
+          "prime": 19,
+          "residual_lpf_ge_7_composite": 9,
+          "small_lpf_3": 20,
+          "small_lpf_5": 6
+        },
+        "sample_residual_edges": "q=563,omega=1807,branch=lower,d=269,lpf=13; q=577,omega=1763,branch=lower,d=179,lpf=41; q=617,omega=1649,branch=lower,d=361,lpf=17; q=647,omega=1573,branch=upper,d=659,lpf=11; q=743,omega=1369,branch=lower,d=95,lpf=37",
+        "wheel30_survivor_candidate_count": 28,
+        "window_width_counter": {
+          "0": 43,
+          "1": 29
+        }
+      }
+    ],
+    "total_odd_candidate_instances": 1266932,
+    "total_prime_q_instances": 3874554,
+    "unique_odd_candidate_per_q": true,
+    "wheel30_survivor_candidate_total": 674361,
+    "wheel30_survivor_identity_verified": true,
+    "window_width_totals": {
+      "-1": 2214518,
+      "0": 783233,
+      "1": 876803
+    }
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "lpf_partition_theorem": {
+    "candidate_identity": "1_{omega exists}=1_{prime}+1_{LPF=3}+1_{LPF=5}+1_{residual_lpf_ge_7_composite}.",
+    "five_cells": [
+      "no_odd_candidate",
+      "prime",
+      "small_lpf_3",
+      "small_lpf_5",
+      "residual_lpf_ge_7_composite"
+    ],
+    "not_enough": "The remaining hard point is the signed/oscillatory separation of composite 30-wheel survivors from prime survivors.",
+    "phase_decomposition": "S_candidate(h)=S_prime(h)+S_LPF3(h)+S_LPF5(h)+S_residual(h), with phase e(-hD(q)/q).",
+    "pointwise_identity": "For each prime q in (P/2,P), exactly one of the five cells holds.",
+    "residual_identity": "Residual edges are exactly omega exists, gcd(omega,30)=1, and omega composite.",
+    "wheel30_identity": "1_{gcd(omega,30)=1}=1_{prime}+1_{residual_lpf_ge_7_composite} on the candidate support."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "072d09ae02389b35d8bd451b1110f8903c24c7d05b75539d8709addf1df4beac",
+    "docs/monograph/external-theorem-index.md": "381aa358766c624d2b7d81a38358ab84a16209d973f921bfaf680844e6a76d36",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "c67eabfeaff61fdc49ca293c0b2e7ad834f228ae92493a5a963a045e4f9c6255",
+    "docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.json": "8fbf60b7cb26db4bc4840a8e4769474da7a4bee6d7eb0afeb1f3a12185817074",
+    "docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.json": "2ef55175cbb1f049b8193f88c79e790a321d54855b6e5a15c84fd51e9af479b7",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_unique_odd_candidate_lpf_partition_closure_audit.py": "86743c0ba98581e65a375f3bd9d72561794d6ec9283cb1f1354723c9be8eb5e0",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "cf91c0dda97f171c61cae870302744479fb0201f97b8ba677745501dbd94eee9"
+  },
+  "status": "unique_odd_candidate_lpf_partition_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "UniqueOddCandidateFiveWayLPFPartition",
+      "frontier_before": [
+        "PrimeQUniqueOddCandidateLPFSubsetPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "the existing omega(q) map has an immediate disjoint LPF partition and isolates the wheel-30 survivor prime/composite split"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "not a one-line closure after the omega(q) projection"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a Phi-LPF LPF-partition gate"
+    }
+  ],
+  "unique_odd_candidate_lpf_partition_closed": true,
+  "wheel30_survivor_prime_composite_phase_saving_closed": false
+}

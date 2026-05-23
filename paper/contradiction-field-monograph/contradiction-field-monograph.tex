@@ -31382,6 +31382,105 @@ or a completion to an external Kloosterman/Vaughan Type-II estimate
 without losing pointwise control in \(P,k\).
 \end{remark}
 
+\section{Unique odd candidate LPF partition closure}
+
+\begin{proposition}[The next deterministic LPF-partition gate]
+After the unique odd-candidate projection, the next deterministic
+subgate is
+\[
+  \texttt{UniqueOddCandidateFiveWayLPFPartition}.
+\]
+It is a pointwise partition of the candidate map
+\(q\mapsto\omega_{P,k}(q)\).  It is not a phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Five-way LPF partition of the unique odd candidate]
+For each prime \(q\in(P/2,P)\), exactly one of the following five
+alternatives holds:
+\[
+\begin{array}{ll}
+{\rm (0)} & \omega_{P,k}(q)\ {\rm does\ not\ exist},\\
+{\rm (p)} & \omega_{P,k}(q)\ {\rm is\ prime},\\
+{\rm (3)} & {\rm LPF}(\omega_{P,k}(q))=3,\\
+{\rm (5)} & {\rm LPF}(\omega_{P,k}(q))=5,\\
+{\rm (R)} & \omega_{P,k}(q)\ {\rm is\ composite\ and}
+             {\rm LPF}(\omega_{P,k}(q))\ge 7.
+\end{array}
+\]
+Moreover the residual edges are exactly the last cell.  Equivalently,
+on the candidate support,
+\[
+  {\bf 1}_{(\omega_{P,k}(q),30)=1}
+  =
+  {\bf 1}_{\omega_{P,k}(q)\ {\rm prime}}
+  +
+  {\bf 1}_{\omega_{P,k}(q)\ {\rm composite},\ {\rm LPF}\ge 7}.
+\]
+Thus a residual edge is the same as
+\[
+  \omega_{P,k}(q)\ {\rm exists},\qquad
+  (\omega_{P,k}(q),30)=1,\qquad
+  \omega_{P,k}(q)\ {\rm composite}.
+\]
+\end{theorem}
+\begin{proof}
+The previous theorem gives at most one odd candidate
+\(\omega_{P,k}(q)\) for the fixed prime \(q\).  If no such candidate
+exists we are in cell \({\rm (0)}\).  Otherwise the candidate is odd.
+If it is prime we are in cell \({\rm (p)}\).  If it is composite and
+has least prime factor \(<7\), that least prime factor cannot be \(2\),
+so it is \(3\) or \(5\).  These give cells \({\rm (3)}\) and
+\({\rm (5)}\).  The remaining composite candidates have least prime
+factor at least \(7\), giving cell \({\rm (R)}\).
+
+The cells are mutually exclusive by definition of the least prime
+factor, and they are exhaustive by the preceding paragraph.  The
+residual edge equivalence is the unique odd-candidate theorem with the
+identity
+\[
+  {\rm composite\ and\ LPF}\ge 7
+  \Longleftrightarrow
+  {\rm composite\ and}\ (\omega_{P,k}(q),30)=1
+\]
+for odd candidates.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-unique-\\
+odd-candidate-lpf-partition-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{corollary}[Exact four-term candidate phase decomposition]
+For every integer \(h\), the candidate phase sum decomposes exactly as
+\[
+  S_{\rm cand}(h)
+  =
+  S_{\rm prime}(h)+S_{{\rm LPF}=3}(h)+S_{{\rm LPF}=5}(h)+S_{\rm res}(h),
+\]
+where each term uses the same phase
+\[
+  e(-hD(q)/q),\qquad
+  D(q)=q\,\omega_{P,k}(q)-kP.
+\]
+In particular, the remaining residual term is the composite part of the
+\(30\)-wheel survivor candidate set.
+\end{corollary}
+
+\begin{remark}[Updated true remaining mouth after the LPF partition]
+The small-prime cells have now been separated pointwise.  The current
+row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is a signed or oscillatory separation of composite
+\(30\)-wheel survivors from prime survivors, or a completion to an
+external Kloosterman/Vaughan Type-II estimate without losing pointwise
+control in \(P,k\).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

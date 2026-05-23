@@ -3552,6 +3552,119 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 75. Phi-LPF unique odd candidate LPF partition closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_unique_odd_candidate_lpf_partition_closure_audit.py
+data/prime-matrix-phi-lpf-unique-odd-candidate-lpf-partition-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-lpf-partition-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-lpf-partition-closure-audit.md
+```
+
+本层继续选择行/列 Phi-LPF 的最快可闭合子门：
+
+```text
+UniqueOddCandidateFiveWayLPFPartition
+LPFResidualAsWheel30CompositeSurvivor
+CandidatePhaseFourTermExactDecomposition
+```
+
+上一层已经证明每个 prime `q in (P/2,P)` 至多有一个奇候选
+`omega_{P,k}(q)`。本层把该候选分入五个互斥点态状态：
+
+```text
+no_odd_candidate
+prime
+small_lpf_3
+small_lpf_5
+residual_lpf_ge_7_composite
+```
+
+因为 `omega` 为奇数，`LPF(omega)<7` 只能是 `3` 或 `5`。因此：
+
+```text
+residual edge
+iff omega exists, gcd(omega,30)=1, and omega is composite.
+```
+
+候选相位随之有精确四项分解：
+
+```text
+S_candidate(h)=S_prime(h)+S_LPF3(h)+S_LPF5(h)+S_residual(h),
+phase=e(-hD(q)/q).
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_odd_candidate_instances=1266932
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+reason_totals={no_odd_candidate:2607622, prime:374384, small_lpf_3:423339, small_lpf_5:169232, residual_lpf_ge_7_composite:299977}
+wheel30_survivor_candidate_total=674361
+prime_candidate_total=374384
+residual_lpf_ge_7_composite_total=299977
+forced_composite_by_30wheel_total=592571
+five_way_partition_exhaustive=true
+candidate_partition_exhaustive=true
+wheel30_survivor_identity_verified=true
+forced_composite_identity_verified=true
+residual_cell_equals_actual_edges=true
+all_candidate_displacements_in_1_to_Pminus1=true
+bad_candidate_total=0
+bad_candidate_displacement_total=0
+bad_small_lpf_partition_total=0
+bad_five_way_partition_total=0
+bad_candidate_partition_total=0
+bad_wheel30_split_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  useful only after a completion from omega(q) phases to bilinear
+  Kloosterman sums; it does not split prime/composite wheel-30 survivors.
+
+Pascadi 2025 arXiv:2511.08445:
+  Type-II Kloosterman source after a valid completion identity; not a
+  pointwise fixed-row LPF partition theorem.
+
+Shao--Shparlinski--Wijaya 2024 arXiv:2411.12113:
+  relevant only after a finite-field/completion bridge to their parameter
+  family.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv v2; near-miss diagnostic only.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQUniqueOddCandidateWheel30CompositeSurvivorPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+unique_odd_candidate_lpf_partition_closed=true
+wheel30_survivor_prime_composite_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
