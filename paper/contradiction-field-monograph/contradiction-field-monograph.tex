@@ -32840,6 +32840,81 @@ floor-cell-typeii-fiber-obstruction-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Row-averaged mixed-modulus graph}
+
+\begin{theorem}[Row-averaged q-support mixed-modulus normal form]
+Combine all rows \(1\le k<P\) in the floor-cell q-support graph.  For
+each admissible edge \((q,m)\), with \(q\le m\), \(P/2<q<P\), and
+\(P/2<m<2P\), the row is uniquely determined by
+\[
+  k=\left\lfloor\frac{qm}{P}\right\rfloor,
+  \qquad 1\le k<P,
+\]
+and the displacement is
+\[
+  D=qm-kP\equiv qm\pmod P,\qquad 1\le D<P.
+\]
+On this row-averaged graph the phase has the exact form
+\[
+  e\!\left(\frac{hkP}{q}\right)
+  =
+  e\!\left(-\frac{hD}{q}\right).
+\]
+Thus row averaging creates long q-fibres, but the resulting phase is a
+mixed-modulus graph phase: the numerator \(D\) is a residue modulo \(P\),
+while the oscillating denominator is \(q\).
+\end{theorem}
+\begin{proof}
+The edge condition in row \(k\) is
+\[
+  kP<qm<(k+1)P.
+\]
+For a fixed pair \((q,m)\) there is at most one such integer \(k\),
+namely \(k=\lfloor qm/P\rfloor\).  The condition \(1\le k<P\) selects
+exactly the rows present in the row/column problem, and the cap \(q\le m\)
+is the same q-side cofactor cap already present in \(I_{P,k}(q)\).
+Since \(P\) is prime and neither \(q\) nor the residual composite \(m\)
+is divisible by \(P\), the remainder \(D=qm-kP\) is nonzero and lies in
+\(\{1,\ldots,P-1\}\).
+
+The phase identity follows from \(kP=qm-D\):
+\[
+  e(hkP/q)=e(h(qm-D)/q)=e(hm)e(-hD/q)=e(-hD/q).
+\]
+This is an exact normal form.  It does not identify the phase with a
+same-modulus trace function modulo \(q\), because the residue \(D\) is
+defined modulo the external prime \(P\), not modulo \(q\).
+\end{proof}
+
+\begin{remark}[What row averaging gives, and what it still misses]
+Row averaging is a real gain over the single-row floor-cell ledger: the
+same \(q\) can now support many cofactors \(m\) and many rows \(k\).
+However, the gained fibre length is not yet a Kloosterman or
+trace-function completion.  The obstruction has changed from "no long
+same-row fibre" to "mixed-modulus row-averaged phase."  Current
+trace-function, arbitrary-modulus Kloosterman, composite Type-II,
+unbalanced Kloosterman-fraction, and smooth/squarefree-parameter
+estimates still require a theorem embedding
+\(D=qm\bmod P\) with denominator \(q\) into a same-object trace,
+Kloosterman, or dispersion family.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+MixedModulusRowAveragedGraphToTraceOrKloostermanEmbedding\\
+AND UniformCancellationAcrossRowAveragedMixedModulusRadialGraph\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-mixed-modulus-graph-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -2765,6 +2765,92 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61F. Phi-LPF q-support row-averaged mixed-modulus graph 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_mixed_modulus_graph_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-mixed-modulus-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-mixed-modulus-graph-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-mixed-modulus-graph-audit.md
+```
+
+本层沿 `SameObjectAveragedGraphDispersionOrTraceEmbedding` 继续下钻。把
+所有 `1<=k<P` 行合并后，每条同对象边由 `(q,m)` 唯一决定：
+
+```text
+k=floor(q*m/P)
+D=q*m-k*P=q*m mod P
+e(h*k*P/q)=e(-h*D/q)
+```
+
+跨行平均确实恢复长纤维，但产生的是 mixed-modulus graph phase：相位分子
+`D` 按模 `P` 取余，分母却是 `q`。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+total_row_averaged_residual_edges=951378
+total_row_averaged_selected_edges=299977
+previous_single_row_selected_edge_total=299977
+row_averaged_selected_edges_match_previous_total=true
+floor_cell_membership_mismatch_total=0
+floor_cell_odd_candidate_mismatch_total=0
+bad_floor_cell_odd_count_total=0
+bad_zero_displacement_total=0
+max_q_to_m_fiber=193
+max_m_to_q_fiber=252
+max_q_to_k_fiber=193
+max_k_to_q_fiber=59
+max_selected_q_to_m_fiber=192
+max_selected_m_to_q_fiber=73
+max_selected_q_to_k_fiber=192
+max_selected_k_to_q_fiber=23
+P_values_with_long_selected_q_fibers=155
+trace_mod_q_conflict_residue_count_total=2811
+trace_mod_q_conflict_q_count_total=767
+P_values_with_trace_mod_q_conflict=129
+first_trace_mod_q_conflict=P=83,q=47,m_mod_q=2,D_mod_q_values=[15, 34]
+same_modulus_trace_family_available_directly=false
+kloosterman_inverse_variable_available_directly=false
+```
+
+外部前沿影响：跨行平均给出了长纤维，但 FKMS trace-function 双线性、
+Milićević--Qin--Wu 任意模 Kloosterman、Pascadi composite Type-II、Wright
+unbalanced Kloosterman fractions/convolution 与 Shao--Shparlinski--Wijaya
+smooth/squarefree 参数估计仍不能直接套用；它们需要先把 mixed-modulus graph
+phase 嵌入同模 trace/Kloosterman/dispersion 对象。
+
+新的最新最窄口：
+
+```text
+MixedModulusRowAveragedGraphToTraceOrKloostermanEmbedding
+AND UniformCancellationAcrossRowAveragedMixedModulusRadialGraph
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+row_averaged_qsupport_graph_normal_form_closed=true
+row_averaging_long_fiber_gain_ledger_closed=true
+mixed_modulus_phase_ledger_closed=true
+direct_same_modulus_trace_embedding_from_row_average_closed=false
+uniform_cancellation_across_row_averaged_mixed_modulus_radial_graph_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：
