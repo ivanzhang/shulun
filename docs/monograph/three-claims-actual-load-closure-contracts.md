@@ -22617,6 +22617,66 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层没有证明 exact same-set 五项证书、新 actual-source entropy 定理或其他并行硬门。
 
+### 1.262 两条替代线 new-joint six-field 与非循环硬攻更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_new_joint_sixfield_sync_router.py
+data/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.json
+
+experiments/prime_matrix_two_replacement_lines_noncycle_hard_attack_router.py
+data/prime-matrix-two-replacement-lines-noncycle-hard-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.json
+```
+
+同步读数为：
+
+```text
+new_joint_sixfield_artifact_proved=false
+external_lemma_author_side_closed=true
+external_lemma_version_closed_conditionally=true
+external_lemma_absolute_unconditional_closed=false
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`
+不能继续作为粗名承重门。它现在必须具体化为 six-field actual joint alpha/delta 公式：
+
+```text
+actual_noncanonical_source_tuple_domain
+joint_row_index_and_formal_unit
+basis_word_formula
+signed_coefficient_formula
+uv_phi_pairing
+budget_and_failure_return
+```
+
+本轮非循环硬攻进一步钉住两线边界。外部引理版在接受 FullS-KLS-ext 和
+DStructure/Rankin 独立验收时作者侧条件闭合；若要求绝对无条件化，则必须替换成
+同对象 FullS theorem-match、actual source capacity 新定理或新 automorphic/dispersion
+证明，并同时支付 DStructure/Rankin 或其自足替代包。内部自足版必须支付：
+
+```text
+(NewActualJointAlphaDeltaSixFieldConstructorArtifact
+ OR AcyclicCanonicalExactSameSetPromotionCertificate
+ OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+这一步关闭的是 actual-load 承重门的非循环分类，不是行/列命题无条件闭合。
+
 ### 1.256 两条替代线 seed/payload 饱和同步更新
 
 新增机器证书：

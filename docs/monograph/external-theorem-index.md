@@ -1421,3 +1421,112 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本层只删除 `canonical-lock` 粗名出口；不构成新的外部引理闭合。
+
+## 32. New-joint six-field 同步后的两线边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_new_joint_sixfield_sync_router.py
+data/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.json
+```
+
+本层不新增外部定理引用。它把
+
+```text
+NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+```
+
+同步为更窄的 six-field actual formula 工件：
+
+```text
+NewActualJointAlphaDeltaSixFieldConstructorArtifact
+```
+
+六字段为：
+
+```text
+actual_noncanonical_source_tuple_domain
+joint_row_index_and_formal_unit
+basis_word_formula
+signed_coefficient_formula
+uv_phi_pairing
+budget_and_failure_return
+```
+
+旧 joint rule 经 alpha-side、same-row、row-level、signed-emitter 返回 signed-source
+固定点；terminal descent 替代路线返回宏循环；pair-energy 也不能生产逐行公式。因此
+FI/DI/BFI/Kuznetsov/Maynard/自守 \(L\) 函数方向即使可作为外部谱输入，也不能替代这个
+pre-Cauchy six-field 构造公式。
+
+外部引理版仍为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层只删除 `NewExplicit...` 粗名出口；不构成新的 theorem-match 或无条件闭合。
+
+## 33. 两条替代线非循环硬攻后的外部/内部边界
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_noncycle_hard_attack_router.py
+data/prime-matrix-two-replacement-lines-noncycle-hard-attack-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.json
+```
+
+本层不新增外部定理引用；它只把外部引理版、无黑箱外部版和内部自足版的边界分开。
+
+外部引理版作者侧条件基保持为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这表示：接受 FullS-KLS-ext 作为外部黑箱，并接受 DStructure/Rankin 晋级包时，
+作者侧普通剩余已经归零。它不是绝对无条件定理。
+
+若要求无黑箱/绝对无条件化，外部侧必须替换为：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+内部自足版必须支付：
+
+```text
+(NewActualJointAlphaDeltaSixFieldConstructorArtifact
+ OR AcyclicCanonicalExactSameSetPromotionCertificate
+ OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+Euler/Gauss/Riemann 三条纪律在本层只作为非循环守门规则：source/product 必须先于
+pushforward，CRT/相位必须同集同对象，谱估计只能在 signed coefficient 已生成后使用。
+它们不替代任何 theorem input。

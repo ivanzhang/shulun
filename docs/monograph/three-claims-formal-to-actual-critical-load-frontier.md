@@ -23849,3 +23849,58 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 这一步继续防止在已知等价接口间循环转换；目标命题仍未无条件闭合。
+
+## 330S. Two replacement lines new-joint six-field and noncycle hard-attack frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_new_joint_sixfield_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-router.json
+data/prime-matrix-two-replacement-lines-new-joint-sixfield-sync-ledger.json
+
+experiments/prime_matrix_two_replacement_lines_noncycle_hard_attack_router.py
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.md
+docs/monograph/prime-matrix-two-replacement-lines-noncycle-hard-attack-router.json
+data/prime-matrix-two-replacement-lines-noncycle-hard-attack-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_noncycle_hard_attack_boundary_closed_unconditional_open
+new_joint_sixfield_artifact_proved=false
+external_lemma_author_side_closed=true
+external_lemma_version_closed_conditionally=true
+external_lemma_absolute_unconditional_closed=false
+external_no_blackbox_version_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：new-joint 粗标签不再是一个 formal 出口。它必须正向生成
+actual source tuple、formal unit/row key、basis word、signed coefficient、UV/Phi pairing
+和 budget/failure return 六字段。旧 joint rule、terminal descent 和 pair-energy 只会回到
+已登记固定点或宏循环，不能作为 actual 公式。
+
+本轮硬攻还把“外部引理版闭合”和“绝对无条件闭合”分开。外部引理版的条件基为：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若不允许外部/独立接受条件，则必须支付：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+     OR SelfContainedDStructureTailLog4FiniteRankinProofPackage)
+```
+
+内部自足版则保留为 source/canonical/new-joint 前端与 ExactUV、模型、PDEC/CleanKLS、
+Rate、DStructure 自足替代包的合取。该合取不能靠 Phi-LPF/CRT 无符号计数或谱估计后验
+生成 signed pre-Cauchy source。本层关闭的是非循环边界，目标命题仍未无条件闭合。
