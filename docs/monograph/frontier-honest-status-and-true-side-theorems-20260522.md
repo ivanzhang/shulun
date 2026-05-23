@@ -871,6 +871,75 @@ $P\le 200$ 全部成立，且实际 $|E(P)|=|E^*(P)|=0$。
 
 **这是黎曼/欧拉/高斯风格能在本会话内做到的最远位置**。
 
+---
+
+## G. 外部前沿定理压力测试（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_external_frontier_theorem_stress_router.py
+data/prime-matrix-external-frontier-theorem-stress-ledger.json
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.md
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json
+```
+
+### G.1 行方向：短区间素数定理的真实可支付内容
+
+H\_P 行命题需要对所有 `x~P^2` 的 `P=x^{1/2}` 长区间给点态素数存在性。因此外部短区间定理
+必须达到：
+
+```text
+theta <= 1/2.
+```
+
+当前已发表点态短区间强输入 Baker--Harman--Pintz 2001 给 `theta=0.525`。这不能闭合
+每一行，但能给一个真实副产品：
+
+```text
+No consecutive empty-row block longer than P^(0.05+epsilon), for large P.
+```
+
+推理是非循环的：若有 `R` 个连续空行，则出现长度约 `R P` 的素数空区间；BHP 禁止长度
+超过 `x^0.525 ~ P^1.05` 的空区间，所以 `R << P^0.05`。
+
+Runbo Li 2025 预印本声称 `theta=0.52`；若被接受，上式可改进为 `R << P^0.04`。它仍不等于
+`theta=1/2`，所以不能推出每行非空。
+
+Guth--Maynard 与 Gafni--Tao 的前沿结果提供更强零密度/例外集框架，但当前形式仍不能给
+`P` 间隔格点上的每一行点态控制。
+
+### G.2 列方向：Linnik/AP 与奇偶屏障
+
+列命题需要每个非零剩余类 `mod P` 在 `P^2` 以内出现素数；这要求 Linnik 型指数达到：
+
+```text
+L <= 2
+```
+
+当前可登记外部结果：
+
+| 定理 | 导入内容 | 对 H\_P 的结论 |
+|---|---|---|
+| Xylouris 2011/2018 | 一般 Linnik 指数 `5.2` 与 `<5` | 保证列方向最终有素数，但高度远超 `P^2` |
+| Meng 2001 | bounded-cubic-part 模数指数 `4.5`，素模数可对齐 | 仍远超 `P^2` |
+| Li--Zhang--Cai 2021 | 每个剩余类有 `P_2` almost-prime，指数 `1.8345` | 进入 `P^2`，但对象不是素数 |
+
+最后一项是很有价值的诊断：筛法能把 `P_2` almost-prime 推入方阵，却不能把素数推入同一窗口，
+这正是奇偶屏障，而不是文稿技巧不足。
+
+### G.3 最新非循环硬点
+
+所有有帮助的外部定理归档后，剩余不再是"再找一个等价命名"。真正需要的是四选一的新突破：
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+这一步完成的是外部前沿压力测试与 side theorem 登记，不是 H\_P 无条件闭合。
 
 
 

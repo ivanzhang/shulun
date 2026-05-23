@@ -28826,6 +28826,60 @@ The closure cannot be performed inside the linear-sieve framework
 \emph{Opera de Cribro} Theorem 11.4 with $f(1/2)=0$).
 \end{remark}
 
+\section{External frontier theorem stress test}
+
+This section records the strongest currently useful external-theorem
+imports for the row/column endpoint.  It does not promote the main theorem;
+it converts the external literature into exact side bounds and identifies the
+remaining exponent gap.
+
+\begin{externalstatement}[Baker--Harman--Pintz row-run side theorem]
+Assume the Baker--Harman--Pintz 2001 prime-gap theorem: every sufficiently
+large interval of length \(x^{0.525}\) contains a prime.  Then, for large
+prime \(P\), no run of consecutive empty \(P\)-rows has length
+\(>P^{0.05+\varepsilon}\).
+\end{externalstatement}
+\begin{proof}
+A run of \(R\) empty rows gives a prime-free interval of length \(RP\) inside
+the region \(x\asymp P^2\).  Baker--Harman--Pintz forbids a prime-free
+interval longer than \(x^{0.525+o(1)}=P^{1.05+o(1)}\).  Hence
+\(RP\ll P^{1.05+\varepsilon}\), so \(R\ll P^{0.05+\varepsilon}\).
+\end{proof}
+
+\begin{externalstatement}[Frontier short-interval candidates]
+Runbo Li's 2025 Harman-sieve preprint claims the exponent \(0.52\); if that
+claim is accepted, the preceding side theorem improves to
+\(R\ll P^{0.04+\varepsilon}\).  Guth--Maynard's zero-density theorem and the
+Gafni--Tao exceptional-interval framework are important for short-interval
+technology, but in their present form they do not give the pointwise
+\(P=x^{1/2}\) row interval required here.
+\end{externalstatement}
+
+\begin{externalstatement}[Linnik and almost-prime column stress test]
+Xylouris' Linnik bounds give a prime in each reduced residue class modulo
+\(P\) by height \(P^{5+o(1)}\) in the strongest general published form, and
+Meng's bounded-cubic-part result gives \(P^{4.5+o(1)}\) for prime moduli.
+Both are far outside the \(P^2\) square.  Li--Zhang--Cai give a \(P_2\)
+almost-prime in each class by exponent \(1.8345\), which enters the square but
+is the wrong parity object.
+\end{externalstatement}
+
+\begin{remark}[Current external frontier]
+The stress-test certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.md.
+\end{quote}
+After importing these external theorems, the remaining non-cyclic
+breakthrough target is
+\begin{quote}\scriptsize\ttfamily
+PointwiseShortIntervalPrimeTheoremThetaLeHalf\\
+OR LinnikExponentLeTwoWithSquareWindowConstants\\
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf\\
+OR NonlinearParityBreakingActualSourceConstructor.
+\end{quote}
+No known imported theorem closes the row/column theorem unconditionally.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

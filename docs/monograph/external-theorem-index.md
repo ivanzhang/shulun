@@ -1790,3 +1790,57 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 严格自足版仍需 seed、`GlobalPDECorSparseTerminalExclusion`、模型/DPRC、Rate 与自足
 DStructure/Rankin 替代包。本层不把 terminal reduction 写成目标命题无条件闭合。
+
+## 39. 外部前沿定理压力测试：短区间、Linnik 与 P2 almost-prime
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_external_frontier_theorem_stress_router.py
+data/prime-matrix-external-frontier-theorem-stress-ledger.json
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.md
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json
+```
+
+本层主动引入并核对当前对行/列命题有帮助的外部前沿定理：
+
+```text
+Baker-Harman-Pintz 2001: pointwise short interval theta=0.525
+Runbo Li 2025 preprint: claimed theta=0.52
+Guth-Maynard 2024/2026: theta>17/30 short-interval PNT context
+Gafni-Tao 2025: exceptional short intervals / zero-density transfer context
+Xylouris 2011/2018: Linnik exponent 5.2 and <5
+Meng 2001: bounded-cubic-part modulus exponent 4.5
+Li-Zhang-Cai 2021: least P2 almost-prime in AP exponent 1.8345
+```
+
+压力测试读数：
+
+```text
+target_short_interval_theta=0.5
+best_published_pointwise_short_interval_theta=0.525
+best_frontier_preprint_pointwise_short_interval_theta=0.52
+best_published_empty_row_run_exponent_bound=0.05
+best_frontier_preprint_empty_row_run_exponent_bound=0.04
+target_linnik_exponent=2
+best_general_linnik_exponent_recorded=<5
+best_special_prime_modulus_compatible_linnik_exponent_recorded=4.5
+least_almost_prime_ap_exponent_inside_square=1.8345
+row_column_unconditional_closed=false
+```
+
+真实副产品：Baker-Harman-Pintz 2001 非循环推出连续空行串不能有长度 `P^(0.05+eps)`
+量级；若 Runbo Li 2025 预印本被接受，该指数可降至 `0.04+eps`。Xylouris/Meng
+给列方向最终有素数，但高度仍在 `P^5` 或 `P^4.5`，不能进入 `P^2` 方阵。P2
+almost-prime 结果能进入 `P^2`，但对象不是素数，正好标记奇偶屏障。
+
+因此当前外部或内部真正需要的新突破仍是：
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+本层不把任何已知外部定理误写为目标命题无条件闭合。

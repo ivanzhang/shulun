@@ -1,0 +1,160 @@
+{
+  "certificate_type": "prime_matrix_external_frontier_theorem_stress_router",
+  "status": "external_frontier_theorems_imported_side_bounds_closed_main_target_open",
+  "target_short_interval_theta": 0.5,
+  "target_linnik_exponent": 2.0,
+  "best_published_pointwise_short_interval_theta": 0.525,
+  "best_frontier_preprint_pointwise_short_interval_theta": 0.52,
+  "best_published_empty_row_run_exponent_bound": 0.050000000000000044,
+  "best_frontier_preprint_empty_row_run_exponent_bound": 0.040000000000000036,
+  "best_general_linnik_exponent_recorded": 5.0,
+  "best_special_prime_modulus_compatible_linnik_exponent_recorded": 4.5,
+  "least_almost_prime_ap_exponent_inside_square": 1.8345,
+  "published_external_side_bounds": [
+    "BHPNoLongEmptyRowRunExponent005",
+    "XylourisLinnikColumnPrimeByHeightP5Plus",
+    "MengPrimeModulusColumnPrimeByHeightP45"
+  ],
+  "arxiv_or_preprint_side_diagnostics": [
+    "LeastP2AlmostPrimeInEachColumnInsideP2Square",
+    "Li052NoLongEmptyRowRunExponent004_if_accepted"
+  ],
+  "new_required_external_or_internal_breakthrough": "PointwiseShortIntervalPrimeTheoremThetaLeHalf OR LinnikExponentLeTwoWithSquareWindowConstants OR GridTransferredShortIntervalSecondMomentAtThetaHalf OR NonlinearParityBreakingActualSourceConstructor",
+  "external_lemma_version_unconditional_closed": false,
+  "internal_self_contained_closed": false,
+  "row_column_unconditional_closed": false,
+  "short_interval_transforms": {
+    "BHP2001": {
+      "theta": 0.525,
+      "target_theta": 0.5,
+      "theta_gap": 0.025000000000000022,
+      "row_length_exponent_in_P": 1.05,
+      "empty_row_run_exponent_bound": 0.050000000000000044
+    },
+    "Li2025_preprint": {
+      "theta": 0.52,
+      "target_theta": 0.5,
+      "theta_gap": 0.020000000000000018,
+      "row_length_exponent_in_P": 1.04,
+      "empty_row_run_exponent_bound": 0.040000000000000036
+    },
+    "GuthMaynard2026": {
+      "theta": 0.5666666666666667,
+      "target_theta": 0.5,
+      "theta_gap": 0.06666666666666665,
+      "row_length_exponent_in_P": 1.1333333333333333,
+      "empty_row_run_exponent_bound": 0.1333333333333333
+    }
+  },
+  "linnik_transforms": {
+    "Xylouris2011": {
+      "linnik_exponent": 5.2,
+      "target_exponent": 2.0,
+      "exponent_gap": 3.2,
+      "column_height_exponent_in_rows": 4.2
+    },
+    "Xylouris2018": {
+      "linnik_exponent": 5.0,
+      "target_exponent": 2.0,
+      "exponent_gap": 3.0,
+      "column_height_exponent_in_rows": 4.0
+    },
+    "Meng2001_bounded_cubic_part": {
+      "linnik_exponent": 4.5,
+      "target_exponent": 2.0,
+      "exponent_gap": 2.5,
+      "column_height_exponent_in_rows": 3.5
+    }
+  },
+  "plain_conclusion": "外部前沿定理已经能给出真实副产品：Baker-Harman-Pintz 2001 禁止长度约 P^0.05 以上的连续空行串；若 Runbo Li 2025 预印本被接受，可把指数改进到 P^0.04。Xylouris/Meng 的 Linnik 型结果保证列方向最终出现素数，但高度仍为 P^5 或 P^4.5 量级，不能进入 P^2 方阵；Li-Zhang-Cai 的 P2 almost-prime 结果进入 P^2，却正好是错误奇偶对象。故所有有帮助的外部定理都已定位为 side bounds/parity diagnostics；目标命题仍需要 theta<=1/2 的点态短区间定理、Linnik<=2 的同窗口常数版本、theta=1/2 二阶矩到行格点的转移，或真正非线性破奇偶构造。",
+  "rows": [
+    {
+      "theorem": "Baker-Harman-Pintz 2001 prime gaps",
+      "source": "https://doi.org/10.1112/plms/83.3.532",
+      "status": "published_external",
+      "payload": "Every large interval of length x^0.525 contains a prime.",
+      "transformed_payload": "For x~P^2 this forbids prime-free row runs longer than P^0.05 up to constants.",
+      "helps": "Closes a genuine side theorem: no asymptotically long consecutive empty-row block of exponent >0.05.",
+      "closes_target": false,
+      "obstruction": "Target row theorem needs theta<=1/2, i.e. empty-run exponent <0."
+    },
+    {
+      "theorem": "Runbo Li 2025 Harman-sieve computation",
+      "source": "https://arxiv.org/abs/2308.04458",
+      "status": "frontier_preprint_external",
+      "payload": "Claims every large interval of length x^0.52 contains a prime.",
+      "transformed_payload": "If accepted, this improves the empty-row run exponent bound from 0.05 to 0.04.",
+      "helps": "Best known-looking pointwise short-interval candidate located in this audit.",
+      "closes_target": false,
+      "obstruction": "Still has theta=0.52>1/2 and is preprint status; it does not give one prime in each P-long row."
+    },
+    {
+      "theorem": "Guth-Maynard 2024/2026 zero-density consequence",
+      "source": "https://arxiv.org/abs/2405.20552",
+      "status": "arxiv_external",
+      "payload": "Uniform short-interval PNT at exponents theta>17/30.",
+      "transformed_payload": "For x~P^2 this gives row windows of size P^(17/15+o(1)), weaker than BHP/Li for pointwise row closure.",
+      "helps": "Important for zero-density and exceptional-set technology, but not the pointwise row gate.",
+      "closes_target": false,
+      "obstruction": "17/30>1/2; pointwise length is still too long."
+    },
+    {
+      "theorem": "Gafni-Tao 2025 exceptional short intervals",
+      "source": "https://arxiv.org/abs/2505.24017",
+      "status": "arxiv_external",
+      "payload": "Relates zero-density estimates to exceptional sets; records all-x theta>17/30 and almost-all theta>2/15 context.",
+      "transformed_payload": "Almost-all x control does not imply control on the rigid lattice endpoints kP or P^2-row blocks.",
+      "helps": "Useful for density-style side bounds and for checking that row-grid control is the missing interface.",
+      "closes_target": false,
+      "obstruction": "Needs lattice/grid transfer from continuous exceptional measure to every P-spaced row endpoint."
+    },
+    {
+      "theorem": "Xylouris 2011 Linnik exponent 5.2",
+      "source": "https://arxiv.org/abs/0906.2749",
+      "status": "published_external",
+      "payload": "Least prime in a reduced residue class mod q is O(q^5.2).",
+      "transformed_payload": "For q=P this gives a column prime by height P^5.2, far beyond the P^2 square.",
+      "helps": "Confirms the AP route is real but much too weak for P x P column closure.",
+      "closes_target": false,
+      "obstruction": "Column theorem needs Linnik exponent <=2 with compatible constants/window."
+    },
+    {
+      "theorem": "Xylouris 2018 Linnik exponent <5",
+      "source": "https://www.mathnet.ru/eng/cheb681",
+      "status": "published_external_nonenglish",
+      "payload": "Improves the general Linnik exponent below 5.",
+      "transformed_payload": "For q=P this is still height P^(5-o(1)), not P^2.",
+      "helps": "Best general published direction found for least prime AP, still not target-compatible.",
+      "closes_target": false,
+      "obstruction": "Exponent gap remains nearly 3."
+    },
+    {
+      "theorem": "Meng 2001 bounded-cubic-part AP exponent 4.5",
+      "source": "https://xbna.pku.edu.cn/EN/Y2001/V37/I1/20",
+      "status": "published_external_special_moduli",
+      "payload": "For moduli with bounded cubic part, least AP prime is O(q^4.5).",
+      "transformed_payload": "Prime modulus P is structurally compatible with bounded cubic part, but P^4.5 is still outside the P^2 square.",
+      "helps": "Stronger special-modulus AP side theorem; gives no column closure.",
+      "closes_target": false,
+      "obstruction": "Exponent gap 2.5 above the needed L<=2 threshold."
+    },
+    {
+      "theorem": "Li-Zhang-Cai 2021 least P2 almost-prime in AP",
+      "source": "https://arxiv.org/abs/2103.13360",
+      "status": "arxiv_external_wrong_object",
+      "payload": "Least at-most-two-prime-factor number in a reduced residue class is O(q^1.8345).",
+      "transformed_payload": "For q=P this enters the P^2 square, but it is an almost-prime, not a prime.",
+      "helps": "Sharp parity-barrier diagnostic: the AP sieve reaches the square for P2, not for primes.",
+      "closes_target": false,
+      "obstruction": "Wrong parity object; cannot replace column prime existence."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_external_frontier_theorem_stress_router.py": "7a0fd0f40663df793d7f88cede9eae199167ea3f8051b7998973f3af4be058d2",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "472b2c1abb88232e553081fe3759a4ee7a6c17b9af3e26aa02f73f3d7018c715",
+    "docs/monograph/claim-status-table.md": "294f967aeddee1b1c6e019ea61cfd2fe559ba20f9ae7217a0547dd0dc3fa38c3",
+    "docs/monograph/external-theorem-index.md": "90302c76df1b04dada3e1f85d3a0ff5bbba9363a9d8cce418eb59ed3671db597",
+    "docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.json": "e8a6967386568175e8d4b06d7b0abd5123934ecc89ac8cb094f154d8bf076290",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "9d41b790ad1098b4c730483f5d17557d4a8da70748f358285ba16b0708f5aac0"
+  }
+}
