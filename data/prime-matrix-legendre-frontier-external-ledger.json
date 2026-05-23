@@ -1,0 +1,172 @@
+{
+  "certificate_type": "prime_matrix_legendre_frontier_external_audit",
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "RHLargerPowersDeltaPositiveImported",
+      "meaning": "registered as RH-conditional near-gate; delta=0 remains missing",
+      "proved": false,
+      "remaining": "DeltaZeroLegendreOrPrimeSquareHalfscale"
+    },
+    {
+      "closed": true,
+      "gate": "P3AlmostPrimeBetweenSquaresImported",
+      "meaning": "registered as arXiv preprint diagnostic: P3 object in square intervals, not a prime object",
+      "proved": false,
+      "remaining": "P3ToPrimeParityBreakingTransfer"
+    },
+    {
+      "closed": false,
+      "gate": "LinearSieveParityBrokenByP3Result",
+      "meaning": "P3 confirms location but not prime parity; it is a parity diagnostic, not a parity break",
+      "proved": false,
+      "remaining": "PrimeObjectExtractionFromP3OrSignedDispersion"
+    },
+    {
+      "closed": false,
+      "gate": "GuthMaynard17Over30AtHalfscale",
+      "meaning": "17/30 gives P^(2/15) row thickening after X=P^2, not one row",
+      "proved": false,
+      "remaining": "ThetaLeHalfOrGridTransferAtHalfscale"
+    },
+    {
+      "closed": true,
+      "gate": "HighPowerZeroFreeRegionProgressImported",
+      "meaning": "latest kth-power zero-free-region work quantifies progress for large k, but not k=2",
+      "proved": false,
+      "remaining": "SquarePowerKEqualsTwoCase"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "neither H_P nor the external/internal versions are unconditionally closed",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources": [
+    {
+      "acceptance_status": "arxiv_preprint_and_RH_conditional",
+      "claim_type": "RH-conditional primes between consecutive larger powers x^(2+delta)",
+      "name": "Chamberland-Straub, Weakening the Legendre Conjecture",
+      "project_role": "conditional near-gate; not delta=0 Legendre and not unconditional",
+      "url": "https://arxiv.org/abs/2602.22502",
+      "verified_version": "v1, submitted 2026-02-26"
+    },
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "unconditional P3 almost-prime in every square interval",
+      "name": "Campbell, On the Existence of Integers with at Most 3 Prime Factors Between Every Pair of Consecutive Squares",
+      "project_role": "parity diagnostic; correct location but wrong prime object",
+      "url": "https://arxiv.org/abs/2603.10356",
+      "verified_version": "v2, 2026-05-19"
+    },
+    {
+      "acceptance_status": "to_appear",
+      "claim_type": "explicit linear sieve / P2 additive Chen-type input",
+      "name": "Bordignon-Johnston-Starichkova, explicit Chen theorem and linear sieve",
+      "project_role": "technology behind almost-prime results; linear-sieve parity remains",
+      "url": "https://arxiv.org/abs/2207.09452",
+      "verified_version": "v6, 2025-06-25"
+    },
+    {
+      "acceptance_status": "published",
+      "claim_type": "zero-density estimate and short-interval PNT at length x^(17/30+o(1))",
+      "name": "Guth-Maynard, New large value estimates for Dirichlet polynomials",
+      "project_role": "deep pointwise PNT technology; exponent still above 1/2",
+      "url": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "verified_version": "Annals 203(2), 2026"
+    },
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "zero-free-region requirements for primes between consecutive kth powers",
+      "name": "Lee, Minimal zero-free regions for results on primes between consecutive perfect kth powers",
+      "project_role": "quantifies high-power progress toward Legendre; does not reach k=2",
+      "url": "https://arxiv.org/abs/2602.14340",
+      "verified_version": "arXiv:2602.14340v2, 2026"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "guth_maynard_scale_audit": {
+    "after_x_equals_p_square": "P^(17/15)",
+    "closes_each_p_row": false,
+    "row_thickness_exponent": 0.133333333333,
+    "target_row_thickness": 0,
+    "theta": "17/30",
+    "theta_decimal": 0.566666666667
+  },
+  "internal_self_contained_closed": false,
+  "larger_powers_scale_audit": {
+    "closes_prime_square_halfscale": false,
+    "delta_records": [
+      {
+        "delta": 0.25,
+        "excess_over_half": 0.055555555556,
+        "interval_power": "2+0.25",
+        "length_exponent_in_X": 0.555555555556,
+        "matches_delta_zero_legendre": false
+      },
+      {
+        "delta": 0.1,
+        "excess_over_half": 0.02380952381,
+        "interval_power": "2+0.1",
+        "length_exponent_in_X": 0.52380952381,
+        "matches_delta_zero_legendre": false
+      },
+      {
+        "delta": 0.01,
+        "excess_over_half": 0.002487562189,
+        "interval_power": "2+0.01",
+        "length_exponent_in_X": 0.502487562189,
+        "matches_delta_zero_legendre": false
+      },
+      {
+        "delta": 0.001,
+        "excess_over_half": 0.000249875062,
+        "interval_power": "2+0.001",
+        "length_exponent_in_X": 0.500249875062,
+        "matches_delta_zero_legendre": false
+      }
+    ],
+    "delta_zero_target": "Legendre/PrimeSquareHalfscale with length exponent 1/2",
+    "source": "Chamberland-Straub under RH",
+    "statement_shape": "primes between x^(2+delta) and (x+1)^(2+delta)",
+    "unconditional": false,
+    "why_not_close": "for every fixed delta>0 the length exponent is 1/2 + delta/(2(2+delta)); delta=0 is exactly the open square case and is not supplied"
+  },
+  "legendre_frontier_external_inputs_imported": true,
+  "new_residual_basis": [
+    "DeltaZeroLegendreOrPrimeSquareHalfscaleTheorem",
+    "P3ToPrimeParityBreakingTransferOrObjectSensitiveSignedSieve",
+    "ThetaLeHalfPointwiseShortIntervalPrimeTheorem",
+    "GridTransferredThetaHalfSecondMoment",
+    "PrimeSquareSpecialPhaseNoOuterTailTheorem",
+    "NewSameObjectSignedDispersionOrAutomorphicProof"
+  ],
+  "p3_between_squares_audit": {
+    "closes_prime_square_halfscale": false,
+    "location_matches_square_interval": true,
+    "object_is_prime": false,
+    "parity_barrier_diagnostic": "linear sieve can force almost-prime objects in square intervals but not a prime object",
+    "source": "Campbell 2026 v2",
+    "statement_shape": "every (n^2,(n+1)^2) contains an integer with at most 3 prime factors counted with multiplicity"
+  },
+  "p3_to_prime_transfer_closed": false,
+  "prime_square_halfscale_closed": false,
+  "rh_larger_powers_delta_zero_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "1f55b05c3e3646bacc57e73e06d993bb987dc13d17c9f79ef811ce68ea226a24",
+    "docs/monograph/external-theorem-index.md": "0487c24ac1d20c89baa3d0e766e497b31d7052d28c9c5c2f50aa024a76598c49",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "3a80bf56ddb28faa22bac13525c9246069feee5a1cf75a97f9c733f27af5a2cd",
+    "docs/monograph/prime-matrix-composite-p2-support-saturation-audit.json": "979f733cab5884a32ee57234873e1b161b7c4677a2f196642130e0aa8661b757",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "docs/monograph/prime-matrix-parity-breaking-obstruction-audit.json": "f1649c686276f7c1ca75471aa23c60d54cc20180c34e676520e208f37d724235",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json": "4dcd74175d9c2ee211e586f7aaa9ddc300763c9b84ef668db8e92f4c63b4191b",
+    "docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json": "0c4bc76f173719e64ff43013cb111cfb25c5a89b27c6ea5521299113198ceef2",
+    "experiments/prime_matrix_legendre_frontier_external_audit.py": "592abe35fc87b589134451b12814b3b031e2df472c62ac67eae9269d7793543e",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "da9e025537b8cacda6edd80c5a29dc3bba65116a52ebb49652312c514a763de3"
+  },
+  "status": "legendre_frontier_external_inputs_are_near_gates_not_prime_square_halfscale_closure"
+}

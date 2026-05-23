@@ -29229,6 +29229,75 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\section{Legendre-Frontier External Theorem Audit}
+
+\begin{externalstatement}[Latest Legendre-frontier inputs are near-gates, not half-scale closure]
+The 2026 external literature contains useful Legendre-adjacent inputs, but none
+gives the unconditional Prime Matrix half-scale statement.  Chamberland--Straub
+prove, under RH, prime existence between consecutive powers
+\[
+  x^{2+\delta}\quad\hbox{and}\quad (x+1)^{2+\delta}
+\]
+for \(\delta>0\), not the \(\delta=0\) square case.  Campbell proves, in an
+arXiv preprint, that every interval between consecutive squares contains an
+integer with at most three prime factors counted with multiplicity; this has
+the right location but the wrong parity object.  Guth--Maynard's 2026 Annals
+zero-density technology gives short-interval PNT at exponent \(17/30\), still
+above \(1/2\).
+\end{externalstatement}
+
+\begin{proof}
+For the larger-powers input, put \(X=x^{2+\delta}\).  The interval length is
+\[
+  (x+1)^{2+\delta}-x^{2+\delta}
+  =(2+\delta)x^{1+\delta}+O(x^\delta),
+\]
+so its exponent in \(X\) is
+\[
+  \frac{1+\delta}{2+\delta}
+  =\frac12+\frac{\delta}{2(2+\delta)}.
+\]
+Every fixed \(\delta>0\) is therefore strictly above \(1/2\), and
+\(\delta=0\) is exactly the Legendre/prime-square half-scale case.  Moreover
+the theorem is RH-conditional, so it cannot be imported as an unconditional
+closure.
+
+The P3 result is located in the exact square interval, but it produces an
+almost-prime object, not a prime.  This is a useful parity diagnostic: linear
+sieve methods can reach the square interval with \(P_3\) objects while still
+failing to isolate primes.  Thus the missing transfer is an object-sensitive
+parity-breaking step, not another same-set counting identity.
+
+Finally, Guth--Maynard's exponent \(17/30\) gives, after \(X=P^2\), a window of
+length \(P^{17/15}=P\cdot P^{2/15}\).  It controls a thickened block of
+\(P^{2/15}\) rows, not a single \(P\)-row.  Hence each external input narrows a
+frontier but leaves the half-scale prime-square target open.
+\end{proof}
+
+\begin{remark}[Legendre-frontier residual basis]
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-legendre-frontier-external-audit.md.
+\end{quote}
+The current non-cyclic residual basis is
+\begin{quote}\scriptsize\ttfamily
+DeltaZeroLegendreOrPrimeSquareHalfscaleTheorem\\
+OR P3ToPrimeParityBreakingTransferOrObjectSensitiveSignedSieve\\
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem\\
+OR GridTransferredThetaHalfSecondMoment\\
+OR PrimeSquareSpecialPhaseNoOuterTailTheorem\\
+OR NewSameObjectSignedDispersionOrAutomorphicProof.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+legendre\_frontier\_external\_inputs\_imported=true\\
+rh\_larger\_powers\_delta\_zero\_closed=false\\
+p3\_to\_prime\_transfer\_closed=false\\
+prime\_square\_halfscale\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Parity-Breaking Candidate Source Audit}
 
 \begin{externalstatement}[Five-gate audit for parity-breaking candidates]

@@ -2534,3 +2534,72 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 53. Legendre-frontier 外部定理审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_legendre_frontier_external_audit.py
+data/prime-matrix-legendre-frontier-external-ledger.json
+docs/monograph/prime-matrix-legendre-frontier-external-audit.json
+docs/monograph/prime-matrix-legendre-frontier-external-audit.md
+```
+
+本层登记 2026 年 Legendre/平方间隔方向最相关的新外部源，并统一映射到
+`P^2±P` 半窗目标。
+
+外部源快照：
+
+```text
+Chamberland--Straub 2026:
+  RH 条件 primes between x^(2+delta) and (x+1)^(2+delta), delta>0.
+  不含 delta=0；非无条件。
+
+Campbell 2026:
+  every square interval contains a P3 almost-prime.
+  位置正确；对象不是 prime。
+
+Bordignon--Johnston--Starichkova:
+  explicit Chen / linear sieve 技术。
+  支撑 almost-prime 结果；仍受 parity barrier。
+
+Guth--Maynard 2026 Annals:
+  theta=17/30 short-interval PNT technology.
+  X=P^2 后仍需 P^(2/15) 行厚度。
+
+Lee 2026:
+  kth-power zero-free-region progress for large k.
+  不触及 k=2 square case。
+```
+
+RH larger-powers 的尺度为：
+
+```text
+length exponent = (1+delta)/(2+delta)
+                 = 1/2 + delta/(2(2+delta)).
+```
+
+因此 `delta=1/4` 给 `5/9`，`delta=0.01` 仍给 `0.502487...`；
+极限接近 `1/2`，但 `delta=0` 正是 Legendre/prime-square halfscale 硬点。
+
+新的剩余基为：
+
+```text
+DeltaZeroLegendreOrPrimeSquareHalfscaleTheorem
+OR P3ToPrimeParityBreakingTransferOrObjectSensitiveSignedSieve
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem
+OR GridTransferredThetaHalfSecondMoment
+OR PrimeSquareSpecialPhaseNoOuterTailTheorem
+OR NewSameObjectSignedDispersionOrAutomorphicProof
+```
+
+边界状态：
+
+```text
+legendre_frontier_external_inputs_imported=true
+rh_larger_powers_delta_zero_closed=false
+p3_to_prime_transfer_closed=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```

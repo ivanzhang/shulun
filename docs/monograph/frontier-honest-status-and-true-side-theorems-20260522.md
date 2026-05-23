@@ -1673,6 +1673,103 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 W：Legendre-frontier 外部定理审计（2026-05-23 第二十一轮）
+
+本轮引入并审计 2026 年与 Legendre/平方间隔最相关的新外部定理：
+
+```text
+experiments/prime_matrix_legendre_frontier_external_audit.py
+data/prime-matrix-legendre-frontier-external-ledger.json
+docs/monograph/prime-matrix-legendre-frontier-external-audit.json
+docs/monograph/prime-matrix-legendre-frontier-external-audit.md
+```
+
+外部源登记：
+
+```text
+Chamberland--Straub, Weakening the Legendre Conjecture:
+  arXiv:2602.22502, RH 条件，x^(2+delta) 与 (x+1)^(2+delta) 间有素数。
+
+Campbell, P3 between consecutive squares:
+  arXiv:2603.10356v2, 每个平方间隔含至多 3 个素因子的整数。
+
+Bordignon--Johnston--Starichkova:
+  arXiv:2207.09452v6, explicit Chen / linear sieve 技术。
+
+Guth--Maynard:
+  Annals 203(2), 2026, Dirichlet polynomial large values / 17/30 短区间 PNT。
+
+Lee:
+  arXiv:2602.14340v2, kth-power zero-free-region progress for large k。
+```
+
+RH larger-powers 结果的尺度换算：
+
+```text
+(x+1)^(2+delta)-x^(2+delta) ~ (2+delta)x^(1+delta)
+X=x^(2+delta)
+length exponent in X = (1+delta)/(2+delta)
+                     = 1/2 + delta/(2(2+delta)).
+```
+
+样本：
+
+```text
+delta=1/4 -> 0.555555...
+delta=0.1 -> 0.523809...
+delta=0.01 -> 0.502487...
+delta=0.001 -> 0.500249...
+```
+
+所以该方向确实逼近半尺度，但只在 `delta>0` 且 RH 条件下成立；`delta=0`
+就是本文需要的平方半窗硬点，未被提供。
+
+P3 almost-prime 结果的定位：
+
+```text
+location_matches_square_interval=true
+object_is_prime=false
+```
+
+这是真正有用的 parity 诊断：线性筛可以把对象推进到平方间隔内的 P3，
+但不能把 P3 自动升级为 prime。它不突破 Phi-LPF 奇偶障碍，只把剩余压成：
+
+```text
+P3ToPrimeParityBreakingTransferOrObjectSensitiveSignedSieve
+```
+
+Guth--Maynard `17/30` 在 `X=P^2` 下给：
+
+```text
+P^(17/15) = P * P^(2/15)
+```
+
+仍是 `P^(2/15)` 行厚度，不是每个单行半窗。
+
+新剩余基为：
+
+```text
+DeltaZeroLegendreOrPrimeSquareHalfscaleTheorem
+OR P3ToPrimeParityBreakingTransferOrObjectSensitiveSignedSieve
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem
+OR GridTransferredThetaHalfSecondMoment
+OR PrimeSquareSpecialPhaseNoOuterTailTheorem
+OR NewSameObjectSignedDispersionOrAutomorphicProof
+```
+
+本层是真推进：它把最新 Legendre 外部前沿全部转成可审稿的条件性、尺度和对象缺口。
+但它不关闭行/列命题。
+
+```text
+legendre_frontier_external_inputs_imported=true
+rh_larger_powers_delta_zero_closed=false
+p3_to_prime_transfer_closed=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 P：破奇偶候选源障碍审计（2026-05-23 第十四轮）
 
 本轮专门审计“创造性突破奇偶性障碍”的候选外部源，不再把筛恒等式、平均 AP
