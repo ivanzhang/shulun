@@ -2431,6 +2431,135 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q11：Phi-LPF unique odd candidate projection closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_unique_odd_candidate_projection_closure_audit.py
+data/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.md
+```
+
+上一层已经把端点侧选择压成 parity selector。本层进一步关闭：
+
+```text
+PrimeQUniqueOddCandidateProjection
+LPFResidualAsQSubsetPredicate
+```
+
+### Q11.1 q 单值奇候选
+
+对每个 prime `q in (P/2,P)` 定义：
+
+```text
+J_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))].
+```
+
+因为 `q>P/2`，`J_q` 至多含两个连续整数，所以至多含一个奇数。记这个
+唯一可能的奇数为：
+
+```text
+omega_{P,k}(q)
+```
+
+若不存在奇数，则该 `q` 无 residual edge。若存在，则 residual edge 完全等价于：
+
+```text
+m=omega_{P,k}(q)
+omega is composite
+LPF(omega)>=7
+```
+
+因此 LPF residual graph 已经不是分支图，而是 q 上的单值函数加 LPF 子集谓词。
+
+### Q11.2 相位对象
+
+在 residual q 上写：
+
+```text
+D(q)=q*omega_{P,k}(q)-kP.
+```
+
+上一层相位恒等式给出：
+
+```text
+e(h*kP/q)=e(-h*D(q)/q).
+```
+
+后续硬点就是这个 odd-candidate LPF-subset phase 的抵消；本层不证明抵消。
+
+### Q11.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_odd_candidate_instances=1266932
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+reason_totals={no_odd_candidate:2607622, prime:374384, small_lpf_3:423339, small_lpf_5:169232, residual_lpf_ge_7_composite:299977}
+branch_totals_on_candidates={both:390129, lower:440801, upper:436002}
+window_width_totals={-1:2214518, 0:783233, 1:876803}
+max_odd_candidates_per_q=1
+unique_odd_candidate_per_q=true
+predicted_edges_equal_actual_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+bad_candidate_total=0
+bad_phase_displacement_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自 clipped window 长度 `<2` 与
+residual cofactor 的奇性。
+
+### Q11.4 外部前沿匹配
+
+```text
+Euler parity plus clipped reciprocal window algebra:
+  closes this normal-form gate.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  remain candidate inputs only after completion to a genuine Kloosterman
+  or Vaughan Type-II object; they do not estimate the fixed-row
+  odd-candidate LPF-subset phase directly.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv, hence recorded only as a near-miss and not as an
+  admissible external theorem.
+```
+
+### Q11.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQParitySelectedFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQUniqueOddCandidateLPFSubsetPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+unique_odd_candidate_projection_closed=true
+unique_odd_candidate_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

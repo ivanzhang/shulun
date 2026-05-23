@@ -1,0 +1,282 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_unique_odd_candidate_projection_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimeQUniqueOddCandidateProjection",
+      "meaning": "Every prime q has at most one odd candidate omega in its clipped reciprocal window.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "LPFResidualAsQSubsetPredicate",
+      "meaning": "Residual edges are exactly q with omega composite and LPF(omega)>=7.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQUniqueOddCandidateLPFSubsetPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation over q with LPF(omega(q))>=7 composite.",
+      "proved": false,
+      "remaining": "unique odd candidate LPF-subset phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the odd-candidate q-subset phase to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "turns residual edges into a q-subset, but gives no cancellation on that subset",
+      "source": "Euler parity plus clipped reciprocal window algebra",
+      "useful_part": "closes the unique odd candidate projection"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "the q-subset odd-candidate phase is not yet a completed bilinear Kloosterman sum",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "power-saving bilinear Kloosterman estimates for arbitrary moduli"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "does not estimate this fixed-row prime-q LPF-subset phase directly",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "Type-II Kloosterman sums with composite moduli via non-abelian amplification"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "still requires a completion identity from odd candidates to Kloosterman sums",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums parametrised by square-free and smooth integers"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "withdrawn on arXiv; cannot be cited as a valid external input",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "useful_part": "Kloosterman-fraction bilinear-form near miss"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_predicted_displacements_in_1_to_Pminus1": true,
+    "bad_candidate_total": 0,
+    "bad_phase_displacement_total": 0,
+    "branch_totals_on_candidates": {
+      "both": 390129,
+      "lower": 440801,
+      "upper": 436002
+    },
+    "extra_edge_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_odd_candidates_per_q": 1,
+    "max_prime": 1009,
+    "missing_edge_total": 0,
+    "predicted_edges_equal_actual_edges": true,
+    "predicted_total_edges_R30": 299977,
+    "reason_totals": {
+      "no_odd_candidate": 2607622,
+      "prime": 374384,
+      "residual_lpf_ge_7_composite": 299977,
+      "small_lpf_3": 423339,
+      "small_lpf_5": 169232
+    },
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_candidate_count": 0,
+        "bad_phase_displacement_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 3,
+          "lower": 2,
+          "upper": 2
+        },
+        "extra_edge_count": 0,
+        "k": 100,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 7,
+        "predicted_edge_count_R30": 1,
+        "q_count": 10,
+        "reason_counter": {
+          "no_odd_candidate": 3,
+          "prime": 4,
+          "residual_lpf_ge_7_composite": 1,
+          "small_lpf_3": 2
+        },
+        "sample_predicted_edges": "q=71,omega=143,branch=both,d=53,lpf=11",
+        "window_width_counter": {
+          "0": 6,
+          "1": 4
+        }
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_candidate_count": 0,
+        "bad_phase_displacement_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 5,
+          "lower": 4,
+          "upper": 7
+        },
+        "extra_edge_count": 0,
+        "k": 256,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 16,
+        "predicted_edge_count_R30": 3,
+        "q_count": 23,
+        "reason_counter": {
+          "no_odd_candidate": 7,
+          "prime": 6,
+          "residual_lpf_ge_7_composite": 3,
+          "small_lpf_3": 4,
+          "small_lpf_5": 3
+        },
+        "sample_predicted_edges": "q=137,omega=481,branch=lower,d=105,lpf=13; q=151,omega=437,branch=upper,d=195,lpf=19; q=193,omega=341,branch=lower,d=21,lpf=11",
+        "window_width_counter": {
+          "0": 12,
+          "1": 11
+        }
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_candidate_count": 0,
+        "bad_phase_displacement_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 22,
+          "lower": 12,
+          "upper": 15
+        },
+        "extra_edge_count": 0,
+        "k": 936,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 49,
+        "predicted_edge_count_R30": 23,
+        "q_count": 71,
+        "reason_counter": {
+          "no_odd_candidate": 22,
+          "prime": 12,
+          "residual_lpf_ge_7_composite": 23,
+          "small_lpf_3": 6,
+          "small_lpf_5": 8
+        },
+        "sample_predicted_edges": "q=491,omega=1853,branch=upper,d=967,lpf=17; q=503,omega=1807,branch=lower,d=65,lpf=13; q=523,omega=1739,branch=upper,d=641,lpf=37; q=541,omega=1681,branch=upper,d=565,lpf=41; q=557,omega=1633,branch=upper,d=725,lpf=23",
+        "window_width_counter": {
+          "-1": 1,
+          "0": 43,
+          "1": 27
+        }
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_candidate_count": 0,
+        "bad_phase_displacement_count": 0,
+        "branch_counter_on_candidates": {
+          "both": 25,
+          "lower": 14,
+          "upper": 15
+        },
+        "extra_edge_count": 0,
+        "k": 1008,
+        "max_odd_candidates_per_q": 1,
+        "missing_edge_count": 0,
+        "odd_candidate_count": 54,
+        "predicted_edge_count_R30": 9,
+        "q_count": 72,
+        "reason_counter": {
+          "no_odd_candidate": 18,
+          "prime": 19,
+          "residual_lpf_ge_7_composite": 9,
+          "small_lpf_3": 20,
+          "small_lpf_5": 6
+        },
+        "sample_predicted_edges": "q=563,omega=1807,branch=lower,d=269,lpf=13; q=577,omega=1763,branch=lower,d=179,lpf=41; q=617,omega=1649,branch=lower,d=361,lpf=17; q=647,omega=1573,branch=upper,d=659,lpf=11; q=743,omega=1369,branch=lower,d=95,lpf=37",
+        "window_width_counter": {
+          "0": 43,
+          "1": 29
+        }
+      }
+    ],
+    "total_odd_candidate_instances": 1266932,
+    "total_prime_q_instances": 3874554,
+    "unique_odd_candidate_per_q": true,
+    "window_width_totals": {
+      "-1": 2214518,
+      "0": 783233,
+      "1": 876803
+    }
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQUniqueOddCandidateLPFSubsetPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "af161082dd37f4f8085592b94e61b1a4b6cce953a7ba26d9ca0a3d97282d2193",
+    "docs/monograph/external-theorem-index.md": "e884a6bcc459e14ef69f16d39df847e0b67da03a21d78538cf45309bbf91d1e9",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "faafaaaa760998105f24f2ea535d4916a860e6c04632a9192937d9123e3e50ec",
+    "docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.json": "80c39bcf0c0627ab0b94323d4a85069969caeca6a2e5a12e1505506342b8bf99",
+    "docs/monograph/prime-matrix-phi-lpf-parity-selected-branch-phase-closure-audit.json": "8fbf60b7cb26db4bc4840a8e4769474da7a4bee6d7eb0afeb1f3a12185817074",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_unique_odd_candidate_projection_closure_audit.py": "cc2a3f42ccbc8f4bd57298f8f28837bd2224eb12eeb3df436e685b6a2f566904",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "418ecdaae931453322be83867ec577ed1855d546dfe596d1d8dc4882fb04a102"
+  },
+  "status": "unique_odd_candidate_projection_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "PrimeQUniqueOddCandidateProjection",
+      "frontier_before": [
+        "PrimeQParitySelectedFloorResidueBranchPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "two-point clipped q-windows have a unique odd candidate; LPF becomes a q-subset predicate"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable q-candidate projection gate"
+    }
+  ],
+  "unique_odd_candidate_phase_saving_closed": false,
+  "unique_odd_candidate_projection_closed": true,
+  "unique_odd_candidate_theorem": {
+    "candidate": "For each prime q in (P/2,P), the clipped window J_q contains at most one odd integer omega_{P,k}(q).",
+    "edge_equivalence": "(q,m) is a residual edge iff omega exists, m=omega, omega is composite, and LPF(omega)>=7.",
+    "normal_form": "The residual graph is a q-subset of a single-valued odd-candidate map, not a branch graph.",
+    "not_enough": "The subset predicate LPF(omega)>=7 is still parity-sensitive and no cancellation over q follows.",
+    "phase": "On a residual q, the phase is e(-hD(q)/q), where D(q)=q*omega_{P,k}(q)-kP."
+  }
+}

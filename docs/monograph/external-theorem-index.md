@@ -3446,6 +3446,112 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 74. Phi-LPF unique odd candidate projection closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_unique_odd_candidate_projection_closure_audit.py
+data/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-projection-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的 q 单值候选投影门：
+
+```text
+PrimeQUniqueOddCandidateProjection
+LPFResidualAsQSubsetPredicate
+```
+
+对每个 prime `q in (P/2,P)` 定义 clipped reciprocal window：
+
+```text
+J_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))].
+```
+
+因为 `q>P/2`，该窗口至多含两个连续整数，故至多含一个奇数。记这个奇数为
+`omega_{P,k}(q)`。本层证明：
+
+```text
+(q,m) is a residual edge
+iff omega_{P,k}(q) exists,
+    m=omega_{P,k}(q),
+    omega is composite,
+    LPF(omega)>=7.
+```
+
+于是 residual graph 被压成 q 上的单值候选函数加 LPF 子集谓词；后续不再有
+端点、分支或多重图自由度。相位变为：
+
+```text
+D(q)=q*omega_{P,k}(q)-kP
+e(h*kP/q)=e(-h*D(q)/q)
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_odd_candidate_instances=1266932
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+reason_totals={no_odd_candidate:2607622, prime:374384, small_lpf_3:423339, small_lpf_5:169232, residual_lpf_ge_7_composite:299977}
+branch_totals_on_candidates={both:390129, lower:440801, upper:436002}
+window_width_totals={-1:2214518, 0:783233, 1:876803}
+max_odd_candidates_per_q=1
+unique_odd_candidate_per_q=true
+predicted_edges_equal_actual_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+bad_candidate_total=0
+bad_phase_displacement_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Euler parity plus clipped reciprocal window algebra:
+  closes this unique odd candidate projection gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  bilinear Kloosterman estimates remain useful only after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  non-abelian amplification is not a pointwise fixed-row q-subset phase theorem.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman sums still need finite-field completion first.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  Kloosterman-fraction bilinear-form near miss is withdrawn on arXiv and
+  cannot be cited as a valid external input.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQUniqueOddCandidateLPFSubsetPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+unique_odd_candidate_projection_closed=true
+unique_odd_candidate_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

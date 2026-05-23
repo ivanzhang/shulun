@@ -31304,6 +31304,84 @@ a completion to an external Kloosterman/Vaughan Type-II estimate without
 losing pointwise control in \(P,k\).
 \end{remark}
 
+\section{Unique odd candidate projection closure}
+
+\begin{proposition}[Next deterministic q-candidate projection gate]
+After parity-selected branch closure, the next deterministic subgate is
+\[
+  \texttt{PrimeQUniqueOddCandidateProjection}.
+\]
+It replaces the residual branch graph by a single-valued candidate map
+on prime \(q\).  It is still not a phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Residual edges are an LPF subset of one odd candidate]
+For each prime \(q\in(P/2,P)\), define the clipped reciprocal window
+\[
+  J_q(P,k)=
+  \left[
+    \max\left(q,\left\lfloor \frac{kP}{q}\right\rfloor+1\right),
+    \min\left(2P-1,\left\lfloor \frac{(k+1)P-1}{q}\right\rfloor\right)
+  \right].
+\]
+Then \(J_q(P,k)\) contains at most one odd integer.  Denote it, when it
+exists, by \(\omega_{P,k}(q)\).  The residual edges are exactly
+\[
+  (q,m)\quad\hbox{with}\quad
+  m=\omega_{P,k}(q),\qquad
+  m\ {\rm composite},\qquad {\rm LPF}(m)\ge 7.
+\]
+On such a residual \(q\), if
+\[
+  D(q)=q\,\omega_{P,k}(q)-kP,
+\]
+then \(1\le D(q)<P\) and
+\[
+  e(hkP/q)=e(-hD(q)/q)
+\]
+for every integer \(h\).
+\end{theorem}
+\begin{proof}
+The uncut product interval has length \(P/q<2\).  Clipping by \(q\) and
+\(2P-1\) cannot increase the number of integer points, so \(J_q(P,k)\)
+contains at most two consecutive integers.  Hence it contains at most
+one odd integer.
+
+Every residual cofactor has least prime factor at least \(7\), hence is
+odd.  Therefore any residual edge over the fixed \(q\) must use the
+unique odd integer \(\omega_{P,k}(q)\), if it exists.  Conversely, if
+that odd candidate exists, is composite, and has least prime factor at
+least \(7\), then by construction it lies in \(J_q(P,k)\), so it gives
+exactly one residual edge.  This proves the edge equivalence.
+
+The displacement and phase identity are the matched-displacement
+identity already proved, applied to \(m=\omega_{P,k}(q)\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-unique-\\
+odd-candidate-projection-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after odd-candidate projection]
+The residual object is now a q-subset of the single-valued odd-candidate
+map
+\[
+  q\mapsto \omega_{P,k}(q).
+\]
+The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQUniqueOddCandidateLPFSubsetPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is cancellation over the q's for which
+\(\omega_{P,k}(q)\) is composite with least prime factor at least \(7\),
+or a completion to an external Kloosterman/Vaughan Type-II estimate
+without losing pointwise control in \(P,k\).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
