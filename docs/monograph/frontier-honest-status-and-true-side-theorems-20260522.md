@@ -1755,6 +1755,68 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
+
+本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial
+极限中闭合目标。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_primorial_wheel_limit_audit.py
+data/prime-matrix-phi-lpf-primorial-wheel-limit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.json
+docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.md
+```
+
+有限 primorial ladder 确实继续收紧：
+
+```text
+max_prime=1009
+row_count=76789
+all_exact_capacity_equals_holes=true
+all_exact_margin_equals_direct_prime_count=true
+```
+
+代表行：
+
+| P | k | $\Delta\Phi_{1/2}$ | $W_{int}$ | $C_{30}$ | $C_{210}$ | $C_{2310}$ | $C_{\sqrt{2P}}$ | holes | primes |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1009 | 1008 | 89 | 101 | 28 | 27 | 26 | 19 | 19 | 70 |
+
+极限判定是关键：若 wheel primes 覆盖到 `sqrt(2P-1)`，则每个合数
+`m<2P` 都有已覆盖小因子，所以 reciprocal cofactor 窗内未删候选恰好是素数。
+因此：
+
+```text
+C_sqrt(P,k)=|F(P,k)|
+DeltaPhi_half(P,k)-C_sqrt(P,k)=pi((k+1)P-1)-pi(kP)
+```
+
+这是真推进，但也给出 no-free-lunch 边界：primorial wheel 极限是目标命题的
+精确等价重述，不是独立证明。继续加 wheel 可以逼近真实 holes；要闭合仍需证明
+精确差为正，或引入真正带符号/谱/结构性输入。
+
+新的最窄口：
+
+```text
+PuncturedSqrtWheelExactForestHolePositivityOrSignedDispersionOrSpecialSquarePhaseLowerBound
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR PhiLPFObjectSensitiveSignedValueTable
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+```
+
+```text
+primorial_wheel_ladder_tightened=true
+sqrt_wheel_limit_exact=true
+primorial_limit_independent_proof=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：

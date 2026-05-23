@@ -2911,3 +2911,75 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 58. Phi-LPF primorial-wheel limit 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_primorial_wheel_limit_audit.py
+data/prime-matrix-phi-lpf-primorial-wheel-limit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.json
+docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.md
+```
+
+本层回答 `30-wheel` 是否可继续到：
+
+```text
+210, 2310, 30030, ..., 2*3*5*7*11*...*p_j
+```
+
+答案分成两部分。首先，有限 primorial wheel ladder 确实单调收紧，因为每一层
+只删除更多被小素数强迫合成的 reciprocal cofactor 候选。有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+all_exact_capacity_equals_holes=true
+all_exact_margin_equals_direct_prime_count=true
+```
+
+代表行：
+
+```text
+P=1009, k=1008
+Delta=89, W_int=101, C_30=28, C_210=27, C_2310=26, C_sqrt=19, holes=19, primes=70
+```
+
+其次，当 wheel primes 覆盖到 `sqrt(2P-1)` 后，所有合数 `m<2P` 都被删除，
+未删的 cofactor `m` 恰好是素数。因此：
+
+```text
+C_sqrt(P,k)=|F(P,k)|
+DeltaPhi_half(P,k)-C_sqrt(P,k)=pi((k+1)P-1)-pi(kP)
+```
+
+这说明 infinite primorial-wheel limit 是目标命题的精确等价形式，不是一个
+独立证明。继续加 wheel 可以把容量上界逼近真实 holes，但要证明目标仍必须证明
+这个精确差为正，或提供新的带符号/谱/结构性输入。
+
+新的剩余基：
+
+```text
+PuncturedSqrtWheelExactForestHolePositivityOrSignedDispersionOrSpecialSquarePhaseLowerBound
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR PhiLPFObjectSensitiveSignedValueTable
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+```
+
+外部前沿状态未改变：已发表 BHP `0.525` 与 Runbo Li `0.52` 仍大于 `1/2`；
+AP 平均分布、P2 almost-prime 与 prime-producing sieve 框架仍不能直接给出本文
+同对象 fixed-row positivity。
+
+状态边界：
+
+```text
+primorial_wheel_ladder_tightened=true
+sqrt_wheel_limit_exact=true
+primorial_limit_independent_proof=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

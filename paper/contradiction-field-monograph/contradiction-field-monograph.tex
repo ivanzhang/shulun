@@ -12421,6 +12421,74 @@ ReciprocalPrimePairWheel30SaturationPDEC.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Primorial-wheel limit is exact but not an independent proof]
+The \(30\)-wheel capacity bound extends monotonically to every primorial
+wheel.  If \(S\) is a finite set of primes and \(C_S(P,k)\) denotes the
+reciprocal-window capacity after deleting all \(m\in I_q(P,k)\) with
+\[
+  m>\ell,\qquad \ell\mid m,\qquad \ell\in S,
+\]
+then \(S_1\subseteq S_2\) implies
+\[
+  C_{S_2}(P,k)\le C_{S_1}(P,k).
+\]
+In particular the chain
+\[
+  2,\quad 2\cdot3,\quad 2\cdot3\cdot5,\quad
+  2\cdot3\cdot5\cdot7,\quad\ldots
+\]
+gives a genuine sequence of sharper forest-hole ceilings.
+
+However, once \(S\) contains all primes \(\ell\le\sqrt{2P-1}\), the capacity
+is exact:
+\[
+  C_S(P,k)=|F(P,k)|.
+\]
+Consequently
+\[
+  \Delta\Phi_{1/2}(P,k)-C_S(P,k)
+  =\pi((k+1)P-1)-\pi(kP).
+\]
+Thus the primorial-wheel limit is an exact restatement of the target row
+positivity, not an independent proof of it.
+\end{theorem}
+\begin{proof}[Status and reference]
+Monotonicity is immediate: enlarging \(S\) only deletes more cofactor
+candidates that are forced composite.  For exactness, every reciprocal
+cofactor satisfies \(m<2P\).  If such an \(m\) is composite, it has a prime
+factor \(\ell\le\sqrt{m}\le\sqrt{2P-1}\).  Hence the dynamic wheel containing
+all primes up to \(\sqrt{2P-1}\) deletes every composite \(m\), while a prime
+\(m\) is not deleted by the rule \(m>\ell,\ \ell\mid m\).  The survivors are
+therefore exactly the prime cofactors, counted with the same \(q\)-window
+multiplicity as \(F(P,k)\).
+
+Combining this with the endpoint identity
+\[
+  \pi((k+1)P-1)-\pi(kP)=\Delta\Phi_{1/2}(P,k)-|F(P,k)|
+\]
+gives the displayed equality.  The machine certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.md.
+\end{quote}
+It records, for \(P\le1009\),
+\begin{quote}\scriptsize\ttfamily
+row\_count=76789\\
+all\_exact\_capacity\_equals\_holes=true\\
+all\_exact\_margin\_equals\_direct\_prime\_count=true.
+\end{quote}
+For example, at \(P=1009,k=1008\),
+\[
+  W_{\rm int}=101,\qquad C_{30}=28,\qquad
+  C_{210}=27,\qquad C_{2310}=26,\qquad C_{\sqrt{2P}}=19=|F|.
+\]
+This narrows the bookkeeping interface to
+\begin{quote}\scriptsize\ttfamily
+PuncturedSqrtWheelExactForestHolePositivityOr\\
+SignedDispersionOrSpecialSquarePhaseLowerBound.
+\end{quote}
+No unconditional row/column closure follows from the wheel limit alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for
@@ -12436,9 +12504,10 @@ Thus the non-circular continuation after the parity-capacity bound is not
 another unsigned rewriting of the same count.  It must supply one of the
 following genuinely new inputs: a square-root-scale interval theorem on the
 relevant endpoints, a special square-phase/CRT structural lower bound proving
-\(\Delta\Phi_{1/2}(P,k)>C_{30}(P,k)\) in the sharpened wheel layer, or a signed transport/dispersion
-estimate that breaks the linear-sieve parity obstruction.  Without such an
-input, the remaining object is a reciprocal prime-pair saturation PDEC.
+\(\Delta\Phi_{1/2}(P,k)>C_{\sqrt{2P}}(P,k)=|F(P,k)|\) in the exact wheel
+limit, or a signed transport/dispersion estimate that breaks the linear-sieve
+parity obstruction.  Without such an input, the remaining object is a
+reciprocal prime-pair saturation PDEC.
 \end{proposition}
 \begin{proof}[Status and reference]
 The assertion is a route-control statement.  The exact identities express the
@@ -12460,8 +12529,8 @@ It records
 status=review\_absorbed\_phi\_lpf\_exactness\_is\_not\_positivity\\
 accepted\_review\_core=true\\
 current\_frontier\_after\_review=\\
-PuncturedParityEndpointCapacityInequalityOr\\
-ReciprocalPrimePairSaturationPDEC.
+PuncturedSqrtWheelExactForestHolePositivityOr\\
+SignedDispersionOrSpecialSquarePhaseLowerBound.
 \end{quote}
 This proposition deliberately does not prove the row/column theorem; it fixes
 the admissible proof obligations after the Phi--LPF exact-count phase.
