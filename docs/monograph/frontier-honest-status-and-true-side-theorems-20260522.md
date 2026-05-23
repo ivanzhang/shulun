@@ -658,6 +658,80 @@ $$
 | K3''' $\to|E(P)|=o(P)$ | $h=X^{1/2}$ 二阶矩（K4 同障）| 开放 |
 | H_P 完整 | Cramér 局部或非线性 sieve | 70 年开放 |
 
+---
+
+## 附录 D：K3* 的 Dusart 加强版 K3*-Dusart（列方向对偶 $\log P$ 改进）
+
+**目的**：行方向 K3''' 已用 Dusart 2010 给出 $\log P$ 阶改进。列方向 K3* 完全对偶地享受同一改进。
+这不是 K3''' 的同义复述——列方向对应 **Linnik 开放问题**，与行方向 Cramér 完全独立。
+
+### D.1 定理 K3*-Dusart
+
+**陈述**：对每个素数 $P\ge 79$，
+$$
+|E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}.
+$$
+
+**证明**：与 K3''' 同构：
+
+(1) 由 Dusart 2010：$\pi(P^2)\ge P^2/(2\log P-1)$（对 $P\ge 79$，即 $P^2\ge 5393$）。
+
+(2) 列求和：$\sum_{j=1}^{P-1}M_P(j)=\pi(P^2)-2$（减素数 $P$ 与单位元 $1$，后者非素）。
+
+(3) 由 MV-AP（取 $q=P$）：$M_P(j)\le 2P^2/((P-1)\log P)$ 对每 $j\in[1,P-1]$。
+
+(4) 联合：
+$$
+(P-1-|E^*(P)|)\cdot\frac{2P^2}{(P-1)\log P}\ge \pi(P^2)-2\ge \frac{P^2}{2\log P-1}-2.
+$$
+
+(5) 解：
+$$
+P-1-|E^*(P)|\ge \frac{(P-1)\log P}{2P^2}\cdot\Bigl(\frac{P^2}{2\log P-1}-2\Bigr)
+=\frac{(P-1)\log P}{2(2\log P-1)}-\frac{(P-1)\log P}{P^2}.
+$$
+
+第一项 $=\frac{(P-1)}{4-2/\log P}\ge \frac{P-1}{4}\cdot\Bigl(1+\frac{1}{2\log P}\Bigr)=\frac{P-1}{4}+\frac{P-1}{8\log P}$。
+
+第二项 $=O(\log P/P)=o(1)$。
+
+故 $P-1-|E^*(P)|\ge (P-1)/4+(P-1)/(8\log P)-o(1)$，即
+$$
+|E^*(P)|<\frac{3(P-1)}{4}-\frac{P-1}{8\log P}+o(1)\le \frac{3P}{4}-\frac{P}{8\log P}\quad\text{对 }P\ge 79.\quad\square
+$$
+
+### D.2 行+列联合现状
+
+**定理 K3-united**（行+列联合无条件版）：对 $P\ge 79$，
+$$
+|E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}.
+$$
+
+证明：K3''' + K3*-Dusart 直接相加。∎
+
+这给"行命题 + 列命题至少一个失败"的总例外密度上界。若取**对偶平均** $(|E|+|E^*|)/(2P)<3/4-1/(8\log P)$，
+仍**远离** H_P 所需的 $=0$。
+
+### D.3 数值核对
+
+`experiments/k3_column_dusart_enhanced_check.py` 验证 K3*-Dusart 对 $P\in[79,200]$ 全部通过，
+实际 $|E^*(P)|=0\ll 3P/4-P/(8\log P)$。
+
+---
+
+## 附录 E：合著稿主线集成（K-系列章节）
+
+本文档总结的 K 系列真定理（K1, K2, K3, K3', K3*, K3''', K3*-Dusart）将作为
+**`paper/contradiction-field-monograph/contradiction-field-monograph.tex`**
+新增独立章节 "Unconditional K-series Side Theorems for H\_P" 加入主稿。
+
+章节地位：
+
+- **不**升级 H\_P 主命题（仍为 `Not claimed`）。
+- 提供**严格无条件、显式有效**的 H\_P 邻近真结果，作为 H\_P 路线的最远诚实终点。
+- 把 monograph 中累积的 4027 文件的"sieve 形式工具"压缩为 7 个清晰可发表的定理。
+
+
 
 
 

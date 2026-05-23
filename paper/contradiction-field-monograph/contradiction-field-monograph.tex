@@ -28551,6 +28551,223 @@ The terminal entries PM-16 and RH-16 remain referee-blocks.  An author-side chec
 The monograph may state the shared contradiction-field method and the completed audit closures.  It must not state unconditional proofs of RH or of the prime-matrix row/column theorem until the remaining structured inputs have independent acceptance.
 \end{remark}
 
+\chapter{Unconditional K-series Side Theorems for $H_P$}
+
+\label{chap:k-series}
+
+This chapter records the unconditional, explicit-effective side-theorems
+for the $H_P$ prime-matrix proposition produced in
+\texttt{docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md}.
+Each theorem comes with status, external inputs, and the precise
+log-saving structure.  None of them resolves $H_P$ itself; their value
+is in providing the strictest available unconditional bounds on the
+$H_P$ exception sets.
+
+\section{Setting}
+
+Let $P$ be a prime and $A(P)_{i,j}=(i-1)P+j$ for $1\le i,j\le P$.
+For $k\in[1,P-1]$ set
+\[
+  N_P(k):=\pi(kP+P)-\pi(kP),
+  \qquad
+  M_P(j):=\big|\{0\le m\le P-1:\, j+mP\text{ prime}\}\big|.
+\]
+The row exception set and column exception set are
+\[
+  E(P):=\{k\in[1,P-1]:N_P(k)=0\},
+  \qquad
+  E^*(P):=\{j\in[1,P-1]:M_P(j)=0\}.
+\]
+The propositions $H_P^{\text{row}}\Leftrightarrow E(P)=\varnothing$ and
+$H_P^{\text{col}}\Leftrightarrow E^*(P)=\varnothing$ remain
+\textbf{Not claimed}: they are equivalent respectively to
+$g(P^2)\le P$ (a local Cram\'er-type inequality) and to Linnik
+constant equal to $2$, both 70-year open problems.
+
+\section{External inputs}
+
+\begin{externalstatement}[Montgomery--Vaughan 1973 sharp Brun--Titchmarsh]
+For $y\ge 2$ and $x\ge 0$,
+\[
+  \pi(x+y)-\pi(x)\le \frac{2y}{\log y}.
+\]
+For arithmetic progressions, with $\gcd(a,q)=1$ and $q<x$,
+\[
+  \pi(x;q,a)\le \frac{2x}{\phi(q)\log(x/q)}.
+\]
+\end{externalstatement}
+
+\begin{externalstatement}[Rosser--Schoenfeld 1962 explicit PNT bounds]
+\[
+  \frac{x}{\log x}<\pi(x)<\frac{1.25506\,x}{\log x},\quad x\ge 17.
+\]
+\end{externalstatement}
+
+\begin{externalstatement}[Dusart 2010 sharper explicit PNT]
+\[
+  \pi(x)\ge \frac{x}{\log x-1},\quad x\ge 5393.
+\]
+\end{externalstatement}
+
+\section{Theorems K1--K2}
+
+\begin{provedstatement}[K1: row mean]
+$\sum_{k=1}^{P-1}N_P(k)=\pi(P^2)-\pi(P)$ and consequently
+$\frac{1}{P-1}\sum_{k=1}^{P-1}N_P(k)\sim \frac{P}{2\log P}$ as $P\to\infty$
+along primes.
+\end{provedstatement}
+
+\begin{externalstatement}[K2: uniform row upper bound]
+For every prime $P\ge 5$ and every $k\in[1,P-1]$,
+\[
+  N_P(k)\le \frac{2P}{\log P}\Bigl(1+O\bigl(\tfrac{1}{\log P}\bigr)\Bigr).
+\]
+This follows directly from Montgomery--Vaughan 1973 with $y=P$.
+\end{externalstatement}
+
+\section{Theorem K3: trivial PNT-only exception bound}
+
+\begin{externalstatement}[K3: PNT-only exception bound]
+$|E(P)|/(P-1)\le 3/4+o(1)$ as $P\to\infty$.
+\end{externalstatement}
+
+\begin{proof}
+Combine K1 and K2: write $S(P)=\sum_k N_P(k)\sim P^2/(2\log P)$.
+Since $N_P(k)\le 2P/\log P$ uniformly,
+\[
+  S(P)=\sum_{k\notin E(P)}N_P(k)\le (P-1-|E(P)|)\cdot \frac{2P}{\log P}.
+\]
+Hence $P-1-|E(P)|\ge P/4-o(P)$ and $|E(P)|\le 3P/4+o(P)$.
+\end{proof}
+
+\section{Theorem K3' (row, RS1962-effective)}
+
+\begin{externalstatement}[K3': explicit row exception bound]
+For every prime $P\ge 5$,
+\[
+  |E(P)|<\frac{3P}{4}-0.37247.
+\]
+\end{externalstatement}
+
+\begin{proof}
+By Montgomery--Vaughan 1973, $N_P(k)\le 2P/\log P$ for all $k$.
+By Rosser--Schoenfeld 1962,
+$\pi(P^2)>P^2/(2\log P)$ and $\pi(P)<1.25506\,P/\log P$, so
+$\pi(P^2)-\pi(P)>P^2/(2\log P)-1.25506P/\log P$.  Combining with
+$(P-1-|E|)\cdot 2P/\log P\ge \pi(P^2)-\pi(P)$:
+\[
+  P-1-|E(P)|\ge \frac{P}{4}-0.62753,
+  \qquad
+  |E(P)|\le \frac{3P}{4}-0.37247.
+\]
+For integer $|E(P)|$ this is strict.
+\end{proof}
+
+\section{Theorem K3* (column, dual)}
+
+\begin{externalstatement}[K3*: explicit column exception bound]
+For every prime $P\ge 5$,
+\[
+  |E^*(P)|<\frac{3P}{4}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Apply Montgomery--Vaughan 1973 in arithmetic progressions: for any
+$j\in[1,P-1]$, $M_P(j)\le \pi(P^2;P,j)\le 2P^2/((P-1)\log P)$.
+Sum over $j$: $\sum_{j=1}^{P-1}M_P(j)=\pi(P^2)-2$.
+By Rosser--Schoenfeld, $\pi(P^2)>P^2/(2\log P)$, so
+\[
+  (P-1-|E^*(P)|)\cdot\frac{2P^2}{(P-1)\log P}\ge \pi(P^2)-2,
+\]
+giving $P-1-|E^*(P)|>(P-1)/4-1$ and the claim.
+\end{proof}
+
+\section{Theorem K3''' (row, Dusart-enhanced)}
+
+\begin{externalstatement}[K3''': $\log P$-order row improvement]
+For every prime $P\ge 79$,
+\[
+  |E(P)|<\frac{3P}{4}-\frac{P}{8\log P}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Replace Rosser--Schoenfeld's lower bound by Dusart 2010:
+$\pi(P^2)\ge P^2/(2\log P-1)$ (valid for $P^2\ge 5393$, i.e.\ $P\ge 79$).
+Then with the same MV1973 row upper bound,
+\[
+  P-1-|E(P)|\ge \frac{P\log P}{2(2\log P-1)}-0.62753
+  =\frac{P}{4-2/\log P}-0.62753.
+\]
+The geometric-series identity $\tfrac{1}{1-1/(2\log P)}\ge 1+\tfrac{1}{2\log P}$
+(valid for $\log P>1/2$) gives
+$\tfrac{P}{4-2/\log P}\ge \tfrac{P}{4}+\tfrac{P}{8\log P}$,
+hence $|E(P)|\le 3P/4-P/(8\log P)-0.37247<3P/4-P/(8\log P)$.
+\end{proof}
+
+\section{Theorem K3*-Dusart (column, Dusart-enhanced)}
+
+\begin{externalstatement}[K3*-Dusart: $\log P$-order column improvement]
+For every prime $P\ge 79$,
+\[
+  |E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Same skeleton as K3''' with MV1973 in arithmetic progressions and
+Dusart 2010 as input.  The geometric-series argument yields the
+identical $\log P$-order saving.
+\end{proof}
+
+\section{Theorem K3-united (row $+$ column joint bound)}
+
+\begin{externalstatement}[K3-united]
+For every prime $P\ge 79$,
+\[
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Direct sum of K3''' and K3*-Dusart.
+\end{proof}
+
+\section{Status table}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Theorem & Status & Range \\
+\midrule
+K1 row mean             & Proved-in-text                          & $P\to\infty$ \\
+K2 uniform row upper    & External-theorem closed (MV1973)        & $P\ge 5$ \\
+K3 exception PNT-only   & External-theorem closed                 & asymptotic \\
+K3' row effective       & External-theorem closed (RS1962+MV1973) & $P\ge 5$ \\
+K3* column effective    & External-theorem closed (RS1962+MV-AP)  & $P\ge 5$ \\
+K3''' row Dusart        & External-theorem closed (D2010+RS+MV)   & $P\ge 79$ \\
+K3*-Dusart column       & External-theorem closed (D2010+RS+MV-AP)& $P\ge 79$ \\
+K3-united joint         & External-theorem closed                 & $P\ge 79$ \\
+\midrule
+$H_P$ row $E(P)=\varnothing$  & \textbf{Not claimed} & 70-year open \\
+$H_P$ col $E^*(P)=\varnothing$ & \textbf{Not claimed} & 70-year open \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{What this chapter does not do}
+
+The K-series gives the strictest unconditional, explicit-effective
+exception bounds presently available.  It does \emph{not} approach $H_P$:
+the gap between $\tfrac{3P}{4}-\tfrac{P}{8\log P}$ and $0$ is of order
+$P$, i.e.\ the whole linear-sieve barrier.  Closing that gap requires
+either an unconditional resolution of the $h=X^{1/2}$ short-interval
+second-moment problem, an unconditional Linnik constant $\le 2$, or a
+non-linear sieve technique bypassing Bombieri 1976 parity barrier.
+This is recorded honestly in the abstract and in
+\texttt{docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md}.
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
