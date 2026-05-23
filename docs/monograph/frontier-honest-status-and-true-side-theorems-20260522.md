@@ -1817,6 +1817,77 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AC：Phi-LPF fixed-wheel rough-composite residual 审计（2026-05-23 第二十七轮）
+
+本轮接在 primorial-wheel limit 后，继续下钻固定 wheel 与动态精确 wheel 之间的
+真实差额。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_fixed_wheel_residual_rough_composite_audit.py
+data/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-ledger.json
+docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.json
+docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.md
+```
+
+原子恒等式为：
+
+```text
+C_S(P,k)=|F(P,k)|+R_S(P,k)
+DeltaPhi_half(P,k)-C_S(P,k)=N(P,k)-R_S(P,k)
+N(P,k)=pi((k+1)P-1)-pi(kP)
+```
+
+其中 `R_S(P,k)` 是 fixed wheel 未删掉的合成 cofactor residual。故固定 wheel
+正性 `DeltaPhi_half>C_S` 实际要求：
+
+```text
+PrimeCountDominatesFixedWheelRoughCompositeResidual:
+N(P,k)>R_S(P,k)
+```
+
+有限审计：
+
+```text
+max_prime=1009
+row_count=76789
+all_sqrt_residual_zero=true
+all_fixed_capacity_decomposition_holds=true
+all_delta_minus_capacity_equals_prime_minus_residual=true
+```
+
+代表行：
+
+| P | k | $\Delta\Phi_{1/2}$ | primes $N$ | holes | $R_{30}$ | $R_{210}$ | $R_{2310}$ | $R_{\sqrt{2P}}$ |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1009 | 1008 | 89 | 70 | 19 | 9 | 8 | 7 | 0 |
+
+有限汇总：
+
+```text
+30-wheel: residual_positive_rows=52697, max_R=23, min(N-R)=1, total_R=299977
+210-wheel: residual_positive_rows=49388, max_R=18, min(N-R)=1, total_R=203277
+2310-wheel: residual_positive_rows=45472, max_R=14, min(N-R)=1, total_R=151197
+sqrt(2P)-wheel: residual_positive_rows=0, max_R=0, min(N-R)=1, total_R=0
+```
+
+这是真推进：它说明继续加有限 wheel 的作用只是削减 `R_S`；一旦加到
+`sqrt(2P-1)`，`R_S=0`，但路线退化成目标命题本身。最新真硬点不是再换一个
+等价表达，而是证明固定 wheel residual 被同一行素数数支配，或给出真正的
+signed dispersion / special square-phase lower bound。
+
+```text
+fixed_wheel_residual_decomposition_closed=true
+sqrt_wheel_residual_zero_closed=true
+fixed_wheel_residual_dominance_global_closed=false
+primorial_limit_independent_proof=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：

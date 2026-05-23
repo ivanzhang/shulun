@@ -12489,6 +12489,87 @@ SignedDispersionOrSpecialSquarePhaseLowerBound.
 No unconditional row/column closure follows from the wheel limit alone.
 \end{proof}
 
+\begin{theorem}[Fixed-wheel rough-composite residual decomposition]
+Let \(S\) be a finite set of wheel primes and let \(C_S(P,k)\) be the
+reciprocal-window capacity obtained by deleting every candidate \(m\in
+I_q(P,k)\) for which
+\[
+  m>\ell,\qquad \ell\mid m,\qquad \ell\in S .
+\]
+Define the fixed-wheel rough-composite residual
+\[
+  R_S(P,k)=\#\{(q,m): P/2<q<P,\ q\ {\rm prime},\ m\in I_q(P,k),\
+  m\ {\rm composite},\ m\ {\rm is\ not\ deleted\ by}\ S\}.
+\]
+Then
+\[
+  C_S(P,k)=|F(P,k)|+R_S(P,k),
+\]
+and therefore
+\[
+  \Delta\Phi_{1/2}(P,k)-C_S(P,k)
+  =
+  \bigl(\pi((k+1)P-1)-\pi(kP)\bigr)-R_S(P,k).
+\]
+Consequently a fixed-wheel positivity proof
+\[
+  \Delta\Phi_{1/2}(P,k)>C_S(P,k)
+\]
+is exactly the stronger dominance assertion
+\[
+  \pi((k+1)P-1)-\pi(kP)>R_S(P,k).
+\]
+If \(S\) contains all primes \(\ell\le\sqrt{2P-1}\), then \(R_S(P,k)=0\).
+\end{theorem}
+\begin{proof}[Status and reference]
+The candidates counted by \(C_S(P,k)\) are precisely the reciprocal-window
+pairs \((q,m)\) that survive the \(S\)-wheel forced-composite deletion.  Each
+surviving \(m\) is either prime or composite.  The prime alternatives are
+exactly the forest holes \(F(P,k)\), counted with the same \(q\)-window
+multiplicity; the composite alternatives are, by definition, \(R_S(P,k)\).
+This proves \(C_S=|F|+R_S\).
+
+Subtracting this identity from the endpoint formula
+\[
+  \pi((k+1)P-1)-\pi(kP)=\Delta\Phi_{1/2}(P,k)-|F(P,k)|
+\]
+gives the displayed residual equation.  If \(S\) contains all primes up to
+\(\sqrt{2P-1}\), then every composite \(m<2P\) has a prime factor in \(S\)
+and is deleted; hence \(R_S=0\).
+
+The machine certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-fixed-wheel-\\
+residual-rough-composite-audit.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=1009\\
+row\_count=76789\\
+all\_sqrt\_residual\_zero=true\\
+all\_fixed\_capacity\_decomposition\_holds=true\\
+all\_delta\_minus\_capacity\_equals\_prime\_minus\_residual=true.
+\end{quote}
+For the representative row \(P=1009,k=1008\), it gives
+\[
+  \Delta\Phi_{1/2}=89,\qquad N=70,\qquad |F|=19,
+\]
+and
+\[
+  R_{30}=9,\qquad R_{210}=8,\qquad R_{2310}=7,\qquad
+  R_{\sqrt{2P}}=0.
+\]
+Thus finite wheel promotion narrows the residual but does not remove the need
+for a genuine same-row prime-minus-rough-composite separation.  The current
+hard input is
+\begin{quote}\scriptsize\ttfamily
+PrimeCountDominatesFixedWheelRoughCompositeResidual\\
+OR same-object signed dispersion\\
+OR special square-phase lower bound.
+\end{quote}
+No unconditional row/column closure follows from this residual ledger alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for

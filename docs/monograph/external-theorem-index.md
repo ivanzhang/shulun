@@ -2081,6 +2081,91 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 59. Phi-LPF fixed-wheel rough-composite residual 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_fixed_wheel_residual_rough_composite_audit.py
+data/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-ledger.json
+docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.json
+docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.md
+```
+
+本层把 primorial-wheel limit 的精确边界进一步拆开。对任意固定 wheel
+prime set `S`，令 `C_S(P,k)` 为删去 `S` 强迫合成 cofactor 后的 reciprocal
+window 容量，令 `R_S(P,k)` 为仍未被删去的合成 cofactor 重数。则：
+
+```text
+C_S(P,k)=|F(P,k)|+R_S(P,k)
+DeltaPhi_half(P,k)-C_S(P,k)=N(P,k)-R_S(P,k)
+N(P,k)=pi((k+1)P-1)-pi(kP)
+```
+
+因此固定 wheel 的正性条件 `DeltaPhi_half>C_S` 不是目标命题的等价式，而是更强的
+`N(P,k)>R_S(P,k)`。这把最新硬点从“继续加 wheel”压成：
+
+```text
+PrimeCountDominatesFixedWheelRoughCompositeResidual
+OR same-object signed dispersion
+OR special square-phase lower bound
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+all_sqrt_residual_zero=true
+all_fixed_capacity_decomposition_holds=true
+all_delta_minus_capacity_equals_prime_minus_residual=true
+```
+
+代表行：
+
+```text
+P=1009, k=1008
+Delta=89, N=70, holes=19
+R_30=9, R_210=8, R_2310=7, R_sqrt=0
+```
+
+有限汇总显示 fixed wheel residual 会随 wheel 扩张单调收缩：
+
+```text
+30-wheel: total_R=299977, max_R=23, min(N-R)=1
+210-wheel: total_R=203277, max_R=18, min(N-R)=1
+2310-wheel: total_R=151197, max_R=14, min(N-R)=1
+sqrt(2P)-wheel: total_R=0, max_R=0
+```
+
+大样本 `P=100003,300007` 的抽样读数仍只作证据，不作全局证明：
+
+```text
+30-wheel: max_R=3213, min(N-R)=3215
+210-wheel: max_R=2552, min(N-R)=3453
+2310-wheel: max_R=2197, min(N-R)=3598
+sqrt(2P)-wheel: max_R=0, min(N-R)=4385
+```
+
+外部前沿状态未改变：已发表 BHP `0.525` 与 Runbo Li `0.52` 仍大于 `1/2`；
+AP 平均分布、P2 almost-prime 与 prime-producing sieve 框架仍不能直接给出本文
+同对象 fixed-row positivity。固定 wheel 线现在的精确外部引理版需求是
+`PrimeCountDominatesFixedWheelRoughCompositeResidual`，内部自足版则需相同对象的
+signed residual 分离。
+
+状态边界：
+
+```text
+fixed_wheel_residual_decomposition_closed=true
+sqrt_wheel_residual_zero_closed=true
+fixed_wheel_residual_dominance_global_closed=false
+primorial_limit_independent_proof=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
