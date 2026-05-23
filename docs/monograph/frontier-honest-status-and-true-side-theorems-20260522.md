@@ -1753,6 +1753,119 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+---
+
+## 附录 Q5：Phi-LPF weight extraction norm closure 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_weight_extraction_norm_closure_audit.py
+data/prime-matrix-phi-lpf-weight-extraction-norm-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.md
+```
+
+finite-H 截断闭合后，本轮继续比较合著稿三命题：
+
+```text
+Prime Matrix row/column Phi-LPF:
+  fastest gate = LPFShellWeightBoundedCoefficientExtraction
+
+two-point sieve / prime-pair line:
+  frontier = BMD=>TLI without hidden denominator/parity gap
+
+RH contradiction-field line:
+  frontier = IndependentRefereeAcceptanceOfAllRHControlledExits
+```
+
+因此本轮仍选择行/列 Phi-LPF。新闭合的是 LPF 权重抽取的范数门，不是相位门。
+
+### Q5.1 有界系数抽取
+
+`30-wheel` 后 residual 可写成：
+
+```text
+R_30(P,k)=sum beta(q,r,a) 1_{kP<qra<(k+1)P}
+P/2<q<P, q prime
+r=LPF(m)>=7
+a>=r, P^-(a)>=r
+beta(q,r,a) in {0,1}
+```
+
+由于 `q>P/2` 且 `r>=7`：
+
+```text
+fixed (q,r) has at most one quotient a
+0 <= b(q) <= #I_q(P,k) <= 2
+sum_q b(q) = R_30(P,k) <= W_int(P,k) <= 2*pi(P) < 2P
+```
+
+所以 LPF-shell 权重可无损抽成 bounded coefficient package，且不需要把 rough
+条件完整展开为所有小素数的 Möbius 排斥和。后者虽然是精确恒等式，但存在
+指数级 `l1` 范数风险，不是本门需要的非循环推进。
+
+### Q5.2 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_R30=299977
+max_projected_q_weight_seen=1
+max_qr_fiber_weight_seen=1
+all_projected_q_weights_le_2=true
+all_qr_fibers_le_1=true
+all_total_masses_le_Wint_le_2piP=true
+violation_count=0
+```
+
+有限审计只验证实现和账本一致性；全局闭合来自 thin-fibre 符号论证。
+
+### Q5.3 外部前沿匹配
+
+```text
+Vaughan/Heath-Brown Type-I/II:
+  bounded coefficients are acceptable after a correct bilinear decomposition,
+  but same-row reciprocal graph dispersion is still missing.
+
+DFI and Bettin--Chandee:
+  bounded coefficients are compatible after inverse-fraction completion,
+  but the real reciprocal/product-window completion identity is still missing.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  useful Kloosterman-frontier candidates only after completion;
+  not direct fixed-row prime-q real reciprocal phase estimates.
+```
+
+### Q5.4 最新最窄口
+
+从上一层两口：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQBoundedLPFCoefficientReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+lpf_weight_bounded_coefficient_extraction_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

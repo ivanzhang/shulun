@@ -30869,10 +30869,86 @@ point.  The current sawtooth branch is reduced to
 PrimeQLPFShellWeightedReciprocalPhaseSaving\\
 AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII.
 \end{quote}
-The recent Kloosterman-frontier inputs of Mili\'cevi\'c--Qin--Wu,
+The recent Kloosterman-frontier inputs of Milicevic--Qin--Wu,
 Pascadi, and Shao--Shparlinski--Wijaya remain useful only after a
 finite-field or inverse-fraction completion; they do not by themselves
 close the prime-\(q\), LPF-shell weighted real reciprocal phase.
+\end{remark}
+
+\section{LPF weight extraction norm closure}
+
+\begin{proposition}[Next fastest gate among the three claims]
+After the finite-\(H\) truncation is closed, the quickest remaining
+fully deterministic subgate is again on the row/column Phi--LPF line:
+\[
+  \texttt{LPFShellWeightBoundedCoefficientExtraction}.
+\]
+The two-point sieve line still requires the Buchstab transfer
+\(\texttt{BMD=>TLI}\) without a hidden denominator or parity gap, and
+the RH contradiction-field line remains an independent referee package.
+The LPF extraction gate is only a support and norm statement, so it can
+be closed before any new prime distribution theorem is proved.
+\end{proposition}
+
+\begin{theorem}[LPF-shell weights as bounded coefficients]
+For the \(30\)-wheel residual in a fixed row,
+\[
+  R_{30}(P,k)
+   =\sum_{\substack{P/2<q<P\\ q\ {\rm prime}}}
+     \sum_{\substack{r\ge 7\\ r\ {\rm prime}}}
+     \sum_{\substack{a\ge r\\ P^-(a)\ge r}}
+     \beta_{P,k}(q,r,a)\,
+     {\bf 1}_{kP<qra<(k+1)P},
+\]
+where \(\beta_{P,k}(q,r,a)\in\{0,1\}\).  Moreover, since
+\(q>P/2\) and \(r\ge 7\), each fixed \((q,r)\) has at most one
+quotient \(a\) in the row.  The projected prime-\(q\) coefficient
+\[
+  b_{P,k}(q)
+   =\#\{m\in I_q(P,k):m\ {\rm composite},\ {\rm LPF}(m)\ge 7\}
+\]
+satisfies
+\[
+  0\le b_{P,k}(q)\le \#I_q(P,k)\le 2
+\]
+and
+\[
+  \sum_q b_{P,k}(q)=R_{30}(P,k)\le W_{\rm int}(P,k)
+  \le 2\pi(P)<2P.
+\]
+Thus LPF-shell extraction causes no coefficient blow-up.
+\end{theorem}
+\begin{proof}
+The identity is the ordered LPF factorization \(m=ra\), with
+\(r={\rm LPF}(m)\) and \(a\) \(r\)-rough.  Conversely every such
+triple gives exactly one residual cofactor \(m=ra\).  The bound for
+fixed \((q,r)\) follows from
+\[
+  \frac{(k+1)P-kP}{qr}=\frac{P}{qr}<1.
+\]
+The projected bound follows from the already established reciprocal
+window estimate \(\#I_q(P,k)\le 2\).  Summing over prime \(q\) gives
+the total-mass estimate.  This avoids the unnecessary full Mobius
+expansion of the rough condition over all primes \(<r\), whose exact
+form is true but has a useless exponential \(\ell^1\) risk.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-weight-\\
+extraction-norm-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after weight extraction]
+The LPF weight is no longer a separate coefficient-norm obstruction.
+The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQBoundedLPFCoefficientReciprocalPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  It is
+the sharper phase/completion problem left after deterministic finite
+truncation and bounded coefficient extraction have both been removed.
 \end{remark}
 
 \chapter{Current Status and Honest Boundary}

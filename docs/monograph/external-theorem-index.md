@@ -2897,6 +2897,91 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 68. Phi-LPF weight extraction norm closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_weight_extraction_norm_closure_audit.py
+data/prime-matrix-phi-lpf-weight-extraction-norm-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的纯代数子门：
+
+```text
+LPFShellWeightBoundedCoefficientExtraction
+NoMobiusL1ExplosionNeeded
+```
+
+finite-H 截断后，真实剩余 finite modes 可把 LPF-shell 权重无损写为：
+
+```text
+R_30(P,k)=sum beta(q,r,a) 1_{kP<qra<(k+1)P}
+P/2<q<P, q prime
+r=LPF(m)>=7
+a>=r, P^-(a)>=r
+beta(q,r,a) in {0,1}
+```
+
+由于 `q>P/2` 且 `r>=7`，固定 `(q,r)` 的 quotient 纤维至多一个点；
+投影到 prime `q` 后：
+
+```text
+0 <= b(q) <= #I_q(P,k) <= 2
+sum_q b(q) = R_30(P,k) <= W_int(P,k) <= 2*pi(P) < 2P
+```
+
+因此 LPF 权重抽取不会造成系数范数爆炸；不需要把 rough 条件完整展开成
+所有小素数的 Möbius 排斥和。有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_R30=299977
+max_projected_q_weight_seen=1
+max_qr_fiber_weight_seen=1
+violation_count=0
+```
+
+外部前沿匹配：
+
+```text
+Vaughan/Heath-Brown Type-I/II identity framework:
+  bounded coefficient sequences are compatible after a valid bilinear decomposition;
+  still no direct same-row reciprocal graph estimate.
+
+Duke-Friedlander-Iwaniec and Bettin--Chandee:
+  bounded coefficients are compatible after inverse-fraction completion;
+  the completion identity remains open.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  useful Kloosterman-frontier candidates after completion;
+  not direct fixed-row prime-q real reciprocal phase estimates.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQBoundedLPFCoefficientReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+lpf_weight_bounded_coefficient_extraction_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
