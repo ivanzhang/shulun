@@ -2071,6 +2071,122 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q8：Phi-LPF matched displacement phase closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_matched_displacement_phase_closure_audit.py
+data/prime-matrix-phi-lpf-matched-displacement-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.md
+```
+
+上一层已经把 residual reciprocal graph 压成部分匹配。本层进一步关闭两个
+deterministic normal-form 门：
+
+```text
+MatchedDisplacementPhaseNormalForm
+TwoSidedEndpointSelectorNormalForm
+```
+
+### Q8.1 matched displacement 正规形
+
+对每条匹配边 `(q,m)` 定义：
+
+```text
+d=q*m-kP.
+```
+
+因为边条件给出 `kP<qm<(k+1)P`，所以：
+
+```text
+1<=d<P.
+```
+
+并且 `kP=qm-d`，故对任意整数 `h`：
+
+```text
+e(h*kP/q)=e(h*m-h*d/q)=e(-h*d/q).
+```
+
+这一步只把大分子 reciprocal phase 精确压成小位移 `d<P` 的 matched
+displacement phase；它不产生相位和抵消。
+
+### Q8.2 两侧端点选择器
+
+每条匹配边还满足：
+
+```text
+m is a lower/upper endpoint of the q-side clipped floor window
+q is a lower/upper endpoint of the m-side reverse clipped floor window
+```
+
+因此 residual graph 现在不仅是部分匹配，而且每条边都带有可审计的
+endpoint-displacement 标签 `(q,m,d,side_q,side_m)`。这为后续
+Kloosterman/Type-II completion 尝试提供了更窄的输入对象。
+
+### Q8.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+global_min_displacement=1
+global_max_displacement=1008
+all_displacements_in_1_to_Pminus1=true
+all_phase_congruences_verified=true
+all_endpoint_selectors_verified=true
+bad_displacement_total=0
+bad_phase_total=0
+bad_endpoint_total=0
+bad_edge_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自整数位移恒等式与两侧
+floor-window 端点事实。
+
+### Q8.4 外部前沿匹配
+
+```text
+Elementary integer phase reduction:
+  closes this normal-form gate.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  remain candidate inputs only after completion to a genuine Kloosterman
+  or Vaughan Type-II object; they do not estimate this fixed-row
+  matched-displacement phase directly.
+```
+
+### Q8.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQMatchingSubsetReciprocalPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQMatchedDisplacementPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+matched_displacement_phase_normal_form_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

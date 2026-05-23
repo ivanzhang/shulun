@@ -3141,6 +3141,98 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 71. Phi-LPF matched displacement phase closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_matched_displacement_phase_closure_audit.py
+data/prime-matrix-phi-lpf-matched-displacement-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的相位正规形子门：
+
+```text
+MatchedDisplacementPhaseNormalForm
+TwoSidedEndpointSelectorNormalForm
+```
+
+matching graph 闭合后，每条 residual 边是唯一匹配边 `(q,m)`。定义
+
+```text
+d=q*m-kP.
+```
+
+由于 `kP<qm<(k+1)P`，所以 `1<=d<P`。又因为 `kP=qm-d`，对任意整数
+`h` 有
+
+```text
+e(h*kP/q)=e(h*m-h*d/q)=e(-h*d/q).
+```
+
+这把 large numerator `h*kP` 的倒数相位精确改写为 matched displacement
+相位。两侧端点选择也被固定：`m` 是 q 侧 clipped floor 窗口端点之一，
+`q` 是 m 侧反向 clipped floor 窗口端点之一。
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+global_min_displacement=1
+global_max_displacement=1008
+all_displacements_in_1_to_Pminus1=true
+all_phase_congruences_verified=true
+all_endpoint_selectors_verified=true
+bad_displacement_total=0
+bad_phase_total=0
+bad_endpoint_total=0
+bad_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Elementary integer phase reduction:
+  closes the normal-form gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  arbitrary-modulus bilinear Kloosterman estimates remain useful only
+  after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  composite-modulus/non-abelian amplification is not a pointwise fixed-row
+  matched-displacement phase theorem.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman parameter sums still need finite-field
+  completion first.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQMatchedDisplacementPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+matched_displacement_phase_normal_form_closed=true
+weighted_reciprocal_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

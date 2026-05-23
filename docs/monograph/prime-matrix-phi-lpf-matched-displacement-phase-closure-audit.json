@@ -1,0 +1,232 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_matched_displacement_phase_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "MatchedDisplacementPhaseNormalForm",
+      "meaning": "Every matched edge has d=qm-kP in [1,P-1] and e(hkP/q)=e(-hd/q).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "TwoSidedEndpointSelectorNormalForm",
+      "meaning": "Each matched edge lies on a q-side endpoint and an m-side reverse endpoint.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQMatchedDisplacementPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation for sum over matched edges e(-h*d(q)/q).",
+      "proved": false,
+      "remaining": "matched displacement phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the matched displacement graph to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "normalises the phase only; gives no cancellation over moving displacements",
+      "source": "Elementary integer phase reduction",
+      "useful_part": "closes e(hkP/q)=e(-hd/q) on every matched edge"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "matched displacement phase is not yet a completed Kloosterman bilinear form",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "arbitrary-modulus bilinear Kloosterman power savings after completion"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "does not estimate this fixed-row matched real phase directly",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "non-abelian amplification for composite-modulus Kloosterman sums"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "requires finite-field Kloosterman completion first",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums over square-free and smooth parameters"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_displacements_in_1_to_Pminus1": true,
+    "all_endpoint_selectors_verified": true,
+    "all_phase_congruences_verified": true,
+    "bad_displacement_total": 0,
+    "bad_edge_total": 0,
+    "bad_endpoint_total": 0,
+    "bad_phase_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "global_max_displacement": 1008,
+    "global_min_displacement": 1,
+    "k_range": "1<=k<P in this implementation audit",
+    "m_endpoint_totals": {
+      "both": 263786,
+      "lower": 18261,
+      "upper": 17930
+    },
+    "max_prime": 1009,
+    "q_endpoint_totals": {
+      "both": 91496,
+      "lower": 104807,
+      "upper": 103674
+    },
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "all_displacements_in_1_to_Pminus1": true,
+        "all_endpoint_selectors_verified": true,
+        "all_phase_congruences_verified": true,
+        "bad_displacement_count": 0,
+        "bad_edge_count": 0,
+        "bad_endpoint_count": 0,
+        "bad_phase_count": 0,
+        "edge_count_R30": 1,
+        "k": 100,
+        "m_endpoint_both": 1,
+        "m_endpoint_lower": 0,
+        "m_endpoint_upper": 0,
+        "max_displacement": 53,
+        "min_displacement": 53,
+        "q_endpoint_both": 1,
+        "q_endpoint_lower": 0,
+        "q_endpoint_upper": 0,
+        "sample_edges": "q=71,m=143,d=53"
+      },
+      {
+        "P": 257,
+        "all_displacements_in_1_to_Pminus1": true,
+        "all_endpoint_selectors_verified": true,
+        "all_phase_congruences_verified": true,
+        "bad_displacement_count": 0,
+        "bad_edge_count": 0,
+        "bad_endpoint_count": 0,
+        "bad_phase_count": 0,
+        "edge_count_R30": 3,
+        "k": 256,
+        "m_endpoint_both": 3,
+        "m_endpoint_lower": 0,
+        "m_endpoint_upper": 0,
+        "max_displacement": 195,
+        "min_displacement": 21,
+        "q_endpoint_both": 0,
+        "q_endpoint_lower": 2,
+        "q_endpoint_upper": 1,
+        "sample_edges": "q=137,m=481,d=105; q=151,m=437,d=195; q=193,m=341,d=21"
+      },
+      {
+        "P": 971,
+        "all_displacements_in_1_to_Pminus1": true,
+        "all_endpoint_selectors_verified": true,
+        "all_phase_congruences_verified": true,
+        "bad_displacement_count": 0,
+        "bad_edge_count": 0,
+        "bad_endpoint_count": 0,
+        "bad_phase_count": 0,
+        "edge_count_R30": 23,
+        "k": 936,
+        "m_endpoint_both": 23,
+        "m_endpoint_lower": 0,
+        "m_endpoint_upper": 0,
+        "max_displacement": 967,
+        "min_displacement": 17,
+        "q_endpoint_both": 11,
+        "q_endpoint_lower": 4,
+        "q_endpoint_upper": 8,
+        "sample_edges": "q=491,m=1853,d=967; q=503,m=1807,d=65; q=523,m=1739,d=641; q=541,m=1681,d=565; q=557,m=1633,d=725"
+      },
+      {
+        "P": 1009,
+        "all_displacements_in_1_to_Pminus1": true,
+        "all_endpoint_selectors_verified": true,
+        "all_phase_congruences_verified": true,
+        "bad_displacement_count": 0,
+        "bad_edge_count": 0,
+        "bad_endpoint_count": 0,
+        "bad_phase_count": 0,
+        "edge_count_R30": 9,
+        "k": 1008,
+        "m_endpoint_both": 9,
+        "m_endpoint_lower": 0,
+        "m_endpoint_upper": 0,
+        "max_displacement": 685,
+        "min_displacement": 95,
+        "q_endpoint_both": 4,
+        "q_endpoint_lower": 4,
+        "q_endpoint_upper": 1,
+        "sample_edges": "q=563,m=1807,d=269; q=577,m=1763,d=179; q=617,m=1649,d=361; q=647,m=1573,d=659; q=743,m=1369,d=95"
+      }
+    ],
+    "total_edges_R30": 299977
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQMatchedDisplacementPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "matched_displacement_phase_normal_form_closed": true,
+  "phase_normal_form_theorem": {
+    "displacement": "For every matched edge (q,m), define d=q*m-kP; then 1<=d<P.",
+    "m_endpoint_selector": "q is one of the two clipped reverse endpoints max(P/2+1,floor(kP/m)+1) or min(P-1,m,floor(((k+1)P-1)/m)).",
+    "normal_form": "The finite phase is a matched displacement sum over edges (q,m,d), not an unnormalised large-numerator reciprocal phase.",
+    "not_enough": "The displacement d is still a moving, LPF-selected residue; cancellation for the matched displacement sum remains open.",
+    "phase_identity": "For every integer h, e(h*kP/q)=e(-h*d/q), since h*kP/q=h*m-h*d/q.",
+    "q_endpoint_selector": "m is one of the two clipped endpoints max(q,floor(kP/q)+1) or min(2P-1,floor(((k+1)P-1)/q))."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "277494006b981a277d32bf933445d2825b95daa3181cb122442478db2a05bc33",
+    "docs/monograph/external-theorem-index.md": "fe6b723685ac264882ab0ddb34c191f25a51a3c9cb690495150fde6a715dcf46",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "215d212be67950bac29716054f9e4fdc384eb03afb5aa5ca234ce212b59684d5",
+    "docs/monograph/prime-matrix-phi-lpf-boolean-q-projection-closure-audit.json": "816fc3e4abbed9e378a10952b3d13d3c5e3c3930ac44779fce69523d84b580cb",
+    "docs/monograph/prime-matrix-phi-lpf-matching-graph-closure-audit.json": "5fa19f48fcab1e4dfc5c90a3f61e0b146c791bd068a078d6934e246db58502c5",
+    "docs/monograph/prime-matrix-phi-lpf-weight-extraction-norm-closure-audit.json": "d0ef19513f1ca9d68671f22802466b93e7cda0598e98870421dbb415bfae6dea",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_matched_displacement_phase_closure_audit.py": "3351f8782803926493b9a59dbc7ea1e9626ddd0d7f0e39ba8482b3ae6ae2391a",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "3ea7ebde7e2337f81d8596a253e0d1bf82d0a88dbecabe946d53a1b35b7de794"
+  },
+  "status": "matched_displacement_phase_normal_form_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "MatchedDisplacementPhaseNormalForm",
+      "frontier_before": [
+        "PrimeQMatchingSubsetReciprocalPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "exact integer displacement identity after matching graph closure; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable phase-normal-form gate"
+    }
+  ],
+  "weighted_reciprocal_phase_saving_closed": false
+}

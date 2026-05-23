@@ -31063,6 +31063,83 @@ graph.  The hard point is still a phase/completion theorem for a moving
 matched prime subset, not a closed unconditional Phi--LPF proof.
 \end{remark}
 
+\section{Matched displacement phase closure}
+
+\begin{proposition}[Next deterministic phase normal form gate]
+After the residual reciprocal graph is a partial matching, the next
+deterministic subgate is
+\[
+  \texttt{MatchedDisplacementPhaseNormalForm}.
+\]
+It again belongs to the row/column Phi--LPF line.  This gate changes
+the shape of the remaining exponential phase, but it is not a
+cancellation theorem.
+\end{proposition}
+
+\begin{theorem}[Matched displacement phase normal form]
+Let \((q,m)\) be an edge of the residual matching graph \(G_{P,k}\), and
+put
+\[
+  d=qm-kP.
+\]
+Then
+\[
+  1\le d<P,
+\]
+and for every integer \(h\),
+\[
+  e\!\left(\frac{hkP}{q}\right)
+  =
+  e\!\left(-\frac{hd}{q}\right).
+\]
+Moreover \(m\) is one of the two clipped floor endpoints in the
+\(q\)-side window \(I_q(P,k)\), and \(q\) is one of the two clipped
+floor endpoints in the reverse \(m\)-side window.
+\end{theorem}
+\begin{proof}
+The edge condition gives \(kP<qm<(k+1)P\), hence
+\[
+  1\le qm-kP<P.
+\]
+Thus \(d=qm-kP\) lies in the desired interval.  Since \(kP=qm-d\),
+\[
+  \frac{hkP}{q}=hm-\frac{hd}{q}.
+\]
+The first term is an integer, so it disappears from the additive
+character and gives the stated identity.
+
+For the endpoint assertion, the \(q\)-side integer window has length
+less than \(2\), because its uncut real interval has length \(P/q<2\).
+Hence every integer point in it is either the lower endpoint, the upper
+endpoint, or both.  The reverse \(m\)-side window has length less than
+\(2\) as well, because residual edges have \(m>P/2\).  Hence its
+matched prime \(q\) is also a lower endpoint, an upper endpoint, or
+both.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-matched-\\
+displacement-phase-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after phase normal form]
+The large-numerator reciprocal phase has now been replaced by a matched
+displacement phase over labelled edges \((q,m,d)\):
+\[
+  e(hkP/q)=e(-hd/q),\qquad 1\le d<P.
+\]
+The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQMatchedDisplacementPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining problem is to prove cancellation for the moving displacement
+phase, or to complete it to an external Kloosterman/Vaughan Type-II
+estimate without losing the fixed row \(P,k\).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
