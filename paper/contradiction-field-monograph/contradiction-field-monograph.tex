@@ -29083,6 +29083,72 @@ docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Prime-Square Half-Scale Specialization Audit}
+
+\begin{externalstatement}[Prime-square endpoints do not auto-drop \(0.52\) to \(1/2\)]
+As of the 2026-05-23 external-source check, the known pointwise
+short-interval input at exponent \(0.52\), when specialized to
+\[
+  X=P^2,
+\]
+gives an interval length \(X^{0.52}=P^{1.04}\).  It does not by itself give a
+prime in every interval of length \(P=X^{1/2}\) beginning or ending at a prime
+square.  The primality of \(P\) gives square-phase rigidity, not a known
+unconditional half-scale theorem.
+\end{externalstatement}
+
+\begin{proof}
+The scale conversion is literal.  Baker--Harman--Pintz gives \(X^{0.525}\),
+hence \(P^{1.05}\) at \(X=P^2\).  Runbo Li's arXiv:2308.04458v8 claim gives
+\(X^{0.52}=P^{1.04}\).  Both exponents remain longer than \(P\).
+
+The special endpoint \(P^2\) does supply useful structure.  For
+\(1\le r<P\), the prime \(P\) divides neither \(P^2+r\) nor \(P^2-r\).  For
+every prime \(q<P\), the right and left square anchors have the fixed
+forbidden residues
+\[
+  q\mid P^2+r \Longleftrightarrow r\equiv -P^2\pmod q,\qquad
+  q\mid P^2-r \Longleftrightarrow r\equiv P^2\pmod q .
+\]
+Thus a survivor avoiding all prime divisors \(q<P\) is prime.  This converts
+the problem into a special square-phase long-block exclusion, but it is not a
+published pointwise short-interval theorem at exponent \(1/2\).
+\end{proof}
+
+\begin{remark}[Half-scale residual basis]
+The right-hand target remains
+\[
+  \pi(P^2+P)-\pi(P^2)>0,
+\]
+and the left top-row target remains
+\[
+  \pi(P^2-1)-\pi(P^2-P)>0.
+\]
+The existing finite scan through \(P\le200000\) records no right-window
+failure, but this is finite evidence only.  The new certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.md.
+\end{quote}
+After this audit the relevant non-cyclic residual basis is
+\begin{quote}\scriptsize\ttfamily
+SquarePhaseSpecialPhaseLongBlockPDECExclusion\\
+OR TwoSidedSquarePhaseLayeredWheelSurvivorLowerBound\\
+OR PrimeSquareEndpointNoExceptionalPhaseTheorem\\
+OR PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP\\
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC\\
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch\\
+OR NewAutomorphicDispersionProof.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+prime\_square\_halfscale\_auto\_drop\_closed=false\\
+square\_phase\_attack\_surface\_identified=true\\
+external\_lemma\_version\_unconditional\_closed=false\\
+internal\_self\_contained\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Parity-Breaking Candidate Source Audit}
 
 \begin{externalstatement}[Five-gate audit for parity-breaking candidates]

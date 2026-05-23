@@ -1,0 +1,157 @@
+{
+  "certificate_type": "prime_matrix_prime_square_halfscale_specialization_audit",
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "ExternalTheta052SpecializedToPrimeSquare",
+      "meaning": "substitution X=P^2 gives length P^1.04, still longer than P",
+      "proved": true,
+      "remaining": "theta<=1/2 or prime-square-specific theorem"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeFactorStructureAutomaticallyDropsExponent",
+      "meaning": "the endpoint being a prime square gives CRT phase rigidity, not a known density theorem",
+      "proved": false,
+      "remaining": "SquarePhaseSpecialPhaseLongBlockPDECExclusion OR PrimeSquareEndpointNoExceptionalPhaseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "RightFirstHalfPrimeSquareFiniteBoundary",
+      "meaning": "finite scan has no failure but is not a proof",
+      "proved": false,
+      "remaining": "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP"
+    },
+    {
+      "closed": false,
+      "gate": "PhiLPFHalfScaleGlobalBreakthrough",
+      "meaning": "6-wheel and Phi-LPF identities tighten the residual but still need global square-phase positivity or signed dispersion",
+      "proved": false,
+      "remaining": "PuncturedWheel6EndpointCapacityInequality OR signed/dispersion input"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "neither H_P nor the external/internal versions are unconditionally closed",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "external_source_notes": [
+    {
+      "name": "Runbo Li short intervals",
+      "role": "gives x^0.52 intervals for sufficiently large x; after X=P^2 this is P^1.04",
+      "url": "https://arxiv.org/abs/2308.04458"
+    },
+    {
+      "name": "Ford-Maynard prime-producing sieve framework",
+      "role": "requires Type I/II style object-sensitive input; does not itself supply the prime-square half-window theorem",
+      "url": "https://arxiv.org/abs/2407.14368"
+    },
+    {
+      "name": "Runbo Li large-moduli AP",
+      "role": "mean-value AP technology; not a pointwise prime-square endpoint theorem",
+      "url": "https://arxiv.org/abs/2602.20917"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "left_window_target": {
+    "current_corpus_proved": false,
+    "name": "PrimeIndexedOppermannLeftTopRow",
+    "role": "Phi-LPF strict top row; parallel square-root half-window",
+    "statement": "prime in (P^2-P,P^2) for every prime P"
+  },
+  "new_residual_basis": [
+    "SquarePhaseSpecialPhaseLongBlockPDECExclusion",
+    "TwoSidedSquarePhaseLayeredWheelSurvivorLowerBound",
+    "PrimeSquareEndpointNoExceptionalPhaseTheorem",
+    "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP",
+    "PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC",
+    "ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch",
+    "NewAutomorphicDispersionProof"
+  ],
+  "prime_square_halfscale_auto_drop_closed": false,
+  "provable_prime_square_structure": [
+    {
+      "effect": "removes one trivial local obstruction only",
+      "meaning": "for 1<=r<P, P does not divide P^2+r or P^2-r",
+      "structure": "q=P is harmless"
+    },
+    {
+      "effect": "turns the problem into a special square-phase long-block avoidance problem",
+      "meaning": "for q<P, the forbidden residue is r≡-P^2 mod q on the right and r≡P^2 mod q on the left",
+      "structure": "square-phase CRT vector"
+    },
+    {
+      "effect": "converts a full low-prime-cover exclusion into a prime existence theorem",
+      "meaning": "if P^2±r avoids all prime divisors q<P for 1<=r<P, then it is prime",
+      "structure": "survivor-to-prime gate"
+    },
+    {
+      "effect": "gives real finite/capacity tightening but not a global lower bound",
+      "meaning": "parity and 6-wheel factors delete some candidate cofactors",
+      "structure": "local wheel deletions"
+    }
+  ],
+  "right_window_target": {
+    "current_corpus_proved": false,
+    "finite_boundary": {
+      "available": true,
+      "failure_count": 0,
+      "first_failure": null,
+      "max_p": 200000,
+      "max_ratio_record": {
+        "least_offset": 4,
+        "least_prime": 29,
+        "offset_ratio": 0.8,
+        "p": 5
+      },
+      "prime_count": 17984
+    },
+    "name": "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP",
+    "statement": "for every sufficiently large prime P, pi(P^2+P)-pi(P^2)>0, equivalently a prime in (P^2,P^2+P)"
+  },
+  "row_column_unconditional_closed": false,
+  "short_answer": "not by currently known unconditional theorems; prime-square structure gives a special square-phase route but no automatic exponent drop",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "824a8e7bd202d06472ce1b4aa68ae22e369a16392b48aff201a52eb83678ff48",
+    "docs/monograph/external-theorem-index.md": "068c7b7924edeaad898c8b1252899af453291d0c13869bef2bcabd6392ec07fe",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "6e255a87dae44b7f33c58ff7218383d495da807a196c2f4eab20aad2d582309e",
+    "docs/monograph/prime-matrix-inverse-alignment-final-tail-rough-survivor-obstruction-router.json": "2faaae72cd649b0d469ce260b380b6180570c3c180a054ea092f3d0f9af48bd3",
+    "docs/monograph/prime-matrix-inverse-alignment-two-frontier-direct-attack-router.json": "e96d2e3199ce385c0b2c7a0dec59b29cad69906ce2291dedc5413992537b51c7",
+    "docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel6-capacity-router.json": "02845ff7fe7afa2541906182d7de47f4bb1a6a36ed57f38f6081e58dbbceda67",
+    "docs/monograph/prime-matrix-postsquare-first-half-finite-boundary-router.json": "312fd0f96abd2429da9797614f8beaad66067369b05b1921404a480f59f1e01c",
+    "docs/monograph/prime-matrix-prime-base-exponent-half-barrier-router.json": "37d15f13627b753f3c8c322e7836e888f06f1824212537a1fe87e77b58880aee",
+    "docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json": "328ee462d76cb6213f976eee33133885f20109157d16cf80d236ae27d78d8993",
+    "experiments/prime_matrix_prime_square_halfscale_specialization_audit.py": "9827f1f4e2dd48a291e3817a9ca1fdb41ab96609ea41e44247235314a57a8865",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "445d11131a56bb2ecc893e1816fd0ce2a22f493ce2c0245b4020c9a5106b9036"
+  },
+  "square_phase_attack_surface_identified": true,
+  "status": "prime_square_endpoint_structure_is_attack_surface_not_halfscale_theorem",
+  "theta_conversion": [
+    {
+      "after_x_equals_p_square": "P^1.05",
+      "directly_sufficient": false,
+      "input": "Baker-Harman-Pintz 0.525",
+      "target_length": "P",
+      "x_scale": "X"
+    },
+    {
+      "after_x_equals_p_square": "P^1.04",
+      "directly_sufficient": false,
+      "input": "Runbo Li arXiv:2308.04458 v8 0.52",
+      "target_length": "P",
+      "x_scale": "X"
+    },
+    {
+      "after_x_equals_p_square": "P",
+      "directly_sufficient": true,
+      "input": "needed prime-square half-scale theorem",
+      "target_length": "P",
+      "x_scale": "X^(1/2) on X=P^2"
+    }
+  ],
+  "user_question": "Can X=P^2 with prime P lower the 0.52 short-interval exponent to 1/2?"
+}

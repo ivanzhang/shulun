@@ -2406,3 +2406,69 @@ OR LinnikExponentLeTwoWithSquareWindowConstants
 OR GridTransferredShortIntervalSecondMomentAtThetaHalf
 OR NonlinearParityBreakingActualSourceConstructor
 ```
+
+## 51. Prime-square half-scale specialization 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_square_halfscale_specialization_audit.py
+data/prime-matrix-prime-square-halfscale-specialization-ledger.json
+docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json
+docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.md
+```
+
+本层专门回答一个尺度问题：若通用短区间素数定理给出 `x^0.52`，
+把端点限制为素数平方 `X=P^2` 是否因 `P` 的因子结构自动降到
+`X^1/2=P`。结论是否定的：
+
+```text
+Baker-Harman-Pintz theta=0.525 -> X=P^2 gives P^1.05
+Runbo Li v8 theta=0.52         -> X=P^2 gives P^1.04
+target half-scale              -> P
+```
+
+`P` 为素数确实给出三个可证明结构收益：
+
+```text
+q=P is harmless for P^2±r, 1<=r<P
+q<P gives square-phase forbidden residues r≡∓P^2 (mod q)
+full avoidance of all q<P turns the survivor into a prime
+```
+
+但这些收益只是平方相位攻击面，不是外部短区间定理。右侧目标仍是：
+
+```text
+PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP:
+  pi(P^2+P)-pi(P^2)>0
+```
+
+左侧 top-row 目标仍是：
+
+```text
+PrimeIndexedOppermannLeftTopRow:
+  pi(P^2-1)-pi(P^2-P)>0
+```
+
+既有右侧有限审计 `P<=200000` 零失败只登记为有限证据，不升级为证明。
+新的剩余基为：
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+OR TwoSidedSquarePhaseLayeredWheelSurvivorLowerBound
+OR PrimeSquareEndpointNoExceptionalPhaseTheorem
+OR PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+边界状态：
+
+```text
+prime_square_halfscale_auto_drop_closed=false
+square_phase_attack_surface_identified=true
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```

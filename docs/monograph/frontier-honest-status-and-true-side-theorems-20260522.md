@@ -2149,3 +2149,87 @@ H_P 的 sieve 参数：$X=P, z=P, D=P^{1/2}, s=1/2$。$f(1/2)=0$。
 任何 K-term Li expansion 给的 $|E|$ 上界都形如
 $P-\sum_{k=0}^{K}\frac{k!}{2^{k+1}}\cdot\frac{P}{\log^{k+1}P}+O(P/\log^{K+2}P)$，
 **主项常数永远是 $1$**——这是 PNT 内部信息的硬上界。
+
+---
+
+## 附录 U：Prime-square half-scale specialization 审计（2026-05-23 第十九轮）
+
+本轮专门审计用户提出的尺度专门化问题：
+
+```text
+If X=P^2 with P prime, can the pointwise short-interval exponent 0.52
+automatically drop to X^0.5=P?
+```
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_square_halfscale_specialization_audit.py
+data/prime-matrix-prime-square-halfscale-specialization-ledger.json
+docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json
+docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.md
+```
+
+尺度换算是刚性的：
+
+```text
+Baker-Harman-Pintz 0.525 -> P^1.05
+Runbo Li v8 0.52         -> P^1.04
+target half-scale        -> P
+```
+
+因此，`X=P^2` 的素数平方端点结构不会自动把外部短区间定理降到半尺度。
+它真正给出的收益是平方相位结构：
+
+```text
+q=P is harmless on P^2±r for 1<=r<P
+q<P imposes r≡-P^2 mod q on the right side
+q<P imposes r≡ P^2 mod q on the left side
+avoidance of all q<P forces the surviving P^2±r to be prime
+```
+
+右侧半尺度目标是：
+
+```text
+PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP:
+pi(P^2+P)-pi(P^2)>0
+```
+
+左侧 top-row 目标是：
+
+```text
+PrimeIndexedOppermannLeftTopRow:
+pi(P^2-1)-pi(P^2-P)>0
+```
+
+既有右侧有限边界仍只作为 Gauss 风格证据登记：
+
+```text
+finite_boundary_available=true
+max_p=200000
+failure_count=0
+```
+
+新剩余基为：
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+OR TwoSidedSquarePhaseLayeredWheelSurvivorLowerBound
+OR PrimeSquareEndpointNoExceptionalPhaseTheorem
+OR PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP
+OR PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+```
+
+本层是真推进，因为它把“素数平方端点特殊性”从模糊希望压成
+`square-phase special phase long-block exclusion`，并防止把 `0.52`
+误用为 `1/2`。但它没有证明右侧或左侧半尺度素数存在。
+
+```text
+prime_square_halfscale_auto_drop_closed=false
+square_phase_attack_surface_identified=true
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
