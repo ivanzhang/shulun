@@ -3307,6 +3307,117 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61L. Phi-LPF q-support row-averaged additive-k hole blocking-cofactor pushforward 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_blocking_cofactor_pushforward_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-blocking-cofactor-pushforward-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-blocking-cofactor-pushforward-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-blocking-cofactor-pushforward-audit.md
+```
+
+本层把四类 completion-hole correction 从缺失 `k` 推到唯一 blocking cofactor
+`m_h`。若 product-cell 有奇候选，则 residual LPF cofactor 只能落在这个唯一
+奇候选上，所以 blocker 取该奇候选；若没有奇候选，则上一层 nonempty 定理
+强制 cell 是偶 singleton，blocker 取该偶数。于是 blocker 的最小素因子只有
+四种可能：
+
+```text
+LPF(m_h)=2, 3, 5, or m_h is prime
+```
+
+相位同时被推前为：
+
+```text
+e(hPk/q) = e(hP floor(q*m_h/P)/q).
+```
+
+因此四类 correction 可重写为两个来源：
+
+```text
+S_H = S_{30-wheel-blocker} + S_{prime-blocker}
+```
+
+其中第一项是 finite 30-wheel 小 LPF 阻塞包，第二项是 prime blocker 动态素性
+包。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+q_bucket_count_total=6020
+previous_q_bucket_count_total=6020
+real_k_count_total=299977
+previous_real_k_count_total=299977
+hole_count_total=1302951
+previous_hole_count_total=1302951
+blocking_cofactor_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+small_lpf_blocker_ratio=0.726836
+prime_blocker_ratio=0.273164
+count_blocker_lpf2_even_total=373676
+count_blocker_lpf3_total=409713
+count_blocker_lpf5_total=163643
+count_blocker_prime_total=355919
+bad_empty_total=0
+bad_odd_multiplicity_total=0
+bad_floor_mismatch_total=0
+bad_residual_blocker_total=0
+bad_class_mismatch_total=0
+duplicate_blocker_m_total=0
+total_bad_pushforward_count=0
+max_pushforward_identity_error=9.334e-14
+pushforward_identity_verified=true
+counts_match_previous_four_class_reduction=true
+unique_blocker_per_hole_verified=true
+two_family_split_closed=true
+sum_abs_small_lpf_blocker_sum_h1=104345.004183
+sum_abs_prime_blocker_sum_h1=61696.864692
+dominant_two_family_bucket_counts_h1={"prime_blocker":757,"small_lpf_blocker":5263}
+two_family_phase_control_closed=false
+```
+
+外部前沿影响：FKMS trace-function、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright 2026 unbalanced convolution/Kloosterman
+fractions 与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 参数估计，
+仍不直接估计这个 floor blocker selector。它们需要先完成 blocker phase 到
+trace/Kloosterman/Type-II/completed convolution 支撑的对象嵌入。
+
+新的最新最窄口：
+
+```text
+TwoFamilyBlockerPhaseCancellationOrAbsorption
+AND PrimeBlockerDynamicSqrtSieveOrTraceEmbedding
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+unique_blocking_cofactor_closed=true
+hole_phase_pushforward_closed=true
+thirty_wheel_vs_prime_blocker_split_closed=true
+two_family_phase_control_closed=false
+prime_blocker_trace_embedding_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

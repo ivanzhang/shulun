@@ -33300,6 +33300,93 @@ row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Blocking cofactors for the hole correction}
+
+\begin{theorem}[Blocking-cofactor pushforward of the four-class correction]
+For each completion hole \(k\in{\mathcal H}_{P,q}\), define its blocking
+cofactor \(m_h=m_h(P,q,k)\) as follows.  If the product cell \(I_{P,k}(q)\)
+contains an odd integer, let \(m_h\) be that unique odd integer.  Otherwise
+let \(m_h\) be the unique even singleton in the cell.  Then \(m_h\) exists,
+is unique, satisfies
+\[
+  k=\left\lfloor \frac{q m_h}{P}\right\rfloor,
+\]
+and is never a residual rough LPF cofactor.  Moreover
+\[
+  {\rm LPF}(m_h)\in\{2,3,5\}
+  \quad\hbox{or}\quad
+  m_h\hbox{ is prime}.
+\]
+Consequently
+\[
+  S_H(h)=S_{30{\rm w}}(h)+S_{\rm prime\ blocker}(h),
+\]
+where \(S_{30{\rm w}}\) is the finite \(30\)-wheel blocker packet
+\({\rm LPF}(m_h)\in\{2,3,5\}\), and \(S_{\rm prime\ blocker}\) is the packet
+with \(m_h\) prime.
+\end{theorem}
+\begin{proof}
+The preceding theorem removes the empty-cell alternative, so every completion
+hole has a non-empty product cell.  Since \(q>P/2\), the cell has length
+less than \(2\); hence it contains at most one odd integer.  If that odd
+integer exists and were a composite number with least prime factor at least
+\(7\), it would be a residual rough LPF cofactor and would put \(k\) back into
+the true support \({\mathcal K}_{P,q}\), contradicting the definition of a
+hole.  Thus an odd blocker is either prime or has least prime factor \(3\)
+or \(5\).  If no odd integer exists, non-emptiness forces a unique even
+singleton, whose least prime factor is \(2\).
+
+The equality \(k=\lfloor q m_h/P\rfloor\) is the defining condition for the
+product cell.  Therefore the additive character on the hole can be pushed
+forward to the blocker:
+\[
+  e(hPk/q)=e\!\left(hP\left\lfloor \frac{q m_h}{P}\right\rfloor/q\right).
+\]
+Splitting the blockers according to \({\rm LPF}(m_h)\in\{2,3,5\}\) or
+\(m_h\) prime gives the displayed two-packet identity.
+\end{proof}
+
+\begin{remark}[Finite blocker ledger and the new two-family mouth]
+The audit up to \(P\le 1009\) verifies the blocker pushforward for all
+\(1302951\) completion holes:
+\[
+  \texttt{blocking\_cofactor\_count\_total}=1302951,\qquad
+  \texttt{total\_bad\_pushforward\_count}=0.
+\]
+The two packets have sizes
+\[
+  947032\ \text{small-LPF blockers},\qquad
+  355919\ \text{prime blockers}.
+\]
+The small-LPF packet further splits as
+\[
+  373676\ {\rm LPF}=2,\qquad
+  409713\ {\rm LPF}=3,\qquad
+  163643\ {\rm LPF}=5.
+\]
+The maximum numerical error in the phase pushforward identity is
+\(9.334\cdot 10^{-14}\).  This is a normal-form theorem, not a phase-saving
+theorem.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+TwoFamilyBlockerPhaseCancellationOrAbsorption\\
+AND PrimeBlockerDynamicSqrtSieveOrTraceEmbedding\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-hole-blocking-cofactor-pushforward-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
