@@ -2681,6 +2681,90 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61E. Phi-LPF q-support floor-cell Type-II fiber obstruction 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_floor_cell_typeii_fiber_obstruction_audit.py
+data/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-audit.md
+```
+
+本层检验 floor-cell 正规形是否已经足以直接喂给 Type-II/Kloosterman 外部定理。
+检查的同对象纤维为：
+
+```text
+q -> m
+m -> q
+q -> (r,beta)
+(q,r) -> beta
+(q,beta) -> r
+(r,beta) -> q
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+total_floor_cell_residual_atoms=951378
+total_floor_cell_selected_terms=299977
+q_floor_cells_checked_total=12532624
+bad_product_cell_window_size_total=0
+bad_product_cell_odd_count_total=0
+max_product_cell_window_size=2
+max_product_cell_odd_count=1
+max_q_to_m_fiber=1
+max_m_to_q_fiber=1
+max_q_to_factor_pair_fiber=1
+max_qr_to_beta_fiber=1
+max_qbeta_to_r_fiber=1
+max_rbeta_to_q_fiber=1
+max_selected_q_to_m_fiber=1
+max_selected_qr_to_beta_fiber=1
+rows_with_long_same_object_fiber=0
+same_object_long_fiber_available_for_any_row=false
+direct_typeii_bilinear_fiber_available=false
+direct_kloosterman_variable_available=false
+phase_is_denominator_graph_phase_not_inverse_variable=true
+```
+
+外部前沿影响：FKMS trace-function 双线性、Milićević--Qin--Wu 任意模
+Kloosterman 双线性、Pascadi 复合模 Type-II 放大、Wright unbalanced
+Kloosterman fractions/convolution、Shao--Shparlinski--Wijaya smooth/squarefree
+参数估计都仍需要一个真正的 same-object trace/Kloosterman/dispersion 嵌入。
+floor-cell 本身给出的只是单点图纤维，不能直接作为长双线性变量。
+
+新的最新最窄口：
+
+```text
+SameObjectAveragedGraphDispersionOrTraceEmbedding
+AND UniformCancellationAcrossGraphSupportedRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+floor_cell_same_object_fiber_singleton_ledger_closed=true
+direct_floor_cell_typeii_completion_rejected=true
+direct_kloosterman_variable_from_floor_cell_rejected=true
+same_object_averaged_graph_dispersion_or_trace_embedding_closed=false
+uniform_cancellation_across_graph_supported_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

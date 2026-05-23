@@ -2860,6 +2860,93 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13E：Phi-LPF q-support floor-cell Type-II fiber obstruction 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_floor_cell_typeii_fiber_obstruction_audit.py
+data/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-typeii-fiber-obstruction-audit.md
+```
+
+本层继续选择行/列 Phi-LPF。上一层已经把 floor denominator 回收到正向
+q-cell；本层检验这些 q-cell 是否能直接形成外部 Type-II/Kloosterman 定理
+所需的长变量。检查的同对象纤维包括：
+
+```text
+q -> m
+m -> q
+q -> (r,beta)
+(q,r) -> beta
+(q,beta) -> r
+(r,beta) -> q
+```
+
+### Q13E.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_floor_cell_residual_atoms=951378
+total_floor_cell_selected_terms=299977
+q_floor_cells_checked_total=12532624
+bad_product_cell_window_size_total=0
+bad_product_cell_odd_count_total=0
+max_product_cell_window_size=2
+max_product_cell_odd_count=1
+max_q_to_m_fiber=1
+max_m_to_q_fiber=1
+max_q_to_factor_pair_fiber=1
+max_qr_to_beta_fiber=1
+max_qbeta_to_r_fiber=1
+max_rbeta_to_q_fiber=1
+max_selected_q_to_m_fiber=1
+max_selected_qr_to_beta_fiber=1
+rows_with_long_same_object_fiber=0
+same_object_long_fiber_available_for_any_row=false
+direct_typeii_bilinear_fiber_available=false
+direct_kloosterman_variable_available=false
+phase_is_denominator_graph_phase_not_inverse_variable=true
+```
+
+### Q13E.2 诚实边界
+
+本层真推进是把“floor-cell 直接就是 Type-II/Kloosterman 长变量”的假出口
+排除。相位仍是图支撑上的 denominator phase `e(h*k*P/q)`，而不是 completed
+inverse-variable Kloosterman sum。外部前沿定理仍可能有用，但必须先构造新的
+same-object averaged graph dispersion 或 trace embedding。
+
+最新最窄口：
+
+```text
+SameObjectAveragedGraphDispersionOrTraceEmbedding
+AND UniformCancellationAcrossGraphSupportedRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+floor_cell_same_object_fiber_singleton_ledger_closed=true
+direct_floor_cell_typeii_completion_rejected=true
+direct_kloosterman_variable_from_floor_cell_rejected=true
+same_object_averaged_graph_dispersion_or_trace_embedding_closed=false
+uniform_cancellation_across_graph_supported_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）

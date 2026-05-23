@@ -32765,6 +32765,81 @@ floor-cell-radial-support-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Why the floor cells are not already a Type-II family}
+
+\begin{theorem}[Direct Type-II completion from floor cells is not available]
+In the floor-cell normal form of the previous theorem, split every residual
+cofactor as \(m=r\beta\), where \(r\ge 7\) is prime and \(\beta\) is
+\(r\)-rough.  Then, inside the same floor-cell object, the fibres
+\[
+  q\mapsto m,\qquad m\mapsto q,\qquad q\mapsto(r,\beta),
+\]
+and also
+\[
+  (q,r)\mapsto\beta,\qquad (q,\beta)\mapsto r,\qquad
+  (r,\beta)\mapsto q
+\]
+are all singleton fibres whenever they are nonempty.  Therefore the
+floor-cell support does not itself provide the long bilinear or trilinear
+variables required by Type-II Kloosterman or trace-function estimates.
+The phase remains the graph-supported denominator phase
+\[
+  e\!\left(\frac{hkP}{q}\right)
+  =
+  e\!\left(-\frac{h(qm-kP)}{q}\right),
+\]
+not a completed inverse-variable Kloosterman sum.
+\end{theorem}
+\begin{proof}
+The interval \(I_{P,k}(q)\) has length at most \(2\) because
+\[
+  \frac{(k+1)P-1}{q}-\frac{kP}{q}<\frac{P}{q}<2.
+\]
+Hence it contains at most one odd integer.  Since residual cofactors in
+the present graph are odd, each fixed \(q\) contributes at most one
+cofactor \(m\).  The previous reverse-cell equivalence gives the reverse
+statement: each residual \(m\) contributes at most one odd \(q\).
+
+Once \(m\) is fixed, its least-prime-factor split \(m=r\beta\) is unique.
+Thus the fibres \(q\mapsto(r,\beta)\), \((q,r)\mapsto\beta\), and
+\((q,\beta)\mapsto r\) are singleton.  Conversely \((r,\beta)\) fixes
+\(m\), and the reverse singleton property fixes \(q\).  Therefore none of
+these same-object decompositions creates a long inner variable.
+
+The displayed phase identity is only the already proved matched
+displacement congruence \(qm-kP=D\).  It rewrites the same graph phase; it
+does not introduce a completed modular inverse variable or a rectangular
+bilinear coefficient family.
+\end{proof}
+
+\begin{remark}[External estimates still need a new embedding]
+This theorem does not say that modern trace-function or Kloosterman
+estimates are irrelevant.  It says only that the current floor-cell graph
+cannot be fed to them directly.  Fouvry--Kowalski--Michel--Sawin type
+trace-function bilinear estimates, Milićević--Qin--Wu arbitrary-modulus
+Kloosterman estimates, Pascadi's composite-modulus Type-II amplification,
+Wright's unbalanced Kloosterman-fraction convolution, and
+Shao--Shparlinski--Wijaya smooth/squarefree-parameter estimates still
+require a same-object embedding that creates a genuine averaged graph
+dispersion or trace family.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+SameObjectAveragedGraphDispersionOrTraceEmbedding\\
+AND UniformCancellationAcrossGraphSupportedRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+floor-cell-typeii-fiber-obstruction-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
