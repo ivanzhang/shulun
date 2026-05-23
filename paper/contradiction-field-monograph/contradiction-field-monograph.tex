@@ -32442,6 +32442,79 @@ conductor-stratified-ramanujan-spectrum-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Complementary conductor pairs}
+
+\begin{theorem}[Complementary conductor pairs do not cancel automatically]
+Let \(W=W_P\) be squarefree and let \(q\mid W\).  Put
+\[
+  q^\vee=\frac{W}{q},
+  \qquad
+  R_m(n)=\frac{c_m(n)}{\varphi(m)}.
+\]
+The involution \(q\mapsto q^\vee\) pairs low and high exact-conductor
+layers with the same \(L^1\)-mass \(\varphi(W)/W\).  Its sign ledger is
+\[
+  \mu(q^\vee)=\mu(W)\mu(q).
+\]
+However the complementary pair kernel
+\[
+  K_q(n)=\mu(q)R_q(n)+\mu(q^\vee)R_{q^\vee}(n)
+\]
+is not identically zero for any complementary pair.
+\end{theorem}
+\begin{proof}
+The equal \(L^1\)-mass is the preceding conductor-layer identity applied
+to \(q\) and \(q^\vee\).  Since \(W\) is squarefree and
+\((q,q^\vee)=1\), multiplicativity gives
+\(\mu(q^\vee)=\mu(W)\mu(q)\).
+
+If \(\mu(q^\vee)=\mu(q)\), then \(R_q(0)=R_{q^\vee}(0)=1\), so
+\[
+  K_q(0)=2\mu(q)\ne 0.
+\]
+It remains to handle the opposite-sign case.  If \(q>1\), choose a prime
+\(\ell\mid q\) and put \(n=W/\ell\).  Then every prime factor of
+\(q^\vee\) divides \(n\), while exactly the \(\ell\)-factor is missing
+from \(q\).  Hence
+\[
+  R_{q^\vee}(n)=1,
+  \qquad
+  R_q(n)=-\frac{1}{\ell-1},
+\]
+and \(K_q(n)=\mu(q)(-1/(\ell-1)-1)\ne0\).  If \(q=1\), choose
+\(\ell\mid q^\vee\) and the same \(n=W/\ell\); then
+\[
+  R_q(n)=1,
+  \qquad
+  R_{q^\vee}(n)=-\frac{1}{\ell-1},
+\]
+so \(K_q(n)=1+1/(\ell-1)\ne0\).  Thus the mass mirror is not a
+pointwise cancellation identity.
+\end{proof}
+
+\begin{remark}[The remaining pair-uniform outlet]
+The machine audit up to \(P\le1009\) records \(32554\) complementary
+pairs, with zero failures of low/high mass balance and zero identically
+vanishing pair kernels.  The largest checked case has \(2048\)
+conductor layers and \(1024\) complementary pairs.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+ComplementaryConductorPairPhaseMatchingOrTraceFamilyBridge\\
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairs\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+complementary-conductor-pair-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

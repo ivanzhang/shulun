@@ -2324,6 +2324,97 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61A. Phi-LPF complementary conductor pair 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_complementary_conductor_pair_audit.py
+data/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-audit.md
+```
+
+本层继续沿 Ramanujan conductor 分层下钻，检验互补对偶：
+
+```text
+q^vee=W_P/q.
+```
+
+它确实把低 conductor 层与高 conductor 层一一配对，并保留相同的整层 L1 质量：
+
+```text
+L1(q)=L1(q^vee)=phi(W_P)/W_P.
+```
+
+但这不是自动相位抵消。符号只满足：
+
+```text
+mu(q^vee)=mu(W_P)mu(q),
+```
+
+因此当 `omega(W_P)` 为偶数时互补对同号，当 `omega(W_P)` 为奇数时互补对异号。
+即使在异号层，归一化配对核
+
+```text
+mu(q)c_q(n)/phi(q)+mu(q^vee)c_{q^vee}(n)/phi(q^vee)
+```
+
+也不恒为零；每个互补对都有显式非零见证。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+max_conductor_layer_count=2048
+max_complementary_pair_count=1024
+pair_count_total=32554
+same_sign_P_count=85
+opposite_sign_P_count=80
+frequency_count_equal_pair_total=0
+frequency_count_unequal_pair_total=32554
+max_primitive_frequency_count_ratio_in_pair=30656102400
+bad_low_high_balance_total=0
+identity_zero_pair_total=0
+all_low_high_complementary_pairs_balanced=true
+all_pair_kernels_nonzero_somewhere=true
+automatic_complementary_pair_cancellation_possible_for_any_P=false
+```
+
+外部前沿影响：Wright 2026、Fouvry--Kowalski--Michel--Sawin 2025、
+Milićević--Qin--Wu 2025、Pascadi 2025、Shao--Shparlinski--Wijaya 2024
+仍不能直接闭合；它们需要先把这些非零配对核包装成同对象的
+Kloosterman/trace-function/Type-II 系数族。Dong--Robles--Zeindler 2026
+撤回结论不能作为闭合输入。
+
+新的最新最窄口：
+
+```text
+ComplementaryConductorPairPhaseMatchingOrTraceFamilyBridge
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairs
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complementary_conductor_mass_duality_closed=true
+complementary_conductor_sign_ledger_closed=true
+automatic_complementary_pair_cancellation_rejected=true
+uniform_complementary_pair_cancellation_closed=false
+usable_kloosterman_or_trace_family_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

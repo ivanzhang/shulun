@@ -2515,6 +2515,97 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13A：Phi-LPF q-support complementary conductor pair 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_complementary_conductor_pair_audit.py
+data/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-conductor-pair-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已证明 full spectrum 可以按 exact
+conductor 分层，且每层 L1 质量相同。本层检验互补对偶：
+
+```text
+q^vee=W_P/q.
+```
+
+该 involution 精确配对低/高 conductor 层，并给出：
+
+```text
+L1(q)=L1(q^vee)=phi(W_P)/W_P,
+mu(q^vee)=mu(W_P)mu(q).
+```
+
+但互补对偶不是自动抵消机制。配对核
+
+```text
+mu(q)c_q(n)/phi(q)+mu(q^vee)c_{q^vee}(n)/phi(q^vee)
+```
+
+对每个互补对都有显式非零见证。
+
+### Q13A.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+P_value_count=165
+max_conductor_layer_count=2048
+max_complementary_pair_count=1024
+pair_count_total=32554
+same_sign_P_count=85
+opposite_sign_P_count=80
+frequency_count_equal_pair_total=0
+frequency_count_unequal_pair_total=32554
+max_primitive_frequency_count_ratio_in_pair=30656102400
+bad_low_high_balance_total=0
+identity_zero_pair_total=0
+all_low_high_complementary_pairs_balanced=true
+all_pair_kernels_nonzero_somewhere=true
+automatic_complementary_pair_cancellation_possible_for_any_P=false
+```
+
+代表性现象：在 `P=971` 与 `P=1009` 的最大样本中，
+`conductor_layer_count=2048`，低/高层各 `1024` 个，L1 质量各为 `1/2`；
+但 `identity_zero_pair_total=0`，说明质量镜像没有给出同对象相位抵消。
+
+### Q13A.2 诚实边界
+
+本层真推进是关闭互补 conductor 质量对偶，并排除“低/高层自动抵消”的假出口。
+它仍没有证明所有互补配对核上的均匀相消，也没有把这些核包装成可直接套用的
+Kloosterman/trace-function/Type-II 系数族。
+
+最新最窄口：
+
+```text
+ComplementaryConductorPairPhaseMatchingOrTraceFamilyBridge
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairs
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complementary_conductor_mass_duality_closed=true
+complementary_conductor_sign_ledger_closed=true
+automatic_complementary_pair_cancellation_rejected=true
+uniform_complementary_pair_cancellation_closed=false
+usable_kloosterman_or_trace_family_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
