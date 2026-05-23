@@ -31991,6 +31991,74 @@ lpf-bucket-completion-bridge-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Reverse prime selector for fixed rough cofactors}
+
+\begin{theorem}[Fixed rough cofactor has a unique reverse prime selector]
+Fix a support triple from the preceding LPF bucket normal form and put
+\[
+  m=r\beta .
+\]
+For fixed \(P,k,m\), the admissible prime \(q\) must lie in
+\[
+  \max(P/2+1,\lfloor kP/m\rfloor+1)
+  \le q \le
+  \min(P-1,m,\lfloor((k+1)P-1)/m\rfloor).
+\]
+This reverse window contains at most two consecutive integers and
+therefore at most one admissible prime \(q\).
+\end{theorem}
+\begin{proof}
+The product inequality \(kP<qm<(k+1)P\) gives
+\[
+  \lfloor kP/m\rfloor+1
+  \le q \le
+  \lfloor((k+1)P-1)/m\rfloor.
+\]
+The original clipped cofactor condition also imposes
+\[
+  P/2<q<P,\qquad q\le m.
+\]
+Combining these inequalities gives the displayed reverse window.  Since
+every support cofactor satisfies \(m>P/2\), the uncut interval has
+length \(P/m<2\).  Hence the integer window has at most two consecutive
+points.  As \(q>P/2>2\) is prime, it is odd; two consecutive integers
+cannot both be odd primes.  Thus there is at most one admissible prime.
+\end{proof}
+
+\begin{corollary}[Actual support equals the reverse selector graph]
+The prime-\(q\) support graph is equivalently obtained by ranging over
+rough cofactors \(m=r\beta\) and selecting the unique odd prime in the
+reverse window above, when it exists.  The phase becomes
+\[
+  e(hkP/Q_{P,k}(r\beta)),
+\]
+where \(Q_{P,k}(m)\) is this floor-defined reverse prime selector.
+\end{corollary}
+
+\begin{remark}[Reverse selector is not a completed Kloosterman family]
+The reverse selector closes another deterministic ambiguity in the
+same object.  It also makes the completion obstruction sharper.  The
+current phase is a floor-prime-selector phase over rough cofactors,
+not a completed bilinear or trilinear Kloosterman family.  Filling the
+other integer in a two-point reverse window would add non-object terms
+and lose pointwise equivalence.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+FloorPrimeSelectorToCompletedKloostermanConvolutionBridge\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+reverse-prime-selector-completion-bridge-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

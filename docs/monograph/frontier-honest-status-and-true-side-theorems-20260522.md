@@ -1970,6 +1970,108 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q7：Phi-LPF q-support reverse prime selector completion bridge 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_reverse_prime_selector_completion_bridge_audit.py
+data/prime-matrix-phi-lpf-qsupport-reverse-prime-selector-completion-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-reverse-prime-selector-completion-bridge-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-reverse-prime-selector-completion-bridge-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已经把支撑项压成：
+
+```text
+kP < q*r*beta < (k+1)P
+q prime in (P/2,P), r prime >= 7, beta r-rough
+```
+
+固定粗余因子 `m=r*beta` 后，反向窗口为：
+
+```text
+max(P/2+1, floor(kP/m)+1)
+  <= q <=
+min(P-1, m, floor(((k+1)P-1)/m)).
+```
+
+因为 `m>P/2`，窗口长度 `<2`，故最多两个连续整数；admissible `q>P/2>2`
+为奇素数，所以该窗口中最多一个可用 prime-q。
+
+### Q7.1 有限审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_actual_support_terms=299977
+total_reverse_selector_terms=299977
+actual_equals_reverse_selector_terms=true
+missing_actual_terms_total=0
+extra_reverse_terms_total=0
+max_reverse_window_size=2
+max_odd_count_per_reverse_window=1
+max_prime_count_per_reverse_window=1
+bad_reverse_window_size_total=0
+bad_prime_multiplicity_total=0
+bad_selected_not_odd_total=0
+```
+
+选择器分布：
+
+```text
+empty=7273864
+singleton_nonprime=1408320
+singleton_prime=263786
+two_point_first_odd_prime=18261
+two_point_odd_nonprime=78131
+two_point_second_odd_prime=17930
+```
+
+### Q7.2 诚实边界
+
+本层真推进是把 sparse product-window graph 进一步压成 fixed-cofactor
+reverse prime selector graph：
+
+```text
+phase=e(h*kP/Q_{P,k}(r*beta)).
+```
+
+但这仍不是外部 Kloosterman theorem 的 completed family。若把两点窗口内
+非选中的整数也填入 dense completion，会加入非同对象项；若不填入，则外部
+Wright/MQW/Pascadi/Ford--Maynard 类型定理仍缺 completed convolution、
+admissible coefficients、Type-II organisation 或 object-specific Type-I/II
+hypotheses。
+
+最新最窄口：
+
+```text
+FloorPrimeSelectorToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+reverse_prime_selector_normal_form_closed=true
+actual_equals_reverse_selector_graph=true
+dense_completion_by_filling_window_rejected=true
+floor_prime_selector_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q5：Phi-LPF weight extraction norm closure 审计（2026-05-23）
 
 新增证书：
