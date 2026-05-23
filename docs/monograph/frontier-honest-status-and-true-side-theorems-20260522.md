@@ -2168,6 +2168,100 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q10：Phi-LPF q-support dynamic primorial unit selector 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_dynamic_primorial_unit_selector_audit.py
+data/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层动态 sqrt-sieve 为：
+
+```text
+Q_odd mod ell != 0 for every prime ell<=sqrt(P-1).
+```
+
+本层把这些小素数排除合并为动态 primorial：
+
+```text
+W_P=product_{ell prime, ell<=sqrt(P-1)} ell,
+selected iff Q_odd exists and gcd(Q_odd,W_P)=1.
+```
+
+等价的有限 Mobius 乘积为：
+
+```text
+1_{gcd(Q_odd,W_P)=1}=sum_{d|W_P, d|Q_odd} mu(d).
+```
+
+### Q10.1 有限审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_actual_support_terms=299977
+total_primorial_unit_selector_terms=299977
+actual_equals_primorial_unit_selector_terms=true
+missing_actual_terms_total=0
+extra_primorial_unit_selector_terms_total=0
+max_dynamic_primorial_modulus=200560490130
+max_dynamic_primorial_prime_count=11
+max_formal_mobius_terms_per_candidate=2048
+primorial_unit_selected_total=299977
+bad_gcd_obstruction_mismatch_total=0
+bad_unit_survivor_not_prime_total=0
+```
+
+非单位拒绝分桶：
+
+```text
+ell=3:316468, ell=5:126802, ell=7:73656, ell=11:41695,
+ell=13:35245, ell=17:26918, ell=19:19798, ell=23:10019,
+ell=29:759, ell=31:41
+```
+
+### Q10.2 诚实边界
+
+本层真推进是把动态 `sqrt(P)` 小素数筛合并为一个动态 `W_P` 的 CRT 单位类
+和有限 Mobius 乘积。它仍是随 `P` 增长的逐点 selector，不是 completed
+Kloosterman family；若把 `W_P` 固定，就会留下 rough composite survivors 并
+改变同对象。
+
+最新最窄口：
+
+```text
+DynamicPrimorialUnitSelectorToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dynamic_primorial_unit_selector_closed=true
+dynamic_sqrt_sieve_equals_primorial_unit_class=true
+primorial_mobius_product_identity_closed=true
+actual_equals_dynamic_primorial_unit_selector_graph=true
+static_modulus_completion_shortcut_valid=false
+dynamic_primorial_completion_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

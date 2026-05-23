@@ -32200,6 +32200,64 @@ dynamic-sqrt-sieve-selector-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dynamic primorial unit form of the selector}
+
+\begin{theorem}[Dynamic sqrt-sieve equals a primorial unit-class test]
+Let
+\[
+  W_P=\prod_{\substack{\ell\le\sqrt{P-1}\\ \ell\ {\rm prime}}}\ell .
+\]
+For every defined \(Q_{\rm odd}\) in the preceding section, the
+dynamic sqrt-sieve condition is equivalent to
+\[
+  \gcd(Q_{\rm odd},W_P)=1 .
+\]
+Equivalently,
+\[
+  1_{\gcd(Q_{\rm odd},W_P)=1}
+  =
+  \sum_{\substack{d\mid W_P\\ d\mid Q_{\rm odd}}}\mu(d).
+\]
+\end{theorem}
+\begin{proof}
+The prime factors of \(W_P\) are exactly the primes
+\(\ell\le\sqrt{P-1}\).  Thus \(\gcd(Q_{\rm odd},W_P)=1\) is precisely
+the assertion that no such \(\ell\) divides \(Q_{\rm odd}\), which is
+the dynamic sqrt-sieve condition.  Since \(W_P\) is squarefree, the
+standard Mobius identity
+\(\sum_{d\mid g}\mu(d)=1\) if \(g=1\) and \(0\) otherwise, applied to
+\(g=\gcd(Q_{\rm odd},W_P)\), gives the displayed finite sum.
+\end{proof}
+
+\begin{corollary}[Nonunit rejection has a least-prime bucket]
+Every nonunit candidate has a unique least prime divisor
+\(\ell\mid W_P\).  Therefore the non-surviving part of the selector is
+partitioned by the same least-prime buckets as the dynamic sqrt-sieve.
+\end{corollary}
+
+\begin{remark}[The primorial modulus is dynamic]
+The primorial unit-class form is exact, but it is not a static-modulus
+completion.  The modulus \(W_P\) grows with \(P\), and freezing it would
+leave rough composite candidates that are removed only by later primes.
+Hence this step closes the CRT/Mobius normal form of the selector while
+leaving the analytic bridge to a completed Kloosterman family open.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+DynamicPrimorialUnitSelectorToCompletedKloostermanConvolutionBridge\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+dynamic-primorial-unit-selector-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
