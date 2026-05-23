@@ -1,0 +1,312 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_lpf_tail_typeii_obligation_audit",
+  "definitions": {
+    "R30_triple": "q prime in (P/2,P), m=r*a in I_q(P,k), r=LPF(m)>=7, a>=r and a is r-rough",
+    "one_point_quotient_fiber": "for fixed q,r, the a interval has length P/(q*r)<1",
+    "thin_q_fiber": "for fixed q, I_q(P,k) has at most two integer m values",
+    "thin_reverse_fiber": "for fixed m>q>P/2, the admissible q interval has length <2",
+    "typeii_obligation": "prove signed dispersion on this reciprocal graph, not on a full rectangle"
+  },
+  "external_frontier_note": "Runbo Li type x^0.52 pointwise short-interval input is still above the x^1/2 row scale; Ford--Maynard prime-producing sieve technology becomes relevant only after Type-I/II estimates are proved for the exact same-row reciprocal graph.",
+  "external_lemma_version_unconditional_closed": false,
+  "external_prime_producing_sieve_applies_directly": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_m_q_reverse_fibers_have_at_most_two_points": true,
+    "all_q_m_windows_have_at_most_two_points": true,
+    "all_qr_a_fibers_have_at_most_one_point": true,
+    "all_residual_qr_steps_exceed_row_length": true,
+    "failure_rows": [],
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 1009,
+    "max_residual_row": {
+      "N": 80,
+      "N_minus_R30": 57,
+      "P": 971,
+      "R30": 23,
+      "W_int": 97,
+      "k": 936,
+      "lpf_shells": {
+        "11": 4,
+        "13": 2,
+        "17": 6,
+        "19": 1,
+        "23": 2,
+        "37": 1,
+        "41": 1,
+        "7": 6
+      },
+      "m_span": 915,
+      "max_a_per_qr": 1,
+      "max_m_per_q": 2,
+      "max_q_per_m": 1,
+      "min_qr_minus_P": 3600,
+      "q_count": 71,
+      "support_density": 0.0014931116755175864
+    },
+    "minimum_prime_minus_R30_row": {
+      "N": 3,
+      "N_minus_R30": 2,
+      "P": 37,
+      "R30": 1,
+      "W_int": 5,
+      "k": 30,
+      "lpf_shells": {
+        "7": 1
+      },
+      "m_span": 25,
+      "max_a_per_qr": 1,
+      "max_m_per_q": 2,
+      "max_q_per_m": 1,
+      "min_qr_minus_P": 124,
+      "q_count": 4,
+      "support_density": 0.05
+    },
+    "row_count": 76789,
+    "sample_rows": [
+      {
+        "N": 5,
+        "N_minus_R30": 4,
+        "P": 29,
+        "R30": 1,
+        "W_int": 5,
+        "k": 28,
+        "lpf_shells": {
+          "7": 1
+        },
+        "m_span": 14,
+        "max_a_per_qr": 1,
+        "max_m_per_q": 2,
+        "max_q_per_m": 1,
+        "min_qr_minus_P": 90,
+        "q_count": 3,
+        "support_density": 0.11904761904761904
+      },
+      {
+        "N": 12,
+        "N_minus_R30": 11,
+        "P": 101,
+        "R30": 1,
+        "W_int": 14,
+        "k": 100,
+        "lpf_shells": {
+          "11": 1
+        },
+        "m_span": 88,
+        "max_a_per_qr": 1,
+        "max_m_per_q": 2,
+        "max_q_per_m": 1,
+        "min_qr_minus_P": 680,
+        "q_count": 10,
+        "support_density": 0.015909090909090907
+      },
+      {
+        "N": 23,
+        "N_minus_R30": 20,
+        "P": 257,
+        "R30": 3,
+        "W_int": 34,
+        "k": 256,
+        "lpf_shells": {
+          "11": 1,
+          "13": 1,
+          "19": 1
+        },
+        "m_span": 242,
+        "max_a_per_qr": 1,
+        "max_m_per_q": 2,
+        "max_q_per_m": 1,
+        "min_qr_minus_P": 1524,
+        "q_count": 23,
+        "support_density": 0.006108515989938915
+      },
+      {
+        "N": 80,
+        "N_minus_R30": 57,
+        "P": 971,
+        "R30": 23,
+        "W_int": 97,
+        "k": 936,
+        "lpf_shells": {
+          "11": 4,
+          "13": 2,
+          "17": 6,
+          "19": 1,
+          "23": 2,
+          "37": 1,
+          "41": 1,
+          "7": 6
+        },
+        "m_span": 915,
+        "max_a_per_qr": 1,
+        "max_m_per_q": 2,
+        "max_q_per_m": 1,
+        "min_qr_minus_P": 3600,
+        "q_count": 71,
+        "support_density": 0.0014931116755175864
+      },
+      {
+        "N": 70,
+        "N_minus_R30": 61,
+        "P": 1009,
+        "R30": 9,
+        "W_int": 101,
+        "k": 1008,
+        "lpf_shells": {
+          "11": 1,
+          "13": 2,
+          "17": 1,
+          "23": 1,
+          "31": 1,
+          "37": 1,
+          "41": 1,
+          "7": 1
+        },
+        "m_span": 980,
+        "max_a_per_qr": 1,
+        "max_m_per_q": 2,
+        "max_q_per_m": 1,
+        "min_qr_minus_P": 4318,
+        "q_count": 72,
+        "support_density": 0.00143140589569161
+      }
+    ],
+    "sparsest_reciprocal_graph_row": {
+      "P": 1009,
+      "W_int": 87,
+      "k": 965,
+      "m_span": 924,
+      "q_count": 72,
+      "rectangle_hull_area": 66528,
+      "support_density_den": 66528,
+      "support_density_float": 0.0013077200577200577,
+      "support_density_num": 87
+    },
+    "total_R30": 299977,
+    "total_direct_prime_count": 4172483,
+    "total_prime_count_minus_R30": 3872506
+  },
+  "frontier_verified_date": "2026-05-23",
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LPFTailTripleRepresentation",
+      "meaning": "30-wheel residual 精确写成 q*r*a，其中 r=LPF(m)>=7 且 a 为 r-rough。",
+      "proved": true,
+      "remaining": "R30=sum_{q,r,a} 1_{kP<qra<(k+1)P}"
+    },
+    {
+      "closed": true,
+      "gate": "ReciprocalGraphThinFibers",
+      "meaning": "同一行中固定 q 至多两个 m，固定 m 至多两个 q，固定 (q,r) 至多一个 a。",
+      "proved": true,
+      "remaining": "graph-thin, not rectangular Type-II box"
+    },
+    {
+      "closed": false,
+      "gate": "QuotientFiberCancellationAvailable",
+      "meaning": "固定 (q,r) 的 a 纤维只有一个点，不能在该纤维内部产生 Type-II 抵消。",
+      "proved": false,
+      "remaining": "cancellation must run across the moving q-r graph"
+    },
+    {
+      "closed": false,
+      "gate": "FordMaynardSieveAppliesDirectly",
+      "meaning": "prime-producing sieve 需要目标序列的 Type-I/II 输入；本层只给出 exact object 与义务。",
+      "proved": false,
+      "remaining": "same-row reciprocal-window Type-II theorem required"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeCountDominatesLPFTailShellSumProved",
+      "meaning": "有限审计中 N-R30 为正，但未证明所有 P,k 的点态支配。",
+      "proved": false,
+      "remaining": "PrimeCountDominatesLPFTailShellSum"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层不证明 H_P、外部引理版或内部自足版无条件闭合。",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "internal_self_contained_closed": false,
+  "large_sample_audit": {
+    "active_residual_row_count": 6,
+    "all_m_q_reverse_fibers_have_at_most_two_points": true,
+    "all_q_m_windows_have_at_most_two_points": true,
+    "all_qr_a_fibers_have_at_most_one_point": true,
+    "all_residual_qr_steps_exceed_row_length": true,
+    "failure_rows": [],
+    "large_samples_are_evidence_not_global_proof": true,
+    "max_residual_row": {
+      "N": null,
+      "N_minus_R30": null,
+      "P": 300007,
+      "R30": 3213,
+      "W_int": 16876,
+      "k": 300006,
+      "lpf_shells": {
+        "11": 355,
+        "13": 267,
+        "17": 186,
+        "19": 151,
+        "23": 138,
+        "29": 105,
+        "31": 80,
+        "37": 69,
+        "41": 64,
+        "7": 661,
+        "other": 1137
+      },
+      "m_span": 299964,
+      "max_a_per_qr": 1,
+      "max_m_per_q": 2,
+      "max_q_per_m": 1,
+      "min_qr_minus_P": 750742,
+      "q_count": 12148,
+      "support_density": 4.631221974273835e-06
+    },
+    "minimum_prime_minus_R30_row": null,
+    "row_count": 10,
+    "sample_count": 10,
+    "sample_rows": [],
+    "sample_seeds": [
+      100000,
+      300000
+    ],
+    "sparsest_reciprocal_graph_row": {
+      "P": 300007,
+      "W_int": 16876,
+      "k": 300006,
+      "m_span": 299964,
+      "q_count": 12148,
+      "rectangle_hull_area": 3643962672,
+      "support_density_den": 3643962672,
+      "support_density_float": 4.631221974273835e-06,
+      "support_density_num": 16876
+    },
+    "total_R30": 10782,
+    "total_direct_prime_count": null,
+    "total_prime_count_minus_R30": null
+  },
+  "lpf_tail_triple_representation_closed": true,
+  "next_direct_attack_target": "SameRowReciprocalWindowTypeIIDispersionForLPFTail OR PrimeCountDominatesLPFTailShellSum OR SquarePhaseEndpointLowerBound",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prime_count_dominates_lpf_tail_shell_sum_proved": false,
+  "quotient_fiber_cancellation_available": false,
+  "reciprocal_graph_thin_fibers_closed": true,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "f50fb18bceed8645ece047eb546301ab1ed293366f14ce6ba63e24b57279a1ba",
+    "docs/monograph/external-theorem-index.md": "3a0bc213f674a13f3d82e7aae57403d81ac9c6ebe08ebe113587ed528ca77a0b",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "9220eb98821366946058b061006df6b752360e7f315dbb58e9d0adae8378cc8a",
+    "docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.json": "8d7300ff718392eef47535ea3daacd39f45e150cf4b26ba9fcbce0911b048473",
+    "docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.json": "222183794d5de930940980e7b616f7ddda3ccde6bdff782a6d5c8aa22e6d9f5a",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.json": "a5a1b831d9c0948ea8ef47939789e47f23dbde1d2d4a9d625e2652064640401a",
+    "experiments/prime_matrix_phi_lpf_lpf_tail_typeii_obligation_audit.py": "e81a2ff33b45e97bf88759e82b8705a1ca341525f49c776265da784baca649af",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "255d3378d3b5f391afda342527df8caaf2562b4485edae0836a4b5449764c525"
+  },
+  "status": "lpf_tail_reduced_to_same_row_reciprocal_graph_typeii_obligation"
+}

@@ -2081,6 +2081,104 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 62. Phi-LPF LPF tail Type-II obligation 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_tail_typeii_obligation_audit.py
+data/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.md
+```
+
+本层把 `30-wheel` 后的 LPF tail residual 写成同一行三变量对象：
+
+```text
+R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k),
+                 r=LPF(m)>=7, a>=r, a is r-rough}
+```
+
+其中
+
+```text
+I_q(P,k)=[max(q, floor(kP/q)+1), min(2P-1, floor(((k+1)P-1)/q))]
+```
+
+但这不是普通矩形 Type-II 盒。由于 `q>P/2`、`m>=q>P/2`、`r>=7`：
+
+```text
+# I_q(P,k) <= 2
+# {q: m in I_q(P,k)} <= 2
+# {a: kP<q*r*a<(k+1)P} <= 1
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+active_residual_row_count=52697
+total_R30=299977
+total_direct_prime_count=4172483
+total_prime_count_minus_R30=3872506
+all_q_m_windows_have_at_most_two_points=true
+all_m_q_reverse_fibers_have_at_most_two_points=true
+all_qr_a_fibers_have_at_most_one_point=true
+all_residual_qr_steps_exceed_row_length=true
+```
+
+代表最大 residual 行：
+
+```text
+P=971, k=936
+N=80, W_int=97, R30=23, N-R30=57
+q_count=71, m_span=915, support_density=0.00149311
+max_m_per_q=2, max_q_per_m=1, max_a_per_qr=1, min_qr_minus_P=3600
+```
+
+最稀疏 finite reciprocal graph 行：
+
+```text
+P=1009, k=965
+W_int=87
+q_count=72
+m_span=924
+rectangle_hull_area=66528
+support_density=0.0013077201
+```
+
+外部前沿验收边界：
+
+```text
+Runbo Li arXiv:2308.04458v8 theta=0.52 -> X=P^2 gives P^1.04, not P
+Ford-Maynard arXiv:2407.14368 -> useful prime-producing sieve paradigm,
+  but still requires Type-I/Type-II input for the exact target sequence
+```
+
+因此 Ford--Maynard/Heath-Brown 型路线若要进入本文，不能只引用“有 Type-II
+技术”或使用普通 rough-number 密度；必须证明同对象命题：
+
+```text
+SameRowReciprocalWindowTypeIIDispersionForLPFTail
+OR PrimeCountDominatesLPFTailShellSum
+OR SquarePhaseEndpointLowerBound
+```
+
+状态边界：
+
+```text
+lpf_tail_triple_representation_closed=true
+reciprocal_graph_thin_fibers_closed=true
+quotient_fiber_cancellation_available=false
+external_prime_producing_sieve_applies_directly=false
+prime_count_dominates_lpf_tail_shell_sum_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 61. Phi-LPF adjacent-coprime parity-trap 审计
 
 新增证书：

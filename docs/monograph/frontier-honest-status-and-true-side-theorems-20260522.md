@@ -2064,6 +2064,91 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AF：Phi-LPF LPF tail Type-II obligation 审计（2026-05-23 第三十轮）
+
+本轮接在相邻互质奇偶陷阱之后，把“需要 Type-II”从口号压成可审计对象。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_tail_typeii_obligation_audit.py
+data/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.md
+```
+
+`30-wheel` residual 的精确三变量形式为：
+
+```text
+R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k),
+                 r=LPF(m)>=7, a>=r, a is r-rough}
+```
+
+但该对象不是普通矩形 Type-II 盒，而是同一行 reciprocal graph：
+
+```text
+I_q(P,k)=[max(q, floor(kP/q)+1), min(2P-1, floor(((k+1)P-1)/q))]
+# I_q(P,k) <= 2
+# {q: m in I_q(P,k)} <= 2
+# {a: kP<q*r*a<(k+1)P} <= 1
+```
+
+有限审计：
+
+```text
+max_prime=1009
+row_count=76789
+active_residual_row_count=52697
+total_R30=299977
+total_direct_prime_count=4172483
+total_prime_count_minus_R30=3872506
+all_q_m_windows_have_at_most_two_points=true
+all_m_q_reverse_fibers_have_at_most_two_points=true
+all_qr_a_fibers_have_at_most_one_point=true
+all_residual_qr_steps_exceed_row_length=true
+```
+
+代表最大 residual 行：
+
+| P | k | N | W_int | R30 | N-R30 | q count | m span | support density | max m/q | max q/m | max a/(q,r) |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 971 | 936 | 80 | 97 | 23 | 57 | 71 | 915 | 0.00149311 | 2 | 1 | 1 |
+
+最稀疏 finite reciprocal graph 行为 `P=1009,k=965`：
+
+```text
+W_int=87
+q_count=72
+m_span=924
+rectangle_hull_area=66528
+support_density=0.0013077201
+```
+
+这是真推进：LPF tail 已经被压成精确 `q*r*a` 对象，同时也证明了 quotient
+纤维内部没有可用抵消。Ford--Maynard 型 prime-producing sieve 仍是正确的外部
+技术范型，但它要求本文对象自己的 Type-I/Type-II 输入；Runbo Li `0.52`
+短区间输入在 `X=P^2` 上仍只是 `P^1.04`，不能支付行长 `P`。
+
+当前最窄口更新为：
+
+```text
+SameRowReciprocalWindowTypeIIDispersionForLPFTail
+OR PrimeCountDominatesLPFTailShellSum
+OR SquarePhaseEndpointLowerBound
+```
+
+```text
+lpf_tail_triple_representation_closed=true
+reciprocal_graph_thin_fibers_closed=true
+quotient_fiber_cancellation_available=false
+external_prime_producing_sieve_applies_directly=false
+prime_count_dominates_lpf_tail_shell_sum_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：

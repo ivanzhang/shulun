@@ -12713,6 +12713,92 @@ OR square-phase endpoint lower bound.
 No unconditional row/column closure follows from adjacent coprimality alone.
 \end{proof}
 
+\begin{theorem}[LPF tail reciprocal-graph Type--II obligation]
+The \(30\)-wheel LPF tail residual has the exact representation
+\[
+  \begin{aligned}
+  R_{30}(P,k)=
+  \#\{(q,r,a):\ &P/2<q<P,\ q\ {\rm prime},\
+  m=ra\in I_q(P,k),\\
+  &r={\rm LPF}(m)\ge 7,\ a\ge r,\ a\ {\rm is}\ r{\rm -rough}\},
+  \end{aligned}
+\]
+where
+\[
+  I_q(P,k)=
+  \bigl[\max(q,\lfloor kP/q\rfloor+1),\
+        \min(2P-1,\lfloor((k+1)P-1)/q\rfloor)\bigr].
+\]
+This representation is a balanced \(q\)-\(m\) object in scale, but its support
+is not a rectangular Type--II box.  It is a same-row reciprocal graph with
+thin fibres:
+\[
+  \#I_q(P,k)\le 2,\qquad
+  \#\{q:m\in I_q(P,k)\}\le 2,\qquad
+  \#\{a:kP<qra<(k+1)P\}\le 1 .
+\]
+Consequently a Ford--Maynard or Heath-Brown style Type--II continuation must
+prove dispersion for this exact reciprocal graph.  It cannot be replaced by
+adjacent coprimality, ordinary rough-number density, or a rectangular bilinear
+box estimate.
+\end{theorem}
+\begin{proof}[Status and reference]
+The preceding LPF shell ledger partitions each \(30\)-wheel residual cofactor
+\(m\) by \(r={\rm LPF}(m)\).  Since the \(30\)-wheel has removed factors
+\(2,3,5\), every residual composite has \(r\ge7\) and \(m=ra\) with \(a\ge r\)
+and \(a\) \(r\)-rough.  This gives the displayed triple representation.
+
+The fibre bounds are deterministic.  For fixed \(q>P/2\), the row condition
+\(kP<qm<(k+1)P\) gives an \(m\)-interval of length \(P/q<2\), hence at most
+two integers after intersecting with the reciprocal cofactor range.  Conversely,
+for fixed \(m\ge q>P/2\), the admissible \(q\)-interval has length \(P/m<2\).
+Finally, for fixed \(q\) and \(r\), the admissible \(a\)-interval has length
+\[
+  \frac{P}{qr}<1,
+\]
+because \(q>P/2\) and \(r\ge7\).  Thus each \((q,r)\)-fibre contains at most
+one \(a\).  In particular there is no quotient-fibre cancellation to harvest
+inside a single \((q,r)\) line; any Type--II cancellation must run across the
+moving reciprocal graph itself.
+
+The machine certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-lpf-tail-\\
+typeii-obligation-audit.md.
+\end{quote}
+For \(P\le1009\) it records
+\begin{quote}\scriptsize\ttfamily
+row\_count=76789\\
+active\_residual\_row\_count=52697\\
+total\_R30=299977\\
+total\_direct\_prime\_count=4172483\\
+total\_prime\_count\_minus\_R30=3872506\\
+all\_q\_m\_windows\_have\_at\_most\_two\_points=true\\
+all\_m\_q\_reverse\_fibers\_have\_at\_most\_two\_points=true\\
+all\_qr\_a\_fibers\_have\_at\_most\_one\_point=true.
+\end{quote}
+For the maximum finite residual row \(P=971,k=936\), it gives
+\[
+  N=80,\qquad W_{\rm int}=97,\qquad R_{30}=23,\qquad N-R_{30}=57,
+\]
+with \(q\)-count \(71\), \(m\)-span \(915\), and reciprocal-graph support
+density \(0.00149311\) inside its rectangular hull.  The sparsest finite graph
+recorded in the audit is \(P=1009,k=965\), with density \(0.0013077201\).
+
+The external-theorem boundary is unchanged: a Runbo Li \(x^{0.52}\)-level
+pointwise short-interval input still gives length \(P^{1.04}\) at \(x=P^2\),
+not the row length \(P\); a Ford--Maynard prime-producing sieve framework is
+relevant only after Type--I/Type--II estimates are supplied for this exact
+sequence.  The narrowed non-circular target is therefore
+\begin{quote}\scriptsize\ttfamily
+SameRowReciprocalWindowTypeIIDispersionForLPFTail\\
+OR PrimeCountDominatesLPFTailShellSum\\
+OR SquarePhaseEndpointLowerBound.
+\end{quote}
+No unconditional row/column closure follows from this Type--II obligation
+ledger alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for
