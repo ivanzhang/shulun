@@ -1,0 +1,212 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_lpf_bucket_completion_bridge_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "QSupportUniqueOddCandidateLPFBucketNormalForm",
+      "meaning": "The actual q-support predicate is exactly a unique LPF bucket over the odd candidate omega_{P,k}(q).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "RoughMobiusLPFBucketIdentityForQSupport",
+      "meaning": "The LPF bucket can be written as a rough-Mobius inner sum over primes below r.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "SparseProductWindowGraphNormalForm",
+      "meaning": "Every support term is a sparse product-window triple (q,r,beta) with max reverse prime multiplicity one.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveDenseDyadicConvolutionCompletionRejected",
+      "meaning": "The product-window graph is sparse and pointwise; treating it as a dense completed convolution would add non-object terms.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "SparseLPFBucketProductWindowGraphToCompletedKloostermanConvolutionBridge",
+      "meaning": "Construct a same-object bridge from sparse product-window triples to a completed bilinear/trilinear Kloosterman family.",
+      "proved": false,
+      "remaining": "new bridge theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RoughBetaSiegelWalfiszUniformityOrReplacement",
+      "meaning": "Provide the SW/equidistribution factor required by external trilinear theorems, or replace it by an object-specific theorem.",
+      "proved": false,
+      "remaining": "rough beta uniformity input"
+    }
+  ],
+  "current_object": {
+    "lpf_bucket_formula": "1_S(q)=sum_{7<=r<=sqrt(omega), r prime, r|omega} 1_{P^-(omega)>=r} 1_{omega/r>=r}",
+    "phase_sum": "sum_{q in S(P,k)} e(h*kP/q)",
+    "product_window_shape": "kP < q*r*beta < (k+1)P with beta=omega/r and P^-(beta)>=r",
+    "rough_mobius_inner_sum": "1_{P^-(omega)>=r}=sum_{d|omega, P^+(d)<r} mu(d)",
+    "support_predicate": "q in S(P,k) iff the unique odd candidate omega_{P,k}(q) is composite with LPF(omega)>=7"
+  },
+  "dense_completed_convolution_available": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_implication": {
+    "Ford_Maynard_2024": "still requires object-specific Type-I/II inputs before sieve positivity",
+    "Milicevic_Qin_Wu_2025": "still requires admissible bilinear Kloosterman coefficients",
+    "Pascadi_2025": "still requires Type-II organisation over the target modulus family",
+    "Wright_2026": "still requires completed convolution plus equidistributed/SW factor"
+  },
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_support_equals_lpf_bucket_terms": true,
+    "bad_bucket_formula_total": 0,
+    "bad_candidate_count": 0,
+    "bad_reverse_window_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_prime": 1009,
+    "max_reverse_prime_count_per_lpf_bucket": 1,
+    "max_terms_per_candidate": 1,
+    "r_bucket_totals": {
+      "7": 96700,
+      "11": 52080,
+      "13": 44104,
+      "17": 34414,
+      "19": 29723,
+      "23": 22368,
+      "29": 11815,
+      "31": 6916,
+      "37": 1559,
+      "41": 262,
+      "43": 36
+    },
+    "reverse_prime_multiplicity_row_histogram": {
+      "0": 24257,
+      "1": 52697
+    },
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "bad_bucket_formula": 0,
+        "bad_candidate_count": 0,
+        "bad_reverse_window": 0,
+        "k": 100,
+        "lpf_bucket_terms_total": 1,
+        "max_reverse_prime_count": 1,
+        "max_terms_per_candidate": 1,
+        "odd_candidate_count": 7,
+        "prime_q_count": 10,
+        "r_bucket_totals": {
+          "11": 1
+        },
+        "residual_support_count": 1,
+        "sample_terms": "q=71,omega=143,r=11,beta=13,reverse_prime_count=1"
+      },
+      {
+        "P": 257,
+        "bad_bucket_formula": 0,
+        "bad_candidate_count": 0,
+        "bad_reverse_window": 0,
+        "k": 256,
+        "lpf_bucket_terms_total": 3,
+        "max_reverse_prime_count": 1,
+        "max_terms_per_candidate": 1,
+        "odd_candidate_count": 16,
+        "prime_q_count": 23,
+        "r_bucket_totals": {
+          "11": 1,
+          "13": 1,
+          "19": 1
+        },
+        "residual_support_count": 3,
+        "sample_terms": "q=137,omega=481,r=13,beta=37,reverse_prime_count=1; q=151,omega=437,r=19,beta=23,reverse_prime_count=1; q=193,omega=341,r=11,beta=31,reverse_prime_count=1"
+      },
+      {
+        "P": 971,
+        "bad_bucket_formula": 0,
+        "bad_candidate_count": 0,
+        "bad_reverse_window": 0,
+        "k": 936,
+        "lpf_bucket_terms_total": 23,
+        "max_reverse_prime_count": 1,
+        "max_terms_per_candidate": 1,
+        "odd_candidate_count": 49,
+        "prime_q_count": 71,
+        "r_bucket_totals": {
+          "7": 6,
+          "11": 4,
+          "13": 2,
+          "17": 6,
+          "19": 1,
+          "23": 2,
+          "37": 1,
+          "41": 1
+        },
+        "residual_support_count": 23,
+        "sample_terms": "q=491,omega=1853,r=17,beta=109,reverse_prime_count=1; q=503,omega=1807,r=13,beta=139,reverse_prime_count=1; q=523,omega=1739,r=37,beta=47,reverse_prime_count=1; q=541,omega=1681,r=41,beta=41,reverse_prime_count=1; q=557,omega=1633,r=23,beta=71,reverse_prime_count=1"
+      },
+      {
+        "P": 1009,
+        "bad_bucket_formula": 0,
+        "bad_candidate_count": 0,
+        "bad_reverse_window": 0,
+        "k": 1008,
+        "lpf_bucket_terms_total": 9,
+        "max_reverse_prime_count": 1,
+        "max_terms_per_candidate": 1,
+        "odd_candidate_count": 54,
+        "prime_q_count": 72,
+        "r_bucket_totals": {
+          "7": 1,
+          "11": 1,
+          "13": 2,
+          "17": 1,
+          "23": 1,
+          "31": 1,
+          "37": 1,
+          "41": 1
+        },
+        "residual_support_count": 9,
+        "sample_terms": "q=563,omega=1807,r=13,beta=139,reverse_prime_count=1; q=577,omega=1763,r=41,beta=43,reverse_prime_count=1; q=617,omega=1649,r=17,beta=97,reverse_prime_count=1; q=647,omega=1573,r=11,beta=143,reverse_prime_count=1; q=743,omega=1369,r=37,beta=37,reverse_prime_count=1"
+      }
+    ],
+    "total_lpf_bucket_terms": 299977,
+    "total_odd_candidate_instances": 1266932,
+    "total_prime_q_instances": 3874554,
+    "total_residual_support_instances": 299977
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "SparseLPFBucketProductWindowGraphToCompletedKloostermanConvolutionBridge",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "lpf_bucket_normal_form_closed": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "the q-support completion bridge is the narrowest non-cyclic continuation after external theorem matching",
+  "rough_mobius_identity_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_object_kloosterman_bridge_closed": false,
+  "siegel_walfisz_factor_extracted": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "3f47ae64d28538d53b1d6a6a78ea04e84ef473782b2069fdc6de297d41584672",
+    "docs/monograph/external-theorem-index.md": "e1386f5244b2080a9f6adf0e3c3fca9b85dfe95bdbbd8a6cf8709e4690f6691f",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "2823501fbbde74b9a9ea50a1343b27a0d5e00a200abb656a12bea9a946fd681f",
+    "docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.json": "0803e05dc11dd0dd915fe44b117b1290e029ec95dc5e5d4d8cad3c76153b91b9",
+    "docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.json": "4ef03e80896b965cdb5526ad2c6df53a3754823850e0a07f19dd8adb275c936d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-external-theorem-match-audit.json": "e6936bbdce216ed8cd3ba420879c5c8185cbb11cce55ab221f2d7ab33cd204ed",
+    "experiments/prime_matrix_phi_lpf_qsupport_lpf_bucket_completion_bridge_audit.py": "94e2ed2e5ca0bb08359262689875b663e953044ae6c2aae4e01392594f5a42f6",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "96f201d1fd9aa925ab36c353c1dd4d55206e523b1fd260927650cb975ebd7f68"
+  },
+  "sparse_product_window_normal_form_closed": true,
+  "status": "lpf_bucket_normal_form_closed_completion_bridge_open"
+}

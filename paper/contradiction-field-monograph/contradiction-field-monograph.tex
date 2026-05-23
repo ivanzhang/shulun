@@ -31909,6 +31909,88 @@ external-theorem-match-audit.md.
 \end{quote}
 \end{remark}
 
+\section{LPF bucket normal form for the prime-q support}
+
+\begin{theorem}[Prime-\(q\) support has a unique LPF bucket]
+Fix \(P,k\) and a prime \(q\in(P/2,P)\).  Let
+\(\omega_{P,k}(q)\) denote the unique odd integer, if it exists, in
+the clipped \(q\)-cofactor window
+\[
+  \max(q,\lfloor kP/q\rfloor+1)
+  \le m \le
+  \min(2P-1,\lfloor((k+1)P-1)/q\rfloor).
+\]
+Then
+\[
+  q\in S(P,k)
+\]
+if and only if \(\omega_{P,k}(q)\) exists, is composite, and has least
+prime factor at least \(7\).  Equivalently, there is a unique prime
+\(r\ge7\) and an integer \(\beta\) such that
+\[
+  \omega_{P,k}(q)=r\beta,\qquad
+  r=\operatorname{LPF}(\omega_{P,k}(q)),\qquad
+  \beta\ge r,\qquad \operatorname{LPF}(\beta)\ge r .
+\]
+\end{theorem}
+\begin{proof}
+Since \(q>P/2\), the unclipped interval has length \(P/q<2\).  Thus
+the clipped window contains at most two consecutive integers and hence
+at most one odd candidate.  The residual Phi--LPF support is exactly
+the composite cofactor support left after removing
+the \(2,3,5\) forced-composite classes and the prime cofactor class.
+Thus membership is equivalent to being composite with least prime
+factor at least \(7\).  Writing \(r\) for that least prime factor gives
+the displayed factorisation, and uniqueness follows from uniqueness of
+least prime factor.
+\end{proof}
+
+\begin{corollary}[Rough-Mobius LPF bucket identity]
+For the same odd candidate \(\omega\),
+\[
+  1_{S(P,k)}(q)
+  =
+  \sum_{\substack{7\le r\le \sqrt{\omega}\\ r\ {\rm prime}\\ r\mid \omega}}
+  1_{P^{-}(\omega)\ge r}\,1_{\omega/r\ge r},
+\]
+where
+\[
+  1_{P^{-}(\omega)\ge r}
+  =
+  \sum_{\substack{d\mid \omega\\ P^{+}(d)<r}}\mu(d).
+\]
+Each non-zero term gives a sparse product-window triple
+\[
+  kP<q\,r\,\beta<(k+1)P,\qquad \beta=\omega/r,\qquad P^{-}(\beta)\ge r.
+\]
+\end{corollary}
+
+\begin{remark}[What the LPF bucket does and does not close]
+The LPF bucket normal form is a genuine deterministic advance: it
+removes any remaining ambiguity in the \(q\)-support predicate.  It
+also shows why the next bridge is still nontrivial.  The product-window
+triples form a sparse same-row graph; filling them into a dense dyadic
+convolution would introduce non-object terms.  Therefore the external
+Kloosterman inputs still require a same-object bridge to a completed
+bilinear or trilinear family, together with a Siegel--Walfisz or
+replacement uniformity input for the rough \(\beta\)-factor.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+SparseLPFBucketProductWindowGraphToCompletedKloostermanConvolutionBridge\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+lpf-bucket-completion-bridge-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

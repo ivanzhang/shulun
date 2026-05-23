@@ -1865,6 +1865,111 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q6：Phi-LPF q-support LPF bucket completion bridge 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_lpf_bucket_completion_bridge_audit.py
+data/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已经把外部 theorem-match 完成，但
+同对象 completion bridge 仍未闭合；因此本层先把 q-support 谓词本身压到
+LPF 桶级别。
+
+### Q6.1 LPF 桶正规形
+
+对每个 `q prime in (P/2,P)`，q 侧 clipped 窗口至多含一个奇候选
+`omega_{P,k}(q)`。残余支撑等价于：
+
+```text
+q in S(P,k)
+iff omega_{P,k}(q) is composite and LPF(omega_{P,k}(q))>=7
+iff omega=r*beta, r=LPF(omega)>=7, beta>=r, LPF(beta)>=r
+```
+
+对应 rough-Mobius 内层为：
+
+```text
+1_{P^-(omega)>=r}
+  = sum_{d|omega, P^+(d)<r} mu(d)
+```
+
+于是每个 support term 变成 sparse product-window triple：
+
+```text
+kP < q*r*beta < (k+1)P
+q prime, r prime, beta r-rough
+```
+
+### Q6.2 有限审计
+
+有限实现 `P<=1009, 1<=k<P` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_odd_candidate_instances=1266932
+total_residual_support_instances=299977
+total_lpf_bucket_terms=299977
+actual_support_equals_lpf_bucket_terms=true
+max_terms_per_candidate=1
+max_reverse_prime_count_per_lpf_bucket=1
+bad_candidate_count=0
+bad_bucket_formula_total=0
+bad_reverse_window_total=0
+```
+
+LPF 桶分布：
+
+```text
+{7:96700, 11:52080, 13:44104, 17:34414, 19:29723,
+ 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+```
+
+这关闭了“q-support 支撑还未原子化”的口，并确认反向固定 `r*beta`
+后 prime-q 重数最大为 `1`。
+
+### Q6.3 仍未闭合的桥
+
+本层也排除一个伪出口：不能把 sparse product-window graph 直接填充成
+外部 Kloosterman theorem 所需的密集 completed dyadic convolution。填充会加入
+非同对象项；而 Wright 2026、Milićević--Qin--Wu 2025、Pascadi 2025 与
+Ford--Maynard 2024 仍分别需要 completed convolution、admissible coefficients、
+Type-II organisation 或 object-specific Type-I/II inputs。
+
+最新最窄口：
+
+```text
+SparseLPFBucketProductWindowGraphToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+lpf_bucket_normal_form_closed=true
+rough_mobius_identity_closed=true
+sparse_product_window_normal_form_closed=true
+dense_completed_convolution_available=false
+siegel_walfisz_factor_extracted=false
+same_object_kloosterman_bridge_closed=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q5：Phi-LPF weight extraction norm closure 审计（2026-05-23）
 
 新增证书：

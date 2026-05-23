@@ -2172,6 +2172,114 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 60. Phi-LPF q-support LPF bucket completion bridge 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_lpf_bucket_completion_bridge_audit.py
+data/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-lpf-bucket-completion-bridge-audit.md
+```
+
+上一层把当前对象压成：
+
+```text
+sum_{q in S(P,k)} e(h*kP/q)
+```
+
+本层继续把支撑谓词原子化。对每个 `q prime in (P/2,P)`，q 侧
+clipped 窗口至多含一个奇候选 `omega_{P,k}(q)`。于是：
+
+```text
+q in S(P,k)
+iff omega_{P,k}(q) is composite and LPF(omega_{P,k}(q))>=7
+iff omega=r*beta, r=LPF(omega)>=7, beta>=r, LPF(beta)>=r
+```
+
+对应 rough-Mobius 桶公式为：
+
+```text
+1_S(q)=sum_{7<=r<=sqrt(omega), r prime, r|omega}
+       1_{P^-(omega)>=r} 1_{omega/r>=r}
+
+1_{P^-(omega)>=r}
+  = sum_{d|omega, P^+(d)<r} mu(d)
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+total_prime_q_instances=3874554
+total_odd_candidate_instances=1266932
+total_residual_support_instances=299977
+total_lpf_bucket_terms=299977
+actual_support_equals_lpf_bucket_terms=true
+max_terms_per_candidate=1
+max_reverse_prime_count_per_lpf_bucket=1
+bad_candidate_count=0
+bad_bucket_formula_total=0
+bad_reverse_window_total=0
+```
+
+LPF 桶分布：
+
+```text
+{7:96700, 11:52080, 13:44104, 17:34414, 19:29723,
+ 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+```
+
+因此每个 support term 都是稀疏 product-window 三元组：
+
+```text
+kP < q*r*beta < (k+1)P
+q prime, r prime, beta r-rough
+```
+
+并且反向固定 `r*beta` 后 prime-q 重数最大为 `1`。这是真推进：
+它关闭了 q-support 谓词未原子化的口。但它同时排除一个伪出口：
+不能把该稀疏图直接填充为外部 Kloosterman theorem 所需的密集 completed
+dyadic convolution；填充会加入非同对象项。
+
+新的最新最窄口：
+
+```text
+SparseLPFBucketProductWindowGraphToCompletedKloostermanConvolutionBridge
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部定理状态：
+
+```text
+Wright 2026: still requires completed convolution plus SW/equidistribution factor
+Milićević--Qin--Wu 2025: still requires admissible bilinear coefficients
+Pascadi 2025: still requires target Type-II organisation
+Ford--Maynard 2024: still requires object-specific Type-I/II inputs
+```
+
+状态边界：
+
+```text
+lpf_bucket_normal_form_closed=true
+rough_mobius_identity_closed=true
+sparse_product_window_normal_form_closed=true
+dense_completed_convolution_available=false
+siegel_walfisz_factor_extracted=false
+same_object_kloosterman_bridge_closed=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65. Phi-LPF reciprocal graph Kloosterman gateway 审计
 
 新增证书：
