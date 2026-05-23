@@ -31778,6 +31778,76 @@ rough-factor-tree-closure-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Complete leaf phase collapse}
+
+\begin{proposition}[Next deterministic phase-collapse gate]
+After the complete rough factor tree has been formed, the next
+deterministic subgate is
+\[
+  \texttt{CompleteLeafPhaseCollapseToPrimeQSupport}.
+\]
+It removes the possibility of extracting cancellation from the internal
+LPF factor chain at fixed \(q\).
+\end{proposition}
+
+\begin{theorem}[Complete leaf phase depends only on \(q\)]
+Let \((q,m)\) be any complete rough-factor leaf edge and put
+\[
+  D=qm-kP.
+\]
+Then
+\[
+  D\equiv -kP \pmod q.
+\]
+Consequently, for every integer \(h\),
+\[
+  e(-hD/q)=e(hkP/q).
+\]
+Thus the matched displacement phase of a complete leaf is independent
+of the factor chain of \(m\).
+\end{theorem}
+\begin{proof}
+The congruence is immediate from \(D=qm-kP\), since \(qm\equiv0\pmod q\).
+For the phase identity,
+\[
+  e(-hD/q)
+  =
+  e(-h(qm-kP)/q)
+  =
+  e(-hm)\,e(hkP/q)
+  =
+  e(hkP/q),
+\]
+because \(h\) and \(m\) are integers.
+\end{proof}
+
+\begin{corollary}[No internal factor-tree oscillation]
+The complete rough factor tree only changes whether a prime \(q\) lies
+in the residual support.  It does not create additional oscillation
+inside the leaves over a fixed \(q\).  Therefore complete-leaf phase
+saving is reduced to signed control of the actual prime-\(q\) support
+set.
+\end{corollary}
+
+\begin{remark}[Updated true remaining mouth after phase collapse]
+The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is an object-sensitive theorem for the actual prime-\(q\)
+support set, or an exact completion of that support-set reciprocal
+phase to an external Kloosterman/Vaughan Type-II estimate without
+losing pointwise control in \(P,k\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-complete-\\
+leaf-phase-collapse-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

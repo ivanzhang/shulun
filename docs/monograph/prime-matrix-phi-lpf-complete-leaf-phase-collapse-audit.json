@@ -1,0 +1,296 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_complete_leaf_phase_collapse_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "CompleteLeafPhaseDependsOnlyOnPrimeQ",
+      "meaning": "The matched displacement phase of every complete leaf equals e(h*kP/q).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "NoInternalFactorTreeOscillation",
+      "meaning": "The LPF factor chain changes support membership, not the phase at fixed q.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "LeafTreePhaseSavingReducedToPrimeQSupportPhase",
+      "meaning": "Complete-leaf phase saving is reduced to cancellation/separation over the prime-q support set.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQSupportSetReciprocalPhaseSavingBeyondParity",
+      "meaning": "Prove nontrivial signed control of the actual q-support set, not an arbitrary subset.",
+      "proved": false,
+      "remaining": "object-sensitive q-support theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the q-support reciprocal phase to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "complete_leaf_phase_collapsed": true,
+  "external_frontier_match_table": [
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "this layer shows the leaf phase is q-only; it does not yet provide the required completion identity",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550",
+      "useful_part": "possible target after converting the q-support reciprocal phase into a genuine bilinear Kloosterman family",
+      "verified_status": "power-saving estimates for general bilinear Kloosterman forms modulo arbitrary q"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "the present object is a prime-denominator support phase, not the input Type-II family",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445",
+      "useful_part": "candidate only after the q-support phase is reorganised into Type-II sums",
+      "verified_status": "Type-II Kloosterman sums with composite moduli via non-abelian amplification"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "q-only reciprocal phase is still not their completed parameter family",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113",
+      "useful_part": "possible comparison after a bridge from LPF support to completed square-free/smooth parameter sums",
+      "verified_status": "Kloosterman sums over square-free and smooth integer parameters; Cambridge version online in 2025"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "does not automatically verify Type-I/II estimates for this q-support set",
+      "source": "Ford--Maynard 2024 arXiv:2407.14368",
+      "source_url": "https://arxiv.org/abs/2407.14368",
+      "useful_part": "guidance for the support-set theorem one would need",
+      "verified_status": "prime-producing sieve framework with required Type-I/II hypotheses"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_factor_leaves_valid": true,
+    "all_predicted_displacements_in_1_to_Pminus1": true,
+    "bad_displacement_total": 0,
+    "bad_factor_leaf_total": 0,
+    "bad_phase_residue_total": 0,
+    "depth_totals": {
+      "2": 274812,
+      "3": 25165
+    },
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "leaf_signature_top20": {
+      "11*67": 3160,
+      "11*71": 3169,
+      "11*73": 3115,
+      "13*53": 3159,
+      "13*59": 3182,
+      "13*61": 3139,
+      "17*41": 3157,
+      "17*43": 3151,
+      "17*47": 3133,
+      "19*37": 3173,
+      "19*41": 3178,
+      "23*29": 3134,
+      "23*31": 3161,
+      "7*101": 3148,
+      "7*103": 3165,
+      "7*107": 3173,
+      "7*109": 3204,
+      "7*113": 3145,
+      "7*7*17": 3114,
+      "7*97": 3162
+    },
+    "max_phase_residue_count_per_q": 1,
+    "max_prime": 1009,
+    "max_q_leaf_multiplicity": 1,
+    "phase_residue_q_only_for_every_leaf": true,
+    "q_multiplicity_totals": {
+      "1": 299977
+    },
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_displacement_count": 0,
+        "bad_factor_leaf_count": 0,
+        "bad_phase_residue_count": 0,
+        "depth_counter": {
+          "2": 1
+        },
+        "k": 100,
+        "leaf_signature_counter": {
+          "11*13": 1
+        },
+        "max_phase_residue_count_per_q": 1,
+        "max_q_leaf_multiplicity": 1,
+        "q_multiplicity_counter": {
+          "1": 1
+        },
+        "samples": "q=71,m=143,D=53,Dmodq=53,expected=53,phase=e(h*kP/q),factors=11*13",
+        "support_q_count": 1
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_displacement_count": 0,
+        "bad_factor_leaf_count": 0,
+        "bad_phase_residue_count": 0,
+        "depth_counter": {
+          "2": 3
+        },
+        "k": 256,
+        "leaf_signature_counter": {
+          "11*31": 1,
+          "13*37": 1,
+          "19*23": 1
+        },
+        "max_phase_residue_count_per_q": 1,
+        "max_q_leaf_multiplicity": 1,
+        "q_multiplicity_counter": {
+          "1": 3
+        },
+        "samples": "q=151,m=437,D=195,Dmodq=44,expected=44,phase=e(h*kP/q),factors=19*23 | q=193,m=341,D=21,Dmodq=21,expected=21,phase=e(h*kP/q),factors=11*31 | q=137,m=481,D=105,Dmodq=105,expected=105,phase=e(h*kP/q),factors=13*37",
+        "support_q_count": 3
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_displacement_count": 0,
+        "bad_factor_leaf_count": 0,
+        "bad_phase_residue_count": 0,
+        "depth_counter": {
+          "2": 21,
+          "3": 2
+        },
+        "k": 936,
+        "leaf_signature_counter": {
+          "11*107": 1,
+          "11*11*11": 1,
+          "11*131": 1,
+          "11*89": 1,
+          "13*113": 1,
+          "13*139": 1,
+          "17*109": 1,
+          "17*59": 1,
+          "17*61": 1,
+          "17*73": 1,
+          "17*79": 1,
+          "17*89": 1,
+          "19*59": 1,
+          "23*43": 1,
+          "23*71": 1,
+          "37*47": 1,
+          "41*41": 1,
+          "7*13*13": 1,
+          "7*157": 1,
+          "7*163": 1,
+          "7*173": 1,
+          "7*193": 1,
+          "7*199": 1
+        },
+        "max_phase_residue_count_per_q": 1,
+        "max_q_leaf_multiplicity": 1,
+        "q_multiplicity_counter": {
+          "1": 23
+        },
+        "samples": "q=673,m=1351,D=367,Dmodq=367,expected=367,phase=e(h*kP/q),factors=7*193 | q=677,m=1343,D=355,Dmodq=355,expected=355,phase=e(h*kP/q),factors=17*79 | q=919,m=989,D=35,Dmodq=35,expected=35,phase=e(h*kP/q),factors=23*43 | q=523,m=1739,D=641,Dmodq=118,expected=118,phase=e(h*kP/q),factors=37*47 | q=683,m=1331,D=217,Dmodq=217,expected=217,phase=e(h*kP/q),factors=11*11*11 | q=491,m=1853,D=967,Dmodq=476,expected=476,phase=e(h*kP/q),factors=17*109",
+        "support_q_count": 23
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_displacement_count": 0,
+        "bad_factor_leaf_count": 0,
+        "bad_phase_residue_count": 0,
+        "depth_counter": {
+          "2": 8,
+          "3": 1
+        },
+        "k": 1008,
+        "leaf_signature_counter": {
+          "11*11*13": 1,
+          "13*139": 1,
+          "13*79": 1,
+          "17*97": 1,
+          "23*47": 1,
+          "31*37": 1,
+          "37*37": 1,
+          "41*43": 1,
+          "7*191": 1
+        },
+        "max_phase_residue_count_per_q": 1,
+        "max_q_leaf_multiplicity": 1,
+        "q_multiplicity_counter": {
+          "1": 9
+        },
+        "samples": "q=991,m=1027,D=685,Dmodq=685,expected=685,phase=e(h*kP/q),factors=13*79 | q=941,m=1081,D=149,Dmodq=149,expected=149,phase=e(h*kP/q),factors=23*47 | q=743,m=1369,D=95,Dmodq=95,expected=95,phase=e(h*kP/q),factors=37*37 | q=617,m=1649,D=361,Dmodq=361,expected=361,phase=e(h*kP/q),factors=17*97 | q=761,m=1337,D=385,Dmodq=385,expected=385,phase=e(h*kP/q),factors=7*191 | q=887,m=1147,D=317,Dmodq=317,expected=317,phase=e(h*kP/q),factors=31*37",
+        "support_q_count": 9
+      }
+    ],
+    "support_q_total": 299977,
+    "support_q_total_equals_edge_total": true
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_factor_tree_oscillation_available": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQSupportSetReciprocalPhaseSavingBeyondParity",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phase_collapse_theorem": {
+    "congruence": "For every complete leaf edge, D=q*m-kP satisfies D == -kP (mod q).",
+    "no_internal_leaf_oscillation": "Leaves with the same q have the same phase; in fact the audited residual graph has max q-leaf multiplicity 1.",
+    "not_enough": "The remaining hard point is nontrivial control of the prime-q support set, or a completion to external Kloosterman/Vaughan Type-II estimates.",
+    "phase_identity": "For every integer h, e(-hD/q)=e(h*kP/q).",
+    "support_form": "The complete factor tree only supplies a 0/1 prime-q support set in the audited row model."
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "q_support_phase_saving_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "83f6ee3da605f3c403e805df1f3cfa11ed1c26c69627360fd8cb72b2c0f85e99",
+    "docs/monograph/external-theorem-index.md": "eb80454f08613640f6b69961a4987994d13360cc2d884b0c2431f2607c1d12b6",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "edf633711d9ab47cf36ae4044beca4e13addd86997135c49d9b571b97c41cc0e",
+    "docs/monograph/prime-matrix-phi-lpf-complete-rough-factor-tree-closure-audit.json": "4ef03e80896b965cdb5526ad2c6df53a3754823850e0a07f19dd8adb275c936d",
+    "docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.json": "e03c5fe6e82cf8468cd60676b987ccd076e131d4a5a3dc67e6bfcd791d5d900e",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_complete_leaf_phase_collapse_audit.py": "3bfe8ee9722fdf459603522d4317b6e9b5a120d34222060b791e02f0152c6764",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "0a169e464e0fba5f82be12b2543091d0fd505e570bac03fc3daabd8d287508fe"
+  },
+  "status": "complete_leaf_phase_collapsed_to_prime_q_support_phase_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "CompleteLeafPhaseCollapseToPrimeQSupport",
+      "frontier_before": [
+        "PrimeQCompleteRoughFactorTreeLeafPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "the complete leaf phase has an immediate q-only congruence, so internal factor-tree oscillation is not a real source of saving"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "no faster deterministic phase-collapse gate than the current Phi-LPF leaf phase"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "not a same-object leaf-phase gate"
+    }
+  ]
+}

@@ -4020,6 +4020,91 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 79. Phi-LPF complete leaf phase collapse 审计
+
+本层继续选择行/列 Phi-LPF 的最快可闭合子门：
+
+```text
+experiments/prime_matrix_phi_lpf_complete_leaf_phase_collapse_audit.py
+data/prime-matrix-phi-lpf-complete-leaf-phase-collapse-ledger.json
+docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.json
+docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.md
+```
+
+上一层已经把 residual object 写成完整粗因子叶子。本层关闭相位塌缩：
+
+```text
+D=qm-kP
+D == -kP (mod q)
+e(-hD/q)=e(h*kP/q)
+```
+
+因此完整因子树不提供固定 `q` 内部振荡；它只决定 prime-q 支撑集合。
+本层关闭：
+
+```text
+CompleteLeafPhaseDependsOnlyOnPrimeQ
+NoInternalFactorTreeOscillation
+LeafTreePhaseSavingReducedToPrimeQSupportPhase
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+support_q_total=299977
+support_q_total_equals_edge_total=true
+max_q_leaf_multiplicity=1
+q_multiplicity_totals={1:299977}
+max_phase_residue_count_per_q=1
+phase_residue_q_only_for_every_leaf=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_factor_leaves_valid=true
+bad_phase_residue_total=0
+bad_displacement_total=0
+bad_factor_leaf_total=0
+```
+
+外部前沿匹配：
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  possible target only after converting the q-support reciprocal phase
+  into a genuine bilinear Kloosterman family.
+
+Pascadi 2025 arXiv:2511.08445:
+  candidate only after reorganising the q-support phase into Type-II sums.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  relevant only after a bridge to completed square-free/smooth parameter sums.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  prime-producing sieve guidance, but it does not verify Type-I/II
+  estimates for this q-support set.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+complete_leaf_phase_collapsed=true
+internal_factor_tree_oscillation_available=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

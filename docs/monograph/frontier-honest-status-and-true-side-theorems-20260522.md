@@ -3083,6 +3083,101 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q16：Phi-LPF complete leaf phase collapse 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_complete_leaf_phase_collapse_audit.py
+data/prime-matrix-phi-lpf-complete-leaf-phase-collapse-ledger.json
+docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.json
+docs/monograph/prime-matrix-phi-lpf-complete-leaf-phase-collapse-audit.md
+```
+
+上一层已经把 residual object 写成完整粗因子叶子。本层关闭一个关键相位门：
+
+```text
+D=qm-kP
+D≡-kP (mod q)
+e(-hD/q)=e(h*kP/q).
+```
+
+所以 LPF 因子链本身不再提供固定 `q` 内部振荡；完整叶子树只决定
+prime-q 支撑集合。
+
+本层关闭：
+
+```text
+CompleteLeafPhaseDependsOnlyOnPrimeQ
+NoInternalFactorTreeOscillation
+LeafTreePhaseSavingReducedToPrimeQSupportPhase
+```
+
+### Q16.1 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+support_q_total=299977
+support_q_total_equals_edge_total=true
+max_q_leaf_multiplicity=1
+q_multiplicity_totals={1:299977}
+max_phase_residue_count_per_q=1
+phase_residue_q_only_for_every_leaf=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_factor_leaves_valid=true
+bad_phase_residue_total=0
+bad_displacement_total=0
+bad_factor_leaf_total=0
+```
+
+有限审计只验证实现与账本一致性；全局相位塌缩来自恒等式 `D=qm-kP`。
+
+### Q16.2 外部前沿匹配
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550,
+Pascadi 2025 arXiv:2511.08445,
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  still candidate inputs only after a valid completion/Kloosterman bridge
+  from the q-support reciprocal phase.
+
+Ford--Maynard 2024 arXiv:2407.14368:
+  useful prime-producing sieve guidance, but still requires object-specific
+  Type-I/II estimates for this exact q-support set.
+```
+
+### Q16.3 最新最窄口
+
+从上一层：
+
+```text
+PrimeQCompleteRoughFactorTreeLeafPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+complete_leaf_phase_collapsed=true
+internal_factor_tree_oscillation_available=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial
