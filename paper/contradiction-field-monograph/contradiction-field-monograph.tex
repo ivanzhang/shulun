@@ -29022,6 +29022,65 @@ docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Parity-Breaking Candidate Source Audit}
+
+\begin{externalstatement}[Five-gate audit for parity-breaking candidates]
+As of 2026-05-23, no currently imported parity-breaking candidate supplies a
+direct unconditional row/column closure for the Prime Matrix endpoint.  The
+audit requires five simultaneous gates:
+\begin{quote}\scriptsize\ttfamily
+PrimeObjectNotP2AlmostPrime\\
+SquareScaleWindowOrP2ColumnCompatibility\\
+RigidPointwiseGridOrFixedPrimeModulusZeroException\\
+SameObjectNonlinearActualSourceConstructorBeforeProjection\\
+UnconditionalPublishedOrIndependentlyAcceptedInput.
+\end{quote}
+Li--Zhang--Cai's \(P_2\) arithmetic-progression result enters the \(P^2\)
+square but has the wrong parity object.  Friedlander--Iwaniec supplies a
+genuine nonlinear prime-producing model, but for the different
+\(X^2+Y^4\) object.  BFI/DI/Kuznetsov/Maynard technologies supply dispersion,
+spectral, or multidimensional-sieve tools, but not a fixed \(q=P\)
+zero-exception theorem for every reduced residue class and not the present
+same-object actual-source constructor.  Ford--Maynard prime-producing sieve
+theory is retained as design guidance for a future constructor, not as a
+ready-made Prime Matrix theorem.
+\end{externalstatement}
+
+\begin{proof}
+The verification is a gate-by-gate theorem-match audit.  A valid import must
+produce primes, not merely \(P_2\) almost-primes; it must land inside the
+strict \(P^2\) square; it must be pointwise on the rigid \(P\)-row grid or on
+every nonzero class modulo the fixed prime \(P\); and it must emit the same
+actual source before projection or averaging losses.  The candidate list fails
+at least one of these gates in every case.  Thus the parity audit narrows the
+remaining target to a same-object nonlinear prime-source constructor or a
+fixed-prime-modulus zero-exception transfer, while preserving the boundary
+\begin{quote}\scriptsize\ttfamily
+direct\_closure\_candidate\_count=0\\
+external\_lemma\_version\_unconditional\_closed=false\\
+internal\_self\_contained\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Parity-breaking residual basis]
+The machine-readable certificate is archived as
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-parity-breaking-obstruction-audit.md.
+\end{quote}
+After this audit the non-cyclic residual basis is refined to
+\begin{quote}\scriptsize\ttfamily
+PrimeObjectNotP2AlmostPrime\\
+OR RigidPointwiseGridOrFixedPrimeModulusZeroException\\
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection\\
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer\\
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf\\
+OR LinnikExponentLeTwoWithSquareWindowConstants.
+\end{quote}
+This is a misuse-exclusion and frontier-narrowing theorem, not a proof of the
+row/column theorem.
+\end{remark}
+
 \section{K6 joint density and row-run rigidity}
 
 \begin{corollary}[K6: joint density and consecutive-block bound]

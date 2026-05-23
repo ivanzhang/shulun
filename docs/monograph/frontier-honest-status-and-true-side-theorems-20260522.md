@@ -1670,3 +1670,58 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 P：破奇偶候选源障碍审计（2026-05-23 第十四轮）
+
+本轮专门审计“创造性突破奇偶性障碍”的候选外部源，不再把筛恒等式、平均 AP
+分布或不同对象的非线性定理改名为本文证明。新增证书：
+
+```text
+experiments/prime_matrix_parity_breaking_obstruction_audit.py
+data/prime-matrix-parity-breaking-obstruction-ledger.json
+docs/monograph/prime-matrix-parity-breaking-obstruction-audit.json
+docs/monograph/prime-matrix-parity-breaking-obstruction-audit.md
+```
+
+五门验收：
+
+```text
+PrimeObjectNotP2AlmostPrime
+SquareScaleWindowOrP2ColumnCompatibility
+RigidPointwiseGridOrFixedPrimeModulusZeroException
+SameObjectNonlinearActualSourceConstructorBeforeProjection
+UnconditionalPublishedOrIndependentlyAcceptedInput
+```
+
+核心读数：
+
+| 候选源 | 可用价值 | 失败门 |
+|---|---|---|
+| Li--Zhang--Cai least $P_2$ almost-prime in AP | 进入 $P^2$ 方阵，尖锐标记列方向奇偶屏障 | 对象是 $P_2$，不是素数 |
+| Friedlander--Iwaniec $X^2+Y^4$ | 真正非线性破奇偶模型 | 不是 Prime Matrix 行/列同对象源 |
+| BFI/DI/Kuznetsov/Maynard well-factorable 技术 | 可作为未来 theorem-match 工具 | 平均/谱工具不自动给 fixed $q=P$ 零例外 |
+| Ford--Maynard prime-producing sieve 框架 | 可指导未来内部构造器设计 | 当前没有本文方阵逐点窗口构造器 |
+| Maynard multidimensional sieve | 素数对象真实 | 结论类型不是每个刚性行/列含素数 |
+| Rosser--Iwaniec 线性筛 | 解释屏障 | $s\le2$ 下界退化，不破奇偶 |
+
+因此本轮把 `NonlinearParityBreakingActualSourceConstructor` 继续细化为：
+
+```text
+PrimeObjectNotP2AlmostPrime
+OR RigidPointwiseGridOrFixedPrimeModulusZeroException
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+这是非循环推进：它把可用破奇偶候选源逐项排到真实失败门，而不是声称目标命题已闭合。
+
+```text
+direct_closure_candidate_count=0
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```

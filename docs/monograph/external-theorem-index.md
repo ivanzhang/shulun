@@ -1843,6 +1843,59 @@ OR GridTransferredShortIntervalSecondMomentAtThetaHalf
 OR NonlinearParityBreakingActualSourceConstructor
 ```
 
+## 46. 破奇偶候选源障碍审计
+
+本层新增一个独立外部源筛查证书：
+
+```text
+experiments/prime_matrix_parity_breaking_obstruction_audit.py
+data/prime-matrix-parity-breaking-obstruction-ledger.json
+docs/monograph/prime-matrix-parity-breaking-obstruction-audit.json
+docs/monograph/prime-matrix-parity-breaking-obstruction-audit.md
+```
+
+审计目的：把“破奇偶”候选源逐项验收到本文目标，而不是把不同结论类型直接导入。
+五门为：
+
+```text
+PrimeObjectNotP2AlmostPrime
+SquareScaleWindowOrP2ColumnCompatibility
+RigidPointwiseGridOrFixedPrimeModulusZeroException
+SameObjectNonlinearActualSourceConstructorBeforeProjection
+UnconditionalPublishedOrIndependentlyAcceptedInput
+```
+
+当前读数：
+
+```text
+Li-Zhang-Cai P2 AP        -> square-compatible but wrong object
+Friedlander-Iwaniec       -> genuine nonlinear prime model but not same object
+BFI/DI/Kuznetsov/Maynard  -> technology class, no fixed q=P zero-exception theorem
+Ford-Maynard framework    -> source-design guidance, no current matrix constructor
+Maynard small gaps        -> prime object, wrong conclusion type
+Rosser-Iwaniec sieve      -> parity-limited negative control
+```
+
+因此可引用的外部源仍未提供直接行/列闭合。最新剩余基为：
+
+```text
+PrimeObjectNotP2AlmostPrime
+OR RigidPointwiseGridOrFixedPrimeModulusZeroException
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+状态边界：
+
+```text
+direct_closure_candidate_count=0
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
 ## 42. 2026 AP 平均分布与条件 Linnik 近门槛压力层
 
 本层继续更新 `experiments/prime_matrix_external_frontier_theorem_stress_router.py`

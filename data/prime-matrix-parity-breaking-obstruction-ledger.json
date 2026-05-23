@@ -1,0 +1,166 @@
+{
+  "audit_gates": [
+    "PrimeObjectNotP2AlmostPrime",
+    "SquareScaleWindowOrP2ColumnCompatibility",
+    "RigidPointwiseGridOrFixedPrimeModulusZeroException",
+    "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+    "UnconditionalPublishedOrIndependentlyAcceptedInput"
+  ],
+  "best_genuine_parity_breaking_model_not_same_object": "Friedlander-Iwaniec polynomial X^2+Y^4",
+  "best_square_compatible_wrong_object": "Li-Zhang-Cai least P2 almost-prime in AP",
+  "candidates": [
+    {
+      "category": "P2_almost_prime_AP",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": false,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": true,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": true,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": false
+      },
+      "name": "Li-Zhang-Cai least P2 almost-prime in AP",
+      "obstruction": "给出的是至多两个素因子的 almost-prime，不是素数；正好卡在奇偶对象门。",
+      "parity_breaking_strength": "enters_P2_square_but_keeps_P2_parity_shadow",
+      "residual_gate": "PrimeObjectNotP2AlmostPrime",
+      "source": "https://arxiv.org/abs/2103.13360",
+      "status": "arXiv_v2_wrong_parity_object",
+      "usable_as": "sharp_column_parity_barrier_marker"
+    },
+    {
+      "category": "nonlinear_prime_values",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": true,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": true
+      },
+      "name": "Friedlander-Iwaniec polynomial X^2+Y^4",
+      "obstruction": "证明不同非线性多项式族含无穷多素数；没有把每个 Prime Matrix 行/列嵌入该族的同对象源构造。",
+      "parity_breaking_strength": "genuine_nonlinear_parity_breaking_model",
+      "residual_gate": "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+      "source": "https://arxiv.org/abs/math/9811185",
+      "status": "published_model_primary_arxiv_available",
+      "usable_as": "technical_model_not_importable_closure"
+    },
+    {
+      "category": "well_factorable_AP_dispersion",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": true,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": true
+      },
+      "name": "Bombieri-Friedlander-Iwaniec / Maynard well-factorable large-moduli AP",
+      "obstruction": "提供 AP/权重平均分布技术；未给固定素模数 P、每个剩余类、P^2 方阵内的零例外定理，也未匹配本文 full-S non-AP WFD 对象。",
+      "parity_breaking_strength": "deep_average_dispersion_not_pointwise_source",
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2006.07088",
+      "status": "external_dispersion_technology_class",
+      "usable_as": "candidate_external_theorem_match_after_exact_variable_translation"
+    },
+    {
+      "category": "kloosterman_spectral_dispersion",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": false,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": true
+      },
+      "name": "Deshouillers-Iwaniec / Kuznetsov spectral large sieve",
+      "obstruction": "谱大筛是 Kloosterman 平均抵消工具，不直接产生素数对象或刚性行列点态正性。",
+      "parity_breaking_strength": "cancellation_tool_not_prime_constructor",
+      "residual_gate": "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+      "source": "https://doi.org/10.1007/BF01390728",
+      "status": "published_spectral_tool",
+      "usable_as": "subtool_for_exact_KLS_match_only"
+    },
+    {
+      "category": "prime_producing_sieve_theory",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": true,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": false
+      },
+      "name": "Ford-Maynard prime-producing sieve framework",
+      "obstruction": "给出 prime-producing sieve 的理论框架；尚未包含本文 P 行/列方阵的实际构造器与逐点窗口常数。",
+      "parity_breaking_strength": "framework_for_sources_not_current_prime_matrix_source",
+      "residual_gate": "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+      "source": "https://arxiv.org/abs/2407.14368",
+      "status": "frontier_framework",
+      "usable_as": "design_guidance_for_future_internal_constructor"
+    },
+    {
+      "category": "multidimensional_sieve",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": true,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": true
+      },
+      "name": "Maynard small gaps / multidimensional Selberg weights",
+      "obstruction": "结论是无穷多 admissible tuple 中多素数，而不是每个长度 P 的刚性区间或每个 mod P 列中有素数。",
+      "parity_breaking_strength": "finds_primes_in_tuples_not_every_rigid_interval",
+      "residual_gate": "RigidPointwiseGridOrFixedPrimeModulusZeroException",
+      "source": "https://arxiv.org/abs/1311.4600",
+      "status": "published_prime_object_wrong_conclusion_type",
+      "usable_as": "wrong_conclusion_type"
+    },
+    {
+      "category": "linear_sieve",
+      "direct_row_column_closure": false,
+      "gates": {
+        "PrimeObjectNotP2AlmostPrime": false,
+        "RigidPointwiseGridOrFixedPrimeModulusZeroException": false,
+        "SameObjectNonlinearActualSourceConstructorBeforeProjection": false,
+        "SquareScaleWindowOrP2ColumnCompatibility": false,
+        "UnconditionalPublishedOrIndependentlyAcceptedInput": true
+      },
+      "name": "Rosser-Iwaniec beta sieve / linear sieve",
+      "obstruction": "在 H_P 的 s<=2 区域下界函数退化为 0；它解释屏障而不提供破屏障源。",
+      "parity_breaking_strength": "does_not_break_parity",
+      "residual_gate": "NonlinearParityBreakingActualSourceConstructor",
+      "source": "https://link.springer.com/book/10.1007/978-3-642-56342-7",
+      "status": "classical_published_but_parity_limited",
+      "usable_as": "negative_control"
+    }
+  ],
+  "certificate_type": "prime_matrix_parity_breaking_obstruction_audit",
+  "direct_closure_candidate_count": 0,
+  "direct_closure_candidates": [],
+  "external_lemma_version_unconditional_closed": false,
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "new_residual_basis_after_parity_audit": [
+    "PrimeObjectNotP2AlmostPrime",
+    "RigidPointwiseGridOrFixedPrimeModulusZeroException",
+    "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+    "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+    "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+    "LinnikExponentLeTwoWithSquareWindowConstants"
+  ],
+  "noncycle_progress_claim": "本审计不把 P2、平均 AP 或不同非线性多项式改名为证明；它把破奇偶路线压成同对象实际源构造或固定素模数零例外转移。",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "232ea0875c8df205c16a9f9db3ee110779ac0d553d1da765de5ea92ffd6ced0a",
+    "docs/monograph/external-theorem-index.md": "7798ad02678ea2a3654431820f45d56bef122787716023f2b6dac09dce875bb3",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "0f4e8853a5528c90c6cf64a7b739eedaea29a68c4f05c5909665e244dbaf739b",
+    "docs/monograph/prime-matrix-external-frontier-residual-gap-audit.json": "9c956f71a7da91fab22864ccf26fb6ebfd5cdf784fd3764f0e890c0e1ab6f58a",
+    "docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md": "ac855e1d55a958b0093f302588dcf135931a9d24b6230b50b535563f0738bc5c",
+    "docs/monograph/prime-matrix-phi-lpf-combinatorial-exactness-parity-barrier-review-router.md": "b2751bbbf9b2cfefb012ad296158e82c81557febea51b786a10cb4e44aeb8e4d",
+    "experiments/prime_matrix_parity_breaking_obstruction_audit.py": "3f551072ac7d9aadf553b47db3c8751ac6e33b8d2851b18f60c6524f3e269907",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "b06a11ddd2fb4368453a345aa5153be7d6fa159331512b04887b20fa589f412c"
+  },
+  "status": "parity_breaking_candidates_screened_no_direct_closure"
+}
