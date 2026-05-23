@@ -2017,6 +2017,70 @@ internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
 
+## 50. Phi-LPF punctured endpoint 6-wheel capacity 证书
+
+本层回到 Phi-LPF 奇偶屏障主线，新增：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_wheel6_capacity_router.py
+data/prime-matrix-phi-lpf-punctured-endpoint-wheel6-capacity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel6-capacity-router.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel6-capacity-router.md
+```
+
+上一层 parity capacity 已证明：
+
+```text
+|F(P,k)| <= C_par(P,k)=W_int(P,k)-E_even(P,k).
+```
+
+本层加入 Euler `6`-wheel 的第二个局部筛除：若 reciprocal cofactor
+`m>3` 且 `3|m`，则 `m` 不可能为素数。因此
+
+```text
+|F(P,k)| <= C_6(P,k)=W_int(P,k)-E_{2,3}(P,k)
+DeltaPhi_half(P,k)>C_6(P,k) => pi((k+1)P-1)-pi(kP)>0
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+closed_by_parity_ceiling_count=76788
+closed_by_wheel6_ceiling_count=76789
+parity_not_closed_count=1
+wheel6_not_closed_count=0
+```
+
+上一层唯一 parity 等号行被删除：
+
+```text
+P=19, k=15, Delta=3, C_par=3, C_6=2, Delta-C_6=1
+```
+
+新的剩余基：
+
+```text
+PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+```
+
+外部源状态未改变：Runbo Li/短区间 `0.52` 仍大于 `1/2`，Runbo Li 2026
+大模数 AP 仍是平均型输入，Ford--Maynard 仍是 prime-producing sieve 框架而
+非本文同对象 Phi-LPF signed value table。
+
+状态边界：
+
+```text
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

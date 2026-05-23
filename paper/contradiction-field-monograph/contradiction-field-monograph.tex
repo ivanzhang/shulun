@@ -12294,6 +12294,67 @@ ReciprocalPrimePairSaturationPDEC.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Punctured endpoint \(6\)-wheel capacity bound]
+For a prime \(P\), \(1<k<P\), and the reciprocal windows \(I_q(P,k)\) above,
+let \(E_{2,3}(P,k)\) be the number of pairs \((q,m)\) with
+\[
+  P/2<q<P,\qquad q\ {\rm prime},\qquad m\in I_q(P,k),
+\]
+such that \(m\) is forced composite by the \(6\)-wheel, namely
+\[
+  (m>2,\ 2\mid m)\quad\hbox{or}\quad (m>3,\ 3\mid m).
+\]
+Set
+\[
+  C_6(P,k)=W_{\rm int}(P,k)-E_{2,3}(P,k).
+\]
+Then
+\[
+  |F(P,k)|\le C_6(P,k).
+\]
+Consequently
+\[
+  \Delta\Phi_{1/2}(P,k)>C_6(P,k)
+  \quad\Longrightarrow\quad
+  \pi((k+1)P-1)-\pi(kP)>0.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The proof is the same reciprocal-window containment as in the parity-capacity
+bound, with one additional Euler \(6\)-wheel deletion.  If \(m>2\) is even, or
+if \(m>3\) is divisible by \(3\), then \(m\) is not prime and cannot be the
+cofactor of a prime-pair forest hole.  Deleting all such candidates from the
+integer windows gives \(|F(P,k)|\le C_6(P,k)\).  The endpoint positivity
+implication follows from
+\[
+  \pi((k+1)P-1)-\pi(kP)=\Delta\Phi_{1/2}(P,k)-|F(P,k)|.
+\]
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-\\
+wheel6-capacity-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=1009\\
+row\_count=76789\\
+closed\_by\_parity\_ceiling\_count=76788\\
+closed\_by\_wheel6\_ceiling\_count=76789\\
+parity\_not\_closed\_count=1\\
+wheel6\_not\_closed\_count=0.
+\end{quote}
+The preceding parity-capacity audit had a single equality case \(P=19,k=15\).
+There \(C_{\rm par}=3\), while the \(6\)-wheel deletes the additional candidate
+\(m=27\), giving \(C_6=2\) and
+\(\Delta\Phi_{1/2}-C_6=1\).  This finite strict closure is not used as a global
+proof.  The remaining interface is
+\begin{quote}\scriptsize\ttfamily
+PuncturedWheel6EndpointCapacityInequalityOr\\
+ReciprocalPrimePairWheel6SaturationPDEC.
+\end{quote}
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for
