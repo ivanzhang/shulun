@@ -1,0 +1,203 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_ford_maynard_embedding_obligation_audit",
+  "conditional_external_lemma_schema": {
+    "closed_as_schema": true,
+    "proved_unconditionally": false,
+    "statement": "If for every sufficiently large prime P and every strict row k the normalized row sequence satisfies Ford--Maynard Type I, Type II, local-density, and positive-C^- hypotheses uniformly, then H_P follows for those rows.",
+    "unproved_inputs": [
+      "FMTypeIShortRowDivisorSwitchEstimate",
+      "FMTypeIISameRowReciprocalGraphBilinearDispersion",
+      "FMLocalDensityForWheelRowComparisonSequence",
+      "FMPointwiseUniformAllRowsUpgrade"
+    ]
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "ford_maynard_embedding_complete": true,
+  "ford_maynard_hypotheses_verified_for_hp": false,
+  "ford_maynard_source": {
+    "arxiv": "2407.14368v1",
+    "close_read_items": [
+      "Type I estimate (I) for w_n=a_n-b_n in divisor-sliced intervals",
+      "Type II estimate (II) for arbitrary divisor-bounded bilinear coefficients",
+      "constants C^-(gamma,theta,nu), C^+(gamma,theta,nu)",
+      "Theorem 2.1: a positive amount of Type II information is necessary",
+      "Theorem 2.2: asymptotic region characterized by A1/A2",
+      "Theorem 2.4/2.5: the gamma=1/2 boundary is delicate and needs extra boundedness"
+    ],
+    "date": "2024-07-19",
+    "paper": "Kevin Ford and James Maynard, On the theory of prime-producing sieves"
+  },
+  "frontier_verified_date": "2026-05-23",
+  "hp_embedding": {
+    "comparison_sequence_candidate": "b_{P,k}(n)=smooth local-density model with same row mass and wheel density",
+    "lpf_tail_typeii_scale": "q,m≈P≈x^(1/2), with q in (P/2,P) and m in I_q(P,k)",
+    "normalized_sequence_candidate": "a_{P,k}(n)=(x/H) 1_{kP<n<(k+1)P} times optional wheel/unit filters",
+    "prime_sum_target": "sum_p a_{P,k}(p)>0 is equivalent, after normalization, to pi((k+1)P-1)-pi(kP)>0",
+    "reciprocal_graph": "I_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))]",
+    "row_window": "I_{P,k}=(kP,(k+1)P), length H=P=x^(1/2)",
+    "x_scale": "x≈P^2 in the top strict band k≈P"
+  },
+  "internal_self_contained_closed": false,
+  "new_residual_basis": [
+    "FMTypeIShortRowDivisorSwitchEstimate",
+    "FMTypeIISameRowReciprocalGraphBilinearDispersion",
+    "FMLocalDensityForWheelRowComparisonSequence",
+    "FMPointwiseUniformAllRowsUpgrade",
+    "CharacterAveragedSameRowCRTDispersionForLPFTail",
+    "SquarePhaseEndpointLowerBound"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prior_certificate_metrics": {
+    "crt_signed_projection_gate": {
+      "available": true,
+      "character_averaged_dispersion_required": true,
+      "fixed_crt_classwise_dominance_proved": false,
+      "negative_rows_by_layer": {
+        "210-wheel": {
+          "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+          "modulus": 210,
+          "stable_negative_unit_cell_count": 67547,
+          "stable_rows_with_negative_unit_cell_surplus": 37115
+        },
+        "2310-wheel": {
+          "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+          "modulus": 2310,
+          "stable_negative_unit_cell_count": 151197,
+          "stable_rows_with_negative_unit_cell_surplus": 45472
+        },
+        "30-wheel": {
+          "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+          "modulus": 30,
+          "stable_negative_unit_cell_count": 998,
+          "stable_rows_with_negative_unit_cell_surplus": 976
+        },
+        "30030-wheel": {
+          "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+          "modulus": 30030,
+          "stable_negative_unit_cell_count": 107093,
+          "stable_rows_with_negative_unit_cell_surplus": 39964
+        }
+      },
+      "status": "fixed_crt_unit_class_dominance_rejected_signed_character_dispersion_required"
+    },
+    "lpf_tail_typeii": {
+      "active_residual_row_count": 52697,
+      "available": true,
+      "large_sample_sparsest_graph": {
+        "P": 300007,
+        "W_int": 16876,
+        "k": 300006,
+        "m_span": 299964,
+        "q_count": 12148,
+        "rectangle_hull_area": 3643962672,
+        "support_density_den": 3643962672,
+        "support_density_float": 4.631221974273835e-06,
+        "support_density_num": 16876
+      },
+      "max_prime": 1009,
+      "one_point_qr_fiber": true,
+      "row_count": 76789,
+      "sparsest_finite_graph": {
+        "P": 1009,
+        "W_int": 87,
+        "k": 965,
+        "m_span": 924,
+        "q_count": 72,
+        "rectangle_hull_area": 66528,
+        "support_density_den": 66528,
+        "support_density_float": 0.0013077200577200577,
+        "support_density_num": 87
+      },
+      "status": "lpf_tail_reduced_to_same_row_reciprocal_graph_typeii_obligation",
+      "thin_q_fiber": true,
+      "thin_reverse_fiber": true,
+      "total_R30": 299977,
+      "total_direct_prime_count": 4172483,
+      "total_prime_count_minus_R30": 3872506
+    }
+  },
+  "row_column_unconditional_closed": false,
+  "same_row_reciprocal_typeii_still_main_attack": true,
+  "selected_non_circular_direction": "SameRowReciprocalWindowTypeIIDispersionForLPFTail",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "96d509246a931421464e288e674cb1959822f6b7cbce1b090ca44a37e0aea7c9",
+    "docs/monograph/external-theorem-index.md": "1f983d9dd7374735aac75f0a84cc679f2fbe6493cecd80c60943f79b84c351fa",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "3a0d909b8264438cab778260fc0b21acbe668c8591bd939cd18717dccc079a97",
+    "docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.json": "629cf9b59f34ef03e2a2d78419f044c043ada143c6b7896f1e1910a53c7e2023",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "experiments/prime_matrix_phi_lpf_ford_maynard_embedding_obligation_audit.py": "6c64097ce7398b8401cd5cc628d1e9317135d9a5d3b0ede4cca9f4698dc2e744",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "f548470e0cd45a392363074b560700c9d48a57f20cc01a94ff174baacf23af4f"
+  },
+  "status": "hp_embedded_in_ford_maynard_typeii_framework_but_hypotheses_open",
+  "theorem_match_table": [
+    {
+      "closed": true,
+      "field": "Nonnegative target sequence",
+      "ford_maynard_requirement": "a_n,b_n nonnegative on x/2<n<=x, average size about 1",
+      "hp_embedding_status": "formal after row normalization by x/H≈P",
+      "proved": true,
+      "remaining": "normalization itself gives no prime lower bound"
+    },
+    {
+      "closed": true,
+      "field": "Prime sum target",
+      "ford_maynard_requirement": "lower-bound sum_p a_p by C^- sum_p b_p",
+      "hp_embedding_status": "sum_p a_{P,k}(p)>0 exactly matches one row of H_P",
+      "proved": true,
+      "remaining": "requires C^->0 and verified hypotheses for every row"
+    },
+    {
+      "closed": false,
+      "field": "Type-I short-row divisor estimate",
+      "ford_maynard_requirement": "uniform control of sum w_{mn} for m<=x^gamma and all n-intervals",
+      "hp_embedding_status": "not proved for the length sqrt(x) moving row sequence",
+      "proved": false,
+      "remaining": "FMTypeIShortRowDivisorSwitchEstimate"
+    },
+    {
+      "closed": false,
+      "field": "Type-II bilinear estimate",
+      "ford_maynard_requirement": "arbitrary divisor-bounded coefficients over x^theta<m<=x^(theta+nu)",
+      "hp_embedding_status": "scale matches q,m≈x^(1/2), but support is a thin reciprocal graph, not a rectangular box",
+      "proved": false,
+      "remaining": "FMTypeIISameRowReciprocalGraphBilinearDispersion"
+    },
+    {
+      "closed": false,
+      "field": "Local density model",
+      "ford_maynard_requirement": "b_n has a prime-number-theorem-type comparison prime mass",
+      "hp_embedding_status": "wheel/local density can be written formally, but row-specific comparison error is unproved",
+      "proved": false,
+      "remaining": "FMLocalDensityForWheelRowComparisonSequence"
+    },
+    {
+      "closed": false,
+      "field": "Pointwise all-row upgrade",
+      "ford_maynard_requirement": "framework is dyadic/asymptotic in x for sequences satisfying estimates",
+      "hp_embedding_status": "H_P needs every prime P and every strict row k, not an averaged exceptional-set statement",
+      "proved": false,
+      "remaining": "FMPointwiseUniformAllRowsUpgrade"
+    },
+    {
+      "closed": true,
+      "field": "Fixed CRT unit-cell route",
+      "ford_maynard_requirement": "signed cancellation may be averaged, not cellwise nonnegative",
+      "hp_embedding_status": "existing CRT audit rejects cellwise dominance; character-averaged dispersion remains possible",
+      "proved": true,
+      "remaining": "CharacterAveragedSameRowCRTDispersionForLPFTail"
+    },
+    {
+      "closed": false,
+      "field": "Unconditional H_P closure",
+      "ford_maynard_requirement": "all above hypotheses plus positive lower-bound region",
+      "hp_embedding_status": "not reached",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "why_selected": [
+    "directly attacks the LPF-tail parity obstruction rather than a renamed equivalent form",
+    "matches the balanced q*m scale x^(1/2) in the strict top band x≈P^2",
+    "Ford--Maynard supplies an explicit theorem-match checklist for Type I/II inputs"
+  ]
+}

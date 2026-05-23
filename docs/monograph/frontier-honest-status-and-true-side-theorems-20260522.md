@@ -3411,20 +3411,22 @@ $$
 Maynard 参数 $s=\theta$。当前无条件 BV 给 $\theta<1/2$，故 $s<1$。
 EH 猜想给 $\theta=1$，故 $s\le 1$。
 
-**$s\le 1\le 2$——Maynard ��在 $f(s)=0$ 屏障内**（Bombieri 1976）。
+**$s\le 1\le 2$——Maynard 仍在 $f(s)=0$ 屏障内**（Bombieri 1976）。
 
 EH 猜想本身**未证**。即使在 EH 下 Maynard 也只给"统计存在性"，**不**给"逐 $k$ 普遍存在性"。
 
-### P.6 推论 K7（Maynard-derived，**条件**于 EH）
+### P.6 Maynard/EH 行例外估计：未推出，不能列为定理
 
-**陈述（条件于 EH 猜想）**：存在常数 $C\ge 246$ 与 $\delta>0$ 使得对充分大 $P$，
-$$
-\#\{k\in[1,P-1]:I_k\text{ 含至少一对相距}\le C\text{的素数}\}\gg P^{1-\delta}.
-$$
+一个诱人的候选表述是：在 EH 下，Maynard 方法是否能推出
+`all but O(P^(1-delta))` 个 H_P 行含 bounded-gap prime pair。当前严格结论是：
+**不能把它列为 Maynard-derived theorem**。
 
-**状态**：`Conditional on EH`——**不是** H_P 本身。
+原因很简单：Maynard 给的是 admissible tuple 的统计/liminf translate 结论；
+H_P 需要每个预先指定的行 `I_k=(kP,(k+1)P)`。从“无穷多 translate 有素数簇”
+到“每个/几乎每个指定行有素数”还缺一个独立的 row-distribution 或
+statistical-to-row upgrade 定理。
 
-**距离 H_P 的间隙**：$P^{1-\delta}\to P-1$ 需要 $\delta\to 0$ + 升级"统计"到"普遍"，二者皆**未证**。
+因此本附录只保留 Maynard 的结构诊断，不再把 K7 作为已推出条件命题。
 
 ### P.7 严格诊断：Maynard 框架本质不能闭合 H_P
 
@@ -3442,11 +3444,11 @@ $$
 
 ### P.8 严格诚实终态
 
-**用户请求**："选 Maynard 持续推进，努力到 H_P 闭合"。
+**当前审计请求**：选择最有希望的非循环方向并持续推进到真实边界。
 
 **严格诚实回答**：
 
-- ✓ 精读 Maynard 2013 完成（论文 §3-§6 核心引理逐行映射）
+- ✓ 精读 Maynard 2013 完成（论文 §3-§6 核心结构映射）
 - ✓ H_P 严格嵌入完成（$\mathcal{H}=\{0,\ldots,P-1\}$, $N=P^2$, $s=\theta\le 1$）
 - ✗ 闭合**不可行**——Maynard 框架本质给统计结果，H_P 要求普遍结果
 
@@ -3454,37 +3456,12 @@ $$
 
 这正是 §0 黎曼-欧拉-高斯方法论纪律所警告的：**留下未证猜想为猜想，不混淆"几乎所有"为"全部"**。
 
-### P.9 推论 K7 严格陈述（**条件**形式，归档至主稿）
-
-**定理 K7（Maynard-derived under EH，条件版）**：
-
-设 EH 猜想成立。则对充分大素数 $P$，
-$$
-|\{k\in[1,P-1]:I_k\text{ 不含相距}\le 246\text{的素数对}\}|\ll P^{1-\delta}
-$$
-对某绝对常数 $\delta>0$。
-
-**状态**：`Conditional on EH`（不是 H_P，但是 H_P 的统计弱版）。
-
-**实际意义**：
-- 若 EH 真，则**几乎所有**行 $I_k$ 不仅含素数，还含 prime pair。
-- 但 $P^{1-\delta}$ 个例外行**可能**存在——H_P 不能由 K7 推出。
-
-### P.10 本会话十四轮提交后的最终边界
-
-**真定理总数：22 个**（K1-K7 全系列 + 各方向加强）。
-
-**外部输入总数：10 个**（PNT, dlVP1899, MV1973, MV-AP, RS1962, Dusart单项/三项/上界, BHP2001, Maynard2013）。
-
-**两版本最强位置**：
-- 内部自足版：$P-P/(2\log P)-P/(4\log^2 P)-P/(4\log^3 P)+O(P/\log^4 P)$
-- 外部引理版：$3P/4-P/(8\log P)-0.1125P/\log^2 P-0.37247$
-
-**条件版（最强）**：K7 在 EH 下给 $|E(P)|\ll P^{1-\delta}$。
+### P.9 本附录后的边界
 
 **H_P 主命题**：严格 `Not claimed`。
 
-**精读完成的三个原始方向**（FI 1998 / Maynard 2013 / 自守 $L$）**全部诊断为不可在 LLM 单次会话闭合 H_P**——这是数学事实，不是工作不足。
+Maynard 2013 已完成结构嵌入和失败门诊断；它不能替代同对象 Type-II/dispersion、
+特殊 square-phase 端点下界，或真正的点态 `theta<=1/2` 短区间定理。
 
 ---
 
@@ -3492,6 +3469,141 @@ $$
 
 > "It is very likely that all roots of $\xi(s)$ are real, but I have not been able to prove this."
 > ——本会话对 H_P 的位置完全相同：所有数值证据支持，所有局部分析符合预期，所有已证工具达到框架极限——但**严格证明仍未给出**。
-> 
+>
 > 留下未证猜想为猜想，是大师方法论的真正核心。
 
+---
+
+## 附录 Q：Ford--Maynard prime-producing sieve 与 Phi-LPF tail 嵌入审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_ford_maynard_embedding_obligation_audit.py
+data/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-audit.json
+docs/monograph/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-audit.md
+```
+
+本轮在三个非循环方向中选择：
+
+```text
+SameRowReciprocalWindowTypeIIDispersionForLPFTail
+```
+
+原因是它直接攻击 `30-wheel` 后的 LPF-tail 奇偶障碍，且在 top strict band
+中有明确的 Ford--Maynard Type-I/Type-II theorem-match 接口。
+
+### Q.1 精读 Ford--Maynard arXiv:2407.14368
+
+Ford--Maynard 的框架处理支撑在 `x/2<n<=x` 上的非负序列 `a_n,b_n`，
+令 `w_n=a_n-b_n`。核心输入不是“直接有素数”，而是：
+
+```text
+Type I:  divisor-sliced interval sums of w_{mn}
+Type II: arbitrary divisor-bounded bilinear sums of w_{mn}
+C^-(gamma,theta,nu): prime-producing lower-bound constant
+```
+
+特别是其 Theorem 2.1 说明：一般 Type-I 信息不足以探测素数，必须有真正
+Type-II 信息。这正好解释为什么 Phi-LPF/CRT 的无符号精确计数不能自己破奇偶。
+
+### Q.2 H_P 行窗口嵌入
+
+在 top strict band 取：
+
+```text
+x≈P^2
+I_{P,k}=(kP,(k+1)P)
+H=P=x^(1/2)
+a_{P,k}(n)=(x/H) 1_{kP<n<(k+1)P}
+```
+
+于是：
+
+```text
+sum_p a_{P,k}(p)>0
+<=> pi((k+1)P-1)-pi(kP)>0
+```
+
+这给出形式嵌入；但形式嵌入不等于证明。Ford--Maynard 还需要本文对象自己的
+Type-I/Type-II 与局部密度输入。
+
+### Q.3 同对象 Type-II 匹配
+
+既有 LPF-tail 证书给出：
+
+```text
+R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k),
+                 r=LPF(m)>=7, a>=r, a is r-rough}
+I_q(P,k)=[max(q, floor(kP/q)+1), min(2P-1, floor(((k+1)P-1)/q))]
+# I_q(P,k) <= 2
+# {q: m in I_q(P,k)} <= 2
+# {a: kP<q*r*a<(k+1)P} <= 1
+```
+
+尺度上 `q,m≈P≈x^(1/2)` 正好是 Type-II 边界；但支撑不是矩形盒，而是极稀疏
+same-row reciprocal graph。因此不能把普通 rectangular Type-II estimate 直接引用到
+本文对象上。
+
+有限读数保持为：
+
+```text
+max_prime=1009
+row_count=76789
+active_residual_row_count=52697
+total_R30=299977
+total_direct_prime_count=4172483
+total_prime_count_minus_R30=3872506
+thin_q_fiber=true
+thin_reverse_fiber=true
+one_point_qr_fiber=true
+```
+
+### Q.4 Theorem-match 判定
+
+| gate | closed | proved | remaining |
+| --- | --- | --- | --- |
+| Nonnegative target sequence | true | true | normalization gives no lower bound |
+| Prime sum target equals one H_P row | true | true | need positive lower bound |
+| FM Type-I short-row divisor estimate | false | false | `FMTypeIShortRowDivisorSwitchEstimate` |
+| FM Type-II same-row reciprocal graph dispersion | false | false | `FMTypeIISameRowReciprocalGraphBilinearDispersion` |
+| FM local density comparison | false | false | `FMLocalDensityForWheelRowComparisonSequence` |
+| FM pointwise all-row upgrade | false | false | `FMPointwiseUniformAllRowsUpgrade` |
+| Fixed CRT unit-cell route | true | true | rejected; need character-averaged/signed dispersion |
+| H_P unconditional closure | false | false | `row_column_unconditional_closed=false` |
+
+### Q.5 条件外部引理版
+
+条件 schema 已闭合：
+
+```text
+If every sufficiently large prime P and every strict row k satisfies
+Ford--Maynard Type-I, Type-II, local-density and positive-C^- hypotheses
+for the normalized row sequence, then H_P follows for those rows.
+```
+
+但这只是条件外部引理 schema，不是无条件证明。
+
+### Q.6 新剩余基
+
+```text
+FMTypeIShortRowDivisorSwitchEstimate
+FMTypeIISameRowReciprocalGraphBilinearDispersion
+FMLocalDensityForWheelRowComparisonSequence
+FMPointwiseUniformAllRowsUpgrade
+CharacterAveragedSameRowCRTDispersionForLPFTail
+SquarePhaseEndpointLowerBound
+```
+
+状态边界：
+
+```text
+ford_maynard_embedding_complete=true
+ford_maynard_hypotheses_verified_for_hp=false
+same_row_reciprocal_typeii_still_main_attack=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

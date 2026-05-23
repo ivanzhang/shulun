@@ -2081,6 +2081,101 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 64. Phi-LPF Ford--Maynard embedding obligation 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_ford_maynard_embedding_obligation_audit.py
+data/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-audit.json
+docs/monograph/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-audit.md
+```
+
+外部论文：
+
+```text
+Kevin Ford and James Maynard, On the theory of prime-producing sieves,
+arXiv:2407.14368v1.
+```
+
+精读验收结论：Ford--Maynard 不是直接证明 `H_P` 的黑箱，而是
+Type-I/Type-II theorem-match 框架。它要求目标序列 `w_n=a_n-b_n` 自己满足：
+
+```text
+Type I divisor-sliced interval estimates
+Type II arbitrary divisor-bounded bilinear estimates
+local-density comparison prime mass
+positive C^-(gamma,theta,nu) lower-bound region
+```
+
+本文嵌入：
+
+```text
+x≈P^2
+I_{P,k}=(kP,(k+1)P)
+H=P=x^(1/2)
+a_{P,k}(n)=(x/H) 1_{I_{P,k}}(n)
+sum_p a_{P,k}(p)>0 <=> pi((k+1)P-1)-pi(kP)>0
+```
+
+LPF-tail Type-II 尺度匹配但支撑不匹配普通矩形盒：
+
+```text
+q,m≈P≈x^(1/2)
+I_q(P,k)=[max(q, floor(kP/q)+1), min(2P-1, floor(((k+1)P-1)/q))]
+# I_q(P,k)<=2
+# {q:m in I_q(P,k)}<=2
+# {a:kP<q*r*a<(k+1)P}<=1
+```
+
+Theorem-match 表：
+
+```text
+NonnegativeTargetSequence: closed=true, proved=true
+PrimeSumTargetEqualsHPRow: closed=true, proved=true
+FMTypeIShortRowDivisorSwitchEstimate: closed=false, proved=false
+FMTypeIISameRowReciprocalGraphBilinearDispersion: closed=false, proved=false
+FMLocalDensityForWheelRowComparisonSequence: closed=false, proved=false
+FMPointwiseUniformAllRowsUpgrade: closed=false, proved=false
+FixedCRTUnitCellRouteRejected: closed=true, proved=true
+HPUnconditionalClosure: closed=false, proved=false
+```
+
+条件外部引理 schema：
+
+```text
+If every sufficiently large prime P and every strict row k satisfies
+Ford--Maynard Type-I, Type-II, local-density and positive-C^- hypotheses
+for the normalized row sequence, then H_P follows for those rows.
+```
+
+该 schema 是有效的条件接口；但四个输入均未证明，因此不能升级为外部引理版或
+内部自足版的无条件闭合。
+
+新的剩余基：
+
+```text
+FMTypeIShortRowDivisorSwitchEstimate
+FMTypeIISameRowReciprocalGraphBilinearDispersion
+FMLocalDensityForWheelRowComparisonSequence
+FMPointwiseUniformAllRowsUpgrade
+CharacterAveragedSameRowCRTDispersionForLPFTail
+SquarePhaseEndpointLowerBound
+```
+
+状态边界：
+
+```text
+ford_maynard_embedding_complete=true
+ford_maynard_hypotheses_verified_for_hp=false
+same_row_reciprocal_typeii_still_main_attack=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 63. Phi-LPF CRT signed residue projection gate 审计
 
 新增证书：

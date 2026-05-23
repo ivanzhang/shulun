@@ -30518,19 +30518,26 @@ the sieve parameter $s=1\le 2$, so $f(1)=0$.  The Bombieri 1976
 parity barrier remains binding.  EH itself is unproved.
 \end{remark}
 
-\begin{externalstatement}[K7: Maynard-derived conditional on EH]
-Conditional on EH, for sufficiently large prime $P$,
-\[
-  |\{k\in[1,P-1]:I_k\text{ contains no prime pair of gap}\le 246\}|\ll P^{1-\delta}
-\]
-for some absolute constant $\delta>0$.
-\end{externalstatement}
+\begin{remark}[The Maynard/EH row-exception estimate is not derived here]
+A tempting statement would be that Maynard's method, perhaps under EH,
+forces all but \(O(P^{1-\delta})\) of the \(H_P\) rows to contain a
+bounded-gap prime pair.  That statement is not a consequence of the
+Maynard theorem alone.  Maynard gives a prime-cluster conclusion for
+infinitely many translates of an admissible tuple, whereas \(H_P\) asks
+for every prescribed row \(I_k\).  Passing from the former to a uniform
+row-exception estimate would require an additional distribution theorem
+for the specific row family.
 
-\begin{remark}[K7 is not $H_P$]
-K7 is conditional on EH (unproved) and only states that all but
-$O(P^{1-\delta})$ rows contain a prime pair of bounded gap.  The
-$P^{1-\delta}$ exceptional rows could a priori have no primes at all,
-and EH is unproved.  $H_P$ remains \textbf{Not claimed}.
+Thus the only accepted conclusion at this point is negative: Maynard
+2013 supplies a powerful statistical sieve architecture, but it does
+not by itself close \(H_P\), even conditionally on EH.
+\end{remark}
+
+\begin{remark}[Maynard is not $H_P$]
+$H_P$ remains \textbf{Not claimed}.  Any usable Maynard-derived row
+statement would need an extra, explicitly stated statistical-to-row
+upgrade; without that input the possible exceptional rows could still
+contain all of the obstruction.
 
 The honest closure of this frontier is the rigorous diagnosis
 recorded above: Maynard 2013, the best-positioned of the three
@@ -30539,6 +30546,110 @@ single-session ambient.  Future progress requires either an
 unconditional resolution of EH plus a statistical-to-pointwise
 upgrade, or a non-sieve technique breaking the Bombieri 1976
 parity barrier outright.
+\end{remark}
+
+\section{Ford--Maynard prime-producing sieve theorem-match for the Phi--LPF tail}
+
+\begin{externalstatement}[Ford--Maynard prime-producing sieve framework]
+Ford and Maynard develop a general framework for non-negative
+sequences \(a_n,b_n\), supported on \(x/2<n\le x\), with
+\(w_n=a_n-b_n\).  If \(w_n\) satisfies Type-I estimates in a divisor
+range and Type-II bilinear estimates in a prescribed range, their
+framework gives optimal constants \(C^-(\gamma,\theta,\nu)\) and
+\(C^+(\gamma,\theta,\nu)\) controlling the prime sum of \(a_n\) in
+terms of the comparison prime sum of \(b_n\).  The same paper also
+shows that a genuinely positive Type-II range is necessary in general.
+\end{externalstatement}
+
+\begin{proposition}[$H_P$ row sequence embedded in the Ford--Maynard interface]
+In the strict top band put \(x\asymp P^2\) and
+\[
+  I_{P,k}=(kP,(k+1)P),\qquad H=|I_{P,k}|=P=x^{1/2}.
+\]
+A formal Ford--Maynard target sequence is
+\[
+  a_{P,k}(n)=\frac{x}{H}\,1_{kP<n<(k+1)P},
+\]
+optionally multiplied by fixed wheel unit filters, with \(b_{P,k}\)
+a smooth local-density comparison sequence of the same total mass.
+Then
+\[
+  \sum_p a_{P,k}(p)>0
+  \quad\Longleftrightarrow\quad
+  \pi((k+1)P-1)-\pi(kP)>0.
+\]
+Thus the row-prime problem is formally a prime-producing sequence
+problem.  The formal embedding, however, supplies no Type-I or Type-II
+estimate.
+\end{proposition}
+
+\begin{theorem}[Ford--Maynard theorem-match obstruction for the Phi--LPF tail]
+The \(30\)-wheel Phi--LPF tail has the balanced scale required for a
+Type-II attack: in the top band \(x\asymp P^2\) one has
+\[
+  q\asymp m\asymp P\asymp x^{1/2}.
+\]
+But the support is the same-row reciprocal graph
+\[
+  I_q(P,k)=
+  [\max(q,\lfloor kP/q\rfloor+1),
+   \min(2P-1,\lfloor((k+1)P-1)/q\rfloor)],
+\]
+with fibres
+\[
+  \#I_q(P,k)\le2,\qquad
+  \#\{q:m\in I_q(P,k)\}\le2,\qquad
+  \#\{a:kP<qra<(k+1)P\}\le1.
+\]
+Consequently the Ford--Maynard framework does not apply by citation
+alone.  A genuine application to \(H_P\) requires the following
+row-uniform inputs:
+\begin{quote}\scriptsize\ttfamily
+FMTypeIShortRowDivisorSwitchEstimate\\
+FMTypeIISameRowReciprocalGraphBilinearDispersion\\
+FMLocalDensityForWheelRowComparisonSequence\\
+FMPointwiseUniformAllRowsUpgrade.
+\end{quote}
+The existing CRT audit also rules out replacing these inputs by fixed
+unit-cell non-negativity; any CRT continuation must be character
+averaged or otherwise genuinely dispersive.
+\end{theorem}
+\begin{proof}[Status and reference]
+The scale \(q,m\asymp P\) is immediate from the already recorded
+LPF-tail representation.  The three fibre bounds are the deterministic
+reciprocal-window bounds in the Type-II obligation certificate.  The
+Ford--Maynard hypotheses are estimates for the target sequence
+\(w_n=a_n-b_n\), with arbitrary divisor-bounded coefficients in the
+Type-II range.  The certificate
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-ford-maynard-\\
+embedding-obligation-audit.md
+\end{quote}
+records the theorem-match table.  It marks the row sequence and prime
+sum target as formally matched, but the Type-I short-row divisor
+estimate, same-row reciprocal-graph Type-II dispersion, local-density
+comparison, and pointwise all-row upgrade as unproved.  Therefore the
+Ford--Maynard embedding is complete as a conditional schema, not as an
+unconditional proof of \(H_P\).
+\end{proof}
+
+\begin{externalstatement}[Conditional Ford--Maynard schema for \(H_P\)]
+If, for every sufficiently large prime \(P\) and every strict row
+\(k\), the normalized row sequence above satisfies the Ford--Maynard
+Type-I, Type-II, local-density, and positive \(C^-\) hypotheses
+uniformly, then \(H_P\) follows for those rows.
+\end{externalstatement}
+
+\begin{remark}[Current status of the selected route]
+This is the present non-circular compression of the hard point.  It
+does not assert that the required Type-I/Type-II estimates are known.
+The most direct remaining line is
+\[
+  \texttt{FMTypeIISameRowReciprocalGraphBilinearDispersion},
+\]
+together with the accompanying short-row Type-I and local-density
+checks.  The external lemma version and the internal self-contained
+version both remain unconditionally open.
 \end{remark}
 
 \chapter{Current Status and Honest Boundary}
