@@ -2081,6 +2081,100 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65. Phi-LPF reciprocal graph Kloosterman gateway 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_reciprocal_graph_kloosterman_gateway_audit.py
+data/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-ledger.json
+docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.json
+docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.md
+```
+
+本层继续下钻：
+
+```text
+FMTypeIISameRowReciprocalGraphBilinearDispersion
+```
+
+目标是验收可相关的外部 Kloosterman/dispersion 定理是否能直接匹配
+Phi-LPF same-row reciprocal graph。
+
+同一行对象保持为：
+
+```text
+R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k),
+                 r=LPF(m)>=7, a>=r, a is r-rough}
+I_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))]
+#I_q(P,k)<=2
+#{q:m in I_q(P,k)}<=2
+#{a:kP<q*r*a<(k+1)P}<=1
+```
+
+频率入口：
+
+```text
+floor_sawtooth_endpoint_route:
+  psi(kP/u), psi(((k+1)P-1)/u) -> e(h*kP/u)
+  defect: reciprocal phase, not modular inverse Kloosterman fraction
+
+product_window_fourier_route:
+  1_{kP<uv<(k+1)P} -> e(t*u*v/Y)
+  defect: additive bilinear phase, not yet DI/DFI/BC inverse-fraction phase
+
+crt_character_average_route:
+  sum_a mu_S(a) chi(a)
+  defect: fixed cellwise dominance is false; still needs signed dispersion
+```
+
+外部 theorem-match：
+
+```text
+Duke-Friedlander-Iwaniec 1997:
+  bilinear Kloosterman fractions e(a*bar m/n)
+  not direct: present graph first emits floor/reciprocal or product-window phases
+
+Bettin-Chandee 2015/2018:
+  trilinear Kloosterman fractions e(theta*a*bar m/n)
+  not direct: present LPF tail has q prime and one-point m/a fibres, not the BC averaged package
+
+Wright 2026 arXiv:2604.25177:
+  partially fixed moduli and unbalanced AP convolution discrepancy
+  not direct: theorem averages AP convolutions over q~Q with Siegel-Walfisz beta;
+  H_P is a fixed pointwise product-window row
+
+Dong-Robles-Zeindler 2026 arXiv:2601.00292:
+  withdrawn; not an accepted theorem source
+```
+
+新原子门：
+
+```text
+ReciprocalGraphToKloostermanCompletionIdentity
+CompletedKloostermanMeanForPrimeQAndLPFShellWeights
+SawtoothTailLogSavingForThinReciprocalFibres
+```
+
+最新最窄口：
+
+```text
+ReciprocalGraphToKloostermanCompletionIdentity
+AND CompletedKloostermanMeanForPrimeQAndLPFShellWeights
+AND SawtoothTailLogSavingForThinReciprocalFibres
+```
+
+状态边界：
+
+```text
+direct_external_closure_reached=false
+same_row_reciprocal_typeii_still_main_attack=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 64. Phi-LPF Ford--Maynard embedding obligation 审计
 
 新增证书：

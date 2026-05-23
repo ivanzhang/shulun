@@ -3607,3 +3607,96 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q2：Phi-LPF reciprocal graph Kloosterman gateway 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_reciprocal_graph_kloosterman_gateway_audit.py
+data/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-ledger.json
+docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.json
+docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.md
+```
+
+本轮继续推进上一轮选定主线：
+
+```text
+FMTypeIISameRowReciprocalGraphBilinearDispersion
+```
+
+目标是原子化验收 DFI 1997、Bettin--Chandee 2015/2018、Wright 2026
+等外部 Kloosterman/dispersion 定理能否直接接入 Phi-LPF same-row
+reciprocal graph。
+
+### Q2.1 频率入口三分
+
+同一行对象仍是：
+
+```text
+R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k),
+                 r=LPF(m)>=7, a>=r, a is r-rough}
+I_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))]
+#I_q(P,k)<=2
+#{q:m in I_q(P,k)}<=2
+#{a:kP<q*r*a<(k+1)P}<=1
+```
+
+可进入频率分析的路径有三条：
+
+| route | closed | proved | obstruction |
+| --- | --- | --- | --- |
+| floor/sawtooth endpoint | true | true | 产生 `e(h*kP/u)`，是 reciprocal phase，不是模逆 Kloosterman fraction |
+| product-window Fourier | true | true | 产生 `e(t*u*v/Y)`，还未无损转成 DI/DFI/BC 逆元相位 |
+| CRT character average | true | true | 固定逐格非负已被反例排除，仍需 signed/character dispersion |
+
+### Q2.2 外部定理匹配
+
+```text
+Duke-Friedlander-Iwaniec 1997:
+  bilinear Kloosterman fractions e(a*bar m/n)
+  useful but not directly matched
+
+Bettin-Chandee 2015/2018:
+  trilinear Kloosterman fractions e(theta*a*bar m/n)
+  useful but needs an averaged numerator/denominator package absent from current one-point fibres
+
+Wright 2026 arXiv:2604.25177:
+  partially fixed moduli and unbalanced convolution AP discrepancy
+  useful as frontier guidance, but still AP-average/Siegel-Walfisz input, not fixed H_P row
+
+Dong-Robles-Zeindler 2026 arXiv:2601.00292:
+  withdrawn, therefore not accepted as source
+```
+
+### Q2.3 真推进后的最窄口
+
+本层不是“外部定理闭合”，而是把此前粗粒度的
+`FMTypeIISameRowReciprocalGraphBilinearDispersion` 压成三个可审计原子：
+
+```text
+ReciprocalGraphToKloostermanCompletionIdentity
+AND CompletedKloostermanMeanForPrimeQAndLPFShellWeights
+AND SawtoothTailLogSavingForThinReciprocalFibres
+```
+
+解释：
+
+- 先必须证明 same-row reciprocal graph 能无损完成到 DFI/BC 可接受的
+  inverse-fraction Kloosterman 形态；
+- 完成后还要有 prime `q`、LPF shell、`r`-rough cofactor 与 one-point fibres 的
+  对象敏感均值定理；
+- floor/sawtooth 的 Fourier 尾项还需任意对数节省。
+
+状态边界：
+
+```text
+direct_external_closure_reached=false
+same_row_reciprocal_typeii_still_main_attack=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

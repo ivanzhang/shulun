@@ -1,0 +1,148 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_reciprocal_graph_kloosterman_gateway_audit",
+  "direct_external_closure_reached": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_match_table": [
+    {
+      "accepted_as_external_input": false,
+      "matched_to_current_object": false,
+      "reason_not_direct": "current graph emits floor/reciprocal or product-window phases before any inverse-modulus completion",
+      "remaining": "ProductWindowToInverseKloostermanCompletionIdentity",
+      "source": "Duke-Friedlander-Iwaniec 1997",
+      "theorem_type": "bilinear forms with Kloosterman fractions e(a*bar m/n)",
+      "useful_part": "arbitrary coefficients; balanced dyadic ranges have nontrivial cancellation"
+    },
+    {
+      "accepted_as_external_input": false,
+      "matched_to_current_object": false,
+      "reason_not_direct": "LPF tail has q prime and one-point m/a fibres, not an existing averaged numerator denominator package",
+      "remaining": "LPFShellWeightsToBCKloostermanVariablesWithoutProjectionLoss",
+      "source": "Bettin-Chandee 2015/2018",
+      "theorem_type": "trilinear Kloosterman fractions e(theta*a*bar m/n)",
+      "useful_part": "adds an averaged numerator variable and improves DFI-type bounds"
+    },
+    {
+      "accepted_as_external_input": false,
+      "matched_to_current_object": false,
+      "reason_not_direct": "estimates average AP convolution over q~Q with Siegel-Walfisz beta; H_P is a pointwise product-window row",
+      "remaining": "SameRowProductWindowToAPConvolutionAverageTransfer",
+      "source": "Wright 2026 arXiv:2604.25177",
+      "theorem_type": "partially fixed moduli and unbalanced convolution AP discrepancy",
+      "useful_part": "improves Bettin-Chandee input when the denominator has a fixed factor"
+    },
+    {
+      "accepted_as_external_input": false,
+      "matched_to_current_object": false,
+      "reason_not_direct": "paper is withdrawn and cannot be used as an accepted theorem",
+      "remaining": "not_an_accepted_source",
+      "source": "Dong-Robles-Zeindler 2026 arXiv:2601.00292",
+      "theorem_type": "claimed improved bilinear Kloosterman fractions",
+      "useful_part": "none for citation discipline"
+    }
+  ],
+  "frequency_decomposition_gate": [
+    {
+      "benefit": "keeps exact same-row reciprocal endpoint geometry",
+      "closed": true,
+      "defect": "produces reciprocal phases e(A/u), not modular-inverse Kloosterman fractions e(A*bar m/n)",
+      "formal_phase": "psi(kP/u), psi(((k+1)P-1)/u) -> finite sums of e(h*kP/u)",
+      "proved": true,
+      "remaining": "ReciprocalSawtoothTailLogSavingForLPFShellWeights",
+      "route": "floor_sawtooth_endpoint_route"
+    },
+    {
+      "benefit": "keeps bilinear product variable before solving for one-point fibres",
+      "closed": true,
+      "defect": "not yet transformed into a DI/DFI/BC inverse-fraction phase without Cauchy/Poisson loss",
+      "formal_phase": "smooth 1_{kP<uv<(k+1)P} -> additive bilinear phases e(t*u*v/Y)",
+      "proved": true,
+      "remaining": "ProductWindowToInverseKloostermanCompletionIdentity",
+      "route": "product_window_fourier_route"
+    },
+    {
+      "benefit": "compatible with fixed-wheel signed projection",
+      "closed": true,
+      "defect": "fixed cellwise dominance is false; character averaging still needs same-row dispersion",
+      "formal_phase": "sum_a mu_S(a) chi(a) across unit classes",
+      "proved": true,
+      "remaining": "CharacterAveragedSameRowCRTDispersionForLPFTail",
+      "route": "crt_character_average_route"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "ReciprocalGraphToKloostermanCompletionIdentity",
+    "AND CompletedKloostermanMeanForPrimeQAndLPFShellWeights",
+    "AND SawtoothTailLogSavingForThinReciprocalFibres"
+  ],
+  "new_atomic_gates": [
+    {
+      "closed": false,
+      "gate": "ReciprocalGraphToKloostermanCompletionIdentity",
+      "meaning": "derive, without losing the pointwise row and LPF-shell weights, a DI/DFI/BC-compatible inverse-fraction bilinear or trilinear form",
+      "proved": false,
+      "remaining": "first missing gate before external Kloosterman theorems can be applied"
+    },
+    {
+      "closed": false,
+      "gate": "CompletedKloostermanMeanForPrimeQAndLPFShellWeights",
+      "meaning": "after completion, prove or cite a mean theorem with q prime, r=LPF(m), a r-rough and one-point fibres",
+      "proved": false,
+      "remaining": "object-sensitive spectral/dispersion theorem"
+    },
+    {
+      "closed": false,
+      "gate": "SawtoothTailLogSavingForThinReciprocalFibres",
+      "meaning": "control the Fourier truncation/tail from the floor endpoint representation with arbitrary log saving",
+      "proved": false,
+      "remaining": "thin reciprocal graph Fourier tail bound"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalKloostermanTheoremsApplyDirectly",
+      "meaning": "DFI/BC/Wright do not directly match the present fixed-row reciprocal graph",
+      "proved": false,
+      "remaining": "must first close the completion identity"
+    }
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prior_metrics": {
+    "active_residual_row_count": 52697,
+    "crt_status": "fixed_crt_unit_class_dominance_rejected_signed_character_dispersion_required",
+    "fixed_crt_classwise_dominance_proved": false,
+    "ford_maynard_hypotheses_verified_for_hp": false,
+    "ford_maynard_status": "hp_embedded_in_ford_maynard_typeii_framework_but_hypotheses_open",
+    "lpf_tail_status": "lpf_tail_reduced_to_same_row_reciprocal_graph_typeii_obligation",
+    "max_prime": 1009,
+    "one_point_qr_fiber": true,
+    "row_count": 76789,
+    "selected_non_circular_direction": "SameRowReciprocalWindowTypeIIDispersionForLPFTail",
+    "thin_q_fiber": true,
+    "thin_reverse_fiber": true,
+    "total_R30": 299977
+  },
+  "row_column_unconditional_closed": false,
+  "same_row_object": {
+    "fiber_bounds": [
+      "#I_q(P,k)<=2",
+      "#{q:m in I_q(P,k)}<=2",
+      "#{a:kP<q*r*a<(k+1)P}<=1"
+    ],
+    "graph": "I_q(P,k)=[max(q,floor(kP/q)+1), min(2P-1,floor(((k+1)P-1)/q))]",
+    "residual": "R_30(P,k)=# {(q,r,a): P/2<q<P, q prime, m=r*a in I_q(P,k), r=LPF(m)>=7, a r-rough}"
+  },
+  "same_row_reciprocal_typeii_still_main_attack": true,
+  "selected_attack_line": "FMTypeIISameRowReciprocalGraphBilinearDispersion",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "e4b83075bc8a44cbd66d45bc962fc95e15ab91640776770447675268d0c2ff78",
+    "docs/monograph/external-theorem-index.md": "0d7bd45e24c3d56c7d4a400c96dd4ef8557c595e4fb2d9e8bc531ab9bba939af",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "41be3307293c23cee07c7215fdaaccc4fab8934dfd05fa3263c62934dcbe0936",
+    "docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.json": "629cf9b59f34ef03e2a2d78419f044c043ada143c6b7896f1e1910a53c7e2023",
+    "docs/monograph/prime-matrix-phi-lpf-ford-maynard-embedding-obligation-audit.json": "b098b18434720c23857818327348ede44efdafbf97c0e19efaaae4c7fd6b8775",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "experiments/prime_matrix_phi_lpf_reciprocal_graph_kloosterman_gateway_audit.py": "e13361d67010230a3b9fcc3456973966708438de7ecb9707b1aed4ad7b92bb48",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "c8fb042597090b7a3ad1847fdb0a1e657a0d450bf7339e0c274a79b7ec372b14"
+  },
+  "status": "reciprocal_graph_kloosterman_gateway_identified_not_closed"
+}

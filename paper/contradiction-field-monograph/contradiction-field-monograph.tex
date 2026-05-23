@@ -30652,6 +30652,92 @@ checks.  The external lemma version and the internal self-contained
 version both remain unconditionally open.
 \end{remark}
 
+\section{Kloosterman gateway for the same-row reciprocal graph}
+
+\begin{externalstatement}[DFI, Bettin--Chandee, and Wright Kloosterman technologies]
+The relevant external Kloosterman-fraction technology includes
+Duke--Friedlander--Iwaniec's bilinear forms with Kloosterman fractions,
+Bettin--Chandee's trilinear Kloosterman fractions, and Wright's 2026
+partially fixed-moduli refinement for unbalanced convolution
+discrepancies.  These are genuine frontier tools for bilinear or
+trilinear inverse-fraction phases and AP convolution averages.
+\end{externalstatement}
+
+\begin{proposition}[Three frequency entrances from the reciprocal graph]
+The same-row Phi--LPF tail admits three formal entrances into frequency
+analysis.
+
+\emph{Endpoint sawtooth.}  Solving the row condition for one variable
+uses
+\[
+  \lfloor ((k+1)P-1)/u\rfloor-\lfloor kP/u\rfloor
+\]
+and hence sawtooth terms with phases of the form
+\[
+  e(hkP/u).
+\]
+These are reciprocal phases, not modular-inverse Kloosterman fractions.
+
+\emph{Product-window Fourier.}  Keeping the product condition
+\(kP<uv<(k+1)P\) before solving for either variable gives additive
+bilinear phases of the form \(e(tuv/Y)\).  A further Cauchy--Poisson or
+completion step would be needed before an inverse-fraction Kloosterman
+theorem can be cited.
+
+\emph{CRT character average.}  The signed residue measure
+\(\sum_a\mu_S(a;P,k)\chi(a)\) is compatible with character averaging,
+but the fixed unit-cell non-negativity route is already false.  It
+still requires same-row signed dispersion.
+\end{proposition}
+
+\begin{theorem}[Kloosterman theorem-match gate for the Phi--LPF reciprocal graph]
+The external Kloosterman sources above do not directly close
+\[
+  \texttt{FMTypeIISameRowReciprocalGraphBilinearDispersion}.
+\]
+DFI estimates bilinear inverse-fraction phases \(e(a\bar m/n)\);
+Bettin--Chandee estimates trilinear inverse-fraction phases
+\(e(\theta a\bar m/n)\); Wright's 2026 theorem estimates averaged AP
+convolution discrepancies with a Siegel--Walfisz input.  The present
+object is a fixed pointwise product-window row with \(q\) prime,
+\(m=ra\), \(r={\rm LPF}(m)\), \(a\) \(r\)-rough, and one-point
+\((q,r)\)-fibres.  Therefore a direct citation would miss a necessary
+completion step.
+
+The narrowed hard point is
+\begin{quote}\scriptsize\ttfamily
+ReciprocalGraphToKloostermanCompletionIdentity\\
+AND CompletedKloostermanMeanForPrimeQAndLPFShellWeights\\
+AND SawtoothTailLogSavingForThinReciprocalFibres.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The endpoint and product-window identities are deterministic rewritings
+of the already established reciprocal graph
+\[
+  I_q(P,k)=
+  [\max(q,\lfloor kP/q\rfloor+1),
+   \min(2P-1,\lfloor((k+1)P-1)/q\rfloor)].
+\]
+They show exactly where the external Kloosterman technology could enter
+and exactly why it cannot yet be cited: the phases first obtained are
+reciprocal or additive product phases, whereas the DFI/BC theorems
+control inverse-modulus Kloosterman fractions after a completion step.
+Wright's theorem is closer to a dispersion package with partially fixed
+moduli, but it remains an averaged AP convolution theorem, not a
+pointwise fixed-row result for \(H_P\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-reciprocal-\\
+graph-kloosterman-gateway-audit.md.
+\end{quote}
+It also records that the 2026 Dong--Robles--Zeindler bilinear
+Kloosterman-fraction preprint is withdrawn and is not accepted as a
+source.  No unconditional row/column closure follows from the
+Kloosterman gateway audit.
+\end{proof}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
