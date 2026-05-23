@@ -2415,6 +2415,86 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61B. Phi-LPF complementary pair radial tensor 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_complementary_pair_radial_tensor_audit.py
+data/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-audit.md
+```
+
+本层继续沿互补 conductor 对偶下钻。令：
+
+```text
+rho_l(n)=1 if l|n, else -1/(l-1).
+```
+
+则每个互补配对核有精确 local Ramanujan tensor 正规形：
+
+```text
+K_q(n)=mu(q)*prod_{l|q}rho_l(n)+mu(W_P/q)*prod_{l|W_P/q}rho_l(n).
+```
+
+因此 `K_q` 只依赖 `gcd(n,W_P)`，对单位群 `(Z/W_PZ)^*` 的乘法作用径向不变。
+若 `q` 与 `W_P/q` 都非平凡，则把 divisibility states 按两侧切开后，
+该矩阵为 two-cylinder sum，rank 精确为 `2`；只有端点互补对 `{1,W_P}`
+为 rank `1`。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+pair_count_total=32554
+rank_one_endpoint_pair_total=165
+rank_two_nontrivial_pair_total=32389
+max_complementary_pair_count=1024
+max_rank_two_nontrivial_pair_count=1023
+radial_bad_total=0
+reciprocal_phase_present_total=0
+all_pair_kernels_unit_orbit_radial=true
+all_nonendpoint_pairs_rank_two=true
+direct_kloosterman_trace_input_available_for_any_pair=false
+```
+
+外部前沿影响：Fouvry--Kowalski--Michel--Sawin 2025/2026 的 trace-function
+双线性估计、Milićević--Qin--Wu 2025 任意模 Kloosterman 双线性估计、
+Pascadi 2025 复合模非交换放大、Wright 2026 Kloosterman fractions/unbalanced
+convolution、Shao--Shparlinski--Wijaya 2024 squarefree/smooth 模数估计，都还
+需要先建立“radial 支撑核与 reciprocal/trace 相位的同对象耦合桥”。原始配对核
+没有 modular inverse phase，不能直接作为这些定理的输入。
+
+新的最新最窄口：
+
+```text
+RadialPairKernelToReciprocalTracePhaseCouplingBridge
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairsAfterCoupling
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complementary_pair_local_tensor_normal_form_closed=true
+complementary_pair_unit_orbit_radiality_closed=true
+complementary_pair_two_cylinder_rank_ledger_closed=true
+direct_kloosterman_trace_input_from_pair_kernel_rejected=true
+radial_pair_to_reciprocal_trace_phase_bridge_closed=false
+uniform_complementary_pair_cancellation_after_coupling_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

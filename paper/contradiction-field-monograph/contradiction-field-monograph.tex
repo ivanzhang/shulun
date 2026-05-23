@@ -32515,6 +32515,86 @@ complementary-conductor-pair-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Radial tensor form of complementary conductor pairs}
+
+\begin{theorem}[Complementary pair kernels are radial two-cylinder tensors]
+Let \(W=W_P\) be squarefree, let \(q\mid W\), and put \(q^\vee=W/q\).
+For each prime \(\ell\mid W\), define
+\[
+  \rho_\ell(n)=
+  \begin{cases}
+    1, & \ell\mid n,\\
+    -1/(\ell-1), & \ell\nmid n.
+  \end{cases}
+\]
+Then the complementary pair kernel from the previous section has the
+exact local tensor form
+\[
+  K_q(n)
+  =
+  \mu(q)\prod_{\ell\mid q}\rho_\ell(n)
+  +
+  \mu(q^\vee)\prod_{\ell\mid q^\vee}\rho_\ell(n).
+\]
+Consequently \(K_q(n)\) depends only on \(\gcd(n,W)\) and is invariant
+under \(n\mapsto un\bmod W\) for every \(u\in(\mathbb Z/W\mathbb Z)^\ast\).
+If both \(q\) and \(q^\vee\) are greater than \(1\), its divisor-state
+matrix across the split \(q\mid W/q^\vee\) has rank exactly \(2\).  For
+the endpoint pair \(\{1,W\}\) the rank is \(1\).
+\end{theorem}
+\begin{proof}
+For squarefree \(m\), the normalized Ramanujan sum factors as
+\[
+  \frac{c_m(n)}{\varphi(m)}=\prod_{\ell\mid m}\rho_\ell(n).
+\]
+Substituting this formula into
+\[
+  K_q(n)=\mu(q)\frac{c_q(n)}{\varphi(q)}
+       +\mu(q^\vee)\frac{c_{q^\vee}(n)}{\varphi(q^\vee)}
+\]
+gives the displayed tensor form.  Each factor \(\rho_\ell(n)\) depends
+only on whether \(\ell\mid n\).  Hence the whole expression depends only
+on \(\gcd(n,W)\), and multiplication by a unit modulo \(W\) preserves it.
+
+Now index rows by divisibility states on the prime factors of \(q\) and
+columns by divisibility states on the prime factors of \(q^\vee\).  The
+matrix has the form
+\[
+  M_{r,c}=u_r+v_c.
+\]
+If both sides are nonempty, the local products on both sides are
+nonconstant, so the column space is spanned by two independent vectors,
+for example \(u+v_{c_1}\mathbf 1\) and \(u+v_{c_2}\mathbf 1\) with
+\(v_{c_1}\ne v_{c_2}\).  Thus the rank is \(2\).  If one side is empty,
+the matrix has only one row or one column after the split, so its rank is
+\(1\).
+\end{proof}
+
+\begin{remark}[No direct trace input is present]
+The radial tensor form is a genuine structural reduction, but it is not
+itself a Kloosterman or trace-function phase.  It has no modular inverse
+phase and is constant on unit orbits.  Thus the currently available
+Kloosterman-fraction, trace-function, and composite-modulus bilinear
+estimates can only enter after an additional same-object coupling bridge
+is proved.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+RadialPairKernelToReciprocalTracePhaseCouplingBridge\\
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairsAfterCoupling\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+complementary-pair-radial-tensor-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

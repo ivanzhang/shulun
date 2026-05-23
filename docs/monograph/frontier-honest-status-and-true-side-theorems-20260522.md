@@ -2606,6 +2606,84 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13B：Phi-LPF q-support complementary pair radial tensor 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_complementary_pair_radial_tensor_audit.py
+data/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-complementary-pair-radial-tensor-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已排除互补 conductor 对的自动抵消。
+本层把每个互补配对核压成局部 Ramanujan tensor：
+
+```text
+rho_l(n)=1 if l|n, else -1/(l-1),
+K_q(n)=mu(q)*prod_{l|q}rho_l(n)+mu(W_P/q)*prod_{l|W_P/q}rho_l(n).
+```
+
+于是 `K_q` 只依赖 `gcd(n,W_P)`，对单位群 `(Z/W_PZ)^*` 乘法作用径向不变。
+非端点互补对是精确 two-cylinder rank `2`；端点对 `{1,W_P}` 是 rank `1`。
+
+### Q13B.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+P_value_count=165
+pair_count_total=32554
+rank_one_endpoint_pair_total=165
+rank_two_nontrivial_pair_total=32389
+max_complementary_pair_count=1024
+max_rank_two_nontrivial_pair_count=1023
+radial_bad_total=0
+reciprocal_phase_present_total=0
+all_pair_kernels_unit_orbit_radial=true
+all_nonendpoint_pairs_rank_two=true
+direct_kloosterman_trace_input_available_for_any_pair=false
+```
+
+代表性现象：在 `P=971` 与 `P=1009` 中，`1024` 个互补对里只有端点对 rank
+`1`，其余 `1023` 个非端点对全为 rank `2`；但所有配对核仍是 radial
+divisor-lattice 函数，不含 reciprocal inverse phase。
+
+### Q13B.2 诚实边界
+
+本层真推进是关闭互补配对核的 local tensor/radial/rank 账本，并排除
+“配对核本身就是可直接套用的 trace/Kloosterman 输入”的假出口。外部前沿定理
+要进入，仍必须先建立同对象相位耦合桥。
+
+最新最窄口：
+
+```text
+RadialPairKernelToReciprocalTracePhaseCouplingBridge
+AND UniformCancellationAcrossComplementaryPrimorialConductorPairsAfterCoupling
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complementary_pair_local_tensor_normal_form_closed=true
+complementary_pair_unit_orbit_radiality_closed=true
+complementary_pair_two_cylinder_rank_ledger_closed=true
+direct_kloosterman_trace_input_from_pair_kernel_rejected=true
+radial_pair_to_reciprocal_trace_phase_bridge_closed=false
+uniform_complementary_pair_cancellation_after_coupling_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
