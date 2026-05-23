@@ -22540,6 +22540,58 @@ AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
 
 本层不证明上述源种子或 moving atom 排斥；它只删除 ExactUV/source 标签循环。
 
+### 1.184 two replacement lines seed/moving-atom/global-terminal sync 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_moving_atom_global_terminal_sync_router.py
+data/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.json
+```
+
+同步读数为：
+
+```text
+moving_atom_isolated_hardpoint_removed=true
+latest_internal_terminal_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND GlobalPDECorSparseTerminalExclusion
+  AND ExplicitModelGapAndFiniteDPRCLedger
+acyclic_seed_current_corpus_proved=false
+global_pdec_sparse_terminal_exclusion_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+rate_preservation_ledger_proved=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一节的 `ActualNoncanonicalCleanCoreMovingAtomExclusion` 不是新的孤立
+付款口。strict moving-atom/global-terminal 路由显示，若无环 seed 下仍存在 clean-core
+moving same-`(u,v)` atom，它必须作为 rate-bearing packet 进入全局 PDEC/sparse 终端，并
+同时保留显式模型余量/有限 DPRC 账本。
+
+因此当前内部活动基改为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND GlobalPDECorSparseTerminalExclusion
+AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+严格自足版还必须携带：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+ExactUV/pair-mass 支线不能作为独立证明；它下游压到
+`RateBearingLargePairAtomPacketExclusion` 或回到全局终端。外部引理版仍只是
+`AcceptedFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`
+条件闭合；无黑箱外部版仍需同对象 Full-S theorem-match、actual source capacity 或 completed
+residue dispersion。
+
 ### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
 
 新增机器证书：

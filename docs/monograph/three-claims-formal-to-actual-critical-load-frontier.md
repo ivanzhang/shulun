@@ -24094,3 +24094,67 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 本层没有证明无环源种子、moving atom 排斥、模型余量、PDEC/CleanKLS、Rate 或 DStructure；
 目标命题仍未无条件闭合。
+
+## 330X. Two replacement lines seed/moving-atom/global-terminal sync frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_moving_atom_global_terminal_sync_router.py
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.json
+data/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_seed_moving_atom_global_terminal_synced_open
+moving_atom_isolated_hardpoint_removed=true
+latest_internal_terminal_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND GlobalPDECorSparseTerminalExclusion
+  AND ExplicitModelGapAndFiniteDPRCLedger
+acyclic_seed_current_corpus_proved=false
+global_pdec_sparse_terminal_exclusion_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+rate_preservation_ledger_proved=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：moving atom 排斥已被接回 actual terminal packet，而不是继续作为
+一个可独立命名的出口。若无环 pre-Cauchy seed 下仍有 clean-core moving atom，则它必须
+显化为全局 PDEC/sparse 终端对象，并支付模型/DPRC 账本。
+
+当前内部活动基为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND GlobalPDECorSparseTerminalExclusion
+AND ExplicitModelGapAndFiniteDPRCLedger
+```
+
+严格自足版保留为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND GlobalPDECorSparseTerminalExclusion
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage
+```
+
+若继续展开终端家族，最新饱和形态是：
+
+```text
+(NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层没有证明 seed、全局终端排斥、模型/DPRC、Rate 或 DStructure；它只把 moving atom
+孤立硬点移回非循环终端账本。ExactUV/pair-mass 支线仍需独立 pair energy 或 large-pair
+packet 排斥，不能回证 source entropy。

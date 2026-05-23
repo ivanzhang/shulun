@@ -1739,3 +1739,54 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 外部引理版仍只是 `AcceptedFullSKLSExtExternalContract AND
 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 条件闭合；本层不支付无环源种子、
 moving atom 排斥、模型、PDEC/CleanKLS、Rate 或 DStructure 门。
+
+## 38. 两条替代线 seed/moving-atom/global-terminal 同步
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_seed_moving_atom_global_terminal_sync_router.py
+data/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.md
+docs/monograph/prime-matrix-two-replacement-lines-seed-moving-atom-global-terminal-sync-router.json
+```
+
+本层不新增外部定理引用；它把上一节的 moving atom 硬点与 strict
+moving-atom/global-terminal 证书对齐。同步读数为：
+
+```text
+moving_atom_isolated_hardpoint_removed=true
+latest_internal_terminal_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  AND GlobalPDECorSparseTerminalExclusion
+  AND ExplicitModelGapAndFiniteDPRCLedger
+acyclic_seed_current_corpus_proved=false
+global_pdec_sparse_terminal_exclusion_proved=false
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+rate_preservation_ledger_proved=false
+row_column_unconditional_closed=false
+```
+
+含义：`ActualNoncanonicalCleanCoreMovingAtomExclusion` 不再作为独立外部/内部出口保留。
+若无环 seed 下仍有 clean-core moving atom，它必须进入全局 PDEC/sparse terminal packet，
+并保留 `ExplicitModelGapAndFiniteDPRCLedger`。
+
+外部引理版仍只是条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需同对象来源或谱证明：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof
+ OR CDependentResidueWeightSpectralCancellationInput
+ OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+严格自足版仍需 seed、`GlobalPDECorSparseTerminalExclusion`、模型/DPRC、Rate 与自足
+DStructure/Rankin 替代包。本层不把 terminal reduction 写成目标命题无条件闭合。
