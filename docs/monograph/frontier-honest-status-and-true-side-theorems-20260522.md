@@ -281,6 +281,8 @@ $h=X^{1/2}$ 二阶矩成立 $\Leftrightarrow$ 各种已知开放硬点。
 | 定理 K1（行均值 $\sim P/(2\log P)$）| `Proved-in-text` | 本文档 §2.1 |
 | 定理 K2（行上界 $\le 2P/\log P$）| `External-theorem closed`（MV1973）| 本文档 §2.2 |
 | 定理 K3（$|E(P)|\le 3P/4$）| `External-theorem closed`（PNT+MV1973）| 本文档 §2.3 |
+| 定理 K3'（$|E(P)|<3P/4$ 显式，$P\ge 5$）| `External-theorem closed`（MV1973+RS1962）| 本文档 附录 A |
+| 定理 K3*（$|E^*(P)|<3P/4$ 列方向，$P\ge 5$）| `External-theorem closed`（MV-AP+RS1962）| 本文档 附录 B |
 | 定理 K4（$|E(P)|=o(P)$）| **`Conditional on SI-2(1/2)`（未证）** | 本文档 §2.4 |
 | 定理 K5（$|E(P)|=o(P/\log P)$）| **`Conditional / removed`（未证）** | 本文档 §2.5 |
 | **H_P 行命题**（$|E(P)|=0$ 对所有 $P$） | **`Not claimed`** | **未证；70 年开放** |
@@ -427,5 +429,105 @@ $$
 
 `experiments/k3_prime_explicit_bound_check.py` 验证 K3' 的两边显式不等式（A.4）对
 $P\le 1500$ 全部成立，且实际 $|E(P)|=0\ll 3P/4$。
+
+---
+
+## 附录 B：列方向对偶定理 K3*（独立 Linnik 路径，2026-05-22 增补）
+
+**目的**：H_P 行命题与列命题在数论谱系上**位于不同的开放硬点**（Cramér 局部 vs Linnik = 2），
+但形式 K3' 论证可平行推广到列方向，给出**独立**的显式无条件常数 $3/4$ 上界。
+这一推广**不是**行命题的等价改写——它从 short-interval 切换到 AP-counting，
+属于**真独立路径**。
+
+### B.1 列函数定义
+
+对素数 $P$，列 $j\in[1,P]$ 由 $A(P)_{1,j}, A(P)_{2,j},\ldots,A(P)_{P,j} = j, j+P, j+2P, \ldots, j+(P-1)P$ 组成。
+定义：
+$$
+M_P(j):=|\{k\in[0,P-1]:j+kP\text{ 是素数}\}|.
+$$
+列 $j$ 含素数 $\Leftrightarrow M_P(j)\ge 1$。设
+$$
+E^*(P):=\{j\in[1,P-1]:M_P(j)=0\}.
+$$
+（$j=P$ 特例：列 $\{P,2P,\ldots,P^2\}$ 含素数 $P$，故 $M_P(P)=1$；不进入 $E^*$。）
+
+### B.2 引入的外部显式定理
+
+**MV-AP**（Montgomery–Vaughan 1973 sharp Brun-Titchmarsh for arithmetic progressions）：
+$$
+\pi(x;q,a)\le\frac{2x}{\phi(q)\log(x/q)},\quad q<x,\;\gcd(a,q)=1.
+$$
+
+**RS1962**：同附录 A。
+
+### B.3 定理 K3*（列方向显式有效版）
+
+**陈述**：对每个素数 $P\ge 5$，
+$$
+|E^*(P)|<\frac{3P}{4}.
+$$
+
+**证明**：
+
+(1) 由 MV-AP（取 $q=P$, $x=P^2$, $\phi(P)=P-1$）：对每 $j\in[1,P-1]$（其中 $\gcd(j,P)=1$ 自动）：
+$$
+M_P(j)\le \pi(P^2;P,j)\le \frac{2P^2}{(P-1)\log P}.\tag{B.1}
+$$
+
+(2) 由 RS1962（同 A.2）：
+$$
+\pi(P^2)-1>\frac{P^2}{2\log P}-1.\tag{B.2}
+$$
+（减 $1$ 是去掉素数 $P$ 自身，它属于列 $P$。）
+
+(3) 列求和恒等式：
+$$
+\sum_{j=1}^{P-1}M_P(j)=\pi(P^2)-1-M_P(P)=\pi(P^2)-2,
+$$
+因为 $\pi(P^2)$ 个素数中 $P$ 属于列 $P$（计 $M_P(P)=1$），其余进入列 $j\in[1,P-1]$。
+
+(4) 联合 (B.1) 与 (3)：
+$$
+(P-1-|E^*(P)|)\cdot\frac{2P^2}{(P-1)\log P}\ge \sum_{j\notin E^*}M_P(j)=\pi(P^2)-2.
+$$
+
+(5) 代入 (B.2)：
+$$
+(P-1-|E^*(P)|)\ge \frac{(\pi(P^2)-2)(P-1)\log P}{2P^2}>\frac{(P-1)\log P}{2P^2}\cdot\Bigl(\frac{P^2}{2\log P}-3\Bigr)=\frac{P-1}{4}-\frac{3(P-1)\log P}{2P^2}.
+$$
+
+对 $P\ge 5$，$3(P-1)\log P/(2P^2)<3\log P/(2P)<1$（因 $\log P/P\to 0$，对 $P\ge 5$ 显式 $\log 5/5\approx 0.322<2/3$）。
+
+故 $P-1-|E^*(P)|>(P-1)/4-1$，即 $|E^*(P)|<3(P-1)/4+1\le 3P/4$。∎
+
+**$P\in\{5,7,11,13\}$ 小情形**：实际数值 $|E^*(P)|=0<3P/4$。
+
+### B.4 K3* 的意义与"非循环"刻画
+
+| 项 | 行 K3' | 列 K3* |
+|---|---|---|
+| 等价开放问题 | Cramér 局部 $g(P^2)\le P$ | Linnik = 2 |
+| 当前最优 | BHP 2001 $g\le x^{0.525}$ | Xylouris 2011 $L\le 5$ |
+| 距离开放硬点 | 差 5% 指数 | 差 $P^3$ |
+| K3 类上界工具 | MV1973 short-interval BT | MV1973 AP-BT |
+| K3' / K3* 常数 | $3/4$（同） | $3/4$（同） |
+
+行 K3' 与列 K3* **使用同一 BT 框架的两种形式**，但**目标命题独立**。
+这**不是**循环——它是同一精化思想（"BT 上界 + PNT 主项 + 求和"）在两条独立开放路径上的并行推论。
+
+### B.5 列数值核对脚本
+
+`experiments/k3_column_explicit_bound_check.py` 验证 K3* 的 B.4 不等式对
+$P\le 200$ 全部成立，且实际 $|E^*(P)|=0\ll 3P/4$。
+
+### B.6 升级路径（同样未做）
+
+| 升级 | 工具 | 预期改进 |
+|---|---|---|
+| K3* 常数 $3/4\to 3/4-\delta$ | Bombieri-Vinogradov + 大筛 | $\delta\sim 1/\log P$ |
+| K3* $\to|E^*(P)|=o(P)$ | Bombieri-Vinogradov 全程 | 几乎所有列 |
+| H_P 列完整 | Linnik = 2 改进 | 70 年开放 |
+
 
 
