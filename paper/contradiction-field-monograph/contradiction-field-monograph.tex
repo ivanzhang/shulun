@@ -32672,6 +32672,99 @@ radial-pair-coupled-phase-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Recovering the floor denominator as a forward floor cell}
+
+\begin{theorem}[Floor-cell radial support normal form]
+Let \(q\) be odd with \(P/2<q<P\), and let \(m\) be a residual rough
+cofactor with \(P/2<m<2P\).  Put
+\[
+  I_{P,k}(q)=
+  \left[
+    \max\{P/2+1,q,\lfloor kP/q\rfloor+1\},
+    \min\{2P-1,\lfloor((k+1)P-1)/q\rfloor\}
+  \right].
+\]
+With \(Q_{P,k}(m)\) as in the previous theorem, one has
+\[
+  Q_{P,k}(m)=q
+  \quad\Longleftrightarrow\quad
+  m\in I_{P,k}(q)
+\]
+inside the residual odd-cofactor graph.  Consequently the selected
+phase atoms may be written equivalently as
+\[
+  {\bf 1}_{(q,W_P)=1}\,
+  {\bf 1}_{m\in I_{P,k}(q)}\,
+  e\!\left(\frac{hkP}{q}\right),
+\]
+with the same complementary radial Ramanujan pair selector acting on
+the original \(q\)-coordinate.
+\end{theorem}
+\begin{proof}
+The reverse condition \(Q_{P,k}(m)=q\) means that the odd integer \(q\)
+lies in
+\[
+  \left[
+    \max\{P/2+1,\lfloor kP/m\rfloor+1\},
+    \min\{P-1,m,\lfloor((k+1)P-1)/m\rfloor\}
+  \right].
+\]
+Since \(m>P/2\), this reverse interval has length at most \(2\), hence
+it contains at most one odd integer.  Thus membership of the odd
+integer \(q\) is equivalent to being the least odd member.
+
+The lower floor inequality is
+\[
+  q\ge \lfloor kP/m\rfloor+1
+  \quad\Longleftrightarrow\quad
+  q>kP/m
+  \quad\Longleftrightarrow\quad
+  m>kP/q
+  \quad\Longleftrightarrow\quad
+  m\ge \lfloor kP/q\rfloor+1.
+\]
+The upper floor inequality is
+\[
+  q\le \lfloor((k+1)P-1)/m\rfloor
+  \quad\Longleftrightarrow\quad
+  mq\le (k+1)P-1
+  \quad\Longleftrightarrow\quad
+  m\le \lfloor((k+1)P-1)/q\rfloor.
+\]
+The remaining caps are exactly \(q<P\), \(q>P/2\), \(m<2P\), and
+\(q\le m\), which produce the displayed interval \(I_{P,k}(q)\).
+Finally, because \(q<P\), the \(W_P\)-unit condition is precisely the
+prime-\(q\) selector already proved in the primorial selector normal
+form.  The reciprocal phase is therefore the same phase
+\(e(hkP/q)\), not a new completed trace variable.
+\end{proof}
+
+\begin{remark}[The cell identity is not cancellation]
+The floor-cell normal form closes another deterministic gap: the
+floor-defined denominator has been recovered as the original
+\(q\)-coordinate of the product window.  This prevents a cyclic
+renaming of the obstruction.  It also shows exactly what remains
+missing: a theorem completing these floor cells and their coupled radial
+pair kernels into a genuine trace/Kloosterman or Type-II family with
+uniform phase saving.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+FloorCellRadialSupportToCompletedTraceFamilyBridge\\
+AND UniformCancellationAcrossFloorCellsWithRadialPairKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+floor-cell-radial-support-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

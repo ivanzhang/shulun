@@ -2772,6 +2772,94 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13D：Phi-LPF q-support floor-cell radial support 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_floor_cell_radial_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-audit.md
+```
+
+本层继续选择行/列 Phi-LPF。上一层把 radial pair kernel 与 actual reciprocal
+phase 耦合到 floor denominator `Q_{P,k}(m)`。本层证明这个 denominator
+可完全回收到正向 q-cell：
+
+```text
+Q_{P,k}(m)=q
+iff
+m in [max(P/2+1,q,floor(kP/q)+1),
+      min(2P-1,floor(((k+1)P-1)/q))].
+```
+
+因此 selected atom 是：
+
+```text
+1_{gcd(q,W_P)=1} * 1_{m in I_{P,k}(q)} * e(h*k*P/q).
+```
+
+### Q13D.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+row_count=76954
+active_residual_row_count=52697
+total_actual_phase_atoms=299977
+total_floor_cell_selected_terms=299977
+total_reverse_selected_terms=299977
+total_product_cell_residual_atoms=951378
+total_reverse_odd_residual_atoms=951378
+floor_cell_terms_equal_actual_phase_atoms=true
+floor_cell_terms_equal_reverse_selected_terms=true
+product_cell_atoms_equal_reverse_odd_atoms=true
+product_cell_to_reverse_mismatch_total=0
+reverse_to_product_cell_mismatch_total=0
+bad_product_cell_window_size_total=0
+bad_product_cell_odd_count_total=0
+bad_reverse_window_size_total=0
+bad_reverse_odd_count_total=0
+bad_unit_q_not_prime_total=0
+q_floor_cells_checked_total=12532624
+max_product_cell_window_size=2
+max_reverse_window_size=2
+```
+
+### Q13D.2 诚实边界
+
+本层真推进是关闭 floor denominator 与正向 q-cell 支撑之间的确定性缺口。
+它排除了“换到 floor 变量后已经得到外部 trace/Kloosterman 输入”的误读；
+但它不产生相消，也不闭合 Phi-LPF 奇偶障碍。
+
+最新最窄口：
+
+```text
+FloorCellRadialSupportToCompletedTraceFamilyBridge
+AND UniformCancellationAcrossFloorCellsWithRadialPairKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+floor_denominator_cell_decomposition_closed=true
+reverse_forward_floor_cell_equivalence_closed=true
+floor_cell_radial_support_exact_reconstruction_closed=true
+floor_cell_to_completed_trace_family_bridge_closed=false
+uniform_cancellation_across_floor_cells_with_radial_pair_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）

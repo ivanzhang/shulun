@@ -2588,6 +2588,99 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61D. Phi-LPF q-support floor-cell radial support 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_floor_cell_radial_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-floor-cell-radial-support-audit.md
+```
+
+本层把上一轮的 floor-defined denominator 压回正向 q-cell 支撑。对
+
+```text
+Q_{P,k}(m)=least odd integer in
+[max(P/2+1,floor(kP/m)+1), min(P-1,m,floor(((k+1)P-1)/m))]
+```
+
+有精确等价：
+
+```text
+Q_{P,k}(m)=q
+iff
+m in I_{P,k}(q)
+I_{P,k}(q)=[max(P/2+1,q,floor(kP/q)+1),
+            min(2P-1,floor(((k+1)P-1)/q))]
+```
+
+并且 selected atom 仍是同一个：
+
+```text
+1_{gcd(q,W_P)=1} * 1_{m in I_{P,k}(q)} * e(h*k*P/q).
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76954
+active_residual_row_count=52697
+total_actual_phase_atoms=299977
+total_floor_cell_selected_terms=299977
+total_reverse_selected_terms=299977
+total_product_cell_residual_atoms=951378
+total_reverse_odd_residual_atoms=951378
+floor_cell_terms_equal_actual_phase_atoms=true
+floor_cell_terms_equal_reverse_selected_terms=true
+product_cell_atoms_equal_reverse_odd_atoms=true
+product_cell_to_reverse_mismatch_total=0
+reverse_to_product_cell_mismatch_total=0
+bad_product_cell_window_size_total=0
+bad_product_cell_odd_count_total=0
+bad_reverse_window_size_total=0
+bad_reverse_odd_count_total=0
+bad_unit_q_not_prime_total=0
+q_floor_cells_checked_total=12532624
+max_product_cell_window_size=2
+max_reverse_window_size=2
+completed_trace_or_kloosterman_family_available=false
+```
+
+外部前沿影响：Fouvry--Kowalski--Michel--Sawin 2025/2026、Milićević--Qin--Wu
+2025、Pascadi 2025、Wright 2026、Shao--Shparlinski--Wijaya 2024 仍只是在完成桥
+之后可能可用；当前只是确定性 floor-cell 恒等式，不是 trace/Kloosterman
+或 Type-II 相消输入。Dong--Robles--Zeindler 2026 撤回结论仍不可用。
+
+新的最新最窄口：
+
+```text
+FloorCellRadialSupportToCompletedTraceFamilyBridge
+AND UniformCancellationAcrossFloorCellsWithRadialPairKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+floor_denominator_cell_decomposition_closed=true
+reverse_forward_floor_cell_equivalence_closed=true
+floor_cell_radial_support_exact_reconstruction_closed=true
+floor_cell_to_completed_trace_family_bridge_closed=false
+uniform_cancellation_across_floor_cells_with_radial_pair_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：
