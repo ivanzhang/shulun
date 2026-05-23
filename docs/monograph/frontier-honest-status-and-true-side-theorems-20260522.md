@@ -1673,6 +1673,88 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 AA：Phi-LPF punctured endpoint 30-wheel capacity（2026-05-23 第二十五轮）
+
+本轮继续攻击上一层最窄口：
+
+```text
+PuncturedWheel6EndpointCapacityInequalityOrReciprocalPrimePairWheel6SaturationPDEC
+```
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_wheel30_capacity_router.py
+data/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-router.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-router.md
+```
+
+上一层 6-wheel capacity 已扣除 `m>2` 偶数与 `m>3,3|m`。本轮加入
+Euler `30`-wheel 的下一项局部筛除：
+
+```text
+m>5 and 5|m  =>  m is not prime
+|F(P,k)| <= C_30(P,k)=W_int(P,k)-E_{2,3,5}(P,k)
+DeltaPhi_half(P,k)>C_30(P,k) => row has a prime
+```
+
+有限审计：
+
+```text
+max_prime=1009
+row_count=76789
+closed_by_wheel6_ceiling_count=76789
+closed_by_wheel30_ceiling_count=76789
+wheel6_not_closed_count=0
+wheel30_not_closed_count=0
+wheel30_nonpositive_margin_count=0
+all_holes_leq_wheel30_ceiling=true
+```
+
+代表样本：
+
+| P | k | $\Delta\Phi_{1/2}$ | $W_{int}$ | $C_6$ | $C_{30}$ | $\Delta-C_{30}$ | holes | primes |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 11 | 10 | 2 | 2 | 1 | 1 | 1 | 1 | 1 |
+| 19 | 15 | 3 | 5 | 2 | 2 | 1 | 2 | 1 |
+| 101 | 100 | 16 | 14 | 5 | 5 | 11 | 4 | 12 |
+| 257 | 256 | 29 | 34 | 12 | 9 | 20 | 6 | 23 |
+| 1009 | 1008 | 89 | 101 | 34 | 28 | 61 | 19 | 70 |
+
+大样本 `P=100003,300007` 的抽样最小 `Delta-C_30` 为 `3215`。
+最大有限额外扣除行为：
+
+```text
+P=997, k=952, extra_deletion_beyond_C6=16, C_6=39, C_30=23
+```
+
+这是真推进：它把 reciprocal forest-hole 上界从 `6`-wheel 压到
+`30`-wheel，并继续保留同一个非循环对象。它仍不是无条件闭合，因为
+全局仍缺少：
+
+```text
+PuncturedWheel30EndpointCapacityInequalityOrReciprocalPrimePairWheel30SaturationPDEC
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+OR PhiLPFObjectSensitiveSignedValueTable
+```
+
+外部前沿状态不变：`0.52` 短区间指数仍大于平方根尺度 `1/2`；平均型 AP
+分布、P2 almost-prime 和 prime-producing sieve 框架仍没有给出本文同对象
+fixed-row positivity。
+
+```text
+phi_lpf_wheel30_capacity_tightened=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：

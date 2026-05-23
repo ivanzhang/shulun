@@ -12355,6 +12355,72 @@ ReciprocalPrimePairWheel6SaturationPDEC.
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Punctured endpoint \(30\)-wheel capacity bound]
+For a prime \(P\), \(1<k<P\), and the reciprocal windows \(I_q(P,k)\) above,
+let \(E_{2,3,5}(P,k)\) be the number of pairs \((q,m)\) with
+\[
+  P/2<q<P,\qquad q\ {\rm prime},\qquad m\in I_q(P,k),
+\]
+such that \(m\) is forced composite by the \(30\)-wheel, namely
+\[
+  (m>2,\ 2\mid m),\qquad (m>3,\ 3\mid m),\qquad
+  (m>5,\ 5\mid m).
+\]
+Set
+\[
+  C_{30}(P,k)=W_{\rm int}(P,k)-E_{2,3,5}(P,k).
+\]
+Then
+\[
+  |F(P,k)|\le C_{30}(P,k).
+\]
+Consequently
+\[
+  \Delta\Phi_{1/2}(P,k)>C_{30}(P,k)
+  \quad\Longrightarrow\quad
+  \pi((k+1)P-1)-\pi(kP)>0.
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+This is the same reciprocal-window containment as in the \(6\)-wheel bound,
+with the next Euler-wheel deletion included.  A forest hole requires the
+cofactor \(m\) to be prime.  Hence every candidate \(m>5\) divisible by \(5\)
+is impossible, just as the preceding layer deleted even \(m>2\) and
+\(3\)-divisible \(m>3\).  Deleting all candidates forced composite by
+\(2,3,\) or \(5\) gives \(|F(P,k)|\le C_{30}(P,k)\).  The endpoint positivity
+implication again follows from
+\[
+  \pi((k+1)P-1)-\pi(kP)=\Delta\Phi_{1/2}(P,k)-|F(P,k)|.
+\]
+
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-\\
+wheel30-capacity-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=1009\\
+row\_count=76789\\
+closed\_by\_wheel6\_ceiling\_count=76789\\
+closed\_by\_wheel30\_ceiling\_count=76789\\
+wheel30\_not\_closed\_count=0\\
+minimum\_sample\_delta\_minus\_wheel30\_ceiling=3215.
+\end{quote}
+For the representative top row \(P=1009,k=1008\), the audit gives
+\[
+  \Delta\Phi_{1/2}=89,\qquad W_{\rm int}=101,\qquad
+  C_6=34,\qquad C_{30}=28.
+\]
+Thus this layer genuinely tightens the unsigned cofactor ceiling.  It remains
+a capacity narrowing, not a global proof of
+\(\Delta\Phi_{1/2}>C_{30}\).  The new interface is
+\begin{quote}\scriptsize\ttfamily
+PuncturedWheel30EndpointCapacityInequalityOr\\
+ReciprocalPrimePairWheel30SaturationPDEC.
+\end{quote}
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for
@@ -12370,7 +12436,7 @@ Thus the non-circular continuation after the parity-capacity bound is not
 another unsigned rewriting of the same count.  It must supply one of the
 following genuinely new inputs: a square-root-scale interval theorem on the
 relevant endpoints, a special square-phase/CRT structural lower bound proving
-\(\Delta\Phi_{1/2}(P,k)>C_{\rm par}(P,k)\), or a signed transport/dispersion
+\(\Delta\Phi_{1/2}(P,k)>C_{30}(P,k)\) in the sharpened wheel layer, or a signed transport/dispersion
 estimate that breaks the linear-sieve parity obstruction.  Without such an
 input, the remaining object is a reciprocal prime-pair saturation PDEC.
 \end{proposition}

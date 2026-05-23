@@ -2838,3 +2838,76 @@ upper_container_reaches_p2=false
 prime_square_halfscale_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 57. Phi-LPF punctured endpoint 30-wheel capacity 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_punctured_endpoint_wheel30_capacity_router.py
+data/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-router.json
+docs/monograph/prime-matrix-phi-lpf-punctured-endpoint-wheel30-capacity-router.md
+```
+
+上一层已经得到 Euler `6`-wheel ceiling：
+
+```text
+|F(P,k)| <= C_6(P,k)=W_int(P,k)-E_{2,3}(P,k).
+```
+
+本层继续加入 `5` 的 forced-composite 扣除。若 reciprocal cofactor
+候选 `m>5` 且 `5|m`，则 `m` 不可能为素数，因此
+
+```text
+|F(P,k)| <= C_30(P,k)=W_int(P,k)-E_{2,3,5}(P,k)
+DeltaPhi_half(P,k)>C_30(P,k) => pi((k+1)P-1)-pi(kP)>0
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+closed_by_wheel6_ceiling_count=76789
+closed_by_wheel30_ceiling_count=76789
+wheel6_not_closed_count=0
+wheel30_not_closed_count=0
+wheel30_nonpositive_margin_count=0
+```
+
+关键样本：
+
+```text
+P=1009, k=1008, Delta=89, W_int=101, C_6=34, C_30=28, Delta-C_30=61
+P=997, k=952, maximum extra deletion beyond C_6 = 16
+```
+
+大样本 `P=100003,300007` 的抽样最小 `Delta-C_30` 为 `3215`。
+这是真推进：它把 6-wheel endpoint capacity 严格收紧到 30-wheel
+endpoint capacity。但它仍只是 forced-composite 容量层，不是全局
+Phi-LPF 奇偶障碍突破。
+
+新的剩余基：
+
+```text
+PuncturedWheel30EndpointCapacityInequalityOrReciprocalPrimePairWheel30SaturationPDEC
+OR ExactExternalSqrtScaleOrFullSNonAPWFDKLSTheoremMatch
+OR NewAutomorphicDispersionProof
+OR SpecialSquarePhaseStructuralLowerBoundBeyondParity
+OR PhiLPFObjectSensitiveSignedValueTable
+```
+
+外部源状态未改变：Baker--Harman--Pintz `0.525` 与 Runbo Li `0.52`
+短区间指数仍大于 `1/2`；AP 平均分布、P2 almost-prime 与
+prime-producing sieve 框架仍不能直接给出本文同对象 fixed-row positivity。
+
+状态边界：
+
+```text
+phi_lpf_wheel30_capacity_tightened=true
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
