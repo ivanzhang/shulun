@@ -283,6 +283,7 @@ $h=X^{1/2}$ 二阶矩成立 $\Leftrightarrow$ 各种已知开放硬点。
 | 定理 K3（$|E(P)|\le 3P/4$）| `External-theorem closed`（PNT+MV1973）| 本文档 §2.3 |
 | 定理 K3'（$|E(P)|<3P/4$ 显式，$P\ge 5$）| `External-theorem closed`（MV1973+RS1962）| 本文档 附录 A |
 | 定理 K3*（$|E^*(P)|<3P/4$ 列方向，$P\ge 5$）| `External-theorem closed`（MV-AP+RS1962）| 本文档 附录 B |
+| 定理 K3'''（$|E(P)|<3P/4-P/(8\log P)$，$P\ge 79$）| `External-theorem closed`（MV1973+Dusart2010+RS1962）| 本文档 附录 C |
 | 定理 K4（$|E(P)|=o(P)$）| **`Conditional on SI-2(1/2)`（未证）** | 本文档 §2.4 |
 | 定理 K5（$|E(P)|=o(P/\log P)$）| **`Conditional / removed`（未证）** | 本文档 §2.5 |
 | **H_P 行命题**（$|E(P)|=0$ 对所有 $P$） | **`Not claimed`** | **未证；70 年开放** |
@@ -528,6 +529,135 @@ $P\le 200$ 全部成立，且实际 $|E^*(P)|=0\ll 3P/4$。
 | K3* 常数 $3/4\to 3/4-\delta$ | Bombieri-Vinogradov + 大筛 | $\delta\sim 1/\log P$ |
 | K3* $\to|E^*(P)|=o(P)$ | Bombieri-Vinogradov 全程 | 几乎所有列 |
 | H_P 列完整 | Linnik = 2 改进 | 70 年开放 |
+
+---
+
+## 附录 C：K3' 的 Dusart 加强版 K3'''（2026-05-22 第三轮强化）
+
+**目的**：把 K3' 中的常数改进 $0.37247$ 升级为 **$\log P$ 阶减项** $P/(8\log P)$。
+这是真实非循环推进：用 Dusart 2010 的**更精的显式 PNT 下界**代替 Rosser-Schoenfeld 1962 的
+$\pi(x)>x/\log x$，并保持 MV1973 sharp BT 不变。
+
+### C.1 外部输入
+
+**Dusart 2010**（*Estimates of some functions over primes without R.H.*, arXiv:1002.0442
+Theorem 6.9）：
+$$
+\pi(x)\ge \frac{x}{\log x - 1},\quad x\ge 5393.
+$$
+
+**Dusart 2018**（*The k-th prime is greater than k(ln k + ln ln k - 1) for k>=2*, Ramanujan J. 45：227–251 改写）：
+$$
+\pi(x)\le \frac{x}{\log x - 1.1},\quad x\ge 60184.
+$$
+
+**MV1973**：同附录 A。
+
+### C.2 定理 K3'''
+
+**陈述**：对每个素数 $P\ge 79$，
+$$
+|E(P)|<\frac{3P}{4}-\frac{P}{8\log P}.
+$$
+
+**证明**：
+
+(1) 由 Dusart 2010 下界（取 $x=P^2\ge 79^2=6241>5393$）：
+$$
+\pi(P^2)\ge\frac{P^2}{2\log P-1}.\tag{C.1}
+$$
+
+(2) 用 RS1962 上界（保留即可）：$\pi(P)\le 1.25506P/\log P$.
+
+(3) 代入 (A.4)：
+$$
+(P-1-|E(P)|)\cdot\frac{2P}{\log P}\ge \pi(P^2)-\pi(P)\ge \frac{P^2}{2\log P-1}-\frac{1.25506P}{\log P}.
+$$
+
+(4) 解：
+$$
+P-1-|E(P)|\ge \frac{\log P}{2P}\cdot\Bigl(\frac{P^2}{2\log P-1}-\frac{1.25506P}{\log P}\Bigr)
+=\frac{P\log P}{2(2\log P-1)}-0.62753.
+$$
+
+(5) 关键代数恒等式：
+$$
+\frac{P\log P}{2(2\log P-1)}=\frac{P}{4-2/\log P}=\frac{P}{4}\cdot\frac{1}{1-1/(2\log P)}.
+$$
+
+由几何级数 $1/(1-u)\ge 1+u$ 对 $0<u<1$（取 $u=1/(2\log P)$，对 $P\ge 2$ 有 $u<1/2$）：
+$$
+\frac{P}{4}\cdot\frac{1}{1-1/(2\log P)}\ge \frac{P}{4}+\frac{P}{8\log P}.
+$$
+
+(6) 故
+$$
+P-1-|E(P)|\ge\frac{P}{4}+\frac{P}{8\log P}-0.62753,
+$$
+即
+$$
+|E(P)|\le \frac{3P}{4}-\frac{P}{8\log P}+0.62753-1=\frac{3P}{4}-\frac{P}{8\log P}-0.37247.
+$$
+
+对整数 $|E(P)|$ 与 $P\ge 79$，严格不等式 $|E(P)|<3P/4-P/(8\log P)$ 成立。∎
+
+### C.3 K3''' 相对 K3' 的真实改进
+
+| 定理 | $P$ 范围 | 上界 |
+|---|---|---|
+| K3'   | $P\ge 5$  | $3P/4-0.37247$ |
+| K3''' | $P\ge 79$ | $3P/4-P/(8\log P)$ |
+
+**比较**：$P/(8\log P)$ vs $0.37247$。后者为常数；前者 $\to\infty$ 当 $P\to\infty$。
+临界点：$P/(8\log P)=0.37247\Leftrightarrow P\approx 2.98\log P$，由数值，对 $P\ge 6$ 已有
+$P/(8\log P)>0.37247$。
+
+**具体数值差距**：
+
+| $P$ | K3' 上界 | K3''' 上界 | K3''' 改进 |
+|---|---|---|---|
+| 79 | $58.88$ | $56.42$ | $-2.46$ |
+| 101 | $75.38$ | $72.04$ | $-3.34$ |
+| 503 | $377.13$ | $367.05$ | $-10.08$ |
+| 1009 | $756.13$ | $738.06$ | $-18.07$ |
+| 4999 | $3749.13$ | $3675.78$ | $-73.35$ |
+
+K3''' 的改进**随 $P$ 增长**，体现 $\log P$ 阶减项的非平凡作用。
+
+### C.4 全 $P\ge 5$ 统一版（合并 K3' 与 K3'''）
+
+**定理 K3-unified**：对所有素数 $P\ge 5$，
+
+$$
+|E(P)|\le \begin{cases}3P/4-0.37247,&5\le P\le 73,\\ 3P/4-P/(8\log P)-0.37247,&P\ge 79\text{（即 }P^2\ge 5393\text{）}.\end{cases}
+$$
+
+数值核对：对 $P\in\{5,7,11,...,73\}$ 直接验证 $|E(P)|=0$（已含于
+`almost_all_rows_exception_density_audit_run_20260522.txt`）。
+
+### C.5 数值核对脚本
+
+`experiments/k3_dusart_enhanced_bound_check.py` 验证 C.3 表的所有 $P\ge 79$ 数据点，
+并显式比较 K3' 与 K3''' 的预测上界与实际 $|E(P)|=0$。
+
+### C.6 K3''' 的"非循环"刻画
+
+- K3''' 与 K3' 不是同一定理改名：K3''' 引入 **Dusart 2010 的更紧 PNT 下界** $\pi(x)\ge x/(\log x-1)$，
+  这比 RS1962 的 $\pi(x)>x/\log x$ **形式上严格更强**。
+- 引入这个不等式的**几何级数展开**直接产生 $1/(2\log P)$ 的对数阶减项——
+  这是 Dusart 显式 PNT 在常数水平之上的真信息。
+- 这才是黎曼/欧拉风格的"非循环"产出：**用一个更精的显式不等式**升级**一个已证明的中间结果**，
+  不是把同一对象起新名字。
+
+### C.7 进一步升级路径
+
+| 升级 | 工具 | 预期 |
+|---|---|---|
+| K3''' $\to|E(P)|\le 3P/4-P/(4\log P)$ | Iwaniec 1982 BT 改进的 $2/(\log y-\delta(y))$ | 因子 2 改进 |
+| K3''' $\to|E(P)|\le P/2$ | Friedlander-Iwaniec 2003 BT 改进 | 跳跃常数 $3/4\to 1/2$ |
+| K3''' $\to|E(P)|=o(P)$ | $h=X^{1/2}$ 二阶矩（K4 同障）| 开放 |
+| H_P 完整 | Cramér 局部或非线性 sieve | 70 年开放 |
+
 
 
 
