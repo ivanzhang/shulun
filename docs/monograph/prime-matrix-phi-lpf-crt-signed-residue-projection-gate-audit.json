@@ -1,0 +1,809 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_crt_signed_residue_projection_gate_audit",
+  "character_averaged_dispersion_required": true,
+  "definitions": {
+    "failed_route": "prove mu_S(a;P,k)>=0 for every unit residue a",
+    "signed_measure": "mu_S(a;P,k)=prime_count_in_residue_a - S-wheel_residual_count_in_residue_a",
+    "stable_unit_condition": "P>2 max(S), so high q and row primes are not wheel primes",
+    "total_identity": "sum_a mu_S(a;P,k)=N(P,k)-R_S(P,k)"
+  },
+  "external_frontier_note": "Ford--Maynard prime-producing sieve requires Type-I/II input for the actual sequence; this CRT projection audit shows fixed residue-cell matching is not that input.",
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "finite_evidence_not_used_as_global_proof": true,
+    "layers": {
+      "210-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 52,
+          "N_minus_R": 34,
+          "P": 773,
+          "R": 18,
+          "k": 755,
+          "negative_unit_cell_count": 9,
+          "worst_negative_unit_cell": {
+            "prime_count": 1,
+            "residual_count": 2,
+            "residue": 31,
+            "surplus": -1
+          }
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 6,
+          "N_minus_R": 4,
+          "P": 107,
+          "R": 2,
+          "k": 93,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 101,
+            "surplus": -1
+          }
+        },
+        "modulus": 210,
+        "row_count": 76789,
+        "stable_active_residual_row_count": 49388,
+        "stable_negative_unit_cell_count": 67547,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 76769,
+        "stable_rows_with_negative_unit_cell_surplus": 37115,
+        "stable_total_prime_count": 4172431,
+        "stable_total_residual_count": 203277,
+        "stable_total_surplus": 3969154,
+        "worst_negative_unit_cell_row": {
+          "N": 43,
+          "N_minus_R": 38,
+          "P": 463,
+          "R": 5,
+          "k": 448,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 3,
+            "residue": 167,
+            "surplus": -3
+          }
+        }
+      },
+      "2310-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 51,
+          "N_minus_R": 37,
+          "P": 769,
+          "R": 14,
+          "k": 759,
+          "negative_unit_cell_count": 14,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 1567,
+            "surplus": -1
+          }
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 6,
+          "N_minus_R": 5,
+          "P": 107,
+          "R": 1,
+          "k": 93,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 731,
+            "surplus": -1
+          }
+        },
+        "modulus": 2310,
+        "row_count": 76789,
+        "stable_active_residual_row_count": 45472,
+        "stable_negative_unit_cell_count": 151197,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 76737,
+        "stable_rows_with_negative_unit_cell_surplus": 45472,
+        "stable_total_prime_count": 4172321,
+        "stable_total_residual_count": 151197,
+        "stable_total_surplus": 4021124,
+        "worst_negative_unit_cell_row": {
+          "N": 12,
+          "N_minus_R": 11,
+          "P": 97,
+          "R": 1,
+          "k": 92,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 2027,
+            "surplus": -1
+          }
+        }
+      },
+      "30-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 80,
+          "N_minus_R": 57,
+          "P": 971,
+          "R": 23,
+          "k": 936,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 3,
+          "N_minus_R": 2,
+          "P": 37,
+          "R": 1,
+          "k": 30,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 17,
+            "surplus": -1
+          }
+        },
+        "modulus": 30,
+        "row_count": 76789,
+        "stable_active_residual_row_count": 52697,
+        "stable_negative_unit_cell_count": 998,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 76789,
+        "stable_rows_with_negative_unit_cell_surplus": 976,
+        "stable_total_prime_count": 4172483,
+        "stable_total_residual_count": 299977,
+        "stable_total_surplus": 3872506,
+        "worst_negative_unit_cell_row": {
+          "N": 25,
+          "N_minus_R": 20,
+          "P": 313,
+          "R": 5,
+          "k": 183,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 4,
+            "residue": 11,
+            "surplus": -4
+          }
+        }
+      },
+      "30030-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 51,
+          "N_minus_R": 39,
+          "P": 983,
+          "R": 12,
+          "k": 929,
+          "negative_unit_cell_count": 12,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 12361,
+            "surplus": -1
+          }
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 13,
+          "N_minus_R": 11,
+          "P": 179,
+          "R": 2,
+          "k": 175,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 1301,
+            "surplus": -1
+          }
+        },
+        "modulus": 30030,
+        "row_count": 76789,
+        "stable_active_residual_row_count": 39964,
+        "stable_negative_unit_cell_count": 107093,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 76716,
+        "stable_rows_with_negative_unit_cell_surplus": 39964,
+        "stable_total_prime_count": 4172236,
+        "stable_total_residual_count": 107093,
+        "stable_total_surplus": 4065143,
+        "worst_negative_unit_cell_row": {
+          "N": 15,
+          "N_minus_R": 14,
+          "P": 157,
+          "R": 1,
+          "k": 145,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 22831,
+            "surplus": -1
+          }
+        }
+      }
+    },
+    "max_prime": 1009,
+    "sample_rows": {
+      "210-wheel": [
+        {
+          "N": 3,
+          "N_minus_R": 3,
+          "P": 37,
+          "R": 0,
+          "k": 30,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        {
+          "N": 12,
+          "N_minus_R": 11,
+          "P": 97,
+          "R": 1,
+          "k": 92,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 137,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 25,
+          "N_minus_R": 22,
+          "P": 313,
+          "R": 3,
+          "k": 183,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 11,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 43,
+          "N_minus_R": 38,
+          "P": 463,
+          "R": 5,
+          "k": 448,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 3,
+            "residue": 167,
+            "surplus": -3
+          }
+        },
+        {
+          "N": 80,
+          "N_minus_R": 63,
+          "P": 971,
+          "R": 17,
+          "k": 936,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 1,
+            "residual_count": 2,
+            "residue": 121,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 70,
+          "N_minus_R": 62,
+          "P": 1009,
+          "R": 8,
+          "k": 1008,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 97,
+            "surplus": -1
+          }
+        }
+      ],
+      "2310-wheel": [
+        {
+          "N": 3,
+          "N_minus_R": 3,
+          "P": 37,
+          "R": 0,
+          "k": 30,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        {
+          "N": 12,
+          "N_minus_R": 11,
+          "P": 97,
+          "R": 1,
+          "k": 92,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 2027,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 25,
+          "N_minus_R": 23,
+          "P": 313,
+          "R": 2,
+          "k": 183,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 2071,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 43,
+          "N_minus_R": 40,
+          "P": 463,
+          "R": 3,
+          "k": 448,
+          "negative_unit_cell_count": 3,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 1847,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 80,
+          "N_minus_R": 67,
+          "P": 971,
+          "R": 13,
+          "k": 936,
+          "negative_unit_cell_count": 13,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 1061,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 70,
+          "N_minus_R": 63,
+          "P": 1009,
+          "R": 7,
+          "k": 1008,
+          "negative_unit_cell_count": 7,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 767,
+            "surplus": -1
+          }
+        }
+      ],
+      "30-wheel": [
+        {
+          "N": 3,
+          "N_minus_R": 2,
+          "P": 37,
+          "R": 1,
+          "k": 30,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 17,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 12,
+          "N_minus_R": 11,
+          "P": 97,
+          "R": 1,
+          "k": 92,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 17,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 25,
+          "N_minus_R": 20,
+          "P": 313,
+          "R": 5,
+          "k": 183,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 4,
+            "residue": 11,
+            "surplus": -4
+          }
+        },
+        {
+          "N": 43,
+          "N_minus_R": 36,
+          "P": 463,
+          "R": 7,
+          "k": 448,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 2,
+            "residual_count": 4,
+            "residue": 17,
+            "surplus": -2
+          }
+        },
+        {
+          "N": 80,
+          "N_minus_R": 57,
+          "P": 971,
+          "R": 23,
+          "k": 936,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        {
+          "N": 70,
+          "N_minus_R": 61,
+          "P": 1009,
+          "R": 9,
+          "k": 1008,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        }
+      ],
+      "30030-wheel": [
+        {
+          "N": 3,
+          "N_minus_R": 3,
+          "P": 37,
+          "R": 0,
+          "k": 30,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        {
+          "N": 12,
+          "N_minus_R": 12,
+          "P": 97,
+          "R": 0,
+          "k": 92,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        {
+          "N": 25,
+          "N_minus_R": 24,
+          "P": 313,
+          "R": 1,
+          "k": 183,
+          "negative_unit_cell_count": 1,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 27481,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 43,
+          "N_minus_R": 41,
+          "P": 463,
+          "R": 2,
+          "k": 448,
+          "negative_unit_cell_count": 2,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 27257,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 80,
+          "N_minus_R": 69,
+          "P": 971,
+          "R": 11,
+          "k": 936,
+          "negative_unit_cell_count": 11,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 7991,
+            "surplus": -1
+          }
+        },
+        {
+          "N": 70,
+          "N_minus_R": 65,
+          "P": 1009,
+          "R": 5,
+          "k": 1008,
+          "negative_unit_cell_count": 5,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 1,
+            "residue": 26177,
+            "surplus": -1
+          }
+        }
+      ]
+    }
+  },
+  "fixed_crt_classwise_dominance_proved": false,
+  "frontier_verified_date": "2026-05-23",
+  "gates": [
+    {
+      "closed": true,
+      "gate": "SignedResidueProjectionIdentity",
+      "meaning": "固定 wheel 下 sum_a mu_S(a;P,k)=N(P,k)-R_S(P,k)。",
+      "proved": true,
+      "remaining": "signed residue ledger"
+    },
+    {
+      "closed": true,
+      "gate": "StableUnitClassSupportAfterWheel",
+      "meaning": "当 P>2 max(S) 时，row primes 与 S-wheel residual atoms 都落在 W_S 的单位类。",
+      "proved": true,
+      "remaining": "stable finite exceptions removed"
+    },
+    {
+      "closed": false,
+      "gate": "FixedCRTClasswiseDominance",
+      "meaning": "有限审计已出现 mu_S(a)<0 的单位类，逐类非负支付路线失败。",
+      "proved": false,
+      "remaining": "global signed/character dispersion required"
+    },
+    {
+      "closed": false,
+      "gate": "CRTProjectionBreaksParityBarrier",
+      "meaning": "固定 CRT 投影只重排 signed mass，不提供 prime-minus-tail 全局下界。",
+      "proved": false,
+      "remaining": "SameRowReciprocalWindowTypeIIDispersionForLPFTail"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层不证明 H_P、外部引理版或内部自足版无条件闭合。",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "internal_self_contained_closed": false,
+  "large_sample_audit": {
+    "large_samples_are_evidence_not_global_proof": true,
+    "layers": {
+      "210-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": true,
+        "maximum_residual_row": {
+          "N": 11966,
+          "N_minus_R": 9414,
+          "P": 300007,
+          "R": 2552,
+          "k": 300006,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 4385,
+          "N_minus_R": 3453,
+          "P": 100003,
+          "R": 932,
+          "k": 100002,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "modulus": 210,
+        "row_count": 10,
+        "stable_active_residual_row_count": 6,
+        "stable_negative_unit_cell_count": 0,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 10,
+        "stable_rows_with_negative_unit_cell_surplus": 0,
+        "stable_total_prime_count": 96550,
+        "stable_total_residual_count": 8552,
+        "stable_total_surplus": 87998,
+        "worst_negative_unit_cell_row": null
+      },
+      "2310-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 11966,
+          "N_minus_R": 9769,
+          "P": 300007,
+          "R": 2197,
+          "k": 300006,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 4300,
+          "N_minus_R": 3580,
+          "P": 100003,
+          "R": 720,
+          "k": 95241,
+          "negative_unit_cell_count": 3,
+          "worst_negative_unit_cell": {
+            "prime_count": 5,
+            "residual_count": 7,
+            "residue": 503,
+            "surplus": -2
+          }
+        },
+        "modulus": 2310,
+        "row_count": 10,
+        "stable_active_residual_row_count": 6,
+        "stable_negative_unit_cell_count": 4,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 10,
+        "stable_rows_with_negative_unit_cell_surplus": 2,
+        "stable_total_prime_count": 96550,
+        "stable_total_residual_count": 7334,
+        "stable_total_surplus": 89216,
+        "worst_negative_unit_cell_row": {
+          "N": 4300,
+          "N_minus_R": 3580,
+          "P": 100003,
+          "R": 720,
+          "k": 95241,
+          "negative_unit_cell_count": 3,
+          "worst_negative_unit_cell": {
+            "prime_count": 5,
+            "residual_count": 7,
+            "residue": 503,
+            "surplus": -2
+          }
+        }
+      },
+      "30-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": true,
+        "maximum_residual_row": {
+          "N": 11966,
+          "N_minus_R": 8753,
+          "P": 300007,
+          "R": 3213,
+          "k": 300006,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 4385,
+          "N_minus_R": 3215,
+          "P": 100003,
+          "R": 1170,
+          "k": 100002,
+          "negative_unit_cell_count": 0,
+          "worst_negative_unit_cell": null
+        },
+        "modulus": 30,
+        "row_count": 10,
+        "stable_active_residual_row_count": 6,
+        "stable_negative_unit_cell_count": 0,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 10,
+        "stable_rows_with_negative_unit_cell_surplus": 0,
+        "stable_total_prime_count": 96550,
+        "stable_total_residual_count": 10782,
+        "stable_total_surplus": 85768,
+        "worst_negative_unit_cell_row": null
+      },
+      "30030-wheel": {
+        "all_stable_atoms_in_unit_classes": true,
+        "all_unit_projection_identities_hold": true,
+        "fixed_crt_classwise_dominance_holds_on_stable_rows": false,
+        "maximum_residual_row": {
+          "N": 11966,
+          "N_minus_R": 10036,
+          "P": 300007,
+          "R": 1930,
+          "k": 300006,
+          "negative_unit_cell_count": 282,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 3,
+            "residue": 9697,
+            "surplus": -3
+          }
+        },
+        "minimum_total_surplus_active_row": {
+          "N": 4300,
+          "N_minus_R": 3675,
+          "P": 100003,
+          "R": 625,
+          "k": 95241,
+          "negative_unit_cell_count": 328,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 3,
+            "residue": 16673,
+            "surplus": -3
+          }
+        },
+        "modulus": 30030,
+        "row_count": 10,
+        "stable_active_residual_row_count": 6,
+        "stable_negative_unit_cell_count": 1505,
+        "stable_nonunit_prime_atoms": 0,
+        "stable_nonunit_residual_atoms": 0,
+        "stable_row_count": 10,
+        "stable_rows_with_negative_unit_cell_surplus": 6,
+        "stable_total_prime_count": 96550,
+        "stable_total_residual_count": 6406,
+        "stable_total_surplus": 90144,
+        "worst_negative_unit_cell_row": {
+          "N": 4300,
+          "N_minus_R": 3675,
+          "P": 100003,
+          "R": 625,
+          "k": 95241,
+          "negative_unit_cell_count": 328,
+          "worst_negative_unit_cell": {
+            "prime_count": 0,
+            "residual_count": 3,
+            "residue": 16673,
+            "surplus": -3
+          }
+        }
+      }
+    },
+    "sample_count": 10,
+    "sample_seeds": [
+      100000,
+      300000
+    ]
+  },
+  "next_direct_attack_target": "CharacterAveragedSameRowCRTDispersionForLPFTail OR SameRowReciprocalWindowTypeIIDispersionForLPFTail OR SquarePhaseEndpointLowerBound",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prime_count_dominates_lpf_tail_shell_sum_proved": false,
+  "row_column_unconditional_closed": false,
+  "signed_residue_projection_identity_closed": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "37fbcda4e7c12ba4759c7758bb84d37df1842019921b707dd38aff877ed98d84",
+    "docs/monograph/external-theorem-index.md": "32c3d155d1da1c9413e691c0b3819c2e401fc1fc44429713b1b57f8819720e17",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "41b8ef9e3512fa9ec39db13192e5b6ca03eae8b9b45aafdc0bd628810cc31db7",
+    "docs/monograph/prime-matrix-phi-lpf-adjacent-coprime-parity-trap-audit.json": "8d7300ff718392eef47535ea3daacd39f45e150cf4b26ba9fcbce0911b048473",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.json": "a5a1b831d9c0948ea8ef47939789e47f23dbde1d2d4a9d625e2652064640401a",
+    "docs/monograph/prime-matrix-phi-lpf-lpf-tail-typeii-obligation-audit.json": "16de32e7d4361f9b44dfce7d913d880ba7051a57f3fbd118453db671d5cc6ac5",
+    "experiments/prime_matrix_phi_lpf_crt_signed_residue_projection_gate_audit.py": "01b774b15612382833312e09fe0315df5554ae06f27c5c38fa60327b19f5307c",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "4a5aa36a9dbf7ecd8fa51a71cfa7c2cde46202c554f0da97bbeb69933a14fa98"
+  },
+  "stable_unit_class_support_closed": true,
+  "status": "fixed_crt_unit_class_dominance_rejected_signed_character_dispersion_required"
+}

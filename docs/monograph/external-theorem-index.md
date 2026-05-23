@@ -2081,6 +2081,99 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 63. Phi-LPF CRT signed residue projection gate 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_crt_signed_residue_projection_gate_audit.py
+data/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.json
+docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.md
+```
+
+本层把同一行 prime-minus-tail 量投影到固定 wheel 的单位剩余类。对
+`W_S=prod(S)` 定义：
+
+```text
+mu_S(a;P,k)=#{row primes n: n≡a mod W_S}
+            - #{S-wheel residual composites n=q*m: n≡a mod W_S}
+sum_a mu_S(a;P,k)=N(P,k)-R_S(P,k)
+```
+
+当 `P>2 max(S)` 时，高素因子 `q` 不在 wheel 内，row primes 与 residual
+atoms 都落在 `W_S` 的单位类。若固定 CRT 单位格逐类支付成立，应有每个单位类
+`mu_S(a;P,k)>=0`。有限审计直接否定该路线：
+
+```text
+[30-wheel]
+modulus=30
+stable_row_count=76789
+stable_active_residual_row_count=52697
+stable_total_prime_count=4172483
+stable_total_residual_count=299977
+stable_total_surplus=3872506
+stable_rows_with_negative_unit_cell_surplus=976
+stable_negative_unit_cell_count=998
+
+[210-wheel]
+modulus=210
+stable_active_residual_row_count=49388
+stable_total_residual_count=203277
+stable_rows_with_negative_unit_cell_surplus=37115
+stable_negative_unit_cell_count=67547
+
+[2310-wheel]
+modulus=2310
+stable_active_residual_row_count=45472
+stable_total_residual_count=151197
+stable_rows_with_negative_unit_cell_surplus=45472
+stable_negative_unit_cell_count=151197
+
+[30030-wheel]
+modulus=30030
+stable_active_residual_row_count=39964
+stable_total_residual_count=107093
+stable_rows_with_negative_unit_cell_surplus=39964
+stable_negative_unit_cell_count=107093
+```
+
+代表负格：
+
+```text
+30-wheel:   P=313, k=183, residue=11, prime_count=0, residual_count=4, surplus=-4
+210-wheel:  P=463, k=448, residue=167, prime_count=0, residual_count=3, surplus=-3
+2310-wheel: P=97,  k=92,  residue=2027, prime_count=0, residual_count=1, surplus=-1
+30030-wheel:P=157, k=145, residue=22831, prime_count=0, residual_count=1, surplus=-1
+```
+
+这是真推进：CRT 投影给出精确 signed ledger，但固定剩余类逐格匹配不是
+Type-I/Type-II 输入，也不能突破奇偶屏障。下一步若继续走 CRT 路线，必须是
+跨单位类的 character 平均或同对象 signed dispersion：
+
+```text
+CharacterAveragedSameRowCRTDispersionForLPFTail
+OR SameRowReciprocalWindowTypeIIDispersionForLPFTail
+OR SquarePhaseEndpointLowerBound
+```
+
+外部前沿验收边界不变：Ford--Maynard prime-producing sieve 框架说明需要目标
+序列的 Type-I/II；本层说明固定 CRT cellwise dominance 不是这种输入。
+
+状态边界：
+
+```text
+signed_residue_projection_identity_closed=true
+stable_unit_class_support_closed=true
+fixed_crt_classwise_dominance_proved=false
+character_averaged_dispersion_required=true
+prime_count_dominates_lpf_tail_shell_sum_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF LPF tail Type-II obligation 审计
 
 新增证书：

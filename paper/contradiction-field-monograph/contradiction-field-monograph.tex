@@ -12799,6 +12799,88 @@ No unconditional row/column closure follows from this Type--II obligation
 ledger alone.
 \end{proof}
 
+\begin{theorem}[CRT signed residue projection gate for the LPF tail]
+Fix a wheel \(S\), put \(W_S=\prod_{\ell\in S}\ell\), and let \(R_S(P,k)\)
+be the corresponding rough-composite residual.  For each residue class
+\(a\bmod W_S\), define the same-row signed residue measure
+\[
+  \mu_S(a;P,k)
+  =
+  \#\{n:kP<n<(k+1)P,\ n\ {\rm prime},\ n\equiv a\pmod {W_S}\}
+\]
+\[
+  \qquad
+  -\#\{n=qm:kP<n<(k+1)P,\ n\equiv a\pmod {W_S},\
+        (q,m)\ {\rm counted\ by}\ R_S(P,k)\}.
+\]
+Then
+\[
+  \sum_{a\bmod W_S}\mu_S(a;P,k)
+  =
+  \pi((k+1)P-1)-\pi(kP)-R_S(P,k).
+\]
+If \(P>2\max S\), all atoms in this signed measure lie in unit classes
+modulo \(W_S\).
+
+However, fixed CRT classwise dominance
+\[
+  \mu_S(a;P,k)\ge0\qquad\hbox{for every unit }a\bmod W_S
+\]
+is false as a route to the LPF-tail inequality.  The remaining CRT route must
+therefore be a character-averaged or cross-residue signed dispersion theorem,
+not a unit-cell matching argument.
+\end{theorem}
+\begin{proof}[Status and reference]
+The identity is just the partition of the signed row measure by residue class
+modulo \(W_S\).  If \(P>2\max S\), then every high prime \(q\in(P/2,P)\) is
+outside \(S\).  A row prime \(n>2\max S\) is also not divisible by any
+\(\ell\in S\).  The \(S\)-wheel residual has cofactor \(m\) not deleted by
+any \(\ell\in S\).  Hence both the prime atoms and the residual atoms are
+unit classes modulo \(W_S\).
+
+The classwise nonnegativity assertion is not a theorem.  The machine
+certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-crt-signed-\\
+residue-projection-gate-audit.md.
+\end{quote}
+For \(P\le1009\), the stable finite ledger records
+\begin{quote}\scriptsize\ttfamily
+30-wheel: negative rows=976, negative unit cells=998\\
+210-wheel: negative rows=37115, negative unit cells=67547\\
+2310-wheel: negative rows=45472, negative unit cells=151197\\
+30030-wheel: negative rows=39964, negative unit cells=107093.
+\end{quote}
+At the same time the total signed surplus remains positive in the finite
+ledger:
+\begin{quote}\scriptsize\ttfamily
+30-wheel stable\_total\_surplus=3872506\\
+210-wheel stable\_total\_surplus=3969154\\
+2310-wheel stable\_total\_surplus=4021124\\
+30030-wheel stable\_total\_surplus=4065143.
+\end{quote}
+Representative negative unit cells are
+\[
+\begin{array}{c|c|c|c|c|c|c}
+W_S & P & k & a & \# {\rm prime} & \# {\rm residual} & \mu_S(a)\\
+\hline
+30 & 313 & 183 & 11 & 0 & 4 & -4\\
+210 & 463 & 448 & 167 & 0 & 3 & -3\\
+2310 & 97 & 92 & 2027 & 0 & 1 & -1\\
+30030 & 157 & 145 & 22831 & 0 & 1 & -1
+\end{array}
+\]
+Thus CRT projection gives a useful exact ledger, but it does not by itself
+break the parity obstruction.  The narrowed hard point is
+\begin{quote}\scriptsize\ttfamily
+CharacterAveragedSameRowCRTDispersionForLPFTail\\
+OR SameRowReciprocalWindowTypeIIDispersionForLPFTail\\
+OR SquarePhaseEndpointLowerBound.
+\end{quote}
+No unconditional row/column closure follows from fixed CRT classwise
+projection alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for

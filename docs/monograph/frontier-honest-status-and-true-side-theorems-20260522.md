@@ -2064,6 +2064,79 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AG：Phi-LPF CRT signed residue projection gate 审计（2026-05-23 第三十一轮）
+
+本轮沿用户提示中的 CRT 周期镜像对称与非零同余类交集继续下钻，检验固定
+CRT 单位剩余类逐格支付能否突破 LPF tail。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_crt_signed_residue_projection_gate_audit.py
+data/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.json
+docs/monograph/prime-matrix-phi-lpf-crt-signed-residue-projection-gate-audit.md
+```
+
+对固定 wheel `S` 与 `W_S=prod(S)`，定义：
+
+```text
+mu_S(a;P,k)=#{row primes n: n≡a mod W_S}
+            - #{S-wheel residual composites n=q*m: n≡a mod W_S}
+sum_a mu_S(a;P,k)=N(P,k)-R_S(P,k)
+```
+
+当 `P>2 max(S)` 时，row primes 与 residual atoms 全部落在 `W_S` 的单位类。
+如果固定 CRT 逐类支付能闭合，就需要所有单位类 `mu_S(a;P,k)>=0`。
+有限审计表明该要求为假：
+
+```text
+30-wheel:   negative rows=976,   negative unit cells=998
+210-wheel:  negative rows=37115, negative unit cells=67547
+2310-wheel: negative rows=45472, negative unit cells=151197
+30030-wheel:negative rows=39964, negative unit cells=107093
+```
+
+同时各层总和仍强正：
+
+```text
+30-wheel stable_total_surplus=3872506
+210-wheel stable_total_surplus=3969154
+2310-wheel stable_total_surplus=4021124
+30030-wheel stable_total_surplus=4065143
+```
+
+代表负单位格：
+
+| layer | P | k | residue | prime count | residual count | surplus |
+|---|---:|---:|---:|---:|---:|---:|
+| 30 | 313 | 183 | 11 | 0 | 4 | -4 |
+| 210 | 463 | 448 | 167 | 0 | 3 | -3 |
+| 2310 | 97 | 92 | 2027 | 0 | 1 | -1 |
+| 30030 | 157 | 145 | 22831 | 0 | 1 | -1 |
+
+这是真推进：固定 CRT 投影没有被丢弃，而是被精确定式为 signed ledger；
+但逐格非负支配路线被反例排除。继续走 CRT 必须进入 character 平均或跨剩余类
+signed dispersion，而不是在单位类逐点匹配：
+
+```text
+CharacterAveragedSameRowCRTDispersionForLPFTail
+OR SameRowReciprocalWindowTypeIIDispersionForLPFTail
+OR SquarePhaseEndpointLowerBound
+```
+
+```text
+signed_residue_projection_identity_closed=true
+stable_unit_class_support_closed=true
+fixed_crt_classwise_dominance_proved=false
+character_averaged_dispersion_required=true
+prime_count_dominates_lpf_tail_shell_sum_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 AF：Phi-LPF LPF tail Type-II obligation 审计（2026-05-23 第三十轮）
 
 本轮接在相邻互质奇偶陷阱之后，把“需要 Type-II”从口号压成可审计对象。新增证书：
