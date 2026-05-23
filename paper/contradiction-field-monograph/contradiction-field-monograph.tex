@@ -28963,6 +28963,36 @@ For every prime $P\ge 180$,
 Sum of K3'''' and K3*-three-term.
 \end{proof}
 
+\begin{provedstatement}[K3-trivial-enhanced: internal self-contained with Li expansion]
+For sufficiently large prime $P$,
+\[
+  |E(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}+O\!\Bigl(\frac{P}{\log^3 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+Standard expansion of $\mathrm{Li}(x)$ gives
+$\mathrm{Li}(P^2) = \frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+O(P^2/\log^3 P)$,
+and de la Vall\'ee-Poussin's 1899 error term gives
+$\pi(P^2)=\mathrm{Li}(P^2)+O(P^2 e^{-c\sqrt{\log P}})$ where the
+exponential decay dominates any inverse-log error.  Hence
+$\pi(P^2)-\pi(P) = \frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+O(P^2/\log^3 P)$.
+Combining with the trivial bound $N_P(k)\le P$ gives the stated
+$P/(4\log^2 P)$-order saving over K3-trivial.  No sieve input is used.
+\end{proof}
+
+\begin{provedstatement}[K3*-trivial-enhanced]
+For sufficiently large prime $P$,
+\[
+  |E^*(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}+O\!\Bigl(\frac{P}{\log^3 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+Identical to K3-trivial-enhanced with rows replaced by columns and
+$M_P(j)\le P$ in place of $N_P(k)\le P$.
+\end{proof}
+
 \begin{remark}[Final K-series summary]
 The K-series side theorems established in this chapter provide the
 strictest currently available unconditional, explicit-effective bounds

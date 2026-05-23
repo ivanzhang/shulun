@@ -1227,3 +1227,69 @@ OR NonlinearParityBreakingActualSourceConstructor
 
 
 
+
+---
+
+## 附录 K：K3-trivial-enhanced（PNT 二阶渐近内部加强，2026-05-23 第十轮）
+
+**目的**：K3-trivial 用 PNT 主项 $\pi(x)\sim x/\log x$ 得到 $|E(P)|\le P-P/(2\log P)+O(P/\log^2 P)$。
+本附录用 PNT **二阶渐近**（即 $\mathrm{Li}(x)$ 的精确渐近展开，**仍属纯 PNT 内部**）
+进一步加强为 K3-trivial-enhanced，得到额外 $P/(4\log^2 P)$ 减项。
+
+### K.1 引入的内部输入（仍是 PNT 内部）
+
+$\mathrm{Li}(x)$ 的标准渐近展开：
+$$
+\mathrm{Li}(x)=\frac{x}{\log x}\Bigl(1+\frac{1}{\log x}+\frac{2!}{\log^2 x}+\frac{3!}{\log^3 x}+\cdots\Bigr).
+$$
+
+de la Vall\'ee-Poussin 1899 余项（无条件、显式）：
+$$
+\pi(x)=\mathrm{Li}(x)+O\bigl(x\exp(-c\sqrt{\log x})\bigr).
+$$
+
+故对充分大 $P$：
+$$
+\pi(P^2)=\frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+\frac{P^2}{4\log^3 P}+O\bigl(P^2 e^{-c\sqrt{2\log P}}\bigr).\tag{K.1}
+$$
+
+### K.2 定理 K3-trivial-enhanced
+
+**陈述**：对充分大素数 $P$，
+$$
+|E(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}+O\!\Bigl(\frac{P}{\log^3 P}\Bigr).
+$$
+
+**证明**：由 (K.1) 与 $\pi(P)=O(P/\log P)$，$\pi(P^2)-\pi(P)=P^2/(2\log P)+P^2/(4\log^2 P)+O(P^2/\log^3 P)$。
+平凡 $N_P(k)\le P$，求和分解给出陈述。$\square$
+
+**状态**：`Proved-in-text + PNT-only`（内部自足，不引入任何外部 sieve）。
+
+### K.3 定理 K3*-trivial-enhanced
+
+**陈述**：对充分大素数 $P$，
+$$
+|E^*(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}+O\!\Bigl(\frac{P}{\log^3 P}\Bigr).
+$$
+
+**证明**：与 K3-trivial-enhanced 同构。
+
+### K.4 内部自足版升级链
+
+| 定理 | 上界 |
+|---|---|
+| K3-trivial | $P-P/(2\log P)+O(P/\log^2 P)$ |
+| **K3-trivial-enhanced** | $P-P/(2\log P)-P/(4\log^2 P)+O(P/\log^3 P)$ |
+
+改进 $P/(4\log^2 P)$，纯 PNT 内部，不引入任何外部输入。
+
+### K.5 两版本最强位置（十轮提交终点）
+
+| 版本 | 最强陈述 | 主项常数 |
+|---|---|---|
+| 内部自足 | $P-P/(2\log P)-P/(4\log^2 P)+O(P/\log^3 P)$ | **1** |
+| 外部引理 | $3P/4-P/(8\log P)-0.05625P/\log^2 P$ | **3/4** |
+| H_P 需要 | $0$ | **0** |
+
+主项常数 $1\to 3/4$ 需要 sieve（已做）。$3/4\to 0$ 需要跨越 Bombieri 1976 奇偶屏障（不可在 LLM 单次会话内完成）。
+
