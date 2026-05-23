@@ -3233,6 +3233,110 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 72. Phi-LPF floor residue branch phase closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_floor_residue_branch_phase_closure_audit.py
+data/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.md
+```
+
+本层继续按“合著稿三命题哪个更快闭合就先攻”的原则选择行/列
+Phi-LPF 的 q 侧 floor-residue branch 子门：
+
+```text
+PrimeQBoundaryCapFreeForResidualEdges
+PrimeQFloorResidueBranchNormalForm
+```
+
+上一层已把每条 residual 边写成 matched displacement：
+
+```text
+d=q*m-kP,  1<=d<P,  e(h*kP/q)=e(-h*d/q).
+```
+
+本层证明 q-window 的两个剪裁边界不是 residual edge 的真实来源。
+lower cap `m=q` 不可用，因为 `m=q` 是素数；若窗口还包含唯一邻点
+`q+1`，它是偶数，也不可能满足 `LPF(m)>=7`。upper cap `m=2P-1`
+也不可用，因为对整数 `q>P/2` 有：
+
+```text
+q*(2P-1)>P^2 >= (k+1)P.
+```
+
+若只退到邻点 `2P-2`，它仍是偶数。因此 residual edge 只能来自
+lower/upper floor endpoint。于是设
+
+```text
+rho=(kP mod q)
+sigma=(((k+1)P-1) mod q)
+```
+
+则有精确分支：
+
+```text
+lower branch: d=q-rho, 1<=d<=q
+upper branch: d=P-1-sigma, P-q<=d<=P-1
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+branch_totals={lower:104807, upper:103674, both:91496, interior:0}
+all_q_side_boundary_caps_absent=true
+all_edges_floor_branch_covered=true
+all_floor_residue_formulas_verified=true
+bad_cap_total=0
+bad_floor_coverage_total=0
+bad_residue_formula_total=0
+```
+
+外部前沿匹配：
+
+```text
+Elementary floor-residue algebra:
+  closes this branch normal-form gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  bilinear Kloosterman estimates remain useful only after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  non-abelian amplification is not a pointwise fixed-row branch-phase theorem.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman sums still need finite-field completion first.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  Kloosterman-fraction bilinear-form near miss is withdrawn on arXiv and
+  cannot be cited as a valid external input.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+floor_residue_branch_normal_form_closed=true
+floor_residue_branch_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

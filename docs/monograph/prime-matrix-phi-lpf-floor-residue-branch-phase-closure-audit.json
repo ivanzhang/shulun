@@ -1,0 +1,216 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_floor_residue_branch_phase_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimeQBoundaryCapFreeForResidualEdges",
+      "meaning": "Residual edges cannot arise from q-side lower cap m=q or upper cap m=2P-1.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeQFloorResidueBranchNormalForm",
+      "meaning": "Every residual edge belongs to a lower and/or upper floor-residue branch with the exact d formulas.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQFloorResidueBranchPhaseSaving",
+      "meaning": "For |h|<=polylog(P), prove cancellation over the lower/upper floor-residue branch sums.",
+      "proved": false,
+      "remaining": "floor-residue branch phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the floor-residue branch graph to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_phase_saving": false,
+      "reason_not_direct": "normalises branches only; gives no cancellation over LPF-selected primes",
+      "source": "Elementary floor-residue algebra",
+      "useful_part": "closes the q-side cap-free lower/upper residue branch formulas"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "floor-residue branches are not yet completed bilinear Kloosterman sums",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "power-saving bilinear Kloosterman estimates for arbitrary moduli"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "the current modulus is prime q and the graph is a fixed-row matched subset",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "Type-II Kloosterman sums with composite moduli via non-abelian amplification"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "requires finite-field/Kloosterman completion before it can see these floor residues",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums parametrised by square-free and smooth integers"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_phase_saving": false,
+      "reason_not_direct": "withdrawn on arXiv; cannot be cited as a valid external input",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "useful_part": "Kloosterman-fraction bilinear-form near miss"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "all_edges_floor_branch_covered": true,
+    "all_floor_residue_formulas_verified": true,
+    "all_q_side_boundary_caps_absent": true,
+    "bad_cap_total": 0,
+    "bad_floor_coverage_total": 0,
+    "bad_residue_formula_total": 0,
+    "branch_totals": {
+      "both": 91496,
+      "interior": 0,
+      "lower": 104807,
+      "upper": 103674
+    },
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "max_prime": 1009,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "bad_cap_count": 0,
+        "bad_floor_coverage_count": 0,
+        "bad_residue_formula_count": 0,
+        "branch_both": 1,
+        "branch_interior": 0,
+        "branch_lower": 0,
+        "branch_upper": 0,
+        "edge_count_R30": 1,
+        "k": 100,
+        "max_lower_or_both_displacement": 53,
+        "max_upper_or_both_displacement": 53,
+        "min_lower_or_both_displacement": 53,
+        "min_upper_or_both_displacement": 53,
+        "sample_edges": "q=71,m=143,d=53,branch=both,rho=18,sigma=47"
+      },
+      {
+        "P": 257,
+        "bad_cap_count": 0,
+        "bad_floor_coverage_count": 0,
+        "bad_residue_formula_count": 0,
+        "branch_both": 0,
+        "branch_interior": 0,
+        "branch_lower": 2,
+        "branch_upper": 1,
+        "edge_count_R30": 3,
+        "k": 256,
+        "max_lower_or_both_displacement": 105,
+        "max_upper_or_both_displacement": 195,
+        "min_lower_or_both_displacement": 21,
+        "min_upper_or_both_displacement": 195,
+        "sample_edges": "q=137,m=481,d=105,branch=lower,rho=32,sigma=14; q=151,m=437,d=195,branch=upper,rho=107,sigma=61; q=193,m=341,d=21,branch=lower,rho=172,sigma=42"
+      },
+      {
+        "P": 971,
+        "bad_cap_count": 0,
+        "bad_floor_coverage_count": 0,
+        "bad_residue_formula_count": 0,
+        "branch_both": 11,
+        "branch_interior": 0,
+        "branch_lower": 4,
+        "branch_upper": 8,
+        "edge_count_R30": 23,
+        "k": 936,
+        "max_lower_or_both_displacement": 865,
+        "max_upper_or_both_displacement": 967,
+        "min_lower_or_both_displacement": 17,
+        "min_upper_or_both_displacement": 275,
+        "sample_edges": "q=491,m=1853,d=967,branch=upper,rho=15,sigma=3; q=503,m=1807,d=65,branch=lower,rho=438,sigma=402; q=523,m=1739,d=641,branch=upper,rho=405,sigma=329; q=541,m=1681,d=565,branch=upper,rho=517,sigma=405; q=557,m=1633,d=725,branch=upper,rho=389,sigma=245"
+      },
+      {
+        "P": 1009,
+        "bad_cap_count": 0,
+        "bad_floor_coverage_count": 0,
+        "bad_residue_formula_count": 0,
+        "branch_both": 4,
+        "branch_interior": 0,
+        "branch_lower": 4,
+        "branch_upper": 1,
+        "edge_count_R30": 9,
+        "k": 1008,
+        "max_lower_or_both_displacement": 685,
+        "max_upper_or_both_displacement": 685,
+        "min_lower_or_both_displacement": 95,
+        "min_upper_or_both_displacement": 149,
+        "sample_edges": "q=563,m=1807,d=269,branch=lower,rho=294,sigma=176; q=577,m=1763,d=179,branch=lower,rho=398,sigma=252; q=617,m=1649,d=361,branch=lower,rho=256,sigma=30; q=647,m=1573,d=659,branch=upper,rho=635,sigma=349; q=743,m=1369,d=95,branch=lower,rho=648,sigma=170"
+      }
+    ],
+    "total_edges_R30": 299977
+  },
+  "floor_residue_branch_normal_form_closed": true,
+  "floor_residue_branch_phase_saving_closed": false,
+  "floor_residue_branch_theorem": {
+    "lower_branch": "If m=floor(kP/q)+1, then d=q-(kP mod q), with 1<=d<=q.",
+    "lower_cap_absence": "A residual edge cannot be supported by the q-side lower cap m>=q: m=q is prime and the only other possible point q+1 is even.",
+    "normal_form": "The matched phase is a sum over lower/upper floor-residue branches, not over unclipped endpoint labels.",
+    "not_enough": "The lower/upper branch residues still move with the LPF-selected matching graph; no cancellation follows from this identity alone.",
+    "upper_branch": "If m=floor(((k+1)P-1)/q), then d=P-1-(((k+1)P-1) mod q), with P-q<=d<=P-1.",
+    "upper_cap_absence": "A residual edge cannot be supported by the q-side upper cap m<=2P-1: q(2P-1)>P^2 for every integer q>P/2."
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQFloorResidueBranchPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "3d415a24eb805b34120436887c87eaebbacfff01fdd9dcbeb74025ab64adeb30",
+    "docs/monograph/external-theorem-index.md": "2784f7f388076862ba7539039090c12a6e5936556cbf16334308d62d09ad5750",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "fd746545464faf5e550c5deadee35578fa7651444a4c240d23a109daedfe9114",
+    "docs/monograph/prime-matrix-phi-lpf-boolean-q-projection-closure-audit.json": "816fc3e4abbed9e378a10952b3d13d3c5e3c3930ac44779fce69523d84b580cb",
+    "docs/monograph/prime-matrix-phi-lpf-matched-displacement-phase-closure-audit.json": "c5e0c6bdd6312c35bba20b49cf14e761fecd326daa6a069d3919d27788ce6330",
+    "docs/monograph/prime-matrix-phi-lpf-matching-graph-closure-audit.json": "5fa19f48fcab1e4dfc5c90a3f61e0b146c791bd068a078d6934e246db58502c5",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_floor_residue_branch_phase_closure_audit.py": "30b037524a6c62f3ec23d6efc4947dc43fa84b2eb910f16c17425b7e092dce16",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "963b9a72c236eb7573ddc952a910f18a0370da217ede17c32b7c8904cc4e0824"
+  },
+  "status": "floor_residue_branch_normal_form_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "PrimeQFloorResidueBranchNormalForm",
+      "frontier_before": [
+        "PrimeQMatchedDisplacementPhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "exact floor-residue algebra after matched displacement closure; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "still needs Buchstab transfer and denominator audit"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a closable floor-residue phase gate"
+    }
+  ]
+}

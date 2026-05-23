@@ -31140,6 +31140,107 @@ phase, or to complete it to an external Kloosterman/Vaughan Type-II
 estimate without losing the fixed row \(P,k\).
 \end{remark}
 
+\section{Floor-residue branch phase closure}
+
+\begin{proposition}[Next deterministic floor-residue branch gate]
+After the matched displacement normal form is established, the next
+deterministic subgate is
+\[
+  \texttt{PrimeQFloorResidueBranchNormalForm}.
+\]
+It removes the artificial \(q\)-side clipping alternatives from the
+residual phase.  It is still a normal-form statement, not a
+phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Residual edges are floor-residue branch edges]
+Let \((q,m)\) be a residual edge with \(P/2<q<P\), \(q\) prime,
+\[
+  kP<qm<(k+1)P,\qquad m\ {\rm composite},\qquad {\rm LPF}(m)\ge 7.
+\]
+Then the \(q\)-side endpoint supporting \(m\) is never the boundary cap
+\(m=q\) or \(m=2P-1\).  Hence every residual edge lies on a lower and/or
+upper floor endpoint:
+\[
+  m=\left\lfloor \frac{kP}{q}\right\rfloor+1
+  \quad\hbox{or}\quad
+  m=\left\lfloor \frac{(k+1)P-1}{q}\right\rfloor .
+\]
+Writing
+\[
+  \rho_q\equiv kP\pmod q,\qquad
+  \sigma_q\equiv (k+1)P-1\pmod q,
+  \qquad 0\le \rho_q,\sigma_q<q,
+\]
+the matched displacement \(d=qm-kP\) satisfies the exact branch formulae
+\[
+  d=q-\rho_q
+  \quad\hbox{on the lower branch},
+  \qquad
+  d=P-1-\sigma_q
+  \quad\hbox{on the upper branch}.
+\]
+If an edge is both lower and upper, the two formulae give the same
+integer \(d\).
+\end{theorem}
+\begin{proof}
+The \(q\)-side product window has real length \(P/q<2\).  If the lower
+cap \(m=q\) were responsible for a residual edge, then the only possible
+integer points at that cap are \(q\) and, at most, \(q+1\).  The first is
+prime, and the second is even.  Neither can be a composite cofactor with
+least prime factor at least \(7\).
+
+For the upper cap, the point \(m=2P-1\) cannot occur in any row with
+\(k<P\), because every integer \(q>P/2\) satisfies
+\[
+  q(2P-1)\ge \frac{P+1}{2}(2P-1)>P^2\ge (k+1)P .
+\]
+The only adjacent point allowed by the length \(<2\) window is
+\(2P-2\), which is even.  Hence no residual edge is supported by the
+upper boundary cap either.
+
+Thus residual edges on the \(q\)-side come only from the lower and upper
+floor endpoints.  On the lower branch,
+\[
+  qm=q\left(\left\lfloor \frac{kP}{q}\right\rfloor+1\right)
+    =kP-\rho_q+q,
+\]
+so \(d=q-\rho_q\).  On the upper branch,
+\[
+  qm=q\left\lfloor \frac{(k+1)P-1}{q}\right\rfloor
+    =(k+1)P-1-\sigma_q,
+\]
+so \(d=P-1-\sigma_q\).  A singleton endpoint is simultaneously lower
+and upper, and then both computations evaluate the same \(qm-kP\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-floor-\\
+residue-branch-phase-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth after floor-residue split]
+The matched displacement phase has now been split into lower/upper
+floor-residue branches:
+\[
+  d=q-(kP\bmod q)
+  \quad\hbox{or}\quad
+  d=P-1-\bigl(((k+1)P-1)\bmod q\bigr).
+\]
+The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQFloorResidueBranchPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is to prove cancellation for these LPF-selected branch
+phases, or to complete them to an external Kloosterman/Vaughan Type-II
+estimate without losing pointwise control in \(P,k\).
+The 2026 Kloosterman-fraction near-miss arXiv:2601.00292 is recorded
+only as withdrawn and is not used as an external input.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -2187,6 +2187,125 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q9：Phi-LPF floor residue branch phase closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_floor_residue_branch_phase_closure_audit.py
+data/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-floor-residue-branch-phase-closure-audit.md
+```
+
+上一层已经把 residual edge 写成 matched displacement phase。本层进一步关闭：
+
+```text
+PrimeQBoundaryCapFreeForResidualEdges
+PrimeQFloorResidueBranchNormalForm
+```
+
+### Q9.1 q 侧 boundary cap 排除
+
+q-window 是：
+
+```text
+max(q, floor(kP/q)+1) <= m <= min(2P-1, floor(((k+1)P-1)/q)).
+```
+
+lower cap `m=q` 不能支撑 residual edge，因为 `m=q` 是素数；窗口长度小于
+`2`，若还出现唯一邻点 `q+1`，它是偶数，不能满足 `LPF(m)>=7`。upper cap
+`m=2P-1` 也不能支撑 residual edge，因为对任意整数 `q>P/2`：
+
+```text
+q*(2P-1)>P^2 >= (k+1)P.
+```
+
+若只退到邻点 `2P-2`，它仍是偶数。因此真实 residual edge 只能由 floor
+端点产生。
+
+### Q9.2 floor-residue branch 公式
+
+令：
+
+```text
+rho=(kP mod q)
+sigma=(((k+1)P-1) mod q)
+```
+
+则每条边属于 lower、upper 或 both 分支：
+
+```text
+lower branch: m=floor(kP/q)+1, d=q-rho, 1<=d<=q
+upper branch: m=floor(((k+1)P-1)/q), d=P-1-sigma, P-q<=d<=P-1
+```
+
+如果同一边同时是 lower 与 upper，两个公式给出同一个 `d`。这把上一层的
+matched displacement phase 再压成 lower/upper floor-residue branch phase。
+
+### Q9.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+total_edges_R30=299977
+branch_totals={lower:104807, upper:103674, both:91496, interior:0}
+all_q_side_boundary_caps_absent=true
+all_edges_floor_branch_covered=true
+all_floor_residue_formulas_verified=true
+bad_cap_total=0
+bad_floor_coverage_total=0
+bad_residue_formula_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自 boundary cap 排除和
+floor-residue 恒等式。
+
+### Q9.4 外部前沿匹配
+
+```text
+Elementary floor-residue algebra:
+  closes this normal-form gate.
+
+Milićević--Qin--Wu 2025, Pascadi 2025, Shao--Shparlinski--Wijaya 2024/2025:
+  remain candidate inputs only after completion to a genuine Kloosterman
+  or Vaughan Type-II object; they do not estimate the fixed-row
+  floor-residue branch phase directly.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv, hence recorded only as a near-miss and not as an
+  admissible external theorem.
+```
+
+### Q9.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQMatchedDisplacementPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQFloorResidueBranchPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+floor_residue_branch_normal_form_closed=true
+floor_residue_branch_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial
