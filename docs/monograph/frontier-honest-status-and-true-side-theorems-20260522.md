@@ -3032,6 +3032,87 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13G：Phi-LPF q-support row-averaged additive-k support 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-audit.md
+```
+
+本层继续选择行/列 Phi-LPF。上一层得到 mixed-modulus graph phase；
+本层利用：
+
+```text
+D=q*m-k*P
+D == -k*P (mod q)
+e(-hD/q)=e(h*P*k/q)
+```
+
+把相位重标记为 q 模上的 `k` 加性角色。
+
+### Q13G.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+total_selected_edges=299977
+previous_row_averaged_selected_edges=299977
+selected_edges_match_previous_total=true
+phase_congruence_checked_total=299977
+phase_congruence_mismatch_total=0
+floor_cell_membership_mismatch_total=0
+floor_cell_odd_candidate_mismatch_total=0
+max_q_to_k_fiber=192
+max_q_to_kmod_fiber=174
+q_buckets_with_kmod_collision_total=1237
+total_kmod_collision_edges=6664
+q_buckets_with_noncomplete_k_interval_total=5920
+total_k_support_count=299977
+total_k_span_length=1602928
+total_k_interval_holes=1302951
+max_k_interval_holes_per_q=556
+first_noncomplete_k_support=P=43,q=23,min_k=26,max_k=41,count=2,span=16,holes=14
+complete_interval_additive_character_sum_available=false
+sparse_lpf_k_support_completion_closed=false
+```
+
+### Q13G.2 诚实边界
+
+本层真推进是关闭相位重标记：混合模数 phase 可视作 `k mod q` 加性角色。
+但 q-bucket 中的 `k` 支撑不是完整区间，而是 LPF residual 集的稀疏像；
+因此现有完整区间加性角色相消或标准 trace-family 输入不能直接闭合。
+
+最新最窄口：
+
+```text
+SparseLPFKSupportCompletionOrDispersion
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+mixed_modulus_phase_to_k_additive_character_relabeling_closed=true
+row_averaged_selected_edge_consistency_closed=true
+direct_complete_interval_additive_character_completion_rejected=true
+sparse_lpf_k_support_completion_or_dispersion_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ---
 
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）

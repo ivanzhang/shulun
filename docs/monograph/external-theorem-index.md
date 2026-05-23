@@ -2851,6 +2851,97 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61G. Phi-LPF q-support row-averaged additive-k support 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-support-audit.md
+```
+
+本层把上一轮 mixed-modulus phase 再压细一步。因为
+
+```text
+D=q*m-k*P
+D == -k*P (mod q)
+```
+
+所以
+
+```text
+e(-hD/q)=e(h*P*k/q)
+```
+
+是模 `q` 上的 `k` 加性角色。相位重标记门闭合；但 q-bucket 内的
+`k=floor(q*m/P)` 支撑由 residual LPF cofactor 集诱导，不是完整区间。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+total_selected_edges=299977
+previous_row_averaged_selected_edges=299977
+selected_edges_match_previous_total=true
+selected_q_bucket_count_total=6020
+phase_congruence_checked_total=299977
+phase_congruence_mismatch_total=0
+floor_cell_membership_mismatch_total=0
+floor_cell_odd_candidate_mismatch_total=0
+bad_floor_cell_odd_count_total=0
+bad_zero_displacement_total=0
+max_q_to_k_fiber=192
+max_q_to_kmod_fiber=174
+q_buckets_with_kmod_collision_total=1237
+total_kmod_collision_edges=6664
+q_buckets_with_noncomplete_k_interval_total=5920
+total_k_support_count=299977
+total_k_span_length=1602928
+total_k_interval_holes=1302951
+max_k_support_count_per_q=192
+max_k_span_length_per_q=748
+max_k_interval_holes_per_q=556
+first_noncomplete_k_support=P=43,q=23,min_k=26,max_k=41,count=2,span=16,holes=14
+additive_character_phase_relabeling_closed=true
+complete_interval_additive_character_sum_available=false
+sparse_lpf_k_support_completion_closed=false
+```
+
+外部前沿影响：相位现在可看成 `k mod q` 加性角色，但 FKMS trace-function、
+Milićević--Qin--Wu Kloosterman、Pascadi Type-II、Wright unbalanced
+convolution 与 Shao--Shparlinski--Wijaya smooth/squarefree 参数估计仍需先把
+LPF 诱导的 sparse `k` 支撑完成或估计为可控 dispersion/convolution family。
+
+新的最新最窄口：
+
+```text
+SparseLPFKSupportCompletionOrDispersion
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+mixed_modulus_phase_to_k_additive_character_relabeling_closed=true
+row_averaged_selected_edge_consistency_closed=true
+direct_complete_interval_additive_character_completion_rejected=true
+sparse_lpf_k_support_completion_or_dispersion_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

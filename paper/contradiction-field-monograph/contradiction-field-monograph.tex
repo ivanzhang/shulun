@@ -32915,6 +32915,82 @@ row-averaged-mixed-modulus-graph-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Row-averaged additive-k support}
+
+\begin{theorem}[Row-averaged phase as a sparse additive k-character]
+In the row-averaged q-support graph of the preceding section, write
+\[
+  k=\left\lfloor\frac{qm}{P}\right\rfloor,
+  \qquad
+  D=qm-kP .
+\]
+Then every selected edge satisfies
+\[
+  D\equiv -kP\pmod q,
+  \qquad
+  e\!\left(-\frac{hD}{q}\right)
+  =
+  e\!\left(\frac{hPk}{q}\right).
+\]
+Thus the mixed-modulus phase can be relabelled as an additive character
+in the variable \(k\bmod q\).  The support, however, is not the full
+interval of \(k\)'s: it is the image
+\[
+  {\mathcal K}_{P,q}
+  =
+  \left\{\left\lfloor\frac{qm}{P}\right\rfloor:
+    m \hbox{ is a selected residual LPF cofactor in the q-bucket}\right\}.
+\]
+Consequently complete-interval additive character cancellation is not
+available without an additional completion or dispersion theorem for the
+sparse LPF-induced set \({\mathcal K}_{P,q}\).
+\end{theorem}
+\begin{proof}
+The congruence is immediate from the identity \(D=qm-kP\), since
+\[
+  D\equiv -kP\pmod q .
+\]
+Therefore, for every integer \(h\),
+\[
+  e(-hD/q)=e(hPk/q).
+\]
+Because \(P\) and \(q\) are distinct primes in the audited range, \(P\)
+is invertible modulo \(q\), so this is a genuine q-modulus additive
+character in the residue class of \(k\).  The final assertion is not a
+new asymptotic estimate: it is the exact support identity inherited from
+the selected residual LPF cofactors \(m\).  Finite audit data show that
+most q-buckets have holes between their minimum and maximum selected
+\(k\)'s, so replacing \({\mathcal K}_{P,q}\) by a complete interval would
+change the object.
+\end{proof}
+
+\begin{remark}[What the additive-k relabelling closes]
+This closes the purely formal phase-relabeling gate left by the
+row-averaged mixed-modulus normal form.  The remaining hard point is now
+sharper: one needs cancellation on the sparse LPF-induced support
+\({\mathcal K}_{P,q}\), or a loss-controlled completion of that support
+which does not change the Phi--LPF selector.  Current trace-function,
+arbitrary-modulus Kloosterman, composite Type-II, unbalanced convolution,
+and smooth/squarefree-parameter estimates still enter only after such a
+sparse-support completion or dispersion input is supplied.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+SparseLPFKSupportCompletionOrDispersion\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-support-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
