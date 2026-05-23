@@ -28826,6 +28826,38 @@ The closure cannot be performed inside the linear-sieve framework
 \emph{Opera de Cribro} Theorem 11.4 with $f(1/2)=0$).
 \end{remark}
 
+\begin{externalstatement}[K3'''' and K3*-three-term]
+Using Dusart's three-term explicit lower bound
+\[
+  \pi(x)\ge \frac{x}{\log x}
+  \left(1+\frac{1}{\log x}+\frac{1.8}{\log^2 x}\right),\qquad x\ge 32299,
+\]
+one obtains, for every prime \(P\ge 180\),
+\[
+  |E(P)|,\ |E^*(P)|
+  < \frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625P}{\log^2 P}.
+\]
+\end{externalstatement}
+\begin{proof}
+At \(x=P^2\), Dusart gives
+\[
+  \pi(P^2)\ge \frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}
+  +\frac{0.225P^2}{\log^3 P}.
+\]
+Insert this in the K3' counting inequality and keep the same
+Montgomery--Vaughan row or column upper bound \(2P/\log P\), with the
+Rosser--Schoenfeld subtraction for the lower endpoint.  Dividing by
+\(2P/\log P\) gives
+\[
+  P-1-|E(P)|\ge \frac{P}{4}+\frac{P}{8\log P}
+  +\frac{0.05625P}{\log^2 P}-0.62753,
+\]
+and the same argument applies to columns.  The companion check is archived in
+\begin{quote}\scriptsize\ttfamily
+experiments/k3\_threeterm\_dusart\_bound\_check.py.
+\end{quote}
+\end{proof}
+
 \section{External frontier theorem stress test}
 
 This section records the strongest currently useful external-theorem

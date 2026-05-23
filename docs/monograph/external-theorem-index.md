@@ -1844,3 +1844,40 @@ OR NonlinearParityBreakingActualSourceConstructor
 ```
 
 本层不把任何已知外部定理误写为目标命题无条件闭合。
+
+## 40. K3''''/K3*-three-term：Dusart 三项显式 PNT 加强
+
+新增文件：
+
+```text
+experiments/k3_threeterm_dusart_bound_check.py
+docs/k3_threeterm_dusart_bound_check_run_20260522.txt
+```
+
+本层引入 Dusart 2010 三项显式下界：
+
+```text
+pi(x) >= x/log x * (1 + 1/log x + 1.8/log^2 x),  x >= 32299
+```
+
+把 K3''' 的单项 Dusart 加强推进为：
+
+```text
+K3'''':
+|E(P)| < 3P/4 - P/(8 log P) - 0.05625 P/log^2 P,  P>=180
+
+K3*-three-term:
+|E*(P)| < 3P/4 - P/(8 log P) - 0.05625 P/log^2 P,  P>=180
+```
+
+数值核对 `P in [180,500]` 全部通过：
+
+```text
+all_pass_Dusart_3term_lower=true
+all_pass_K3''''=true
+all_pass_K3*-3term=true
+```
+
+这是真实的外部显式 PNT 常数推进；但主项仍为 `3P/4`，所以不关闭目标命题。它与
+Baker-Harman-Pintz 连续空行块界合并后给出新的分布刚性：例外行即使存在，也不能聚成
+长度超过 `P^(0.05+eps)` 的连续块，同时总量满足上述三项 K3'''' 上界。
