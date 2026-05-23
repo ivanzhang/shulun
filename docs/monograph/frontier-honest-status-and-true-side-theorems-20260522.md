@@ -1794,6 +1794,67 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 R：P2 最早见证选择器路线反证审计（2026-05-23 第十六轮）
+
+本轮删除上一层剩余基中的一个伪出口：不能把 Li--Zhang--Cai 的 least-`P2`
+选择器升级为 prime 选择器。新增证书：
+
+```text
+experiments/prime_matrix_p2_selector_route_rejection_audit.py
+data/prime-matrix-p2-selector-route-rejection-ledger.json
+docs/monograph/prime-matrix-p2-selector-route-rejection-audit.json
+docs/monograph/prime-matrix-p2-selector-route-rejection-audit.md
+```
+
+首个反例已经在排除 `n<=P` 的非平凡版本中出现：
+
+```text
+P=3
+X=floor(P^1.8345)=7
+a=1
+least_P2_after_P=4
+factors=[2, 2]
+```
+
+大样本审计：
+
+| P | $X=\lfloor P^{1.8345}\rfloor$ | 最早 P2 为素数 | 最早 P2 为合数 | 缺失 | 合数比例 |
+|---:|---:|---:|---:|---:|---:|
+| 101 | 4752 | 43 | 57 | 0 | 0.570000 |
+| 199 | 16490 | 76 | 122 | 0 | 0.616162 |
+| 499 | 89056 | 179 | 319 | 0 | 0.640562 |
+| 997 | 317034 | 355 | 641 | 0 | 0.643574 |
+
+因此以下路线被有限反例排除：
+
+```text
+PrimeBeforeCompositeP2SelectorInEveryFixedClass
+```
+
+更新后的 `P2` 路线剩余基为：
+
+```text
+SmallFactorCofactorAPCompositeFiberDominanceBound
+OR NonleastPrimeSelectorRequiresAdditionalDistributionInput
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+这是真推进，因为它删除了一个看似自然但实际错误的破奇偶出口；但它不证明
+非最早素数选择器存在。
+
+```text
+selector_route_rejected=true
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 N：K3*-Dusart-upper（列方向 Dusart 上界对偶）+ K3-trivial-K-term-Li 一般式（2026-05-23 第十三轮）
 
 ### N.1 K3*-Dusart-upper（列方向最强外部引理版）

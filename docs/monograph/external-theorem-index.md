@@ -1909,6 +1909,61 @@ internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
 
+## 48. P2 最早见证选择器路线反证审计
+
+本层继续下钻 P2-to-prime 转移，新增：
+
+```text
+experiments/prime_matrix_p2_selector_route_rejection_audit.py
+data/prime-matrix-p2-selector-route-rejection-ledger.json
+docs/monograph/prime-matrix-p2-selector-route-rejection-audit.json
+docs/monograph/prime-matrix-p2-selector-route-rejection-audit.md
+```
+
+外部背景仍是 Li--Zhang--Cai 的 least-`P2` AP 定理；本层证明不能把该 least-`P2`
+选择器升级为 prime 选择器。即使要求 `n>P`，有限反例已经出现：
+
+```text
+P=3, a=1, least_P2_after_P=4=2^2
+```
+
+大样本读数：
+
+```text
+P=101: first P2 composite share 0.570000
+P=199: first P2 composite share 0.616162
+P=499: first P2 composite share 0.640562
+P=997: first P2 composite share 0.643574
+large_sample_all_have_counterexamples=true
+```
+
+因此删除的路线：
+
+```text
+PrimeBeforeCompositeP2SelectorInEveryFixedClass
+```
+
+更新后的剩余基：
+
+```text
+SmallFactorCofactorAPCompositeFiberDominanceBound
+OR NonleastPrimeSelectorRequiresAdditionalDistributionInput
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+状态边界：
+
+```text
+selector_route_rejected=true
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

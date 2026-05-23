@@ -29137,6 +29137,50 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\begin{externalstatement}[Least-\(P_2\) prime-selector route is false]
+The natural selector upgrade
+\begin{quote}\scriptsize\ttfamily
+PrimeBeforeCompositeP2SelectorInEveryFixedClass
+\end{quote}
+is false.  Even after discarding trivial witnesses \(n\le P\), the least
+\(P_2\) witness in a reduced class can be composite.  The smallest audited
+counterexample is
+\[
+  P=3,\qquad a=1,\qquad X=\lfloor P^{1.8345}\rfloor=7,\qquad
+  4\equiv1\pmod3,\qquad 4=2^2.
+\]
+Thus Li--Zhang--Cai's least-\(P_2\) theorem cannot be promoted to a prime
+theorem by asserting that its chosen witness is prime.
+\end{externalstatement}
+
+\begin{proof}
+The displayed example satisfies \(4>P\), \(4\le X\), \(4\equiv1\pmod3\), and
+\(\Omega(4)=2\).  Since no integer \(n>P\) with \(n\equiv1\pmod3\) lies between
+3 and 4, this is the first post-modulus \(P_2\) witness in that class, and it
+is composite.  Hence the proposed universal selector statement is refuted by a
+finite counterexample.  Larger diagnostic scans show the same phenomenon is
+not an isolated small-prime artifact: for \(P=997\), \(641\) of the \(996\)
+nonzero classes have a composite first \(P_2\) witness after \(P\) below
+\(\lfloor P^{1.8345}\rfloor\).
+\end{proof}
+
+\begin{remark}[Selector route after rejection]
+The selector-rejection audit is archived as
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-p2-selector-route-rejection-audit.md.
+\end{quote}
+After deleting the false least-\(P_2\) selector route, the \(P_2\)-to-prime
+frontier becomes
+\begin{quote}\scriptsize\ttfamily
+SmallFactorCofactorAPCompositeFiberDominanceBound\\
+OR NonleastPrimeSelectorRequiresAdditionalDistributionInput\\
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects\\
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection.
+\end{quote}
+The deletion of a false route is real progress in proof hygiene, but it is not
+an unconditional prime-existence theorem.
+\end{remark}
+
 \section{K6 joint density and row-run rigidity}
 
 \begin{corollary}[K6: joint density and consecutive-block bound]
