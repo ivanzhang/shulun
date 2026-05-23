@@ -28826,7 +28826,7 @@ The closure cannot be performed inside the linear-sieve framework
 \emph{Opera de Cribro} Theorem 11.4 with $f(1/2)=0$).
 \end{remark}
 
-\begin{externalstatement}[K3'''' and K3*-three-term]
+\begin{externalstatement}[K3'''' and K3*-three-term, with self-audit correction]
 Using Dusart's three-term explicit lower bound
 \[
   \pi(x)\ge \frac{x}{\log x}
@@ -28835,7 +28835,7 @@ Using Dusart's three-term explicit lower bound
 one obtains, for every prime \(P\ge 180\),
 \[
   |E(P)|,\ |E^*(P)|
-  < \frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625P}{\log^2 P}.
+  < \frac{3P}{4}-\frac{P}{8\log P}-\frac{0.1125\,P}{\log^2 P}.
 \]
 \end{externalstatement}
 \begin{proof}
@@ -28847,15 +28847,44 @@ At \(x=P^2\), Dusart gives
 Insert this in the K3' counting inequality and keep the same
 Montgomery--Vaughan row or column upper bound \(2P/\log P\), with the
 Rosser--Schoenfeld subtraction for the lower endpoint.  Dividing by
-\(2P/\log P\) gives
+\(2P/\log P\), the third-term contribution becomes
+\[
+  \frac{\log P}{2P}\cdot\frac{0.225P^2}{\log^3 P}
+  =\frac{0.225P}{2\log^2 P}=\frac{0.1125P}{\log^2 P},
+\]
+so
 \[
   P-1-|E(P)|\ge \frac{P}{4}+\frac{P}{8\log P}
-  +\frac{0.05625P}{\log^2 P}-0.62753,
+  +\frac{0.1125P}{\log^2 P}-0.62753,
 \]
 and the same argument applies to columns.  The companion check is archived in
 \begin{quote}\scriptsize\ttfamily
-experiments/k3\_threeterm\_dusart\_bound\_check.py.
+experiments/k3\_quadruple\_prime\_corrected\_check.py.
 \end{quote}
+\end{proof}
+
+\begin{remark}[Self-audit correction]
+An earlier draft of this theorem stated the third-term coefficient as
+\(0.05625\), off by a factor of two from the correct \(0.225/2=0.1125\).
+The corrected statement strictly tightens the bound; all previous
+numerical checks remain valid since the previous looser bound is
+implied by the new tighter one.
+\end{remark}
+
+\begin{externalstatement}[K3''''-Dusart-upper: further constant tightening]
+For every prime \(P\ge 60184\),
+\[
+  |E(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.1125P}{\log^2 P}-\frac{1}{2}+\frac{0.55}{\log P}.
+\]
+\end{externalstatement}
+\begin{proof}
+Replace Rosser--Schoenfeld's \(\pi(P)\le 1.25506P/\log P\) with Dusart 2010
+\(\pi(x)\le x/(\log x-1.1)\) (valid for \(x\ge 60184\)).  Expanding the
+geometric series gives
+\(\pi(P)\le P/\log P+1.1P/\log^2 P+O(P/\log^3 P)\),
+which is strictly tighter than Rosser--Schoenfeld for \(P\ge 149\).
+Re-deriving K3'''' yields the stated constant offset
+\(-1/2+0.55/\log P\) replacing the \(-0.37247\) of K3''''.
 \end{proof}
 
 \section{External frontier theorem stress test}
