@@ -1673,6 +1673,89 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
+
+本轮审计用户提出的指数夹击想法：
+
+```text
+(P^(50/24))^0.52 与 (P^(50/26))^0.52
+目标：(P^(50/25))^0.5=P
+```
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_power_slope_sandwich_audit.py
+data/prime-matrix-prime-power-slope-sandwich-ledger.json
+docs/monograph/prime-matrix-prime-power-slope-sandwich-audit.json
+docs/monograph/prime-matrix-prime-power-slope-sandwich-audit.md
+```
+
+核心指数恒等式：
+
+```text
+0.52=13/25
+
+lower endpoint: P^(50/26)=P^(25/13)
+(P^(25/13))^(13/25)=P
+
+center endpoint: P^(50/25)=P^2
+(P^2)^(1/2)=P
+
+upper endpoint: P^(50/24)=P^(25/12)
+(P^(25/12))^(13/25)=P^(13/12)
+```
+
+这说明下端确实出现半径 `P` 的长度巧合，但该短区间位置不在 `P^2` 附近：
+
+```text
+P^2-P^(25/13)=P^2(1-P^(-1/13)) asymp P^2
+lower radius=P
+gap/radius asymp P
+```
+
+上端也无法从上方触及 `P^2`：
+
+```text
+P^(25/12)-P^2=P^2(P^(1/12)-1) asymp P^(25/12)
+upper radius=P^(13/12)
+gap/radius asymp P
+```
+
+一般地，若 `X=P^a`，通用短区间输入给长度 `X^theta=P^(a theta)`。
+要让容器中心在 `P^2`，必须 `a=2`；要让半径为 `P`，必须 `a theta=1`。
+二者同时成立等价于：
+
+```text
+theta=1/2
+```
+
+对当前 `theta=13/25`，半径 `P` 强制 `a=25/13`，它不等于 `2`。
+
+新的剩余基为：
+
+```text
+PrimeSquareEndpointLocalizationNotExponentInterpolation
+OR ThetaEqualsHalfOrPrimeSquareSpecificPointwiseTheorem
+OR P2CenteredContainerPrimeLowerBound
+OR OuterScaleGapBridgeBetweenP25Over13AndP2
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof
+```
+
+本层是真推进：它删除了一个自然的指数插值夹击出口，并把障碍压成
+“位置与半径不能同时满足”这一条可审稿门槛。
+
+```text
+prime_power_slope_sandwich_no_go_closed=true
+exponent_length_coincidence_closed=true
+lower_container_reaches_p2=false
+upper_container_reaches_p2=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 Y：almost-all 例外脊线审计（2026-05-23 第二十三轮）
 
 本轮引入并审计 almost-all 短区间素数与例外集前沿：

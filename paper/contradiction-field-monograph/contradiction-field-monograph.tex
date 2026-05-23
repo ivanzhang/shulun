@@ -29229,6 +29229,86 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\section{Prime-Power Slope Sandwich Audit}
+
+\begin{externalstatement}[Prime-power exponent interpolation does not localize the \(P^2\) half-window]
+Let \(\theta=0.52=13/25\).  Applying a \(\theta\)-short-interval input at
+\(P^{50/26}=P^{25/13}\) gives a length
+\[
+  \bigl(P^{25/13}\bigr)^{13/25}=P,
+\]
+which matches the formal half-window length
+\[
+  \bigl(P^{50/25}\bigr)^{1/2}=P.
+\]
+However, this is only a length coincidence.  The lower container is centered
+near \(P^{25/13}\), far below \(P^2\), while the upper container near
+\(P^{50/24}=P^{25/12}\) remains far above \(P^2\).  Hence the two endpoint
+applications do not force a prime into the \(P^2\) half-window.
+\end{externalstatement}
+
+\begin{proof}
+The lower endpoint is
+\[
+  X_- = P^{50/26}=P^{25/13}.
+\]
+Its guaranteed short-interval radius under the \(\theta=13/25\) input is
+\[
+  X_-^\theta=P.
+\]
+But its distance from the target center is
+\[
+  P^2-P^{25/13}=P^2(1-P^{-1/13})\asymp P^2,
+\]
+so the ratio between the gap and the guaranteed radius is \(\asymp P\).  The
+container around \(X_-\) cannot reach the \(P^2\) row.
+
+The upper endpoint is
+\[
+  X_+ = P^{50/24}=P^{25/12}.
+\]
+Its guaranteed radius is
+\[
+  X_+^\theta=P^{(25/12)(13/25)}=P^{13/12}.
+\]
+Yet
+\[
+  P^{25/12}-P^2=P^2(P^{1/12}-1)\asymp P^{25/12},
+\]
+again a factor \(P\) larger than the guaranteed radius.  Thus the upper
+container also cannot touch the \(P^2\) half-window.
+
+The general obstruction is simple.  If \(X=P^a\), a \(X^\theta\) short-interval
+theorem gives length \(P^{a\theta}\).  Location at the prime-square endpoint
+requires \(a=2\), while radius \(P\) requires \(a\theta=1\).  Both equations
+hold simultaneously only when \(\theta=1/2\).  For \(\theta=13/25\), the
+radius condition gives \(a=25/13\), which is exactly not the \(P^2\) location.
+\end{proof}
+
+\begin{remark}[Slope-sandwich residual basis]
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-prime-power-slope-sandwich-audit.md.
+\end{quote}
+The current residual basis is
+\begin{quote}\scriptsize\ttfamily
+PrimeSquareEndpointLocalizationNotExponentInterpolation\\
+OR ThetaEqualsHalfOrPrimeSquareSpecificPointwiseTheorem\\
+OR P2CenteredContainerPrimeLowerBound\\
+OR OuterScaleGapBridgeBetweenP25Over13AndP2\\
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+prime\_power\_slope\_sandwich\_no\_go\_closed=true\\
+exponent\_length\_coincidence\_closed=true\\
+lower\_container\_reaches\_p2=false\\
+upper\_container\_reaches\_p2=false\\
+prime\_square\_halfscale\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Legendre-Frontier External Theorem Audit}
 
 \begin{externalstatement}[Latest Legendre-frontier inputs are near-gates, not half-scale closure]

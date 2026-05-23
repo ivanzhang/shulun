@@ -2759,3 +2759,82 @@ pointwise_every_prime_square_endpoint_closed=false
 phi_lpf_parity_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 56. prime-power slope sandwich 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_prime_power_slope_sandwich_audit.py
+data/prime-matrix-prime-power-slope-sandwich-ledger.json
+docs/monograph/prime-matrix-prime-power-slope-sandwich-audit.json
+docs/monograph/prime-matrix-prime-power-slope-sandwich-audit.md
+```
+
+本层审计用户提出的新夹击：
+
+```text
+(P^(50/24))^0.52 and (P^(50/26))^0.52
+target: (P^(50/25))^0.5 = P
+```
+
+取 `0.52=13/25`，则指数恒等式为：
+
+```text
+lower endpoint: P^(50/26)=P^(25/13)
+(P^(25/13))^(13/25)=P
+
+center endpoint: P^(50/25)=P^2
+(P^2)^(1/2)=P
+
+upper endpoint: P^(50/24)=P^(25/12)
+(P^(25/12))^(13/25)=P^(13/12)
+```
+
+这里确有长度巧合，但容器位置不对。下端容器位于 `P^(25/13)` 附近，
+到 `P^2` 的距离为：
+
+```text
+P^2-P^(25/13)=P^2(1-P^(-1/13)) asymp P^2,
+```
+
+而保证半径只有 `P`。上端容器位于 `P^(25/12)` 附近，到 `P^2` 的距离为：
+
+```text
+P^(25/12)-P^2=P^2(P^(1/12)-1) asymp P^(25/12),
+```
+
+而保证半径只有 `P^(13/12)`。两端都差一个 `P` 因子，不能触及 `P^2`
+半窗。
+
+一般形式：
+
+```text
+X=P^a, short interval length X^theta=P^(a theta).
+location at P^2 requires a=2.
+radius P requires a theta=1.
+simultaneous solution requires theta=1/2.
+```
+
+对 `theta=13/25`，半径 `P` 强制 `a=25/13`，这恰好偏离 `P^2`。
+
+新的剩余基为：
+
+```text
+PrimeSquareEndpointLocalizationNotExponentInterpolation
+OR ThetaEqualsHalfOrPrimeSquareSpecificPointwiseTheorem
+OR P2CenteredContainerPrimeLowerBound
+OR OuterScaleGapBridgeBetweenP25Over13AndP2
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof
+```
+
+边界状态：
+
+```text
+prime_power_slope_sandwich_no_go_closed=true
+exponent_length_coincidence_closed=true
+lower_container_reaches_p2=false
+upper_container_reaches_p2=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```

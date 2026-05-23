@@ -1,0 +1,143 @@
+{
+  "certificate_type": "prime_matrix_prime_power_slope_sandwich_audit",
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "ExponentLengthCoincidenceRecognized",
+      "meaning": "(P^(50/26))^(13/25)=P and (P^2)^(1/2)=P",
+      "proved": true,
+      "remaining": "location mismatch"
+    },
+    {
+      "closed": false,
+      "gate": "LowerContainerTouchesP2",
+      "meaning": "the lower container has length P but lies around P^(25/13), far below P^2",
+      "proved": false,
+      "remaining": "P2MinusLowerEndpointGapExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "UpperContainerTouchesP2",
+      "meaning": "the upper container lies around P^(25/12), far above P^2; radius P^(13/12) is too small",
+      "proved": false,
+      "remaining": "UpperEndpointGapToP2Bridge"
+    },
+    {
+      "closed": false,
+      "gate": "SandwichForcesPrimeIntoP2HalfWindow",
+      "meaning": "two far-away existence intervals do not imply existence in (P^2,P^2+P] or [P^2-P,P^2)",
+      "proved": false,
+      "remaining": "PrimeSquareEndpointLocalization"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "external lemma and internal self-contained versions remain open",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "endpoint_records": [
+    {
+      "distance_to_p2_scale": "P^2",
+      "endpoint": "P^(25/13)",
+      "endpoint_exponent": "25/13",
+      "gap_shape": "P^2-P^a = P^2(1-P^(a-2))",
+      "guaranteed_radius": "P^1",
+      "label": "lower_X=P^(50/26)=P^(25/13)",
+      "radius_exponent": "1/1",
+      "radius_reaches_p2": false,
+      "side": "below_P2",
+      "theta": "13/25"
+    },
+    {
+      "distance_to_p2_scale": "0",
+      "endpoint": "P^(2/1)",
+      "endpoint_exponent": "2/1",
+      "gap_shape": "0",
+      "guaranteed_radius": "P^(26/25)",
+      "label": "center_X=P^(50/25)=P^2",
+      "radius_exponent": "26/25",
+      "radius_reaches_p2": true,
+      "side": "at_P2",
+      "theta": "13/25"
+    },
+    {
+      "distance_to_p2_scale": "P^(25/12)",
+      "endpoint": "P^(25/12)",
+      "endpoint_exponent": "25/12",
+      "gap_shape": "P^a-P^2 = P^a(1-P^(2-a))",
+      "guaranteed_radius": "P^(13/12)",
+      "label": "upper_X=P^(50/24)=P^(25/12)",
+      "radius_exponent": "13/12",
+      "radius_reaches_p2": false,
+      "side": "above_P2",
+      "theta": "13/25"
+    }
+  ],
+  "exponent_identity": {
+    "center_endpoint_exponent": "2/1",
+    "center_halfscale_exponent": "1",
+    "center_is_p_square": true,
+    "lower_endpoint_exponent": "25/13",
+    "lower_radius_equals_p": true,
+    "lower_radius_exponent": "1/1",
+    "target_halfscale": "P",
+    "theta": "13/25",
+    "upper_endpoint_exponent": "25/12",
+    "upper_radius": "P^(13/12)",
+    "upper_radius_exponent": "13/12"
+  },
+  "exponent_length_coincidence_closed": true,
+  "external_input": {
+    "shape": "prime in intervals of length x^0.52 for sufficiently large x",
+    "source": "Runbo Li arXiv:2308.04458 v8 / latest 0.52 short-interval preprint stream",
+    "status_in_project": "preprint/frontier input; even granting it, this sandwich does not close halfscale",
+    "theta": "13/25"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "frontier_verified_date": "2026-05-23",
+  "general_gate": {
+    "closes_halfscale": false,
+    "require_location": "a=2 for X=P^2",
+    "require_radius_p": "a*theta=1",
+    "simultaneous_solution_requires": "theta=1/2",
+    "with_theta_13_over_25": "a=25/13 gives radius P but not location P^2"
+  },
+  "internal_self_contained_closed": false,
+  "location_radius_obstruction": {
+    "conclusion": "both guaranteed containers are a factor P too far from P^2 in the power scale",
+    "lower_gap_over_radius": "asymp P",
+    "lower_gap_to_center": "P^2-P^(25/13)=P^2(1-P^(-1/13)) asymp P^2",
+    "lower_guaranteed_radius": "P",
+    "upper_gap_over_radius": "asymp P",
+    "upper_gap_to_center": "P^(25/12)-P^2=P^2(P^(1/12)-1) asymp P^(25/12)",
+    "upper_guaranteed_radius": "P^(13/12)"
+  },
+  "lower_container_reaches_p2": false,
+  "new_residual_basis": [
+    "PrimeSquareEndpointLocalizationNotExponentInterpolation",
+    "ThetaEqualsHalfOrPrimeSquareSpecificPointwiseTheorem",
+    "P2CenteredContainerPrimeLowerBound",
+    "OuterScaleGapBridgeBetweenP25Over13AndP2",
+    "SameObjectSignedDispersionOrAutomorphicEndpointProof"
+  ],
+  "prime_power_slope_sandwich_no_go_closed": true,
+  "prime_square_halfscale_closed": false,
+  "row_column_unconditional_closed": false,
+  "short_answer": "no: P^(50/26) gives radius P but is far below P^2, while P^(50/24) is far above P^2 and its radius is still too small to reach P^2",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2d58a7cb25ffe1d130a68c3500e0f4aa32b73f3f99d678367d4d009deac09c83",
+    "docs/monograph/external-theorem-index.md": "a5c9b1d4dd4f6930e536e2b4bb363c13647e16ead2aa14307bc39a4aea3b4ddf",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f411c5ce7a0735c79bbf6cc4e2821a816c7d1782c8e7e69ab3058ea06da24dcc",
+    "docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.json": "39919ae4d4158f57adaec5ba5b7707ed2075337507d293025b9c45eff0cc21e9",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json": "4dcd74175d9c2ee211e586f7aaa9ddc300763c9b84ef668db8e92f4c63b4191b",
+    "docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json": "0c4bc76f173719e64ff43013cb111cfb25c5a89b27c6ea5521299113198ceef2",
+    "docs/monograph/prime-matrix-short-interval-transference-parity-audit.json": "a0b3d9aa052698f150f61d39dd4be1a0c0bfa2b29202ee723920586af432a6fa",
+    "experiments/prime_matrix_prime_power_slope_sandwich_audit.py": "2d5e3e223a551ee6a7e86e4ec1efd4c5c77346fc4ec2e5f3b219f7694f0a08ff",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "5b48fd8ccb0dd73f69cf573a9c96e8b93a6cb58567689614fac7db4642d87d2e"
+  },
+  "status": "prime_power_slope_sandwich_has_length_coincidence_but_misses_p2_location",
+  "upper_container_reaches_p2": false,
+  "user_question": "Can (P^(50/24))^0.52 and (P^(50/26))^0.52 sandwich (P^(50/25))^0.5?"
+}
