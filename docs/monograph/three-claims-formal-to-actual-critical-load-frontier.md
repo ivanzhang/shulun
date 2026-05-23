@@ -23904,3 +23904,47 @@ AND (DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 内部自足版则保留为 source/canonical/new-joint 前端与 ExactUV、模型、PDEC/CleanKLS、
 Rate、DStructure 自足替代包的合取。该合取不能靠 Phi-LPF/CRT 无符号计数或谱估计后验
 生成 signed pre-Cauchy source。本层关闭的是非循环边界，目标命题仍未无条件闭合。
+
+## 330T. Two replacement lines common unconditional kernel frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_common_unconditional_kernel_router.py
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.md
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.json
+data/prime-matrix-two-replacement-lines-common-unconditional-kernel-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_common_unconditional_kernel_pinned_unconditional_open
+common_unconditional_kernel_boundary_closed=true
+common_unconditional_kernel_proved=false
+external_conditional_author_side_closed=true
+external_absolute_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：两条绝对路线的共同核不是 FullS 谱前端，也不是 six-field/source
+前端，而是同一个 DStructure/Rankin 自足尾门：
+
+```text
+SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+它进一步拆成四个合取子包：
+
+```text
+SelfContainedDStructureStructuredEHPDDefinitionsAndABReductionProof
+AND SelfContainedTailLog4BGOrRKSTailAdapterWithExactTheoremNumbersAndConstants
+AND ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
+AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
+```
+
+外部绝对无条件作者证明版还要支付同对象 FullS theorem-match、actual source capacity
+或新 automorphic/dispersion 证明；内部自足版还要支付 six-field/source/canonical 前端以及
+ExactUV、模型、PDEC/CleanKLS 与 Rate。FullS、six-field 与 DStructure 三者互不代偿。
+本层关闭的是共同核边界，目标命题仍未无条件闭合。

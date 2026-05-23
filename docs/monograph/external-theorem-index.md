@@ -1530,3 +1530,57 @@ AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
 Euler/Gauss/Riemann 三条纪律在本层只作为非循环守门规则：source/product 必须先于
 pushforward，CRT/相位必须同集同对象，谱估计只能在 signed coefficient 已生成后使用。
 它们不替代任何 theorem input。
+
+## 34. 两条替代线共同无条件核
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_common_unconditional_kernel_router.py
+data/prime-matrix-two-replacement-lines-common-unconditional-kernel-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.md
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.json
+```
+
+本层不新增外部定理引用；它把绝对无条件外部线与内部自足线的共同核从各自前端中分离。
+共同核为：
+
+```text
+SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+该包展开为：
+
+```text
+SelfContainedDStructureStructuredEHPDDefinitionsAndABReductionProof
+AND SelfContainedTailLog4BGOrRKSTailAdapterWithExactTheoremNumbersAndConstants
+AND ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
+AND SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
+```
+
+外部绝对无条件作者证明版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+内部自足版仍需：
+
+```text
+(NewActualJointAlphaDeltaSixFieldConstructorArtifact
+ OR AcyclicCanonicalExactSameSetPromotionCertificate
+ OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+ OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+ OR FullSNonAPStrengthenedSourceAntiAtomForActualSource)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+禁止代偿：FullS theorem-match 不支付 six-field/source/ExactUV/model/rate；six-field/source
+不支付 FullS-KLS 谱估计；DStructure/Rankin 自足包也不支付任一前端，它只是两条绝对路线的共同尾门。

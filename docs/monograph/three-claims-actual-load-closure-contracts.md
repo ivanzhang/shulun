@@ -22365,6 +22365,45 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.180 two replacement lines common unconditional kernel 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_common_unconditional_kernel_router.py
+data/prime-matrix-two-replacement-lines-common-unconditional-kernel-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.md
+docs/monograph/prime-matrix-two-replacement-lines-common-unconditional-kernel-router.json
+```
+
+同步读数为：
+
+```text
+common_unconditional_kernel_boundary_closed=true
+common_unconditional_kernel_proved=false
+external_conditional_author_side_closed=true
+external_absolute_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：若目标是同时推进外部绝对无条件线和内部自足线，真正共同承重核为
+
+```text
+SelfContainedDStructureTailLog4FiniteRankinProofPackage
+```
+
+而不是 FullS 谱输入或 six-field/source 前端。FullS theorem-match 只推进外部无黑箱线；
+six-field/source/canonical 与 ExactUV/model/PDEC/Rate 只推进内部自足线；DStructure/Rankin
+自足包推进两线共同尾门，但不替代任一前端。当前最短共同主攻顺序为四个自足子包：
+
+```text
+SelfContainedDStructureStructuredEHPDDefinitionsAndABReductionProof
+SelfContainedTailLog4BGOrRKSTailAdapterWithExactTheoremNumbersAndConstants
+ReproducibleFiniteVerificationArchiveWithHashesAndIndependentRunner
+SelfContainedFullRankinPassOrReturnLedgerAndDownstreamReturnIntegration
+```
+
 ### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
 
 新增机器证书：
