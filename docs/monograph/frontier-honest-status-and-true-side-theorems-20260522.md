@@ -323,3 +323,109 @@ $h=X^{1/2}$ 二阶矩成立 $\Leftrightarrow$ 各种已知开放硬点。
 
 *文档创建日期：2026-05-22。Claude 接手会话产出。*
 *不替代主稿；作为 monograph 前沿状态固化层。*
+
+---
+
+## 附录 A：K3 的显式有效版（K3'，2026-05-22 强化）
+
+**目的**：把 K3 中的 $o(1)$ 项消去，给出**显式无条件常数**与**所有素数 $P\ge 5$ 一致成立**的有效上界。
+
+### A.1 引入的外部显式定理
+
+**RS1962**（Rosser–Schoenfeld 1962, *Illinois J. Math.* 6:64–94, Theorems 1 & 2）：
+$$
+\frac{x}{\log x}<\pi(x)<\frac{1.25506\,x}{\log x},\quad x\ge 17.
+$$
+
+**MV1973**（Montgomery–Vaughan 1973, *J. London Math. Soc.* (2) 8:73–82）：
+$$
+\pi(x+y)-\pi(x)\le \frac{2y}{\log y},\quad y\ge 2.
+$$
+
+二者均无条件、已发表、显式常数。
+
+### A.2 定理 K3'（显式有效版）
+
+**陈述**：对每个素数 $P\ge 5$，
+$$
+|E(P)|<\frac{3P}{4}.
+$$
+等价地：$P\times P$ 方阵中**至少有 $\lceil P/4\rceil$ 行含素数**。
+
+**证明**：
+
+(1) 由 MV1973（代入 $y=P\ge 5\ge 2$）：对每 $k\in[1,P-1]$，
+$$
+N_P(k)=\pi(kP+P)-\pi(kP)\le \frac{2P}{\log P}.\tag{A.1}
+$$
+
+(2) 由 RS1962（代入 $x=P^2\ge 25>17$ 与 $x=P\ge 5$，其中 $\pi(P)< 1.25506P/\log P$ 对 $P\ge 17$ 成立；
+$P\in\{5,7,11,13\}$ 时 $\pi(P)\le 6$ 用平凡上界 $\pi(P)\le P$ 已足）：
+$$
+\pi(P^2)>\frac{P^2}{\log P^2}=\frac{P^2}{2\log P},\quad \pi(P)<\frac{1.25506\,P}{\log P}.\tag{A.2}
+$$
+故
+$$
+\pi(P^2)-\pi(P)>\frac{P^2}{2\log P}-\frac{1.25506\,P}{\log P}.\tag{A.3}
+$$
+
+(3) 联合：
+$$
+\sum_{k\notin E(P)}N_P(k)=\pi(P^2)-\pi(P),\qquad\text{且}\qquad \sum_{k\notin E(P)}N_P(k)\le|[1,P-1]\setminus E(P)|\cdot\max_k N_P(k).
+$$
+即
+$$
+(P-1-|E(P)|)\cdot\frac{2P}{\log P}\ge \pi(P^2)-\pi(P).\tag{A.4}
+$$
+
+(4) 代入 (A.3) 到 (A.4) 并解出 $|E(P)|$：
+$$
+P-1-|E(P)|\ge \frac{\log P}{2P}\Bigl(\frac{P^2}{2\log P}-\frac{1.25506\,P}{\log P}\Bigr)=\frac{P}{4}-\frac{0.62753}{1}=\frac{P}{4}-0.62753.
+$$
+$$
+|E(P)|\le P-1-\frac{P}{4}+0.62753=\frac{3P}{4}-0.37247.
+$$
+对整数 $|E(P)|$ 与 $P\ge 5$，$\frac{3P}{4}-0.37247<\frac{3P}{4}$，故 $|E(P)|<3P/4$。∎
+
+**小 $P$ 的核对**（$P\in\{5,7,11,13\}$）：RS1962 在这些点的常数版本仍成立或直接数值核对
+$|E(P)|=0$（项目已验证 $P\le 4999$ 全部例外集为空，故 $|E(P)|=0<3P/4$ 平凡成立）。
+
+### A.3 K3' 的有效"主链不含 RS1962"内部自足版（K3''）
+
+如果不接受 RS1962 显式常数，可以用纯 PNT（Hadamard / de la Vallée-Poussin 1896）：
+
+**定理 K3''（内部自足版）**：存在 $P_0$（无效）使得对所有素数 $P\ge P_0$，
+$$
+|E(P)|\le \frac{3P}{4}+P\cdot\epsilon(P),
+$$
+其中 $\epsilon(P)\to 0$ 由 PNT 余项给出。
+
+**证明**：把 RS1962 替换为 PNT $\pi(x)=x/\log x(1+o(1))$，证明结构同 A.2。∎
+
+**状态**：`Proved-in-text + PNT-only`（无显式常数）。
+
+### A.4 K3' 显式版与"非循环"原则的关系
+
+- K3' 通过引入 **MV1973** 与 **RS1962** 两个**已发表的显式定理**，把 K3 的 $o(1)$ 消去为常数 $0.37247$。
+- 这**不是**把 Phi-LPF 改名为另一个"router"——它**引入**外部刚性定理（MV1973 是 Selberg sieve 的 sharp form；RS1962 是 PNT 显式版）。
+- 这才是欧拉/黎曼风格："$\zeta(s)=\prod(1-p^{-s})^{-1}$"是显式恒等式，"$\pi(x)\sim\mathrm{Li}(x)$"是高斯**带 $\sim$ 符号**的命题；从恒等式到不等式必须经过**显式刚性输入**。
+
+### A.5 升级路径（尚未做、但合理）
+
+下一步可尝试的真升级（按难度递增）：
+
+| 升级 | 工具 | 预期改进 |
+|---|---|---|
+| K3' 常数 $3/4\to 3/4-\delta$ | Selberg sieve 第二矩 + Cauchy-Schwarz | $\delta\sim 1/\log P$ |
+| K3' $\to|E(P)|\le P/2$ | Iwaniec 1982 BT 改进 + Bombieri-Davenport prime-pair 上界 | 严格 $1/2$ 阈值（与 BHP 不冲突） |
+| K3'' $\to$ "几乎所有行" | 见定理 K4 条件（$h=X^{1/2}$ 二阶矩）| 直接给 $o(P)$，但开放 |
+| H_P 完整 | Cramér 局部或非线性 sieve | 70 年开放 |
+
+**当前严格无条件最强**：K3' = $|E(P)|<3P/4$ 对 $P\ge 5$ 显式。
+
+### A.6 数值核对脚本
+
+`experiments/k3_prime_explicit_bound_check.py` 验证 K3' 的两边显式不等式（A.4）对
+$P\le 1500$ 全部成立，且实际 $|E(P)|=0\ll 3P/4$。
+
+
