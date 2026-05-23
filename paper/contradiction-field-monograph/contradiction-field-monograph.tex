@@ -31595,6 +31595,104 @@ quotient graph, or a completion to an external Kloosterman/Vaughan
 Type-II estimate without losing pointwise control in \(P,k\).
 \end{remark}
 
+\section{Rough quotient second LPF split closure}
+
+\begin{proposition}[Next deterministic second-LPF split gate]
+After the prime-\(q\), small-\(r\) rough quotient graph has been
+formed, the next deterministic subgate is
+\[
+  \texttt{RoughQuotientSecondLPFSplitAndUniqueBeta}.
+\]
+It splits the quotient \(\alpha_{P,k}(q,r)\) into a prime quotient cell
+and a second-LPF composite quotient cell.  It is still not a
+phase-saving theorem.
+\end{proposition}
+
+\begin{theorem}[Second-LPF split of the rough quotient]
+Let a residual edge be written in the previous normal form as
+\[
+  m=r\alpha,\qquad r={\rm LPF}(m),\qquad
+  \alpha=\alpha_{P,k}(q,r),\qquad {\rm LPF}(\alpha)\ge r.
+\]
+Then exactly one of the following alternatives holds:
+\[
+  \alpha\ {\rm is\ prime},
+\]
+or
+\[
+  \alpha=s\beta,\qquad
+  s={\rm LPF}(\alpha)\ge r,\qquad
+  \beta\ge s,\qquad {\rm LPF}(\beta)\ge s.
+\]
+In the second case, for fixed \(q,r,s\) the only possible value of
+\(\beta\) is
+\[
+  \beta_{P,k}(q,r,s)
+  =
+  \left\lfloor \frac{kP}{qrs}\right\rfloor+1.
+\]
+\end{theorem}
+\begin{proof}
+Since \({\rm LPF}(\alpha)\ge r\), either \(\alpha\) is prime or it is
+composite.  In the composite case put \(s={\rm LPF}(\alpha)\) and
+\(\beta=\alpha/s\).  Then \(s\ge r\), \(\beta\ge s\), and no prime below
+\(s\) divides \(\beta\), so \({\rm LPF}(\beta)\ge s\).
+
+For fixed \(q,r,s\), any such \(\beta\) must satisfy
+\[
+  kP<qrs\beta<(k+1)P.
+\]
+The real interval has length
+\[
+  \frac{P}{qrs}<\frac{2}{rs}\le \frac{2}{49}<1,
+\]
+so it contains at most one integer.  The least integer strictly larger
+than \(kP/(qrs)\) is
+\(\left\lfloor kP/(qrs)\right\rfloor+1\), proving the uniqueness
+formula.
+\end{proof}
+
+\begin{corollary}[Two-cell iterated rough quotient graph]
+The residual graph decomposes exactly into two disjoint cells:
+\[
+  {\rm semiprime\text{-}\alpha\ cell}
+  \quad\sqcup\quad
+  {\rm second\text{-}LPF\ rough\ quotient\ cell}.
+\]
+The first cell has \(m=r\alpha\) with \(\alpha\) prime.  The second has
+\[
+  m=rs\beta,\qquad
+  \beta=\beta_{P,k}(q,r,s).
+\]
+Both cells keep the matched displacement phase
+\[
+  e(-hD/q),
+\]
+with \(D=qr\alpha-kP\) in the first cell and
+\(D=qrs\beta-kP\) in the second cell.
+\end{corollary}
+
+\begin{remark}[Updated true remaining mouth after the second-LPF split]
+The rough quotient is no longer a single black-box rough integer.  It
+has been split into a semiprime quotient cell and a second-LPF rough
+quotient cell.  The current row/column sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQIteratedRoughQuotientTwoCellPhaseSaving\\
+AND CompletionToExternalKloostermanOrVaughanTypeII.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.  The
+remaining task is cancellation or signed separation across these two
+iterated quotient cells, or a completion to an external
+Kloosterman/Vaughan Type-II estimate without losing pointwise control
+in \(P,k\).
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-rough-\\
+quotient-second-lpf-split-closure-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

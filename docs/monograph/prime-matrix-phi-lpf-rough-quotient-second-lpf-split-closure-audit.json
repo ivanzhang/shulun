@@ -1,0 +1,313 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_rough_quotient_second_lpf_split_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "RoughQuotientPrimeOrSecondLPFPartition",
+      "meaning": "The r-rough quotient alpha is either prime or has second least prime factor s>=r.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "FixedPrimeQRSecondLPFQuotientSingleton",
+      "meaning": "For fixed q,r,s, the beta interval has length <1 and contains at most one integer.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ResidualAsSemiprimeAlphaOrSecondRoughQuotientGraph",
+      "meaning": "Residual edges split exactly into semiprime-alpha edges and second-LPF rough quotient quadruples.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQIteratedRoughQuotientTwoCellPhaseSaving",
+      "meaning": "Prove cancellation or signed separation over semiprime-alpha and second-LPF rough quotient cells.",
+      "proved": false,
+      "remaining": "two-cell iterated rough quotient phase theorem"
+    },
+    {
+      "closed": false,
+      "gate": "CompletionToExternalKloostermanOrVaughanTypeII",
+      "meaning": "Convert the iterated quotient graph to a DI/DFI/BC/FM-compatible estimate without losing pointwise P,k.",
+      "proved": false,
+      "remaining": "completion/dispersion identity"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "does not handle the fixed-row alpha-prime/second-LPF split directly",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "source_url": "https://arxiv.org/abs/2511.07550",
+      "useful_part": "possible target only after completing the iterated rough quotient graph to bilinear Kloosterman sums",
+      "verified_status": "power-saving estimates for general bilinear Kloosterman forms modulo arbitrary q"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "not a pointwise estimate for this prime-q iterated quotient graph",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "source_url": "https://arxiv.org/abs/2511.08445",
+      "useful_part": "possible completion technology for a later Type-II organisation",
+      "verified_status": "non-abelian amplification for Type-II Kloosterman sums with composite moduli"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "alpha-prime and second-LPF rough quotient cells are not their completed parameter family",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "source_url": "https://arxiv.org/abs/2411.12113",
+      "useful_part": "comparison source for arithmetic-function-twisted Kloosterman sums after a bridge",
+      "verified_status": "Kloosterman sums parametrised by square-free and smooth integers; Cambridge journal version first online in 2025"
+    },
+    {
+      "closes_this_gate": false,
+      "reason_not_direct": "withdrawn papers cannot be used as an admissible external theorem",
+      "source": "Dong--Robles--Zeindler 2026 arXiv:2601.00292",
+      "source_url": "https://arxiv.org/abs/2601.00292",
+      "useful_part": "near-miss diagnostic only",
+      "verified_status": "withdrawn on arXiv v2 after a missing factor was reported"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_audit": {
+    "active_residual_row_count": 52697,
+    "actual_total_edges_R30": 299977,
+    "all_alpha_formulas_verified": true,
+    "all_beta_formulas_verified": true,
+    "all_predicted_displacements_in_1_to_Pminus1": true,
+    "all_second_lpf_descent_valid": true,
+    "bad_alpha_formula_total": 0,
+    "bad_beta_formula_total": 0,
+    "bad_beta_interval_total": 0,
+    "bad_displacement_total": 0,
+    "bad_second_lpf_total": 0,
+    "beta_interval_unique_for_each_qrs": true,
+    "extra_edge_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "k_range": "1<=k<P in this implementation audit",
+    "lpf_r_bucket_totals": {
+      "11": 52080,
+      "13": 44104,
+      "17": 34414,
+      "19": 29723,
+      "23": 22368,
+      "29": 11815,
+      "31": 6916,
+      "37": 1559,
+      "41": 262,
+      "43": 36,
+      "7": 96700
+    },
+    "max_beta_interval_points": 1,
+    "max_prime": 1009,
+    "missing_edge_total": 0,
+    "predicted_edges_equal_actual_edges": true,
+    "predicted_second_quadruple_total": 25165,
+    "predicted_total_edges_R30": 299977,
+    "row_count": 76954,
+    "sample_rows": [
+      {
+        "P": 101,
+        "actual_edge_count_R30": 1,
+        "bad_alpha_formula_count": 0,
+        "bad_beta_formula_count": 0,
+        "bad_beta_interval_count": 0,
+        "bad_displacement_count": 0,
+        "bad_second_lpf_count": 0,
+        "extra_edge_count": 0,
+        "k": 100,
+        "max_beta_interval_points": 0,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 1,
+        "predicted_second_quadruple_count": 0,
+        "q_count": 10,
+        "r_bucket_counter": {
+          "11": 1
+        },
+        "rs_bucket_counter": {},
+        "second_lpf_edge_count": 0,
+        "second_lpf_samples": "empty",
+        "semiprime_alpha_edge_count": 1,
+        "semiprime_samples": "q=71,r=11,alpha=13,m=143,d=53",
+        "split_counter_on_edges": {
+          "semiprime_alpha_prime": 1
+        }
+      },
+      {
+        "P": 257,
+        "actual_edge_count_R30": 3,
+        "bad_alpha_formula_count": 0,
+        "bad_beta_formula_count": 0,
+        "bad_beta_interval_count": 0,
+        "bad_displacement_count": 0,
+        "bad_second_lpf_count": 0,
+        "extra_edge_count": 0,
+        "k": 256,
+        "max_beta_interval_points": 0,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 3,
+        "predicted_second_quadruple_count": 0,
+        "q_count": 23,
+        "r_bucket_counter": {
+          "11": 1,
+          "13": 1,
+          "19": 1
+        },
+        "rs_bucket_counter": {},
+        "second_lpf_edge_count": 0,
+        "second_lpf_samples": "empty",
+        "semiprime_alpha_edge_count": 3,
+        "semiprime_samples": "q=151,r=19,alpha=23,m=437,d=195; q=193,r=11,alpha=31,m=341,d=21; q=137,r=13,alpha=37,m=481,d=105",
+        "split_counter_on_edges": {
+          "semiprime_alpha_prime": 3
+        }
+      },
+      {
+        "P": 971,
+        "actual_edge_count_R30": 23,
+        "bad_alpha_formula_count": 0,
+        "bad_beta_formula_count": 0,
+        "bad_beta_interval_count": 0,
+        "bad_displacement_count": 0,
+        "bad_second_lpf_count": 0,
+        "extra_edge_count": 0,
+        "k": 936,
+        "max_beta_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 23,
+        "predicted_second_quadruple_count": 2,
+        "q_count": 71,
+        "r_bucket_counter": {
+          "11": 4,
+          "13": 2,
+          "17": 6,
+          "19": 1,
+          "23": 2,
+          "37": 1,
+          "41": 1,
+          "7": 6
+        },
+        "rs_bucket_counter": {
+          "11,11": 1,
+          "7,13": 1
+        },
+        "second_lpf_edge_count": 2,
+        "second_lpf_samples": "q=683,r=11,s=11,beta=11,m=1331,d=217; q=769,r=7,s=13,beta=13,m=1183,d=871",
+        "semiprime_alpha_edge_count": 21,
+        "semiprime_samples": "q=673,r=7,alpha=193,m=1351,d=367; q=677,r=17,alpha=79,m=1343,d=355; q=919,r=23,alpha=43,m=989,d=35; q=523,r=37,alpha=47,m=1739,d=641; q=491,r=17,alpha=109,m=1853,d=967",
+        "split_counter_on_edges": {
+          "second_lpf_descent_cell": 2,
+          "semiprime_alpha_prime": 21
+        }
+      },
+      {
+        "P": 1009,
+        "actual_edge_count_R30": 9,
+        "bad_alpha_formula_count": 0,
+        "bad_beta_formula_count": 0,
+        "bad_beta_interval_count": 0,
+        "bad_displacement_count": 0,
+        "bad_second_lpf_count": 0,
+        "extra_edge_count": 0,
+        "k": 1008,
+        "max_beta_interval_points": 1,
+        "missing_edge_count": 0,
+        "predicted_edge_count_R30": 9,
+        "predicted_second_quadruple_count": 1,
+        "q_count": 72,
+        "r_bucket_counter": {
+          "11": 1,
+          "13": 2,
+          "17": 1,
+          "23": 1,
+          "31": 1,
+          "37": 1,
+          "41": 1,
+          "7": 1
+        },
+        "rs_bucket_counter": {
+          "11,11": 1
+        },
+        "second_lpf_edge_count": 1,
+        "second_lpf_samples": "q=647,r=11,s=11,beta=13,m=1573,d=659",
+        "semiprime_alpha_edge_count": 8,
+        "semiprime_samples": "q=991,r=13,alpha=79,m=1027,d=685; q=941,r=23,alpha=47,m=1081,d=149; q=743,r=37,alpha=37,m=1369,d=95; q=617,r=17,alpha=97,m=1649,d=361; q=761,r=7,alpha=191,m=1337,d=385",
+        "split_counter_on_edges": {
+          "second_lpf_descent_cell": 1,
+          "semiprime_alpha_prime": 8
+        }
+      }
+    ],
+    "second_lpf_total_edges": 25165,
+    "second_quadruples_equal_second_edges": true,
+    "second_rs_bucket_totals": {
+      "11,11": 1181,
+      "11,13": 33,
+      "7,11": 6978,
+      "7,13": 1882,
+      "7,7": 15091
+    },
+    "semiprime_alpha_total_edges": 274812,
+    "split_totals_on_edges": {
+      "second_lpf_descent_cell": 25165,
+      "semiprime_alpha_prime": 274812
+    },
+    "two_cell_partition_exhaustive": true
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "iterated_rough_quotient_phase_saving_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQIteratedRoughQuotientTwoCellPhaseSaving",
+    "AND CompletionToExternalKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "rough_quotient_second_lpf_split_closed": true,
+  "row_column_unconditional_closed": false,
+  "second_lpf_split_theorem": {
+    "edge_decomposition": "Residual edges split exactly into semiprime-alpha edges and second-LPF rough-quotient quadruples (q,r,s,beta).",
+    "not_enough": "The remaining hard point is phase saving or signed separation across the two-cell iterated rough quotient graph.",
+    "phase": "Both cells keep phase e(-hD/q), with D=q*r*alpha-kP or D=q*r*s*beta-kP.",
+    "two_cells": "alpha prime OR alpha=s*beta with s=LPF(alpha)>=r, beta>=s, LPF(beta)>=s.",
+    "unique_beta_candidate": "For fixed (q,r,s), beta=floor(kP/(q*r*s))+1 is the only possible second quotient because P/(q*r*s)<2/(r*s)<=2/49<1."
+  },
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "7db97c107eb022a507bfda98cc7084b539ccc4e432cdde0f72f8f4f91cde4b2b",
+    "docs/monograph/external-theorem-index.md": "bf15de5a55e96709e7b01582912daa2447dc46d0f3b50366fd82aab0ed486f09",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "d2b73868c576eed812cc2753725e71380145b36516aee7dd44861aa364bea532",
+    "docs/monograph/prime-matrix-phi-lpf-unique-odd-candidate-lpf-partition-closure-audit.json": "2f9035a8c1848e7601916bb62ae27ec152bad27c05720d1818ec9a3b25972188",
+    "docs/monograph/prime-matrix-phi-lpf-wheel30-composite-lpf-descent-closure-audit.json": "d9fbf6d3e7a23cd838cbe0a501baf6b44754b122d002546198b00ace6d1fa275",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_rough_quotient_second_lpf_split_closure_audit.py": "13d8e85c83ffc1dce7f1d373881e69016366fd064cb31b2515cb34f9dc7878da",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "e0b0b81e1eacbd3c2177e698b9afa03f0236469aab2e19c72001f5c2aee6b407"
+  },
+  "status": "rough_quotient_second_lpf_split_closed_phase_saving_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "RoughQuotientSecondLPFSplitAndUniqueBeta",
+      "frontier_before": [
+        "PrimeQSmallRoughQuotientCandidatePhaseSaving",
+        "AND CompletionToExternalKloostermanOrVaughanTypeII"
+      ],
+      "reason": "the rough quotient alpha has an immediate prime/composite split, and its composite cell has a unique second quotient for each (q,r,s)"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "no faster deterministic closure than the available second-LPF descent inside Phi-LPF"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package, not a second-LPF rough quotient gate"
+    }
+  ]
+}

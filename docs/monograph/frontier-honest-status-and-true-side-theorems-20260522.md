@@ -2837,6 +2837,148 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q14：Phi-LPF rough quotient second LPF split closure 审计（2026-05-23）
+
+本轮继续沿合著稿三命题中最快可闭合的行/列 Phi-LPF 子门推进。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_rough_quotient_second_lpf_split_closure_audit.py
+data/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.md
+```
+
+上一层已经把 residual edge 写成：
+
+```text
+m=r*alpha
+r=LPF(m)
+alpha=alpha_{P,k}(q,r)
+LPF(alpha)>=r
+```
+
+本层关闭：
+
+```text
+RoughQuotientPrimeOrSecondLPFPartition
+FixedPrimeQRSecondLPFQuotientSingleton
+ResidualAsSemiprimeAlphaOrSecondRoughQuotientGraph
+```
+
+### Q14.1 第二 LPF 分裂
+
+`alpha` 恰落入两类之一：
+
+```text
+alpha is prime
+OR
+alpha=s*beta, s=LPF(alpha)>=r, beta>=s, LPF(beta)>=s.
+```
+
+固定 `(q,r,s)` 后，二级商区间长度为：
+
+```text
+P/(q*r*s)<2/(r*s)<=2/49<1.
+```
+
+所以二级商至多一个，唯一候选为：
+
+```text
+beta_{P,k}(q,r,s)=floor(kP/(q*r*s))+1.
+```
+
+### Q14.2 相位对象
+
+两个相位单元分别是：
+
+```text
+semiprime-alpha cell:
+  D=q*r*alpha-kP
+
+second-LPF cell:
+  D=q*r*s*beta-kP
+
+phase=e(-hD/q).
+```
+
+这一步继续下钻而不循环：rough quotient 的合成部分被强制递降为
+`s,beta`，剩余困难转为 semiprime-alpha 与 second-LPF 两个相位单元的
+signed/oscillatory 控制。
+
+### Q14.3 有限实现审计
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+semiprime_alpha_total_edges=274812
+second_lpf_total_edges=25165
+predicted_second_quadruple_total=25165
+split_totals_on_edges={semiprime_alpha_prime:274812, second_lpf_descent_cell:25165}
+lpf_r_bucket_totals={7:96700, 11:52080, 13:44104, 17:34414, 19:29723, 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+second_rs_bucket_totals={7,7:15091, 7,11:6978, 7,13:1882, 11,11:1181, 11,13:33}
+max_beta_interval_points=1
+beta_interval_unique_for_each_qrs=true
+predicted_edges_equal_actual_edges=true
+two_cell_partition_exhaustive=true
+second_quadruples_equal_second_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_alpha_formulas_verified=true
+all_beta_formulas_verified=true
+all_second_lpf_descent_valid=true
+bad_beta_interval_total=0
+bad_alpha_formula_total=0
+bad_beta_formula_total=0
+bad_second_lpf_total=0
+bad_displacement_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+有限审计只验证实现与账本一致性；全局闭合来自 `P/(q*r*s)<1` 与最小素因子递降。
+
+### Q14.4 外部前沿匹配
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550,
+Pascadi 2025 arXiv:2511.08445,
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  still candidate inputs only after a valid completion/Kloosterman bridge.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv v2; near-miss diagnostic only.
+```
+
+### Q14.5 最新最窄口
+
+从上一层：
+
+```text
+PrimeQSmallRoughQuotientCandidatePhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+压成：
+
+```text
+PrimeQIteratedRoughQuotientTwoCellPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+rough_quotient_second_lpf_split_closed=true
+iterated_rough_quotient_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial

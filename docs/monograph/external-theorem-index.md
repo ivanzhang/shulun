@@ -3798,6 +3798,131 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 77. Phi-LPF rough quotient second LPF split closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_rough_quotient_second_lpf_split_closure_audit.py
+data/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-rough-quotient-second-lpf-split-closure-audit.md
+```
+
+本层继续选择行/列 Phi-LPF 的最快可闭合子门：
+
+```text
+RoughQuotientPrimeOrSecondLPFPartition
+FixedPrimeQRSecondLPFQuotientSingleton
+ResidualAsSemiprimeAlphaOrSecondRoughQuotientGraph
+```
+
+上一层已经把 residual edge 写成唯一三元图：
+
+```text
+m=r*alpha
+r=LPF(m)
+alpha=alpha_{P,k}(q,r)
+LPF(alpha)>=r
+```
+
+本层把 `alpha` 分成两类：
+
+```text
+alpha is prime
+OR
+alpha=s*beta, s=LPF(alpha)>=r, beta>=s, LPF(beta)>=s.
+```
+
+固定 `(q,r,s)` 后，二级商区间长度为：
+
+```text
+P/(q*r*s)<2/(r*s)<=2/49<1.
+```
+
+所以至多一个整数商，唯一候选为：
+
+```text
+beta_{P,k}(q,r,s)=floor(kP/(q*r*s))+1.
+```
+
+相位仍为：
+
+```text
+D=q*r*alpha-kP
+or D=q*r*s*beta-kP
+phase=e(-hD/q).
+```
+
+有限实现审计读数：
+
+```text
+max_prime=1009
+k_range=1<=k<P in this implementation audit
+row_count=76954
+active_residual_row_count=52697
+actual_total_edges_R30=299977
+predicted_total_edges_R30=299977
+semiprime_alpha_total_edges=274812
+second_lpf_total_edges=25165
+predicted_second_quadruple_total=25165
+split_totals_on_edges={semiprime_alpha_prime:274812, second_lpf_descent_cell:25165}
+lpf_r_bucket_totals={7:96700, 11:52080, 13:44104, 17:34414, 19:29723, 23:22368, 29:11815, 31:6916, 37:1559, 41:262, 43:36}
+second_rs_bucket_totals={7,7:15091, 7,11:6978, 7,13:1882, 11,11:1181, 11,13:33}
+max_beta_interval_points=1
+beta_interval_unique_for_each_qrs=true
+predicted_edges_equal_actual_edges=true
+two_cell_partition_exhaustive=true
+second_quadruples_equal_second_edges=true
+all_predicted_displacements_in_1_to_Pminus1=true
+all_alpha_formulas_verified=true
+all_beta_formulas_verified=true
+all_second_lpf_descent_valid=true
+bad_beta_interval_total=0
+bad_alpha_formula_total=0
+bad_beta_formula_total=0
+bad_second_lpf_total=0
+bad_displacement_total=0
+missing_edge_total=0
+extra_edge_total=0
+```
+
+外部前沿匹配：
+
+```text
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  useful only after completing the iterated rough quotient graph to a
+  genuine bilinear Kloosterman form.
+
+Pascadi 2025 arXiv:2511.08445:
+  possible Type-II completion technology, not a pointwise estimate for
+  this prime-q iterated quotient graph.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  relevant only after a bridge to their square-free/smooth parameter family.
+
+Dong--Robles--Zeindler 2026 arXiv:2601.00292:
+  withdrawn on arXiv v2 and usable only as a near-miss diagnostic.
+```
+
+最新最窄口进一步压成：
+
+```text
+PrimeQIteratedRoughQuotientTwoCellPhaseSaving
+AND CompletionToExternalKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+rough_quotient_second_lpf_split_closed=true
+iterated_rough_quotient_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
