@@ -2081,6 +2081,100 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 60. Phi-LPF LPF shell decrement 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_shell_decrement_audit.py
+data/prime-matrix-phi-lpf-lpf-shell-decrement-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.md
+```
+
+本层把 fixed-wheel residual 继续原子化到最小素因子 shell。对每个合成
+reciprocal cofactor `m`，令 `r=LPF(m)`，则：
+
+```text
+m=r*a,  a>=r,  every prime divisor of a is >=r
+```
+
+因此若 `C_y` 表示删去所有 `LPF<=y` 的 primorial wheel 容量，固定 wheel
+residual 与相邻 wheel decrement 满足：
+
+```text
+R_y(P,k)=sum_{r>y} Shell_r(P,k)
+C_y(P,k)-C_y'(P,k)=sum_{y<r<=y'} Shell_r(P,k)
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+row_count=76789
+all_lpf_factorizations_ordered=true
+all_capacity_reconstructed_from_lpf_shells=true
+all_adjacent_decrements_equal_lpf_shells=true
+```
+
+有限 LPF shell 总账：
+
+```text
+2=1269907
+3=423339
+5=169232
+7=96700
+11=52080
+13=44104
+tail_ge_17=107093
+```
+
+代表行：
+
+```text
+P=1009, k=1008
+Delta=89, N=70, holes=19, W_int=101, C_30=28
+R_30=9, R_210=8, R_2310=7, R_sqrt=0
+LPF shells: 2:47, 3:20, 5:6, 7:1, 11:1, 13:2, tail_ge_17:5
+```
+
+大样本 `P=100003,300007` 抽样：
+
+```text
+sample_count=10
+all_lpf_factorizations_ordered=true
+all_capacity_reconstructed_from_lpf_shells=true
+all_adjacent_decrements_equal_lpf_shells=true
+tail_ge_17=3016
+```
+
+这是真推进：`R_y` 不再是黑箱尾项，而是互斥 LPF shell 尾和。继续加
+primorial wheel 的每一步只是在剥离下一段 LPF shell。全局闭合仍需证明同一行
+素数数支配整条 LPF 尾和：
+
+```text
+PrimeCountDominatesLPFTailShellSum
+OR signed shell cancellation
+OR square-phase endpoint lower bound
+```
+
+外部 rough-number 短区间与方差理论可作为密度诊断，但它们控制的是普通 rough
+集合或平均/方差对象；本文需要的是 `reciprocal-window` 加权、逐行点态、同对象的
+prime-minus-shell-tail 支配。因此现有外部 rough-number 输入不能直接替代上面的
+同对象 residual theorem。
+
+状态边界：
+
+```text
+lpf_shell_decrement_law_closed=true
+fixed_wheel_residual_dominance_global_closed=false
+external_rough_number_theorem_closes_pointwise_rows=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF fixed-wheel rough-composite residual 审计
 
 新增证书：

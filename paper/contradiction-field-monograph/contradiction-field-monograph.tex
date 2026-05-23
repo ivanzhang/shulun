@@ -12570,6 +12570,83 @@ OR special square-phase lower bound.
 No unconditional row/column closure follows from this residual ledger alone.
 \end{proof}
 
+\begin{theorem}[LPF shell decrement law for fixed-wheel residuals]
+For each composite reciprocal cofactor \(m\), let \(r={\rm LPF}(m)\).  Then
+\[
+  m=r a,\qquad a\ge r,
+\]
+and \(a\) has no prime factor below \(r\).  Let
+\[
+  {\rm Shell}_r(P,k)
+\]
+denote the number of reciprocal-window pairs \((q,m)\) with
+\({\rm LPF}(m)=r\), counted with the same multiplicity as in the forest-hole
+ledger.  If \(C_y(P,k)\) denotes the primorial-wheel capacity after deleting
+all cofactor candidates with least prime factor at most \(y\), then
+\[
+  R_y(P,k)=\sum_{r>y}{\rm Shell}_r(P,k),
+\]
+and for two cutoffs \(y<y'\),
+\[
+  C_y(P,k)-C_{y'}(P,k)
+  =
+  \sum_{y<r\le y'}{\rm Shell}_r(P,k).
+\]
+Thus each primorial-wheel promotion strips exactly the next LPF shell, and the
+remaining fixed-wheel hard point is the tail dominance
+\[
+  \pi((k+1)P-1)-\pi(kP)
+  >
+  \sum_{r>y}{\rm Shell}_r(P,k).
+\]
+\end{theorem}
+\begin{proof}[Status and reference]
+The factorization assertion is the defining property of the least prime
+factor: if \(r={\rm LPF}(m)\), then \(m=ra\), \(a\ge r\), and no prime below
+\(r\) divides \(a\).  Hence the composite cofactor candidates are partitioned
+disjointly by their least prime factor.  A primorial wheel with cutoff \(y\)
+deletes exactly those composite candidates whose least prime factor is at most
+\(y\), while it leaves the prime cofactors untouched.  Therefore the residual
+after the cutoff is precisely the shell tail \(\sum_{r>y}{\rm Shell}_r\), and
+the drop from cutoff \(y\) to cutoff \(y'\) is the intervening shell sum.
+
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-lpf-shell-\\
+decrement-audit.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+max\_prime=1009\\
+row\_count=76789\\
+all\_lpf\_factorizations\_ordered=true\\
+all\_capacity\_reconstructed\_from\_lpf\_shells=true\\
+all\_adjacent\_decrements\_equal\_lpf\_shells=true.
+\end{quote}
+The aggregate finite shell ledger is
+\begin{quote}\scriptsize\ttfamily
+LPF=2:1269907,\quad LPF=3:423339,\quad LPF=5:169232,\\
+LPF=7:96700,\quad LPF=11:52080,\quad LPF=13:44104,\\
+tail\_ge\_17:107093.
+\end{quote}
+For \(P=1009,k=1008\), the shell profile is
+\[
+  2:47,\quad 3:20,\quad 5:6,\quad 7:1,\quad 11:1,\quad
+  13:2,\quad {\rm tail}_{\ge17}:5.
+\]
+This proves the decrement bookkeeping law and identifies the current
+non-circular target as
+\begin{quote}\scriptsize\ttfamily
+PrimeCountDominatesLPFTailShellSum\\
+OR signed shell cancellation\\
+OR square-phase endpoint lower bound.
+\end{quote}
+Existing rough-number short-interval or variance inputs provide useful density
+diagnostics, but they do not by themselves prove this reciprocal-window
+weighted, pointwise, same-row dominance statement.  No unconditional
+row/column closure follows from the shell ledger alone.
+\end{proof}
+
 \begin{proposition}[Phi--LPF exactness does not bypass the parity barrier]
 The Phi--LPF identities above are combinatorially exact identities for
 \(N_P(k)\).  They do not, by themselves, constitute a positive lower bound for

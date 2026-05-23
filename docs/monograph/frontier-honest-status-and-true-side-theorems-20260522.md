@@ -1888,6 +1888,94 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 AD：Phi-LPF LPF shell decrement 审计（2026-05-23 第二十八轮）
+
+本轮继续下钻 fixed-wheel rough-composite residual，把 `R_y` 原子化为最小素因子
+互斥 shell。新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_shell_decrement_audit.py
+data/prime-matrix-phi-lpf-lpf-shell-decrement-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-shell-decrement-audit.md
+```
+
+对每个合成 cofactor：
+
+```text
+m=r*a
+r=LPF(m)
+a>=r
+a is r-rough
+```
+
+因此 fixed-wheel residual 是 LPF shell 尾和，相邻 wheel 容量下降正好是新加入
+LPF shell：
+
+```text
+R_y(P,k)=sum_{r>y} Shell_r(P,k)
+C_y(P,k)-C_y'(P,k)=sum_{y<r<=y'} Shell_r(P,k)
+```
+
+有限审计：
+
+```text
+max_prime=1009
+row_count=76789
+all_lpf_factorizations_ordered=true
+all_capacity_reconstructed_from_lpf_shells=true
+all_adjacent_decrements_equal_lpf_shells=true
+```
+
+有限 LPF shell 总账：
+
+```text
+2=1269907
+3=423339
+5=169232
+7=96700
+11=52080
+13=44104
+tail_ge_17=107093
+```
+
+代表行：
+
+| P | k | $\Delta\Phi_{1/2}$ | $N$ | holes | $W_{int}$ | $C_{30}$ | $R_{30}$ | $R_{210}$ | $R_{2310}$ | $R_{\sqrt{2P}}$ |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1009 | 1008 | 89 | 70 | 19 | 101 | 28 | 9 | 8 | 7 | 0 |
+
+该行 LPF shells：
+
+```text
+2:47, 3:20, 5:6, 7:1, 11:1, 13:2, tail_ge_17:5
+```
+
+这是真推进，因为它把“rough residual”拆成可递归剥离的 LPF shell 动力系统：
+每加一个 primorial wheel 层，就剥离一个新的 LPF 桶；但全局闭合仍需证明
+同一行素数数支配剩余尾和：
+
+```text
+PrimeCountDominatesLPFTailShellSum
+OR signed shell cancellation
+OR square-phase endpoint lower bound
+```
+
+外部 rough-number 短区间/方差定理只提供普通 rough 集合的密度或平均信息，尚不匹配
+本文 `reciprocal-window` 加权、逐行点态、同对象的 prime-minus-shell-tail 支配。
+
+```text
+lpf_shell_decrement_law_closed=true
+fixed_wheel_residual_dominance_global_closed=false
+external_rough_number_theorem_closes_pointwise_rows=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Z：prime-power slope sandwich 审计（2026-05-23 第二十四轮）
 
 本轮审计用户提出的指数夹击想法：

@@ -1,0 +1,323 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_lpf_shell_decrement_audit",
+  "definitions": {
+    "Shell_r(P,k)": "candidate cofactor multiplicity with LPF(m)=r",
+    "ordered_factorization": "m=r*a, r=LPF(m), a>=r, and a is r-rough",
+    "residual_tail": "R_y(P,k)=sum_{r>y} Shell_r(P,k)",
+    "wheel_decrement": "C_y(P,k)-C_yprime(P,k)=sum_{y<r<=yprime} Shell_r(P,k)"
+  },
+  "external_frontier_note": "Recent rough-number short-interval variance results are relevant as diagnostics, but they do not give the required pointwise same-row weighted residual dominance.",
+  "external_lemma_version_unconditional_closed": false,
+  "external_rough_number_theorem_closes_pointwise_rows": false,
+  "finite_audit": {
+    "aggregate_lpf_shells": {
+      "11": 52080,
+      "13": 44104,
+      "2": 1269907,
+      "3": 423339,
+      "5": 169232,
+      "7": 96700,
+      "tail_ge_17": 107093,
+      "tail_to_sqrt": 107093
+    },
+    "all_adjacent_decrements_equal_lpf_shells": true,
+    "all_capacity_reconstructed_from_lpf_shells": true,
+    "all_lpf_factorizations_ordered": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_prime": 1009,
+    "maximum_tail_ge_17_row": {
+      "C_30": 29,
+      "Delta": 65,
+      "N": 51,
+      "P": 983,
+      "R_210": 12,
+      "R_2310": 12,
+      "R_30": 15,
+      "R_sqrt": 0,
+      "W_int": 95,
+      "holes": 14,
+      "k": 929,
+      "shells": {
+        "11": 0,
+        "13": 0,
+        "2": 43,
+        "3": 18,
+        "5": 5,
+        "7": 3,
+        "tail_ge_17": 12,
+        "tail_to_sqrt": 12
+      }
+    },
+    "minimum_prime_minus_R30_row": {
+      "C_30": 1,
+      "Delta": 2,
+      "N": 1,
+      "P": 11,
+      "R_210": 0,
+      "R_2310": 0,
+      "R_30": 0,
+      "R_sqrt": 0,
+      "W_int": 2,
+      "holes": 1,
+      "k": 10,
+      "shells": {
+        "11": 0,
+        "13": 0,
+        "2": 1,
+        "3": 0,
+        "5": 0,
+        "7": 0,
+        "tail_ge_17": 0,
+        "tail_to_sqrt": 0
+      }
+    },
+    "row_count": 76789,
+    "sample_rows": [
+      {
+        "C_30": 1,
+        "Delta": 2,
+        "N": 1,
+        "P": 11,
+        "R_210": 0,
+        "R_2310": 0,
+        "R_30": 0,
+        "R_sqrt": 0,
+        "W_int": 2,
+        "holes": 1,
+        "k": 10,
+        "shells": {
+          "11": 0,
+          "13": 0,
+          "2": 1,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "tail_ge_17": 0,
+          "tail_to_sqrt": 0
+        }
+      },
+      {
+        "C_30": 2,
+        "Delta": 3,
+        "N": 1,
+        "P": 19,
+        "R_210": 0,
+        "R_2310": 0,
+        "R_30": 0,
+        "R_sqrt": 0,
+        "W_int": 5,
+        "holes": 2,
+        "k": 15,
+        "shells": {
+          "11": 0,
+          "13": 0,
+          "2": 2,
+          "3": 1,
+          "5": 0,
+          "7": 0,
+          "tail_ge_17": 0,
+          "tail_to_sqrt": 0
+        }
+      },
+      {
+        "C_30": 5,
+        "Delta": 16,
+        "N": 12,
+        "P": 101,
+        "R_210": 1,
+        "R_2310": 0,
+        "R_30": 1,
+        "R_sqrt": 0,
+        "W_int": 14,
+        "holes": 4,
+        "k": 100,
+        "shells": {
+          "11": 1,
+          "13": 0,
+          "2": 7,
+          "3": 2,
+          "5": 0,
+          "7": 0,
+          "tail_ge_17": 0,
+          "tail_to_sqrt": 0
+        }
+      },
+      {
+        "C_30": 9,
+        "Delta": 29,
+        "N": 23,
+        "P": 257,
+        "R_210": 3,
+        "R_2310": 2,
+        "R_30": 3,
+        "R_sqrt": 0,
+        "W_int": 34,
+        "holes": 6,
+        "k": 256,
+        "shells": {
+          "11": 1,
+          "13": 1,
+          "2": 18,
+          "3": 4,
+          "5": 3,
+          "7": 0,
+          "tail_ge_17": 1,
+          "tail_to_sqrt": 1
+        }
+      },
+      {
+        "C_30": 28,
+        "Delta": 89,
+        "N": 70,
+        "P": 1009,
+        "R_210": 8,
+        "R_2310": 7,
+        "R_30": 9,
+        "R_sqrt": 0,
+        "W_int": 101,
+        "holes": 19,
+        "k": 1008,
+        "shells": {
+          "11": 1,
+          "13": 2,
+          "2": 47,
+          "3": 20,
+          "5": 6,
+          "7": 1,
+          "tail_ge_17": 5,
+          "tail_to_sqrt": 5
+        }
+      }
+    ]
+  },
+  "fixed_wheel_residual_dominance_global_closed": false,
+  "frontier_verified_date": "2026-05-23",
+  "gates": [
+    {
+      "closed": true,
+      "gate": "LPFShellOrderedFactorization",
+      "meaning": "每个合成 cofactor 唯一写成 m=r*a，其中 r=LPF(m)，a>=r 且 a 为 r-rough。",
+      "proved": true,
+      "remaining": "ordered LPF shell ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AdjacentWheelDropEqualsNewLPFShell",
+      "meaning": "primorial wheel 从 y 加到 y' 时，容量下降等于 y<LPF(m)<=y' 的 shell。",
+      "proved": true,
+      "remaining": "C_y-C_yprime=shell(y,yprime]"
+    },
+    {
+      "closed": true,
+      "gate": "ResidualEqualsTailLPFShellSum",
+      "meaning": "固定 wheel residual 等于 LPF 大于 wheel cutoff 的 shell 尾和。",
+      "proved": true,
+      "remaining": "R_y=sum_{r>y} Shell_r"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeDominatesEveryTailGlobally",
+      "meaning": "有限审计中 N>R_30，但尚未证明所有 P,k 的同对象素数数支配 LPF 尾和。",
+      "proved": false,
+      "remaining": "PrimeCountDominatesLPFTailShellSum"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalRoughNumberTheoremClosesPointwiseRows",
+      "meaning": "现有 rough-number 短区间/方差结果控制普通 rough 集合，尚不匹配本文 reciprocal-window 加权同对象 residual。",
+      "proved": false,
+      "remaining": "same-row signed residual theorem required"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本层不证明 H_P、外部引理版或内部自足版无条件闭合。",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "internal_self_contained_closed": false,
+  "large_sample_audit": {
+    "aggregate_lpf_shells": {
+      "11": 582,
+      "13": 421,
+      "2": 13391,
+      "3": 4500,
+      "5": 1743,
+      "7": 1031,
+      "tail_ge_17": 3016,
+      "tail_to_sqrt": 3016
+    },
+    "all_adjacent_decrements_equal_lpf_shells": true,
+    "all_capacity_reconstructed_from_lpf_shells": true,
+    "all_lpf_factorizations_ordered": true,
+    "large_samples_are_evidence_not_global_proof": true,
+    "maximum_tail_ge_17_row": {
+      "C_30": 4485,
+      "Delta": 13238,
+      "N": 11966,
+      "P": 300007,
+      "R_210": 2552,
+      "R_2310": 2197,
+      "R_30": 3213,
+      "R_sqrt": 0,
+      "W_int": 16876,
+      "holes": 1272,
+      "k": 300006,
+      "shells": {
+        "11": 355,
+        "13": 267,
+        "2": 8432,
+        "3": 2870,
+        "5": 1089,
+        "7": 661,
+        "tail_ge_17": 1930,
+        "tail_to_sqrt": 1930
+      }
+    },
+    "minimum_prime_minus_R30_row": {
+      "C_30": 1685,
+      "Delta": 4900,
+      "N": 4385,
+      "P": 100003,
+      "R_210": 932,
+      "R_2310": 787,
+      "R_30": 1170,
+      "R_sqrt": 0,
+      "W_int": 6249,
+      "holes": 515,
+      "k": 100002,
+      "shells": {
+        "11": 145,
+        "13": 93,
+        "2": 3118,
+        "3": 1012,
+        "5": 434,
+        "7": 238,
+        "tail_ge_17": 694,
+        "tail_to_sqrt": 694
+      }
+    },
+    "row_count": 10,
+    "sample_count": 10,
+    "sample_rows": [],
+    "sample_seeds": [
+      100000,
+      300000
+    ]
+  },
+  "lpf_shell_decrement_law_closed": true,
+  "next_direct_attack_target": "PrimeCountDominatesLPFTailShellSum OR signed shell cancellation OR square-phase endpoint lower bound",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c0650dffa822ff5dd979af1670200e7deb0ca46ddb1823ecd8b5aecc1f7ad576",
+    "docs/monograph/external-theorem-index.md": "df1b80c20fdfbb356100a79d6a9579f4957992c5132af57140e57cc719ff8aa7",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "325ab944c6c55c1cf5e7384720c57962a48b37de71c72621f16c5b1187068040",
+    "docs/monograph/prime-matrix-phi-lpf-fixed-wheel-residual-rough-composite-audit.json": "222183794d5de930940980e7b616f7ddda3ccde6bdff782a6d5c8aa22e6d9f5a",
+    "docs/monograph/prime-matrix-phi-lpf-primorial-wheel-limit-audit.json": "1041a4e0404f966dd6f892cc35766b5530a6e026284da4d1fba477a3aa5616aa",
+    "experiments/prime_matrix_phi_lpf_lpf_shell_decrement_audit.py": "67f64873052af866fd2c3f8aa09c229a0f68b0f5eae70b022c1971286ecf1716",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "db0a16da4c524477f663d93c41b5865ec9266232a8b2531d8c970c89651a026d"
+  },
+  "status": "fixed_wheel_residual_split_into_lpf_shell_decrement_law"
+}
