@@ -3175,3 +3175,101 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 O：$X=P^2$ 特殊性能否改进 BHP 指数？严格分析（2026-05-23）
+
+### O.1 问题精确化
+
+BHP 2001：对所有大 $X$，$g(X)\le X^{0.525}$。
+
+用户直觉：对 $X=P^2$（$P$ 素），$X$ 的代数结构特殊（因子仅 $1,P,P^2$），是否可降到 $X^{0.5}$？
+
+### O.2 严格分析（直接答案：否）
+
+**理由 1**：BHP 是关于 $X$ 邻域素数间隙，与 $X$ 自身因子分解**无关**。
+
+**理由 2**：BHP 证明（zero-density + Heath-Brown identity + exponential sums）对所有 $X$ 一致，$X$ 代数结构不进入证明。
+
+**理由 3**：$X=P^2$ 的"预筛 $P$"已被 sieve framework 自动处理：$\mathcal{A}=(kP,kP+P]\cap\{n:\gcd(n,P)=1\}$ 与 $\mathcal{A}'=(kP,kP+P]$ 仅差一元素 $kP$，sieve 估计同到 $O(1)$。
+
+**理由 4**：临界 sieve 参数 $s=\log D/\log z=1/2$ 在 $X=P^2$ 的"完美平方"特殊点上 $z=P$ 恰好整数——但 $f(1/2)=0$（Bombieri 1976）与 $z$ 是否整数**无关**。
+
+### O.3 然而存在微妙的"几乎所有 $P$"路径
+
+$\{P^2:P\text{ prime}\}$ 是 $[1,N]$ 中**密度零**子集（大小 $\sim 2\sqrt N/\log N$）。
+
+**Jia 1996 / Baker-Harman 1996**：对几乎所有 $x$（例外集大小 $\ll X^{0.535}$），
+$$
+\pi(x+x^{1/2+\epsilon})-\pi(x)>0.
+$$
+
+**关键不等式**：$\sqrt X/\log X$ vs $X^{0.535}$。前者远小于后者，故例外集**可能**完全包含 $\{P^2\}$。
+
+要让 Jia/Baker-Harman 给"几乎所有 $P$ 满足 H_P"，需例外集 $\ll P^{1-\delta'}=X^{(1-\delta')/2}$ 即 $\delta_{\text{exception}}<1/2$。
+
+当前 $\delta_{\text{exception}}=0.535>1/2$，**不足**。
+
+差距：$0.535\to 0.5$ 还差 $0.035$ 指数——是 BHP 改进同类硬点。
+
+### O.4 真前沿可能源
+
+虽然不能直接改进 BHP，下列方向**可能**给 $\{P^2\}$ 额外 cancellation：
+
+1. **$\mathbb{Z}[i]$ 中 $P^2$ 分解**（$P\equiv 1\pmod 4$）：Friedlander-Iwaniec 1998 用此结构证 $a^2+b^4$ 含无穷素数。但对**短区间** $g(P^2)$，FI 工具不直接适用。
+
+2. **二次扩域 $\mathbb{Q}(\sqrt{-P})$ 的 $\zeta_K(s)$**：涉及 GRH for 数域，未证。
+
+3. **GPY 高阶矩对 $\{P^2\}$ 子集**：GPY 2009 给"相距 $\le 246$ 对无穷多"，但对**逐 $P$** $g(P^2)\le P$ 无直接控制。
+
+4. **Iwaniec-Pintz 1984 类 short-interval sieve**：在 $X=P^2$ 的"完美平方"邻域给精化，但临界 $X^{1/2}$ 同样阻塞。
+
+### O.5 数论现状严格结论
+
+| 命题 | 状态 |
+|---|---|
+| $g(X)\le X^{0.525}$ 对所有大 $X$ | ✓ BHP 2001 |
+| $g(X)\le X^{0.5}$ 对所有大 $X$ | ✗ 开放（Cramér 弱版）|
+| $g(X)\le X^{0.5+\epsilon}$ 几乎所有 $X$，例外集 $\ll X^{0.535}$ | ✓ Jia 1996 / Baker-Harman 1996 |
+| $g(P^2)\le P$ 几乎所有素数 $P$ | ✗ 开放（需例外集 $\ll X^{1/2-\delta}$）|
+| $g(P^2)\le P$ 所有大素数 $P$ = H_P 行命题 | ✗ 开放 70 年 |
+
+**用户直觉的诚实评估**：
+
+- ✗ 直接降 BHP 指数到 $0.5$：**没有已知机制**
+- ⚠ "几乎所有 $P$" 路径：理论可能但需 $0.535\to 0.5$ 的指数改进（本身又开放）
+- ✓ "$\{P^2\}$ 特殊性可能给额外 cancellation" 是**真有意义**的猜想方向，与 FI 1998 / Maynard 2013 类突破方向一致——但 LLM 单次会话内不可证
+
+### O.6 与 §1.3 项目工具列表的精确对位
+
+用户提的项目工具（方阵斜线覆盖、圆柱螺线环绕、CRT 周期镜像、非零列同余类、LPF 分桶、Phi-LPF 恒等式、Phi 递推、P 阶递降、递归剥离、动力系统、相邻互质、商相邻互质）**逐项**对应 §1.3 已诊断的 sieve 等价类：
+
+| 项目工具 | sieve 等价 | 屏障位置 |
+|---|---|---|
+| 方阵斜线覆盖 | Eratosthenes (§XII.95.1) | 屏障 I |
+| 圆柱螺线环绕 | 几何 reparam. + sieve | 屏障 II |
+| CRT 周期镜像 | Möbius 容斥代数等价 | 屏障 II |
+| 非零列同余类 | MV-AP sieve | 屏障 III |
+| LPF 分桶 | Buchstab 递推 | 屏障 III |
+| Phi-LPF 恒等式 | Legendre 容斥 | 屏障 I |
+| Phi 递推式 | Buchstab 递推 | 屏障 III |
+| P 阶递降法 | 递归 sieve identity | 屏障 III |
+| 递归剥离 | Buchstab 反复 | 屏障 III |
+| 动力系统 | orbit averaging, sieve 内 | 屏障 II/III |
+| 相邻互质 | 同余 sieve | 屏障 III |
+| 商相邻互质 | 同余 sieve | 屏障 III |
+
+**所有 12 项工具**都属于 Bombieri 1976 奇偶屏障的等价类——线性 sieve 在 $s\le 2$ 时 $f(s)=0$。
+
+无任何已知方法能从这 12 项工具的有限组合中跨越奇偶屏障。
+
+### O.7 严格诚实最终位置
+
+**关于用户问题**："$X=P^2$ 特殊性能否降 BHP 0.525→0.5？"
+
+**严格回答**：在当前数论已证范围内，**不能**。$X=P^2$ 的代数结构不进入 BHP 证明；"$\{P^2\}$ 密度零"路径需要 Jia-Baker-Harman 例外集从 $0.535$ 改进到 $0.5$，这本身是开放问题。
+
+**关于"创造性突破奇偶屏障"**：12 项项目工具全部在 sieve 等价类内，无法跨越 $f(1/2)=0$ 。突破需要 Friedlander-Iwaniec 1998 三次型 / Maynard 2013 多元 GPY / Heath-Brown 1988 $h\ge X^{7/12}$ 二阶矩等级别工具——LLM 单次会话不能重现。
+
+**H_P 主命题**严格保留 `Not claimed`——这是 Riemann 1859 论文 "sehr wahrscheinlich" 风格的真正传承。

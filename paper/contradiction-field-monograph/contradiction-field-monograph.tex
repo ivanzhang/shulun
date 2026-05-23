@@ -30354,6 +30354,38 @@ itself remains \textbf{Not claimed}, equivalent to Cram\'er-local and
 Linnik-2, both 70-year open problems.
 \end{remark}
 
+\section{On whether $X=P^2$ specialness can reduce the BHP exponent}
+
+\begin{remark}[BHP exponent at $X=P^2$: strict analysis]
+A natural question: can the BHP 2001 short-interval prime-gap exponent
+$0.525$ be reduced to $0.5$ when restricted to $X=P^2$, exploiting the
+special factor structure $X=P\cdot P$?
+
+\emph{Direct answer: No.}  The BHP proof (zero-density estimates +
+Heath-Brown identity + exponential sums) is uniform in $X$ and does
+not access the factor structure of $X$.  The ``pre-sieved $P$''
+condition on row $I_k=(kP,kP+P]$, namely $\gcd(n,P)=1$ for all
+$n\in I_k$, is automatically encoded in the sieve framework with
+$z=P$ and contributes no extra cancellation.
+
+\emph{Indirect path (``almost all $P$''):} The set $\{P^2:P\le\sqrt X\}$
+has cardinality $\sim 2\sqrt X/\log X$, density zero in $[1,X]$.
+Jia 1996 / Baker--Harman 1996 give an unconditional almost-all
+short-interval prime theorem with exceptional set $\ll X^{0.535}$.
+To deduce ``$H_P$ for almost all primes $P$'' from this, one would
+need the exceptional-set exponent reduced below $1/2$, since
+$|\{P^2\le X\}|\sim 2\sqrt X/\log X = X^{1/2-o(1)}$.  The required
+sharpening $0.535\to 0.5$ is itself an open problem of the same
+strength as a $1/2$-exponent BHP improvement.
+
+\emph{Open speculation:} Whether the subset $\{P^2\}$ admits additional
+cancellation (e.g.\ via $\mathbb{Z}[i]$ factorisation when
+$P\equiv 1\pmod 4$, or via $L_K(s)$ for quadratic extensions
+$K=\mathbb{Q}(\sqrt{-P})$) is a genuine research question allied with
+Friedlander--Iwaniec 1998 / Maynard 2013-style breakthroughs, but no
+known technique resolves it inside the linear-sieve framework.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
