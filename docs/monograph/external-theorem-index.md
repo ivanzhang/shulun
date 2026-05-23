@@ -1843,6 +1843,58 @@ OR GridTransferredShortIntervalSecondMomentAtThetaHalf
 OR NonlinearParityBreakingActualSourceConstructor
 ```
 
+## 42. 2026 AP 平均分布与条件 Linnik 近门槛压力层
+
+本层继续更新 `experiments/prime_matrix_external_frontier_theorem_stress_router.py`
+并重生成外部压力证书。新增外部输入：
+
+```text
+Stadlmann arXiv:2309.00425v3:
+  smooth moduli average distribution to x^(1/2+1/40-eps)
+
+Runbo Li arXiv:2505.09629v3:
+  smooth-moduli prime minorant distribution level 10/19
+
+Pascadi arXiv:2505.00653v2:
+  weighted/well-factorable distribution up to x^(5/8-o(1))
+
+Runbo Li arXiv:2602.20917v5:
+  bilinear moduli x^(9/17), trilinear moduli x^(17/32), almost-all q AP bounds
+
+Bruna arXiv:2603.25612v1:
+  under generalized Lindelof, least AP prime p(a mod q) <<_eps q^(2+eps)
+```
+
+换算到 `x=P^2`：
+
+```text
+1/2+1/40 -> P^(1.05-o(1)) modulus range
+10/19    -> P^(20/19) modulus range
+5/8      -> P^(5/4-o(1)) modulus range
+9/17     -> P^(18/17) modulus range
+17/32    -> P^(17/16) modulus range
+2+eps    -> P^(2+eps) conditional least-prime height
+```
+
+真实推进是新增门槛：
+
+```text
+mean_value_ap_to_fixed_prime_modulus:
+  AP 平均分布即使越过 x^1/2，也不推出固定素模数 q=P 的全部 reduced residue classes
+  在 P^2 方阵内同时有素数。需要零例外 fixed-prime-modulus transfer。
+```
+
+因此最新列方向硬点压缩为：
+
+```text
+MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+本层不把平均分布、smooth-moduli、weighted mean-value、minorant 或 GLH 条件近门槛误写为
+无条件列闭合。
+
 本层不把任何已知外部定理误写为目标命题无条件闭合。
 
 ## 40. K3''''/K3*-three-term：Dusart 三项显式 PNT 加强

@@ -109,6 +109,16 @@ def linnik_gap(exponent: float) -> dict[str, Any]:
     }
 
 
+def ap_distribution_gap(theta: float) -> dict[str, Any]:
+    """把 AP 平均分布指数换成 x=P^2 时的模数尺度。"""
+    return {
+        "distribution_exponent_in_x": theta,
+        "modulus_range_exponent_in_P": 2 * theta,
+        "square_root_barrier_excess_in_x": theta - 0.5,
+        "fixed_prime_modulus_P_is_inside_range": theta >= 0.5,
+    }
+
+
 def version_row(name: str, source: str, version: str, date: str, audited_payload: str) -> dict[str, str]:
     """记录本轮核验到的外部源版本。"""
     return {
@@ -129,6 +139,12 @@ def build_payload() -> dict[str, Any]:
     xylouris52 = linnik_gap(5.2)
     xylouris5 = linnik_gap(5.0)
     meng45 = linnik_gap(4.5)
+    stadlmann_smooth = ap_distribution_gap(0.5 + 1 / 40)
+    li_smooth_minorant = ap_distribution_gap(10 / 19)
+    pascadi_weighted = ap_distribution_gap(5 / 8)
+    li_large_bilinear = ap_distribution_gap(9 / 17)
+    li_large_trilinear = ap_distribution_gap(17 / 32)
+    bruna_glh = linnik_gap(2.0)
 
     source_versions = [
         version_row(
@@ -172,6 +188,41 @@ def build_payload() -> dict[str, Any]:
             "arXiv:2103.13360v2",
             "2021-07-19",
             "P2(a,q) << q^1.8345, inside P^2 after q=P but wrong parity object.",
+        ),
+        version_row(
+            "Stadlmann smooth-moduli prime AP distribution",
+            "https://arxiv.org/abs/2309.00425",
+            "arXiv:2309.00425v3 / accepted Adv. Math.",
+            "2025-02-22",
+            "Average prime equidistribution to smooth moduli up to x^(1/2+1/40-epsilon); smooth-modulus average, not fixed prime modulus P.",
+        ),
+        version_row(
+            "Runbo Li smooth-moduli minorant",
+            "https://arxiv.org/abs/2505.09629",
+            "arXiv:2505.09629v3",
+            "2025-12-29",
+            "Minorant for prime indicator with level 10/19 in APs to smooth moduli; still not a fixed prime-modulus all-residue theorem.",
+        ),
+        version_row(
+            "Pascadi weighted prime/smooth distribution",
+            "https://arxiv.org/abs/2505.00653",
+            "arXiv:2505.00653v2",
+            "2025-06-29",
+            "Weighted/well-factorable prime distribution to moduli up to x^(5/8-o(1)); mean-value weighted input, not column closure.",
+        ),
+        version_row(
+            "Runbo Li large-moduli Harman-sieve APs",
+            "https://arxiv.org/abs/2602.20917",
+            "arXiv:2602.20917v5",
+            "2026-05-05",
+            "Mean-value theorems for primes to bilinear moduli up to x^(9/17) and trilinear moduli up to x^(17/32); almost-all q, not fixed q=P all residues.",
+        ),
+        version_row(
+            "Bruna conditional least AP prime",
+            "https://arxiv.org/abs/2603.25612",
+            "arXiv:2603.25612v1",
+            "2026-03-26",
+            "Assuming generalized Lindelof for Dirichlet L-functions, p(a mod q) <<_epsilon q^(2+epsilon); conditional and still outside a fixed q^2 square.",
         ),
         version_row(
             "Xylouris Linnik constant",
@@ -273,6 +324,56 @@ def build_payload() -> dict[str, Any]:
             False,
             "Wrong parity object; cannot replace column prime existence.",
         ),
+        row(
+            "Stadlmann 2025 smooth-moduli AP distribution",
+            "https://arxiv.org/abs/2309.00425",
+            "accepted_external_average_smooth_moduli",
+            "Primes are equidistributed on average to smooth moduli up to x^(1/2+1/40-epsilon).",
+            "At x=P^2 this reaches moduli up to P^(1.05-o(1)), but the prime modulus P is not a smooth-modulus average input.",
+            "Confirms that distribution beyond the square-root barrier is available only with averaging/smoothness structure.",
+            False,
+            "Column closure needs the fixed prime modulus q=P and every reduced residue class, not an average over smooth q.",
+        ),
+        row(
+            "Runbo Li 2025 smooth-moduli minorant",
+            "https://arxiv.org/abs/2505.09629",
+            "arxiv_external_minorant_average",
+            "Constructs a prime-indicator minorant with distribution level 10/19 for APs to smooth moduli.",
+            "At x=P^2 the modulus range is P^(20/19), again an averaged smooth-modulus input rather than fixed q=P.",
+            "Useful as a lower-bound sieve diagnostic: genuine minorants exist past 1/2 only after smooth-modulus averaging.",
+            False,
+            "The minorant does not certify a prime in each residue class for the single prime modulus P.",
+        ),
+        row(
+            "Pascadi 2025 weighted distribution exponent 5/8",
+            "https://arxiv.org/abs/2505.00653",
+            "arxiv_external_weighted_mean_value",
+            "Primes and smooth numbers are equidistributed in APs to moduli up to x^(5/8-o(1)) with triply-well-factorable weights.",
+            "At x=P^2 this reaches P^(5/4-o(1)) in modulus range, far beyond P, but only in weighted mean-value form.",
+            "Marks the strongest recorded distribution-exponent technology in this audit.",
+            False,
+            "Weighted mean values do not imply a zero-exception theorem for the fixed prime modulus P and all columns.",
+        ),
+        row(
+            "Runbo Li 2026 large-moduli Harman-sieve APs",
+            "https://arxiv.org/abs/2602.20917",
+            "frontier_preprint_average_ap",
+            "Mean-value theorems for primes with bilinear moduli up to x^(9/17) and trilinear moduli up to x^(17/32); almost-all q bounds for pi(x;q,a).",
+            "At x=P^2 the bilinear/trilinear ranges are P^(18/17) and P^(17/16), so q=P lies below range, but only inside structured averages.",
+            "Newest AP-distribution frontier found this round; it sharpens the column stress test but does not give a pointwise column theorem.",
+            False,
+            "Average over moduli and factorization classes cannot be specialized to every prime P and every residue a without a new fixed-modulus transfer.",
+        ),
+        row(
+            "Bruna 2026 conditional GLH least AP prime",
+            "https://arxiv.org/abs/2603.25612",
+            "conditional_arxiv_linnik_near_gate",
+            "Assuming generalized Lindelof for Dirichlet L-functions, the least prime p≡a mod q satisfies p <<_eps q^(2+eps).",
+            "For q=P this gives P^(2+eps), a conditional near-square bound but not a prime guaranteed inside the strict P^2 square.",
+            "Pins the conditional Linnik route almost exactly at the square barrier.",
+            False,
+            "It is conditional and has an epsilon/logarithmic overshoot; unconditional target needs L<=2 with compatible constants/window.",
+        ),
     ]
 
     return {
@@ -291,6 +392,14 @@ def build_payload() -> dict[str, Any]:
         "best_frontier_preprint_empty_row_run_exponent_bound_label": "0.04+epsilon_if_accepted",
         "best_general_linnik_exponent_recorded": xylouris5["linnik_exponent"],
         "best_special_prime_modulus_compatible_linnik_exponent_recorded": meng45["linnik_exponent"],
+        "best_average_ap_distribution_exponent_recorded": "5/8-o(1)",
+        "best_large_moduli_average_ap_exponents_recorded": {
+            "RunboLi2026_bilinear": "9/17",
+            "RunboLi2026_trilinear": "17/32",
+            "Stadlmann2025_smooth_moduli": "1/2+1/40",
+            "RunboLi2025_smooth_minorant": "10/19",
+        },
+        "best_conditional_linnik_near_square_recorded": "2+epsilon under generalized Lindelof",
         "least_almost_prime_ap_exponent_inside_square": 1.8345,
         "transfer_gate_lemmas": {
             "pointwise_short_interval_to_row_run": (
@@ -305,6 +414,11 @@ def build_payload() -> dict[str, Any]:
                 "Almost-all x short-interval PNT does not control the rigid lattice of P-spaced row starts "
                 "without an additional grid-transfer or second-moment input."
             ),
+            "mean_value_ap_to_fixed_prime_modulus": (
+                "Bombieri-Vinogradov/Elliott-Halberstam style mean-value distribution, even beyond x^1/2, "
+                "does not imply the fixed-modulus statement for q=P and all reduced residue classes without "
+                "a zero-exception or fixed-prime-modulus transfer theorem."
+            ),
         },
         "source_version_snapshot": source_versions,
         "published_external_side_bounds": [
@@ -316,6 +430,8 @@ def build_payload() -> dict[str, Any]:
             "LeastP2AlmostPrimeInEachColumnInsideP2Square",
             "Li052NoLongEmptyRowRunExponent004_if_accepted",
             "HieuPrimeAPsTheta17over30_structural_abundance_no_row_closure",
+            "AverageAPBeyondHalfNoFixedPrimeModulusClosure",
+            "ConditionalGLHLinnikTwoPlusEpsilonNearMiss",
         ],
         "new_required_external_or_internal_breakthrough": (
             "PointwiseShortIntervalPrimeTheoremThetaLeHalf OR "
@@ -336,6 +452,14 @@ def build_payload() -> dict[str, Any]:
             "Xylouris2011": xylouris52,
             "Xylouris2018": xylouris5,
             "Meng2001_bounded_cubic_part": meng45,
+            "Bruna2026_GLH_conditional": bruna_glh,
+        },
+        "average_ap_distribution_transforms": {
+            "Stadlmann2025_smooth_moduli": stadlmann_smooth,
+            "RunboLi2025_smooth_minorant": li_smooth_minorant,
+            "Pascadi2025_weighted": pascadi_weighted,
+            "RunboLi2026_bilinear": li_large_bilinear,
+            "RunboLi2026_trilinear": li_large_trilinear,
         },
         "plain_conclusion": (
             "外部前沿定理已经能给出真实副产品：Baker-Harman-Pintz 2001 禁止长度约 "
@@ -344,7 +468,10 @@ def build_payload() -> dict[str, Any]:
             "P^5 或 P^4.5 量级，不能进入 P^2 方阵；Li-Zhang-Cai 的 P2 almost-prime "
             "结果进入 P^2，却正好是错误奇偶对象。Guth--Maynard v2 与 Le Duc Hieu v2 "
             "在 theta>17/30 短区间内给出点态 PNT/等差数列结构，但换算到行尺度仍需要 "
-            "P^(2/15+o(1)) 个行厚度。故所有有帮助的外部定理都已定位为 side "
+            "P^(2/15+o(1)) 个行厚度。Stadlmann/Runbo Li/Pascadi 的大模数 AP 平均分布"
+            "越过 x^1/2 甚至达到加权 5/8-o(1)，但不能转成固定素模数 P 的全 residue "
+            "列闭合；Bruna 2026 在广义 Lindelof 下得到 q^(2+epsilon) 条件近门槛，仍有"
+            "条件性与 epsilon 超方阵误差。故所有有帮助的外部定理都已定位为 side "
             "bounds/parity diagnostics；目标命题仍需要 theta<=1/2 的点态短区间定理、"
             "Linnik<=2 的同窗口常数版本、theta=1/2 二阶矩到行格点的转移，或真正非线性破奇偶构造。"
         ),
@@ -396,6 +523,8 @@ def build_markdown(payload: dict[str, Any]) -> str:
         f"target_linnik_exponent={payload['target_linnik_exponent']}",
         f"best_general_linnik_exponent_recorded={payload['best_general_linnik_exponent_recorded']}",
         f"best_special_prime_modulus_compatible_linnik_exponent_recorded={payload['best_special_prime_modulus_compatible_linnik_exponent_recorded']}",
+        f"best_average_ap_distribution_exponent_recorded={payload['best_average_ap_distribution_exponent_recorded']}",
+        f"best_conditional_linnik_near_square_recorded={payload['best_conditional_linnik_near_square_recorded']}",
         f"least_almost_prime_ap_exponent_inside_square={payload['least_almost_prime_ap_exponent_inside_square']}",
         f"external_lemma_version_unconditional_closed={fmt_bool(payload['external_lemma_version_unconditional_closed'])}",
         f"internal_self_contained_closed={fmt_bool(payload['internal_self_contained_closed'])}",
@@ -412,6 +541,7 @@ def build_markdown(payload: dict[str, Any]) -> str:
         f"pointwise_short_interval_to_row_run={payload['transfer_gate_lemmas']['pointwise_short_interval_to_row_run']}",
         f"linnik_to_square_column={payload['transfer_gate_lemmas']['linnik_to_square_column']}",
         f"almost_all_exceptional_to_lattice={payload['transfer_gate_lemmas']['almost_all_exceptional_to_lattice']}",
+        f"mean_value_ap_to_fixed_prime_modulus={payload['transfer_gate_lemmas']['mean_value_ap_to_fixed_prime_modulus']}",
         "```",
         "",
         "## 4. 真实副产品",

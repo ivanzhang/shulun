@@ -1189,6 +1189,11 @@ Commit 9  [本提交] K3-united-three-term + 完全归总表
 | Guth--Maynard large values | arXiv:2405.20552v2, 2026-04-07 | $\theta>17/30$ 点态短区间 PNT 技术 | 否，行厚度仍是 $P^{2/15+o(1)}$ |
 | Gafni--Tao exceptional intervals | arXiv:2505.24017v1, 2025-05-29 | exceptional-set/zero-density 转接口 | 否，缺少 rigid $P$-grid 转移 |
 | Le Duc Hieu prime APs in short intervals | arXiv:2509.04883v2, 2025-09-24 | $\theta>17/30$ 短区间内素数等差数列丰度 | 否，结构更强但长度门槛不变 |
+| Stadlmann smooth-moduli AP | arXiv:2309.00425v3, accepted Adv. Math. | 平均分布到光滑模数 $x^{1/2+1/40-\epsilon}$ | 否，平均/光滑模数不是固定素模数 $P$ |
+| Runbo Li smooth minorant | arXiv:2505.09629v3, 2025-12-29 | 光滑模数 AP 中素数 minorant level $10/19$ | 否，minorant 平均不保证每列有素数 |
+| Pascadi weighted distribution | arXiv:2505.00653v2, 2025-06-29 | 加权/良因子权下到 $x^{5/8-o(1)}$ | 否，weighted mean-value 不能推出固定 $q=P$ 全 residue |
+| Runbo Li large-moduli AP | arXiv:2602.20917v5, 2026-05-05 | bilinear $9/17$、trilinear $17/32$ 大模数平均分布 | 否，仍是 almost-all/结构化平均 |
+| Bruna conditional Linnik | arXiv:2603.25612v1, 2026-03-26 | GLH 下 $p(a\bmod q)\ll_\epsilon q^{2+\epsilon}$ | 否，条件且有 $\epsilon$ 超方阵误差 |
 | Xylouris / Meng AP primes | published / special modulus | Linnik 型列方向最终有素数 | 否，高度仍 $P^{5-o(1)}$ 或 $P^{4.5}$ |
 | Li--Zhang--Cai $P_2$ in AP | arXiv:2103.13360v2 | $P_2(a,q)\ll q^{1.8345}$ 进入 $P^2$ | 否，对象是 almost-prime |
 
@@ -1209,6 +1214,11 @@ $$
 **almost-all 到 rigid-grid 门槛**：almost-all $x$ 的短区间 PNT 不能自动控制
 $P$-间隔行起点；要闭合目标，仍需 `GridTransferredShortIntervalSecondMomentAtThetaHalf`
 或同等强度的新输入。
+
+**AP 平均分布到固定素模数门槛**：Bombieri--Vinogradov/Elliott--Halberstam 型平均定理，
+即使越过 $x^{1/2}$，也只控制模数集合的平均误差或特定光滑/良因子权结构。
+列闭合需要的是单个素模数 $q=P$ 的所有 reduced residue classes 在 $x=P^2$
+窗口内同时有素数；这需要零例外 fixed-prime-modulus transfer，而不是平均分布本身。
 
 ### J.3 诚实终点
 
@@ -1291,5 +1301,35 @@ $$
 | 外部引理 | $3P/4-P/(8\log P)-0.05625P/\log^2 P$ | **3/4** |
 | H_P 需要 | $0$ | **0** |
 
-主项常数 $1\to 3/4$ 需要 sieve（已做）。$3/4\to 0$ 需要跨越 Bombieri 1976 奇偶屏障（不可在 LLM 单次会话内完成）。
+主项常数 $1\to 3/4$ 需要 sieve（已做）。$3/4\to 0$ 需要跨越 Bombieri 1976 奇偶屏障；
+当前无条件输入仍不能完成该跨越。
 
+---
+
+## 附录 L：2026 AP 平均分布与条件 Linnik 近门槛压力层
+
+**目的**：继续原子化审计列方向最新外部输入。上一层只登记了 Linnik 指数和 almost-prime；
+本层补入 2025--2026 年 AP 平均分布与条件 Linnik 近门槛结果。
+
+### L.1 新增外部输入
+
+| 输入 | 指数/载荷 | 换算到 $x=P^2$ | 为什么不闭合 |
+|---|---|---|---|
+| Stadlmann smooth moduli | $x^{1/2+1/40-\epsilon}$ | 模数到 $P^{1.05-o(1)}$ | 光滑模数平均，不是素模数 $P$ |
+| Runbo Li smooth minorant | level $10/19$ | 模数到 $P^{20/19}$ | minorant/光滑平均，不是每个 residue |
+| Pascadi weighted distribution | $x^{5/8-o(1)}$ | 模数到 $P^{5/4-o(1)}$ | weighted mean-value，不给零例外固定模数 |
+| Runbo Li large-moduli AP | bilinear $9/17$、trilinear $17/32$ | $P^{18/17}$、$P^{17/16}$ | almost-all/结构化平均，不给单个 $q=P$ |
+| Bruna GLH conditional | $p(a\bmod q)\ll_\epsilon q^{2+\epsilon}$ | $P^{2+\epsilon}$ | 条件且超过固定 $P^2$ 窗口 |
+
+### L.2 真推进
+
+这一层把列方向最新硬点进一步压窄为：
+
+```text
+MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+这不是等价命题循环，而是把“已有 AP 分布技术为什么不能直接用于列闭合”拆成新的
+fixed-prime-modulus transfer 缺口。当前外部引理版仍未无条件闭合。
