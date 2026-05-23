@@ -33074,6 +33074,79 @@ row-averaged-additive-k-completion-tax-audit.md.
 \end{quote}
 \end{remark}
 
+\section{The completion-hole correction phase}
+
+\begin{theorem}[Sparse additive-k sum equals geometric interval minus holes]
+With \({\mathcal K}_{P,q}\), \({\mathcal C}_{P,q}\), and
+\({\mathcal H}_{P,q}\) as above, define
+\[
+  S_K(h)=\sum_{k\in{\mathcal K}_{P,q}} e\!\left(\frac{hPk}{q}\right),
+  \qquad
+  S_C(h)=\sum_{k\in{\mathcal C}_{P,q}} e\!\left(\frac{hPk}{q}\right),
+  \qquad
+  S_H(h)=\sum_{k\in{\mathcal H}_{P,q}} e\!\left(\frac{hPk}{q}\right).
+\]
+Then, for every integer \(h\),
+\[
+  S_K(h)=S_C(h)-S_H(h).
+\]
+Moreover, if \(q\nmid h\), then the completed interval term is the
+explicit geometric progression
+\[
+  S_C(h)
+  =
+  e\!\left(\frac{hP\min{\mathcal K}_{P,q}}{q}\right)
+  \frac{1-e\!\left(hP|{\mathcal C}_{P,q}|/q\right)}
+       {1-e(hP/q)}.
+\]
+Thus complete-interval additive cancellation closes only the elementary
+geometric part; the true Phi--LPF object still requires control of the
+completion-hole correction \(S_H(h)\).
+\end{theorem}
+\begin{proof}
+The first identity follows from the disjoint decomposition
+\[
+  {\mathcal C}_{P,q}={\mathcal K}_{P,q}\sqcup{\mathcal H}_{P,q}.
+\]
+For the second identity, \({\mathcal C}_{P,q}\) is a consecutive integer
+interval.  Since \(P\) is invertible modulo the prime \(q\), and
+\(q\nmid h\), the ratio \(e(hP/q)\) is not \(1\).  Summing the resulting
+finite geometric progression gives the displayed formula.
+\end{proof}
+
+\begin{remark}[What remains after the geometric sum]
+The finite audit at \(P\le 1009\), using \(h=1\) as a magnitude
+diagnostic, verifies the phase identity and the geometric formula with
+maximum numerical errors \(1.641\cdot 10^{-13}\) and
+\(3.329\cdot 10^{-11}\).  Across the audited q-buckets,
+\[
+  \sum |S_C(1)|=12232.215742,\qquad
+  \sum |S_H(1)|=56664.077674,
+\]
+and in \(5150\) of \(6020\) buckets the hole-correction magnitude is
+larger than the complete-interval geometric magnitude.  These numbers
+are finite diagnostics only; the rigorous conclusion is the structural
+one: a proof cannot replace the sparse Phi--LPF support by a complete
+interval unless it also proves cancellation or absorption for the
+no-odd, prime-candidate, and small-LPF completion holes.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+HoleCorrectionPhaseCancellationOrAbsorptionForNoOddPrimeSmallLPFCells\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-completion-correction-phase-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -3027,6 +3027,102 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61I. Phi-LPF q-support row-averaged additive-k completion correction phase 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_completion_correction_phase_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-audit.md
+```
+
+本层把 completion tax 推到相位层。对任意整数 `h`，真实 sparse 支撑相位和满足：
+
+```text
+S_K(h)=sum_{k in K_{P,q}} e(hPk/q)
+S_C(h)=sum_{k=minK}^{maxK} e(hPk/q)
+S_H(h)=sum_{k in H_{P,q}} e(hPk/q)
+S_K(h)=S_C(h)-S_H(h)
+```
+
+其中 `S_C(h)` 是完整区间上的显式几何和。由于 `P` 在模 `q` 下可逆，
+当 `h` 不被 `q` 整除时，
+
+```text
+S_C(h)=e(hP*minK/q)*(1-e(hP*(maxK-minK+1)/q))/(1-e(hP/q)).
+```
+
+因此完整区间相位部分已经闭合；真正剩余是 completion-hole correction
+`S_H(h)` 的相消或吸收。
+
+有限审计读数（`h=1` 用于幅度诊断；符号恒等式对所有 `h` 成立）：
+
+```text
+max_prime=1009
+P_value_count=165
+q_bucket_count_total=6020
+real_k_count_total=299977
+complete_span_total=1602928
+hole_count_total=1302951
+phase_identity_counts_match_completion_tax=true
+geometric_formula_verified=true
+correction_phase_identity_verified=true
+max_geometric_formula_error=3.329e-11
+max_correction_identity_error=1.641e-13
+sum_abs_sparse_sum_h1=53897.476591
+sum_abs_complete_geometric_sum_h1=12232.215742
+sum_abs_hole_correction_sum_h1=56664.077674
+max_abs_complete_geometric_sum_h1=158.704702
+max_abs_hole_correction_sum_h1=118.782265
+max_hole_over_complete_abs_ratio_h1=4699.709076
+hole_abs_gt_complete_abs_bucket_count_h1=5150
+sparse_abs_gt_complete_abs_bucket_count_h1=5000
+complete_near_zero_with_nonzero_hole_bucket_count_h1=10
+hole_label_no_odd_candidate_total=373676
+hole_label_odd_candidate_prime_total=355919
+hole_label_odd_candidate_small_lpf_3_total=409713
+hole_label_odd_candidate_small_lpf_5_total=163643
+hole_label_residual_candidate_total=0
+first_hole_dominates_complete=P=43,q=23,holes=14,abs_complete=0.677199,abs_hole=1.304173,abs_sparse=1.981372
+complete_interval_geometric_part_closed=true
+hole_correction_phase_control_closed=false
+```
+
+外部前沿影响：完整区间部分不再需要 FKMS trace-function、Milićević--Qin--Wu
+任意模 Kloosterman、Pascadi composite Type-II、Wright unbalanced
+convolution/Kloosterman fractions 或 Shao--Shparlinski--Wijaya smooth/squarefree
+参数估计；它已经是初等几何和。上述外部结果若要进入，必须作用在
+`S_H` 的 no-odd/prime/small-LPF hole correction 上，或绕过 completion
+直接给 sparse 支撑相消。
+
+新的最新最窄口：
+
+```text
+HoleCorrectionPhaseCancellationOrAbsorptionForNoOddPrimeSmallLPFCells
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complete_interval_geometric_phase_closed=true
+sparse_support_minus_hole_correction_identity_closed=true
+hole_correction_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

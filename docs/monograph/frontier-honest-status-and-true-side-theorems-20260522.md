@@ -3196,6 +3196,93 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13I：Phi-LPF q-support row-averaged additive-k completion correction phase 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_completion_correction_phase_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-correction-phase-audit.md
+```
+
+本层继续下钻 completion tax。对任意 `h`：
+
+```text
+S_K(h)=S_C(h)-S_H(h)
+S_C(h)=sum_{k=minK}^{maxK} e(hPk/q)
+S_H(h)=sum_{k in completion holes} e(hPk/q)
+```
+
+`S_C(h)` 是显式几何和；因此完整区间部分已经闭合，真正剩余转为
+completion-hole correction 的相位控制。
+
+### Q13I.1 有限审计
+
+有限实现 `P<=1009,h=1` 给出：
+
+```text
+q_bucket_count_total=6020
+real_k_count_total=299977
+complete_span_total=1602928
+hole_count_total=1302951
+phase_identity_counts_match_completion_tax=true
+geometric_formula_verified=true
+correction_phase_identity_verified=true
+max_geometric_formula_error=3.329e-11
+max_correction_identity_error=1.641e-13
+sum_abs_sparse_sum_h1=53897.476591
+sum_abs_complete_geometric_sum_h1=12232.215742
+sum_abs_hole_correction_sum_h1=56664.077674
+max_hole_over_complete_abs_ratio_h1=4699.709076
+hole_abs_gt_complete_abs_bucket_count_h1=5150
+sparse_abs_gt_complete_abs_bucket_count_h1=5000
+complete_near_zero_with_nonzero_hole_bucket_count_h1=10
+hole_label_no_odd_candidate_total=373676
+hole_label_odd_candidate_prime_total=355919
+hole_label_odd_candidate_small_lpf_3_total=409713
+hole_label_odd_candidate_small_lpf_5_total=163643
+hole_label_residual_candidate_total=0
+complete_interval_geometric_part_closed=true
+hole_correction_phase_control_closed=false
+```
+
+### Q13I.2 诚实边界
+
+本层真推进是把“完整区间可求和”与“真实 sparse 支撑”分开：前者是初等
+几何级数，后者仍需要扣除大规模非同对象 hole correction。有限诊断中
+`5150/6020` 个 q-bucket 的 hole correction 幅度大于完整区间几何项，因此
+不能把 correction 当作自动误差。
+
+最新最窄口：
+
+```text
+HoleCorrectionPhaseCancellationOrAbsorptionForNoOddPrimeSmallLPFCells
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+complete_interval_geometric_phase_closed=true
+sparse_support_minus_hole_correction_identity_closed=true
+hole_correction_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
