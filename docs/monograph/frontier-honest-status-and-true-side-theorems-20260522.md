@@ -1173,6 +1173,55 @@ Commit 9  [本提交] K3-united-three-term + 完全归总表
 方法论能在 LLM 单次会话内做到的最远位置。**H_P 主命题严格保留 `Not claimed`，
 等待 70 年开放硬点的解决**。
 
+---
+
+## 附录 J：2026-05-23 最新外部源版本核验与门槛引理
+
+本轮重新在线核验可用于行/列端点的最新外部源，并把它们统一压入
+`docs/monograph/prime-matrix-external-frontier-theorem-stress-router.md`。
+
+### J.1 版本快照
+
+| 外部源 | 本轮核验版本 | 对行/列命题的可用载荷 | 是否闭合 |
+|---|---|---|---|
+| Baker--Harman--Pintz 2001 | published | 点态短区间 $\theta=0.525$ | 否，只给连续空行串 $\le P^{0.05+\epsilon}$ |
+| Runbo Li short intervals | arXiv:2308.04458v8, 2025-10-16 | 预印本声称 $\theta=0.52$ | 否，即使接受也只到 $P^{0.04+\epsilon}$ 行串界 |
+| Guth--Maynard large values | arXiv:2405.20552v2, 2026-04-07 | $\theta>17/30$ 点态短区间 PNT 技术 | 否，行厚度仍是 $P^{2/15+o(1)}$ |
+| Gafni--Tao exceptional intervals | arXiv:2505.24017v1, 2025-05-29 | exceptional-set/zero-density 转接口 | 否，缺少 rigid $P$-grid 转移 |
+| Le Duc Hieu prime APs in short intervals | arXiv:2509.04883v2, 2025-09-24 | $\theta>17/30$ 短区间内素数等差数列丰度 | 否，结构更强但长度门槛不变 |
+| Xylouris / Meng AP primes | published / special modulus | Linnik 型列方向最终有素数 | 否，高度仍 $P^{5-o(1)}$ 或 $P^{4.5}$ |
+| Li--Zhang--Cai $P_2$ in AP | arXiv:2103.13360v2 | $P_2(a,q)\ll q^{1.8345}$ 进入 $P^2$ | 否，对象是 almost-prime |
+
+### J.2 本轮新增的非循环门槛引理
+
+**短区间到行串门槛**：若外部定理只保证每个 $x$ 附近长度 $x^\theta$
+区间含素数，则在 $x\asymp P^2$ 的方阵行尺度上，只能推出最长连续空行串
+$$
+R(P)\ll P^{2\theta-1+o(1)}.
+$$
+因此每行闭合必须有 $\theta\le 1/2$；$\theta=0.525,0.52,17/30$
+均不能闭合目标命题。
+
+**Linnik 到列闭合门槛**：若最小同余类素数满足 $p(a\bmod P)\ll P^L$，
+则进入 $P^2$ 方阵至少需要 $L\le 2$ 且常数/窗口兼容。当前 $L<5$
+或特殊 $L=4.5$ 均只给列方向远端存在性。
+
+**almost-all 到 rigid-grid 门槛**：almost-all $x$ 的短区间 PNT 不能自动控制
+$P$-间隔行起点；要闭合目标，仍需 `GridTransferredShortIntervalSecondMomentAtThetaHalf`
+或同等强度的新输入。
+
+### J.3 诚实终点
+
+本轮新增 `HieuPrimeAPsTheta17over30_structural_abundance_no_row_closure`
+诊断，并把 Guth--Maynard v2 / Runbo Li v8 的版本状态写入证书。它是真实前沿核验与
+非循环门槛压缩，不是 $H_P$ 证明。当前硬点仍是：
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR NonlinearParityBreakingActualSourceConstructor
+```
 
 
 

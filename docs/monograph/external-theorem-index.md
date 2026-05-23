@@ -1881,3 +1881,53 @@ all_pass_K3*-3term=true
 这是真实的外部显式 PNT 常数推进；但主项仍为 `3P/4`，所以不关闭目标命题。它与
 Baker-Harman-Pintz 连续空行块界合并后给出新的分布刚性：例外行即使存在，也不能聚成
 长度超过 `P^(0.05+eps)` 的连续块，同时总量满足上述三项 K3'''' 上界。
+
+## 41. 2026-05-23 最新外部前沿版本核验与转换门槛
+
+本层更新 `experiments/prime_matrix_external_frontier_theorem_stress_router.py`
+并重生成：
+
+```text
+data/prime-matrix-external-frontier-theorem-stress-ledger.json
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json
+docs/monograph/prime-matrix-external-frontier-theorem-stress-router.md
+```
+
+新增核验字段：
+
+```text
+frontier_verified_date=2026-05-23
+best_arxiv_uniform_structural_theta=17/30
+HieuPrimeAPsTheta17over30_structural_abundance_no_row_closure
+```
+
+外部源版本快照：
+
+```text
+BHP 2001 published: theta=0.525
+Runbo Li arXiv:2308.04458v8 (2025-10-16): claimed theta=0.52
+Guth-Maynard arXiv:2405.20552v2 (2026-04-07): theta>17/30 zero-density / short-interval PNT
+Gafni-Tao arXiv:2505.24017v1 (2025-05-29): exceptional intervals / almost-all interface
+Le Duc Hieu arXiv:2509.04883v2 (2025-09-24): prime AP abundance in theta>17/30 intervals
+Li-Zhang-Cai arXiv:2103.13360v2: P2 almost-prime in AP with exponent 1.8345
+Xylouris/Meng: Linnik/AP prime exponents still above 2
+```
+
+新增转换门槛：
+
+```text
+pointwise short interval theta  ->  empty-row-run exponent 2theta-1
+least AP prime exponent L       ->  P^2 square only if L<=2
+almost-all x                    ->  no rigid P-grid closure without a grid-transfer theorem
+```
+
+因此 Runbo Li v8 即便接受也只把连续空行串指数从 `0.05` 改进到 `0.04`；
+Guth--Maynard/Hieu 的 `17/30` 结构结果只给 `P^(2/15+o(1))` 行厚度，
+不能推出每个单行区间含素数。目标仍需：
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR NonlinearParityBreakingActualSourceConstructor
+```

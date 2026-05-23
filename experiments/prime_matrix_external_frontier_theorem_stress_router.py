@@ -36,6 +36,7 @@ SEED_TERMINAL = DOCS / "prime-matrix-two-replacement-lines-seed-moving-atom-glob
 
 TARGET_SHORT_INTERVAL_THETA = 0.5
 TARGET_LINNIK_EXPONENT = 2.0
+FRONTIER_VERIFIED_DATE = "2026-05-23"
 
 
 def sha256(path: Path) -> str:
@@ -108,14 +109,78 @@ def linnik_gap(exponent: float) -> dict[str, Any]:
     }
 
 
+def version_row(name: str, source: str, version: str, date: str, audited_payload: str) -> dict[str, str]:
+    """记录本轮核验到的外部源版本。"""
+    return {
+        "name": name,
+        "source": source,
+        "version": version,
+        "date": date,
+        "audited_payload": audited_payload,
+    }
+
+
 def build_payload() -> dict[str, Any]:
     """构造证书 payload。"""
     bhp = short_interval_gap(0.525)
     li052 = short_interval_gap(0.52)
     guth_maynard = short_interval_gap(17 / 30)
+    hieu_ap = short_interval_gap(17 / 30)
     xylouris52 = linnik_gap(5.2)
     xylouris5 = linnik_gap(5.0)
     meng45 = linnik_gap(4.5)
+
+    source_versions = [
+        version_row(
+            "Baker-Harman-Pintz 2001",
+            "https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/difference-between-consecutive-primes-ii/2EF13261B3B25458A25F41ED74AA2FC2",
+            "published",
+            "2001-10-22 online / 2001-11 issue",
+            "Published pointwise prime in [x, x+x^0.525] for large x.",
+        ),
+        version_row(
+            "Runbo Li short intervals",
+            "https://arxiv.org/abs/2308.04458",
+            "arXiv:2308.04458v8",
+            "2025-10-16",
+            "Preprint claims primes in [x-x^0.52, x] for all sufficiently large x.",
+        ),
+        version_row(
+            "Guth-Maynard large values",
+            "https://arxiv.org/abs/2405.20552",
+            "arXiv:2405.20552v2",
+            "2026-04-07",
+            "Zero-density estimate and short-interval prime asymptotics at length x^(17/30+o(1)).",
+        ),
+        version_row(
+            "Gafni-Tao exceptional intervals",
+            "https://arxiv.org/abs/2505.24017",
+            "arXiv:2505.24017v1",
+            "2025-05-29",
+            "Exceptional-set interface: all x for theta>17/30 and almost all x for theta>2/15 are not row-grid pointwise closure.",
+        ),
+        version_row(
+            "Le Duc Hieu short-interval prime APs",
+            "https://arxiv.org/abs/2509.04883",
+            "arXiv:2509.04883v2",
+            "2025-09-24",
+            "Many k-term prime APs in every interval [x,x+x^theta] for theta>17/30; structurally stronger but length gate unchanged.",
+        ),
+        version_row(
+            "Li-Zhang-Cai least P2 almost-prime in AP",
+            "https://arxiv.org/abs/2103.13360",
+            "arXiv:2103.13360v2",
+            "2021-07-19",
+            "P2(a,q) << q^1.8345, inside P^2 after q=P but wrong parity object.",
+        ),
+        version_row(
+            "Xylouris Linnik constant",
+            "https://arxiv.org/abs/0906.2749",
+            "Acta Arith. 150 (2011)",
+            "2011",
+            "Least AP prime exponent L=5.2; later <5 records remain far above the needed L<=2 gate.",
+        ),
+    ]
 
     rows = [
         row(
@@ -157,6 +222,16 @@ def build_payload() -> dict[str, Any]:
             "Useful for density-style side bounds and for checking that row-grid control is the missing interface.",
             False,
             "Needs lattice/grid transfer from continuous exceptional measure to every P-spaced row endpoint.",
+        ),
+        row(
+            "Le Duc Hieu 2025 prime APs in short intervals",
+            "https://arxiv.org/abs/2509.04883",
+            "arxiv_external_structural_stress",
+            "For theta>17/30, every sufficiently long interval [x,x+x^theta] contains many k-term APs of primes.",
+            "At x~P^2 the interval length remains P^(17/15+o(1)); it certifies rich prime structure only after thickening each row by P^(2/15+o(1)) rows.",
+            "Rules out the hope that adding Green-Tao/transference structure at the 17/30 scale alone closes the P-row theorem.",
+            False,
+            "The row window is still wider than one P-row; structural abundance does not imply a prime in each individual row.",
         ),
         row(
             "Xylouris 2011 Linnik exponent 5.2",
@@ -202,16 +277,36 @@ def build_payload() -> dict[str, Any]:
 
     return {
         "certificate_type": "prime_matrix_external_frontier_theorem_stress_router",
+        "frontier_verified_date": FRONTIER_VERIFIED_DATE,
         "status": "external_frontier_theorems_imported_side_bounds_closed_main_target_open",
         "target_short_interval_theta": TARGET_SHORT_INTERVAL_THETA,
         "target_linnik_exponent": TARGET_LINNIK_EXPONENT,
         "best_published_pointwise_short_interval_theta": bhp["theta"],
         "best_frontier_preprint_pointwise_short_interval_theta": li052["theta"],
+        "best_arxiv_uniform_structural_theta": 17 / 30,
+        "best_arxiv_uniform_structural_theta_label": "17/30",
         "best_published_empty_row_run_exponent_bound": bhp["empty_row_run_exponent_bound"],
         "best_frontier_preprint_empty_row_run_exponent_bound": li052["empty_row_run_exponent_bound"],
+        "best_published_empty_row_run_exponent_bound_label": "0.05+epsilon",
+        "best_frontier_preprint_empty_row_run_exponent_bound_label": "0.04+epsilon_if_accepted",
         "best_general_linnik_exponent_recorded": xylouris5["linnik_exponent"],
         "best_special_prime_modulus_compatible_linnik_exponent_recorded": meng45["linnik_exponent"],
         "least_almost_prime_ap_exponent_inside_square": 1.8345,
+        "transfer_gate_lemmas": {
+            "pointwise_short_interval_to_row_run": (
+                "A pointwise theorem giving a prime in every interval of length x^theta at x~P^2 "
+                "only gives no empty row-run longer than P^(2theta-1+o(1)); every-row closure requires theta<=1/2."
+            ),
+            "linnik_to_square_column": (
+                "A least-prime-in-AP theorem p(a mod P) << P^L enters the P^2 square only if L<=2 "
+                "with compatible constants and reduced residue classes."
+            ),
+            "almost_all_exceptional_to_lattice": (
+                "Almost-all x short-interval PNT does not control the rigid lattice of P-spaced row starts "
+                "without an additional grid-transfer or second-moment input."
+            ),
+        },
+        "source_version_snapshot": source_versions,
         "published_external_side_bounds": [
             "BHPNoLongEmptyRowRunExponent005",
             "XylourisLinnikColumnPrimeByHeightP5Plus",
@@ -220,6 +315,7 @@ def build_payload() -> dict[str, Any]:
         "arxiv_or_preprint_side_diagnostics": [
             "LeastP2AlmostPrimeInEachColumnInsideP2Square",
             "Li052NoLongEmptyRowRunExponent004_if_accepted",
+            "HieuPrimeAPsTheta17over30_structural_abundance_no_row_closure",
         ],
         "new_required_external_or_internal_breakthrough": (
             "PointwiseShortIntervalPrimeTheoremThetaLeHalf OR "
@@ -234,6 +330,7 @@ def build_payload() -> dict[str, Any]:
             "BHP2001": bhp,
             "Li2025_preprint": li052,
             "GuthMaynard2026": guth_maynard,
+            "Hieu2025_AP_structure": hieu_ap,
         },
         "linnik_transforms": {
             "Xylouris2011": xylouris52,
@@ -245,7 +342,9 @@ def build_payload() -> dict[str, Any]:
             "P^0.05 以上的连续空行串；若 Runbo Li 2025 预印本被接受，可把指数改进到 "
             "P^0.04。Xylouris/Meng 的 Linnik 型结果保证列方向最终出现素数，但高度仍为 "
             "P^5 或 P^4.5 量级，不能进入 P^2 方阵；Li-Zhang-Cai 的 P2 almost-prime "
-            "结果进入 P^2，却正好是错误奇偶对象。故所有有帮助的外部定理都已定位为 side "
+            "结果进入 P^2，却正好是错误奇偶对象。Guth--Maynard v2 与 Le Duc Hieu v2 "
+            "在 theta>17/30 短区间内给出点态 PNT/等差数列结构，但换算到行尺度仍需要 "
+            "P^(2/15+o(1)) 个行厚度。故所有有帮助的外部定理都已定位为 side "
             "bounds/parity diagnostics；目标命题仍需要 theta<=1/2 的点态短区间定理、"
             "Linnik<=2 的同窗口常数版本、theta=1/2 二阶矩到行格点的转移，或真正非线性破奇偶构造。"
         ),
@@ -281,6 +380,7 @@ def build_markdown(payload: dict[str, Any]) -> str:
         "# Prime Matrix 外部前沿定理压力测试证书",
         "",
         f"**状态：** `{payload['status']}`",
+        f"**外部源核验日期：** `{payload['frontier_verified_date']}`",
         "",
         "## 1. 结论",
         "",
@@ -290,8 +390,9 @@ def build_markdown(payload: dict[str, Any]) -> str:
         f"target_short_interval_theta={payload['target_short_interval_theta']}",
         f"best_published_pointwise_short_interval_theta={payload['best_published_pointwise_short_interval_theta']}",
         f"best_frontier_preprint_pointwise_short_interval_theta={payload['best_frontier_preprint_pointwise_short_interval_theta']}",
-        f"best_published_empty_row_run_exponent_bound={payload['best_published_empty_row_run_exponent_bound']}",
-        f"best_frontier_preprint_empty_row_run_exponent_bound={payload['best_frontier_preprint_empty_row_run_exponent_bound']}",
+        f"best_arxiv_uniform_structural_theta={payload['best_arxiv_uniform_structural_theta_label']}",
+        f"best_published_empty_row_run_exponent_bound={payload['best_published_empty_row_run_exponent_bound_label']}",
+        f"best_frontier_preprint_empty_row_run_exponent_bound={payload['best_frontier_preprint_empty_row_run_exponent_bound_label']}",
         f"target_linnik_exponent={payload['target_linnik_exponent']}",
         f"best_general_linnik_exponent_recorded={payload['best_general_linnik_exponent_recorded']}",
         f"best_special_prime_modulus_compatible_linnik_exponent_recorded={payload['best_special_prime_modulus_compatible_linnik_exponent_recorded']}",
@@ -305,7 +406,15 @@ def build_markdown(payload: dict[str, Any]) -> str:
         "",
         rows_markdown(payload["rows"]),
         "",
-        "## 3. 真实副产品",
+        "## 3. 转换门槛引理",
+        "",
+        "```text",
+        f"pointwise_short_interval_to_row_run={payload['transfer_gate_lemmas']['pointwise_short_interval_to_row_run']}",
+        f"linnik_to_square_column={payload['transfer_gate_lemmas']['linnik_to_square_column']}",
+        f"almost_all_exceptional_to_lattice={payload['transfer_gate_lemmas']['almost_all_exceptional_to_lattice']}",
+        "```",
+        "",
+        "## 4. 真实副产品",
         "",
         "已由已发表外部定理登记的副产品：",
         "",
@@ -319,23 +428,42 @@ def build_markdown(payload: dict[str, Any]) -> str:
         *payload["arxiv_or_preprint_side_diagnostics"],
         "```",
         "",
-        "## 4. 仍需的新突破",
+        "## 5. 仍需的新突破",
         "",
         "```text",
         payload["new_required_external_or_internal_breakthrough"],
         "```",
         "",
-        "## 5. 来源链接",
+        "## 6. 来源版本快照",
+        "",
+        "| name | version | date | audited payload | source |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for item in payload["source_version_snapshot"]:
+        lines.append(
+            "| {name} | `{version}` | {date} | {audited} | <{source}> |".format(
+                name=cell(item["name"]),
+                version=cell(item["version"]),
+                date=cell(item["date"]),
+                audited=cell(item["audited_payload"]),
+                source=item["source"],
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "## 7. 来源链接",
         "",
         "| theorem | source |",
         "| --- | --- |",
-    ]
+        ]
+    )
     for item in payload["rows"]:
         lines.append(f"| {cell(item['theorem'])} | <{item['source']}> |")
     lines.extend(
         [
             "",
-            "## 6. 依赖哈希",
+            "## 8. 依赖哈希",
             "",
             "| file | sha256 |",
             "| --- | --- |",
