@@ -2822,6 +2822,81 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 67. Phi-LPF finite-H truncation closure 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_finite_h_truncation_closure_audit.py
+data/prime-matrix-phi-lpf-finite-h-truncation-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-finite-h-truncation-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-finite-h-truncation-closure-audit.md
+```
+
+本层在合著稿三命题中选择最快可完全闭合的子门：
+
+```text
+Prime Matrix row/column Phi-LPF:
+  UniformFiniteHTruncationWithHPolylog
+```
+
+选择理由：二点筛仍需 `BMD=>TLI without hidden denominator/parity gap`，RH 线仍是
+controlled exits 的 independent referee package；而 finite-H 截断只需
+Vaaler/截断账本与 reciprocal thin-fibre 质量上界。
+
+截断账本：
+
+```text
+W_int(P,k) <= 2*pi(P) < 2P
+two endpoint sawtooth tails have absolute mass <= 4P/H
+choose H=ceil((log P)^(A+2))
+tail = O(P/log^(A+2)P) = O(P/log^A P)
+finite remaining modes: |h|<=H, harmonic coefficient cost O(log H)=O(log log P)
+```
+
+因此：
+
+```text
+UniformFiniteHTruncationWithHPolylog=true
+```
+
+但剩余 finite modes 仍必须证明带权抵消。最新最窄口变为：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+```
+
+外部前沿匹配：
+
+```text
+Vaaler finite Fourier approximation:
+  accepted for deterministic truncation gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  power-saving bilinear forms with Kloosterman sums modulo arbitrary q;
+  useful after completion, not direct for current real phase and LPF weights.
+
+Pascadi 2025 arXiv:2511.08445:
+  non-abelian amplification for composite-modulus Kloosterman sums;
+  useful frontier input, not direct for prime-q LPF-weighted sawtooth phase.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman parameter sums;
+  still requires finite-field completion and LPF-shell transfer.
+```
+
+状态边界：
+
+```text
+uniform_finite_h_truncation_closed=true
+weighted_sawtooth_phi_lpf_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：

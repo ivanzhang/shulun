@@ -30810,6 +30810,71 @@ external theorem-match table.  No unconditional row/column closure
 follows.
 \end{proof}
 
+\section{Finite-\(H\) truncation closure}
+
+\begin{proposition}[Choice among the three manuscript claims]
+Among the three current manuscript fronts, the Prime Matrix row/column
+Phi--LPF line has the shortest fully closable subgate.  The two-point
+sieve line still requires the Buchstab transfer
+\(\texttt{BMD=>TLI}\) without a hidden denominator or parity gap, and
+the RH contradiction-field line remains an independent referee package
+for controlled exits.  By contrast
+\[
+  \texttt{UniformFiniteHTruncationWithHPolylog}
+\]
+is a deterministic truncation ledger once the reciprocal thin-fibre
+mass bound is fixed.
+\end{proposition}
+
+\begin{theorem}[Polylogarithmic finite-\(H\) truncation]
+For every strict row and every \(A>0\), choose
+\[
+  H=\lceil(\log P)^{A+2}\rceil .
+\]
+The total high-\(q\) reciprocal candidate mass satisfies
+\[
+  W_{\rm int}(P,k)\le 2\pi(P)<2P.
+\]
+Since the two endpoint sawtooth terms have absolute mass at most
+\(4P\), the Vaaler truncation tail contributes
+\[
+  O(P/H)=O(P/(\log P)^{A+2})=O(P/(\log P)^A).
+\]
+Thus
+\[
+  \texttt{UniformFiniteHTruncationWithHPolylog}
+\]
+is closed unconditionally.
+\end{theorem}
+\begin{proof}
+Each prime \(q\in(P/2,P)\) contributes at most two integer \(m\)-values
+to the reciprocal window \(I_q(P,k)\).  Hence the total absolute
+counting mass is at most \(2\pi(P)\), and the two endpoint sawtooth
+expansions have total absolute mass at most \(4P\).  Vaaler's finite
+Fourier approximation leaves a pointwise endpoint error \(O(1/H)\);
+summing against the nonnegative LPF-shell counting weights gives the
+claimed \(O(P/H)\) tail.  The finite modes left after truncation have
+\(|h|\le H\) and only the harmonic coefficient cost \(O(\log H)\).
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-finite-h-\\
+truncation-closure-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Updated true remaining mouth]
+The deterministic finite-\(H\) gate is no longer part of the hard
+point.  The current sawtooth branch is reduced to
+\begin{quote}\scriptsize\ttfamily
+PrimeQLPFShellWeightedReciprocalPhaseSaving\\
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII.
+\end{quote}
+The recent Kloosterman-frontier inputs of Mili\'cevi\'c--Qin--Wu,
+Pascadi, and Shao--Shparlinski--Wijaya remain useful only after a
+finite-field or inverse-fraction completion; they do not by themselves
+close the prime-\(q\), LPF-shell weighted real reciprocal phase.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -1753,8 +1753,6 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
----
-
 ## 附录 AB：Phi-LPF primorial-wheel limit 审计（2026-05-23 第二十六轮）
 
 本轮回答 `30-wheel` 是否可以继续到 `210,2310,...` 并在无限 primorial
@@ -3785,6 +3783,113 @@ AND UniformFiniteHTruncationWithHPolylog
 
 ```text
 unweighted_sawtooth_benchmark_closed=true
+weighted_sawtooth_phi_lpf_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
+## 附录 Q4：Phi-LPF finite-H truncation closure 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_finite_h_truncation_closure_audit.py
+data/prime-matrix-phi-lpf-finite-h-truncation-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-finite-h-truncation-closure-audit.json
+docs/monograph/prime-matrix-phi-lpf-finite-h-truncation-closure-audit.md
+```
+
+本轮按“哪个命题更快突破就先突破”的原则，比较合著稿三命题：
+
+```text
+Prime Matrix row/column Phi-LPF:
+  fastest gate = UniformFiniteHTruncationWithHPolylog
+
+two-point sieve / prime-pair line:
+  frontier = BMD=>TLI without hidden denominator/parity gap
+
+RH contradiction-field line:
+  frontier = IndependentRefereeAcceptanceOfAllRHControlledExits
+```
+
+因此本轮选择行/列 Phi-LPF 的 finite-H 截断门。它不需要新的素数分布定理，
+只用 Vaaler/截断账本和 reciprocal thin-fibre 质量上界。
+
+### Q4.1 截断闭合
+
+对每个 strict row：
+
+```text
+W_int(P,k) <= 2*pi(P) < 2P
+two endpoint sawtooth tails have absolute mass <= 4P/H
+```
+
+给定任意目标对数幂 `A>0`，取
+
+```text
+H=ceil((log P)^(A+2)).
+```
+
+则截断尾项满足：
+
+```text
+tail = O(P/log^(A+2)P) = O(P/log^A P).
+```
+
+有限 Fourier 模式只剩：
+
+```text
+|h|<=H
+harmonic coefficient cost O(log H)=O(log log P).
+```
+
+所以本层闭合：
+
+```text
+UniformFiniteHTruncationWithHPolylog=true
+```
+
+### Q4.2 外部前沿匹配
+
+```text
+Vaaler finite Fourier approximation:
+  closes the deterministic truncation gate.
+
+Milićević--Qin--Wu 2025 arXiv:2511.07550:
+  arbitrary-q bilinear Kloosterman sums, useful only after completion.
+
+Pascadi 2025 arXiv:2511.08445:
+  composite-modulus/non-abelian Kloosterman amplification, not direct for prime-q LPF weights.
+
+Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113:
+  square-free/smooth Kloosterman parameter sums, still needs finite-field completion.
+```
+
+### Q4.3 最新最窄口
+
+从上一层三口：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+AND UniformFiniteHTruncationWithHPolylog
+```
+
+压成两口：
+
+```text
+PrimeQLPFShellWeightedReciprocalPhaseSaving
+AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII
+```
+
+状态边界：
+
+```text
+uniform_finite_h_truncation_closed=true
 weighted_sawtooth_phi_lpf_closed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false

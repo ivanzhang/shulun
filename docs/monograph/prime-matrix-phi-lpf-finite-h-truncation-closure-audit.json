@@ -1,0 +1,175 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_finite_h_truncation_closure_audit",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "UniformFiniteHTruncationWithHPolylog",
+      "meaning": "Choose H=(log P)^(A+2); reciprocal thin-fibre total mass gives sawtooth tail O(P/log^A P).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+      "meaning": "Finite modes still need cancellation with prime-q and LPF-shell/rough quotient weights.",
+      "proved": false,
+      "remaining": "weighted finite-mode phase saving"
+    },
+    {
+      "closed": false,
+      "gate": "WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII",
+      "meaning": "LPF condition must be converted without circularity into a Type-II/Kloosterman-compatible coefficient package.",
+      "proved": false,
+      "remaining": "LPF weight extraction identity/theorem"
+    }
+  ],
+  "external_frontier_match_table": [
+    {
+      "accepted_for_this_gate": true,
+      "closes_weighted_phase": false,
+      "source": "Vaaler finite Fourier approximation for sawtooth",
+      "useful_part": "closes deterministic polylog truncation once absolute thin-fibre mass is O(P)"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_weighted_phase": false,
+      "reason_not_direct": "finite-field Kloosterman sums after completion, not the present real reciprocal phase with LPF-shell weights",
+      "source": "Milićević--Qin--Wu 2025 arXiv:2511.07550",
+      "useful_part": "power-saving bilinear forms with Kloosterman sums modulo arbitrary q"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_weighted_phase": false,
+      "reason_not_direct": "composite-modulus Kloosterman setting; present denominator q is prime and the missing step is LPF-weighted completion",
+      "source": "Pascadi 2025 arXiv:2511.08445",
+      "useful_part": "non-abelian amplification for composite-modulus Kloosterman sums"
+    },
+    {
+      "accepted_for_this_gate": false,
+      "closes_weighted_phase": false,
+      "reason_not_direct": "useful only after finite-field Kloosterman completion and parameter transfer",
+      "source": "Shao--Shparlinski--Wijaya 2024/2025 arXiv:2411.12113",
+      "useful_part": "Kloosterman sums over square-free and smooth parameters"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "finite_h_samples": [
+    {
+      "P": 101,
+      "chosen_H": 9663,
+      "endpoint_tail_bound_le": "4P/log^6P",
+      "finite_mode_count_le": 19326,
+      "tail_over_P_numeric": 0.000413950119,
+      "target_log_power_A": 4
+    },
+    {
+      "P": 101,
+      "chosen_H": 4383596,
+      "endpoint_tail_bound_le": "4P/log^10P",
+      "finite_mode_count_le": 8767192,
+      "tail_over_P_numeric": 9.12493e-07,
+      "target_log_power_A": 8
+    },
+    {
+      "P": 1009,
+      "chosen_H": 109497,
+      "endpoint_tail_bound_le": "4P/log^6P",
+      "finite_mode_count_le": 218994,
+      "tail_over_P_numeric": 3.6530681e-05,
+      "target_log_power_A": 4
+    },
+    {
+      "P": 1009,
+      "chosen_H": 250610247,
+      "endpoint_tail_bound_le": "4P/log^10P",
+      "finite_mode_count_le": 501220494,
+      "tail_over_P_numeric": 1.5961e-08,
+      "target_log_power_A": 8
+    },
+    {
+      "P": 100003,
+      "chosen_H": 2328740,
+      "endpoint_tail_bound_le": "4P/log^6P",
+      "finite_mode_count_le": 4657480,
+      "tail_over_P_numeric": 1.717667e-06,
+      "target_log_power_A": 4
+    },
+    {
+      "P": 100003,
+      "chosen_H": 40913652002,
+      "endpoint_tail_bound_le": "4P/log^10P",
+      "finite_mode_count_le": 81827304004,
+      "tail_over_P_numeric": 9.8e-11,
+      "target_log_power_A": 8
+    },
+    {
+      "P": 1000003,
+      "chosen_H": 6953480,
+      "endpoint_tail_bound_le": "4P/log^6P",
+      "finite_mode_count_le": 13906960,
+      "tail_over_P_numeric": 5.75252e-07,
+      "target_log_power_A": 4
+    },
+    {
+      "P": 1000003,
+      "chosen_H": 253320498442,
+      "endpoint_tail_bound_le": "4P/log^10P",
+      "finite_mode_count_le": 506640996884,
+      "tail_over_P_numeric": 1.6e-11,
+      "target_log_power_A": 8
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+    "AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9259b08e64fcc8928ce3742c8b2b48fa77dc0985802173fc8ddd1c1c2347c9a7",
+    "docs/monograph/external-theorem-index.md": "ceb1abe449e48d588d9cce953cc88b233219fb5b2705438ac79621b6c639c248",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "3185b93719cbee524de64764e74ab2eea7aa22a6d9be712a00d370fbf4c581c4",
+    "docs/monograph/prime-matrix-phi-lpf-reciprocal-graph-kloosterman-gateway-audit.json": "1cdbe972f4c6fd4a505cb45ea926f4afbd332290d20750a8d03623ca42163bf2",
+    "docs/monograph/prime-matrix-phi-lpf-sawtooth-reciprocal-tail-gateway-audit.json": "7efdbb156881c4aa5e4d339186745a0c84d37d5fc053290d9b5918a682e2df01",
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "experiments/prime_matrix_phi_lpf_finite_h_truncation_closure_audit.py": "99444f97d815ed479b693d4ad5aecc6f8bd5f7c5eebdbbf8f9303613618d3776",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "6cc58faf0a9872fa1244224b95c3ba200d7ae17acb0a4561fda1ac3e411d30e1"
+  },
+  "status": "finite_h_truncation_closed_weighted_phase_and_lpf_extraction_open",
+  "three_claim_source_status": "三个命题的当前前沿必须分开看：行/列链最新硬点是 `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2`；二次筛链仍需要 I3-Core/true-residual total incidence 或外部 DI/BFI-KLS；RH 链仍是待独立审稿的验证包。继续攻击行/列最新硬点可得精确等价：rank-one 排斥就是 `theta(P^2;P,a)>0` 对每个非零类成立。显式公式把它压成带符号零点包必须逐类小于主项的屏障；当前 GRH 形状、BV 平均、完整 CRT 均匀性和标准 Linnik 都不足以给出该 sharp P^2 正性。",
+  "three_claim_triage": [
+    {
+      "chosen": true,
+      "claim": "Prime Matrix row/column Phi-LPF",
+      "fastest_subgate": "UniformFiniteHTruncationWithHPolylog",
+      "frontier_before": [
+        "PrimeQLPFShellWeightedReciprocalPhaseSaving",
+        "AND WeightExtractionFromLPFShellToBilinearKloostermanOrVaughanTypeII",
+        "AND UniformFiniteHTruncationWithHPolylog"
+      ],
+      "reason": "deterministic Vaaler truncation plus thin-fibre absolute mass bound; no new prime theorem required"
+    },
+    {
+      "chosen": false,
+      "claim": "two-point sieve / prime-pair line",
+      "frontier": "BMD=>TLI without hidden denominator/parity gap",
+      "reason": "requires Buchstab transfer and denominator audit, not a one-gate bookkeeping closure"
+    },
+    {
+      "chosen": false,
+      "claim": "RH contradiction-field line",
+      "frontier": "IndependentRefereeAcceptanceOfAllRHControlledExits",
+      "reason": "verification package state; not the fastest mathematical hard-point closure"
+    }
+  ],
+  "truncation_theorem": {
+    "finite_mode_reduction": "Only |h|<=H weighted phases remain; coefficients have harmonic cost O(log H)=O(log log P).",
+    "mass_bound": "For every strict row, total high-q reciprocal candidate mass W_int(P,k)<=2*pi(P)<2P; two endpoint sawtooth tails have absolute mass <=4P.",
+    "polylog_choice": "For any target A>0 choose H=ceil((log P)^(A+2)); then the tail is O(P/log^(A+2)P), hence O(P/log^A P).",
+    "vaaler_tail_rule": "With H>=1, endpoint truncation error is O(P/H) for nonnegative LPF-shell counting weights, after summing absolute weights."
+  },
+  "uniform_finite_h_truncation_closed": true,
+  "weighted_sawtooth_phi_lpf_closed": false
+}
