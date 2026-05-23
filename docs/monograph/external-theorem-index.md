@@ -2686,3 +2686,76 @@ bdh_pointwise_all_rows_closed=false
 prime_square_halfscale_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 55. almost-all 例外脊线审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_almost_all_exceptional_spine_audit.py
+data/prime-matrix-almost-all-exceptional-spine-ledger.json
+docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.json
+docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.md
+```
+
+本层审计 almost-all 短区间素数、exceptional intervals 和高阶一致性输入是否
+能绕开 Phi-LPF 奇偶障碍。
+
+外部源快照：
+
+```text
+Runbo Li 2025:
+  almost all [n,n+n^(1/21.5+epsilon)] contain primes.
+  X=P^2 后长度 P^(4/43)，若点态化则强过目标。
+
+Runbo Li II working paper:
+  almost all left intervals of length n^(1/22+epsilon).
+  X=P^2 后长度 P^(1/11)，但仍是 working paper 与 almost-all。
+
+Gafni--Tao 2025:
+  exceptional intervals framework; all x for theta>17/30, almost all x for theta>2/15.
+  X=P^2 后 theta=2/15 给 P^(4/15)，但例外集未排除 prime-square spine。
+
+Matomaki--Radziwill--Shao--Tao--Teravainen:
+  almost all short intervals higher uniformity for Lambda/mu/divisor functions.
+  深层一致性输入，不是每个 P^2 端点的点态定理。
+```
+
+素数平方脊线在 dyadic 块中的大小为：
+
+```text
+{P^2: P prime, X<=P^2<=2X}
+size asymp X^(1/2)/log X
+density asymp 1/(X^(1/2)log X)
+```
+
+因此 `almost all x` 允许的稀疏例外集原则上仍可包含全部素数平方端点。
+要把 almost-all 输入升级为 Prime Matrix 闭合，必须新增：
+
+```text
+ExceptionalPrimeSquareSpineDisjointness
+OR PointwiseEndpointUniformityAtEveryPrimeSquare
+OR AlmostAllToAllRowsUpgradeWithArithmeticSpineRepulsion
+```
+
+新的剩余基为：
+
+```text
+ExceptionalPrimeSquareSpineDisjointness
+OR PointwiseEndpointUniformityAtEveryPrimeSquare
+OR AlmostAllToAllRowsUpgradeWithArithmeticSpineRepulsion
+OR NoPrimeSquareExceptionalPhaseForGafniTaoBounds
+OR PhiLPFObjectSensitiveSignedSieveOnSparseSpine
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem
+```
+
+边界状态：
+
+```text
+almost_all_short_interval_inputs_imported=true
+scale_stronger_than_halfwindow_if_pointwise=true
+exceptional_prime_square_spine_excluded=false
+pointwise_every_prime_square_endpoint_closed=false
+phi_lpf_parity_closed=false
+row_column_unconditional_closed=false
+```

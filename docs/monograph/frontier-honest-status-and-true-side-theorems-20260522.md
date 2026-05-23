@@ -1673,6 +1673,88 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Y：almost-all 例外脊线审计（2026-05-23 第二十三轮）
+
+本轮引入并审计 almost-all 短区间素数与例外集前沿：
+
+```text
+experiments/prime_matrix_almost_all_exceptional_spine_audit.py
+data/prime-matrix-almost-all-exceptional-spine-ledger.json
+docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.json
+docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.md
+```
+
+外部源登记：
+
+```text
+Runbo Li:
+  arXiv:2407.05651v6, almost all [n,n+n^(1/21.5+epsilon)] contain primes.
+
+Runbo Li II:
+  Cambridge Open Engage working paper, almost all left intervals of length n^(1/22+epsilon).
+
+Gafni--Tao:
+  arXiv:2505.24017v1, exceptional intervals to short-interval PNT;
+  all x for theta>17/30, almost all x for theta>2/15.
+
+Matomaki--Radziwill--Shao--Tao--Teravainen:
+  arXiv:2411.05770v2 / Invent. Math. 2026,
+  almost all short intervals higher uniformity for Lambda, mu and divisor functions.
+```
+
+统一尺度换算：
+
+```text
+X=P^2
+target halfwindow=P=X^(1/2)
+
+theta=1/21.5=2/43 -> P^(4/43)
+theta=1/22         -> P^(1/11)
+theta=2/15         -> P^(4/15)
+theta=1/3          -> P^(2/3)
+```
+
+这些尺度都短于 `P`。所以本层不是普通厚窗障碍；若上述 almost-all 结果能点态化到
+每个 `P^2`，它们会强过本文需要的半窗目标。
+
+真正缺口是例外脊线：
+
+```text
+prime_square_spine={P^2: P prime, X<=P^2<=2X}
+size asymp X^(1/2)/log X
+density asymp 1/(X^(1/2)log X)
+```
+
+`almost all x` 可以允许密度为零的例外集。素数平方端点本身正是这样一条稀疏
+算术脊线。因此，除非额外证明例外集最终不交这条脊线，否则 almost-all 输入
+不能推出每个 `P^2` 的半窗含素数。
+
+新的剩余基为：
+
+```text
+ExceptionalPrimeSquareSpineDisjointness
+OR PointwiseEndpointUniformityAtEveryPrimeSquare
+OR AlmostAllToAllRowsUpgradeWithArithmeticSpineRepulsion
+OR NoPrimeSquareExceptionalPhaseForGafniTaoBounds
+OR PhiLPFObjectSensitiveSignedSieveOnSparseSpine
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem
+```
+
+本层是真推进：它把“almost-all 已经极短，是否足够”压成一个精确可审稿的
+`ExceptionalPrimeSquareSpineDisjointness` 门。
+
+```text
+almost_all_short_interval_inputs_imported=true
+scale_stronger_than_halfwindow_if_pointwise=true
+exceptional_prime_square_spine_excluded=false
+pointwise_every_prime_square_endpoint_closed=false
+phi_lpf_parity_closed=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 X：短区间转移法奇偶审计（2026-05-23 第二十二轮）
 
 本轮继续审计“看似可破奇偶”的外部转移法输入：

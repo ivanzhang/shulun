@@ -1,0 +1,172 @@
+{
+  "almost_all_short_interval_inputs_imported": true,
+  "certificate_type": "prime_matrix_almost_all_exceptional_spine_audit",
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "AlmostAllPrimeInputImported",
+      "meaning": "registered newest almost-all prime interval scales",
+      "proved": false,
+      "remaining": "PrimeSquareSpinePointwiseExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "ScaleWouldBeatHalfWindowIfPointwise",
+      "meaning": "all listed almost-all exponents are below 1/2 in X, hence below P at X=P^2",
+      "proved": true,
+      "remaining": "not a pointwise theorem"
+    },
+    {
+      "closed": false,
+      "gate": "ExceptionalSetCannotContainPrimeSquares",
+      "meaning": "almost-all statements do not identify the exceptional set arithmetically",
+      "proved": false,
+      "remaining": "ExceptionalPrimeSquareSpineDisjointness"
+    },
+    {
+      "closed": false,
+      "gate": "HigherUniformityImpliesEndpointPrime",
+      "meaning": "almost-all Lambda uniformity gives powerful averages but permits exceptional intervals",
+      "proved": false,
+      "remaining": "PointwiseEndpointUniformityAtEveryP2"
+    },
+    {
+      "closed": false,
+      "gate": "PhiLPFParityBrokenByAlmostAll",
+      "meaning": "Phi-LPF needs every row/column fiber, not density-one rows",
+      "proved": false,
+      "remaining": "AllRowsNoExceptionOrObjectSensitiveSignedSieve"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "external lemma and internal self-contained versions remain open",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "exceptional_prime_square_spine_excluded": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources": [
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "almost all intervals [n,n+n^(1/21.5+epsilon)] contain primes",
+      "name": "Runbo Li, Primes in almost all short intervals",
+      "project_role": "scale-overkill if pointwise; still almost-all only",
+      "url": "https://arxiv.org/abs/2407.05651",
+      "verified_version": "arXiv:2407.05651v6, 2025-09-25"
+    },
+    {
+      "acceptance_status": "working_paper_not_peer_reviewed_at_posting",
+      "claim_type": "almost all intervals [n-n^(1/22+epsilon),n] contain primes",
+      "name": "Runbo Li, Primes in almost all short intervals II",
+      "project_role": "newest almost-all scale indicator; not a citable unconditional pointwise closure",
+      "url": "https://www.cambridge.org/engage/coe/article-details/68f12b20bc2ac3a0e0635f11",
+      "verified_version": "Cambridge Open Engage working paper v1, 2025-10-17"
+    },
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "exceptional-set bounds; PNT in short intervals all x for theta>17/30 and almost all x for theta>2/15",
+      "name": "Gafni--Tao, On the number of exceptional intervals to the PNT in short intervals",
+      "project_role": "best exceptional-set framework; still permits structured sparse spines without extra exclusion",
+      "url": "https://arxiv.org/abs/2505.24017",
+      "verified_version": "arXiv:2505.24017v1, 2025-05-29"
+    },
+    {
+      "acceptance_status": "published_inventiones_2026",
+      "claim_type": "almost all short intervals higher uniformity for Lambda, mu and divisor functions",
+      "name": "Matomaki--Radziwill--Shao--Tao--Teravainen, Higher uniformity II",
+      "project_role": "deep almost-all transference/uniformity input; not pointwise on prime-square spine",
+      "url": "https://arxiv.org/abs/2411.05770",
+      "verified_version": "arXiv:2411.05770v2, 2026; Invent. Math. 2026"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "new_residual_basis": [
+    "ExceptionalPrimeSquareSpineDisjointness",
+    "PointwiseEndpointUniformityAtEveryPrimeSquare",
+    "AlmostAllToAllRowsUpgradeWithArithmeticSpineRepulsion",
+    "NoPrimeSquareExceptionalPhaseForGafniTaoBounds",
+    "PhiLPFObjectSensitiveSignedSieveOnSparseSpine",
+    "ThetaLeHalfPointwiseShortIntervalPrimeTheorem"
+  ],
+  "phi_lpf_parity_closed": false,
+  "pointwise_every_prime_square_endpoint_closed": false,
+  "prime_square_halfscale_closed": false,
+  "prime_square_spine_audit": {
+    "dyadic_block": "X <= n <= 2X",
+    "prime_square_spine": "{P^2: P prime, sqrt(X) <= P <= sqrt(2X)}",
+    "required_upgrade": "ExceptionalSetIntersectPrimeSquareSpineIsEmptyEventually",
+    "spine_density": "asymp 1/(X^(1/2) log X)",
+    "spine_size_asymptotic": "asymp X^(1/2)/log X",
+    "why_almost_all_does_not_close": "an o(X) exceptional set, or even a sparse structured exceptional set, may still contain every prime-square endpoint unless a spine-disjointness theorem is proved"
+  },
+  "row_column_unconditional_closed": false,
+  "scale_audit": {
+    "prime_matrix_specialization": "X=P^2",
+    "records": [
+      {
+        "label": "runbo_li_almost_all_1_over_21_5",
+        "length_after_x_equals_p_square": "P^(4/43)",
+        "p_exponent_decimal": 0.093023255814,
+        "shorter_than_halfscale_P": true,
+        "status": "almost_all",
+        "theta_as_fraction": "2/43",
+        "theta_decimal": 0.046511627907
+      },
+      {
+        "label": "runbo_li_ii_working_paper_1_over_22",
+        "length_after_x_equals_p_square": "P^(1/11)",
+        "p_exponent_decimal": 0.090909090909,
+        "shorter_than_halfscale_P": true,
+        "status": "almost_all_working_paper",
+        "theta_as_fraction": "1/22",
+        "theta_decimal": 0.045454545455
+      },
+      {
+        "label": "gafni_tao_almost_all_2_over_15",
+        "length_after_x_equals_p_square": "P^(4/15)",
+        "p_exponent_decimal": 0.266666666667,
+        "shorter_than_halfscale_P": true,
+        "status": "almost_all_pnt",
+        "theta_as_fraction": "2/15",
+        "theta_decimal": 0.133333333333
+      },
+      {
+        "label": "higher_uniformity_lambda_1_over_3",
+        "length_after_x_equals_p_square": "P^(2/3)",
+        "p_exponent_decimal": 0.666666666667,
+        "shorter_than_halfscale_P": true,
+        "status": "almost_all_uniformity",
+        "theta_as_fraction": "1/3",
+        "theta_decimal": 0.333333333333
+      },
+      {
+        "label": "target_halfscale",
+        "length_after_x_equals_p_square": "P^(1/1)",
+        "p_exponent_decimal": 1.0,
+        "shorter_than_halfscale_P": false,
+        "status": "pointwise_target",
+        "theta_as_fraction": "1/2",
+        "theta_decimal": 0.5
+      }
+    ],
+    "scale_conclusion": "the almost-all inputs are shorter than P after X=P^2; if they were pointwise they would be stronger than needed",
+    "target_halfwindow": "length P = X^(1/2)"
+  },
+  "scale_stronger_than_halfwindow_if_pointwise": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "a613c92e51cc7ab9db2aed1b681b21e1ebffbccbee5f35df6e58c5dedb4f62d6",
+    "docs/monograph/external-theorem-index.md": "eaaa960be49986de865ab55001024c62345ff6a7c7584a76ab4d8087dd4e336d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "8b06c414f33c74677d6848dc45c031070e11de887af68225c40aa15eb5183eab",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "docs/monograph/prime-matrix-legendre-frontier-external-audit.json": "f8076427ecee0eeb7d6bf2e9296d6c243def0a62cf6fe7f9c9451ca9b5a4f9c1",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json": "4dcd74175d9c2ee211e586f7aaa9ddc300763c9b84ef668db8e92f4c63b4191b",
+    "docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json": "0c4bc76f173719e64ff43013cb111cfb25c5a89b27c6ea5521299113198ceef2",
+    "docs/monograph/prime-matrix-short-interval-transference-parity-audit.json": "a0b3d9aa052698f150f61d39dd4be1a0c0bfa2b29202ee723920586af432a6fa",
+    "experiments/prime_matrix_almost_all_exceptional_spine_audit.py": "494389b3abdaf8e3a088715d6484200c9be3ba9c5dd3d6d128c30996ad702ed2",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "1fe82d980f9be8b5a22600d0cb0bd2d52acd39a8300dc8c034d60e20ea1815b2"
+  },
+  "status": "almost_all_short_interval_inputs_are_scale_strong_but_spine_pointwise_open"
+}

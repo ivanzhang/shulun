@@ -29373,6 +29373,78 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\section{Almost-All Short-Interval Exceptional-Spine Audit}
+
+\begin{externalstatement}[Almost-all short intervals do not remove the prime-square spine]
+Recent almost-all short-interval inputs are much stronger in scale than the
+Prime Matrix half-window, but they remain almost-all statements.  Runbo Li's
+almost-all prime interval theorem reaches intervals of length
+\(x^{1/21.5+\epsilon}\), and the newer working-paper direction records
+\(x^{1/22+\epsilon}\) left intervals.  Gafni--Tao's exceptional-interval
+framework gives pointwise short-interval PNT above \(17/30\) and almost-all
+control down to \(2/15\).  The Matomaki--Radziwill--Shao--Tao--Teravainen
+higher-uniformity theorem supplies deep almost-all control for \(\Lambda\) and
+related functions.  None of these inputs asserts that every prime-square
+endpoint \(P^2\) is non-exceptional.
+\end{externalstatement}
+
+\begin{proof}
+Set \(X=P^2\).  A theorem at scale \(X^\theta\) becomes a Prime Matrix window
+of length \(P^{2\theta}\).  Hence
+\[
+  \theta=\frac{2}{43}\quad\Longrightarrow\quad X^\theta=P^{4/43},
+\]
+\[
+  \theta=\frac1{22}\quad\Longrightarrow\quad X^\theta=P^{1/11},
+\]
+and
+\[
+  \theta=\frac{2}{15}\quad\Longrightarrow\quad X^\theta=P^{4/15}.
+\]
+All these lengths are smaller than \(P=X^{1/2}\).  Thus, if they were
+pointwise at every \(X=P^2\), they would more than suffice for the half-window
+target.
+
+The obstruction is not scale but exceptional-set geometry.  In a dyadic block
+\([X,2X]\), the prime-square endpoint spine has size
+\[
+  \#\{P^2\in[X,2X]:P\ {\rm prime}\}\asymp \frac{X^{1/2}}{\log X},
+\]
+and therefore density about \(1/(X^{1/2}\log X)\).  An almost-all theorem
+permits a zero-density exceptional set, and such a set can in principle contain
+this entire arithmetic spine unless the theorem supplies additional
+spine-disjointness information.  The Prime Matrix row/column statement needs
+every endpoint, not density-one endpoints.  Therefore the required upgrade is a
+pointwise theorem on the prime-square spine or an object-sensitive signed sieve
+that forbids the exceptional set from carrying all \(P^2\) phases.
+\end{proof}
+
+\begin{remark}[Almost-all residual basis]
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-almost-all-exceptional-spine-audit.md.
+\end{quote}
+The current residual basis is
+\begin{quote}\scriptsize\ttfamily
+ExceptionalPrimeSquareSpineDisjointness\\
+OR PointwiseEndpointUniformityAtEveryPrimeSquare\\
+OR AlmostAllToAllRowsUpgradeWithArithmeticSpineRepulsion\\
+OR NoPrimeSquareExceptionalPhaseForGafniTaoBounds\\
+OR PhiLPFObjectSensitiveSignedSieveOnSparseSpine\\
+OR ThetaLeHalfPointwiseShortIntervalPrimeTheorem.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+almost\_all\_short\_interval\_inputs\_imported=true\\
+scale\_stronger\_than\_halfwindow\_if\_pointwise=true\\
+exceptional\_prime\_square\_spine\_excluded=false\\
+pointwise\_every\_prime\_square\_endpoint\_closed=false\\
+phi\_lpf\_parity\_closed=false\\
+prime\_square\_halfscale\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Parity-Breaking Candidate Source Audit}
 
 \begin{externalstatement}[Five-gate audit for parity-breaking candidates]
