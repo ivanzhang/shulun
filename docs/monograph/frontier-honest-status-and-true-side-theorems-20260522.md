@@ -1614,3 +1614,59 @@ $$\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.225P}{\log^2 P}$$
 跨越主项常数需要：
 - $1 \to 3/4$（内部到外部）：sieve（**已**集成于外部版）
 - $3/4 \to 0$（外部到 H_P）：跨越 Bombieri 1976 奇偶屏障（**70 年开放**）
+
+---
+
+## 附录 O：外部前沿 residual-gap 审计（2026-05-23 第十三轮）
+
+### O.1 目的
+
+本轮把所有最新可用外部输入统一换算成目标窗口中的**剩余缺口**，而不是继续堆叠定理名：
+
+- 点态短区间 $x^\theta$ 输入只给连续空行串界 $P^{2\theta-1+o(1)}$；
+- Linnik/AP 首素数指数 $L$ 只有在 $L\le 2$ 且常数窗口兼容时才进入 $P^2$ 方阵；
+- AP 平均分布即使模数范围覆盖 $q=P$，仍需 fixed-prime-modulus zero-exception transfer；
+- $P_2$ almost-prime 进入方阵只说明奇偶屏障尖锐，不能替代素数。
+
+新增证书：
+
+```text
+experiments/prime_matrix_external_frontier_residual_gap_audit.py
+data/prime-matrix-external-frontier-residual-gap-ledger.json
+docs/monograph/prime-matrix-external-frontier-residual-gap-audit.json
+docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md
+```
+
+### O.2 最强残余缺口读数
+
+| 方向 | 当前最强读数 | 转换后残余 | 是否闭合 |
+|---|---|---|---|
+| 已发表点态短区间 | BHP $\theta=0.525$ | 连续空行串 $P^{0.05+o(1)}$ | 否 |
+| 前沿预印本点态短区间 | Runbo Li v8 $\theta=0.52$ | 连续空行串 $P^{0.04+o(1)}$ | 否 |
+| 结构性短区间 | Guth--Maynard/Hieu $17/30$ | 行厚度 $P^{2/15+o(1)}$ | 否 |
+| 素模数兼容 Linnik | Meng $L=4.5$ | 高度超出 $P^2$ by $P^{2.5}$ | 否 |
+| 条件 Linnik | Bruna GLH $2+\epsilon$ | 条件且超出 $P^2$ by $P^\epsilon$ | 否 |
+| AP almost-prime | Li--Zhang--Cai $P_2$ exponent $1.8345$ | 有 $P^{0.1655}$ 方阵余量但对象为 $P_2$ | 否 |
+| AP 平均分布 | Pascadi $5/8-o(1)$ | 模数到 $P^{5/4-o(1)}$，但 fixed $q=P$ 零例外缺失 | 否 |
+
+### O.3 最新真剩余基
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+### O.4 边界声明
+
+这是真实非循环推进：每个外部输入都被转换成可检查的缺口数值或对象缺口。
+它不证明外部引理版或内部自足版完全无条件闭合。
+
+```text
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```

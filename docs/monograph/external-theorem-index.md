@@ -2021,6 +2021,51 @@ all_pass_K3-trivial-3term-Li_col=true
 这是 PNT-only 内部链的真实三项推进；但主项仍为 `P`，弱于外部 sieve 链的 `3P/4`，
 所以不关闭目标命题。
 
+## 45. 外部前沿 residual-gap 审计
+
+新增文件：
+
+```text
+experiments/prime_matrix_external_frontier_residual_gap_audit.py
+data/prime-matrix-external-frontier-residual-gap-ledger.json
+docs/monograph/prime-matrix-external-frontier-residual-gap-audit.json
+docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md
+```
+
+统一转换规则：
+
+```text
+pointwise short interval x^theta  ->  empty row-run residual P^(2theta-1+o(1))
+least AP prime p(a mod P) << P^L ->  column square closure only if L<=2
+average AP distribution           ->  needs fixed-prime-modulus zero-exception transfer
+P2 almost-prime in AP              ->  enters square but wrong parity object
+```
+
+最新读数：
+
+```text
+Baker-Harman-Pintz theta=0.525      -> run residual exponent 0.05
+Runbo Li v8 theta=0.52              -> run residual exponent 0.04 if accepted
+Guth-Maynard/Hieu theta=17/30       -> row thickening P^(2/15+o(1))
+Meng prime-modulus-compatible L=4.5 -> P^2.5 overshoot beyond P^2
+Bruna GLH L=2+epsilon               -> conditional + P^epsilon overshoot
+Li-Zhang-Cai P2 exponent 1.8345     -> square margin 0.1655 but wrong object
+Pascadi weighted AP exponent 5/8    -> modulus range P^(5/4-o(1)), fixed q=P transfer open
+```
+
+因此最新真剩余基为：
+
+```text
+PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer
+OR ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants
+OR NonlinearParityBreakingActualSourceConstructor
+```
+
+本层是真实的残差量化和防误用推进；它不关闭目标命题。
+
 ## 41. 2026-05-23 最新外部前沿版本核验与转换门槛
 
 本层更新 `experiments/prime_matrix_external_frontier_theorem_stress_router.py`

@@ -28970,6 +28970,58 @@ OR NonlinearParityBreakingActualSourceConstructor.
 No known imported theorem closes the row/column theorem unconditionally.
 \end{remark}
 
+\section{External Frontier Residual-Gap Audit}
+
+\begin{externalstatement}[Residual-gap audit for current external frontier]
+As of 2026-05-23, every imported external theorem leaves a quantified
+residual gate.  A pointwise short-interval theorem at exponent \(\theta\)
+near \(x\asymp P^2\) gives only an empty-row-run exponent
+\[
+  2\theta-1.
+\]
+Thus Baker--Harman--Pintz \(\theta=0.525\) leaves \(0.05\), and Runbo Li's
+arXiv v8 \(\theta=0.52\) would still leave \(0.04\) if accepted.  The
+Guth--Maynard/Hieu \(17/30\) inputs leave a row thickening
+\(P^{2/15+o(1)}\).  On the column side, a least-prime-in-AP theorem
+\(p(a\bmod P)\ll P^L\) enters the \(P^2\) square only if \(L\le2\);
+Meng's prime-modulus-compatible \(L=4.5\) still overshoots by \(P^{2.5}\).
+Bruna's GLH result reaches \(2+\varepsilon\), but remains conditional and
+outside the strict square by \(P^\varepsilon\).  Li--Zhang--Cai's
+\(P_2\)-almost-prime exponent \(1.8345\) enters the square but is the wrong
+parity object.  Average AP distribution results, including Pascadi's
+\(5/8-o(1)\), cover \(q=P\) in range but not as a fixed-prime-modulus
+zero-exception theorem.
+\end{externalstatement}
+
+\begin{proof}
+The transformations are direct scale substitutions.  A block of \(R\)
+empty \(P\)-rows gives a prime-free interval of length \(RP\) at
+\(x\asymp P^2\), so \(RP\ll x^\theta=P^{2\theta+o(1)}\) gives
+\(R\ll P^{2\theta-1+o(1)}\).  A column class modulo \(P\) is filled inside
+the \(P\times P\) square only if the first prime in that class is
+\(\le P^2\), i.e. \(L\le2\) with compatible constants.  Mean-value AP
+theorems average over moduli or weights and therefore do not imply a
+zero-exception theorem for the single prime modulus \(P\).  The \(P_2\)
+result has the right location but the wrong object.  Hence the audit closes
+only side bounds and misuse exclusions, not the row/column theorem.
+\end{proof}
+
+\begin{remark}[Residual basis]
+The current non-cyclic residual basis is
+\begin{quote}\scriptsize\ttfamily
+PointwiseShortIntervalPrimeTheoremThetaLeHalf\\
+OR GridTransferredShortIntervalSecondMomentAtThetaHalf\\
+OR LinnikExponentLeTwoWithSquareWindowConstants\\
+OR MeanValueAPToFixedPrimeModulusZeroExceptionTransfer\\
+OR ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants\\
+OR NonlinearParityBreakingActualSourceConstructor.
+\end{quote}
+The machine-readable certificate is archived as
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-external-frontier-residual-gap-audit.md.
+\end{quote}
+\end{remark}
+
 \section{K6 joint density and row-run rigidity}
 
 \begin{corollary}[K6: joint density and consecutive-block bound]

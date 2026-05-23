@@ -1,0 +1,234 @@
+{
+  "best_conditional_linnik_gap": "epsilon plus conditional GLH hypothesis",
+  "best_preprint_pointwise_row_residual": {
+    "empty_row_run_residual_exponent": 0.040000000000000036,
+    "name": "Runbo Li short intervals"
+  },
+  "best_published_pointwise_row_residual": {
+    "empty_row_run_residual_exponent": 0.050000000000000044,
+    "name": "Baker-Harman-Pintz 2001"
+  },
+  "best_published_prime_modulus_linnik_gap": {
+    "exponent_gap": 2.5,
+    "name": "Meng bounded-cubic-part AP prime"
+  },
+  "best_wrong_object_square_margin": {
+    "name": "Li-Zhang-Cai least P2 almost-prime in AP",
+    "square_margin": 0.16549999999999998,
+    "wrong_object": "P2 almost-prime, not prime"
+  },
+  "certificate_type": "prime_matrix_external_frontier_residual_gap_audit",
+  "external_lemma_version_unconditional_closed": false,
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_true_residual_basis": [
+    "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+    "GridTransferredShortIntervalSecondMomentAtThetaHalf",
+    "LinnikExponentLeTwoWithSquareWindowConstants",
+    "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+    "ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants",
+    "NonlinearParityBreakingActualSourceConstructor"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closes_row": false,
+      "empty_row_run_residual_exponent": 0.050000000000000044,
+      "input_theta": 0.525,
+      "kind": "pointwise_short_interval",
+      "name": "Baker-Harman-Pintz 2001",
+      "note": "给出已发表点态短区间 side theorem；行串残余指数为 0.05。",
+      "residual_gate": "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+      "row_window_exponent_in_P": 1.05,
+      "source": "https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/difference-between-consecutive-primes-ii/2EF13261B3B25458A25F41ED74AA2FC2",
+      "status": "published",
+      "target_theta": 0.5,
+      "theta_gap": 0.025000000000000022
+    },
+    {
+      "closes_row": false,
+      "empty_row_run_residual_exponent": 0.040000000000000036,
+      "input_theta": 0.52,
+      "kind": "pointwise_short_interval",
+      "name": "Runbo Li short intervals",
+      "note": "若接受，可把行串残余指数压到 0.04；仍大于 theta=1/2 门槛。",
+      "residual_gate": "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+      "row_window_exponent_in_P": 1.04,
+      "source": "https://arxiv.org/abs/2308.04458",
+      "status": "arXiv:2308.04458v8",
+      "target_theta": 0.5,
+      "theta_gap": 0.020000000000000018
+    },
+    {
+      "closes_row": false,
+      "empty_row_run_residual_exponent": 0.1333333333333333,
+      "input_theta": 0.5666666666666667,
+      "kind": "pointwise_short_interval",
+      "name": "Guth-Maynard zero-density consequence",
+      "note": "17/30 技术很强，但换算成行厚度仍是 P^(2/15+o(1))。",
+      "residual_gate": "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+      "row_window_exponent_in_P": 1.1333333333333333,
+      "source": "https://arxiv.org/abs/2405.20552",
+      "status": "arXiv:2405.20552v2",
+      "target_theta": 0.5,
+      "theta_gap": 0.06666666666666665
+    },
+    {
+      "closes_row": false,
+      "empty_row_run_residual_exponent": 0.1333333333333333,
+      "input_theta": 0.5666666666666667,
+      "kind": "pointwise_short_interval",
+      "name": "Le Duc Hieu prime APs in short intervals",
+      "note": "短区间内素数等差数列结构更强，但长度门槛仍未到单行 P。",
+      "residual_gate": "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+      "row_window_exponent_in_P": 1.1333333333333333,
+      "source": "https://arxiv.org/abs/2509.04883",
+      "status": "arXiv:2509.04883v2",
+      "target_theta": 0.5,
+      "theta_gap": 0.06666666666666665
+    },
+    {
+      "almost_all_available": true,
+      "closes_row": false,
+      "kind": "exceptional_set_to_grid_transfer",
+      "name": "Gafni-Tao exceptional short intervals",
+      "note": "almost-all/exceptional-set 信息不能自动控制所有 P-间隔行端点。",
+      "residual_gate": "GridTransferredShortIntervalSecondMomentAtThetaHalf",
+      "rigid_P_grid_pointwise_control": false,
+      "source": "https://arxiv.org/abs/2505.24017",
+      "status": "arxiv_exceptional_set_interface"
+    },
+    {
+      "closes_column": false,
+      "exponent_gap": 3.0,
+      "height_overshoot_over_P2": "P^3",
+      "kind": "least_prime_ap_linnik",
+      "linnik_exponent": 5.0,
+      "name": "Xylouris general Linnik published scale",
+      "note": "按当前账本记录为 <5 量级；距 P^2 方阵仍差约 P^3。",
+      "residual_gate": "LinnikExponentLeTwoWithSquareWindowConstants",
+      "source": "https://arxiv.org/abs/0906.2749",
+      "status": "published",
+      "target_exponent": 2.0
+    },
+    {
+      "closes_column": false,
+      "exponent_gap": 2.5,
+      "height_overshoot_over_P2": "P^2.5",
+      "kind": "least_prime_ap_linnik",
+      "linnik_exponent": 4.5,
+      "name": "Meng bounded-cubic-part AP prime",
+      "note": "素模数兼容，但首素数高度仍为 P^4.5，距 P^2 差 P^2.5。",
+      "residual_gate": "LinnikExponentLeTwoWithSquareWindowConstants",
+      "source": "https://xbna.pku.edu.cn/EN/Y2001/V37/I1/20",
+      "status": "published_special_prime_modulus_compatible",
+      "target_exponent": 2.0
+    },
+    {
+      "closes_column": false,
+      "height_overshoot_over_P2": "P^epsilon",
+      "kind": "conditional_linnik_near_square",
+      "linnik_exponent": "2+epsilon",
+      "name": "Bruna conditional GLH least AP prime",
+      "note": "GLH 下到 q^(2+epsilon)，是条件近门槛，不是无条件 strict P^2 方阵内闭合。",
+      "residual_gate": "ConditionalLinnikTwoPlusEpsilonToUnconditionalLinnikLeTwoWithConstants",
+      "source": "https://arxiv.org/abs/2603.25612",
+      "status": "conditional_arxiv",
+      "symbolic_gap": "epsilon plus conditional GLH hypothesis",
+      "target_exponent": 2.0
+    },
+    {
+      "almost_prime_exponent": 1.8345,
+      "closes_column": false,
+      "enters_P2_square": true,
+      "kind": "almost_prime_ap_wrong_object",
+      "name": "Li-Zhang-Cai least P2 almost-prime in AP",
+      "note": "指数进入 P^2，但对象是 P2 almost-prime；这正定位奇偶屏障。",
+      "residual_gate": "NonlinearParityBreakingActualSourceConstructor",
+      "source": "https://arxiv.org/abs/2103.13360",
+      "square_margin": 0.16549999999999998,
+      "status": "arxiv_wrong_parity_object"
+    },
+    {
+      "closes_column": false,
+      "distribution_exponent_in_x": 0.525,
+      "kind": "average_ap_distribution",
+      "modulus_range_exponent_in_P": 1.05,
+      "name": "Stadlmann smooth-moduli prime AP distribution",
+      "note": "模数范围覆盖 P，但平均/光滑模数结构不能推出固定素模数 P 的零例外全 residue。",
+      "prime_modulus_P_inside_range": true,
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2309.00425",
+      "status": "accepted_average_smooth_moduli",
+      "structure": "smooth moduli average"
+    },
+    {
+      "closes_column": false,
+      "distribution_exponent_in_x": 0.5263157894736842,
+      "kind": "average_ap_distribution",
+      "modulus_range_exponent_in_P": 1.0526315789473684,
+      "name": "Runbo Li smooth-moduli minorant",
+      "note": "minorant 越过 1/2 后仍是平均光滑模数输入，不是逐列点态正性。",
+      "prime_modulus_P_inside_range": true,
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2505.09629",
+      "status": "arXiv:2505.09629v3",
+      "structure": "smooth minorant average"
+    },
+    {
+      "closes_column": false,
+      "distribution_exponent_in_x": 0.625,
+      "kind": "average_ap_distribution",
+      "modulus_range_exponent_in_P": 1.25,
+      "name": "Pascadi weighted prime/smooth distribution",
+      "note": "模数范围到 P^(5/4-o(1))，但 weighted mean value 不给固定 P 零例外。",
+      "prime_modulus_P_inside_range": true,
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2505.00653",
+      "status": "arXiv:2505.00653v2",
+      "structure": "weighted/well-factorable mean value"
+    },
+    {
+      "closes_column": false,
+      "distribution_exponent_in_x": 0.5294117647058824,
+      "kind": "average_ap_distribution",
+      "modulus_range_exponent_in_P": 1.0588235294117647,
+      "name": "Runbo Li large-moduli AP bilinear",
+      "note": "q=P 在范围内，但结果仍是结构化平均而非固定素模数全 residue。",
+      "prime_modulus_P_inside_range": true,
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2602.20917",
+      "status": "arXiv:2602.20917v5",
+      "structure": "bilinear moduli average"
+    },
+    {
+      "closes_column": false,
+      "distribution_exponent_in_x": 0.53125,
+      "kind": "average_ap_distribution",
+      "modulus_range_exponent_in_P": 1.0625,
+      "name": "Runbo Li large-moduli AP trilinear",
+      "note": "q=P 在范围内，但 almost-all/结构化平均不能专化成每列有素数。",
+      "prime_modulus_P_inside_range": true,
+      "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer",
+      "source": "https://arxiv.org/abs/2602.20917",
+      "status": "arXiv:2602.20917v5",
+      "structure": "trilinear moduli average"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "e0f6a7571411f2bd29aaedb8d34d3fabc513281963a4642bc5cd0b8d4d71ef5c",
+    "docs/monograph/external-theorem-index.md": "6ea6e2accab1910e301f99981af46811d5a653f28bc4746636cb3da217ba56f6",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "6101334b1a09edec9b0ee3f5dbb2de4981ecda2bb8189be3c8cdfc9a4366bc35",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "experiments/prime_matrix_external_frontier_residual_gap_audit.py": "cd7b20910fb0c757f776603268cb61dba2f71bd3ae4c8fb72a818001c7a3bf0a",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2066d2cda52077808579747cea84944c78a9db60918ce2459019062d9cdbdb4e"
+  },
+  "status": "residual_gaps_quantified_target_open",
+  "strongest_average_ap_modulus_range": {
+    "modulus_range_exponent_in_P": 1.25,
+    "name": "Pascadi weighted prime/smooth distribution",
+    "residual_gate": "MeanValueAPToFixedPrimeModulusZeroExceptionTransfer"
+  },
+  "target_column_linnik_exponent": 2.0,
+  "target_row_theta": 0.5
+}
