@@ -1794,6 +1794,61 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 S：合成 P2 支持饱和审计（2026-05-23 第十七轮）
+
+本轮继续下钻上一轮的 P2 选择器反证：即使不使用“最早 P2”选择器，只看
+`P2` residue 支持本身，也不能得到破奇偶结论。新增证书：
+
+```text
+experiments/prime_matrix_composite_p2_support_saturation_audit.py
+data/prime-matrix-composite-p2-support-saturation-ledger.json
+docs/monograph/prime-matrix-composite-p2-support-saturation-audit.json
+docs/monograph/prime-matrix-composite-p2-support-saturation-audit.md
+```
+
+在 Li--Zhang--Cai 尺度 `X=floor(P^1.8345)` 内，样本读数为：
+
+| P | $X$ | prime 支持 | 合成 P2 支持 | 每列最少合成 P2 | 合成 P2/素数 | 合成 P2 > 素数的列 | 最小差 |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 101 | 4752 | 100/100 | 100/100 | 8 | 2.015649 | 96/100 | -1 |
+| 199 | 16490 | 198/198 | 198/198 | 13 | 2.196859 | 196/198 | 0 |
+| 499 | 89056 | 498/498 | 498/498 | 27 | 2.426252 | 498/498 | 5 |
+| 997 | 317034 | 996/996 | 996/996 | 54 | 2.562792 | 996/996 | 18 |
+| 2003 | 1140075 | 2002/2002 | 2002/2002 | 88 | 2.684857 | 2002/2002 | 32 |
+| 5003 | 6112774 | 5002/5002 | 5002/5002 | 195 | 2.826571 | 5002/5002 | 95 |
+
+因此以下 support-only 路线被删除：
+
+```text
+ResidueSupportOnlyP2ToPrimeTransfer
+```
+
+新的 `P2` 路线剩余基为：
+
+```text
+ObjectSensitivePrimeMinusCompositeP2SeparationInput
+OR SmallFactorCofactorAPCompositeFiberDominanceBound
+OR NonleastPrimeSelectorRequiresAdditionalDistributionInput
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+这是真推进，因为它说明 `P2` 支持覆盖本身可以完全由合成对象承担，且在
+样本大行逐列压过 prime 对象；但它仍只是有限审计和路线删除，不是全 P
+的无条件素数存在定理。
+
+```text
+support_only_p2_to_prime_transfer_rejected=true
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 R：P2 最早见证选择器路线反证审计（2026-05-23 第十六轮）
 
 本轮删除上一层剩余基中的一个伪出口：不能把 Li--Zhang--Cai 的 least-`P2`

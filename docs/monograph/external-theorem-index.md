@@ -1964,6 +1964,59 @@ internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
 
+## 49. 合成 P2 支持饱和审计
+
+本层继续下钻 P2-to-prime 转移，新增：
+
+```text
+experiments/prime_matrix_composite_p2_support_saturation_audit.py
+data/prime-matrix-composite-p2-support-saturation-ledger.json
+docs/monograph/prime-matrix-composite-p2-support-saturation-audit.json
+docs/monograph/prime-matrix-composite-p2-support-saturation-audit.md
+```
+
+外部背景仍是 Li--Zhang--Cai 的 least-`P2` AP 定理（`P^1.8345` 尺度）。
+本层审计一个更弱但常被误用的 support-only 出口：若只知道每个 residue class
+有 `P2` 支持，能否由支持信息推出 prime 支持。有限样本给出否定诊断：
+
+```text
+P=101,199,499,997,2003,5003:
+  composite P2 support covers every nonzero residue below floor(P^1.8345)
+P=499:
+  every nonzero residue has strictly more composite P2 objects than prime objects
+P=5003:
+  min(composite_P2_count - prime_count)=95
+  total composite_P2 / prime count ratio = 2.826571
+```
+
+因此删除的路线：
+
+```text
+ResidueSupportOnlyP2ToPrimeTransfer
+```
+
+更新后的剩余基：
+
+```text
+ObjectSensitivePrimeMinusCompositeP2SeparationInput
+OR SmallFactorCofactorAPCompositeFiberDominanceBound
+OR NonleastPrimeSelectorRequiresAdditionalDistributionInput
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+状态边界：
+
+```text
+support_only_p2_to_prime_transfer_rejected=true
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
