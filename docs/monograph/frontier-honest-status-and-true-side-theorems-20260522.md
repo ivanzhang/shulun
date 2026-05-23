@@ -1728,6 +1728,72 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q：P2 到素数转移原子审计（2026-05-23 第十五轮）
+
+本轮继续下钻上一轮的 `PrimeObjectNotP2AlmostPrime` 门。新增证书：
+
+```text
+experiments/prime_matrix_p2_to_prime_transfer_atom_audit.py
+data/prime-matrix-p2-to-prime-transfer-atom-ledger.json
+docs/monograph/prime-matrix-p2-to-prime-transfer-atom-audit.json
+docs/monograph/prime-matrix-p2-to-prime-transfer-atom-audit.md
+```
+
+闭合的小引理是：
+
+```text
+If P is prime, 1<=a<P, n≡a mod P, Ω(n)=2 and n<P^2,
+then n=r*m with prime r<P and m≡a*r^{-1} mod P.
+If n<=P^sigma with sigma<2, then r<=P^(sigma/2).
+```
+
+对 Li--Zhang--Cai 的 `P2` exponent `1.8345`，这把合成 P2 见证压到：
+
+```text
+r <= P^0.91725,
+m ≡ a*r^{-1} (mod P).
+```
+
+有限审计 `P<=997`：
+
+| P | 方阵内素数 | 方阵内合成 P2 | 合成 P2/素数 | 最早 P2 为合数的列比例 |
+|---:|---:|---:|---:|---:|
+| 101 | 1251 | 2650 | 2.118305 | 0.550000 |
+| 199 | 4163 | 9651 | 2.318280 | 0.580808 |
+| 499 | 21963 | 55623 | 2.532578 | 0.632530 |
+| 997 | 78059 | 208680 | 2.673362 | 0.621486 |
+
+所有样本中：
+
+```text
+cofactor_ap_identity_closed=true
+small_factor_bound_sample_closed=true
+lzc_small_factor_bound_sample_closed=true
+```
+
+因此 `P2` 路线的最新真实剩余基为：
+
+```text
+SmallFactorCofactorAPCompositeFiberDominanceBound
+OR PrimeBeforeCompositeP2SelectorInEveryFixedClass
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+这是真推进：它把“P2 错对象”精确化为小素因子/cofactor AP 半素数纤维；但并未证明
+这些半素数纤维不能耗尽固定列。
+
+```text
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 N：K3*-Dusart-upper（列方向 Dusart 上界对偶）+ K3-trivial-K-term-Li 一般式（2026-05-23 第十三轮）
 
 ### N.1 K3*-Dusart-upper（列方向最强外部引理版）

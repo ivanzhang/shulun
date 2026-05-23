@@ -1,0 +1,138 @@
+{
+  "aggregate_failures": {
+    "cofactor_ap_failures_square": 0,
+    "lzc_small_factor_failures": 0,
+    "small_factor_failures_square": 0
+  },
+  "certificate_type": "prime_matrix_p2_to_prime_transfer_atom_audit",
+  "exact_transfer_atom": {
+    "cofactor_ap_identity_closed": true,
+    "lzc_small_factor_bound_sample_closed": true,
+    "proved_by_factor_ordering": true,
+    "small_factor_bound_sample_closed": true,
+    "statement": "If P is prime, 1<=a<P, n≡a mod P, Ω(n)=2 and n<P^2, then n=r*m with prime r<P and m≡a*r^{-1} mod P. If n<=P^sigma with sigma<2, then r<=P^(sigma/2)."
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_source_notes": [
+    {
+      "name": "Li-Zhang-Cai least P2 almost-prime in AP",
+      "role": "supplies P2(a,q) << q^1.8345, which is square-compatible but not prime-object compatible",
+      "url": "https://arxiv.org/abs/2103.13360"
+    },
+    {
+      "name": "Ford-Maynard prime-producing sieve framework",
+      "role": "indicates the right kind of Type I/II prime-producing information needed, but does not supply this Prime Matrix source",
+      "url": "https://arxiv.org/abs/2407.14368"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "lzc_exponent": 1.8345,
+  "lzc_small_factor_exponent": 0.91725,
+  "new_residual_basis_after_p2_atom": [
+    "SmallFactorCofactorAPCompositeFiberDominanceBound",
+    "PrimeBeforeCompositeP2SelectorInEveryFixedClass",
+    "FixedPrimeModulusZeroExceptionTransferForPrimeObjects",
+    "SameObjectNonlinearActualSourceConstructorBeforeProjection",
+    "PointwiseShortIntervalPrimeTheoremThetaLeHalf",
+    "LinnikExponentLeTwoWithSquareWindowConstants"
+  ],
+  "p2_to_prime_transfer_closed": false,
+  "row_column_unconditional_closed": false,
+  "sample_extrema": {
+    "max_least_p2_composite_share_square": {
+      "P": 929,
+      "share": 0.6411637931034483
+    },
+    "max_semiprime_to_prime_ratio_square": {
+      "P": 997,
+      "ratio": 2.6733624566033387
+    }
+  },
+  "sample_max_prime_modulus": 997,
+  "sample_modulus_count": 164,
+  "sample_rows": [
+    {
+      "P": 101,
+      "cofactor_ap_failures_square": 0,
+      "least_p2_composite_residues_square": 55,
+      "least_p2_composite_share_square": 0.55,
+      "lzc_bound_floor": 4752,
+      "lzc_least_p2_composite_residues": 55,
+      "lzc_prime_total": 639,
+      "lzc_residues_with_p2": 100,
+      "lzc_semiprime_composite_total": 1288,
+      "lzc_semiprime_to_prime_ratio": 2.0156494522691704,
+      "lzc_small_factor_failures": 0,
+      "prime_total_square": 1251,
+      "residues_without_prime_in_square": 0,
+      "semiprime_composite_total_square": 2650,
+      "semiprime_to_prime_ratio_square": 2.1183053557154277,
+      "small_factor_failures_square": 0
+    },
+    {
+      "P": 199,
+      "cofactor_ap_failures_square": 0,
+      "least_p2_composite_residues_square": 115,
+      "least_p2_composite_share_square": 0.5808080808080808,
+      "lzc_bound_floor": 16490,
+      "lzc_least_p2_composite_residues": 115,
+      "lzc_prime_total": 1910,
+      "lzc_residues_with_p2": 198,
+      "lzc_semiprime_composite_total": 4196,
+      "lzc_semiprime_to_prime_ratio": 2.1968586387434557,
+      "lzc_small_factor_failures": 0,
+      "prime_total_square": 4163,
+      "residues_without_prime_in_square": 0,
+      "semiprime_composite_total_square": 9651,
+      "semiprime_to_prime_ratio_square": 2.318280086476099,
+      "small_factor_failures_square": 0
+    },
+    {
+      "P": 499,
+      "cofactor_ap_failures_square": 0,
+      "least_p2_composite_residues_square": 315,
+      "least_p2_composite_share_square": 0.6325301204819277,
+      "lzc_bound_floor": 89056,
+      "lzc_least_p2_composite_residues": 315,
+      "lzc_prime_total": 8624,
+      "lzc_residues_with_p2": 498,
+      "lzc_semiprime_composite_total": 20924,
+      "lzc_semiprime_to_prime_ratio": 2.426252319109462,
+      "lzc_small_factor_failures": 0,
+      "prime_total_square": 21963,
+      "residues_without_prime_in_square": 0,
+      "semiprime_composite_total_square": 55623,
+      "semiprime_to_prime_ratio_square": 2.5325775167326867,
+      "small_factor_failures_square": 0
+    },
+    {
+      "P": 997,
+      "cofactor_ap_failures_square": 0,
+      "least_p2_composite_residues_square": 619,
+      "least_p2_composite_share_square": 0.6214859437751004,
+      "lzc_bound_floor": 317034,
+      "lzc_least_p2_composite_residues": 619,
+      "lzc_prime_total": 27360,
+      "lzc_residues_with_p2": 996,
+      "lzc_semiprime_composite_total": 70118,
+      "lzc_semiprime_to_prime_ratio": 2.562792397660819,
+      "lzc_small_factor_failures": 0,
+      "prime_total_square": 78059,
+      "residues_without_prime_in_square": 0,
+      "semiprime_composite_total_square": 208680,
+      "semiprime_to_prime_ratio_square": 2.6733624566033387,
+      "small_factor_failures_square": 0
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "264bbf3aa97f7268604d34ce228dadc5a30335317f5742fda215373897380eb4",
+    "docs/monograph/external-theorem-index.md": "f51cfcb371884dbb39877b3ef6bd0db2b5003baa0f6474d088892cf4e1f89748",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "c4bcf69f25e766c8e667cd94f18ee6e65d21fdda715fb7bb4edca3164e861a01",
+    "docs/monograph/prime-matrix-external-frontier-residual-gap-audit.json": "9c956f71a7da91fab22864ccf26fb6ebfd5cdf784fd3764f0e890c0e1ab6f58a",
+    "docs/monograph/prime-matrix-parity-breaking-obstruction-audit.json": "f1649c686276f7c1ca75471aa23c60d54cc20180c34e676520e208f37d724235",
+    "experiments/prime_matrix_p2_to_prime_transfer_atom_audit.py": "d67cf75a14bbfe9a765afbe57e8b4b162db856844e1689b14acf2a7a629c72c4",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "d361463798460e2b5d9618884813945ec7eb40787d628b724a547746be87a0b4"
+  },
+  "status": "p2_wrong_object_split_to_small_factor_cofactor_ap_fibers_open"
+}

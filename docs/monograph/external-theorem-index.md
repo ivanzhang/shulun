@@ -1843,6 +1843,72 @@ OR GridTransferredShortIntervalSecondMomentAtThetaHalf
 OR NonlinearParityBreakingActualSourceConstructor
 ```
 
+## 47. P2 到素数转移原子审计
+
+本层继续下钻 Li--Zhang--Cai `P2` almost-prime 输入，新增：
+
+```text
+experiments/prime_matrix_p2_to_prime_transfer_atom_audit.py
+data/prime-matrix-p2-to-prime-transfer-atom-ledger.json
+docs/monograph/prime-matrix-p2-to-prime-transfer-atom-audit.json
+docs/monograph/prime-matrix-p2-to-prime-transfer-atom-audit.md
+```
+
+外部输入仍是：
+
+```text
+Li-Zhang-Cai arXiv:2103.13360v2:
+  least P2 almost-prime in AP with exponent 1.8345
+
+Ford-Maynard arXiv:2407.14368:
+  prime-producing sieve framework, useful as source-design guidance only
+```
+
+新闭合的自足原子：
+
+```text
+If P is prime, 1<=a<P, n≡a mod P, Ω(n)=2 and n<P^2,
+then n=r*m with prime r<P and m≡a*r^{-1} mod P.
+If n<=P^sigma with sigma<2, then r<=P^(sigma/2).
+```
+
+因此 Li--Zhang--Cai 的 `sigma=1.8345` 把合成 P2 见证压成：
+
+```text
+r <= P^0.91725
+m ≡ a*r^{-1} (mod P)
+```
+
+有限读数 `P<=997`：
+
+```text
+cofactor_ap_identity_closed=true
+small_factor_bound_sample_closed=true
+lzc_small_factor_bound_sample_closed=true
+max_semiprime_to_prime_ratio_square: P=997, ratio=2.673362
+max_least_p2_composite_share_square: P=929, share=0.641164
+```
+
+最新剩余基：
+
+```text
+SmallFactorCofactorAPCompositeFiberDominanceBound
+OR PrimeBeforeCompositeP2SelectorInEveryFixedClass
+OR FixedPrimeModulusZeroExceptionTransferForPrimeObjects
+OR SameObjectNonlinearActualSourceConstructorBeforeProjection
+OR PointwiseShortIntervalPrimeTheoremThetaLeHalf
+OR LinnikExponentLeTwoWithSquareWindowConstants
+```
+
+状态边界：
+
+```text
+p2_to_prime_transfer_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
 ## 46. 破奇偶候选源障碍审计
 
 本层新增一个独立外部源筛查证书：
