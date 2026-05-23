@@ -28768,6 +28768,64 @@ non-linear sieve technique bypassing Bombieri 1976 parity barrier.
 This is recorded honestly in the abstract and in
 \texttt{docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md}.
 
+\section{Internal self-contained K3-trivial}
+
+The K-series external versions above all use Brun--Titchmarsh-type
+sieve inputs (Montgomery--Vaughan 1973 or its arithmetic-progression
+analogue).  This section records the strictly weaker, but strictly
+\emph{internal} version that uses only the Prime Number Theorem
+(Hadamard 1896, de la Vall\'ee-Poussin 1896) and the trivial bound
+$\pi(x+y)-\pi(x)\le y$.
+
+\begin{provedstatement}[K3-trivial: PNT-only internal bound]
+For every prime $P$ large enough,
+\[
+  |E(P)|\le P-\frac{P}{2\log P}+O\!\Bigl(\frac{P}{\log^2 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+By PNT, $\pi(P^2)-\pi(P)=\frac{P^2}{2\log P}(1+o(1))$.  By the trivial
+interval-length bound, $N_P(k)\le P$ for every $k$.  Hence
+\[
+  (P-1-|E(P)|)\cdot P\ge \sum_{k\notin E(P)}N_P(k)=\pi(P^2)-\pi(P),
+\]
+giving $P-1-|E(P)|\ge \frac{P}{2\log P}(1+o(1))$, equivalently
+$|E(P)|\le P-\frac{P}{2\log P}+O(P/\log^2 P)$.
+\end{proof}
+
+\begin{provedstatement}[K3*-trivial: PNT-only internal column bound]
+For every prime $P$ large enough,
+\[
+  |E^*(P)|\le P-\frac{P}{2\log P}+O\!\Bigl(\frac{P}{\log^2 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+Identical to K3-trivial with rows replaced by columns, using
+$\sum_{j=1}^{P-1}M_P(j)=\pi(P^2)-1$ and $M_P(j)\le P$.
+\end{proof}
+
+\begin{remark}[Internal vs.\ external closure]
+The user-requested ``internal-self-contained version'' and
+``external-lemma version'' of $H_P$ closure correspond to the K-series
+above:
+
+\begin{itemize}
+\item \emph{Internal self-contained (PNT only)}: K3-trivial and
+  K3*-trivial give $|E(P)|, |E^*(P)|\le P(1-1/(2\log P))$.
+\item \emph{External-lemma (RS1962 + MV1973 + Dusart 2010)}: K3''',
+  K3*-Dusart, K3-united give $|E(P)|, |E^*(P)|<3P/4-P/(8\log P)$.
+\end{itemize}
+
+Both versions remain at distance $\Theta(P)$ from $H_P$ (which would
+require $|E(P)|=|E^*(P)|=0$).  Closing either gap is equivalent to
+unconditional Cram\'er-local / Linnik = 2, both 70-year open problems.
+The closure cannot be performed inside the linear-sieve framework
+(Bombieri 1976 parity barrier; cf.\ Iwaniec--Friedlander
+\emph{Opera de Cribro} Theorem 11.4 with $f(1/2)=0$).
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
