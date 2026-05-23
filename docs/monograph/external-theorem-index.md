@@ -1625,3 +1625,57 @@ OR BakerFrequencyLargeSieveOrDBGAverageReplacement
 ```
 
 禁止误用：Burgess 乘法角色和不能替代 RKS-log 加性倒数相位；EXT-BG 接受也不能当成自足重证。
+
+## 36. 两条替代线 RKS-log/RNRS 版本调和
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_rnrs_version_reconciliation_router.py
+data/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.json
+```
+
+本层不新增外部定理引用；它把最新 `RKS-log final atom` 与旧
+`RNRS/Rudnev transfer closure` 做版本调和。哈希审计给出：
+
+```text
+same_rks_log_object_reconciled=true
+same_log118_parameter_reconciled=true
+rnrs_imports_exact_statement=true
+noncycle_dependency_direction_closed=true
+latest_rks_log_open_flag_superseded_by_rnrs=true
+rks_log_current_active_obstruction=false
+```
+
+含义：RNRS/Rudnev 链处理的是同一个 Tail-log4/RKS2/RKS3 倒数 Kloosterman
+`log^-118` 输入，且其依赖方向只从 strict RKS/Rudnev/RNRS 文件导入两条替代线，
+不反向调用两条替代线结论。因此最新 RKS-log open 标记被删除。
+
+最新内部活动硬点回到：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+OR ActualNoncanonicalExactUVSupportLowerBound
+OR CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+外部引理版仍只是条件闭合：
+
+```text
+AcceptedFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+无黑箱外部版仍需同对象来源或谱证明：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层不把 RNRS 回填误写为目标命题闭合：ExactUV/source、FullS theorem-match、
+模型、PDEC/CleanKLS、Rate 与独立验收门仍需另行支付。

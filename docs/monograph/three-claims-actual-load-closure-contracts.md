@@ -22439,6 +22439,49 @@ OR BakerFrequencyLargeSieveOrDBGAverageReplacement
 该原子只处理 RKS/Tail-log4 加性倒数相位，不支付内部 source 前端、ExactUV、模型、
 PDEC/CleanKLS 或 Rate。
 
+### 1.182 two replacement lines RKS-log/RNRS version reconciliation 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_rnrs_version_reconciliation_router.py
+data/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-ledger.json
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.json
+```
+
+同步读数为：
+
+```text
+same_rks_log_object_reconciled=true
+same_log118_parameter_reconciled=true
+rnrs_imports_exact_statement=true
+noncycle_dependency_direction_closed=true
+latest_rks_log_open_flag_superseded_by_rnrs=true
+rks_log_current_active_obstruction=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一节锁定的 RKS-log/Baker-DB 原子与旧 RNRS/Rudnev 回填链
+不是两个不同 hardpoint。它们在 exact statement 名称、`log^-118` 参数与依赖哈希上对齐；
+RNRS 链只从 strict RKS/Rudnev/RNRS 方向导入，不用两条替代线结论反证自身。因此 RKS-log
+不再是当前活动承重点。
+
+最新内部承重点恢复为：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+OR ActualNoncanonicalExactUVSupportLowerBound
+OR CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+外部引理版仍只是 `AcceptedFullSKLSExtExternalContract AND
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 条件闭合；无黑箱外部版仍需
+FullS theorem-match、actual source capacity 或新 dispersion 证明。本层不支付 ExactUV/source、
+模型、PDEC/CleanKLS、Rate 或独立验收门。
+
 ### 1.258 两条替代线 terminal-leaf/source-bridge 同步更新
 
 新增机器证书：

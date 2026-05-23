@@ -23985,3 +23985,53 @@ OR BakerFrequencyLargeSieveOrDBGAverageReplacement
 严格自足版必须重证上述 RKS-log/Baker-DB 原子。Burgess 乘法角色和、FullS 谱闭合、
 six-field source 生成与 EXT-BG 接受均不能相互代偿。本层关闭最终原子定位，
 目标命题仍未无条件闭合。
+
+## 330V. Two replacement lines RKS-log/RNRS version reconciliation frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_two_replacement_lines_rks_log_rnrs_version_reconciliation_router.py
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.md
+docs/monograph/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-router.json
+data/prime-matrix-two-replacement-lines-rks-log-rnrs-version-reconciliation-ledger.json
+```
+
+同步结果：
+
+```text
+status=two_replacement_lines_rks_log_rnrs_reconciled_exactuv_source_frontier_restored
+same_rks_log_object_reconciled=true
+same_log118_parameter_reconciled=true
+rnrs_imports_exact_statement=true
+noncycle_dependency_direction_closed=true
+latest_rks_log_open_flag_superseded_by_rnrs=true
+rks_log_current_active_obstruction=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：330U 的 RKS-log final atom 只是锁定了 exact statement；
+旧 RNRS/Rudnev 回填证书处理的是同一个 Tail-log4/RKS2/RKS3 `log^-118` 输入，并且
+依赖方向不经过两条替代线结论。因此可非循环导入 RNRS 回填，删除 RKS-log 活动 open 标记。
+
+最新内部活动 hardpoint 回到：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+OR ActualNoncanonicalExactUVSupportLowerBound
+OR CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+```
+
+外部无黑箱版仍需：
+
+```text
+(ExactPrimarySourceFullSNonAPWFDKLSTheoremMatch
+ OR ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+ OR NewAutomorphicDispersionProof)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本层不把 RNRS 版本调和伪装成目标命题证明；ExactUV/source、FullS theorem-match、
+模型、PDEC/CleanKLS、Rate 和独立验收门仍在 frontier 上。
