@@ -3214,6 +3214,99 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61K. Phi-LPF q-support row-averaged additive-k hole nonempty four-class reduction 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_nonempty_four_class_reduction_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.md
+```
+
+本层继续下钻五类分解中的 `empty_cell` packet。固定 `P,q` 后，carrier
+区间
+
+```text
+M_{P,q}=[max(P/2+1,q),2P-1]∩Z
+```
+
+上的映射 `m -> floor(qm/P)` 单调，且因为 `q<P`，相邻载体的 `k` 值增量
+只能是 `0` 或 `1`。因此其像集没有中间缺口。既然真实 sparse 支撑
+`K_{P,q}` 的 `minK` 与 `maxK` 都来自这个像集，则 `[minK,maxK]` 内每个
+completion hole 都有至少一个载体整数 `m`；hole 不能是 empty cell。
+
+所以 correction 恒等式从五类进一步压成四类：
+
+```text
+S_H = S_even + S_prime + S_lpf3 + S_lpf5
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+q_bucket_count_total=6020
+previous_q_bucket_count_total=6020
+real_k_count_total=299977
+previous_real_k_count_total=299977
+hole_count_total=1302951
+previous_hole_count_total=1302951
+four_class_hole_count_total=1302951
+carrier_gap_count_total=0
+selected_span_missing_count_total=0
+empty_hole_count_total=0
+previous_empty_hole_count_total=0
+forbidden_hole_count_total=0
+max_carrier_fiber_size=2
+counts_match_previous_hole_class_audit=true
+carrier_floor_map_no_skip_verified=true
+selected_span_nonempty_verified=true
+empty_class_eliminated=true
+four_class_reduction_closed=true
+count_even_singleton_total=373676
+count_odd_candidate_prime_total=355919
+count_odd_candidate_lpf3_total=409713
+count_odd_candidate_lpf5_total=163643
+four_class_phase_control_closed=false
+```
+
+外部前沿影响：FKMS trace-function、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright 2026 unbalanced convolution/Kloosterman
+fractions 与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 参数估计，
+仍需要先把四类 packet 中的一类嵌入 trace/Kloosterman/Type-II/convolution
+支撑。本层只删除空载体 packet，不提供四类 packet 的相消。
+
+新的最新最窄口：
+
+```text
+FourClassHolePhaseCancellationOrAbsorption
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+carrier_floor_map_no_skip_closed=true
+selected_span_nonempty_closed=true
+empty_hole_class_eliminated=true
+four_class_hole_phase_identity_closed=true
+four_class_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

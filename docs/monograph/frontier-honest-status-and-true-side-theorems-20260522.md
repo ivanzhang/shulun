@@ -3363,6 +3363,95 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13K：Phi-LPF q-support row-averaged additive-k hole nonempty four-class reduction 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_nonempty_four_class_reduction_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.md
+```
+
+本层从上一轮五类分解继续剥离 `empty_cell`。固定 `P,q` 时，载体整数区间
+
+```text
+M_{P,q}=[max(P/2+1,q),2P-1]∩Z
+```
+
+上的 `m -> floor(qm/P)` 单调，且相邻差为 `0` 或 `1`。故 carrier floor
+像集没有跳过中间 `k`。对任何有真实 sparse 支撑的 q-bucket，
+`[min K_{P,q},max K_{P,q}]` 内的 completion hole 全部有非空 product-cell。
+
+于是
+
+```text
+S_H = S_even + S_prime + S_lpf3 + S_lpf5
+```
+
+### Q13K.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+q_bucket_count_total=6020
+real_k_count_total=299977
+hole_count_total=1302951
+four_class_hole_count_total=1302951
+carrier_gap_count_total=0
+selected_span_missing_count_total=0
+empty_hole_count_total=0
+forbidden_hole_count_total=0
+max_carrier_fiber_size=2
+counts_match_previous_hole_class_audit=true
+carrier_floor_map_no_skip_verified=true
+selected_span_nonempty_verified=true
+empty_class_eliminated=true
+four_class_reduction_closed=true
+count_even_singleton_total=373676
+count_odd_candidate_prime_total=355919
+count_odd_candidate_lpf3_total=409713
+count_odd_candidate_lpf5_total=163643
+four_class_phase_control_closed=false
+```
+
+### Q13K.2 诚实边界
+
+本层真推进是把五类 correction 删除一个空类，压成四个非空 packet。它仍没有
+证明 even/prime/LPF3/LPF5 packet 的统一相消或吸收；外部 trace/Kloosterman/
+Type-II/卷积定理也仍需要先完成同对象嵌入。
+
+最新最窄口：
+
+```text
+FourClassHolePhaseCancellationOrAbsorption
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+carrier_floor_map_no_skip_closed=true
+selected_span_nonempty_closed=true
+empty_hole_class_eliminated=true
+four_class_hole_phase_identity_closed=true
+four_class_phase_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

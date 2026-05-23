@@ -33219,6 +33219,87 @@ row-averaged-additive-k-hole-class-phase-decomposition-audit.md.
 \end{quote}
 \end{remark}
 
+\section{No empty holes and the four-class correction}
+
+\begin{theorem}[No empty holes in the row-averaged additive-\(k\) completion]
+Fix a selected q-bucket in the row-averaged additive-\(k\) normal form, and
+let
+\[
+  M_{P,q}=\{\max(P/2+1,q)\le m\le 2P-1:\ m\in{\bf Z}\}.
+\]
+Then the map \(m\mapsto \lfloor qm/P\rfloor\) has no skipped values between
+any two values in its image.  Consequently every completion hole between
+\(\min{\mathcal K}_{P,q}\) and \(\max{\mathcal K}_{P,q}\) has a non-empty
+product cell.  Hence
+\[
+  S_{\emptyset}(h)=0
+\]
+and the hole-correction phase reduces to the four non-empty local packets
+\[
+  S_H(h)=S_{\rm even}(h)+S_{\rm prime}(h)+S_{3}(h)+S_{5}(h).
+\]
+\end{theorem}
+\begin{proof}
+The function \(m\mapsto qm/P\) is increasing.  Since \(q<P\), adjacent carrier
+integers satisfy
+\[
+  0\le
+  \left\lfloor \frac{q(m+1)}{P}\right\rfloor
+  -\left\lfloor \frac{qm}{P}\right\rfloor
+  \le 1.
+\]
+Thus the integer-valued floor map can pause or move by one, but it cannot jump
+over an intermediate \(k\).  Its image on the integer interval \(M_{P,q}\) is
+therefore a contiguous integer interval.  The selected support
+\({\mathcal K}_{P,q}\) is a subset of that image, so every integer between
+\(\min{\mathcal K}_{P,q}\) and \(\max{\mathcal K}_{P,q}\) is also attained by
+some carrier \(m\in M_{P,q}\).  A completion hole is by definition a missing
+selected-support value inside this span; it is not a missing carrier value.
+Therefore the empty-cell class is identically zero.  Combining this with the
+five-class partition gives the displayed four-class identity.
+\end{proof}
+
+\begin{remark}[Finite nonempty ledger and remaining phase obstruction]
+The audit up to \(P\le 1009\) gives
+\[
+  6020\ \text{q-buckets},\qquad
+  299977\ \text{real }k\text{-support values},\qquad
+  1302951\ \text{completion holes}.
+\]
+The carrier floor map has no gap and the selected span has no empty product
+cell:
+\[
+  \texttt{carrier\_gap\_count\_total}=0,\qquad
+  \texttt{selected\_span\_missing\_count\_total}=0,\qquad
+  \texttt{empty\_hole\_count\_total}=0.
+\]
+The four non-empty classes account for all holes:
+\[
+  373676\ \text{even singletons},\quad
+  355919\ \text{prime candidates},\quad
+  409713\ \text{LPF }3,\quad
+  163643\ \text{LPF }5.
+\]
+This closes the empty-cell packet only.  It does not prove cancellation or
+absorption for the four non-empty packets.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+FourClassHolePhaseCancellationOrAbsorption\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-hole-nonempty-four-class-reduction-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
