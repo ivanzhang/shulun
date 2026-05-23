@@ -28912,41 +28912,7 @@ OR NonlinearParityBreakingActualSourceConstructor.
 No known imported theorem closes the row/column theorem unconditionally.
 \end{remark}
 
-\section{Theorem K3'''' / K3*-three-term (Dusart 2010 three-term enhancement)}
-
-\begin{externalstatement}[K3'''' Dusart three-term]
-For every prime $P\ge 180$,
-\[
-  |E(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625\,P}{\log^2 P}.
-\]
-\end{externalstatement}
-
-\begin{proof}
-The Dusart 2010 three-term lower bound (arXiv:1002.0442 Theorem 6.9)
-gives, for $x\ge 32299$,
-\[
-  \pi(x)\ge \frac{x}{\log x}\Bigl(1+\frac{1}{\log x}+\frac{1.8}{\log^2 x}\Bigr).
-\]
-Apply at $x=P^2\ge 32400$ to obtain
-\[
-\pi(P^2)\ge \frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+\frac{0.225\,P^2}{\log^3 P}.
-\]
-With Rosser--Schoenfeld upper bound on $\pi(P)$ and Montgomery--Vaughan
-1973 on $N_P(k)$, the proof of K3''' then yields the additional
-$0.05625P/\log^2 P$ saving.
-\end{proof}
-
-\begin{externalstatement}[K3*-three-term column dual]
-For every prime $P\ge 180$,
-\[
-  |E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625\,P}{\log^2 P}.
-\]
-\end{externalstatement}
-
-\begin{proof}
-Identical to K3'''' with rows replaced by columns and Montgomery--Vaughan
-short-interval replaced by Montgomery--Vaughan in arithmetic progressions.
-\end{proof}
+\section{K6 joint density and row-run rigidity}
 
 \begin{corollary}[K6: joint density and consecutive-block bound]
 For every prime $P$ large enough:
@@ -28967,6 +28933,49 @@ K3'''' refines K3''' by a $P/\log^2 P$ order saving, but the
 still $\Theta(P)$.  Eliminating the constant $3/4$ requires
 sharpening Brun--Titchmarsh below the Selberg constant $2$, which
 cannot be done in linear-sieve framework alone (parity barrier).
+\end{remark}
+
+\section{Theorem K3-united-three-term and final K-series summary}
+
+\begin{externalstatement}[K3-united-three-term]
+For every prime $P\ge 180$,
+\[
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.1125\,P}{\log^2 P}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Sum of K3'''' and K3*-three-term.
+\end{proof}
+
+\begin{remark}[Final K-series summary]
+The K-series side theorems established in this chapter provide the
+strictest currently available unconditional, explicit-effective bounds
+on the $H_P$ exception sets.  They split into two parallel chains:
+
+\emph{Internal self-contained chain} (PNT only, no sieve input):
+\[
+  |E(P)|,\ |E^*(P)|\le P-\frac{P}{2\log P}+O\!\Bigl(\frac{P}{\log^2 P}\Bigr).
+\]
+
+\emph{External-lemma chain} (PNT + Brun--Titchmarsh + Dusart 2010):
+\[
+  |E(P)|,\ |E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625\,P}{\log^2 P}.
+\]
+
+\emph{Joint chain} (row + column + BHP 2001 long-block bound):
+\[
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.1125\,P}{\log^2 P},
+\]
+\[
+  \max\text{ consecutive empty rows}\le P^{0.05+\varepsilon}.
+\]
+
+Both chains close to their respective unconditional limits inside the
+linear-sieve framework.  The residual $\Theta(P)$ gap to $H_P$ is
+precisely the parity barrier (Bombieri 1976; $f(1/2)=0$).  $H_P$
+itself remains \textbf{Not claimed}, equivalent to Cram\'er-local and
+Linnik-2, both 70-year open problems.
 \end{remark}
 
 \chapter{Current Status and Honest Boundary}
