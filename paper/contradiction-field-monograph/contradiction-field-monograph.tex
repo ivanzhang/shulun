@@ -29298,6 +29298,81 @@ row\_column\_unconditional\_closed=false.
 \end{quote}
 \end{remark}
 
+\section{Short-Interval Transference Parity Audit}
+
+\begin{externalstatement}[Short-interval transference does not localize the first prime-square row]
+Short-interval arithmetic-progression and transference inputs are genuine
+external technology, but they do not by themselves close the Prime Matrix
+Phi-LPF parity gate.  Le Duc Hieu's 2025 preprint proves \(k\)-term prime
+arithmetic progressions in intervals \([x,x+x^\theta]\) for
+\(\theta>17/30\).  Green--Tao/W-trick transference supplies a mechanism for
+prime patterns after small-prime normalization.  BDH-type inputs supply
+mean-square or average control.  None of these statements is a pointwise
+assertion that every prime-square endpoint \(P^2\) contains a prime in the
+first or last length-\(P\) half-window.
+\end{externalstatement}
+
+\begin{proof}
+Put \(X=P^2\).  A short interval of length \(X^\theta\) becomes a Prime Matrix
+window of length \(P^{2\theta}\).  The target half-scale row is exactly
+\(\theta=1/2\), because \(X^{1/2}=P\).  Guth--Maynard's \(17/30\) exponent
+gives
+\[
+  X^{17/30}=P^{17/15}=P\cdot P^{2/15},
+\]
+and any \(\theta>17/30\) gives an even thicker block
+\[
+  P^{2\theta}=P\cdot P^{2\theta-1}.
+\]
+Thus Hieu's short-interval prime-AP input lives in a block with positive row
+thickness \(P^{2\theta-1}\), not in a single Prime Matrix row.
+
+Pattern abundance in the full container
+\[
+  (P^2,P^2+P^{2\theta}]
+\]
+does not force a prime in the initial subinterval \((P^2,P^2+P]\).  For
+\(\theta>1/2\), the outer tail
+\[
+  [P^2+P,P^2+P^{2\theta}]
+\]
+has length comparable to the full container, so the whole pattern count can be
+absorbed outside the first row unless an additional localization theorem is
+proved.
+
+The W-trick removes logarithmic small-prime biases and enables dense-model
+transference, but Phi-LPF closure requires avoiding every residue cover from
+all \(q<P\), uniformly at each prime-square endpoint.  Similarly, BDH-type
+mean-square control does not preclude a sparse exceptional set containing all
+prime-square phases.  Therefore these inputs narrow the residual basis but do
+not break the same-object parity obstruction.
+\end{proof}
+
+\begin{remark}[Transference residual basis]
+The certificate is archived in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-short-interval-transference-parity-audit.md.
+\end{quote}
+The current residual basis is
+\begin{quote}\scriptsize\ttfamily
+ThetaLeHalfUniformShortIntervalPrimeTheorem\\
+OR APPatternLocalizationInsidePrimeSquareHalfWindow\\
+OR BDHNoExceptionalPrimeSquarePhaseTheorem\\
+OR WTrickToFullPhiLPFObjectSensitiveSieve\\
+OR MaynardClusterAnchoredAtEveryPrimeSquare\\
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof.
+\end{quote}
+The boundary status is
+\begin{quote}\scriptsize\ttfamily
+short\_interval\_transference\_inputs\_imported=true\\
+prime\_pattern\_to\_first\_row\_transfer\_closed=false\\
+w\_trick\_phi\_lpf\_parity\_closed=false\\
+bdh\_pointwise\_all\_rows\_closed=false\\
+prime\_square\_halfscale\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{remark}
+
 \section{Parity-Breaking Candidate Source Audit}
 
 \begin{externalstatement}[Five-gate audit for parity-breaking candidates]

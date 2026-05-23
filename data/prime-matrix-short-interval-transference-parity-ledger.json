@@ -1,0 +1,184 @@
+{
+  "bdh_pointwise_all_rows_closed": false,
+  "certificate_type": "prime_matrix_short_interval_transference_parity_audit",
+  "decision_gates": [
+    {
+      "closed": true,
+      "gate": "ShortIntervalAPTransferenceImported",
+      "meaning": "registered Hieu/Green--Tao style prime-pattern transference as external input",
+      "proved": false,
+      "remaining": "EndpointLocalizationInsidePrimeSquareHalfWindow"
+    },
+    {
+      "closed": false,
+      "gate": "ThetaGreater17Over30AtPrimeSquareScale",
+      "meaning": "theta>17/30 gives P^(2/15+epsilon) row thickening after X=P^2",
+      "proved": false,
+      "remaining": "ThetaLeHalfUniformShortIntervalPrimeTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "PrimePatternAbundanceForcesFirstRowPrime",
+      "meaning": "outer tail can absorb the whole-pattern count at theta>1/2",
+      "proved": false,
+      "remaining": "APPatternLocalizationInsidePrimeSquareHalfWindow"
+    },
+    {
+      "closed": false,
+      "gate": "WTrickBreaksPhiLPFParity",
+      "meaning": "W-trick handles small logarithmic primes and dense models, not all q<P Phi-LPF covers",
+      "proved": false,
+      "remaining": "WTrickToFullPhiLPFObjectSensitiveSieve"
+    },
+    {
+      "closed": false,
+      "gate": "BDHMeanSquareGivesAllRows",
+      "meaning": "mean-square/AP averages do not remove every prime-square endpoint exception",
+      "proved": false,
+      "remaining": "BDHNoExceptionalPrimeSquarePhaseTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "external lemma and internal self-contained versions remain open",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources": [
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "k-term prime APs in intervals [x,x+x^theta] for theta>17/30",
+      "name": "Le Duc Hieu, Arithmetic progressions of primes in short intervals beyond the 17/30 barrier",
+      "project_role": "prime-pattern abundance in thick short intervals; not endpoint-localized halfscale",
+      "url": "https://arxiv.org/abs/2509.04883",
+      "verified_version": "arXiv:2509.04883v1, 2025"
+    },
+    {
+      "acceptance_status": "published",
+      "claim_type": "short-interval PNT at length x^(17/30+o(1))",
+      "name": "Guth--Maynard, New large value estimates for Dirichlet polynomials",
+      "project_role": "analytic input behind the 17/30 frontier; still gives thick rows at X=P^2",
+      "url": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "verified_version": "Annals 203(2), 2026"
+    },
+    {
+      "acceptance_status": "published_related_preprint",
+      "claim_type": "primes in short intervals/arithmetic progressions for most moduli or averaged settings",
+      "name": "Matomaki--Shao, Vinogradov's theorem with almost equal summands",
+      "project_role": "useful AP distribution technology; not all prime-square endpoints",
+      "url": "https://arxiv.org/abs/1405.6592",
+      "verified_version": "arXiv:1405.6592"
+    },
+    {
+      "acceptance_status": "arxiv_preprint",
+      "claim_type": "L-function-free short-interval/AP technology at much longer scales",
+      "name": "Matomaki--Merikoski--Teravainen, Primes in arithmetic progressions and short intervals without L-functions",
+      "project_role": "methodological input; scale far above Prime Matrix halfscale",
+      "url": "https://arxiv.org/abs/2401.17570",
+      "verified_version": "arXiv:2401.17570v1, 2024"
+    },
+    {
+      "acceptance_status": "published",
+      "claim_type": "global transference theorem for prime AP patterns",
+      "name": "Green--Tao, The primes contain arbitrarily long arithmetic progressions",
+      "project_role": "transference architecture; not local pointwise prime existence",
+      "url": "https://arxiv.org/abs/math/0404188",
+      "verified_version": "Annals 167(2), 2008"
+    }
+  ],
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "mean_square_obstruction": {
+    "bdh_or_average_role": "controls many moduli/intervals on average",
+    "closes_row_column_unconditional": false,
+    "known_failure_mode": "a sparse exceptional set can still contain all prime-square rows unless an object-sensitive endpoint theorem is added",
+    "missing_pointwise_gate": "no exceptional prime-square phase for all P and all relevant fibers"
+  },
+  "new_residual_basis": [
+    "ThetaLeHalfUniformShortIntervalPrimeTheorem",
+    "APPatternLocalizationInsidePrimeSquareHalfWindow",
+    "BDHNoExceptionalPrimeSquarePhaseTheorem",
+    "WTrickToFullPhiLPFObjectSensitiveSieve",
+    "MaynardClusterAnchoredAtEveryPrimeSquare",
+    "SameObjectSignedDispersionOrAutomorphicEndpointProof"
+  ],
+  "pattern_count_localization_obstruction": {
+    "closes_prime_square_halfscale": false,
+    "outer_tail_can_absorb_patterns": true,
+    "reason": "when theta>1/2, the outer tail length is comparable to the whole thick container, so pattern abundance need not intersect the first row",
+    "required_statement": "there is a prime inside the initial/final length-P subinterval for every prime P",
+    "whole_container_statement": "there are prime APs or many primes in a short interval of length X^theta"
+  },
+  "prime_pattern_to_first_row_transfer_closed": false,
+  "prime_square_halfscale_closed": false,
+  "row_column_unconditional_closed": false,
+  "scale_audit": {
+    "input_variable": "X",
+    "prime_square_specialization": "X=P^2",
+    "records": [
+      {
+        "label": "target_half_scale",
+        "length_after_x_equals_p_square": "P^1",
+        "row_thickness_exponent": 0.0,
+        "single_row_halfscale": true,
+        "theta": 0.5
+      },
+      {
+        "label": "hieu_beyond_17_over_30_plus_0.001",
+        "length_after_x_equals_p_square": "P^1.13533333333",
+        "row_thickness_exponent": 0.135333333333,
+        "single_row_halfscale": false,
+        "theta": 0.567666666667
+      },
+      {
+        "label": "guth_maynard_17_over_30",
+        "length_after_x_equals_p_square": "P^1.13333333333",
+        "row_thickness_exponent": 0.133333333333,
+        "single_row_halfscale": false,
+        "theta": 0.566666666667
+      },
+      {
+        "label": "legacy_0.52_prime_gap_input",
+        "length_after_x_equals_p_square": "P^1.04",
+        "row_thickness_exponent": 0.04,
+        "single_row_halfscale": false,
+        "theta": 0.52
+      },
+      {
+        "label": "l_function_free_39_over_40",
+        "length_after_x_equals_p_square": "P^1.95",
+        "row_thickness_exponent": 0.95,
+        "single_row_halfscale": false,
+        "theta": 0.975
+      }
+    ],
+    "target_interval": "(P^2, P^2+P] or [P^2-P, P^2)",
+    "target_theta": 0.5,
+    "why_theta_gt_half_does_not_localize": "for theta>1/2 the container (P^2,P^2+P^(2theta)] has an outer tail of length P^(2theta)-P, asymptotically almost the whole container"
+  },
+  "short_interval_transference_inputs_imported": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "f89615837d03f983a23b8df58e97ac91071f14777c1c655a0f3cecb3886e0cdf",
+    "docs/monograph/external-theorem-index.md": "c3507240bf61476760dccbc86ea995da9e740b230315f645aad6bffc0e1e39de",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "86a6817098ab5de7ca435defd0021b48fcc95978a7bc7d79a7e705117b5b8c35",
+    "docs/monograph/prime-matrix-composite-p2-support-saturation-audit.json": "979f733cab5884a32ee57234873e1b161b7c4677a2f196642130e0aa8661b757",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "docs/monograph/prime-matrix-legendre-frontier-external-audit.json": "f8076427ecee0eeb7d6bf2e9296d6c243def0a62cf6fe7f9c9451ca9b5a4f9c1",
+    "docs/monograph/prime-matrix-parity-breaking-obstruction-audit.json": "f1649c686276f7c1ca75471aa23c60d54cc20180c34e676520e208f37d724235",
+    "docs/monograph/prime-matrix-prime-square-halfscale-specialization-audit.json": "4dcd74175d9c2ee211e586f7aaa9ddc300763c9b84ef668db8e92f4c63b4191b",
+    "docs/monograph/prime-matrix-prime-square-pm1-sandwich-audit.json": "0c4bc76f173719e64ff43013cb111cfb25c5a89b27c6ea5521299113198ceef2",
+    "experiments/prime_matrix_short_interval_transference_parity_audit.py": "899f261984411b40a83359e7c2e338322ccc40e3fa717e5c88e92f86c54c13ac",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "156ff562c2f5a5fdb269f02cefa43a44006e7de3fb8e696840ac0749c9628024"
+  },
+  "status": "transference_and_prime_pattern_inputs_are_not_single_row_phi_lpf_parity_closure",
+  "transference_obstruction": {
+    "closes_single_row_halfscale": false,
+    "full_phi_lpf_sieve_needed": "avoid all q<P residue covers, not only W with q up to logarithmic size",
+    "green_tao_or_w_trick_role": "removes small prime biases and transfers dense-model pattern counts",
+    "missing_prime_matrix_property": "anchoring every prime-square endpoint and every Phi-LPF row/column fiber",
+    "parity_breaking": false
+  },
+  "w_trick_phi_lpf_parity_closed": false
+}

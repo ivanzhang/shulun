@@ -2603,3 +2603,86 @@ p3_to_prime_transfer_closed=false
 prime_square_halfscale_closed=false
 row_column_unconditional_closed=false
 ```
+
+## 54. 短区间转移法奇偶审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_short_interval_transference_parity_audit.py
+data/prime-matrix-short-interval-transference-parity-ledger.json
+docs/monograph/prime-matrix-short-interval-transference-parity-audit.json
+docs/monograph/prime-matrix-short-interval-transference-parity-audit.md
+```
+
+本层审计短区间 AP/Green--Tao 转移、BDH 均方和 L-function-free 技术是否
+能从外部突破 Phi-LPF 奇偶障碍。
+
+外部源快照：
+
+```text
+Le Duc Hieu 2025:
+  k-term prime APs in [x,x+x^theta], theta>17/30.
+  这是厚短区间素数模式丰度，不是 prime-square 首行定位。
+
+Guth--Maynard 2026:
+  theta=17/30 short-interval PNT technology.
+  X=P^2 后仍有 P^(2/15) 行厚度。
+
+Green--Tao/W-trick:
+  转移素数模式和小素数偏差。
+  不等于筛掉所有 q<P 的 Phi-LPF residue covers。
+
+BDH/平均 AP 输入:
+  控制多数模数或均方误差。
+  不排除所有 prime-square exceptional phase。
+
+Matomaki--Merikoski--Teravainen:
+  L-function-free AP/short-interval 技术有方法价值。
+  尺度仍远大于半窗。
+```
+
+尺度换算：
+
+```text
+X=P^2, interval length X^theta=P^(2theta).
+target theta=1/2 -> P.
+theta=17/30 -> P^(17/15)=P*P^(2/15).
+theta=17/30+epsilon -> P^(17/15+2epsilon).
+```
+
+因此，只要 `theta>1/2`，容器
+
+```text
+(P^2, P^2+P^(2theta)]
+```
+
+的外尾段
+
+```text
+[P^2+P, P^2+P^(2theta)]
+```
+
+长度仍与整个厚容器同阶；素数 AP 或素数丰度完全可能被外尾段吸收。
+
+新的剩余基为：
+
+```text
+ThetaLeHalfUniformShortIntervalPrimeTheorem
+OR APPatternLocalizationInsidePrimeSquareHalfWindow
+OR BDHNoExceptionalPrimeSquarePhaseTheorem
+OR WTrickToFullPhiLPFObjectSensitiveSieve
+OR MaynardClusterAnchoredAtEveryPrimeSquare
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof
+```
+
+边界状态：
+
+```text
+short_interval_transference_inputs_imported=true
+prime_pattern_to_first_row_transfer_closed=false
+w_trick_phi_lpf_parity_closed=false
+bdh_pointwise_all_rows_closed=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```

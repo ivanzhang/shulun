@@ -1673,6 +1673,109 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 X：短区间转移法奇偶审计（2026-05-23 第二十二轮）
+
+本轮继续审计“看似可破奇偶”的外部转移法输入：
+
+```text
+experiments/prime_matrix_short_interval_transference_parity_audit.py
+data/prime-matrix-short-interval-transference-parity-ledger.json
+docs/monograph/prime-matrix-short-interval-transference-parity-audit.json
+docs/monograph/prime-matrix-short-interval-transference-parity-audit.md
+```
+
+外部源登记：
+
+```text
+Le Duc Hieu:
+  arXiv:2509.04883, theta>17/30 的短区间素数 AP。
+
+Guth--Maynard:
+  Annals 203(2), 2026, theta=17/30 短区间 PNT 技术。
+
+Green--Tao/W-trick:
+  全局素数 AP 转移框架，不是每个 P^2 端点的点态半窗定理。
+
+BDH/平均 AP 输入:
+  均方或多数模数控制，不排除所有 prime-square exceptional phase。
+
+Matomaki--Merikoski--Teravainen:
+  L-function-free 短区间/AP 技术，方法有用但尺度更长。
+```
+
+统一尺度换算：
+
+```text
+X=P^2
+X^theta=P^(2theta)
+target halfscale=P
+```
+
+因此：
+
+```text
+theta=1/2        -> P
+theta=17/30      -> P^(17/15)=P*P^(2/15)
+theta=17/30+eps  -> P^(17/15+2eps)
+theta=0.52       -> P^1.04
+```
+
+只要 `theta>1/2`，厚容器
+
+```text
+(P^2, P^2+P^(2theta)]
+```
+
+的外尾段
+
+```text
+[P^2+P, P^2+P^(2theta)]
+```
+
+仍与整个容器同阶。素数 AP 丰度、模式计数或短区间 PNT 都可能完全落在外尾段，
+所以不能推出首行半窗 `(P^2,P^2+P]` 必有素数。
+
+W-trick 的精确缺口是：
+
+```text
+handles logarithmic small-prime biases
+does_not_handle all q<P Phi-LPF residue covers
+does_not_anchor every prime-square endpoint
+```
+
+BDH/均方输入的精确缺口是：
+
+```text
+average_control=true
+all_prime_square_phases_pointwise=false
+exceptional_set_can_contain_target_rows=true
+```
+
+新的剩余基为：
+
+```text
+ThetaLeHalfUniformShortIntervalPrimeTheorem
+OR APPatternLocalizationInsidePrimeSquareHalfWindow
+OR BDHNoExceptionalPrimeSquarePhaseTheorem
+OR WTrickToFullPhiLPFObjectSensitiveSieve
+OR MaynardClusterAnchoredAtEveryPrimeSquare
+OR SameObjectSignedDispersionOrAutomorphicEndpointProof
+```
+
+本层是真推进：它把短区间 AP/转移法路线从“可能破奇偶”的直觉压缩为
+首行定位、点态无例外相位和全 Phi-LPF 对象敏感筛三个硬门。
+
+```text
+short_interval_transference_inputs_imported=true
+prime_pattern_to_first_row_transfer_closed=false
+w_trick_phi_lpf_parity_closed=false
+bdh_pointwise_all_rows_closed=false
+prime_square_halfscale_closed=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 W：Legendre-frontier 外部定理审计（2026-05-23 第二十一轮）
 
 本轮引入并审计 2026 年与 Legendre/平方间隔最相关的新外部定理：
