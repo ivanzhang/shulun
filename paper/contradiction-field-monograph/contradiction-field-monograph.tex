@@ -28874,17 +28874,18 @@ implied by the new tighter one.
 \begin{externalstatement}[K3''''-Dusart-upper: further constant tightening]
 For every prime \(P\ge 60184\),
 \[
-  |E(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.1125P}{\log^2 P}-\frac{1}{2}+\frac{0.55}{\log P}.
+  |E(P)|\le \frac{3P}{4}-\frac{P}{8\log P}-\frac{0.1125P}{\log^2 P}
+  -1+\frac{\log P}{2(\log P-1.1)}.
 \]
 \end{externalstatement}
 \begin{proof}
 Replace Rosser--Schoenfeld's \(\pi(P)\le 1.25506P/\log P\) with Dusart 2010
-\(\pi(x)\le x/(\log x-1.1)\) (valid for \(x\ge 60184\)).  Expanding the
-geometric series gives
-\(\pi(P)\le P/\log P+1.1P/\log^2 P+O(P/\log^3 P)\),
-which is strictly tighter than Rosser--Schoenfeld for \(P\ge 149\).
-Re-deriving K3'''' yields the stated constant offset
-\(-1/2+0.55/\log P\) replacing the \(-0.37247\) of K3''''.
+\(\pi(x)\le x/(\log x-1.1)\) (valid for \(x\ge 60184\)).  Keeping this
+upper bound in exact form gives the lower-endpoint contribution
+\(\log P/(2(\log P-1.1))\) after division by \(2P/\log P\).  Re-deriving
+K3'''' gives the displayed exact offset.  Asymptotically it is
+\(-1/2+0.55/\log P+O(1/\log^2 P)\), replacing the \(-0.37247\) term
+coming from Rosser--Schoenfeld.
 \end{proof}
 
 \section{External frontier theorem stress test}
@@ -28977,7 +28978,7 @@ For every prime $P$ large enough:
 \item Maximum length of a consecutive prime-free row block is
 $\le P^{0.05+\varepsilon}$ (Baker--Harman--Pintz 2001).
 \item Total row-exception density satisfies
-$|E(P)|<3P/4-P/(8\log P)-0.05625P/\log^2 P$ (K3'''').
+$|E(P)|<3P/4-P/(8\log P)-0.1125P/\log^2 P$ (K3'''' corrected).
 \end{enumerate}
 Hence the exception set $E(P)$, even at maximum permissible density
 $3P/4$, is forced into short consecutive clusters of length
@@ -28997,7 +28998,7 @@ cannot be done in linear-sieve framework alone (parity barrier).
 \begin{externalstatement}[K3-united-three-term]
 For every prime $P\ge 180$,
 \[
-  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.1125\,P}{\log^2 P}.
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.225\,P}{\log^2 P}.
 \]
 \end{externalstatement}
 
@@ -29035,6 +29036,47 @@ Identical to K3-trivial-enhanced with rows replaced by columns and
 $M_P(j)\le P$ in place of $N_P(k)\le P$.
 \end{proof}
 
+\begin{provedstatement}[K3-trivial-three-term-Li: internal three-term Li expansion]
+For sufficiently large prime $P$,
+\[
+  |E(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}-\frac{P}{4\log^3 P}+O\!\Bigl(\frac{P}{\log^4 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+Expand $\mathrm{Li}(x) = (x/\log x) \sum_{k\ge 0} k!/\log^k x$ to order
+$k=2$.  At $x=P^2$ the $k=2$ contribution is
+$(P^2/(2\log P))\cdot 2/(4\log^2 P)=P^2/(4\log^3 P)$.  Hence
+$\pi(P^2)-\pi(P)=\frac{P^2}{2\log P}+\frac{P^2}{4\log^2 P}+\frac{P^2}{4\log^3 P}+O(P^2/\log^4 P)$.
+Trivial $N_P(k)\le P$ then yields the stated bound.  Still no sieve
+input; the expansion is internal to PNT.
+\end{proof}
+
+\begin{provedstatement}[K3*-trivial-three-term-Li]
+For sufficiently large prime $P$,
+\[
+  |E^*(P)|\le P-\frac{P}{2\log P}-\frac{P}{4\log^2 P}-\frac{P}{4\log^3 P}+O\!\Bigl(\frac{P}{\log^4 P}\Bigr).
+\]
+\end{provedstatement}
+
+\begin{proof}
+Identical to K3-trivial-three-term-Li, column version with
+$M_P(j)\le P$.
+\end{proof}
+
+\begin{externalstatement}[K3-united-three-term-corrected (factor-of-2 correction)]
+For every prime $P\ge 180$,
+\[
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.225\,P}{\log^2 P}.
+\]
+\end{externalstatement}
+
+\begin{proof}
+Sum of K3''''-corrected and K3*-three-term-corrected, both with the
+correct third-term coefficient $0.1125$.  The joint coefficient is
+twice that, namely $0.225$.
+\end{proof}
+
 \begin{remark}[Final K-series summary]
 The K-series side theorems established in this chapter provide the
 strictest currently available unconditional, explicit-effective bounds
@@ -29049,12 +29091,12 @@ on the $H_P$ exception sets.  They split into two parallel chains:
 
 \emph{External-lemma chain} (PNT + Brun--Titchmarsh + Dusart 2010):
 \[
-  |E(P)|,\ |E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.05625\,P}{\log^2 P}.
+  |E(P)|,\ |E^*(P)|<\frac{3P}{4}-\frac{P}{8\log P}-\frac{0.1125\,P}{\log^2 P}.
 \]
 
 \emph{Joint chain} (row + column + BHP 2001 long-block bound):
 \[
-  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.1125\,P}{\log^2 P},
+  |E(P)|+|E^*(P)|<\frac{3P}{2}-\frac{P}{4\log P}-\frac{0.225\,P}{\log^2 P},
 \]
 \[
   \max\text{ consecutive empty rows}\le P^{0.05+\varepsilon}.
