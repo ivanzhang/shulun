@@ -32381,6 +32381,67 @@ full-ramanujan-spectrum-obstruction-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Conductor stratification of the full Ramanujan spectrum}
+
+\begin{theorem}[Equal mass on exact conductor layers]
+Let \(W=W_P\) be squarefree.  For a frequency \(a\bmod W\), define its
+exact additive conductor by
+\[
+  q=\frac{W}{\gcd(a,W)}.
+\]
+Then \(q\mid W\), there are exactly \(\varphi(q)\) frequencies of exact
+conductor \(q\), and for all such frequencies
+\[
+  \frac{c_W(a)}{W}
+  =
+  \mu(q)\frac{\varphi(W)}{W\varphi(q)}.
+\]
+Consequently each exact-conductor layer has total \(L^1\)-mass
+\[
+  \sum_{\substack{a\bmod W\\ W/\gcd(a,W)=q}}
+  \left|\frac{c_W(a)}{W}\right|
+  =
+  \frac{\varphi(W)}{W}.
+\]
+\end{theorem}
+\begin{proof}
+Writing \(g=\gcd(a,W)\), the primitive frequency on the quotient has
+conductor \(q=W/g\).  The standard formula for Ramanujan sums gives
+\[
+  c_W(a)=\mu(q)\frac{\varphi(W)}{\varphi(q)}
+\]
+for squarefree \(W\).  The number of residues \(a\bmod W\) with
+\(W/\gcd(a,W)=q\) is the number of units modulo \(q\), namely
+\(\varphi(q)\).  Multiplying that count by the absolute value of the
+coefficient gives the displayed common \(L^1\)-mass.
+\end{proof}
+
+\begin{remark}[Low conductor layers are not a negligible exact tail]
+The full spectrum has \(2^{\omega(W_P)}\) exact-conductor layers, but
+each layer carries the same total \(L^1\)-mass.  Thus conductor
+stratification is a useful organisation of the full dynamic spectrum,
+not a proof that low conductor layers dominate.  Dropping high
+conductor layers changes the exact selector and removes a fixed
+fraction of the spectral mass whenever a fixed fraction of layers is
+removed.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+ConductorStratifiedSpectrumToKloostermanOrTraceFamilyBridge\\
+AND UniformCancellationAcrossAllPrimorialConductorLayers\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+conductor-stratified-ramanujan-spectrum-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

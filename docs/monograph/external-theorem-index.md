@@ -2245,6 +2245,85 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61. Phi-LPF conductor-stratified Ramanujan spectrum 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_conductor_stratified_ramanujan_spectrum_audit.py
+data/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-audit.md
+```
+
+本层把 full `W_P` additive spectrum 按真实 additive conductor 分层。若：
+
+```text
+q=W_P/gcd(a,W_P),
+```
+
+则：
+
+```text
+c_W(a)/W = mu(q)*phi(W)/(W*phi(q)).
+```
+
+exact conductor `q` 层含 `phi(q)` 个 primitive 频率，因此每一层总 L1 质量为：
+
+```text
+phi(q) * phi(W)/(W*phi(q)) = phi(W)/W.
+```
+
+所以低 conductor 层并不自动承载主质量；丢弃高 conductor 层不是精确同对象截断。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+max_conductor_layer_count=2048
+max_full_additive_frequency_count=200560490130
+max_sqrt_sieve_prime_count=11
+bad_frequency_count_total=0
+bad_layer_l1_equality_total=0
+bad_total_l1_formula_total=0
+bad_total_l2_parseval_total=0
+all_conductor_strata_nonempty_and_equal_l1=true
+proper_conductor_layer_truncation_exact_possible_for_any_P=false
+```
+
+外部前沿影响：Wright 2026、Fouvry--Kowalski--Michel--Sawin 2025、
+Milićević--Qin--Wu 2025、Pascadi 2025、Shao--Shparlinski--Wijaya 2024
+仍只能作为未来输入。当前还缺把这些 conductor layers 组织成同对象
+Kloosterman/trace-function/Type-II 系数族的桥。
+
+新的最新最窄口：
+
+```text
+ConductorStratifiedSpectrumToKloostermanOrTraceFamilyBridge
+AND UniformCancellationAcrossAllPrimorialConductorLayers
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+conductor_stratification_closed=true
+equal_l1_mass_per_conductor_layer_proved=true
+low_conductor_exact_truncation_rejected=true
+uniform_conductor_layer_cancellation_closed=false
+usable_kloosterman_or_trace_family_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

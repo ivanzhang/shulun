@@ -1,0 +1,525 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_conductor_stratified_ramanujan_spectrum_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "RamanujanSpectrumExactConductorStratification",
+      "meaning": "Every frequency has exact conductor q=W_P/gcd(a,W_P), with coefficient mu(q)phi(W_P)/(W_P phi(q)).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "EqualL1MassPerConductorLayer",
+      "meaning": "Each conductor layer q|W_P has total L1 mass phi(W_P)/W_P.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "LowConductorExactTruncationRejected",
+      "meaning": "Keeping only low conductor layers changes the exact selector and is not a negligible exact tail.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "UniformCancellationAcrossAllPrimorialConductorLayers",
+      "meaning": "Prove cancellation across all conductor layers of the dynamic primorial spectrum.",
+      "proved": false,
+      "remaining": "new conductor-uniform cancellation theorem"
+    },
+    {
+      "closed": false,
+      "gate": "ConductorStratifiedSpectrumToKloostermanOrTraceFamilyBridge",
+      "meaning": "Package the conductor layers into a same-object Kloosterman/trace-function/Type-II family.",
+      "proved": false,
+      "remaining": "new bridge theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RoughBetaSiegelWalfiszUniformityOrReplacement",
+      "meaning": "Supply the equidistribution/SW factor or an object-specific replacement for rough beta weights.",
+      "proved": false,
+      "remaining": "rough beta uniformity input"
+    }
+  ],
+  "conductor_stratification_closed": true,
+  "current_object": {
+    "coefficient_by_conductor": "c_W(a)/W = mu(q)*phi(W)/(W*phi(q))",
+    "frequency_conductor": "q=W_P/gcd(a,W_P)",
+    "layer_l1": "sum over exact conductor q of |c_W(a)|/W equals phi(W)/W",
+    "primitive_frequency_count": "there are phi(q) frequencies of exact conductor q",
+    "truncation_conclusion": "dropping any conductor layer changes the exact selector and does not remove a small-mass tail"
+  },
+  "equal_l1_mass_per_conductor_layer_proved": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_theorem_implication": {
+    "Fouvry_Kowalski_Michel_Sawin_2025_arXiv_2511_09459": "trace-function bilinear bounds require sheaf/trace packaging of the conductor layers",
+    "Milicevic_Qin_Wu_2025_arXiv_2511_07550": "arbitrary-q Kloosterman estimates still need admissible bilinear coefficient ranges",
+    "Pascadi_2025_arXiv_2511_08445": "non-abelian amplification may apply after Type-II organisation over composite conductor layers",
+    "Shao_Shparlinski_Wijaya_2024_arXiv_2411_12113": "squarefree/smooth Kloosterman parameter sums are adjacent to the conductor set but not this pointwise P,k selector",
+    "Wright_2026_arXiv_2604_25177": "useful only after conductor layers become a completed unbalanced-convolution coefficient family"
+  },
+  "finite_audit": {
+    "P_value_count": 165,
+    "all_conductor_strata_nonempty_and_equal_l1": true,
+    "bad_frequency_count_total": 0,
+    "bad_layer_l1_equality_total": 0,
+    "bad_total_l1_formula_total": 0,
+    "bad_total_l2_parseval_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "max_conductor_layer_count": 2048,
+    "max_full_additive_frequency_count": 200560490130,
+    "max_prime": 1009,
+    "max_sqrt_sieve_prime_count": 11,
+    "previous_bad_nonzero_frequency_total": 0,
+    "previous_full_support_audit_status": "full_ramanujan_spectrum_obstruction_closed_exact_truncation_rejected",
+    "previous_max_full_additive_frequency_count": 200560490130,
+    "proper_conductor_layer_truncation_exact_possible_for_any_P": false,
+    "sample_rows": [
+      {
+        "P": 101,
+        "W_P": 210,
+        "all_conductor_layers_nonzero": true,
+        "all_layer_l1_equal": true,
+        "common_layer_l1": "8/35",
+        "conductor_layer_count": 16,
+        "frequency_count_sum": 210,
+        "frequency_count_sum_matches_W": true,
+        "full_additive_frequency_count": 210,
+        "phi_W": 48,
+        "proper_conductor_layer_truncation_exact_possible": false,
+        "sample_conductor_layers": [
+          {
+            "coefficient": "8/35",
+            "coefficient_abs": "8/35",
+            "conductor": 1,
+            "layer_l1": "8/35",
+            "layer_l2": "64/1225",
+            "prime_count": 0,
+            "primitive_frequency_count": 1,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-8/35",
+            "coefficient_abs": "8/35",
+            "conductor": 2,
+            "layer_l1": "8/35",
+            "layer_l2": "64/1225",
+            "prime_count": 1,
+            "primitive_frequency_count": 1,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-4/35",
+            "coefficient_abs": "4/35",
+            "conductor": 3,
+            "layer_l1": "8/35",
+            "layer_l2": "32/1225",
+            "prime_count": 1,
+            "primitive_frequency_count": 2,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-2/35",
+            "coefficient_abs": "2/35",
+            "conductor": 5,
+            "layer_l1": "8/35",
+            "layer_l2": "16/1225",
+            "prime_count": 1,
+            "primitive_frequency_count": 4,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "4/35",
+            "coefficient_abs": "4/35",
+            "conductor": 6,
+            "layer_l1": "8/35",
+            "layer_l2": "32/1225",
+            "prime_count": 2,
+            "primitive_frequency_count": 2,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-4/105",
+            "coefficient_abs": "4/105",
+            "conductor": 7,
+            "layer_l1": "8/35",
+            "layer_l2": "32/3675",
+            "prime_count": 1,
+            "primitive_frequency_count": 6,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "2/35",
+            "coefficient_abs": "2/35",
+            "conductor": 10,
+            "layer_l1": "8/35",
+            "layer_l2": "16/1225",
+            "prime_count": 2,
+            "primitive_frequency_count": 4,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "4/105",
+            "coefficient_abs": "4/105",
+            "conductor": 14,
+            "layer_l1": "8/35",
+            "layer_l2": "32/3675",
+            "prime_count": 2,
+            "primitive_frequency_count": 6,
+            "signed_layer": "positive"
+          }
+        ],
+        "small_conductor_cut_sqrtW": 14,
+        "small_conductor_l1_fraction": "1/2",
+        "small_conductor_layer_count": 8,
+        "sqrt_sieve_prime_count": 4,
+        "total_l1": "128/35",
+        "total_l1_matches_full_spectrum": true,
+        "total_l2": "8/35",
+        "total_l2_matches_parseval": true
+      },
+      {
+        "P": 257,
+        "W_P": 30030,
+        "all_conductor_layers_nonzero": true,
+        "all_layer_l1_equal": true,
+        "common_layer_l1": "192/1001",
+        "conductor_layer_count": 64,
+        "frequency_count_sum": 30030,
+        "frequency_count_sum_matches_W": true,
+        "full_additive_frequency_count": 30030,
+        "phi_W": 5760,
+        "proper_conductor_layer_truncation_exact_possible": false,
+        "sample_conductor_layers": [
+          {
+            "coefficient": "192/1001",
+            "coefficient_abs": "192/1001",
+            "conductor": 1,
+            "layer_l1": "192/1001",
+            "layer_l2": "36864/1002001",
+            "prime_count": 0,
+            "primitive_frequency_count": 1,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-192/1001",
+            "coefficient_abs": "192/1001",
+            "conductor": 2,
+            "layer_l1": "192/1001",
+            "layer_l2": "36864/1002001",
+            "prime_count": 1,
+            "primitive_frequency_count": 1,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-96/1001",
+            "coefficient_abs": "96/1001",
+            "conductor": 3,
+            "layer_l1": "192/1001",
+            "layer_l2": "18432/1002001",
+            "prime_count": 1,
+            "primitive_frequency_count": 2,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-48/1001",
+            "coefficient_abs": "48/1001",
+            "conductor": 5,
+            "layer_l1": "192/1001",
+            "layer_l2": "9216/1002001",
+            "prime_count": 1,
+            "primitive_frequency_count": 4,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "96/1001",
+            "coefficient_abs": "96/1001",
+            "conductor": 6,
+            "layer_l1": "192/1001",
+            "layer_l2": "18432/1002001",
+            "prime_count": 2,
+            "primitive_frequency_count": 2,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-32/1001",
+            "coefficient_abs": "32/1001",
+            "conductor": 7,
+            "layer_l1": "192/1001",
+            "layer_l2": "6144/1002001",
+            "prime_count": 1,
+            "primitive_frequency_count": 6,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "48/1001",
+            "coefficient_abs": "48/1001",
+            "conductor": 10,
+            "layer_l1": "192/1001",
+            "layer_l2": "9216/1002001",
+            "prime_count": 2,
+            "primitive_frequency_count": 4,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-96/5005",
+            "coefficient_abs": "96/5005",
+            "conductor": 11,
+            "layer_l1": "192/1001",
+            "layer_l2": "18432/5010005",
+            "prime_count": 1,
+            "primitive_frequency_count": 10,
+            "signed_layer": "negative"
+          }
+        ],
+        "small_conductor_cut_sqrtW": 173,
+        "small_conductor_l1_fraction": "1/2",
+        "small_conductor_layer_count": 32,
+        "sqrt_sieve_prime_count": 6,
+        "total_l1": "12288/1001",
+        "total_l1_matches_full_spectrum": true,
+        "total_l2": "192/1001",
+        "total_l2_matches_parseval": true
+      },
+      {
+        "P": 971,
+        "W_P": 200560490130,
+        "all_conductor_layers_nonzero": true,
+        "all_layer_l1_equal": true,
+        "common_layer_l1": "13271040/86822723",
+        "conductor_layer_count": 2048,
+        "frequency_count_sum": 200560490130,
+        "frequency_count_sum_matches_W": true,
+        "full_additive_frequency_count": 200560490130,
+        "phi_W": 30656102400,
+        "proper_conductor_layer_truncation_exact_possible": false,
+        "sample_conductor_layers": [
+          {
+            "coefficient": "13271040/86822723",
+            "coefficient_abs": "13271040/86822723",
+            "conductor": 1,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "176120502681600/7538185229134729",
+            "prime_count": 0,
+            "primitive_frequency_count": 1,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-13271040/86822723",
+            "coefficient_abs": "13271040/86822723",
+            "conductor": 2,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "176120502681600/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 1,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-6635520/86822723",
+            "coefficient_abs": "6635520/86822723",
+            "conductor": 3,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "88060251340800/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 2,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-3317760/86822723",
+            "coefficient_abs": "3317760/86822723",
+            "conductor": 5,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "44030125670400/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 4,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "6635520/86822723",
+            "coefficient_abs": "6635520/86822723",
+            "conductor": 6,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "88060251340800/7538185229134729",
+            "prime_count": 2,
+            "primitive_frequency_count": 2,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-2211840/86822723",
+            "coefficient_abs": "2211840/86822723",
+            "conductor": 7,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "29353417113600/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 6,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "3317760/86822723",
+            "coefficient_abs": "3317760/86822723",
+            "conductor": 10,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "44030125670400/7538185229134729",
+            "prime_count": 2,
+            "primitive_frequency_count": 4,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-1327104/86822723",
+            "coefficient_abs": "1327104/86822723",
+            "conductor": 11,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "17612050268160/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 10,
+            "signed_layer": "negative"
+          }
+        ],
+        "small_conductor_cut_sqrtW": 447839,
+        "small_conductor_l1_fraction": "1/2",
+        "small_conductor_layer_count": 1024,
+        "sqrt_sieve_prime_count": 11,
+        "total_l1": "27179089920/86822723",
+        "total_l1_matches_full_spectrum": true,
+        "total_l2": "13271040/86822723",
+        "total_l2_matches_parseval": true
+      },
+      {
+        "P": 1009,
+        "W_P": 200560490130,
+        "all_conductor_layers_nonzero": true,
+        "all_layer_l1_equal": true,
+        "common_layer_l1": "13271040/86822723",
+        "conductor_layer_count": 2048,
+        "frequency_count_sum": 200560490130,
+        "frequency_count_sum_matches_W": true,
+        "full_additive_frequency_count": 200560490130,
+        "phi_W": 30656102400,
+        "proper_conductor_layer_truncation_exact_possible": false,
+        "sample_conductor_layers": [
+          {
+            "coefficient": "13271040/86822723",
+            "coefficient_abs": "13271040/86822723",
+            "conductor": 1,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "176120502681600/7538185229134729",
+            "prime_count": 0,
+            "primitive_frequency_count": 1,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-13271040/86822723",
+            "coefficient_abs": "13271040/86822723",
+            "conductor": 2,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "176120502681600/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 1,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-6635520/86822723",
+            "coefficient_abs": "6635520/86822723",
+            "conductor": 3,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "88060251340800/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 2,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "-3317760/86822723",
+            "coefficient_abs": "3317760/86822723",
+            "conductor": 5,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "44030125670400/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 4,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "6635520/86822723",
+            "coefficient_abs": "6635520/86822723",
+            "conductor": 6,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "88060251340800/7538185229134729",
+            "prime_count": 2,
+            "primitive_frequency_count": 2,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-2211840/86822723",
+            "coefficient_abs": "2211840/86822723",
+            "conductor": 7,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "29353417113600/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 6,
+            "signed_layer": "negative"
+          },
+          {
+            "coefficient": "3317760/86822723",
+            "coefficient_abs": "3317760/86822723",
+            "conductor": 10,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "44030125670400/7538185229134729",
+            "prime_count": 2,
+            "primitive_frequency_count": 4,
+            "signed_layer": "positive"
+          },
+          {
+            "coefficient": "-1327104/86822723",
+            "coefficient_abs": "1327104/86822723",
+            "conductor": 11,
+            "layer_l1": "13271040/86822723",
+            "layer_l2": "17612050268160/7538185229134729",
+            "prime_count": 1,
+            "primitive_frequency_count": 10,
+            "signed_layer": "negative"
+          }
+        ],
+        "small_conductor_cut_sqrtW": 447839,
+        "small_conductor_l1_fraction": "1/2",
+        "small_conductor_layer_count": 1024,
+        "sqrt_sieve_prime_count": 11,
+        "total_l1": "27179089920/86822723",
+        "total_l1_matches_full_spectrum": true,
+        "total_l2": "13271040/86822723",
+        "total_l2_matches_parseval": true
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-23",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "ConductorStratifiedSpectrumToKloostermanOrTraceFamilyBridge",
+    "AND UniformCancellationAcrossAllPrimorialConductorLayers",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "low_conductor_exact_truncation_rejected": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after full Fourier support, the fastest non-cyclic continuation is to stratify by true additive conductor and test low-conductor truncation",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "29ce19cefd1c21a29f32d0b8570b7d3eff046a6978cee0717027dfd0ce0e38e1",
+    "docs/monograph/external-theorem-index.md": "b6b82c430b8a5e047dac92a0340888368d4156ebc8c52422aeb16e556d7536ba",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "59c0e3d8a194c691d8e365575bba02f87e2ef613bae9725ab9e2276a48ca53cd",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-primorial-unit-selector-audit.json": "de71600de9cf3020c3ade2d6735a17588627fc5a5365562ff945af1f13c9c6a1",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-dynamic-ramanujan-unit-expansion-audit.json": "2002448ff69ce3c26a7b0911e4348951ac4aedef5de94a7dbe60d6d9732f6e6c",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-full-ramanujan-spectrum-obstruction-audit.json": "18ea3870efa6a93537fec0119d8af3ba5892ea80215c82d51fcb014623538977",
+    "experiments/prime_matrix_phi_lpf_qsupport_conductor_stratified_ramanujan_spectrum_audit.py": "beef7fe9a6bb4125441043a184af207ad1aa7af1842db887ff0eb735edad320c",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "d51123c708e5d56f0fc890eca5fa8c83edffcde1f5baf7ff45988c6c91e9babc"
+  },
+  "status": "conductor_stratified_full_spectrum_closed_low_conductor_truncation_rejected",
+  "uniform_conductor_layer_cancellation_closed": false,
+  "usable_kloosterman_or_trace_family_bridge_closed": false
+}

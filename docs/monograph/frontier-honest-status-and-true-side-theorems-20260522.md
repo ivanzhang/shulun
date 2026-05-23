@@ -2436,6 +2436,87 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13：Phi-LPF q-support conductor-stratified Ramanujan spectrum 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_conductor_stratified_ramanujan_spectrum_audit.py
+data/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-conductor-stratified-ramanujan-spectrum-audit.md
+```
+
+本轮继续选择行/列 Phi-LPF。上一层已证明 full additive spectrum 不能精确截断。
+本层进一步按真实 additive conductor 分层：
+
+```text
+q=W_P/gcd(a,W_P),
+c_W(a)/W_P = mu(q)*phi(W_P)/(W_P*phi(q)).
+```
+
+exact conductor `q` 层含 `phi(q)` 个 primitive 频率，因此该层总 L1 质量恒为：
+
+```text
+phi(W_P)/W_P.
+```
+
+### Q13.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+P_value_count=165
+max_conductor_layer_count=2048
+max_full_additive_frequency_count=200560490130
+max_sqrt_sieve_prime_count=11
+bad_frequency_count_total=0
+bad_layer_l1_equality_total=0
+bad_total_l1_formula_total=0
+bad_total_l2_parseval_total=0
+all_conductor_strata_nonempty_and_equal_l1=true
+proper_conductor_layer_truncation_exact_possible_for_any_P=false
+```
+
+代表性现象：在 `P=971` 与 `P=1009` 的最大样本中，`W_P=200560490130`、
+`conductor_layer_count=2048`；取 `q<=sqrt(W_P)` 仅保留 `1024` 层，L1
+质量正好为 `1/2`，不是可忽略尾项。
+
+### Q13.2 诚实边界
+
+本层真推进是把 full spectrum 组织成 conductor layers，并排除“低 conductor
+主导”的精确截断捷径。它仍没有证明所有 conductor 层上的抵消，也没有把这些
+层包装成可直接套用的 Kloosterman/trace-function/Type-II 系数族。
+
+最新最窄口：
+
+```text
+ConductorStratifiedSpectrumToKloostermanOrTraceFamilyBridge
+AND UniformCancellationAcrossAllPrimorialConductorLayers
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+conductor_stratification_closed=true
+equal_l1_mass_per_conductor_layer_proved=true
+low_conductor_exact_truncation_rejected=true
+uniform_conductor_layer_cancellation_closed=false
+usable_kloosterman_or_trace_family_bridge_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
