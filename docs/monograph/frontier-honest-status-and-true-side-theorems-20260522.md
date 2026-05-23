@@ -3115,6 +3115,87 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13H：Phi-LPF q-support row-averaged additive-k completion tax 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_completion_tax_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-audit.md
+```
+
+本层继续下钻上一层 sparse `k mod q` 加性角色支撑。完整区间 completion
+
+```text
+[min K_{P,q}, max K_{P,q}]
+```
+
+不是同对象替换；它等于真实 sparse LPF 支撑加上 completion holes。
+每个 hole 的 product-cell 至多有一个奇候选，若该候选是 residual LPF
+cofactor，则该 `k` 已经属于真实支撑。
+
+### Q13H.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+selected_q_bucket_count_total=6020
+real_k_count_total=299977
+completion_span_total=1602928
+completion_holes_total=1302951
+completion_holes_match_previous_total=true
+completion_tax_ratio_total=4.343503
+holes_without_odd_candidate_total=373676
+holes_with_nonresidual_odd_candidate_total=929275
+holes_with_residual_candidate_total=0
+bad_odd_count_over_one_total=0
+odd_candidate_prime_total=355919
+odd_candidate_small_lpf_3_total=409713
+odd_candidate_small_lpf_5_total=163643
+max_completion_holes_per_q=556
+max_completion_tax_ratio_per_q=11.500000
+first_completion_hole=P=43,q=23,k=27,I=[51,52],m=51,class=odd_candidate_small_lpf_3
+complete_interval_replacement_object_preserving=false
+completion_correction_control_closed=false
+```
+
+### Q13H.2 诚实边界
+
+本层真推进是关闭 completion tax 账本并排除“补成完整区间仍是同一对象”的
+捷径。补入项不是小误差自动消失；在有限账本中假 `k` 数是真支撑的
+`4.343503` 倍，且全部来自无奇候选、素数候选或 `3/5` 小 LPF 候选。
+
+最新最窄口：
+
+```text
+CompletionCorrectionCancellationOrAbsorptionForSparseLPFKSupport
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+sparse_k_completion_tax_ledger_closed=true
+residual_candidate_hole_exclusion_closed=true
+direct_complete_interval_object_preservation_closed=false
+completion_correction_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

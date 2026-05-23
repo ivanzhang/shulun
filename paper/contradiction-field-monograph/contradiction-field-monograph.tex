@@ -32991,6 +32991,89 @@ row-averaged-additive-k-support-audit.md.
 \end{quote}
 \end{remark}
 
+\section{The additive-k completion tax}
+
+\begin{theorem}[Complete-interval replacement has a non-object correction]
+Fix a selected q-bucket in the row-averaged additive-k normal form, and
+let
+\[
+  {\mathcal K}_{P,q}
+  =
+  \left\{\left\lfloor\frac{qm}{P}\right\rfloor:
+    m \hbox{ is a selected residual LPF cofactor in the q-bucket}\right\}.
+\]
+Let
+\[
+  {\mathcal C}_{P,q}
+  =
+  [\min {\mathcal K}_{P,q},\max {\mathcal K}_{P,q}]\cap{\bf Z}
+\]
+and write
+\({\mathcal H}_{P,q}={\mathcal C}_{P,q}\setminus{\mathcal K}_{P,q}\).
+For every \(k\in{\mathcal H}_{P,q}\), the product cell
+\[
+  I_{P,k}(q)=
+  \left[
+    \max\!\left\{\frac{P+1}{2},q,\left\lfloor\frac{kP}{q}\right\rfloor+1\right\},
+    \min\!\left\{2P-1,\left\lfloor\frac{(k+1)P-1}{q}\right\rfloor\right\}
+  \right]
+\]
+contains no selected residual LPF cofactor.  More precisely, since
+\(q>P/2\), it contains at most one odd integer; if that odd integer were
+a residual LPF cofactor, then \(k\) would already belong to
+\({\mathcal K}_{P,q}\).  Therefore replacing \({\mathcal K}_{P,q}\) by
+the complete interval \({\mathcal C}_{P,q}\) introduces a correction
+supported only on non-object holes.
+\end{theorem}
+\begin{proof}
+The cell \(I_{P,k}(q)\) is exactly the set of cofactors \(m\) satisfying
+\[
+  kP<qm<(k+1)P
+\]
+together with the existing row/column caps.  Its length is \(<P/q<2\),
+so it contains at most one odd integer.  If this odd integer \(m\) is a
+selected residual LPF cofactor, then
+\[
+  k=\left\lfloor\frac{qm}{P}\right\rfloor
+\]
+and hence \(k\in{\mathcal K}_{P,q}\), contradicting
+\(k\in{\mathcal H}_{P,q}\).  Thus each completion hole has either no odd
+representative or an odd representative which fails the residual LPF
+cofactor condition.  The completed interval is therefore not an
+object-preserving replacement of the sparse Phi--LPF support.
+\end{proof}
+
+\begin{remark}[Finite completion-tax ledger]
+The audit up to \(P\le 1009\) gives
+\[
+  |{\mathcal K}|=299977,\qquad |{\mathcal C}|=1602928,\qquad
+  |{\mathcal H}|=1302951,
+\]
+so the completion correction is about \(4.343503\) times the true
+support in this finite ledger.  The holes split as \(373676\) no-odd
+cells and \(929275\) non-residual odd candidates; among the latter the
+prime, LPF \(3\), and LPF \(5\) counts are \(355919\), \(409713\), and
+\(163643\).  There are no residual-candidate holes in the audit.  This
+does not prove the Phi--LPF target; it only shows that any complete
+interval additive-character argument must also control a large,
+non-object completion correction.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+CompletionCorrectionCancellationOrAbsorptionForSparseLPFKSupport\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-completion-tax-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

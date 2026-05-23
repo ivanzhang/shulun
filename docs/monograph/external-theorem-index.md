@@ -2942,6 +2942,91 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61H. Phi-LPF q-support row-averaged additive-k completion tax 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_completion_tax_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-completion-tax-audit.md
+```
+
+本层继续选择 row/column Phi-LPF 的 additive-k 路线。若把真实支撑
+
+```text
+K_{P,q}={floor(q*m/P): m is a selected residual LPF cofactor}
+```
+
+补成完整区间 `[min K_{P,q}, max K_{P,q}]`，则完整区间精确分解为真实
+sparse 支撑加 completion holes。每个 hole 的 product-cell 长度小于 2，
+至多有一个奇候选；若这个奇候选是 residual LPF cofactor，则该 `k`
+已经属于真实支撑。因此 hole correction 不是同对象项。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+selected_q_bucket_count_total=6020
+real_k_count_total=299977
+completion_span_total=1602928
+completion_holes_total=1302951
+completion_holes_match_previous_total=true
+real_k_count_matches_previous_total=true
+completion_span_matches_previous_total=true
+completion_tax_ratio_total=4.343503
+holes_without_odd_candidate_total=373676
+holes_with_nonresidual_odd_candidate_total=929275
+holes_with_residual_candidate_total=0
+bad_odd_count_over_one_total=0
+odd_candidate_prime_total=355919
+odd_candidate_small_lpf_3_total=409713
+odd_candidate_small_lpf_5_total=163643
+odd_candidate_other_nonresidual_total=0
+max_completion_holes_per_q=556
+max_completion_tax_ratio_per_q=11.500000
+first_completion_hole=P=43,q=23,k=27,I=[51,52],m=51,class=odd_candidate_small_lpf_3
+residual_candidate_holes_absent=true
+complete_interval_replacement_object_preserving=false
+completion_correction_control_closed=false
+```
+
+外部前沿影响：FKMS trace-function、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright unbalanced convolution/Kloosterman fractions
+和 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 参数估计，都仍不能
+直接吞掉这个 completion correction。它包含无奇候选、prime 候选以及小 LPF
+候选，必须先证明 correction cancellation/absorption 或保持 sparse 支撑直接做
+dispersion。
+
+新的最新最窄口：
+
+```text
+CompletionCorrectionCancellationOrAbsorptionForSparseLPFKSupport
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+sparse_k_completion_tax_ledger_closed=true
+residual_candidate_hole_exclusion_closed=true
+direct_complete_interval_object_preservation_closed=false
+completion_correction_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：
