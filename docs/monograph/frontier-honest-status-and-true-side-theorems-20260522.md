@@ -1755,6 +1755,84 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q5：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.md
+```
+
+本层接在 fixed-`m` q-prefix line atomization 后。对每条边 `(P,q,m)` 写
+
+```text
+q*m = k*P + D,  1<=k<P, 1<=D<P,
+A(q) = -D mod q.
+```
+
+于是 endpoint phase 精确正规化为：
+
+```text
+e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q).
+```
+
+有限审计确认：
+
+```text
+phase_normal_form_atom_count_total=15439
+phase_normal_form_edge_count_total=177515
+product_division_mismatch_count=0
+phase_congruence_mismatch_count=0
+k_out_of_strict_row_range_count=0
+D_out_of_range_count=0
+A_zero_count=0
+k_nonincreasing_step_count=0
+phase_normal_form_identity_verified=true
+```
+
+结构性新信息是：多 `q` atom 的 `k(q)=floor(q*m/P)` 全部严格递增，但归一化分子
+绝大多数不是常数：
+
+```text
+singleton_q atoms/edges = 1162/1162
+strict_beatty_k_multiq atoms/edges = 14277/176353
+constant_normalized_numerator atoms/edges = 1164/1166
+moving_beatty_numerator atoms/edges = 14275/176349
+```
+
+这把最新最窄口从“fixed-`m` reciprocal orbit”继续压成：
+
+```text
+MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving
+AND CompletionOfA(q)/qToExternalTraceOrKloostermanFamily
+AND NoLossAggregationAcross15439QPrefixPhaseAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部边界仍诚实保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright unbalanced Kloosterman fractions 都需要先完成
+`A(q)/q` 的同对象 completed family；Runbo Li 的 `x^0.52` 短区间素数存在不估计
+该 moving-numerator reciprocal phase。
+
+状态边界：
+
+```text
+phase_normal_form_closed=true
+fixed_numerator_completed_kloosterman_input_available=false
+moving_q_denominator_completed_trace_closed=false
+qprefix_line_atom_phase_saving_closed=false
+no_loss_qprefix_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q5：Phi-LPF q-support external theorem match 审计（2026-05-23）
 
 新增证书：

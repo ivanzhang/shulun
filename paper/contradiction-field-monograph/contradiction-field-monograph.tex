@@ -34795,6 +34795,84 @@ boundary-endpoint-flux-qprefix-atom-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Phase normal form for q-prefix line atoms}
+
+\begin{theorem}[Fixed-\(m\) q-prefix phase normal form]
+In the audit range \(P\le 1009\), every edge \((P,q,m)\) in the fixed-\(m\)
+q-prefix atom ledger has a unique division form
+\[
+  qm = kP + D,\qquad 1\le k<P,\qquad 1\le D<P .
+\]
+If \(A(q)\) denotes the least positive residue of \(-D\) modulo \(q\), then
+\[
+  e\!\left(\frac{h kP}{q}\right)
+  =e\!\left(-\frac{hD}{q}\right)
+  =e\!\left(\frac{hA(q)}{q}\right).
+\]
+The finite audit verifies this normal form for all \(15439\) atoms and all
+\(177515\) atom edges:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{product\_division\_mismatch\_count} & 0\\
+\texttt{phase\_congruence\_mismatch\_count} & 0\\
+\texttt{k\_out\_of\_strict\_row\_range\_count} & 0\\
+\texttt{D\_out\_of\_range\_count} & 0\\
+\texttt{A\_zero\_count} & 0\\
+\texttt{k\_nonincreasing\_step\_count} & 0 .
+\end{array}
+\]
+Moreover every multi-\(q\) atom has strictly increasing
+\(k(q)=\lfloor qm/P\rfloor\) along its prime-q prefix.
+\end{theorem}
+\begin{proof}
+The atom ledger supplies \(P\), a fixed prime \(m\), and a contiguous
+prime-q interval.  For every prime \(q\) in that interval, Euclidean
+division of \(qm\) by \(P\) gives \(qm=kP+D\) with \(0\le D<P\).
+The audit verifies that \(D\ne0\) and \(1\le k<P\) for every edge.  Since
+\[
+  \frac{kP}{q}=m-\frac{D}{q},
+\]
+the displayed phase identity follows because \(e(hm)=1\).  Finally, for
+fixed \(m\), the function \(q\mapsto\lfloor qm/P\rfloor\) is nondecreasing;
+the audit checks the stronger strict increase on every non-singleton
+prime-q prefix in the boundary atom ledger.
+\end{proof}
+
+\begin{remark}[Moving numerator, not a completed Kloosterman input]
+The phase normal form removes the previous ambiguity in the fixed-\(m\)
+reciprocal-orbit mouth, but it also identifies the next obstruction.  The
+audit finds
+\[
+\begin{array}{c|c|c}
+\hbox{orbit class} & \hbox{atoms} & \hbox{edge mass}\\ \hline
+\texttt{singleton\_q} & 1162 & 1162\\
+\texttt{strict\_beatty\_k\_multiq} & 14277 & 176353\\
+\texttt{constant\_normalized\_numerator} & 1164 & 1166\\
+\texttt{moving\_beatty\_numerator} & 14275 & 176349 .
+\end{array}
+\]
+Thus almost all atom mass is carried by a moving Beatty numerator
+\(A(q)\), not by a fixed-numerator completed Kloosterman family.  The latest
+remaining analytic mouth is
+\begin{quote}\scriptsize\ttfamily
+MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving\\
+AND CompletionOfA(q)/qToExternalTraceOrKloostermanFamily\\
+AND NoLossAggregationAcross15439QPrefixPhaseAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the deterministic phase normal form.  It does not
+prove q-prefix phase saving, the external-lemma version, or the internal
+self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-phase-normal-form-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

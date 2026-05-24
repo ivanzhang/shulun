@@ -24955,3 +24955,56 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是 q-prefix/unimodal 来源黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
+
+## 330AG. Phi-LPF q-prefix phase normal-form frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_phase_normal_form_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_line_atoms_have_phase_normal_form_completed_trace_open
+phase_normal_form_atom_count_total=15439
+phase_normal_form_edge_count_total=177515
+product_division_mismatch_count=0
+phase_congruence_mismatch_count=0
+k_out_of_strict_row_range_count=0
+D_out_of_range_count=0
+A_zero_count=0
+k_nonincreasing_step_count=0
+phase_normal_form_identity_verified=true
+qprefix_line_atom_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的
+
+```text
+QPrefixLineAtomReciprocalOrbitPhaseSaving
+```
+
+已被压成更具体的 moving-numerator phase problem。对每条 fixed-`m` atom 边：
+
+```text
+q*m=k*P+D,  A(q)=-D mod q,
+e(h*k*P/q)=e(h*A(q)/q).
+```
+
+审计显示所有 multi-`q` atoms 的 `k(q)=floor(q*m/P)` 严格递增，但
+`14275` 个 atoms、`176349` 条边属于 `moving_beatty_numerator`。因此最新实际硬点为：
+
+```text
+MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving
+AND CompletionOfA(q)/qToExternalTraceOrKloostermanFamily
+AND NoLossAggregationAcross15439QPrefixPhaseAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是相位形状黑箱；没有删除 moving numerator 相消、completed family 和无损聚合真缺口。

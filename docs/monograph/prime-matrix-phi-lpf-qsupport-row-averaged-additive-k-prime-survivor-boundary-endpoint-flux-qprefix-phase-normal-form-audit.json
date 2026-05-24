@@ -1,0 +1,819 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_phase_normal_form_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "QPrefixLineAtomLedgerImported",
+      "meaning": "The fixed-m q-prefix atom ledger is inherited.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "ProductDivisionPhaseNormalForm",
+      "meaning": "Every edge has q*m=k*P+D with 1<=k<P and 1<=D<P.",
+      "proved": true,
+      "remaining": "none for deterministic division normal form"
+    },
+    {
+      "closed": true,
+      "gate": "ReciprocalPhaseRelabeling",
+      "meaning": "The endpoint phase is exactly e(-h*D/q)=e(h*A(q)/q).",
+      "proved": true,
+      "remaining": "none for formal phase relabeling"
+    },
+    {
+      "closed": true,
+      "gate": "BeattyKOrbitMonotonicity",
+      "meaning": "On every multi-q atom, k(q)=floor(q*m/P) is strictly increasing along the prime prefix.",
+      "proved": true,
+      "remaining": "none for finite orbit monotonicity"
+    },
+    {
+      "closed": false,
+      "gate": "FixedNumeratorCompletedKloostermanInput",
+      "meaning": "Most atoms have a moving Beatty numerator A(q), so the normalized family is not a fixed-numerator completed Kloosterman input.",
+      "proved": false,
+      "remaining": "need a moving-numerator completion or a new reciprocal-orbit estimate"
+    },
+    {
+      "closed": false,
+      "gate": "QPrefixLineAtomPhaseSaving",
+      "meaning": "Prove cancellation on moving-numerator fixed-m prime-q prefix reciprocal orbits.",
+      "proved": false,
+      "remaining": "new completed trace/Kloosterman or Vaughan-Type-II bridge required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixAtomAggregation",
+      "meaning": "Aggregate atom-level phase estimates across all 15439 atoms without losing the boundary gain.",
+      "proved": false,
+      "remaining": "requires analytic aggregation discipline"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "moving Beatty numerator A(q) on a prime-q prefix",
+    "identity": "q*m=k*P+D with e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+    "input": "15439 fixed-m q-prefix line atoms carrying 177515 edges",
+    "remaining": "phase saving for moving-numerator prime-q reciprocal orbits and no-loss aggregation"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "trace bilinear input would need a completed moving-q family, not just the real reciprocal normal form",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman estimates require an inverse-fraction or completed trace variable after normalization",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "one-dimensional q-prefix orbits with moving numerator are not direct composite Type-II rectangles",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman fractions become relevant only after converting A(q)/q to an admissible completed family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime existence does not estimate the fixed-m q-prefix reciprocal phase orbit",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "normal form gives explicit reciprocal phases, but not a completed moving-q trace family",
+    "Li_short_interval_x_052": "prime existence in short intervals does not estimate the normalized reciprocal phase",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "no direct inverse-fraction Kloosterman variable is produced by e(A(q)/q)",
+    "Pascadi_composite_Type_II": "q-prefix line atoms remain one-dimensional after fixed-m normalization",
+    "Wright_unbalanced_Kloosterman": "closest candidate after converting moving numerator A(q) into an admissible completed family"
+  },
+  "finite_audit": {
+    "A_zero_count": 0,
+    "D_out_of_range_count": 0,
+    "atom_count_by_endpoint_flux_class_rows": [
+      {
+        "atom_count": 2466,
+        "edge_weight_sum": 29144,
+        "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell"
+      },
+      {
+        "atom_count": 633,
+        "edge_weight_sum": 8652,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture"
+      },
+      {
+        "atom_count": 54,
+        "edge_weight_sum": 776,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture"
+      },
+      {
+        "atom_count": 1237,
+        "edge_weight_sum": 12879,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture"
+      },
+      {
+        "atom_count": 42,
+        "edge_weight_sum": 708,
+        "endpoint_flux_class": "right_tail_right_collar_only_with_P_puncture"
+      },
+      {
+        "atom_count": 131,
+        "edge_weight_sum": 2487,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture"
+      },
+      {
+        "atom_count": 267,
+        "edge_weight_sum": 4864,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture"
+      },
+      {
+        "atom_count": 4398,
+        "edge_weight_sum": 52957,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture"
+      },
+      {
+        "atom_count": 200,
+        "edge_weight_sum": 3428,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture"
+      },
+      {
+        "atom_count": 6011,
+        "edge_weight_sum": 61620,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell"
+      }
+    ],
+    "atom_count_by_k_orbit_rows": [
+      {
+        "atom_count": 1162,
+        "edge_weight_sum": 1162,
+        "k_orbit_class": "singleton_q"
+      },
+      {
+        "atom_count": 14277,
+        "edge_weight_sum": 176353,
+        "k_orbit_class": "strict_beatty_k_multiq"
+      }
+    ],
+    "atom_count_by_numerator_motion_rows": [
+      {
+        "atom_count": 1164,
+        "edge_weight_sum": 1166,
+        "numerator_motion_class": "constant_normalized_numerator"
+      },
+      {
+        "atom_count": 14275,
+        "edge_weight_sum": 176349,
+        "numerator_motion_class": "moving_beatty_numerator"
+      }
+    ],
+    "atom_count_by_strip_rows": [
+      {
+        "atom_count": 2466,
+        "edge_weight_sum": 29144,
+        "strip": "lower_wing"
+      },
+      {
+        "atom_count": 6962,
+        "edge_weight_sum": 86751,
+        "strip": "right_tail"
+      },
+      {
+        "atom_count": 6011,
+        "edge_weight_sum": 61620,
+        "strip": "upper_wing"
+      }
+    ],
+    "bad_edge_samples": [],
+    "fixed_numerator_completed_kloosterman_input_available": false,
+    "k_distinct_count_max": 37,
+    "k_distinct_count_median": 10,
+    "k_distinct_count_min": 1,
+    "k_nonincreasing_step_count": 0,
+    "k_out_of_strict_row_range_count": 0,
+    "k_span_average": 76.68359349698815,
+    "k_span_max": 318,
+    "k_span_median": 62,
+    "k_span_min": 1,
+    "k_step_average": 7.209451121695994,
+    "k_step_max": 33,
+    "k_step_median": 6.0,
+    "k_step_min": 1,
+    "m_equals_P_count": 0,
+    "m_not_prime_count": 0,
+    "max_prime": 1009,
+    "moving_beatty_numerator_dominates": true,
+    "moving_q_denominator_completed_trace_closed": false,
+    "no_loss_qprefix_atom_aggregation_closed": false,
+    "phase_congruence_mismatch_count": 0,
+    "phase_normal_form_atom_count_total": 15439,
+    "phase_normal_form_closed": true,
+    "phase_normal_form_edge_count_total": 177515,
+    "phase_normal_form_identity_verified": true,
+    "previous_qprefix_line_atom_count_total": 15439,
+    "previous_qprefix_line_atom_edge_count_total": 177515,
+    "product_division_mismatch_count": 0,
+    "q_not_prime_count": 0,
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median_atom_weighted": 10,
+    "q_prefix_count_min": 1,
+    "qprefix_line_atom_phase_saving_closed": false,
+    "row_column_unconditional_closed": false,
+    "sample_atoms": [
+      {
+        "A_distinct_count": 1,
+        "A_max": 17,
+        "A_min": 17,
+        "A_sample": [
+          17
+        ],
+        "D_max": 12,
+        "D_min": 12,
+        "D_sample": [
+          12
+        ],
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 43,
+        "k_min": 43,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          43
+        ],
+        "k_span": 1,
+        "m": 79,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 0,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 29,
+        "q_prefix_count": 1,
+        "q_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 7,
+        "A_min": 7,
+        "A_sample": [
+          7
+        ],
+        "D_max": 22,
+        "D_min": 22,
+        "D_sample": [
+          22
+        ],
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 45,
+        "k_min": 45,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          45
+        ],
+        "k_span": 1,
+        "m": 83,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 0,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 29,
+        "q_prefix_count": 1,
+        "q_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 21,
+        "A_min": 21,
+        "A_sample": [
+          21
+        ],
+        "D_max": 37,
+        "D_min": 37,
+        "D_sample": [
+          37
+        ],
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 48,
+        "k_min": 48,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          48
+        ],
+        "k_span": 1,
+        "m": 89,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 0,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 29,
+        "q_prefix_count": 1,
+        "q_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 13,
+        "A_min": 13,
+        "A_sample": [
+          13
+        ],
+        "D_max": 18,
+        "D_min": 18,
+        "D_sample": [
+          18
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 49,
+        "k_min": 49,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          49
+        ],
+        "k_span": 1,
+        "m": 97,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 11,
+        "A_min": 11,
+        "A_sample": [
+          11
+        ],
+        "D_max": 20,
+        "D_min": 20,
+        "D_sample": [
+          20
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 51,
+        "k_min": 51,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          51
+        ],
+        "k_span": 1,
+        "m": 101,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 10,
+        "A_min": 10,
+        "A_sample": [
+          10
+        ],
+        "D_max": 21,
+        "D_min": 21,
+        "D_sample": [
+          21
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 52,
+        "k_min": 52,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          52
+        ],
+        "k_span": 1,
+        "m": 103,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 8,
+        "A_min": 8,
+        "A_sample": [
+          8
+        ],
+        "D_max": 23,
+        "D_min": 23,
+        "D_sample": [
+          23
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 54,
+        "k_min": 54,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          54
+        ],
+        "k_span": 1,
+        "m": 107,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 7,
+        "A_min": 7,
+        "A_sample": [
+          7
+        ],
+        "D_max": 24,
+        "D_min": 24,
+        "D_sample": [
+          24
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 55,
+        "k_min": 55,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          55
+        ],
+        "k_span": 1,
+        "m": 109,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 5,
+        "A_min": 5,
+        "A_sample": [
+          5
+        ],
+        "D_max": 26,
+        "D_min": 26,
+        "D_sample": [
+          26
+        ],
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 57,
+        "k_min": 57,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          57
+        ],
+        "k_span": 1,
+        "m": 113,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 2,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 36,
+        "A_min": 36,
+        "A_sample": [
+          36
+        ],
+        "D_max": 38,
+        "D_min": 38,
+        "D_sample": [
+          38
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 53,
+        "k_min": 53,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          53
+        ],
+        "k_span": 1,
+        "m": 97,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 22,
+        "A_min": 22,
+        "A_sample": [
+          22
+        ],
+        "D_max": 52,
+        "D_min": 52,
+        "D_sample": [
+          52
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 55,
+        "k_min": 55,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          55
+        ],
+        "k_span": 1,
+        "m": 101,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 15,
+        "A_min": 15,
+        "A_sample": [
+          15
+        ],
+        "D_max": 59,
+        "D_min": 59,
+        "D_sample": [
+          59
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 56,
+        "k_min": 56,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          56
+        ],
+        "k_span": 1,
+        "m": 103,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 31,
+        "A_min": 31,
+        "A_sample": [
+          31
+        ],
+        "D_max": 6,
+        "D_min": 6,
+        "D_sample": [
+          6
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 59,
+        "k_min": 59,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          59
+        ],
+        "k_span": 1,
+        "m": 107,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 24,
+        "A_min": 24,
+        "A_sample": [
+          24
+        ],
+        "D_max": 13,
+        "D_min": 13,
+        "D_sample": [
+          13
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 60,
+        "k_min": 60,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          60
+        ],
+        "k_span": 1,
+        "m": 109,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 10,
+        "A_min": 10,
+        "A_sample": [
+          10
+        ],
+        "D_max": 27,
+        "D_min": 27,
+        "D_sample": [
+          27
+        ],
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "k_distinct_count": 1,
+        "k_max": 62,
+        "k_min": 62,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          62
+        ],
+        "k_span": 1,
+        "m": 113,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 4,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      },
+      {
+        "A_distinct_count": 1,
+        "A_max": 37,
+        "A_min": 37,
+        "A_sample": [
+          37
+        ],
+        "D_max": 69,
+        "D_min": 69,
+        "D_sample": [
+          69
+        ],
+        "P": 71,
+        "edge_count": 1,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "k_distinct_count": 1,
+        "k_max": 58,
+        "k_min": 58,
+        "k_orbit_class": "singleton_q",
+        "k_sample": [
+          58
+        ],
+        "k_span": 1,
+        "m": 79,
+        "numerator_motion_class": "constant_normalized_numerator",
+        "packet_index": 5,
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 53,
+        "q_prefix_count": 1,
+        "q_sample": [
+          53
+        ],
+        "q_start": 53,
+        "strip": "right_tail"
+      }
+    ]
+  },
+  "fixed_numerator_completed_kloosterman_input_available": false,
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving",
+    "AND CompletionOfA(q)/qToExternalTraceOrKloostermanFamily",
+    "AND NoLossAggregationAcross15439QPrefixPhaseAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_qprefix_atom_aggregation_closed": false,
+  "phase_normal_form_closed": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "qprefix_line_atom_phase_saving_closed": false,
+  "reason_chosen": "after fixed-m q-prefix atomization, the next acyclic step is to normalize the reciprocal phase before attempting any trace/Kloosterman input",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "87fb5ec50612e9fce62680fc8e3f2fd2a30376ef936d77ea4de428fcf779a4f9",
+    "docs/monograph/external-theorem-index.md": "68f910b11d973023eb364f11ccb090861a4e72b5316ff05b99cbc2f85108139c",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "aa3e7d6f570227efd836ecd550ef77615c8de2b715a9c070c8436d6875bc18fb",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json": "cbfe0b837d418fa6270d654476e23489291c3e183d87740d853c7d30fa8fb452",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.json": "f0e224a893f8a09e6b8ea2b8e247623680d3ae50bf1d45b05cb50ca99628f4c2",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "19aebede85773f80ec413fa0501d97e905f44d64dd502ba2c89fa93ac8127db1",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "73fa09e3bec0b677c1a51adfade8d135e9409671f4dd91d9821e1f680569bf81",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_phase_normal_form_audit.py": "f1b43d5135d5082a40ebcf475c123eb4de8bf51c887d96698e6c72074c29a994",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "01264e7c94170795ba702b91f87d54579a9015ccf91aff8d520fe3fe98003a62"
+  },
+  "status": "qprefix_line_atoms_have_phase_normal_form_completed_trace_open"
+}

@@ -22365,6 +22365,58 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.256 Phi-LPF q-prefix phase normal-form 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json
+```
+
+同步读数为：
+
+```text
+status=qprefix_line_atoms_have_phase_normal_form_completed_trace_open
+phase_normal_form_atom_count_total=15439
+phase_normal_form_edge_count_total=177515
+phase_normal_form_identity_verified=true
+moving_beatty_numerator atoms/edges=14275/176349
+phase_normal_form_closed=true
+qprefix_line_atom_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：fixed-`m` q-prefix atoms 现在不只是支撑对象，而是具有显式相位：
+
+```text
+q*m=k*P+D,
+e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q),
+A(q)=-D mod q.
+```
+
+这关闭 `ProductDivisionPhaseNormalForm`、`ReciprocalPhaseRelabeling` 与
+`BeattyKOrbitMonotonicity`。但大多数 atoms 的 `A(q)` 随 `q` 移动，因此不能升级为
+固定分子 Kloosterman 输入。
+
+最新直接主攻改为：
+
+```text
+MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving
+```
+
+并行仍需：
+
+```text
+CompletionOfA(q)/qToExternalTraceOrKloostermanFamily
+NoLossAggregationAcross15439QPrefixPhaseAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+行/列命题、外部引理版与内部自足版仍未无条件闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：
