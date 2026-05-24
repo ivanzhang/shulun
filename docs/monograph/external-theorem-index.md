@@ -5374,6 +5374,79 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 59. Phi-LPF boundary layer-cake phase-interface 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.md
+```
+
+上一层已把 boundary 拆成 `6190` 个完整 product rectangles。本层继续检查这些
+rectangles 是否已可直接作为长双变量 Type-II/trace 输入。有限审计读数：
+
+```text
+layercake_rectangle_count_total=6190
+edge_count_total=177515
+genuine_qm_product_layer: rectangles=3880, edges=147181
+q_prefix_line_layer: rectangles=1955, edges=29172
+m_shell_line_layer: rectangles=296, edges=1103
+point_layer: rectangles=59, edges=59
+q_prefix_count_median=11
+q_prefix_count_max=37
+m_shell_prime_count_median=2
+m_shell_prime_count_max=12
+both>=16: rectangles=0, edges=0
+naive_layer_sqrt_loss_factor=71.553080825699
+```
+
+结论是：多数边数确实落入 q-m product 层，但 `m` 侧是短 prime shell，
+逐层并不是现有长变量 Type-II 定理的直接输入。最新最窄接口改写为：
+
+```text
+UniformShortPrimeShellCompletionAcrossLayerCakeRectangles
+AND MovingPrimeQDenominatorCompletedTraceFamily
+AND NoLossLayerAggregationFor6190ShortShellPackets
+AND EndpointSummationByPartsForQPrefixLineLayers
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部定理匹配：
+
+```text
+FKMS trace bilinear:
+  product layers are present, but thin m-shell and cross-layer aggregation are not supplied.
+
+Milićević--Qin--Wu arbitrary-modulus Kloosterman:
+  relevant only after the moving prime q denominator is completed layerwise.
+
+Pascadi composite/non-abelian Type-II:
+  does not by itself absorb q-prefix line layers or short endpoint shells.
+
+Wright unbalanced Kloosterman fractions:
+  promising for q-long/m-short layers, still conditional on the exact reciprocal phase model.
+
+Li x^0.52 short intervals:
+  still does not yield half-scale or short-shell endpoint positivity.
+```
+
+状态边界：
+
+```text
+phase_interface_shape_verified=true
+direct_long_typeii_layer_closure_available=false
+boundary_phase_saving_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

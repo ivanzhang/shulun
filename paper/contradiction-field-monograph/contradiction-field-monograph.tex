@@ -34263,6 +34263,88 @@ boundary-layercake-rectangles-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Phase interface of the boundary layer-cake packets}
+
+\begin{theorem}[Short-shell obstruction inside the boundary layer-cake]
+The boundary layer-cake decomposition does not by itself put the boundary
+into a long two-variable Type-II range.  In the audit range \(P\le 1009\),
+the \(6190\) complete product layers split into
+\[
+\begin{array}{c|c|c}
+\hbox{phase class} & \hbox{rectangles} & \hbox{edges}\\ \hline
+\texttt{genuine\_qm\_product\_layer} & 3880 & 147181\\
+\texttt{q\_prefix\_line\_layer} & 1955 & 29172\\
+\texttt{m\_shell\_line\_layer} & 296 & 1103\\
+\texttt{point\_layer} & 59 & 59 .
+\end{array}
+\]
+The median \(q\)-prefix length is \(11\) and the maximum is \(37\), but
+the median prime-\(m\)-shell length is only \(2\), and the maximum is \(12\).
+In particular no audited layer has both sides of length at least \(16\).
+\end{theorem}
+\begin{proof}
+For each layer rectangle \(R\) in the preceding layer-cake decomposition,
+write
+\[
+  Q(R)=\#\{q\hbox{ in the strip-local prefix}\},\qquad
+  M(R)=\#\{m\hbox{ in the prime shell}\}.
+\]
+Classify \(R\) as a point layer if \(Q(R)=M(R)=1\), as a
+\(q\)-prefix line if \(Q(R)>1\) and \(M(R)=1\), as an \(m\)-shell line if
+\(Q(R)=1\) and \(M(R)>1\), and as a genuine \(q,m\)-product layer if both
+sides have length at least \(2\).  The machine audit regenerates the
+same \(6190\) rectangles from the previous certificate and checks that
+their total edge count remains \(177515\).  Direct enumeration of the
+pairs \((Q(R),M(R))\) gives the displayed table, the side-length
+statistics, and the zero count for \(Q(R),M(R)\ge 16\).
+\end{proof}
+
+\begin{remark}[External theorem interface after the phase split]
+This is a genuine narrowing of the obstruction.  The issue is no longer
+that the boundary is a curved or arbitrary staircase: it is a finite family
+of product layers.  The obstruction is that the product layers are
+predominantly \(q\)-long but \(m\)-short, with many \(q\)-prefix line
+layers.  Thus a long-variable Type-II or trace theorem cannot be invoked
+layer by layer without an additional short prime-shell completion, a
+moving prime-\(q\) denominator completion, and a summation principle over
+all \(6190\) layer packets.
+
+The finite ledger also records
+\[
+  \sum_R \sqrt{|R|}=30147.122529825978,\qquad
+  \sqrt{\sum_R |R|}=421.325290007614,
+\]
+so a naive per-layer square-root summation has an audited loss factor
+\[
+  71.553080825699.
+\]
+This number is not an asymptotic theorem, but it prevents the manuscript
+from silently replacing uniform layer aggregation by a harmless constant.
+
+The latest narrow mouth is now
+\begin{quote}\scriptsize\ttfamily
+UniformShortPrimeShellCompletionAcrossLayerCakeRectangles\\
+AND MovingPrimeQDenominatorCompletedTraceFamily\\
+AND NoLossLayerAggregationFor6190ShortShellPackets\\
+AND EndpointSummationByPartsForQPrefixLineLayers\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+FKMS-type trace bilinear inputs, arbitrary-modulus Kloosterman inputs,
+composite Type-II inputs, unbalanced Kloosterman inputs, and \(x^{0.52}\)
+short-interval prime theorems remain relevant interfaces only after these
+short-shell and moving-denominator conditions are supplied.  This is still
+not an unconditional proof of the Phi--LPF target, the external-lemma
+version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-layercake-phase-interface-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -4328,6 +4328,77 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13V：Phi-LPF q-support row-averaged additive-k prime-survivor boundary layer-cake phase-interface 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.md
+```
+
+本层承接 Q13U，不再问 product rectangle 恒等式，而是问每个 layer 是否已经匹配
+现有外部 Type-II/trace/Kloosterman 的长双变量输入。
+
+### Q13V.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+layercake_rectangle_count_total=6190
+edge_count_total=177515
+genuine_qm_product_layer=3880 rectangles / 147181 edges
+q_prefix_line_layer=1955 rectangles / 29172 edges
+m_shell_line_layer=296 rectangles / 1103 edges
+point_layer=59 rectangles / 59 edges
+q_prefix_count_median=11
+q_prefix_count_max=37
+m_shell_prime_count_median=2
+m_shell_prime_count_max=12
+both>=16: rectangles=0, edges=0
+naive_layer_sqrt_loss_factor=71.553080825699
+```
+
+### Q13V.2 诚实边界
+
+`genuine_qm_product_layer` 承载多数边数，但 `m` 侧是短 prime shell：
+审计范围内中位数为 `2`，最大为 `12`。因此“已经有 product rectangles”
+不等于“可以逐层调用长变量 Type-II 定理”。若逐层 Cauchy/平方根损失求和，
+有限账本中的形状损耗指标约为 `71.553`，必须由统一相消或层聚合吸收。
+
+最新最窄口：
+
+```text
+UniformShortPrimeShellCompletionAcrossLayerCakeRectangles
+AND MovingPrimeQDenominatorCompletedTraceFamily
+AND NoLossLayerAggregationFor6190ShortShellPackets
+AND EndpointSummationByPartsForQPrefixLineLayers
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部定理边界不变：FKMS trace bilinear、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright unbalanced Kloosterman 与 Li `x^0.52` 短区间素数
+都只是候选接口；它们没有直接给出本文需要的短 shell completion、移动 q 分母
+completed trace family 和 6190 层无损求和。
+
+状态边界：
+
+```text
+phase_interface_shape_verified=true
+direct_long_typeii_layer_closure_available=false
+boundary_phase_saving_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

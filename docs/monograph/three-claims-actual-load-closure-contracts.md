@@ -22365,6 +22365,59 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json
+```
+
+同步读数为：
+
+```text
+layercake_rectangle_count_total=6190
+edge_count_total=177515
+genuine_qm_product_layer=3880 rectangles / 147181 edges
+q_prefix_line_layer=1955 rectangles / 29172 edges
+m_shell_line_layer=296 rectangles / 1103 edges
+point_layer=59 rectangles / 59 edges
+m_shell_prime_count_median=2
+m_shell_prime_count_max=12
+both>=16: rectangles=0, edges=0
+direct_long_typeii_layer_closure_available=false
+boundary_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层 `6190` 个 product rectangles 的支撑恒等式已保留，但
+每个 layer 的实际相位接口多数是 q-long/m-short，而不是长 m 变量的标准 Type-II
+矩形。真实负载不能再写成“product rectangle 已出现所以外部 Type-II 直接吃掉”；
+它必须通过短 prime-shell completion、移动 prime q 分母 completed trace family
+和跨层无损求和支付。
+
+最新直接主攻改为：
+
+```text
+UniformShortPrimeShellCompletionAcrossLayerCakeRectangles
+AND MovingPrimeQDenominatorCompletedTraceFamily
+AND NoLossLayerAggregationFor6190ShortShellPackets
+```
+
+并行保留：
+
+```text
+EndpointSummationByPartsForQPrefixLineLayers
+DiagonalPGhostSubtractionDiscipline
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+CompletedTraceFamilyForPrimePrimeBulkRectangle
+```
+
+本层只定位真实解析接口，不关闭 Phi-LPF 奇偶性障碍、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

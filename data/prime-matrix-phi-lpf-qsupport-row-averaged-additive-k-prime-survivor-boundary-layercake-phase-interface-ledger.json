@@ -1,0 +1,595 @@
+{
+  "boundary_phase_saving_closed": false,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "BoundaryLayerCakeShapeImported",
+      "meaning": "The previous exact 6190-rectangle layer-cake support identity is preserved.",
+      "proved": true,
+      "remaining": "none for support shape"
+    },
+    {
+      "closed": true,
+      "gate": "PhaseInterfaceClassLedger",
+      "meaning": "Every layer is classified by its q-prefix and m-shell side lengths.",
+      "proved": true,
+      "remaining": "none for finite classification"
+    },
+    {
+      "closed": true,
+      "gate": "ThinPrimeShellObstructionLocated",
+      "meaning": "The audited m-shell side has median 2 and maximum 12, so long-m Type-II input is not directly available layerwise.",
+      "proved": true,
+      "remaining": "prove short-shell completion or aggregate layers before applying external estimates"
+    },
+    {
+      "closed": false,
+      "gate": "UniformShortShellPhaseSaving",
+      "meaning": "Prove cancellation for q-long but m-short prime shells with moving prime q denominator.",
+      "proved": false,
+      "remaining": "new analytic estimate or completed trace family required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossLayerSummation",
+      "meaning": "Sum the 6190 layer estimates without a comparable Cauchy/endpoint loss.",
+      "proved": false,
+      "remaining": "uniform layer aggregation remains required"
+    }
+  ],
+  "completed_trace_or_kloosterman_variable_closed": false,
+  "current_object": {
+    "input": "6190 boundary layer-cake product rectangles",
+    "phase_interface": "split into point, q-prefix line, m-shell line, and genuine q-m product layers",
+    "remaining": "short prime-m shell completion, moving q-denominator trace family, and uniform summation over layers"
+  },
+  "direct_long_typeii_layer_closure_available": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "long bilinear trace input would need a completed family and uniform aggregation; thin m-shell layers are not supplied as a direct theorem instance",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman input is relevant only after the moving prime q denominator is completed layerwise",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "Type-II shape is present for many edges, but the m side is short and endpoint layer summation remains rate-bearing",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced estimates are a plausible interface for right-tail and q-long layers, still requiring the exact congruence model",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval theta=0.52 does not close the half-scale or short-shell phase interface",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "genuine product layers are present, but the short m side and cross-layer aggregation are not automatic theorem hypotheses",
+    "Li_short_interval_x_052": "does not imply the needed half-scale or layer endpoint positivity",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "useful only after layerwise moving q denominators are completed as Kloosterman variables",
+    "Pascadi_composite_Type_II": "does not by itself absorb q-prefix line layers or short m-shell endpoint layers",
+    "Wright_unbalanced_Kloosterman": "most relevant to q-long/m-short layers, still requiring the exact reciprocal phase model"
+  },
+  "finite_audit": {
+    "all_m_shells_le_12": true,
+    "boundary_phase_saving_closed": false,
+    "direct_long_typeii_layer_closure_available": false,
+    "edge_count_total": 177515,
+    "genuine_product_edge_count": 147181,
+    "genuine_product_rectangle_count": 3880,
+    "largest_rectangles": [
+      {
+        "P": 919,
+        "edge_count": 261,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 643,
+        "q_prefix_count": 29,
+        "q_start": 461,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 911,
+        "edge_count": 252,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 631,
+        "q_prefix_count": 28,
+        "q_start": 457,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 907,
+        "edge_count": 243,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 619,
+        "q_prefix_count": 27,
+        "q_start": 457,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 839,
+        "edge_count": 216,
+        "m_end": 1327,
+        "m_shell_prime_count": 12,
+        "m_start": 1277,
+        "q_end": 523,
+        "q_prefix_count": 18,
+        "q_start": 421,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 887,
+        "edge_count": 216,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 601,
+        "q_prefix_count": 24,
+        "q_start": 449,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 983,
+        "edge_count": 216,
+        "m_end": 1453,
+        "m_shell_prime_count": 8,
+        "m_start": 1423,
+        "q_end": 661,
+        "q_prefix_count": 27,
+        "q_start": 499,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 877,
+        "edge_count": 207,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 587,
+        "q_prefix_count": 23,
+        "q_start": 439,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 883,
+        "edge_count": 207,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 593,
+        "q_prefix_count": 23,
+        "q_start": 443,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 953,
+        "edge_count": 207,
+        "m_end": 1459,
+        "m_shell_prime_count": 9,
+        "m_start": 1423,
+        "q_end": 619,
+        "q_prefix_count": 23,
+        "q_start": 479,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 881,
+        "edge_count": 198,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 587,
+        "q_prefix_count": 22,
+        "q_start": 443,
+        "strip": "upper_wing"
+      }
+    ],
+    "layercake_rectangle_count_total": 6190,
+    "m_bucket_rows": [
+      {
+        "bucket": "3<=m<=4",
+        "edge_count": 77832,
+        "rectangle_count": 1925
+      },
+      {
+        "bucket": "5<=m<=8",
+        "edge_count": 20347,
+        "rectangle_count": 449
+      },
+      {
+        "bucket": "9<=m<=12",
+        "edge_count": 6485,
+        "rectangle_count": 69
+      },
+      {
+        "bucket": "m=1",
+        "edge_count": 29231,
+        "rectangle_count": 2014
+      },
+      {
+        "bucket": "m=2",
+        "edge_count": 43620,
+        "rectangle_count": 1733
+      }
+    ],
+    "m_shell_prime_count_average": 2.494184168012924,
+    "m_shell_prime_count_max": 12,
+    "m_shell_prime_count_median": 2.0,
+    "m_shell_prime_count_min": 1,
+    "max_prime": 1009,
+    "naive_layer_sqrt_loss_factor": 71.55308082569925,
+    "no_large_balanced_typeii_layer_ge_16": true,
+    "phase_class_rows": [
+      {
+        "bucket": "genuine_qm_product_layer",
+        "edge_count": 147181,
+        "rectangle_count": 3880
+      },
+      {
+        "bucket": "m_shell_line_layer",
+        "edge_count": 1103,
+        "rectangle_count": 296
+      },
+      {
+        "bucket": "point_layer",
+        "edge_count": 59,
+        "rectangle_count": 59
+      },
+      {
+        "bucket": "q_prefix_line_layer",
+        "edge_count": 29172,
+        "rectangle_count": 1955
+      }
+    ],
+    "phase_interface_shape_verified": true,
+    "previous_layercake_edge_count_total": 177515,
+    "previous_layercake_rectangle_count_total": 6190,
+    "q_bucket_rows": [
+      {
+        "bucket": "17<=q<=37",
+        "edge_count": 93081,
+        "rectangle_count": 1872
+      },
+      {
+        "bucket": "2<=q<=4",
+        "edge_count": 7452,
+        "rectangle_count": 886
+      },
+      {
+        "bucket": "5<=q<=8",
+        "edge_count": 20877,
+        "rectangle_count": 1220
+      },
+      {
+        "bucket": "9<=q<=16",
+        "edge_count": 54943,
+        "rectangle_count": 1857
+      },
+      {
+        "bucket": "q=1",
+        "edge_count": 1162,
+        "rectangle_count": 355
+      }
+    ],
+    "q_prefix_count_average": 12.566720516962842,
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median": 11.0,
+    "q_prefix_count_min": 1,
+    "rectangle_edge_count_average": 28.677705977382875,
+    "rectangle_edge_count_max": 261,
+    "rectangle_edge_count_median": 21.0,
+    "rectangle_edge_count_min": 1,
+    "row_column_unconditional_closed": false,
+    "shape_bucket_rows": [
+      {
+        "edge_count": 40965,
+        "m_bucket": "3<=m<=4",
+        "q_bucket": "17<=q<=37",
+        "rectangle_count": 533
+      },
+      {
+        "edge_count": 6181,
+        "m_bucket": "5<=m<=8",
+        "q_bucket": "17<=q<=37",
+        "rectangle_count": 50
+      },
+      {
+        "edge_count": 3528,
+        "m_bucket": "9<=m<=12",
+        "q_bucket": "17<=q<=37",
+        "rectangle_count": 18
+      },
+      {
+        "edge_count": 18683,
+        "m_bucket": "m=1",
+        "q_bucket": "17<=q<=37",
+        "rectangle_count": 767
+      },
+      {
+        "edge_count": 23724,
+        "m_bucket": "m=2",
+        "q_bucket": "17<=q<=37",
+        "rectangle_count": 504
+      },
+      {
+        "edge_count": 3004,
+        "m_bucket": "3<=m<=4",
+        "q_bucket": "2<=q<=4",
+        "rectangle_count": 301
+      },
+      {
+        "edge_count": 1978,
+        "m_bucket": "5<=m<=8",
+        "q_bucket": "2<=q<=4",
+        "rectangle_count": 110
+      },
+      {
+        "edge_count": 378,
+        "m_bucket": "9<=m<=12",
+        "q_bucket": "2<=q<=4",
+        "rectangle_count": 15
+      },
+      {
+        "edge_count": 696,
+        "m_bucket": "m=1",
+        "q_bucket": "2<=q<=4",
+        "rectangle_count": 227
+      },
+      {
+        "edge_count": 1396,
+        "m_bucket": "m=2",
+        "q_bucket": "2<=q<=4",
+        "rectangle_count": 233
+      },
+      {
+        "edge_count": 8930,
+        "m_bucket": "3<=m<=4",
+        "q_bucket": "5<=q<=8",
+        "rectangle_count": 391
+      },
+      {
+        "edge_count": 4524,
+        "m_bucket": "5<=m<=8",
+        "q_bucket": "5<=q<=8",
+        "rectangle_count": 118
+      },
+      {
+        "edge_count": 664,
+        "m_bucket": "9<=m<=12",
+        "q_bucket": "5<=q<=8",
+        "rectangle_count": 10
+      },
+      {
+        "edge_count": 2331,
+        "m_bucket": "m=1",
+        "q_bucket": "5<=q<=8",
+        "rectangle_count": 355
+      },
+      {
+        "edge_count": 4428,
+        "m_bucket": "m=2",
+        "q_bucket": "5<=q<=8",
+        "rectangle_count": 346
+      },
+      {
+        "edge_count": 24496,
+        "m_bucket": "3<=m<=4",
+        "q_bucket": "9<=q<=16",
+        "rectangle_count": 575
+      },
+      {
+        "edge_count": 7285,
+        "m_bucket": "5<=m<=8",
+        "q_bucket": "9<=q<=16",
+        "rectangle_count": 107
+      },
+      {
+        "edge_count": 1822,
+        "m_bucket": "9<=m<=12",
+        "q_bucket": "9<=q<=16",
+        "rectangle_count": 16
+      },
+      {
+        "edge_count": 7462,
+        "m_bucket": "m=1",
+        "q_bucket": "9<=q<=16",
+        "rectangle_count": 606
+      },
+      {
+        "edge_count": 13878,
+        "m_bucket": "m=2",
+        "q_bucket": "9<=q<=16",
+        "rectangle_count": 553
+      },
+      {
+        "edge_count": 437,
+        "m_bucket": "3<=m<=4",
+        "q_bucket": "q=1",
+        "rectangle_count": 125
+      },
+      {
+        "edge_count": 379,
+        "m_bucket": "5<=m<=8",
+        "q_bucket": "q=1",
+        "rectangle_count": 64
+      },
+      {
+        "edge_count": 93,
+        "m_bucket": "9<=m<=12",
+        "q_bucket": "q=1",
+        "rectangle_count": 10
+      },
+      {
+        "edge_count": 59,
+        "m_bucket": "m=1",
+        "q_bucket": "q=1",
+        "rectangle_count": 59
+      },
+      {
+        "edge_count": 194,
+        "m_bucket": "m=2",
+        "q_bucket": "q=1",
+        "rectangle_count": 97
+      }
+    ],
+    "sqrt_total_edges": 421.32529000761394,
+    "strip_phase_class_rows": [
+      {
+        "edge_count": 24514,
+        "phase_class": "genuine_qm_product_layer",
+        "rectangle_count": 670,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 128,
+        "phase_class": "m_shell_line_layer",
+        "rectangle_count": 37,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 12,
+        "phase_class": "point_layer",
+        "rectangle_count": 12,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 4490,
+        "phase_class": "q_prefix_line_layer",
+        "rectangle_count": 313,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 67906,
+        "phase_class": "genuine_qm_product_layer",
+        "rectangle_count": 1815,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 519,
+        "phase_class": "m_shell_line_layer",
+        "rectangle_count": 151,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 29,
+        "phase_class": "point_layer",
+        "rectangle_count": 29,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 18297,
+        "phase_class": "q_prefix_line_layer",
+        "rectangle_count": 1196,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 54761,
+        "phase_class": "genuine_qm_product_layer",
+        "rectangle_count": 1395,
+        "strip": "upper_wing"
+      },
+      {
+        "edge_count": 456,
+        "phase_class": "m_shell_line_layer",
+        "rectangle_count": 108,
+        "strip": "upper_wing"
+      },
+      {
+        "edge_count": 18,
+        "phase_class": "point_layer",
+        "rectangle_count": 18,
+        "strip": "upper_wing"
+      },
+      {
+        "edge_count": 6385,
+        "phase_class": "q_prefix_line_layer",
+        "rectangle_count": 446,
+        "strip": "upper_wing"
+      }
+    ],
+    "sum_sqrt_rectangle_edges": 30147.122529825978,
+    "thin_or_line_edge_count": 30334,
+    "thin_or_line_rectangle_count": 2310,
+    "threshold_rows": [
+      {
+        "edge_count": 147181,
+        "rectangle_count": 3880,
+        "threshold": "both>=2"
+      },
+      {
+        "edge_count": 102347,
+        "rectangle_count": 2084,
+        "threshold": "both>=3"
+      },
+      {
+        "edge_count": 64616,
+        "rectangle_count": 1084,
+        "threshold": "both>=4"
+      },
+      {
+        "edge_count": 24004,
+        "rectangle_count": 319,
+        "threshold": "both>=5"
+      },
+      {
+        "edge_count": 6118,
+        "rectangle_count": 42,
+        "threshold": "both>=8"
+      },
+      {
+        "edge_count": 499,
+        "rectangle_count": 3,
+        "threshold": "both>=10"
+      },
+      {
+        "edge_count": 0,
+        "rectangle_count": 0,
+        "threshold": "both>=16"
+      }
+    ],
+    "uniform_short_shell_completion_required": true
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "UniformShortPrimeShellCompletionAcrossLayerCakeRectangles",
+    "AND MovingPrimeQDenominatorCompletedTraceFamily",
+    "AND NoLossLayerAggregationFor6190ShortShellPackets",
+    "AND EndpointSummationByPartsForQPrefixLineLayers",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phase_interface_shape_verified": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "layer-cake rectangles closed the support identity; the next non-cyclic question is whether their q and m sides match current external Type-II/trace interfaces",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "1759a1aeb330e819e74336c5bc216301e475cf614051a284752c1400d799bcdd",
+    "docs/monograph/external-theorem-index.md": "592964e97b615ac784430308189caf7fa00cceada76a1b48e644c1d2ce01e0a5",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "b6bed95cf7281daddd569241b46b471ee72735e7169ea3d3b137d7d096f38c61",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json": "d320b65d266a3161c858ce5f781f2eb700674c1ce16b39d72c1348a5003c602f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json": "bdf83a4edb2ed72465b1e5646105e4c262dc809337a9200704dc5ba8c890188b",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json": "720726090e6d3358ff41a53ea4cb82bdf8c7df483a83ea3becd89c175f2a29b8",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "4c9720c116e34a6933f5c3169e210d81aeefeb6b8dcd2d970662ff122c842232",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "62cb3b3c5e7fcf2f3c69ddc84c12ea2f31a50964aea3e4b63f91ea06016a4a53",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit.py": "90593bd584d18b27322183dc8d569c4e4a886cd5ebf781b12a46759cdce0628a",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "b9d35f5924d6dec1b513898ddf5726abcaa3ef4b7949578864b0dde8245c4977"
+  },
+  "status": "boundary_layercake_rectangles_split_by_phase_interface_short_shell_completion_open"
+}

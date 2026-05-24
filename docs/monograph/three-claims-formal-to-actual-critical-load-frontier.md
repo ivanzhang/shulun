@@ -24349,6 +24349,56 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AG. Phi-LPF prime-survivor boundary layer-cake phase-interface frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_phase_interface_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-ledger.json
+```
+
+同步结果：
+
+```text
+status=boundary_layercake_rectangles_split_by_phase_interface_short_shell_completion_open
+layercake_rectangle_count_total=6190
+edge_count_total=177515
+genuine_qm_product_layer=3880 rectangles / 147181 edges
+q_prefix_line_layer=1955 rectangles / 29172 edges
+m_shell_line_layer=296 rectangles / 1103 edges
+point_layer=59 rectangles / 59 edges
+q_prefix_count_max=37
+m_shell_prime_count_median=2
+m_shell_prime_count_max=12
+both>=16: rectangles=0, edges=0
+naive_layer_sqrt_loss_factor=71.553080825699
+direct_long_typeii_layer_closure_available=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`UniformPhaseSavingAcrossBoundaryLayerCakeRectangles`
+不能被替换为“已有 product rectangle 所以直接调用长变量 Type-II”。实际 layer
+接口显示，多数边数在 q-m product 层内，但 `m` 侧只是短 prime shell；另有
+`q_prefix_line_layer` 承载 `29172` 条边，必须走 endpoint summation 或
+q-long/m-short 的不平衡相消。
+
+最新实际硬点：
+
+```text
+UniformShortPrimeShellCompletionAcrossLayerCakeRectangles
+AND MovingPrimeQDenominatorCompletedTraceFamily
+AND NoLossLayerAggregationFor6190ShortShellPackets
+AND EndpointSummationByPartsForQPrefixLineLayers
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“product layer 已足以直接闭合”的过强读法；没有删除短 shell
+completion、移动分母 completed trace family 与跨层求和真缺口。
+
 ## 330AF. Phi-LPF prime-survivor boundary layer-cake rectangle frontier
 
 新增文件：
