@@ -33984,6 +33984,93 @@ rough-envelope-cap-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Bulk rectangles inside the nested prime-survivor cap}
+
+\begin{theorem}[Prime-prime bulk rectangle extracted from the cap]
+Fix \(P\), and let \(E_P\) be the prime-survivor edge set in the
+\((q,m)\)-plane after diagonal \(m=P\) subtraction.  For each eligible
+prime \(q\), write its vertical fibre as the prime interval
+\[
+  E_P(q)=\{m:\ (q,m)\in E_P\}
+        =\{m\ {\rm prime}:\ L_q\le m\le U_q\}\setminus\{P\}.
+\]
+For every consecutive block \(Q=[q_i,q_j]\) of eligible prime \(q\)'s, set
+\[
+  L(Q)=\max_{q\in Q}L_q,\qquad U(Q)=\min_{q\in Q}U_q.
+\]
+Then
+\[
+  Q\times\{m\ {\rm prime}:\ L(Q)\le m\le U(Q),\ m\ne P\}
+  \subset E_P.
+\]
+Thus the nested cap contains genuine prime \(q\) by prime \(m\) product
+rectangles.  The maximal such rectangle gives the natural first Type-II
+bulk candidate; its complement in \(E_P\) is the staircase boundary.
+\end{theorem}
+\begin{proof}
+For every \(q\in Q\), the definition of \(L(Q)\) and \(U(Q)\) gives
+\[
+  L_q\le L(Q)\le m\le U(Q)\le U_q.
+\]
+Hence every prime \(m\ne P\) in the displayed interval belongs to the
+vertical fibre \(E_P(q)\).  This proves the product inclusion.  Maximising
+the product of the number of primes in \(Q\) and the number of primes in the
+common \(m\)-interval gives the largest bulk rectangle for that row.  The
+remaining edges are exactly the boundary left after this rectangle is
+removed.
+\end{proof}
+
+\begin{remark}[Finite bulk-rectangle Type-II ledger]
+The audit up to \(P\le 1009\) extracts the largest verified complete
+prime-prime rectangle in every active row.  The total prime-survivor edge
+count remains
+\[
+  \texttt{actual\_prime\_edge\_count\_total}=355919.
+\]
+The extracted bulk and the leftover boundary have comparable sizes:
+\[
+  \texttt{bulk\_rectangle\_edge\_count\_total}=178404,\qquad
+  \texttt{boundary\_edge\_count\_total}=177515,
+\]
+so
+\[
+  \texttt{bulk\_fraction\_total}=0.501248879661,\qquad
+  \texttt{boundary\_fraction\_total}=0.498751120339.
+\]
+Every extracted bulk rectangle is actually complete:
+\[
+  \texttt{bulk\_missing\_count\_total}=0,\qquad
+  \texttt{total\_bad\_bulk\_rectangle\_typeii\_count}=0.
+\]
+Naively completing each row to its full \(q\times m\) rectangle is too
+expensive:
+\[
+  \texttt{row\_full\_rectangle\_count\_total}=795159,\qquad
+  \texttt{row\_completion\_extra\_count\_total}=439240.
+\]
+Thus the support now has a genuine Type-II-shaped bulk entrance, but a
+bulk-only estimate cannot close the survivor layer: the staircase boundary
+is still rate-bearing and must be completed or estimated with cancellation.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+BoundaryPhaseSavingForNestedRoughEnvelopeStaircase\\
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle\\
+AND StaircaseBoundaryCompletionWithoutComparableLoss\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+bulk-rectangle-typeii-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

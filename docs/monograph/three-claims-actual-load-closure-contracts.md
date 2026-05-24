@@ -22536,6 +22536,51 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新是有限结构压缩，不是行/列命题闭合。
 
+### 1.185 Phi-LPF prime-survivor bulk-rectangle Type-II 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json
+```
+
+同步读数为：
+
+```text
+bulk_product_rectangle_verified=true
+actual_prime_edge_count_total=355919
+bulk_rectangle_edge_count_total=178404
+boundary_edge_count_total=177515
+bulk_fraction_total=0.501248879661
+boundary_fraction_total=0.498751120339
+row_full_rectangle_count_total=795159
+row_completion_extra_count_total=439240
+bulk_missing_count_total=0
+direct_bulk_only_typeii_closure_available=false
+boundary_phase_saving_or_staircase_completion_required=true
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：nested rough-envelope cap 中确实存在可供外部 Type-II/trace
+路线继续攻击的完整 prime `q` x prime `m` bulk rectangle；但剩余 staircase
+boundary 与 bulk 同阶，不能作为普通完成误差。
+
+最新活动硬点更新为：
+
+```text
+BoundaryPhaseSavingForNestedRoughEnvelopeStaircase
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StaircaseBoundaryCompletionWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+该更新关闭的是 bulk 入口与边界负担账本，不是行/列命题闭合。
+
 ### 1.184 Phi-LPF prime-survivor rough-envelope cap 更新
 
 新增机器证书：

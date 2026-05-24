@@ -1,0 +1,564 @@
+{
+  "boundary_phase_saving_or_staircase_completion_required": true,
+  "bulk_boundary_comparable_obstruction_closed": true,
+  "bulk_product_rectangle_verified": true,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "LargestPrimePrimeBulkRectangleExtraction",
+      "meaning": "Each active P row contains a verified complete prime q x prime m bulk rectangle inside the survivor graph.",
+      "proved": true,
+      "remaining": "none for the finite structural extraction"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveRowRectangleCompletionCostQuantified",
+      "meaning": "Completing the row support to the full q x m row rectangle costs more than the actual support.",
+      "proved": true,
+      "remaining": "none for the cost ledger"
+    },
+    {
+      "closed": true,
+      "gate": "BulkBoundaryComparableObstruction",
+      "meaning": "The extracted bulk is large, but the remaining boundary is comparable and cannot be discarded.",
+      "proved": true,
+      "remaining": "boundary phase saving or staircase completion remains required"
+    },
+    {
+      "closed": false,
+      "gate": "DirectBulkOnlyTypeIIClosure",
+      "meaning": "Apply external Type-II/trace estimates only to the extracted bulk and close the full survivor layer.",
+      "proved": false,
+      "remaining": "does not handle the comparable boundary"
+    }
+  ],
+  "completed_trace_or_kloosterman_variable_closed": false,
+  "current_object": {
+    "boundary": "actual support minus the extracted complete bulk rectangle",
+    "bulk_rectangle": "maximal complete prime q x prime m rectangle inside each fixed-P support row",
+    "edge_graph": "prime-survivor edges (P,q,m) after rough-envelope cap",
+    "remaining": "prove phase saving for the comparable boundary, or complete the staircase into trace/Type-II packets without losing the main term"
+  },
+  "direct_bulk_only_typeii_closure_available": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "the extracted bulk is closer to a trace bilinear input, but the comparable boundary remains outside the theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "bulk rectangles still need a completed Kloosterman variable; boundary is not absorbed",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "bulk rectangles are Type-II shaped, but boundary cancellation or completion is still missing",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "the split suggests an unbalanced convolution route only after boundary tails are completed",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "additional smooth/squarefree matching remains absent for the prime-prime rectangle and boundary",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval theta=0.52 is not a replacement for boundary phase saving at the half-scale",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "the bulk rectangle is a closer local shape, but the comparable boundary and completed trace family are not supplied",
+    "Li_short_interval_x_052": "does not replace the missing half-scale pointwise boundary estimate",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "no completed Kloosterman variable has been constructed for bulk plus boundary",
+    "Pascadi_composite_Type_II": "bulk rectangles are Type-II shaped, yet the boundary remains rate-bearing",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "prime-prime and boundary weights still do not match the theorem hypotheses directly",
+    "Wright_unbalanced_convolution": "a future unbalanced decomposition must include the staircase boundary"
+  },
+  "finite_audit": {
+    "active_P_count": 155,
+    "actual_prime_edge_count_total": 355919,
+    "boundary_edge_count_total": 177515,
+    "boundary_fraction_total": 0.4987511203391783,
+    "boundary_phase_saving_or_staircase_completion_required": true,
+    "bulk_fraction_ge_45pct_rows": 155,
+    "bulk_fraction_ge_half_rows": 99,
+    "bulk_fraction_max": 1.0,
+    "bulk_fraction_median": 0.5118063754427391,
+    "bulk_fraction_min": 0.48522751779167567,
+    "bulk_fraction_total": 0.5012488796608217,
+    "bulk_is_large_but_not_dominating_boundary": true,
+    "bulk_missing_count_total": 0,
+    "bulk_product_rectangle_verified": true,
+    "bulk_rectangle_bad_row_count": 0,
+    "bulk_rectangle_edge_count_total": 178404,
+    "direct_bulk_only_typeii_closure_available": false,
+    "dyadic_density_cells": [
+      {
+        "actual": 27651,
+        "density": 0.7514879739094986,
+        "full": 36795,
+        "m_bin": "[0.5, 0.75)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 37575,
+        "density": 0.9999201660546064,
+        "full": 37578,
+        "m_bin": "[0.75, 1.0)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 36521,
+        "density": 1.0,
+        "full": 36521,
+        "m_bin": "[1.0, 1.25)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 36107,
+        "density": 0.9998615418697386,
+        "full": 36112,
+        "m_bin": "[1.25, 1.5)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 30106,
+        "density": 0.8442275875606404,
+        "full": 35661,
+        "m_bin": "[1.5, 1.75)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 8799,
+        "density": 0.2934173669467787,
+        "full": 29988,
+        "m_bin": "[1.75, 2.01)P",
+        "q_bin": "[0.5, 0.625)P"
+      },
+      {
+        "actual": 7962,
+        "density": 0.21687731531924168,
+        "full": 36712,
+        "m_bin": "[0.5, 0.75)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 36958,
+        "density": 0.9942964756524079,
+        "full": 37170,
+        "m_bin": "[0.75, 1.0)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 36418,
+        "density": 0.9996980427681244,
+        "full": 36429,
+        "m_bin": "[1.0, 1.25)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 26397,
+        "density": 0.7403449726546066,
+        "full": 35655,
+        "m_bin": "[1.25, 1.5)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 1829,
+        "density": 0.051351882528006286,
+        "full": 35617,
+        "m_bin": "[1.5, 1.75)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 29786,
+        "m_bin": "[1.75, 2.01)P",
+        "q_bin": "[0.625, 0.75)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 34953,
+        "m_bin": "[0.5, 0.75)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 24361,
+        "density": 0.6815218911735907,
+        "full": 35745,
+        "m_bin": "[0.75, 1.0)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 29219,
+        "density": 0.8401817293038503,
+        "full": 34777,
+        "m_bin": "[1.0, 1.25)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 1802,
+        "density": 0.052557895350872075,
+        "full": 34286,
+        "m_bin": "[1.25, 1.5)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 33874,
+        "m_bin": "[1.5, 1.75)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 28448,
+        "m_bin": "[1.75, 2.01)P",
+        "q_bin": "[0.75, 0.875)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 29444,
+        "m_bin": "[0.5, 0.75)P",
+        "q_bin": "[0.875, 1.000001)P"
+      },
+      {
+        "actual": 6476,
+        "density": 0.2175855928501831,
+        "full": 29763,
+        "m_bin": "[0.75, 1.0)P",
+        "q_bin": "[0.875, 1.000001)P"
+      },
+      {
+        "actual": 7738,
+        "density": 0.2668735988963614,
+        "full": 28995,
+        "m_bin": "[1.0, 1.25)P",
+        "q_bin": "[0.875, 1.000001)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 28511,
+        "m_bin": "[1.25, 1.5)P",
+        "q_bin": "[0.875, 1.000001)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 28403,
+        "m_bin": "[1.5, 1.75)P",
+        "q_bin": "[0.875, 1.000001)P"
+      },
+      {
+        "actual": 0,
+        "density": 0.0,
+        "full": 23936,
+        "m_bin": "[1.75, 2.01)P",
+        "q_bin": "[0.875, 1.000001)P"
+      }
+    ],
+    "max_prime": 1009,
+    "previous_actual_prime_edge_count_total": 355919,
+    "row_completion_extra_count_total": 439240,
+    "row_completion_extra_to_actual_ratio_total": 1.234101017366311,
+    "row_completion_ratio_total": 2.234101017366311,
+    "row_full_rectangle_count_total": 795159,
+    "sample_rows": [
+      {
+        "P": 43,
+        "actual_edge_count": 6,
+        "boundary_edge_count": 0,
+        "bulk_edge_count": 6,
+        "bulk_fraction": 1.0,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 6,
+        "m_end": 73,
+        "m_start": 53,
+        "q_count": 1,
+        "q_end": 23,
+        "q_start": 23,
+        "row_completion_extra_count": 0,
+        "row_full_rectangle_count": 6,
+        "row_m_count": 6,
+        "row_q_count": 1,
+        "sample": "P=43, bulk q=[23,23] (1), m=[53,73] (6), bulk=6, boundary=0"
+      },
+      {
+        "P": 53,
+        "actual_edge_count": 13,
+        "boundary_edge_count": 3,
+        "bulk_edge_count": 10,
+        "bulk_fraction": 0.7692307692307693,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 5,
+        "m_end": 73,
+        "m_start": 59,
+        "q_count": 2,
+        "q_end": 31,
+        "q_start": 29,
+        "row_completion_extra_count": 3,
+        "row_full_rectangle_count": 16,
+        "row_m_count": 8,
+        "row_q_count": 2,
+        "sample": "P=53, bulk q=[29,31] (2), m=[59,73] (5), bulk=10, boundary=3"
+      },
+      {
+        "P": 59,
+        "actual_edge_count": 26,
+        "boundary_edge_count": 6,
+        "bulk_edge_count": 20,
+        "bulk_fraction": 0.7692307692307693,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 5,
+        "m_end": 73,
+        "m_start": 53,
+        "q_count": 4,
+        "q_end": 43,
+        "q_start": 31,
+        "row_completion_extra_count": 6,
+        "row_full_rectangle_count": 32,
+        "row_m_count": 8,
+        "row_q_count": 4,
+        "sample": "P=59, bulk q=[31,43] (4), m=[53,73] (5), bulk=20, boundary=6"
+      },
+      {
+        "P": 61,
+        "actual_edge_count": 37,
+        "boundary_edge_count": 12,
+        "bulk_edge_count": 25,
+        "bulk_fraction": 0.6756756756756757,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 5,
+        "m_end": 73,
+        "m_start": 53,
+        "q_count": 5,
+        "q_end": 47,
+        "q_start": 31,
+        "row_completion_extra_count": 33,
+        "row_full_rectangle_count": 70,
+        "row_m_count": 14,
+        "row_q_count": 5,
+        "sample": "P=61, bulk q=[31,47] (5), m=[53,73] (5), bulk=25, boundary=12"
+      },
+      {
+        "P": 67,
+        "actual_edge_count": 38,
+        "boundary_edge_count": 6,
+        "bulk_edge_count": 32,
+        "bulk_fraction": 0.8421052631578947,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 8,
+        "m_end": 89,
+        "m_start": 53,
+        "q_count": 4,
+        "q_end": 47,
+        "q_start": 37,
+        "row_completion_extra_count": 18,
+        "row_full_rectangle_count": 56,
+        "row_m_count": 14,
+        "row_q_count": 4,
+        "sample": "P=67, bulk q=[37,47] (4), m=[53,89] (8), bulk=32, boundary=6"
+      },
+      {
+        "P": 71,
+        "actual_edge_count": 49,
+        "boundary_edge_count": 17,
+        "bulk_edge_count": 32,
+        "bulk_fraction": 0.6530612244897959,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 8,
+        "m_end": 89,
+        "m_start": 53,
+        "q_count": 4,
+        "q_end": 47,
+        "q_start": 37,
+        "row_completion_extra_count": 31,
+        "row_full_rectangle_count": 80,
+        "row_m_count": 16,
+        "row_q_count": 5,
+        "sample": "P=71, bulk q=[37,47] (4), m=[53,89] (8), bulk=32, boundary=17"
+      },
+      {
+        "P": 73,
+        "actual_edge_count": 57,
+        "boundary_edge_count": 15,
+        "bulk_edge_count": 42,
+        "bulk_fraction": 0.7368421052631579,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 14,
+        "m_end": 113,
+        "m_start": 53,
+        "q_count": 3,
+        "q_end": 43,
+        "q_start": 37,
+        "row_completion_extra_count": 33,
+        "row_full_rectangle_count": 90,
+        "row_m_count": 18,
+        "row_q_count": 5,
+        "sample": "P=73, bulk q=[37,43] (3), m=[53,113] (14), bulk=42, boundary=15"
+      },
+      {
+        "P": 79,
+        "actual_edge_count": 58,
+        "boundary_edge_count": 16,
+        "bulk_edge_count": 42,
+        "bulk_fraction": 0.7241379310344828,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 14,
+        "m_end": 113,
+        "m_start": 53,
+        "q_count": 3,
+        "q_end": 47,
+        "q_start": 41,
+        "row_completion_extra_count": 68,
+        "row_full_rectangle_count": 126,
+        "row_m_count": 18,
+        "row_q_count": 7,
+        "sample": "P=79, bulk q=[41,47] (3), m=[53,113] (14), bulk=42, boundary=16"
+      },
+      {
+        "P": 101,
+        "actual_edge_count": 96,
+        "boundary_edge_count": 36,
+        "bulk_edge_count": 60,
+        "bulk_fraction": 0.625,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 12,
+        "m_end": 139,
+        "m_start": 79,
+        "q_count": 5,
+        "q_end": 71,
+        "q_start": 53,
+        "row_completion_extra_count": 64,
+        "row_full_rectangle_count": 160,
+        "row_m_count": 20,
+        "row_q_count": 8,
+        "sample": "P=101, bulk q=[53,71] (5), m=[79,139] (12), bulk=60, boundary=36"
+      },
+      {
+        "P": 257,
+        "actual_edge_count": 591,
+        "boundary_edge_count": 272,
+        "bulk_edge_count": 319,
+        "bulk_fraction": 0.5397631133671743,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 29,
+        "m_end": 359,
+        "m_start": 191,
+        "q_count": 11,
+        "q_end": 181,
+        "q_start": 131,
+        "row_completion_extra_count": 751,
+        "row_full_rectangle_count": 1342,
+        "row_m_count": 61,
+        "row_q_count": 22,
+        "sample": "P=257, bulk q=[131,181] (11), m=[191,359] (29), bulk=319, boundary=272"
+      },
+      {
+        "P": 971,
+        "actual_edge_count": 6206,
+        "boundary_edge_count": 3146,
+        "bulk_edge_count": 3060,
+        "bulk_fraction": 0.49307122139864645,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 90,
+        "m_end": 1327,
+        "m_start": 709,
+        "q_count": 34,
+        "q_end": 701,
+        "q_start": 487,
+        "row_completion_extra_count": 7654,
+        "row_full_rectangle_count": 13860,
+        "row_m_count": 198,
+        "row_q_count": 70,
+        "sample": "P=971, bulk q=[487,701] (34), m=[709,1327] (90), bulk=3060, boundary=3146"
+      },
+      {
+        "P": 1009,
+        "actual_edge_count": 6414,
+        "boundary_edge_count": 3255,
+        "bulk_edge_count": 3159,
+        "bulk_fraction": 0.49251637043966323,
+        "bulk_missing_count": 0,
+        "bulk_missing_sample": [],
+        "bulk_rectangle_verified": true,
+        "m_count": 81,
+        "m_end": 1327,
+        "m_start": 769,
+        "q_count": 39,
+        "q_end": 761,
+        "q_start": 509,
+        "row_completion_extra_count": 7928,
+        "row_full_rectangle_count": 14342,
+        "row_m_count": 202,
+        "row_q_count": 71,
+        "sample": "P=1009, bulk q=[509,761] (39), m=[769,1327] (81), bulk=3159, boundary=3255"
+      }
+    ],
+    "total_bad_bulk_rectangle_typeii_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "BoundaryPhaseSavingForNestedRoughEnvelopeStaircase",
+    "AND CompletedTraceFamilyForPrimePrimeBulkRectangle",
+    "AND StaircaseBoundaryCompletionWithoutComparableLoss",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "prefix_cap_trace_or_typeii_embedding_closed": false,
+  "prime_floor_span_trace_or_typeii_phase_saving_closed": false,
+  "reason_chosen": "the rough-envelope cap left the trace/Type-II embedding gate; the fastest next step is to isolate the largest genuine product rectangles and measure the remaining boundary",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c74decff8975d72b00646515d5c8649857244fe2d6615046e26797b2bbc969b9",
+    "docs/monograph/external-theorem-index.md": "0613c684ec1f9dd0b54248a0074d35db1efd6c9f03c014bef9c122f4cfc5d33e",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "969aeb43f4d86db628fe19475296fdca8ae489b0e82a480b59503e33f00b1bd1",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json": "a1b1fd53368dcbe3e19e87353e3335034aef4b2d7774cc4ce1d1e5a088f1050e",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json": "0d01167dd468a8e6e3e5da8189112e31d970a81ee070e9606c5be9f3e85fbd70",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.json": "2b018bef404ec18d8d66243a8884818e6f0b7527c7e81f42acb08c1348c71ec1",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "fe3bb78e579c8cca2e4182856850cdf4bf31657905e265fc844d68d35b48587b",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "8a26c03ee15c160cc0d5d3cffb5db4ab7c4804dbd21ad0d37939d4696523e649",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit.py": "2403eefb93a6706cb06bcc9c624b55fce8aa53d4539667233baab08325d65077",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "775359d46175ff5b48097f07475fc07d21a0f6e0e6b8da91e430189ffee5594a"
+  },
+  "status": "bulk_product_rectangle_extracted_boundary_typeii_phase_saving_open"
+}

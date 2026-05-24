@@ -3932,6 +3932,76 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61S. Phi-LPF q-support row-averaged additive-k prime-survivor bulk-rectangle Type-II 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.md
+```
+
+本层承接 61R：rough-envelope cap 已把支撑压成 nested staircase，但外部
+Type-II/trace/Kloosterman 定理首先需要可识别的双变量 product rectangle。对每个
+固定 `P`，本证书抽取实际 prime-survivor edge graph 中最大的完整 prime `q` x
+prime `m` bulk rectangle，并直接复核无缺边。
+
+有限审计读数：
+
+```text
+max_prime=1009
+active_P_count=155
+actual_prime_edge_count_total=355919
+bulk_rectangle_edge_count_total=178404
+boundary_edge_count_total=177515
+bulk_fraction_total=0.501248879661
+boundary_fraction_total=0.498751120339
+row_full_rectangle_count_total=795159
+row_completion_extra_count_total=439240
+row_completion_ratio_total=2.234101017366
+row_completion_extra_to_actual_ratio_total=1.234101017366
+bulk_fraction_min=0.485227517792
+bulk_fraction_median=0.511806375443
+bulk_fraction_max=1.000000000000
+bulk_fraction_ge_half_rows=99
+bulk_fraction_ge_45pct_rows=155
+bulk_missing_count_total=0
+total_bad_bulk_rectangle_typeii_count=0
+```
+
+外部前沿影响：FKMS、Milićević--Qin--Wu、Pascadi、Wright 2026 等工具现在有
+一个更接近假设的 bulk rectangle 入口，但该入口只覆盖约一半 prime-survivor
+edges。剩余 staircase boundary 与 bulk 同阶，不能作为误差丢弃；Runbo Li 的
+`x^0.52` 短区间素数输入也不替代这里需要的半尺度边界相消。
+
+新的最新最窄口：
+
+```text
+BoundaryPhaseSavingForNestedRoughEnvelopeStaircase
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StaircaseBoundaryCompletionWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+bulk_product_rectangle_verified=true
+bulk_boundary_comparable_obstruction_closed=true
+direct_bulk_only_typeii_closure_available=false
+boundary_phase_saving_or_staircase_completion_required=true
+prefix_cap_trace_or_typeii_embedding_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

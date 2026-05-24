@@ -24349,6 +24349,51 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AD. Phi-LPF prime-survivor bulk-rectangle Type-II frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-ledger.json
+```
+
+同步结果：
+
+```text
+status=bulk_product_rectangle_extracted_boundary_typeii_phase_saving_open
+actual_prime_edge_count_total=355919
+bulk_rectangle_edge_count_total=178404
+boundary_edge_count_total=177515
+bulk_fraction_total=0.501248879661
+boundary_fraction_total=0.498751120339
+row_completion_ratio_total=2.234101017366
+bulk_missing_count_total=0
+direct_bulk_only_typeii_closure_available=false
+boundary_phase_saving_or_staircase_completion_required=true
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope`
+现在被分解为一个正向 bulk 入口和一个同阶 boundary 入口。bulk 是真正的完整
+prime `q` x prime `m` product rectangle；boundary 仍是 rate-bearing staircase。
+
+因此最新实际硬点改写为：
+
+```text
+BoundaryPhaseSavingForNestedRoughEnvelopeStaircase
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StaircaseBoundaryCompletionWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“没有任何 Type-II 形状”的黑箱；没有删除边界相消和 completed trace
+family 的真缺口。
+
 ## 330AC. Phi-LPF prime-survivor rough-envelope cap frontier
 
 新增文件：

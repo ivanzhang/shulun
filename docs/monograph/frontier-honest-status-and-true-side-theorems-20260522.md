@@ -4090,6 +4090,88 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13S：Phi-LPF q-support row-averaged additive-k prime-survivor bulk-rectangle Type-II 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_bulk_rectangle_typeii_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.md
+```
+
+本层承接 Q13R。nested rough-envelope cap 已关闭支撑形状来源，但还没有给出
+外部 Type-II/trace/Kloosterman 可直接使用的完成对象。本证书对每个固定 row
+prime `P` 抽取最大的完整 prime `q` x prime `m` product rectangle：
+
+```text
+bulk(P)=[q_1,q_2]_{prime} x [m_1,m_2]_{prime} subset prime-survivor(P).
+```
+
+### Q13S.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+actual_prime_edge_count_total=355919
+bulk_rectangle_edge_count_total=178404
+boundary_edge_count_total=177515
+bulk_fraction_total=0.501248879661
+boundary_fraction_total=0.498751120339
+row_full_rectangle_count_total=795159
+row_completion_extra_count_total=439240
+row_completion_ratio_total=2.234101017366
+bulk_fraction_min=0.485227517792
+bulk_fraction_median=0.511806375443
+bulk_fraction_max=1.000000000000
+bulk_fraction_ge_half_rows=99
+bulk_fraction_ge_45pct_rows=155
+bulk_missing_count_total=0
+total_bad_bulk_rectangle_typeii_count=0
+```
+
+代表大行：
+
+```text
+P=971: bulk q=[487,701], m=[709,1327], q_count=34, m_count=90, bulk=3060, boundary=3146.
+P=1009: bulk q=[509,761], m=[769,1327], q_count=39, m_count=81, bulk=3159, boundary=3255.
+```
+
+### Q13S.2 诚实边界
+
+本层证明/审计的是：rough-envelope staircase 内确实有可供 Type-II 进一步研究的
+完整 product rectangle；但最大 bulk 总量只有约一半，剩余 boundary 同阶。因此
+不能只对 bulk 套用外部定理后把 boundary 当误差丢掉。
+
+最新最窄口：
+
+```text
+BoundaryPhaseSavingForNestedRoughEnvelopeStaircase
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StaircaseBoundaryCompletionWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+bulk_product_rectangle_verified=true
+bulk_boundary_comparable_obstruction_closed=true
+direct_bulk_only_typeii_closure_available=false
+boundary_phase_saving_or_staircase_completion_required=true
+prefix_cap_trace_or_typeii_embedding_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
