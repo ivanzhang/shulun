@@ -22567,6 +22567,57 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite core atom 账本；largest atom bound、core atom aggregation 与
 top-two noncore residual 仍未闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom template-witness actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.json
+```
+
+actual-load 含义继续收缩：最大 core atom
+`gap4_right_tail_two_sided/cycle=5/switch=3` 的质量 `70` 不再作为单块保留，
+而是拆成 7 个模板见证，每个质量 `10`。
+
+```text
+largest_atom_template_witness_ledger_closed=true
+witness_template_count=7
+witness_edge_mass=70
+all_witness_edge_mass_equals_10=true
+distinct_sign_word_count=5
+dominant_sign_word=--+-+
+dominant_sign_word_edge_mass=30
+```
+
+最新直接主攻改为：
+
+```text
+DominantLargestAtomSignWordFamilyBound(--+-+)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite largest-atom witness 账本；dominant sign-word family bound、
+seven witness family bounds 与 residual atoms 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：

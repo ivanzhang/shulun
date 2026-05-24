@@ -36452,6 +36452,102 @@ gap2-gap4-top-two-core-route-cycle-switch-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) largest core atom template witnesses}
+
+\begin{theorem}[Largest core atom template-witness ledger]
+In the audit range \(P\le 1009\), restrict the previous core atom ledger to its
+largest atom:
+\[
+\texttt{route}=\texttt{gap4\_right\_tail\_two\_sided},\quad
+\texttt{cycle\_length}=5,\quad
+\texttt{sign\_switch\_count}=3 .
+\]
+This atom has edge mass \(70\).  It splits into \(7\) template witnesses, each
+with edge mass \(10\).  The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{largest\_atom\_template\_witness\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{witness\_template\_count} & 7\\
+\texttt{witness\_edge\_mass} & 70\\
+\texttt{all\_witness\_edge\_mass\_equals\_10} & \texttt{true}\\
+\texttt{distinct\_sign\_word\_count} & 5\\
+\texttt{dominant\_sign\_word} & \texttt{--+-+}\\
+\texttt{dominant\_sign\_word\_edge\_mass} & 30\\
+\texttt{q\_prefix\_band\_q\_le\_10\_edge\_mass} & 30\\
+\texttt{q\_prefix\_band\_q\_le\_20\_edge\_mass} & 10\\
+\texttt{q\_prefix\_band\_q\_gt\_20\_edge\_mass} & 30\\
+\texttt{m\_shell\_band\_m\_le\_4\_edge\_mass} & 30\\
+\texttt{m\_shell\_band\_m\_le\_8\_edge\_mass} & 40 .
+\end{array}
+\]
+Thus the largest core atom no longer hides a larger internal carrier: its
+dominant sign word has mass \(30\), and the remaining four sign words have mass
+\(10\) each.
+\end{theorem}
+\begin{proof}
+The audit imports the \(11\)-atom top-two core ledger and filters the unique
+largest route-cycle-switch atom.  The imported mass of this atom is \(70\).
+The filtered rows are then recorded by \(P\), packet index, sign word,
+q-prefix count, m-shell prime count, and the adjacent \(m\)-pair.  The seven
+rows all have edge mass \(10\), so their total is \(70\).  Counting sign words
+gives the distribution
+\[
+30,\quad 10,\quad 10,\quad 10,\quad 10,
+\]
+with dominant word \(\texttt{--+-+}\).  The q-prefix and m-shell subtables are
+the stated finite refinements.
+\end{proof}
+
+\begin{remark}[Template-witness family gates]
+The largest core atom gate is now replaced by
+\begin{quote}\scriptsize\ttfamily
+DominantLargestAtomSignWordFamilyBound(--+-+)\\
+AND OtherLargestAtomTemplateWitnessFamilyBounds.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+DominantLargestAtomSignWordFamilyBound(--+-+)\\
+AND OtherLargestAtomTemplateWitnessFamilyBounds\\
+AND OtherCoreRouteCycleSwitchAtomBounds\\
+AND TopTwoNonCoreSignCycleResidualBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This remains a finite witness ledger.  The current trace/Kloosterman and
+short-interval inputs still do not prove a uniform bound for the dominant sign
+word family or for the seven witness families.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-template-witness-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

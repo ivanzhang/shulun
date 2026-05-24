@@ -25969,3 +25969,43 @@ sign_switch3_core_edge_mass=146
 本层删除的是“top-two 核心仍是不可分 270 质量块”的含混说法；没有删除
 route-cycle-switch atom signed equality、PDEC/SAE 聚合、top-two noncore residual、
 single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom template-witness formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层最大原子
+
+```text
+Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound
+```
+
+现在被拆成：
+
+```text
+DominantLargestAtomSignWordFamilyBound(--+-+)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+```
+
+关键审计读数为：
+
+```text
+largest_atom_template_witness_ledger_closed=true
+witness_template_count=7
+witness_edge_mass=70
+all_witness_edge_mass_equals_10=true
+distinct_sign_word_count=5
+dominant_sign_word=--+-+
+dominant_sign_word_edge_mass=30
+```
+
+本层删除的是“最大 70 原子仍可隐藏内部大块结构”的含混说法；没有删除
+template witness family 的 signed equality、PDEC/SAE 聚合、其他 core atoms、
+top-two noncore residual、single-P slice summation 或 prime-q reciprocal phase saving 缺口。

@@ -2507,6 +2507,61 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65W. Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom template-witness 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.md
+```
+
+上一层最大 core atom 为：
+
+```text
+route=gap4_right_tail_two_sided
+cycle_length=5
+sign_switch_count=3
+edge_mass=70
+```
+
+本层把该最大 atom 拆成 7 个等质量模板见证：
+
+```text
+largest_atom_template_witness_ledger_closed=true
+witness_template_count=7
+witness_edge_mass=70
+all_witness_edge_mass_equals_10=true
+distinct_sign_word_count=5
+dominant_sign_word=--+-+
+dominant_sign_word_edge_mass=30
+q_prefix_band_q_le_10_edge_mass=30
+q_prefix_band_q_le_20_edge_mass=10
+q_prefix_band_q_gt_20_edge_mass=30
+m_shell_band_m_le_4_edge_mass=30
+m_shell_band_m_le_8_edge_mass=40
+```
+
+外部 theorem 边界仍不变：FKMS trace bilinear、Milićević--Qin--Wu
+arbitrary-modulus Kloosterman 与 Wright unbalanced Kloosterman inputs 需要先有
+local witness 到双线性/trace family 的 completion；Li `x^0.52` 短区间输入仍不触及
+`theta=1/2` fixed endpoint witness。
+
+状态边界：
+
+```text
+largest_atom_template_witness_ledger_closed=true
+largest_atom_template_family_bound_proved=false
+dominant_sign_word_family_bound_proved=false
+all_seven_witness_families_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

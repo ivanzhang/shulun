@@ -1,0 +1,515 @@
+{
+  "all_seven_witness_families_bound_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "TopTwoCoreRouteCycleSwitchLedgerImported",
+      "meaning": "The 11-atom top-two core ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "LargestCoreAtomTemplateWitnessLedger",
+      "meaning": "The 70-mass largest atom is split into 7 template witnesses.",
+      "proved": true,
+      "remaining": "none for the finite witness ledger"
+    },
+    {
+      "closed": false,
+      "gate": "DominantSignWordFamilyBound",
+      "meaning": "Control the dominant --+-+ sign-word family.",
+      "proved": false,
+      "remaining": "finite audit shows mass 30 but no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "AllSevenWitnessFamiliesOrPDEC",
+      "meaning": "Control the seven witness templates uniformly or route them through PDEC/SAE.",
+      "proved": false,
+      "remaining": "requires a uniform lift beyond the finite audit range"
+    },
+    {
+      "closed": false,
+      "gate": "ResidualCoreAtomBounds",
+      "meaning": "Control the other 10 route-cycle-switch atoms and the top-two noncore residual.",
+      "proved": false,
+      "remaining": "carried forward from the core atom ledger"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "7 equal-mass template witnesses; the largest sign word --+-+ carries edge mass 30",
+    "input": "largest route-cycle-switch atom inside the top-two core",
+    "operation": "split the 70 edge mass into exact template witnesses and sign/q/m subledgers",
+    "remaining": "turn these finite witnesses into a uniform family bound or route the family through PDEC/SAE"
+  },
+  "dominant_sign_word_family_bound_proved": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "nontrivial below Polya-Vinogradov range after sheaf/trace completion; still not a fixed template witness theorem",
+    "Li_short_intervals": "x^0.52 short interval prime existence is above theta=1/2 and does not see the signed template witness",
+    "Milicevic_Qin_Wu_Kloosterman": "arbitrary-modulus bilinear Kloosterman power saving after completion; no direct local witness equality",
+    "Wright_unbalanced_Kloosterman": "useful for unbalanced convolution ranges; does not estimate one fixed endpoint packet"
+  },
+  "finite_audit": {
+    "P_band_edge_rows": [
+      {
+        "P_band": "P<=850",
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855
+      },
+      {
+        "P_band": "P<=700",
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857
+      },
+      {
+        "P_band": "P>850",
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857
+      }
+    ],
+    "all_witness_edge_mass_equals_10": true,
+    "distinct_m_shell_prime_count_count": 5,
+    "distinct_q_prefix_count_count": 5,
+    "distinct_sign_word_count": 5,
+    "dominant_sign_word": "--+-+",
+    "dominant_sign_word_edge_mass": 30,
+    "dominant_sign_word_ratio": 0.42857142857142855,
+    "largest_atom_template_family_bound_proved": false,
+    "largest_atom_template_witness_ledger_closed": true,
+    "m_shell_band_edge_rows": [
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.5714285714285714,
+        "m_shell_band": "m<=8"
+      },
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855,
+        "m_shell_band": "m<=4"
+      }
+    ],
+    "m_shell_band_m_le_4_edge_mass": 30,
+    "m_shell_band_m_le_8_edge_mass": 40,
+    "m_shell_prime_count_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "m_shell_prime_count": 4
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "m_shell_prime_count": 5
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_prime_count": 3
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_prime_count": 6
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_prime_count": 7
+      }
+    ],
+    "max_prime": 1009,
+    "previous_largest_atom_edge_mass": 70,
+    "previous_top_two_core_route_cycle_switch_ledger_closed": true,
+    "q_m_band_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "m_shell_band": "m<=4",
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "m_shell_band": "m<=8",
+        "q_prefix_band": "q>20"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "q_prefix_band": "q<=20"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=4",
+        "q_prefix_band": "q>20"
+      }
+    ],
+    "q_prefix_band_edge_rows": [
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855,
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855,
+        "q_prefix_band": "q>20"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q<=20"
+      }
+    ],
+    "q_prefix_band_q_gt_20_edge_mass": 30,
+    "q_prefix_band_q_le_10_edge_mass": 30,
+    "q_prefix_band_q_le_20_edge_mass": 10,
+    "q_prefix_count_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "q_prefix_count": 28
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_count": 16
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_count": 26
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_count": 7
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "sign_balance_edge_rows": [
+      {
+        "edge_mass": 50,
+        "edge_ratio": 0.7142857142857143,
+        "sign_balance": "plus=2,minus=3"
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "sign_balance": "plus=3,minus=2"
+      }
+    ],
+    "sign_m_band_edge_rows": [
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855,
+        "m_shell_band": "m<=4",
+        "sign_word": "--+-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "sign_word": "+-++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "sign_word": "+-+--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "sign_word": "+--+-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "m_shell_band": "m<=8",
+        "sign_word": "-++-+"
+      }
+    ],
+    "sign_q_band_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.2857142857142857,
+        "q_prefix_band": "q<=10",
+        "sign_word": "--+-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q<=10",
+        "sign_word": "+-++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q>20",
+        "sign_word": "+-+--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q>20",
+        "sign_word": "+--+-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q<=20",
+        "sign_word": "-++-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "q_prefix_band": "q>20",
+        "sign_word": "--+-+"
+      }
+    ],
+    "sign_word_edge_rows": [
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.42857142857142855,
+        "sign_word": "--+-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "sign_word": "+-++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "sign_word": "+-+--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "sign_word": "+--+-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.14285714285714285,
+        "sign_word": "-++-+"
+      }
+    ],
+    "sign_word_template_rows": [
+      {
+        "sign_word": "--+-+",
+        "template_count": 3,
+        "template_ratio": 0.42857142857142855
+      },
+      {
+        "sign_word": "+-++-",
+        "template_count": 1,
+        "template_ratio": 0.14285714285714285
+      },
+      {
+        "sign_word": "+-+--",
+        "template_count": 1,
+        "template_ratio": 0.14285714285714285
+      },
+      {
+        "sign_word": "+--+-",
+        "template_count": 1,
+        "template_ratio": 0.14285714285714285
+      },
+      {
+        "sign_word": "-++-+",
+        "template_count": 1,
+        "template_ratio": 0.14285714285714285
+      }
+    ],
+    "target_cycle_length": 5,
+    "target_route": "gap4_right_tail_two_sided",
+    "target_sign_switch_count": 3,
+    "template_witness_rows": [
+      {
+        "P": 607,
+        "P_band": "P<=700",
+        "edge_mass": 10,
+        "m_pair": "[769, 773]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 3,
+        "packet_index": 1887,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 7,
+        "sign_balance": "plus=2,minus=3",
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 619,
+        "P_band": "P<=700",
+        "edge_mass": 10,
+        "m_pair": "[739, 743]",
+        "m_shell_band": "m<=8",
+        "m_shell_prime_count": 5,
+        "packet_index": 2017,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 10,
+        "sign_balance": "plus=3,minus=2",
+        "sign_word": "+-++-"
+      },
+      {
+        "P": 739,
+        "P_band": "P<=850",
+        "edge_mass": 10,
+        "m_pair": "[757, 761]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "packet_index": 2842,
+        "q_prefix_band": "q>20",
+        "q_prefix_count": 28,
+        "sign_balance": "plus=2,minus=3",
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 773,
+        "P_band": "P<=850",
+        "edge_mass": 10,
+        "m_pair": "[823, 827]",
+        "m_shell_band": "m<=8",
+        "m_shell_prime_count": 6,
+        "packet_index": 3157,
+        "q_prefix_band": "q>20",
+        "q_prefix_count": 28,
+        "sign_balance": "plus=2,minus=3",
+        "sign_word": "+-+--"
+      },
+      {
+        "P": 823,
+        "P_band": "P<=850",
+        "edge_mass": 10,
+        "m_pair": "[859, 863]",
+        "m_shell_band": "m<=8",
+        "m_shell_prime_count": 5,
+        "packet_index": 3485,
+        "q_prefix_band": "q>20",
+        "q_prefix_count": 26,
+        "sign_balance": "plus=2,minus=3",
+        "sign_word": "+--+-"
+      },
+      {
+        "P": 953,
+        "P_band": "P>850",
+        "edge_mass": 10,
+        "m_pair": "[769, 773]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "packet_index": 4601,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 10,
+        "sign_balance": "plus=2,minus=3",
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 991,
+        "P_band": "P>850",
+        "edge_mass": 10,
+        "m_pair": "[859, 863]",
+        "m_shell_band": "m<=8",
+        "m_shell_prime_count": 7,
+        "packet_index": 4931,
+        "q_prefix_band": "q<=20",
+        "q_prefix_count": 16,
+        "sign_balance": "plus=3,minus=2",
+        "sign_word": "-++-+"
+      }
+    ],
+    "witness_edge_mass": 70,
+    "witness_template_count": 7
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "largest_atom_template_family_bound_proved": false,
+  "largest_atom_template_witness_ledger_closed": true,
+  "latest_narrowest_mouth": [
+    "DominantLargestAtomSignWordFamilyBound(--+-+)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the largest remaining core atom is now the smallest current finite carrier with edge mass 70",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2f2b785bba7b35ff526f62dc37dbe48d54a8484d8a7f1d8ca40d047d34b1a79c",
+    "docs/monograph/external-theorem-index.md": "7f558dbe49ca9927aa75f4bf077e1ff5e6572dde1eb9b2f8084625114935f33f",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "d2e0046aa0d603c03e356c322e188bd7805c5b787bdb2591ad49ea8ddcbb520f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.json": "70b44b7c2a39cc36abebda4165fd99c6b3628112df7a4da7c5b4f084ae86ab78",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "e586b1d15773533dd20cffc67fe1bc16530b9c1f0aa01c5560829f60b8b6cde8",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "4b20d2ad37a351ea2f1ea78f5169a021285131922fdd97a28eeb891b9c8a1d91",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit.py": "a79860a71ce73bc0fed8406530eb1725988d1a135ee7cac042c72e5326d2971c",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2e5ae8e6d101fc94cb547a12e7e5c82daca6163a18ae9db1f69aaae2ae2a57ed"
+  },
+  "status": "largest_core_atom_template_witness_ledger_closed_family_bound_open"
+}

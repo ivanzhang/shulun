@@ -3131,6 +3131,94 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC18：Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom template-witness 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_template_witness_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.md
+```
+
+本层承接 Q13AC17，只处理最大 route-cycle-switch atom：
+
+```text
+target_route=gap4_right_tail_two_sided
+target_cycle_length=5
+target_sign_switch_count=3
+previous_largest_atom_edge_mass=70
+```
+
+有限审计读数：
+
+```text
+largest_atom_template_witness_ledger_closed=true
+witness_template_count=7
+witness_edge_mass=70
+all_witness_edge_mass_equals_10=true
+distinct_sign_word_count=5
+dominant_sign_word=--+-+
+dominant_sign_word_edge_mass=30
+dominant_sign_word_ratio=0.42857142857142855
+q_prefix_band_q_le_10_edge_mass=30
+q_prefix_band_q_le_20_edge_mass=10
+q_prefix_band_q_gt_20_edge_mass=30
+m_shell_band_m_le_4_edge_mass=30
+m_shell_band_m_le_8_edge_mass=40
+```
+
+7 个模板见证全部质量为 `10`。最大 sign word `--+-+` 由 3 个见证贡献，
+质量 `30`；其余 4 个 sign words 各质量 `10`。本层删除了“最大 70 原子仍可隐藏
+大块内部结构”的含混说法，但没有给出这些见证族的全局 uniform bound。
+
+### Q13AC18.1 最新最窄口
+
+```text
+DominantLargestAtomSignWordFamilyBound(--+-+)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+largest_atom_template_witness_ledger_closed=true
+largest_atom_template_family_bound_proved=false
+dominant_sign_word_family_bound_proved=false
+all_seven_witness_families_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：
