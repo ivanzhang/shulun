@@ -25831,3 +25831,51 @@ dominant_aligned_edge_ratio=0.9444444444444444
 本层删除的是“gap2/gap4 collision 只有 prime gap 标签”的含混说法；没有删除
 route-superclass signed equality、PDEC/SAE 回流、single-P slice summation 或
 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 exact route-class formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_exact_route_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+Gap2WingTwinAdjacentPairCollisionBound
+AND Gap2RightTailTwinResidualCollisionBound
+AND Gap4RightTailCousinAdjacentPairCollisionBound
+AND Gap4WingCousinResidualCollisionBound
+```
+
+现在被拆成：
+
+```text
+Gap2UpperWingTwinCollisionBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailTwoSidedCousinCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+```
+
+关键审计读数为：
+
+```text
+single_P_local_gap2_gap4_exact_route_class_ledger_closed=true
+gap4_right_tail_two_sided_edge_mass=258
+gap2_upper_wing_edge_mass=212
+top_two_route_edge_mass=470
+top_two_route_edge_ratio=0.7679738562091504
+residual_route_edge_mass=142
+duplicate_raw_base_edge_mass=48
+```
+
+本层删除的是“route-superclass carrier 是最后分类”的含混说法；没有删除 exact-route
+signed equality、PDEC/SAE 回流、single-P slice summation 或 prime-q reciprocal
+phase saving 缺口。

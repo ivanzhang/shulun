@@ -22413,6 +22413,59 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite route-superclass 账本；gap2-wing、gap4-right-tail 与两个 residual
 carrier 的 signed collision bound 仍未闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 exact route-class actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_exact_route_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.json
+```
+
+actual-load 含义继续收缩：route-superclass carrier 被拆成 exact route-class carrier。
+
+```text
+single_P_local_gap2_gap4_exact_route_class_ledger_closed=true
+gap2_gap4_edge_mass=612
+gap4_right_tail_two_sided_edge_mass=258
+gap2_upper_wing_edge_mass=212
+gap2_lower_wing_edge_mass=78
+gap4_right_tail_left_collar_edge_mass=30
+gap4_upper_wing_edge_mass=22
+gap2_right_tail_two_sided_edge_mass=6
+gap4_lower_wing_edge_mass=6
+top_two_route_edge_mass=470
+top_two_route_edge_ratio=0.7679738562091504
+residual_route_edge_mass=142
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+Gap2UpperWingTwinCollisionBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailTwoSidedCousinCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite exact-route 账本；两个最大 exact routes 和 residual exact routes
+的 signed collision bound 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：

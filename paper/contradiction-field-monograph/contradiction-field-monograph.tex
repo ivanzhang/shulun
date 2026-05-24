@@ -36145,6 +36145,113 @@ gap2-gap4-route-superclass-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) exact route-class carriers}
+
+\begin{theorem}[Gap \(2\)/gap \(4\) exact route-class ledger]
+In the audit range \(P\le 1009\), the \(64\) gap \(2\) and gap \(4\)
+route-superclass templates of the previous ledger split into exact route
+classes as follows:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_gap2\_gap4\_exact\_route\_class\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{gap2\_gap4\_template\_count} & 64\\
+\texttt{gap2\_gap4\_edge\_mass} & 612\\
+\texttt{gap4\_right\_tail\_two\_sided\_edge\_mass} & 258\\
+\texttt{gap2\_upper\_wing\_edge\_mass} & 212\\
+\texttt{gap2\_lower\_wing\_edge\_mass} & 78\\
+\texttt{gap4\_right\_tail\_left\_collar\_edge\_mass} & 30\\
+\texttt{gap4\_upper\_wing\_edge\_mass} & 22\\
+\texttt{gap2\_right\_tail\_two\_sided\_edge\_mass} & 6\\
+\texttt{gap4\_lower\_wing\_edge\_mass} & 6 .
+\end{array}
+\]
+The two largest exact routes are the gap \(4\) two-sided right-tail collar and
+the gap \(2\) upper wing:
+\[
+258+212=470,\qquad \frac{470}{612}=0.7679738562091504\ldots .
+\]
+The residual exact-route mass outside these two largest cells is \(142\).
+\end{theorem}
+\begin{proof}
+The audit imports the gap \(2\)/gap \(4\) route-superclass ledger and refines
+each local route label into its exact subclass: upper wing, lower wing,
+two-sided right-tail collar, or left-collar right-tail.  The seven nonempty
+cells are
+\[
+\begin{gathered}
+\text{gap4 two-sided right-tail},\quad
+\text{gap2 upper wing},\quad
+\text{gap2 lower wing},\\
+\text{gap4 left-collar right-tail},\quad
+\text{gap4 upper wing},\quad
+\text{gap2 two-sided right-tail},\quad
+\text{gap4 lower wing}.
+\end{gathered}
+\]
+Their edge masses are
+\[
+258,\qquad 212,\qquad 78,\qquad 30,\qquad 22,\qquad 6,\qquad 6,
+\]
+which sum to the imported gap \(2\)/gap \(4\) mass \(612\).  The ledger also
+checks that the inherited gap \(2\) wing/right-tail and gap \(4\)
+right-tail/wing superclass masses are exactly recovered after recombination.
+\end{proof}
+
+\begin{remark}[Exact route-class collision gates]
+The route-superclass gates are now replaced by
+\begin{quote}\scriptsize\ttfamily
+Gap2UpperWingTwinCollisionBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailTwoSidedCousinCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND Gap2UpperWingTwinCollisionBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailTwoSidedCousinCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This remains a finite exact-route ledger.  Trace/Kloosterman average inputs,
+prime-gap theorems, and short-interval prime existence estimates still do not
+prove signed collision control for one fixed exact route inside an endpoint
+packet.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-exact-route-class-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

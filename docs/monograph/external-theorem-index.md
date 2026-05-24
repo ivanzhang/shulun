@@ -2347,6 +2347,63 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65T. Phi-LPF q-prefix single-P local gap2/gap4 exact route-class 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_exact_route_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.md
+```
+
+上一层把 gap 2/gap 4 主量压成四个 route-superclass carrier。本层继续拆到 exact route class：
+
+```text
+single_P_local_gap2_gap4_exact_route_class_ledger_closed=true
+gap2_gap4_template_count=64
+gap2_gap4_edge_mass=612
+gap4_right_tail_two_sided_edge_mass=258
+gap2_upper_wing_edge_mass=212
+gap2_lower_wing_edge_mass=78
+gap4_right_tail_left_collar_edge_mass=30
+gap4_upper_wing_edge_mass=22
+gap2_right_tail_two_sided_edge_mass=6
+gap4_lower_wing_edge_mass=6
+top_two_route_edge_mass=470
+top_two_route_edge_ratio=0.7679738562091504
+residual_route_edge_mass=142
+residual_route_edge_ratio=0.23202614379084968
+```
+
+因此 route-superclass 门继续被替换为 exact-route 门：
+
+```text
+Gap2UpperWingTwinCollisionBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailTwoSidedCousinCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+```
+
+外部 theorem 匹配边界仍不变：trace/Kloosterman 平均型输入、Maynard 小间隔素数定理与
+Li 短区间素数存在性都不直接估计固定 endpoint packet 中的 signed exact-route equality。
+
+状态边界：
+
+```text
+single_P_local_gap2_gap4_exact_route_class_ledger_closed=true
+gap2_upper_wing_twin_collision_bound_proved=false
+gap4_right_tail_two_sided_cousin_collision_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：
