@@ -1,0 +1,315 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_path_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "LargestAtomTemplateWitnessLedgerImported",
+      "meaning": "The 7-witness largest atom ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "DominantSignWordPathLedger",
+      "meaning": "The --+-+ subfamily is split into three path witnesses.",
+      "proved": true,
+      "remaining": "none for the finite path ledger"
+    },
+    {
+      "closed": false,
+      "gate": "DominantSignWordUniformFamilyBound",
+      "meaning": "Control the three path witnesses as a uniform family.",
+      "proved": false,
+      "remaining": "finite audit gives exact paths but no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "OtherLargestAtomTemplateWitnessFamilyBounds",
+      "meaning": "Control the other sign-word witnesses inside the largest atom.",
+      "proved": false,
+      "remaining": "carried forward from the 7-witness ledger"
+    },
+    {
+      "closed": false,
+      "gate": "ResidualCoreAndTopTwoBounds",
+      "meaning": "Control remaining core atoms and top-two noncore residuals.",
+      "proved": false,
+      "remaining": "carried forward from the core atom ledger"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "3 equal-mass path witnesses with distinct raw-base templates and shared gap4/m<=4 structure",
+    "input": "dominant sign word --+-+ inside the largest core atom",
+    "operation": "split its 30 edge mass into exact raw-base and signed-child path witnesses",
+    "remaining": "turn the three path witnesses into a uniform family bound or route the family through PDEC/SAE"
+  },
+  "dominant_sign_word_path_family_bound_proved": false,
+  "dominant_sign_word_path_ledger_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the gap4 label is structural here but prime-gap existence theorems do not bound signed local equality",
+    "short_interval_prime_inputs": "theta=0.52 remains above the endpoint half-scale and does not see the path witnesses",
+    "trace_or_kloosterman_inputs": "need a nonlocal completion from these three path witnesses to a bilinear or trace-family sum"
+  },
+  "finite_audit": {
+    "P_band_edge_rows": [
+      {
+        "P_band": "P<=700",
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333
+      },
+      {
+        "P_band": "P<=850",
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333
+      },
+      {
+        "P_band": "P>850",
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333
+      }
+    ],
+    "all_path_edge_mass_equals_10": true,
+    "all_path_integer_gap_equals_4": true,
+    "all_path_m_shell_band_m_le_4": true,
+    "all_path_occurrence_count_equals_2": true,
+    "all_path_sign_balance_plus2_minus3": true,
+    "distinct_m_pair_count": 2,
+    "distinct_raw_base_template_count": 3,
+    "distinct_signed_child_count": 3,
+    "dominant_m_pair": "[769, 773]",
+    "dominant_m_pair_edge_mass": 20,
+    "dominant_sign_word_path_family_bound_proved": false,
+    "dominant_sign_word_path_ledger_closed": true,
+    "m_pair_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "m_pair": "[769, 773]"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_pair": "[757, 761]"
+      }
+    ],
+    "m_shell_prime_count_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "m_shell_prime_count": 4
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_shell_prime_count": 3
+      }
+    ],
+    "max_prime": 1009,
+    "path_edge_mass": 30,
+    "path_template_count": 3,
+    "path_witness_rows": [
+      {
+        "P": 607,
+        "P_band": "P<=700",
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[769, 773]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 1887,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 7,
+        "raw_base_template": "g=2,c=2 -> g=4,c=5 -> g=6,c=7 -> g=8,c=10 -> g=4,c=6",
+        "signed_child": "g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative -> g=4,c=6,A=positive"
+      },
+      {
+        "P": 739,
+        "P_band": "P<=850",
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[757, 761]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 2842,
+        "q_prefix_band": "q>20",
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive"
+      },
+      {
+        "P": 953,
+        "P_band": "P>850",
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[769, 773]",
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 4601,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 10,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=6,c=5 -> g=4,c=3 -> g=8,c=7",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=3,A=negative -> g=8,c=7,A=positive"
+      }
+    ],
+    "previous_dominant_sign_word_edge_mass": 30,
+    "previous_largest_atom_template_witness_ledger_closed": true,
+    "q_m_pair_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "m_pair": "[769, 773]",
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_pair": "[757, 761]",
+        "q_prefix_band": "q>20"
+      }
+    ],
+    "q_prefix_band_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_band": "q>20"
+      }
+    ],
+    "q_prefix_band_q_gt_20_edge_mass": 10,
+    "q_prefix_band_q_le_10_edge_mass": 20,
+    "q_prefix_count_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 28
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 7
+      }
+    ],
+    "raw_base_template_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=6,c=5 -> g=4,c=3 -> g=8,c=7"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "raw_base_template": "g=2,c=2 -> g=4,c=5 -> g=6,c=7 -> g=8,c=10 -> g=4,c=6"
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "signed_child_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=3,A=negative -> g=8,c=7,A=positive"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "signed_child": "g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative -> g=4,c=6,A=positive"
+      }
+    ],
+    "target_sign_word": "--+-+"
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DominantLargestAtomPathWitnessUniformFamilyBound(--+-+)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "other_largest_atom_template_witness_family_bounds_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the dominant sign word --+-+ is the largest subfamily inside the current largest core atom",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "60883aadcd7f2afa67305e752232ee172b50a56c3185dda3c62f592c508bf52c",
+    "docs/monograph/external-theorem-index.md": "3aec235c556c327b6f2835c43ee851772baeb67d8de9a68a77b82dba6c7af239",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "99133633c9d01a6a736ab32ba71953bb138147e30802f754e46b51d717811e14",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-template-witness-audit.json": "048e6f4aa7e05d821cd371e70bab883f191775358e5cfac8affec5c60fd0827e",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "f55c7bbc72a146bb4f547f8dd33cc5fba188daa402f87d7c7f4116fcd5a8d263",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "ab608d3f7bc9d17a65a648cd5d901336c5ed77a61c3843b7180942a91f120fcb",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_path_audit.py": "932bc7052dc1552a2cdb281a46f6d8d23af2b1177e59e2d793941f0ed55096f2",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "755659cb100c36e062dd1b43e7c621cc4ff3fab751e9dec3de49b5d974f7570a"
+  },
+  "status": "dominant_largest_atom_sign_word_path_ledger_closed_family_bound_open"
+}

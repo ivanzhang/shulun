@@ -36548,6 +36548,94 @@ gap2-gap4-top-two-core-largest-atom-template-witness-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) dominant sign-word path witnesses}
+
+\begin{theorem}[Dominant largest-atom sign-word path ledger]
+In the audit range \(P\le 1009\), restrict the largest core atom template
+witness ledger to its dominant sign word \(\texttt{--+-+}\).  This family has
+edge mass \(30\) and splits into \(3\) raw-base/signed-child path witnesses.
+The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{dominant\_sign\_word\_path\_ledger\_closed} & \texttt{true}\\
+\texttt{path\_template\_count} & 3\\
+\texttt{path\_edge\_mass} & 30\\
+\texttt{all\_path\_edge\_mass\_equals\_10} & \texttt{true}\\
+\texttt{all\_path\_occurrence\_count\_equals\_2} & \texttt{true}\\
+\texttt{all\_path\_integer\_gap\_equals\_4} & \texttt{true}\\
+\texttt{all\_path\_m\_shell\_band\_m\_le\_4} & \texttt{true}\\
+\texttt{all\_path\_sign\_balance\_plus2\_minus3} & \texttt{true}\\
+\texttt{distinct\_raw\_base\_template\_count} & 3\\
+\texttt{distinct\_signed\_child\_count} & 3\\
+\texttt{distinct\_m\_pair\_count} & 2\\
+\texttt{dominant\_m\_pair} & \texttt{[769, 773]}\\
+\texttt{dominant\_m\_pair\_edge\_mass} & 20\\
+\texttt{q\_prefix\_band\_q\_le\_10\_edge\_mass} & 20\\
+\texttt{q\_prefix\_band\_q\_gt\_20\_edge\_mass} & 10 .
+\end{array}
+\]
+Thus the dominant sign-word block no longer hides an internal mass larger than
+one path witness of mass \(10\).
+\end{theorem}
+\begin{proof}
+The audit imports the \(7\)-witness largest-atom ledger and keeps only those
+rows with sign word \(\texttt{--+-+}\).  The imported mass of this sign word is
+\(30\).  The filtered rows occur at three \(P\)-values and have three distinct
+raw-base templates and three distinct signed-child paths.  Each row has edge
+mass \(10\), occurrence count \(2\), integer gap \(4\), m-shell band
+\(\texttt{m<=4}\), and sign balance \(\texttt{plus=2,minus=3}\).  The three
+edge masses sum to \(30\), and the m-pair/q-prefix subtables give the stated
+refinement.
+\end{proof}
+
+\begin{remark}[Dominant path-family gate]
+The dominant sign-word family gate is now replaced by
+\begin{quote}\scriptsize\ttfamily
+DominantLargestAtomPathWitnessUniformFamilyBound(--+-+).
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+DominantLargestAtomPathWitnessUniformFamilyBound(--+-+)\\
+AND OtherLargestAtomTemplateWitnessFamilyBounds\\
+AND OtherCoreRouteCycleSwitchAtomBounds\\
+AND TopTwoNonCoreSignCycleResidualBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still a finite path ledger.  Current trace/Kloosterman inputs require a
+completion from these local paths to a nonlocal family, and short-interval prime
+inputs still do not estimate this fixed endpoint signed path equality.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

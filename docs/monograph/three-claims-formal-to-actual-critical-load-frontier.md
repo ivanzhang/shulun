@@ -26009,3 +26009,44 @@ dominant_sign_word_edge_mass=30
 本层删除的是“最大 70 原子仍可隐藏内部大块结构”的含混说法；没有删除
 template witness family 的 signed equality、PDEC/SAE 聚合、其他 core atoms、
 top-two noncore residual、single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word path formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_path_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+DominantLargestAtomSignWordFamilyBound(--+-+)
+```
+
+现在被替换为：
+
+```text
+DominantLargestAtomPathWitnessUniformFamilyBound(--+-+)
+```
+
+关键审计读数为：
+
+```text
+dominant_sign_word_path_ledger_closed=true
+path_template_count=3
+path_edge_mass=30
+all_path_edge_mass_equals_10=true
+distinct_raw_base_template_count=3
+distinct_signed_child_count=3
+distinct_m_pair_count=2
+dominant_m_pair=[769, 773]
+dominant_m_pair_edge_mass=20
+```
+
+本层删除的是“dominant sign-word family 仍可隐藏内部大块结构”的含混说法；没有删除
+三路径见证族的 uniform signed equality、PDEC/SAE 聚合、其他 witness/core residual、
+single-P slice summation 或 prime-q reciprocal phase saving 缺口。

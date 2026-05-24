@@ -22618,6 +22618,57 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite largest-atom witness 账本；dominant sign-word family bound、
 seven witness family bounds 与 residual atoms 仍未闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word path actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_path_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.json
+```
+
+actual-load 含义继续收缩：dominant sign word `--+-+` 的质量 `30` 不再作为单块保留，
+而是拆成 3 个 raw-base/signed-child 路径见证。
+
+```text
+dominant_sign_word_path_ledger_closed=true
+path_template_count=3
+path_edge_mass=30
+all_path_edge_mass_equals_10=true
+distinct_raw_base_template_count=3
+distinct_signed_child_count=3
+dominant_m_pair=[769, 773]
+dominant_m_pair_edge_mass=20
+```
+
+最新直接主攻改为：
+
+```text
+DominantLargestAtomPathWitnessUniformFamilyBound(--+-+)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite dominant sign-word path 账本；该三路径族的 uniform bound 与
+其余 witness/core residual 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：
