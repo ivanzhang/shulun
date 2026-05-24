@@ -6513,6 +6513,86 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65L. Phi-LPF q-prefix missing-mirror endpoint-router 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_endpoint_router_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.md
+```
+
+本层继续处理 missing-mirror endpoint carriers，检查 signed-child template 层面能否
+先无损路由为纯 endpoint 模板和混合 endpoint 模板。有限审计读数：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+missing_mirror_edge_mass=62980
+missing_mirror_template_count=7156
+pure_endpoint_template_edge_mass=48636
+pure_endpoint_template_edge_ratio=0.7722451571927597
+mixed_endpoint_template_edge_mass=14344
+mixed_endpoint_template_edge_ratio=0.2277548428072404
+mixed_right_tail_endpoint_edge_mass=14316
+mixed_right_tail_endpoint_edge_ratio=0.22731025722451573
+mixed_wing_tail_endpoint_edge_mass=28
+mixed_wing_tail_endpoint_edge_ratio=0.0004445855827246745
+single_strip_pure_endpoint_edge_mass=48636
+single_strip_pure_endpoint_edge_ratio=0.7722451571927597
+endpoint_group_width_min/median/max=1/1.0/3
+```
+
+route 质量分解：
+
+```text
+pure_upper_wing_single_shell=20314
+mixed_right_tail_endpoint=14316
+pure_right_tail_two_sided_collar=13310
+pure_lower_wing_single_shell=10208
+pure_right_tail_right_collar=2347
+pure_right_tail_left_collar=1769
+pure_right_tail_terminal_full_interval=688
+mixed_wing_and_tail_endpoint=28
+```
+
+因此上一层的
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+被压成：
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+外部前沿匹配边界继续保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman 与 Wright unbalanced Kloosterman fractions 只有在 endpoint-routed
+carriers 被完成为 trace/Kloosterman 变量后才可能接入；Pascadi composite Type-II
+仍要求 Type-II box，而不是只要 endpoint-routed signed templates。
+
+状态边界：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+pure_endpoint_carrier_phase_saving_closed=false
+mixed_right_tail_endpoint_router_no_loss_closed=false
+missing_mirror_trace_completion_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

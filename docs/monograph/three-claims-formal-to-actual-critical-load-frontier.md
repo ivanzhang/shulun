@@ -25477,3 +25477,55 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层删除的是“missing-mirror residual 未定位”的黑箱；没有删除 endpoint carrier
 相消、trace/Kloosterman completion、unequal-pair residual 和 residual endpoint
 真缺口。
+
+### Phi-LPF q-prefix missing-mirror endpoint-router formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_endpoint_router_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+现在被 endpoint-router ledger 压成：
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+关键审计读数为：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+pure_endpoint_template_edge_ratio=0.7722451571927597
+mixed_right_tail_endpoint_edge_ratio=0.22731025722451573
+mixed_wing_tail_endpoint_edge_mass=28
+single_strip_pure_endpoint_edge_ratio=0.7722451571927597
+```
+
+因此最新实际硬点为：
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND MissingMirrorTraceKloostermanCompletion
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“missing-mirror endpoint 不能先路由”的黑箱；没有删除纯端点相消、
+right-tail 混合端点无损拆分、trace/Kloosterman completion 和兄弟 residual 真缺口。

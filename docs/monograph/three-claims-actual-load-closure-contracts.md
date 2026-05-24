@@ -22884,6 +22884,52 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层只关闭 missing-mirror structure ledger；endpoint carrier phase saving、
 trace/Kloosterman completion、unequal-pair residual、外部引理版与内部自足版仍未闭合。
 
+### 1.179F Phi-LPF q-prefix missing-mirror endpoint-router actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_endpoint_router_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.json
+```
+
+actual-load 含义更新为：missing-mirror endpoint carrier 已先路由为纯 endpoint
+模板与 right-tail 内部混合模板。同步读数：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+pure_endpoint_template_edge_mass=48636
+pure_endpoint_template_edge_ratio=0.7722451571927597
+mixed_endpoint_template_edge_mass=14344
+mixed_endpoint_template_edge_ratio=0.2277548428072404
+mixed_right_tail_endpoint_edge_mass=14316
+mixed_wing_tail_endpoint_edge_mass=28
+single_strip_pure_endpoint_edge_ratio=0.7722451571927597
+```
+
+最新直接主攻改为：
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+MixedRightTailEndpointRouterNoLoss
+MissingMirrorTraceKloostermanCompletion
+```
+
+并行仍需：
+
+```text
+UnequalMirrorPairResidualPhaseSaving
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 endpoint-router ledger；纯端点相消、right-tail 混合端点无损拆分、
+trace/Kloosterman completion、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

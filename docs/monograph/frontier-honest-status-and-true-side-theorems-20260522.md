@@ -2328,6 +2328,67 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC7：Phi-LPF q-prefix missing-mirror endpoint-router 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_endpoint_router_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.json
+```
+
+本层继续把 missing-mirror endpoint carriers 按 signed-child template 是否纯端点
+路由。关键读数：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+missing_mirror_edge_mass=62980
+pure_endpoint_template_edge_mass=48636
+pure_endpoint_template_edge_ratio=0.7722451571927597
+mixed_endpoint_template_edge_mass=14344
+mixed_endpoint_template_edge_ratio=0.2277548428072404
+mixed_right_tail_endpoint_edge_mass=14316
+mixed_right_tail_endpoint_edge_ratio=0.22731025722451573
+mixed_wing_tail_endpoint_edge_mass=28
+single_strip_pure_endpoint_edge_ratio=0.7722451571927597
+```
+
+真推进点：missing-mirror endpoint 口不再是一块整体。主体是纯端点模板；
+混合端点质量几乎全部留在 right-tail 内部，跨 wing/tail 混合只有 `28` edge。
+
+最新最窄口：
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND MissingMirrorTraceKloostermanCompletion
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+missing_mirror_endpoint_router_ledger_closed=true
+pure_endpoint_carrier_phase_saving_closed=false
+mixed_right_tail_endpoint_router_no_loss_closed=false
+missing_mirror_trace_completion_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

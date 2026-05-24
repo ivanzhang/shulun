@@ -35495,6 +35495,73 @@ structure-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Missing-mirror endpoint router}
+
+\begin{theorem}[Pure and mixed endpoint routing]
+In the audit range \(P\le 1009\), the missing-mirror endpoint carriers split
+at the signed-child template level into pure endpoint templates and mixed
+endpoint templates.  The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{missing\_mirror\_endpoint\_router\_ledger\_closed} & \texttt{true}\\
+\texttt{missing\_mirror\_edge\_mass} & 62980\\
+\texttt{missing\_mirror\_template\_count} & 7156\\
+\texttt{pure\_endpoint\_template\_edge\_mass} & 48636\\
+\texttt{pure\_endpoint\_template\_edge\_ratio} & 0.7722451571927597\\
+\texttt{mixed\_endpoint\_template\_edge\_mass} & 14344\\
+\texttt{mixed\_endpoint\_template\_edge\_ratio} & 0.2277548428072404\\
+\texttt{mixed\_right\_tail\_endpoint\_edge\_mass} & 14316\\
+\texttt{mixed\_right\_tail\_endpoint\_edge\_ratio} & 0.22731025722451573\\
+\texttt{mixed\_wing\_tail\_endpoint\_edge\_mass} & 28\\
+\texttt{single\_strip\_pure\_endpoint\_edge\_mass} & 48636 .
+\end{array}
+\]
+Thus most of the missing-mirror mass is already pure endpoint support, while
+the non-pure part is almost entirely a right-tail internal endpoint mixture.
+\end{theorem}
+\begin{proof}
+For every missing-mirror signed child, the audit collects the endpoint groups
+that occur in its supporting cycle packets.  A template with exactly one
+endpoint group is routed as pure endpoint support.  A template with several
+right-tail endpoint groups is routed to the mixed right-tail packet; the audit
+separately records the exceptional wing/tail mixed mass.  The displayed masses
+sum to \(48636+14344=62980\), and the mixed part further splits as
+\(14316+28=14344\).
+\end{proof}
+
+\begin{remark}[Router closed, analytic gates open]
+The endpoint router turns the missing-mirror branch into
+\begin{quote}\scriptsize\ttfamily
+PureEndpointMissingMirrorCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND MissingMirrorTraceKloostermanCompletion.
+\end{quote}
+The full remaining mouth is
+\begin{quote}\scriptsize\ttfamily
+PureEndpointMissingMirrorCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND MissingMirrorTraceKloostermanCompletion\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the finite endpoint-router ledger.  It does not prove
+pure endpoint phase saving, does not split mixed right-tail templates without
+loss at the analytic level, and does not complete any carrier to an admissible
+trace/Kloosterman family.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-\\
+endpoint-router-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
