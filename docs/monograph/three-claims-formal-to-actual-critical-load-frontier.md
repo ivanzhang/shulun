@@ -25745,3 +25745,46 @@ prime_index_gap_[1]_edge_mass=662
 本层删除的是“same-packet multi-m collision 是单一黑箱”的含混说法；没有删除
 相邻素数对 signed template equality、非相邻素数对、相邻素数链或 repeated
 occurrence 聚合/回流的全局证明缺口。
+
+### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+AdjacentPrimePairCollisionBound
+```
+
+现在被拆成：
+
+```text
+Gap2TwinAdjacentPairCollisionBound
+AND Gap4CousinAdjacentPairCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+```
+
+关键审计读数为：
+
+```text
+single_P_local_adjacent_prime_pair_gap_class_ledger_closed=true
+adjacent_prime_pair_edge_mass=662
+gap2_twin_adjacent_pair_edge_mass=296
+gap4_cousin_adjacent_pair_edge_mass=316
+gap6_sexy_adjacent_pair_edge_mass=36
+gap_ge8_adjacent_pair_edge_mass=14
+bad_adjacent_pair_template_count=0
+observed_gap2_or_gap4_edge_mass=612
+```
+
+本层删除的是“adjacent prime pair collision 是单一黑箱”的含混说法；没有删除
+gap 2/4/6/>=8 signed collision bound，也没有删除后续 repeated occurrence
+aggregation/PDEC、single-P slice summation 或 prime-q reciprocal phase saving 缺口。

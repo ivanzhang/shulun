@@ -1,0 +1,1270 @@
+{
+  "adjacent_prime_pair_collision_bound_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SamePacketMultiMGapLedgerImported",
+      "meaning": "The previous same-packet multi-m gap ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "AdjacentPrimePairGapClassLedger",
+      "meaning": "Adjacent-prime-pair collisions are split by exact prime gap.",
+      "proved": true,
+      "remaining": "none for the finite gap-class ledger"
+    },
+    {
+      "closed": false,
+      "gate": "Gap2TwinAdjacentPairCollisionBound",
+      "meaning": "Control signed template equality across adjacent m-pairs of gap 2.",
+      "proved": false,
+      "remaining": "finite audit shows 33 templates / 296 edge mass but gives no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "Gap4CousinAdjacentPairCollisionBound",
+      "meaning": "Control signed template equality across adjacent m-pairs of gap 4.",
+      "proved": false,
+      "remaining": "finite audit shows 31 templates / 316 edge mass but gives no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "Gap6AndLargeAdjacentPairCollisionBound",
+      "meaning": "Control gap 6 and gap >=8 adjacent-pair collisions.",
+      "proved": false,
+      "remaining": "finite audit shows 7 templates / 50 edge mass but no global suppression"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "gap 2 and gap 4 together carry almost all adjacent-pair collision mass",
+    "input": "the 71 same-packet adjacent-prime-pair repeated templates",
+    "operation": "classify adjacent pairs by exact integer prime gap 2, 4, 6, or >=8",
+    "remaining": "prove signed collision bounds for gap-2/gap-4 adjacent pairs or route excess to PDEC/SAE"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; not a fixed-packet adjacent-pair equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman input; no local gap-2/gap-4 signed template bound",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced average input; not a pointwise adjacent-pair collision bound",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence theorem; does not control signed template equality on adjacent m-pairs",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; not a local collision theorem",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_theorems": "describe existence or density of prime gaps, not equality of Phi-LPF signed templates",
+    "short_interval_prime_inputs": "do not estimate adjacent-m template collision classes",
+    "trace_or_kloosterman_inputs": "need nonlocal summation variables and do not directly bound fixed-packet gap-2/gap-4 signed collisions"
+  },
+  "finite_audit": {
+    "adjacent_pair_gap_class_a_edge_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 304,
+        "edge_ratio": 0.459214501510574
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 296,
+        "edge_ratio": 0.4471299093655589
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974
+      },
+      {
+        "A_class": "all_positive",
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266
+      },
+      {
+        "A_class": "all_positive",
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 8,
+        "edge_ratio": 0.012084592145015106
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133
+      }
+    ],
+    "adjacent_pair_gap_class_cycle_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 110,
+        "edge_ratio": 0.1661631419939577
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 100,
+        "edge_ratio": 0.1510574018126888
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 88,
+        "edge_ratio": 0.13293051359516617
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 72,
+        "edge_ratio": 0.10876132930513595
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 48,
+        "edge_ratio": 0.07250755287009064
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 48,
+        "edge_ratio": 0.07250755287009064
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.06042296072507553
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 28,
+        "edge_ratio": 0.04229607250755287
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "edge_ratio": 0.012084592145015106
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "edge_ratio": 0.012084592145015106
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 2,
+        "edge_mass": 4,
+        "edge_ratio": 0.006042296072507553
+      }
+    ],
+    "adjacent_pair_gap_class_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 316,
+        "edge_ratio": 0.4773413897280967
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 296,
+        "edge_ratio": 0.4471299093655589
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436
+      }
+    ],
+    "adjacent_pair_gap_class_q_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 48,
+        "edge_ratio": 0.07250755287009064,
+        "q_prefix_count": 28
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974,
+        "q_prefix_count": 10
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 32,
+        "edge_ratio": 0.04833836858006042,
+        "q_prefix_count": 19
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 28,
+        "edge_ratio": 0.04229607250755287,
+        "q_prefix_count": 10
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 26,
+        "edge_ratio": 0.03927492447129909,
+        "q_prefix_count": 12
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 26,
+        "edge_ratio": 0.03927492447129909,
+        "q_prefix_count": 13
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 26,
+        "edge_ratio": 0.03927492447129909,
+        "q_prefix_count": 7
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532,
+        "q_prefix_count": 5
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532,
+        "q_prefix_count": 8
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532,
+        "q_prefix_count": 9
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 22,
+        "edge_ratio": 0.03323262839879154,
+        "q_prefix_count": 16
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 22,
+        "edge_ratio": 0.03323262839879154,
+        "q_prefix_count": 26
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766,
+        "q_prefix_count": 16
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766,
+        "q_prefix_count": 20
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987,
+        "q_prefix_count": 18
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021,
+        "q_prefix_count": 24
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021,
+        "q_prefix_count": 9
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "q_prefix_count": 23
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "q_prefix_count": 27
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "q_prefix_count": 31
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "q_prefix_count": 17
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "q_prefix_count": 27
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "q_prefix_count": 14
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "q_prefix_count": 21
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "q_prefix_count": 25
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "q_prefix_count": 11
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "q_prefix_count": 14
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "q_prefix_count": 15
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "q_prefix_count": 32
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "q_prefix_count": 29
+      }
+    ],
+    "adjacent_pair_gap_class_route_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 258,
+        "edge_ratio": 0.38972809667673713,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 212,
+        "edge_ratio": 0.3202416918429003,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 78,
+        "edge_ratio": 0.11782477341389729,
+        "route_class": "pure_lower_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 30,
+        "edge_ratio": 0.045317220543806644,
+        "route_class": "pure_right_tail_left_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 22,
+        "edge_ratio": 0.03323262839879154,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133,
+        "route_class": "pure_lower_wing_single_shell"
+      }
+    ],
+    "adjacent_pair_gap_class_shell_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 68,
+        "edge_ratio": 0.1027190332326284,
+        "m_shell_prime_count": 4
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 64,
+        "edge_ratio": 0.09667673716012085,
+        "m_shell_prime_count": 6
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 60,
+        "edge_ratio": 0.09063444108761329,
+        "m_shell_prime_count": 6
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 60,
+        "edge_ratio": 0.09063444108761329,
+        "m_shell_prime_count": 5
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 52,
+        "edge_ratio": 0.07854984894259819,
+        "m_shell_prime_count": 3
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 48,
+        "edge_ratio": 0.07250755287009064,
+        "m_shell_prime_count": 4
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 44,
+        "edge_ratio": 0.06646525679758308,
+        "m_shell_prime_count": 3
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 44,
+        "edge_ratio": 0.06646525679758308,
+        "m_shell_prime_count": 9
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 40,
+        "edge_ratio": 0.06042296072507553,
+        "m_shell_prime_count": 2
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 30,
+        "edge_ratio": 0.045317220543806644,
+        "m_shell_prime_count": 2
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766,
+        "m_shell_prime_count": 7
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987,
+        "m_shell_prime_count": 5
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021,
+        "m_shell_prime_count": 9
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021,
+        "m_shell_prime_count": 4
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "m_shell_prime_count": 8
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.021148036253776436,
+        "m_shell_prime_count": 6
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "m_shell_prime_count": 8
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266,
+        "m_shell_prime_count": 10
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.015105740181268883,
+        "m_shell_prime_count": 11
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 8,
+        "edge_ratio": 0.012084592145015106,
+        "m_shell_prime_count": 2
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133,
+        "m_shell_prime_count": 3
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133,
+        "m_shell_prime_count": 5
+      }
+    ],
+    "adjacent_pair_gap_class_template_rows": [
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "template_count": 33,
+        "template_ratio": 0.4647887323943662
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "template_count": 31,
+        "template_ratio": 0.43661971830985913
+      },
+      {
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "template_count": 5,
+        "template_ratio": 0.07042253521126761
+      },
+      {
+        "adjacent_pair_gap_class": "gap_ge8_adjacent_pair_collision",
+        "template_count": 2,
+        "template_ratio": 0.028169014084507043
+      }
+    ],
+    "adjacent_pair_gap_max": 10,
+    "adjacent_pair_gap_min": 2,
+    "adjacent_prime_pair_collision_bound_proved": false,
+    "adjacent_prime_pair_edge_mass": 662,
+    "adjacent_prime_pair_template_count": 71,
+    "bad_adjacent_pair_template_count": 0,
+    "duplicate_raw_base_count": 3,
+    "duplicate_raw_base_edge_mass": 48,
+    "exact_integer_gap_edge_rows": [
+      {
+        "edge_mass": 316,
+        "edge_ratio": 0.4773413897280967,
+        "integer_gap": 4
+      },
+      {
+        "edge_mass": 296,
+        "edge_ratio": 0.4471299093655589,
+        "integer_gap": 2
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974,
+        "integer_gap": 6
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.012084592145015106,
+        "integer_gap": 10
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.00906344410876133,
+        "integer_gap": 8
+      }
+    ],
+    "exact_integer_gap_template_rows": [
+      {
+        "integer_gap": 2,
+        "template_count": 33,
+        "template_ratio": 0.4647887323943662
+      },
+      {
+        "integer_gap": 4,
+        "template_count": 31,
+        "template_ratio": 0.43661971830985913
+      },
+      {
+        "integer_gap": 6,
+        "template_count": 5,
+        "template_ratio": 0.07042253521126761
+      },
+      {
+        "integer_gap": 10,
+        "template_count": 1,
+        "template_ratio": 0.014084507042253521
+      },
+      {
+        "integer_gap": 8,
+        "template_count": 1,
+        "template_ratio": 0.014084507042253521
+      }
+    ],
+    "gap2_twin_adjacent_pair_collision_bound_proved": false,
+    "gap2_twin_adjacent_pair_edge_mass": 296,
+    "gap2_twin_adjacent_pair_template_count": 33,
+    "gap4_cousin_adjacent_pair_collision_bound_proved": false,
+    "gap4_cousin_adjacent_pair_edge_mass": 316,
+    "gap4_cousin_adjacent_pair_template_count": 31,
+    "gap6_sexy_adjacent_pair_collision_bound_proved": false,
+    "gap6_sexy_adjacent_pair_edge_mass": 36,
+    "gap6_sexy_adjacent_pair_template_count": 5,
+    "gap_ge8_adjacent_pair_collision_bound_proved": false,
+    "gap_ge8_adjacent_pair_edge_mass": 14,
+    "gap_ge8_adjacent_pair_template_count": 2,
+    "max_prime": 1009,
+    "observed_gap2_or_gap4_dominant": true,
+    "observed_gap2_or_gap4_edge_mass": 612,
+    "observed_gap2_or_gap4_edge_ratio": 0.9244712990936556,
+    "previous_single_P_local_same_packet_multi_m_gap_ledger_closed": true,
+    "row_column_unconditional_closed": false,
+    "single_P_local_adjacent_prime_pair_gap_class_ledger_closed": true,
+    "top_adjacent_pair_template_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 829,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap": 4,
+        "m_pair": "[1303, 1307]",
+        "m_shell_prime_count": 9,
+        "packet_index": 3622,
+        "q_prefix_count": 19,
+        "raw_base_template": "g=10,c=16 -> g=2,c=3 -> g=6,c=10 -> g=4,c=6 -> g=6,c=9 -> g=8,c=13 -> g=4,c=6 -> g=2,c=3",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=positive -> g=4,c=6,A=negative -> g=6,c=9,A=positive -> g=8,c=13,A=negative -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 971,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap": 4,
+        "m_pair": "[907, 911]",
+        "m_shell_prime_count": 5,
+        "packet_index": 4742,
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=9 -> g=8,c=8 -> g=6,c=5 -> g=6,c=6 -> g=4,c=3 -> g=8,c=8 -> g=4,c=4 -> g=14,c=13",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=negative -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive -> g=4,c=3,A=positive -> g=8,c=8,A=negative -> g=4,c=4,A=positive -> g=14,c=13,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 809,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap": 4,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 6,
+        "packet_index": 3316,
+        "q_prefix_count": 24,
+        "raw_base_template": "g=2,c=1 -> g=6,c=6 -> g=6,c=5 -> g=4,c=4 -> g=2,c=2 -> g=4,c=4 -> g=6,c=5 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=2,c=1,A=negative -> g=6,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=positive -> g=4,c=4,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 919,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap": 4,
+        "m_pair": "[883, 887]",
+        "m_shell_prime_count": 6,
+        "packet_index": 4307,
+        "q_prefix_count": 27,
+        "raw_base_template": "g=10,c=10 -> g=8,c=8 -> g=10,c=9 -> g=8,c=8 -> g=6,c=6 -> g=4,c=4 -> g=8,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=negative -> g=8,c=8,A=positive -> g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=6,A=positive -> g=4,c=4,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 613,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap": 2,
+        "m_pair": "[1049, 1051]",
+        "m_shell_prime_count": 2,
+        "packet_index": 1948,
+        "q_prefix_count": 9,
+        "raw_base_template": "g=10,c=17 -> g=2,c=4 -> g=4,c=7 -> g=2,c=3 -> g=4,c=7 -> g=14,c=24 -> g=6,c=10",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=17,A=negative -> g=2,c=4,A=positive -> g=4,c=7,A=positive -> g=2,c=3,A=positive -> g=4,c=7,A=negative -> g=14,c=24,A=positive -> g=6,c=10,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 977,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap": 4,
+        "m_pair": "[877, 881]",
+        "m_shell_prime_count": 8,
+        "packet_index": 4807,
+        "q_prefix_count": 23,
+        "raw_base_template": "g=4,c=3 -> g=8,c=8 -> g=6,c=5 -> g=4,c=4 -> g=8,c=7 -> g=6,c=5 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=4,c=3,A=positive -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[937, 941]",
+        "m_shell_prime_count": 4,
+        "packet_index": 3478,
+        "q_prefix_count": 16,
+        "raw_base_template": "g=10,c=11 -> g=2,c=3 -> g=4,c=4 -> g=6,c=7 -> g=2,c=2 -> g=12,c=14",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=2,c=3,A=negative -> g=4,c=4,A=negative -> g=6,c=7,A=positive -> g=2,c=2,A=negative -> g=12,c=14,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 769,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[823, 827]",
+        "m_shell_prime_count": 5,
+        "packet_index": 3101,
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=11 -> g=6,c=6 -> g=6,c=7 -> g=4,c=4 -> g=2,c=2 -> g=12,c=13",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=6,c=6,A=negative -> g=6,c=7,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=negative -> g=12,c=13,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 1009,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 2,
+        "m_pair": "[1481, 1483]",
+        "m_shell_prime_count": 6,
+        "packet_index": 5099,
+        "q_prefix_count": 27,
+        "raw_base_template": "g=10,c=15 -> g=6,c=9 -> g=6,c=9 -> g=2,c=3 -> g=18,c=27 -> g=6,c=8",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=15,A=positive -> g=6,c=9,A=negative -> g=6,c=9,A=positive -> g=2,c=3,A=positive -> g=18,c=27,A=positive -> g=6,c=8,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 821,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 2,
+        "m_pair": "[1319, 1321]",
+        "m_shell_prime_count": 3,
+        "packet_index": 3443,
+        "q_prefix_count": 16,
+        "raw_base_template": "g=10,c=16 -> g=2,c=3 -> g=6,c=10 -> g=8,c=13 -> g=4,c=6 -> g=2,c=3",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 937,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[769, 773]",
+        "m_shell_prime_count": 2,
+        "packet_index": 4419,
+        "q_prefix_count": 14,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=10,c=9 -> g=8,c=6 -> g=6,c=5 -> g=8,c=7",
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=positive -> g=10,c=9,A=positive -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 733,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[673, 677]",
+        "m_shell_prime_count": 3,
+        "packet_index": 2788,
+        "q_prefix_count": 25,
+        "raw_base_template": "g=10,c=9 -> g=6,c=5 -> g=6,c=6 -> g=2,c=2 -> g=18,c=16 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=2,c=2,A=positive -> g=18,c=16,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[769, 773]",
+        "m_shell_prime_count": 2,
+        "packet_index": 4061,
+        "q_prefix_count": 21,
+        "raw_base_template": "g=10,c=9 -> g=2,c=1 -> g=4,c=4 -> g=6,c=5 -> g=6,c=5 -> g=8,c=7",
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=positive -> g=2,c=1,A=negative -> g=4,c=4,A=negative -> g=6,c=5,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 947,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 4,
+        "m_pair": "[877, 881]",
+        "m_shell_prime_count": 10,
+        "packet_index": 4550,
+        "q_prefix_count": 26,
+        "raw_base_template": "g=10,c=9 -> g=8,c=8 -> g=6,c=5 -> g=6,c=6 -> g=4,c=4 -> g=8,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 2,
+        "m_pair": "[1487, 1489]",
+        "m_shell_prime_count": 8,
+        "packet_index": 4082,
+        "q_prefix_count": 12,
+        "raw_base_template": "g=12,c=20 -> g=8,c=14 -> g=4,c=7 -> g=6,c=10 -> g=8,c=13 -> g=4,c=7",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=12,c=20,A=positive -> g=8,c=14,A=negative -> g=4,c=7,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap": 2,
+        "m_pair": "[1289, 1291]",
+        "m_shell_prime_count": 9,
+        "packet_index": 3502,
+        "q_prefix_count": 17,
+        "raw_base_template": "g=2,c=3 -> g=6,c=9 -> g=4,c=6 -> g=6,c=10 -> g=8,c=12 -> g=4,c=7",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=2,c=3,A=negative -> g=6,c=9,A=positive -> g=4,c=6,A=negative -> g=6,c=10,A=positive -> g=8,c=12,A=positive -> g=4,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 727,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 3,
+        "packet_index": 2741,
+        "q_prefix_count": 29,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=2,c=2 -> g=18,c=18 -> g=6,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=2,c=2,A=negative -> g=18,c=18,A=positive -> g=6,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 739,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[757, 761]",
+        "m_shell_prime_count": 4,
+        "packet_index": 2842,
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 829,
+        "adjacent_pair_gap_class": "gap6_sexy_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 6,
+        "m_pair": "[751, 757]",
+        "m_shell_prime_count": 4,
+        "packet_index": 3600,
+        "q_prefix_count": 21,
+        "raw_base_template": "g=10,c=10 -> g=8,c=7 -> g=6,c=6 -> g=6,c=5 -> g=8,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=positive -> g=8,c=7,A=negative -> g=6,c=6,A=positive -> g=6,c=5,A=negative -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[859, 863]",
+        "m_shell_prime_count": 5,
+        "packet_index": 3485,
+        "q_prefix_count": 26,
+        "raw_base_template": "g=10,c=11 -> g=2,c=2 -> g=4,c=4 -> g=2,c=3 -> g=12,c=12",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=2,c=2,A=negative -> g=4,c=4,A=negative -> g=2,c=3,A=positive -> g=12,c=12,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 773,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[823, 827]",
+        "m_shell_prime_count": 6,
+        "packet_index": 3157,
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=11 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 761,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 4,
+        "m_pair": "[877, 881]",
+        "m_shell_prime_count": 7,
+        "packet_index": 3042,
+        "q_prefix_count": 19,
+        "raw_base_template": "g=10,c=12 -> g=6,c=7 -> g=6,c=7 -> g=2,c=3 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=12,A=negative -> g=6,c=7,A=positive -> g=6,c=7,A=negative -> g=2,c=3,A=positive -> g=6,c=6,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 613,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 2,
+        "m_pair": "[881, 883]",
+        "m_shell_prime_count": 4,
+        "packet_index": 1957,
+        "q_prefix_count": 20,
+        "raw_base_template": "g=10,c=14 -> g=2,c=3 -> g=4,c=6 -> g=14,c=20 -> g=6,c=9",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=14,A=positive -> g=2,c=3,A=positive -> g=4,c=6,A=positive -> g=14,c=20,A=negative -> g=6,c=9,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 617,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap": 2,
+        "m_pair": "[1031, 1033]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1994,
+        "q_prefix_count": 10,
+        "raw_base_template": "g=10,c=16 -> g=2,c=4 -> g=4,c=6 -> g=14,c=24 -> g=6,c=10",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=4,A=positive -> g=4,c=6,A=negative -> g=14,c=24,A=positive -> g=6,c=10,A=negative"
+      }
+    ],
+    "top_p_edge_rows": [
+      {
+        "P": 977,
+        "edge_mass": 36,
+        "edge_ratio": 0.054380664652567974
+      },
+      {
+        "P": 613,
+        "edge_mass": 34,
+        "edge_ratio": 0.0513595166163142
+      },
+      {
+        "P": 823,
+        "edge_mass": 34,
+        "edge_ratio": 0.0513595166163142
+      },
+      {
+        "P": 883,
+        "edge_mass": 34,
+        "edge_ratio": 0.0513595166163142
+      },
+      {
+        "P": 919,
+        "edge_mass": 32,
+        "edge_ratio": 0.04833836858006042
+      },
+      {
+        "P": 991,
+        "edge_mass": 30,
+        "edge_ratio": 0.045317220543806644
+      },
+      {
+        "P": 773,
+        "edge_mass": 28,
+        "edge_ratio": 0.04229607250755287
+      },
+      {
+        "P": 829,
+        "edge_mass": 26,
+        "edge_ratio": 0.03927492447129909
+      },
+      {
+        "P": 1009,
+        "edge_mass": 24,
+        "edge_ratio": 0.03625377643504532
+      },
+      {
+        "P": 607,
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766
+      },
+      {
+        "P": 617,
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766
+      },
+      {
+        "P": 887,
+        "edge_mass": 20,
+        "edge_ratio": 0.030211480362537766
+      },
+      {
+        "P": 449,
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987
+      },
+      {
+        "P": 739,
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987
+      },
+      {
+        "P": 761,
+        "edge_mass": 18,
+        "edge_ratio": 0.027190332326283987
+      },
+      {
+        "P": 677,
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021
+      },
+      {
+        "P": 809,
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021
+      },
+      {
+        "P": 907,
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021
+      },
+      {
+        "P": 971,
+        "edge_mass": 16,
+        "edge_ratio": 0.02416918429003021
+      },
+      {
+        "P": 733,
+        "edge_mass": 12,
+        "edge_ratio": 0.01812688821752266
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "gap2_twin_adjacent_pair_collision_bound_proved": false,
+  "gap4_cousin_adjacent_pair_collision_bound_proved": false,
+  "gap6_sexy_adjacent_pair_collision_bound_proved": false,
+  "gap_ge8_adjacent_pair_collision_bound_proved": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "LocalCycleLengthUniformBound",
+    "AND Gap2TwinAdjacentPairCollisionBound",
+    "AND Gap4CousinAdjacentPairCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "local_occurrence_multiplicity_uniform_bound_proved": false,
+  "local_template_multiplicity_uniform_bound_proved": false,
+  "multi_P_trace_completion_closed": false,
+  "multi_packet_duplicate_transport_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pure_endpoint_carrier_phase_saving_closed": false,
+  "reason_chosen": "adjacent-prime-pair collisions are the dominant subgate of same-packet multi-m collisions",
+  "repeated_occurrence_aggregation_or_pdec_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_packet_multi_m_collision_bound_proved": false,
+  "single_P_local_adjacent_prime_pair_gap_class_ledger_closed": true,
+  "single_P_local_endpoint_packet_bound_closed": false,
+  "single_P_slice_endpoint_packet_summation_closed": false,
+  "single_packet_single_m_multi_cycle_suppression_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "fee52aa171b075896255010ddf7741286dc4561dfc8200e99a3c798519db8f40",
+    "docs/monograph/external-theorem-index.md": "3bb40db743c8fb38196292ebc3032ac41b6a1a9e1b9628cd160241cb8170d474",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "ee9611115548213e50369c9baecafc7a70f92751e3116c0ffa0be944f3833763",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.json": "e518f350b9d03d24627ef624e1c566d9bf0a1706ba29bd4bb6bc1398065e7386",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json": "5c1747f0c5f67a2d1e495c8f8d4f3ae989fca89448b4a708b598bf6749faa1d9",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "c88063cab3f61d5c6e57f53d1373644a3cf68d29f80dd82b1ef7647ad4a4aa3c",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "b8f8209b2b9afaecd13e0d5fa184d2223052de5b645ff8901304239fbc9d09e8",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit.py": "c49ec25457ec042a952113a77b4b3184158e812b76c24e859b39f16ba14ad30d",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "d2a3b2052c8216e1a7729f64c1825c5d093a5b9fda61e585c5dcf92513e1dc09"
+  },
+  "status": "single_p_local_adjacent_prime_pair_gap_class_ledger_closed_uniform_bound_open"
+}

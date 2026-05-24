@@ -2684,6 +2684,109 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC13：Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.md
+```
+
+本轮继续选择合著稿三命题中最近的 Prime Matrix row/column Phi-LPF 线。上一层
+same-packet multi-m gap ledger 已把主量落在相邻素数对 collision 上，本层继续拆成
+exact integer prime gap classes：
+
+```text
+single_P_local_adjacent_prime_pair_gap_class_ledger_closed=true
+adjacent_prime_pair_template_count=71
+adjacent_prime_pair_edge_mass=662
+gap2_twin_adjacent_pair_template_count=33
+gap2_twin_adjacent_pair_edge_mass=296
+gap4_cousin_adjacent_pair_template_count=31
+gap4_cousin_adjacent_pair_edge_mass=316
+gap6_sexy_adjacent_pair_template_count=5
+gap6_sexy_adjacent_pair_edge_mass=36
+gap_ge8_adjacent_pair_template_count=2
+gap_ge8_adjacent_pair_edge_mass=14
+bad_adjacent_pair_template_count=0
+```
+
+gap 2 与 gap 4 合计占相邻素数对 collision 质量：
+
+```text
+observed_gap2_or_gap4_edge_mass=612
+observed_gap2_or_gap4_edge_ratio=0.9244712990936556
+```
+
+这是真推进：`AdjacentPrimePairCollisionBound` 不再是单一黑箱，而被拆成 gap 2、
+gap 4、gap 6、gap >=8 四个具体 signed-template equality 门。它仍不是全局
+collision theorem。
+
+### Q13AC13.1 外部前沿匹配
+
+```text
+FKMS 2025 trace bilinear v3:
+  trace-family average input; not fixed-packet gap-2/gap-4 equality control.
+
+Milićević--Qin--Wu 2025 arbitrary-modulus Kloosterman:
+  completion后有用；不能直接吃掉本地 adjacent-pair collision。
+
+Wright 2026 unbalanced Kloosterman fractions:
+  useful average input, but not a pointwise endpoint-packet theorem.
+
+Maynard 2015 small gaps:
+  controls existence of bounded prime gaps, not signed Phi-LPF template equality.
+
+Li 2023/2025 short intervals:
+  theta=0.52 prime existence remains above sqrt scale and does not imply this
+  local collision bound.
+```
+
+### Q13AC13.2 最新最窄口
+
+```text
+LocalCycleLengthUniformBound
+AND Gap2TwinAdjacentPairCollisionBound
+AND Gap4CousinAdjacentPairCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+single_P_local_adjacent_prime_pair_gap_class_ledger_closed=true
+gap2_twin_adjacent_pair_collision_bound_proved=false
+gap4_cousin_adjacent_pair_collision_bound_proved=false
+gap6_sexy_adjacent_pair_collision_bound_proved=false
+gap_ge8_adjacent_pair_collision_bound_proved=false
+adjacent_prime_pair_collision_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

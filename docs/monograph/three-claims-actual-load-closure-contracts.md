@@ -22365,6 +22365,56 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.json
+```
+
+actual-load 含义继续收缩：上一层的相邻素数对 collision 主量现在被拆成精确
+prime gap 类：
+
+```text
+single_P_local_adjacent_prime_pair_gap_class_ledger_closed=true
+adjacent_prime_pair_template_count=71
+adjacent_prime_pair_edge_mass=662
+gap2_twin_adjacent_pair_template_count=33
+gap2_twin_adjacent_pair_edge_mass=296
+gap4_cousin_adjacent_pair_template_count=31
+gap4_cousin_adjacent_pair_edge_mass=316
+gap6_sexy_adjacent_pair_template_count=5
+gap6_sexy_adjacent_pair_edge_mass=36
+gap_ge8_adjacent_pair_template_count=2
+gap_ge8_adjacent_pair_edge_mass=14
+observed_gap2_or_gap4_edge_ratio=0.9244712990936556
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+Gap2TwinAdjacentPairCollisionBound
+Gap4CousinAdjacentPairCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite adjacent-pair exact-gap 账本；gap 2/4 的 signed template equality、
+gap 6 与更大相邻 gap 控制、非相邻素数对、相邻素数链和 repeated occurrence 回流
+仍未闭合。
+
 ### 1.256 Phi-LPF q-prefix phase normal-form 同步更新
 
 新增机器证书：

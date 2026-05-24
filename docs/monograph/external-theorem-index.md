@@ -2212,6 +2212,79 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65R. Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_adjacent_prime_pair_gap_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-adjacent-prime-pair-gap-class-audit.md
+```
+
+上一层把 same-packet multi-m 主量压到相邻素数对 collision：
+
+```text
+adjacent_prime_pair_template_count=71
+adjacent_prime_pair_edge_mass=662
+```
+
+本层继续按精确整数素数间隔分类：
+
+```text
+gap2_twin_adjacent_pair_template_count=33
+gap2_twin_adjacent_pair_edge_mass=296
+gap4_cousin_adjacent_pair_template_count=31
+gap4_cousin_adjacent_pair_edge_mass=316
+gap6_sexy_adjacent_pair_template_count=5
+gap6_sexy_adjacent_pair_edge_mass=36
+gap_ge8_adjacent_pair_template_count=2
+gap_ge8_adjacent_pair_edge_mass=14
+bad_adjacent_pair_template_count=0
+observed_gap2_or_gap4_edge_ratio=0.9244712990936556
+```
+
+因此 `AdjacentPrimePairCollisionBound` 被实际拆成：
+
+```text
+Gap2TwinAdjacentPairCollisionBound
+AND Gap4CousinAdjacentPairCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+```
+
+外部 theorem 匹配边界：
+
+```text
+FKMS 2025 trace bilinear estimates:
+  useful only after nonlocal trace-family completion; not a fixed-packet
+  adjacent-pair equality theorem.
+
+Milićević--Qin--Wu 2025 arbitrary-modulus Kloosterman sums:
+  useful for completed bilinear Kloosterman inputs; not a local gap-2/gap-4
+  signed template collision bound.
+
+Wright 2026 unbalanced Kloosterman fractions:
+  useful as an average reciprocal-fraction input; not pointwise for one
+  endpoint packet.
+
+Maynard small prime gaps and Li short-interval primes:
+  give prime-gap or prime-existence information, but do not estimate equality
+  of Phi-LPF signed templates across adjacent m-pairs.
+```
+
+状态边界：
+
+```text
+single_P_local_adjacent_prime_pair_gap_class_ledger_closed=true
+adjacent_prime_pair_collision_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

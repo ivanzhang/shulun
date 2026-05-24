@@ -35947,6 +35947,98 @@ same-packet-multi-m-gap-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Adjacent-prime-pair exact gap classes}
+
+\begin{theorem}[Single-\(P\) adjacent-prime-pair exact-gap ledger]
+In the audit range \(P\le 1009\), the \(71\) same-packet
+adjacent-prime-pair collision templates of the previous ledger split by exact
+integer prime gap as follows:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_adjacent\_prime\_pair\_gap\_class\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{adjacent\_prime\_pair\_template\_count} & 71\\
+\texttt{adjacent\_prime\_pair\_edge\_mass} & 662\\
+\texttt{gap2\_twin\_adjacent\_pair\_template\_count} & 33\\
+\texttt{gap2\_twin\_adjacent\_pair\_edge\_mass} & 296\\
+\texttt{gap4\_cousin\_adjacent\_pair\_template\_count} & 31\\
+\texttt{gap4\_cousin\_adjacent\_pair\_edge\_mass} & 316\\
+\texttt{gap6\_sexy\_adjacent\_pair\_template\_count} & 5\\
+\texttt{gap6\_sexy\_adjacent\_pair\_edge\_mass} & 36\\
+\texttt{gap\_ge8\_adjacent\_pair\_template\_count} & 2\\
+\texttt{gap\_ge8\_adjacent\_pair\_edge\_mass} & 14\\
+\texttt{bad\_adjacent\_pair\_template\_count} & 0 .
+\end{array}
+\]
+The observed integer gaps run from \(2\) to \(10\).  Gap \(2\) and gap \(4\)
+together carry edge mass \(612\), namely
+\[
+\frac{612}{662}=0.9244712990936556\ldots .
+\]
+\end{theorem}
+\begin{proof}
+The audit imports the same-packet multi-\(m\) gap ledger and restricts to its
+adjacent-prime-pair class.  For each repeated template it sorts the two selected
+prime \(m\)-values and records their exact integer difference.  Difference
+\(2\) is assigned to the twin-prime adjacent-pair class, difference \(4\) to the
+cousin-prime adjacent-pair class, difference \(6\) to the gap-\(6\) class, and
+all remaining adjacent prime gaps to the \(\ge 8\) class.  The four class edge
+masses are
+\[
+296,\qquad 316,\qquad 36,\qquad 14,
+\]
+which sum to the imported adjacent-pair mass \(662\).  The ledger also checks
+that every imported record is genuinely a two-prime adjacent pair and that no
+bad adjacent-pair template remains.
+\end{proof}
+
+\begin{remark}[Exact-gap collision gates]
+The adjacent-prime-pair gate is now replaced by
+\begin{quote}\scriptsize\ttfamily
+Gap2TwinAdjacentPairCollisionBound\\
+AND Gap4CousinAdjacentPairCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND Gap2TwinAdjacentPairCollisionBound\\
+AND Gap4CousinAdjacentPairCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This remains a finite exact-gap ledger.  It does not prove a signed collision
+bound for gap \(2\), gap \(4\), gap \(6\), or larger adjacent prime gaps.
+Trace/Kloosterman average estimates, small-gap prime theorems, and
+short-interval prime existence inputs do not by themselves prove equality
+control for signed Phi-LPF local templates inside a fixed endpoint packet.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+adjacent-prime-pair-gap-class-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
