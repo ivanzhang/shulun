@@ -25165,3 +25165,58 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是切换图黑箱；没有删除 switch-graph 路径相消、completed family 和无损聚合真缺口。
+
+## 330AS. Phi-LPF q-prefix carry switch flow decomposition frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_switch_paths_have_loop_erased_cycle_flow_core_phase_saving_open
+adjacent_letter_pair_count_inside_atoms=147799
+loop_erased_flow_decomposition_closed=true
+raw_cycle_edge_mass=117733
+raw_residual_edge_mass=30066
+raw_cycle_edge_ratio=0.7965750783158209
+signed_cycle_edge_mass=107677
+signed_residual_edge_mass=40122
+signed_cycle_edge_ratio=0.7285367289359197
+cycle_packet_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的
+
+```text
+FiniteSwitchGraphPathExponentialSumSaving
+```
+
+现在被压成两类真实对象：
+
+```text
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore
+ResidualEndpointPathSummationWithoutBoundaryLoss
+```
+
+raw 侧约 `79.66%` 的 switch-edge 质量进入 cycle core，signed 侧约 `72.85%`
+进入 cycle core；剩余 endpoint paths 较短但仍必须无损控制。因此最新实际硬点为：
+
+```text
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfCycleAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 switch path 质量形状黑箱；没有删除 cycle 相消、residual 求和和 completed
+family 真缺口。

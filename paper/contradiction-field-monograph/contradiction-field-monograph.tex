@@ -35090,6 +35090,64 @@ boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Loop-erased cycle flow of q-prefix carry switch paths}
+
+\begin{theorem}[Cycle-flow core and endpoint residual paths]
+In the same audit range \(P\le 1009\), apply deterministic loop erasure to
+the raw and signed switch paths of every fixed-\(m\) q-prefix atom: whenever
+the active path revisits a carry letter, peel the resulting directed cycle;
+the remaining active stack is the endpoint residual path.  The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{adjacent\_letter\_pair\_count\_inside\_atoms} & 147799\\
+\texttt{loop\_erased\_flow\_decomposition\_closed} & \texttt{true}\\
+\texttt{raw\_cycle\_edge\_mass} & 117733\\
+\texttt{raw\_residual\_edge\_mass} & 30066\\
+\texttt{raw\_cycle\_edge\_ratio} & 0.7965750783158209\\
+\texttt{signed\_cycle\_edge\_mass} & 107677\\
+\texttt{signed\_residual\_edge\_mass} & 40122\\
+\texttt{signed\_cycle\_edge\_ratio} & 0.7285367289359197 .
+\end{array}
+\]
+The raw residual path length has minimum/median/maximum \(0/2/9\), and the
+signed residual path length has minimum/median/maximum \(0/3/15\).
+\end{theorem}
+\begin{proof}
+For a switch path \(v_0,\ldots,v_n\), scan from left to right while keeping
+the current loop-erased stack.  If the next vertex \(v_i\) has already
+appeared in the stack at position \(j\), the segment from \(j\) to the top of
+the stack together with the new edge forms a directed cycle of length
+\(\ell=\#\text{stack}-j\); remove the vertices after \(j\).  If \(v_i\) is
+new, append it to the stack.  Every input edge is assigned exactly once,
+either to one peeled cycle or to the final residual path.  The audit performs
+this decomposition for all raw and signed atom paths and checks that cycle
+mass plus residual mass is \(147799\) in both cases.
+\end{proof}
+
+\begin{remark}[Cycle core is not yet cycle cancellation]
+The loop-erased ledger shows that most switch-edge mass lies in a recurrent
+cycle core, but it does not estimate the phases carried by those cycles.  The
+remaining analytic mouth is
+\begin{quote}\scriptsize\ttfamily
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND TraceKloostermanCompletionOfCycleAndResidualPackets\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the loop-erased cycle/residual structure.  It does
+not prove cycle-packet phase saving, residual endpoint summation, the
+external-lemma version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

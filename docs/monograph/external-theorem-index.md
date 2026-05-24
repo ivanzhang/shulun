@@ -6115,6 +6115,70 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65F. Phi-LPF q-prefix carry switch flow decomposition 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md
+```
+
+上一层得到 high-branch finite switch graph。本层对每个 fixed-`m` atom 的 switch path
+做确定性 loop erasure：
+
+```text
+repeated active letter => peel one directed cycle
+remaining active stack => endpoint residual path
+```
+
+有限审计读数：
+
+```text
+flow_decomposition_atom_count_total=15439
+switch_atom_count=13355
+non_switch_atom_count=2084
+adjacent_letter_pair_count_inside_atoms=147799
+loop_erased_flow_decomposition_closed=true
+raw_cycle_packet_count=45178
+raw_cycle_edge_mass=117733
+raw_residual_edge_mass=30066
+raw_cycle_edge_ratio=0.7965750783158209
+raw_cycle_length_min/median/max=1/2/10
+raw_residual_length_min/median/max=0/2/9
+signed_cycle_packet_count=36330
+signed_cycle_edge_mass=107677
+signed_residual_edge_mass=40122
+signed_cycle_edge_ratio=0.7285367289359197
+signed_cycle_length_min/median/max=1/2/14
+signed_residual_length_min/median/max=0/3/15
+```
+
+这一步把 switch-graph path 的质量拆成多数 loop-erased cycle core 与短 endpoint
+residual paths。它不是相消证明：cycle packet 仍需相位节省，residual endpoint path
+仍需无损求和，二者还要完成到外部 trace/Kloosterman family 或内部自足替代输入。
+
+外部定理匹配边界继续保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 都仍要求先把
+cycle/residual packets 变成 admissible analytic family。Li 的 `x^0.52` 短区间素数存在
+仍不估计 loop-erased switch-cycle phases。
+
+状态边界：
+
+```text
+loop_erased_cycle_flow_core_closed=true
+cycle_packet_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_flow_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

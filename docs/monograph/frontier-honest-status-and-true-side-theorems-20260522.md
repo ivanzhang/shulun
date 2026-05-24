@@ -1951,6 +1951,72 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AG：Phi-LPF q-prefix carry switch flow decomposition 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md
+```
+
+本层接在 finite switch graph 后，对每个 fixed-`m` atom 的 switch path 做确定性
+loop erasure：
+
+```text
+repeated active letter => directed cycle packet
+remaining active stack => endpoint residual path
+```
+
+有限审计确认：
+
+```text
+flow_decomposition_atom_count_total=15439
+switch_atom_count=13355
+non_switch_atom_count=2084
+adjacent_letter_pair_count_inside_atoms=147799
+loop_erased_flow_decomposition_closed=true
+raw_cycle_edge_mass=117733
+raw_residual_edge_mass=30066
+raw_cycle_edge_ratio=0.7965750783158209
+raw_cycle_length_min/median/max=1/2/10
+raw_residual_length_min/median/max=0/2/9
+signed_cycle_edge_mass=107677
+signed_residual_edge_mass=40122
+signed_cycle_edge_ratio=0.7285367289359197
+signed_cycle_length_min/median/max=1/2/14
+signed_residual_length_min/median/max=0/3/15
+```
+
+这是真推进：high-branch switch path 的质量被拆成多数 cycle-flow core 与短 residual
+endpoint paths。最新最窄口变为：
+
+```text
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfCycleAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+loop_erased_cycle_flow_core_closed=true
+cycle_packet_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_flow_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

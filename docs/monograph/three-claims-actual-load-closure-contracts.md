@@ -22590,6 +22590,66 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 行/列命题、外部引理版与内部自足版仍未无条件闭合。
 
+### 1.260 Phi-LPF q-prefix carry switch flow decomposition 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json
+```
+
+同步读数为：
+
+```text
+status=qprefix_switch_paths_have_loop_erased_cycle_flow_core_phase_saving_open
+switch_atom_count=13355
+non_switch_atom_count=2084
+adjacent_letter_pair_count_inside_atoms=147799
+loop_erased_flow_decomposition_closed=true
+raw_cycle_edge_mass=117733
+raw_residual_edge_mass=30066
+raw_cycle_edge_ratio=0.7965750783158209
+signed_cycle_edge_mass=107677
+signed_residual_edge_mass=40122
+signed_cycle_edge_ratio=0.7285367289359197
+raw_residual_length_min/median/max=0/2/9
+signed_residual_length_min/median/max=0/3/15
+cycle_packet_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：high-branch switch graph 的路径质量已拆成 loop-erased cycle core
+和 endpoint residual path：
+
+```text
+repeated active letter => directed cycle packet
+remaining active stack => residual endpoint path
+```
+
+这关闭 `LoopErasedCycleFlowDecomposition`。但 cycle packet 还没有相消，residual
+endpoint path 也还没有无损求和。
+
+最新直接主攻改为：
+
+```text
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore
+```
+
+并行仍需：
+
+```text
+ResidualEndpointPathSummationWithoutBoundaryLoss
+TraceKloostermanCompletionOfCycleAndResidualPackets
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+行/列命题、外部引理版与内部自足版仍未无条件闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

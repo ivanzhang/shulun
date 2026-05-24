@@ -1,0 +1,947 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "FiniteCarrySwitchGraphImported",
+      "meaning": "The previous finite switch graph ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "LoopErasedCycleFlowDecomposition",
+      "meaning": "Every switch path is split into peeled cycles and one endpoint residual path.",
+      "proved": true,
+      "remaining": "none for current deterministic ledger"
+    },
+    {
+      "closed": false,
+      "gate": "CyclePacketPhaseSaving",
+      "meaning": "Prove cancellation for the peeled cycle packets.",
+      "proved": false,
+      "remaining": "requires new exponential-sum or trace/Kloosterman input"
+    },
+    {
+      "closed": false,
+      "gate": "ResidualEndpointPathSummation",
+      "meaning": "Control the loop-erased endpoint residual paths without losing the boundary gain.",
+      "proved": false,
+      "remaining": "requires residual endpoint summation or analytic compression"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixFlowAtomAggregation",
+      "meaning": "Aggregate cycle and residual estimates across all fixed-m atoms.",
+      "proved": false,
+      "remaining": "requires no-loss aggregation discipline"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "majority cycle-flow core plus short endpoint residual paths",
+    "input": "147799 adjacent carry-letter switch edges across 13355 switch atoms",
+    "operation": "deterministic loop erasure of each raw and signed switch path",
+    "remaining": "phase saving on cycle packets, residual endpoint summation, and trace/Kloosterman completion"
+  },
+  "cycle_packet_phase_saving_closed": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "cycle packets still need conversion to trace functions before trace bilinear estimates apply",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "cycle-flow packets are not yet inverse-variable Kloosterman sums modulo q",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "loop-erased cycles remain one-dimensional path packets, not balanced composite Type-II rectangles",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman input remains candidate only after cycle/residual paths become admissible fractions",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short interval prime existence does not estimate loop-erased switch-cycle phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "cycle packets still need trace-function completion",
+    "Li_short_interval_x_052": "prime existence does not estimate cycle/residual reciprocal phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "loop cycles are not yet Kloosterman inverse families",
+    "Pascadi_composite_Type_II": "cycle/residual paths remain one-dimensional rather than Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "candidate only after paths are converted to admissible unbalanced fractions"
+  },
+  "finite_audit": {
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "cycle_packet_phase_saving_closed": false,
+    "flow_decomposition_atom_count_total": 15439,
+    "loop_erased_cycle_flow_core_closed": true,
+    "loop_erased_flow_decomposition_closed": true,
+    "max_prime": 1009,
+    "no_loss_qprefix_flow_atom_aggregation_closed": false,
+    "non_switch_atom_count": 2084,
+    "previous_switch_graph_decomposition_closed": true,
+    "raw_cycle_edge_mass": 117733,
+    "raw_cycle_edge_ratio": 0.7965750783158209,
+    "raw_cycle_length_max": 10,
+    "raw_cycle_length_median": 2.0,
+    "raw_cycle_length_min": 1,
+    "raw_cycle_length_rows": [
+      {
+        "cycle_count": 5602,
+        "cycle_length": 1
+      },
+      {
+        "cycle_count": 21446,
+        "cycle_length": 2
+      },
+      {
+        "cycle_count": 8645,
+        "cycle_length": 3
+      },
+      {
+        "cycle_count": 5967,
+        "cycle_length": 4
+      },
+      {
+        "cycle_count": 2078,
+        "cycle_length": 5
+      },
+      {
+        "cycle_count": 1129,
+        "cycle_length": 6
+      },
+      {
+        "cycle_count": 233,
+        "cycle_length": 7
+      },
+      {
+        "cycle_count": 64,
+        "cycle_length": 8
+      },
+      {
+        "cycle_count": 11,
+        "cycle_length": 9
+      },
+      {
+        "cycle_count": 3,
+        "cycle_length": 10
+      }
+    ],
+    "raw_cycle_packet_count": 45178,
+    "raw_cycle_plus_residual_edge_mass": 147799,
+    "raw_residual_edge_mass": 30066,
+    "raw_residual_edge_ratio": 0.2034249216841792,
+    "raw_residual_length_max": 9,
+    "raw_residual_length_median": 2,
+    "raw_residual_length_min": 0,
+    "raw_residual_length_rows": [
+      {
+        "atom_count": 1589,
+        "residual_length": 0
+      },
+      {
+        "atom_count": 3313,
+        "residual_length": 1
+      },
+      {
+        "atom_count": 3197,
+        "residual_length": 2
+      },
+      {
+        "atom_count": 2558,
+        "residual_length": 3
+      },
+      {
+        "atom_count": 1471,
+        "residual_length": 4
+      },
+      {
+        "atom_count": 775,
+        "residual_length": 5
+      },
+      {
+        "atom_count": 295,
+        "residual_length": 6
+      },
+      {
+        "atom_count": 112,
+        "residual_length": 7
+      },
+      {
+        "atom_count": 33,
+        "residual_length": 8
+      },
+      {
+        "atom_count": 12,
+        "residual_length": 9
+      }
+    ],
+    "raw_zero_residual_atom_count": 1589,
+    "residual_endpoint_path_summation_closed": false,
+    "row_column_unconditional_closed": false,
+    "sample_cycle_atoms": [
+      {
+        "P": 79,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 83,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=2,c=3",
+          "g=6,c=6"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 0,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 79,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 89,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=7",
+          "g=2,c=2",
+          "g=6,c=7"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 2,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 83,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 79,
+        "raw_cycle_edge_mass": 3,
+        "raw_cycle_length_sample": [
+          3
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=2,c=2",
+          "g=6,c=5",
+          "g=4,c=4",
+          "g=2,c=2"
+        ],
+        "raw_residual_length": 1,
+        "signed_cycle_edge_mass": 3,
+        "signed_cycle_length_sample": [
+          3
+        ],
+        "signed_residual_length": 1,
+        "strip": "right_tail",
+        "switch_count": 4
+      },
+      {
+        "P": 83,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 89,
+        "raw_cycle_edge_mass": 3,
+        "raw_cycle_length_sample": [
+          3
+        ],
+        "raw_letter_sample": [
+          "g=6,c=7",
+          "g=2,c=2",
+          "g=6,c=6",
+          "g=4,c=5",
+          "g=2,c=2"
+        ],
+        "raw_residual_length": 1,
+        "signed_cycle_edge_mass": 3,
+        "signed_cycle_length_sample": [
+          3
+        ],
+        "signed_residual_length": 1,
+        "strip": "right_tail",
+        "switch_count": 4
+      },
+      {
+        "P": 97,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 127,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=8",
+          "g=2,c=2",
+          "g=6,c=8"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 0,
+        "strip": "upper_wing",
+        "switch_count": 2
+      },
+      {
+        "P": 97,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 131,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=8",
+          "g=2,c=3",
+          "g=6,c=8"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 2,
+        "strip": "upper_wing",
+        "switch_count": 2
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 97,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=5",
+          "g=4,c=4",
+          "g=6,c=5"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 0,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 101,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=4,c=4",
+          "g=6,c=6"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 2,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 103,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=4,c=3",
+          "g=6,c=6"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 2,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 109,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=4,c=4",
+          "g=6,c=6"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 0,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 113,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=6,c=6",
+          "g=4,c=4",
+          "g=6,c=6"
+        ],
+        "raw_residual_length": 0,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 2,
+        "strip": "right_tail",
+        "switch_count": 2
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 137,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=2,c=3",
+          "g=4,c=4",
+          "g=2,c=2"
+        ],
+        "raw_residual_length": 2,
+        "signed_cycle_edge_mass": 0,
+        "signed_cycle_length_sample": [],
+        "signed_residual_length": 4,
+        "strip": "right_tail",
+        "switch_count": 4
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 139,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=5",
+          "g=2,c=2"
+        ],
+        "raw_residual_length": 2,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 2,
+        "strip": "right_tail",
+        "switch_count": 4
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 131,
+        "raw_cycle_edge_mass": 4,
+        "raw_cycle_length_sample": [
+          2,
+          2
+        ],
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4"
+        ],
+        "raw_residual_length": 1,
+        "signed_cycle_edge_mass": 4,
+        "signed_cycle_length_sample": [
+          2,
+          2
+        ],
+        "signed_residual_length": 1,
+        "strip": "right_tail",
+        "switch_count": 5
+      },
+      {
+        "P": 131,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 127,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=3",
+          "g=2,c=2",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4"
+        ],
+        "raw_residual_length": 3,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 3,
+        "strip": "right_tail",
+        "switch_count": 5
+      },
+      {
+        "P": 131,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 137,
+        "raw_cycle_edge_mass": 2,
+        "raw_cycle_length_sample": [
+          2
+        ],
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=5"
+        ],
+        "raw_residual_length": 3,
+        "signed_cycle_edge_mass": 2,
+        "signed_cycle_length_sample": [
+          2
+        ],
+        "signed_residual_length": 3,
+        "strip": "right_tail",
+        "switch_count": 5
+      }
+    ],
+    "signed_cycle_edge_mass": 107677,
+    "signed_cycle_edge_ratio": 0.7285367289359197,
+    "signed_cycle_length_max": 14,
+    "signed_cycle_length_median": 2.0,
+    "signed_cycle_length_min": 1,
+    "signed_cycle_length_rows": [
+      {
+        "cycle_count": 3360,
+        "cycle_length": 1
+      },
+      {
+        "cycle_count": 15401,
+        "cycle_length": 2
+      },
+      {
+        "cycle_count": 7145,
+        "cycle_length": 3
+      },
+      {
+        "cycle_count": 5052,
+        "cycle_length": 4
+      },
+      {
+        "cycle_count": 2557,
+        "cycle_length": 5
+      },
+      {
+        "cycle_count": 1489,
+        "cycle_length": 6
+      },
+      {
+        "cycle_count": 810,
+        "cycle_length": 7
+      },
+      {
+        "cycle_count": 297,
+        "cycle_length": 8
+      },
+      {
+        "cycle_count": 125,
+        "cycle_length": 9
+      },
+      {
+        "cycle_count": 65,
+        "cycle_length": 10
+      },
+      {
+        "cycle_count": 19,
+        "cycle_length": 11
+      },
+      {
+        "cycle_count": 8,
+        "cycle_length": 12
+      },
+      {
+        "cycle_count": 1,
+        "cycle_length": 13
+      },
+      {
+        "cycle_count": 1,
+        "cycle_length": 14
+      }
+    ],
+    "signed_cycle_packet_count": 36330,
+    "signed_cycle_plus_residual_edge_mass": 147799,
+    "signed_residual_edge_mass": 40122,
+    "signed_residual_edge_ratio": 0.27146327106408025,
+    "signed_residual_length_max": 15,
+    "signed_residual_length_median": 3,
+    "signed_residual_length_min": 0,
+    "signed_residual_length_rows": [
+      {
+        "atom_count": 1056,
+        "residual_length": 0
+      },
+      {
+        "atom_count": 2573,
+        "residual_length": 1
+      },
+      {
+        "atom_count": 2603,
+        "residual_length": 2
+      },
+      {
+        "atom_count": 2386,
+        "residual_length": 3
+      },
+      {
+        "atom_count": 1827,
+        "residual_length": 4
+      },
+      {
+        "atom_count": 1255,
+        "residual_length": 5
+      },
+      {
+        "atom_count": 762,
+        "residual_length": 6
+      },
+      {
+        "atom_count": 439,
+        "residual_length": 7
+      },
+      {
+        "atom_count": 249,
+        "residual_length": 8
+      },
+      {
+        "atom_count": 128,
+        "residual_length": 9
+      },
+      {
+        "atom_count": 51,
+        "residual_length": 10
+      },
+      {
+        "atom_count": 14,
+        "residual_length": 11
+      },
+      {
+        "atom_count": 9,
+        "residual_length": 12
+      },
+      {
+        "atom_count": 2,
+        "residual_length": 13
+      },
+      {
+        "atom_count": 1,
+        "residual_length": 15
+      }
+    ],
+    "signed_zero_residual_atom_count": 1056,
+    "strip_flow_rows": [
+      {
+        "raw_cycle_edge_mass": 19267,
+        "raw_residual_edge_mass": 5085,
+        "signed_cycle_edge_mass": 17498,
+        "signed_residual_edge_mass": 6854,
+        "strip": "lower_wing",
+        "switch_edge_count": 24352
+      },
+      {
+        "raw_cycle_edge_mass": 59321,
+        "raw_residual_edge_mass": 14054,
+        "signed_cycle_edge_mass": 54281,
+        "signed_residual_edge_mass": 19094,
+        "strip": "right_tail",
+        "switch_edge_count": 73375
+      },
+      {
+        "raw_cycle_edge_mass": 39145,
+        "raw_residual_edge_mass": 10927,
+        "signed_cycle_edge_mass": 35898,
+        "signed_residual_edge_mass": 14174,
+        "strip": "upper_wing",
+        "switch_edge_count": 50072
+      }
+    ],
+    "switch_atom_count": 13355,
+    "top_raw_residual_endpoint_rows": [
+      {
+        "count": 143,
+        "end": "g=2,c=3",
+        "start": "g=2,c=3"
+      },
+      {
+        "count": 139,
+        "end": "g=2,c=3",
+        "start": "g=4,c=6"
+      },
+      {
+        "count": 115,
+        "end": "g=6,c=4",
+        "start": "g=4,c=3"
+      },
+      {
+        "count": 110,
+        "end": "g=4,c=4",
+        "start": "g=4,c=4"
+      },
+      {
+        "count": 104,
+        "end": "g=6,c=9",
+        "start": "g=2,c=3"
+      },
+      {
+        "count": 100,
+        "end": "g=4,c=4",
+        "start": "g=6,c=6"
+      },
+      {
+        "count": 98,
+        "end": "g=4,c=7",
+        "start": "g=2,c=3"
+      },
+      {
+        "count": 94,
+        "end": "g=6,c=9",
+        "start": "g=4,c=6"
+      },
+      {
+        "count": 91,
+        "end": "g=2,c=2",
+        "start": "g=4,c=4"
+      },
+      {
+        "count": 91,
+        "end": "g=2,c=3",
+        "start": "g=4,c=7"
+      },
+      {
+        "count": 90,
+        "end": "g=6,c=4",
+        "start": "g=6,c=4"
+      },
+      {
+        "count": 88,
+        "end": "g=6,c=10",
+        "start": "g=6,c=10"
+      },
+      {
+        "count": 87,
+        "end": "g=2,c=3",
+        "start": "g=6,c=10"
+      },
+      {
+        "count": 87,
+        "end": "g=6,c=4",
+        "start": "g=2,c=1"
+      },
+      {
+        "count": 83,
+        "end": "g=4,c=5",
+        "start": "g=4,c=5"
+      },
+      {
+        "count": 83,
+        "end": "g=2,c=4",
+        "start": "g=4,c=7"
+      },
+      {
+        "count": 82,
+        "end": "g=6,c=10",
+        "start": "g=4,c=7"
+      },
+      {
+        "count": 82,
+        "end": "g=4,c=3",
+        "start": "g=4,c=3"
+      },
+      {
+        "count": 79,
+        "end": "g=6,c=6",
+        "start": "g=4,c=4"
+      },
+      {
+        "count": 77,
+        "end": "g=4,c=6",
+        "start": "g=4,c=6"
+      }
+    ],
+    "top_signed_residual_endpoint_rows": [
+      {
+        "count": 51,
+        "end": "g=2,c=3,A=negative",
+        "start": "g=2,c=3,A=negative"
+      },
+      {
+        "count": 45,
+        "end": "g=4,c=4,A=positive",
+        "start": "g=4,c=4,A=positive"
+      },
+      {
+        "count": 44,
+        "end": "g=2,c=3,A=negative",
+        "start": "g=4,c=6,A=negative"
+      },
+      {
+        "count": 40,
+        "end": "g=6,c=6,A=negative",
+        "start": "g=4,c=4,A=negative"
+      },
+      {
+        "count": 39,
+        "end": "g=6,c=10,A=negative",
+        "start": "g=4,c=7,A=positive"
+      },
+      {
+        "count": 39,
+        "end": "g=2,c=3,A=positive",
+        "start": "g=4,c=6,A=negative"
+      },
+      {
+        "count": 38,
+        "end": "g=4,c=3,A=negative",
+        "start": "g=4,c=3,A=negative"
+      },
+      {
+        "count": 38,
+        "end": "g=4,c=4,A=positive",
+        "start": "g=6,c=6,A=positive"
+      },
+      {
+        "count": 37,
+        "end": "g=6,c=10,A=positive",
+        "start": "g=4,c=6,A=negative"
+      },
+      {
+        "count": 37,
+        "end": "g=4,c=4,A=negative",
+        "start": "g=4,c=4,A=negative"
+      },
+      {
+        "count": 37,
+        "end": "g=4,c=7,A=negative",
+        "start": "g=2,c=3,A=negative"
+      },
+      {
+        "count": 37,
+        "end": "g=2,c=3,A=positive",
+        "start": "g=2,c=3,A=positive"
+      },
+      {
+        "count": 37,
+        "end": "g=4,c=5,A=positive",
+        "start": "g=4,c=5,A=positive"
+      },
+      {
+        "count": 36,
+        "end": "g=6,c=9,A=negative",
+        "start": "g=2,c=3,A=negative"
+      },
+      {
+        "count": 35,
+        "end": "g=6,c=4,A=positive",
+        "start": "g=4,c=3,A=negative"
+      },
+      {
+        "count": 35,
+        "end": "g=2,c=2,A=negative",
+        "start": "g=4,c=4,A=negative"
+      },
+      {
+        "count": 35,
+        "end": "g=2,c=3,A=negative",
+        "start": "g=4,c=7,A=positive"
+      },
+      {
+        "count": 35,
+        "end": "g=2,c=2,A=negative",
+        "start": "g=6,c=7,A=positive"
+      },
+      {
+        "count": 34,
+        "end": "g=6,c=9,A=positive",
+        "start": "g=2,c=3,A=positive"
+      },
+      {
+        "count": 34,
+        "end": "g=6,c=10,A=negative",
+        "start": "g=6,c=10,A=negative"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "CyclePacketPhaseSavingForLoopErasedCarrySwitchCore",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND TraceKloostermanCompletionOfCycleAndResidualPackets",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "loop_erased_cycle_flow_core_closed": true,
+  "no_loss_qprefix_flow_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after high-branch switch graph, the next acyclic step is to separate recurrent cycle mass from endpoint residual paths",
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "f85ab7701325f4496032485921f28661e1958b5c73204b87983e5556ccfbaad8",
+    "docs/monograph/external-theorem-index.md": "1f10fb182f70c2d7c780d1a9646e0f06662cdae359aa780d978d6312b7ebd21d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "4c1057eb065089b878471714afaf44ee57111afc03d5f08ed51391782c2c09d2",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json": "71f243a1adc9d19b09bb557ab41475963fc2eaf224c12dbeecb34d8ff84f373a",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json": "b16c75e6f07abeb330ccdba470feb2214a139cc0c08028b8f376d702ce601127",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "83b5adc94a31075473f389fe5e8d03a05a8937068c24c4cf23a4b5929fc113fe",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "db9ed9633afacd6257b423fc04e6d88a31a2bd0611fbf4704cbbbf45831dd7d3",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_flow_decomposition_audit.py": "4a25190e8865daacebabecef07c3f4665fe1542664f5ccbcb7384e9511d9ae87",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "f4f57b5bbebb22ee7816a716eff05f92e369b601fe989e4e218639850de27835"
+  },
+  "status": "qprefix_switch_paths_have_loop_erased_cycle_flow_core_phase_saving_open"
+}
