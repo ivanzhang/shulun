@@ -4002,6 +4002,81 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61T. Phi-LPF q-support row-averaged additive-k prime-survivor boundary strip decomposition 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_strip_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.md
+```
+
+本层承接 61S。上一层显示 bulk rectangle 只覆盖约一半 prime-survivor edges，
+boundary 同阶。本证书进一步把 boundary 从任意 leftover 集合压成三条单调
+prime-interval strip：
+
+```text
+boundary = lower_wing disjoint union upper_wing disjoint union right_tail,
+left_tail = 0.
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+active_P_count=155
+boundary_edge_count_total=177515
+strip_boundary_count_total=177515
+left_tail_count_total=0
+lower_wing_count_total=29144
+upper_wing_count_total=61620
+right_tail_count_total=86751
+lower_wing_fraction_of_boundary=0.164177675126
+upper_wing_fraction_of_boundary=0.347125595020
+right_tail_fraction_of_boundary=0.488696729854
+q_start_not_row_first_count=0
+left_tail_active_row_count=0
+strip_prime_interval_mismatch_count_total=0
+noncontiguous_strip_count_total=0
+strip_length_monotonicity_bad_steps_total=0
+total_bad_boundary_strip_decomposition_count=0
+```
+
+外部前沿影响：边界现在不再是任意稀疏 leftover，而是三条单调 endpoint packet。
+这使 FKMS 型 trace bilinear、Milićević--Qin--Wu 型 Kloosterman、Pascadi/Wright
+型 Type-II 或 unbalanced convolution 的接口更具体；但这些外部定理仍没有直接给出
+三条 endpoint strip 的无损完成或相消。Runbo Li 的 `x^0.52` 仍不闭合这里的
+半尺度 endpoint 控制。
+
+新的最新最窄口：
+
+```text
+BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+bulk_prefix_start_verified=true
+left_tail_vanishes_verified=true
+boundary_three_strip_identity_verified=true
+boundary_strips_are_monotone_prime_interval_packets=true
+boundary_phase_saving_closed=false
+strip_completion_without_loss_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

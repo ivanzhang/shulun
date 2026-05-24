@@ -4172,6 +4172,84 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13T：Phi-LPF q-support row-averaged additive-k prime-survivor boundary strip decomposition 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_strip_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.md
+```
+
+本层承接 Q13S，将同阶 boundary 继续拆成三条可命名单调条带：
+
+```text
+boundary=lower_wing disjoint union upper_wing disjoint union right_tail,
+left_tail=0.
+```
+
+### Q13T.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+boundary_edge_count_total=177515
+strip_boundary_count_total=177515
+left_tail_count_total=0
+lower_wing_count_total=29144
+upper_wing_count_total=61620
+right_tail_count_total=86751
+q_start_not_row_first_count=0
+strip_prime_interval_mismatch_count_total=0
+noncontiguous_strip_count_total=0
+strip_length_monotonicity_bad_steps_total=0
+total_bad_boundary_strip_decomposition_count=0
+```
+
+代表大行：
+
+```text
+P=971: lower/upper/right = 533/1119/1494, boundary=3146.
+P=1009: lower/upper/right = 713/1349/1193, boundary=3255.
+```
+
+### Q13T.2 诚实边界
+
+本层关闭的是 boundary 的支撑形状黑箱：每条 strip 都是连续 q-block 上的完整
+prime interval fibre，且 fibre 长度沿 q 无上升步。这仍没有给出 endpoint
+summation-by-parts、completed trace family 或 Kloosterman 相消。
+
+最新最窄口：
+
+```text
+BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+bulk_prefix_start_verified=true
+left_tail_vanishes_verified=true
+boundary_three_strip_identity_verified=true
+boundary_strips_are_monotone_prime_interval_packets=true
+boundary_phase_saving_closed=false
+strip_completion_without_loss_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

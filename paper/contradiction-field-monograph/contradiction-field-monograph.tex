@@ -34071,6 +34071,108 @@ bulk-rectangle-typeii-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Three monotone strips for the bulk boundary}
+
+\begin{theorem}[Boundary strip decomposition]
+In the setting of the preceding theorem, suppose the vertical fibres
+\[
+  E_P(q)=\{m\ {\rm prime}:\ L_q\le m\le U_q,\ m\ne P\}
+\]
+are ordered by increasing eligible prime \(q\).  Since the rough-envelope
+endpoints satisfy \(L_q\) nondecreasing and \(U_q\) nonincreasing, a
+maximal product rectangle may be taken to start at the first eligible \(q\).
+Write this bulk prefix as \(q\le q_*\), and write its common \(m\)-interval
+as \([L_*,U_*]\).  Then the complement of the bulk in \(E_P\) is the
+disjoint union of three strip packets:
+\[
+\begin{aligned}
+  B_{\rm lower}
+  &=
+  \{(q,m): q\le q_*,\ L_q\le m<L_*,\ m\ {\rm prime},\ m\ne P\},\\
+  B_{\rm upper}
+  &=
+  \{(q,m): q\le q_*,\ U_*<m\le U_q,\ m\ {\rm prime},\ m\ne P\},\\
+  B_{\rm right}
+  &=
+  \{(q,m): q>q_*,\ L_q\le m\le U_q,\ m\ {\rm prime},\ m\ne P\}.
+\end{aligned}
+\]
+There is no left-tail strip.  Moreover, each active strip is supported on a
+contiguous block of \(q\)'s, and its fibre lengths are nonincreasing along
+the \(q\)-order.
+\end{theorem}
+\begin{proof}
+For any consecutive block of \(q\)'s not beginning at the first eligible
+\(q\), adding the preceding eligible \(q\) cannot shrink the common
+\(m\)-interval: its lower endpoint is no larger and its upper endpoint is no
+smaller.  Thus the rectangle area weakly increases after adding it.  A
+maximal rectangle therefore begins at the first eligible \(q\).
+
+Inside the bulk prefix \(q\le q_*\), the bulk occupies the common interval
+\([L_*,U_*]\).  The fibre interval \([L_q,U_q]\) splits disjointly into the
+lower part below \(L_*\), the bulk part, and the upper part above \(U_*\).
+For \(q>q_*\), no point belongs to the chosen bulk, so the entire fibre is
+the right-tail packet.  These three cases exhaust the boundary and are
+disjoint.
+
+The monotonicity of \(L_q\) and \(U_q\) implies that
+\([L_q,L_*)\), \((U_*,U_q]\), and \([L_q,U_q]\) shrink as \(q\) increases
+within their respective active ranges.  Hence the active \(q\)-sets are
+contiguous and the prime fibre lengths cannot increase.
+\end{proof}
+
+\begin{remark}[Finite boundary-strip ledger]
+The audit up to \(P\le 1009\) verifies that the boundary of size
+\[
+  \texttt{boundary\_edge\_count\_total}=177515
+\]
+is exactly recovered by the three strip packets:
+\[
+  \texttt{strip\_boundary\_count\_total}=177515,\qquad
+  \texttt{left\_tail\_count\_total}=0.
+\]
+The three nonzero strip counts are
+\[
+  \texttt{lower\_wing\_count\_total}=29144,\qquad
+  \texttt{upper\_wing\_count\_total}=61620,\qquad
+  \texttt{right\_tail\_count\_total}=86751.
+\]
+The bulk always starts at the first eligible \(q\) in the audited rows:
+\[
+  \texttt{q\_start\_not\_row\_first\_count}=0.
+\]
+The strip fibres have no completion mismatch and no monotonicity failure:
+\[
+  \texttt{strip\_prime\_interval\_mismatch\_count\_total}=0,\qquad
+  \texttt{noncontiguous\_strip\_count\_total}=0,\qquad
+  \texttt{strip\_length\_monotonicity\_bad\_steps\_total}=0.
+\]
+
+Thus the boundary is no longer an arbitrary leftover; it is a union of three
+monotone prime-interval endpoint packets.  This still does not give
+cancellation.  The remaining analytic task is to complete these endpoint
+packets, or to prove a summation-by-parts/trace estimate for them, without
+losing a boundary-sized main term.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips\\
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle\\
+AND StripEndpointSummationByPartsWithoutComparableLoss\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-strip-decomposition-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

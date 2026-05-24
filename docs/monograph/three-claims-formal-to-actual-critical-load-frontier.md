@@ -24349,6 +24349,47 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AE. Phi-LPF prime-survivor boundary strip frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_strip_decomposition_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-ledger.json
+```
+
+同步结果：
+
+```text
+status=bulk_boundary_decomposed_into_three_monotone_strips_phase_saving_open
+boundary_edge_count_total=177515
+strip_boundary_count_total=177515
+left_tail_count_total=0
+lower_wing_count_total=29144
+upper_wing_count_total=61620
+right_tail_count_total=86751
+strip_prime_interval_mismatch_count_total=0
+noncontiguous_strip_count_total=0
+strip_length_monotonicity_bad_steps_total=0
+boundary_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`BoundaryPhaseSavingForNestedRoughEnvelopeStaircase`
+现在被压成三条具体 monotone strip 的 endpoint 相消问题，而不是任意 staircase
+leftover：
+
+```text
+BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips
+AND StripEndpointSummationByPartsWithoutComparableLoss
+```
+
+并行仍需 completed trace family for the bulk、diagonal ghost discipline、sparse
+kernel cancellation 与 prime-q reciprocal phase saving。本层删除的是 boundary
+形状黑箱；没有删除相位节省真缺口。
+
 ## 330AD. Phi-LPF prime-survivor bulk-rectangle Type-II frontier
 
 新增文件：

@@ -22536,6 +22536,52 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新是有限结构压缩，不是行/列命题闭合。
 
+### 1.186 Phi-LPF prime-survivor boundary strip decomposition 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_strip_decomposition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json
+```
+
+同步读数为：
+
+```text
+boundary_three_strip_identity_verified=true
+boundary_edge_count_total=177515
+strip_boundary_count_total=177515
+left_tail_count_total=0
+lower_wing_count_total=29144
+upper_wing_count_total=61620
+right_tail_count_total=86751
+q_start_not_row_first_count=0
+strip_prime_interval_mismatch_count_total=0
+noncontiguous_strip_count_total=0
+strip_length_monotonicity_bad_steps_total=0
+boundary_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：bulk 外的同阶 boundary 不再是任意稀疏集合，而是三条单调
+prime-interval strip。它们可作为 endpoint summation-by-parts、completed trace
+或 unbalanced convolution 的具体入口，但仍没有相消定理。
+
+最新活动硬点更新为：
+
+```text
+BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+该更新关闭的是 boundary 支撑形状黑箱，不是行/列命题闭合。
+
 ### 1.185 Phi-LPF prime-survivor bulk-rectangle Type-II 更新
 
 新增机器证书：
