@@ -35706,6 +35706,69 @@ endpoint-packet-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Single-\(P\) local template multiplicity}
+
+\begin{theorem}[Single-\(P\) local template multiplicity ledger]
+In the audit range \(P\le 1009\), each single-\(P\) local endpoint template has
+edge mass equal to
+\[
+\texttt{cycle\_length}\cdot\texttt{occurrence\_count}.
+\]
+The generated ledger verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_template\_multiplicity\_factor\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{single\_P\_local\_endpoint\_edge\_mass} & 26753\\
+\texttt{single\_P\_local\_endpoint\_template\_count} & 4915\\
+\texttt{single\_occurrence\_template\_count} & 4818\\
+\texttt{single\_occurrence\_edge\_mass} & 25881\\
+\texttt{repeated\_template\_count} & 97\\
+\texttt{repeated\_template\_edge\_mass} & 872\\
+\texttt{template\_edge\_mass\_min/median/max} & 1/5/16\\
+\texttt{cycle\_length\_min/median/max} & 1/5/14\\
+\texttt{occurrence\_count\_min/median/max} & 1/1/4 .
+\end{array}
+\]
+\end{theorem}
+\begin{proof}
+The audit imports the single-\(P\) local endpoint packet certificate and reruns
+the same signed-child construction.  For every width-one pure endpoint template
+it records the cycle length and the number of times that exact signed template
+occurs.  The identity
+\[
+\texttt{edge\_mass}
+=\texttt{cycle\_length}\cdot\texttt{occurrence\_count}
+\]
+is checked template by template.  Summing these identities gives the imported
+total edge mass \(26753\).  The occurrence rows show that \(4818\) of the
+\(4915\) templates occur once, while the repeated part has edge mass \(872\).
+\end{proof}
+
+\begin{remark}[Remaining multiplicity gates]
+This reduces the local-template gate to
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND LocalOccurrenceMultiplicityUniformBound\\
+AND CycleOccurrenceProductBoundOrPDEC.
+\end{quote}
+The finite audit observes \(\texttt{cycle\_length}\le 14\),
+\(\texttt{occurrence\_count}\le 4\), and \(\texttt{edge\_mass}\le 16\).  These
+are not yet global uniform bounds.  Average trace/Kloosterman inputs, including
+the FKMS, Milićević--Qin--Wu, Wright, and Xu--Zhang type inputs, do not directly
+prove this local signed-cycle multiplicity statement without a completed
+averaging variable.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+template-multiplicity-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

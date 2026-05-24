@@ -6726,6 +6726,61 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65O. Phi-LPF q-prefix single-P local template multiplicity 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_multiplicity_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.md
+```
+
+本层把 `LocalTemplateMultiplicityUniformBound` 的有限对象拆成
+`edge_mass = cycle_length * occurrence_count`：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_occurrence_template_count=4818
+single_occurrence_edge_mass=25881
+repeated_template_count=97
+repeated_template_edge_mass=872
+multi_packet_template_count=17
+multi_packet_template_edge_mass=136
+template_edge_mass_min/median/max=1/5/16
+cycle_length_min/median/max=1/5/14
+occurrence_count_min/median/max=1/1/4
+```
+
+最新实际门：
+
+```text
+LocalCycleLengthUniformBound
+AND LocalOccurrenceMultiplicityUniformBound
+AND CycleOccurrenceProductBoundOrPDEC
+```
+
+外部前沿边界：FKMS、Milićević--Qin--Wu、Wright 与 Xu--Zhang 都是
+平均/双线性/集合变量输入，不能直接证明 width-one signed cycle template 的
+occurrence multiplicity。这里需要组合结构界或超额模板回流 PDEC/SAE。
+
+状态边界：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+local_cycle_length_uniform_bound_proved=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+cycle_occurrence_product_bound_proved=false
+local_template_multiplicity_uniform_bound_proved=false
+single_P_slice_endpoint_packet_summation_closed=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

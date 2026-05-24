@@ -2510,6 +2510,58 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC10：Phi-LPF q-prefix single-P local template multiplicity 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_multiplicity_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json
+```
+
+本层把 local template edge mass 因式化为 cycle length 与 occurrence count。
+关键读数：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_occurrence_template_count=4818
+single_occurrence_edge_mass=25881
+repeated_template_count=97
+repeated_template_edge_mass=872
+template_edge_mass_max=16
+cycle_length_max=14
+occurrence_count_max=4
+```
+
+最新最窄口改写为：
+
+```text
+LocalCycleLengthUniformBound
+AND LocalOccurrenceMultiplicityUniformBound
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+状态边界：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+local_cycle_length_uniform_bound_proved=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+cycle_occurrence_product_bound_proved=false
+local_template_multiplicity_uniform_bound_proved=false
+single_P_slice_endpoint_packet_summation_closed=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

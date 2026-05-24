@@ -25624,3 +25624,42 @@ right_tail_single_P_local=13213
 
 本层删除的是“single-P local packets 可直接由平均型 trace/Kloosterman theorem
 吃掉”的黑箱；没有删除局部模板重数推广、P-slice 求和/回流或实际相消缺口。
+
+### Phi-LPF q-prefix single-P local template multiplicity formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_multiplicity_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+LocalTemplateMultiplicityUniformBound
+```
+
+现在被拆成：
+
+```text
+LocalCycleLengthUniformBound
+AND LocalOccurrenceMultiplicityUniformBound
+AND CycleOccurrenceProductBoundOrPDEC
+```
+
+关键审计读数为：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+single_occurrence_template_count=4818
+repeated_template_count=97
+template_edge_mass_max=16
+cycle_length_max=14
+occurrence_count_max=4
+```
+
+本层删除的是“单模板最大质量可以作为黑箱常数”的含混说法；没有删除
+cycle length、occurrence multiplicity 或二者乘积的全局证明缺口。

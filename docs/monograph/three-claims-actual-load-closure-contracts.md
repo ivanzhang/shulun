@@ -23017,6 +23017,43 @@ PureEndpointCarrierPhaseSaving
 本层只关闭 single-P local endpoint 结构账本；全局局部模板重数界、
 P-slice 求和/回流、外部引理版与内部自足版仍未闭合。
 
+### 1.179I Phi-LPF q-prefix single-P local template multiplicity actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_multiplicity_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json
+```
+
+actual-load 含义更新为：局部模板重数已经拆成 cycle length、occurrence count
+与 product-bound/回流：
+
+```text
+single_P_local_template_multiplicity_factor_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_occurrence_template_count=4818
+repeated_template_count=97
+template_edge_mass_max=16
+cycle_length_max=14
+occurrence_count_max=4
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+LocalOccurrenceMultiplicityUniformBound
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite factor ledger；cycle length 与 occurrence 的全局均匀界、
+product 超额回流和 P-slice 求和仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：
