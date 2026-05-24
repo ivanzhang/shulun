@@ -25062,3 +25062,59 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是 moving numerator 生成机制黑箱；没有删除 carry-word 相消、completed family 和无损聚合真缺口。
+
+## 330AQ. Phi-LPF q-prefix carry letter/run frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_carry_words_have_finite_letter_run_decomposition_phase_saving_open
+successor_transition_count_total=162076
+raw_letter_run_length_sum=162076
+signed_letter_run_length_sum=162076
+letter_run_decomposition_closed=true
+raw_carry_letter_alphabet_count/capacity=117/297
+signed_carry_letter_alphabet_count/capacity=256/891
+raw_constant/variable_letter_atom_count=946/13331
+signed_constant/variable_letter_atom_count=934/13343
+raw_run_length_min/median/max=1/1/3
+signed_run_length_min/median/max=1/1/3
+finite_letter_exponential_sum_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的
+
+```text
+PrimeGapDrivenCarryWordExponentialSumSaving
+```
+
+现在被压成有限 carry-letter word 的相消问题。每条相邻 prime-q 转移对应
+
+```text
+raw letter    L=(q_next-q,k_next-k)
+signed letter L_plus=(q_next-q,k_next-k,sign(A_next-A))
+```
+
+审计显示 raw alphabet 只有 `117` 种、signed alphabet 只有 `256` 种，但
+`raw_switch_ratio=0.962097172511316`、`signed_switch_ratio=0.9772664226415605`，
+run 最大长度仅 `3`。因此最新实际硬点为：
+
+```text
+FiniteCarryLetterWordExponentialSumSaving
+AND PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion
+AND NoLossAggregationAcross15439QPrefixCarryLetterAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 carry word 的无限形状黑箱；没有删除有限字母词相消、completed family
+和无损聚合真缺口。

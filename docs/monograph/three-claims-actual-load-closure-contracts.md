@@ -22474,6 +22474,64 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 行/列命题、外部引理版与内部自足版仍未无条件闭合。
 
+### 1.258 Phi-LPF q-prefix carry letter/run 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json
+```
+
+同步读数为：
+
+```text
+status=qprefix_carry_words_have_finite_letter_run_decomposition_phase_saving_open
+successor_transition_count_total=162076
+raw_letter_run_length_sum=162076
+signed_letter_run_length_sum=162076
+letter_run_decomposition_closed=true
+raw_carry_letter_alphabet_count/capacity=117/297
+signed_carry_letter_alphabet_count/capacity=256/891
+raw_constant/variable_letter_atom_count=946/13331
+signed_constant/variable_letter_atom_count=934/13343
+raw_run_length_min/median/max=1/1/3
+signed_run_length_min/median/max=1/1/3
+raw_switch_count/ratio=142197/0.962097172511316
+signed_switch_count/ratio=144439/0.9772664226415605
+finite_letter_exponential_sum_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：successor carry word 现在被进一步拆成有限字母表
+
+```text
+L=(q_next-q,k_next-k),
+L_plus=(q_next-q,k_next-k,sign(A_next-A)).
+```
+
+这关闭 `FiniteCarryLetterAlphabet` 与 `CarryRunLengthLedger`。但 run 的中位长度为
+`1`、最大仅为 `3`，排除了“长常字母块/常步长旋转”捷径；剩下的是频繁切换的有限
+字母词相消。
+
+最新直接主攻改为：
+
+```text
+FiniteCarryLetterWordExponentialSumSaving
+```
+
+并行仍需：
+
+```text
+PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion
+NoLossAggregationAcross15439QPrefixCarryLetterAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+行/列命题、外部引理版与内部自足版仍未无条件闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

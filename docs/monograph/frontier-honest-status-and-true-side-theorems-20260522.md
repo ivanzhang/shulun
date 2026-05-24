@@ -1825,6 +1825,68 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AE：Phi-LPF q-prefix carry letter/run 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.md
+```
+
+本层接在 successor carry dynamics 后，把每条相邻 prime-q 转移写成：
+
+```text
+raw letter    L=(q_next-q,k_next-k)
+signed letter L_plus=(q_next-q,k_next-k,sign(A_next-A))
+```
+
+有限审计确认：
+
+```text
+successor_transition_count_total=162076
+raw_letter_run_length_sum=162076
+signed_letter_run_length_sum=162076
+letter_run_decomposition_closed=true
+raw_carry_letter_alphabet_count/capacity=117/297
+signed_carry_letter_alphabet_count/capacity=256/891
+raw_constant/variable_letter_atom_count=946/13331
+signed_constant/variable_letter_atom_count=934/13343
+raw_run_length_min/median/max=1/1/3
+signed_run_length_min/median/max=1/1/3
+raw_switch_count/ratio=142197/0.962097172511316
+signed_switch_count/ratio=144439/0.9772664226415605
+```
+
+这是真推进：prime-gap carry word 现在有显式有限字母表和 run 分解，且所有
+`162076` 条转移被无损重构。但它同时排除了长常字母块捷径，因为 run 最大长度仅
+`3`。最新最窄口变为：
+
+```text
+FiniteCarryLetterWordExponentialSumSaving
+AND PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion
+AND NoLossAggregationAcross15439QPrefixCarryLetterAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+finite_carry_letter_alphabet_closed=true
+long_constant_letter_block_route_available=false
+finite_letter_exponential_sum_saving_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_letter_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

@@ -34953,6 +34953,76 @@ boundary-endpoint-flux-qprefix-carry-dynamics-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Finite carry letters and run fragmentation on q-prefix atoms}
+
+\begin{theorem}[Finite carry-letter and run ledger]
+In the same audit range \(P\le 1009\), every adjacent prime-\(q\) transition
+inside a fixed-\(m\) q-prefix carry atom is encoded by the raw carry letter
+\[
+  L(q,q')=(q'-q,\ k'-k)
+\]
+and by the signed carry letter
+\[
+  L^{+}(q,q')=(q'-q,\ k'-k,\ \operatorname{sgn}(A(q')-A(q))).
+\]
+The letter/run audit verifies that the \(162076\) transitions are recovered
+without loss from their raw and signed run decompositions:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{raw\_letter\_run\_length\_sum} & 162076\\
+\texttt{signed\_letter\_run\_length\_sum} & 162076\\
+\texttt{letter\_run\_decomposition\_closed} & \texttt{true}\\
+\texttt{raw\_carry\_letter\_alphabet\_count/capacity} & 117/297\\
+\texttt{signed\_carry\_letter\_alphabet\_count/capacity} & 256/891\\
+\texttt{raw\_constant/variable\_letter\_atom\_count} & 946/13331\\
+\texttt{signed\_constant/variable\_letter\_atom\_count} & 934/13343 .
+\end{array}
+\]
+The raw and signed run lengths both have minimum \(1\), median \(1\), and
+maximum \(3\).
+\end{theorem}
+\begin{proof}
+The previous successor carry identity supplies, for each adjacent pair
+\(q<q'\),
+\[
+  q'-q=g,\qquad k'-k=c,\qquad A(q')-A(q).
+\]
+Thus \(L\) and \(L^{+}\) are defined for every transition.  The audit scans
+each fixed-\(m\) atom in order, compresses consecutive identical letters into
+maximal runs, and checks that the sum of the run lengths is exactly the
+previous successor-transition count for both raw and signed alphabets.  It
+also recomputes the alphabet capacities from the observed \(9\) prime-gap
+values, \(33\) carry values, and \(3\) signs.
+\end{proof}
+
+\begin{remark}[Finite alphabet is not yet cancellation]
+The finite alphabet removes another layer of structural ambiguity, but it
+does not itself provide cancellation.  The audit finds raw and signed switch
+ratios
+\[
+  0.962097172511316,\qquad 0.9772664226415605,
+\]
+and no raw or signed run longer than \(3\).  Hence the latest remaining mouth
+is
+\begin{quote}\scriptsize\ttfamily
+FiniteCarryLetterWordExponentialSumSaving\\
+AND PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion\\
+AND NoLossAggregationAcross15439QPrefixCarryLetterAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the finite carry-letter and run ledger.  It does not
+prove finite-letter exponential-sum saving, the external-lemma version, or the
+internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-letter-run-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

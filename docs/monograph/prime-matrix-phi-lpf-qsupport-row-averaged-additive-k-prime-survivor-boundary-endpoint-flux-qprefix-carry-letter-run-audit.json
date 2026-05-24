@@ -1,0 +1,1544 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SuccessorCarryDynamicsImported",
+      "meaning": "The previous exact carry identity is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteCarryLetterAlphabet",
+      "meaning": "All transitions are encoded by raw and signed finite carry letters.",
+      "proved": true,
+      "remaining": "none for current finite alphabet ledger"
+    },
+    {
+      "closed": true,
+      "gate": "CarryRunLengthLedger",
+      "meaning": "The run lengths reconstruct all adjacent prime-q transitions without loss.",
+      "proved": true,
+      "remaining": "none for current run ledger"
+    },
+    {
+      "closed": false,
+      "gate": "LongConstantLetterBlockReduction",
+      "meaning": "The observed maximum raw/signed run length is only 3.",
+      "proved": false,
+      "remaining": "there is no long constant-letter block to exploit as a constant rotation"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteCarryLetterWordExponentialSumSaving",
+      "meaning": "Prove cancellation for the finite-letter carry words along prime q.",
+      "proved": false,
+      "remaining": "new exponential-sum input or trace/Kloosterman completion required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixLetterAtomAggregation",
+      "meaning": "Aggregate any letter-word saving across all fixed-m atoms without losing the boundary gain.",
+      "proved": false,
+      "remaining": "requires analytic aggregation discipline"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "finite alphabet with highly fragmented one-step runs",
+    "input": "15439 fixed-m carry atoms and 162076 adjacent prime-q transitions",
+    "raw_letter": "L=(q_next-q, k_next-k)",
+    "remaining": "exponential-sum saving for finite carry-letter words or conversion to an external trace/Kloosterman family",
+    "signed_letter": "L_plus=(q_next-q, k_next-k, sign(A_next-A))"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "finite carry letters still need completion to trace functions before trace bilinear estimates apply",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "the letter word is not yet an inverse-fraction Kloosterman family modulo q",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "run words are one-dimensional prime-q strings, not balanced composite Type-II boxes",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman input remains candidate only after the letter word is converted to an admissible reciprocal family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short interval prime existence does not estimate finite carry-letter reciprocal phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "finite letters are not yet trace functions over a completed family",
+    "Li_short_interval_x_052": "existence of primes in intervals does not control carry-letter phase cancellation",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "the word does not yet expose an inverse variable with a usable modulus family",
+    "Pascadi_composite_Type_II": "run decomposition remains one-dimensional and short-shell weighted",
+    "Wright_unbalanced_Kloosterman": "candidate only after a completed unbalanced reciprocal family is constructed"
+  },
+  "finite_audit": {
+    "A_step_sign_rows": [
+      {
+        "A_step_sign": "negative",
+        "count": 79136
+      },
+      {
+        "A_step_sign": "positive",
+        "count": 82792
+      },
+      {
+        "A_step_sign": "zero",
+        "count": 148
+      }
+    ],
+    "adjacent_pair_count_inside_atoms": 147799,
+    "carry_delta_k_rows": [
+      {
+        "carry_delta_k": 1,
+        "count": 4512
+      },
+      {
+        "carry_delta_k": 2,
+        "count": 14606
+      },
+      {
+        "carry_delta_k": 3,
+        "count": 17066
+      },
+      {
+        "carry_delta_k": 4,
+        "count": 18208
+      },
+      {
+        "carry_delta_k": 5,
+        "count": 12620
+      },
+      {
+        "carry_delta_k": 6,
+        "count": 18307
+      },
+      {
+        "carry_delta_k": 7,
+        "count": 14469
+      },
+      {
+        "carry_delta_k": 8,
+        "count": 9405
+      },
+      {
+        "carry_delta_k": 9,
+        "count": 12783
+      },
+      {
+        "carry_delta_k": 10,
+        "count": 9330
+      },
+      {
+        "carry_delta_k": 11,
+        "count": 6138
+      },
+      {
+        "carry_delta_k": 12,
+        "count": 4935
+      },
+      {
+        "carry_delta_k": 13,
+        "count": 3813
+      },
+      {
+        "carry_delta_k": 14,
+        "count": 3572
+      },
+      {
+        "carry_delta_k": 15,
+        "count": 2970
+      },
+      {
+        "carry_delta_k": 16,
+        "count": 1886
+      },
+      {
+        "carry_delta_k": 17,
+        "count": 1657
+      },
+      {
+        "carry_delta_k": 18,
+        "count": 1376
+      },
+      {
+        "carry_delta_k": 19,
+        "count": 973
+      },
+      {
+        "carry_delta_k": 20,
+        "count": 882
+      },
+      {
+        "carry_delta_k": 21,
+        "count": 647
+      },
+      {
+        "carry_delta_k": 22,
+        "count": 411
+      },
+      {
+        "carry_delta_k": 23,
+        "count": 204
+      },
+      {
+        "carry_delta_k": 24,
+        "count": 171
+      },
+      {
+        "carry_delta_k": 25,
+        "count": 188
+      },
+      {
+        "carry_delta_k": 26,
+        "count": 223
+      },
+      {
+        "carry_delta_k": 27,
+        "count": 202
+      },
+      {
+        "carry_delta_k": 28,
+        "count": 144
+      },
+      {
+        "carry_delta_k": 29,
+        "count": 140
+      },
+      {
+        "carry_delta_k": 30,
+        "count": 108
+      },
+      {
+        "carry_delta_k": 31,
+        "count": 74
+      },
+      {
+        "carry_delta_k": 32,
+        "count": 43
+      },
+      {
+        "carry_delta_k": 33,
+        "count": 13
+      }
+    ],
+    "carry_letter_atom_count_total": 15439,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "distinct_A_step_sign_count": 3,
+    "distinct_carry_delta_k_count": 33,
+    "distinct_q_gap_count": 9,
+    "expected_successor_transition_count_total": 162076,
+    "finite_carry_letter_alphabet_closed": true,
+    "finite_letter_exponential_sum_saving_closed": false,
+    "letter_run_decomposition_closed": true,
+    "long_constant_letter_block_route_available": false,
+    "max_prime": 1009,
+    "max_raw_run_sample": {
+      "P": 307,
+      "m": 311,
+      "raw_letter": "g=6,c=6",
+      "run_length": 3,
+      "strip": "right_tail",
+      "transition_count": 15
+    },
+    "max_signed_run_sample": {
+      "P": 307,
+      "m": 311,
+      "run_length": 3,
+      "signed_letter": "g=6,c=6,A=negative",
+      "strip": "right_tail",
+      "transition_count": 15
+    },
+    "multiq_atom_count": 14277,
+    "no_loss_qprefix_letter_atom_aggregation_closed": false,
+    "previous_successor_carry_identity_verified": true,
+    "q_gap_rows": [
+      {
+        "count": 29006,
+        "q_gap": 2
+      },
+      {
+        "count": 34852,
+        "q_gap": 4
+      },
+      {
+        "count": 44782,
+        "q_gap": 6
+      },
+      {
+        "count": 19192,
+        "q_gap": 8
+      },
+      {
+        "count": 17997,
+        "q_gap": 10
+      },
+      {
+        "count": 9353,
+        "q_gap": 12
+      },
+      {
+        "count": 4088,
+        "q_gap": 14
+      },
+      {
+        "count": 2624,
+        "q_gap": 18
+      },
+      {
+        "count": 182,
+        "q_gap": 20
+      }
+    ],
+    "raw_all_singleton_runs_atom_count": 10345,
+    "raw_carry_letter_alphabet_count": 117,
+    "raw_carry_letter_capacity": 297,
+    "raw_carry_letter_density": 0.3939393939393939,
+    "raw_constant_letter_atom_count": 946,
+    "raw_distinct_letter_count_by_atom_rows": [
+      {
+        "atom_count": 946,
+        "distinct_raw_letters": 1
+      },
+      {
+        "atom_count": 1092,
+        "distinct_raw_letters": 2
+      },
+      {
+        "atom_count": 1164,
+        "distinct_raw_letters": 3
+      },
+      {
+        "atom_count": 1410,
+        "distinct_raw_letters": 4
+      },
+      {
+        "atom_count": 1607,
+        "distinct_raw_letters": 5
+      },
+      {
+        "atom_count": 1612,
+        "distinct_raw_letters": 6
+      },
+      {
+        "atom_count": 1602,
+        "distinct_raw_letters": 7
+      },
+      {
+        "atom_count": 1651,
+        "distinct_raw_letters": 8
+      },
+      {
+        "atom_count": 1334,
+        "distinct_raw_letters": 9
+      },
+      {
+        "atom_count": 1023,
+        "distinct_raw_letters": 10
+      },
+      {
+        "atom_count": 527,
+        "distinct_raw_letters": 11
+      },
+      {
+        "atom_count": 247,
+        "distinct_raw_letters": 12
+      },
+      {
+        "atom_count": 59,
+        "distinct_raw_letters": 13
+      },
+      {
+        "atom_count": 3,
+        "distinct_raw_letters": 14
+      }
+    ],
+    "raw_distinct_letter_per_atom_max": 14,
+    "raw_distinct_letter_per_atom_median": 6,
+    "raw_equal_adjacent_pair_count": 5602,
+    "raw_letter_run_length_sum": 162076,
+    "raw_run_count_by_atom_rows": [
+      {
+        "atom_count": 946,
+        "raw_run_count": 1
+      },
+      {
+        "atom_count": 814,
+        "raw_run_count": 2
+      },
+      {
+        "atom_count": 837,
+        "raw_run_count": 3
+      },
+      {
+        "atom_count": 866,
+        "raw_run_count": 4
+      },
+      {
+        "atom_count": 776,
+        "raw_run_count": 5
+      },
+      {
+        "atom_count": 895,
+        "raw_run_count": 6
+      },
+      {
+        "atom_count": 765,
+        "raw_run_count": 7
+      },
+      {
+        "atom_count": 675,
+        "raw_run_count": 8
+      },
+      {
+        "atom_count": 637,
+        "raw_run_count": 9
+      },
+      {
+        "atom_count": 652,
+        "raw_run_count": 10
+      },
+      {
+        "atom_count": 592,
+        "raw_run_count": 11
+      },
+      {
+        "atom_count": 506,
+        "raw_run_count": 12
+      },
+      {
+        "atom_count": 516,
+        "raw_run_count": 13
+      },
+      {
+        "atom_count": 498,
+        "raw_run_count": 14
+      },
+      {
+        "atom_count": 453,
+        "raw_run_count": 15
+      },
+      {
+        "atom_count": 448,
+        "raw_run_count": 16
+      },
+      {
+        "atom_count": 397,
+        "raw_run_count": 17
+      },
+      {
+        "atom_count": 380,
+        "raw_run_count": 18
+      },
+      {
+        "atom_count": 400,
+        "raw_run_count": 19
+      },
+      {
+        "atom_count": 317,
+        "raw_run_count": 20
+      },
+      {
+        "atom_count": 283,
+        "raw_run_count": 21
+      },
+      {
+        "atom_count": 213,
+        "raw_run_count": 22
+      },
+      {
+        "atom_count": 228,
+        "raw_run_count": 23
+      },
+      {
+        "atom_count": 203,
+        "raw_run_count": 24
+      },
+      {
+        "atom_count": 213,
+        "raw_run_count": 25
+      },
+      {
+        "atom_count": 153,
+        "raw_run_count": 26
+      },
+      {
+        "atom_count": 163,
+        "raw_run_count": 27
+      },
+      {
+        "atom_count": 122,
+        "raw_run_count": 28
+      },
+      {
+        "atom_count": 113,
+        "raw_run_count": 29
+      },
+      {
+        "atom_count": 81,
+        "raw_run_count": 30
+      },
+      {
+        "atom_count": 59,
+        "raw_run_count": 31
+      },
+      {
+        "atom_count": 29,
+        "raw_run_count": 32
+      },
+      {
+        "atom_count": 22,
+        "raw_run_count": 33
+      },
+      {
+        "atom_count": 19,
+        "raw_run_count": 34
+      },
+      {
+        "atom_count": 6,
+        "raw_run_count": 35
+      }
+    ],
+    "raw_run_count_per_atom_max": 35,
+    "raw_run_count_per_atom_median": 9,
+    "raw_run_count_total": 156474,
+    "raw_run_length_max": 3,
+    "raw_run_length_median": 1.0,
+    "raw_run_length_min": 1,
+    "raw_run_length_rows": [
+      {
+        "run_count": 151027,
+        "run_length": 1
+      },
+      {
+        "run_count": 5292,
+        "run_length": 2
+      },
+      {
+        "run_count": 155,
+        "run_length": 3
+      }
+    ],
+    "raw_switch_count": 142197,
+    "raw_switch_ratio": 0.962097172511316,
+    "raw_variable_letter_atom_count": 13331,
+    "row_column_unconditional_closed": false,
+    "sample_high_complexity_atoms": [
+      {
+        "P": 607,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m": 571,
+        "q_end": 557,
+        "q_start": 439,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=4,c=4",
+          "g=6,c=6",
+          "g=8,c=7",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4",
+          "g=12,c=11",
+          "g=8,c=8"
+        ],
+        "raw_run_count": 17,
+        "signed_distinct_letter_count": 15,
+        "signed_letter_sample": [
+          "g=4,c=4,A=negative",
+          "g=6,c=6,A=positive",
+          "g=8,c=7,A=positive",
+          "g=4,c=4,A=negative",
+          "g=2,c=2,A=positive",
+          "g=4,c=4,A=positive",
+          "g=12,c=11,A=negative",
+          "g=8,c=8,A=positive"
+        ],
+        "signed_run_count": 17,
+        "strip": "right_tail",
+        "transition_count": 17
+      },
+      {
+        "P": 607,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 643,
+        "q_end": 563,
+        "q_start": 439,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=4,c=4",
+          "g=6,c=6",
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=2,c=2",
+          "g=4,c=4",
+          "g=12,c=13",
+          "g=8,c=8"
+        ],
+        "raw_run_count": 18,
+        "signed_distinct_letter_count": 14,
+        "signed_letter_sample": [
+          "g=4,c=4,A=negative",
+          "g=6,c=6,A=negative",
+          "g=8,c=9,A=positive",
+          "g=4,c=4,A=negative",
+          "g=2,c=2,A=negative",
+          "g=4,c=4,A=negative",
+          "g=12,c=13,A=positive",
+          "g=8,c=8,A=positive"
+        ],
+        "signed_run_count": 18,
+        "strip": "right_tail",
+        "transition_count": 18
+      },
+      {
+        "P": 641,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 673,
+        "q_end": 601,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=6,c=6",
+          "g=12,c=13",
+          "g=2,c=2",
+          "g=18,c=19"
+        ],
+        "raw_run_count": 17,
+        "signed_distinct_letter_count": 12,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=4,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=5,A=positive",
+          "g=6,c=6,A=negative",
+          "g=12,c=13,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=19,A=positive"
+        ],
+        "signed_run_count": 17,
+        "strip": "right_tail",
+        "transition_count": 18
+      },
+      {
+        "P": 643,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 607,
+        "q_end": 587,
+        "q_start": 467,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=12,c=12",
+          "g=8,c=7",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=3",
+          "g=6,c=6",
+          "g=12,c=11",
+          "g=2,c=2"
+        ],
+        "raw_run_count": 15,
+        "signed_distinct_letter_count": 14,
+        "signed_letter_sample": [
+          "g=12,c=12,A=negative",
+          "g=8,c=7,A=negative",
+          "g=4,c=4,A=positive",
+          "g=8,c=8,A=positive",
+          "g=4,c=3,A=positive",
+          "g=6,c=6,A=negative",
+          "g=12,c=11,A=positive",
+          "g=2,c=2,A=negative"
+        ],
+        "signed_run_count": 15,
+        "strip": "right_tail",
+        "transition_count": 16
+      },
+      {
+        "P": 643,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 701,
+        "q_end": 587,
+        "q_start": 467,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=12,c=13",
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=6,c=6",
+          "g=12,c=13",
+          "g=2,c=3"
+        ],
+        "raw_run_count": 16,
+        "signed_distinct_letter_count": 13,
+        "signed_letter_sample": [
+          "g=12,c=13,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=5,A=negative",
+          "g=8,c=9,A=positive",
+          "g=4,c=4,A=negative",
+          "g=6,c=6,A=positive",
+          "g=12,c=13,A=negative",
+          "g=2,c=3,A=positive"
+        ],
+        "signed_run_count": 16,
+        "strip": "right_tail",
+        "transition_count": 16
+      },
+      {
+        "P": 673,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 701,
+        "q_end": 643,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=6,c=7",
+          "g=12,c=12",
+          "g=2,c=2",
+          "g=18,c=19"
+        ],
+        "raw_run_count": 22,
+        "signed_distinct_letter_count": 13,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=4,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=4,A=negative",
+          "g=6,c=7,A=positive",
+          "g=12,c=12,A=negative",
+          "g=2,c=2,A=negative",
+          "g=18,c=19,A=positive"
+        ],
+        "signed_run_count": 23,
+        "strip": "right_tail",
+        "transition_count": 25
+      },
+      {
+        "P": 677,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 643,
+        "q_end": 631,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=8,c=7",
+          "g=4,c=4",
+          "g=6,c=6",
+          "g=12,c=11",
+          "g=2,c=2",
+          "g=18,c=17"
+        ],
+        "raw_run_count": 22,
+        "signed_distinct_letter_count": 16,
+        "signed_letter_sample": [
+          "g=8,c=8,A=negative",
+          "g=4,c=4,A=positive",
+          "g=8,c=7,A=positive",
+          "g=4,c=4,A=negative",
+          "g=6,c=6,A=positive",
+          "g=12,c=11,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=17,A=positive"
+        ],
+        "signed_run_count": 22,
+        "strip": "right_tail",
+        "transition_count": 23
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m": 619,
+        "q_end": 607,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=3",
+          "g=8,c=7",
+          "g=4,c=4",
+          "g=6,c=5",
+          "g=12,c=11",
+          "g=2,c=1",
+          "g=18,c=16"
+        ],
+        "raw_run_count": 18,
+        "signed_distinct_letter_count": 15,
+        "signed_letter_sample": [
+          "g=8,c=8,A=positive",
+          "g=4,c=3,A=negative",
+          "g=8,c=7,A=negative",
+          "g=4,c=4,A=positive",
+          "g=6,c=5,A=negative",
+          "g=12,c=11,A=positive",
+          "g=2,c=1,A=negative",
+          "g=18,c=16,A=negative"
+        ],
+        "signed_run_count": 19,
+        "strip": "right_tail",
+        "transition_count": 19
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 761,
+        "q_end": 643,
+        "q_start": 479,
+        "raw_distinct_letter_count": 13,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=5",
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=6,c=6",
+          "g=12,c=13",
+          "g=2,c=2",
+          "g=18,c=20"
+        ],
+        "raw_run_count": 25,
+        "signed_distinct_letter_count": 17,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=5,A=positive",
+          "g=8,c=8,A=negative",
+          "g=4,c=5,A=positive",
+          "g=6,c=6,A=negative",
+          "g=12,c=13,A=negative",
+          "g=2,c=2,A=positive",
+          "g=18,c=20,A=negative"
+        ],
+        "signed_run_count": 25,
+        "strip": "right_tail",
+        "transition_count": 25
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m": 659,
+        "q_end": 647,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=7",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=3",
+          "g=6,c=6",
+          "g=12,c=11",
+          "g=2,c=2",
+          "g=18,c=17"
+        ],
+        "raw_run_count": 24,
+        "signed_distinct_letter_count": 16,
+        "signed_letter_sample": [
+          "g=8,c=7,A=positive",
+          "g=4,c=4,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=3,A=negative",
+          "g=6,c=6,A=negative",
+          "g=12,c=11,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=17,A=positive"
+        ],
+        "signed_run_count": 25,
+        "strip": "right_tail",
+        "transition_count": 26
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 743,
+        "q_end": 653,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=6,c=6",
+          "g=12,c=13",
+          "g=2,c=2",
+          "g=18,c=19"
+        ],
+        "raw_run_count": 25,
+        "signed_distinct_letter_count": 14,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=4,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=5,A=positive",
+          "g=6,c=6,A=negative",
+          "g=12,c=13,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=19,A=negative"
+        ],
+        "signed_run_count": 26,
+        "strip": "right_tail",
+        "transition_count": 27
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 673,
+        "q_end": 661,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=3",
+          "g=6,c=6",
+          "g=12,c=12",
+          "g=2,c=2",
+          "g=18,c=17"
+        ],
+        "raw_run_count": 26,
+        "signed_distinct_letter_count": 16,
+        "signed_letter_sample": [
+          "g=8,c=8,A=negative",
+          "g=4,c=4,A=positive",
+          "g=8,c=8,A=positive",
+          "g=4,c=3,A=negative",
+          "g=6,c=6,A=negative",
+          "g=12,c=12,A=positive",
+          "g=2,c=2,A=positive",
+          "g=18,c=17,A=negative"
+        ],
+        "signed_run_count": 27,
+        "strip": "right_tail",
+        "transition_count": 29
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 733,
+        "q_end": 661,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=8,c=8",
+          "g=4,c=4",
+          "g=6,c=7",
+          "g=12,c=12",
+          "g=2,c=2",
+          "g=18,c=19"
+        ],
+        "raw_run_count": 27,
+        "signed_distinct_letter_count": 15,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=4,A=negative",
+          "g=8,c=8,A=positive",
+          "g=4,c=4,A=negative",
+          "g=6,c=7,A=positive",
+          "g=12,c=12,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=19,A=negative"
+        ],
+        "signed_run_count": 29,
+        "strip": "right_tail",
+        "transition_count": 29
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 811,
+        "q_end": 613,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=10",
+          "g=4,c=4",
+          "g=8,c=9",
+          "g=4,c=5",
+          "g=6,c=7",
+          "g=12,c=13",
+          "g=2,c=3",
+          "g=18,c=20"
+        ],
+        "raw_run_count": 18,
+        "signed_distinct_letter_count": 13,
+        "signed_letter_sample": [
+          "g=8,c=10,A=positive",
+          "g=4,c=4,A=negative",
+          "g=8,c=9,A=positive",
+          "g=4,c=5,A=negative",
+          "g=6,c=7,A=positive",
+          "g=12,c=13,A=positive",
+          "g=2,c=3,A=negative",
+          "g=18,c=20,A=positive"
+        ],
+        "signed_run_count": 18,
+        "strip": "right_tail",
+        "transition_count": 20
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 787,
+        "q_end": 631,
+        "q_start": 479,
+        "raw_distinct_letter_count": 12,
+        "raw_letter_sample": [
+          "g=8,c=9",
+          "g=4,c=5",
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=6,c=6",
+          "g=12,c=14",
+          "g=2,c=2",
+          "g=18,c=20"
+        ],
+        "raw_run_count": 23,
+        "signed_distinct_letter_count": 16,
+        "signed_letter_sample": [
+          "g=8,c=9,A=negative",
+          "g=4,c=5,A=positive",
+          "g=8,c=8,A=negative",
+          "g=4,c=5,A=negative",
+          "g=6,c=6,A=positive",
+          "g=12,c=14,A=negative",
+          "g=2,c=2,A=negative",
+          "g=18,c=20,A=positive"
+        ],
+        "signed_run_count": 23,
+        "strip": "right_tail",
+        "transition_count": 23
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 773,
+        "q_end": 643,
+        "q_start": 479,
+        "raw_distinct_letter_count": 13,
+        "raw_letter_sample": [
+          "g=8,c=8",
+          "g=4,c=5",
+          "g=8,c=9",
+          "g=4,c=4",
+          "g=6,c=6",
+          "g=12,c=14",
+          "g=2,c=2",
+          "g=18,c=19"
+        ],
+        "raw_run_count": 24,
+        "signed_distinct_letter_count": 17,
+        "signed_letter_sample": [
+          "g=8,c=8,A=negative",
+          "g=4,c=5,A=negative",
+          "g=8,c=9,A=positive",
+          "g=4,c=4,A=negative",
+          "g=6,c=6,A=positive",
+          "g=12,c=14,A=positive",
+          "g=2,c=2,A=negative",
+          "g=18,c=19,A=positive"
+        ],
+        "signed_run_count": 25,
+        "strip": "right_tail",
+        "transition_count": 25
+      }
+    ],
+    "signed_all_singleton_runs_atom_count": 11848,
+    "signed_carry_letter_alphabet_count": 256,
+    "signed_carry_letter_capacity": 891,
+    "signed_carry_letter_density": 0.287317620650954,
+    "signed_constant_letter_atom_count": 934,
+    "signed_distinct_letter_count_by_atom_rows": [
+      {
+        "atom_count": 934,
+        "distinct_signed_letters": 1
+      },
+      {
+        "atom_count": 979,
+        "distinct_signed_letters": 2
+      },
+      {
+        "atom_count": 1036,
+        "distinct_signed_letters": 3
+      },
+      {
+        "atom_count": 1138,
+        "distinct_signed_letters": 4
+      },
+      {
+        "atom_count": 1301,
+        "distinct_signed_letters": 5
+      },
+      {
+        "atom_count": 1228,
+        "distinct_signed_letters": 6
+      },
+      {
+        "atom_count": 1154,
+        "distinct_signed_letters": 7
+      },
+      {
+        "atom_count": 1157,
+        "distinct_signed_letters": 8
+      },
+      {
+        "atom_count": 1081,
+        "distinct_signed_letters": 9
+      },
+      {
+        "atom_count": 1045,
+        "distinct_signed_letters": 10
+      },
+      {
+        "atom_count": 935,
+        "distinct_signed_letters": 11
+      },
+      {
+        "atom_count": 733,
+        "distinct_signed_letters": 12
+      },
+      {
+        "atom_count": 575,
+        "distinct_signed_letters": 13
+      },
+      {
+        "atom_count": 430,
+        "distinct_signed_letters": 14
+      },
+      {
+        "atom_count": 286,
+        "distinct_signed_letters": 15
+      },
+      {
+        "atom_count": 154,
+        "distinct_signed_letters": 16
+      },
+      {
+        "atom_count": 83,
+        "distinct_signed_letters": 17
+      },
+      {
+        "atom_count": 21,
+        "distinct_signed_letters": 18
+      },
+      {
+        "atom_count": 4,
+        "distinct_signed_letters": 19
+      },
+      {
+        "atom_count": 2,
+        "distinct_signed_letters": 20
+      },
+      {
+        "atom_count": 1,
+        "distinct_signed_letters": 21
+      }
+    ],
+    "signed_distinct_letter_per_atom_max": 21,
+    "signed_distinct_letter_per_atom_median": 7,
+    "signed_equal_adjacent_pair_count": 3360,
+    "signed_letter_run_length_sum": 162076,
+    "signed_run_count_by_atom_rows": [
+      {
+        "atom_count": 934,
+        "signed_run_count": 1
+      },
+      {
+        "atom_count": 809,
+        "signed_run_count": 2
+      },
+      {
+        "atom_count": 819,
+        "signed_run_count": 3
+      },
+      {
+        "atom_count": 864,
+        "signed_run_count": 4
+      },
+      {
+        "atom_count": 743,
+        "signed_run_count": 5
+      },
+      {
+        "atom_count": 884,
+        "signed_run_count": 6
+      },
+      {
+        "atom_count": 778,
+        "signed_run_count": 7
+      },
+      {
+        "atom_count": 675,
+        "signed_run_count": 8
+      },
+      {
+        "atom_count": 618,
+        "signed_run_count": 9
+      },
+      {
+        "atom_count": 651,
+        "signed_run_count": 10
+      },
+      {
+        "atom_count": 589,
+        "signed_run_count": 11
+      },
+      {
+        "atom_count": 509,
+        "signed_run_count": 12
+      },
+      {
+        "atom_count": 512,
+        "signed_run_count": 13
+      },
+      {
+        "atom_count": 502,
+        "signed_run_count": 14
+      },
+      {
+        "atom_count": 452,
+        "signed_run_count": 15
+      },
+      {
+        "atom_count": 435,
+        "signed_run_count": 16
+      },
+      {
+        "atom_count": 420,
+        "signed_run_count": 17
+      },
+      {
+        "atom_count": 368,
+        "signed_run_count": 18
+      },
+      {
+        "atom_count": 402,
+        "signed_run_count": 19
+      },
+      {
+        "atom_count": 327,
+        "signed_run_count": 20
+      },
+      {
+        "atom_count": 296,
+        "signed_run_count": 21
+      },
+      {
+        "atom_count": 199,
+        "signed_run_count": 22
+      },
+      {
+        "atom_count": 219,
+        "signed_run_count": 23
+      },
+      {
+        "atom_count": 197,
+        "signed_run_count": 24
+      },
+      {
+        "atom_count": 204,
+        "signed_run_count": 25
+      },
+      {
+        "atom_count": 177,
+        "signed_run_count": 26
+      },
+      {
+        "atom_count": 150,
+        "signed_run_count": 27
+      },
+      {
+        "atom_count": 154,
+        "signed_run_count": 28
+      },
+      {
+        "atom_count": 132,
+        "signed_run_count": 29
+      },
+      {
+        "atom_count": 85,
+        "signed_run_count": 30
+      },
+      {
+        "atom_count": 69,
+        "signed_run_count": 31
+      },
+      {
+        "atom_count": 46,
+        "signed_run_count": 32
+      },
+      {
+        "atom_count": 33,
+        "signed_run_count": 33
+      },
+      {
+        "atom_count": 15,
+        "signed_run_count": 34
+      },
+      {
+        "atom_count": 10,
+        "signed_run_count": 35
+      }
+    ],
+    "signed_run_count_per_atom_max": 35,
+    "signed_run_count_per_atom_median": 10,
+    "signed_run_count_total": 158716,
+    "signed_run_length_max": 3,
+    "signed_run_length_median": 1.0,
+    "signed_run_length_min": 1,
+    "signed_run_length_rows": [
+      {
+        "run_count": 155434,
+        "run_length": 1
+      },
+      {
+        "run_count": 3204,
+        "run_length": 2
+      },
+      {
+        "run_count": 78,
+        "run_length": 3
+      }
+    ],
+    "signed_switch_count": 144439,
+    "signed_switch_ratio": 0.9772664226415605,
+    "signed_variable_letter_atom_count": 13343,
+    "singleton_q_atom_count": 1162,
+    "strip_rows": [
+      {
+        "atom_count": 2466,
+        "strip": "lower_wing",
+        "transition_count": 26678
+      },
+      {
+        "atom_count": 6962,
+        "strip": "right_tail",
+        "transition_count": 79789
+      },
+      {
+        "atom_count": 6011,
+        "strip": "upper_wing",
+        "transition_count": 55609
+      }
+    ],
+    "successor_transition_count_total": 162076,
+    "top_raw_carry_letter_rows": [
+      {
+        "count": 12515,
+        "raw_letter": "g=2,c=2"
+      },
+      {
+        "count": 9894,
+        "raw_letter": "g=2,c=3"
+      },
+      {
+        "count": 9877,
+        "raw_letter": "g=4,c=4"
+      },
+      {
+        "count": 9045,
+        "raw_letter": "g=6,c=6"
+      },
+      {
+        "count": 7217,
+        "raw_letter": "g=6,c=9"
+      },
+      {
+        "count": 6897,
+        "raw_letter": "g=4,c=6"
+      },
+      {
+        "count": 6133,
+        "raw_letter": "g=4,c=3"
+      },
+      {
+        "count": 6043,
+        "raw_letter": "g=6,c=7"
+      },
+      {
+        "count": 6024,
+        "raw_letter": "g=6,c=4"
+      },
+      {
+        "count": 5667,
+        "raw_letter": "g=6,c=5"
+      },
+      {
+        "count": 5121,
+        "raw_letter": "g=4,c=5"
+      },
+      {
+        "count": 4549,
+        "raw_letter": "g=6,c=10"
+      },
+      {
+        "count": 4512,
+        "raw_letter": "g=2,c=1"
+      },
+      {
+        "count": 4225,
+        "raw_letter": "g=4,c=7"
+      },
+      {
+        "count": 3626,
+        "raw_letter": "g=6,c=8"
+      },
+      {
+        "count": 3420,
+        "raw_letter": "g=8,c=8"
+      },
+      {
+        "count": 2990,
+        "raw_letter": "g=10,c=10"
+      },
+      {
+        "count": 2690,
+        "raw_letter": "g=8,c=9"
+      },
+      {
+        "count": 2376,
+        "raw_letter": "g=10,c=11"
+      },
+      {
+        "count": 2307,
+        "raw_letter": "g=8,c=7"
+      }
+    ],
+    "top_signed_carry_letter_rows": [
+      {
+        "count": 6280,
+        "signed_letter": "g=2,c=2,A=negative"
+      },
+      {
+        "count": 6235,
+        "signed_letter": "g=2,c=2,A=positive"
+      },
+      {
+        "count": 5091,
+        "signed_letter": "g=4,c=4,A=negative"
+      },
+      {
+        "count": 5018,
+        "signed_letter": "g=2,c=3,A=positive"
+      },
+      {
+        "count": 4876,
+        "signed_letter": "g=2,c=3,A=negative"
+      },
+      {
+        "count": 4786,
+        "signed_letter": "g=4,c=4,A=positive"
+      },
+      {
+        "count": 4593,
+        "signed_letter": "g=6,c=6,A=negative"
+      },
+      {
+        "count": 4452,
+        "signed_letter": "g=6,c=6,A=positive"
+      },
+      {
+        "count": 3703,
+        "signed_letter": "g=6,c=9,A=positive"
+      },
+      {
+        "count": 3514,
+        "signed_letter": "g=6,c=9,A=negative"
+      },
+      {
+        "count": 3504,
+        "signed_letter": "g=4,c=6,A=negative"
+      },
+      {
+        "count": 3393,
+        "signed_letter": "g=4,c=6,A=positive"
+      },
+      {
+        "count": 3299,
+        "signed_letter": "g=6,c=7,A=positive"
+      },
+      {
+        "count": 3274,
+        "signed_letter": "g=4,c=3,A=positive"
+      },
+      {
+        "count": 3061,
+        "signed_letter": "g=6,c=4,A=negative"
+      },
+      {
+        "count": 2963,
+        "signed_letter": "g=6,c=4,A=positive"
+      },
+      {
+        "count": 2903,
+        "signed_letter": "g=6,c=5,A=negative"
+      },
+      {
+        "count": 2859,
+        "signed_letter": "g=4,c=3,A=negative"
+      },
+      {
+        "count": 2761,
+        "signed_letter": "g=4,c=5,A=positive"
+      },
+      {
+        "count": 2749,
+        "signed_letter": "g=6,c=5,A=positive"
+      }
+    ]
+  },
+  "finite_carry_letter_alphabet_closed": true,
+  "finite_letter_exponential_sum_saving_closed": false,
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "FiniteCarryLetterWordExponentialSumSaving",
+    "AND PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion",
+    "AND NoLossAggregationAcross15439QPrefixCarryLetterAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "long_constant_letter_block_route_available": false,
+  "no_loss_qprefix_letter_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after successor carry dynamics, the next acyclic step is to expose the finite transition alphabet and run fragmentation",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "8e223f335aea3b371c5aa48a1df2c41d43238aca78f69af018f3eeb71bb879be",
+    "docs/monograph/external-theorem-index.md": "2afbfb08e8a459b19e0e3dc92aedea130388f13bcd917431ff7e051e7c90e22b",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "bf3e2ea2a24ab203c1d2fe11b1465dfce17543e9a287409b601784b69dd14ba8",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json": "cbfe0b837d418fa6270d654476e23489291c3e183d87740d853c7d30fa8fb452",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.json": "11bb2c779e6877b0be69d8c9f60349b6435f964f6f364b041a9e3117cdcfae51",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json": "66046c1ff4c9ccf5c49ce021ac6831a00e39227d982ae663ae7106a0cb08ce47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "40455341a14f21644313577f83d15b4e89fec5c6b0d23001f5422fe59896dc2d",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "b2b9e18bc136e8fbbdb4626c919c0e76cc8a9e0ac94ee8d28514ddd869a6a2a6",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit.py": "64835a7cfa416eb6b1a2f403a1b671beb470840fc0ce7aec1a0940c6caa00760",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "e30fa387edb99b4f34c8e31208cdfe6fb65517762c461662dae2921d5b44aa2c"
+  },
+  "status": "qprefix_carry_words_have_finite_letter_run_decomposition_phase_saving_open"
+}

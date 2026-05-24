@@ -5975,6 +5975,74 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65D. Phi-LPF q-prefix carry letter/run 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_letter_run_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.md
+```
+
+上一层把 moving numerator 的相邻 prime-q 演化压成 successor carry：
+
+```text
+D' = D + m*(q'-q) - P*c,
+c = k' - k.
+```
+
+本层继续把每条转移写成有限字母：
+
+```text
+raw letter    L=(q'-q,c)
+signed letter L+=(q'-q,c,sign(A'-A))
+```
+
+有限审计读数：
+
+```text
+carry_letter_atom_count_total=15439
+multiq_atom_count=14277
+singleton_q_atom_count=1162
+successor_transition_count_total=162076
+raw_letter_run_length_sum=162076
+signed_letter_run_length_sum=162076
+letter_run_decomposition_closed=true
+raw_carry_letter_alphabet_count/capacity=117/297
+signed_carry_letter_alphabet_count/capacity=256/891
+raw_constant/variable_letter_atom_count=946/13331
+signed_constant/variable_letter_atom_count=934/13343
+raw_run_length_min/median/max=1/1/3
+signed_run_length_min/median/max=1/1/3
+raw_switch_count/ratio=142197/0.962097172511316
+signed_switch_count/ratio=144439/0.9772664226415605
+```
+
+最高频 raw letters 为 `(2,2)`、`(2,3)`、`(4,4)`、`(6,6)`，对应计数
+`12515,9894,9877,9045`。这说明 q-prefix carry word 已经不是任意黑箱；
+但 run 中位长度为 `1` 且最大仅 `3`，所以也不存在可直接利用的长常字母块。
+
+外部定理匹配边界进一步收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 仍然要求先把
+finite carry-letter word 完成到 admissible trace/Kloosterman family。Li 的 `x^0.52`
+短区间素数存在仍不估计这类 reciprocal phase cancellation。
+
+状态边界：
+
+```text
+finite_carry_letter_alphabet_closed=true
+long_constant_letter_block_route_available=false
+finite_letter_exponential_sum_saving_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_letter_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：
