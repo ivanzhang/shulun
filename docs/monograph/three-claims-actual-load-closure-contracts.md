@@ -22365,6 +22365,43 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json
+```
+
+同步读数为：
+
+```text
+prime_blocker_dynamic_sqrt_sieve_identity_closed=true
+prime_blocker_phase_packet_pushforward_closed=true
+no_rough_composite_sqrt_rejection_after_30_closed=true
+sqrt_sieve_survivor_count_total=355919
+total_bad_dynamic_sqrt_sieve_count=0
+moving_primorial_mobius_compression_closed=false
+prime_blocker_survivor_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：latest `prime blocker` 不再作为未拆开的素性标签保留；它现在等价于
+`W(m_h)=prod_{ell<=sqrt(m_h)} ell` 的 moving survivor packet。真正活动硬点收缩为：
+
+```text
+PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding
+AND MovingPrimorialMobiusExpansionCompression
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+```
+
+并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
+prime-q reciprocal phase saving、Rate 与 DStructure。该更新不证明行/列命题、外部引理版
+或内部自足版无条件闭合。
+
 ### 1.180 two replacement lines common unconditional kernel 更新
 
 新增机器证书：

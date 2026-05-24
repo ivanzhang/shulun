@@ -1,0 +1,348 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimeBlockerDynamicSqrtSieveIdentity",
+      "meaning": "The prime-blocker indicator equals the dynamic sqrt-sieve survivor indicator on every blocker.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeBlockerPhasePacketPushforward",
+      "meaning": "The additive prime-blocker packet equals the additive survivor packet bucket by bucket.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "NoRoughCompositeSqrtRejectionAfterThirtyWheel",
+      "meaning": "After LPF 2/3/5 rejections, no LPF 7/11/... composite blocker remains.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "MovingPrimorialMobiusCompression",
+      "meaning": "Compress the moving sqrt-sieve survivor product into a usable completed bilinear/trace family.",
+      "proved": false,
+      "remaining": "new compression or trace embedding theorem"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeBlockerSurvivorPhaseSaving",
+      "meaning": "Prove cancellation or absorption for the survivor packet itself.",
+      "proved": false,
+      "remaining": "non-wheel phase saving beyond parity"
+    }
+  ],
+  "current_object": {
+    "dynamic_packet": "S_{prime-blocker}=S_{sqrt-sieve-survivor}",
+    "moving_primorial": "W(m_h)=prod_{ell<=sqrt(m_h)} ell varies with m_h",
+    "prime_blocker_identity": "m_h prime iff m_h is not 0 modulo every prime ell<=sqrt(m_h)",
+    "remaining": "phase saving or trace/Type-II embedding for the moving survivor packet",
+    "thirty_wheel_relation": "all non-survivors are exactly LPF 2/3/5 blockers already in the 30-wheel packet"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "candidate trace-function bilinear input after a genuine blocker-to-trace embedding",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "candidate arbitrary-modulus Kloosterman input after completion of the moving sqrt-sieve packet",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_composite_type_II",
+      "role": "candidate composite Type-II input only after the packet is reorganised into bilinear fibres",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate unbalanced convolution input after a completed convolution model exists",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "candidate smooth/squarefree parameter input, not a direct prime-blocker selector estimate",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime input remains above the theta=1/2 pointwise scale needed for direct closure",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "not directly applicable until the moving sqrt-sieve survivor packet is embedded into a trace-function family",
+    "Li_short_interval_x_052": "theta=0.52 remains above the pointwise theta=1/2 scale, so it does not close this packet",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "does not by itself compress W(m_h)-moving local congruence constraints into a completed Kloosterman sum",
+    "Pascadi_composite_Type_II": "may help only after the blocker support is reorganised as long bilinear fibres",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "does not directly estimate the prime-blocker survivor selector",
+    "Wright_unbalanced_convolution": "requires a completed convolution/Kloosterman-fraction form, not just the pointwise primality sieve"
+  },
+  "finite_audit": {
+    "bad_composite_survivor_total": 0,
+    "bad_prime_rejected_total": 0,
+    "bad_prime_survivor_mismatch_total": 0,
+    "blocker_count_total": 1302951,
+    "counts_match_previous_primorial_escalation": true,
+    "distinct_largest_sqrt_prime_seen": 11,
+    "distinct_sqrt_limits_seen": 38,
+    "dynamic_sqrt_sieve_identity_closed": true,
+    "dynamic_sqrt_sieve_phase_saving_closed": false,
+    "finite_evidence_not_used_as_global_proof": true,
+    "largest_sqrt_prime_counts": {
+      "7": 2808,
+      "11": 6079,
+      "13": 33541,
+      "17": 36849,
+      "19": 158602,
+      "23": 498272,
+      "29": 186047,
+      "31": 319123,
+      "37": 55343,
+      "41": 5547,
+      "43": 740
+    },
+    "max_W_sqrt_bits": 54,
+    "max_W_sqrt_over_P": 13814953887719.145,
+    "max_mobius_terms_per_blocker": 16384,
+    "max_pi_sqrt_all": 14,
+    "max_pi_sqrt_prime_blocker": 14,
+    "max_prime": 1009,
+    "max_prime_packet_phase_identity_error": 0.0,
+    "moving_primorial_mobius_compression_closed": false,
+    "obstruction_counts": {
+      "2": 373676,
+      "3": 409713,
+      "5": 163643,
+      "none": 355919
+    },
+    "previous_blocker_count_total": 1302951,
+    "previous_prime_blocker_count_total": 355919,
+    "previous_small_lpf_blocker_count_total": 947032,
+    "prime_blocker_count_total": 355919,
+    "prime_blocker_equals_dynamic_sqrt_survivor_verified": true,
+    "prime_blocker_full_sqrt_tests_total": 3373946,
+    "prime_blocker_mobius_terms_full_expansion_total": 399176624,
+    "q_bucket_prime_phase_mismatch_count": 0,
+    "q_bucket_with_prime_blocker_count": 5848,
+    "rough_composite_rejection_after_5_total": 0,
+    "sample_prime_blockers": [
+      "P=43,q=23,k=28,m=53,sqrt=7,pi_sqrt=4,W_bits=8",
+      "P=43,q=23,k=31,m=59,sqrt=7,pi_sqrt=4,W_bits=8",
+      "P=43,q=23,k=32,m=61,sqrt=7,pi_sqrt=4,W_bits=8",
+      "P=43,q=23,k=35,m=67,sqrt=8,pi_sqrt=4,W_bits=8",
+      "P=43,q=23,k=37,m=71,sqrt=8,pi_sqrt=4,W_bits=8",
+      "P=43,q=23,k=39,m=73,sqrt=8,pi_sqrt=4,W_bits=8",
+      "P=53,q=29,k=32,m=59,sqrt=7,pi_sqrt=4,W_bits=8",
+      "P=53,q=29,k=33,m=61,sqrt=7,pi_sqrt=4,W_bits=8"
+    ],
+    "sample_rows": [
+      {
+        "P": 101,
+        "bad_mismatch": 0,
+        "blockers": 302,
+        "max_W_sqrt_bits": 15,
+        "max_pi_sqrt": 6,
+        "prime_blockers": 96,
+        "small_lpf_blockers": 206,
+        "sqrt_sieve_rejections": 206,
+        "sqrt_sieve_survivors": 96
+      },
+      {
+        "P": 257,
+        "bad_mismatch": 0,
+        "blockers": 1948,
+        "max_W_sqrt_bits": 24,
+        "max_pi_sqrt": 8,
+        "prime_blockers": 591,
+        "small_lpf_blockers": 1357,
+        "sqrt_sieve_rejections": 1357,
+        "sqrt_sieve_survivors": 591
+      },
+      {
+        "P": 971,
+        "bad_mismatch": 0,
+        "blockers": 23383,
+        "max_W_sqrt_bits": 54,
+        "max_pi_sqrt": 14,
+        "prime_blockers": 6206,
+        "small_lpf_blockers": 17177,
+        "sqrt_sieve_rejections": 17177,
+        "sqrt_sieve_survivors": 6206
+      },
+      {
+        "P": 1009,
+        "bad_mismatch": 0,
+        "blockers": 24457,
+        "max_W_sqrt_bits": 54,
+        "max_pi_sqrt": 14,
+        "prime_blockers": 6414,
+        "small_lpf_blockers": 18043,
+        "sqrt_sieve_rejections": 18043,
+        "sqrt_sieve_survivors": 6414
+      }
+    ],
+    "small_lpf_blocker_count_total": 947032,
+    "small_lpf_short_circuit_tests_total": 1684031,
+    "sqrt_sieve_rejected_count_total": 947032,
+    "sqrt_sieve_rejections_are_exactly_lpf_2_3_5": true,
+    "sqrt_sieve_survivor_count_total": 355919,
+    "stage_profiles": [
+      {
+        "cutoff": 2,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 373676,
+        "small_lpf_rejected_count": 373676,
+        "survivor_count": 929275
+      },
+      {
+        "cutoff": 3,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 783389,
+        "small_lpf_rejected_count": 783389,
+        "survivor_count": 519562
+      },
+      {
+        "cutoff": 5,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 7,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 11,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 13,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 17,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 19,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 23,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 29,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 31,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 37,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 41,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      },
+      {
+        "cutoff": 43,
+        "new_rejections_after_5": 0,
+        "prime_survivor_count": 355919,
+        "rejected_count": 947032,
+        "small_lpf_rejected_count": 947032,
+        "survivor_count": 355919
+      }
+    ],
+    "total_bad_dynamic_sqrt_sieve_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding",
+    "AND MovingPrimorialMobiusExpansionCompression",
+    "AND FiniteThirtyWheelSmallLPFBlockerPacketControl",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_primorial_mobius_compression_closed": false,
+  "no_rough_composite_sqrt_rejection_after_30_closed": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "prime_blocker_dynamic_sqrt_sieve_identity_closed": true,
+  "prime_blocker_phase_packet_pushforward_closed": true,
+  "prime_blocker_survivor_phase_saving_closed": false,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after primorial escalation is inert, the fastest non-cyclic refinement is to replace the prime-blocker oracle by its exact moving sqrt-sieve survivor packet",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "small_lpf_blocker_packet_control_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "ac32883284a05daa67b5eaba7e5487d6f1b0e05ba3e89efba747696cb3131280",
+    "docs/monograph/external-theorem-index.md": "9a4d5bf0999f72c287565f02380f1e57086f785156e40b98b1032c3c7b80f0be",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "5612f2cf7e234c91c83de8aa3748a1c91722fa663c26cd8972e63f318d675aa2",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-blocking-cofactor-pushforward-audit.json": "7aa85ce44c657a0cf50b0b13e4a123ee518c8a3ca9579f7cfc0283aee8f8fada",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.json": "20614d630128db216380902fdf270c12b499c8b3716bf77b8b962441fd9873c9",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit.py": "3731a0ecb9c5ccd1d568d9e473e7b5013eae0c7676c9937d1b56751f7d89ccf6",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "8fb7d876ec1023a6dc7906e1105fccc7a7548f3c59914d0a581c59eed1cd23b7"
+  },
+  "status": "prime_blocker_packet_rewritten_as_dynamic_sqrt_sieve_survivors_phase_saving_open",
+  "uniform_cancellation_across_sparse_k_support_radial_kernels_closed": false
+}

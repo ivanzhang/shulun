@@ -3522,6 +3522,91 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61N. Phi-LPF q-support row-averaged additive-k prime-blocker dynamic sqrt-sieve 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md
+```
+
+本层把上一节留下的 `prime blocker` 从素性黑箱改写为逐点动态
+`sqrt(m_h)` 筛幸存者。对每个 blocker：
+
+```text
+m_h is prime  iff  m_h mod ell != 0 for every prime ell<=sqrt(m_h)
+S_{prime-blocker}=S_{sqrt-sieve-survivor}
+```
+
+有限审计读数：
+
+```text
+max_prime=1009
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+sqrt_sieve_survivor_count_total=355919
+sqrt_sieve_rejected_count_total=947032
+total_bad_dynamic_sqrt_sieve_count=0
+q_bucket_prime_phase_mismatch_count=0
+max_prime_packet_phase_identity_error=0
+obstruction_counts={2:373676,3:409713,5:163643,none:355919}
+max_pi_sqrt_prime_blocker=14
+max_mobius_terms_per_blocker=16384
+prime_blocker_full_sqrt_tests_total=3373946
+prime_blocker_mobius_terms_full_expansion_total=399176624
+```
+
+逐层 cutoff 显示 `5` 之后没有新拒绝：
+
+```text
+cutoff=2: rejected=373676, survived=929275
+cutoff=3: rejected=783389, survived=519562
+cutoff=5: rejected=947032, survived=355919
+cutoff=7,11,...,43: rejected=947032, survived=355919
+```
+
+外部前沿影响：FKMS trace-function bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II、Wright 2026 unbalanced convolution
+与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 估计仍是候选工具，
+但只有在 moving survivor packet 被真正嵌入 completed trace/Type-II/convolution
+对象后才可使用。Runbo Li 的 `x^0.52` 短区间素数输入仍高于点态 `theta=1/2`
+尺度，不能直接闭合该 packet。
+
+新的最新最窄口：
+
+```text
+PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding
+AND MovingPrimorialMobiusExpansionCompression
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+prime_blocker_dynamic_sqrt_sieve_identity_closed=true
+prime_blocker_phase_packet_pushforward_closed=true
+no_rough_composite_sqrt_rejection_after_30_closed=true
+moving_primorial_mobius_compression_closed=false
+prime_blocker_survivor_phase_saving_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

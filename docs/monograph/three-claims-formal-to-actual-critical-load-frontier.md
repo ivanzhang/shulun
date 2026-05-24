@@ -24158,3 +24158,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 本层没有证明 seed、全局终端排斥、模型/DPRC、Rate 或 DStructure；它只把 moving atom
 孤立硬点移回非循环终端账本。ExactUV/pair-mass 支线仍需独立 pair energy 或 large-pair
 packet 排斥，不能回证 source entropy。
+
+## 330Y. Phi-LPF prime-blocker dynamic sqrt-sieve frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-ledger.json
+```
+
+同步结果：
+
+```text
+status=prime_blocker_packet_rewritten_as_dynamic_sqrt_sieve_survivors_phase_saving_open
+prime_blocker_count_total=355919
+sqrt_sieve_survivor_count_total=355919
+sqrt_sieve_rejected_count_total=947032
+total_bad_dynamic_sqrt_sieve_count=0
+max_prime_packet_phase_identity_error=0
+max_mobius_terms_per_blocker=16384
+prime_blocker_mobius_terms_full_expansion_total=399176624
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：primorial 升级路线被排除后，`prime blocker` 的最新非循环形态
+是 moving sqrt-sieve survivor packet，而不是新的 fixed-wheel 层。该 packet 已完成
+素性原子化和逐 bucket 相位推前，但仍缺少：
+
+```text
+PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding
+AND MovingPrimorialMobiusExpansionCompression
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 `prime blocker` 黑箱标签，不是 Phi-LPF 奇偶性障碍的无条件突破。

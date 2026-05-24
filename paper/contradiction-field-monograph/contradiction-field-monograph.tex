@@ -33474,6 +33474,98 @@ row-averaged-additive-k-hole-primorial-escalation-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dynamic square-root sieve for prime blockers}
+
+\begin{theorem}[Prime blockers as dynamic square-root-sieve survivors]
+Let \(m_h=m_h(P,q,k)\) be a blocker in the preceding normal form and put
+\[
+  W(m_h)=\prod_{\ell\le \sqrt{m_h}}\ell,
+\]
+where the product is over primes.  Then
+\[
+  m_h\hbox{ is a prime blocker}
+  \quad\Longleftrightarrow\quad
+  (m_h,W(m_h))=1.
+\]
+Equivalently \(m_h\) is a prime blocker if and only if
+\[
+  m_h\not\equiv 0\pmod \ell
+  \qquad(\ell\le\sqrt{m_h},\ \ell\ {\rm prime}).
+\]
+Consequently the prime-blocker phase packet admits the exact rewriting
+\[
+  S_{\rm prime\ blocker}(h)=S_{\sqrt{\rm -sieve}\ {\rm survivor}}(h).
+\]
+All blockers rejected by this dynamic square-root sieve are exactly the
+\({\rm LPF}=2,3,5\) blockers already belonging to the \(30\)-wheel packet.
+\end{theorem}
+\begin{proof}
+The elementary square-root primality criterion gives, for any integer
+\(m_h>1\), that \(m_h\) is prime if and only if no prime
+\(\ell\le\sqrt{m_h}\) divides it.  This is the displayed
+\((m_h,W(m_h))=1\) condition.  The blocker theorem has already shown that
+every blocker has least prime factor \(2,3,5\), or else is prime.  Therefore
+a rejected blocker has least prime factor \(2,3\), or \(5\); after the
+\(30\)-wheel rejections, the remaining blockers are precisely the dynamic
+square-root-sieve survivors.  The phase identity follows by summing the same
+additive character \(e(hP\lfloor q m_h/P\rfloor/q)\) over this identical
+survivor set.
+\end{proof}
+
+\begin{remark}[Finite dynamic square-root-sieve ledger]
+The audit up to \(P\le 1009\) verifies the identity on all
+\(1302951\) blockers.  The counts are
+\[
+  947032\ \text{small-LPF blockers},\qquad
+  355919\ \text{prime blockers}
+  =355919\ \text{dynamic square-root-sieve survivors}.
+\]
+There are no mismatches:
+\[
+  \texttt{total\_bad\_dynamic\_sqrt\_sieve\_count}=0,\qquad
+  \texttt{max\_prime\_packet\_phase\_identity\_error}=0.
+\]
+The first obstruction counts are
+\[
+  373676\ {\rm at}\ 2,\qquad
+  409713\ {\rm at}\ 3,\qquad
+  163643\ {\rm at}\ 5,\qquad
+  355919\ {\rm survivors}.
+\]
+Thus the dynamic square-root sieve removes the prime-blocker oracle as a
+definition, but it does not yet give cancellation.  The moving primorial
+\(W(m_h)\) varies with the blocker; in the same finite audit the maximum
+number of square-root primes per blocker is \(14\), so a full Mobius expansion
+can have \(16384\) local terms per blocker, and the prime-blocker survivor
+packet accounts for \(399176624\) formal Mobius terms.
+
+The external frontier is unchanged in substance: trace-function bilinear
+estimates, arbitrary-modulus Kloosterman estimates, composite Type-II
+amplification, unbalanced Kloosterman-fraction convolutions, and
+smooth/squarefree Kloosterman parameter estimates become relevant only after
+this moving survivor packet is embedded into a completed trace, Type-II, or
+convolution object.  The known short-interval exponent \(0.52\) is still above
+the pointwise \(1/2\) scale needed for direct closure.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding\\
+AND MovingPrimorialMobiusExpansionCompression\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -3643,6 +3643,108 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13N：Phi-LPF q-support row-averaged additive-k prime-blocker dynamic sqrt-sieve 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_dynamic_sqrt_sieve_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md
+```
+
+本层承接 Q13M：既然 `30 -> 210 -> 2310 -> ...` 不产生新的 composite
+blocker shell，就把剩余 `prime blocker` 原子化为动态素性筛：
+
+```text
+m_h prime iff m_h mod ell != 0 for every prime ell<=sqrt(m_h)
+S_{prime-blocker}=S_{sqrt-sieve-survivor}
+```
+
+### Q13N.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+sqrt_sieve_survivor_count_total=355919
+sqrt_sieve_rejected_count_total=947032
+bad_prime_survivor_mismatch_total=0
+bad_composite_survivor_total=0
+bad_prime_rejected_total=0
+rough_composite_rejection_after_5_total=0
+q_bucket_prime_phase_mismatch_count=0
+max_prime_packet_phase_identity_error=0
+total_bad_dynamic_sqrt_sieve_count=0
+max_pi_sqrt_prime_blocker=14
+max_mobius_terms_per_blocker=16384
+prime_blocker_full_sqrt_tests_total=3373946
+prime_blocker_mobius_terms_full_expansion_total=399176624
+```
+
+obstruction 分桶为：
+
+```text
+LPF=2: 373676
+LPF=3: 409713
+LPF=5: 163643
+none: 355919
+```
+
+因此所有非幸存者正好是 30-wheel 小 LPF blocker，`7,11,13,...` 后没有
+新的合数拒绝层。
+
+### Q13N.2 诚实边界
+
+本层真推进是把 `prime blocker` 素性黑箱替换为 moving primorial survivor
+packet：
+
+```text
+W(m_h)=prod_{ell<=sqrt(m_h)} ell
+1_{prime blocker}=1_{gcd(m_h,W(m_h))=1}
+```
+
+但这仍不是相位节省。完全 Mobius 展开已经在有限审计中显示出 moving packet
+成本，且外部 trace/Kloosterman/Type-II 定理必须先获得同对象 completed
+embedding 才能调用。Runbo Li 的 `x^0.52` 短区间输入仍未达到点态 `1/2`
+尺度。
+
+最新最窄口：
+
+```text
+PrimeBlockerSqrtSieveSurvivorPhaseSavingOrTraceEmbedding
+AND MovingPrimorialMobiusExpansionCompression
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+prime_blocker_dynamic_sqrt_sieve_identity_closed=true
+prime_blocker_phase_packet_pushforward_closed=true
+no_rough_composite_sqrt_rejection_after_30_closed=true
+moving_primorial_mobius_compression_closed=false
+prime_blocker_survivor_phase_saving_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
