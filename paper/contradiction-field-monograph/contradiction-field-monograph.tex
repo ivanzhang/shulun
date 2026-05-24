@@ -36252,6 +36252,105 @@ gap2-gap4-exact-route-class-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) top-two sign-cycle carriers}
+
+\begin{theorem}[Top-two exact-route sign-cycle ledger]
+In the audit range \(P\le 1009\), restrict the previous gap \(2\)/gap \(4\)
+exact-route ledger to its two largest cells:
+\[
+\text{gap4 two-sided right-tail},\qquad \text{gap2 upper wing}.
+\]
+Then their \(48\) templates and edge mass \(470\) satisfy
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{top\_two\_exact\_route\_sign\_cycle\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{top\_two\_exact\_route\_template\_count} & 48\\
+\texttt{top\_two\_exact\_route\_edge\_mass} & 470\\
+\texttt{gap4\_right\_tail\_two\_sided\_edge\_mass} & 258\\
+\texttt{gap2\_upper\_wing\_edge\_mass} & 212\\
+\texttt{occurrence\_count\_gt2\_edge\_mass} & 0\\
+\texttt{all\_positive\_edge\_mass} & 0\\
+\texttt{cycle\_length\_min} & 2\\
+\texttt{cycle\_length\_max} & 8\\
+\texttt{sign\_switch\_count\_max} & 6 .
+\end{array}
+\]
+Moreover cycle lengths \(4,5,6\) carry mass
+\[
+362,\qquad \frac{362}{470}=0.7702127659574468\ldots ,
+\]
+sign-switch count at most \(3\) carries mass
+\[
+332,\qquad \frac{332}{470}=0.7063829787234043\ldots ,
+\]
+and their intersection carries mass \(270\).
+\end{theorem}
+\begin{proof}
+The audit imports the exact-route ledger and filters the two exact route keys
+\[
+(\text{gap4 cousin},\text{two-sided right-tail}),\qquad
+(\text{gap2 twin},\text{upper wing}).
+\]
+For each selected template it extracts the signed child word, counts adjacent
+sign switches, records the cycle length, and checks the occurrence multiplicity.
+All \(48\) selected templates have occurrence count \(2\), all are
+mixed-positive-negative, and none are all-positive.  The route masses are
+\[
+258,\qquad 212,
+\]
+which sum to \(470\), the top-two mass imported from the exact-route ledger.
+The cycle and sign-switch subtables then give the stated masses.
+\end{proof}
+
+\begin{remark}[Top-two sign-cycle collision gates]
+The two largest exact-route gates are now refined to
+\begin{quote}\scriptsize\ttfamily
+Gap4RightTailTwoSidedCousinSignCycleCollisionBound\\
+AND Gap2UpperWingTwinSignCycleCollisionBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND Gap4RightTailTwoSidedCousinSignCycleCollisionBound\\
+AND Gap2UpperWingTwinSignCycleCollisionBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is a finite sign-cycle ledger, not a global cancellation theorem.  Current
+trace/Kloosterman, prime-gap, and short-interval prime inputs still do not
+estimate a fixed endpoint packet sign-cycle equality.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-sign-cycle-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -25879,3 +25879,48 @@ duplicate_raw_base_edge_mass=48
 本层删除的是“route-superclass carrier 是最后分类”的含混说法；没有删除 exact-route
 signed equality、PDEC/SAE 回流、single-P slice summation 或 prime-q reciprocal
 phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two sign-cycle formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_sign_cycle_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层两个最大 exact-route 门
+
+```text
+Gap4RightTailTwoSidedCousinCollisionBound
+AND Gap2UpperWingTwinCollisionBound
+```
+
+现在被拆成 sign-cycle 版本：
+
+```text
+Gap4RightTailTwoSidedCousinSignCycleCollisionBound
+AND Gap2UpperWingTwinSignCycleCollisionBound
+```
+
+关键审计读数为：
+
+```text
+top_two_exact_route_sign_cycle_ledger_closed=true
+top_two_exact_route_template_count=48
+top_two_exact_route_edge_mass=470
+all_top_two_templates_pairwise_occurrence=true
+occurrence_count_gt2_edge_mass=0
+all_top_two_templates_mixed_positive_negative=true
+all_positive_edge_mass=0
+cycle_length_max=8
+sign_switch_count_max=6
+cycle_4_5_6_edge_mass=362
+sign_switch_le3_edge_mass=332
+```
+
+本层删除的是“最大 exact routes 仍可隐藏高重数或全正同号 carrier”的含混说法；
+没有删除 sign-cycle signed equality、PDEC/SAE 回流、single-P slice summation 或
+prime-q reciprocal phase saving 缺口。

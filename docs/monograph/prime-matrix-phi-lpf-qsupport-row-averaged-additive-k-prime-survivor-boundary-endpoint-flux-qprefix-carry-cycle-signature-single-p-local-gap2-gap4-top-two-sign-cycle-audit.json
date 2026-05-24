@@ -1,0 +1,1640 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_sign_cycle_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "Gap2Gap4ExactRouteClassLedgerImported",
+      "meaning": "The exact route-class ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "TopTwoExactRouteSignCycleLedger",
+      "meaning": "The two largest exact routes are split by sign/cycle signatures.",
+      "proved": true,
+      "remaining": "none for the finite top-two sign-cycle ledger"
+    },
+    {
+      "closed": false,
+      "gate": "Gap4RightTailTwoSidedSignCycleCollisionBound",
+      "meaning": "Control sign-cycle packets inside the largest exact route.",
+      "proved": false,
+      "remaining": "finite audit shows 258 edge mass but no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "Gap2UpperWingSignCycleCollisionBound",
+      "meaning": "Control sign-cycle packets inside the second largest exact route.",
+      "proved": false,
+      "remaining": "finite audit shows 212 edge mass but no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "ResidualExactRouteCollisionBounds",
+      "meaning": "Control lower wing, left collar, and other exact-route residuals.",
+      "proved": false,
+      "remaining": "carried forward from the exact-route ledger"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "all top-two templates are pairwise mixed-sign occurrences with cycle length at most 8",
+    "input": "the two largest gap2/gap4 exact route classes",
+    "operation": "split them by pairwise occurrence, sign word, sign-switch count, and cycle length",
+    "remaining": "prove sign-cycle collision bounds or route each packet to PDEC/SAE"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_theorems": "do not see the signed word or cycle-length carrier",
+    "short_interval_prime_inputs": "do not estimate fixed endpoint-packet sign-cycle equality",
+    "trace_or_kloosterman_inputs": "still need completion from local sign-cycle words to a usable bilinear family"
+  },
+  "finite_audit": {
+    "all_positive_edge_mass": 0,
+    "all_top_two_templates_mixed_positive_negative": true,
+    "all_top_two_templates_pairwise_occurrence": true,
+    "cycle_4_5_6_and_switch_le3_edge_mass": 270,
+    "cycle_4_5_6_and_switch_le3_edge_ratio": 0.574468085106383,
+    "cycle_4_5_6_edge_mass": 362,
+    "cycle_4_5_6_edge_ratio": 0.7702127659574468,
+    "cycle_length_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 170,
+        "edge_ratio": 0.3617021276595745
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 96,
+        "edge_ratio": 0.20425531914893616
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 96,
+        "edge_ratio": 0.20425531914893616
+      },
+      {
+        "cycle_length": 7,
+        "edge_mass": 42,
+        "edge_ratio": 0.08936170212765958
+      },
+      {
+        "cycle_length": 8,
+        "edge_mass": 32,
+        "edge_ratio": 0.06808510638297872
+      },
+      {
+        "cycle_length": 3,
+        "edge_mass": 30,
+        "edge_ratio": 0.06382978723404255
+      },
+      {
+        "cycle_length": 2,
+        "edge_mass": 4,
+        "edge_ratio": 0.00851063829787234
+      }
+    ],
+    "cycle_length_max": 8,
+    "cycle_length_min": 2,
+    "cycle_length_template_rows": [
+      {
+        "cycle_length": 5,
+        "template_count": 17,
+        "template_ratio": 0.3541666666666667
+      },
+      {
+        "cycle_length": 4,
+        "template_count": 12,
+        "template_ratio": 0.25
+      },
+      {
+        "cycle_length": 6,
+        "template_count": 8,
+        "template_ratio": 0.16666666666666666
+      },
+      {
+        "cycle_length": 3,
+        "template_count": 5,
+        "template_ratio": 0.10416666666666667
+      },
+      {
+        "cycle_length": 7,
+        "template_count": 3,
+        "template_ratio": 0.0625
+      },
+      {
+        "cycle_length": 8,
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "cycle_length": 2,
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      }
+    ],
+    "cycle_switch_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 90,
+        "edge_ratio": 0.19148936170212766,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 36,
+        "edge_ratio": 0.07659574468085106,
+        "sign_switch_count": 4
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 36,
+        "edge_ratio": 0.07659574468085106,
+        "sign_switch_count": 5
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 32,
+        "edge_ratio": 0.06808510638297872,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 7,
+        "edge_mass": 28,
+        "edge_ratio": 0.059574468085106386,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.0425531914893617,
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.0425531914893617,
+        "sign_switch_count": 4
+      },
+      {
+        "cycle_length": 3,
+        "edge_mass": 18,
+        "edge_ratio": 0.03829787234042553,
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_switch_count": 5
+      },
+      {
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_switch_count": 6
+      },
+      {
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "sign_switch_count": 5
+      },
+      {
+        "cycle_length": 3,
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 2,
+        "edge_mass": 4,
+        "edge_ratio": 0.00851063829787234,
+        "sign_switch_count": 1
+      }
+    ],
+    "gap2_upper_wing_edge_mass": 212,
+    "gap2_upper_wing_sign_cycle_bound_proved": false,
+    "gap4_right_tail_two_sided_edge_mass": 258,
+    "gap4_right_tail_two_sided_sign_cycle_bound_proved": false,
+    "m_shell_edge_rows": [
+      {
+        "edge_mass": 124,
+        "edge_ratio": 0.26382978723404255,
+        "m_shell_prime_count": 6
+      },
+      {
+        "edge_mass": 82,
+        "edge_ratio": 0.17446808510638298,
+        "m_shell_prime_count": 4
+      },
+      {
+        "edge_mass": 78,
+        "edge_ratio": 0.16595744680851063,
+        "m_shell_prime_count": 5
+      },
+      {
+        "edge_mass": 60,
+        "edge_ratio": 0.1276595744680851,
+        "m_shell_prime_count": 3
+      },
+      {
+        "edge_mass": 44,
+        "edge_ratio": 0.09361702127659574,
+        "m_shell_prime_count": 9
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.05531914893617021,
+        "m_shell_prime_count": 8
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.0425531914893617,
+        "m_shell_prime_count": 7
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "m_shell_prime_count": 2
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "m_shell_prime_count": 10
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "m_shell_prime_count": 11
+      }
+    ],
+    "max_prime": 1009,
+    "mixed_positive_negative_edge_mass": 470,
+    "occurrence_count_gt2_edge_mass": 0,
+    "occurrence_count_two_edge_mass": 470,
+    "previous_gap2_gap4_exact_route_class_ledger_closed": true,
+    "q_prefix_edge_rows": [
+      {
+        "edge_mass": 56,
+        "edge_ratio": 0.11914893617021277,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 48,
+        "edge_ratio": 0.10212765957446808,
+        "q_prefix_count": 28
+      },
+      {
+        "edge_mass": 42,
+        "edge_ratio": 0.08936170212765958,
+        "q_prefix_count": 16
+      },
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "q_prefix_count": 9
+      },
+      {
+        "edge_mass": 28,
+        "edge_ratio": 0.059574468085106386,
+        "q_prefix_count": 12
+      },
+      {
+        "edge_mass": 28,
+        "edge_ratio": 0.059574468085106386,
+        "q_prefix_count": 7
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.05531914893617021,
+        "q_prefix_count": 13
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.05531914893617021,
+        "q_prefix_count": 27
+      },
+      {
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "q_prefix_count": 5
+      },
+      {
+        "edge_mass": 22,
+        "edge_ratio": 0.04680851063829787,
+        "q_prefix_count": 26
+      },
+      {
+        "edge_mass": 18,
+        "edge_ratio": 0.03829787234042553,
+        "q_prefix_count": 18
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "q_prefix_count": 17
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "q_prefix_count": 24
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "q_prefix_count": 23
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "q_prefix_count": 25
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "q_prefix_count": 15
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "q_prefix_count": 19
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "q_prefix_count": 20
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "q_prefix_count": 29
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.01702127659574468,
+        "q_prefix_count": 8
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.01276595744680851,
+        "q_prefix_count": 32
+      }
+    ],
+    "route_class_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 258,
+        "edge_ratio": 0.548936170212766,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "template_count": 25
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 212,
+        "edge_ratio": 0.451063829787234,
+        "route_class": "pure_upper_wing_single_shell",
+        "template_count": 23
+      }
+    ],
+    "route_cycle_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 100,
+        "edge_ratio": 0.2127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 70,
+        "edge_ratio": 0.14893617021276595,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 56,
+        "edge_ratio": 0.11914893617021277,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 48,
+        "edge_ratio": 0.10212765957446808,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 48,
+        "edge_ratio": 0.10212765957446808,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 32,
+        "edge_ratio": 0.06808510638297872,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 28,
+        "edge_ratio": 0.059574468085106386,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 3,
+        "edge_mass": 6,
+        "edge_ratio": 0.01276595744680851,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 2,
+        "edge_mass": 4,
+        "edge_ratio": 0.00851063829787234,
+        "route_class": "pure_right_tail_two_sided_collar"
+      }
+    ],
+    "route_sign_cycle_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 30,
+        "edge_ratio": 0.06382978723404255,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "--+-+|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+--+|cycle=4"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-+-++-+-|cycle=8"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-+-+|cycle=4"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "--+-++-+|cycle=8"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "-+++-++|cycle=7"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "++-+-+-|cycle=7"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-++-+++|cycle=7"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+-+++-|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+-+-+-|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "-+-+++|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "-+-++-|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+-+-+-|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+-+--+|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+--+-+|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-+-+-+|cycle=6"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+++-+|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+++--|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+---+|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "+----|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "-+-++|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "-+-+-|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_cycle_signature": "--+-+|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "++++-|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+-++-|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+-+--|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "+--+-|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-++-+|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "-+-+-|cycle=5"
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_cycle_signature": "---++|cycle=5"
+      }
+    ],
+    "route_switch_edge_rows": [
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 108,
+        "edge_ratio": 0.2297872340425532,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 3
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 72,
+        "edge_ratio": 0.15319148936170213,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 2
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 66,
+        "edge_ratio": 0.14042553191489363,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 54,
+        "edge_ratio": 0.1148936170212766,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 5
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 46,
+        "edge_ratio": 0.09787234042553192,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 1
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 1
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 34,
+        "edge_ratio": 0.07234042553191489,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 4
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 22,
+        "edge_ratio": 0.04680851063829787,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 4
+      },
+      {
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 6
+      },
+      {
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 5
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "sign_balance_edge_rows": [
+      {
+        "edge_mass": 100,
+        "edge_ratio": 0.2127659574468085,
+        "sign_balance": "plus=2,minus=3"
+      },
+      {
+        "edge_mass": 72,
+        "edge_ratio": 0.15319148936170213,
+        "sign_balance": "plus=3,minus=3"
+      },
+      {
+        "edge_mass": 56,
+        "edge_ratio": 0.11914893617021277,
+        "sign_balance": "plus=2,minus=2"
+      },
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "sign_balance": "plus=3,minus=2"
+      },
+      {
+        "edge_mass": 32,
+        "edge_ratio": 0.06808510638297872,
+        "sign_balance": "plus=3,minus=1"
+      },
+      {
+        "edge_mass": 32,
+        "edge_ratio": 0.06808510638297872,
+        "sign_balance": "plus=4,minus=4"
+      },
+      {
+        "edge_mass": 28,
+        "edge_ratio": 0.059574468085106386,
+        "sign_balance": "plus=5,minus=2"
+      },
+      {
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "sign_balance": "plus=4,minus=2"
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.0425531914893617,
+        "sign_balance": "plus=4,minus=1"
+      },
+      {
+        "edge_mass": 18,
+        "edge_ratio": 0.03829787234042553,
+        "sign_balance": "plus=1,minus=2"
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "sign_balance": "plus=4,minus=3"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_balance": "plus=2,minus=1"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_balance": "plus=1,minus=4"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.01702127659574468,
+        "sign_balance": "plus=1,minus=3"
+      },
+      {
+        "edge_mass": 4,
+        "edge_ratio": 0.00851063829787234,
+        "sign_balance": "plus=1,minus=1"
+      }
+    ],
+    "sign_switch_count_max": 6,
+    "sign_switch_edge_rows": [
+      {
+        "edge_mass": 174,
+        "edge_ratio": 0.3702127659574468,
+        "sign_switch_count": 3
+      },
+      {
+        "edge_mass": 86,
+        "edge_ratio": 0.1829787234042553,
+        "sign_switch_count": 1
+      },
+      {
+        "edge_mass": 72,
+        "edge_ratio": 0.15319148936170213,
+        "sign_switch_count": 2
+      },
+      {
+        "edge_mass": 66,
+        "edge_ratio": 0.14042553191489363,
+        "sign_switch_count": 5
+      },
+      {
+        "edge_mass": 56,
+        "edge_ratio": 0.11914893617021277,
+        "sign_switch_count": 4
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_switch_count": 6
+      }
+    ],
+    "sign_switch_le3_edge_mass": 332,
+    "sign_switch_le3_edge_ratio": 0.7063829787234043,
+    "sign_switch_template_rows": [
+      {
+        "sign_switch_count": 3,
+        "template_count": 17,
+        "template_ratio": 0.3541666666666667
+      },
+      {
+        "sign_switch_count": 1,
+        "template_count": 11,
+        "template_ratio": 0.22916666666666666
+      },
+      {
+        "sign_switch_count": 2,
+        "template_count": 9,
+        "template_ratio": 0.1875
+      },
+      {
+        "sign_switch_count": 4,
+        "template_count": 5,
+        "template_ratio": 0.10416666666666667
+      },
+      {
+        "sign_switch_count": 5,
+        "template_count": 5,
+        "template_ratio": 0.10416666666666667
+      },
+      {
+        "sign_switch_count": 6,
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      }
+    ],
+    "sign_word_edge_rows": [
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.0851063829787234,
+        "sign_word": "--+-+"
+      },
+      {
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "sign_word": "+-+-+-"
+      },
+      {
+        "edge_mass": 24,
+        "edge_ratio": 0.05106382978723404,
+        "sign_word": "+--+"
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.0425531914893617,
+        "sign_word": "-+-+-"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_word": "+-+-"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_word": "-+-+"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_word": "-+-++-+-"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.03404255319148936,
+        "sign_word": "--+-++-+"
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "sign_word": "++-+-+-"
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "sign_word": "-+++-++"
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.029787234042553193,
+        "sign_word": "-++-+++"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "+-+++-"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "+-+--+"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "+--"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "+--+-+"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "-+-+++"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "-+-++-"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.02553191489361702,
+        "sign_word": "-+-+-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "++++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+++-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+++--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+-++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+-+--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+--+-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+---+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "+----"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "-++-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "-+-++"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.02127659574468085,
+        "sign_word": "---++"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.01702127659574468,
+        "sign_word": "+++-"
+      }
+    ],
+    "sign_word_template_rows": [
+      {
+        "sign_word": "--+-+",
+        "template_count": 4,
+        "template_ratio": 0.08333333333333333
+      },
+      {
+        "sign_word": "+--+",
+        "template_count": 3,
+        "template_ratio": 0.0625
+      },
+      {
+        "sign_word": "+-+-",
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "sign_word": "+-+-+-",
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "sign_word": "+--",
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "sign_word": "-+-+",
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "sign_word": "-+-+-",
+        "template_count": 2,
+        "template_ratio": 0.041666666666666664
+      },
+      {
+        "sign_word": "++++-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+++-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+++-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+++--",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "++-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "++-+-+-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-++",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-+++-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-++-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-+--",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+-+--+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+--+-",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+--+-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+---",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+---+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "+----",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-++",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-+++",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-+++-++",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-++-+",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      },
+      {
+        "sign_word": "-++-+++",
+        "template_count": 1,
+        "template_ratio": 0.020833333333333332
+      }
+    ],
+    "top_two_exact_route_edge_mass": 470,
+    "top_two_exact_route_sign_cycle_ledger_closed": true,
+    "top_two_exact_route_template_count": 48,
+    "top_two_route_template_rows": [
+      {
+        "P": 971,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "m_pair": "[907, 911]",
+        "m_shell_prime_count": 5,
+        "packet_index": 4742,
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 6,
+        "sign_word": "-+-++-+-"
+      },
+      {
+        "P": 809,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 6,
+        "packet_index": 3316,
+        "q_prefix_count": 24,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 5,
+        "sign_word": "--+-++-+"
+      },
+      {
+        "P": 613,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_pair": "[1049, 1051]",
+        "m_shell_prime_count": 2,
+        "packet_index": 1948,
+        "q_prefix_count": 9,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3,
+        "sign_word": "-+++-++"
+      },
+      {
+        "P": 977,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_pair": "[877, 881]",
+        "m_shell_prime_count": 8,
+        "packet_index": 4807,
+        "q_prefix_count": 23,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 5,
+        "sign_word": "++-+-+-"
+      },
+      {
+        "P": 919,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_pair": "[883, 887]",
+        "m_shell_prime_count": 6,
+        "packet_index": 4307,
+        "q_prefix_count": 27,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 3,
+        "sign_word": "-++-+++"
+      },
+      {
+        "P": 1009,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1481, 1483]",
+        "m_shell_prime_count": 6,
+        "packet_index": 5099,
+        "q_prefix_count": 27,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3,
+        "sign_word": "+-+++-"
+      },
+      {
+        "P": 883,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1487, 1489]",
+        "m_shell_prime_count": 8,
+        "packet_index": 4082,
+        "q_prefix_count": 12,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 5,
+        "sign_word": "+-+-+-"
+      },
+      {
+        "P": 823,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1289, 1291]",
+        "m_shell_prime_count": 9,
+        "packet_index": 3502,
+        "q_prefix_count": 17,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3,
+        "sign_word": "-+-+++"
+      },
+      {
+        "P": 821,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1319, 1321]",
+        "m_shell_prime_count": 3,
+        "packet_index": 3443,
+        "q_prefix_count": 16,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 4,
+        "sign_word": "-+-++-"
+      },
+      {
+        "P": 947,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[877, 881]",
+        "m_shell_prime_count": 10,
+        "packet_index": 4550,
+        "q_prefix_count": 26,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 5,
+        "sign_word": "+-+-+-"
+      },
+      {
+        "P": 769,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[823, 827]",
+        "m_shell_prime_count": 5,
+        "packet_index": 3101,
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 4,
+        "sign_word": "+-+--+"
+      },
+      {
+        "P": 823,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[937, 941]",
+        "m_shell_prime_count": 4,
+        "packet_index": 3478,
+        "q_prefix_count": 16,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 4,
+        "sign_word": "+--+-+"
+      },
+      {
+        "P": 733,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[673, 677]",
+        "m_shell_prime_count": 3,
+        "packet_index": 2788,
+        "q_prefix_count": 25,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 5,
+        "sign_word": "-+-+-+"
+      },
+      {
+        "P": 883,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1427, 1429]",
+        "m_shell_prime_count": 5,
+        "packet_index": 4084,
+        "q_prefix_count": 15,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 2,
+        "sign_word": "+++-+"
+      },
+      {
+        "P": 613,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[881, 883]",
+        "m_shell_prime_count": 4,
+        "packet_index": 1957,
+        "q_prefix_count": 20,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 1,
+        "sign_word": "+++--"
+      },
+      {
+        "P": 907,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1619, 1621]",
+        "m_shell_prime_count": 6,
+        "packet_index": 4196,
+        "q_prefix_count": 9,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 2,
+        "sign_word": "+---+"
+      },
+      {
+        "P": 887,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1451, 1453]",
+        "m_shell_prime_count": 11,
+        "packet_index": 4138,
+        "q_prefix_count": 13,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 1,
+        "sign_word": "+----"
+      },
+      {
+        "P": 919,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1427, 1429]",
+        "m_shell_prime_count": 9,
+        "packet_index": 4324,
+        "q_prefix_count": 18,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3,
+        "sign_word": "-+-++"
+      },
+      {
+        "P": 617,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1031, 1033]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1994,
+        "q_prefix_count": 10,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 4,
+        "sign_word": "-+-+-"
+      },
+      {
+        "P": 617,
+        "adjacent_pair_gap_class": "gap2_twin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1019, 1021]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1994,
+        "q_prefix_count": 10,
+        "route_class": "pure_upper_wing_single_shell",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 613,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[757, 761]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1929,
+        "q_prefix_count": 7,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 1,
+        "sign_word": "++++-"
+      },
+      {
+        "P": 619,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 5,
+        "packet_index": 2017,
+        "q_prefix_count": 10,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 3,
+        "sign_word": "+-++-"
+      },
+      {
+        "P": 773,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[823, 827]",
+        "m_shell_prime_count": 6,
+        "packet_index": 3157,
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 3,
+        "sign_word": "+-+--"
+      },
+      {
+        "P": 823,
+        "adjacent_pair_gap_class": "gap4_cousin_adjacent_pair_collision",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[859, 863]",
+        "m_shell_prime_count": 5,
+        "packet_index": 3485,
+        "q_prefix_count": 26,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "sign_switch_count": 3,
+        "sign_word": "+--+-"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "gap2_lower_wing_twin_collision_bound_proved": false,
+  "gap2_right_tail_twin_residual_bound_proved": false,
+  "gap2_upper_wing_sign_cycle_bound_proved": false,
+  "gap4_right_tail_left_collar_cousin_collision_bound_proved": false,
+  "gap4_right_tail_two_sided_sign_cycle_bound_proved": false,
+  "gap4_wing_cousin_residual_bound_proved": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "LocalCycleLengthUniformBound",
+    "AND Gap4RightTailTwoSidedCousinSignCycleCollisionBound",
+    "AND Gap2UpperWingTwinSignCycleCollisionBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the two largest exact routes carry 470 of 612 gap2/gap4 edge mass",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "ced75ad219c5808aa0d7b991d1f80a438739d63116ec9cdf667e4588a6331c2b",
+    "docs/monograph/external-theorem-index.md": "0fd7645891eb115a0de073fe20a994e29363b6876a93b3f8dd9e8c6e33dca3df",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "0391c1eef634913da1f5121427ab0ca13abc24d9548292757f16fdf3712a1d78",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-exact-route-class-audit.json": "420e0d26bc09b69062c5c5fd1d5dcce600b7f14d38c3c01c474d6b605c4f577d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.json": "92d126aae0919ef6adf9411054ba17afee0965382f12ef5332cdbc2c073a9ffd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "ce5a02e3ae5741d95f7f423387621fde7193394d4ed0108529f166dcc898c430",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "66e73e0216c21c410102e5e184804371b5ed63561626779acf3afb969e73444e",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_sign_cycle_audit.py": "fa81838f7ae784f695e572937c0b493501c5a0607e8d9fe80cc458d5252d6da3",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "f428c0df1323987e8951fa14fa94b5fc6c9a8547667e9651b8a343c27af41e41"
+  },
+  "status": "top_two_exact_route_sign_cycle_ledger_closed_collision_bounds_open",
+  "top_two_exact_route_sign_cycle_ledger_closed": true
+}

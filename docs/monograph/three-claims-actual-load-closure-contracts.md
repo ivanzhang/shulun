@@ -22466,6 +22466,56 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite exact-route 账本；两个最大 exact routes 和 residual exact routes
 的 signed collision bound 仍未闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two sign-cycle actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_sign_cycle_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.json
+```
+
+actual-load 含义继续收缩：两个最大 exact routes 已压成 pairwise mixed-sign
+sign-cycle packets。
+
+```text
+top_two_exact_route_sign_cycle_ledger_closed=true
+top_two_exact_route_edge_mass=470
+gap4_right_tail_two_sided_edge_mass=258
+gap2_upper_wing_edge_mass=212
+occurrence_count_gt2_edge_mass=0
+all_positive_edge_mass=0
+cycle_4_5_6_edge_mass=362
+sign_switch_le3_edge_mass=332
+cycle_4_5_6_and_switch_le3_edge_mass=270
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+Gap4RightTailTwoSidedCousinSignCycleCollisionBound
+Gap2UpperWingTwinSignCycleCollisionBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite top-two sign-cycle 账本；两个 sign-cycle collision bound 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：

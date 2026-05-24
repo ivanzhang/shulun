@@ -2404,6 +2404,54 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65U. Phi-LPF q-prefix single-P local gap2/gap4 top-two sign-cycle 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_sign_cycle_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.md
+```
+
+上一层显示两个最大 exact routes 是 `gap4 right-tail two-sided` 与 `gap2 upper wing`。
+本层只处理这两口：
+
+```text
+top_two_exact_route_sign_cycle_ledger_closed=true
+top_two_exact_route_template_count=48
+top_two_exact_route_edge_mass=470
+gap4_right_tail_two_sided_edge_mass=258
+gap2_upper_wing_edge_mass=212
+all_top_two_templates_pairwise_occurrence=true
+occurrence_count_gt2_edge_mass=0
+all_top_two_templates_mixed_positive_negative=true
+all_positive_edge_mass=0
+cycle_length_min=2
+cycle_length_max=8
+sign_switch_count_max=6
+cycle_4_5_6_edge_mass=362
+sign_switch_le3_edge_mass=332
+cycle_4_5_6_and_switch_le3_edge_mass=270
+```
+
+外部 theorem 边界继续保持：trace/Kloosterman 输入需要先把这些局部 sign-cycle words
+完成到可估计双线性族；prime-gap 与 short-interval prime theorem 不识别 signed word
+或 fixed packet cycle carrier。
+
+状态边界：
+
+```text
+top_two_exact_route_sign_cycle_ledger_closed=true
+gap4_right_tail_two_sided_sign_cycle_bound_proved=false
+gap2_upper_wing_sign_cycle_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：
