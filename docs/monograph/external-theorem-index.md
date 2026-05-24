@@ -6043,6 +6043,78 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65E. Phi-LPF q-prefix carry switch graph 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md
+```
+
+上一层把每条转移写成 finite carry letters：
+
+```text
+L=(q_next-q,k_next-k),
+L_plus=(q_next-q,k_next-k,sign(A_next-A)).
+```
+
+本层继续把连续两条转移之间的切换写成 directed switch graph：
+
+```text
+L_i -> L_{i+1},
+L_i^+ -> L_{i+1}^+.
+```
+
+有限审计读数：
+
+```text
+carry_switch_atom_count_total=15439
+multiq_atom_count=14277
+singleton_q_atom_count=1162
+successor_transition_count_total=162076
+adjacent_letter_pair_count_inside_atoms=147799
+raw_switch_pair_count_total=147799
+signed_switch_pair_count_total=147799
+switch_graph_decomposition_closed=true
+raw_graph_nodes/edges/density=117/1161/0.08481262327416174
+signed_graph_nodes/edges/density=256/4017/0.0612945556640625
+raw_outdegree_min/median/max=0/8/54
+signed_outdegree_min/median/max=0/10/100
+raw_largest_weak/scc=117/115
+signed_largest_weak/scc=255/250
+raw_changed_letter_pair_count/ratio=142197/0.962097172511316
+changed_gap_pair_count/ratio=136761/0.9253174919992693
+changed_carry_pair_count/ratio=140789/0.9525707210468272
+changed_A_step_sign_pair_count/ratio=91187/0.6169662852928639
+```
+
+这一步把 `PrimeGapCarrySwitchingLaw` 的对象从自由词压成有限有向图。它同时给出
+负面边界：raw 图最大出度 `54`、signed 图最大出度 `100`，且主要节点落入大强连通块，
+因此当前对象不是低分支确定性自动机，也不能直接化为常步长旋转。
+
+外部定理匹配边界继续保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 都仍要求先把
+high-branch switch paths 完成到 admissible trace/Kloosterman family。Li 的 `x^0.52`
+短区间素数存在仍不估计 switch-graph reciprocal phases。
+
+状态边界：
+
+```text
+finite_switch_graph_closed=true
+deterministic_switching_law_closed=false
+low_branch_switch_graph_available=false
+finite_switch_graph_phase_saving_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_switch_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

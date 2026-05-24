@@ -1887,6 +1887,70 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AF：Phi-LPF q-prefix carry switch graph 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md
+```
+
+本层接在 finite carry-letter/run 后，把连续两条转移之间的切换写成：
+
+```text
+L_i=(g_i,c_i) -> L_{i+1}=(g_{i+1},c_{i+1})
+L_i^+ -> L_{i+1}^+
+```
+
+有限审计确认：
+
+```text
+adjacent_letter_pair_count_inside_atoms=147799
+raw_switch_pair_count_total=147799
+signed_switch_pair_count_total=147799
+switch_graph_decomposition_closed=true
+raw_graph_nodes/edges/density=117/1161/0.08481262327416174
+signed_graph_nodes/edges/density=256/4017/0.0612945556640625
+raw_outdegree_min/median/max=0/8/54
+signed_outdegree_min/median/max=0/10/100
+raw_largest_weak/scc=117/115
+signed_largest_weak/scc=255/250
+raw_changed_letter_pair_count/ratio=142197/0.962097172511316
+changed_gap_pair_count/ratio=136761/0.9253174919992693
+changed_carry_pair_count/ratio=140789/0.9525707210468272
+changed_A_step_sign_pair_count/ratio=91187/0.6169662852928639
+```
+
+这是真推进：切换对象已从自由词压成有限有向图，并给出强连通/出度结构。但它也说明
+“低分支确定性切换律”没有出现，最新最窄口变为：
+
+```text
+FiniteSwitchGraphPathExponentialSumSaving
+AND TraceKloostermanCompletionOfHighBranchCarrySwitchGraph
+AND NoLossAggregationAcross15439QPrefixSwitchAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+finite_switch_graph_closed=true
+deterministic_switching_law_closed=false
+low_branch_switch_graph_available=false
+finite_switch_graph_phase_saving_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_switch_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

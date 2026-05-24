@@ -35023,6 +35023,73 @@ boundary-endpoint-flux-qprefix-carry-letter-run-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Directed switch graph of q-prefix carry letters}
+
+\begin{theorem}[Finite carry-letter switch graph]
+In the same audit range \(P\le 1009\), consider consecutive carry letters
+inside each fixed-\(m\) q-prefix carry atom:
+\[
+  L_i=(g_i,c_i),\qquad L_{i+1}=(g_{i+1},c_{i+1}),
+\]
+and similarly the signed letters \(L_i^+\).  The switch-graph audit encodes
+all consecutive pairs as directed edges \(L_i\to L_{i+1}\) and
+\(L_i^+\to L_{i+1}^+\).  It verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{adjacent\_letter\_pair\_count\_inside\_atoms} & 147799\\
+\texttt{raw\_switch\_pair\_count\_total} & 147799\\
+\texttt{signed\_switch\_pair\_count\_total} & 147799\\
+\texttt{switch\_graph\_decomposition\_closed} & \texttt{true}\\
+\texttt{raw\_graph\_nodes/edges} & 117/1161\\
+\texttt{signed\_graph\_nodes/edges} & 256/4017\\
+\texttt{raw\_outdegree\_min/median/max} & 0/8/54\\
+\texttt{signed\_outdegree\_min/median/max} & 0/10/100 .
+\end{array}
+\]
+The largest weak and strong components have sizes \(117/115\) in the raw
+graph and \(255/250\) in the signed graph.
+\end{theorem}
+\begin{proof}
+The finite carry-letter ledger supplies the ordered word of raw and signed
+letters in each atom.  The audit forms every adjacent pair in those words,
+counts it as a directed switch edge, and checks that the total number of
+switch pairs equals
+\[
+  162076-14277=147799,
+\]
+namely the number of adjacent pairs among the \(162076\) transitions after
+one initial transition is removed from each of the \(14277\) multi-\(q\)
+atoms.  The graph statistics are then computed from the observed directed
+edge set.
+\end{proof}
+
+\begin{remark}[High branching remains the analytic obstruction]
+The switch graph is finite, but it is not a low-branch deterministic
+automaton.  The audit finds raw and signed maximum outdegrees \(54\) and
+\(100\), together with changed-letter and changed-sign ratios
+\[
+  0.962097172511316,\qquad 0.6169662852928639.
+\]
+Thus the latest remaining mouth is
+\begin{quote}\scriptsize\ttfamily
+FiniteSwitchGraphPathExponentialSumSaving\\
+AND TraceKloostermanCompletionOfHighBranchCarrySwitchGraph\\
+AND NoLossAggregationAcross15439QPrefixSwitchAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the finite switch-graph ledger.  It does not prove a
+deterministic switching law, switch-graph phase saving, the external-lemma
+version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

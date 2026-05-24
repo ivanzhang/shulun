@@ -1,0 +1,1689 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "CarryLetterRunLedgerImported",
+      "meaning": "The previous finite carry-letter and run decomposition is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteCarrySwitchGraphLedger",
+      "meaning": "All adjacent letter pairs are encoded as raw and signed directed switch edges.",
+      "proved": true,
+      "remaining": "none for current finite switch graph ledger"
+    },
+    {
+      "closed": false,
+      "gate": "LowBranchOrDeterministicSwitchingLaw",
+      "meaning": "The observed graph has large branching: raw max outdegree 54 and signed max outdegree 100.",
+      "proved": false,
+      "remaining": "a new analytic law is required; the graph is not deterministic"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteSwitchGraphPhaseSaving",
+      "meaning": "Prove cancellation for paths in the finite switch graph along prime q.",
+      "proved": false,
+      "remaining": "new exponential-sum input or trace/Kloosterman completion required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixSwitchAtomAggregation",
+      "meaning": "Aggregate any switch-graph saving across all fixed-m atoms without losing the boundary gain.",
+      "proved": false,
+      "remaining": "requires analytic aggregation discipline"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "connected high-branch finite switch graph rather than deterministic low-branch law",
+    "input": "117 raw letters, 256 signed letters, and 147799 adjacent letter pairs",
+    "raw_switch": "L_i=(g_i,c_i) -> L_{i+1}=(g_{i+1},c_{i+1})",
+    "remaining": "switch-graph exponential-sum saving or completion to a trace/Kloosterman family",
+    "signed_switch": "L_i^+ -> L_{i+1}^+ with A-step signs"
+  },
+  "deterministic_switching_law_closed": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "the switch graph is not yet a trace-function family over a complete summation box",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "high-branch switch graph data does not by itself create Kloosterman inverse variables",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "switch graph paths remain one-dimensional prime-q words rather than balanced Type-II rectangles",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman input remains candidate only after switch paths are completed into admissible fractions",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "prime existence in short intervals does not estimate carry-letter switch graph phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "switch edges are not yet trace functions over complete boxes",
+    "Li_short_interval_x_052": "prime existence in intervals does not estimate switch-graph reciprocal phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "branching switch graph does not by itself expose inverse Kloosterman variables",
+    "Pascadi_composite_Type_II": "switch paths remain one-dimensional and do not form balanced composite Type-II packets",
+    "Wright_unbalanced_Kloosterman": "could apply only after switch paths are converted to admissible unbalanced fractions"
+  },
+  "finite_audit": {
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "carry_switch_atom_count_total": 15439,
+    "changed_A_step_sign_pair_count": 91187,
+    "changed_A_step_sign_ratio": 0.6169662852928639,
+    "changed_carry_pair_count": 140789,
+    "changed_carry_ratio": 0.9525707210468272,
+    "changed_gap_pair_count": 136761,
+    "changed_gap_ratio": 0.9253174919992693,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "deterministic_switching_law_closed": false,
+    "expected_adjacent_letter_pair_count_inside_atoms": 147799,
+    "finite_switch_graph_closed": true,
+    "finite_switch_graph_phase_saving_closed": false,
+    "low_branch_switch_graph_available": false,
+    "max_prime": 1009,
+    "multiq_atom_count": 14277,
+    "no_loss_qprefix_switch_atom_aggregation_closed": false,
+    "per_atom_switch_count_max": 35,
+    "per_atom_switch_count_median": 9,
+    "previous_letter_run_decomposition_closed": true,
+    "raw_changed_letter_pair_count": 142197,
+    "raw_changed_letter_ratio": 0.962097172511316,
+    "raw_graph": {
+      "branching_indegree_gt1_node_count": 112,
+      "branching_outdegree_gt1_node_count": 113,
+      "directed_edge_capacity": 13689,
+      "directed_edge_density": 0.08481262327416174,
+      "directed_edge_type_count": 1161,
+      "indegree_max": 36,
+      "indegree_median": 8,
+      "indegree_min": 1,
+      "indegree_rows": [
+        {
+          "indegree": 1,
+          "node_count": 5
+        },
+        {
+          "indegree": 2,
+          "node_count": 25
+        },
+        {
+          "indegree": 3,
+          "node_count": 6
+        },
+        {
+          "indegree": 4,
+          "node_count": 7
+        },
+        {
+          "indegree": 5,
+          "node_count": 8
+        },
+        {
+          "indegree": 6,
+          "node_count": 6
+        },
+        {
+          "indegree": 7,
+          "node_count": 1
+        },
+        {
+          "indegree": 8,
+          "node_count": 3
+        },
+        {
+          "indegree": 9,
+          "node_count": 7
+        },
+        {
+          "indegree": 10,
+          "node_count": 7
+        },
+        {
+          "indegree": 11,
+          "node_count": 4
+        },
+        {
+          "indegree": 12,
+          "node_count": 6
+        },
+        {
+          "indegree": 13,
+          "node_count": 3
+        },
+        {
+          "indegree": 14,
+          "node_count": 1
+        },
+        {
+          "indegree": 15,
+          "node_count": 4
+        },
+        {
+          "indegree": 16,
+          "node_count": 5
+        },
+        {
+          "indegree": 17,
+          "node_count": 2
+        },
+        {
+          "indegree": 19,
+          "node_count": 1
+        },
+        {
+          "indegree": 20,
+          "node_count": 1
+        },
+        {
+          "indegree": 22,
+          "node_count": 2
+        },
+        {
+          "indegree": 26,
+          "node_count": 1
+        },
+        {
+          "indegree": 27,
+          "node_count": 1
+        },
+        {
+          "indegree": 28,
+          "node_count": 1
+        },
+        {
+          "indegree": 29,
+          "node_count": 3
+        },
+        {
+          "indegree": 30,
+          "node_count": 2
+        },
+        {
+          "indegree": 31,
+          "node_count": 1
+        },
+        {
+          "indegree": 32,
+          "node_count": 1
+        },
+        {
+          "indegree": 33,
+          "node_count": 1
+        },
+        {
+          "indegree": 34,
+          "node_count": 1
+        },
+        {
+          "indegree": 36,
+          "node_count": 1
+        }
+      ],
+      "largest_strong_component_size": 115,
+      "largest_weak_component_size": 117,
+      "node_count": 117,
+      "outdegree_max": 54,
+      "outdegree_median": 8,
+      "outdegree_min": 0,
+      "outdegree_rows": [
+        {
+          "node_count": 2,
+          "outdegree": 0
+        },
+        {
+          "node_count": 2,
+          "outdegree": 1
+        },
+        {
+          "node_count": 21,
+          "outdegree": 2
+        },
+        {
+          "node_count": 11,
+          "outdegree": 3
+        },
+        {
+          "node_count": 5,
+          "outdegree": 4
+        },
+        {
+          "node_count": 4,
+          "outdegree": 5
+        },
+        {
+          "node_count": 6,
+          "outdegree": 6
+        },
+        {
+          "node_count": 7,
+          "outdegree": 7
+        },
+        {
+          "node_count": 3,
+          "outdegree": 8
+        },
+        {
+          "node_count": 8,
+          "outdegree": 9
+        },
+        {
+          "node_count": 5,
+          "outdegree": 10
+        },
+        {
+          "node_count": 8,
+          "outdegree": 11
+        },
+        {
+          "node_count": 5,
+          "outdegree": 12
+        },
+        {
+          "node_count": 5,
+          "outdegree": 13
+        },
+        {
+          "node_count": 1,
+          "outdegree": 14
+        },
+        {
+          "node_count": 4,
+          "outdegree": 15
+        },
+        {
+          "node_count": 2,
+          "outdegree": 16
+        },
+        {
+          "node_count": 1,
+          "outdegree": 19
+        },
+        {
+          "node_count": 1,
+          "outdegree": 20
+        },
+        {
+          "node_count": 3,
+          "outdegree": 22
+        },
+        {
+          "node_count": 4,
+          "outdegree": 23
+        },
+        {
+          "node_count": 1,
+          "outdegree": 24
+        },
+        {
+          "node_count": 2,
+          "outdegree": 26
+        },
+        {
+          "node_count": 1,
+          "outdegree": 27
+        },
+        {
+          "node_count": 2,
+          "outdegree": 28
+        },
+        {
+          "node_count": 1,
+          "outdegree": 34
+        },
+        {
+          "node_count": 1,
+          "outdegree": 50
+        },
+        {
+          "node_count": 1,
+          "outdegree": 54
+        }
+      ],
+      "strong_component_count": 3,
+      "strong_component_size_rows": [
+        {
+          "component_count": 2,
+          "component_size": 1
+        },
+        {
+          "component_count": 1,
+          "component_size": 115
+        }
+      ],
+      "weak_component_count": 1,
+      "weak_component_size_rows": [
+        {
+          "component_count": 1,
+          "component_size": 117
+        }
+      ],
+      "zero_indegree_node_count": 0,
+      "zero_outdegree_node_count": 2
+    },
+    "raw_same_letter_pair_count": 5602,
+    "raw_switch_pair_count_total": 147799,
+    "row_column_unconditional_closed": false,
+    "same_A_step_sign_pair_count": 56612,
+    "same_carry_pair_count": 7010,
+    "same_gap_pair_count": 11038,
+    "sample_switch_atoms": [
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 683,
+        "q_end": 677,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=5",
+          "g=6,c=5 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=5"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=5,A=negative",
+          "g=6,c=5,A=negative -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=18,c=18,A=positive",
+          "g=18,c=18,A=positive -> g=6,c=5,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 719,
+        "q_end": 677,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=7",
+          "g=6,c=7 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=7"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=6,c=7,A=positive",
+          "g=6,c=7,A=positive -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=18,A=positive",
+          "g=18,c=18,A=positive -> g=6,c=7,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 691,
+        "q_end": 683,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=3",
+          "g=4,c=3 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=positive -> g=4,c=3,A=negative",
+          "g=4,c=3,A=negative -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=18,c=18,A=positive",
+          "g=18,c=18,A=positive -> g=6,c=6,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 31,
+        "transition_count": 32
+      },
+      {
+        "P": 701,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 709,
+        "q_end": 683,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=19",
+          "g=18,c=19 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=8,c=8,A=negative",
+          "g=8,c=8,A=negative -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=19,A=positive",
+          "g=18,c=19,A=positive -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 31,
+        "transition_count": 32
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 683,
+        "q_end": 677,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=3",
+          "g=4,c=3 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=11",
+          "g=12,c=11 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=5"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=positive -> g=4,c=3,A=negative",
+          "g=4,c=3,A=negative -> g=8,c=8,A=negative",
+          "g=8,c=8,A=negative -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=12,c=11,A=positive",
+          "g=12,c=11,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=18,c=18,A=negative",
+          "g=18,c=18,A=negative -> g=6,c=5,A=zero"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 733,
+        "q_end": 677,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=5",
+          "g=4,c=5 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=19",
+          "g=18,c=19 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=5,A=positive",
+          "g=4,c=5,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=19,A=positive",
+          "g=18,c=19,A=positive -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 691,
+        "q_end": 683,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=11",
+          "g=12,c=11 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=12,c=11,A=positive",
+          "g=12,c=11,A=positive -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=18,A=positive",
+          "g=18,c=18,A=positive -> g=6,c=6,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 31,
+        "transition_count": 32
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m": 727,
+        "q_end": 683,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=13",
+          "g=12,c=13 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=8,c=8,A=negative",
+          "g=8,c=8,A=negative -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=12,c=13,A=negative",
+          "g=12,c=13,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=18,A=negative",
+          "g=18,c=18,A=negative -> g=6,c=6,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 31,
+        "transition_count": 32
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 701,
+        "q_end": 691,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=8",
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=17",
+          "g=18,c=17 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=positive -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=8,c=8,A=positive",
+          "g=8,c=8,A=positive -> g=4,c=4,A=positive",
+          "g=4,c=4,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=12,c=12,A=positive",
+          "g=12,c=12,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=18,c=17,A=negative",
+          "g=18,c=17,A=negative -> g=6,c=6,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 32,
+        "transition_count": 33
+      },
+      {
+        "P": 709,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 719,
+        "q_end": 691,
+        "q_start": 479,
+        "raw_switch_sample": [
+          "g=8,c=8 -> g=4,c=4",
+          "g=4,c=4 -> g=8,c=9",
+          "g=8,c=9 -> g=4,c=4",
+          "g=4,c=4 -> g=6,c=6",
+          "g=6,c=6 -> g=12,c=12",
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=8,c=8,A=negative -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=8,c=9,A=positive",
+          "g=8,c=9,A=positive -> g=4,c=4,A=negative",
+          "g=4,c=4,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=12,c=12,A=negative",
+          "g=12,c=12,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=18,c=18,A=negative",
+          "g=18,c=18,A=negative -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 32,
+        "transition_count": 33
+      },
+      {
+        "P": 733,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 727,
+        "q_end": 719,
+        "q_start": 509,
+        "raw_switch_sample": [
+          "g=12,c=12 -> g=2,c=2",
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6",
+          "g=6,c=6 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=12,c=12,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=18,c=18,A=negative",
+          "g=18,c=18,A=negative -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=10,c=10,A=positive",
+          "g=10,c=10,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=6,c=6,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 743,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m": 733,
+        "q_end": 727,
+        "q_start": 521,
+        "raw_switch_sample": [
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6",
+          "g=6,c=6 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10"
+        ],
+        "signed_switch_sample": [
+          "g=2,c=2,A=positive -> g=18,c=18,A=negative",
+          "g=18,c=18,A=negative -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=10,c=10,A=positive",
+          "g=10,c=10,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=10,c=10,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 743,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 739,
+        "q_end": 733,
+        "q_start": 521,
+        "raw_switch_sample": [
+          "g=2,c=2 -> g=18,c=18",
+          "g=18,c=18 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=5",
+          "g=6,c=5 -> g=6,c=6",
+          "g=6,c=6 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10"
+        ],
+        "signed_switch_sample": [
+          "g=2,c=2,A=positive -> g=18,c=18,A=positive",
+          "g=18,c=18,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=10,c=10,A=positive",
+          "g=10,c=10,A=positive -> g=6,c=5,A=negative",
+          "g=6,c=5,A=negative -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=10,c=10,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 31,
+        "transition_count": 32
+      },
+      {
+        "P": 751,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 757,
+        "q_end": 739,
+        "q_start": 541,
+        "raw_switch_sample": [
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6",
+          "g=6,c=6 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=6,c=6,A=negative -> g=10,c=10,A=negative",
+          "g=10,c=10,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=10,c=10,A=negative",
+          "g=10,c=10,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 751,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 761,
+        "q_end": 739,
+        "q_start": 541,
+        "raw_switch_sample": [
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6",
+          "g=6,c=6 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=6"
+        ],
+        "signed_switch_sample": [
+          "g=6,c=6,A=negative -> g=10,c=10,A=negative",
+          "g=10,c=10,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=10,c=10,A=positive",
+          "g=10,c=10,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      },
+      {
+        "P": 757,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m": 733,
+        "q_end": 727,
+        "q_start": 521,
+        "raw_switch_sample": [
+          "g=2,c=2 -> g=18,c=17",
+          "g=18,c=17 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10",
+          "g=10,c=10 -> g=6,c=6",
+          "g=6,c=6 -> g=6,c=5",
+          "g=6,c=5 -> g=2,c=2",
+          "g=2,c=2 -> g=6,c=6",
+          "g=6,c=6 -> g=10,c=10"
+        ],
+        "signed_switch_sample": [
+          "g=2,c=2,A=positive -> g=18,c=17,A=positive",
+          "g=18,c=17,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=10,c=10,A=positive",
+          "g=10,c=10,A=positive -> g=6,c=6,A=positive",
+          "g=6,c=6,A=positive -> g=6,c=5,A=negative",
+          "g=6,c=5,A=negative -> g=2,c=2,A=positive",
+          "g=2,c=2,A=positive -> g=6,c=6,A=negative",
+          "g=6,c=6,A=negative -> g=10,c=10,A=positive"
+        ],
+        "strip": "right_tail",
+        "switch_count": 30,
+        "transition_count": 31
+      }
+    ],
+    "sign_switch_rows": [
+      {
+        "count": 91187,
+        "sign_switch_class": "changed_A_step_sign"
+      },
+      {
+        "count": 56612,
+        "sign_switch_class": "same_A_step_sign"
+      }
+    ],
+    "signed_graph": {
+      "branching_indegree_gt1_node_count": 238,
+      "branching_outdegree_gt1_node_count": 236,
+      "directed_edge_capacity": 65536,
+      "directed_edge_density": 0.0612945556640625,
+      "directed_edge_type_count": 4017,
+      "indegree_max": 67,
+      "indegree_median": 9.0,
+      "indegree_min": 0,
+      "indegree_rows": [
+        {
+          "indegree": 0,
+          "node_count": 2
+        },
+        {
+          "indegree": 1,
+          "node_count": 16
+        },
+        {
+          "indegree": 2,
+          "node_count": 11
+        },
+        {
+          "indegree": 3,
+          "node_count": 27
+        },
+        {
+          "indegree": 4,
+          "node_count": 35
+        },
+        {
+          "indegree": 5,
+          "node_count": 5
+        },
+        {
+          "indegree": 6,
+          "node_count": 8
+        },
+        {
+          "indegree": 7,
+          "node_count": 8
+        },
+        {
+          "indegree": 8,
+          "node_count": 9
+        },
+        {
+          "indegree": 9,
+          "node_count": 10
+        },
+        {
+          "indegree": 10,
+          "node_count": 4
+        },
+        {
+          "indegree": 11,
+          "node_count": 4
+        },
+        {
+          "indegree": 12,
+          "node_count": 4
+        },
+        {
+          "indegree": 13,
+          "node_count": 3
+        },
+        {
+          "indegree": 14,
+          "node_count": 5
+        },
+        {
+          "indegree": 15,
+          "node_count": 6
+        },
+        {
+          "indegree": 16,
+          "node_count": 11
+        },
+        {
+          "indegree": 17,
+          "node_count": 4
+        },
+        {
+          "indegree": 18,
+          "node_count": 9
+        },
+        {
+          "indegree": 19,
+          "node_count": 6
+        },
+        {
+          "indegree": 20,
+          "node_count": 6
+        },
+        {
+          "indegree": 21,
+          "node_count": 5
+        },
+        {
+          "indegree": 22,
+          "node_count": 1
+        },
+        {
+          "indegree": 23,
+          "node_count": 1
+        },
+        {
+          "indegree": 24,
+          "node_count": 2
+        },
+        {
+          "indegree": 25,
+          "node_count": 4
+        },
+        {
+          "indegree": 26,
+          "node_count": 3
+        },
+        {
+          "indegree": 27,
+          "node_count": 2
+        },
+        {
+          "indegree": 28,
+          "node_count": 4
+        },
+        {
+          "indegree": 29,
+          "node_count": 4
+        },
+        {
+          "indegree": 30,
+          "node_count": 1
+        },
+        {
+          "indegree": 31,
+          "node_count": 1
+        },
+        {
+          "indegree": 33,
+          "node_count": 2
+        },
+        {
+          "indegree": 35,
+          "node_count": 1
+        },
+        {
+          "indegree": 36,
+          "node_count": 1
+        },
+        {
+          "indegree": 37,
+          "node_count": 1
+        },
+        {
+          "indegree": 38,
+          "node_count": 2
+        },
+        {
+          "indegree": 41,
+          "node_count": 1
+        },
+        {
+          "indegree": 42,
+          "node_count": 1
+        },
+        {
+          "indegree": 48,
+          "node_count": 2
+        },
+        {
+          "indegree": 49,
+          "node_count": 1
+        },
+        {
+          "indegree": 50,
+          "node_count": 3
+        },
+        {
+          "indegree": 51,
+          "node_count": 2
+        },
+        {
+          "indegree": 52,
+          "node_count": 3
+        },
+        {
+          "indegree": 54,
+          "node_count": 2
+        },
+        {
+          "indegree": 55,
+          "node_count": 2
+        },
+        {
+          "indegree": 56,
+          "node_count": 1
+        },
+        {
+          "indegree": 57,
+          "node_count": 1
+        },
+        {
+          "indegree": 59,
+          "node_count": 1
+        },
+        {
+          "indegree": 60,
+          "node_count": 1
+        },
+        {
+          "indegree": 61,
+          "node_count": 2
+        },
+        {
+          "indegree": 62,
+          "node_count": 2
+        },
+        {
+          "indegree": 63,
+          "node_count": 1
+        },
+        {
+          "indegree": 65,
+          "node_count": 1
+        },
+        {
+          "indegree": 67,
+          "node_count": 1
+        }
+      ],
+      "largest_strong_component_size": 250,
+      "largest_weak_component_size": 255,
+      "node_count": 256,
+      "outdegree_max": 100,
+      "outdegree_median": 10.0,
+      "outdegree_min": 0,
+      "outdegree_rows": [
+        {
+          "node_count": 5,
+          "outdegree": 0
+        },
+        {
+          "node_count": 15,
+          "outdegree": 1
+        },
+        {
+          "node_count": 11,
+          "outdegree": 2
+        },
+        {
+          "node_count": 11,
+          "outdegree": 3
+        },
+        {
+          "node_count": 40,
+          "outdegree": 4
+        },
+        {
+          "node_count": 8,
+          "outdegree": 5
+        },
+        {
+          "node_count": 6,
+          "outdegree": 6
+        },
+        {
+          "node_count": 8,
+          "outdegree": 7
+        },
+        {
+          "node_count": 10,
+          "outdegree": 8
+        },
+        {
+          "node_count": 9,
+          "outdegree": 9
+        },
+        {
+          "node_count": 6,
+          "outdegree": 10
+        },
+        {
+          "node_count": 4,
+          "outdegree": 11
+        },
+        {
+          "node_count": 3,
+          "outdegree": 12
+        },
+        {
+          "node_count": 5,
+          "outdegree": 13
+        },
+        {
+          "node_count": 9,
+          "outdegree": 14
+        },
+        {
+          "node_count": 7,
+          "outdegree": 15
+        },
+        {
+          "node_count": 6,
+          "outdegree": 16
+        },
+        {
+          "node_count": 7,
+          "outdegree": 17
+        },
+        {
+          "node_count": 11,
+          "outdegree": 18
+        },
+        {
+          "node_count": 8,
+          "outdegree": 19
+        },
+        {
+          "node_count": 9,
+          "outdegree": 20
+        },
+        {
+          "node_count": 7,
+          "outdegree": 21
+        },
+        {
+          "node_count": 3,
+          "outdegree": 22
+        },
+        {
+          "node_count": 3,
+          "outdegree": 23
+        },
+        {
+          "node_count": 2,
+          "outdegree": 24
+        },
+        {
+          "node_count": 1,
+          "outdegree": 25
+        },
+        {
+          "node_count": 1,
+          "outdegree": 26
+        },
+        {
+          "node_count": 1,
+          "outdegree": 27
+        },
+        {
+          "node_count": 3,
+          "outdegree": 29
+        },
+        {
+          "node_count": 2,
+          "outdegree": 30
+        },
+        {
+          "node_count": 2,
+          "outdegree": 32
+        },
+        {
+          "node_count": 1,
+          "outdegree": 36
+        },
+        {
+          "node_count": 2,
+          "outdegree": 38
+        },
+        {
+          "node_count": 3,
+          "outdegree": 39
+        },
+        {
+          "node_count": 2,
+          "outdegree": 40
+        },
+        {
+          "node_count": 2,
+          "outdegree": 41
+        },
+        {
+          "node_count": 4,
+          "outdegree": 42
+        },
+        {
+          "node_count": 3,
+          "outdegree": 43
+        },
+        {
+          "node_count": 1,
+          "outdegree": 45
+        },
+        {
+          "node_count": 1,
+          "outdegree": 46
+        },
+        {
+          "node_count": 3,
+          "outdegree": 49
+        },
+        {
+          "node_count": 1,
+          "outdegree": 50
+        },
+        {
+          "node_count": 1,
+          "outdegree": 52
+        },
+        {
+          "node_count": 1,
+          "outdegree": 53
+        },
+        {
+          "node_count": 1,
+          "outdegree": 54
+        },
+        {
+          "node_count": 1,
+          "outdegree": 55
+        },
+        {
+          "node_count": 1,
+          "outdegree": 58
+        },
+        {
+          "node_count": 1,
+          "outdegree": 67
+        },
+        {
+          "node_count": 1,
+          "outdegree": 91
+        },
+        {
+          "node_count": 1,
+          "outdegree": 92
+        },
+        {
+          "node_count": 1,
+          "outdegree": 96
+        },
+        {
+          "node_count": 1,
+          "outdegree": 100
+        }
+      ],
+      "strong_component_count": 7,
+      "strong_component_size_rows": [
+        {
+          "component_count": 6,
+          "component_size": 1
+        },
+        {
+          "component_count": 1,
+          "component_size": 250
+        }
+      ],
+      "weak_component_count": 2,
+      "weak_component_size_rows": [
+        {
+          "component_count": 1,
+          "component_size": 1
+        },
+        {
+          "component_count": 1,
+          "component_size": 255
+        }
+      ],
+      "zero_indegree_node_count": 2,
+      "zero_outdegree_node_count": 5
+    },
+    "signed_switch_pair_count_total": 147799,
+    "singleton_q_atom_count": 1162,
+    "strip_switch_rows": [
+      {
+        "strip": "lower_wing",
+        "switch_count": 24352
+      },
+      {
+        "strip": "right_tail",
+        "switch_count": 73375
+      },
+      {
+        "strip": "upper_wing",
+        "switch_count": 50072
+      }
+    ],
+    "successor_transition_count_total": 162076,
+    "switch_class_rows": [
+      {
+        "count": 140789,
+        "switch_class": "changed_carry"
+      },
+      {
+        "count": 136761,
+        "switch_class": "changed_gap"
+      },
+      {
+        "count": 142197,
+        "switch_class": "changed_raw_letter"
+      },
+      {
+        "count": 7010,
+        "switch_class": "same_carry"
+      },
+      {
+        "count": 11038,
+        "switch_class": "same_gap"
+      },
+      {
+        "count": 5602,
+        "switch_class": "same_raw_letter"
+      }
+    ],
+    "switch_graph_decomposition_closed": true,
+    "top_raw_delta_rows": [
+      {
+        "count": 12265,
+        "delta_carry": 2,
+        "delta_gap": 2
+      },
+      {
+        "count": 9842,
+        "delta_carry": 3,
+        "delta_gap": 2
+      },
+      {
+        "count": 9665,
+        "delta_carry": -2,
+        "delta_gap": -2
+      },
+      {
+        "count": 7197,
+        "delta_carry": -3,
+        "delta_gap": -2
+      },
+      {
+        "count": 5907,
+        "delta_carry": 1,
+        "delta_gap": 2
+      },
+      {
+        "count": 5602,
+        "delta_carry": 0,
+        "delta_gap": 0
+      },
+      {
+        "count": 5322,
+        "delta_carry": -4,
+        "delta_gap": -4
+      },
+      {
+        "count": 4732,
+        "delta_carry": -5,
+        "delta_gap": -4
+      },
+      {
+        "count": 4488,
+        "delta_carry": -1,
+        "delta_gap": -2
+      },
+      {
+        "count": 4421,
+        "delta_carry": 4,
+        "delta_gap": 4
+      },
+      {
+        "count": 4359,
+        "delta_carry": -6,
+        "delta_gap": -4
+      },
+      {
+        "count": 4346,
+        "delta_carry": -3,
+        "delta_gap": -4
+      },
+      {
+        "count": 4031,
+        "delta_carry": 5,
+        "delta_gap": 4
+      },
+      {
+        "count": 3894,
+        "delta_carry": 3,
+        "delta_gap": 4
+      },
+      {
+        "count": 3653,
+        "delta_carry": 4,
+        "delta_gap": 2
+      },
+      {
+        "count": 3460,
+        "delta_carry": 6,
+        "delta_gap": 4
+      },
+      {
+        "count": 2764,
+        "delta_carry": -7,
+        "delta_gap": -4
+      },
+      {
+        "count": 2740,
+        "delta_carry": 1,
+        "delta_gap": 0
+      },
+      {
+        "count": 2696,
+        "delta_carry": -1,
+        "delta_gap": 0
+      },
+      {
+        "count": 2040,
+        "delta_carry": 7,
+        "delta_gap": 4
+      }
+    ],
+    "top_raw_switch_rows": [
+      {
+        "count": 2093,
+        "raw_switch": "g=2,c=2 -> g=4,c=4"
+      },
+      {
+        "count": 1890,
+        "raw_switch": "g=4,c=4 -> g=2,c=2"
+      },
+      {
+        "count": 1439,
+        "raw_switch": "g=6,c=6 -> g=6,c=6"
+      },
+      {
+        "count": 1436,
+        "raw_switch": "g=4,c=4 -> g=6,c=6"
+      },
+      {
+        "count": 1359,
+        "raw_switch": "g=2,c=3 -> g=4,c=6"
+      },
+      {
+        "count": 1336,
+        "raw_switch": "g=4,c=6 -> g=6,c=9"
+      },
+      {
+        "count": 1317,
+        "raw_switch": "g=4,c=6 -> g=2,c=3"
+      },
+      {
+        "count": 1212,
+        "raw_switch": "g=6,c=6 -> g=4,c=4"
+      },
+      {
+        "count": 1166,
+        "raw_switch": "g=6,c=6 -> g=2,c=2"
+      },
+      {
+        "count": 1090,
+        "raw_switch": "g=4,c=3 -> g=6,c=4"
+      },
+      {
+        "count": 1044,
+        "raw_switch": "g=8,c=12 -> g=4,c=6"
+      },
+      {
+        "count": 1002,
+        "raw_switch": "g=2,c=3 -> g=6,c=9"
+      },
+      {
+        "count": 944,
+        "raw_switch": "g=4,c=4 -> g=8,c=8"
+      },
+      {
+        "count": 920,
+        "raw_switch": "g=6,c=9 -> g=6,c=9"
+      },
+      {
+        "count": 905,
+        "raw_switch": "g=8,c=8 -> g=4,c=4"
+      },
+      {
+        "count": 893,
+        "raw_switch": "g=6,c=7 -> g=6,c=7"
+      },
+      {
+        "count": 890,
+        "raw_switch": "g=2,c=1 -> g=4,c=3"
+      },
+      {
+        "count": 883,
+        "raw_switch": "g=2,c=2 -> g=4,c=5"
+      },
+      {
+        "count": 879,
+        "raw_switch": "g=6,c=9 -> g=2,c=3"
+      },
+      {
+        "count": 863,
+        "raw_switch": "g=6,c=4 -> g=6,c=4"
+      }
+    ],
+    "top_signed_switch_rows": [
+      {
+        "count": 820,
+        "signed_switch": "g=2,c=2,A=negative -> g=4,c=4,A=negative"
+      },
+      {
+        "count": 785,
+        "signed_switch": "g=4,c=4,A=negative -> g=2,c=2,A=negative"
+      },
+      {
+        "count": 761,
+        "signed_switch": "g=2,c=2,A=positive -> g=4,c=4,A=positive"
+      },
+      {
+        "count": 670,
+        "signed_switch": "g=4,c=4,A=positive -> g=2,c=2,A=positive"
+      },
+      {
+        "count": 545,
+        "signed_switch": "g=6,c=6,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "count": 512,
+        "signed_switch": "g=4,c=4,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "count": 505,
+        "signed_switch": "g=4,c=4,A=positive -> g=6,c=6,A=positive"
+      },
+      {
+        "count": 502,
+        "signed_switch": "g=2,c=2,A=negative -> g=4,c=5,A=positive"
+      },
+      {
+        "count": 464,
+        "signed_switch": "g=6,c=6,A=positive -> g=6,c=6,A=positive"
+      },
+      {
+        "count": 444,
+        "signed_switch": "g=4,c=3,A=positive -> g=6,c=4,A=negative"
+      },
+      {
+        "count": 443,
+        "signed_switch": "g=6,c=6,A=negative -> g=4,c=4,A=negative"
+      },
+      {
+        "count": 442,
+        "signed_switch": "g=2,c=3,A=positive -> g=4,c=6,A=positive"
+      },
+      {
+        "count": 436,
+        "signed_switch": "g=6,c=6,A=positive -> g=4,c=4,A=positive"
+      },
+      {
+        "count": 428,
+        "signed_switch": "g=2,c=2,A=negative -> g=4,c=4,A=positive"
+      },
+      {
+        "count": 424,
+        "signed_switch": "g=6,c=6,A=negative -> g=2,c=2,A=negative"
+      },
+      {
+        "count": 409,
+        "signed_switch": "g=4,c=5,A=positive -> g=2,c=2,A=negative"
+      },
+      {
+        "count": 405,
+        "signed_switch": "g=4,c=6,A=positive -> g=2,c=3,A=positive"
+      },
+      {
+        "count": 402,
+        "signed_switch": "g=6,c=5,A=negative -> g=2,c=2,A=positive"
+      },
+      {
+        "count": 387,
+        "signed_switch": "g=4,c=6,A=negative -> g=6,c=9,A=positive"
+      },
+      {
+        "count": 386,
+        "signed_switch": "g=6,c=6,A=positive -> g=2,c=2,A=positive"
+      }
+    ]
+  },
+  "finite_switch_graph_closed": true,
+  "finite_switch_graph_phase_saving_closed": false,
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "FiniteSwitchGraphPathExponentialSumSaving",
+    "AND TraceKloostermanCompletionOfHighBranchCarrySwitchGraph",
+    "AND NoLossAggregationAcross15439QPrefixSwitchAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "low_branch_switch_graph_available": false,
+  "no_loss_qprefix_switch_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after finite letter/run decomposition, the next acyclic step is to expose the directed switch graph behind the high-frequency letter changes",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2192408cec54df5289981ecf587e10f4c020f0a71d65e5360083ab2bc25d4785",
+    "docs/monograph/external-theorem-index.md": "beebbe944a14bd2190ae980227906583d84d6275e95d8ce7b58d802aea5669c9",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "7622c22a575a2aad5cfc1dfb3fa82e5f7b0dcf6a26128f21f29ceab29404bb78",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.json": "11bb2c779e6877b0be69d8c9f60349b6435f964f6f364b041a9e3117cdcfae51",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json": "71f243a1adc9d19b09bb557ab41475963fc2eaf224c12dbeecb34d8ff84f373a",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json": "66046c1ff4c9ccf5c49ce021ac6831a00e39227d982ae663ae7106a0cb08ce47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "b1cecd4db467fe37d81768d28df3332431360f2e9815dc2d7d89f86605ea90b8",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "76de4faac5a1bccca49b24e3b76b4837b5abf6905b8c39bef123a3ca699ba0da",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit.py": "b9a4fb18510060cbdc3565283ccd32932f8e1af408d1f36d612e8155cc07ff8a",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "bdd622e8dfdde4c162d0ac8d262ab6acea1e9a04c500f1096b0d2db8cd9df228"
+  },
+  "status": "qprefix_carry_letter_words_have_finite_switch_graph_phase_saving_open"
+}

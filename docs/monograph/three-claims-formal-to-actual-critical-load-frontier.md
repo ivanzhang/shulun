@@ -25118,3 +25118,50 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是 carry word 的无限形状黑箱；没有删除有限字母词相消、completed family
 和无损聚合真缺口。
+
+## 330AR. Phi-LPF q-prefix carry switch graph frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_carry_letter_words_have_finite_switch_graph_phase_saving_open
+adjacent_letter_pair_count_inside_atoms=147799
+raw_switch_pair_count_total=147799
+signed_switch_pair_count_total=147799
+switch_graph_decomposition_closed=true
+raw_graph_nodes/edges/density=117/1161/0.08481262327416174
+signed_graph_nodes/edges/density=256/4017/0.0612945556640625
+raw_outdegree_min/median/max=0/8/54
+signed_outdegree_min/median/max=0/10/100
+raw_largest_weak/scc=117/115
+signed_largest_weak/scc=255/250
+finite_switch_graph_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的
+
+```text
+PrimeGapCarrySwitchingLawOrTraceKloostermanCompletion
+```
+
+现在被压成 finite switch graph 路径问题。审计显示所有相邻字母对被 raw/signed 有向边
+无损重构，但图并非低分支：raw 最大出度 `54`，signed 最大出度 `100`。因此最新实际硬点为：
+
+```text
+FiniteSwitchGraphPathExponentialSumSaving
+AND TraceKloostermanCompletionOfHighBranchCarrySwitchGraph
+AND NoLossAggregationAcross15439QPrefixSwitchAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是切换图黑箱；没有删除 switch-graph 路径相消、completed family 和无损聚合真缺口。

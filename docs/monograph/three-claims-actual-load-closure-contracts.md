@@ -22532,6 +22532,64 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 行/列命题、外部引理版与内部自足版仍未无条件闭合。
 
+### 1.259 Phi-LPF q-prefix carry switch graph 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_switch_graph_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json
+```
+
+同步读数为：
+
+```text
+status=qprefix_carry_letter_words_have_finite_switch_graph_phase_saving_open
+adjacent_letter_pair_count_inside_atoms=147799
+raw_switch_pair_count_total=147799
+signed_switch_pair_count_total=147799
+switch_graph_decomposition_closed=true
+raw_graph_nodes/edges/density=117/1161/0.08481262327416174
+signed_graph_nodes/edges/density=256/4017/0.0612945556640625
+raw_outdegree_min/median/max=0/8/54
+signed_outdegree_min/median/max=0/10/100
+raw_largest_weak/scc=117/115
+signed_largest_weak/scc=255/250
+raw_changed_letter_pair_count/ratio=142197/0.962097172511316
+changed_A_step_sign_pair_count/ratio=91187/0.6169662852928639
+finite_switch_graph_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：finite carry-letter word 的相邻切换已经不再是自由描述，而是有限
+directed graph：
+
+```text
+L_i=(g_i,c_i) -> L_{i+1}=(g_{i+1},c_{i+1}),
+L_i^+ -> L_{i+1}^+.
+```
+
+这关闭 `FiniteCarrySwitchGraphLedger`。但 raw/signed 最大出度为 `54/100`，
+大强连通块为 `115/250` 个节点，因此不能降成低分支确定性切换律或常步长旋转。
+
+最新直接主攻改为：
+
+```text
+FiniteSwitchGraphPathExponentialSumSaving
+```
+
+并行仍需：
+
+```text
+TraceKloostermanCompletionOfHighBranchCarrySwitchGraph
+NoLossAggregationAcross15439QPrefixSwitchAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+行/列命题、外部引理版与内部自足版仍未无条件闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：
