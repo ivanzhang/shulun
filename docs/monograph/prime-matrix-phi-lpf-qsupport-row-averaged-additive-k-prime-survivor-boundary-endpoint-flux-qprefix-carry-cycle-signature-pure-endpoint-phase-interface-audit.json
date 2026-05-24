@@ -1,0 +1,477 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_pure_endpoint_phase_interface_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "MissingMirrorEndpointRouterImported",
+      "meaning": "The previous endpoint router ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "PureEndpointPhaseInterfaceLedger",
+      "meaning": "Pure endpoint mass is routed into single-P local packets and multi-P trace candidates.",
+      "proved": true,
+      "remaining": "none for the finite interface ledger"
+    },
+    {
+      "closed": false,
+      "gate": "SinglePLocalEndpointPacketBound",
+      "meaning": "Control pure endpoint packets with only one supporting P.",
+      "proved": false,
+      "remaining": "requires local signed packet bounds not supplied by the ledger"
+    },
+    {
+      "closed": false,
+      "gate": "MultiPTraceKloostermanCompletion",
+      "meaning": "Complete multi-P pure endpoint packets to trace/Kloosterman sums.",
+      "proved": false,
+      "remaining": "requires explicit completion variables and sheaf/Kloosterman admissibility"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "pure endpoint mass splits into local single-P packets and multi-P trace candidates",
+    "input": "pure endpoint missing-mirror signed-child templates",
+    "operation": "single-P versus multi-P phase-interface routing",
+    "remaining": "local packet estimates, multi-P trace/Kloosterman completion, and phase saving"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "candidate for multi-P pure endpoint trace sums after sheaf/trace realization",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "candidate for multi-P pure endpoint Kloosterman variables after completion",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate for unbalanced right-tail pure endpoint fractions after variable extraction",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Dong_Robles_Zeindler_2026_kloosterman_fractions",
+      "role": "withdrawn near-miss; not an admissible external input",
+      "url": "https://arxiv.org/abs/2601.00292"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "does not estimate pure endpoint signed-carrier phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "candidate only for multi-P pure endpoint trace candidates after sheaf realization",
+    "Li_short_interval_x_052": "does not control signed pure endpoint carrier phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "candidate only after bilinear Kloosterman variables are extracted",
+    "Wright_unbalanced_Kloosterman": "candidate only for right-tail multi-P packets after fraction variables are explicit"
+  },
+  "finite_audit": {
+    "P_support_width_max": 54,
+    "P_support_width_median": 1.0,
+    "P_support_width_min": 1,
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "atom_count_total": 15439,
+    "max_prime": 1009,
+    "missing_mirror_trace_completion_closed": false,
+    "mixed_right_tail_endpoint_router_no_loss_closed": false,
+    "multi_P_pure_endpoint_edge_mass": 21883,
+    "multi_P_pure_endpoint_edge_ratio": 0.44993420511555227,
+    "multi_P_right_tail_pure_endpoint_edge_mass": 4901,
+    "multi_P_right_tail_pure_endpoint_edge_ratio": 0.1007689777119829,
+    "multi_P_trace_completion_closed": false,
+    "multi_P_wing_pure_endpoint_edge_mass": 16982,
+    "multi_P_wing_pure_endpoint_edge_ratio": 0.34916522740356937,
+    "non_switch_atom_count": 2084,
+    "previous_missing_endpoint_router_ledger_closed": true,
+    "pure_endpoint_A_class_edge_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "edge_mass": 47217,
+        "edge_ratio": 0.9708240809277079
+      },
+      {
+        "A_class": "all_positive",
+        "edge_mass": 623,
+        "edge_ratio": 0.01280944156591825
+      },
+      {
+        "A_class": "mixed_with_zero",
+        "edge_mass": 404,
+        "edge_ratio": 0.008306604161526442
+      },
+      {
+        "A_class": "all_negative",
+        "edge_mass": 392,
+        "edge_ratio": 0.008059873344847437
+      }
+    ],
+    "pure_endpoint_P_width_edge_rows": [
+      {
+        "P_width_bucket": "single_P_local_packet",
+        "edge_mass": 26753,
+        "edge_ratio": 0.5500657948844477
+      },
+      {
+        "P_width_bucket": "multi_P_width_2_to_4",
+        "edge_mass": 13984,
+        "edge_ratio": 0.2875236450365984
+      },
+      {
+        "P_width_bucket": "multi_P_width_5_to_16",
+        "edge_mass": 6043,
+        "edge_ratio": 0.12424952709926804
+      },
+      {
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 1856,
+        "edge_ratio": 0.03816103297968583
+      }
+    ],
+    "pure_endpoint_carrier_phase_saving_closed": false,
+    "pure_endpoint_edge_mass": 48636,
+    "pure_endpoint_phase_interface_edge_rows": [
+      {
+        "edge_mass": 26753,
+        "edge_ratio": 0.5500657948844477,
+        "phase_interface_class": "single_P_local_endpoint_packet"
+      },
+      {
+        "edge_mass": 16982,
+        "edge_ratio": 0.34916522740356937,
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate"
+      },
+      {
+        "edge_mass": 4901,
+        "edge_ratio": 0.1007689777119829,
+        "phase_interface_class": "multi_P_right_tail_endpoint_trace_candidate"
+      }
+    ],
+    "pure_endpoint_phase_interface_ledger_closed": true,
+    "pure_endpoint_phase_interface_ledger_closed_flag": true,
+    "pure_endpoint_route_edge_rows": [
+      {
+        "edge_mass": 20314,
+        "edge_ratio": 0.4176741508347726,
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "edge_mass": 13310,
+        "edge_ratio": 0.2736655974997944,
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "edge_mass": 10208,
+        "edge_ratio": 0.20988568138827207,
+        "route_class": "pure_lower_wing_single_shell"
+      },
+      {
+        "edge_mass": 2347,
+        "edge_ratio": 0.04825643556213505,
+        "route_class": "pure_right_tail_right_collar"
+      },
+      {
+        "edge_mass": 1769,
+        "edge_ratio": 0.03637223455876305,
+        "route_class": "pure_right_tail_left_collar"
+      },
+      {
+        "edge_mass": 688,
+        "edge_ratio": 0.014145900156262851,
+        "route_class": "pure_right_tail_terminal_full_interval"
+      }
+    ],
+    "pure_endpoint_template_count": 6408,
+    "row_column_unconditional_closed": false,
+    "signed_cycle_edge_mass": 107677,
+    "signed_cycle_packet_count": 36330,
+    "signed_residual_edge_mass": 40122,
+    "single_P_local_endpoint_packet_bound_closed": false,
+    "single_P_pure_endpoint_edge_mass": 26753,
+    "single_P_pure_endpoint_edge_ratio": 0.5500657948844477,
+    "switch_atom_count": 13355,
+    "top_pure_endpoint_template_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 50,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 208,
+        "endpoint_group_profile": "upper_wing_single_shell:208",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=4 -> g=4,c=6",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=2,c=4,A=positive -> g=4,c=6,A=negative",
+        "strip_profile": "upper_wing:208"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 54,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 202,
+        "endpoint_group_profile": "lower_wing_single_shell:202",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=2 -> g=4,c=2",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=2,c=2,A=positive -> g=4,c=2,A=negative",
+        "strip_profile": "lower_wing:202"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 36,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 124,
+        "endpoint_group_profile": "lower_wing_single_shell:124",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=2 -> g=8,c=6",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=4,c=2,A=negative -> g=8,c=6,A=positive",
+        "strip_profile": "lower_wing:124"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 29,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 124,
+        "endpoint_group_profile": "upper_wing_single_shell:124",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=6 -> g=8,c=14",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=6,A=negative -> g=8,c=14,A=positive",
+        "strip_profile": "upper_wing:124"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 32,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 122,
+        "endpoint_group_profile": "upper_wing_single_shell:122",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=7 -> g=8,c=12",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=7,A=positive -> g=8,c=12,A=negative",
+        "strip_profile": "upper_wing:122"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 27,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 117,
+        "endpoint_group_profile": "upper_wing_single_shell:117",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=6 -> g=6,c=8 -> g=8,c=12",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=6,A=positive -> g=6,c=8,A=negative -> g=8,c=12,A=negative",
+        "strip_profile": "upper_wing:117"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 27,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 94,
+        "endpoint_group_profile": "upper_wing_single_shell:94",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=7 -> g=6,c=9",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=7,A=positive -> g=6,c=9,A=negative",
+        "strip_profile": "upper_wing:94"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 34,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 92,
+        "endpoint_group_profile": "lower_wing_single_shell:92",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=2 -> g=6,c=5",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=4,c=2,A=negative -> g=6,c=5,A=positive",
+        "strip_profile": "lower_wing:92"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 14,
+        "P_width_bucket": "multi_P_width_5_to_16",
+        "edge_mass": 81,
+        "endpoint_group_profile": "upper_wing_single_shell:81",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=3 -> g=6,c=9 -> g=6,c=10",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=2,c=3,A=negative -> g=6,c=9,A=negative -> g=6,c=10,A=positive",
+        "strip_profile": "upper_wing:81"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 20,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 78,
+        "endpoint_group_profile": "upper_wing_single_shell:78",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=6 -> g=6,c=9 -> g=8,c=11",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=6,A=positive -> g=6,c=9,A=positive -> g=8,c=11,A=negative",
+        "strip_profile": "upper_wing:78"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 21,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 74,
+        "endpoint_group_profile": "upper_wing_single_shell:74",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=10,c=16 -> g=2,c=4",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=4,A=positive",
+        "strip_profile": "upper_wing:74"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 19,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 72,
+        "endpoint_group_profile": "lower_wing_single_shell:72",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=3 -> g=6,c=4 -> g=8,c=6",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=4,c=3,A=positive -> g=6,c=4,A=negative -> g=8,c=6,A=positive",
+        "strip_profile": "lower_wing:72"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 27,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 70,
+        "endpoint_group_profile": "upper_wing_single_shell:70",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=2 -> g=6,c=9",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=2,c=2,A=negative -> g=6,c=9,A=positive",
+        "strip_profile": "upper_wing:70"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 15,
+        "P_width_bucket": "multi_P_width_5_to_16",
+        "edge_mass": 69,
+        "endpoint_group_profile": "upper_wing_single_shell:69",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=10,c=14 -> g=6,c=8 -> g=6,c=9",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=10,c=14,A=negative -> g=6,c=8,A=positive -> g=6,c=9,A=negative",
+        "strip_profile": "upper_wing:69"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 17,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 69,
+        "endpoint_group_profile": "lower_wing_single_shell:69",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=1 -> g=6,c=5 -> g=6,c=4",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=2,c=1,A=positive -> g=6,c=5,A=positive -> g=6,c=4,A=negative",
+        "strip_profile": "lower_wing:69"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 15,
+        "P_width_bucket": "multi_P_width_5_to_16",
+        "edge_mass": 68,
+        "endpoint_group_profile": "upper_wing_single_shell:68",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=3 -> g=4,c=8",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=2,c=3,A=negative -> g=4,c=8,A=positive",
+        "strip_profile": "upper_wing:68"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 18,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 68,
+        "endpoint_group_profile": "upper_wing_single_shell:68",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=2,c=4 -> g=6,c=9",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=2,c=4,A=positive -> g=6,c=9,A=negative",
+        "strip_profile": "upper_wing:68"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 17,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 66,
+        "endpoint_group_profile": "lower_wing_single_shell:66",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=3 -> g=6,c=4 -> g=8,c=6",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=4,c=3,A=positive -> g=6,c=4,A=positive -> g=8,c=6,A=negative",
+        "strip_profile": "lower_wing:66"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 18,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 62,
+        "endpoint_group_profile": "lower_wing_single_shell:62",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=3 -> g=6,c=3",
+        "route_class": "pure_lower_wing_single_shell",
+        "signed_child": "g=4,c=3,A=positive -> g=6,c=3,A=negative",
+        "strip_profile": "lower_wing:62"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 24,
+        "P_width_bucket": "multi_P_width_17_to_64",
+        "edge_mass": 62,
+        "endpoint_group_profile": "upper_wing_single_shell:62",
+        "phase_interface_class": "multi_P_wing_endpoint_trace_candidate",
+        "raw_base_template": "g=4,c=5 -> g=8,c=12",
+        "route_class": "pure_upper_wing_single_shell",
+        "signed_child": "g=4,c=5,A=negative -> g=8,c=12,A=positive",
+        "strip_profile": "upper_wing:62"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "SinglePLocalPureEndpointPacketBound",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "mixed_right_tail_endpoint_router_no_loss_closed": false,
+  "multi_P_trace_completion_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pure_endpoint_carrier_phase_saving_closed": false,
+  "pure_endpoint_phase_interface_ledger_closed": true,
+  "reason_chosen": "pure endpoint carriers are the dominant routed missing-mirror branch and must be split before external trace inputs can be matched",
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "single_P_local_endpoint_packet_bound_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "4c227f1964b744b88406d7ceebe17af5d3c61806f77ee042a2c1e640ceb7bfd8",
+    "docs/monograph/external-theorem-index.md": "060d4e0da51a7d199c664d61fec88d8daad8f3c1b1fa89bc37605b8c55e4b55c",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "9154be305f1c9e2a11e6781d4c63d8fddbf492f20bd7fa9320c5bcb937162e16",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-endpoint-router-audit.json": "166f24e28d8c123ee2825087cdb65d985b11c3e64866ecd57b913ee01ad80f70",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.json": "d150170c76633cf32bb3917eccf3c745c00a2ccbb9a853fd557897929a486bf2",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "a29ac3017240014beae04ec50e83b6b85aceec2ae3a1fb8b8af7e679865952e4",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "dc60331f4e1a3add934139709b0265546a72b4dabcbe2fc9c16db8d47c4654be",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_pure_endpoint_phase_interface_audit.py": "476625e2cc5a316b0df1de452c3a19e9cfb2df203e7544c74c19b92e311d163d",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "f9b71b7687fe09d31d7bcb8b6ce73e0533f1db53f39c117f4687b007225409e0"
+  },
+  "status": "pure_endpoint_phase_interface_ledger_closed_phase_saving_open",
+  "thin_P_support_carrier_summation_closed": false,
+  "unequal_mirror_pair_residual_phase_saving_closed": false
+}

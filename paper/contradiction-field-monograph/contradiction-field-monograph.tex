@@ -35562,6 +35562,76 @@ endpoint-router-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Pure endpoint phase interface}
+
+\begin{theorem}[Pure endpoint phase-interface ledger]
+In the audit range \(P\le 1009\), the pure endpoint part of the missing-mirror
+router splits into local single-\(P\) packets and multi-\(P\) trace candidates.
+The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{pure\_endpoint\_phase\_interface\_ledger\_closed} & \texttt{true}\\
+\texttt{pure\_endpoint\_edge\_mass} & 48636\\
+\texttt{pure\_endpoint\_template\_count} & 6408\\
+\texttt{single\_P\_pure\_endpoint\_edge\_mass} & 26753\\
+\texttt{single\_P\_pure\_endpoint\_edge\_ratio} & 0.5500657948844477\\
+\texttt{multi\_P\_pure\_endpoint\_edge\_mass} & 21883\\
+\texttt{multi\_P\_pure\_endpoint\_edge\_ratio} & 0.44993420511555227\\
+\texttt{multi\_P\_wing\_pure\_endpoint\_edge\_mass} & 16982\\
+\texttt{multi\_P\_right\_tail\_pure\_endpoint\_edge\_mass} & 4901\\
+\texttt{P\_support\_width\_min/median/max} & 1/1.0/54 .
+\end{array}
+\]
+Thus the pure endpoint mass is not yet a single analytic object: it has a
+local single-\(P\) part and a multi-\(P\) part which would still need explicit
+trace/Kloosterman completion.
+\end{theorem}
+\begin{proof}
+For each pure endpoint signed child, the audit counts the distinct values of
+\(P\) supporting the template.  Width \(1\) templates are routed to the local
+single-\(P\) packet class.  Templates with wider \(P\)-support are routed by
+endpoint geometry into wing and right-tail trace-candidate classes.  The edge
+mass identity
+\[
+26753+21883=48636
+\]
+is checked, and the multi-\(P\) mass further splits as \(16982+4901=21883\).
+\end{proof}
+
+\begin{remark}[External theorem entry point]
+This ledger shows where external trace inputs may enter, and where they cannot.
+FKMS-type trace bilinear estimates, arbitrary-modulus Kloosterman estimates, or
+unbalanced Kloosterman-fraction estimates can only be invoked after the
+multi-\(P\) candidates have been completed to admissible variables.  The
+withdrawn Dong--Robles--Zeindler Kloosterman-fraction near-miss is recorded as
+non-admissible external input.  These inputs do not control the single-\(P\)
+local packets by themselves.
+
+The active mouth is
+\begin{quote}\scriptsize\ttfamily
+SinglePLocalPureEndpointPacketBound\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the finite phase-interface ledger and does not prove
+any of the displayed analytic gates.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-\\
+phase-interface-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

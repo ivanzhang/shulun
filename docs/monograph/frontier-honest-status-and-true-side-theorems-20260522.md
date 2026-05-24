@@ -2389,6 +2389,73 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC8：Phi-LPF q-prefix pure endpoint phase-interface 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_pure_endpoint_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.json
+```
+
+本层把 pure endpoint 主体拆成 single-`P` 局部包与 multi-`P` trace 候选。关键读数：
+
+```text
+pure_endpoint_phase_interface_ledger_closed=true
+pure_endpoint_edge_mass=48636
+single_P_pure_endpoint_edge_mass=26753
+single_P_pure_endpoint_edge_ratio=0.5500657948844477
+multi_P_pure_endpoint_edge_mass=21883
+multi_P_pure_endpoint_edge_ratio=0.44993420511555227
+multi_P_wing_pure_endpoint_edge_mass=16982
+multi_P_right_tail_pure_endpoint_edge_mass=4901
+```
+
+真推进点：pure endpoint 不能整体交给外部 trace/Kloosterman theorem。需要先分离：
+
+```text
+SinglePLocalPureEndpointPacketBound
+AND MultiPPureEndpointTraceKloostermanCompletion
+```
+
+并行仍需：
+
+```text
+PureEndpointCarrierPhaseSaving
+MixedRightTailEndpointRouterNoLoss
+UnequalMirrorPairResidualPhaseSaving
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部前沿边界同步更新：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman 与 Wright unbalanced Kloosterman 只能作为 multi-`P` completion
+之后的候选输入；Dong--Robles--Zeindler Kloosterman-fraction bilinear forms
+已撤回，不可作为外部输入；single-`P` local packets 仍需独立局部估计。
+
+状态边界：
+
+```text
+pure_endpoint_phase_interface_ledger_closed=true
+single_P_local_endpoint_packet_bound_closed=false
+multi_P_trace_completion_closed=false
+pure_endpoint_carrier_phase_saving_closed=false
+mixed_right_tail_endpoint_router_no_loss_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

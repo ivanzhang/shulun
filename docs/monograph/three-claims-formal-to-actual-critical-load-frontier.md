@@ -25529,3 +25529,58 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是“missing-mirror endpoint 不能先路由”的黑箱；没有删除纯端点相消、
 right-tail 混合端点无损拆分、trace/Kloosterman completion 和兄弟 residual 真缺口。
+
+### Phi-LPF q-prefix pure endpoint phase-interface formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_pure_endpoint_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+PureEndpointMissingMirrorCarrierPhaseSaving
+```
+
+现在被 phase-interface ledger 压成：
+
+```text
+SinglePLocalPureEndpointPacketBound
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+```
+
+关键审计读数为：
+
+```text
+pure_endpoint_phase_interface_ledger_closed=true
+single_P_pure_endpoint_edge_ratio=0.5500657948844477
+multi_P_pure_endpoint_edge_ratio=0.44993420511555227
+multi_P_wing_pure_endpoint_edge_mass=16982
+multi_P_right_tail_pure_endpoint_edge_mass=4901
+```
+
+因此最新实际硬点为：
+
+```text
+SinglePLocalPureEndpointPacketBound
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“pure endpoint 能整体套外部 trace 定理”的黑箱；没有删除 single-`P`
+局部包估计、multi-`P` completion 或实际相消缺口。FKMS、Milićević--Qin--Wu
+与 Wright 只给 multi-`P` completion 后的候选外部入口，不能替代 single-`P`
+局部包估计；Dong--Robles--Zeindler 的 Kloosterman-fraction 近似输入已撤回，
+不可引用。

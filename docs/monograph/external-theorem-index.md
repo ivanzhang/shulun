@@ -6593,6 +6593,82 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65M. Phi-LPF q-prefix pure endpoint phase-interface 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_pure_endpoint_phase_interface_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-pure-endpoint-phase-interface-audit.md
+```
+
+本层只处理 missing-mirror endpoint-router 中的 pure endpoint 主体，把 `48636`
+edge mass 拆成 single-`P` local packets 与 multi-`P` trace candidates：
+
+```text
+pure_endpoint_phase_interface_ledger_closed=true
+pure_endpoint_edge_mass=48636
+pure_endpoint_template_count=6408
+single_P_pure_endpoint_edge_mass=26753
+single_P_pure_endpoint_edge_ratio=0.5500657948844477
+multi_P_pure_endpoint_edge_mass=21883
+multi_P_pure_endpoint_edge_ratio=0.44993420511555227
+multi_P_wing_pure_endpoint_edge_mass=16982
+multi_P_right_tail_pure_endpoint_edge_mass=4901
+P_support_width_min/median/max=1/1.0/54
+```
+
+phase-interface 分解：
+
+```text
+single_P_local_endpoint_packet=26753
+multi_P_wing_endpoint_trace_candidate=16982
+multi_P_right_tail_endpoint_trace_candidate=4901
+```
+
+这说明外部 trace/Kloosterman 定理不能直接吃掉 pure endpoint 全量；必须先处理
+single-`P` local packets，同时把 multi-`P` 候选完成为合法 trace/Kloosterman
+变量族。
+
+最新最窄口：
+
+```text
+SinglePLocalPureEndpointPacketBound
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部前沿边界：FKMS trace bilinear、Milićević--Qin--Wu 任意模 Kloosterman 与
+Wright unbalanced Kloosterman 只能作用在已经完成的 multi-`P` trace/Kloosterman
+变量上；Dong--Robles--Zeindler Kloosterman-fraction bilinear forms 已撤回，
+不可作为外部输入；Li 的 `x^0.52` 短区间素数存在不估计 signed pure endpoint
+carriers。
+
+状态边界：
+
+```text
+pure_endpoint_phase_interface_ledger_closed=true
+single_P_local_endpoint_packet_bound_closed=false
+multi_P_trace_completion_closed=false
+pure_endpoint_carrier_phase_saving_closed=false
+mixed_right_tail_endpoint_router_no_loss_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：
