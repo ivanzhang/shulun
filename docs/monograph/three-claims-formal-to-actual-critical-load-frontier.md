@@ -25663,3 +25663,45 @@ occurrence_count_max=4
 
 本层删除的是“单模板最大质量可以作为黑箱常数”的含混说法；没有删除
 cycle length、occurrence multiplicity 或二者乘积的全局证明缺口。
+
+### Phi-LPF q-prefix single-P local template occurrence class formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+LocalOccurrenceMultiplicityUniformBound
+```
+
+现在对 repeated templates 被拆成：
+
+```text
+SinglePacketMultiMCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+```
+
+关键审计读数为：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+repeated_template_count=97
+repeated_template_edge_mass=872
+single_packet_multi_m_repeated_edge_mass=720
+multi_packet_repeated_edge_mass=136
+single_packet_single_m_multi_cycle_edge_mass=16
+unclassified_repeated_template_count=0
+```
+
+本层删除的是“occurrence multiplicity 是单一黑箱”的含混说法；没有删除
+same-packet multi-m collision、multi-packet duplicate transport、same-m multi-cycle
+suppression 或 repeated occurrence 聚合/回流的全局证明缺口。

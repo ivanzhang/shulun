@@ -35769,6 +35769,92 @@ template-multiplicity-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated single-\(P\) local template occurrences}
+
+\begin{theorem}[Single-\(P\) local template occurrence class ledger]
+In the audit range \(P\le 1009\), the repeated part of the single-\(P\) local
+endpoint templates admits the following finite classification:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_template\_occurrence\_class\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{repeated\_template\_count} & 97\\
+\texttt{repeated\_template\_edge\_mass} & 872\\
+\texttt{repeated\_template\_edge\_ratio} & 0.03259447538593802\\
+\texttt{single\_packet\_multi\_m\_repeated\_template\_count} & 78\\
+\texttt{single\_packet\_multi\_m\_repeated\_edge\_mass} & 720\\
+\texttt{multi\_packet\_repeated\_template\_count} & 17\\
+\texttt{multi\_packet\_repeated\_edge\_mass} & 136\\
+\texttt{single\_packet\_single\_m\_multi\_cycle\_template\_count} & 2\\
+\texttt{single\_packet\_single\_m\_multi\_cycle\_edge\_mass} & 16\\
+\texttt{unclassified\_repeated\_template\_count} & 0 .
+\end{array}
+\]
+Moreover every repeated template observed in the audit has strip support
+equal to \(1\), packet support at most \(2\), \(q\)-prefix support at most \(2\),
+shell-prime support at most \(2\), and \(m\)-value support at most \(4\).
+\end{theorem}
+\begin{proof}
+The audit imports the single-\(P\) local template multiplicity ledger and
+reconstructs every occurrence of every repeated signed template.  Each repeated
+template is then classified by the support of its occurrence records.  If its
+packet support has size \(>1\), it is a multi-packet repeated template.  If its
+packet support has size \(1\) but its \(m\)-value support has size \(>1\), it is
+a single-packet multi-\(m\) repeated template.  The remaining repeated records
+are checked for multiple cycles at the same packet and the same \(m\)-value.
+The three classes have masses
+\[
+720,\qquad 136,\qquad 16,
+\]
+and their sum is \(872\), the repeated edge mass imported from the previous
+factor ledger.  The unclassified counter is \(0\), and the support counters
+listed in the statement are verified by the generated JSON ledger.
+\end{proof}
+
+\begin{remark}[Occurrence collision gates]
+This replaces the occurrence-multiplicity gate by the more concrete list
+\begin{quote}\scriptsize\ttfamily
+SinglePacketMultiMCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC.
+\end{quote}
+Together with the previous cycle-length and product gates, the active mouth is
+now
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND SinglePacketMultiMCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still a finite classification result.  It does not prove a global
+same-packet multi-\(m\) collision bound, a multi-packet duplicate transport
+bound, a same-\(m\) multi-cycle suppression theorem, or a repeated-occurrence
+PDEC/SAE return.  Average trace/Kloosterman inputs and short-interval prime
+existence theorems do not by themselves prove these width-one local occurrence
+collision statements.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+template-occurrence-class-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

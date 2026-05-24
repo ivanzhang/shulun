@@ -23054,6 +23054,49 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite factor ledger；cycle length 与 occurrence 的全局均匀界、
 product 超额回流和 P-slice 求和仍未闭合。
 
+### 1.179J Phi-LPF q-prefix single-P local template occurrence class actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json
+```
+
+actual-load 含义继续收缩：`LocalOccurrenceMultiplicityUniformBound` 的重复模板
+部分已被拆成同 packet 跨 m、跨 packet、同 packet 同 m 多 cycle 三类：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+repeated_template_count=97
+repeated_template_edge_mass=872
+single_packet_multi_m_repeated_template_count=78
+single_packet_multi_m_repeated_edge_mass=720
+multi_packet_repeated_template_count=17
+multi_packet_repeated_edge_mass=136
+single_packet_single_m_multi_cycle_template_count=2
+single_packet_single_m_multi_cycle_edge_mass=16
+unclassified_repeated_template_count=0
+observed_repeated_templates_single_strip=true
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+SinglePacketMultiMCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 repeated occurrence 分类账本；三个 collision bound、重复部分聚合/回流、
+cycle-occurrence product 与 P-slice 求和仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

@@ -1,0 +1,1036 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SinglePLocalTemplateMultiplicityImported",
+      "meaning": "The previous cycle_length times occurrence_count factor ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "RepeatedTemplateOccurrenceClassLedger",
+      "meaning": "Every repeated template is classified as same-packet multi-m, multi-packet, or same-m multi-cycle.",
+      "proved": true,
+      "remaining": "none for the finite classification ledger"
+    },
+    {
+      "closed": false,
+      "gate": "SinglePacketMultiMCollisionBound",
+      "meaning": "Promote same-packet multi-m collision sparsity to a structural bound.",
+      "proved": false,
+      "remaining": "finite audit shows 78 templates / 720 edge mass but gives no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "MultiPacketDuplicateTransportBound",
+      "meaning": "Control repeated templates transported across packets.",
+      "proved": false,
+      "remaining": "finite audit shows 17 templates / 136 edge mass but no global transport bound"
+    },
+    {
+      "closed": false,
+      "gate": "SinglePacketSingleMMultiCycleSuppression",
+      "meaning": "Suppress multiple cycles inside one packet and one m-value.",
+      "proved": false,
+      "remaining": "finite audit shows 2 templates / 16 edge mass but no global exclusion"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "all repeated templates stay inside one strip; most are same-packet multi-m collisions",
+    "input": "the 97 single-P local endpoint templates with occurrence_count>1",
+    "operation": "classify repeated occurrences by packet, m-value and local cycle support",
+    "remaining": "prove uniform collision bounds or route repeated excess to PDEC/SAE"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "bilinear trace input; does not prove local repeated-template collision bounds",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman average; needs extracted bilinear variables",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced convolution input; does not bound width-one occurrence collisions",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_amplification_kloosterman",
+      "role": "composite-modulus Type-II input; still needs a bilinear family, not a single local collision",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2025_squarefree_smooth_kloosterman",
+      "role": "square-free/smooth parameter input; does not control repeated signed local templates",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Xu_Zhang_2026_generalized_kloosterman_arbitrary_sets",
+      "role": "arbitrary-set bilinear input; still requires explicit finite-field set variables",
+      "url": "https://doi.org/10.1016/j.jnt.2025.09.027"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "prime existence input; not an occurrence-collision theorem",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "arbitrary_set_inputs": "need explicit finite-field sets and a summation variable not present in a single local collision",
+    "short_interval_prime_inputs": "do not estimate signed endpoint occurrence classes",
+    "trace_or_kloosterman_average_inputs": "do not directly control width-one local repeated-template collisions"
+  },
+  "finite_audit": {
+    "local_occurrence_multiplicity_uniform_bound_proved": false,
+    "m_shell_support_edge_rows": [
+      {
+        "edge_mass": 754,
+        "edge_ratio": 0.8646788990825688,
+        "m_shell_support_count": 1
+      },
+      {
+        "edge_mass": 118,
+        "edge_ratio": 0.1353211009174312,
+        "m_shell_support_count": 2
+      }
+    ],
+    "m_value_support_edge_rows": [
+      {
+        "edge_mass": 812,
+        "edge_ratio": 0.9311926605504587,
+        "m_value_support_count": 2
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.04128440366972477,
+        "m_value_support_count": 3
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.01834862385321101,
+        "m_value_support_count": 1
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.009174311926605505,
+        "m_value_support_count": 4
+      }
+    ],
+    "max_prime": 1009,
+    "multi_packet_duplicate_transport_bound_proved": false,
+    "multi_packet_repeated_edge_mass": 136,
+    "multi_packet_repeated_template_count": 17,
+    "observed_repeated_m_value_support_le_4": true,
+    "observed_repeated_occurrence_count_le_4": true,
+    "observed_repeated_packet_support_le_2": true,
+    "observed_repeated_templates_single_strip": true,
+    "occurrence_class_edge_rows": [
+      {
+        "edge_mass": 720,
+        "edge_ratio": 0.8256880733944955,
+        "occurrence_class": "single_packet_multi_m_repeated_template"
+      },
+      {
+        "edge_mass": 136,
+        "edge_ratio": 0.1559633027522936,
+        "occurrence_class": "multi_packet_repeated_template"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.01834862385321101,
+        "occurrence_class": "single_packet_single_m_multi_cycle_template"
+      }
+    ],
+    "occurrence_class_route_edge_rows": [
+      {
+        "edge_mass": 314,
+        "edge_ratio": 0.36009174311926606,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "edge_mass": 282,
+        "edge_ratio": 0.32339449541284404,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "edge_mass": 84,
+        "edge_ratio": 0.0963302752293578,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "route_class": "pure_lower_wing_single_shell"
+      },
+      {
+        "edge_mass": 62,
+        "edge_ratio": 0.07110091743119266,
+        "occurrence_class": "multi_packet_repeated_template",
+        "route_class": "pure_right_tail_two_sided_collar"
+      },
+      {
+        "edge_mass": 48,
+        "edge_ratio": 0.05504587155963303,
+        "occurrence_class": "multi_packet_repeated_template",
+        "route_class": "pure_upper_wing_single_shell"
+      },
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.034403669724770644,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "route_class": "pure_right_tail_left_collar"
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.02981651376146789,
+        "occurrence_class": "multi_packet_repeated_template",
+        "route_class": "pure_lower_wing_single_shell"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.011467889908256881,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "route_class": "pure_right_tail_right_collar"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.011467889908256881,
+        "occurrence_class": "single_packet_single_m_multi_cycle_template",
+        "route_class": "pure_right_tail_left_collar"
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.006880733944954129,
+        "occurrence_class": "single_packet_single_m_multi_cycle_template",
+        "route_class": "pure_upper_wing_single_shell"
+      }
+    ],
+    "occurrence_class_template_rows": [
+      {
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "template_count": 78,
+        "template_ratio": 0.8041237113402062
+      },
+      {
+        "occurrence_class": "multi_packet_repeated_template",
+        "template_count": 17,
+        "template_ratio": 0.17525773195876287
+      },
+      {
+        "occurrence_class": "single_packet_single_m_multi_cycle_template",
+        "template_count": 2,
+        "template_ratio": 0.020618556701030927
+      }
+    ],
+    "occurrence_count_edge_rows": [
+      {
+        "edge_mass": 828,
+        "edge_ratio": 0.9495412844036697,
+        "occurrence_count": 2
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.04128440366972477,
+        "occurrence_count": 3
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.009174311926605505,
+        "occurrence_count": 4
+      }
+    ],
+    "packet_support_edge_rows": [
+      {
+        "edge_mass": 736,
+        "edge_ratio": 0.8440366972477065,
+        "packet_support_count": 1
+      },
+      {
+        "edge_mass": 136,
+        "edge_ratio": 0.1559633027522936,
+        "packet_support_count": 2
+      }
+    ],
+    "previous_single_P_local_template_multiplicity_factor_ledger_closed": true,
+    "q_prefix_support_edge_rows": [
+      {
+        "edge_mass": 736,
+        "edge_ratio": 0.8440366972477065,
+        "q_prefix_support_count": 1
+      },
+      {
+        "edge_mass": 136,
+        "edge_ratio": 0.1559633027522936,
+        "q_prefix_support_count": 2
+      }
+    ],
+    "repeated_occurrence_aggregation_or_pdec_closed": false,
+    "repeated_template_count": 97,
+    "repeated_template_edge_mass": 872,
+    "repeated_template_edge_ratio": 0.03259447538593802,
+    "repeated_template_m_shell_support_count_max": 2,
+    "repeated_template_m_value_support_count_max": 4,
+    "repeated_template_occurrence_count_max": 4,
+    "repeated_template_packet_support_count_max": 2,
+    "repeated_template_q_prefix_support_count_max": 2,
+    "repeated_template_strip_support_count_max": 1,
+    "row_column_unconditional_closed": false,
+    "single_P_local_endpoint_edge_mass": 26753,
+    "single_P_local_endpoint_template_count": 4915,
+    "single_P_local_template_occurrence_class_ledger_closed": true,
+    "single_packet_multi_m_collision_bound_proved": false,
+    "single_packet_multi_m_repeated_edge_mass": 720,
+    "single_packet_multi_m_repeated_template_count": 78,
+    "single_packet_single_m_multi_cycle_edge_mass": 16,
+    "single_packet_single_m_multi_cycle_suppression_proved": false,
+    "single_packet_single_m_multi_cycle_template_count": 2,
+    "strip_support_edge_rows": [
+      {
+        "edge_mass": 872,
+        "edge_ratio": 1.0,
+        "strip_support_count": 1
+      }
+    ],
+    "support_signature_rows": [
+      {
+        "cycle_length": 5,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 25,
+        "template_edge_mass": 10,
+        "template_ratio": 0.25773195876288657
+      },
+      {
+        "cycle_length": 4,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 19,
+        "template_edge_mass": 8,
+        "template_ratio": 0.1958762886597938
+      },
+      {
+        "cycle_length": 3,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 16,
+        "template_edge_mass": 6,
+        "template_ratio": 0.16494845360824742
+      },
+      {
+        "cycle_length": 6,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 10,
+        "template_edge_mass": 12,
+        "template_ratio": 0.10309278350515463
+      },
+      {
+        "cycle_length": 4,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 6,
+        "template_edge_mass": 8,
+        "template_ratio": 0.061855670103092786
+      },
+      {
+        "cycle_length": 7,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 3,
+        "template_edge_mass": 14,
+        "template_ratio": 0.030927835051546393
+      },
+      {
+        "cycle_length": 8,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 3,
+        "template_edge_mass": 16,
+        "template_ratio": 0.030927835051546393
+      },
+      {
+        "cycle_length": 2,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 2,
+        "template_edge_mass": 4,
+        "template_ratio": 0.020618556701030927
+      },
+      {
+        "cycle_length": 3,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 2,
+        "template_edge_mass": 6,
+        "template_ratio": 0.020618556701030927
+      },
+      {
+        "cycle_length": 3,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 1,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 6,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 5,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 1,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 10,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 2,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 4,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 2,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 4,
+        "occurrence_count": 4,
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 8,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 2,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 4,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 3,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 6,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 4,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 8,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 7,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 2,
+        "occurrence_count": 2,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 14,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 3,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 3,
+        "occurrence_count": 3,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 9,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 4,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 3,
+        "occurrence_count": 3,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 12,
+        "template_ratio": 0.010309278350515464
+      },
+      {
+        "cycle_length": 5,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 3,
+        "occurrence_count": 3,
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "strip_support_count": 1,
+        "template_count": 1,
+        "template_edge_mass": 15,
+        "template_ratio": 0.010309278350515464
+      }
+    ],
+    "top_repeated_p_rows": [
+      {
+        "P": 1009,
+        "edge_mass": 50,
+        "edge_ratio": 0.05733944954128441
+      },
+      {
+        "P": 991,
+        "edge_mass": 42,
+        "edge_ratio": 0.0481651376146789
+      },
+      {
+        "P": 997,
+        "edge_mass": 38,
+        "edge_ratio": 0.04357798165137615
+      },
+      {
+        "P": 977,
+        "edge_mass": 36,
+        "edge_ratio": 0.04128440366972477
+      },
+      {
+        "P": 607,
+        "edge_mass": 35,
+        "edge_ratio": 0.040137614678899085
+      },
+      {
+        "P": 613,
+        "edge_mass": 34,
+        "edge_ratio": 0.0389908256880734
+      },
+      {
+        "P": 823,
+        "edge_mass": 34,
+        "edge_ratio": 0.0389908256880734
+      },
+      {
+        "P": 883,
+        "edge_mass": 34,
+        "edge_ratio": 0.0389908256880734
+      },
+      {
+        "P": 919,
+        "edge_mass": 32,
+        "edge_ratio": 0.03669724770642202
+      },
+      {
+        "P": 617,
+        "edge_mass": 28,
+        "edge_ratio": 0.03211009174311927
+      },
+      {
+        "P": 773,
+        "edge_mass": 28,
+        "edge_ratio": 0.03211009174311927
+      },
+      {
+        "P": 821,
+        "edge_mass": 26,
+        "edge_ratio": 0.02981651376146789
+      },
+      {
+        "P": 829,
+        "edge_mass": 26,
+        "edge_ratio": 0.02981651376146789
+      },
+      {
+        "P": 887,
+        "edge_mass": 26,
+        "edge_ratio": 0.02981651376146789
+      },
+      {
+        "P": 809,
+        "edge_mass": 24,
+        "edge_ratio": 0.027522935779816515
+      },
+      {
+        "P": 769,
+        "edge_mass": 22,
+        "edge_ratio": 0.02522935779816514
+      },
+      {
+        "P": 971,
+        "edge_mass": 22,
+        "edge_ratio": 0.02522935779816514
+      },
+      {
+        "P": 619,
+        "edge_mass": 20,
+        "edge_ratio": 0.022935779816513763
+      },
+      {
+        "P": 449,
+        "edge_mass": 18,
+        "edge_ratio": 0.020642201834862386
+      },
+      {
+        "P": 691,
+        "edge_mass": 18,
+        "edge_ratio": 0.020642201834862386
+      }
+    ],
+    "top_repeated_template_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 829,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3622,m=1303,q=19,s=9; pkt=3622,m=1307,q=19,s=9",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=16 -> g=2,c=3 -> g=6,c=10 -> g=4,c=6 -> g=6,c=9 -> g=8,c=13 -> g=4,c=6 -> g=2,c=3",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=positive -> g=4,c=6,A=negative -> g=6,c=9,A=positive -> g=8,c=13,A=negative -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 971,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4742,m=907,q=28,s=5; pkt=4742,m=911,q=28,s=5",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=9 -> g=8,c=8 -> g=6,c=5 -> g=6,c=6 -> g=4,c=3 -> g=8,c=8 -> g=4,c=4 -> g=14,c=13",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=negative -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive -> g=4,c=3,A=positive -> g=8,c=8,A=negative -> g=4,c=4,A=positive -> g=14,c=13,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 809,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3316,m=739,q=24,s=6; pkt=3316,m=743,q=24,s=6",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=2,c=1 -> g=6,c=6 -> g=6,c=5 -> g=4,c=4 -> g=2,c=2 -> g=4,c=4 -> g=6,c=5 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=2,c=1,A=negative -> g=6,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=positive -> g=4,c=4,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 607,
+        "cycle_length": 5,
+        "edge_mass": 15,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 3,
+        "occurrence_class": "multi_packet_repeated_template",
+        "occurrence_count": 3,
+        "occurrence_locations": "pkt=1887,m=479,q=7,s=3; pkt=1888,m=487,q=8,s=5; pkt=1888,m=491,q=8,s=5",
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "raw_base_template": "g=2,c=2 -> g=4,c=3 -> g=6,c=5 -> g=8,c=6 -> g=4,c=3",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=2,c=2,A=negative -> g=4,c=3,A=negative -> g=6,c=5,A=positive -> g=8,c=6,A=negative -> g=4,c=3,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 919,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4307,m=883,q=27,s=6; pkt=4307,m=887,q=27,s=6",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=10 -> g=8,c=8 -> g=10,c=9 -> g=8,c=8 -> g=6,c=6 -> g=4,c=4 -> g=8,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=negative -> g=8,c=8,A=positive -> g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=6,A=positive -> g=4,c=4,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 613,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=1948,m=1049,q=9,s=2; pkt=1948,m=1051,q=9,s=2",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=17 -> g=2,c=4 -> g=4,c=7 -> g=2,c=3 -> g=4,c=7 -> g=14,c=24 -> g=6,c=10",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=17,A=negative -> g=2,c=4,A=positive -> g=4,c=7,A=positive -> g=2,c=3,A=positive -> g=4,c=7,A=negative -> g=14,c=24,A=positive -> g=6,c=10,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 821,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 2,
+        "occurrence_class": "multi_packet_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3417,m=701,q=15,s=3; pkt=3418,m=709,q=16,s=2",
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "raw_base_template": "g=10,c=9 -> g=2,c=2 -> g=4,c=3 -> g=6,c=5 -> g=4,c=3 -> g=2,c=2 -> g=12,c=10",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=negative -> g=2,c=2,A=positive -> g=4,c=3,A=negative -> g=6,c=5,A=negative -> g=4,c=3,A=positive -> g=2,c=2,A=negative -> g=12,c=10,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 977,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4807,m=877,q=23,s=8; pkt=4807,m=881,q=23,s=8",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=4,c=3 -> g=8,c=8 -> g=6,c=5 -> g=4,c=4 -> g=8,c=7 -> g=6,c=5 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=4,c=3,A=positive -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 991,
+        "cycle_length": 4,
+        "edge_mass": 12,
+        "m_shell_support_count": 2,
+        "m_value_support_count": 3,
+        "occurrence_class": "multi_packet_repeated_template",
+        "occurrence_count": 3,
+        "occurrence_locations": "pkt=4968,m=1367,q=33,s=2; pkt=4968,m=1373,q=33,s=2; pkt=4969,m=1361,q=34,s=1",
+        "packet_support_count": 2,
+        "q_prefix_support_count": 2,
+        "raw_base_template": "g=12,c=17 -> g=4,c=5 -> g=6,c=9 -> g=2,c=2",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=12,c=17,A=negative -> g=4,c=5,A=positive -> g=6,c=9,A=positive -> g=2,c=2,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3478,m=937,q=16,s=4; pkt=3478,m=941,q=16,s=4",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=11 -> g=2,c=3 -> g=4,c=4 -> g=6,c=7 -> g=2,c=2 -> g=12,c=14",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=2,c=3,A=negative -> g=4,c=4,A=negative -> g=6,c=7,A=positive -> g=2,c=2,A=negative -> g=12,c=14,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 769,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3101,m=823,q=28,s=5; pkt=3101,m=827,q=28,s=5",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=11 -> g=6,c=6 -> g=6,c=7 -> g=4,c=4 -> g=2,c=2 -> g=12,c=13",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=11,A=positive -> g=6,c=6,A=negative -> g=6,c=7,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=negative -> g=12,c=13,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 1009,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=5099,m=1481,q=27,s=6; pkt=5099,m=1483,q=27,s=6",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=15 -> g=6,c=9 -> g=6,c=9 -> g=2,c=3 -> g=18,c=27 -> g=6,c=8",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=15,A=positive -> g=6,c=9,A=negative -> g=6,c=9,A=positive -> g=2,c=3,A=positive -> g=18,c=27,A=positive -> g=6,c=8,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 821,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3443,m=1319,q=16,s=3; pkt=3443,m=1321,q=16,s=3",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=16 -> g=2,c=3 -> g=6,c=10 -> g=8,c=13 -> g=4,c=6 -> g=2,c=3",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 937,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4419,m=769,q=14,s=2; pkt=4419,m=773,q=14,s=2",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=10,c=9 -> g=8,c=6 -> g=6,c=5 -> g=8,c=7",
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=positive -> g=10,c=9,A=positive -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 733,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=2788,m=673,q=25,s=3; pkt=2788,m=677,q=25,s=3",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=9 -> g=6,c=5 -> g=6,c=6 -> g=2,c=2 -> g=18,c=16 -> g=6,c=6",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=2,c=2,A=positive -> g=18,c=16,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4061,m=769,q=21,s=2; pkt=4061,m=773,q=21,s=2",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=9 -> g=2,c=1 -> g=4,c=4 -> g=6,c=5 -> g=6,c=5 -> g=8,c=7",
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=positive -> g=2,c=1,A=negative -> g=4,c=4,A=negative -> g=6,c=5,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 947,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4550,m=877,q=26,s=10; pkt=4550,m=881,q=26,s=10",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=9 -> g=8,c=8 -> g=6,c=5 -> g=6,c=6 -> g=4,c=4 -> g=8,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=4082,m=1487,q=12,s=8; pkt=4082,m=1489,q=12,s=8",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=12,c=20 -> g=8,c=14 -> g=4,c=7 -> g=6,c=10 -> g=8,c=13 -> g=4,c=7",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=12,c=20,A=positive -> g=8,c=14,A=negative -> g=4,c=7,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=3502,m=1289,q=17,s=9; pkt=3502,m=1291,q=17,s=9",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=2,c=3 -> g=6,c=9 -> g=4,c=6 -> g=6,c=10 -> g=8,c=12 -> g=4,c=7",
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "signed_child": "g=2,c=3,A=negative -> g=6,c=9,A=positive -> g=4,c=6,A=negative -> g=6,c=10,A=positive -> g=8,c=12,A=positive -> g=4,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 727,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_shell_support_count": 1,
+        "m_value_support_count": 2,
+        "occurrence_class": "single_packet_multi_m_repeated_template",
+        "occurrence_count": 2,
+        "occurrence_locations": "pkt=2741,m=739,q=29,s=3; pkt=2741,m=743,q=29,s=3",
+        "packet_support_count": 1,
+        "q_prefix_support_count": 1,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=2,c=2 -> g=18,c=18 -> g=6,c=7",
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=2,c=2,A=negative -> g=18,c=18,A=positive -> g=6,c=7,A=positive"
+      }
+    ],
+    "unclassified_repeated_template_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "LocalCycleLengthUniformBound",
+    "AND SinglePacketMultiMCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "local_occurrence_multiplicity_uniform_bound_proved": false,
+  "local_template_multiplicity_uniform_bound_proved": false,
+  "mixed_right_tail_endpoint_router_no_loss_closed": false,
+  "multi_P_trace_completion_closed": false,
+  "multi_packet_duplicate_transport_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pure_endpoint_carrier_phase_saving_closed": false,
+  "reason_chosen": "the repeated-template part is the narrowest subgate of LocalOccurrenceMultiplicityUniformBound",
+  "repeated_occurrence_aggregation_or_pdec_closed": false,
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "single_P_local_endpoint_packet_bound_closed": false,
+  "single_P_local_template_occurrence_class_ledger_closed": true,
+  "single_P_slice_endpoint_packet_summation_closed": false,
+  "single_packet_multi_m_collision_bound_proved": false,
+  "single_packet_single_m_multi_cycle_suppression_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "ec279bd50340b4f1cb39bd6610987c240e4b066b775b56bb171d357d636f022b",
+    "docs/monograph/external-theorem-index.md": "8d41a1329e3fe906d57684475e4b2a059931a7f6333d7c2246a7b7594ec37abc",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "07bc80fd3e8f600b2b627d831f44c8a73f442aa7f95099d90a70b9d9967cc26d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.json": "91178f484119f0a61d1682e600b79ecdfa81b8a41774a1fa261c19301da86d34",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json": "410cb5ef8d65ce3068bec20ec6a040da9b08599fe7c6fca4a4808789753ad65d",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "91f5d1b11c40b25f41f6793e7e0577ca052ef9c6d37ea63d39a9d3b80de27e47",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "52d2eeb9f7beec1bba25a807b0f56347cbf95ef0e981d31e551ecdbf9ba30295",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit.py": "4121d60e72dd0fe2ee54cfcb657adcdf2eabffebc1e1add3a69f54278cda7042",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "f0bab12f1dade6c9831e614e690cfcefa958fe3ec021a20e6ece161d385a6d95"
+  },
+  "status": "single_p_local_template_occurrence_class_ledger_closed_uniform_bound_open",
+  "thin_P_support_carrier_summation_closed": false,
+  "unequal_mirror_pair_residual_phase_saving_closed": false
+}

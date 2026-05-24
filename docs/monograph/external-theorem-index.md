@@ -2081,6 +2081,70 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65P. Phi-LPF q-prefix single-P local template occurrence class 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.md
+```
+
+本层继续下钻 `LocalOccurrenceMultiplicityUniformBound` 中真正有重数的部分。
+上一层显示 `4915` 个 single-P local endpoint templates 中只有 `97` 个重复；
+本层把这 `97` 个 occurrence-count 大于一的模板分成三类：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+repeated_template_count=97
+repeated_template_edge_mass=872
+repeated_template_edge_ratio=0.03259447538593802
+single_packet_multi_m_repeated_template_count=78
+single_packet_multi_m_repeated_edge_mass=720
+multi_packet_repeated_template_count=17
+multi_packet_repeated_edge_mass=136
+single_packet_single_m_multi_cycle_template_count=2
+single_packet_single_m_multi_cycle_edge_mass=16
+unclassified_repeated_template_count=0
+observed_repeated_templates_single_strip=true
+repeated_template_packet_support_count_max=2
+repeated_template_m_value_support_count_max=4
+repeated_template_q_prefix_support_count_max=2
+repeated_template_m_shell_support_count_max=2
+```
+
+这把 occurrence 门从一个单一黑箱进一步拆成：
+
+```text
+SinglePacketMultiMCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+```
+
+外部前沿边界：FKMS、Milićević--Qin--Wu、Wright、Pascadi、
+Shao--Shparlinski--Wijaya、Xu--Zhang 仍是平均型、双线性、参数型或集合变量
+输入；它们不直接给出 width-one local repeated-template collision bound。Li 的
+短区间素数存在结果也不估计 signed endpoint occurrence classes。
+
+状态边界：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+single_packet_multi_m_collision_bound_proved=false
+multi_packet_duplicate_transport_bound_proved=false
+single_packet_single_m_multi_cycle_suppression_proved=false
+repeated_occurrence_aggregation_or_pdec_closed=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+local_template_multiplicity_uniform_bound_proved=false
+single_P_slice_endpoint_packet_summation_closed=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

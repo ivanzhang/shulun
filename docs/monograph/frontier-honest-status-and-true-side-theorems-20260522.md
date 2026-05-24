@@ -2562,6 +2562,67 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC11：Phi-LPF q-prefix single-P local template occurrence class 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_template_occurrence_class_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json
+```
+
+本层只处理上一层的 repeated templates：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+repeated_template_count=97
+repeated_template_edge_mass=872
+single_packet_multi_m_repeated_template_count=78
+single_packet_multi_m_repeated_edge_mass=720
+multi_packet_repeated_template_count=17
+multi_packet_repeated_edge_mass=136
+single_packet_single_m_multi_cycle_template_count=2
+single_packet_single_m_multi_cycle_edge_mass=16
+unclassified_repeated_template_count=0
+observed_repeated_templates_single_strip=true
+```
+
+最新最窄口改写为：
+
+```text
+LocalCycleLengthUniformBound
+AND SinglePacketMultiMCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+外部 theorem 影响没有发生闭合性改变：平均 trace/Kloosterman、composite
+Type-II、smooth/square-free parameter、arbitrary-set Kloosterman 与短区间素数
+存在输入，都不能直接证明 width-one repeated local template collision bound。
+
+状态边界：
+
+```text
+single_P_local_template_occurrence_class_ledger_closed=true
+single_packet_multi_m_collision_bound_proved=false
+multi_packet_duplicate_transport_bound_proved=false
+single_packet_single_m_multi_cycle_suppression_proved=false
+repeated_occurrence_aggregation_or_pdec_closed=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+local_template_multiplicity_uniform_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：
