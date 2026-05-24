@@ -6669,6 +6669,63 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65N. Phi-LPF q-prefix single-P local endpoint packet 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_endpoint_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.md
+```
+
+本层只处理 pure endpoint phase-interface 中的 `single_P_local_endpoint_packet`
+支路，把 `26753` edge mass 拆成局部模板、P-slice、route 与 endpoint shell
+负载账本：
+
+```text
+single_P_local_endpoint_structure_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_P_support_prime_count=128
+single_P_support_P_min/max=97/1009
+single_P_edge_mass_per_P_min/median/max=2/167.5/827
+single_P_template_edge_mass_min/median/max=1/5/16
+observed_local_template_edge_mass_le_16=true
+wing_single_P_local=13540
+right_tail_single_P_local=13213
+observed_width_one_route_superclass_balance_gap=327
+```
+
+真推进点：`SinglePLocalPureEndpointPacketBound` 不是一个可直接套平均型
+Kloosterman/trace theorem 的对象。它先被压成两个实际门：
+
+```text
+LocalTemplateMultiplicityUniformBound
+AND SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+外部前沿边界：FKMS、Milićević--Qin--Wu、Wright 与 Xu--Zhang 的
+trace/Kloosterman 输入都需要显式长变量、双线性变量或有限域集合变量；
+它们不能直接估计 `P_support_width=1` 的 signed local packets。Li 的
+`x^0.52` 短区间素数存在也不估计 signed carrier phase。
+
+状态边界：
+
+```text
+single_P_local_endpoint_structure_ledger_closed=true
+local_template_multiplicity_uniform_bound_proved=false
+single_P_slice_endpoint_packet_summation_closed=false
+single_P_local_endpoint_packet_bound_closed=false
+multi_P_trace_completion_closed=false
+pure_endpoint_carrier_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

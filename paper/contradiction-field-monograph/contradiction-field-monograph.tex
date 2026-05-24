@@ -35632,6 +35632,80 @@ phase-interface-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Single-\(P\) local endpoint packets}
+
+\begin{theorem}[Single-\(P\) local endpoint packet ledger]
+In the audit range \(P\le 1009\), the single-\(P\) branch inside the pure
+endpoint support has the following finite structure:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_endpoint\_structure\_ledger\_closed} & \texttt{true}\\
+\texttt{single\_P\_local\_endpoint\_edge\_mass} & 26753\\
+\texttt{single\_P\_local\_endpoint\_template\_count} & 4915\\
+\texttt{single\_P\_support\_prime\_count} & 128\\
+\texttt{single\_P\_support\_P\_min/max} & 97/1009\\
+\texttt{single\_P\_edge\_mass\_per\_P\_min/median/max} & 2/167.5/827\\
+\texttt{single\_P\_template\_edge\_mass\_min/median/max} & 1/5/16\\
+\texttt{wing\_single\_P\_local} & 13540\\
+\texttt{right\_tail\_single\_P\_local} & 13213 .
+\end{array}
+\]
+The width-one endpoint mass is therefore not a completed trace family.  It is a
+local template problem plus a \(P\)-slice summation problem.
+\end{theorem}
+\begin{proof}
+The audit reruns the signed-child construction and imports the pure endpoint
+phase-interface certificate.  It keeps exactly those pure endpoint templates
+whose \(P\)-support has width \(1\).  The resulting edge mass is
+\[
+26753,
+\]
+matching the imported single-\(P\) mass.  The same records are then sorted by
+endpoint route, \(A\)-class, \(P\)-slice, \(q\)-prefix load, shell-prime load,
+and local template mass.  The route-superclass identity
+\[
+13540+13213=26753
+\]
+is checked by the generated ledger.
+\end{proof}
+
+\begin{remark}[Local obstruction]
+This narrows the first pure endpoint gate to
+\begin{quote}\scriptsize\ttfamily
+LocalTemplateMultiplicityUniformBound\\
+AND SinglePSliceEndpointPacketSummationOrPDEC.
+\end{quote}
+The observed local template edge mass is at most \(16\) in the finite audit,
+but this is not yet a global uniform bound.  FKMS-type trace bilinear estimates,
+arbitrary-modulus Kloosterman estimates, unbalanced Kloosterman estimates, and
+the Xu--Zhang generalized Kloosterman bounds over arbitrary sets require
+completed long variables or finite-field set variables; they do not by
+themselves control width-one \(P\)-support local packets.
+
+The active mouth is now
+\begin{quote}\scriptsize\ttfamily
+LocalTemplateMultiplicityUniformBound\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+endpoint-packet-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

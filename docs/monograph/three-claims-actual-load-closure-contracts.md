@@ -22980,6 +22980,43 @@ FKMS、Milićević--Qin--Wu 与 Wright 的前沿 trace/Kloosterman 输入只能�
 multi-`P` 变量完成后作为候选工具，不能处理 single-`P` local packet；
 Dong--Robles--Zeindler 的 Kloosterman-fraction 近似输入已撤回，不可引用。
 
+### 1.179H Phi-LPF q-prefix single-P local endpoint packet actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_endpoint_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.json
+```
+
+actual-load 含义更新为：single-P local endpoint 主体已拆成局部模板重数与
+P-slice endpoint packet 求和两层：
+
+```text
+single_P_local_endpoint_structure_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_P_support_prime_count=128
+single_P_edge_mass_per_P_min/median/max=2/167.5/827
+single_P_template_edge_mass_min/median/max=1/5/16
+wing_single_P_local=13540
+right_tail_single_P_local=13213
+```
+
+最新直接主攻改为：
+
+```text
+LocalTemplateMultiplicityUniformBound
+SinglePSliceEndpointPacketSummationOrPDEC
+MultiPPureEndpointTraceKloostermanCompletion
+PureEndpointCarrierPhaseSaving
+```
+
+本层只关闭 single-P local endpoint 结构账本；全局局部模板重数界、
+P-slice 求和/回流、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

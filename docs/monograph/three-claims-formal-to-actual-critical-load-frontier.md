@@ -25584,3 +25584,43 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 与 Wright 只给 multi-`P` completion 后的候选外部入口，不能替代 single-`P`
 局部包估计；Dong--Robles--Zeindler 的 Kloosterman-fraction 近似输入已撤回，
 不可引用。
+
+### Phi-LPF q-prefix single-P local endpoint packet formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_endpoint_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-endpoint-packet-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+SinglePLocalPureEndpointPacketBound
+```
+
+现在被拆成：
+
+```text
+LocalTemplateMultiplicityUniformBound
+AND SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+关键审计读数为：
+
+```text
+single_P_local_endpoint_structure_ledger_closed=true
+single_P_local_endpoint_edge_mass=26753
+single_P_local_endpoint_template_count=4915
+single_P_support_prime_count=128
+single_P_template_edge_mass_max=16
+single_P_edge_mass_per_P_max=827
+wing_single_P_local=13540
+right_tail_single_P_local=13213
+```
+
+本层删除的是“single-P local packets 可直接由平均型 trace/Kloosterman theorem
+吃掉”的黑箱；没有删除局部模板重数推广、P-slice 求和/回流或实际相消缺口。
