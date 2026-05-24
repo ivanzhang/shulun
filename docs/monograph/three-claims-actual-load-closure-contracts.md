@@ -22749,6 +22749,50 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层只关闭组合 weight-carrier ledger；weighted phase saving、thin-support summation、
 residual endpoint summation、外部引理版与内部自足版仍未闭合。
 
+### 1.179C Phi-LPF q-prefix signed-child mirror actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_signed_child_mirror_reconciliation_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.json
+```
+
+actual-load 含义更新为：raw-base/signed-child reconciliation 不能靠简单
+`A`-step sign mirror pairing 闭合。同步读数为：
+
+```text
+signed_child_mirror_reconciliation_ledger_closed=true
+mirror_balanced_edge_ratio=0.2909999349907594
+mirror_imbalance_edge_ratio=0.7090000650092406
+missing_mirror_edge_ratio=0.5848974247053689
+raw_base_exact_mirror_balance_count=25
+raw_base_exact_mirror_balance_ratio=0.0046650494495241645
+raw_base_mirror_imbalance_ratio_median=1.0
+```
+
+最新直接主攻改为：
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+NonMirrorSignedChildCarrierControl
+```
+
+并行仍需：
+
+```text
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 signed-child mirror ledger；mirror-imbalance phase saving、thin-support
+summation、residual endpoint summation、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

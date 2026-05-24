@@ -35287,6 +35287,73 @@ boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Signed-child mirror obstruction inside cycle-signature carriers}
+
+\begin{theorem}[Signed-child mirror reconciliation ledger]
+In the same audit range \(P\le 1009\), fix each raw-base cycle template and
+pair its signed children by the involution that exchanges \(A\)-step signs
+\(\texttt{positive}\leftrightarrow\texttt{negative}\) while leaving
+\(\texttt{zero}\) fixed.  The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{signed\_child\_mirror\_reconciliation\_ledger\_closed} & \texttt{true}\\
+\texttt{signed\_cycle\_edge\_mass} & 107677\\
+\texttt{raw\_base\_signed\_refinement\_count} & 5359\\
+\texttt{raw\_base\_with\_multiple\_signed\_children\_count} & 1823\\
+\texttt{raw\_base\_multi\_child\_signed\_edge\_ratio} & 0.7569583105027071\\
+\texttt{mirror\_balanced\_edge\_mass} & 31334\\
+\texttt{mirror\_balanced\_edge\_ratio} & 0.2909999349907594\\
+\texttt{mirror\_imbalance\_edge\_mass} & 76343\\
+\texttt{mirror\_imbalance\_edge\_ratio} & 0.7090000650092406\\
+\texttt{missing\_mirror\_edge\_ratio} & 0.5848974247053689\\
+\texttt{raw\_base\_exact\_mirror\_balance\_count} & 25\\
+\texttt{raw\_base\_exact\_mirror\_balance\_ratio} & 0.0046650494495241645 .
+\end{array}
+\]
+Thus sign-mirror pairing is a finite, auditable structure, but it is not a
+large enough exact pairing to reconcile the signed-child weights.
+\end{theorem}
+\begin{proof}
+For a signed child template
+\[
+(g_1,c_1,\epsilon_1),\ldots,(g_\ell,c_\ell,\epsilon_\ell),
+\]
+replace each \(\epsilon_i\) by its mirror sign and reduce again to the
+canonical directed rotation.  Inside each raw-base template, compare the edge
+mass of a signed child with the edge mass of its mirror.  The balanced
+contribution is twice the smaller mass in each nontrivial pair, while the
+absolute difference and any missing mirror mass are assigned to mirror
+imbalance.  The machine ledger checks that balanced plus imbalanced mass is
+exactly the signed cycle-edge mass \(107677\).
+\end{proof}
+
+\begin{remark}[Mirror pairing does not break parity]
+Only about \(29.10\%\) of signed cycle-edge mass is balanced by the sign mirror;
+about \(70.90\%\) remains as mirror imbalance, and only \(25\) of \(5359\)
+raw-base templates have exact mirror balance.  The remaining mouth is therefore
+\begin{quote}\scriptsize\ttfamily
+SignedChildMirrorImbalancePhaseSaving\\
+AND NonMirrorSignedChildCarrierControl\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the mirror-pairing ledger.  It does not prove
+mirror-imbalance phase saving, thin-support summation, residual endpoint
+summation, the external-lemma version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-\\
+reconciliation-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

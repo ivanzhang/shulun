@@ -2138,6 +2138,66 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC4：Phi-LPF q-prefix signed-child mirror reconciliation 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_signed_child_mirror_reconciliation_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.json
+```
+
+本层测试 raw-base/signed-child reconciliation 的最自然非循环候选：同一 raw-base
+内以 `A`-step 符号镜像 `positive <-> negative` 配平 signed children。关键读数：
+
+```text
+signed_child_mirror_reconciliation_ledger_closed=true
+signed_cycle_edge_mass=107677
+mirror_balanced_edge_mass=31334
+mirror_balanced_edge_ratio=0.2909999349907594
+mirror_imbalance_edge_mass=76343
+mirror_imbalance_edge_ratio=0.7090000650092406
+missing_mirror_edge_ratio=0.5848974247053689
+raw_base_exact_mirror_balance_count=25
+raw_base_exact_mirror_balance_ratio=0.0046650494495241645
+raw_base_mirror_imbalance_ratio_median=1.0
+```
+
+真推进点：符号镜像配对捷径被定量排除；剩余不是 raw/signed 命名差异，而是
+`76343` edge mass 的 mirror-imbalance signed-child carriers。
+
+最新最窄口变为：
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+AND NonMirrorSignedChildCarrierControl
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+signed_child_mirror_reconciliation_ledger_closed=true
+mirror_pairing_enough_for_reconciliation_closed=false
+raw_base_to_signed_child_weight_reconciliation_closed=false
+signed_child_mirror_imbalance_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

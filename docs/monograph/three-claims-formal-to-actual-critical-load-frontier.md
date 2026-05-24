@@ -25319,3 +25319,54 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是 weighted phase saving 载体未定位的黑箱；没有删除 signed carrier
 相消、thin-support 无损求和、completed family 和 residual endpoint 真缺口。
+
+### Phi-LPF q-prefix signed-child mirror formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_signed_child_mirror_reconciliation_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RawBaseToSignedChildWeightReconciliation
+```
+
+现在被一个符号镜像审计压成：
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+NonMirrorSignedChildCarrierControl
+```
+
+关键审计读数为：
+
+```text
+signed_child_mirror_reconciliation_ledger_closed=true
+mirror_balanced_edge_mass=31334
+mirror_imbalance_edge_mass=76343
+mirror_imbalance_edge_ratio=0.7090000650092406
+missing_mirror_edge_ratio=0.5848974247053689
+raw_base_exact_mirror_balance_count=25
+raw_base_mirror_imbalance_ratio_median=1.0
+```
+
+因此最新实际硬点为：
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+AND NonMirrorSignedChildCarrierControl
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“raw-base 内可能自然符号配平”的捷径；没有删除 mirror-imbalance
+相消、thin-support 无损求和、completed family 和 residual endpoint 真缺口。
