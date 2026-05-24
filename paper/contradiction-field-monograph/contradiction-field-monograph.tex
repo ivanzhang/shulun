@@ -34173,6 +34173,96 @@ boundary-strip-decomposition-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Layer-cake rectangles for the boundary strips}
+
+\begin{theorem}[Boundary layer-cake product rectangles]
+Let \(B\) be one of the three boundary strips from the preceding theorem,
+and order its active fibres as
+\[
+  I_1\supseteq I_2\supseteq \cdots \supseteq I_s
+\]
+along increasing eligible prime \(q\).  Define \(I_{s+1}=\emptyset\).  Then
+\[
+  B
+  =
+  \bigsqcup_{j=1}^{s}
+  \bigl(\{q_1,\ldots,q_j\}\times (I_j\setminus I_{j+1})\bigr).
+\]
+After splitting each prime shell \(I_j\setminus I_{j+1}\) into consecutive
+prime intervals, the boundary is a disjoint union of strip-local
+\(q\)-prefix by prime-\(m\)-shell product rectangles.
+\end{theorem}
+\begin{proof}
+Since the strip fibres are nested decreasing, a point \(m\in I_j\setminus
+I_{j+1}\) belongs exactly to the first \(j\) fibres \(I_1,\ldots,I_j\) and
+to no later fibre.  Hence its full contribution to the graph is precisely
+\(\{q_1,\ldots,q_j\}\times\{m\}\).  Summing over the disjoint shell
+differences \(I_j\setminus I_{j+1}\) proves the displayed disjoint union.
+Each shell is a union of consecutive prime intervals because the original
+fibres are prime intervals.  Splitting the shell by its prime-interval
+components gives product rectangles.
+\end{proof}
+
+\begin{remark}[Finite boundary layer-cake ledger]
+The audit up to \(P\le 1009\) verifies the exact rectangle layer expansion:
+\[
+  \texttt{boundary\_edge\_count\_total}
+  =
+  \texttt{layercake\_edge\_count\_total}
+  =
+  177515.
+\]
+The boundary is carried by
+\[
+  \texttt{layercake\_rectangle\_count\_total}=6190
+\]
+complete product rectangles, split by strip as
+\[
+  \texttt{lower\_wing\_rectangle\_count\_total}=1032,\qquad
+  \texttt{upper\_wing\_rectangle\_count\_total}=1967,\qquad
+  \texttt{right\_tail\_rectangle\_count\_total}=3191.
+\]
+The edge counts carried by the same three families are
+\[
+  29144,\qquad 61620,\qquad 86751,
+\]
+respectively.  The layer expansion has no audited leak:
+\[
+  \texttt{nested\_bad\_steps\_total}
+  =
+  \texttt{missing\_count\_total}
+  =
+  \texttt{extra\_count\_total}
+  =
+  0.
+\]
+The largest audited layer contains \(261\) edges, and the maximum number of
+layers in one row is \(81\).
+
+This removes the curved-boundary support obstruction, but it still does not
+close the analytic estimate.  One must prove a uniform phase saving over
+all layer rectangles, or build a completed trace/Kloosterman family whose
+summation over the \(6190\) audited layer packets has no comparable loss.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+UniformPhaseSavingAcrossBoundaryLayerCakeRectangles\\
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle\\
+AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers\\
+AND StripEndpointSummationByPartsWithoutComparableLoss\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-layercake-rectangles-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

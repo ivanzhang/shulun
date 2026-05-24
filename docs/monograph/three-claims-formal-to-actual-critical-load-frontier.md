@@ -24349,6 +24349,46 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AF. Phi-LPF prime-survivor boundary layer-cake rectangle frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-ledger.json
+```
+
+同步结果：
+
+```text
+status=boundary_monotone_strips_decomposed_into_layercake_product_rectangles_phase_saving_open
+boundary_edge_count_total=177515
+layercake_rectangle_count_total=6190
+layercake_edge_count_total=177515
+row_rectangle_count_max=81
+max_rectangle_edge_count=261
+total_bad_boundary_layercake_rectangle_count=0
+boundary_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`BoundaryPhaseSavingForThreeMonotonePrimeIntervalStrips`
+现在被进一步压成 `UniformPhaseSavingAcrossBoundaryLayerCakeRectangles`。边界已成为
+完整 product-rectangle 层包；但仍没有 completed trace/Kloosterman family，也没有
+对 `6190` 个层矩形求和的无损统一估计。
+
+最新实际硬点：
+
+```text
+UniformPhaseSavingAcrossBoundaryLayerCakeRectangles
+AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers
+AND StripEndpointSummationByPartsWithoutComparableLoss
+```
+
+本层删除的是 strip 曲边支撑黑箱；没有删除相位节省和 completed variable 真缺口。
+
 ## 330AE. Phi-LPF prime-survivor boundary strip frontier
 
 新增文件：

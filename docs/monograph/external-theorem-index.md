@@ -4077,6 +4077,73 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61U. Phi-LPF q-support row-averaged additive-k prime-survivor boundary layer-cake rectangles 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.md
+```
+
+本层承接 61T。三条 monotone boundary strips 可以用 layer-cake/Ferrers
+分解写成互不重叠的 strip-local `q`-prefix x prime `m`-shell product
+rectangles。有限审计读数：
+
+```text
+max_prime=1009
+active_P_count=155
+boundary_edge_count_total=177515
+layercake_rectangle_count_total=6190
+layercake_edge_count_total=177515
+lower_wing_rectangle_count_total=1032
+upper_wing_rectangle_count_total=1967
+right_tail_rectangle_count_total=3191
+lower_wing_edge_count_total=29144
+upper_wing_edge_count_total=61620
+right_tail_edge_count_total=86751
+row_rectangle_count_min=1
+row_rectangle_count_median=38.5
+row_rectangle_count_max=81
+row_rectangle_count_average=40.194805194805
+max_rectangle_edge_count=261
+nested_bad_steps_total=0
+missing_count_total=0
+extra_count_total=0
+total_bad_boundary_layercake_rectangle_count=0
+```
+
+外部前沿影响：边界现在已贴近 Type-II/trace 的 product-shape 输入；但 `6190`
+个层矩形仍需要统一 completed family、移动 prime denominator 的 Kloosterman
+变量和跨层求和控制。FKMS、Milićević--Qin--Wu、Pascadi、Wright 等外部输入
+仍没有直接给出这些层的无条件相消。
+
+新的最新最窄口：
+
+```text
+UniformPhaseSavingAcrossBoundaryLayerCakeRectangles
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+boundary_layercake_rectangle_identity_verified=true
+all_layers_are_complete_product_rectangles=true
+boundary_phase_saving_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

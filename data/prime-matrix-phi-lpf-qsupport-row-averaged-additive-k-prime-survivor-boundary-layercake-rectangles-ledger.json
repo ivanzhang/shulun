@@ -1,0 +1,805 @@
+{
+  "all_layers_are_complete_product_rectangles": true,
+  "boundary_layercake_rectangle_identity_verified": true,
+  "boundary_phase_saving_closed": false,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "BoundaryLayerCakeRectangleIdentity",
+      "meaning": "The three monotone strips decompose exactly into disjoint q-prefix by m-shell product rectangles.",
+      "proved": true,
+      "remaining": "none for the support identity"
+    },
+    {
+      "closed": true,
+      "gate": "NoLayerOverlapOrLeak",
+      "meaning": "Expanded layer rectangles match the boundary edge set with no missing and no extra edge.",
+      "proved": true,
+      "remaining": "none for the finite ledger"
+    },
+    {
+      "closed": true,
+      "gate": "LayerCountAndLoadLedger",
+      "meaning": "The boundary load is carried by 6190 rectangle layers, with row layer counts recorded.",
+      "proved": true,
+      "remaining": "uniform summation control over layers remains required"
+    },
+    {
+      "closed": false,
+      "gate": "LayerUniformPhaseSaving",
+      "meaning": "Apply trace/Kloosterman/Type-II estimates uniformly across all layer rectangles.",
+      "proved": false,
+      "remaining": "new analytic estimate and completed family still required"
+    }
+  ],
+  "completed_trace_or_kloosterman_variable_closed": false,
+  "current_object": {
+    "input": "three monotone prime-interval boundary strips",
+    "layercake_decomposition": "each strip is a disjoint union of strip-local q-prefix x prime m-shell rectangles",
+    "remaining": "uniform phase saving or completed trace/Kloosterman estimates over the 6190 rectangle layers"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "the boundary is now a finite family of product rectangles, but uniform trace-family hypotheses and summation over layers remain open",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "rectangle layers still require a completed Kloosterman variable for the moving q denominator",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "layer rectangles are Type-II shaped, but the number of layers and endpoint weights must be absorbed",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "right-tail layers are unbalanced candidates only after their congruence model is completed",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval theta=0.52 still does not close the half-scale layer endpoint problem",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "layer rectangles fit the product-shape interface better, but a trace-family sheaf and uniform layer summation are not supplied",
+    "Li_short_interval_x_052": "does not provide the missing half-scale layer endpoint estimate",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "moving q denominators still need completed Kloosterman variables on every layer",
+    "Pascadi_composite_Type_II": "Type-II shape is present layerwise, but endpoint weights and layer count remain rate-bearing",
+    "Wright_unbalanced_convolution": "right-tail layers suggest an unbalanced route, still conditional on a congruence model"
+  },
+  "finite_audit": {
+    "active_P_count": 155,
+    "all_layers_are_complete_product_rectangles": true,
+    "bad_layercake_row_count": 0,
+    "boundary_edge_count_total": 177515,
+    "boundary_layercake_rectangle_identity_verified": true,
+    "boundary_phase_saving_closed": false,
+    "completed_trace_or_kloosterman_variable_closed": false,
+    "extra_count_total": 0,
+    "layer_count_requires_uniform_summation_control": true,
+    "layercake_edge_count_total": 177515,
+    "layercake_rectangle_count_total": 6190,
+    "lower_wing_edge_count_total": 29144,
+    "lower_wing_rectangle_count_total": 1032,
+    "max_prime": 1009,
+    "max_rectangle_edge_count": 261,
+    "missing_count_total": 0,
+    "nested_bad_steps_total": 0,
+    "previous_boundary_edge_count_total": 177515,
+    "previous_lower_wing_edge_count_total": 29144,
+    "previous_right_tail_edge_count_total": 86751,
+    "previous_upper_wing_edge_count_total": 61620,
+    "right_tail_edge_count_total": 86751,
+    "right_tail_rectangle_count_total": 3191,
+    "row_rectangle_count_average": 40.1948051948052,
+    "row_rectangle_count_max": 81,
+    "row_rectangle_count_median": 38.5,
+    "row_rectangle_count_min": 1,
+    "sample_rows": [
+      {
+        "P": 43,
+        "boundary_edge_count": 0,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 0,
+        "layercake_rectangle_count": 0,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 0,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 0,
+        "right_tail_rectangle_count": 0,
+        "sample_rectangles": [],
+        "upper_wing_edge_count": 0,
+        "upper_wing_rectangle_count": 0
+      },
+      {
+        "P": 53,
+        "boundary_edge_count": 3,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 3,
+        "layercake_rectangle_count": 1,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 3,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 0,
+        "right_tail_rectangle_count": 0,
+        "sample_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_start": 29,
+            "strip": "upper_wing"
+          }
+        ],
+        "upper_wing_edge_count": 3,
+        "upper_wing_rectangle_count": 1
+      },
+      {
+        "P": 59,
+        "boundary_edge_count": 6,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 6,
+        "layercake_rectangle_count": 1,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 6,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 0,
+        "right_tail_rectangle_count": 0,
+        "sample_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 37,
+            "q_prefix_count": 2,
+            "q_start": 31,
+            "strip": "upper_wing"
+          }
+        ],
+        "upper_wing_edge_count": 6,
+        "upper_wing_rectangle_count": 1
+      },
+      {
+        "P": 61,
+        "boundary_edge_count": 12,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 12,
+        "layercake_rectangle_count": 2,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 6,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 0,
+        "right_tail_rectangle_count": 0,
+        "sample_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 37,
+            "q_prefix_count": 2,
+            "q_start": 31,
+            "strip": "upper_wing"
+          }
+        ],
+        "upper_wing_edge_count": 12,
+        "upper_wing_rectangle_count": 2
+      },
+      {
+        "P": 67,
+        "boundary_edge_count": 6,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 6,
+        "layercake_rectangle_count": 1,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 6,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 0,
+        "right_tail_rectangle_count": 0,
+        "sample_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97,
+            "q_end": 37,
+            "q_prefix_count": 1,
+            "q_start": 37,
+            "strip": "upper_wing"
+          }
+        ],
+        "upper_wing_edge_count": 6,
+        "upper_wing_rectangle_count": 1
+      },
+      {
+        "P": 71,
+        "boundary_edge_count": 17,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 17,
+        "layercake_rectangle_count": 3,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 12,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 3,
+        "right_tail_rectangle_count": 1,
+        "sample_rectangles": [
+          {
+            "edge_count": 2,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127,
+            "q_end": 37,
+            "q_prefix_count": 1,
+            "q_start": 37,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 12,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97,
+            "q_end": 41,
+            "q_prefix_count": 2,
+            "q_start": 37,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 53,
+            "q_prefix_count": 1,
+            "q_start": 53,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 14,
+        "upper_wing_rectangle_count": 2
+      },
+      {
+        "P": 73,
+        "boundary_edge_count": 15,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 15,
+        "layercake_rectangle_count": 3,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 6,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 11,
+        "right_tail_rectangle_count": 2,
+        "sample_rectangles": [
+          {
+            "edge_count": 4,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127,
+            "q_end": 37,
+            "q_prefix_count": 1,
+            "q_start": 37,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 5,
+            "m_end": 71,
+            "m_shell_prime_count": 5,
+            "m_start": 53,
+            "q_end": 47,
+            "q_prefix_count": 1,
+            "q_start": 47,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 53,
+            "q_prefix_count": 2,
+            "q_start": 47,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 4,
+        "upper_wing_rectangle_count": 1
+      },
+      {
+        "P": 79,
+        "boundary_edge_count": 16,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 16,
+        "layercake_rectangle_count": 2,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 8,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 8,
+        "right_tail_rectangle_count": 1,
+        "sample_rectangles": [
+          {
+            "edge_count": 8,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127,
+            "q_end": 43,
+            "q_prefix_count": 2,
+            "q_start": 41,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 8,
+            "m_end": 89,
+            "m_shell_prime_count": 2,
+            "m_start": 83,
+            "q_end": 67,
+            "q_prefix_count": 4,
+            "q_start": 53,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 8,
+        "upper_wing_rectangle_count": 1
+      },
+      {
+        "P": 101,
+        "boundary_edge_count": 36,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 36,
+        "layercake_rectangle_count": 7,
+        "lower_wing_edge_count": 0,
+        "lower_wing_rectangle_count": 0,
+        "max_rectangle_edge_count": 12,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 20,
+        "right_tail_rectangle_count": 4,
+        "sample_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 181,
+            "m_shell_prime_count": 3,
+            "m_start": 173,
+            "q_end": 53,
+            "q_prefix_count": 1,
+            "q_start": 53,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 4,
+            "m_end": 167,
+            "m_shell_prime_count": 2,
+            "m_start": 163,
+            "q_end": 59,
+            "q_prefix_count": 2,
+            "q_start": 53,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 9,
+            "m_end": 157,
+            "m_shell_prime_count": 3,
+            "m_start": 149,
+            "q_end": 61,
+            "q_prefix_count": 3,
+            "q_start": 53,
+            "strip": "upper_wing"
+          },
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79,
+            "q_end": 73,
+            "q_prefix_count": 1,
+            "q_start": 73,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 2,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127,
+            "q_end": 73,
+            "q_prefix_count": 1,
+            "q_start": 73,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 3,
+            "m_end": 97,
+            "m_shell_prime_count": 1,
+            "m_start": 97,
+            "q_end": 83,
+            "q_prefix_count": 3,
+            "q_start": 73,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 12,
+            "m_end": 113,
+            "m_shell_prime_count": 4,
+            "m_start": 103,
+            "q_end": 83,
+            "q_prefix_count": 3,
+            "q_start": 73,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 16,
+        "upper_wing_rectangle_count": 3
+      },
+      {
+        "P": 257,
+        "boundary_edge_count": 272,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 272,
+        "layercake_rectangle_count": 19,
+        "lower_wing_edge_count": 47,
+        "lower_wing_rectangle_count": 4,
+        "max_rectangle_edge_count": 48,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 118,
+        "right_tail_rectangle_count": 7,
+        "sample_rectangles": [
+          {
+            "edge_count": 2,
+            "m_end": 139,
+            "m_shell_prime_count": 2,
+            "m_start": 137,
+            "q_end": 131,
+            "q_prefix_count": 1,
+            "q_start": 131,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 9,
+            "m_end": 157,
+            "m_shell_prime_count": 3,
+            "m_start": 149,
+            "q_end": 139,
+            "q_prefix_count": 3,
+            "q_start": 131,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 12,
+            "m_end": 167,
+            "m_shell_prime_count": 2,
+            "m_start": 163,
+            "q_end": 157,
+            "q_prefix_count": 6,
+            "q_start": 131,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 24,
+            "m_end": 181,
+            "m_shell_prime_count": 3,
+            "m_start": 173,
+            "q_end": 167,
+            "q_prefix_count": 8,
+            "q_start": 131,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 30,
+            "m_end": 241,
+            "m_shell_prime_count": 6,
+            "m_start": 223,
+            "q_end": 211,
+            "q_prefix_count": 5,
+            "q_start": 191,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 5,
+            "m_end": 293,
+            "m_shell_prime_count": 1,
+            "m_start": 293,
+            "q_end": 211,
+            "q_prefix_count": 5,
+            "q_start": 191,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 48,
+            "m_end": 283,
+            "m_shell_prime_count": 6,
+            "m_start": 263,
+            "q_end": 229,
+            "q_prefix_count": 8,
+            "q_start": 191,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 11,
+            "m_end": 251,
+            "m_shell_prime_count": 1,
+            "m_start": 251,
+            "q_end": 241,
+            "q_prefix_count": 11,
+            "q_start": 191,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 107,
+        "upper_wing_rectangle_count": 8
+      },
+      {
+        "P": 971,
+        "boundary_edge_count": 3146,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 3146,
+        "layercake_rectangle_count": 78,
+        "lower_wing_edge_count": 533,
+        "lower_wing_rectangle_count": 15,
+        "max_rectangle_edge_count": 154,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 1494,
+        "right_tail_rectangle_count": 38,
+        "sample_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 509,
+            "m_shell_prime_count": 3,
+            "m_start": 499,
+            "q_end": 491,
+            "q_prefix_count": 2,
+            "q_start": 487,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 10,
+            "m_end": 523,
+            "m_shell_prime_count": 2,
+            "m_start": 521,
+            "q_end": 509,
+            "q_prefix_count": 5,
+            "q_start": 487,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 14,
+            "m_end": 547,
+            "m_shell_prime_count": 2,
+            "m_start": 541,
+            "q_end": 523,
+            "q_prefix_count": 7,
+            "q_start": 487,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 9,
+            "m_end": 557,
+            "m_shell_prime_count": 1,
+            "m_start": 557,
+            "q_end": 547,
+            "q_prefix_count": 9,
+            "q_start": 487,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 68,
+            "m_end": 997,
+            "m_shell_prime_count": 2,
+            "m_start": 991,
+            "q_end": 941,
+            "q_prefix_count": 34,
+            "q_start": 709,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 35,
+            "m_end": 953,
+            "m_shell_prime_count": 1,
+            "m_start": 953,
+            "q_end": 947,
+            "q_prefix_count": 35,
+            "q_start": 709,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 36,
+            "m_end": 967,
+            "m_shell_prime_count": 1,
+            "m_start": 967,
+            "q_end": 953,
+            "q_prefix_count": 36,
+            "q_start": 709,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 72,
+            "m_end": 983,
+            "m_shell_prime_count": 2,
+            "m_start": 977,
+            "q_end": 953,
+            "q_prefix_count": 36,
+            "q_start": 709,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 1119,
+        "upper_wing_rectangle_count": 25
+      },
+      {
+        "P": 1009,
+        "boundary_edge_count": 3255,
+        "decomposition_verified": true,
+        "extra_count": 0,
+        "layercake_edge_count": 3255,
+        "layercake_rectangle_count": 77,
+        "lower_wing_edge_count": 713,
+        "lower_wing_rectangle_count": 20,
+        "max_rectangle_edge_count": 162,
+        "missing_count": 0,
+        "nested_bad_steps": 0,
+        "right_tail_edge_count": 1193,
+        "right_tail_rectangle_count": 35,
+        "sample_rectangles": [
+          {
+            "edge_count": 2,
+            "m_end": 523,
+            "m_shell_prime_count": 2,
+            "m_start": 521,
+            "q_end": 509,
+            "q_prefix_count": 1,
+            "q_start": 509,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 6,
+            "m_end": 547,
+            "m_shell_prime_count": 2,
+            "m_start": 541,
+            "q_end": 523,
+            "q_prefix_count": 3,
+            "q_start": 509,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 5,
+            "m_end": 557,
+            "m_shell_prime_count": 1,
+            "m_start": 557,
+            "q_end": 547,
+            "q_prefix_count": 5,
+            "q_start": 509,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 24,
+            "m_end": 577,
+            "m_shell_prime_count": 4,
+            "m_start": 563,
+            "q_end": 557,
+            "q_prefix_count": 6,
+            "q_start": 509,
+            "strip": "lower_wing"
+          },
+          {
+            "edge_count": 30,
+            "m_end": 983,
+            "m_shell_prime_count": 1,
+            "m_start": 983,
+            "q_end": 977,
+            "q_prefix_count": 30,
+            "q_start": 769,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 60,
+            "m_end": 1033,
+            "m_shell_prime_count": 2,
+            "m_start": 1031,
+            "q_end": 977,
+            "q_prefix_count": 30,
+            "q_start": 769,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 62,
+            "m_end": 997,
+            "m_shell_prime_count": 2,
+            "m_start": 991,
+            "q_end": 983,
+            "q_prefix_count": 31,
+            "q_start": 769,
+            "strip": "right_tail"
+          },
+          {
+            "edge_count": 96,
+            "m_end": 1021,
+            "m_shell_prime_count": 3,
+            "m_start": 1013,
+            "q_end": 991,
+            "q_prefix_count": 32,
+            "q_start": 769,
+            "strip": "right_tail"
+          }
+        ],
+        "upper_wing_edge_count": 1349,
+        "upper_wing_rectangle_count": 22
+      }
+    ],
+    "total_bad_boundary_layercake_rectangle_count": 0,
+    "upper_wing_edge_count_total": 61620,
+    "upper_wing_rectangle_count_total": 1967
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "UniformPhaseSavingAcrossBoundaryLayerCakeRectangles",
+    "AND CompletedTraceFamilyForPrimePrimeBulkRectangle",
+    "AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers",
+    "AND StripEndpointSummationByPartsWithoutComparableLoss",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the boundary strip audit left endpoint phase saving; the fastest non-cyclic advance is to turn monotone strips into exact q-prefix by m-shell product rectangles",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "51dbf86875a5de431dceaf6a4a82af7092da7bd16c8ed08df3af21180d98156b",
+    "docs/monograph/external-theorem-index.md": "49ca1a1b4718cbe028b16a89a39bd8bd167396503787a55312f97c2b4fdde56b",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "23dbc2aa103e62912c28c291fb90d9bece5fa6eac71b4629f707da2924decd68",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json": "bdf83a4edb2ed72465b1e5646105e4c262dc809337a9200704dc5ba8c890188b",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json": "720726090e6d3358ff41a53ea4cb82bdf8c7df483a83ea3becd89c175f2a29b8",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.json": "2b018bef404ec18d8d66243a8884818e6f0b7527c7e81f42acb08c1348c71ec1",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "c616fcc7e238110a1fb30228233a2ec65ee174f837adc6b13ff91409d2a5791d",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "57b2dfd93a74539c5b3ef29e2e19f219843278fef45a8fb8665207ebeacd3eb7",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit.py": "8842479dc4b65bb6a08124c9b385fcae55ffa4923898da0ce75471adce37363f",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "610b4c852455fa4c68beb141977e7feebb96f4a3b1612a140665ef8f60f4a088"
+  },
+  "status": "boundary_monotone_strips_decomposed_into_layercake_product_rectangles_phase_saving_open"
+}

@@ -22536,6 +22536,52 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新是有限结构压缩，不是行/列命题闭合。
 
+### 1.187 Phi-LPF prime-survivor boundary layer-cake rectangles 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json
+```
+
+同步读数为：
+
+```text
+boundary_layercake_rectangle_identity_verified=true
+boundary_edge_count_total=177515
+layercake_rectangle_count_total=6190
+layercake_edge_count_total=177515
+lower_wing_rectangle_count_total=1032
+upper_wing_rectangle_count_total=1967
+right_tail_rectangle_count_total=3191
+row_rectangle_count_max=81
+max_rectangle_edge_count=261
+missing_count_total=0
+extra_count_total=0
+boundary_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：三条 boundary strip 不仅是单调 prime interval packet，而且
+可精确展开为 strip-local `q`-prefix x prime `m`-shell product rectangles。
+剩余不再是边界形状，而是跨 `6190` 个层矩形的统一相消与完成变量构造。
+
+最新活动硬点更新为：
+
+```text
+UniformPhaseSavingAcrossBoundaryLayerCakeRectangles
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+该更新关闭的是 boundary strip 的 rectangle 层包恒等式，不是行/列命题闭合。
+
 ### 1.186 Phi-LPF prime-survivor boundary strip decomposition 更新
 
 新增机器证书：

@@ -4250,6 +4250,84 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13U：Phi-LPF q-support row-averaged additive-k prime-survivor boundary layer-cake rectangles 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_layercake_rectangles_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.md
+```
+
+本层承接 Q13T，将三条 monotone boundary strips 继续分解为 layer-cake/Ferrers
+矩形层：
+
+```text
+strip = disjoint union of strip-local q-prefix x prime m-shell rectangles.
+```
+
+### Q13U.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+boundary_edge_count_total=177515
+layercake_rectangle_count_total=6190
+layercake_edge_count_total=177515
+lower_wing_rectangle_count_total=1032
+upper_wing_rectangle_count_total=1967
+right_tail_rectangle_count_total=3191
+row_rectangle_count_min=1
+row_rectangle_count_median=38.5
+row_rectangle_count_max=81
+max_rectangle_edge_count=261
+nested_bad_steps_total=0
+missing_count_total=0
+extra_count_total=0
+total_bad_boundary_layercake_rectangle_count=0
+```
+
+代表大行：
+
+```text
+P=971: boundary=3146, layer rectangles=78, max layer edge count=154.
+P=1009: boundary=3255, layer rectangles=77, max layer edge count=162.
+```
+
+### Q13U.2 诚实边界
+
+本层关闭的是 strip 到 product rectangle 层包的支撑恒等式。它把边界更贴近
+Type-II/trace 输入，但没有提供跨 `6190` 个层矩形的统一相消，也没有构造移动
+prime denominator 的 completed Kloosterman 变量。
+
+最新最窄口：
+
+```text
+UniformPhaseSavingAcrossBoundaryLayerCakeRectangles
+AND CompletedTraceFamilyForPrimePrimeBulkRectangle
+AND CompletedKloostermanVariableForMovingPrimeDenominatorOnLayers
+AND StripEndpointSummationByPartsWithoutComparableLoss
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+boundary_layercake_rectangle_identity_verified=true
+all_layers_are_complete_product_rectangles=true
+boundary_phase_saving_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
