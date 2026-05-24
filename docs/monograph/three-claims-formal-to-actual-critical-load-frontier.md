@@ -26050,3 +26050,44 @@ dominant_m_pair_edge_mass=20
 本层删除的是“dominant sign-word family 仍可隐藏内部大块结构”的含混说法；没有删除
 三路径见证族的 uniform signed equality、PDEC/SAE 聚合、其他 witness/core residual、
 single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word dominant m-pair path formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_dominant_m_pair_path_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+DominantLargestAtomPathWitnessUniformFamilyBound(--+-+)
+```
+
+现在被替换为：
+
+```text
+DominantMPairEndpointCoordinateUniformFamilyBound([769,773])
+AND OtherDominantSignWordMPairBound([757,761])
+```
+
+关键审计读数为：
+
+```text
+dominant_m_pair_endpoint_coordinate_path_ledger_closed=true
+endpoint_coordinate_witness_count=2
+endpoint_coordinate_edge_mass=20
+all_endpoint_integer_gap_equals_4=true
+all_endpoint_sign_word_is_target=true
+all_endpoint_sign_switch_count_equals_3=true
+distinct_raw_base_template_count=2
+distinct_signed_child_count=2
+```
+
+本层删除的是“dominant m-pair 仍可隐藏内部 20 质量结构”的含混说法；没有删除
+二路径坐标族的 uniform signed equality、PDEC/SAE 聚合、另一个 dominant sign-word
+`m_pair`、其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
+phase saving 缺口。

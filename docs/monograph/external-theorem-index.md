@@ -9578,3 +9578,55 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+## 65Y. Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word dominant m-pair path 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_dominant_m_pair_path_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.md
+```
+
+上一层 dominant sign word `--+-+` 的最大 `m_pair` 子块为 `[769, 773]`，
+质量 `20`。本层把该子块继续拆成 2 个端点坐标路径见证：
+
+```text
+dominant_m_pair_endpoint_coordinate_path_ledger_closed=true
+target_sign_word=--+-+
+target_m_pair=[769, 773]
+endpoint_coordinate_witness_count=2
+endpoint_coordinate_edge_mass=20
+all_endpoint_edge_mass_equals_10=true
+all_endpoint_integer_gap_equals_4=true
+all_endpoint_occurrence_count_equals_2=true
+all_endpoint_q_prefix_band_q_le_10=true
+all_endpoint_m_shell_band_m_le_4=true
+all_endpoint_cycle_length_equals_5=true
+all_endpoint_sign_word_is_target=true
+all_endpoint_sign_switch_count_equals_3=true
+distinct_raw_base_template_count=2
+distinct_signed_child_count=2
+```
+
+坐标上，一个 witness 是 `P=607` 的 `above_P` 路径，offset `[162,166]`；
+另一个是 `P=953` 的 `below_P` 路径，offset `[-184,-180]`。这一步删除了
+dominant `m_pair` 仍可隐藏 20 质量整体黑箱的说法。
+
+外部 theorem 边界仍不变：FKMS trace bilinear、Milićević--Qin--Wu
+任意模 Kloosterman、Wright unbalanced Kloosterman fractions 等平均型输入
+仍需要先把这两个 fixed endpoint coordinate witness 完成到非局部 family；
+Maynard small gaps 与 Li short interval primes 不直接估计 fixed signed path equality。
+
+状态边界：
+
+```text
+dominant_m_pair_endpoint_coordinate_path_ledger_closed=true
+dominant_m_pair_endpoint_coordinate_family_bound_proved=false
+dominant_sign_word_path_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

@@ -28456,3 +28456,53 @@ DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger
 ```
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word dominant m-pair path actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_dominant_m_pair_path_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.json
+```
+
+actual-load 含义继续收缩：dominant sign word `--+-+` 中最大 `m_pair=[769,773]`
+的质量 `20` 不再作为单块保留，而是拆成两个端点坐标路径见证。
+
+```text
+dominant_m_pair_endpoint_coordinate_path_ledger_closed=true
+endpoint_coordinate_witness_count=2
+endpoint_coordinate_edge_mass=20
+all_endpoint_edge_mass_equals_10=true
+all_endpoint_q_prefix_band_q_le_10=true
+all_endpoint_m_shell_band_m_le_4=true
+orientation_edge_mass=above_P:10,below_P:10
+```
+
+最新直接主攻改为：
+
+```text
+DominantMPairEndpointCoordinateUniformFamilyBound([769,773])
+OtherDominantSignWordMPairBound([757,761])
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite dominant m-pair endpoint-coordinate 账本；该二路径族的 uniform bound、
+另一个 `m_pair=[757,761]` witness、其余 witness/core residual 仍未闭合。

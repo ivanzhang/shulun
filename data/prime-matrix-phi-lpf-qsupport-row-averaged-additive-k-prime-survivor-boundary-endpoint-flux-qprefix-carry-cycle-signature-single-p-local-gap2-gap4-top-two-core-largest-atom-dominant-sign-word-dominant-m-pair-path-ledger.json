@@ -1,0 +1,388 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_dominant_m_pair_path_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "DominantSignWordPathLedgerImported",
+      "meaning": "The 3-path dominant sign-word ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "DominantMPairEndpointCoordinatePathLedger",
+      "meaning": "The [769,773] mass-20 block is split into two endpoint coordinate witnesses.",
+      "proved": true,
+      "remaining": "none for the finite coordinate ledger"
+    },
+    {
+      "closed": false,
+      "gate": "DominantMPairEndpointCoordinateUniformFamilyBound",
+      "meaning": "Control the two coordinate witnesses as a uniform family.",
+      "proved": false,
+      "remaining": "finite coordinate audit gives exact witnesses but no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "OtherDominantSignWordMPairBound",
+      "meaning": "Control the non-dominant m-pair [757,761] witness in the sign word.",
+      "proved": false,
+      "remaining": "carried forward from the 3-path ledger"
+    },
+    {
+      "closed": false,
+      "gate": "OtherLargestAtomTemplateWitnessFamilyBounds",
+      "meaning": "Control the other sign-word witnesses inside the largest atom.",
+      "proved": false,
+      "remaining": "carried forward from the 7-witness ledger"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "two mass-10 witnesses: one above-P endpoint path and one below-P endpoint path",
+    "input": "dominant m-pair [769,773] inside sign word --+-+",
+    "operation": "split its 20 edge mass into exact endpoint coordinate path witnesses",
+    "remaining": "prove a uniform endpoint-coordinate family bound or route the two witnesses through PDEC/SAE"
+  },
+  "dominant_m_pair_endpoint_coordinate_family_bound_proved": false,
+  "dominant_m_pair_endpoint_coordinate_path_ledger_closed": true,
+  "dominant_sign_word_path_family_bound_proved": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the fixed m-pair gap4 label is structural and is not controlled by prime-gap existence theorems",
+    "short_interval_prime_inputs": "theta=0.52 does not yield a fixed [769,773] endpoint signed equality estimate",
+    "trace_or_kloosterman_inputs": "the two endpoint coordinate witnesses still need a nonlocal completion into a trace or bilinear family"
+  },
+  "finite_audit": {
+    "P_edge_rows": [
+      {
+        "P": 607,
+        "edge_mass": 10,
+        "edge_ratio": 0.5
+      },
+      {
+        "P": 953,
+        "edge_mass": 10,
+        "edge_ratio": 0.5
+      }
+    ],
+    "all_endpoint_cycle_length_equals_5": true,
+    "all_endpoint_edge_mass_equals_10": true,
+    "all_endpoint_integer_gap_equals_4": true,
+    "all_endpoint_m_shell_band_m_le_4": true,
+    "all_endpoint_occurrence_count_equals_2": true,
+    "all_endpoint_q_prefix_band_q_le_10": true,
+    "all_endpoint_sign_balance_plus2_minus3": true,
+    "all_endpoint_sign_switch_count_equals_3": true,
+    "all_endpoint_sign_word_is_target": true,
+    "distinct_raw_base_template_count": 2,
+    "distinct_signed_child_count": 2,
+    "dominant_m_pair_endpoint_coordinate_family_bound_proved": false,
+    "dominant_m_pair_endpoint_coordinate_path_ledger_closed": true,
+    "endpoint_coordinate_edge_mass": 20,
+    "endpoint_coordinate_witness_count": 2,
+    "endpoint_coordinate_witness_rows": [
+      {
+        "P": 607,
+        "P_band": "P<=700",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "endpoint_orientation": "above_P",
+        "integer_gap": 4,
+        "m_left": 769,
+        "m_offset_pair": "[162, 166]",
+        "m_offsets_from_P": [
+          162,
+          166
+        ],
+        "m_pair": "[769, 773]",
+        "m_right": 773,
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 1887,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 7,
+        "raw_base_template": "g=2,c=2 -> g=4,c=5 -> g=6,c=7 -> g=8,c=10 -> g=4,c=6",
+        "raw_coordinate_path": [
+          {
+            "carry": 2,
+            "gap": 2,
+            "step": 1
+          },
+          {
+            "carry": 5,
+            "gap": 4,
+            "step": 2
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "step": 3
+          },
+          {
+            "carry": 10,
+            "gap": 8,
+            "step": 4
+          },
+          {
+            "carry": 6,
+            "gap": 4,
+            "step": 5
+          }
+        ],
+        "sign_balance": "plus=2,minus=3",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+",
+        "signed_child": "g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative -> g=4,c=6,A=positive",
+        "signed_coordinate_path": [
+          {
+            "carry": 2,
+            "gap": 2,
+            "sign": "negative",
+            "step": 1
+          },
+          {
+            "carry": 5,
+            "gap": 4,
+            "sign": "negative",
+            "step": 2
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "sign": "positive",
+            "step": 3
+          },
+          {
+            "carry": 10,
+            "gap": 8,
+            "sign": "negative",
+            "step": 4
+          },
+          {
+            "carry": 6,
+            "gap": 4,
+            "sign": "positive",
+            "step": 5
+          }
+        ],
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "P_band": "P>850",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "endpoint_orientation": "below_P",
+        "integer_gap": 4,
+        "m_left": 769,
+        "m_offset_pair": "[-184, -180]",
+        "m_offsets_from_P": [
+          -184,
+          -180
+        ],
+        "m_pair": "[769, 773]",
+        "m_right": 773,
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 4601,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 10,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=6,c=5 -> g=4,c=3 -> g=8,c=7",
+        "raw_coordinate_path": [
+          {
+            "carry": 8,
+            "gap": 10,
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 8,
+            "step": 2
+          },
+          {
+            "carry": 5,
+            "gap": 6,
+            "step": 3
+          },
+          {
+            "carry": 3,
+            "gap": 4,
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 8,
+            "step": 5
+          }
+        ],
+        "sign_balance": "plus=2,minus=3",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=3,A=negative -> g=8,c=7,A=positive",
+        "signed_coordinate_path": [
+          {
+            "carry": 8,
+            "gap": 10,
+            "sign": "negative",
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 8,
+            "sign": "negative",
+            "step": 2
+          },
+          {
+            "carry": 5,
+            "gap": 6,
+            "sign": "positive",
+            "step": 3
+          },
+          {
+            "carry": 3,
+            "gap": 4,
+            "sign": "negative",
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 8,
+            "sign": "positive",
+            "step": 5
+          }
+        ],
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      }
+    ],
+    "m_offset_pair_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "m_offset_pair": "[-184, -180]"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "m_offset_pair": "[162, 166]"
+      }
+    ],
+    "m_shell_prime_count_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "m_shell_prime_count": 3
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "m_shell_prime_count": 4
+      }
+    ],
+    "max_prime": 1009,
+    "orientation_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "endpoint_orientation": "above_P"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "endpoint_orientation": "below_P"
+      }
+    ],
+    "previous_dominant_m_pair_edge_mass": 20,
+    "previous_dominant_sign_word_path_ledger_closed": true,
+    "q_prefix_count_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.5,
+        "q_prefix_count": 7
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "target_m_pair": "[769, 773]",
+    "target_sign_word": "--+-+"
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DominantMPairEndpointCoordinateUniformFamilyBound([769,773])",
+    "AND OtherDominantSignWordMPairBound([757,761])",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "other_largest_atom_template_witness_family_bounds_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the dominant m-pair [769,773] is the largest remaining block inside the dominant sign-word path ledger",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9557d37a57fff7e14faa5ef90c743c871a09c535474a6f81e9cc18930fd67392",
+    "docs/monograph/external-theorem-index.md": "c7e50e99d0e3a10395aaa9225efb7ef88d5812b38820259c28711769e438a893",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "fe29dfbb9beb4582c52190cdc8ab483c4cafa871974db825784474760f376f43",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.json": "23f16e4bf548b3f4b070f872ba9ab3b01b5e08884abe3b138f4012623dafa214",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "dfb65e367ce306864ab302f2096884d5c8d713560992deeca97c06cbad7299df",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "10637f4e06ea2972f94e1e860832377c101cde5a5a252f3b0558b8ab8ae199e6",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_dominant_m_pair_path_audit.py": "258aee8701e4571916b4bc154fa318a1d6167d619ebb579784833fb0cd036e0d",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2897f7a7291b0507aeb800ca5d1511cbbb33704237fd41160130c39330bda5e9"
+  },
+  "status": "dominant_m_pair_endpoint_coordinate_path_ledger_closed_family_bound_open"
+}

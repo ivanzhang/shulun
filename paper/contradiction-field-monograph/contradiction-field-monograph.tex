@@ -36636,6 +36636,66 @@ gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dominant m-pair endpoint coordinate witnesses}
+
+\begin{theorem}[Dominant sign-word m-pair coordinate ledger]
+In the audit range \(P\le 1009\), restrict the dominant sign-word path
+ledger to its largest m-pair \(\texttt{[769, 773]}\).  This subledger has
+edge mass \(20\) and splits into two endpoint-coordinate path witnesses:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{dominant\_m\_pair\_endpoint\_coordinate\_path\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{target\_sign\_word} & \texttt{--+-+}\\
+\texttt{target\_m\_pair} & \texttt{[769, 773]}\\
+\texttt{endpoint\_coordinate\_witness\_count} & 2\\
+\texttt{endpoint\_coordinate\_edge\_mass} & 20\\
+\texttt{all\_endpoint\_edge\_mass\_equals\_10} & \texttt{true}\\
+\texttt{all\_endpoint\_integer\_gap\_equals\_4} & \texttt{true}\\
+\texttt{all\_endpoint\_occurrence\_count\_equals\_2} & \texttt{true}\\
+\texttt{all\_endpoint\_q\_prefix\_band\_q\_le\_10} & \texttt{true}\\
+\texttt{all\_endpoint\_m\_shell\_band\_m\_le\_4} & \texttt{true}\\
+\texttt{all\_endpoint\_cycle\_length\_equals\_5} & \texttt{true}\\
+\texttt{distinct\_raw\_base\_template\_count} & 2\\
+\texttt{distinct\_signed\_child\_count} & 2 .
+\end{array}
+\]
+The two witnesses are the \(P=607\) above-\(P\) path with offsets
+\(\texttt{[162,166]}\) and the \(P=953\) below-\(P\) path with offsets
+\(\texttt{[-184,-180]}\).
+\end{theorem}
+\begin{proof}
+The audit imports the dominant sign-word path ledger and keeps only rows whose
+m-pair is \(\texttt{[769, 773]}\).  The imported m-pair mass is \(20\).
+Exactly two rows remain.  Each has edge mass \(10\), occurrence count \(2\),
+integer gap \(4\), q-prefix band \(\texttt{q<=10}\), m-shell band
+\(\texttt{m<=4}\), cycle length \(5\), sign word \(\texttt{--+-+}\), sign
+switch count \(3\), and sign balance \(\texttt{plus=2,minus=3}\).  Their
+orientations relative to \(P\) are different, one above \(P\) and one below
+\(P\), so the mass \(20\) no longer remains an unresolved coordinate block.
+\end{proof}
+
+\begin{remark}[Coordinate-family gate]
+The dominant path-family gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+DominantMPairEndpointCoordinateUniformFamilyBound([769,773])\\
+AND OtherDominantSignWordMPairBound([757,761]).
+\end{quote}
+This is still a finite coordinate ledger, not a global cancellation theorem.
+Trace/Kloosterman inputs still require a completion from these fixed endpoint
+coordinate witnesses to a nonlocal family.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-dominant-sign-word-\\
+dominant-m-pair-path-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
