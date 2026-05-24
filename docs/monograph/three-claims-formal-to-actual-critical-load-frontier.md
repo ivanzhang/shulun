@@ -24199,3 +24199,44 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是 `prime blocker` 黑箱标签，不是 Phi-LPF 奇偶性障碍的无条件突破。
+
+## 330Z. Phi-LPF prime-blocker Mobius involution frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-ledger.json
+```
+
+同步结果：
+
+```text
+status=moving_mobius_expansion_reduced_to_euler_involution_and_prime_singletons_phase_saving_open
+mobius_survivor_weight_total=355919
+active_divisor_terms_total=4321483
+prime_singleton_terms_total=355919
+composite_cancelled_terms_total=3965564
+composite_involution_pair_count_total=1982782
+total_bad_mobius_involution_count=0
+max_mobius_packet_phase_identity_error=0
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：moving Mobius 展开不会独立提供新余量。它在小 LPF blocker
+上通过首阻碍 Euler involution 点态清零，在 prime survivor 上退化为 `d=1` 单层。
+新的最新窄口为：
+
+```text
+PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding
+AND NonPointwiseCompressionBeyondEulerMobiusInvolution
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 Mobius 自证路线，不是 Phi-LPF 奇偶性障碍的无条件突破。

@@ -1,0 +1,239 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "MovingMobiusDivisorExpansionIdentity",
+      "meaning": "The dynamic sqrt-sieve survivor indicator equals the squarefree divisor Mobius sum.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "EulerInvolutionCancelsRejectedBlockers",
+      "meaning": "Every rejected blocker has a first obstruction s and its Mobius terms pair by d <-> s*d.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeSurvivorSingletonLayerReduction",
+      "meaning": "Every prime blocker contributes only the d=1 Mobius layer.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "MovingMobiusExpansionSelfCompressionPhaseSaving",
+      "meaning": "Obtain nontrivial cancellation from the Mobius expansion itself after the pointwise involution.",
+      "proved": false,
+      "remaining": "not available; requires new phase saving or embedding"
+    }
+  ],
+  "current_object": {
+    "mobius_expansion": "1_prime(m_h)=sum_{d|m_h,d|W(m_h)} mu(d)",
+    "phase_identity": "prime-blocker phase equals the Mobius-weighted all-blocker phase bucket by bucket",
+    "prime_survivor_mechanism": "prime blockers have no nontrivial d and remain as the singleton d=1 layer",
+    "remaining": "the singleton prime-survivor layer still needs phase saving or trace/Type-II embedding",
+    "small_lpf_mechanism": "if first obstruction is s, terms pair by d <-> s*d and cancel pointwise"
+  },
+  "euler_involution_cancels_rejected_blockers_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "below-Polya-Vinogradov trace bilinear input, still requiring a trace-family embedding",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman bilinear input, still requiring completed Kloosterman form",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "composite-modulus Type-II amplification, not directly a pointwise Mobius involution estimate",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced convolution/Kloosterman-fraction input after convolution completion",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "smooth/squarefree Kloosterman parameter input, not direct survivor phase saving",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "pointwise short interval exponent remains above theta=1/2",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "still requires a nontrivial embedding of the prime singleton survivor layer into trace functions",
+    "Li_short_interval_x_052": "short-interval theta=0.52 remains above the pointwise half-scale requirement",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "still requires completed Kloosterman variables; the involution is pointwise, not bilinear",
+    "Pascadi_composite_Type_II": "does not act on the already pointwise-cancelled small-LPF Mobius pairs",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "smooth/squarefree parameter estimates do not by themselves create survivor phase saving",
+    "Wright_unbalanced_convolution": "needs a convolution model for the survivor layer"
+  },
+  "finite_audit": {
+    "active_divisor_terms_total": 4321483,
+    "active_terms_vs_previous_formal_ratio": 0.01082599215529214,
+    "bad_composite_without_obstruction_total": 0,
+    "bad_first_obstruction_not_small_lpf_total": 0,
+    "bad_involution_pairing_total": 0,
+    "bad_mobius_sum_identity_total": 0,
+    "bad_prime_active_singleton_total": 0,
+    "basis_size_counts": {
+      "0": 355919,
+      "1": 457984,
+      "2": 268999,
+      "3": 193398,
+      "4": 26651
+    },
+    "blocker_count_total": 1302951,
+    "composite_cancelled_terms_total": 3965564,
+    "composite_involution_pair_count_total": 1982782,
+    "counts_match_previous_dynamic_sqrt_sieve": true,
+    "euler_involution_cancels_all_rejected_blockers": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "first_obstruction_counts": {
+      "2": 373676,
+      "3": 409713,
+      "5": 163643,
+      "none": 355919
+    },
+    "max_active_terms": 16,
+    "max_basis_size": 4,
+    "max_mobius_packet_phase_identity_error": 0.0,
+    "max_pair_count": 8,
+    "max_prime": 1009,
+    "mobius_expansion_identity_verified": true,
+    "mobius_survivor_weight_total": 355919,
+    "moving_mobius_expansion_self_compression_closes_phase": false,
+    "previous_blocker_count_total": 1302951,
+    "previous_prime_blocker_count_total": 355919,
+    "previous_prime_blocker_mobius_terms_full_expansion_total": 399176624,
+    "previous_small_lpf_blocker_count_total": 947032,
+    "previous_sqrt_sieve_survivor_count_total": 355919,
+    "prime_blocker_count_total": 355919,
+    "prime_singleton_terms_total": 355919,
+    "prime_survivors_are_singleton_d1_layer": true,
+    "q_bucket_mobius_phase_mismatch_count": 0,
+    "sample_involutions": [
+      "P=43,q=23,k=27,m=51,basis=3,first=3,terms=2,pairs=1",
+      "P=43,q=23,k=29,m=55,basis=5,first=5,terms=2,pairs=1",
+      "P=43,q=23,k=30,m=57,basis=3,first=3,terms=2,pairs=1",
+      "P=43,q=23,k=33,m=63,basis=3*7,first=3,terms=4,pairs=2",
+      "P=43,q=23,k=34,m=65,basis=5,first=5,terms=2,pairs=1",
+      "P=43,q=23,k=36,m=69,basis=3,first=3,terms=2,pairs=1",
+      "P=43,q=23,k=38,m=72,basis=2*3,first=2,terms=4,pairs=2",
+      "P=43,q=23,k=40,m=75,basis=3*5,first=3,terms=4,pairs=2"
+    ],
+    "sample_rows": [
+      {
+        "P": 101,
+        "active_terms": 746,
+        "bad_mismatch": 0,
+        "blockers": 302,
+        "cancelled_pairs": 325,
+        "max_active_terms": 8,
+        "max_basis_size": 3,
+        "mobius_survivor_weight": 96,
+        "prime_blockers": 96,
+        "small_lpf_blockers": 206
+      },
+      {
+        "P": 257,
+        "active_terms": 5549,
+        "bad_mismatch": 0,
+        "blockers": 1948,
+        "cancelled_pairs": 2479,
+        "max_active_terms": 16,
+        "max_basis_size": 4,
+        "mobius_survivor_weight": 591,
+        "prime_blockers": 591,
+        "small_lpf_blockers": 1357
+      },
+      {
+        "P": 971,
+        "active_terms": 80668,
+        "bad_mismatch": 0,
+        "blockers": 23383,
+        "cancelled_pairs": 37231,
+        "max_active_terms": 16,
+        "max_basis_size": 4,
+        "mobius_survivor_weight": 6206,
+        "prime_blockers": 6206,
+        "small_lpf_blockers": 17177
+      },
+      {
+        "P": 1009,
+        "active_terms": 85070,
+        "bad_mismatch": 0,
+        "blockers": 24457,
+        "cancelled_pairs": 39328,
+        "max_active_terms": 16,
+        "max_basis_size": 4,
+        "mobius_survivor_weight": 6414,
+        "prime_blockers": 6414,
+        "small_lpf_blockers": 18043
+      }
+    ],
+    "small_lpf_blocker_count_total": 947032,
+    "top_basis_counts": {
+      "2": 127623,
+      "2*11": 10363,
+      "2*3": 61829,
+      "2*3*5": 12481,
+      "2*5": 29433,
+      "2*7": 20361,
+      "3": 217625,
+      "3*11": 9863,
+      "3*5": 46999,
+      "3*7": 32552,
+      "5": 112736,
+      "prime_singleton": 355919
+    },
+    "total_bad_mobius_involution_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding",
+    "AND NonPointwiseCompressionBeyondEulerMobiusInvolution",
+    "AND FiniteThirtyWheelSmallLPFBlockerPacketControl",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_mobius_divisor_expansion_identity_closed": true,
+  "moving_mobius_expansion_self_compression_phase_saving_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "prime_survivor_singleton_layer_phase_saving_closed": false,
+  "prime_survivor_singleton_layer_reduction_closed": true,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after the prime blocker becomes a moving sqrt-sieve survivor, the next non-cyclic refinement is to inspect whether the Mobius expansion itself supplies cancellation",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "small_lpf_blocker_packet_control_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "753292b78997efd7b842d875dee3a59541577ec2330d3f0f4cb6bba1d1ab71a0",
+    "docs/monograph/external-theorem-index.md": "02986866554dd90320d9b741108c9018ad5bfbd7e1d58b462ea85610021ac95f",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "487f19d6d11cb61f979d769ef3495a87aa91c981a7f36331a12e439a0042a3e9",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.json": "20614d630128db216380902fdf270c12b499c8b3716bf77b8b962441fd9873c9",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json": "b66655694ac25675cdbf95c23ae9b9f923a84179799ed5287400a0b5848c3321",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "9d54b0836a32ca7423fb3dc87afda43f3f3b1e8405be44ce074875234ef0b1de",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "73cfec962cfa93e0052a1a6df6854b74203cc3d8004a870339096357c0113f52",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit.py": "ffbac099d3db0ad31c2a0768734c5ad81b543dfec0d8a17642ec0a928bd8e08b",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "121784d603b872e6771f8c992b1be33a576b8195da40ef00e335c579cda143d1"
+  },
+  "status": "moving_mobius_expansion_reduced_to_euler_involution_and_prime_singletons_phase_saving_open",
+  "uniform_cancellation_across_sparse_k_support_radial_kernels_closed": false
+}

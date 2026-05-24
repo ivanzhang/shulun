@@ -3607,6 +3607,99 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61O. Phi-LPF q-support row-averaged additive-k prime-blocker Mobius involution 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.md
+```
+
+本层把 moving sqrt-sieve survivor 的 Mobius 展开继续拆开：
+
+```text
+1_prime(m_h)=sum_{d|m_h,d|W(m_h)} mu(d)
+W(m_h)=prod_{ell<=sqrt(m_h)} ell
+```
+
+若 blocker 是小 LPF 合数，令 `s` 为第一个阻碍素数，则 squarefree divisor
+项按 Euler involution：
+
+```text
+d <-> s*d
+```
+
+成对抵消。若 blocker 是 prime survivor，则没有非平凡 divisor 项，只剩
+`d=1` 单层。
+
+有限审计读数：
+
+```text
+max_prime=1009
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+mobius_survivor_weight_total=355919
+active_divisor_terms_total=4321483
+prime_singleton_terms_total=355919
+composite_cancelled_terms_total=3965564
+composite_involution_pair_count_total=1982782
+previous_prime_blocker_mobius_terms_full_expansion_total=399176624
+active_terms_vs_previous_formal_ratio=0.01082599
+max_basis_size=4
+max_active_terms=16
+total_bad_mobius_involution_count=0
+max_mobius_packet_phase_identity_error=0
+```
+
+分桶读数：
+
+```text
+basis_size_counts={0:355919,1:457984,2:268999,3:193398,4:26651}
+first_obstruction_counts={2:373676,3:409713,5:163643,none:355919}
+```
+
+外部前沿影响：FKMS trace-function bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II、Wright 2026 unbalanced convolution
+与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 估计仍不能直接作用
+于这个点态 involution。它们仍需要把 prime survivor singleton layer 嵌入
+completed trace/Type-II/convolution 对象。Runbo Li 的 `x^0.52` 短区间输入仍
+没有达到点态 `theta=1/2`。
+
+新的最新最窄口：
+
+```text
+PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding
+AND NonPointwiseCompressionBeyondEulerMobiusInvolution
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+moving_mobius_divisor_expansion_identity_closed=true
+euler_involution_cancels_rejected_blockers_closed=true
+prime_survivor_singleton_layer_reduction_closed=true
+moving_mobius_expansion_self_compression_phase_saving_closed=false
+prime_survivor_singleton_layer_phase_saving_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

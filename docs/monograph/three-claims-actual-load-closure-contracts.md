@@ -22402,6 +22402,43 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新不证明行/列命题、外部引理版
 或内部自足版无条件闭合。
 
+### 1.181 Phi-LPF prime-blocker Mobius involution 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json
+```
+
+同步读数为：
+
+```text
+moving_mobius_divisor_expansion_identity_closed=true
+euler_involution_cancels_rejected_blockers_closed=true
+prime_survivor_singleton_layer_reduction_closed=true
+active_divisor_terms_total=4321483
+composite_involution_pair_count_total=1982782
+total_bad_mobius_involution_count=0
+moving_mobius_expansion_self_compression_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：moving Mobius 展开已被点态耗尽。小 LPF blocker 只通过首阻碍
+Euler involution 成对清零；prime survivor 只保留 `d=1` 单层。最新活动硬点更新为：
+
+```text
+PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding
+AND NonPointwiseCompressionBeyondEulerMobiusInvolution
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+```
+
+并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
+prime-q reciprocal phase saving、Rate 与 DStructure。该更新排除的是 Mobius 自证出口，
+不是行/列命题闭合。
+
 ### 1.180 two replacement lines common unconditional kernel 更新
 
 新增机器证书：

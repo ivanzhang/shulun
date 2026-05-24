@@ -3745,6 +3745,97 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13O：Phi-LPF q-support row-averaged additive-k prime-blocker Mobius involution 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_blocker_mobius_involution_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.md
+```
+
+本层承接 Q13N：把 dynamic sqrt-sieve survivor 的 moving Mobius 展开写成
+Euler 首阻碍 involution：
+
+```text
+1_prime(m_h)=sum_{d|m_h,d|W(m_h)} mu(d)
+```
+
+若 `m_h` 是小 LPF blocker，首阻碍 `s in {2,3,5}` 将所有 divisor 项按
+`d <-> s*d` 成对抵消。若 `m_h` 是 prime survivor，则没有非平凡 divisor
+项，Mobius 展开只剩 `d=1`。
+
+### Q13O.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+mobius_survivor_weight_total=355919
+active_divisor_terms_total=4321483
+prime_singleton_terms_total=355919
+composite_cancelled_terms_total=3965564
+composite_involution_pair_count_total=1982782
+previous_prime_blocker_mobius_terms_full_expansion_total=399176624
+active_terms_vs_previous_formal_ratio=0.01082599
+max_basis_size=4
+max_active_terms=16
+q_bucket_mobius_phase_mismatch_count=0
+max_mobius_packet_phase_identity_error=0
+total_bad_mobius_involution_count=0
+```
+
+分桶：
+
+```text
+basis_size_counts={0:355919,1:457984,2:268999,3:193398,4:26651}
+first_obstruction_counts={2:373676,3:409713,5:163643,none:355919}
+```
+
+### Q13O.2 诚实边界
+
+本层真推进是删除 “moving Mobius expansion 自带相消余量” 的伪出口。它完成
+了点态压缩：小 LPF 层被 Euler involution 清零，prime 层退化为 singleton
+`d=1`。因此剩余不是 Mobius 展开本身，而是 prime survivor singleton layer
+的非点态相位节省或外部 trace/Type-II 嵌入。
+
+最新最窄口：
+
+```text
+PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding
+AND NonPointwiseCompressionBeyondEulerMobiusInvolution
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+moving_mobius_divisor_expansion_identity_closed=true
+euler_involution_cancels_rejected_blockers_closed=true
+prime_survivor_singleton_layer_reduction_closed=true
+moving_mobius_expansion_self_compression_phase_saving_closed=false
+prime_survivor_singleton_layer_phase_saving_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

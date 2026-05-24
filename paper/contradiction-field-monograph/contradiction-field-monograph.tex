@@ -33566,6 +33566,96 @@ row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Euler--Mobius involution for prime blockers}
+
+\begin{theorem}[Moving Mobius expansion reduces to involution and prime singletons]
+For a blocker \(m_h\), let
+\[
+  W(m_h)=\prod_{\ell\le \sqrt{m_h}}\ell
+\]
+be the moving square-root primorial.  Then the prime-blocker indicator has
+the exact Mobius form
+\[
+  1_{\rm prime\ blocker}(m_h)
+  =\sum_{\substack{d\mid m_h\\ d\mid W(m_h)}}\mu(d).
+\]
+If \(m_h\) is rejected by the square-root sieve, let \(s\) be the least prime
+divisor of \(m_h\) with \(s\le\sqrt{m_h}\).  The terms in the displayed sum
+are paired by the involution
+\[
+  d\longleftrightarrow sd
+\]
+on squarefree divisors not already containing \(s\), and each pair has total
+Mobius weight zero.  If \(m_h\) is a prime blocker, the only divisor
+contributing to the sum is \(d=1\).  Hence the moving Mobius expansion itself
+does not create a new phase-saving layer: after pointwise cancellation it
+leaves exactly the prime-survivor singleton layer.
+\end{theorem}
+\begin{proof}
+The identity is the finite Euler product
+\[
+  \prod_{\ell\mid W(m_h)}(1-1_{\ell\mid m_h})
+  =\sum_{\substack{d\mid m_h\\ d\mid W(m_h)}}\mu(d).
+\]
+It equals \(1\) precisely when no prime \(\ell\le\sqrt{m_h}\) divides
+\(m_h\), which is the prime-blocker condition from the previous theorem; it
+equals \(0\) otherwise.  In the rejected case, the least obstruction \(s\)
+divides \(m_h\).  Multiplication by \(s\) maps every squarefree divisor of
+\(m_h\) not containing \(s\) bijectively to one containing \(s\), and changes
+the sign of the Mobius value.  Thus the two terms cancel.  In the prime case
+there is no nontrivial divisor \(d\mid m_h\) with \(d\le\sqrt{m_h}\), so the
+sum consists only of \(d=1\).
+\end{proof}
+
+\begin{remark}[Finite Euler--Mobius involution ledger]
+The audit up to \(P\le 1009\) verifies the Mobius identity and the involution
+on all \(1302951\) blockers:
+\[
+  \texttt{total\_bad\_mobius\_involution\_count}=0,\qquad
+  \texttt{max\_mobius\_packet\_phase\_identity\_error}=0.
+\]
+The active squarefree divisor terms are
+\[
+  \texttt{active\_divisor\_terms\_total}=4321483,
+\]
+of which
+\[
+  \texttt{prime\_singleton\_terms\_total}=355919
+\]
+are the \(d=1\) prime-survivor terms, while
+\[
+  \texttt{composite\_cancelled\_terms\_total}=3965564
+\]
+are paired into
+\[
+  \texttt{composite\_involution\_pair\_count\_total}=1982782
+\]
+zero-sum Euler pairs.  The largest active divisor basis has size \(4\), so
+the largest active pointwise expansion has \(16\) terms.  This is far smaller
+than the formal moving-primorial expansion ledger, but it also shows why the
+Mobius expansion is not an independent proof: after the pointwise Euler
+involution, the only uncancelled object is again the prime-survivor singleton
+phase packet.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+PrimeSurvivorSingletonLayerPhaseSavingOrTraceEmbedding\\
+AND NonPointwiseCompressionBeyondEulerMobiusInvolution\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-prime-blocker-mobius-involution-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
