@@ -6373,6 +6373,71 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65J. Phi-LPF q-prefix mirror-imbalance support 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_mirror_imbalance_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.md
+```
+
+本层接在 signed-child mirror reconciliation 之后，不再把剩余项只称为
+mirror-imbalance，而是把 `76343` edge mass 精确拆成两类 residual carriers：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+mirror_imbalance_edge_mass=76343
+missing_mirror_edge_mass=62980
+missing_mirror_within_imbalance_ratio=0.824961031135795
+unequal_mirror_pair_residual_edge_mass=13363
+unequal_mirror_pair_within_imbalance_ratio=0.17503896886420497
+missing_mirror_pair_count=7156
+unequal_mirror_pair_residual_count=639
+residual_carrier_count=7795
+multi_P_residual_edge_ratio=0.6484419003706954
+P_support_width_min/median/max=1/1/94
+multi_strip_residual_edge_ratio=0.006326709717983312
+strip_support_width_min/median/max=1/1/2
+```
+
+因此前一层的
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+AND NonMirrorSignedChildCarrierControl
+```
+
+被压成更具体的
+
+```text
+MissingMirrorCarrierPhaseSaving
+AND UnequalMirrorPairResidualPhaseSaving
+```
+
+外部前沿匹配边界不变但更精确：FKMS trace bilinear、Milićević--Qin--Wu
+任意模 Kloosterman、Pascadi composite Type-II 与 Wright 2026 unbalanced
+Kloosterman fractions 只有在这些 missing/unequal residual carriers 被完成为
+admissible trace/Kloosterman 或 Type-II family 后才可能使用；Runbo Li 的
+`x^0.52` 短区间素数存在仍不估计 signed-child residual phase。
+
+状态边界：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+missing_mirror_carrier_phase_saving_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

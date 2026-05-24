@@ -35354,6 +35354,82 @@ reconciliation-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Mirror-imbalance support ledger}
+
+\begin{theorem}[Mirror-imbalance support decomposition]
+In the same audit range \(P\le 1009\), the mirror-imbalance mass left by the
+signed-child mirror ledger admits a deterministic support decomposition.  The
+audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{mirror\_imbalance\_support\_ledger\_closed} & \texttt{true}\\
+\texttt{signed\_cycle\_edge\_mass} & 107677\\
+\texttt{mirror\_balanced\_edge\_mass\_imported} & 31334\\
+\texttt{mirror\_imbalance\_edge\_mass} & 76343\\
+\texttt{missing\_mirror\_edge\_mass} & 62980\\
+\texttt{missing\_mirror\_within\_imbalance\_ratio} & 0.824961031135795\\
+\texttt{unequal\_mirror\_pair\_residual\_edge\_mass} & 13363\\
+\texttt{unequal\_mirror\_pair\_within\_imbalance\_ratio} &
+0.17503896886420497\\
+\texttt{residual\_carrier\_count} & 7795\\
+\texttt{multi\_P\_residual\_edge\_ratio} & 0.6484419003706954\\
+\texttt{P\_support\_width\_min/median/max} & 1/1/94\\
+\texttt{multi\_strip\_residual\_edge\_ratio} & 0.006326709717983312 .
+\end{array}
+\]
+Thus the residual signed-child mirror obstruction is no longer an anonymous
+imbalance: it is the union of missing-mirror carriers and unequal mirror-pair
+residual carriers.
+\end{theorem}
+\begin{proof}
+For each non-self-mirror signed child, compare its edge mass with the edge mass
+of its \(A\)-sign mirror.  If the mirror child is absent, the whole child mass
+is assigned to the missing-mirror class.  If both children are present, cancel
+twice the smaller mass and assign the absolute difference to the unequal-pair
+residual class.  The audit also records the \(P\)-support, strip support,
+endpoint-flux profile, \(A\)-class and raw-base parent of the dominant residual
+child.  The ledger identity is
+\[
+62980+13363=76343,
+\]
+and \(76343+31334=107677\), matching the imported signed cycle-edge mass.
+\end{proof}
+
+\begin{remark}[New actual mouth]
+The preceding theorem closes only the finite support ledger.  It replaces the
+coarser obstruction
+\[
+\texttt{SignedChildMirrorImbalancePhaseSaving}
+\]
+by the more explicit pair
+\begin{quote}\scriptsize\ttfamily
+MissingMirrorCarrierPhaseSaving\\
+AND UnequalMirrorPairResidualPhaseSaving.
+\end{quote}
+The remaining mouth is
+\begin{quote}\scriptsize\ttfamily
+MissingMirrorCarrierPhaseSaving\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This does not prove phase saving for either class, does not complete the
+packets to a trace/Kloosterman family, and does not close the external-lemma or
+internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-\\
+support-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

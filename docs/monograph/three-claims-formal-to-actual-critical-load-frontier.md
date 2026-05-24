@@ -25370,3 +25370,58 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是“raw-base 内可能自然符号配平”的捷径；没有删除 mirror-imbalance
 相消、thin-support 无损求和、completed family 和 residual endpoint 真缺口。
+
+### Phi-LPF q-prefix mirror-imbalance support formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_mirror_imbalance_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+SignedChildMirrorImbalancePhaseSaving
+AND NonMirrorSignedChildCarrierControl
+```
+
+现在被 support ledger 压成：
+
+```text
+MissingMirrorCarrierPhaseSaving
+AND UnequalMirrorPairResidualPhaseSaving
+```
+
+关键审计读数为：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+mirror_imbalance_edge_mass=76343
+missing_mirror_edge_mass=62980
+missing_mirror_within_imbalance_ratio=0.824961031135795
+unequal_mirror_pair_residual_edge_mass=13363
+unequal_mirror_pair_within_imbalance_ratio=0.17503896886420497
+residual_carrier_count=7795
+multi_P_residual_edge_ratio=0.6484419003706954
+P_support_width_min/median/max=1/1/94
+```
+
+因此最新实际硬点为：
+
+```text
+MissingMirrorCarrierPhaseSaving
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“mirror-imbalance 未分类”的黑箱；没有删除 missing-mirror carrier
+相消、unequal-pair residual 相消、thin-support 无损求和、completed family 和
+residual endpoint 真缺口。

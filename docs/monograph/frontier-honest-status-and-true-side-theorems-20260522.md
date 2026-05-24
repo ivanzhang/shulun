@@ -2198,6 +2198,68 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC5：Phi-LPF q-prefix mirror-imbalance support 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_mirror_imbalance_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.json
+```
+
+本层把上一附录暴露出的 `76343` edge mass 的 mirror-imbalance signed-child
+carriers 继续拆开。关键读数：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+mirror_imbalance_edge_mass=76343
+missing_mirror_edge_mass=62980
+missing_mirror_within_imbalance_ratio=0.824961031135795
+unequal_mirror_pair_residual_edge_mass=13363
+unequal_mirror_pair_within_imbalance_ratio=0.17503896886420497
+residual_carrier_count=7795
+multi_P_residual_edge_ratio=0.6484419003706954
+P_support_width_min/median/max=1/1/94
+residual_A_class_mixed_positive_negative_edge_ratio=0.9382130647210615
+```
+
+真推进点：最新剩余不再是笼统的 mirror-imbalance，而是两类显式 residual
+carrier：
+
+```text
+MissingMirrorCarrierPhaseSaving
+AND UnequalMirrorPairResidualPhaseSaving
+```
+
+并行仍需：
+
+```text
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+missing_mirror_carrier_phase_saving_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

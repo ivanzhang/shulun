@@ -22793,6 +22793,53 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层只关闭 signed-child mirror ledger；mirror-imbalance phase saving、thin-support
 summation、residual endpoint summation、外部引理版与内部自足版仍未闭合。
 
+### 1.179D Phi-LPF q-prefix mirror-imbalance support actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_mirror_imbalance_support_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.json
+```
+
+actual-load 含义更新为：上一层留下的 mirror-imbalance carrier 已经不是一个
+未分类黑箱，而是两类 explicit residual support。同步读数为：
+
+```text
+mirror_imbalance_support_ledger_closed=true
+mirror_imbalance_edge_mass=76343
+missing_mirror_edge_mass=62980
+missing_mirror_within_imbalance_ratio=0.824961031135795
+unequal_mirror_pair_residual_edge_mass=13363
+unequal_mirror_pair_within_imbalance_ratio=0.17503896886420497
+residual_carrier_count=7795
+multi_P_residual_edge_ratio=0.6484419003706954
+P_support_width_min/median/max=1/1/94
+residual_A_class_mixed_positive_negative_edge_ratio=0.9382130647210615
+```
+
+最新直接主攻改为：
+
+```text
+MissingMirrorCarrierPhaseSaving
+UnequalMirrorPairResidualPhaseSaving
+```
+
+并行仍需：
+
+```text
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+TraceKloostermanCompletionOfMirrorImbalanceAndResidualPackets
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 mirror-imbalance support ledger；missing-mirror/unequal-pair 的相位节省、
+thin-support summation、residual endpoint summation、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：
