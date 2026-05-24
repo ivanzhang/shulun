@@ -1,0 +1,973 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_route_cycle_switch_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "TopTwoExactRouteSignCycleLedgerImported",
+      "meaning": "The top-two exact-route sign-cycle ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "TopTwoCoreRouteCycleSwitchLedger",
+      "meaning": "The 270-mass cycle 4/5/6 and switch<=3 core is split into route-cycle-switch atoms.",
+      "proved": true,
+      "remaining": "none for the finite core atom ledger"
+    },
+    {
+      "closed": false,
+      "gate": "LargestCoreAtomCollisionBound",
+      "meaning": "Control the largest 70-mass route-cycle-switch atom.",
+      "proved": false,
+      "remaining": "finite audit identifies the atom but gives no global theorem"
+    },
+    {
+      "closed": false,
+      "gate": "AllCoreAtomCollisionBoundsOrPDEC",
+      "meaning": "Control all 11 core atoms or route them through PDEC/SAE.",
+      "proved": false,
+      "remaining": "requires signed equality, aggregation, or endpoint trace completion"
+    },
+    {
+      "closed": false,
+      "gate": "NonCoreTopTwoSignCycleResidual",
+      "meaning": "Control the remaining 200 edge mass outside the core.",
+      "proved": false,
+      "remaining": "carried forward from the top-two sign-cycle ledger"
+    }
+  ],
+  "core_route_cycle_switch_collision_bound_proved": false,
+  "current_object": {
+    "dominant_shape": "the core splits into 11 route-cycle-switch atoms; the largest atom has edge mass 70",
+    "input": "cycle 4/5/6 and sign-switch <=3 core inside the top-two exact routes",
+    "operation": "split the 270 edge mass by route, cycle length, and sign-switch count",
+    "remaining": "prove one of the atom collision bounds, aggregate atoms through PDEC/SAE, or complete the endpoint trace family"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_theorems": "identify possible prime gaps but do not control signed local atom equality",
+    "short_interval_prime_inputs": "remain above theta=1/2 and do not see fixed endpoint sign-cycle atoms",
+    "trace_or_kloosterman_inputs": "still need completion from route-cycle-switch atoms to a bilinear or trace-family object"
+  },
+  "finite_audit": {
+    "all_core_cycles_are_4_5_6": true,
+    "all_core_switches_le3": true,
+    "all_core_templates_mixed_positive_negative": true,
+    "all_core_templates_pairwise_occurrence": true,
+    "core_definition": "cycle_length in {4,5,6} and sign_switch_count <= 3",
+    "core_edge_mass": 270,
+    "core_edge_ratio_inside_top_two": 0.574468085106383,
+    "core_route_cycle_switch_collision_bound_proved": false,
+    "core_template_count": 29,
+    "cycle4_core_edge_mass": 96,
+    "cycle5_core_edge_mass": 150,
+    "cycle6_core_edge_mass": 24,
+    "cycle_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 150,
+        "edge_ratio": 0.5555555555555556
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 96,
+        "edge_ratio": 0.35555555555555557
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889
+      }
+    ],
+    "cycle_switch_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 90,
+        "edge_ratio": 0.3333333333333333,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.14814814814814814,
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 40,
+        "edge_ratio": 0.14814814814814814,
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 32,
+        "edge_ratio": 0.11851851851851852,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.07407407407407407,
+        "sign_switch_count": 2
+      }
+    ],
+    "cycle_template_rows": [
+      {
+        "cycle_length": 5,
+        "template_count": 15,
+        "template_ratio": 0.5172413793103449
+      },
+      {
+        "cycle_length": 4,
+        "template_count": 12,
+        "template_ratio": 0.41379310344827586
+      },
+      {
+        "cycle_length": 6,
+        "template_count": 2,
+        "template_ratio": 0.06896551724137931
+      }
+    ],
+    "gap2_upper_wing_core_edge_mass": 140,
+    "gap4_right_tail_two_sided_core_edge_mass": 130,
+    "largest_route_cycle_switch_atom_edge_mass": 70,
+    "largest_route_cycle_switch_atom_ratio_inside_core": 0.25925925925925924,
+    "m_shell_band_edge_rows": [
+      {
+        "edge_mass": 116,
+        "edge_ratio": 0.42962962962962964,
+        "m_shell_band": "m<=8"
+      },
+      {
+        "edge_mass": 106,
+        "edge_ratio": 0.3925925925925926,
+        "m_shell_band": "m<=4"
+      },
+      {
+        "edge_mass": 48,
+        "edge_ratio": 0.17777777777777778,
+        "m_shell_band": "m>8"
+      }
+    ],
+    "max_prime": 1009,
+    "noncore_top_two_edge_mass": 200,
+    "noncore_top_two_edge_ratio": 0.425531914893617,
+    "previous_top_two_exact_route_sign_cycle_ledger_closed": true,
+    "q_prefix_band_edge_rows": [
+      {
+        "edge_mass": 110,
+        "edge_ratio": 0.4074074074074074,
+        "q_prefix_band": "q<=20"
+      },
+      {
+        "edge_mass": 108,
+        "edge_ratio": 0.4,
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 52,
+        "edge_ratio": 0.1925925925925926,
+        "q_prefix_band": "q>20"
+      }
+    ],
+    "route_cycle_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 90,
+        "edge_ratio": 0.3333333333333333,
+        "route_label": "gap4_right_tail_two_sided"
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 60,
+        "edge_ratio": 0.2222222222222222,
+        "route_label": "gap2_upper_wing"
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 56,
+        "edge_ratio": 0.2074074074074074,
+        "route_label": "gap2_upper_wing"
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.14814814814814814,
+        "route_label": "gap4_right_tail_two_sided"
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "route_label": "gap2_upper_wing"
+      }
+    ],
+    "route_cycle_switch_atom_count": 11,
+    "route_cycle_switch_edge_rows": [
+      {
+        "cycle_length": 5,
+        "edge_mass": 70,
+        "edge_ratio": 0.25925925925925924,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 40,
+        "edge_ratio": 0.14814814814814814,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 6,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.07407407407407407,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.07407407407407407,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.07407407407407407,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3
+      },
+      {
+        "cycle_length": 5,
+        "edge_mass": 20,
+        "edge_ratio": 0.07407407407407407,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 16,
+        "edge_ratio": 0.05925925925925926,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1
+      },
+      {
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3
+      }
+    ],
+    "route_edge_rows": [
+      {
+        "edge_mass": 140,
+        "edge_ratio": 0.5185185185185185,
+        "route_label": "gap2_upper_wing",
+        "template_count": 15
+      },
+      {
+        "edge_mass": 130,
+        "edge_ratio": 0.48148148148148145,
+        "route_label": "gap4_right_tail_two_sided",
+        "template_count": 14
+      }
+    ],
+    "route_switch_edge_rows": [
+      {
+        "edge_mass": 94,
+        "edge_ratio": 0.34814814814814815,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3
+      },
+      {
+        "edge_mass": 60,
+        "edge_ratio": 0.2222222222222222,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2
+      },
+      {
+        "edge_mass": 52,
+        "edge_ratio": 0.1925925925925926,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.13333333333333333,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 1
+      },
+      {
+        "edge_mass": 28,
+        "edge_ratio": 0.1037037037037037,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "sign_switch1_core_edge_mass": 64,
+    "sign_switch2_core_edge_mass": 60,
+    "sign_switch3_core_edge_mass": 146,
+    "sign_switch_edge_rows": [
+      {
+        "edge_mass": 146,
+        "edge_ratio": 0.5407407407407407,
+        "sign_switch_count": 3
+      },
+      {
+        "edge_mass": 64,
+        "edge_ratio": 0.23703703703703705,
+        "sign_switch_count": 1
+      },
+      {
+        "edge_mass": 60,
+        "edge_ratio": 0.2222222222222222,
+        "sign_switch_count": 2
+      }
+    ],
+    "sign_switch_template_rows": [
+      {
+        "sign_switch_count": 3,
+        "template_count": 15,
+        "template_ratio": 0.5172413793103449
+      },
+      {
+        "sign_switch_count": 1,
+        "template_count": 7,
+        "template_ratio": 0.2413793103448276
+      },
+      {
+        "sign_switch_count": 2,
+        "template_count": 7,
+        "template_ratio": 0.2413793103448276
+      }
+    ],
+    "sign_word_edge_rows": [
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.14814814814814814,
+        "sign_word": "--+-+"
+      },
+      {
+        "edge_mass": 24,
+        "edge_ratio": 0.08888888888888889,
+        "sign_word": "+--+"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.05925925925925926,
+        "sign_word": "+-+-"
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.05925925925925926,
+        "sign_word": "-+-+"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.044444444444444446,
+        "sign_word": "+-+++-"
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.044444444444444446,
+        "sign_word": "-+-+++"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "++++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+++-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+++--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+-++-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+-+--"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+--+-"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+---+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "+----"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "-++-+"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "-+-++"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.037037037037037035,
+        "sign_word": "---++"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "sign_word": "+++-"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "sign_word": "++-+"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "sign_word": "+-++"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "sign_word": "+---"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.02962962962962963,
+        "sign_word": "-+++"
+      }
+    ],
+    "sign_word_template_rows": [
+      {
+        "sign_word": "--+-+",
+        "template_count": 4,
+        "template_ratio": 0.13793103448275862
+      },
+      {
+        "sign_word": "+--+",
+        "template_count": 3,
+        "template_ratio": 0.10344827586206896
+      },
+      {
+        "sign_word": "+-+-",
+        "template_count": 2,
+        "template_ratio": 0.06896551724137931
+      },
+      {
+        "sign_word": "-+-+",
+        "template_count": 2,
+        "template_ratio": 0.06896551724137931
+      },
+      {
+        "sign_word": "++++-",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+++-",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+++-+",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+++--",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "++-+",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+-++",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+-+++-",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+-++-",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+-+--",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+--+-",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+---",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+---+",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "+----",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "-+++",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "-++-+",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "-+-++",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "-+-+++",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      },
+      {
+        "sign_word": "---++",
+        "template_count": 1,
+        "template_ratio": 0.034482758620689655
+      }
+    ],
+    "top_core_template_rows": [
+      {
+        "P": 1009,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1481, 1483]",
+        "m_shell_prime_count": 6,
+        "packet_index": 5099,
+        "q_prefix_count": 27,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3,
+        "sign_word": "+-+++-"
+      },
+      {
+        "P": 823,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "m_pair": "[1289, 1291]",
+        "m_shell_prime_count": 9,
+        "packet_index": 3502,
+        "q_prefix_count": 17,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3,
+        "sign_word": "-+-+++"
+      },
+      {
+        "P": 613,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[881, 883]",
+        "m_shell_prime_count": 4,
+        "packet_index": 1957,
+        "q_prefix_count": 20,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1,
+        "sign_word": "+++--"
+      },
+      {
+        "P": 887,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1451, 1453]",
+        "m_shell_prime_count": 11,
+        "packet_index": 4138,
+        "q_prefix_count": 13,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1,
+        "sign_word": "+----"
+      },
+      {
+        "P": 883,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1427, 1429]",
+        "m_shell_prime_count": 5,
+        "packet_index": 4084,
+        "q_prefix_count": 15,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+++-+"
+      },
+      {
+        "P": 907,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1619, 1621]",
+        "m_shell_prime_count": 6,
+        "packet_index": 4196,
+        "q_prefix_count": 9,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+---+"
+      },
+      {
+        "P": 919,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1427, 1429]",
+        "m_shell_prime_count": 9,
+        "packet_index": 4324,
+        "q_prefix_count": 18,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3,
+        "sign_word": "-+-++"
+      },
+      {
+        "P": 617,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[1019, 1021]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1994,
+        "q_prefix_count": 10,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 613,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[757, 761]",
+        "m_shell_prime_count": 6,
+        "packet_index": 1929,
+        "q_prefix_count": 7,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 1,
+        "sign_word": "++++-"
+      },
+      {
+        "P": 727,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 3,
+        "packet_index": 2741,
+        "q_prefix_count": 29,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 1,
+        "sign_word": "---++"
+      },
+      {
+        "P": 619,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[739, 743]",
+        "m_shell_prime_count": 5,
+        "packet_index": 2017,
+        "q_prefix_count": 10,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "+-++-"
+      },
+      {
+        "P": 773,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[823, 827]",
+        "m_shell_prime_count": 6,
+        "packet_index": 3157,
+        "q_prefix_count": 28,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "+-+--"
+      },
+      {
+        "P": 823,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[859, 863]",
+        "m_shell_prime_count": 5,
+        "packet_index": 3485,
+        "q_prefix_count": 26,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "+--+-"
+      },
+      {
+        "P": 991,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[859, 863]",
+        "m_shell_prime_count": 7,
+        "packet_index": 4931,
+        "q_prefix_count": 16,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "-++-+"
+      },
+      {
+        "P": 607,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[769, 773]",
+        "m_shell_prime_count": 3,
+        "packet_index": 1887,
+        "q_prefix_count": 7,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 739,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[757, 761]",
+        "m_shell_prime_count": 4,
+        "packet_index": 2842,
+        "q_prefix_count": 28,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 953,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "m_pair": "[769, 773]",
+        "m_shell_prime_count": 4,
+        "packet_index": 4601,
+        "q_prefix_count": 10,
+        "route_label": "gap4_right_tail_two_sided",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+"
+      },
+      {
+        "P": 739,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1229, 1231]",
+        "m_shell_prime_count": 4,
+        "packet_index": 2851,
+        "q_prefix_count": 12,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 1,
+        "sign_word": "-+++"
+      },
+      {
+        "P": 761,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1277, 1279]",
+        "m_shell_prime_count": 9,
+        "packet_index": 3061,
+        "q_prefix_count": 10,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "++-+"
+      },
+      {
+        "P": 919,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1451, 1453]",
+        "m_shell_prime_count": 9,
+        "packet_index": 4324,
+        "q_prefix_count": 18,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+-++"
+      },
+      {
+        "P": 331,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[461, 463]",
+        "m_shell_prime_count": 4,
+        "packet_index": 531,
+        "q_prefix_count": 13,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+--+"
+      },
+      {
+        "P": 659,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1019, 1021]",
+        "m_shell_prime_count": 4,
+        "packet_index": 2320,
+        "q_prefix_count": 16,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+--+"
+      },
+      {
+        "P": 853,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1451, 1453]",
+        "m_shell_prime_count": 3,
+        "packet_index": 3735,
+        "q_prefix_count": 13,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 2,
+        "sign_word": "+--+"
+      },
+      {
+        "P": 997,
+        "cycle_length": 4,
+        "edge_mass": 8,
+        "m_pair": "[1787, 1789]",
+        "m_shell_prime_count": 5,
+        "packet_index": 5021,
+        "q_prefix_count": 7,
+        "route_label": "gap2_upper_wing",
+        "sign_switch_count": 3,
+        "sign_word": "+-+-"
+      }
+    ],
+    "top_two_core_route_cycle_switch_ledger_closed": true
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "largest_core_atom_collision_bound_proved": false,
+  "latest_narrowest_mouth": [
+    "LocalCycleLengthUniformBound",
+    "AND Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound",
+    "AND Gap2UpperWingTwinCoreRouteCycleSwitchAtomBound",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the fastest current route is still the finite Phi-LPF single-P local top-two carrier split",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2f893c719ec65b92fb54e4b735476d792b1f06cfcf6941ece5b536ef8ac736f7",
+    "docs/monograph/external-theorem-index.md": "efade494a83699b9fdfe2d559c203da6def92192383bc6fa22bc128190d7b747",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f38d2a51a46d24e7f8860a45227a3b27e3926550c8ee71294ca5de552bf58381",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-sign-cycle-audit.json": "928aea8e49fe5777b40657bdacc640673c306626a367c6b4be829f3fc19e71a6",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "8a763aaed07b6e4a6fee2b9f1e6432a94150b26dda6d523707569912a633d460",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "3b66a0491cf92acc4ffa88a41da02cb922b5387fb0fd182a074c511547a55a51",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_route_cycle_switch_audit.py": "bd12ce6d50cf563e5f7553c017ed92b8e5cc6b283a2298ca14d66fad0841dc70",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "5eab87898669906b5a4c5cdc1ce3fc5b7d50396573afd3c0edfa0e9ba2d4b73f"
+  },
+  "status": "top_two_core_route_cycle_switch_ledger_closed_atom_bounds_open",
+  "top_two_core_route_cycle_switch_ledger_closed": true,
+  "top_two_noncore_residual_bound_proved": false
+}

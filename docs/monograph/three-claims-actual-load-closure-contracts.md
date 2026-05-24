@@ -22516,6 +22516,57 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite top-two sign-cycle 账本；两个 sign-cycle collision bound 仍未闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core route-cycle-switch actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_route_cycle_switch_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.json
+```
+
+actual-load 含义继续收缩：上一层 `cycle_4_5_6_and_switch_le3_edge_mass=270`
+不再作为单块保留，而是拆成 `route x cycle_length x sign_switch_count` 的 11 个 atom。
+
+```text
+top_two_core_route_cycle_switch_ledger_closed=true
+core_template_count=29
+core_edge_mass=270
+route_cycle_switch_atom_count=11
+largest_route_cycle_switch_atom_edge_mass=70
+gap2_upper_wing_core_edge_mass=140
+gap4_right_tail_two_sided_core_edge_mass=130
+noncore_top_two_edge_mass=200
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound
+Gap2UpperWingTwinCoreRouteCycleSwitchAtomBound
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite core atom 账本；largest atom bound、core atom aggregation 与
+top-two noncore residual 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：

@@ -2452,6 +2452,61 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65V. Phi-LPF q-prefix single-P local gap2/gap4 top-two core route-cycle-switch 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_route_cycle_switch_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.md
+```
+
+上一层留下的最集中核心为：
+
+```text
+cycle_length in {4,5,6}
+sign_switch_count <= 3
+edge_mass=270
+```
+
+本层把该核心继续拆成 `route x cycle_length x sign_switch_count` 原子：
+
+```text
+top_two_core_route_cycle_switch_ledger_closed=true
+core_template_count=29
+core_edge_mass=270
+noncore_top_two_edge_mass=200
+route_cycle_switch_atom_count=11
+largest_route_cycle_switch_atom_edge_mass=70
+gap2_upper_wing_core_edge_mass=140
+gap4_right_tail_two_sided_core_edge_mass=130
+cycle5_core_edge_mass=150
+cycle4_core_edge_mass=96
+cycle6_core_edge_mass=24
+sign_switch3_core_edge_mass=146
+sign_switch1_core_edge_mass=64
+sign_switch2_core_edge_mass=60
+```
+
+外部 theorem 边界仍不变：trace/Kloosterman 平均输入只有在这些局部 atom
+被完成为可估计的双线性或 trace-family 对象后才可调用；prime-gap 与 short-interval
+prime theorem 不直接控制 fixed endpoint packet 内的 signed atom equality。
+
+状态边界：
+
+```text
+top_two_core_route_cycle_switch_ledger_closed=true
+core_route_cycle_switch_collision_bound_proved=false
+largest_core_atom_collision_bound_proved=false
+top_two_noncore_residual_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

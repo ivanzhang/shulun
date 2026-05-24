@@ -25924,3 +25924,48 @@ sign_switch_le3_edge_mass=332
 本层删除的是“最大 exact routes 仍可隐藏高重数或全正同号 carrier”的含混说法；
 没有删除 sign-cycle signed equality、PDEC/SAE 回流、single-P slice summation 或
 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core route-cycle-switch formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_route_cycle_switch_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-route-cycle-switch-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层留下的集中核心
+
+```text
+cycle_length in {4,5,6}
+sign_switch_count <= 3
+edge_mass=270
+```
+
+现在被拆成：
+
+```text
+Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound
+AND Gap2UpperWingTwinCoreRouteCycleSwitchAtomBound
+AND TopTwoNonCoreSignCycleResidualBound
+```
+
+关键审计读数为：
+
+```text
+top_two_core_route_cycle_switch_ledger_closed=true
+core_template_count=29
+core_edge_mass=270
+route_cycle_switch_atom_count=11
+largest_route_cycle_switch_atom_edge_mass=70
+gap2_upper_wing_core_edge_mass=140
+gap4_right_tail_two_sided_core_edge_mass=130
+cycle5_core_edge_mass=150
+sign_switch3_core_edge_mass=146
+```
+
+本层删除的是“top-two 核心仍是不可分 270 质量块”的含混说法；没有删除
+route-cycle-switch atom signed equality、PDEC/SAE 聚合、top-two noncore residual、
+single-P slice summation 或 prime-q reciprocal phase saving 缺口。

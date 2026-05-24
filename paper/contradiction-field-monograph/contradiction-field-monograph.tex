@@ -36351,6 +36351,107 @@ gap2-gap4-top-two-sign-cycle-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) top-two core route-cycle-switch atoms}
+
+\begin{theorem}[Top-two core route-cycle-switch ledger]
+In the audit range \(P\le 1009\), restrict the previous top-two sign-cycle
+ledger to the core
+\[
+\texttt{cycle\_length}\in\{4,5,6\},\qquad
+\texttt{sign\_switch\_count}\le 3 .
+\]
+Then this core has \(29\) templates and edge mass \(270\), and it splits into
+\(11\) \(\text{route}\times\text{cycle}\times\text{switch}\) atoms.  The
+principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{top\_two\_core\_route\_cycle\_switch\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{core\_template\_count} & 29\\
+\texttt{core\_edge\_mass} & 270\\
+\texttt{noncore\_top\_two\_edge\_mass} & 200\\
+\texttt{route\_cycle\_switch\_atom\_count} & 11\\
+\texttt{largest\_route\_cycle\_switch\_atom\_edge\_mass} & 70\\
+\texttt{gap2\_upper\_wing\_core\_edge\_mass} & 140\\
+\texttt{gap4\_right\_tail\_two\_sided\_core\_edge\_mass} & 130\\
+\texttt{cycle5\_core\_edge\_mass} & 150\\
+\texttt{cycle4\_core\_edge\_mass} & 96\\
+\texttt{cycle6\_core\_edge\_mass} & 24\\
+\texttt{sign\_switch3\_core\_edge\_mass} & 146\\
+\texttt{sign\_switch1\_core\_edge\_mass} & 64\\
+\texttt{sign\_switch2\_core\_edge\_mass} & 60 .
+\end{array}
+\]
+The largest atom is the gap \(4\) two-sided right-tail route with cycle length
+\(5\) and sign-switch count \(3\); its edge mass is \(70\).
+\end{theorem}
+\begin{proof}
+The audit imports the top-two exact-route sign-cycle ledger and keeps exactly
+those rows with cycle length \(4\), \(5\), or \(6\), and sign-switch count at
+most \(3\).  The imported ledger gives the selected mass as the previously
+recorded intersection mass \(270\).  Each selected row is then labelled by its
+exact route, cycle length, and sign-switch count.  Summing the edge masses over
+these labels gives the \(11\) atoms listed in the machine certificate; their
+masses sum to \(270\).  The complementary top-two mass is therefore
+\[
+470-270=200.
+\]
+All selected templates inherit occurrence count \(2\) and mixed-positive-negative
+sign type from the previous ledger.
+\end{proof}
+
+\begin{remark}[Core atom collision gates]
+The top-two sign-cycle gates are now refined to
+\begin{quote}\scriptsize\ttfamily
+Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound\\
+AND Gap2UpperWingTwinCoreRouteCycleSwitchAtomBound\\
+AND TopTwoNonCoreSignCycleResidualBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND Gap4RightTailTwoSidedCousinCoreRouteCycleSwitchAtomBound\\
+AND Gap2UpperWingTwinCoreRouteCycleSwitchAtomBound\\
+AND TopTwoNonCoreSignCycleResidualBound\\
+AND Gap2LowerWingTwinCollisionBound\\
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound\\
+AND Gap4RightTailLeftCollarCousinCollisionBound\\
+AND Gap4UpperWingCousinResidualCollisionBound\\
+AND Gap4LowerWingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is a finite atom ledger, not a global cancellation theorem.  Current
+trace/Kloosterman average inputs are useful only after a completion from these
+local route-cycle-switch atoms to a bilinear or trace-family object; prime-gap
+and short-interval prime theorems do not control the fixed endpoint signed atom
+equality.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-route-cycle-switch-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
