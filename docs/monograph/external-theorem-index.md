@@ -6438,6 +6438,81 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65K. Phi-LPF q-prefix missing-mirror structure 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_structure_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.md
+```
+
+本层优先处理上一层中占主导的 missing-mirror residual。有限审计读数：
+
+```text
+missing_mirror_structure_ledger_closed=true
+missing_mirror_edge_mass=62980
+missing_mirror_pair_count=7156
+missing_raw_base_count=5114
+single_P_missing_edge_mass=26797
+single_P_missing_edge_ratio=0.4254842807240394
+single_strip_missing_edge_mass=62952
+single_strip_missing_edge_ratio=0.9995554144172754
+wing_single_shell_missing_edge_mass=30538
+wing_single_shell_missing_edge_ratio=0.48488409018736106
+right_tail_missing_edge_mass=32442
+right_tail_missing_edge_ratio=0.5151159098126389
+missing_A_class_mixed_positive_negative_edge_ratio=0.9735947919974595
+```
+
+几何拆分为：
+
+```text
+right_tail_two_sided_collar=21925
+upper_wing_single_shell=20318
+lower_wing_single_shell=10220
+right_tail_right_collar=5091
+right_tail_left_collar=3925
+right_tail_terminal_full_interval=1501
+```
+
+因此 missing-mirror 口进一步从
+
+```text
+MissingMirrorCarrierPhaseSaving
+```
+
+压成：
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+外部前沿匹配边界：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II、Wright 2026 unbalanced Kloosterman
+fractions 目前仍只是候选接口，因为 missing-mirror endpoint carriers 还没有
+被完成为 trace/Kloosterman 或 Type-II 变量族；Li 的 `x^0.52` 短区间素数存在
+不估计 signed missing-mirror carrier phases。
+
+状态边界：
+
+```text
+missing_mirror_structure_ledger_closed=true
+missing_mirror_carrier_phase_saving_closed=false
+missing_mirror_to_trace_completion_closed=false
+unequal_mirror_pair_residual_phase_saving_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

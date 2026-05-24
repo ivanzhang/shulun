@@ -25425,3 +25425,55 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层删除的是“mirror-imbalance 未分类”的黑箱；没有删除 missing-mirror carrier
 相消、unequal-pair residual 相消、thin-support 无损求和、completed family 和
 residual endpoint 真缺口。
+
+### Phi-LPF q-prefix missing-mirror structure formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_structure_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+MissingMirrorCarrierPhaseSaving
+```
+
+现在被 endpoint/strip/P-support structure ledger 压成：
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+AND MissingMirrorTraceKloostermanCompletion
+```
+
+关键审计读数为：
+
+```text
+missing_mirror_structure_ledger_closed=true
+missing_mirror_edge_mass=62980
+single_strip_missing_edge_ratio=0.9995554144172754
+right_tail_missing_edge_ratio=0.5151159098126389
+wing_single_shell_missing_edge_ratio=0.48488409018736106
+missing_A_class_mixed_positive_negative_edge_ratio=0.9735947919974595
+single_P_missing_edge_ratio=0.4254842807240394
+```
+
+因此最新实际硬点为：
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+AND MissingMirrorTraceKloostermanCompletion
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“missing-mirror residual 未定位”的黑箱；没有删除 endpoint carrier
+相消、trace/Kloosterman completion、unequal-pair residual 和 residual endpoint
+真缺口。

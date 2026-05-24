@@ -1,0 +1,806 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_structure_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "MirrorImbalanceSupportLedgerImported",
+      "meaning": "The previous mirror-imbalance support ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "MissingMirrorStructureLedger",
+      "meaning": "Every missing-mirror edge is assigned strip, endpoint, sign, length, P-support, and raw-base structure.",
+      "proved": true,
+      "remaining": "none for the finite structure ledger"
+    },
+    {
+      "closed": false,
+      "gate": "MissingMirrorCarrierPhaseSaving",
+      "meaning": "Prove cancellation or positivity for the missing-mirror carrier family.",
+      "proved": false,
+      "remaining": "requires analytic phase input on the exposed endpoint support"
+    },
+    {
+      "closed": false,
+      "gate": "MissingMirrorTraceCompletion",
+      "meaning": "Complete the missing-mirror endpoint carriers to admissible trace/Kloosterman sums.",
+      "proved": false,
+      "remaining": "requires an explicit completion map and no-loss aggregation"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "missing-mirror mass is mostly mixed-sign and one-strip endpoint support, not yet a trace family",
+    "input": "missing-mirror signed-child residual carriers",
+    "operation": "strip/endpoint/A-class/length/P-support/raw-base structure audit",
+    "remaining": "phase saving for missing-mirror endpoint carriers and completion to an admissible trace/Kloosterman family"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "sub-P\u00f3lya-Vinogradov bilinear trace-function input, but only after missing carriers become trace sums",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "power-saving bilinear Kloosterman sums for arbitrary q, but requires explicit Kloosterman variables",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "composite-modulus Type-II Kloosterman amplification, not matched to missing signed-child templates",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced convolution/Kloosterman-fraction input, candidate only after endpoint carriers are completed",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence at exponent 0.52, still not a signed-carrier phase estimate",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "not directly applicable before missing-mirror endpoint carriers become trace-function sums",
+    "Li_short_interval_x_052": "does not estimate signed missing-mirror carrier phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "not directly applicable before explicit Kloosterman variables are extracted",
+    "Pascadi_composite_Type_II": "not matched because missing-mirror support is not a composite-modulus Type-II box",
+    "Wright_unbalanced_Kloosterman": "candidate only after the endpoint support is converted to unbalanced Kloosterman fractions"
+  },
+  "finite_audit": {
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "atom_count_total": 15439,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "max_prime": 1009,
+    "missing_A_class_edge_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "edge_mass": 61317,
+        "edge_ratio": 0.9735947919974595
+      },
+      {
+        "A_class": "all_positive",
+        "edge_mass": 742,
+        "edge_ratio": 0.011781517942203874
+      },
+      {
+        "A_class": "all_negative",
+        "edge_mass": 517,
+        "edge_ratio": 0.008208955223880597
+      },
+      {
+        "A_class": "mixed_with_zero",
+        "edge_mass": 404,
+        "edge_ratio": 0.006414734836456017
+      }
+    ],
+    "missing_P_width_bucket_edge_rows": [
+      {
+        "P_width_bucket": "single_P",
+        "edge_mass": 26797,
+        "edge_ratio": 0.4254842807240394
+      },
+      {
+        "P_width_bucket": "P_width_2_to_4",
+        "edge_mass": 20380,
+        "edge_ratio": 0.3235947919974595
+      },
+      {
+        "P_width_bucket": "P_width_5_to_16",
+        "edge_mass": 12741,
+        "edge_ratio": 0.20230231819625277
+      },
+      {
+        "P_width_bucket": "P_width_17_to_64",
+        "edge_mass": 3062,
+        "edge_ratio": 0.04861860908224833
+      }
+    ],
+    "missing_cycle_length_edge_rows": [
+      {
+        "cycle_length": "4",
+        "edge_mass": 16296,
+        "edge_ratio": 0.25874880914576054
+      },
+      {
+        "cycle_length": "3",
+        "edge_mass": 12663,
+        "edge_ratio": 0.20106382978723406
+      },
+      {
+        "cycle_length": "5",
+        "edge_mass": 12290,
+        "edge_ratio": 0.19514131470308035
+      },
+      {
+        "cycle_length": "6",
+        "edge_mass": 8730,
+        "edge_ratio": 0.13861543347094316
+      },
+      {
+        "cycle_length": "7",
+        "edge_mass": 5621,
+        "edge_ratio": 0.0892505557319784
+      },
+      {
+        "cycle_length": "2",
+        "edge_mass": 2892,
+        "edge_ratio": 0.04591933947284852
+      },
+      {
+        "cycle_length": "8",
+        "edge_mass": 2376,
+        "edge_ratio": 0.03772626230549381
+      },
+      {
+        "cycle_length": "9",
+        "edge_mass": 1125,
+        "edge_ratio": 0.017862813591616386
+      },
+      {
+        "cycle_length": "10",
+        "edge_mass": 650,
+        "edge_ratio": 0.010320736741822802
+      },
+      {
+        "cycle_length": "11",
+        "edge_mass": 209,
+        "edge_ratio": 0.0033185138139091774
+      },
+      {
+        "cycle_length": "12",
+        "edge_mass": 96,
+        "edge_ratio": 0.0015242934264845982
+      },
+      {
+        "cycle_length": "14",
+        "edge_mass": 14,
+        "edge_ratio": 0.00022229279136233725
+      },
+      {
+        "cycle_length": "13",
+        "edge_mass": 13,
+        "edge_ratio": 0.000206414734836456
+      },
+      {
+        "cycle_length": "1",
+        "edge_mass": 5,
+        "edge_ratio": 7.939028262940616e-05
+      }
+    ],
+    "missing_endpoint_edge_rows": [
+      {
+        "edge_mass": 20565,
+        "edge_ratio": 0.32653223245474755,
+        "endpoint_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture"
+      },
+      {
+        "edge_mass": 20318,
+        "edge_ratio": 0.32261035249285486,
+        "endpoint_class": "upper_wing_single_contiguous_endpoint_shell"
+      },
+      {
+        "edge_mass": 10220,
+        "edge_ratio": 0.1622737376945062,
+        "endpoint_class": "lower_wing_single_contiguous_endpoint_shell"
+      },
+      {
+        "edge_mass": 4809,
+        "edge_ratio": 0.07635757383296285,
+        "endpoint_class": "right_tail_right_collar_only_no_P_puncture"
+      },
+      {
+        "edge_mass": 3687,
+        "edge_ratio": 0.058542394410924105,
+        "endpoint_class": "right_tail_left_collar_only_no_P_puncture"
+      },
+      {
+        "edge_mass": 1360,
+        "edge_ratio": 0.021594156875198476,
+        "endpoint_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture"
+      },
+      {
+        "edge_mass": 1054,
+        "edge_ratio": 0.01673547157827882,
+        "endpoint_class": "right_tail_terminal_full_interval_with_P_puncture"
+      },
+      {
+        "edge_mass": 447,
+        "edge_ratio": 0.00709749126706891,
+        "endpoint_class": "right_tail_terminal_full_interval_no_P_puncture"
+      },
+      {
+        "edge_mass": 282,
+        "edge_ratio": 0.004477611940298508,
+        "endpoint_class": "right_tail_right_collar_only_with_P_puncture"
+      },
+      {
+        "edge_mass": 238,
+        "edge_ratio": 0.003778977453159733,
+        "endpoint_class": "right_tail_left_collar_only_with_P_puncture"
+      }
+    ],
+    "missing_endpoint_group_edge_rows": [
+      {
+        "edge_mass": 21925,
+        "edge_ratio": 0.348126389329946,
+        "endpoint_group": "right_tail_two_sided_collar"
+      },
+      {
+        "edge_mass": 20318,
+        "edge_ratio": 0.32261035249285486,
+        "endpoint_group": "upper_wing_single_shell"
+      },
+      {
+        "edge_mass": 10220,
+        "edge_ratio": 0.1622737376945062,
+        "endpoint_group": "lower_wing_single_shell"
+      },
+      {
+        "edge_mass": 5091,
+        "edge_ratio": 0.08083518577326135,
+        "endpoint_group": "right_tail_right_collar"
+      },
+      {
+        "edge_mass": 3925,
+        "edge_ratio": 0.06232137186408383,
+        "endpoint_group": "right_tail_left_collar"
+      },
+      {
+        "edge_mass": 1501,
+        "edge_ratio": 0.02383296284534773,
+        "endpoint_group": "right_tail_terminal_full_interval"
+      }
+    ],
+    "missing_mirror_carrier_phase_saving_closed": false,
+    "missing_mirror_edge_mass": 62980,
+    "missing_mirror_endpoint_aggregation_closed": false,
+    "missing_mirror_pair_count": 7156,
+    "missing_mirror_structure_ledger_closed": true,
+    "missing_mirror_structure_ledger_closed_flag": true,
+    "missing_mirror_to_trace_completion_closed": false,
+    "missing_raw_base_count": 5114,
+    "missing_raw_base_share_max": 1.0,
+    "missing_raw_base_share_median": 1.0,
+    "missing_raw_base_share_min": 0.004761904761904762,
+    "missing_strip_edge_rows": [
+      {
+        "edge_mass": 32442,
+        "edge_ratio": 0.5151159098126389,
+        "strip": "right_tail"
+      },
+      {
+        "edge_mass": 20318,
+        "edge_ratio": 0.32261035249285486,
+        "strip": "upper_wing"
+      },
+      {
+        "edge_mass": 10220,
+        "edge_ratio": 0.1622737376945062,
+        "strip": "lower_wing"
+      }
+    ],
+    "non_switch_atom_count": 2084,
+    "previous_mirror_imbalance_support_ledger_closed": true,
+    "residual_endpoint_path_summation_closed": false,
+    "right_tail_missing_edge_mass": 32442,
+    "right_tail_missing_edge_ratio": 0.5151159098126389,
+    "row_column_unconditional_closed": false,
+    "signed_cycle_edge_mass": 107677,
+    "signed_cycle_packet_count": 36330,
+    "signed_cycle_signature_count": 8691,
+    "signed_residual_edge_mass": 40122,
+    "single_P_missing_edge_mass": 26797,
+    "single_P_missing_edge_ratio": 0.4254842807240394,
+    "single_strip_missing_edge_mass": 62952,
+    "single_strip_missing_edge_ratio": 0.9995554144172754,
+    "switch_atom_count": 13355,
+    "thin_P_support_carrier_summation_closed": false,
+    "top_missing_raw_base_rows": [
+      {
+        "endpoint_group_profile": "upper_wing_single_shell:236",
+        "missing_edge_mass": 236,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 236,
+        "raw_base_template": "g=2,c=4 -> g=4,c=6",
+        "signed_child_count": 2,
+        "strip_profile": "upper_wing:236"
+      },
+      {
+        "endpoint_group_profile": "lower_wing_single_shell:202",
+        "missing_edge_mass": 202,
+        "missing_share_inside_raw_base": 0.7890625,
+        "raw_base_signed_edge_mass": 256,
+        "raw_base_template": "g=2,c=2 -> g=4,c=2",
+        "signed_child_count": 3,
+        "strip_profile": "lower_wing:202"
+      },
+      {
+        "endpoint_group_profile": "right_tail_left_collar:51,right_tail_terminal_full_interval:9,right_tail_two_sided_collar:141",
+        "missing_edge_mass": 201,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 201,
+        "raw_base_template": "g=2,c=2 -> g=6,c=6 -> g=6,c=5",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:201"
+      },
+      {
+        "endpoint_group_profile": "right_tail_left_collar:54,right_tail_terminal_full_interval:9,right_tail_two_sided_collar:126",
+        "missing_edge_mass": 189,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 189,
+        "raw_base_template": "g=4,c=4 -> g=8,c=7 -> g=6,c=6",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:189"
+      },
+      {
+        "endpoint_group_profile": "lower_wing_single_shell:183",
+        "missing_edge_mass": 183,
+        "missing_share_inside_raw_base": 0.8591549295774648,
+        "raw_base_signed_edge_mass": 213,
+        "raw_base_template": "g=4,c=3 -> g=6,c=4 -> g=8,c=6",
+        "signed_child_count": 5,
+        "strip_profile": "lower_wing:183"
+      },
+      {
+        "endpoint_group_profile": "upper_wing_single_shell:177",
+        "missing_edge_mass": 177,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 177,
+        "raw_base_template": "g=4,c=6 -> g=6,c=8 -> g=8,c=12",
+        "signed_child_count": 3,
+        "strip_profile": "upper_wing:177"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:42,right_tail_terminal_full_interval:3,right_tail_two_sided_collar:129",
+        "missing_edge_mass": 174,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 174,
+        "raw_base_template": "g=4,c=4 -> g=8,c=9 -> g=6,c=6",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:174"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:48,right_tail_terminal_full_interval:8,right_tail_two_sided_collar:92",
+        "missing_edge_mass": 148,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 148,
+        "raw_base_template": "g=10,c=10 -> g=14,c=15 -> g=4,c=4 -> g=2,c=2",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:148"
+      },
+      {
+        "endpoint_group_profile": "upper_wing_single_shell:147",
+        "missing_edge_mass": 147,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 147,
+        "raw_base_template": "g=2,c=3 -> g=6,c=9 -> g=6,c=10",
+        "signed_child_count": 4,
+        "strip_profile": "upper_wing:147"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:51,right_tail_two_sided_collar:93",
+        "missing_edge_mass": 144,
+        "missing_share_inside_raw_base": 0.7272727272727273,
+        "raw_base_signed_edge_mass": 198,
+        "raw_base_template": "g=4,c=4 -> g=8,c=9 -> g=6,c=7",
+        "signed_child_count": 5,
+        "strip_profile": "right_tail:144"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:18,right_tail_terminal_full_interval:12,right_tail_two_sided_collar:108",
+        "missing_edge_mass": 138,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 138,
+        "raw_base_template": "g=2,c=2 -> g=6,c=6 -> g=6,c=7",
+        "signed_child_count": 2,
+        "strip_profile": "right_tail:138"
+      },
+      {
+        "endpoint_group_profile": "right_tail_left_collar:36,right_tail_terminal_full_interval:12,right_tail_two_sided_collar:87",
+        "missing_edge_mass": 135,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 135,
+        "raw_base_template": "g=10,c=10 -> g=2,c=2 -> g=12,c=11",
+        "signed_child_count": 3,
+        "strip_profile": "right_tail:135"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:48,right_tail_terminal_full_interval:2,right_tail_two_sided_collar:84",
+        "missing_edge_mass": 134,
+        "missing_share_inside_raw_base": 0.8933333333333333,
+        "raw_base_signed_edge_mass": 150,
+        "raw_base_template": "g=14,c=15 -> g=4,c=4",
+        "signed_child_count": 3,
+        "strip_profile": "right_tail:134"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:48,right_tail_two_sided_collar:84",
+        "missing_edge_mass": 132,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 132,
+        "raw_base_template": "g=4,c=4 -> g=8,c=8 -> g=6,c=7",
+        "signed_child_count": 3,
+        "strip_profile": "right_tail:132"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:42,right_tail_two_sided_collar:87",
+        "missing_edge_mass": 129,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 129,
+        "raw_base_template": "g=2,c=2 -> g=6,c=7 -> g=6,c=6",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:129"
+      },
+      {
+        "endpoint_group_profile": "right_tail_left_collar:28,right_tail_terminal_full_interval:12,right_tail_two_sided_collar:88",
+        "missing_edge_mass": 128,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 128,
+        "raw_base_template": "g=2,c=2 -> g=4,c=4 -> g=6,c=5 -> g=6,c=6",
+        "signed_child_count": 4,
+        "strip_profile": "right_tail:128"
+      },
+      {
+        "endpoint_group_profile": "lower_wing_single_shell:124",
+        "missing_edge_mass": 124,
+        "missing_share_inside_raw_base": 0.8378378378378378,
+        "raw_base_signed_edge_mass": 148,
+        "raw_base_template": "g=4,c=2 -> g=8,c=6",
+        "signed_child_count": 3,
+        "strip_profile": "lower_wing:124"
+      },
+      {
+        "endpoint_group_profile": "upper_wing_single_shell:124",
+        "missing_edge_mass": 124,
+        "missing_share_inside_raw_base": 0.8611111111111112,
+        "raw_base_signed_edge_mass": 144,
+        "raw_base_template": "g=4,c=6 -> g=8,c=14",
+        "signed_child_count": 3,
+        "strip_profile": "upper_wing:124"
+      },
+      {
+        "endpoint_group_profile": "upper_wing_single_shell:122",
+        "missing_edge_mass": 122,
+        "missing_share_inside_raw_base": 0.8133333333333334,
+        "raw_base_signed_edge_mass": 150,
+        "raw_base_template": "g=4,c=7 -> g=8,c=12",
+        "signed_child_count": 3,
+        "strip_profile": "upper_wing:122"
+      },
+      {
+        "endpoint_group_profile": "right_tail_right_collar:36,right_tail_terminal_full_interval:3,right_tail_two_sided_collar:78",
+        "missing_edge_mass": 117,
+        "missing_share_inside_raw_base": 1.0,
+        "raw_base_signed_edge_mass": 117,
+        "raw_base_template": "g=4,c=4 -> g=6,c=6 -> g=8,c=9",
+        "signed_child_count": 3,
+        "strip_profile": "right_tail:117"
+      }
+    ],
+    "top_missing_signed_child_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 50,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:208",
+        "missing_edge_mass": 208,
+        "missing_mirror_child": "g=2,c=4,A=negative -> g=4,c=6,A=positive",
+        "raw_base_child_count": 2,
+        "raw_base_template": "g=2,c=4 -> g=4,c=6",
+        "signed_child": "g=2,c=4,A=positive -> g=4,c=6,A=negative",
+        "strip_profile": "upper_wing:208"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 54,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:202",
+        "missing_edge_mass": 202,
+        "missing_mirror_child": "g=2,c=2,A=negative -> g=4,c=2,A=positive",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=2,c=2 -> g=4,c=2",
+        "signed_child": "g=2,c=2,A=positive -> g=4,c=2,A=negative",
+        "strip_profile": "lower_wing:202"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 29,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:30,right_tail_left_collar_only_with_P_puncture:9,right_tail_terminal_full_interval_no_P_puncture:3,right_tail_terminal_full_interval_with_P_puncture:6,right_tail_two_sided_left_and_right_collars_no_P_puncture:87,right_tail_two_sided_left_and_right_collars_with_P_puncture:6",
+        "missing_edge_mass": 141,
+        "missing_mirror_child": "g=2,c=2,A=negative -> g=6,c=6,A=negative -> g=6,c=5,A=positive",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=2,c=2 -> g=6,c=6 -> g=6,c=5",
+        "signed_child": "g=2,c=2,A=positive -> g=6,c=6,A=positive -> g=6,c=5,A=negative",
+        "strip_profile": "right_tail:141"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 23,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:42,right_tail_right_collar_only_with_P_puncture:6,right_tail_terminal_full_interval_no_P_puncture:2,right_tail_two_sided_left_and_right_collars_no_P_puncture:80,right_tail_two_sided_left_and_right_collars_with_P_puncture:4",
+        "missing_edge_mass": 134,
+        "missing_mirror_child": "g=14,c=15,A=negative -> g=4,c=4,A=positive",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=14,c=15 -> g=4,c=4",
+        "signed_child": "g=14,c=15,A=positive -> g=4,c=4,A=negative",
+        "strip_profile": "right_tail:134"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 36,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:124",
+        "missing_edge_mass": 124,
+        "missing_mirror_child": "g=4,c=2,A=positive -> g=8,c=6,A=negative",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=4,c=2 -> g=8,c=6",
+        "signed_child": "g=4,c=2,A=negative -> g=8,c=6,A=positive",
+        "strip_profile": "lower_wing:124"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 29,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:124",
+        "missing_edge_mass": 124,
+        "missing_mirror_child": "g=4,c=6,A=positive -> g=8,c=14,A=negative",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=4,c=6 -> g=8,c=14",
+        "signed_child": "g=4,c=6,A=negative -> g=8,c=14,A=positive",
+        "strip_profile": "upper_wing:124"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 32,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:122",
+        "missing_edge_mass": 122,
+        "missing_mirror_child": "g=4,c=7,A=negative -> g=8,c=12,A=positive",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=4,c=7 -> g=8,c=12",
+        "signed_child": "g=4,c=7,A=positive -> g=8,c=12,A=negative",
+        "strip_profile": "upper_wing:122"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 27,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:117",
+        "missing_edge_mass": 117,
+        "missing_mirror_child": "g=4,c=6,A=negative -> g=6,c=8,A=positive -> g=8,c=12,A=positive",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=4,c=6 -> g=6,c=8 -> g=8,c=12",
+        "signed_child": "g=4,c=6,A=positive -> g=6,c=8,A=negative -> g=8,c=12,A=negative",
+        "strip_profile": "upper_wing:117"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 21,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:18,right_tail_terminal_full_interval_with_P_puncture:12,right_tail_two_sided_left_and_right_collars_no_P_puncture:69,right_tail_two_sided_left_and_right_collars_with_P_puncture:9",
+        "missing_edge_mass": 108,
+        "missing_mirror_child": "g=2,c=2,A=positive -> g=6,c=6,A=positive -> g=6,c=7,A=negative",
+        "raw_base_child_count": 2,
+        "raw_base_template": "g=2,c=2 -> g=6,c=6 -> g=6,c=7",
+        "signed_child": "g=2,c=2,A=negative -> g=6,c=6,A=negative -> g=6,c=7,A=positive",
+        "strip_profile": "right_tail:108"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 22,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:24,right_tail_terminal_full_interval_with_P_puncture:3,right_tail_two_sided_left_and_right_collars_no_P_puncture:72,right_tail_two_sided_left_and_right_collars_with_P_puncture:9",
+        "missing_edge_mass": 108,
+        "missing_mirror_child": "g=4,c=4,A=positive -> g=8,c=9,A=negative -> g=6,c=6,A=positive",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=4,c=4 -> g=8,c=9 -> g=6,c=6",
+        "signed_child": "g=4,c=4,A=negative -> g=8,c=9,A=positive -> g=6,c=6,A=negative",
+        "strip_profile": "right_tail:108"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 25,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:30,right_tail_left_collar_only_with_P_puncture:3,right_tail_terminal_full_interval_no_P_puncture:3,right_tail_terminal_full_interval_with_P_puncture:6,right_tail_two_sided_left_and_right_collars_no_P_puncture:63",
+        "missing_edge_mass": 105,
+        "missing_mirror_child": "g=4,c=4,A=negative -> g=8,c=7,A=positive -> g=6,c=6,A=negative",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=4,c=4 -> g=8,c=7 -> g=6,c=6",
+        "signed_child": "g=4,c=4,A=positive -> g=8,c=7,A=negative -> g=6,c=6,A=positive",
+        "strip_profile": "right_tail:105"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 17,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 4,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:20,right_tail_left_collar_only_with_P_puncture:4,right_tail_terminal_full_interval_with_P_puncture:4,right_tail_two_sided_left_and_right_collars_no_P_puncture:60,right_tail_two_sided_left_and_right_collars_with_P_puncture:12",
+        "missing_edge_mass": 100,
+        "missing_mirror_child": "g=10,c=10,A=negative -> g=14,c=13,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=negative",
+        "raw_base_child_count": 3,
+        "raw_base_template": "g=10,c=10 -> g=14,c=13 -> g=4,c=4 -> g=2,c=2",
+        "signed_child": "g=10,c=10,A=positive -> g=14,c=13,A=negative -> g=4,c=4,A=positive -> g=2,c=2,A=positive",
+        "strip_profile": "right_tail:100"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 27,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:94",
+        "missing_edge_mass": 94,
+        "missing_mirror_child": "g=4,c=7,A=negative -> g=6,c=9,A=positive",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=4,c=7 -> g=6,c=9",
+        "signed_child": "g=4,c=7,A=positive -> g=6,c=9,A=negative",
+        "strip_profile": "upper_wing:94"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 17,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:30,right_tail_two_sided_left_and_right_collars_no_P_puncture:63",
+        "missing_edge_mass": 93,
+        "missing_mirror_child": "g=4,c=4,A=positive -> g=8,c=9,A=negative -> g=6,c=7,A=negative",
+        "raw_base_child_count": 5,
+        "raw_base_template": "g=4,c=4 -> g=8,c=9 -> g=6,c=7",
+        "signed_child": "g=4,c=4,A=negative -> g=8,c=9,A=positive -> g=6,c=7,A=positive",
+        "strip_profile": "right_tail:93"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 34,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 2,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:92",
+        "missing_edge_mass": 92,
+        "missing_mirror_child": "g=4,c=2,A=positive -> g=6,c=5,A=negative",
+        "raw_base_child_count": 1,
+        "raw_base_template": "g=4,c=2 -> g=6,c=5",
+        "signed_child": "g=4,c=2,A=negative -> g=6,c=5,A=positive",
+        "strip_profile": "lower_wing:92"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 16,
+        "P_width_bucket": "P_width_5_to_16",
+        "cycle_length": 4,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:20,right_tail_right_collar_only_with_P_puncture:12,right_tail_terminal_full_interval_with_P_puncture:4,right_tail_two_sided_left_and_right_collars_no_P_puncture:40,right_tail_two_sided_left_and_right_collars_with_P_puncture:8",
+        "missing_edge_mass": 84,
+        "missing_mirror_child": "g=10,c=10,A=positive -> g=14,c=15,A=negative -> g=4,c=4,A=positive -> g=2,c=2,A=positive",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=10,c=10 -> g=14,c=15 -> g=4,c=4 -> g=2,c=2",
+        "signed_child": "g=10,c=10,A=negative -> g=14,c=15,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=negative",
+        "strip_profile": "right_tail:84"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 19,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:21,right_tail_terminal_full_interval_with_P_puncture:3,right_tail_two_sided_left_and_right_collars_no_P_puncture:54,right_tail_two_sided_left_and_right_collars_with_P_puncture:6",
+        "missing_edge_mass": 84,
+        "missing_mirror_child": "g=2,c=3,A=negative -> g=6,c=6,A=positive -> g=6,c=6,A=negative",
+        "raw_base_child_count": 2,
+        "raw_base_template": "g=2,c=3 -> g=6,c=6 -> g=6,c=6",
+        "signed_child": "g=2,c=3,A=positive -> g=6,c=6,A=negative -> g=6,c=6,A=positive",
+        "strip_profile": "right_tail:84"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 15,
+        "P_width_bucket": "P_width_5_to_16",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:24,right_tail_terminal_full_interval_no_P_puncture:3,right_tail_terminal_full_interval_with_P_puncture:3,right_tail_two_sided_left_and_right_collars_no_P_puncture:45,right_tail_two_sided_left_and_right_collars_with_P_puncture:6",
+        "missing_edge_mass": 81,
+        "missing_mirror_child": "g=10,c=10,A=positive -> g=12,c=13,A=negative -> g=2,c=2,A=positive",
+        "raw_base_child_count": 2,
+        "raw_base_template": "g=10,c=10 -> g=12,c=13 -> g=2,c=2",
+        "signed_child": "g=10,c=10,A=negative -> g=12,c=13,A=positive -> g=2,c=2,A=negative",
+        "strip_profile": "right_tail:81"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 14,
+        "P_width_bucket": "P_width_5_to_16",
+        "cycle_length": 3,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:81",
+        "missing_edge_mass": 81,
+        "missing_mirror_child": "g=2,c=3,A=positive -> g=6,c=9,A=positive -> g=6,c=10,A=negative",
+        "raw_base_child_count": 4,
+        "raw_base_template": "g=2,c=3 -> g=6,c=9 -> g=6,c=10",
+        "signed_child": "g=2,c=3,A=negative -> g=6,c=9,A=negative -> g=6,c=10,A=positive",
+        "strip_profile": "upper_wing:81"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P_support_width": 17,
+        "P_width_bucket": "P_width_17_to_64",
+        "cycle_length": 3,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:15,right_tail_terminal_full_interval_no_P_puncture:6,right_tail_terminal_full_interval_with_P_puncture:6,right_tail_two_sided_left_and_right_collars_no_P_puncture:48,right_tail_two_sided_left_and_right_collars_with_P_puncture:3",
+        "missing_edge_mass": 78,
+        "missing_mirror_child": "g=10,c=10,A=positive -> g=2,c=2,A=positive -> g=12,c=13,A=negative",
+        "raw_base_child_count": 5,
+        "raw_base_template": "g=10,c=10 -> g=2,c=2 -> g=12,c=13",
+        "signed_child": "g=10,c=10,A=negative -> g=2,c=2,A=negative -> g=12,c=13,A=positive",
+        "strip_profile": "right_tail:78"
+      }
+    ],
+    "unequal_mirror_pair_residual_phase_saving_closed": false,
+    "wing_single_shell_missing_edge_mass": 30538,
+    "wing_single_shell_missing_edge_ratio": 0.48488409018736106
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "MissingMirrorEndpointCarrierPhaseSaving",
+    "AND MissingMirrorTraceKloostermanCompletion",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "missing_mirror_carrier_phase_saving_closed": false,
+  "missing_mirror_structure_ledger_closed": true,
+  "missing_mirror_to_trace_completion_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "missing-mirror mass is the dominant part of the latest mirror-imbalance obstruction",
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "037afc8150c9e578ca6ee1655583b04258c634109efc4d723551cb0676401b10",
+    "docs/monograph/external-theorem-index.md": "d3ac880f65709e9ee918b1def6dbd2d606d2443c2dca01a2f708823bf028904d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "63ee8a0492eff3349f8763c5ad789767448ed249b6646a195ee4799614b7ee59",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-mirror-imbalance-support-audit.json": "84ee6c1b873ae5a81f7447a540c2396195033ae40f1b6393540952ab4055a319",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-signed-child-mirror-reconciliation-audit.json": "9ffb76af36c7c0074b05817d467def722fa1183051fd5a73c246224db4eef5b9",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.json": "7dfa43205017f8c6e38f9ed9fb17a1b6b7db491021385505ba4bf1560b9714cb",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "580f709160d2643384bcd7555fb6d82d64de7bce569ff5fdf47a080168dc76ae",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "14609f344fce60797456a658fb964666f8c80a397961291dfb0150ff9737c68f",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_structure_audit.py": "8371cc1cc095c6e84f397303ac67d3885716200c8e600274ba4ab700f24a6ebe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "43c3fa95ec769ae336ae3ba0f9358830ea84e7da483754fd8c6ab1db01223e73"
+  },
+  "status": "missing_mirror_structure_ledger_closed_phase_saving_open",
+  "thin_P_support_carrier_summation_closed": false,
+  "unequal_mirror_pair_residual_phase_saving_closed": false
+}

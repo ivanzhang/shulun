@@ -22840,6 +22840,50 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层只关闭 mirror-imbalance support ledger；missing-mirror/unequal-pair 的相位节省、
 thin-support summation、residual endpoint summation、外部引理版与内部自足版仍未闭合。
 
+### 1.179E Phi-LPF q-prefix missing-mirror structure actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_missing_mirror_structure_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-structure-audit.json
+```
+
+actual-load 含义更新为：missing-mirror 主体现在已经落实为 endpoint/strip/P-support
+结构账本。同步读数为：
+
+```text
+missing_mirror_structure_ledger_closed=true
+missing_mirror_edge_mass=62980
+single_strip_missing_edge_ratio=0.9995554144172754
+right_tail_missing_edge_ratio=0.5151159098126389
+wing_single_shell_missing_edge_ratio=0.48488409018736106
+missing_A_class_mixed_positive_negative_edge_ratio=0.9735947919974595
+single_P_missing_edge_ratio=0.4254842807240394
+```
+
+最新直接主攻改为：
+
+```text
+MissingMirrorEndpointCarrierPhaseSaving
+MissingMirrorTraceKloostermanCompletion
+```
+
+并行仍需：
+
+```text
+UnequalMirrorPairResidualPhaseSaving
+ThinPSupportCarrierSummationWithoutLoss
+ResidualEndpointPathSummationWithoutBoundaryLoss
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 missing-mirror structure ledger；endpoint carrier phase saving、
+trace/Kloosterman completion、unequal-pair residual、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

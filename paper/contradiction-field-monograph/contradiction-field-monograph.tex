@@ -35430,6 +35430,71 @@ support-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Missing-mirror endpoint support ledger}
+
+\begin{theorem}[Missing-mirror structure decomposition]
+In the audit range \(P\le 1009\), restrict the previous mirror-imbalance
+support ledger to the missing-mirror class.  The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{missing\_mirror\_structure\_ledger\_closed} & \texttt{true}\\
+\texttt{missing\_mirror\_edge\_mass} & 62980\\
+\texttt{missing\_mirror\_pair\_count} & 7156\\
+\texttt{missing\_raw\_base\_count} & 5114\\
+\texttt{single\_P\_missing\_edge\_ratio} & 0.4254842807240394\\
+\texttt{single\_strip\_missing\_edge\_ratio} & 0.9995554144172754\\
+\texttt{wing\_single\_shell\_missing\_edge\_mass} & 30538\\
+\texttt{wing\_single\_shell\_missing\_edge\_ratio} & 0.48488409018736106\\
+\texttt{right\_tail\_missing\_edge\_mass} & 32442\\
+\texttt{right\_tail\_missing\_edge\_ratio} & 0.5151159098126389\\
+\texttt{mixed\_positive\_negative\ A-class\ ratio} & 0.9735947919974595 .
+\end{array}
+\]
+Thus the dominant missing-mirror obstruction is almost entirely a one-strip
+endpoint carrier family, split between wing single shells and right-tail
+collar/terminal shells.
+\end{theorem}
+\begin{proof}
+For each signed child whose \(A\)-sign mirror has zero global edge mass, the
+audit records its strip support, endpoint-flux class, \(A\)-sign class, cycle
+length, \(P\)-support width and raw-base parent.  Summing these records over all
+missing signed children recovers exactly the imported missing-mirror mass
+\(62980\).  The strip, endpoint, sign, length and \(P\)-width row sums are each
+checked against the same total, giving the displayed structure ledger.
+\end{proof}
+
+\begin{remark}[Endpoint support is not phase saving]
+The preceding decomposition removes the anonymous missing-mirror black box but
+does not prove cancellation.  The missing-mirror branch is now
+\begin{quote}\scriptsize\ttfamily
+MissingMirrorEndpointCarrierPhaseSaving\\
+AND MissingMirrorTraceKloostermanCompletion.
+\end{quote}
+The full remaining mouth is
+\begin{quote}\scriptsize\ttfamily
+MissingMirrorEndpointCarrierPhaseSaving\\
+AND MissingMirrorTraceKloostermanCompletion\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+Known external trace/Kloosterman inputs can enter only after the endpoint
+carriers are completed to admissible trace families.  This theorem does not
+close that completion, the external-lemma version, or the internal
+self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-missing-mirror-\\
+structure-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
