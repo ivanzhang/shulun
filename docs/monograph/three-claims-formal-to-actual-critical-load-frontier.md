@@ -24458,6 +24458,62 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层删除的是 successor-core 稀疏支撑黑箱；没有删除 punctured interval 相消、
 single-block endpoint 求和、moving denominator completion 或全局 Phi-LPF 奇偶障碍。
 
+## 330AL. Phi-LPF right-tail endpoint collar frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_endpoint_collar_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-ledger.json
+```
+
+同步结果：
+
+```text
+status=right_tail_punctured_interval_differences_split_into_endpoint_collars_phase_saving_open
+right_tail_packet_count=2107
+right_tail_edge_count=86751
+right_tail_single_block_packet_count=1024
+right_tail_multi_block_packet_count=1083
+right_tail_endpoint_collar_identity_verified=true
+bad_endpoint_collar_packet_count=0
+terminal_full_interval_packet_count=150
+two_sided_collar_packet_count=1007
+one_sided_collar_packet_count=950
+p_punctured_packet_count=146
+completed_collar_count_median=3
+completed_collar_count_max=13
+right_tail_endpoint_collar_flux_identity_closed=true
+right_tail_endpoint_collar_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`RightTailPuncturedIntervalDifferencePhaseSaving`
+仍过粗。相邻 nested punctured intervals 的差不是任意短区间差，而是左端 collar、
+右端 collar、左右双端 collar 或 terminal full interval flux，外加显式可选
+diagonal `P` puncture。
+
+因此 right-tail 多段支撑门进一步压成：
+
+```text
+RightTailEndpointCollarFluxPhaseSaving
+```
+
+并且仍需：
+
+```text
+SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnEndpointCollarsAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 punctured interval difference 的任意差分黑箱；没有删除 endpoint
+collar 相消、single-block endpoint 求和、moving denominator completion 或全局
+Phi-LPF 奇偶障碍。
+
 ## 330AI. Phi-LPF prime-survivor boundary right-tail gap localization frontier
 
 新增文件：

@@ -34623,6 +34623,71 @@ boundary-right-tail-interval-completion-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Endpoint-collar flux decomposition of the right-tail shells}
+
+\begin{theorem}[Right-tail shell packets are endpoint-collar fluxes]
+In the audit range \(P\le 1009\), every right-tail shell-step packet is
+exactly one of the following endpoint flux objects, with the optional row
+prime \(P\) puncture removed:
+\[
+\hbox{left collar},\qquad
+\hbox{right collar},\qquad
+\hbox{left collar}\cup\hbox{right collar},\qquad
+\hbox{terminal full interval}.
+\]
+The endpoint-collar ledger has
+\[
+\begin{array}{c|c|c}
+\hbox{class} & \hbox{packets} & \hbox{edge mass}\\ \hline
+\texttt{left\_collar\_only\_no\_P\_puncture} & 314 & 8652\\
+\texttt{left\_collar\_only\_with\_P\_puncture} & 19 & 776\\
+\texttt{right\_collar\_only\_no\_P\_puncture} & 604 & 12879\\
+\texttt{right\_collar\_only\_with\_P\_puncture} & 13 & 708\\
+\texttt{terminal\_full\_interval\_no\_P\_puncture} & 75 & 2487\\
+\texttt{terminal\_full\_interval\_with\_P\_puncture} & 75 & 4864\\
+\texttt{two\_sided\_left\_and\_right\_collars\_no\_P\_puncture} & 968 & 52957\\
+\texttt{two\_sided\_left\_and\_right\_collars\_with\_P\_puncture} & 39 & 3428 .
+\end{array}
+\]
+Thus all \(2107\) right-tail packets, carrying \(86751\) edges, satisfy the
+endpoint-collar identity.  The audit finds zero bad endpoint-collar packets.
+\end{theorem}
+\begin{proof}
+For a fixed row \(P\), let \(F_i\supseteq F_{i+1}\) be adjacent nested
+right-tail fibres.  By the preceding section each \(F_i\) is a prime interval
+with at most the row prime \(P\) removed.  Complete \(F_i\) to its ambient
+prime interval \(I_i\).  If \(F_{i+1}\ne\varnothing\), the shell
+\(F_i\setminus F_{i+1}\) is exactly the union of the primes of \(I_i\) to the
+left of \(F_{i+1}\) and the primes of \(I_i\) to the right of \(F_{i+1}\),
+again with \(P\) removed if present.  If \(F_{i+1}=\varnothing\), the same
+formula gives the terminal full interval.  The machine audit reconstructs
+all right-tail packets from the shell-step ledger and verifies this equality
+packet by packet.
+\end{proof}
+
+\begin{remark}[Narrowed analytic mouth]
+The punctured-interval difference is no longer an arbitrary interval
+difference.  It is an endpoint-collar flux problem.  The latest remaining
+analytic mouth is
+\begin{quote}\scriptsize\ttfamily
+RightTailEndpointCollarFluxPhaseSaving\\
+AND SingleBlockEndpointPacketSummationByParts\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnEndpointCollarsAndSingleBlockPackets\\
+AND NoLossAggregationAcross5106ShellStepPackets\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still only a support decomposition.  It does not prove endpoint
+collar phase saving, the external-lemma version, or the internal
+self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-right-tail-endpoint-collar-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

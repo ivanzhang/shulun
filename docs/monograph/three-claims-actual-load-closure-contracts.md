@@ -22630,6 +22630,63 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭 right-tail 支撑补全账本，不关闭 punctured interval 相位节省、外部引理版或内部自足版。
 
+### 1.185 Phi-LPF right-tail endpoint collar 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_endpoint_collar_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.json
+```
+
+同步读数为：
+
+```text
+shell_step_packet_count_total=5106
+edge_count_total=177515
+packet_identity_inherited=true
+right_tail_packet_count=2107
+right_tail_edge_count=86751
+right_tail_single_block_packet_count=1024
+right_tail_multi_block_packet_count=1083
+right_tail_endpoint_collar_identity_verified=true
+bad_endpoint_collar_packet_count=0
+terminal_full_interval_packet_count=150
+two_sided_collar_packet_count=1007
+one_sided_collar_packet_count=950
+p_punctured_packet_count=146
+completed_collar_count_min=1
+completed_collar_count_median=3
+completed_collar_count_max=13
+right_tail_endpoint_collar_flux_identity_closed=true
+right_tail_endpoint_collar_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 nested `P`-punctured interval difference 仍过粗。
+每个 right-tail shell-step packet 都是 left endpoint collar、right endpoint collar、
+two-sided endpoint collars 或 terminal full interval flux，再挖掉可选行素数 `P`。
+没有其他支撑误差。
+
+最新直接主攻改为：
+
+```text
+RightTailEndpointCollarFluxPhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnEndpointCollarsAndSingleBlockPackets
+```
+
+并行保留：
+
+```text
+NoLossAggregationAcross5106ShellStepPackets
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 right-tail endpoint collar 支撑恒等式，不关闭 endpoint collar 相位节省、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

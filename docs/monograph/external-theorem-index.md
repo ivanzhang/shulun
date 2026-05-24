@@ -5688,6 +5688,60 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 64. Phi-LPF right-tail endpoint collar 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_endpoint_collar_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.md
+```
+
+上一层把 right-tail shell 写成 nested `P`-punctured interval difference。
+本层进一步确认每个 shell 是 endpoint collar flux，有限审计读数：
+
+```text
+right_tail_packet_count=2107
+right_tail_edge_count=86751
+right_tail_single_block_packet_count=1024
+right_tail_multi_block_packet_count=1083
+right_tail_endpoint_collar_identity_verified=true
+bad_endpoint_collar_packet_count=0
+terminal_full_interval_packet_count=150
+two_sided_collar_packet_count=1007
+one_sided_collar_packet_count=950
+p_punctured_packet_count=146
+completed_collar_count_median=3
+completed_collar_count_max=13
+```
+
+因此 right-tail 支撑变成：
+
+```text
+right-tail shell = endpoint collar flux minus optional {P}.
+```
+
+外部定理匹配相应收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 若要进入，
+现在必须作用在 endpoint collar flux 的 moving-denominator 相位上；Runbo Li 的
+`x^0.52` 短区间素数存在仍不能给出 fixed-row reciprocal phase saving。
+
+状态边界：
+
+```text
+right_tail_endpoint_collar_flux_identity_closed=true
+right_tail_endpoint_collar_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：
