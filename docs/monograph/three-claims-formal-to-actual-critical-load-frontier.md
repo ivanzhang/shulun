@@ -24240,3 +24240,56 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是 Mobius 自证路线，不是 Phi-LPF 奇偶性障碍的无条件突破。
+
+## 330AA. Phi-LPF prime-survivor floor-span completion frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_floor_span_completion_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-ledger.json
+```
+
+同步结果：
+
+```text
+status=prime_survivor_singleton_layer_rewritten_as_floor_prime_span_with_diagonal_P_ghost_open
+prime_survivor_edge_count_total=355919
+q_bucket_count_total=5848
+span_prime_count_total=361626
+raw_missing_count_total=5707
+diagonal_ghost_count_total=5707
+expected_missing_after_diagonal_subtraction_total=0
+expected_extra_after_diagonal_subtraction_total=0
+total_bad_prime_survivor_floor_span_count=0
+full_prime_prime_rectangle_edge_count_without_diagonal_total=849334
+prime_survivor_to_full_rectangle_without_diagonal_density=0.41905658
+dense_rectangle_completion_missing_edge_count_without_diagonal=493415
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层剩下的 prime survivor singleton layer 已转成
+prime interval floor-span graph，并且唯一 completion tax 是 `m=P,k=q,D=0` 的
+diagonal ghost：
+
+```text
+S_prime-survivor=sum_q sum_{m prime in [L_q,U_q],m!=P} e(hP floor(qm/P)/q).
+```
+
+这是真推进，因为它把 singleton 黑箱换成可嵌入外部方法的 floor graph；但该 graph
+仍不是完整 prime-prime rectangle，也没有相位节省。因此新的最新窄口为：
+
+```text
+PrimeSurvivorPrimeIntervalFloorSpanPhaseSavingOrTraceEmbedding
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 prime-survivor singleton 黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。

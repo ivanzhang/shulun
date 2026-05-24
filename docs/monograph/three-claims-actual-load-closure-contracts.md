@@ -22439,6 +22439,55 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新排除的是 Mobius 自证出口，
 不是行/列命题闭合。
 
+### 1.182 Phi-LPF prime-survivor floor-span completion 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_floor_span_completion_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json
+```
+
+同步读数为：
+
+```text
+prime_survivor_floor_span_identity_closed=true
+diagonal_P_ghost_completion_tax_closed=true
+prime_survivor_phase_packet_span_rewrite_closed=true
+prime_survivor_edge_count_total=355919
+q_bucket_count_total=5848
+span_prime_count_total=361626
+diagonal_ghost_count_total=5707
+total_bad_prime_survivor_floor_span_count=0
+full_prime_prime_rectangle_edge_count_without_diagonal_total=849334
+dense_rectangle_completion_missing_edge_count_without_diagonal=493415
+full_prime_prime_rectangle_completion_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`d=1` prime survivor singleton layer 已经变成固定 `(P,q)`
+的 prime interval floor-span graph：
+
+```text
+M_prime(P,q)={prime m in [L_{P,q},U_{P,q}]} \ {P}.
+```
+
+唯一 span completion 税是 diagonal `m=P` ghost；扣掉它后没有缺口。但该 graph
+仍不是完整 prime-prime rectangle，不能直接调用标准双线性/trace 定理。最新活动硬点更新为：
+
+```text
+PrimeSurvivorPrimeIntervalFloorSpanPhaseSavingOrTraceEmbedding
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+```
+
+并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
+prime-q reciprocal phase saving、Rate 与 DStructure。该更新排除的是 singleton 黑箱口径，
+不是行/列命题闭合。
+
 ### 1.180 two replacement lines common unconditional kernel 更新
 
 新增机器证书：

@@ -3700,6 +3700,90 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61P. Phi-LPF q-support row-averaged additive-k prime-survivor floor-span completion 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_floor_span_completion_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.md
+```
+
+本层承接 61O：Mobius involution 后唯一剩余的 `d=1` prime survivor
+singleton layer，可按每个活动 `(P,q)` 桶写成 prime interval floor-span：
+
+```text
+M_prime(P,q)={prime m in [L_{P,q},U_{P,q}]} \ {P}
+S_prime-survivor=sum_q sum_{m prime in [L_q,U_q],m!=P} e(hP floor(qm/P)/q)
+```
+
+其中 `m=P` 对应 `k=q,D=0`，不是 blocker；若把 span 中的素数补全，必须把
+这个 diagonal ghost 显式扣除。
+
+有限审计读数：
+
+```text
+max_prime=1009
+prime_survivor_edge_count_total=355919
+q_bucket_count_total=5848
+span_prime_count_total=361626
+raw_missing_count_total=5707
+raw_extra_count_total=0
+diagonal_ghost_count_total=5707
+bucket_with_only_diagonal_ghost_count=5707
+bucket_with_no_raw_missing_count=141
+expected_missing_after_diagonal_subtraction_total=0
+expected_extra_after_diagonal_subtraction_total=0
+total_bad_prime_survivor_floor_span_count=0
+max_span_completion_phase_error=1.421e-14
+```
+
+完整 prime-prime rectangle 仍不可直接使用：
+
+```text
+q_eligible_prime_count_total=6115
+m_eligible_prime_count_without_diagonal_total=17299
+full_prime_prime_rectangle_edge_count_without_diagonal_total=849334
+prime_survivor_to_full_rectangle_without_diagonal_density=0.41905658
+dense_rectangle_completion_missing_edge_count_without_diagonal=493415
+full_prime_prime_rectangle_completion_available_directly=false
+```
+
+外部前沿影响：FKMS trace-function bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II、Wright 2026 unbalanced convolution
+与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 估计仍只是在把该
+floor-span graph 嵌入 completed trace/Type-II/convolution 对象后才可用。
+Runbo Li 的 `x^0.52` 短区间输入仍未达到点态 `theta=1/2`。
+
+新的最新最窄口：
+
+```text
+PrimeSurvivorPrimeIntervalFloorSpanPhaseSavingOrTraceEmbedding
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+prime_survivor_floor_span_identity_closed=true
+diagonal_P_ghost_completion_tax_closed=true
+prime_survivor_phase_packet_span_rewrite_closed=true
+full_prime_prime_rectangle_completion_closed=false
+prime_floor_span_trace_or_typeii_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

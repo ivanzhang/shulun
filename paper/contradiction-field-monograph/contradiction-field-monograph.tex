@@ -33656,6 +33656,126 @@ row-averaged-additive-k-prime-blocker-mobius-involution-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Prime-survivor floor-span completion}
+
+\begin{theorem}[Prime survivors fill their floor prime span up to the diagonal]
+Fix a row prime \(P\) and an active prime \(q\)-bucket in the
+row-averaged additive-\(k\) completion setting.  Let
+\[
+  M_{P,q}^{\rm pr}
+\]
+be the set of prime blockers left by the Euler--Mobius singleton layer.  If
+this set is nonempty, put
+\[
+  L_{P,q}=\min M_{P,q}^{\rm pr},\qquad
+  U_{P,q}=\max M_{P,q}^{\rm pr}.
+\]
+Then
+\[
+  M_{P,q}^{\rm pr}
+  =
+  \{m:\ L_{P,q}\le m\le U_{P,q},\ m\ {\rm prime}\}\setminus\{P\}.
+\]
+Consequently the prime-survivor singleton phase packet has the exact
+floor-span form
+\[
+  S_{\rm pr\ surv}(h)
+  =
+  \sum_q\ \sum_{\substack{L_{P,q}\le m\le U_{P,q}\\
+                         m\ {\rm prime},\ m\ne P}}
+  e\!\left(\frac{hP\lfloor qm/P\rfloor}{q}\right),
+\]
+with the diagonal \(m=P\) treated only as a completion ghost.
+\end{theorem}
+\begin{proof}
+One inclusion is the definition of \(L_{P,q}\) and \(U_{P,q}\).  Conversely
+let \(m\) be a prime in the displayed interval with \(m\ne P\), and put
+\[
+  k=\lfloor qm/P\rfloor.
+\]
+The map \(m\mapsto\lfloor qm/P\rfloor\) is monotone, so \(k\) lies between
+the two \(k\)-values attached to the endpoint prime blockers, hence inside
+the same completion span.  Since \(m\ne P\), the defect
+\[
+  D=qm-kP
+\]
+is positive.  The corresponding product cell has length \(<2\) and contains
+the unique odd candidate \(m\).  If \(k\) were a genuine selected LPF-support
+index, that unique odd candidate would have to be a residual rough composite
+cofactor.  But \(m\) is prime, so this is impossible.  Thus \(k\) is a
+completion hole, and its blocker is exactly the prime \(m\).  The only prime
+in the span for which this argument fails is \(m=P\), where
+\(\lfloor qP/P\rfloor=q\) and \(D=0\); this is not a blocker and must be
+subtracted as the diagonal completion ghost.
+\end{proof}
+
+\begin{remark}[Finite prime-survivor floor-span ledger]
+The audit up to \(P\le 1009\) verifies the floor-span identity on the entire
+prime-survivor singleton layer:
+\[
+  \texttt{prime\_survivor\_edge\_count\_total}=355919,
+\qquad
+  \texttt{q\_bucket\_count\_total}=5848.
+\]
+The raw completed prime spans contain
+\[
+  \texttt{span\_prime\_count\_total}=361626
+\]
+prime entries.  The only raw missing entries are the diagonal ghosts:
+\[
+  \texttt{raw\_missing\_count\_total}
+  =
+  \texttt{diagonal\_ghost\_count\_total}
+  =
+  5707,\qquad
+  \texttt{raw\_extra\_count\_total}=0.
+\]
+After subtracting \(m=P\), there are no span mismatches:
+\[
+  \texttt{total\_bad\_prime\_survivor\_floor\_span\_count}=0,
+\qquad
+  \texttt{max\_span\_completion\_phase\_error}=1.421\cdot 10^{-14}.
+\]
+
+This does not turn the packet into a dense bilinear object.  With the
+diagonal removed, the full prime-prime rectangle for the same audited rows
+has
+\[
+  \texttt{full\_prime\_prime\_rectangle\_edge\_count\_without\_diagonal\_total}
+  =
+  849334
+\]
+possible edges, while the survivor graph has density only
+\[
+  \texttt{prime\_survivor\_to\_full\_rectangle\_without\_diagonal\_density}
+  =
+  0.41905658.
+\]
+Thus \(493415\) rectangle edges are still absent.  The result is a sharper
+normal form for the remaining prime-survivor layer, not a phase-saving
+theorem.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+PrimeSurvivorPrimeIntervalFloorSpanPhaseSavingOrTraceEmbedding\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+floor-span-completion-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

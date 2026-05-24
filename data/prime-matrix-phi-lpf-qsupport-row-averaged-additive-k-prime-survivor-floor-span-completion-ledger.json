@@ -1,0 +1,340 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_floor_span_completion_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PrimeSurvivorFloorSpanIdentity",
+      "meaning": "In each active q-bucket, prime survivors fill the prime m-span after subtracting the diagonal m=P ghost.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "DiagonalPGhostCompletionTax",
+      "meaning": "The only raw span-completion missing prime is m=P, where D=0 and no blocker exists.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeSurvivorPhasePacketSpanRewrite",
+      "meaning": "The additive packet equals the prime interval span packet minus the diagonal ghost bucket by bucket.",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "FullPrimePrimeRectangleCompletion",
+      "meaning": "Upgrade the span graph to a dense prime-prime rectangle suitable for standard bilinear estimates.",
+      "proved": false,
+      "remaining": "not available; many prime-prime rectangle edges are absent"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeFloorSpanTraceOrTypeIIPhaseSaving",
+      "meaning": "Obtain nontrivial cancellation for the prime-prime floor-span graph.",
+      "proved": false,
+      "remaining": "requires new trace/Type-II/convolution embedding or new phase theorem"
+    }
+  ],
+  "current_object": {
+    "diagonal_ghost": "m=P gives k=q and D=0, so it is a completion ghost, not a blocker",
+    "floor_span_identity": "for each active (P,q), M_prime(P,q)={prime m in [L_{P,q},U_{P,q}]}\\{P}",
+    "phase_packet": "S_prime-survivor=sum_q sum_{m prime in [L_q,U_q],m!=P} e(hP floor(qm/P)/q)",
+    "rectangle_obstruction": "the union of span intervals is not the full prime-prime rectangle in (q,m)",
+    "remaining": "phase saving or trace/Type-II/convolution embedding for the prime-prime floor graph"
+  },
+  "diagonal_P_ghost_completion_tax_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "candidate trace bilinear input only after the floor-span survivor graph is embedded into a trace family",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "candidate arbitrary-modulus Kloosterman input after a completed inverse-variable model exists",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "candidate composite Type-II input after dense enough bilinear fibres are constructed",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate unbalanced convolution input after the prime-prime floor graph is converted to a convolution packet",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "candidate smooth/squarefree parameter input, not a direct prime interval floor-span estimate",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "theta=0.52 short-interval prime input remains above the pointwise half-scale required for direct closure",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "promising only after the prime floor-span packet is converted into an actual trace-function bilinear family",
+    "Li_short_interval_x_052": "does not lower to the required pointwise theta=1/2 window for this packet",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "requires a completed Kloosterman variable; the present graph has floor denominator q and sparse span support",
+    "Pascadi_composite_Type_II": "requires a genuine Type-II factorisation; the audited graph is not a full dense rectangle",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "does not directly estimate this prime interval floor-span selector",
+    "Wright_unbalanced_convolution": "requires a convolution/Kloosterman-fraction model for the floor-span graph"
+  },
+  "finite_audit": {
+    "P_count": 165,
+    "bad_span_identity_bucket_count": 0,
+    "bucket_with_no_raw_missing_count": 141,
+    "bucket_with_only_diagonal_ghost_count": 5707,
+    "counts_match_previous_mobius_singleton_layer": true,
+    "dense_rectangle_completion_missing_edge_count_including_diagonal": 499530,
+    "dense_rectangle_completion_missing_edge_count_without_diagonal": 493415,
+    "diagonal_ghost_count_total": 5707,
+    "diagonal_subtracted_span_equals_survivor_edges": true,
+    "expected_extra_after_diagonal_subtraction_total": 0,
+    "expected_missing_after_diagonal_subtraction_total": 0,
+    "finite_evidence_not_used_as_global_proof": true,
+    "full_prime_prime_rectangle_completion_available_directly": false,
+    "full_prime_prime_rectangle_edge_count_including_diagonal_total": 855449,
+    "full_prime_prime_rectangle_edge_count_without_diagonal_total": 849334,
+    "ghost_samples": [
+      "P=59,q=31,m-span=[53,89],edges=8,span_primes=9,ghost=59",
+      "P=59,q=37,m-span=[53,89],edges=8,span_primes=9,ghost=59",
+      "P=59,q=41,m-span=[53,73],edges=5,span_primes=6,ghost=59",
+      "P=59,q=43,m-span=[53,73],edges=5,span_primes=6,ghost=59",
+      "P=61,q=31,m-span=[53,113],edges=14,span_primes=15,ghost=61",
+      "P=61,q=37,m-span=[53,89],edges=8,span_primes=9,ghost=61"
+    ],
+    "m_eligible_prime_count_total": 17464,
+    "m_eligible_prime_count_without_diagonal_total": 17299,
+    "max_prime": 1009,
+    "max_span_completion_phase_error": 1.4210854715202004e-14,
+    "no_ghost_samples": [
+      "P=43,q=23,m-span=[53,73],edges=6,span_primes=6,ghost=none",
+      "P=53,q=29,m-span=[59,89],edges=8,span_primes=8,ghost=none",
+      "P=53,q=31,m-span=[59,73],edges=5,span_primes=5,ghost=none",
+      "P=71,q=53,m-span=[79,89],edges=3,span_primes=3,ghost=none",
+      "P=73,q=53,m-span=[79,89],edges=3,span_primes=3,ghost=none",
+      "P=79,q=53,m-span=[83,89],edges=2,span_primes=2,ghost=none"
+    ],
+    "previous_prime_blocker_count_total": 355919,
+    "previous_prime_singleton_terms_total": 355919,
+    "prime_survivor_edge_count_total": 355919,
+    "prime_survivor_floor_span_identity_verified": true,
+    "prime_survivor_to_full_rectangle_including_diagonal_density": 0.4160610392904779,
+    "prime_survivor_to_full_rectangle_without_diagonal_density": 0.41905657844852556,
+    "q_bucket_count_total": 5848,
+    "q_eligible_prime_count_total": 6115,
+    "raw_completion_tax_is_only_diagonal_P": true,
+    "raw_extra_count_total": 0,
+    "raw_missing_count_total": 5707,
+    "sample_buckets": [
+      {
+        "L": 53,
+        "P": 43,
+        "U": 73,
+        "diagonal_ghost": "none",
+        "edges": 6,
+        "phase_error": "0.000e+00",
+        "q": 23,
+        "raw_missing_count": 0,
+        "span_primes": 6
+      },
+      {
+        "L": 59,
+        "P": 53,
+        "U": 89,
+        "diagonal_ghost": "none",
+        "edges": 8,
+        "phase_error": "0.000e+00",
+        "q": 29,
+        "raw_missing_count": 0,
+        "span_primes": 8
+      },
+      {
+        "L": 59,
+        "P": 53,
+        "U": 73,
+        "diagonal_ghost": "none",
+        "edges": 5,
+        "phase_error": "0.000e+00",
+        "q": 31,
+        "raw_missing_count": 0,
+        "span_primes": 5
+      },
+      {
+        "L": 53,
+        "P": 59,
+        "U": 89,
+        "diagonal_ghost": 59,
+        "edges": 8,
+        "phase_error": "2.220e-16",
+        "q": 31,
+        "raw_missing_count": 1,
+        "span_primes": 9
+      },
+      {
+        "L": 53,
+        "P": 59,
+        "U": 89,
+        "diagonal_ghost": 59,
+        "edges": 8,
+        "phase_error": "2.220e-16",
+        "q": 37,
+        "raw_missing_count": 1,
+        "span_primes": 9
+      },
+      {
+        "L": 53,
+        "P": 59,
+        "U": 73,
+        "diagonal_ghost": 59,
+        "edges": 5,
+        "phase_error": "1.110e-16",
+        "q": 41,
+        "raw_missing_count": 1,
+        "span_primes": 6
+      },
+      {
+        "L": 53,
+        "P": 59,
+        "U": 73,
+        "diagonal_ghost": 59,
+        "edges": 5,
+        "phase_error": "2.220e-16",
+        "q": 43,
+        "raw_missing_count": 1,
+        "span_primes": 6
+      },
+      {
+        "L": 53,
+        "P": 61,
+        "U": 113,
+        "diagonal_ghost": 61,
+        "edges": 14,
+        "phase_error": "0.000e+00",
+        "q": 31,
+        "raw_missing_count": 1,
+        "span_primes": 15
+      }
+    ],
+    "sample_rows": [
+      {
+        "P": 101,
+        "bad_span": 0,
+        "density": "0.3097",
+        "density_without_diagonal": "0.3200",
+        "diagonal_ghosts": 8,
+        "distinct_m": 20,
+        "edges": 96,
+        "eligible_m_primes": 31,
+        "eligible_m_primes_without_diagonal": 30,
+        "eligible_q_primes": 10,
+        "full_rectangle": 310,
+        "full_rectangle_without_diagonal": 300,
+        "max_k_to_q": 4,
+        "max_m_to_q": 8,
+        "max_q_to_m": 20,
+        "q_buckets": 8
+      },
+      {
+        "P": 257,
+        "bad_span": 0,
+        "density": "0.3893",
+        "density_without_diagonal": "0.3953",
+        "diagonal_ghosts": 19,
+        "distinct_m": 61,
+        "edges": 591,
+        "eligible_m_primes": 66,
+        "eligible_m_primes_without_diagonal": 65,
+        "eligible_q_primes": 23,
+        "full_rectangle": 1518,
+        "full_rectangle_without_diagonal": 1495,
+        "max_k_to_q": 9,
+        "max_m_to_q": 22,
+        "max_q_to_m": 61,
+        "q_buckets": 22
+      },
+      {
+        "P": 971,
+        "bad_span": 0,
+        "density": "0.4306",
+        "density_without_diagonal": "0.4327",
+        "diagonal_ghosts": 70,
+        "distinct_m": 198,
+        "edges": 6206,
+        "eligible_m_primes": 203,
+        "eligible_m_primes_without_diagonal": 202,
+        "eligible_q_primes": 71,
+        "full_rectangle": 14413,
+        "full_rectangle_without_diagonal": 14342,
+        "max_k_to_q": 21,
+        "max_m_to_q": 70,
+        "max_q_to_m": 198,
+        "q_buckets": 70
+      },
+      {
+        "P": 1009,
+        "bad_span": 0,
+        "density": "0.4242",
+        "density_without_diagonal": "0.4262",
+        "diagonal_ghosts": 70,
+        "distinct_m": 202,
+        "edges": 6414,
+        "eligible_m_primes": 210,
+        "eligible_m_primes_without_diagonal": 209,
+        "eligible_q_primes": 72,
+        "full_rectangle": 15120,
+        "full_rectangle_without_diagonal": 15048,
+        "max_k_to_q": 19,
+        "max_m_to_q": 71,
+        "max_q_to_m": 202,
+        "q_buckets": 71
+      }
+    ],
+    "span_prime_count_total": 361626,
+    "total_bad_prime_survivor_floor_span_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "full_prime_prime_rectangle_completion_closed": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeSurvivorPrimeIntervalFloorSpanPhaseSavingOrTraceEmbedding",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph",
+    "AND FiniteThirtyWheelSmallLPFBlockerPacketControl",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "prime_floor_span_trace_or_typeii_phase_saving_closed": false,
+  "prime_survivor_floor_span_identity_closed": true,
+  "prime_survivor_phase_packet_span_rewrite_closed": true,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after the Mobius expansion leaves only the d=1 prime survivor layer, the fastest non-cyclic refinement is to expose its prime-prime floor-span geometry",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "small_lpf_blocker_packet_control_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "fe3c0e967bc9ba34dd1919629ec32aaa0efd44a090cb08c855ff37c48ab397f4",
+    "docs/monograph/external-theorem-index.md": "b4f000a59a9e5f330f7b3bf8ca3ecb1ff62a7b28f56eb965ea2385f63a9b9c28",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "e208be8a495b123285201a91eac93f54de8120b96e85a280df06d8ec7f109e89",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-dynamic-sqrt-sieve-audit.json": "b66655694ac25675cdbf95c23ae9b9f923a84179799ed5287400a0b5848c3321",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json": "11a24d2069c0cfa9fb5f6ed6f5923de2090fba03951eddfd5185c23d76dd36d8",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "1ab20501d3204f7682bd9a41ab3ec0d943834bfd842ba05665b7b4a13aecad53",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "3baf485782b9a50096a0039536fef4dbb577340e241664a25123659f9696875a",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_floor_span_completion_audit.py": "a4e4292ae10fd8809ed1ccee496e7c4b993cf27a7b596be551df9a4191d2f587",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "0a9220fc2d70ae6fcc02abb350d378e54bd623e733a083d637645627150d845f"
+  },
+  "status": "prime_survivor_singleton_layer_rewritten_as_floor_prime_span_with_diagonal_P_ghost_open",
+  "uniform_cancellation_across_sparse_k_support_radial_kernels_closed": false
+}
