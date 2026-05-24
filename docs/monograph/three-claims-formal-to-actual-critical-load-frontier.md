@@ -24406,6 +24406,58 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层删除的是 right-tail 多段 gap 的未解释支撑原子；没有删除 successor-core
 相消、single-block endpoint 求和、移动分母 completed trace 或全局 Phi-LPF 奇偶障碍。
 
+## 330AK. Phi-LPF right-tail interval completion frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_interval_completion_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-ledger.json
+```
+
+同步结果：
+
+```text
+status=right_tail_fibres_and_multi_block_gaps_completed_to_p_punctured_intervals_phase_saving_open
+right_tail_fibre_count_total=3011
+right_tail_fibre_contiguous_count=138
+right_tail_fibre_p_punctured_count=2873
+right_tail_fibre_other_holes_count=0
+all_right_tail_fibres_are_punctured_intervals=true
+right_tail_multi_block_packet_count=1083
+multi_block_interval_completion_packet_count=1083
+multi_block_completion_other_holes_packet_count=0
+all_multi_block_packets_complete_to_intervals=true
+right_tail_fibre_punctured_interval_identity_closed=true
+right_tail_multi_block_successor_core_interval_completion_closed=true
+right_tail_punctured_interval_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`RightTailSuccessorFibreCorePhaseSaving` 仍过粗。实际
+successor core 的支撑来源是嵌套 `P`-punctured prime interval；right-tail
+multi-block shell 是两个相邻 punctured intervals 的差分，而不是任意多洞集合。
+
+因此 right-tail 多段支撑门被压成：
+
+```text
+RightTailPuncturedIntervalDifferencePhaseSaving
+```
+
+并且仍需：
+
+```text
+SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnPuncturedIntervalsAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 successor-core 稀疏支撑黑箱；没有删除 punctured interval 相消、
+single-block endpoint 求和、moving denominator completion 或全局 Phi-LPF 奇偶障碍。
+
 ## 330AI. Phi-LPF prime-survivor boundary right-tail gap localization frontier
 
 新增文件：

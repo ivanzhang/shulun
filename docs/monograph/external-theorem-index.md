@@ -5635,6 +5635,59 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 63. Phi-LPF right-tail interval completion 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_interval_completion_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.md
+```
+
+上一层把 right-tail internal gap 分成 successor core 与 diagonal `P` ghost。
+本层进一步确认 successor core 来自嵌套 punctured interval，而不是任意稀疏集合。
+有限审计读数：
+
+```text
+right_tail_fibre_count_total=3011
+right_tail_fibre_contiguous_count=138
+right_tail_fibre_p_punctured_count=2873
+right_tail_fibre_other_holes_count=0
+all_right_tail_fibres_are_punctured_intervals=true
+multi_block_interval_completion_packet_count=1083
+multi_block_completion_other_holes_packet_count=0
+all_multi_block_packets_complete_to_intervals=true
+```
+
+因此 right-tail 支撑变成：
+
+```text
+right-tail fibre = prime interval minus optional {P};
+multi-block shell = difference of two nested P-punctured prime intervals.
+```
+
+外部定理匹配相应收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 若要进入，
+现在必须作用在 `P`-punctured interval difference 的 moving-denominator 相位上；
+Runbo Li 的 `x^0.52` 短区间素数存在仍不能提供 fixed-row reciprocal phase saving。
+
+状态边界：
+
+```text
+right_tail_fibre_punctured_interval_identity_closed=true
+right_tail_multi_block_successor_core_interval_completion_closed=true
+right_tail_punctured_interval_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

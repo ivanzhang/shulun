@@ -22580,6 +22580,56 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭 right-tail multi-block 的支撑恒等式，不关闭 successor-core 相位节省、外部引理版或内部自足版。
 
+### 1.184 Phi-LPF right-tail interval completion 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_interval_completion_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.json
+```
+
+同步读数为：
+
+```text
+right_tail_fibre_count_total=3011
+right_tail_fibre_edge_proxy_total=86751
+right_tail_fibre_contiguous_count=138
+right_tail_fibre_p_punctured_count=2873
+right_tail_fibre_other_holes_count=0
+all_right_tail_fibres_are_punctured_intervals=true
+right_tail_multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_interval_completion_packet_count=1083
+multi_block_completion_other_holes_packet_count=0
+all_multi_block_packets_complete_to_intervals=true
+completed_interval_prime_count_median=31
+successor_core_count_median=25
+right_tail_punctured_interval_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 successor core 不是任意稀疏残差。每条 right-tail fibre 都是 prime interval，至多挖掉行素数 `P`；每个 right-tail multi-block shell 加上 successor core 和 `P` 后补成一个连续 prime interval。
+
+最新直接主攻改为：
+
+```text
+RightTailPuncturedIntervalDifferencePhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnPuncturedIntervalsAndSingleBlockPackets
+```
+
+并行保留：
+
+```text
+NoLossAggregationAcross5106ShellStepPackets
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 right-tail 支撑补全账本，不关闭 punctured interval 相位节省、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

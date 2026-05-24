@@ -34561,6 +34561,68 @@ boundary-right-tail-gap-diagonal-core-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Punctured-interval completion of the right-tail fibres}
+
+\begin{theorem}[Right-tail fibres are punctured prime intervals]
+In the audit range \(P\le 1009\), every right-tail fibre is a contiguous
+prime interval, possibly with the row prime \(P\) removed.  The fibre ledger
+has
+\[
+\begin{array}{c|c|c}
+\hbox{fibre class} & \hbox{fibres} & \hbox{prime mass}\\ \hline
+\texttt{contiguous\_prime\_interval} & 138 & 245\\
+\texttt{p\_punctured\_prime\_interval} & 2873 & 86506 .
+\end{array}
+\]
+There are no right-tail fibres with any other internal hole.  Moreover, each
+of the \(1083\) right-tail multi-block shell packets completes to one prime
+interval after adding its successor-fibre core and the diagonal \(P\)-ghost.
+The completion carries all \(61294\) multi-block edges.
+\end{theorem}
+\begin{proof}
+For every fixed row \(P\), reconstruct the right-tail fibres from the
+boundary layer-cake ledger.  For each nonempty fibre, compare it with the
+full prime interval between its least and greatest prime.  The only possible
+missing prime is \(P\), and the audit finds no other missing prime in any of
+the \(3011\) right-tail fibres.
+
+For a multi-block packet, the shell is \(F_i\setminus F_{i+1}\).  Let
+\([a,b]_{\mathbb P}\) be the prime interval between the least and greatest
+prime of this shell.  The audit checks that
+\[
+  (F_i\setminus F_{i+1})\cup(F_{i+1}\cap [a,b]_{\mathbb P})\cup\{P\}
+  = [a,b]_{\mathbb P}
+\]
+with the evident convention that \(P\) is added only when \(P\in [a,b]\).
+This verification succeeds for all \(1083\) multi-block packets and has zero
+completion holes.
+\end{proof}
+
+\begin{remark}[Updated analytic mouth]
+The successor core is not an arbitrary sparse residue.  It is the part of
+the next nested right-tail punctured interval lying inside the current
+completed interval.  Thus the right-tail multi-block problem has been
+reduced from gap classification to phase saving for differences of nested
+\(P\)-punctured prime intervals:
+\begin{quote}\scriptsize\ttfamily
+RightTailPuncturedIntervalDifferencePhaseSaving\\
+AND SingleBlockEndpointPacketSummationByParts\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnPuncturedIntervalsAndSingleBlockPackets\\
+AND NoLossAggregationAcross5106ShellStepPackets\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still only a support-completion theorem.  It does not prove the
+right-tail punctured-interval phase saving, the external-lemma version, or
+the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-right-tail-interval-completion-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

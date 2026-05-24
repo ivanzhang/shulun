@@ -4614,6 +4614,75 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13Z：Phi-LPF right-tail interval completion 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_interval_completion_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.md
+```
+
+本层承接 Q13Y，检查 successor core 是否为任意稀疏对象。
+
+### Q13Z.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+right_tail_fibre_count_total=3011
+right_tail_fibre_edge_proxy_total=86751
+right_tail_fibre_contiguous_count=138
+right_tail_fibre_p_punctured_count=2873
+right_tail_fibre_other_holes_count=0
+all_right_tail_fibres_are_punctured_intervals=true
+right_tail_multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_interval_completion_packet_count=1083
+multi_block_completion_other_holes_packet_count=0
+all_multi_block_packets_complete_to_intervals=true
+completed_interval_prime_count_median=31
+successor_core_count_median=25
+```
+
+### Q13Z.2 诚实边界
+
+本层关闭的是支撑补全：
+
+```text
+right-tail fibre = prime interval minus optional {P},
+multi-block shell + successor core + {P} = prime interval.
+```
+
+最新最窄口：
+
+```text
+RightTailPuncturedIntervalDifferencePhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnPuncturedIntervalsAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+right_tail_fibre_punctured_interval_identity_closed=true
+right_tail_multi_block_successor_core_interval_completion_closed=true
+right_tail_punctured_interval_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
