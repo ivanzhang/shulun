@@ -36039,6 +36039,112 @@ adjacent-prime-pair-gap-class-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Gap \(2\)/gap \(4\) route-superclass carriers}
+
+\begin{theorem}[Gap \(2\)/gap \(4\) route-superclass ledger]
+In the audit range \(P\le 1009\), the \(64\) gap \(2\) and gap \(4\)
+adjacent-prime-pair templates of the previous ledger split by route superclass
+as follows:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_gap2\_gap4\_route\_superclass\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{gap2\_gap4\_template\_count} & 64\\
+\texttt{gap2\_gap4\_edge\_mass} & 612\\
+\texttt{gap2\_wing\_template\_count} & 32\\
+\texttt{gap2\_wing\_edge\_mass} & 290\\
+\texttt{gap2\_right\_tail\_template\_count} & 1\\
+\texttt{gap2\_right\_tail\_edge\_mass} & 6\\
+\texttt{gap4\_right\_tail\_template\_count} & 28\\
+\texttt{gap4\_right\_tail\_edge\_mass} & 288\\
+\texttt{gap4\_wing\_template\_count} & 3\\
+\texttt{gap4\_wing\_edge\_mass} & 28 .
+\end{array}
+\]
+Thus the dominant aligned carriers are gap \(2\) on the wing side and gap \(4\)
+on the right-tail side:
+\[
+290+288=578,\qquad \frac{578}{612}=0.9444444444444444\ldots .
+\]
+Within gap \(2\), the wing carrier has mass ratio
+\[
+\frac{290}{296}=0.9797297297297297\ldots ,
+\]
+and within gap \(4\), the right-tail carrier has mass ratio
+\[
+\frac{288}{316}=0.9113924050632911\ldots .
+\]
+\end{theorem}
+\begin{proof}
+The audit imports the exact-gap adjacent-pair ledger and restricts to its gap
+\(2\) and gap \(4\) classes.  Each selected template already carries a local
+route label, either a wing single-shell route or a right-tail collar route.
+Passing from the route label to the coarser route superclass partitions the
+gap \(2\)/gap \(4\) mass into four disjoint cells:
+\[
+\text{gap2-wing},\quad \text{gap2-right-tail},\quad
+\text{gap4-right-tail},\quad \text{gap4-wing}.
+\]
+The four edge masses are
+\[
+290,\qquad 6,\qquad 288,\qquad 28,
+\]
+which sum to the imported gap \(2\)/gap \(4\) mass \(612\).  The ledger also
+checks the inherited product identity
+\[
+\texttt{edge\_mass}=\texttt{cycle\_length}\cdot\texttt{occurrence\_count}
+\]
+for every selected template.
+\end{proof}
+
+\begin{remark}[Route-superclass collision gates]
+The two dominant exact-gap gates are now replaced by
+\begin{quote}\scriptsize\ttfamily
+Gap2WingTwinAdjacentPairCollisionBound\\
+AND Gap2RightTailTwinResidualCollisionBound\\
+AND Gap4RightTailCousinAdjacentPairCollisionBound\\
+AND Gap4WingCousinResidualCollisionBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND Gap2WingTwinAdjacentPairCollisionBound\\
+AND Gap2RightTailTwinResidualCollisionBound\\
+AND Gap4RightTailCousinAdjacentPairCollisionBound\\
+AND Gap4WingCousinResidualCollisionBound\\
+AND Gap6SexyAdjacentPairCollisionBound\\
+AND GapGe8AdjacentPairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This remains a finite route-superclass ledger.  Trace/Kloosterman average
+inputs, prime-gap theorems, and short-interval prime existence estimates do not
+by themselves prove signed collision control for one fixed gap2-wing or
+gap4-right-tail endpoint carrier.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-route-superclass-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

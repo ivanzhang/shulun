@@ -22365,6 +22365,54 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 
 以及 source seed、Rate、DStructure 与 constructor 兄弟字段。行/列命题仍未无条件闭合。
 
+### Phi-LPF q-prefix single-P local gap2/gap4 route-superclass actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_route_superclass_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.json
+```
+
+actual-load 含义继续收缩：gap2/gap4 主量已经不是单纯 prime-gap 标签，而是
+带几何 carrier 的四口：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_gap4_edge_mass=612
+gap2_wing_edge_mass=290
+gap2_right_tail_edge_mass=6
+gap4_right_tail_edge_mass=288
+gap4_wing_edge_mass=28
+dominant_aligned_edge_mass=578
+dominant_aligned_edge_ratio=0.9444444444444444
+offdominant_residual_edge_mass=34
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+Gap2WingTwinAdjacentPairCollisionBound
+Gap2RightTailTwinResidualCollisionBound
+Gap4RightTailCousinAdjacentPairCollisionBound
+Gap4WingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite route-superclass 账本；gap2-wing、gap4-right-tail 与两个 residual
+carrier 的 signed collision bound 仍未闭合。
+
 ### Phi-LPF q-prefix single-P local adjacent-prime-pair exact-gap actual-load 更新
 
 新增机器证书：

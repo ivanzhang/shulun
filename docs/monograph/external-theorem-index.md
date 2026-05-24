@@ -2285,6 +2285,68 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65S. Phi-LPF q-prefix single-P local gap2/gap4 route-superclass 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_route_superclass_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.md
+```
+
+上一层显示相邻素数对 collision 主量集中在 gap 2 与 gap 4：
+
+```text
+gap2_twin_adjacent_pair_edge_mass=296
+gap4_cousin_adjacent_pair_edge_mass=316
+observed_gap2_or_gap4_edge_mass=612
+```
+
+本层继续按几何 route-superclass 分类：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_gap4_template_count=64
+gap2_gap4_edge_mass=612
+gap2_wing_template_count=32
+gap2_wing_edge_mass=290
+gap2_right_tail_template_count=1
+gap2_right_tail_edge_mass=6
+gap4_right_tail_template_count=28
+gap4_right_tail_edge_mass=288
+gap4_wing_template_count=3
+gap4_wing_edge_mass=28
+dominant_aligned_edge_mass=578
+dominant_aligned_edge_ratio=0.9444444444444444
+```
+
+因此 gap 2/gap 4 的两个主门被实际拆成：
+
+```text
+Gap2WingTwinAdjacentPairCollisionBound
+AND Gap2RightTailTwinResidualCollisionBound
+AND Gap4RightTailCousinAdjacentPairCollisionBound
+AND Gap4WingCousinResidualCollisionBound
+```
+
+外部 theorem 匹配边界没有变化：trace/Kloosterman 输入需要非局部 completion；
+Maynard 小间隔与 Li 短区间结果只给 prime-gap/prime-existence 信息，不给固定
+endpoint packet 的 signed route-superclass equality。
+
+状态边界：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_wing_twin_collision_bound_proved=false
+gap4_right_tail_cousin_collision_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

@@ -2787,6 +2787,92 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC14：Phi-LPF q-prefix single-P local gap2/gap4 route-superclass 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_route_superclass_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.md
+```
+
+本层继续沿 exact-gap 线下钻，把 gap 2 与 gap 4 的主量按 route-superclass 拆开：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_gap4_template_count=64
+gap2_gap4_edge_mass=612
+gap2_wing_template_count=32
+gap2_wing_edge_mass=290
+gap2_right_tail_template_count=1
+gap2_right_tail_edge_mass=6
+gap4_right_tail_template_count=28
+gap4_right_tail_edge_mass=288
+gap4_wing_template_count=3
+gap4_wing_edge_mass=28
+dominant_aligned_edge_mass=578
+dominant_aligned_edge_ratio=0.9444444444444444
+offdominant_residual_edge_mass=34
+```
+
+关键结构读数：
+
+```text
+gap2_wing_edge_ratio_within_gap2=0.9797297297297297
+gap4_right_tail_edge_ratio_within_gap4=0.9113924050632911
+dominant_aligned_mixed_positive_negative_edge_mass=578
+all_positive_edge_mass=12
+```
+
+这是真推进：gap 2 不再只是 twin-gap 标签，而是几乎完全落在 wing carrier；
+gap 4 不再只是 cousin-gap 标签，而是主要落在 right-tail collar carrier。它仍不是
+全局 signed collision theorem。
+
+### Q13AC14.1 最新最窄口
+
+```text
+LocalCycleLengthUniformBound
+AND Gap2WingTwinAdjacentPairCollisionBound
+AND Gap2RightTailTwinResidualCollisionBound
+AND Gap4RightTailCousinAdjacentPairCollisionBound
+AND Gap4WingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_wing_twin_collision_bound_proved=false
+gap2_right_tail_twin_residual_bound_proved=false
+gap4_right_tail_cousin_collision_bound_proved=false
+gap4_wing_cousin_residual_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

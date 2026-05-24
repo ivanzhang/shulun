@@ -25788,3 +25788,46 @@ observed_gap2_or_gap4_edge_mass=612
 本层删除的是“adjacent prime pair collision 是单一黑箱”的含混说法；没有删除
 gap 2/4/6/>=8 signed collision bound，也没有删除后续 repeated occurrence
 aggregation/PDEC、single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 route-superclass formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_route_superclass_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-route-superclass-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+Gap2TwinAdjacentPairCollisionBound
+AND Gap4CousinAdjacentPairCollisionBound
+```
+
+现在被拆成：
+
+```text
+Gap2WingTwinAdjacentPairCollisionBound
+AND Gap2RightTailTwinResidualCollisionBound
+AND Gap4RightTailCousinAdjacentPairCollisionBound
+AND Gap4WingCousinResidualCollisionBound
+```
+
+关键审计读数为：
+
+```text
+single_P_local_gap2_gap4_route_superclass_ledger_closed=true
+gap2_wing_edge_mass=290
+gap2_right_tail_edge_mass=6
+gap4_right_tail_edge_mass=288
+gap4_wing_edge_mass=28
+dominant_aligned_edge_mass=578
+dominant_aligned_edge_ratio=0.9444444444444444
+```
+
+本层删除的是“gap2/gap4 collision 只有 prime gap 标签”的含混说法；没有删除
+route-superclass signed equality、PDEC/SAE 回流、single-P slice summation 或
+prime-q reciprocal phase saving 缺口。
