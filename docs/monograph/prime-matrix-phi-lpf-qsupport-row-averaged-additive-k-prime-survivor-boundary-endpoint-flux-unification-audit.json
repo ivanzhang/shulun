@@ -1,0 +1,777 @@
+{
+  "boundary_endpoint_flux_phase_saving_closed": false,
+  "boundary_endpoint_flux_unification_closed": true,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_unification_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "BoundaryShellStepPacketImported",
+      "meaning": "The 5106 shell-step packets and edge mass are inherited.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "LowerUpperSingleEndpointShellIdentity",
+      "meaning": "Every lower/upper wing packet is one contiguous endpoint prime shell.",
+      "proved": true,
+      "remaining": "none for finite lower/upper endpoint support"
+    },
+    {
+      "closed": true,
+      "gate": "RightTailEndpointCollarFluxIdentity",
+      "meaning": "Every right-tail packet is an endpoint collar flux minus optional P.",
+      "proved": true,
+      "remaining": "none for finite right-tail endpoint-collar support"
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryEndpointFluxUnification",
+      "meaning": "All boundary shell-step packets are in the unified endpoint-flux family.",
+      "proved": true,
+      "remaining": "none for finite support unification"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryEndpointFluxPhaseSaving",
+      "meaning": "Prove cancellation on the unified endpoint-flux packet family.",
+      "proved": false,
+      "remaining": "new completed trace or endpoint summation estimate required"
+    },
+    {
+      "closed": false,
+      "gate": "MovingPrimeQDenominatorCompletion",
+      "meaning": "Complete the moving q denominator on endpoint-flux packets.",
+      "proved": false,
+      "remaining": "not supplied by support unification"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossEndpointFluxAggregation",
+      "meaning": "Aggregate endpoint-flux phase savings over all 5106 packets without comparable loss.",
+      "proved": false,
+      "remaining": "requires analytic summation discipline"
+    }
+  ],
+  "current_object": {
+    "identity": "lower/upper wings are single contiguous endpoint shells and right-tail packets are endpoint collars",
+    "input": "5106 boundary shell-step packets carrying 177515 edges",
+    "remaining": "phase saving on the unified endpoint-flux packet family with moving q denominator"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "endpoint-flux packets are closer to a completed trace family, but the moving prime-q denominator is still not completed",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman input still requires a precise completed endpoint-flux phase model",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "the unified endpoint-flux family is short and boundary-weighted, not a direct long composite Type-II box",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "q-long endpoint-flux packets are the closest unbalanced Kloosterman target after denominator completion",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime existence still does not imply fixed-row endpoint-flux reciprocal phase saving",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "endpoint-flux support is explicit but no completed moving-denominator trace family is supplied",
+    "Li_short_interval_x_052": "short-interval prime existence does not imply endpoint-flux reciprocal phase saving",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "arbitrary-modulus estimates require an actual completed endpoint-flux Kloosterman variable",
+    "Pascadi_composite_Type_II": "endpoint-flux packets are short boundary objects, not direct long Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "unbalanced fractions are the nearest candidate only after q-denominator completion"
+  },
+  "finite_audit": {
+    "actual_shell_prime_count_average": 3.0236976106541325,
+    "actual_shell_prime_count_max": 12,
+    "actual_shell_prime_count_median": 3.0,
+    "actual_shell_prime_count_min": 1,
+    "bad_endpoint_flux_packet_count": 0,
+    "bad_packet_samples": [],
+    "block_class_rows": [
+      {
+        "edge_weight_sum": 29144,
+        "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell",
+        "m_block_count": 1,
+        "packet_count": 1032
+      },
+      {
+        "edge_weight_sum": 8652,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "m_block_count": 1,
+        "packet_count": 314
+      },
+      {
+        "edge_weight_sum": 731,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture",
+        "m_block_count": 1,
+        "packet_count": 18
+      },
+      {
+        "edge_weight_sum": 45,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture",
+        "m_block_count": 2,
+        "packet_count": 1
+      },
+      {
+        "edge_weight_sum": 12879,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m_block_count": 1,
+        "packet_count": 604
+      },
+      {
+        "edge_weight_sum": 708,
+        "endpoint_flux_class": "right_tail_right_collar_only_with_P_puncture",
+        "m_block_count": 1,
+        "packet_count": 13
+      },
+      {
+        "edge_weight_sum": 2487,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m_block_count": 1,
+        "packet_count": 75
+      },
+      {
+        "edge_weight_sum": 4864,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m_block_count": 2,
+        "packet_count": 75
+      },
+      {
+        "edge_weight_sum": 52957,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "m_block_count": 2,
+        "packet_count": 968
+      },
+      {
+        "edge_weight_sum": 3392,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture",
+        "m_block_count": 2,
+        "packet_count": 38
+      },
+      {
+        "edge_weight_sum": 36,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture",
+        "m_block_count": 3,
+        "packet_count": 1
+      },
+      {
+        "edge_weight_sum": 61620,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m_block_count": 1,
+        "packet_count": 1967
+      }
+    ],
+    "boundary_endpoint_flux_edge_count": 177515,
+    "boundary_endpoint_flux_identity_verified": true,
+    "boundary_endpoint_flux_packet_count": 5106,
+    "boundary_endpoint_flux_phase_saving_closed": false,
+    "boundary_endpoint_flux_unification_closed": true,
+    "completed_flux_support_count_average": 3.0522914218566393,
+    "completed_flux_support_count_max": 13,
+    "completed_flux_support_count_median": 3.0,
+    "completed_flux_support_count_min": 1,
+    "completed_support_bin_rows": [
+      {
+        "completed_support_bin": "1<=support<=2",
+        "edge_weight_sum": 46895,
+        "packet_count": 2440
+      },
+      {
+        "completed_support_bin": "3<=support<=4",
+        "edge_weight_sum": 71876,
+        "packet_count": 1729
+      },
+      {
+        "completed_support_bin": "5<=support<=8",
+        "edge_weight_sum": 50666,
+        "packet_count": 835
+      },
+      {
+        "completed_support_bin": "9<=support<=13",
+        "edge_weight_sum": 8078,
+        "packet_count": 102
+      }
+    ],
+    "edge_count_total": 177515,
+    "endpoint_flux_class_rows": [
+      {
+        "edge_weight_sum": 29144,
+        "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell",
+        "packet_count": 1032
+      },
+      {
+        "edge_weight_sum": 8652,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture",
+        "packet_count": 314
+      },
+      {
+        "edge_weight_sum": 776,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture",
+        "packet_count": 19
+      },
+      {
+        "edge_weight_sum": 12879,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "packet_count": 604
+      },
+      {
+        "edge_weight_sum": 708,
+        "endpoint_flux_class": "right_tail_right_collar_only_with_P_puncture",
+        "packet_count": 13
+      },
+      {
+        "edge_weight_sum": 2487,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "packet_count": 75
+      },
+      {
+        "edge_weight_sum": 4864,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "packet_count": 75
+      },
+      {
+        "edge_weight_sum": 52957,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture",
+        "packet_count": 968
+      },
+      {
+        "edge_weight_sum": 3428,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture",
+        "packet_count": 39
+      },
+      {
+        "edge_weight_sum": 61620,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "packet_count": 1967
+      }
+    ],
+    "lower_upper_internal_gap_count_total": 0,
+    "lower_upper_single_endpoint_edge_count": 90764,
+    "lower_upper_single_endpoint_packet_count": 2999,
+    "max_prime": 1009,
+    "moving_q_denominator_completed_trace_closed": false,
+    "multi_block_endpoint_flux_packet_count": 1083,
+    "no_loss_endpoint_flux_aggregation_closed": false,
+    "p_punctured_endpoint_flux_packet_count": 146,
+    "packet_identity_inherited": true,
+    "previous_edge_count_total": 177515,
+    "previous_shell_step_packet_count_total": 5106,
+    "q_prefix_bin_rows": [
+      {
+        "edge_weight_sum": 93081,
+        "packet_count": 1507,
+        "q_prefix_bin": "17<=q<=37"
+      },
+      {
+        "edge_weight_sum": 7452,
+        "packet_count": 769,
+        "q_prefix_bin": "2<=q<=4"
+      },
+      {
+        "edge_weight_sum": 20877,
+        "packet_count": 1006,
+        "q_prefix_bin": "5<=q<=8"
+      },
+      {
+        "edge_weight_sum": 54943,
+        "packet_count": 1529,
+        "q_prefix_bin": "9<=q<=16"
+      },
+      {
+        "edge_weight_sum": 1162,
+        "packet_count": 295,
+        "q_prefix_bin": "q=1"
+      }
+    ],
+    "q_prefix_count_average": 12.339992166079123,
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median": 11.0,
+    "q_prefix_count_min": 1,
+    "right_tail_endpoint_collar_edge_count": 86751,
+    "right_tail_endpoint_collar_flux_identity_closed": true,
+    "right_tail_endpoint_collar_identity_inherited": true,
+    "right_tail_endpoint_collar_packet_count": 2107,
+    "row_column_unconditional_closed": false,
+    "sample_packets": [
+      {
+        "P": 53,
+        "actual_shell_prime_count": 3,
+        "completed_flux_support_count": 3,
+        "edge_count": 3,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          79,
+          89
+        ],
+        "p_puncture_count": 0,
+        "q_end": 29,
+        "q_prefix_count": 1,
+        "q_start": 29,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 59,
+        "actual_shell_prime_count": 3,
+        "completed_flux_support_count": 3,
+        "edge_count": 6,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          79,
+          89
+        ],
+        "p_puncture_count": 0,
+        "q_end": 37,
+        "q_prefix_count": 2,
+        "q_start": 31,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "actual_shell_prime_count": 6,
+        "completed_flux_support_count": 6,
+        "edge_count": 6,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          97,
+          113
+        ],
+        "p_puncture_count": 0,
+        "q_end": 31,
+        "q_prefix_count": 1,
+        "q_start": 31,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "actual_shell_prime_count": 3,
+        "completed_flux_support_count": 3,
+        "edge_count": 6,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          79,
+          89
+        ],
+        "p_puncture_count": 0,
+        "q_end": 37,
+        "q_prefix_count": 2,
+        "q_start": 31,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 67,
+        "actual_shell_prime_count": 6,
+        "completed_flux_support_count": 6,
+        "edge_count": 6,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          97,
+          113
+        ],
+        "p_puncture_count": 0,
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_start": 37,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 71,
+        "actual_shell_prime_count": 2,
+        "completed_flux_support_count": 2,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          127,
+          131
+        ],
+        "p_puncture_count": 0,
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_start": 37,
+        "source_rectangles": [
+          {
+            "edge_count": 2,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 71,
+        "actual_shell_prime_count": 6,
+        "completed_flux_support_count": 6,
+        "edge_count": 12,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          97,
+          113
+        ],
+        "p_puncture_count": 0,
+        "q_end": 41,
+        "q_prefix_count": 2,
+        "q_start": 37,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 73,
+        "actual_shell_prime_count": 5,
+        "completed_flux_support_count": 6,
+        "edge_count": 5,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture",
+        "identity_verified": true,
+        "left_collar_count": 6,
+        "m_block_count": 1,
+        "p_puncture_count": 1,
+        "q_end": 47,
+        "q_prefix_count": 1,
+        "q_start": 47,
+        "right_collar_count": 0,
+        "source_rectangles": [
+          {
+            "edge_count": 5,
+            "m_end": 71,
+            "m_shell_prime_count": 5,
+            "m_start": 53
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 73,
+        "actual_shell_prime_count": 4,
+        "completed_flux_support_count": 4,
+        "edge_count": 4,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          127,
+          139
+        ],
+        "p_puncture_count": 0,
+        "q_end": 37,
+        "q_prefix_count": 1,
+        "q_start": 37,
+        "source_rectangles": [
+          {
+            "edge_count": 4,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 79,
+        "actual_shell_prime_count": 4,
+        "completed_flux_support_count": 4,
+        "edge_count": 8,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          127,
+          139
+        ],
+        "p_puncture_count": 0,
+        "q_end": 43,
+        "q_prefix_count": 2,
+        "q_start": 41,
+        "source_rectangles": [
+          {
+            "edge_count": 8,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 83,
+        "actual_shell_prime_count": 2,
+        "completed_flux_support_count": 3,
+        "edge_count": 12,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "identity_verified": true,
+        "left_collar_count": 3,
+        "m_block_count": 2,
+        "p_puncture_count": 1,
+        "q_end": 73,
+        "q_prefix_count": 6,
+        "q_start": 53,
+        "right_collar_count": 0,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 79,
+            "m_shell_prime_count": 1,
+            "m_start": 79
+          },
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 1,
+            "m_start": 89
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 89,
+        "actual_shell_prime_count": 6,
+        "completed_flux_support_count": 6,
+        "edge_count": 6,
+        "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          53,
+          73
+        ],
+        "p_puncture_count": 0,
+        "q_end": 47,
+        "q_prefix_count": 1,
+        "q_start": 47,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 73,
+            "m_shell_prime_count": 6,
+            "m_start": 53
+          }
+        ],
+        "strip": "lower_wing"
+      },
+      {
+        "P": 89,
+        "actual_shell_prime_count": 3,
+        "completed_flux_support_count": 3,
+        "edge_count": 3,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          149,
+          157
+        ],
+        "p_puncture_count": 0,
+        "q_end": 47,
+        "q_prefix_count": 1,
+        "q_start": 47,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 157,
+            "m_shell_prime_count": 3,
+            "m_start": 149
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 89,
+        "actual_shell_prime_count": 2,
+        "completed_flux_support_count": 2,
+        "edge_count": 4,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          137,
+          139
+        ],
+        "p_puncture_count": 0,
+        "q_end": 53,
+        "q_prefix_count": 2,
+        "q_start": 47,
+        "source_rectangles": [
+          {
+            "edge_count": 4,
+            "m_end": 139,
+            "m_shell_prime_count": 2,
+            "m_start": 137
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 89,
+        "actual_shell_prime_count": 2,
+        "completed_flux_support_count": 2,
+        "edge_count": 6,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          127,
+          131
+        ],
+        "p_puncture_count": 0,
+        "q_end": 59,
+        "q_prefix_count": 3,
+        "q_start": 47,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 97,
+        "actual_shell_prime_count": 5,
+        "completed_flux_support_count": 5,
+        "edge_count": 5,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "identity_verified": true,
+        "m_block_count": 1,
+        "m_range": [
+          149,
+          167
+        ],
+        "p_puncture_count": 0,
+        "q_end": 53,
+        "q_prefix_count": 1,
+        "q_start": 53,
+        "source_rectangles": [
+          {
+            "edge_count": 5,
+            "m_end": 167,
+            "m_shell_prime_count": 5,
+            "m_start": 149
+          }
+        ],
+        "strip": "upper_wing"
+      }
+    ],
+    "shell_step_packet_count_total": 5106,
+    "single_block_endpoint_flux_packet_count": 4023,
+    "single_block_endpoint_support_model_closed": true,
+    "strip_rows": [
+      {
+        "edge_weight_sum": 29144,
+        "packet_count": 1032,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_weight_sum": 86751,
+        "packet_count": 2107,
+        "strip": "right_tail"
+      },
+      {
+        "edge_weight_sum": 61620,
+        "packet_count": 1967,
+        "strip": "upper_wing"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "BoundaryEndpointFluxPhaseSaving",
+    "AND MovingPrimeQDenominatorCompletedTraceFamilyOnBoundaryEndpointFluxPackets",
+    "AND NoLossAggregationAcross5106EndpointFluxPackets",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_endpoint_flux_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the latest mouth separated right-tail endpoint collars from single-block endpoint packets; the next acyclic step is to unify both support families before attacking phase saving",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "8a2fade439e0ca3cf034d7da38adf7cb3adeae939e99e8e8f720d02ce7242c57",
+    "docs/monograph/external-theorem-index.md": "98abeafef08ca92773db4dc0955ce1c7d59f037e820192fdc32d5f7949744a6b",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "071a6b27c9eaab28a959a2d3cf4d96b6fb2db6b7484b0e4d7439e8e447beb84d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json": "d320b65d266a3161c858ce5f781f2eb700674c1ce16b39d72c1348a5003c602f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.json": "58f08272694b29f74c6555b7060da49a16c06679218c85103d5104b5456ae4a4",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-interval-completion-audit.json": "8f321d825494f078c6eca55cf4394454638e263d97fe069a47cde656547975b3",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "3fe24b9d971e72dfc965fc330ec587e1928697ffab1663f1f7fed9512b876ec7",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "a588e5a41519e48dc2cf012c058ff3d126654718a4295c99c43877d2945de715",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_unification_audit.py": "e8e797e3b5764880c5c185cda3bbfd2fdcfdcb05b1a2e6f5736f073f1fce7c5f",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "96dcde62311b54cf002da245aaa0101ed30080620d4e1fc138bb837a58515826"
+  },
+  "status": "all_boundary_shell_step_packets_unified_as_endpoint_flux_phase_saving_open"
+}

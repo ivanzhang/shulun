@@ -34688,6 +34688,57 @@ boundary-right-tail-endpoint-collar-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Boundary endpoint-flux unification}
+
+\begin{theorem}[All boundary shell-step packets are endpoint-flux packets]
+In the audit range \(P\le 1009\), every boundary shell-step packet belongs to
+one unified endpoint-flux family.  The lower and upper wings are single
+contiguous endpoint prime shells, while the right tail is the endpoint-collar
+family of the preceding section.  The unified ledger has
+\[
+\begin{array}{c|c|c}
+\hbox{family} & \hbox{packets} & \hbox{edge mass}\\ \hline
+\texttt{lower\_wing} & 1032 & 29144\\
+\texttt{upper\_wing} & 1967 & 61620\\
+\texttt{right\_tail} & 2107 & 86751 .
+\end{array}
+\]
+Thus all \(5106\) boundary packets, carrying \(177515\) edges, are accounted
+for by endpoint flux.  The audit finds zero bad endpoint-flux packets.  The
+actual shell prime count has maximum \(12\); after restoring optional
+right-tail \(P\)-punctures, the completed endpoint-flux support has maximum
+\(13\).
+\end{theorem}
+\begin{proof}
+The shell-step packet ledger partitions the boundary into lower wing, upper
+wing, and right tail.  The lower and upper wing packets all have one
+source rectangle, one contiguous prime shell, no internal prime gap, and no
+diagonal \(P\)-puncture.  The preceding endpoint-collar theorem accounts for
+all right-tail packets.  Combining these two verified cases gives a
+disjoint classification of every shell-step packet in the boundary ledger.
+\end{proof}
+
+\begin{remark}[Unified endpoint-flux mouth]
+The former separation between single-block endpoint packets and right-tail
+endpoint collars is now only a bookkeeping separation.  The support problem
+has a single endpoint-flux interface:
+\begin{quote}\scriptsize\ttfamily
+BoundaryEndpointFluxPhaseSaving\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnBoundaryEndpointFluxPackets\\
+AND NoLossAggregationAcross5106EndpointFluxPackets\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This does not prove endpoint-flux phase saving, the external-lemma version,
+or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-unification-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

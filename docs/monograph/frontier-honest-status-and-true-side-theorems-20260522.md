@@ -4761,6 +4761,78 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AB：Phi-LPF boundary endpoint-flux unification 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_unification_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.md
+```
+
+本层承接 Q13AA，把 right-tail endpoint collars 与 lower/upper single-block endpoints
+统一成一个 boundary endpoint-flux family。
+
+### Q13AB.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+boundary_endpoint_flux_packet_count=5106
+boundary_endpoint_flux_edge_count=177515
+lower_upper_single_endpoint_packet_count=2999
+lower_upper_single_endpoint_edge_count=90764
+right_tail_endpoint_collar_packet_count=2107
+right_tail_endpoint_collar_edge_count=86751
+single_block_endpoint_flux_packet_count=4023
+multi_block_endpoint_flux_packet_count=1083
+boundary_endpoint_flux_identity_verified=true
+bad_endpoint_flux_packet_count=0
+p_punctured_endpoint_flux_packet_count=146
+actual_shell_prime_count_min=1
+actual_shell_prime_count_median=3
+actual_shell_prime_count_max=12
+completed_flux_support_count_min=1
+completed_flux_support_count_median=3
+completed_flux_support_count_max=13
+```
+
+### Q13AB.2 诚实边界
+
+本层关闭的是支撑统一：
+
+```text
+boundary shell-step packet =
+  lower/upper single contiguous endpoint shell
+  OR right-tail endpoint collar flux.
+```
+
+最新最窄口：
+
+```text
+BoundaryEndpointFluxPhaseSaving
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnBoundaryEndpointFluxPackets
+AND NoLossAggregationAcross5106EndpointFluxPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+boundary_endpoint_flux_unification_closed=true
+boundary_endpoint_flux_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_endpoint_flux_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

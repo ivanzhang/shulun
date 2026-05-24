@@ -22687,6 +22687,57 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭 right-tail endpoint collar 支撑恒等式，不关闭 endpoint collar 相位节省、外部引理版或内部自足版。
 
+### 1.186 Phi-LPF boundary endpoint-flux unification 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_unification_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.json
+```
+
+同步读数为：
+
+```text
+shell_step_packet_count_total=5106
+edge_count_total=177515
+boundary_endpoint_flux_packet_count=5106
+boundary_endpoint_flux_edge_count=177515
+lower_upper_single_endpoint_packet_count=2999
+lower_upper_single_endpoint_edge_count=90764
+right_tail_endpoint_collar_packet_count=2107
+right_tail_endpoint_collar_edge_count=86751
+single_block_endpoint_flux_packet_count=4023
+multi_block_endpoint_flux_packet_count=1083
+boundary_endpoint_flux_identity_verified=true
+bad_endpoint_flux_packet_count=0
+p_punctured_endpoint_flux_packet_count=146
+actual_shell_prime_count_max=12
+completed_flux_support_count_max=13
+boundary_endpoint_flux_unification_closed=true
+boundary_endpoint_flux_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`SingleBlockEndpointPacketSummationByParts` 与
+`RightTailEndpointCollarFluxPhaseSaving` 不再是两个独立支撑族。lower/upper wings
+全部是单个 contiguous endpoint prime shell；right-tail 已由上一层拆成 endpoint
+collars。因此全部 `5106` 个 boundary shell-step packets 进入同一个 endpoint-flux
+相位对象。
+
+最新直接主攻改为：
+
+```text
+BoundaryEndpointFluxPhaseSaving
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnBoundaryEndpointFluxPackets
+AND NoLossAggregationAcross5106EndpointFluxPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 endpoint-flux 支撑统一账本，不关闭 endpoint-flux 相位节省、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：
