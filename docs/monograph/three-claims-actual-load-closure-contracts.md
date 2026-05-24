@@ -22418,6 +22418,57 @@ CompletedTraceFamilyForPrimePrimeBulkRectangle
 
 本层只定位真实解析接口，不关闭 Phi-LPF 奇偶性障碍、外部引理版或内部自足版。
 
+### 1.181 Phi-LPF boundary shell-step packet 聚合更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json
+```
+
+同步读数为：
+
+```text
+previous_layer_rectangle_count_total=6190
+shell_step_packet_count_total=5106
+rectangle_to_packet_reduction=1084
+edge_count_total=177515
+packet_identity_verified=true
+m_block_count distribution: 1/2/3 packets = 4023/1082/1
+m_shell_prime_count_median=3
+m_shell_prime_count_max=12
+naive_packet_sqrt_loss_factor=64.519277044879
+previous_layer_sqrt_loss_factor=71.553080825699
+short_shell_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：`NoLossLayerAggregationFor6190ShortShellPackets` 先被收紧为
+更精确的 packet 账本。真实对象不是 6190 个孤立 rectangles，而是 5106 个
+q-prefix shell-step packets；每个 packet 最多三段 m-block。该聚合减少了形式层数
+和朴素平方根求和损耗，但 actual phase saving 仍必须在 packet 层证明。
+
+最新直接主攻改为：
+
+```text
+UniformShortShellPhaseSavingForAtMostThreeBlockPackets
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+```
+
+并行保留：
+
+```text
+EndpointSummationByPartsForQPrefixLinePackets
+DiagonalPGhostSubtractionDiscipline
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭支撑聚合账本，不关闭外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

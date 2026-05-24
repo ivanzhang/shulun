@@ -4399,6 +4399,73 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13W：Phi-LPF q-support row-averaged additive-k prime-survivor boundary shell-step packet 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.md
+```
+
+本层承接 Q13V，将同一 row、strip、q-prefix step 的短 m-blocks 无损合并。
+
+### Q13W.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+previous_layer_rectangle_count_total=6190
+shell_step_packet_count_total=5106
+rectangle_to_packet_reduction=1084
+edge_count_total=177515
+packet_identity_verified=true
+m_block_count distribution: 1/2/3 packets = 4023/1082/1
+m_block_count distribution edges = 116221/61258/36
+multi_block_packet_count=1083
+internal_prime_gap_count_total=1084
+m_shell_prime_count_median=3
+m_shell_prime_count_max=12
+no_large_balanced_packet_ge_16=true
+naive_packet_sqrt_loss_factor=64.519277044879
+previous_layer_sqrt_loss_factor=71.553080825699
+```
+
+### Q13W.2 诚实边界
+
+本层关闭的是 packet 级支撑聚合：边界求和对象从 `6190` 个 layer rectangles
+压为 `5106` 个 q-prefix shell-step packets，且每个 packet 的 m 侧最多 `3` 个
+prime blocks。它降低了有限账本中的朴素平方根求和损耗，但没有给出相位节省。
+
+最新最窄口：
+
+```text
+UniformShortShellPhaseSavingForAtMostThreeBlockPackets
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND EndpointSummationByPartsForQPrefixLinePackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+packet_identity_verified=true
+layer_aggregation_support_closed=true
+short_shell_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_layer_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

@@ -1,0 +1,491 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "ShellStepPacketSupportAggregation",
+      "meaning": "The 6190 layer rectangles are grouped into 5106 q-prefix shell-step packets without changing total edge mass.",
+      "proved": true,
+      "remaining": "none for the finite support aggregation"
+    },
+    {
+      "closed": true,
+      "gate": "AtMostThreeMBlocksPerPacket",
+      "meaning": "Every audited packet has at most three prime-m blocks.",
+      "proved": true,
+      "remaining": "none for the finite block-count ledger"
+    },
+    {
+      "closed": true,
+      "gate": "LayerSqrtLossReduced",
+      "meaning": "The naive square-root summation factor drops from 71.553080825699 to 64.519277044879 after packet aggregation.",
+      "proved": true,
+      "remaining": "this is only a finite accounting improvement, not analytic cancellation"
+    },
+    {
+      "closed": false,
+      "gate": "UniformShortShellPhaseSaving",
+      "meaning": "Prove cancellation for q-prefix packets whose m side has at most 12 primes and up to three blocks.",
+      "proved": false,
+      "remaining": "new short-shell completion or unbalanced trace estimate required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossPacketSummation",
+      "meaning": "Aggregate all 5106 packet estimates without comparable endpoint or Cauchy loss.",
+      "proved": false,
+      "remaining": "uniform packet-level summation principle remains required"
+    }
+  ],
+  "current_object": {
+    "aggregation": "same row, strip, q-prefix count, q-start and q-end are merged into one shell-step packet",
+    "input": "6190 boundary layer-cake rectangles",
+    "remaining": "short shell phase saving, moving prime q denominator completion, and no-loss packet aggregation"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "packet aggregation reduces layer count but still leaves short m-shell packets outside a direct long bilinear input",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "each packet still needs a completed moving prime q denominator before Kloosterman input applies",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "multi-block short packets remain endpoint objects rather than a single long Type-II box",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "the q-long/m-short packet form is a plausible unbalanced interface after the exact phase model is completed",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime existence does not control these fixed-row short shell packets",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "packet aggregation helps bookkeeping but still leaves short m-shells outside a direct long bilinear theorem",
+    "Li_short_interval_x_052": "does not supply packet-level fixed-row positivity or short-shell cancellation",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "moving q denominators still need completion at packet level",
+    "Pascadi_composite_Type_II": "multi-block packets remain endpoint shells rather than single long boxes",
+    "Wright_unbalanced_Kloosterman": "q-long/m-short packet geometry is a candidate interface after exact phase modeling"
+  },
+  "finite_audit": {
+    "all_packets_have_at_most_three_m_blocks": true,
+    "all_packets_have_m_shell_size_le_12": true,
+    "block_count_rows": [
+      {
+        "edge_count": 116221,
+        "m_block_count": "1",
+        "packet_count": 4023
+      },
+      {
+        "edge_count": 61258,
+        "m_block_count": "2",
+        "packet_count": 1082
+      },
+      {
+        "edge_count": 36,
+        "m_block_count": "3",
+        "packet_count": 1
+      }
+    ],
+    "boundary_phase_saving_closed": false,
+    "edge_count_total": 177515,
+    "internal_prime_gap_count_total": 1084,
+    "internal_prime_gap_packet_count": 1083,
+    "largest_packets": [
+      {
+        "P": 919,
+        "edge_count": 261,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 643,
+        "q_prefix_count": 29,
+        "q_start": 461,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 261,
+            "m_end": 1307,
+            "m_shell_prime_count": 9,
+            "m_start": 1277
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 947,
+        "edge_count": 260,
+        "internal_prime_gap_count": 1,
+        "m_block_count": 2,
+        "m_end": 1033,
+        "m_shell_prime_count": 10,
+        "m_start": 877,
+        "q_end": 863,
+        "q_prefix_count": 26,
+        "q_start": 691,
+        "source_rectangle_count": 2,
+        "source_rectangles": [
+          {
+            "edge_count": 104,
+            "m_end": 887,
+            "m_shell_prime_count": 4,
+            "m_start": 877
+          },
+          {
+            "edge_count": 156,
+            "m_end": 1033,
+            "m_shell_prime_count": 6,
+            "m_start": 1009
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 911,
+        "edge_count": 252,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 631,
+        "q_prefix_count": 28,
+        "q_start": 457,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 252,
+            "m_end": 1307,
+            "m_shell_prime_count": 9,
+            "m_start": 1277
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 907,
+        "edge_count": 243,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 619,
+        "q_prefix_count": 27,
+        "q_start": 457,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 243,
+            "m_end": 1307,
+            "m_shell_prime_count": 9,
+            "m_start": 1277
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 881,
+        "edge_count": 224,
+        "internal_prime_gap_count": 1,
+        "m_block_count": 2,
+        "m_end": 919,
+        "m_shell_prime_count": 7,
+        "m_start": 853,
+        "q_end": 839,
+        "q_prefix_count": 32,
+        "q_start": 631,
+        "source_rectangle_count": 2,
+        "source_rectangles": [
+          {
+            "edge_count": 128,
+            "m_end": 863,
+            "m_shell_prime_count": 4,
+            "m_start": 853
+          },
+          {
+            "edge_count": 96,
+            "m_end": 919,
+            "m_shell_prime_count": 3,
+            "m_start": 907
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 839,
+        "edge_count": 216,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1327,
+        "m_shell_prime_count": 12,
+        "m_start": 1277,
+        "q_end": 523,
+        "q_prefix_count": 18,
+        "q_start": 421,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 216,
+            "m_end": 1327,
+            "m_shell_prime_count": 12,
+            "m_start": 1277
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 853,
+        "edge_count": 216,
+        "internal_prime_gap_count": 1,
+        "m_block_count": 2,
+        "m_end": 887,
+        "m_shell_prime_count": 8,
+        "m_start": 821,
+        "q_end": 811,
+        "q_prefix_count": 27,
+        "q_start": 631,
+        "source_rectangle_count": 2,
+        "source_rectangles": [
+          {
+            "edge_count": 108,
+            "m_end": 829,
+            "m_shell_prime_count": 4,
+            "m_start": 821
+          },
+          {
+            "edge_count": 108,
+            "m_end": 887,
+            "m_shell_prime_count": 4,
+            "m_start": 877
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 887,
+        "edge_count": 216,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1307,
+        "m_shell_prime_count": 9,
+        "m_start": 1277,
+        "q_end": 601,
+        "q_prefix_count": 24,
+        "q_start": 449,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 216,
+            "m_end": 1307,
+            "m_shell_prime_count": 9,
+            "m_start": 1277
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 983,
+        "edge_count": 216,
+        "internal_prime_gap_count": 0,
+        "m_block_count": 1,
+        "m_end": 1453,
+        "m_shell_prime_count": 8,
+        "m_start": 1423,
+        "q_end": 661,
+        "q_prefix_count": 27,
+        "q_start": 499,
+        "source_rectangle_count": 1,
+        "source_rectangles": [
+          {
+            "edge_count": 216,
+            "m_end": 1453,
+            "m_shell_prime_count": 8,
+            "m_start": 1423
+          }
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 929,
+        "edge_count": 208,
+        "internal_prime_gap_count": 1,
+        "m_block_count": 2,
+        "m_end": 1021,
+        "m_shell_prime_count": 8,
+        "m_start": 853,
+        "q_end": 839,
+        "q_prefix_count": 26,
+        "q_start": 661,
+        "source_rectangle_count": 2,
+        "source_rectangles": [
+          {
+            "edge_count": 104,
+            "m_end": 863,
+            "m_shell_prime_count": 4,
+            "m_start": 853
+          },
+          {
+            "edge_count": 104,
+            "m_end": 1021,
+            "m_shell_prime_count": 4,
+            "m_start": 1009
+          }
+        ],
+        "strip": "right_tail"
+      }
+    ],
+    "layer_aggregation_support_closed": true,
+    "m_block_count_max": 3,
+    "m_block_count_median": 1.0,
+    "m_block_count_min": 1,
+    "m_shell_prime_count_average": 3.0236976106541325,
+    "m_shell_prime_count_max": 12,
+    "m_shell_prime_count_median": 3.0,
+    "m_shell_prime_count_min": 1,
+    "max_prime": 1009,
+    "moving_q_denominator_completed_trace_closed": false,
+    "multi_block_packet_count": 1083,
+    "naive_packet_sqrt_loss_factor": 64.51927704487926,
+    "no_large_balanced_packet_ge_16": true,
+    "no_loss_layer_aggregation_closed": false,
+    "packet_edge_count_average": 34.7659616137877,
+    "packet_edge_count_max": 261,
+    "packet_edge_count_median": 24.0,
+    "packet_edge_count_min": 1,
+    "packet_identity_verified": true,
+    "previous_edge_count_total": 177515,
+    "previous_layer_rectangle_count_total": 6190,
+    "previous_layer_sqrt_loss_factor": 71.55308082569925,
+    "previous_sum_sqrt_rectangle_edges": 30147.122529825978,
+    "q_prefix_count_average": 12.339992166079123,
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median": 11.0,
+    "q_prefix_count_min": 1,
+    "rectangle_to_packet_reduction": 1084,
+    "row_column_unconditional_closed": false,
+    "shell_step_packet_count_total": 5106,
+    "short_shell_phase_saving_closed": false,
+    "source_rectangle_count_max": 3,
+    "source_rectangle_count_median": 1.0,
+    "source_rectangle_count_min": 1,
+    "source_rectangle_count_rows": [
+      {
+        "edge_count": 116221,
+        "packet_count": 4023,
+        "source_rectangle_count": "1"
+      },
+      {
+        "edge_count": 61258,
+        "packet_count": 1082,
+        "source_rectangle_count": "2"
+      },
+      {
+        "edge_count": 36,
+        "packet_count": 1,
+        "source_rectangle_count": "3"
+      }
+    ],
+    "sqrt_loss_factor_improvement": 7.033803780819994,
+    "sqrt_total_edges": 421.32529000761394,
+    "strip_packet_rows": [
+      {
+        "edge_count": 29144,
+        "packet_count": 1032,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 86751,
+        "packet_count": 2107,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 61620,
+        "packet_count": 1967,
+        "strip": "upper_wing"
+      }
+    ],
+    "sum_sqrt_packet_edges": 27183.603112015346,
+    "threshold_rows": [
+      {
+        "edge_count": 159156,
+        "packet_count": 3613,
+        "threshold": "both>=2"
+      },
+      {
+        "edge_count": 126736,
+        "packet_count": 2294,
+        "threshold": "both>=3"
+      },
+      {
+        "edge_count": 91549,
+        "packet_count": 1391,
+        "threshold": "both>=4"
+      },
+      {
+        "edge_count": 52477,
+        "packet_count": 644,
+        "threshold": "both>=5"
+      },
+      {
+        "edge_count": 9152,
+        "packet_count": 64,
+        "threshold": "both>=8"
+      },
+      {
+        "edge_count": 959,
+        "packet_count": 5,
+        "threshold": "both>=10"
+      },
+      {
+        "edge_count": 0,
+        "packet_count": 0,
+        "threshold": "both>=16"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "UniformShortShellPhaseSavingForAtMostThreeBlockPackets",
+    "AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets",
+    "AND NoLossAggregationAcross5106ShellStepPackets",
+    "AND EndpointSummationByPartsForQPrefixLinePackets",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "layer_aggregation_support_closed": true,
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_layer_aggregation_closed": false,
+  "packet_identity_verified": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "phase-interface audit left a layer-summation loss and short m-shell obstruction; the next non-cyclic step is to aggregate all blocks sharing the same q-prefix step",
+  "row_column_unconditional_closed": false,
+  "short_shell_phase_saving_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2d553b3fd13df9409f2f9500dcc26e4d39e24b52d5601baf60124ecfba3d06de",
+    "docs/monograph/external-theorem-index.md": "6ae2949e52572d8e928bc3d1f4fe277025c700c061cd1ef6492a15bf9ff18768",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "bbb76f3ce9d21db7e9ae275e5095ccebd7d8d55f850fe2d0c2d25b9450422977",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json": "abe27c82dd7977396652b17f9ba86ccc46fffad669a9974e6cd8772851947dc4",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json": "d320b65d266a3161c858ce5f781f2eb700674c1ce16b39d72c1348a5003c602f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-strip-decomposition-audit.json": "bdf83a4edb2ed72465b1e5646105e4c262dc809337a9200704dc5ba8c890188b",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "801a308704d6ce7f173fb0bcfc821649e34699ced5cf8178f1cfae8996a62405",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "7cf13d9c3fd67e88fe8bade48b7a66de0e2d30c363081c335d799b28f18bf460",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit.py": "a2885e5d3285adc4d07c81a06dc43ccf618e55409cd2506173925bafaa9313a7",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "4a4c7e774a5c859abe0800375feb1418b1a7fd704dbf43cc9285d404d26c3c8f"
+  },
+  "status": "boundary_layercake_rectangles_aggregated_to_shell_step_packets_phase_saving_open"
+}

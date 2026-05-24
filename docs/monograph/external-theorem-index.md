@@ -5447,6 +5447,71 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 60. Phi-LPF boundary shell-step packet aggregation 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.md
+```
+
+上一层显示 `6190` 个 layer rectangles 多数是 q-long/m-short。本层把同一 row、
+同一 strip、同一 q-prefix step 的 m-blocks 合并为一个 shell-step packet。有限审计读数：
+
+```text
+previous_layer_rectangle_count_total=6190
+shell_step_packet_count_total=5106
+rectangle_to_packet_reduction=1084
+edge_count_total=177515
+packet_identity_verified=true
+m_block_count_min=1
+m_block_count_median=1
+m_block_count_max=3
+m_block_count distribution: 1/2/3 packets = 4023/1082/1
+m_block_count distribution edges = 116221/61258/36
+m_shell_prime_count_median=3
+m_shell_prime_count_max=12
+no_large_balanced_packet_ge_16=true
+naive_packet_sqrt_loss_factor=64.519277044879
+previous_layer_sqrt_loss_factor=71.553080825699
+```
+
+这是真推进：跨层对象从 `6190` 个 layer rectangles 压成 `5106` 个 shell-step packets，
+并证明每个 packet 的 m 侧最多由 `3` 个 prime blocks 组成。但它仍只是支撑聚合
+和求和账本收紧，不是相位节省。
+
+最新最窄接口：
+
+```text
+UniformShortShellPhaseSavingForAtMostThreeBlockPackets
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND EndpointSummationByPartsForQPrefixLinePackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部定理匹配仍保持候选状态：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 和 Wright unbalanced Kloosterman 可以作为
+后续接口，但均未直接给出 at-most-three-block 短壳 packet 的固定行相消。
+
+状态边界：
+
+```text
+packet_identity_verified=true
+layer_aggregation_support_closed=true
+short_shell_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_layer_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

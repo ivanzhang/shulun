@@ -34345,6 +34345,90 @@ boundary-layercake-phase-interface-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Shell-step packets for the boundary layer-cake}
+
+\begin{theorem}[Shell-step packet aggregation]
+In the boundary layer-cake audit range \(P\le 1009\), all layer rectangles
+with the same row, strip, \(q\)-prefix count, \(q\)-start, and \(q\)-end
+can be merged into a single \(q\)-prefix shell-step packet.  This gives an
+edge-preserving aggregation
+\[
+  6190\ \hbox{layer rectangles}
+  \longrightarrow
+  5106\ \hbox{shell-step packets},
+\]
+with total edge mass still equal to \(177515\).  Each packet has at most
+three prime-\(m\) blocks.  The block distribution is
+\[
+\begin{array}{c|c|c}
+\hbox{number of \(m\)-blocks} & \hbox{packets} & \hbox{edges}\\ \hline
+1 & 4023 & 116221\\
+2 & 1082 & 61258\\
+3 & 1 & 36 .
+\end{array}
+\]
+The median \(m\)-shell size rises to \(3\), but the maximum remains \(12\);
+no audited packet has both sides of length at least \(16\).
+\end{theorem}
+\begin{proof}
+Start from the preceding layer-cake rectangles.  Two rectangles are placed
+in the same packet exactly when they have the same tuple
+\[
+  (P,\ \hbox{strip},\ q\hbox{-prefix count},\ q_{\min},\ q_{\max}).
+\]
+The \(q\)-side is therefore identical within a packet; the \(m\)-side is
+the disjoint union of the prime-\(m\) blocks contributed by the source
+rectangles.  The machine audit recomputes all packets from the rectangle
+ledger and verifies
+\[
+  \sum_{\hbox{packets}} |Q_{\rm packet}|\,|M_{\rm packet}|
+  =
+  177515
+  =
+  \sum_{\hbox{rectangles}} |Q_{\rm rect}|\,|M_{\rm rect}|.
+\]
+It also records the number of source \(m\)-blocks in each packet, giving
+the displayed block distribution and the bound of three blocks per packet.
+\end{proof}
+
+\begin{remark}[What this aggregation does and does not prove]
+This is an accounting improvement for the endpoint summation problem.
+The naive finite square-root ledger improves from
+\[
+  71.553080825699
+  \quad\hbox{to}\quad
+  64.519277044879
+\]
+when passing from individual layer rectangles to shell-step packets.
+Equivalently, the formal layer count drops by \(1084\) without changing
+the actual edge mass.
+
+The remaining obstruction is still analytic.  One must prove cancellation
+for \(q\)-prefix packets whose \(m\)-side has at most three prime blocks
+and at most \(12\) primes, complete the moving prime-\(q\) denominator as a
+trace or Kloosterman variable, and sum all \(5106\) packet estimates without
+a comparable endpoint or Cauchy loss.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+UniformShortShellPhaseSavingForAtMostThreeBlockPackets\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets\\
+AND NoLossAggregationAcross5106ShellStepPackets\\
+AND EndpointSummationByPartsForQPrefixLinePackets\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+Thus the aggregation does not close the Phi--LPF parity barrier, the
+external-lemma version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-shell-step-packet-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

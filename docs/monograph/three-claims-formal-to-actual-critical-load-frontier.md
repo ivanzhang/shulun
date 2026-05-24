@@ -24349,6 +24349,55 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AH. Phi-LPF prime-survivor boundary shell-step packet frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_shell_step_packet_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-ledger.json
+```
+
+同步结果：
+
+```text
+status=boundary_layercake_rectangles_aggregated_to_shell_step_packets_phase_saving_open
+previous_layer_rectangle_count_total=6190
+shell_step_packet_count_total=5106
+rectangle_to_packet_reduction=1084
+edge_count_total=177515
+packet_identity_verified=true
+m_block_count_max=3
+m_block_count distribution: 1/2/3 packets = 4023/1082/1
+m_shell_prime_count_median=3
+m_shell_prime_count_max=12
+naive_packet_sqrt_loss_factor=64.519277044879
+previous_layer_sqrt_loss_factor=71.553080825699
+short_shell_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的 `NoLossLayerAggregationFor6190ShortShellPackets`
+过粗。实际可求和对象可先按 q-prefix step 聚合为 `5106` 个 packets，且每个 packet
+的 m 侧最多三段 prime blocks。这降低了有限层数与朴素平方根损耗，但没有提供
+packet 级相消。
+
+最新实际硬点：
+
+```text
+UniformShortShellPhaseSavingForAtMostThreeBlockPackets
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnShellStepPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND EndpointSummationByPartsForQPrefixLinePackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“6190 层必须逐层处理”的过粗账本；没有删除短 shell packet 相消、
+移动 q 分母 completed trace family 与 packet 级无损求和真缺口。
+
 ## 330AG. Phi-LPF prime-survivor boundary layer-cake phase-interface frontier
 
 新增文件：
