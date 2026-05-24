@@ -3925,6 +3925,82 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13Q：Phi-LPF q-support row-averaged additive-k prime-survivor q-prefix unimodal 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.md
+```
+
+本层承接 Q13P 并转置图方向。有限审计范围内，固定 `(P,m)` 的 q-neighbourhood
+不是任意稀疏集，而是：
+
+```text
+Q_prime(P,m)={prime q: q0(P)<=q<=Q*(P,m)}.
+```
+
+其中 `q0(P)` 是本行第一个 eligible prime q。同一行的 cap `Q*(P,m)` 沿 prime
+`m` 序列为单峰帽函数。
+
+### Q13Q.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+prime_survivor_edge_count_total=355919
+pm_bucket_count_total=16328
+q_prefix_count_total=355919
+lower_endpoint_not_row_first_total=0
+q_prefix_missing_count_total=0
+q_prefix_extra_count_total=0
+bad_q_prefix_identity_count=0
+max_q_prefix_phase_error=0
+active_P_count=155
+cap_unimodality_bad_row_count=0
+cap_turn_count_distribution={0:1,1:154}
+total_bad_qprefix_unimodal_count=0
+```
+
+### Q13Q.2 诚实边界
+
+本层真推进是把 prime survivor floor graph 在有限范围内从一般稀疏二部图压成
+q-prefix cap graph，并记录每行 cap 单峰。这给后续 trace/Type-II split 提供更具体
+的支撑形态；但本层没有证明全局 prefix/unimodal theorem，也没有给出 phase saving。
+
+最新最窄口：
+
+```text
+GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement
+AND PrefixCapTraceOrTypeIIPhaseSaving
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+finite_q_prefix_neighbourhood_audit_closed=true
+finite_unimodal_cap_audit_closed=true
+prefix_cap_phase_packet_rewrite_closed_on_audited_range=true
+global_qprefix_unimodal_theorem_proved=false
+prefix_cap_trace_or_typeii_embedding_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

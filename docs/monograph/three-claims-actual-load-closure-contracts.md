@@ -22488,6 +22488,54 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新排除的是 singleton 黑箱口径，
 不是行/列命题闭合。
 
+### 1.183 Phi-LPF prime-survivor q-prefix cap 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json
+```
+
+同步读数为：
+
+```text
+finite_q_prefix_neighbourhood_audit_closed=true
+finite_unimodal_cap_audit_closed=true
+prefix_cap_phase_packet_rewrite_closed_on_audited_range=true
+prime_survivor_edge_count_total=355919
+pm_bucket_count_total=16328
+q_prefix_count_total=355919
+bad_q_prefix_identity_count=0
+active_P_count=155
+cap_unimodality_bad_row_count=0
+global_qprefix_unimodal_theorem_proved=false
+prefix_cap_trace_or_typeii_embedding_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：上一层的 prime interval floor graph 在转置方向上，有限范围内为
+q-prefix cap graph：
+
+```text
+Q_prime(P,m)={prime q: q0(P)<=q<=Q*(P,m)}.
+```
+
+这将待估对象从一般稀疏点云压成一条单峰帽函数控制的前缀图。最新活动硬点更新为：
+
+```text
+GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement
+AND PrefixCapTraceOrTypeIIPhaseSaving
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+```
+
+并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
+prime-q reciprocal phase saving、Rate 与 DStructure。该更新是有限结构压缩，不是行/列命题闭合。
+
 ### 1.180 two replacement lines common unconditional kernel 更新
 
 新增机器证书：

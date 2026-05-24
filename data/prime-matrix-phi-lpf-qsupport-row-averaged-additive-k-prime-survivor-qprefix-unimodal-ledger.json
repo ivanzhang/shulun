@@ -1,0 +1,332 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "FiniteQPrefixNeighbourhoodAudit",
+      "meaning": "For P<=1009, every fixed (P,m) q-neighbourhood is a prime-q prefix from q0(P).",
+      "proved": true,
+      "remaining": "global proof or direct analytic exploitation"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteUnimodalCapAudit",
+      "meaning": "For P<=1009, the cap Q*(P,m) is unimodal in the ordered prime m-list of each active row.",
+      "proved": true,
+      "remaining": "global proof or Type-II split along the cap"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixCapPhasePacketRewrite",
+      "meaning": "On the audited range, the phase packet equals the q-prefix cap packet exactly.",
+      "proved": true,
+      "remaining": "uniform analytic estimate for the rewritten packet"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalQPrefixUnimodalTheorem",
+      "meaning": "Promote the finite prefix/unimodal audit to a global deterministic theorem.",
+      "proved": false,
+      "remaining": "not proved in this layer"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixCapTraceOrTypeIIEmbedding",
+      "meaning": "Use the prefix-cap graph to obtain phase saving or a completed bilinear/trace family.",
+      "proved": false,
+      "remaining": "new embedding theorem still required"
+    }
+  ],
+  "current_object": {
+    "meaning": "the remaining graph is a prefix-cap graph rather than a generic sparse point cloud",
+    "phase_packet": "S_prime-survivor=sum_m sum_{q0(P)<=q<=Q*(P,m), q prime} e(hP floor(qm/P)/q)",
+    "q_prefix_identity": "for audited (P,m), Q_prime(P,m)={prime q: q0(P)<=q<=Q*(P,m)}",
+    "remaining": "prove or exploit this shape globally and embed it into trace/Type-II/convolution estimates",
+    "row_cap_shape": "for audited rows, Q*(P,m) along prime m is unimodal"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "candidate after the q-prefix cap graph is promoted to a trace-function bilinear family",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "candidate after a completed Kloosterman variable is built from the prefix-cap graph",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "candidate if the prefix-cap graph is split into Type-II fibres with usable lengths",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate for a future unbalanced convolution model of the prefix cap",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "candidate parameter input after the arithmetic weights are fitted to their hypotheses",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "still above the theta=1/2 pointwise scale and not a direct closure for this graph",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "the prefix cap is closer to a bilinear trace object but still lacks the completed trace family",
+    "Li_short_interval_x_052": "does not close the pointwise theta=1/2 requirement",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "the denominator q remains a moving prime prefix cap, not yet a completed Kloosterman variable",
+    "Pascadi_composite_Type_II": "the prefix graph suggests a Type-II split, but usable long fibres are not yet constructed",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "requires additional smoothing/squarefree parameter matching beyond this finite cap shape",
+    "Wright_unbalanced_convolution": "the unimodal cap may fit a future unbalanced convolution model, not available here"
+  },
+  "finite_audit": {
+    "active_P_count": 155,
+    "bad_q_prefix_identity_count": 0,
+    "cap_sample_paths": [
+      "P=101: left 79->73, 83->73, 89->73, 97->83, 103->83, 107->83, 109->83, 113->83; right 149->61, 151->61, 157->61, 163->59, 167->59, 173->53, 179->53, 181->53",
+      "P=257: left 137->131, 139->131, 149->139, 151->139, 157->139, 163->157, 167->157, 173->167; right 449->139, 457->139, 461->139, 463->139, 467->139, 479->137, 487->131, 491->131",
+      "P=971: left 499->491, 503->491, 509->491, 521->509, 523->509, 541->523, 547->523, 557->547; right 1871->499, 1873->499, 1877->499, 1879->499, 1889->491, 1901->491, 1907->491, 1913->491",
+      "P=1009: left 521->509, 523->509, 541->523, 547->523, 557->547, 563->557, 569->557, 571->557; right 1913->523, 1931->523, 1933->523, 1949->509, 1951->509, 1973->509, 1979->509, 1987->509"
+    ],
+    "cap_turn_count_distribution": {
+      "0": 1,
+      "1": 154
+    },
+    "cap_turn_count_total": 154,
+    "cap_unimodality_bad_row_count": 0,
+    "counts_match_previous_floor_span": true,
+    "finite_evidence_not_used_as_global_proof": true,
+    "global_qprefix_theorem_proved": false,
+    "lower_endpoint_not_row_first_total": 0,
+    "max_prime": 1009,
+    "max_q_prefix_phase_error": 0.0,
+    "peak_plateau_prime_count_distribution": {
+      "1": 42,
+      "2": 36,
+      "3": 37,
+      "4": 17,
+      "5": 12,
+      "6": 6,
+      "7": 3,
+      "8": 1,
+      "9": 1
+    },
+    "pm_bucket_count_total": 16328,
+    "previous_P_count": 165,
+    "previous_prime_survivor_edge_count_total": 355919,
+    "prime_floor_span_trace_or_typeii_phase_saving_closed": false,
+    "prime_survivor_edge_count_total": 355919,
+    "q_prefix_count_total": 355919,
+    "q_prefix_extra_count_total": 0,
+    "q_prefix_identity_verified_on_finite_audit": true,
+    "q_prefix_missing_count_total": 0,
+    "q_prefix_phase_packet_rewrite_verified_on_finite_audit": true,
+    "row_cap_unimodality_verified_on_finite_audit": true,
+    "sample_prefixes": [
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 53,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 59,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 61,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 67,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 71,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 43,
+        "bad": 0,
+        "cap": 23,
+        "m": 73,
+        "prefix_count": 1,
+        "q0": 23,
+        "q_count": 1
+      },
+      {
+        "P": 53,
+        "bad": 0,
+        "cap": 31,
+        "m": 59,
+        "prefix_count": 2,
+        "q0": 29,
+        "q_count": 2
+      },
+      {
+        "P": 53,
+        "bad": 0,
+        "cap": 31,
+        "m": 61,
+        "prefix_count": 2,
+        "q0": 29,
+        "q_count": 2
+      },
+      {
+        "P": 53,
+        "bad": 0,
+        "cap": 31,
+        "m": 67,
+        "prefix_count": 2,
+        "q0": 29,
+        "q_count": 2
+      },
+      {
+        "P": 53,
+        "bad": 0,
+        "cap": 31,
+        "m": 71,
+        "prefix_count": 2,
+        "q0": 29,
+        "q_count": 2
+      }
+    ],
+    "sample_rows": [
+      {
+        "P": 101,
+        "active_m_count": 20,
+        "bad_after_down_increase": 0,
+        "edge_count": 96,
+        "first_m": 79,
+        "last_m": 181,
+        "max_cap_q": 83,
+        "peak_m_max": 113,
+        "peak_m_max_minus_P": 12,
+        "peak_m_min": 97,
+        "peak_m_min_minus_P": -4,
+        "peak_plateau_prime_count": 5,
+        "turn_count": 1,
+        "unimodal_cap_verified": true
+      },
+      {
+        "P": 257,
+        "active_m_count": 61,
+        "bad_after_down_increase": 0,
+        "edge_count": 591,
+        "first_m": 137,
+        "last_m": 491,
+        "max_cap_q": 241,
+        "peak_m_max": 251,
+        "peak_m_max_minus_P": -6,
+        "peak_m_min": 251,
+        "peak_m_min_minus_P": -6,
+        "peak_plateau_prime_count": 1,
+        "turn_count": 1,
+        "unimodal_cap_verified": true
+      },
+      {
+        "P": 971,
+        "active_m_count": 198,
+        "bad_after_down_increase": 0,
+        "edge_count": 6206,
+        "first_m": 499,
+        "last_m": 1913,
+        "max_cap_q": 953,
+        "peak_m_max": 983,
+        "peak_m_max_minus_P": 12,
+        "peak_m_min": 967,
+        "peak_m_min_minus_P": -4,
+        "peak_plateau_prime_count": 3,
+        "turn_count": 1,
+        "unimodal_cap_verified": true
+      },
+      {
+        "P": 1009,
+        "active_m_count": 202,
+        "bad_after_down_increase": 0,
+        "edge_count": 6414,
+        "first_m": 521,
+        "last_m": 1987,
+        "max_cap_q": 991,
+        "peak_m_max": 1021,
+        "peak_m_max_minus_P": 12,
+        "peak_m_min": 1013,
+        "peak_m_min_minus_P": 4,
+        "peak_plateau_prime_count": 3,
+        "turn_count": 1,
+        "unimodal_cap_verified": true
+      }
+    ],
+    "total_bad_qprefix_unimodal_count": 0
+  },
+  "finite_q_prefix_neighbourhood_audit_closed": true,
+  "finite_unimodal_cap_audit_closed": true,
+  "frontier_verified_date": "2026-05-24",
+  "full_prime_prime_rectangle_completion_closed": false,
+  "global_qprefix_unimodal_theorem_proved": false,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement",
+    "AND PrefixCapTraceOrTypeIIPhaseSaving",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph",
+    "AND FiniteThirtyWheelSmallLPFBlockerPacketControl",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "prefix_cap_phase_packet_rewrite_closed_on_audited_range": true,
+  "prefix_cap_trace_or_typeii_embedding_closed": false,
+  "prime_floor_span_trace_or_typeii_phase_saving_closed": false,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "after the floor-span graph is exposed, the next non-cyclic refinement is to test whether the transposed graph has interval or prefix structure",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "small_lpf_blocker_packet_control_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "72196025b0aa445dafc9e498168efe124db76ee6c05ec2b145a1ac1fea96af4d",
+    "docs/monograph/external-theorem-index.md": "66ba5f7463a8c91c02345f4c0b90579568122c1b0165fd08856e63ad0372a650",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "1825c117e5c29a36113db946fec6c00e3950ebc8d49e409afbe5b3933323ca78",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-blocker-mobius-involution-audit.json": "11a24d2069c0cfa9fb5f6ed6f5923de2090fba03951eddfd5185c23d76dd36d8",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json": "a1b1fd53368dcbe3e19e87353e3335034aef4b2d7774cc4ce1d1e5a088f1050e",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "205f58eaa51cb9945dd35fa94fc034fa4098077a1cfb30eec17f2084023e02f7",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "20aaec4928d7333ac7c37223f4957c99924ced342399fbd3ea3810d5c599160e",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit.py": "da8f18dececab9c597a6edd94d4b03e6e08ed199214605d4328cc750727ccef4",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2931edeb7188fce784b4ea395b8d16308688ca184d433717011d1e4ee17b9ef5"
+  },
+  "status": "prime_survivor_floor_graph_refined_to_finite_qprefix_unimodal_cap_open",
+  "uniform_cancellation_across_sparse_k_support_radial_kernels_closed": false
+}

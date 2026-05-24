@@ -33776,6 +33776,79 @@ floor-span-completion-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Finite q-prefix cap structure of the prime-survivor graph}
+
+\begin{reductionstatement}[Finite q-prefix and unimodal-cap audit]
+In the finite audit range \(P\le 1009\), transpose the prime-survivor
+floor-span graph by fixing \(P\) and a prime survivor coordinate \(m\).  For
+every audited nonempty \((P,m)\) fibre, the \(q\)-neighbourhood is a prime
+prefix
+\[
+  Q_{P,m}^{\rm pr}
+  =
+  \{q:\ q_0(P)\le q\le Q^*(P,m),\ q\ {\rm prime}\},
+\]
+where \(q_0(P)\) is the first eligible prime \(q\) with \(P/2<q<P\).  Moreover,
+for every audited active row \(P\), the cap \(Q^*(P,m)\), as \(m\) runs
+through the ordered prime survivor coordinates, is unimodal: it is first
+nondecreasing and then nonincreasing.
+\end{reductionstatement}
+
+\begin{remark}[Finite q-prefix cap ledger]
+The q-prefix audit is deliberately recorded as a finite structural
+certificate, not as a global theorem.  It verifies the transposed support
+shape on the same \(355919\) prime-survivor edges:
+\[
+  \texttt{pm\_bucket\_count\_total}=16328,\qquad
+  \texttt{q\_prefix\_count\_total}=355919.
+\]
+There are no prefix defects:
+\[
+  \texttt{lower\_endpoint\_not\_row\_first\_total}=0,\quad
+  \texttt{q\_prefix\_missing\_count\_total}=0,\quad
+  \texttt{q\_prefix\_extra\_count\_total}=0.
+\]
+The phase packet agrees exactly in the audit:
+\[
+  \texttt{bad\_q\_prefix\_identity\_count}=0,\qquad
+  \texttt{max\_q\_prefix\_phase\_error}=0.
+\]
+Among the \(155\) active audited rows, every cap is unimodal:
+\[
+  \texttt{cap\_unimodality\_bad\_row\_count}=0,\qquad
+  \texttt{cap\_turn\_count\_distribution}=\{0:1,\ 1:154\}.
+\]
+
+Thus the remaining prime-survivor graph is no longer best viewed as a generic
+sparse point cloud.  In the audited range it is a \(q\)-prefix cap graph,
+with a one-dimensional cap \(Q^*(P,m)\).  This is closer to a possible
+two-monotone Type-II or unbalanced convolution decomposition, but it still
+does not supply the required phase saving.  A global proof of the prefix cap
+structure, or a replacement analytic estimate that does not need it, remains
+open.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement\\
+AND PrefixCapTraceOrTypeIIPhaseSaving\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+qprefix-unimodal-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

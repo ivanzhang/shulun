@@ -24293,3 +24293,58 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是 prime-survivor singleton 黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
+
+## 330AB. Phi-LPF prime-survivor q-prefix unimodal frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-ledger.json
+```
+
+同步结果：
+
+```text
+status=prime_survivor_floor_graph_refined_to_finite_qprefix_unimodal_cap_open
+prime_survivor_edge_count_total=355919
+pm_bucket_count_total=16328
+q_prefix_count_total=355919
+lower_endpoint_not_row_first_total=0
+q_prefix_missing_count_total=0
+q_prefix_extra_count_total=0
+bad_q_prefix_identity_count=0
+active_P_count=155
+cap_unimodality_bad_row_count=0
+cap_turn_count_distribution={0:1,1:154}
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：prime survivor graph 的转置方向在有限范围内不是任意稀疏
+fiber，而是从行首 eligible prime 开始的 q-prefix：
+
+```text
+S_prime-survivor=sum_m sum_{q0(P)<=q<=Q*(P,m), q prime}
+  e(hP floor(qm/P)/q).
+```
+
+每行 `Q*(P,m)` 是单峰 cap。这为后续二分单调区间、Type-II split 或 unbalanced
+convolution 嵌入提供更具体形状；但全局 prefix/unimodal 定理与相位节省仍未证明。
+
+最新窄口为：
+
+```text
+GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement
+AND PrefixCapTraceOrTypeIIPhaseSaving
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。

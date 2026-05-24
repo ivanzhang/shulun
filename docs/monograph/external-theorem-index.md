@@ -3784,6 +3784,78 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61Q. Phi-LPF q-support row-averaged additive-k prime-survivor q-prefix unimodal 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_qprefix_unimodal_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.md
+```
+
+本层转置 61P 的 floor-span graph：固定 `(P,m)` 后，有限审计范围内的
+q-neighbourhood 是从本行第一个 eligible prime `q0(P)` 开始的完整 prime-q prefix：
+
+```text
+Q_prime(P,m)={prime q: q0(P)<=q<=Q*(P,m)}.
+```
+
+同一行中 `Q*(P,m)` 沿 prime `m` 序列先不降、后不升，形成单峰 cap。
+
+有限审计读数：
+
+```text
+max_prime=1009
+prime_survivor_edge_count_total=355919
+pm_bucket_count_total=16328
+q_prefix_count_total=355919
+lower_endpoint_not_row_first_total=0
+q_prefix_missing_count_total=0
+q_prefix_extra_count_total=0
+bad_q_prefix_identity_count=0
+max_q_prefix_phase_error=0
+active_P_count=155
+cap_unimodality_bad_row_count=0
+cap_turn_count_distribution={0:1,1:154}
+total_bad_qprefix_unimodal_count=0
+```
+
+外部前沿影响：该 prefix-cap 形态比一般稀疏点集更接近 bilinear/trace 输入，
+但仍未生成 completed trace family、completed Kloosterman variable、或具有可用长度的
+Type-II fibres。FKMS、Milićević--Qin--Wu、Pascadi、Wright 2026 与
+Shao--Shparlinski--Wijaya 仍只是后续嵌入候选；Runbo Li 的 `x^0.52` 仍不闭合
+点态 `theta=1/2`。
+
+新的最新最窄口：
+
+```text
+GlobalPrimeSurvivorQPrefixUnimodalCapProofOrReplacement
+AND PrefixCapTraceOrTypeIIPhaseSaving
+AND DiagonalPGhostSubtractionDiscipline
+AND DenseRectangleCompletionOrBilinearTraceEmbeddingForPrimePrimeFloorGraph
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+finite_q_prefix_neighbourhood_audit_closed=true
+finite_unimodal_cap_audit_closed=true
+prefix_cap_phase_packet_rewrite_closed_on_audited_range=true
+global_qprefix_unimodal_theorem_proved=false
+prefix_cap_trace_or_typeii_embedding_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：
