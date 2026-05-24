@@ -24956,7 +24956,7 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是 q-prefix/unimodal 来源黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
-## 330AG. Phi-LPF q-prefix phase normal-form frontier
+## 330AO. Phi-LPF q-prefix phase normal-form frontier
 
 新增文件：
 
@@ -25008,3 +25008,57 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是相位形状黑箱；没有删除 moving numerator 相消、completed family 和无损聚合真缺口。
+
+## 330AP. Phi-LPF q-prefix successor carry dynamics frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_dynamics_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_phase_atoms_have_successor_carry_dynamics_phase_saving_open
+carry_dynamics_atom_count_total=15439
+multiq_atom_count=14277
+successor_transition_count_total=162076
+carry_formula_mismatch_count=0
+D_successor_mismatch_count=0
+A_successor_mismatch_count=0
+successor_carry_identity_verified=true
+q_gap_min/median/max=2/6/20
+carry_delta_k_min/median/max=1/6/33
+moving_numerator_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的
+
+```text
+MovingBeattyNumeratorPrimeQPrefixReciprocalPhaseSaving
+```
+
+现在被压成 prime-gap successor carry 问题。若 `q'` 是同一 atom 中 `q` 的下一个素数：
+
+```text
+g=q'-q,
+D' = D + m*g - P*(k'-k),
+k'-k = floor((D+m*g)/P).
+```
+
+审计显示 `13317` 个 multi-`q` atoms 为 `variable_carry_word`，`12895` 个为
+`A_mixed_sawtooth`。因此最新实际硬点为：
+
+```text
+PrimeGapDrivenCarryWordExponentialSumSaving
+AND CompletionOfSuccessorCarryDynamicsToTraceOrKloostermanFamily
+AND NoLossAggregationAcross15439QPrefixCarryAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 moving numerator 生成机制黑箱；没有删除 carry-word 相消、completed family 和无损聚合真缺口。

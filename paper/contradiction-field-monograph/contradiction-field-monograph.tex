@@ -34873,6 +34873,86 @@ boundary-endpoint-flux-qprefix-phase-normal-form-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Successor carry dynamics on q-prefix phase atoms}
+
+\begin{theorem}[Prime-q successor carry identity]
+In the audit range \(P\le 1009\), let \(q<q'\) be adjacent primes inside the
+same fixed-\(m\) q-prefix phase atom.  Write
+\[
+  qm=kP+D,\qquad q'm=k'P+D',
+\]
+with \(1\le D,D'<P\), and put \(g=q'-q\).  Then every one of the
+\(162076\) adjacent transitions satisfies
+\[
+  D'=D+mg-Pc,\qquad
+  c=k'-k=\left\lfloor \frac{D+mg}{P}\right\rfloor .
+\]
+The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{successor\_transition\_count\_total} & 162076\\
+\texttt{carry\_formula\_mismatch\_count} & 0\\
+\texttt{D\_successor\_mismatch\_count} & 0\\
+\texttt{A\_successor\_mismatch\_count} & 0\\
+\texttt{q\_gap\_nonpositive\_count} & 0\\
+\texttt{carry\_nonpositive\_count} & 0 .
+\end{array}
+\]
+The observed prime gap range is \(2\le g\le 20\), with median \(6\), and the
+observed carry range is \(1\le c\le 33\), with median \(6\).
+\end{theorem}
+\begin{proof}
+Subtract the two division identities:
+\[
+  q'm-qm=(k'-k)P+(D'-D).
+\]
+Since \(q'm=qm+mg\), this gives \(D'=D+mg-P(k'-k)\).  Because
+\[
+  q'm=kP+D+mg,
+\]
+Euclidean division by \(P\) gives
+\[
+  k'-k=\left\lfloor \frac{D+mg}{P}\right\rfloor .
+\]
+The audit checks these two formulas for every adjacent prime pair in every
+fixed-\(m\) q-prefix phase atom, and also recomputes the next normalized
+numerator \(A(q')\) from \(D'\).
+\end{proof}
+
+\begin{remark}[Carry words are still not phase savings]
+The successor identity removes another structural ambiguity, but it does not
+make the reciprocal orbit a constant-step rotation.  Among the \(15439\)
+atoms, the audit finds
+\[
+\begin{array}{c|c}
+\hbox{class} & \hbox{atoms}\\ \hline
+\texttt{variable\_carry\_word} & 13317\\
+\texttt{constant\_carry\_word} & 960\\
+\texttt{singleton\_q\_no\_transition} & 1162\\
+\texttt{A\_mixed\_sawtooth} & 12895\\
+\texttt{A\_constant} & 2 .
+\end{array}
+\]
+Thus the latest remaining analytic mouth is
+\begin{quote}\scriptsize\ttfamily
+PrimeGapDrivenCarryWordExponentialSumSaving\\
+AND CompletionOfSuccessorCarryDynamicsToTraceOrKloostermanFamily\\
+AND NoLossAggregationAcross15439QPrefixCarryAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only deterministic successor carry dynamics.  It does
+not prove carry-word exponential-sum saving, the external-lemma version, or
+the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-dynamics-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

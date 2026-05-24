@@ -1,0 +1,1369 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_dynamics_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "QPrefixPhaseNormalFormImported",
+      "meaning": "The fixed-m A(q)/q normal form is inherited.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SuccessorCarryIdentity",
+      "meaning": "Every adjacent prime-q transition obeys the exact carry formula.",
+      "proved": true,
+      "remaining": "none for deterministic successor dynamics"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeGapDrivenCarryWordLedger",
+      "meaning": "Each atom has an explicit q-gap word, carry word, and A-step word.",
+      "proved": true,
+      "remaining": "none for finite carry ledger"
+    },
+    {
+      "closed": false,
+      "gate": "ConstantStepRotationReduction",
+      "meaning": "The dominant mass is not a constant-step fixed-denominator rotation.",
+      "proved": false,
+      "remaining": "variable q-gaps and carry words must be estimated"
+    },
+    {
+      "closed": false,
+      "gate": "MovingNumeratorPrimeQPrefixPhaseSaving",
+      "meaning": "Prove cancellation for the prime-gap-driven A(q)/q orbit.",
+      "proved": false,
+      "remaining": "new carry-word exponential sum or completed trace/Kloosterman input required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixPhaseAtomAggregation",
+      "meaning": "Aggregate carry-orbit estimates across all fixed-m atoms without losing the boundary gain.",
+      "proved": false,
+      "remaining": "requires analytic aggregation discipline"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "constant_step_rotation_reduction_available": false,
+  "current_object": {
+    "dominant_shape": "variable prime-gap carry words and mixed A(q) sawtooth motion",
+    "identity": "D_next=D+m*(q_next-q)-P*(k_next-k), carry=floor((D+m*(q_next-q))/P)",
+    "input": "15439 fixed-m phase atoms and 162076 adjacent prime-q transitions",
+    "remaining": "phase saving for prime-gap-driven moving numerator or completion to an external trace/Kloosterman family"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "carry dynamics must still be completed to a trace family before trace bilinear estimates apply",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "prime-gap carry words do not by themselves create an inverse-fraction Kloosterman variable",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "successor carry words are one-dimensional along q and not direct composite Type-II boxes",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman input remains a candidate only after the carry word is completed into an admissible family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime existence does not estimate prime-gap-driven reciprocal carry phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "successor dynamics is explicit but not a completed trace family",
+    "Li_short_interval_x_052": "prime existence does not estimate carry-driven reciprocal phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "carry words do not directly supply inverse Kloosterman variables",
+    "Pascadi_composite_Type_II": "successor orbits remain one-dimensional and boundary-weighted",
+    "Wright_unbalanced_Kloosterman": "could become relevant only after carry words are completed into an admissible unbalanced family"
+  },
+  "finite_audit": {
+    "A_step_average": 4.192014857227473,
+    "A_step_max": 877,
+    "A_step_median": 6.0,
+    "A_step_min": -871,
+    "A_step_sign_rows": [
+      {
+        "A_step_sign": "negative",
+        "count": 79136
+      },
+      {
+        "A_step_sign": "positive",
+        "count": 82792
+      },
+      {
+        "A_step_sign": "zero",
+        "count": 148
+      }
+    ],
+    "A_step_zero_count": 148,
+    "A_successor_mismatch_count": 0,
+    "D_step_average": 0.42274611910461757,
+    "D_step_max": 994,
+    "D_step_median": 2.0,
+    "D_step_min": -984,
+    "D_step_sign_rows": [
+      {
+        "D_step_sign": "negative",
+        "count": 80672
+      },
+      {
+        "D_step_sign": "positive",
+        "count": 81404
+      }
+    ],
+    "D_successor_mismatch_count": 0,
+    "atom_count_by_A_motion_rows": [
+      {
+        "A_motion_class": "A_constant",
+        "atom_count": 2
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "atom_count": 12895
+      },
+      {
+        "A_motion_class": "A_strict_decreasing",
+        "atom_count": 598
+      },
+      {
+        "A_motion_class": "A_strict_increasing",
+        "atom_count": 782
+      },
+      {
+        "A_motion_class": "singleton_q_no_transition",
+        "atom_count": 1162
+      }
+    ],
+    "atom_count_by_carry_word_rows": [
+      {
+        "atom_count": 960,
+        "carry_word_class": "constant_carry_word"
+      },
+      {
+        "atom_count": 1162,
+        "carry_word_class": "singleton_q_no_transition"
+      },
+      {
+        "atom_count": 13317,
+        "carry_word_class": "variable_carry_word"
+      }
+    ],
+    "atom_count_by_prime_gap_word_rows": [
+      {
+        "atom_count": 962,
+        "prime_gap_word_class": "constant_prime_gap_word"
+      },
+      {
+        "atom_count": 1162,
+        "prime_gap_word_class": "singleton_q_no_transition"
+      },
+      {
+        "atom_count": 13315,
+        "prime_gap_word_class": "variable_prime_gap_word"
+      }
+    ],
+    "atom_count_by_strip_rows": [
+      {
+        "atom_count": 2466,
+        "strip": "lower_wing",
+        "transition_count": 26678
+      },
+      {
+        "atom_count": 6962,
+        "strip": "right_tail",
+        "transition_count": 79789
+      },
+      {
+        "atom_count": 6011,
+        "strip": "upper_wing",
+        "transition_count": 55609
+      }
+    ],
+    "bad_transition_samples": [],
+    "carry_delta_k_average": 7.209451121695994,
+    "carry_delta_k_max": 33,
+    "carry_delta_k_median": 6.0,
+    "carry_delta_k_min": 1,
+    "carry_delta_k_rows": [
+      {
+        "carry_delta_k": 1,
+        "count": 4512
+      },
+      {
+        "carry_delta_k": 2,
+        "count": 14606
+      },
+      {
+        "carry_delta_k": 3,
+        "count": 17066
+      },
+      {
+        "carry_delta_k": 4,
+        "count": 18208
+      },
+      {
+        "carry_delta_k": 5,
+        "count": 12620
+      },
+      {
+        "carry_delta_k": 6,
+        "count": 18307
+      },
+      {
+        "carry_delta_k": 7,
+        "count": 14469
+      },
+      {
+        "carry_delta_k": 8,
+        "count": 9405
+      },
+      {
+        "carry_delta_k": 9,
+        "count": 12783
+      },
+      {
+        "carry_delta_k": 10,
+        "count": 9330
+      },
+      {
+        "carry_delta_k": 11,
+        "count": 6138
+      },
+      {
+        "carry_delta_k": 12,
+        "count": 4935
+      },
+      {
+        "carry_delta_k": 13,
+        "count": 3813
+      },
+      {
+        "carry_delta_k": 14,
+        "count": 3572
+      },
+      {
+        "carry_delta_k": 15,
+        "count": 2970
+      },
+      {
+        "carry_delta_k": 16,
+        "count": 1886
+      },
+      {
+        "carry_delta_k": 17,
+        "count": 1657
+      },
+      {
+        "carry_delta_k": 18,
+        "count": 1376
+      },
+      {
+        "carry_delta_k": 19,
+        "count": 973
+      },
+      {
+        "carry_delta_k": 20,
+        "count": 882
+      },
+      {
+        "carry_delta_k": 21,
+        "count": 647
+      },
+      {
+        "carry_delta_k": 22,
+        "count": 411
+      },
+      {
+        "carry_delta_k": 23,
+        "count": 204
+      },
+      {
+        "carry_delta_k": 24,
+        "count": 171
+      },
+      {
+        "carry_delta_k": 25,
+        "count": 188
+      },
+      {
+        "carry_delta_k": 26,
+        "count": 223
+      },
+      {
+        "carry_delta_k": 27,
+        "count": 202
+      },
+      {
+        "carry_delta_k": 28,
+        "count": 144
+      },
+      {
+        "carry_delta_k": 29,
+        "count": 140
+      },
+      {
+        "carry_delta_k": 30,
+        "count": 108
+      },
+      {
+        "carry_delta_k": 31,
+        "count": 74
+      },
+      {
+        "carry_delta_k": 32,
+        "count": 43
+      },
+      {
+        "carry_delta_k": 33,
+        "count": 13
+      }
+    ],
+    "carry_dynamics_atom_count_total": 15439,
+    "carry_formula_mismatch_count": 0,
+    "carry_nonpositive_count": 0,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "constant_step_rotation_reduction_available": false,
+    "distinct_carry_delta_k_count": 33,
+    "distinct_q_gap_count": 9,
+    "expected_successor_transition_count_total": 162076,
+    "max_prime": 1009,
+    "moving_numerator_phase_saving_closed": false,
+    "multiq_atom_count": 14277,
+    "no_loss_qprefix_phase_atom_aggregation_closed": false,
+    "previous_phase_normal_form_atom_count_total": 15439,
+    "previous_phase_normal_form_edge_count_total": 177515,
+    "prime_gap_driven_variable_carry_dominates": true,
+    "q_gap_average": 6.293084725684247,
+    "q_gap_max": 20,
+    "q_gap_median": 6.0,
+    "q_gap_min": 2,
+    "q_gap_nonpositive_count": 0,
+    "q_gap_rows": [
+      {
+        "count": 29006,
+        "q_gap": 2
+      },
+      {
+        "count": 34852,
+        "q_gap": 4
+      },
+      {
+        "count": 44782,
+        "q_gap": 6
+      },
+      {
+        "count": 19192,
+        "q_gap": 8
+      },
+      {
+        "count": 17997,
+        "q_gap": 10
+      },
+      {
+        "count": 9353,
+        "q_gap": 12
+      },
+      {
+        "count": 4088,
+        "q_gap": 14
+      },
+      {
+        "count": 2624,
+        "q_gap": 18
+      },
+      {
+        "count": 182,
+        "q_gap": 20
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "sample_atoms": [
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          -12,
+          14,
+          -18
+        ],
+        "D_step_sample": [
+          24,
+          -71,
+          24
+        ],
+        "P": 79,
+        "carry_sample": [
+          6,
+          3,
+          6
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 52,
+            "D": 54,
+            "k": 55,
+            "m": 83,
+            "q": 53
+          },
+          {
+            "A": 40,
+            "D": 78,
+            "k": 61,
+            "m": 83,
+            "q": 59
+          },
+          {
+            "A": 54,
+            "D": 7,
+            "k": 64,
+            "m": 83,
+            "q": 61
+          },
+          {
+            "A": 36,
+            "D": 31,
+            "k": 70,
+            "m": 83,
+            "q": 67
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 83,
+        "packet_index": 11,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 67,
+        "q_gap_sample": [
+          6,
+          2,
+          6
+        ],
+        "q_prefix_count": 4,
+        "q_start": 53,
+        "strip": "right_tail",
+        "transition_count": 3
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          -28,
+          -18,
+          25
+        ],
+        "D_step_sample": [
+          -19,
+          20,
+          -19
+        ],
+        "P": 79,
+        "carry_sample": [
+          7,
+          2,
+          7
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 50,
+            "D": 56,
+            "k": 59,
+            "m": 89,
+            "q": 53
+          },
+          {
+            "A": 22,
+            "D": 37,
+            "k": 66,
+            "m": 89,
+            "q": 59
+          },
+          {
+            "A": 4,
+            "D": 57,
+            "k": 68,
+            "m": 89,
+            "q": 61
+          },
+          {
+            "A": 29,
+            "D": 38,
+            "k": 75,
+            "m": 89,
+            "q": 67
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 89,
+        "packet_index": 11,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 67,
+        "q_gap_sample": [
+          6,
+          2,
+          6
+        ],
+        "q_prefix_count": 4,
+        "q_start": 53,
+        "strip": "right_tail",
+        "transition_count": 3
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          30,
+          10,
+          -53,
+          20,
+          10
+        ],
+        "D_step_sample": [
+          -24,
+          -8,
+          59,
+          -16,
+          -8
+        ],
+        "P": 83,
+        "carry_sample": [
+          6,
+          2,
+          5,
+          4,
+          2
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 16,
+            "D": 37,
+            "k": 50,
+            "m": 79,
+            "q": 53
+          },
+          {
+            "A": 46,
+            "D": 13,
+            "k": 56,
+            "m": 79,
+            "q": 59
+          },
+          {
+            "A": 56,
+            "D": 5,
+            "k": 58,
+            "m": 79,
+            "q": 61
+          },
+          {
+            "A": 3,
+            "D": 64,
+            "k": 63,
+            "m": 79,
+            "q": 67
+          },
+          {
+            "A": 23,
+            "D": 48,
+            "k": 67,
+            "m": 79,
+            "q": 71
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 79,
+        "packet_index": 14,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 73,
+        "q_gap_sample": [
+          6,
+          2,
+          6,
+          4,
+          2
+        ],
+        "q_prefix_count": 6,
+        "q_start": 53,
+        "strip": "right_tail",
+        "transition_count": 5
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          0,
+          -10,
+          37,
+          -4,
+          -10
+        ],
+        "D_step_sample": [
+          -47,
+          12,
+          36,
+          -59,
+          12
+        ],
+        "P": 83,
+        "carry_sample": [
+          7,
+          2,
+          6,
+          5,
+          2
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 37,
+            "D": 69,
+            "k": 56,
+            "m": 89,
+            "q": 53
+          },
+          {
+            "A": 37,
+            "D": 22,
+            "k": 63,
+            "m": 89,
+            "q": 59
+          },
+          {
+            "A": 27,
+            "D": 34,
+            "k": 65,
+            "m": 89,
+            "q": 61
+          },
+          {
+            "A": 64,
+            "D": 70,
+            "k": 71,
+            "m": 89,
+            "q": 67
+          },
+          {
+            "A": 60,
+            "D": 11,
+            "k": 76,
+            "m": 89,
+            "q": 71
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 89,
+        "packet_index": 14,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 73,
+        "q_gap_sample": [
+          6,
+          2,
+          6,
+          4,
+          2
+        ],
+        "q_prefix_count": 6,
+        "q_start": 53,
+        "strip": "right_tail",
+        "transition_count": 5
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          44,
+          -67
+        ],
+        "D_step_sample": [
+          -40,
+          69
+        ],
+        "P": 89,
+        "carry_sample": [
+          4,
+          1
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 25,
+            "D": 42,
+            "k": 59,
+            "m": 79,
+            "q": 67
+          },
+          {
+            "A": 69,
+            "D": 2,
+            "k": 63,
+            "m": 79,
+            "q": 71
+          },
+          {
+            "A": 2,
+            "D": 71,
+            "k": 64,
+            "m": 79,
+            "q": 73
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 79,
+        "packet_index": 16,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 73,
+        "q_gap_sample": [
+          4,
+          2
+        ],
+        "q_prefix_count": 3,
+        "q_start": 67,
+        "strip": "right_tail",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_strict_increasing",
+        "A_step_sample": [
+          28,
+          14
+        ],
+        "D_step_sample": [
+          -24,
+          -12
+        ],
+        "P": 89,
+        "carry_sample": [
+          4,
+          2
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 24,
+            "D": 43,
+            "k": 62,
+            "m": 83,
+            "q": 67
+          },
+          {
+            "A": 52,
+            "D": 19,
+            "k": 66,
+            "m": 83,
+            "q": 71
+          },
+          {
+            "A": 66,
+            "D": 7,
+            "k": 68,
+            "m": 83,
+            "q": 73
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 83,
+        "packet_index": 16,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 73,
+        "q_gap_sample": [
+          4,
+          2
+        ],
+        "q_prefix_count": 3,
+        "q_start": 67,
+        "strip": "right_tail",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          9,
+          -8
+        ],
+        "D_step_sample": [
+          50,
+          -39
+        ],
+        "P": 89,
+        "carry_sample": [
+          8,
+          9
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 41,
+            "D": 6,
+            "k": 67,
+            "m": 127,
+            "q": 47
+          },
+          {
+            "A": 50,
+            "D": 56,
+            "k": 75,
+            "m": 127,
+            "q": 53
+          },
+          {
+            "A": 42,
+            "D": 17,
+            "k": 84,
+            "m": 127,
+            "q": 59
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 127,
+        "packet_index": 19,
+        "prime_gap_word_class": "constant_prime_gap_word",
+        "q_end": 59,
+        "q_gap_sample": [
+          6,
+          6
+        ],
+        "q_prefix_count": 3,
+        "q_start": 47,
+        "strip": "upper_wing",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          21,
+          -9
+        ],
+        "D_step_sample": [
+          -15,
+          74
+        ],
+        "P": 89,
+        "carry_sample": [
+          9,
+          8
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 31,
+            "D": 16,
+            "k": 69,
+            "m": 131,
+            "q": 47
+          },
+          {
+            "A": 52,
+            "D": 1,
+            "k": 78,
+            "m": 131,
+            "q": 53
+          },
+          {
+            "A": 43,
+            "D": 75,
+            "k": 86,
+            "m": 131,
+            "q": 59
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 131,
+        "packet_index": 19,
+        "prime_gap_word_class": "constant_prime_gap_word",
+        "q_end": 59,
+        "q_gap_sample": [
+          6,
+          6
+        ],
+        "q_prefix_count": 3,
+        "q_start": 47,
+        "strip": "upper_wing",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_strict_increasing",
+        "A_step_sample": [
+          4,
+          19
+        ],
+        "D_step_sample": [
+          -51,
+          -17
+        ],
+        "P": 97,
+        "carry_sample": [
+          9,
+          3
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 23,
+            "D": 83,
+            "k": 74,
+            "m": 137,
+            "q": 53
+          },
+          {
+            "A": 27,
+            "D": 32,
+            "k": 83,
+            "m": 137,
+            "q": 59
+          },
+          {
+            "A": 46,
+            "D": 15,
+            "k": 86,
+            "m": 137,
+            "q": 61
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 137,
+        "packet_index": 22,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 61,
+        "q_gap_sample": [
+          6,
+          2
+        ],
+        "q_prefix_count": 3,
+        "q_start": 53,
+        "strip": "upper_wing",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          -8,
+          15
+        ],
+        "D_step_sample": [
+          -39,
+          -13
+        ],
+        "P": 97,
+        "carry_sample": [
+          9,
+          3
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 14,
+            "D": 92,
+            "k": 75,
+            "m": 139,
+            "q": 53
+          },
+          {
+            "A": 6,
+            "D": 53,
+            "k": 84,
+            "m": 139,
+            "q": 59
+          },
+          {
+            "A": 21,
+            "D": 40,
+            "k": 87,
+            "m": 139,
+            "q": 61
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 139,
+        "packet_index": 22,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 61,
+        "q_gap_sample": [
+          6,
+          2
+        ],
+        "q_prefix_count": 3,
+        "q_start": 53,
+        "strip": "upper_wing",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_strict_increasing",
+        "A_step_sample": [
+          20,
+          3,
+          26
+        ],
+        "D_step_sample": [
+          -14,
+          60,
+          -14
+        ],
+        "P": 97,
+        "carry_sample": [
+          8,
+          2,
+          8
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 15,
+            "D": 38,
+            "k": 69,
+            "m": 127,
+            "q": 53
+          },
+          {
+            "A": 35,
+            "D": 24,
+            "k": 77,
+            "m": 127,
+            "q": 59
+          },
+          {
+            "A": 38,
+            "D": 84,
+            "k": 79,
+            "m": 127,
+            "q": 61
+          },
+          {
+            "A": 64,
+            "D": 70,
+            "k": 87,
+            "m": 127,
+            "q": 67
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 127,
+        "packet_index": 23,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 67,
+        "q_gap_sample": [
+          6,
+          2,
+          6
+        ],
+        "q_prefix_count": 4,
+        "q_start": 53,
+        "strip": "upper_wing",
+        "transition_count": 3
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          2,
+          -28,
+          -4
+        ],
+        "D_step_sample": [
+          10,
+          -29,
+          10
+        ],
+        "P": 97,
+        "carry_sample": [
+          8,
+          3,
+          8
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 50,
+            "D": 56,
+            "k": 71,
+            "m": 131,
+            "q": 53
+          },
+          {
+            "A": 52,
+            "D": 66,
+            "k": 79,
+            "m": 131,
+            "q": 59
+          },
+          {
+            "A": 24,
+            "D": 37,
+            "k": 82,
+            "m": 131,
+            "q": 61
+          },
+          {
+            "A": 20,
+            "D": 47,
+            "k": 90,
+            "m": 131,
+            "q": 67
+          }
+        ],
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 131,
+        "packet_index": 23,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 67,
+        "q_gap_sample": [
+          6,
+          2,
+          6
+        ],
+        "q_prefix_count": 4,
+        "q_start": 53,
+        "strip": "upper_wing",
+        "transition_count": 3
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          8,
+          -59
+        ],
+        "D_step_sample": [
+          77,
+          -16
+        ],
+        "P": 101,
+        "carry_sample": [
+          5,
+          4
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 62,
+            "D": 11,
+            "k": 70,
+            "m": 97,
+            "q": 73
+          },
+          {
+            "A": 70,
+            "D": 88,
+            "k": 75,
+            "m": 97,
+            "q": 79
+          },
+          {
+            "A": 11,
+            "D": 72,
+            "k": 79,
+            "m": 97,
+            "q": 83
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 97,
+        "packet_index": 25,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 83,
+        "q_gap_sample": [
+          6,
+          4
+        ],
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "strip": "right_tail",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_strict_decreasing",
+        "A_step_sample": [
+          -6,
+          -4
+        ],
+        "D_step_sample": [
+          12,
+          8
+        ],
+        "P": 101,
+        "carry_sample": [
+          6,
+          4
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 28,
+            "D": 45,
+            "k": 74,
+            "m": 103,
+            "q": 73
+          },
+          {
+            "A": 22,
+            "D": 57,
+            "k": 80,
+            "m": 103,
+            "q": 79
+          },
+          {
+            "A": 18,
+            "D": 65,
+            "k": 84,
+            "m": 103,
+            "q": 83
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 103,
+        "packet_index": 25,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 83,
+        "q_gap_sample": [
+          6,
+          4
+        ],
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "strip": "right_tail",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_mixed_sawtooth",
+        "A_step_sample": [
+          -30,
+          63
+        ],
+        "D_step_sample": [
+          36,
+          24
+        ],
+        "P": 101,
+        "carry_sample": [
+          6,
+          4
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 39,
+            "D": 34,
+            "k": 77,
+            "m": 107,
+            "q": 73
+          },
+          {
+            "A": 9,
+            "D": 70,
+            "k": 83,
+            "m": 107,
+            "q": 79
+          },
+          {
+            "A": 72,
+            "D": 94,
+            "k": 87,
+            "m": 107,
+            "q": 83
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 107,
+        "packet_index": 25,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 83,
+        "q_gap_sample": [
+          6,
+          4
+        ],
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "strip": "right_tail",
+        "transition_count": 2
+      },
+      {
+        "A_motion_class": "A_strict_decreasing",
+        "A_step_sample": [
+          -14,
+          -28
+        ],
+        "D_step_sample": [
+          -53,
+          32
+        ],
+        "P": 101,
+        "carry_sample": [
+          7,
+          4
+        ],
+        "carry_word_class": "variable_carry_word",
+        "edge_sample": [
+          {
+            "A": 67,
+            "D": 79,
+            "k": 78,
+            "m": 109,
+            "q": 73
+          },
+          {
+            "A": 53,
+            "D": 26,
+            "k": 85,
+            "m": 109,
+            "q": 79
+          },
+          {
+            "A": 25,
+            "D": 58,
+            "k": 89,
+            "m": 109,
+            "q": 83
+          }
+        ],
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 109,
+        "packet_index": 25,
+        "prime_gap_word_class": "variable_prime_gap_word",
+        "q_end": 83,
+        "q_gap_sample": [
+          6,
+          4
+        ],
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "strip": "right_tail",
+        "transition_count": 2
+      }
+    ],
+    "singleton_q_atom_count": 1162,
+    "successor_carry_dynamics_closed": true,
+    "successor_carry_identity_verified": true,
+    "successor_transition_count_total": 162076
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrimeGapDrivenCarryWordExponentialSumSaving",
+    "AND CompletionOfSuccessorCarryDynamicsToTraceOrKloostermanFamily",
+    "AND NoLossAggregationAcross15439QPrefixCarryAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_numerator_phase_saving_closed": false,
+  "no_loss_qprefix_phase_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after phase normal form, the next acyclic step is to expose the prime-gap carry word driving the moving numerator",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "7bcf3913de97c8f5a5d824ca33f068069a515513ef2b067248dbd9b169bd4c64",
+    "docs/monograph/external-theorem-index.md": "2dbf8b1f838bf2a818ea25d3c70409ea20233b0f9f84581430513e4b8e85b352",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "7fcf40ae2e81843320e25eb978a7e05ea46a6448249c46236ae3cfb3e65c240d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json": "cbfe0b837d418fa6270d654476e23489291c3e183d87740d853c7d30fa8fb452",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json": "66046c1ff4c9ccf5c49ce021ac6831a00e39227d982ae663ae7106a0cb08ce47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "23d18d90a7ce49335f8a9b940bc651bfdcbe9ac12e565257c9fd13cb3dde7678",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "c45020c0e5897bd63c1561e4cdee91e7a0160fad9df3fec7dda1ff0bdc4910bf",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_dynamics_audit.py": "7218f22560944799a5f74fa9512285044d3032cf8146fb4413388c31aa0e2825",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "b9dc7b4384c31cfa51fee3a524ae9c43f7aba06d261bd3727bd3f9f0b086cadc"
+  },
+  "status": "qprefix_phase_atoms_have_successor_carry_dynamics_phase_saving_open",
+  "successor_carry_dynamics_closed": true
+}

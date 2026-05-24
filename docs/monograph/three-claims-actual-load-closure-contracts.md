@@ -22417,6 +22417,63 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 行/列命题、外部引理版与内部自足版仍未无条件闭合。
 
+### 1.257 Phi-LPF q-prefix successor carry dynamics 同步更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_dynamics_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.json
+```
+
+同步读数为：
+
+```text
+status=qprefix_phase_atoms_have_successor_carry_dynamics_phase_saving_open
+successor_transition_count_total=162076
+carry_formula_mismatch_count=0
+D_successor_mismatch_count=0
+A_successor_mismatch_count=0
+successor_carry_identity_verified=true
+variable_carry_word atoms=13317
+A_mixed_sawtooth atoms=12895
+successor_carry_dynamics_closed=true
+moving_numerator_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：moving numerator `A(q)` 的相邻素数演化已经由整数 carry word
+完全控制：
+
+```text
+q' = next prime in the atom,
+g=q'-q,
+D' = D + m*g - P*c,
+c = k' - k = floor((D+m*g)/P).
+```
+
+这关闭 `SuccessorCarryIdentity` 与 `PrimeGapDrivenCarryWordLedger`。但主质量是
+variable carry word，且 `A(q)` 多为 mixed sawtooth，因此不能降成固定步长旋转或
+固定分子 Kloosterman 输入。
+
+最新直接主攻改为：
+
+```text
+PrimeGapDrivenCarryWordExponentialSumSaving
+```
+
+并行仍需：
+
+```text
+CompletionOfSuccessorCarryDynamicsToTraceOrKloostermanFamily
+NoLossAggregationAcross15439QPrefixCarryAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+行/列命题、外部引理版与内部自足版仍未无条件闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

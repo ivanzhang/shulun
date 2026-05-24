@@ -5910,6 +5910,71 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65C. Phi-LPF boundary endpoint-flux q-prefix carry dynamics 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_dynamics_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-dynamics-audit.md
+```
+
+上一层把 phase atoms 写成 `A(q)/q`。本层进一步对同一 atom 中相邻素数
+`q<q'` 写
+
+```text
+g=q'-q,
+D' = D + m*g - P*c,
+c = k' - k = floor((D+m*g)/P).
+```
+
+有限审计读数：
+
+```text
+carry_dynamics_atom_count_total=15439
+multiq_atom_count=14277
+singleton_q_atom_count=1162
+successor_transition_count_total=162076
+carry_formula_mismatch_count=0
+D_successor_mismatch_count=0
+A_successor_mismatch_count=0
+successor_carry_identity_verified=true
+q_gap_min/median/max=2/6/20
+carry_delta_k_min/median/max=1/6/33
+```
+
+dominant shape：
+
+```text
+variable_carry_word atoms = 13317
+constant_carry_word atoms = 960
+variable_prime_gap_word atoms = 13315
+A_mixed_sawtooth atoms = 12895
+A_strict_increasing/decreasing atoms = 782/598
+A_constant atoms = 2
+```
+
+外部定理匹配继续收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 都仍需要先
+把 prime-gap carry word 完成到可用 trace/Kloosterman family。Li 的 `x^0.52`
+短区间素数存在不估计 carry-driven reciprocal phase。
+
+状态边界：
+
+```text
+successor_carry_dynamics_closed=true
+constant_step_rotation_reduction_available=false
+moving_numerator_phase_saving_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_phase_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：
