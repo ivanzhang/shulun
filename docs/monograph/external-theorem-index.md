@@ -3418,6 +3418,110 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61M. Phi-LPF q-support row-averaged additive-k hole primorial escalation 审计
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_primorial_escalation_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.md
+```
+
+本层检验 `30 -> 210 -> 2310 -> ...` 在 blocker 正规形中是否仍有独立杀伤。
+上一节已证明每个 blocker 满足：
+
+```text
+LPF(m_h) in {2,3,5} or m_h is prime.
+```
+
+因此 cutoff `y` 的 primorial wheel 对 blocker 的作用精确为：
+
+```text
+killed_y(m_h) iff LPF(m_h)<=y.
+```
+
+所以 `30-wheel` 已经删除全部小 LPF blocker；继续加入 `7,11,13,...` 不会
+产生新的 rough-composite blocker shell。剩余 prime blocker 只有当 cutoff
+达到该 prime blocker 本身时才会被删除。特别地，`sqrt(2P-1)<P/2<m_h`，
+所以动态 sqrt wheel 与 `30-wheel` 在 blocker 上同效。
+
+有限审计读数：
+
+```text
+max_prime=1009
+P_value_count=165
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+prime_blocker_min=53
+prime_blocker_max=1987
+prime_blocker_le_P_total=140983
+prime_blocker_gt_P_total=214936
+counts_match_previous_blocker_audit=true
+thirty_wheel_kills_all_small_lpf_blockers=true
+fixed_210_2310_and_beyond_new_rough_shell_count_total=0
+fixed_primorial_extra_kills_over_30_total=0
+sqrt_cutoff_killed_count=947032
+sqrt_cutoff_extra_killed_over_30=0
+sqrt_cutoff_same_as_30_verified=true
+P_cutoff_prime_killed_total=140983
+P_cutoff_prime_survived_total=214936
+full_2P_minus_1_cutoff_closes_all=true
+full_2P_minus_1_cutoff_is_prime_oracle=true
+nonoracle_primorial_escalation_closes_target=false
+```
+
+primorial cutoff 摘要：
+
+```text
+W_5=30: killed=947032, survived=355919, prime_killed=0
+W_7=210: killed=947032, survived=355919, prime_killed=0
+W_11=2310: killed=947032, survived=355919, prime_killed=0
+W_31=200560490130: killed=947032, survived=355919, prime_killed=0
+W_sqrt(2P-1): killed=947032, survived=355919, prime_killed=0
+W_P: killed=1088015, survived=214936, prime_killed=140983
+W_{2P-1}: killed=1302951, survived=0, prime_killed=355919
+```
+
+外部前沿影响：FKMS trace-function、Milićević--Qin--Wu 任意模 Kloosterman、
+Pascadi composite Type-II、Wright 2026 unbalanced convolution/Kloosterman
+fractions 与 Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman 参数估计，
+仍可能是 prime-blocker 非轮筛相位控制的候选输入；但单纯 primorial 升级不
+产生可交给这些定理的新 composite shell。
+
+新的最新最窄口：
+
+```text
+PrimeBlockerNonWheelPhaseSavingOrTraceEmbedding
+AND NonOracleControlOfPrimeBlockerDynamicSqrtSieve
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+primorial_cutoff_action_closed=true
+no_new_rough_composite_shell_after_30_closed=true
+sqrt_primorial_equals_30_on_blockers_closed=true
+nonoracle_primorial_escalation_closes_target=false
+prime_blocker_trace_embedding_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 62. Phi-LPF q-support floor prime LPF selector 审计
 
 新增证书：

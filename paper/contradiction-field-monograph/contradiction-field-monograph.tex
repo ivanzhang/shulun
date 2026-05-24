@@ -33387,6 +33387,93 @@ row-averaged-additive-k-hole-blocking-cofactor-pushforward-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Primorial escalation after the blocker pushforward}
+
+\begin{theorem}[Primorial escalation is inert until the prime-blocker oracle]
+Let \(m_h\) be a blocker from the preceding theorem, and let \(y\ge 5\) be
+a primorial cutoff.  The \(y\)-wheel deletes \(m_h\) exactly when
+\[
+  {\rm LPF}(m_h)\le y.
+\]
+Since every blocker has least prime factor \(2,3,5\) or is itself prime,
+the promotion
+\[
+  30,\ 210,\ 2310,\ 30030,\ldots
+\]
+creates no new composite blocker shell after \(30\).  Moreover the dynamic
+cutoff \(y=\lfloor\sqrt{2P-1}\rfloor\) deletes no prime blocker.  Therefore
+the \(\sqrt{2P-1}\)-primorial wheel has the same blocker action as the
+\(30\)-wheel.  All blockers are deleted only when the cutoff reaches every
+prime blocker itself, for example at \(y=2P-1\); this is a prime-blocker
+oracle, not an independent phase-saving theorem.
+\end{theorem}
+\begin{proof}
+The first assertion is the definition of a primorial wheel cutoff on a
+cofactor: a cofactor is deleted precisely when it is divisible by a prime
+\(\le y\), equivalently when its least prime factor is at most \(y\).
+The previous theorem says that no blocker has composite least prime factor
+shell \(7,11,13,\ldots\).  Hence, after the \(30\)-wheel has removed the
+\({\rm LPF}=2,3,5\) blockers, all remaining blockers are prime blockers.
+Adding \(7,11,13,\ldots\) can delete such a blocker only when the cutoff has
+reached that prime itself.
+
+For \(P\ge 11\), \(\sqrt{2P-1}<P/2\).  Every blocker lies in a product cell
+with \(m_h\ge q>P/2\).  Thus a prime blocker \(m_h\) is strictly larger than
+\(\sqrt{2P-1}\), so the dynamic square-root cutoff cannot delete it.  Finally,
+the cutoff \(2P-1\) includes every possible blocker prime because
+\(m_h\le 2P-1\).  This closes the wheel deletion ledger only by admitting the
+blocker primes themselves as wheel factors.
+\end{proof}
+
+\begin{remark}[Finite primorial escalation ledger]
+The audit up to \(P\le 1009\) starts with
+\[
+  1302951\ \text{blockers}
+  =947032\ \text{small-LPF blockers}
+  +355919\ \text{prime blockers}.
+\]
+The fixed wheels through \(31\) and the dynamic square-root wheel all have
+the same blocker count:
+\[
+  \text{deleted}=947032,\qquad
+  \text{surviving prime blockers}=355919.
+\]
+In particular
+\[
+  \texttt{fixed\_210\_2310\_and\_beyond\_new\_rough\_shell\_count\_total}=0,
+\quad
+  \texttt{sqrt\_cutoff\_extra\_killed\_over\_30}=0.
+\]
+The cutoff \(y=P\) deletes \(140983\) prime blockers but leaves \(214936\).
+The cutoff \(y=2P-1\) deletes all \(355919\) prime blockers, and is therefore
+recorded as
+\[
+  \texttt{full\_2P\_minus\_1\_cutoff\_is\_prime\_oracle=true}.
+\]
+Thus the primorial ladder is now fully diagnosed in the blocker normal form:
+continued finite-wheel refinement does not break the parity barrier.  The
+remaining route must control the prime-blocker packet by a non-wheel phase
+saving, a trace/Kloosterman embedding, or a genuinely new theorem.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+PrimeBlockerNonWheelPhaseSavingOrTraceEmbedding\\
+AND NonOracleControlOfPrimeBlockerDynamicSqrtSieve\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-qsupport-\\
+row-averaged-additive-k-hole-primorial-escalation-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

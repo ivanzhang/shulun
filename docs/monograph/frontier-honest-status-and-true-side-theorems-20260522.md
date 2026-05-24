@@ -3548,6 +3548,101 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13M：Phi-LPF q-support row-averaged additive-k hole primorial escalation 审计（2026-05-23）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_hole_primorial_escalation_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-hole-primorial-escalation-audit.md
+```
+
+本层直接检验 `30 -> 210 -> 2310 -> ...` 是否能在 blocker 正规形中继续推进。
+由于每个 blocker 的 `LPF` 只能为 `2,3,5` 或 blocker 本身为素数，cutoff
+`y` 的 wheel 删除规则精确为：
+
+```text
+killed_y(m_h) iff LPF(m_h)<=y.
+```
+
+### Q13M.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+blocker_count_total=1302951
+small_lpf_blocker_count_total=947032
+prime_blocker_count_total=355919
+prime_blocker_min=53
+prime_blocker_max=1987
+prime_blocker_le_P_total=140983
+prime_blocker_gt_P_total=214936
+counts_match_previous_blocker_audit=true
+thirty_wheel_kills_all_small_lpf_blockers=true
+fixed_210_2310_and_beyond_new_rough_shell_count_total=0
+fixed_primorial_extra_kills_over_30_total=0
+sqrt_cutoff_killed_count=947032
+sqrt_cutoff_extra_killed_over_30=0
+sqrt_cutoff_same_as_30_verified=true
+P_cutoff_prime_killed_total=140983
+P_cutoff_prime_survived_total=214936
+full_2P_minus_1_cutoff_closes_all=true
+full_2P_minus_1_cutoff_is_prime_oracle=true
+nonoracle_primorial_escalation_closes_target=false
+```
+
+cutoff 层摘要：
+
+```text
+W_5=30 through W_31: killed=947032, survived=355919, extra_over_30=0
+W_sqrt(2P-1): killed=947032, survived=355919, extra_over_30=0
+W_P: killed=1088015, survived=214936
+W_{2P-1}: killed=1302951, survived=0, but prime_oracle=true
+```
+
+### Q13M.2 诚实边界
+
+本层真推进是排除“继续加 7,11,13,... 小素数自动突破”的路线。由于没有
+`LPF=7,11,...` 的 composite blocker shell，有限或 sqrt 级 primorial 升级在
+当前对象上没有新增独立杀伤。若 cutoff 升到 `2P-1`，它确实删除所有 prime
+blocker，但这是把 blocker primes 本身作为 wheel 因子纳入，等价于 prime
+oracle，不是非循环证明。
+
+最新最窄口：
+
+```text
+PrimeBlockerNonWheelPhaseSavingOrTraceEmbedding
+AND NonOracleControlOfPrimeBlockerDynamicSqrtSieve
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+primorial_cutoff_action_closed=true
+no_new_rough_composite_shell_after_30_closed=true
+sqrt_primorial_equals_30_on_blockers_closed=true
+nonoracle_primorial_escalation_closes_target=false
+prime_blocker_trace_embedding_closed=false
+small_lpf_blocker_packet_control_closed=false
+uniform_cancellation_across_sparse_k_support_radial_kernels_closed=false
+rough_beta_siegel_walfisz_factor_extracted=false
+pointwise_pk_transfer_closed=false
+q_support_phase_saving_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
