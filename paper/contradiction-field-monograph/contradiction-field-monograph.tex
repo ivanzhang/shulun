@@ -34429,6 +34429,75 @@ boundary-shell-step-packet-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Right-tail localization of multi-block shell gaps}
+
+\begin{theorem}[All multi-block packets lie in the right tail]
+In the shell-step packet audit range \(P\le 1009\), the multi-block
+short-shell complexity is completely localized in the right-tail family.
+The packet ledger splits as
+\[
+\begin{array}{c|c|c|c}
+\hbox{strip} & \hbox{\(m\)-blocks} & \hbox{packets} & \hbox{edges}\\ \hline
+\texttt{lower\_wing} & 1 & 1032 & 29144\\
+\texttt{upper\_wing} & 1 & 1967 & 61620\\
+\texttt{right\_tail} & 1 & 1024 & 25457\\
+\texttt{right\_tail} & 2 & 1082 & 61258\\
+\texttt{right\_tail} & 3 & 1 & 36 .
+\end{array}
+\]
+Thus the \(1083\) multi-block packets, carrying \(61294\) edges, all lie in
+\(\texttt{right\_tail}\).  The lower and upper wings contain no multi-block
+packet.
+\end{theorem}
+\begin{proof}
+For each shell-step packet, count the number of prime-\(m\) blocks in its
+\(m\)-support and record the strip label inherited from the boundary
+decomposition.  The machine audit recomputes the full \(5106\)-packet ledger,
+checks that the edge mass remains \(177515\), and tabulates the pair
+\((\hbox{strip},\hbox{block count})\).  The displayed table is the complete
+nonzero output of this tabulation.  Since the only rows with block count
+larger than \(1\) have strip label \(\texttt{right\_tail}\), the asserted
+localization follows.
+\end{proof}
+
+\begin{remark}[Gap statistics and the next analytic interface]
+The right-tail multi-block packets contain \(1084\) internal prime gaps.
+Their missing-prime gap sizes have
+\[
+  \min=1,\qquad
+  \operatorname{median}=26,\qquad
+  \max=79,\qquad
+  \operatorname{average}=28.690959409594.
+\]
+This proves that multi-block behavior is not a global feature of all short
+shell packets.  It is a named right-tail endpoint phenomenon.  The remaining
+single-block packet family consists of \(4023\) packets carrying \(116221\)
+edges; it includes all lower-wing packets, all upper-wing packets, and
+\(1024\) right-tail packets.
+
+The latest narrow mouth is now
+\begin{quote}\scriptsize\ttfamily
+RightTailMultiBlockGapPacketPhaseSaving\\
+AND SingleBlockEndpointPacketSummationByParts\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets\\
+AND NoLossAggregationAcross5106ShellStepPackets\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is a support localization and endpoint taxonomy theorem, not an
+unconditional phase-saving theorem.  FKMS-type trace bilinear estimates,
+arbitrary-modulus Kloosterman estimates, composite Type-II estimates, and
+unbalanced Kloosterman estimates remain only candidate interfaces until the
+moving \(q\)-denominator and packet-level summation are supplied.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-right-tail-gap-localization-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -22469,6 +22469,60 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭支撑聚合账本，不关闭外部引理版或内部自足版。
 
+### 1.182 Phi-LPF boundary right-tail gap 定位更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.json
+```
+
+同步读数为：
+
+```text
+single_block_packet_count=4023
+single_block_edge_count=116221
+multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_packet_strip_set=['right_tail']
+all_multi_block_packets_are_right_tail=true
+lower_wing_multi_block_packet_count=0
+upper_wing_multi_block_packet_count=0
+right_tail_multi_block_packet_count=1083
+right_tail_single_block_packet_count=1024
+gap_count_total=1084
+gap_size_median=26
+gap_size_max=79
+right_tail_multi_block_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：multi-block 不是全 boundary 的平均复杂性，而是 `right_tail`
+专属复杂性。`lower_wing` 和 `upper_wing` 的 packets 全部是 single-block，可进入
+single-block endpoint summation；right-tail 则拆成 single-block 与 multi-block
+gap packet 两个子族。
+
+最新直接主攻改为：
+
+```text
+RightTailMultiBlockGapPacketPhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets
+```
+
+并行保留：
+
+```text
+NoLossAggregationAcross5106ShellStepPackets
+DiagonalPGhostSubtractionDiscipline
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 right-tail gap 定位账本，不关闭外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

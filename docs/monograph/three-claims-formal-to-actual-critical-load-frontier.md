@@ -24349,6 +24349,60 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AI. Phi-LPF prime-survivor boundary right-tail gap localization frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-ledger.json
+```
+
+同步结果：
+
+```text
+status=boundary_shell_step_packet_gaps_localized_to_right_tail_phase_saving_open
+shell_step_packet_count_total=5106
+edge_count_total=177515
+single_block_packet_count=4023
+single_block_edge_count=116221
+multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_packet_strip_set=['right_tail']
+all_multi_block_packets_are_right_tail=true
+lower_wing_multi_block_packet_count=0
+upper_wing_multi_block_packet_count=0
+right_tail_multi_block_packet_count=1083
+gap_count_total=1084
+gap_size_median=26
+gap_size_max=79
+right_tail_multi_block_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`UniformShortShellPhaseSavingForAtMostThreeBlockPackets`
+仍过粗。实际多段 gap 负载全部位于 `right_tail`；`lower_wing` 与 `upper_wing`
+已经是 single-block endpoint packets。因此 phase-saving 任务被拆成：
+
+```text
+RightTailMultiBlockGapPacketPhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+```
+
+并且仍需：
+
+```text
+MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是“multi-block gap 是全局 packet 复杂性”的过粗账本；没有删除
+right-tail gap 相消、single-block endpoint 求和与移动分母 completed trace 真缺口。
+
 ## 330AH. Phi-LPF prime-survivor boundary shell-step packet frontier
 
 新增文件：

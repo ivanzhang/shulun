@@ -1,0 +1,621 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "ShellStepPacketLedgerImported",
+      "meaning": "The 5106-packet support ledger and total edge mass are inherited exactly.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "LowerUpperSingleBlockPurity",
+      "meaning": "Every lower_wing and upper_wing packet is single-block in m.",
+      "proved": true,
+      "remaining": "none for the finite strip purity ledger"
+    },
+    {
+      "closed": true,
+      "gate": "RightTailGapLocalization",
+      "meaning": "All 1083 multi-block packets and all 1084 internal prime gaps lie in right_tail.",
+      "proved": true,
+      "remaining": "none for the finite localization ledger"
+    },
+    {
+      "closed": false,
+      "gate": "RightTailMultiBlockPhaseSaving",
+      "meaning": "Prove cancellation on right-tail packets with two or three m-blocks.",
+      "proved": false,
+      "remaining": "new endpoint/unbalanced trace estimate required"
+    },
+    {
+      "closed": false,
+      "gate": "SingleBlockEndpointPhaseSaving",
+      "meaning": "Prove cancellation or summation-by-parts for the single-block packets.",
+      "proved": false,
+      "remaining": "moving q denominator and packet aggregation remain open"
+    }
+  ],
+  "current_object": {
+    "input": "5106 boundary shell-step packets",
+    "localization": "multi-block m-shell gaps occur only in right_tail packets",
+    "remaining": "right-tail multi-block phase saving, single-block endpoint summation, moving q denominator completion"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "right-tail gap localization narrows the support, but trace bilinear input still needs a completed family and packet aggregation",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "multi-block right-tail packets still need moving q denominators completed as Kloosterman variables",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "the right-tail gap family remains an endpoint/multi-block object, not a single long Type-II rectangle",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "right-tail q-long/m-short packets are the most plausible unbalanced interface after exact phase modeling",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short interval prime existence still does not control right-tail packet gaps",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "right-tail localization narrows the support but does not provide completed trace families",
+    "Li_short_interval_x_052": "does not control fixed-row right-tail gap packets",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "moving prime q denominators remain the central completion problem",
+    "Pascadi_composite_Type_II": "right-tail multi-block packets are endpoint shells rather than direct long Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "right-tail q-long/m-short packets are the best-matched unbalanced candidate after phase modeling"
+  },
+  "finite_audit": {
+    "all_multi_block_packets_are_right_tail": true,
+    "edge_count_total": 177515,
+    "gap_by_strip_rows": [
+      {
+        "edge_weight_sum": 61330,
+        "gap_count": 1084,
+        "strip": "right_tail"
+      }
+    ],
+    "gap_count_total": 1084,
+    "gap_packet_count_total": 1083,
+    "gap_size_average": 28.690959409594097,
+    "gap_size_max": 79,
+    "gap_size_median": 26.0,
+    "gap_size_min": 1,
+    "lower_wing_multi_block_packet_count": 0,
+    "max_prime": 1009,
+    "moving_q_denominator_completed_trace_closed": false,
+    "multi_block_edge_count": 61294,
+    "multi_block_packet_count": 1083,
+    "multi_block_packet_strip_set": [
+      "right_tail"
+    ],
+    "multi_m_shell_prime_count_max": 12,
+    "multi_m_shell_prime_count_median": 4,
+    "multi_q_prefix_count_max": 37,
+    "multi_q_prefix_count_median": 12,
+    "no_loss_packet_aggregation_closed": false,
+    "packet_identity_inherited": true,
+    "previous_edge_count_total": 177515,
+    "previous_shell_step_packet_count_total": 5106,
+    "right_tail_gap_localization_closed": true,
+    "right_tail_multi_block_packet_count": 1083,
+    "right_tail_multi_block_phase_saving_closed": false,
+    "right_tail_single_block_packet_count": 1024,
+    "row_column_unconditional_closed": false,
+    "sample_multi_packets": [
+      {
+        "P": 83,
+        "edge_count": 12,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 2,
+        "q_end": 73,
+        "q_prefix_count": 6,
+        "q_start": 53,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 79,
+            "m_shell_prime_count": 1,
+            "m_start": 79
+          },
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 1,
+            "m_start": 89
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 101,
+        "edge_count": 5,
+        "gap_sizes": [
+          6
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 73,
+        "q_prefix_count": 1,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79
+          },
+          {
+            "edge_count": 2,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 101,
+        "edge_count": 15,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 83,
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 97,
+            "m_shell_prime_count": 1,
+            "m_start": 97
+          },
+          {
+            "edge_count": 12,
+            "m_end": 113,
+            "m_shell_prime_count": 4,
+            "m_start": 103
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 103,
+        "edge_count": 15,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 101,
+            "m_shell_prime_count": 2,
+            "m_start": 97
+          },
+          {
+            "edge_count": 9,
+            "m_end": 113,
+            "m_shell_prime_count": 3,
+            "m_start": 107
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 107,
+        "edge_count": 20,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 89,
+        "q_prefix_count": 4,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 103,
+            "m_shell_prime_count": 3,
+            "m_start": 97
+          },
+          {
+            "edge_count": 8,
+            "m_end": 113,
+            "m_shell_prime_count": 2,
+            "m_start": 109
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 109,
+        "edge_count": 21,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 7,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 107,
+            "m_shell_prime_count": 4,
+            "m_start": 97
+          },
+          {
+            "edge_count": 9,
+            "m_end": 131,
+            "m_shell_prime_count": 3,
+            "m_start": 113
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 113,
+        "edge_count": 27,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 9,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 15,
+            "m_end": 109,
+            "m_shell_prime_count": 5,
+            "m_start": 97
+          },
+          {
+            "edge_count": 12,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 127,
+        "edge_count": 8,
+        "gap_sizes": [
+          7
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 8,
+        "q_end": 89,
+        "q_prefix_count": 1,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          },
+          {
+            "edge_count": 2,
+            "m_end": 167,
+            "m_shell_prime_count": 2,
+            "m_start": 163
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 131,
+        "edge_count": 9,
+        "gap_sizes": [
+          9
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 9,
+        "q_end": 89,
+        "q_prefix_count": 1,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          },
+          {
+            "edge_count": 3,
+            "m_end": 181,
+            "m_shell_prime_count": 3,
+            "m_start": 173
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 131,
+        "edge_count": 21,
+        "gap_sizes": [
+          1
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 3,
+        "q_end": 113,
+        "q_prefix_count": 7,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 7,
+            "m_end": 127,
+            "m_shell_prime_count": 1,
+            "m_start": 127
+          },
+          {
+            "edge_count": 14,
+            "m_end": 139,
+            "m_shell_prime_count": 2,
+            "m_start": 137
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 137,
+        "edge_count": 30,
+        "gap_sizes": [
+          2
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 113,
+        "q_prefix_count": 6,
+        "q_start": 97,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          },
+          {
+            "edge_count": 18,
+            "m_end": 157,
+            "m_shell_prime_count": 3,
+            "m_start": 149
+          }
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 139,
+        "edge_count": 42,
+        "gap_sizes": [
+          2
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 7,
+        "q_end": 113,
+        "q_prefix_count": 6,
+        "q_start": 97,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          },
+          {
+            "edge_count": 30,
+            "m_end": 167,
+            "m_shell_prime_count": 5,
+            "m_start": 149
+          }
+        ],
+        "strip": "right_tail"
+      }
+    ],
+    "shell_step_packet_count_total": 5106,
+    "single_block_edge_count": 116221,
+    "single_block_endpoint_packet_support_closed": true,
+    "single_block_packet_count": 4023,
+    "single_block_packet_phase_saving_closed": false,
+    "single_m_shell_prime_count_max": 12,
+    "single_m_shell_prime_count_median": 2,
+    "single_q_prefix_count_max": 37,
+    "single_q_prefix_count_median": 11,
+    "strip_block_rows": [
+      {
+        "edge_count": 29144,
+        "m_block_count": 1,
+        "packet_count": 1032,
+        "strip": "lower_wing"
+      },
+      {
+        "edge_count": 25457,
+        "m_block_count": 1,
+        "packet_count": 1024,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 61258,
+        "m_block_count": 2,
+        "packet_count": 1082,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 36,
+        "m_block_count": 3,
+        "packet_count": 1,
+        "strip": "right_tail"
+      },
+      {
+        "edge_count": 61620,
+        "m_block_count": 1,
+        "packet_count": 1967,
+        "strip": "upper_wing"
+      }
+    ],
+    "top_gap_size_rows": [
+      {
+        "edge_weight_sum": 4981,
+        "gap_count": 78,
+        "missing_prime_gap_size": 1
+      },
+      {
+        "edge_weight_sum": 2341,
+        "gap_count": 28,
+        "missing_prime_gap_size": 8
+      },
+      {
+        "edge_weight_sum": 2590,
+        "gap_count": 26,
+        "missing_prime_gap_size": 4
+      },
+      {
+        "edge_weight_sum": 2087,
+        "gap_count": 23,
+        "missing_prime_gap_size": 3
+      },
+      {
+        "edge_weight_sum": 1857,
+        "gap_count": 23,
+        "missing_prime_gap_size": 12
+      },
+      {
+        "edge_weight_sum": 1329,
+        "gap_count": 23,
+        "missing_prime_gap_size": 30
+      },
+      {
+        "edge_weight_sum": 2090,
+        "gap_count": 22,
+        "missing_prime_gap_size": 6
+      },
+      {
+        "edge_weight_sum": 1880,
+        "gap_count": 22,
+        "missing_prime_gap_size": 2
+      },
+      {
+        "edge_weight_sum": 1765,
+        "gap_count": 22,
+        "missing_prime_gap_size": 13
+      },
+      {
+        "edge_weight_sum": 1189,
+        "gap_count": 21,
+        "missing_prime_gap_size": 21
+      },
+      {
+        "edge_weight_sum": 1045,
+        "gap_count": 21,
+        "missing_prime_gap_size": 29
+      },
+      {
+        "edge_weight_sum": 1668,
+        "gap_count": 21,
+        "missing_prime_gap_size": 18
+      },
+      {
+        "edge_weight_sum": 1347,
+        "gap_count": 20,
+        "missing_prime_gap_size": 15
+      },
+      {
+        "edge_weight_sum": 1136,
+        "gap_count": 20,
+        "missing_prime_gap_size": 39
+      },
+      {
+        "edge_weight_sum": 1645,
+        "gap_count": 19,
+        "missing_prime_gap_size": 5
+      },
+      {
+        "edge_weight_sum": 1010,
+        "gap_count": 18,
+        "missing_prime_gap_size": 7
+      },
+      {
+        "edge_weight_sum": 1337,
+        "gap_count": 18,
+        "missing_prime_gap_size": 10
+      },
+      {
+        "edge_weight_sum": 1395,
+        "gap_count": 18,
+        "missing_prime_gap_size": 27
+      },
+      {
+        "edge_weight_sum": 1142,
+        "gap_count": 18,
+        "missing_prime_gap_size": 17
+      },
+      {
+        "edge_weight_sum": 692,
+        "gap_count": 18,
+        "missing_prime_gap_size": 31
+      }
+    ],
+    "upper_wing_multi_block_packet_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RightTailMultiBlockGapPacketPhaseSaving",
+    "AND SingleBlockEndpointPacketSummationByParts",
+    "AND MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets",
+    "AND NoLossAggregationAcross5106ShellStepPackets",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_packet_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the shell-step packet audit left at-most-three-block short shells; the next non-cyclic step is to locate whether multi-block packets are global or confined to a named boundary tail",
+  "right_tail_gap_localization_closed": true,
+  "right_tail_multi_block_phase_saving_closed": false,
+  "row_column_unconditional_closed": false,
+  "single_block_endpoint_packet_support_closed": true,
+  "single_block_packet_phase_saving_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "b32f4a57d60f5fc203c4fbcf9243b4e1344bf012600a907593637a64d3367b5a",
+    "docs/monograph/external-theorem-index.md": "1b2b44ddcc7707edd2b48d0ab168fecbd833a13e41b742caf62d5f17899e35dd",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "cd2bdcd92a2f3930b58addaddcc0faeaa1557cbb21d0537e781e20bca8439190",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-phase-interface-audit.json": "abe27c82dd7977396652b17f9ba86ccc46fffad669a9974e6cd8772851947dc4",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json": "d320b65d266a3161c858ce5f781f2eb700674c1ce16b39d72c1348a5003c602f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "8bc2810d84581704d228298ce699c24c91785a91f0f5519a274432c7741f8ea1",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "27fae0158812f7aacd7e3e13fe1f6335441d2cd93f210470abc88a7185b74783",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit.py": "f2a57e612f69aff5aa6e98a871fde6d984f64d511fa88cd27edd013706501c56",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "bb23d0c95120995d8e60c27de7ce7b59584e480568402da15e3b1aa154253b80"
+  },
+  "status": "boundary_shell_step_packet_gaps_localized_to_right_tail_phase_saving_open"
+}

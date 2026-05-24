@@ -5512,6 +5512,71 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 61. Phi-LPF boundary right-tail gap localization 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.md
+```
+
+上一层将 boundary 压成 `5106` 个 shell-step packets。本层继续定位多段
+`m`-block 的来源。有限审计读数：
+
+```text
+shell_step_packet_count_total=5106
+edge_count_total=177515
+single_block_packet_count=4023
+single_block_edge_count=116221
+multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_packet_strip_set=['right_tail']
+all_multi_block_packets_are_right_tail=true
+lower_wing_multi_block_packet_count=0
+upper_wing_multi_block_packet_count=0
+right_tail_multi_block_packet_count=1083
+right_tail_single_block_packet_count=1024
+gap_count_total=1084
+gap_size_min=1
+gap_size_median=26
+gap_size_max=79
+gap_size_average=28.690959409594
+```
+
+因此 multi-block gap 不是全局短壳复杂性，而是完全定位到 `right_tail`。
+`lower_wing` 与 `upper_wing` 都是 single-block endpoint packets。最新接口：
+
+```text
+RightTailMultiBlockGapPacketPhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+外部定理匹配不变：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 仍是
+候选接口；它们没有直接给出 right-tail gap packet 的固定行相消。
+
+状态边界：
+
+```text
+right_tail_gap_localization_closed=true
+single_block_endpoint_packet_support_closed=true
+right_tail_multi_block_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

@@ -4466,6 +4466,75 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13X：Phi-LPF q-support row-averaged additive-k prime-survivor boundary right-tail gap localization 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_localization_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.md
+```
+
+本层承接 Q13W，将 multi-block gap 从全体 shell-step packets 中剥离并定位。
+
+### Q13X.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+shell_step_packet_count_total=5106
+edge_count_total=177515
+single_block_packet_count=4023
+single_block_edge_count=116221
+multi_block_packet_count=1083
+multi_block_edge_count=61294
+multi_block_packet_strip_set=['right_tail']
+all_multi_block_packets_are_right_tail=true
+lower_wing_multi_block_packet_count=0
+upper_wing_multi_block_packet_count=0
+right_tail_multi_block_packet_count=1083
+right_tail_single_block_packet_count=1024
+gap_count_total=1084
+gap_size_min=1
+gap_size_median=26
+gap_size_max=79
+```
+
+### Q13X.2 诚实边界
+
+本层关闭的是定位账本：所有多段 m-block 与内部 prime gap 完全来自 `right_tail`。
+`lower_wing` 和 `upper_wing` 已压成 single-block endpoint packets。它不提供相位节省。
+
+最新最窄口：
+
+```text
+RightTailMultiBlockGapPacketPhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnRightTailAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND DiagonalPGhostSubtractionDiscipline
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+right_tail_gap_localization_closed=true
+single_block_endpoint_packet_support_closed=true
+right_tail_multi_block_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
