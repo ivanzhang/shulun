@@ -1,0 +1,688 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_weight_carrier_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "FiniteCycleSignatureLedgerImported",
+      "meaning": "The previous finite cycle-signature ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "CycleSignatureWeightCarrierLedger",
+      "meaning": "Every raw/signed signature is assigned P-support, strip-support, endpoint class, and signed fragmentation data.",
+      "proved": true,
+      "remaining": "none for current deterministic carrier ledger"
+    },
+    {
+      "closed": false,
+      "gate": "CycleSignatureWeightedPhaseSaving",
+      "meaning": "Prove cancellation for the weighted carriers exposed here.",
+      "proved": false,
+      "remaining": "requires analytic phase input after signed refinement and thin-support handling"
+    },
+    {
+      "closed": false,
+      "gate": "SignedRefinementWeightReconciliation",
+      "meaning": "Reconcile raw-base cycle weights after signed A-step refinement.",
+      "proved": false,
+      "remaining": "requires cancellation or exact transfer across signed children of the same raw base"
+    },
+    {
+      "closed": false,
+      "gate": "TraceKloostermanCompletion",
+      "meaning": "Convert the weighted carriers to an admissible trace/Kloosterman family.",
+      "proved": false,
+      "remaining": "requires a new completion map, not supplied by this ledger"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "high-mass signed carriers are thin in P/strip support, while raw bases fragment across signed children",
+    "input": "raw/signed cycle signatures from the loop-erased carry-switch core",
+    "operation": "support and fragmentation audit for the combinatorial weights carried by signatures",
+    "remaining": "weighted phase saving must reconcile signed refinements, thin carriers, residual endpoints, and trace/Kloosterman completion"
+  },
+  "cycle_signature_weight_carrier_closed": true,
+  "cycle_signature_weighted_phase_saving_closed": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "needs a trace-function realization of the weighted carrier, not only finite signatures",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "needs bilinear Kloosterman variables modulo q; the carrier is still signature/P/strip incidence",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "needs composite Type-II boxes; the carrier remains a path-template incidence ledger",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "needs admissible unbalanced convolution fractions; the carrier is not yet such a family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "prime existence in short intervals does not control signature carrier phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "candidate only after weighted carriers are realized as trace-function sums",
+    "Li_short_interval_x_052": "does not estimate the exposed signature carrier phases",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "candidate only after inverse-variable Kloosterman variables appear",
+    "Pascadi_composite_Type_II": "not matched because carriers are not composite Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "not matched because carriers are not unbalanced convolution fractions"
+  },
+  "finite_audit": {
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "cycle_signature_atom_count_total": 15439,
+    "cycle_signature_weight_carrier_closed": true,
+    "cycle_signature_weight_carrier_ledger_closed": true,
+    "cycle_signature_weighted_phase_saving_closed": false,
+    "max_prime": 1009,
+    "no_loss_qprefix_flow_atom_aggregation_closed": false,
+    "non_switch_atom_count": 2084,
+    "previous_cycle_signature_decomposition_closed": true,
+    "raw_base_fragmented_signed_edge_mass": 81507,
+    "raw_base_fragmented_signed_edge_ratio": 0.7569583105027071,
+    "raw_base_max_child_edge_share_max": 1.0,
+    "raw_base_max_child_edge_share_median": 1.0,
+    "raw_base_max_child_edge_share_min": 0.16666666666666666,
+    "raw_base_signed_refinement_count": 5359,
+    "raw_base_with_multiple_signed_children_count": 1823,
+    "raw_carrier_support": {
+      "P_support_width_max": 101,
+      "P_support_width_median": 2.0,
+      "P_support_width_min": 1,
+      "multi_P_edge_mass": 109981,
+      "multi_P_edge_ratio": 0.9341560989697026,
+      "multi_P_signature_count": 2109,
+      "multi_strip_edge_mass": 5187,
+      "multi_strip_edge_ratio": 0.04405731613056662,
+      "multi_strip_signature_count": 33,
+      "signature_count": 3546,
+      "strip_support_width_max": 2,
+      "strip_support_width_median": 1.0,
+      "strip_support_width_min": 1
+    },
+    "raw_cycle_edge_mass": 117733,
+    "raw_cycle_packet_count": 45178,
+    "raw_cycle_signature_count": 3546,
+    "raw_residual_edge_mass": 30066,
+    "residual_endpoint_path_summation_closed": false,
+    "row_column_unconditional_closed": false,
+    "signed_A_class_cycle_rows": [
+      {
+        "A_class": "all_negative",
+        "cycle_count": 4981,
+        "edge_mass": 9169,
+        "edge_ratio": 0.08515281815057997
+      },
+      {
+        "A_class": "all_positive",
+        "cycle_count": 5311,
+        "edge_mass": 9980,
+        "edge_ratio": 0.0926846030257158
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "cycle_count": 25951,
+        "edge_mass": 88124,
+        "edge_ratio": 0.8184106169376932
+      },
+      {
+        "A_class": "mixed_with_zero",
+        "cycle_count": 87,
+        "edge_mass": 404,
+        "edge_ratio": 0.0037519618860109402
+      }
+    ],
+    "signed_carrier_support": {
+      "P_support_width_max": 95,
+      "P_support_width_median": 1,
+      "P_support_width_min": 1,
+      "multi_P_edge_mass": 79526,
+      "multi_P_edge_ratio": 0.7385606954131337,
+      "multi_P_signature_count": 3388,
+      "multi_strip_edge_mass": 1555,
+      "multi_strip_edge_ratio": 0.014441338447393594,
+      "multi_strip_signature_count": 38,
+      "signature_count": 8691,
+      "strip_support_width_max": 2,
+      "strip_support_width_median": 1,
+      "strip_support_width_min": 1
+    },
+    "signed_cycle_edge_mass": 107677,
+    "signed_cycle_packet_count": 36330,
+    "signed_cycle_signature_count": 8691,
+    "signed_refinement_weight_reconciliation_closed": false,
+    "signed_residual_edge_mass": 40122,
+    "switch_atom_count": 13355,
+    "top_raw_base_signed_fragment_rows": [
+      {
+        "max_child_edge_share": 0.5054347826086957,
+        "raw_base_template": "g=2,c=2 -> g=4,c=4",
+        "signed_child_count": 4,
+        "signed_cycle_count": 736,
+        "signed_edge_mass": 1472,
+        "top_signed_child": "g=2,c=2,A=negative -> g=4,c=4,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.5401387512388504,
+        "raw_base_template": "g=6,c=6",
+        "signed_child_count": 2,
+        "signed_cycle_count": 1009,
+        "signed_edge_mass": 1009,
+        "top_signed_child": "g=6,c=6,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.4044943820224719,
+        "raw_base_template": "g=2,c=3 -> g=4,c=6",
+        "signed_child_count": 4,
+        "signed_cycle_count": 356,
+        "signed_edge_mass": 712,
+        "top_signed_child": "g=2,c=3,A=positive -> g=4,c=6,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.4258064516129032,
+        "raw_base_template": "g=4,c=6 -> g=6,c=9",
+        "signed_child_count": 4,
+        "signed_cycle_count": 310,
+        "signed_edge_mass": 620,
+        "top_signed_child": "g=4,c=6,A=positive -> g=6,c=9,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.4880546075085324,
+        "raw_base_template": "g=4,c=4 -> g=8,c=8",
+        "signed_child_count": 4,
+        "signed_cycle_count": 293,
+        "signed_edge_mass": 586,
+        "top_signed_child": "g=4,c=4,A=negative -> g=8,c=8,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.49310344827586206,
+        "raw_base_template": "g=4,c=3 -> g=6,c=4",
+        "signed_child_count": 4,
+        "signed_cycle_count": 290,
+        "signed_edge_mass": 580,
+        "top_signed_child": "g=4,c=3,A=positive -> g=6,c=4,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.5964285714285714,
+        "raw_base_template": "g=6,c=7",
+        "signed_child_count": 2,
+        "signed_cycle_count": 560,
+        "signed_edge_mass": 560,
+        "top_signed_child": "g=6,c=7,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.48880597014925375,
+        "raw_base_template": "g=4,c=4 -> g=6,c=6",
+        "signed_child_count": 4,
+        "signed_cycle_count": 268,
+        "signed_edge_mass": 536,
+        "top_signed_child": "g=4,c=4,A=positive -> g=6,c=6,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.3106060606060606,
+        "raw_base_template": "g=4,c=6 -> g=8,c=12",
+        "signed_child_count": 4,
+        "signed_cycle_count": 264,
+        "signed_edge_mass": 528,
+        "top_signed_child": "g=4,c=6,A=positive -> g=8,c=12,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.45294117647058824,
+        "raw_base_template": "g=4,c=4 -> g=8,c=8 -> g=6,c=6",
+        "signed_child_count": 7,
+        "signed_cycle_count": 170,
+        "signed_edge_mass": 510,
+        "top_signed_child": "g=4,c=4,A=negative -> g=8,c=8,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.5413385826771654,
+        "raw_base_template": "g=6,c=4",
+        "signed_child_count": 2,
+        "signed_cycle_count": 508,
+        "signed_edge_mass": 508,
+        "top_signed_child": "g=6,c=4,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.484251968503937,
+        "raw_base_template": "g=2,c=1 -> g=4,c=3",
+        "signed_child_count": 4,
+        "signed_cycle_count": 254,
+        "signed_edge_mass": 508,
+        "top_signed_child": "g=2,c=1,A=positive -> g=4,c=3,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.4898785425101215,
+        "raw_base_template": "g=2,c=2 -> g=6,c=6",
+        "signed_child_count": 4,
+        "signed_cycle_count": 247,
+        "signed_edge_mass": 494,
+        "top_signed_child": "g=2,c=2,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.5450733752620545,
+        "raw_base_template": "g=6,c=9",
+        "signed_child_count": 2,
+        "signed_cycle_count": 477,
+        "signed_edge_mass": 477,
+        "top_signed_child": "g=6,c=9,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.44680851063829785,
+        "raw_base_template": "g=2,c=3 -> g=6,c=9",
+        "signed_child_count": 4,
+        "signed_cycle_count": 235,
+        "signed_edge_mass": 470,
+        "top_signed_child": "g=2,c=3,A=positive -> g=6,c=9,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.4,
+        "raw_base_template": "g=2,c=3 -> g=4,c=7",
+        "signed_child_count": 4,
+        "signed_cycle_count": 220,
+        "signed_edge_mass": 440,
+        "top_signed_child": "g=2,c=3,A=negative -> g=4,c=7,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.6102088167053364,
+        "raw_base_template": "g=6,c=5",
+        "signed_child_count": 2,
+        "signed_cycle_count": 431,
+        "signed_edge_mass": 431,
+        "top_signed_child": "g=6,c=5,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.4532710280373832,
+        "raw_base_template": "g=2,c=1 -> g=6,c=4",
+        "signed_child_count": 4,
+        "signed_cycle_count": 214,
+        "signed_edge_mass": 428,
+        "top_signed_child": "g=2,c=1,A=negative -> g=6,c=4,A=positive"
+      },
+      {
+        "max_child_edge_share": 0.4714285714285714,
+        "raw_base_template": "g=4,c=3 -> g=8,c=5",
+        "signed_child_count": 5,
+        "signed_cycle_count": 210,
+        "signed_edge_mass": 420,
+        "top_signed_child": "g=4,c=3,A=positive -> g=8,c=5,A=negative"
+      },
+      {
+        "max_child_edge_share": 0.32057416267942584,
+        "raw_base_template": "g=10,c=15 -> g=2,c=3",
+        "signed_child_count": 4,
+        "signed_cycle_count": 209,
+        "signed_edge_mass": 418,
+        "top_signed_child": "g=10,c=15,A=positive -> g=2,c=3,A=positive"
+      }
+    ],
+    "top_raw_carrier_rows": [
+      {
+        "cycle_count": 949,
+        "distinct_P_count": 101,
+        "edge_mass": 1898,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:78,right_tail_left_collar_only_with_P_puncture:37,right_tail_right_collar_only_no_P_puncture:72,right_tail_right_collar_only_with_P_puncture:12,right_tail_terminal_full_interval_no_P_puncture:86,right_tail_terminal_full_interval_with_P_puncture:171,right_tail_two_sided_left_and_right_collars_no_P_puncture:392,right_tail_two_sided_left_and_right_collars_with_P_puncture:101",
+        "strip_profile": "right_tail:949",
+        "template": "g=2,c=2 -> g=4,c=4"
+      },
+      {
+        "cycle_count": 1439,
+        "distinct_P_count": 99,
+        "edge_mass": 1439,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:128,right_tail_left_collar_only_with_P_puncture:26,right_tail_right_collar_only_no_P_puncture:88,right_tail_right_collar_only_with_P_puncture:28,right_tail_terminal_full_interval_no_P_puncture:154,right_tail_terminal_full_interval_with_P_puncture:284,right_tail_two_sided_left_and_right_collars_no_P_puncture:586,right_tail_two_sided_left_and_right_collars_with_P_puncture:145",
+        "strip_profile": "right_tail:1439",
+        "template": "g=6,c=6"
+      },
+      {
+        "cycle_count": 482,
+        "distinct_P_count": 72,
+        "edge_mass": 964,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:482",
+        "strip_profile": "upper_wing:482",
+        "template": "g=2,c=3 -> g=4,c=6"
+      },
+      {
+        "cycle_count": 920,
+        "distinct_P_count": 83,
+        "edge_mass": 920,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:920",
+        "strip_profile": "upper_wing:920",
+        "template": "g=6,c=9"
+      },
+      {
+        "cycle_count": 893,
+        "distinct_P_count": 76,
+        "edge_mass": 893,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:266,right_tail_right_collar_only_with_P_puncture:2,right_tail_two_sided_left_and_right_collars_no_P_puncture:623,right_tail_two_sided_left_and_right_collars_with_P_puncture:2",
+        "strip_profile": "right_tail:893",
+        "template": "g=6,c=7"
+      },
+      {
+        "cycle_count": 444,
+        "distinct_P_count": 67,
+        "edge_mass": 888,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:444",
+        "strip_profile": "upper_wing:444",
+        "template": "g=4,c=6 -> g=6,c=9"
+      },
+      {
+        "cycle_count": 863,
+        "distinct_P_count": 83,
+        "edge_mass": 863,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:863",
+        "strip_profile": "lower_wing:863",
+        "template": "g=6,c=4"
+      },
+      {
+        "cycle_count": 386,
+        "distinct_P_count": 71,
+        "edge_mass": 772,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:386",
+        "strip_profile": "lower_wing:386",
+        "template": "g=4,c=3 -> g=6,c=4"
+      },
+      {
+        "cycle_count": 373,
+        "distinct_P_count": 74,
+        "edge_mass": 746,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:28,right_tail_left_collar_only_with_P_puncture:9,right_tail_right_collar_only_no_P_puncture:19,right_tail_right_collar_only_with_P_puncture:12,right_tail_terminal_full_interval_no_P_puncture:46,right_tail_terminal_full_interval_with_P_puncture:98,right_tail_two_sided_left_and_right_collars_no_P_puncture:111,right_tail_two_sided_left_and_right_collars_with_P_puncture:50",
+        "strip_profile": "right_tail:373",
+        "template": "g=4,c=4 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 365,
+        "distinct_P_count": 72,
+        "edge_mass": 730,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:26,right_tail_left_collar_only_with_P_puncture:13,right_tail_right_collar_only_no_P_puncture:33,right_tail_right_collar_only_with_P_puncture:12,right_tail_terminal_full_interval_no_P_puncture:52,right_tail_terminal_full_interval_with_P_puncture:69,right_tail_two_sided_left_and_right_collars_no_P_puncture:115,right_tail_two_sided_left_and_right_collars_with_P_puncture:45",
+        "strip_profile": "right_tail:365",
+        "template": "g=4,c=4 -> g=8,c=8"
+      },
+      {
+        "cycle_count": 363,
+        "distinct_P_count": 46,
+        "edge_mass": 726,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:363",
+        "strip_profile": "upper_wing:363",
+        "template": "g=2,c=3 -> g=6,c=9"
+      },
+      {
+        "cycle_count": 354,
+        "distinct_P_count": 78,
+        "edge_mass": 708,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:351,right_tail_two_sided_left_and_right_collars_no_P_puncture:3",
+        "strip_profile": "lower_wing:351,right_tail:3",
+        "template": "g=2,c=1 -> g=4,c=3"
+      },
+      {
+        "cycle_count": 351,
+        "distinct_P_count": 52,
+        "edge_mass": 702,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:28,right_tail_left_collar_only_with_P_puncture:10,right_tail_right_collar_only_no_P_puncture:20,right_tail_right_collar_only_with_P_puncture:6,right_tail_terminal_full_interval_no_P_puncture:46,right_tail_terminal_full_interval_with_P_puncture:80,right_tail_two_sided_left_and_right_collars_no_P_puncture:127,right_tail_two_sided_left_and_right_collars_with_P_puncture:34",
+        "strip_profile": "right_tail:351",
+        "template": "g=2,c=2 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 329,
+        "distinct_P_count": 78,
+        "edge_mass": 658,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:89,right_tail_terminal_full_interval_with_P_puncture:6,right_tail_two_sided_left_and_right_collars_no_P_puncture:223,right_tail_two_sided_left_and_right_collars_with_P_puncture:11",
+        "strip_profile": "right_tail:329",
+        "template": "g=2,c=2 -> g=4,c=5"
+      },
+      {
+        "cycle_count": 655,
+        "distinct_P_count": 63,
+        "edge_mass": 655,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:2,right_tail_left_collar_only_no_P_puncture:150,right_tail_two_sided_left_and_right_collars_no_P_puncture:503",
+        "strip_profile": "lower_wing:2,right_tail:653",
+        "template": "g=6,c=5"
+      },
+      {
+        "cycle_count": 296,
+        "distinct_P_count": 57,
+        "edge_mass": 592,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:296",
+        "strip_profile": "upper_wing:296",
+        "template": "g=2,c=3 -> g=4,c=7"
+      },
+      {
+        "cycle_count": 295,
+        "distinct_P_count": 45,
+        "edge_mass": 590,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:295",
+        "strip_profile": "upper_wing:295",
+        "template": "g=4,c=6 -> g=8,c=12"
+      },
+      {
+        "cycle_count": 196,
+        "distinct_P_count": 32,
+        "edge_mass": 588,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:13,right_tail_left_collar_only_with_P_puncture:2,right_tail_right_collar_only_no_P_puncture:7,right_tail_right_collar_only_with_P_puncture:4,right_tail_terminal_full_interval_no_P_puncture:34,right_tail_terminal_full_interval_with_P_puncture:66,right_tail_two_sided_left_and_right_collars_no_P_puncture:45,right_tail_two_sided_left_and_right_collars_with_P_puncture:25",
+        "strip_profile": "right_tail:196",
+        "template": "g=4,c=4 -> g=8,c=8 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 269,
+        "distinct_P_count": 36,
+        "edge_mass": 538,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:269",
+        "strip_profile": "lower_wing:269",
+        "template": "g=2,c=1 -> g=6,c=4"
+      },
+      {
+        "cycle_count": 263,
+        "distinct_P_count": 25,
+        "edge_mass": 526,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:263",
+        "strip_profile": "lower_wing:263",
+        "template": "g=10,c=7 -> g=6,c=4"
+      }
+    ],
+    "top_signed_carrier_rows": [
+      {
+        "cycle_count": 372,
+        "distinct_P_count": 94,
+        "edge_mass": 744,
+        "endpoint_profile": "right_tail_left_collar_only_with_P_puncture:1,right_tail_right_collar_only_no_P_puncture:49,right_tail_right_collar_only_with_P_puncture:12,right_tail_terminal_full_interval_no_P_puncture:54,right_tail_terminal_full_interval_with_P_puncture:84,right_tail_two_sided_left_and_right_collars_no_P_puncture:135,right_tail_two_sided_left_and_right_collars_with_P_puncture:37",
+        "strip_profile": "right_tail:372",
+        "template": "g=2,c=2,A=negative -> g=4,c=4,A=negative"
+      },
+      {
+        "cycle_count": 334,
+        "distinct_P_count": 95,
+        "edge_mass": 668,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:47,right_tail_left_collar_only_with_P_puncture:26,right_tail_terminal_full_interval_no_P_puncture:25,right_tail_terminal_full_interval_with_P_puncture:69,right_tail_two_sided_left_and_right_collars_no_P_puncture:119,right_tail_two_sided_left_and_right_collars_with_P_puncture:48",
+        "strip_profile": "right_tail:334",
+        "template": "g=2,c=2,A=positive -> g=4,c=4,A=positive"
+      },
+      {
+        "cycle_count": 545,
+        "distinct_P_count": 94,
+        "edge_mass": 545,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:51,right_tail_right_collar_only_with_P_puncture:22,right_tail_terminal_full_interval_no_P_puncture:91,right_tail_terminal_full_interval_with_P_puncture:130,right_tail_two_sided_left_and_right_collars_no_P_puncture:189,right_tail_two_sided_left_and_right_collars_with_P_puncture:62",
+        "strip_profile": "right_tail:545",
+        "template": "g=6,c=6,A=negative"
+      },
+      {
+        "cycle_count": 464,
+        "distinct_P_count": 88,
+        "edge_mass": 464,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:68,right_tail_left_collar_only_with_P_puncture:24,right_tail_terminal_full_interval_no_P_puncture:54,right_tail_terminal_full_interval_with_P_puncture:117,right_tail_two_sided_left_and_right_collars_no_P_puncture:153,right_tail_two_sided_left_and_right_collars_with_P_puncture:48",
+        "strip_profile": "right_tail:464",
+        "template": "g=6,c=6,A=positive"
+      },
+      {
+        "cycle_count": 334,
+        "distinct_P_count": 71,
+        "edge_mass": 334,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:92,right_tail_right_collar_only_with_P_puncture:2,right_tail_two_sided_left_and_right_collars_no_P_puncture:240",
+        "strip_profile": "right_tail:334",
+        "template": "g=6,c=7,A=positive"
+      },
+      {
+        "cycle_count": 150,
+        "distinct_P_count": 57,
+        "edge_mass": 300,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:50,right_tail_right_collar_only_with_P_puncture:2,right_tail_terminal_full_interval_no_P_puncture:1,right_tail_terminal_full_interval_with_P_puncture:2,right_tail_two_sided_left_and_right_collars_no_P_puncture:92,right_tail_two_sided_left_and_right_collars_with_P_puncture:3",
+        "strip_profile": "right_tail:150",
+        "template": "g=4,c=4,A=negative -> g=8,c=9,A=positive"
+      },
+      {
+        "cycle_count": 147,
+        "distinct_P_count": 66,
+        "edge_mass": 294,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:37,right_tail_terminal_full_interval_with_P_puncture:3,right_tail_two_sided_left_and_right_collars_no_P_puncture:104,right_tail_two_sided_left_and_right_collars_with_P_puncture:3",
+        "strip_profile": "right_tail:147",
+        "template": "g=2,c=2,A=negative -> g=4,c=5,A=positive"
+      },
+      {
+        "cycle_count": 144,
+        "distinct_P_count": 60,
+        "edge_mass": 288,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:144",
+        "strip_profile": "upper_wing:144",
+        "template": "g=2,c=3,A=positive -> g=4,c=6,A=positive"
+      },
+      {
+        "cycle_count": 143,
+        "distinct_P_count": 59,
+        "edge_mass": 286,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:143",
+        "strip_profile": "lower_wing:143",
+        "template": "g=4,c=3,A=positive -> g=6,c=4,A=negative"
+      },
+      {
+        "cycle_count": 143,
+        "distinct_P_count": 66,
+        "edge_mass": 286,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:19,right_tail_right_collar_only_with_P_puncture:11,right_tail_terminal_full_interval_no_P_puncture:27,right_tail_terminal_full_interval_with_P_puncture:31,right_tail_two_sided_left_and_right_collars_no_P_puncture:36,right_tail_two_sided_left_and_right_collars_with_P_puncture:19",
+        "strip_profile": "right_tail:143",
+        "template": "g=4,c=4,A=negative -> g=8,c=8,A=negative"
+      },
+      {
+        "cycle_count": 275,
+        "distinct_P_count": 64,
+        "edge_mass": 275,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:275",
+        "strip_profile": "lower_wing:275",
+        "template": "g=6,c=4,A=negative"
+      },
+      {
+        "cycle_count": 132,
+        "distinct_P_count": 58,
+        "edge_mass": 264,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:132",
+        "strip_profile": "upper_wing:132",
+        "template": "g=4,c=6,A=positive -> g=6,c=9,A=positive"
+      },
+      {
+        "cycle_count": 263,
+        "distinct_P_count": 59,
+        "edge_mass": 263,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:68,right_tail_two_sided_left_and_right_collars_no_P_puncture:195",
+        "strip_profile": "right_tail:263",
+        "template": "g=6,c=5,A=negative"
+      },
+      {
+        "cycle_count": 131,
+        "distinct_P_count": 64,
+        "edge_mass": 262,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:13,right_tail_left_collar_only_with_P_puncture:8,right_tail_terminal_full_interval_no_P_puncture:19,right_tail_terminal_full_interval_with_P_puncture:34,right_tail_two_sided_left_and_right_collars_no_P_puncture:42,right_tail_two_sided_left_and_right_collars_with_P_puncture:15",
+        "strip_profile": "right_tail:131",
+        "template": "g=4,c=4,A=positive -> g=6,c=6,A=positive"
+      },
+      {
+        "cycle_count": 260,
+        "distinct_P_count": 66,
+        "edge_mass": 260,
+        "endpoint_profile": "upper_wing_single_contiguous_endpoint_shell:260",
+        "strip_profile": "upper_wing:260",
+        "template": "g=6,c=9,A=positive"
+      },
+      {
+        "cycle_count": 130,
+        "distinct_P_count": 64,
+        "edge_mass": 260,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:11,right_tail_right_collar_only_with_P_puncture:10,right_tail_terminal_full_interval_no_P_puncture:23,right_tail_terminal_full_interval_with_P_puncture:40,right_tail_two_sided_left_and_right_collars_no_P_puncture:29,right_tail_two_sided_left_and_right_collars_with_P_puncture:17",
+        "strip_profile": "right_tail:130",
+        "template": "g=4,c=4,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "cycle_count": 127,
+        "distinct_P_count": 53,
+        "edge_mass": 254,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:34,right_tail_left_collar_only_with_P_puncture:1,right_tail_terminal_full_interval_no_P_puncture:1,right_tail_two_sided_left_and_right_collars_no_P_puncture:91",
+        "strip_profile": "right_tail:127",
+        "template": "g=4,c=4,A=positive -> g=8,c=7,A=negative"
+      },
+      {
+        "cycle_count": 123,
+        "distinct_P_count": 62,
+        "edge_mass": 246,
+        "endpoint_profile": "lower_wing_single_contiguous_endpoint_shell:121,right_tail_two_sided_left_and_right_collars_no_P_puncture:2",
+        "strip_profile": "lower_wing:121,right_tail:2",
+        "template": "g=2,c=1,A=positive -> g=4,c=3,A=negative"
+      },
+      {
+        "cycle_count": 123,
+        "distinct_P_count": 57,
+        "edge_mass": 246,
+        "endpoint_profile": "right_tail_left_collar_only_no_P_puncture:14,right_tail_left_collar_only_with_P_puncture:9,right_tail_terminal_full_interval_no_P_puncture:17,right_tail_terminal_full_interval_with_P_puncture:29,right_tail_two_sided_left_and_right_collars_no_P_puncture:38,right_tail_two_sided_left_and_right_collars_with_P_puncture:16",
+        "strip_profile": "right_tail:123",
+        "template": "g=4,c=4,A=positive -> g=8,c=8,A=positive"
+      },
+      {
+        "cycle_count": 121,
+        "distinct_P_count": 44,
+        "edge_mass": 242,
+        "endpoint_profile": "right_tail_right_collar_only_no_P_puncture:10,right_tail_right_collar_only_with_P_puncture:4,right_tail_terminal_full_interval_no_P_puncture:22,right_tail_terminal_full_interval_with_P_puncture:34,right_tail_two_sided_left_and_right_collars_no_P_puncture:39,right_tail_two_sided_left_and_right_collars_with_P_puncture:12",
+        "strip_profile": "right_tail:121",
+        "template": "g=2,c=2,A=negative -> g=6,c=6,A=negative"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "SignedCycleSignatureCarrierWeightedPhaseSaving",
+    "AND RawBaseToSignedChildWeightReconciliation",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "no_loss_qprefix_flow_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the previous finite signature ledger leaves weighted phase saving as the direct hard point",
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "signed_refinement_weight_reconciliation_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "259fe9f13434b58f70d8530885883d82627d4fe20e1354f774e78027b92e9ba7",
+    "docs/monograph/external-theorem-index.md": "85a2097707d017275b32dfe69318e77e8d790d6e82841af1fe4047713098d70d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "965a01b957e394d86fe52f1a058b0932fafd450e9a04385e7955aa410f715d30",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.json": "73fd650cffa9008500199e7e4cb82d0b65ddaaf8aae15708bfca76ebcf830fe9",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json": "6597eff36504fd233d1f06df972327e502c073b84542423f7490e9cc96dc00d8",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "681826fa288b8525a12ead93480591641bca8b8ce0bb6bbf29d55b0570822a23",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "5fe61628a368cd609d9afd898c2af1218adb4dda8fbae59963acd43da252d650",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_weight_carrier_audit.py": "a5193a77e68e5dbb0698474c2a033dd1643aed7b3b27c63cc9056d493e82efe5",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "d06bd99f97c24b2cb47285f1549ce4d25f545987d35b6088d076d6ed97e964f5"
+  },
+  "status": "qprefix_cycle_signature_weight_carrier_ledger_closed_phase_saving_open",
+  "thin_P_support_carrier_summation_closed": false
+}

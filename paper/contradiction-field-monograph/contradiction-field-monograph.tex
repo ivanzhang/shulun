@@ -35220,6 +35220,73 @@ boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Weight carriers of q-prefix carry cycle signatures}
+
+\begin{theorem}[Cycle-signature weight-carrier ledger]
+In the same audit range \(P\le 1009\), attach to every raw and signed cycle
+signature its \(P\)-support, strip-support, endpoint-flux class, and signed
+\(A\)-class.  Also project each signed template to its raw-base template and
+record the signed-child fragmentation.  The audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{cycle\_signature\_weight\_carrier\_ledger\_closed} & \texttt{true}\\
+\texttt{raw\_cycle\_signature\_count} & 3546\\
+\texttt{raw\_multi\_P\_edge\_ratio} & 0.9341560989697026\\
+\texttt{raw\_multi\_strip\_edge\_ratio} & 0.04405731613056662\\
+\texttt{signed\_cycle\_signature\_count} & 8691\\
+\texttt{signed\_multi\_P\_edge\_ratio} & 0.7385606954131337\\
+\texttt{signed\_multi\_strip\_edge\_ratio} & 0.014441338447393594\\
+\texttt{signed\_P\_support\_width\_min/median/max} & 1/1/95\\
+\texttt{raw\_base\_signed\_refinement\_count} & 5359\\
+\texttt{raw\_base\_with\_multiple\_signed\_children\_count} & 1823\\
+\texttt{raw\_base\_fragmented\_signed\_edge\_ratio} & 0.7569583105027071\\
+\texttt{mixed\_positive\_negative\_signed\_edge\_ratio} & 0.8184106169376932 .
+\end{array}
+\]
+Thus the weighted cycle-signature problem is not a single undifferentiated
+bucket problem: it splits into signed carriers, raw-base to signed-child
+fragmentation, and thin \(P\)-support carriers.
+\end{theorem}
+\begin{proof}
+Replay the previous cycle-signature ledger.  For each raw template, count its
+cycle multiplicity and edge mass and store the set of primes \(P\), the strip
+profile, and the endpoint-flux profile of the atoms in which it occurs.  For
+each signed template, do the same, and additionally classify the \(A\)-step
+sign word as all-positive, all-negative, mixed positive/negative, or mixed
+with zero.  Finally erase the sign coordinate from each signed template to
+obtain its raw-base template and record the edge mass carried by each signed
+child.  The ledger checks that the raw and signed cycle counts and edge masses
+remain exactly those of the previous signature theorem.
+\end{proof}
+
+\begin{remark}[Carrier ledger is not phase saving]
+The signed cycle-edge mass is dominated by mixed positive/negative \(A\)-class
+carriers, about \(81.84\%\).  The raw-base to signed-child fragmentation
+carries about \(75.70\%\) of signed edge mass.  At the same time the signed
+carrier \(P\)-support width has median \(1\), so a no-loss argument must also
+control thin \(P\)-support carriers.  The remaining mouth is therefore
+\begin{quote}\scriptsize\ttfamily
+SignedCycleSignatureCarrierWeightedPhaseSaving\\
+AND RawBaseToSignedChildWeightReconciliation\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the combinatorial weight-carrier ledger.  It does
+not prove weighted phase saving, thin-support summation, residual endpoint
+summation, the external-lemma version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

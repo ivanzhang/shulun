@@ -6242,6 +6242,76 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65H. Phi-LPF q-prefix carry cycle signature weight-carrier 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_weight_carrier_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.md
+```
+
+上一层把 cycle core 拆成 finite directed signatures。本层继续拆
+`CycleSignatureWeightedPhaseSaving` 的真实载体：对每个 raw/signed signature
+登记 P-support、strip-support、endpoint-flux class，并把 raw-base template 到
+signed-child template 的碎裂关系单独成账。
+
+有限审计读数：
+
+```text
+cycle_signature_weight_carrier_ledger_closed=true
+raw_cycle_packet_count=45178
+raw_cycle_edge_mass=117733
+raw_cycle_signature_count=3546
+raw_multi_P_edge_ratio=0.9341560989697026
+raw_multi_strip_edge_ratio=0.04405731613056662
+signed_cycle_packet_count=36330
+signed_cycle_edge_mass=107677
+signed_cycle_signature_count=8691
+signed_multi_P_edge_ratio=0.7385606954131337
+signed_multi_strip_edge_ratio=0.014441338447393594
+signed_P_support_width_min/median/max=1/1/95
+raw_base_signed_refinement_count=5359
+raw_base_with_multiple_signed_children_count=1823
+raw_base_fragmented_signed_edge_ratio=0.7569583105027071
+```
+
+signed A-class 边质量：
+
+```text
+all_negative edge_ratio=0.08515281815057997
+all_positive edge_ratio=0.0926846030257158
+mixed_positive_negative edge_ratio=0.8184106169376932
+mixed_with_zero edge_ratio=0.0037519618860109402
+```
+
+这一步不是相消证明；它把 weighted phase saving 的真实对象拆成三道更窄门：
+signed carrier 本身的相位节省、raw-base 到 signed-child 的权重协调、以及
+median P-support 为 `1` 的 thin carrier 无损求和。
+
+外部定理匹配边界继续保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 都要求先把
+这些 carriers 变成 admissible trace/Kloosterman 或 Type-II analytic family。Li 的
+`x^0.52` 短区间素数存在仍不估计 signature carrier phases。
+
+状态边界：
+
+```text
+cycle_signature_weight_carrier_closed=true
+cycle_signature_weighted_phase_saving_closed=false
+signed_refinement_weight_reconciliation_closed=false
+thin_P_support_carrier_summation_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_flow_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

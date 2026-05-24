@@ -25269,3 +25269,53 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是 cycle packet 未拆签名的形状黑箱；没有删除 weighted phase saving、
 residual endpoint summation、completed family 和无损聚合真缺口。
+
+### Phi-LPF q-prefix cycle-signature weight-carrier formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_weight_carrier_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-weight-carrier-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore
+```
+
+现在被压成三类真实对象：
+
+```text
+SignedCycleSignatureCarrierWeightedPhaseSaving
+RawBaseToSignedChildWeightReconciliation
+ThinPSupportCarrierSummationWithoutLoss
+```
+
+关键审计读数为：
+
+```text
+cycle_signature_weight_carrier_ledger_closed=true
+signed_P_support_width_min/median/max=1/1/95
+raw_base_fragmented_signed_edge_ratio=0.7569583105027071
+mixed_positive_negative_signed_edge_ratio=0.8184106169376932
+signed_multi_strip_edge_ratio=0.014441338447393594
+```
+
+因此最新实际硬点为：
+
+```text
+SignedCycleSignatureCarrierWeightedPhaseSaving
+AND RawBaseToSignedChildWeightReconciliation
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 weighted phase saving 载体未定位的黑箱；没有删除 signed carrier
+相消、thin-support 无损求和、completed family 和 residual endpoint 真缺口。
