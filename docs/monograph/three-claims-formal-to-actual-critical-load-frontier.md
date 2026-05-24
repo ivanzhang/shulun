@@ -24571,6 +24571,60 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 本层删除的是 single-block endpoint 与 right-tail collar 的支撑族分裂；没有删除
 endpoint-flux 相消、moving denominator completion、无损聚合或全局 Phi-LPF 奇偶障碍。
 
+## 330AN. Phi-LPF boundary endpoint-flux q-prefix atom frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-ledger.json
+```
+
+同步结果：
+
+```text
+status=boundary_endpoint_flux_split_into_qprefix_line_atoms_phase_saving_open
+qprefix_line_atom_count_total=15439
+qprefix_line_atom_edge_count_total=177515
+expanded_edge_set_size=177515
+duplicate_atom_edge_count=0
+qprefix_line_atom_identity_verified=true
+bad_qprefix_atom_count=0
+packet_support_count_median=3
+packet_support_count_max=12
+q_prefix_count_median=11
+q_prefix_count_max=37
+qprefix_line_atomization_closed=true
+qprefix_line_atom_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`BoundaryEndpointFluxPhaseSaving` 仍过粗。实际每个 endpoint
+packet 的相位支撑可拆成固定 `m` 的 q-prefix prime line atom：
+
+```text
+{m} x [q_start,q_end]_prime.
+```
+
+因此 boundary endpoint-flux 相位门压成：
+
+```text
+QPrefixLineAtomReciprocalOrbitPhaseSaving
+```
+
+并且仍需：
+
+```text
+MovingPrimeQDenominatorCompletedTraceFamilyOnFixedMAtoms
+AND NoLossAggregationAcross15439QPrefixLineAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 endpoint packet 内部的多 m 支撑耦合；没有删除 q-prefix reciprocal
+orbit 相消、moving denominator completion、无损聚合或全局 Phi-LPF 奇偶障碍。
+
 ## 330AI. Phi-LPF prime-survivor boundary right-tail gap localization frontier
 
 新增文件：

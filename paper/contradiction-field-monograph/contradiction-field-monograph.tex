@@ -34739,6 +34739,62 @@ boundary-endpoint-flux-unification-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Q-prefix line atomization of endpoint flux}
+
+\begin{theorem}[Endpoint flux splits into fixed-\(m\) prime-prefix line atoms]
+In the audit range \(P\le 1009\), the \(5106\) boundary endpoint-flux packets
+split without overlap into \(15439\) fixed-\(m\) q-prefix line atoms of the
+form
+\[
+  \{m\}\times [q_{\rm start},q_{\rm end}]_{\mathbb P}.
+\]
+The expanded atom edge set has size \(177515\), equal to the full boundary
+edge mass, and the audit finds no duplicate atom edge.  The strip-level atom
+ledger is
+\[
+\begin{array}{c|c|c}
+\hbox{strip} & \hbox{atoms} & \hbox{edge mass}\\ \hline
+\texttt{lower\_wing} & 2466 & 29144\\
+\texttt{right\_tail} & 6962 & 86751\\
+\texttt{upper\_wing} & 6011 & 61620 .
+\end{array}
+\]
+Every q-prefix is a contiguous interval of primes.  The packet support size
+has median \(3\) and maximum \(12\); the q-prefix length has median \(11\)
+and maximum \(37\).
+\end{theorem}
+\begin{proof}
+For each endpoint-flux packet, expand the actual endpoint prime shell into
+its individual primes \(m\).  For each such \(m\), pair it with the prime
+prefix from \(q_{\rm start}\) to \(q_{\rm end}\).  The audit verifies that
+the number of primes in this q-interval is exactly the packet
+q-prefix count.  It then expands all atoms to triples \((P,q,m)\) and checks
+that the resulting set has cardinality \(177515\), with no repeated triple.
+This equals the inherited endpoint-flux edge mass, so the atomization is
+lossless at the support level.
+\end{proof}
+
+\begin{remark}[Fixed-\(m\) reciprocal-orbit mouth]
+The endpoint-flux phase problem has been reduced to fixed-\(m\) prime-q
+prefix line atoms:
+\begin{quote}\scriptsize\ttfamily
+QPrefixLineAtomReciprocalOrbitPhaseSaving\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnFixedMAtoms\\
+AND NoLossAggregationAcross15439QPrefixLineAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This remains a support atomization theorem only.  It does not prove
+q-prefix reciprocal-orbit phase saving, the external-lemma version, or the
+internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-atom-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

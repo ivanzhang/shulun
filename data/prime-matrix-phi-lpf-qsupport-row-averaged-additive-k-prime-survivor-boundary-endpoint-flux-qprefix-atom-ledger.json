@@ -1,0 +1,479 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "BoundaryEndpointFluxImported",
+      "meaning": "The unified endpoint-flux packet ledger is inherited.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "QPrefixContiguousPrimeIntervalIdentity",
+      "meaning": "Every atom uses a contiguous prime-q prefix interval.",
+      "proved": true,
+      "remaining": "none for finite q-prefix support"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointFluxQPrefixLineAtomization",
+      "meaning": "All endpoint-flux edges expand disjointly into fixed-m q-prefix line atoms.",
+      "proved": true,
+      "remaining": "none for finite atom support"
+    },
+    {
+      "closed": false,
+      "gate": "QPrefixLineAtomPhaseSaving",
+      "meaning": "Prove cancellation on fixed-m prime-q prefix reciprocal orbits.",
+      "proved": false,
+      "remaining": "new completed trace or reciprocal-orbit estimate required"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixAtomAggregation",
+      "meaning": "Aggregate q-prefix atom phase savings without losing the endpoint-flux gain.",
+      "proved": false,
+      "remaining": "requires analytic aggregation discipline"
+    }
+  ],
+  "current_object": {
+    "identity": "each endpoint-flux packet is a disjoint union of {m} x contiguous prime-q prefix line atoms",
+    "input": "5106 boundary endpoint-flux packets carrying 177515 edges",
+    "remaining": "phase saving on fixed-m prime-q prefix reciprocal orbits and no-loss aggregation"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "q-prefix line atoms are trace-shaped only after the moving denominator is completed",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "fixed-m q-prefix atoms still require a completed Kloosterman variable in q",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "one-dimensional q-prefix atoms are not direct composite Type-II rectangles",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman fractions are closest after the q-prefix atom phase is normalized",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval prime existence does not control q-prefix reciprocal orbit phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "q-prefix atoms are explicit but still need completed moving-denominator trace normalization",
+    "Li_short_interval_x_052": "prime existence in short intervals does not supply reciprocal q-prefix phase cancellation",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "arbitrary-modulus estimates do not start until the atom denominator is a valid Kloosterman variable",
+    "Pascadi_composite_Type_II": "line atoms are one-dimensional q-prefix objects, not Type-II rectangles",
+    "Wright_unbalanced_Kloosterman": "unbalanced estimates become plausible only after q-prefix reciprocal-orbit normalization"
+  },
+  "finite_audit": {
+    "atom_count_by_endpoint_flux_class_rows": [
+      {
+        "atom_count": 2466,
+        "edge_weight_sum": 29144,
+        "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell"
+      },
+      {
+        "atom_count": 633,
+        "edge_weight_sum": 8652,
+        "endpoint_flux_class": "right_tail_left_collar_only_no_P_puncture"
+      },
+      {
+        "atom_count": 54,
+        "edge_weight_sum": 776,
+        "endpoint_flux_class": "right_tail_left_collar_only_with_P_puncture"
+      },
+      {
+        "atom_count": 1237,
+        "edge_weight_sum": 12879,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture"
+      },
+      {
+        "atom_count": 42,
+        "edge_weight_sum": 708,
+        "endpoint_flux_class": "right_tail_right_collar_only_with_P_puncture"
+      },
+      {
+        "atom_count": 131,
+        "edge_weight_sum": 2487,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture"
+      },
+      {
+        "atom_count": 267,
+        "edge_weight_sum": 4864,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture"
+      },
+      {
+        "atom_count": 4398,
+        "edge_weight_sum": 52957,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_no_P_puncture"
+      },
+      {
+        "atom_count": 200,
+        "edge_weight_sum": 3428,
+        "endpoint_flux_class": "right_tail_two_sided_left_and_right_collars_with_P_puncture"
+      },
+      {
+        "atom_count": 6011,
+        "edge_weight_sum": 61620,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell"
+      }
+    ],
+    "atom_count_by_q_prefix_bin_rows": [
+      {
+        "atom_count": 4052,
+        "edge_weight_sum": 93081,
+        "q_prefix_bin": "17<=q<=37"
+      },
+      {
+        "atom_count": 2525,
+        "edge_weight_sum": 7452,
+        "q_prefix_bin": "2<=q<=4"
+      },
+      {
+        "atom_count": 3220,
+        "edge_weight_sum": 20877,
+        "q_prefix_bin": "5<=q<=8"
+      },
+      {
+        "atom_count": 4480,
+        "edge_weight_sum": 54943,
+        "q_prefix_bin": "9<=q<=16"
+      },
+      {
+        "atom_count": 1162,
+        "edge_weight_sum": 1162,
+        "q_prefix_bin": "q=1"
+      }
+    ],
+    "atom_count_by_strip_rows": [
+      {
+        "atom_count": 2466,
+        "edge_weight_sum": 29144,
+        "strip": "lower_wing"
+      },
+      {
+        "atom_count": 6962,
+        "edge_weight_sum": 86751,
+        "strip": "right_tail"
+      },
+      {
+        "atom_count": 6011,
+        "edge_weight_sum": 61620,
+        "strip": "upper_wing"
+      }
+    ],
+    "bad_atom_samples": [],
+    "bad_qprefix_atom_count": 0,
+    "duplicate_atom_edge_count": 0,
+    "expanded_edge_set_size": 177515,
+    "max_prime": 1009,
+    "moving_q_denominator_completed_trace_closed": false,
+    "no_loss_qprefix_atom_aggregation_closed": false,
+    "packet_support_count_average": 3.0236976106541325,
+    "packet_support_count_max": 12,
+    "packet_support_count_median": 3.0,
+    "packet_support_count_min": 1,
+    "previous_boundary_endpoint_flux_edge_count": 177515,
+    "previous_boundary_endpoint_flux_packet_count": 5106,
+    "q_prefix_count_average": 12.339992166079123,
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median": 11.0,
+    "q_prefix_count_min": 1,
+    "qprefix_line_atom_count_total": 15439,
+    "qprefix_line_atom_edge_count_total": 177515,
+    "qprefix_line_atom_identity_verified": true,
+    "qprefix_line_atom_phase_saving_closed": false,
+    "qprefix_line_atomization_closed": true,
+    "row_column_unconditional_closed": false,
+    "sample_atoms": [
+      {
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 79,
+        "packet_index": 0,
+        "q_end": 29,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 83,
+        "packet_index": 0,
+        "q_end": 29,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 53,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 89,
+        "packet_index": 0,
+        "q_end": 29,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          29
+        ],
+        "q_start": 29,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 59,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 79,
+        "packet_index": 1,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 59,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 83,
+        "packet_index": 1,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 59,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 89,
+        "packet_index": 1,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 97,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 101,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 103,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 107,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 109,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 113,
+        "packet_index": 2,
+        "q_end": 31,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          31
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 79,
+        "packet_index": 3,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 83,
+        "packet_index": 3,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 61,
+        "edge_count": 2,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 89,
+        "packet_index": 3,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 2,
+        "q_prefix_sample": [
+          31,
+          37
+        ],
+        "q_start": 31,
+        "strip": "upper_wing"
+      },
+      {
+        "P": 67,
+        "edge_count": 1,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 97,
+        "packet_index": 4,
+        "q_end": 37,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 1,
+        "q_prefix_sample": [
+          37
+        ],
+        "q_start": 37,
+        "strip": "upper_wing"
+      }
+    ],
+    "shell_step_packet_count_total": 5106
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "QPrefixLineAtomReciprocalOrbitPhaseSaving",
+    "AND MovingPrimeQDenominatorCompletedTraceFamilyOnFixedMAtoms",
+    "AND NoLossAggregationAcross15439QPrefixLineAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_qprefix_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "qprefix_line_atom_phase_saving_closed": false,
+  "qprefix_line_atomization_closed": true,
+  "reason_chosen": "after endpoint-flux unification, the next acyclic support step is to split every endpoint packet into fixed-m q-prefix line atoms",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "892a205ab7cd1f8115360fdccc7217d339e41b437e59e69c27cfc913d3fe9432",
+    "docs/monograph/external-theorem-index.md": "b81c6378932e9a914d87ed47801bb32d114baeef1faff403f76ce720cb6d8a33",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "105283b9b485689eb13bc336fa224d4644b59d961af4bbd86bbd1a35f3846c27",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.json": "f0e224a893f8a09e6b8ea2b8e247623680d3ae50bf1d45b05cb50ca99628f4c2",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-endpoint-collar-audit.json": "58f08272694b29f74c6555b7060da49a16c06679218c85103d5104b5456ae4a4",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "33ac5d2b1920e889617a0576fc2621ae11b544820b0517a02f4a37e3c98305e5",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "cb430163daaa32237f410069d2831473eae2695a4401bea6903fcba6e32fdc12",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit.py": "da2ff33c6b3a3a527821b7654c235b71e8ac3833ed4d8cedfb376202edc66ad3",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "c4a00a0d6f786e23bcacd0823b86d3469aeaf260e504006a93ed6e84c2b0335e"
+  },
+  "status": "boundary_endpoint_flux_split_into_qprefix_line_atoms_phase_saving_open"
+}

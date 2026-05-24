@@ -5793,6 +5793,55 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65A. Phi-LPF boundary endpoint-flux q-prefix atom 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.md
+```
+
+上一层把 boundary 支撑统一为 endpoint-flux packets。本层进一步把每个 packet
+拆成固定 `m` 的 q-prefix line atom。有限审计读数：
+
+```text
+qprefix_line_atom_count_total=15439
+qprefix_line_atom_edge_count_total=177515
+expanded_edge_set_size=177515
+duplicate_atom_edge_count=0
+qprefix_line_atom_identity_verified=true
+bad_qprefix_atom_count=0
+q_prefix_count_median=11
+q_prefix_count_max=37
+```
+
+因此 boundary 支撑变成：
+
+```text
+endpoint-flux packet = disjoint union of {m} x [q_start,q_end]_prime atoms.
+```
+
+外部定理匹配相应收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 若要进入，
+现在必须作用在 fixed-`m` q-prefix reciprocal orbit 的 completed phase 上；Runbo Li
+的 `x^0.52` 短区间素数存在仍不能提供 q-prefix reciprocal phase saving。
+
+状态边界：
+
+```text
+qprefix_line_atomization_closed=true
+qprefix_line_atom_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_qprefix_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

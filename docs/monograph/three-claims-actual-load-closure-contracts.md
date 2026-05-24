@@ -22738,6 +22738,55 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭 endpoint-flux 支撑统一账本，不关闭 endpoint-flux 相位节省、外部引理版或内部自足版。
 
+### 1.187 Phi-LPF boundary endpoint-flux q-prefix atom 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json
+```
+
+同步读数为：
+
+```text
+qprefix_line_atom_count_total=15439
+qprefix_line_atom_edge_count_total=177515
+expanded_edge_set_size=177515
+duplicate_atom_edge_count=0
+qprefix_line_atom_identity_verified=true
+bad_qprefix_atom_count=0
+packet_support_count_min=1
+packet_support_count_median=3
+packet_support_count_max=12
+q_prefix_count_min=1
+q_prefix_count_median=11
+q_prefix_count_max=37
+qprefix_line_atomization_closed=true
+qprefix_line_atom_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：统一 endpoint-flux packet 仍不是最原子相位对象。每个 packet
+无重叠拆成若干固定 endpoint prime `m` 的 q-prefix line atoms：
+
+```text
+{m} x [q_start,q_end]_prime.
+```
+
+因此 boundary endpoint-flux 相位门被压成：
+
+```text
+QPrefixLineAtomReciprocalOrbitPhaseSaving
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnFixedMAtoms
+AND NoLossAggregationAcross15439QPrefixLineAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 q-prefix line atom 支撑原子化，不关闭 reciprocal orbit 相位节省、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：

@@ -4833,6 +4833,78 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC：Phi-LPF boundary endpoint-flux q-prefix atom 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_atom_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.md
+```
+
+本层承接 Q13AB，把统一 endpoint-flux packet 拆成固定 `m` 的 q-prefix line atoms。
+
+### Q13AC.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+qprefix_line_atom_count_total=15439
+qprefix_line_atom_edge_count_total=177515
+expanded_edge_set_size=177515
+duplicate_atom_edge_count=0
+qprefix_line_atom_identity_verified=true
+bad_qprefix_atom_count=0
+packet_support_count_min=1
+packet_support_count_median=3
+packet_support_count_max=12
+q_prefix_count_min=1
+q_prefix_count_median=11
+q_prefix_count_max=37
+```
+
+atom strip 分布：
+
+```text
+lower_wing=2466 atoms / 29144 edges
+right_tail=6962 atoms / 86751 edges
+upper_wing=6011 atoms / 61620 edges
+```
+
+### Q13AC.2 诚实边界
+
+本层关闭的是支撑原子化：
+
+```text
+endpoint-flux packet = disjoint union of {m} x contiguous prime-q prefix atoms.
+```
+
+最新最窄口：
+
+```text
+QPrefixLineAtomReciprocalOrbitPhaseSaving
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnFixedMAtoms
+AND NoLossAggregationAcross15439QPrefixLineAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+qprefix_line_atomization_closed=true
+qprefix_line_atom_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_qprefix_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：
