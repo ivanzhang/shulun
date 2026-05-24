@@ -34498,6 +34498,69 @@ boundary-right-tail-gap-localization-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Diagonal-core decomposition of right-tail shell gaps}
+
+\begin{theorem}[Right-tail gaps are successor cores plus diagonal ghosts]
+In the right-tail multi-block shell packet audit range \(P\le 1009\),
+every internal prime gap between adjacent \(m\)-blocks has the following
+form.  If \(F_i\) is the current right-tail fibre, \(F_{i+1}\) is the
+successor fibre, and \(G\) is the set of missing primes in the internal
+gap, then
+\[
+  G=(G\cap F_{i+1})\sqcup E,
+  \qquad E\in\{\varnothing,\{P\}\}.
+\]
+Thus the only gap prime not carried by the successor fibre is the row-prime
+diagonal ghost \(P\).  The finite ledger gives
+\[
+\begin{array}{c|c|c}
+\hbox{gap class} & \hbox{gaps} & \hbox{gap-edge weight}\\ \hline
+\texttt{diagonal\_plus\_carried\_core} & 1006 & 56349\\
+\texttt{pure\_diagonal\_slit} & 77 & 4945\\
+\texttt{carried\_core\_without\_diagonal} & 1 & 36 .
+\end{array}
+\]
+There are no unexplained gap primes.
+\end{theorem}
+\begin{proof}
+For each of the \(1083\) right-tail multi-block packets, reconstruct the
+nested right-tail fibres from the boundary layer-cake ledger.  The current
+packet shell is exactly \(F_i\setminus F_{i+1}\).  For each of the \(1084\)
+internal gaps, enumerate the missing primes between the adjacent shell
+blocks and split them into primes lying in \(F_{i+1}\), the possible row
+prime \(P\), and all remaining primes.  The machine audit finds zero
+remaining primes.  It also verifies that the inherited shell-step packet
+count remains \(5106\), the total edge mass remains \(177515\), and the
+right-tail multi-block edge mass remains \(61294\).  Hence the displayed
+decomposition holds for every audited gap.
+\end{proof}
+
+\begin{remark}[Latest right-tail phase interface]
+The diagonal \(P\)-ghost is now an explicit support subtraction for the
+right-tail multi-block family.  Across all internal gaps, the missing-prime
+mass \(31101\) splits into \(30018\) successor-fibre carried primes and
+\(1083\) diagonal ghosts.  This does not prove cancellation.  It reduces the
+right-tail multi-block analytic task to cancellation on the carried core:
+\begin{quote}\scriptsize\ttfamily
+RightTailSuccessorFibreCorePhaseSaving\\
+AND SingleBlockEndpointPacketSummationByParts\\
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnSuccessorCoreAndSingleBlockPackets\\
+AND NoLossAggregationAcross5106ShellStepPackets\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+FKMS-type trace bilinear estimates, arbitrary-modulus Kloosterman estimates,
+composite Type-II estimates, and unbalanced Kloosterman estimates remain
+candidate interfaces only after the successor-core family is completed with
+the moving \(q\)-denominator.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-right-tail-gap-diagonal-core-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

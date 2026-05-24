@@ -24349,6 +24349,63 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
 
+## 330AJ. Phi-LPF right-tail gap diagonal/core frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-ledger.json
+```
+
+同步结果：
+
+```text
+status=right_tail_multi_block_gaps_split_into_successor_core_plus_diagonal_ghost_phase_saving_open
+right_tail_multi_block_packet_count=1083
+multi_block_edge_count=61294
+gap_count_total=1084
+gap_decomposition_verified=true
+unexplained_gap_count=0
+gap_missing_prime_count_total=31101
+carried_core_prime_count_total=30018
+diagonal_ghost_count_total=1083
+diagonal_plus_carried_core_gap_count=1006
+pure_diagonal_slit_gap_count=77
+carried_core_without_diagonal_gap_count=1
+right_tail_gap_diagonal_core_identity_closed=true
+right_tail_successor_fibre_core_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：上一层的 `DiagonalPGhostSubtractionDiscipline` 对
+right-tail multi-block gap 支撑已经可以剥离。每个 internal prime gap 满足：
+
+```text
+missing primes = successor-fibre carried core disjoint union optional {P}.
+```
+
+其中 `P` 是固定行素数的 diagonal ghost；没有 unexplained third gap atom。
+因此 right-tail multi-block 的真正相位门不再是“解释 gap”，而是：
+
+```text
+RightTailSuccessorFibreCorePhaseSaving
+```
+
+并且仍需：
+
+```text
+SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnSuccessorCoreAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 right-tail 多段 gap 的未解释支撑原子；没有删除 successor-core
+相消、single-block endpoint 求和、移动分母 completed trace 或全局 Phi-LPF 奇偶障碍。
+
 ## 330AI. Phi-LPF prime-survivor boundary right-tail gap localization frontier
 
 新增文件：

@@ -1,0 +1,778 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "RightTailGapLocalizationImported",
+      "meaning": "The 1083 multi-block packets and 1084 gaps are inherited from the right-tail localization ledger.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "RightTailGapDiagonalCoreIdentity",
+      "meaning": "Every internal gap decomposes into successor-fibre carried primes plus optional row-prime P.",
+      "proved": true,
+      "remaining": "none for the finite diagonal/core identity ledger"
+    },
+    {
+      "closed": true,
+      "gate": "RightTailDiagonalPGhostSupportSubtraction",
+      "meaning": "The only gap element not carried by the successor fibre is the row-prime diagonal ghost P.",
+      "proved": true,
+      "remaining": "none for right-tail multi-block support subtraction"
+    },
+    {
+      "closed": false,
+      "gate": "RightTailSuccessorFibreCorePhaseSaving",
+      "meaning": "Prove cancellation on the carried core after diagonal support subtraction.",
+      "proved": false,
+      "remaining": "new completed trace or endpoint summation estimate required"
+    },
+    {
+      "closed": false,
+      "gate": "SingleBlockEndpointPhaseSaving",
+      "meaning": "Prove cancellation or summation-by-parts for the single-block packets.",
+      "proved": false,
+      "remaining": "moving q denominator and packet aggregation remain open"
+    }
+  ],
+  "current_object": {
+    "identity": "each internal gap equals successor-fibre carried core disjoint union optional row-prime P diagonal ghost",
+    "input": "1083 right-tail multi-block shell-step packets and 1084 internal prime gaps",
+    "remaining": "phase saving on successor-fibre carried cores, single-block endpoint summation, moving q denominator completion"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "diagonal/core support splitting removes unexplained gaps, but still needs a completed trace family for successor-fibre cores",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "successor-fibre cores still have moving prime q denominators before arbitrary-modulus Kloosterman input can apply",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "the remaining core is nested endpoint support, not a single long Type-II rectangle",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "the q-long/successor-core form is the closest unbalanced interface after the diagonal ghost is isolated",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short-interval existence does not control successor-fibre carried cores at fixed row and moving q",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "support identity removes unexplained gaps but still lacks completed trace families for successor cores",
+    "Li_short_interval_x_052": "short-interval existence does not control fixed-row successor-core phase sums",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "moving prime q denominators remain the central completion problem",
+    "Pascadi_composite_Type_II": "successor cores are nested endpoint supports rather than direct long Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "right-tail q-long/successor-core packets are the closest unbalanced candidate after diagonal subtraction"
+  },
+  "finite_audit": {
+    "carried_core_bin_rows": [
+      {
+        "carried_bin": "17<=carried<=32",
+        "edge_weight_sum": 16631,
+        "gap_count": 273
+      },
+      {
+        "carried_bin": "1<=carried<=4",
+        "edge_weight_sum": 8238,
+        "gap_count": 91
+      },
+      {
+        "carried_bin": "33<=carried<=78",
+        "edge_weight_sum": 14194,
+        "gap_count": 416
+      },
+      {
+        "carried_bin": "5<=carried<=16",
+        "edge_weight_sum": 17322,
+        "gap_count": 227
+      },
+      {
+        "carried_bin": "carried=0",
+        "edge_weight_sum": 4945,
+        "gap_count": 77
+      }
+    ],
+    "carried_core_count_average": 27.69188191881919,
+    "carried_core_count_max": 78,
+    "carried_core_count_median": 25.0,
+    "carried_core_count_min": 0,
+    "carried_core_prime_count_total": 30018,
+    "diagonal_ghost_count_total": 1083,
+    "diagonal_ghost_gap_count": 1083,
+    "diagonal_position_rows": [
+      {
+        "diagonal_position": "P_first_missing_prime",
+        "edge_weight_sum": 6889,
+        "gap_count": 100
+      },
+      {
+        "diagonal_position": "P_interior_missing_prime",
+        "edge_weight_sum": 52957,
+        "gap_count": 968
+      },
+      {
+        "diagonal_position": "P_last_missing_prime",
+        "edge_weight_sum": 1448,
+        "gap_count": 15
+      },
+      {
+        "diagonal_position": "no_P_in_gap",
+        "edge_weight_sum": 36,
+        "gap_count": 1
+      }
+    ],
+    "edge_count_total": 177515,
+    "gap_class_rows": [
+      {
+        "edge_weight_sum": 36,
+        "gap_class": "carried_core_without_diagonal",
+        "gap_count": 1
+      },
+      {
+        "edge_weight_sum": 56349,
+        "gap_class": "diagonal_plus_carried_core",
+        "gap_count": 1006
+      },
+      {
+        "edge_weight_sum": 4945,
+        "gap_class": "pure_diagonal_slit",
+        "gap_count": 77
+      }
+    ],
+    "gap_count_total": 1084,
+    "gap_decomposition_verified": true,
+    "gap_missing_prime_count_total": 31101,
+    "gap_size_average": 28.690959409594097,
+    "gap_size_max": 79,
+    "gap_size_median": 26.0,
+    "gap_size_min": 1,
+    "m_block_count_rows": [
+      {
+        "edge_weight_sum": 61258,
+        "m_block_count": "2",
+        "packet_count": 1082
+      },
+      {
+        "edge_weight_sum": 36,
+        "m_block_count": "3",
+        "packet_count": 1
+      }
+    ],
+    "max_prime": 1009,
+    "moving_q_denominator_completed_trace_closed": false,
+    "multi_block_edge_count": 61294,
+    "no_diagonal_gap_count": 1,
+    "no_loss_packet_aggregation_closed": false,
+    "packet_class_rows": [
+      {
+        "edge_weight_sum": 36,
+        "packet_class": "carried_core_without_diagonal+pure_diagonal_slit_packet",
+        "packet_count": 1
+      },
+      {
+        "edge_weight_sum": 56349,
+        "packet_class": "diagonal_plus_carried_core_packet",
+        "packet_count": 1006
+      },
+      {
+        "edge_weight_sum": 4909,
+        "packet_class": "pure_diagonal_slit_packet",
+        "packet_count": 76
+      }
+    ],
+    "packet_identity_inherited": true,
+    "previous_edge_count_total": 177515,
+    "previous_gap_count_total": 1084,
+    "previous_multi_block_edge_count": 61294,
+    "previous_right_tail_multi_block_packet_count": 1083,
+    "previous_shell_step_packet_count_total": 5106,
+    "q_prefix_bin_rows": [
+      {
+        "edge_weight_sum": 35129,
+        "packet_count": 365,
+        "q_prefix_bin": "17<=q<=37"
+      },
+      {
+        "edge_weight_sum": 1756,
+        "packet_count": 117,
+        "q_prefix_bin": "2<=q<=4"
+      },
+      {
+        "edge_weight_sum": 6709,
+        "packet_count": 213,
+        "q_prefix_bin": "5<=q<=8"
+      },
+      {
+        "edge_weight_sum": 17318,
+        "packet_count": 328,
+        "q_prefix_bin": "9<=q<=16"
+      },
+      {
+        "edge_weight_sum": 382,
+        "packet_count": 60,
+        "q_prefix_bin": "q=1"
+      }
+    ],
+    "right_tail_diagonal_p_ghost_support_subtraction_closed": true,
+    "right_tail_gap_diagonal_core_identity_closed": true,
+    "right_tail_multi_block_packet_count": 1083,
+    "right_tail_successor_fibre_core_phase_saving_closed": false,
+    "row_column_unconditional_closed": false,
+    "sample_gap_packets": [
+      {
+        "P": 83,
+        "edge_count": 12,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 83,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 83,
+            "left_shell_prime": 79,
+            "right_shell_prime": 89,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 2,
+        "q_end": 73,
+        "q_prefix_count": 6,
+        "q_start": 53,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 79,
+            "m_shell_prime_count": 1,
+            "m_start": 79
+          },
+          {
+            "edge_count": 6,
+            "m_end": 89,
+            "m_shell_prime_count": 1,
+            "m_start": 89
+          }
+        ]
+      },
+      {
+        "P": 101,
+        "edge_count": 5,
+        "gap_records": [
+          {
+            "carried_core_count": 5,
+            "carried_core_sample": [
+              97,
+              103,
+              107,
+              109,
+              113
+            ],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_interior_missing_prime",
+            "first_missing_prime": 97,
+            "gap_class": "diagonal_plus_carried_core",
+            "gap_size": 6,
+            "last_missing_prime": 113,
+            "left_shell_prime": 89,
+            "right_shell_prime": 127,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 73,
+        "q_prefix_count": 1,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 89,
+            "m_shell_prime_count": 3,
+            "m_start": 79
+          },
+          {
+            "edge_count": 2,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          }
+        ]
+      },
+      {
+        "P": 101,
+        "edge_count": 15,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 101,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 101,
+            "left_shell_prime": 97,
+            "right_shell_prime": 103,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 83,
+        "q_prefix_count": 3,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 3,
+            "m_end": 97,
+            "m_shell_prime_count": 1,
+            "m_start": 97
+          },
+          {
+            "edge_count": 12,
+            "m_end": 113,
+            "m_shell_prime_count": 4,
+            "m_start": 103
+          }
+        ]
+      },
+      {
+        "P": 103,
+        "edge_count": 15,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 103,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 103,
+            "left_shell_prime": 101,
+            "right_shell_prime": 107,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 101,
+            "m_shell_prime_count": 2,
+            "m_start": 97
+          },
+          {
+            "edge_count": 9,
+            "m_end": 113,
+            "m_shell_prime_count": 3,
+            "m_start": 107
+          }
+        ]
+      },
+      {
+        "P": 107,
+        "edge_count": 20,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 107,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 107,
+            "left_shell_prime": 103,
+            "right_shell_prime": 109,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 89,
+        "q_prefix_count": 4,
+        "q_start": 73,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 103,
+            "m_shell_prime_count": 3,
+            "m_start": 97
+          },
+          {
+            "edge_count": 8,
+            "m_end": 113,
+            "m_shell_prime_count": 2,
+            "m_start": 109
+          }
+        ]
+      },
+      {
+        "P": 109,
+        "edge_count": 21,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 109,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 109,
+            "left_shell_prime": 107,
+            "right_shell_prime": 113,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 7,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 107,
+            "m_shell_prime_count": 4,
+            "m_start": 97
+          },
+          {
+            "edge_count": 9,
+            "m_end": 131,
+            "m_shell_prime_count": 3,
+            "m_start": 113
+          }
+        ]
+      },
+      {
+        "P": 113,
+        "edge_count": 27,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 113,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 113,
+            "left_shell_prime": 109,
+            "right_shell_prime": 127,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 9,
+        "q_end": 89,
+        "q_prefix_count": 3,
+        "q_start": 79,
+        "source_rectangles": [
+          {
+            "edge_count": 15,
+            "m_end": 109,
+            "m_shell_prime_count": 5,
+            "m_start": 97
+          },
+          {
+            "edge_count": 12,
+            "m_end": 139,
+            "m_shell_prime_count": 4,
+            "m_start": 127
+          }
+        ]
+      },
+      {
+        "P": 127,
+        "edge_count": 8,
+        "gap_records": [
+          {
+            "carried_core_count": 6,
+            "carried_core_sample": [
+              131,
+              137,
+              139,
+              149,
+              151,
+              157
+            ],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 127,
+            "gap_class": "diagonal_plus_carried_core",
+            "gap_size": 7,
+            "last_missing_prime": 157,
+            "left_shell_prime": 113,
+            "right_shell_prime": 163,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 8,
+        "q_end": 89,
+        "q_prefix_count": 1,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          },
+          {
+            "edge_count": 2,
+            "m_end": 167,
+            "m_shell_prime_count": 2,
+            "m_start": 163
+          }
+        ]
+      },
+      {
+        "P": 131,
+        "edge_count": 9,
+        "gap_records": [
+          {
+            "carried_core_count": 8,
+            "carried_core_sample": [
+              127,
+              137,
+              139,
+              149,
+              151,
+              157
+            ],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_interior_missing_prime",
+            "first_missing_prime": 127,
+            "gap_class": "diagonal_plus_carried_core",
+            "gap_size": 9,
+            "last_missing_prime": 167,
+            "left_shell_prime": 113,
+            "right_shell_prime": 173,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 9,
+        "q_end": 89,
+        "q_prefix_count": 1,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 6,
+            "m_end": 113,
+            "m_shell_prime_count": 6,
+            "m_start": 97
+          },
+          {
+            "edge_count": 3,
+            "m_end": 181,
+            "m_shell_prime_count": 3,
+            "m_start": 173
+          }
+        ]
+      },
+      {
+        "P": 131,
+        "edge_count": 21,
+        "gap_records": [
+          {
+            "carried_core_count": 0,
+            "carried_core_sample": [],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 131,
+            "gap_class": "pure_diagonal_slit",
+            "gap_size": 1,
+            "last_missing_prime": 131,
+            "left_shell_prime": 127,
+            "right_shell_prime": 137,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 3,
+        "q_end": 113,
+        "q_prefix_count": 7,
+        "q_start": 89,
+        "source_rectangles": [
+          {
+            "edge_count": 7,
+            "m_end": 127,
+            "m_shell_prime_count": 1,
+            "m_start": 127
+          },
+          {
+            "edge_count": 14,
+            "m_end": 139,
+            "m_shell_prime_count": 2,
+            "m_start": 137
+          }
+        ]
+      },
+      {
+        "P": 137,
+        "edge_count": 30,
+        "gap_records": [
+          {
+            "carried_core_count": 1,
+            "carried_core_sample": [
+              139
+            ],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_first_missing_prime",
+            "first_missing_prime": 137,
+            "gap_class": "diagonal_plus_carried_core",
+            "gap_size": 2,
+            "last_missing_prime": 139,
+            "left_shell_prime": 131,
+            "right_shell_prime": 149,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 5,
+        "q_end": 113,
+        "q_prefix_count": 6,
+        "q_start": 97,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          },
+          {
+            "edge_count": 18,
+            "m_end": 157,
+            "m_shell_prime_count": 3,
+            "m_start": 149
+          }
+        ]
+      },
+      {
+        "P": 139,
+        "edge_count": 42,
+        "gap_records": [
+          {
+            "carried_core_count": 1,
+            "carried_core_sample": [
+              137
+            ],
+            "diagonal_ghost_count": 1,
+            "diagonal_position": "P_last_missing_prime",
+            "first_missing_prime": 137,
+            "gap_class": "diagonal_plus_carried_core",
+            "gap_size": 2,
+            "last_missing_prime": 139,
+            "left_shell_prime": 131,
+            "right_shell_prime": 149,
+            "unexplained_count": 0,
+            "unexplained_sample": [],
+            "verified": true
+          }
+        ],
+        "m_block_count": 2,
+        "m_shell_prime_count": 7,
+        "q_end": 113,
+        "q_prefix_count": 6,
+        "q_start": 97,
+        "source_rectangles": [
+          {
+            "edge_count": 12,
+            "m_end": 131,
+            "m_shell_prime_count": 2,
+            "m_start": 127
+          },
+          {
+            "edge_count": 30,
+            "m_end": 167,
+            "m_shell_prime_count": 5,
+            "m_start": 149
+          }
+        ]
+      }
+    ],
+    "shell_step_packet_count_total": 5106,
+    "single_block_packet_phase_saving_closed": false,
+    "unexplained_gap_count": 0,
+    "unexplained_prime_count_total": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RightTailSuccessorFibreCorePhaseSaving",
+    "AND SingleBlockEndpointPacketSummationByParts",
+    "AND MovingPrimeQDenominatorCompletedTraceFamilyOnSuccessorCoreAndSingleBlockPackets",
+    "AND NoLossAggregationAcross5106ShellStepPackets",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "moving_q_denominator_completed_trace_closed": false,
+  "no_loss_packet_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the previous right-tail localization left diagonal P ghost subtraction and right-tail gap phase saving as distinct support/analytic gates; this audit separates the support identity from the analytic phase-saving problem",
+  "right_tail_diagonal_p_ghost_support_subtraction_closed": true,
+  "right_tail_gap_diagonal_core_identity_closed": true,
+  "right_tail_successor_fibre_core_phase_saving_closed": false,
+  "row_column_unconditional_closed": false,
+  "single_block_packet_phase_saving_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "12c6df7a6584b754295ea8f593ed8cc2af7d772a9bf919ec52ba9dc1428e4431",
+    "docs/monograph/external-theorem-index.md": "a3b05f075a985ed371b6d893e33130e8654a18be7ada10ecaa50e7e6727e630a",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f6e8383605f12175679f6f66abeefd11d4e495bec5e0fb7710511aaff338b205",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-layercake-rectangles-audit.json": "d320b65d266a3161c858ce5f781f2eb700674c1ce16b39d72c1348a5003c602f",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-localization-audit.json": "85b0b987ac377f64f0834e7b0c287806609bd9e1adf0c3db3a4ce903155d4717",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-bulk-rectangle-typeii-audit.json": "720726090e6d3358ff41a53ea4cb82bdf8c7df483a83ea3becd89c175f2a29b8",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "56c628fcea86602e2b6db495163b868ad884be88f885bccc7463652c38ba5e56",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "2eac0005df4125c14c1e967925b163cfb62c29d66bed396cbbf9127780c997b9",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit.py": "02764f0acad1cf0cc34df199135fb84a1a07fd5f222f591b13726cce8af9dd8b",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "a310842013198e60ba6c8d63d990cc0b232f6f7e92d3ee157dbd39a9158153bf"
+  },
+  "status": "right_tail_multi_block_gaps_split_into_successor_core_plus_diagonal_ghost_phase_saving_open"
+}

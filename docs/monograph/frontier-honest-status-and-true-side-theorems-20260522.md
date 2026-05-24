@@ -4535,6 +4535,85 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13Y：Phi-LPF right-tail gap diagonal/core 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.md
+```
+
+本层承接 Q13X，继续拆解 right-tail multi-block 的 internal prime gaps。
+
+### Q13Y.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+right_tail_multi_block_packet_count=1083
+multi_block_edge_count=61294
+gap_count_total=1084
+gap_decomposition_verified=true
+unexplained_gap_count=0
+unexplained_prime_count_total=0
+gap_missing_prime_count_total=31101
+carried_core_prime_count_total=30018
+diagonal_ghost_count_total=1083
+diagonal_ghost_gap_count=1083
+no_diagonal_gap_count=1
+gap_size_median=26
+carried_core_count_median=25
+```
+
+gap class 分桶：
+
+```text
+diagonal_plus_carried_core=1006 gaps / 56349 gap-edge-weight
+pure_diagonal_slit=77 gaps / 4945 gap-edge-weight
+carried_core_without_diagonal=1 gap / 36 gap-edge-weight
+```
+
+### Q13Y.2 诚实边界
+
+本层关闭的是支撑恒等式：
+
+```text
+internal gap = successor-fibre carried core disjoint union optional diagonal P ghost.
+```
+
+它把 right-tail multi-block 的 `DiagonalPGhostSubtractionDiscipline` 剥成显式账本；
+不提供 carried-core 相位节省。
+
+最新最窄口：
+
+```text
+RightTailSuccessorFibreCorePhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnSuccessorCoreAndSingleBlockPackets
+AND NoLossAggregationAcross5106ShellStepPackets
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+right_tail_gap_diagonal_core_identity_closed=true
+right_tail_diagonal_p_ghost_support_subtraction_closed=true
+right_tail_successor_fibre_core_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

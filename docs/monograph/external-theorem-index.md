@@ -5577,6 +5577,64 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 62. Phi-LPF right-tail gap diagonal/core 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.md
+```
+
+上一层定位了 `1083` 个 right-tail multi-block packets。本层继续拆解它们的
+`1084` 个 internal prime gaps。有限审计读数：
+
+```text
+gap_decomposition_verified=true
+unexplained_gap_count=0
+gap_missing_prime_count_total=31101
+carried_core_prime_count_total=30018
+diagonal_ghost_count_total=1083
+diagonal_ghost_gap_count=1083
+no_diagonal_gap_count=1
+```
+
+gap class：
+
+```text
+diagonal_plus_carried_core=1006
+pure_diagonal_slit=77
+carried_core_without_diagonal=1
+```
+
+因此 every right-tail internal gap 具有支撑恒等式：
+
+```text
+missing primes = successor-fibre carried core disjoint union optional {P}.
+```
+
+外部定理匹配相应收窄：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 若要进入，
+现在必须作用在 successor-fibre carried core 的移动分母相位和 packet 求和上；
+它们仍没有直接给出固定行 unconditional phase saving。
+
+状态边界：
+
+```text
+right_tail_gap_diagonal_core_identity_closed=true
+right_tail_diagonal_p_ghost_support_subtraction_closed=true
+right_tail_successor_fibre_core_phase_saving_closed=false
+single_block_packet_phase_saving_closed=false
+moving_q_denominator_completed_trace_closed=false
+no_loss_packet_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

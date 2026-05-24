@@ -22523,6 +22523,63 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层只关闭 right-tail gap 定位账本，不关闭外部引理版或内部自足版。
 
+### 1.183 Phi-LPF right-tail gap diagonal/core 分解更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_right_tail_gap_diagonal_core_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-right-tail-gap-diagonal-core-audit.json
+```
+
+同步读数为：
+
+```text
+right_tail_multi_block_packet_count=1083
+multi_block_edge_count=61294
+gap_count_total=1084
+gap_decomposition_verified=true
+unexplained_gap_count=0
+gap_missing_prime_count_total=31101
+carried_core_prime_count_total=30018
+diagonal_ghost_count_total=1083
+diagonal_ghost_gap_count=1083
+no_diagonal_gap_count=1
+diagonal_plus_carried_core_gap_count=1006
+pure_diagonal_slit_gap_count=77
+carried_core_without_diagonal_gap_count=1
+right_tail_successor_fibre_core_phase_saving_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：right-tail multi-block gap 不是第三类未知洞。每个内部 gap 的缺口素数都精确分成
+
+```text
+successor-fibre carried core
+disjoint union optional diagonal P ghost.
+```
+
+所以 `DiagonalPGhostSubtractionDiscipline` 在 right-tail multi-block 支撑层已经化为显式恒等式；剩余负载转移到 carried core 的相位节省。
+
+最新直接主攻改为：
+
+```text
+RightTailSuccessorFibreCorePhaseSaving
+AND SingleBlockEndpointPacketSummationByParts
+AND MovingPrimeQDenominatorCompletedTraceFamilyOnSuccessorCoreAndSingleBlockPackets
+```
+
+并行保留：
+
+```text
+NoLossAggregationAcross5106ShellStepPackets
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 right-tail multi-block 的支撑恒等式，不关闭 successor-core 相位节省、外部引理版或内部自足版。
+
 ### 1.180 Phi-LPF prime-blocker dynamic sqrt-sieve survivor 更新
 
 新增机器证书：
