@@ -2017,6 +2017,67 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC2：Phi-LPF q-prefix carry cycle signature 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.json
+```
+
+本层把 loop-erased cycle core 继续拆成 directed signatures 与 length/load/sign
+shape buckets。关键读数：
+
+```text
+cycle_signature_decomposition_closed=true
+raw_cycle_packet_count=45178
+raw_cycle_edge_mass=117733
+raw_cycle_signature_count=3546
+raw_cycle_shape_count=2718
+raw_template_top20_edge_ratio=0.13926426745262585
+raw_template_top100_edge_ratio=0.34888264123058105
+signed_cycle_packet_count=36330
+signed_cycle_edge_mass=107677
+signed_cycle_signature_count=8691
+signed_cycle_shape_count=5905
+signed_A_sign_variable_cycle_count=26038
+signed_template_top20_edge_ratio=0.06297538007188165
+signed_template_top100_edge_ratio=0.18002916128792593
+```
+
+真推进点：cycle core 已不再是未分解黑箱；它现在是有限模板族上的 weighted
+signature 问题。负面边界同样明确：raw/signed top-20 模板质量占比都太低，不能靠
+少数主模板的平凡相消闭合。
+
+最新最窄口变为：
+
+```text
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+cycle_signature_ledger_closed=true
+cycle_signature_weighted_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_flow_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

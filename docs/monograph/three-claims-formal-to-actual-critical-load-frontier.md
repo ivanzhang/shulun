@@ -25220,3 +25220,52 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 本层删除的是 switch path 质量形状黑箱；没有删除 cycle 相消、residual 求和和 completed
 family 真缺口。
+
+### Phi-LPF q-prefix cycle-signature formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+CyclePacketPhaseSavingForLoopErasedCarrySwitchCore
+```
+
+现在被压成有限模板族上的 weighted signature 问题：
+
+```text
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore
+```
+
+关键审计读数为：
+
+```text
+cycle_signature_decomposition_closed=true
+raw_cycle_signature_count=3546
+raw_cycle_shape_count=2718
+raw_template_top20_edge_ratio=0.13926426745262585
+signed_cycle_signature_count=8691
+signed_cycle_shape_count=5905
+signed_A_sign_variable_cycle_count=26038
+signed_template_top20_edge_ratio=0.06297538007188165
+```
+
+因此最新实际硬点为：
+
+```text
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 cycle packet 未拆签名的形状黑箱；没有删除 weighted phase saving、
+residual endpoint summation、completed family 和无损聚合真缺口。

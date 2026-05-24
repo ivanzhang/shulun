@@ -35148,6 +35148,78 @@ boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Finite signatures of q-prefix carry cycles}
+
+\begin{theorem}[Cycle core signature ledger]
+In the same audit range \(P\le 1009\), take every directed cycle packet
+peeled from the loop-erased switch paths and quotient only by cyclic rotation
+of its starting point, not by reversal.  Then attach the length, the
+gap/carry load, and, in the signed case, the \(A\)-step sign profile.  The
+audit verifies
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{cycle\_signature\_decomposition\_closed} & \texttt{true}\\
+\texttt{raw\_cycle\_packet\_count} & 45178\\
+\texttt{raw\_cycle\_edge\_mass} & 117733\\
+\texttt{raw\_cycle\_signature\_count} & 3546\\
+\texttt{raw\_cycle\_shape\_count} & 2718\\
+\texttt{raw\_template\_top20\_edge\_ratio} & 0.13926426745262585\\
+\texttt{raw\_template\_top100\_edge\_ratio} & 0.34888264123058105\\
+\texttt{signed\_cycle\_packet\_count} & 36330\\
+\texttt{signed\_cycle\_edge\_mass} & 107677\\
+\texttt{signed\_cycle\_signature\_count} & 8691\\
+\texttt{signed\_cycle\_shape\_count} & 5905\\
+\texttt{signed\_A\_sign\_variable\_cycle\_count} & 26038\\
+\texttt{signed\_template\_top20\_edge\_ratio} & 0.06297538007188165\\
+\texttt{signed\_template\_top100\_edge\_ratio} & 0.18002916128792593 .
+\end{array}
+\]
+Thus the recurrent cycle core is now a finite directed-signature ledger, but
+its mass is not concentrated in a few trivial templates.
+\end{theorem}
+\begin{proof}
+For each peeled directed cycle \(v_0,\ldots,v_{\ell-1},v_0\), serialize the
+raw letters \(v_i=(q_{i+1}-q_i,k_{i+1}-k_i)\) and the signed letters
+\(v_i^+=(q_{i+1}-q_i,k_{i+1}-k_i,\operatorname{sgn}(A_{i+1}-A_i))\).
+Choose the lexicographically least cyclic rotation as the canonical directed
+template.  Separately record
+\[
+\ell,\quad \sum_i(q_{i+1}-q_i),\quad \sum_i(k_{i+1}-k_i),
+\]
+the minimum and maximum of these two coordinates, and the signed \(A\)-profile
+in the signed ledger.  The machine ledger replays the same loop-erasure
+decomposition as the previous theorem, checks that the raw and signed cycle
+edge masses remain \(117733\) and \(107677\), and verifies zero non-closed
+edge-delta errors.
+\end{proof}
+
+\begin{remark}[Signature ledger is not weighted cancellation]
+This step removes one more structural ambiguity: cycle packets are no longer
+unclassified loops in a high-branch graph.  They are finite signature buckets.
+However, the largest raw template carries only about \(1.61\%\) of raw cycle
+edge mass, the raw top \(20\) templates carry about \(13.93\%\), and the signed
+top \(20\) carry about \(6.30\%\).  Therefore the remaining mouth is not a
+single-template cancellation problem but
+\begin{quote}\scriptsize\ttfamily
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This theorem closes only the finite cycle-signature ledger.  It does not
+prove weighted phase saving, residual endpoint summation, the external-lemma
+version, or the internal self-contained version.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

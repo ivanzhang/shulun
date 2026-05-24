@@ -6179,6 +6179,69 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65G. Phi-LPF q-prefix carry cycle signature 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md
+```
+
+上一层把 high-branch switch paths 拆成 loop-erased cycle core 与 endpoint
+residual paths。本层只继续拆 cycle core：每个 directed cycle 取规范旋转模板，
+再按长度、gap/carry 载荷与 `A` 符号形状分桶。
+
+有限审计读数：
+
+```text
+cycle_signature_atom_count_total=15439
+switch_atom_count=13355
+non_switch_atom_count=2084
+adjacent_letter_pair_count_inside_atoms=147799
+cycle_signature_decomposition_closed=true
+raw_cycle_packet_count=45178
+raw_cycle_edge_mass=117733
+raw_cycle_signature_count=3546
+raw_cycle_shape_count=2718
+raw_template_max_edge_ratio=0.0161212234462725
+raw_template_top20_edge_ratio=0.13926426745262585
+raw_template_top100_edge_ratio=0.34888264123058105
+signed_cycle_packet_count=36330
+signed_cycle_edge_mass=107677
+signed_cycle_signature_count=8691
+signed_cycle_shape_count=5905
+signed_A_sign_variable_cycle_count=26038
+signed_template_max_edge_ratio=0.006909553572257771
+signed_template_top20_edge_ratio=0.06297538007188165
+signed_template_top100_edge_ratio=0.18002916128792593
+```
+
+这一步说明 cycle core 不是少数模板支配的平凡对象：raw top-20 模板只覆盖约
+`13.93%` 的 raw cycle-edge mass，signed top-20 只覆盖约 `6.30%`。因此最新缺口
+不是“找到一个主模板并抵消”，而是 weighted signature buckets 上的相位节省。
+
+外部定理匹配边界继续保持：FKMS trace bilinear、Milićević--Qin--Wu 任意模
+Kloosterman、Pascadi composite Type-II 与 Wright unbalanced Kloosterman 仍要求先把
+cycle signatures 完成到 admissible trace/Kloosterman family。Li 的 `x^0.52`
+短区间素数存在仍不估计 weighted cycle-signature phases。
+
+状态边界：
+
+```text
+cycle_signature_ledger_closed=true
+cycle_signature_weighted_phase_saving_closed=false
+residual_endpoint_path_summation_closed=false
+completion_to_external_trace_or_kloosterman_closed=false
+no_loss_qprefix_flow_atom_aggregation_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 66. Phi-LPF sawtooth reciprocal tail gateway 审计
 
 新增证书：

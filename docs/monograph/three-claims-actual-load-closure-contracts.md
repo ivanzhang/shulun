@@ -22650,6 +22650,58 @@ PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 
 行/列命题、外部引理版与内部自足版仍未无条件闭合。
 
+### 1.179A Phi-LPF q-prefix cycle-signature actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-audit.json
+```
+
+actual-load 含义更新为：cycle core 已经不是一个黑箱对象，而是有限 directed
+signature 与 length/load/sign shape buckets：
+
+```text
+directed cycle packet => canonical rotation signature
+signature => length/load/sign shape bucket
+```
+
+同步读数为：
+
+```text
+cycle_signature_decomposition_closed=true
+raw_cycle_signature_count=3546
+raw_cycle_shape_count=2718
+raw_template_top20_edge_ratio=0.13926426745262585
+raw_template_top100_edge_ratio=0.34888264123058105
+signed_cycle_signature_count=8691
+signed_cycle_shape_count=5905
+signed_A_sign_variable_cycle_count=26038
+signed_template_top20_edge_ratio=0.06297538007188165
+signed_template_top100_edge_ratio=0.18002916128792593
+```
+
+最新直接主攻改为：
+
+```text
+CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore
+```
+
+并行仍需：
+
+```text
+ResidualEndpointPathSummationWithoutBoundaryLoss
+TraceKloostermanCompletionOfCycleSignatureAndResidualPackets
+NoLossAggregationAcross15439QPrefixFlowAtoms
+PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层只关闭 finite signature ledger；weighted phase saving、residual endpoint
+summation、外部引理版与内部自足版仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

@@ -1,0 +1,813 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "LoopErasedCycleFlowImported",
+      "meaning": "The previous cycle/residual decomposition ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteCycleSignatureLedger",
+      "meaning": "Every peeled cycle packet is assigned a canonical directed signature and a length/load/sign shape.",
+      "proved": true,
+      "remaining": "none for current deterministic ledger"
+    },
+    {
+      "closed": false,
+      "gate": "CycleSignatureWeightedPhaseSaving",
+      "meaning": "Prove cancellation after grouping by cycle signature and analytic weight.",
+      "proved": false,
+      "remaining": "requires new exponential-sum or trace/Kloosterman input on the weighted buckets"
+    },
+    {
+      "closed": false,
+      "gate": "ResidualEndpointPathSummation",
+      "meaning": "Control the endpoint residual paths from the previous flow ledger.",
+      "proved": false,
+      "remaining": "requires residual endpoint summation without boundary loss"
+    },
+    {
+      "closed": false,
+      "gate": "NoLossQPrefixFlowAtomAggregation",
+      "meaning": "Aggregate signature and residual estimates across all fixed-m atoms.",
+      "proved": false,
+      "remaining": "requires no-loss aggregation discipline over 15439 atoms"
+    }
+  ],
+  "completion_to_external_trace_or_kloosterman_closed": false,
+  "current_object": {
+    "dominant_shape": "many short recurrent templates with no single template carrying enough mass for trivial cancellation",
+    "input": "loop-erased raw/signed cycle packets from 13355 switch atoms",
+    "operation": "canonical rotation signature plus length/load/sign shape bucketing",
+    "remaining": "weighted phase saving by cycle signature, endpoint residual summation, and trace/Kloosterman completion"
+  },
+  "cycle_signature_ledger_closed": true,
+  "cycle_signature_weighted_phase_saving_closed": false,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "cycle signatures still need conversion to trace-function weights before bilinear trace estimates apply",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "cycle signatures are not yet inverse-variable Kloosterman families modulo q",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "signature buckets remain path templates rather than balanced composite Type-II boxes",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate only after signatures are completed to admissible unbalanced fractions",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "short interval prime existence does not estimate weighted cycle-signature phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "finite signatures still need trace-function weights",
+    "Li_short_interval_x_052": "short interval existence gives no cycle-signature phase estimate",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "signature buckets are not yet inverse-variable Kloosterman sums",
+    "Pascadi_composite_Type_II": "signature buckets are path templates rather than composite Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "candidate only after signature templates become admissible unbalanced fractions"
+  },
+  "finite_audit": {
+    "adjacent_letter_pair_count_inside_atoms": 147799,
+    "completion_to_external_trace_or_kloosterman_closed": false,
+    "cycle_signature_atom_count_total": 15439,
+    "cycle_signature_decomposition_closed": true,
+    "cycle_signature_ledger_closed": true,
+    "cycle_signature_weighted_phase_saving_closed": false,
+    "max_prime": 1009,
+    "no_loss_qprefix_flow_atom_aggregation_closed": false,
+    "non_switch_atom_count": 2084,
+    "previous_loop_erased_flow_decomposition_closed": true,
+    "raw_carry_variable_cycle_count": 39314,
+    "raw_cycle_edge_mass": 117733,
+    "raw_cycle_length_max": 10,
+    "raw_cycle_length_median": 2.0,
+    "raw_cycle_length_min": 1,
+    "raw_cycle_packet_count": 45178,
+    "raw_cycle_shape_count": 2718,
+    "raw_cycle_signature_count": 3546,
+    "raw_q_gap_variable_cycle_count": 39240,
+    "raw_residual_edge_mass": 30066,
+    "raw_self_loop_cycle_count": 5602,
+    "raw_self_loop_edge_mass": 5602,
+    "raw_shape_max_edge_mass": 1898,
+    "raw_shape_max_edge_ratio": 0.0161212234462725,
+    "raw_template_max_edge_mass": 1898,
+    "raw_template_max_edge_ratio": 0.0161212234462725,
+    "raw_template_top100_edge_ratio": 0.34888264123058105,
+    "raw_template_top20_edge_ratio": 0.13926426745262585,
+    "residual_endpoint_path_summation_closed": false,
+    "row_column_unconditional_closed": false,
+    "sample_signature_atoms": [
+      {
+        "P": 79,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 83,
+        "raw_cycle_templates": [
+          "g=2,c=3 -> g=6,c=6"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=3,A=positive -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 79,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 89,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=6,c=7"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "right_tail"
+      },
+      {
+        "P": 83,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 79,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=6,c=5 -> g=4,c=4"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=positive -> g=6,c=5,A=negative -> g=4,c=4,A=positive"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 83,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 89,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=6,c=6 -> g=4,c=5"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=negative -> g=6,c=6,A=positive -> g=4,c=5,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 97,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 127,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=6,c=8"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=positive -> g=6,c=8,A=positive"
+        ],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 97,
+        "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+        "m": 131,
+        "raw_cycle_templates": [
+          "g=2,c=3 -> g=6,c=8"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "upper_wing"
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 97,
+        "raw_cycle_templates": [
+          "g=4,c=4 -> g=6,c=5"
+        ],
+        "signed_cycle_templates": [
+          "g=4,c=4,A=positive -> g=6,c=5,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 101,
+        "raw_cycle_templates": [
+          "g=4,c=4 -> g=6,c=6"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "right_tail"
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 103,
+        "raw_cycle_templates": [
+          "g=4,c=3 -> g=6,c=6"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "right_tail"
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 109,
+        "raw_cycle_templates": [
+          "g=4,c=4 -> g=6,c=6"
+        ],
+        "signed_cycle_templates": [
+          "g=4,c=4,A=negative -> g=6,c=6,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 107,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 113,
+        "raw_cycle_templates": [
+          "g=4,c=4 -> g=6,c=6"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "right_tail"
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 137,
+        "raw_cycle_templates": [
+          "g=2,c=3 -> g=4,c=4"
+        ],
+        "signed_cycle_templates": [],
+        "strip": "right_tail"
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_right_collar_only_no_P_puncture",
+        "m": 139,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=4,c=5"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=negative -> g=4,c=5,A=positive"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 127,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_no_P_puncture",
+        "m": 131,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=4,c=4",
+          "g=2,c=2 -> g=4,c=4"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=negative -> g=4,c=4,A=negative",
+          "g=2,c=2,A=negative -> g=4,c=4,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 131,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 127,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=4,c=4"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=positive -> g=4,c=4,A=negative"
+        ],
+        "strip": "right_tail"
+      },
+      {
+        "P": 131,
+        "endpoint_flux_class": "right_tail_terminal_full_interval_with_P_puncture",
+        "m": 137,
+        "raw_cycle_templates": [
+          "g=2,c=2 -> g=4,c=4"
+        ],
+        "signed_cycle_templates": [
+          "g=2,c=2,A=negative -> g=4,c=4,A=positive"
+        ],
+        "strip": "right_tail"
+      }
+    ],
+    "signed_A_sign_variable_cycle_count": 26038,
+    "signed_carry_variable_cycle_count": 32716,
+    "signed_cycle_edge_mass": 107677,
+    "signed_cycle_length_max": 14,
+    "signed_cycle_length_median": 2.0,
+    "signed_cycle_length_min": 1,
+    "signed_cycle_packet_count": 36330,
+    "signed_cycle_shape_count": 5905,
+    "signed_cycle_signature_count": 8691,
+    "signed_q_gap_variable_cycle_count": 32761,
+    "signed_residual_edge_mass": 40122,
+    "signed_self_loop_cycle_count": 3360,
+    "signed_self_loop_edge_mass": 3360,
+    "signed_shape_max_edge_mass": 744,
+    "signed_shape_max_edge_ratio": 0.006909553572257771,
+    "signed_template_max_edge_mass": 744,
+    "signed_template_max_edge_ratio": 0.006909553572257771,
+    "signed_template_top100_edge_ratio": 0.18002916128792593,
+    "signed_template_top20_edge_ratio": 0.06297538007188165,
+    "strip_cycle_signature_rows": [
+      {
+        "raw_cycle_edge_mass": 19267,
+        "signed_cycle_edge_mass": 17498,
+        "strip": "lower_wing"
+      },
+      {
+        "raw_cycle_edge_mass": 59321,
+        "signed_cycle_edge_mass": 54281,
+        "strip": "right_tail"
+      },
+      {
+        "raw_cycle_edge_mass": 39145,
+        "signed_cycle_edge_mass": 35898,
+        "strip": "upper_wing"
+      }
+    ],
+    "switch_atom_count": 13355,
+    "top_raw_cycle_shape_rows": [
+      {
+        "cycle_count": 949,
+        "edge_mass": 1898,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4]"
+      },
+      {
+        "cycle_count": 1439,
+        "edge_mass": 1439,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6]"
+      },
+      {
+        "cycle_count": 482,
+        "edge_mass": 964,
+        "shape": "len=2,sum_g=6,sum_c=9,g=[2,4],c=[3,6]"
+      },
+      {
+        "cycle_count": 920,
+        "edge_mass": 920,
+        "shape": "len=1,sum_g=6,sum_c=9,g=[6,6],c=[9,9]"
+      },
+      {
+        "cycle_count": 893,
+        "edge_mass": 893,
+        "shape": "len=1,sum_g=6,sum_c=7,g=[6,6],c=[7,7]"
+      },
+      {
+        "cycle_count": 444,
+        "edge_mass": 888,
+        "shape": "len=2,sum_g=10,sum_c=15,g=[4,6],c=[6,9]"
+      },
+      {
+        "cycle_count": 863,
+        "edge_mass": 863,
+        "shape": "len=1,sum_g=6,sum_c=4,g=[6,6],c=[4,4]"
+      },
+      {
+        "cycle_count": 386,
+        "edge_mass": 772,
+        "shape": "len=2,sum_g=10,sum_c=7,g=[4,6],c=[3,4]"
+      },
+      {
+        "cycle_count": 373,
+        "edge_mass": 746,
+        "shape": "len=2,sum_g=10,sum_c=10,g=[4,6],c=[4,6]"
+      },
+      {
+        "cycle_count": 365,
+        "edge_mass": 730,
+        "shape": "len=2,sum_g=12,sum_c=12,g=[4,8],c=[4,8]"
+      },
+      {
+        "cycle_count": 363,
+        "edge_mass": 726,
+        "shape": "len=2,sum_g=8,sum_c=12,g=[2,6],c=[3,9]"
+      },
+      {
+        "cycle_count": 354,
+        "edge_mass": 708,
+        "shape": "len=2,sum_g=6,sum_c=4,g=[2,4],c=[1,3]"
+      },
+      {
+        "cycle_count": 351,
+        "edge_mass": 702,
+        "shape": "len=2,sum_g=8,sum_c=8,g=[2,6],c=[2,6]"
+      },
+      {
+        "cycle_count": 231,
+        "edge_mass": 693,
+        "shape": "len=3,sum_g=18,sum_c=18,g=[4,8],c=[4,8]"
+      },
+      {
+        "cycle_count": 329,
+        "edge_mass": 658,
+        "shape": "len=2,sum_g=6,sum_c=7,g=[2,4],c=[2,5]"
+      },
+      {
+        "cycle_count": 655,
+        "edge_mass": 655,
+        "shape": "len=1,sum_g=6,sum_c=5,g=[6,6],c=[5,5]"
+      },
+      {
+        "cycle_count": 296,
+        "edge_mass": 592,
+        "shape": "len=2,sum_g=6,sum_c=10,g=[2,4],c=[3,7]"
+      },
+      {
+        "cycle_count": 295,
+        "edge_mass": 590,
+        "shape": "len=2,sum_g=12,sum_c=18,g=[4,8],c=[6,12]"
+      },
+      {
+        "cycle_count": 269,
+        "edge_mass": 538,
+        "shape": "len=2,sum_g=8,sum_c=5,g=[2,6],c=[1,4]"
+      },
+      {
+        "cycle_count": 263,
+        "edge_mass": 526,
+        "shape": "len=2,sum_g=16,sum_c=11,g=[6,10],c=[4,7]"
+      }
+    ],
+    "top_raw_cycle_signature_rows": [
+      {
+        "cycle_count": 949,
+        "edge_mass": 1898,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4]",
+        "template": "g=2,c=2 -> g=4,c=4"
+      },
+      {
+        "cycle_count": 1439,
+        "edge_mass": 1439,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6]",
+        "template": "g=6,c=6"
+      },
+      {
+        "cycle_count": 482,
+        "edge_mass": 964,
+        "shape": "len=2,sum_g=6,sum_c=9,g=[2,4],c=[3,6]",
+        "template": "g=2,c=3 -> g=4,c=6"
+      },
+      {
+        "cycle_count": 920,
+        "edge_mass": 920,
+        "shape": "len=1,sum_g=6,sum_c=9,g=[6,6],c=[9,9]",
+        "template": "g=6,c=9"
+      },
+      {
+        "cycle_count": 893,
+        "edge_mass": 893,
+        "shape": "len=1,sum_g=6,sum_c=7,g=[6,6],c=[7,7]",
+        "template": "g=6,c=7"
+      },
+      {
+        "cycle_count": 444,
+        "edge_mass": 888,
+        "shape": "len=2,sum_g=10,sum_c=15,g=[4,6],c=[6,9]",
+        "template": "g=4,c=6 -> g=6,c=9"
+      },
+      {
+        "cycle_count": 863,
+        "edge_mass": 863,
+        "shape": "len=1,sum_g=6,sum_c=4,g=[6,6],c=[4,4]",
+        "template": "g=6,c=4"
+      },
+      {
+        "cycle_count": 386,
+        "edge_mass": 772,
+        "shape": "len=2,sum_g=10,sum_c=7,g=[4,6],c=[3,4]",
+        "template": "g=4,c=3 -> g=6,c=4"
+      },
+      {
+        "cycle_count": 373,
+        "edge_mass": 746,
+        "shape": "len=2,sum_g=10,sum_c=10,g=[4,6],c=[4,6]",
+        "template": "g=4,c=4 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 365,
+        "edge_mass": 730,
+        "shape": "len=2,sum_g=12,sum_c=12,g=[4,8],c=[4,8]",
+        "template": "g=4,c=4 -> g=8,c=8"
+      },
+      {
+        "cycle_count": 363,
+        "edge_mass": 726,
+        "shape": "len=2,sum_g=8,sum_c=12,g=[2,6],c=[3,9]",
+        "template": "g=2,c=3 -> g=6,c=9"
+      },
+      {
+        "cycle_count": 354,
+        "edge_mass": 708,
+        "shape": "len=2,sum_g=6,sum_c=4,g=[2,4],c=[1,3]",
+        "template": "g=2,c=1 -> g=4,c=3"
+      },
+      {
+        "cycle_count": 351,
+        "edge_mass": 702,
+        "shape": "len=2,sum_g=8,sum_c=8,g=[2,6],c=[2,6]",
+        "template": "g=2,c=2 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 329,
+        "edge_mass": 658,
+        "shape": "len=2,sum_g=6,sum_c=7,g=[2,4],c=[2,5]",
+        "template": "g=2,c=2 -> g=4,c=5"
+      },
+      {
+        "cycle_count": 655,
+        "edge_mass": 655,
+        "shape": "len=1,sum_g=6,sum_c=5,g=[6,6],c=[5,5]",
+        "template": "g=6,c=5"
+      },
+      {
+        "cycle_count": 296,
+        "edge_mass": 592,
+        "shape": "len=2,sum_g=6,sum_c=10,g=[2,4],c=[3,7]",
+        "template": "g=2,c=3 -> g=4,c=7"
+      },
+      {
+        "cycle_count": 295,
+        "edge_mass": 590,
+        "shape": "len=2,sum_g=12,sum_c=18,g=[4,8],c=[6,12]",
+        "template": "g=4,c=6 -> g=8,c=12"
+      },
+      {
+        "cycle_count": 196,
+        "edge_mass": 588,
+        "shape": "len=3,sum_g=18,sum_c=18,g=[4,8],c=[4,8]",
+        "template": "g=4,c=4 -> g=8,c=8 -> g=6,c=6"
+      },
+      {
+        "cycle_count": 269,
+        "edge_mass": 538,
+        "shape": "len=2,sum_g=8,sum_c=5,g=[2,6],c=[1,4]",
+        "template": "g=2,c=1 -> g=6,c=4"
+      },
+      {
+        "cycle_count": 263,
+        "edge_mass": 526,
+        "shape": "len=2,sum_g=16,sum_c=11,g=[6,10],c=[4,7]",
+        "template": "g=10,c=7 -> g=6,c=4"
+      }
+    ],
+    "top_signed_cycle_shape_rows": [
+      {
+        "cycle_count": 372,
+        "edge_mass": 744,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4],A(-,0,+)=(2,0,0)"
+      },
+      {
+        "cycle_count": 334,
+        "edge_mass": 668,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4],A(-,0,+)=(0,0,2)"
+      },
+      {
+        "cycle_count": 545,
+        "edge_mass": 545,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6],A(-,0,+)=(1,0,0)"
+      },
+      {
+        "cycle_count": 239,
+        "edge_mass": 478,
+        "shape": "len=2,sum_g=10,sum_c=7,g=[4,6],c=[3,4],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 464,
+        "edge_mass": 464,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6],A(-,0,+)=(0,0,1)"
+      },
+      {
+        "cycle_count": 217,
+        "edge_mass": 434,
+        "shape": "len=2,sum_g=6,sum_c=4,g=[2,4],c=[1,3],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 187,
+        "edge_mass": 374,
+        "shape": "len=2,sum_g=6,sum_c=7,g=[2,4],c=[2,5],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 183,
+        "edge_mass": 366,
+        "shape": "len=2,sum_g=8,sum_c=5,g=[2,6],c=[1,4],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 174,
+        "edge_mass": 348,
+        "shape": "len=2,sum_g=12,sum_c=8,g=[4,8],c=[3,5],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 172,
+        "edge_mass": 344,
+        "shape": "len=2,sum_g=12,sum_c=13,g=[4,8],c=[4,9],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 334,
+        "edge_mass": 334,
+        "shape": "len=1,sum_g=6,sum_c=7,g=[6,6],c=[7,7],A(-,0,+)=(0,0,1)"
+      },
+      {
+        "cycle_count": 165,
+        "edge_mass": 330,
+        "shape": "len=2,sum_g=6,sum_c=10,g=[2,4],c=[3,7],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 160,
+        "edge_mass": 320,
+        "shape": "len=2,sum_g=16,sum_c=11,g=[6,10],c=[4,7],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 156,
+        "edge_mass": 312,
+        "shape": "len=2,sum_g=12,sum_c=11,g=[4,8],c=[4,7],A(-,0,+)=(1,0,1)"
+      },
+      {
+        "cycle_count": 144,
+        "edge_mass": 288,
+        "shape": "len=2,sum_g=6,sum_c=9,g=[2,4],c=[3,6],A(-,0,+)=(0,0,2)"
+      },
+      {
+        "cycle_count": 96,
+        "edge_mass": 288,
+        "shape": "len=3,sum_g=18,sum_c=18,g=[4,8],c=[4,8],A(-,0,+)=(3,0,0)"
+      },
+      {
+        "cycle_count": 143,
+        "edge_mass": 286,
+        "shape": "len=2,sum_g=12,sum_c=12,g=[4,8],c=[4,8],A(-,0,+)=(2,0,0)"
+      },
+      {
+        "cycle_count": 93,
+        "edge_mass": 279,
+        "shape": "len=3,sum_g=14,sum_c=13,g=[2,6],c=[2,6],A(-,0,+)=(1,0,2)"
+      },
+      {
+        "cycle_count": 92,
+        "edge_mass": 276,
+        "shape": "len=3,sum_g=18,sum_c=19,g=[4,8],c=[4,9],A(-,0,+)=(2,0,1)"
+      },
+      {
+        "cycle_count": 275,
+        "edge_mass": 275,
+        "shape": "len=1,sum_g=6,sum_c=4,g=[6,6],c=[4,4],A(-,0,+)=(1,0,0)"
+      }
+    ],
+    "top_signed_cycle_signature_rows": [
+      {
+        "cycle_count": 372,
+        "edge_mass": 744,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4],A(-,0,+)=(2,0,0)",
+        "template": "g=2,c=2,A=negative -> g=4,c=4,A=negative"
+      },
+      {
+        "cycle_count": 334,
+        "edge_mass": 668,
+        "shape": "len=2,sum_g=6,sum_c=6,g=[2,4],c=[2,4],A(-,0,+)=(0,0,2)",
+        "template": "g=2,c=2,A=positive -> g=4,c=4,A=positive"
+      },
+      {
+        "cycle_count": 545,
+        "edge_mass": 545,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6],A(-,0,+)=(1,0,0)",
+        "template": "g=6,c=6,A=negative"
+      },
+      {
+        "cycle_count": 464,
+        "edge_mass": 464,
+        "shape": "len=1,sum_g=6,sum_c=6,g=[6,6],c=[6,6],A(-,0,+)=(0,0,1)",
+        "template": "g=6,c=6,A=positive"
+      },
+      {
+        "cycle_count": 334,
+        "edge_mass": 334,
+        "shape": "len=1,sum_g=6,sum_c=7,g=[6,6],c=[7,7],A(-,0,+)=(0,0,1)",
+        "template": "g=6,c=7,A=positive"
+      },
+      {
+        "cycle_count": 150,
+        "edge_mass": 300,
+        "shape": "len=2,sum_g=12,sum_c=13,g=[4,8],c=[4,9],A(-,0,+)=(1,0,1)",
+        "template": "g=4,c=4,A=negative -> g=8,c=9,A=positive"
+      },
+      {
+        "cycle_count": 147,
+        "edge_mass": 294,
+        "shape": "len=2,sum_g=6,sum_c=7,g=[2,4],c=[2,5],A(-,0,+)=(1,0,1)",
+        "template": "g=2,c=2,A=negative -> g=4,c=5,A=positive"
+      },
+      {
+        "cycle_count": 144,
+        "edge_mass": 288,
+        "shape": "len=2,sum_g=6,sum_c=9,g=[2,4],c=[3,6],A(-,0,+)=(0,0,2)",
+        "template": "g=2,c=3,A=positive -> g=4,c=6,A=positive"
+      },
+      {
+        "cycle_count": 143,
+        "edge_mass": 286,
+        "shape": "len=2,sum_g=10,sum_c=7,g=[4,6],c=[3,4],A(-,0,+)=(1,0,1)",
+        "template": "g=4,c=3,A=positive -> g=6,c=4,A=negative"
+      },
+      {
+        "cycle_count": 143,
+        "edge_mass": 286,
+        "shape": "len=2,sum_g=12,sum_c=12,g=[4,8],c=[4,8],A(-,0,+)=(2,0,0)",
+        "template": "g=4,c=4,A=negative -> g=8,c=8,A=negative"
+      },
+      {
+        "cycle_count": 275,
+        "edge_mass": 275,
+        "shape": "len=1,sum_g=6,sum_c=4,g=[6,6],c=[4,4],A(-,0,+)=(1,0,0)",
+        "template": "g=6,c=4,A=negative"
+      },
+      {
+        "cycle_count": 132,
+        "edge_mass": 264,
+        "shape": "len=2,sum_g=10,sum_c=15,g=[4,6],c=[6,9],A(-,0,+)=(0,0,2)",
+        "template": "g=4,c=6,A=positive -> g=6,c=9,A=positive"
+      },
+      {
+        "cycle_count": 263,
+        "edge_mass": 263,
+        "shape": "len=1,sum_g=6,sum_c=5,g=[6,6],c=[5,5],A(-,0,+)=(1,0,0)",
+        "template": "g=6,c=5,A=negative"
+      },
+      {
+        "cycle_count": 131,
+        "edge_mass": 262,
+        "shape": "len=2,sum_g=10,sum_c=10,g=[4,6],c=[4,6],A(-,0,+)=(0,0,2)",
+        "template": "g=4,c=4,A=positive -> g=6,c=6,A=positive"
+      },
+      {
+        "cycle_count": 260,
+        "edge_mass": 260,
+        "shape": "len=1,sum_g=6,sum_c=9,g=[6,6],c=[9,9],A(-,0,+)=(0,0,1)",
+        "template": "g=6,c=9,A=positive"
+      },
+      {
+        "cycle_count": 130,
+        "edge_mass": 260,
+        "shape": "len=2,sum_g=10,sum_c=10,g=[4,6],c=[4,6],A(-,0,+)=(2,0,0)",
+        "template": "g=4,c=4,A=negative -> g=6,c=6,A=negative"
+      },
+      {
+        "cycle_count": 127,
+        "edge_mass": 254,
+        "shape": "len=2,sum_g=12,sum_c=11,g=[4,8],c=[4,7],A(-,0,+)=(1,0,1)",
+        "template": "g=4,c=4,A=positive -> g=8,c=7,A=negative"
+      },
+      {
+        "cycle_count": 123,
+        "edge_mass": 246,
+        "shape": "len=2,sum_g=6,sum_c=4,g=[2,4],c=[1,3],A(-,0,+)=(1,0,1)",
+        "template": "g=2,c=1,A=positive -> g=4,c=3,A=negative"
+      },
+      {
+        "cycle_count": 123,
+        "edge_mass": 246,
+        "shape": "len=2,sum_g=12,sum_c=12,g=[4,8],c=[4,8],A(-,0,+)=(0,0,2)",
+        "template": "g=4,c=4,A=positive -> g=8,c=8,A=positive"
+      },
+      {
+        "cycle_count": 121,
+        "edge_mass": 242,
+        "shape": "len=2,sum_g=8,sum_c=8,g=[2,6],c=[2,6],A(-,0,+)=(2,0,0)",
+        "template": "g=2,c=2,A=negative -> g=6,c=6,A=negative"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "CycleSignatureWeightedPhaseSavingForLoopErasedCarrySwitchCore",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND TraceKloostermanCompletionOfCycleSignatureAndResidualPackets",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "no_loss_qprefix_flow_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after loop-erased cycle-flow decomposition, the fastest non-cyclic drilldown is to expose the finite cycle template and load/sign buckets",
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9685a0ec424947ce6b23d0639b1a9aed0a47b81fe89feacb4c6bac47dc784d85",
+    "docs/monograph/external-theorem-index.md": "8154436451e90ed9bb900fdc8c447283eef0679ddf96652859e84e452f0789b0",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "69cc5f5367036cd418242ca353aedb01c1184a52c687dea2cb0dceef19d4c840",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-letter-run-audit.json": "71f243a1adc9d19b09bb557ab41475963fc2eaf224c12dbeecb34d8ff84f373a",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-flow-decomposition-audit.json": "6597eff36504fd233d1f06df972327e502c073b84542423f7490e9cc96dc00d8",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-switch-graph-audit.json": "b16c75e6f07abeb330ccdba470feb2214a139cc0c08028b8f376d702ce601127",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "debe556cc2ff60eee9c39b1331dcbfa1dba01ff4a27d1a737174bbd29d11295b",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "2e5e0f2fcf9e5560638ccf79c4fa7171a811d5cf0b1756962c6354d26909b3dc",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_audit.py": "113a6c1af5cfbced483e301e6bc0a4f76b6e250a2e5e10a22c4a37e97e909aea",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "019491d2ab91837da2db960419bd1e9d6f405aca5c65f7358c6407d20076e5a2"
+  },
+  "status": "qprefix_cycle_core_has_finite_signature_ledger_weighted_phase_saving_open"
+}
