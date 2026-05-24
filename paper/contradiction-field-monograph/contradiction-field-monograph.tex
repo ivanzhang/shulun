@@ -33849,6 +33849,141 @@ qprefix-unimodal-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Nested rough-envelope origin of the q-prefix cap}
+
+\begin{theorem}[Residual rough envelope for the prime-survivor cap]
+Fix \(P\), and let \(R_P\) be the set of residual rough composite cofactors
+in the row range \(P/2<m<2P\).  For an eligible prime \(q\) with
+\(P/2<q<P\), the selected residual support in the \(q\)-bucket is exactly
+\[
+  R_{P,q}
+  =
+  \{m\in R_P:\ q\le m,\ qm<P^2\}.
+\]
+If this set is nonempty, write
+\[
+  A_q=\min R_{P,q},\qquad B_q=\max R_{P,q}.
+\]
+Then the prime-survivor blockers in this \(q\)-bucket are precisely
+\[
+  \{m:\ A_q\le m\le B_q,\ m\ {\rm prime}\}\setminus\{P\}.
+\]
+As \(q\) increases, the sets \(R_{P,q}\) are nested decreasing; hence
+\(A_q\) is nondecreasing and \(B_q\) is nonincreasing.  Consequently the
+transposed prime-survivor cap satisfies
+\[
+  Q^*(P,m)
+  =
+  \min\Bigl(\max\{q:\ A_q<m\},\ \max\{q:\ B_q>m\}\Bigr)
+\]
+whenever the two threshold sets are nonempty.  Thus the \(q\)-prefix and the
+unimodal cap shape come from the nested residual rough envelope.
+\end{theorem}
+\begin{proof}
+For a residual rough cofactor \(m\), the \(q\)-cell condition includes
+\(m\ge q\).  The additive row condition \(1\le k<P\), with
+\(k=\lfloor qm/P\rfloor\), is equivalent to \(qm<P^2\).  Since
+\(q>P/2\), the product cell has length \(P/q<2\), so it contains at most one
+odd integer.  Therefore a residual rough \(m\) is selected exactly when
+\[
+  m\in R_P,\qquad q\le m,\qquad qm<P^2.
+\]
+This proves the displayed formula for \(R_{P,q}\).
+
+The completion span of the \(q\)-bucket is the interval between the least and
+greatest selected residual \(k\)-values.  Since the map
+\[
+  m\longmapsto \lfloor qm/P\rfloor
+\]
+is nondecreasing, every prime \(m\) between \(A_q\) and \(B_q\) maps into
+that completion span.  Its product cell has \(m\) as the unique odd
+candidate.  It is not a residual rough composite, so it is a completion
+blocker; if \(m=P\), then \(k=q\) and \(D=qm-kP=0\), so it is only the
+diagonal completion ghost and must be removed.  Conversely, the preceding
+floor-span theorem shows that every prime survivor in the \(q\)-bucket lies
+between the two residual endpoints.  This proves the prime-survivor envelope.
+
+If \(q_1<q_2\), then
+\[
+  [q_2,P^2/q_2)\subset [q_1,P^2/q_1),
+\]
+so \(R_{P,q_2}\subset R_{P,q_1}\).  Hence \(A_q\) cannot decrease and
+\(B_q\) cannot increase along nonempty buckets.  For fixed \(m\), the
+conditions \(A_q<m\) and \(B_q>m\) are therefore both prefix conditions in
+the ordered list of eligible \(q\)'s.  Their intersection is a prefix whose
+last element is the displayed minimum of the two threshold maxima.  As \(m\)
+increases, the first threshold is nondecreasing and the second is
+nonincreasing, so their minimum is unimodal.
+\end{proof}
+
+\begin{remark}[Finite rough-envelope cap ledger]
+The audit up to \(P\le 1009\) verifies the rough-envelope formula against
+the existing selected-\(k\) implementation:
+\[
+  \texttt{selected\_formula\_m\_count\_total}
+  =
+  \texttt{selected\_existing\_m\_count\_total}
+  =
+  299977,
+\qquad
+  \texttt{selected\_envelope\_formula\_mismatch\_count}=0.
+\]
+The prime-survivor edge set is recovered exactly:
+\[
+  \texttt{actual\_prime\_edge\_count\_total}
+  =
+  \texttt{predicted\_prime\_edge\_count\_total}
+  =
+  355919,
+\]
+with
+\[
+  \texttt{prime\_envelope\_missing\_count}
+  =
+  \texttt{prime\_envelope\_extra\_count}
+  =
+  0.
+\]
+The endpoint monotonicity has no audited exception:
+\[
+  \texttt{A\_monotonicity\_bad\_step\_count}
+  =
+  \texttt{B\_monotonicity\_bad\_step\_count}
+  =
+  0.
+\]
+The cap formula also matches all \(16328\) audited \((P,m)\)-buckets:
+\[
+  \texttt{cap\_min\_threshold\_mismatch\_count}=0,\qquad
+  \texttt{predicted\_qprefix\_mismatch\_count}=0.
+\]
+
+This closes the support-shape origin of the \(q\)-prefix cap.  It does not
+close the analytic phase problem: one still needs to turn the nested cap with
+the moving prime denominator \(q\) into a completed trace/Kloosterman,
+Type-II, dispersion, or convolution estimate.
+
+The latest narrow mouth is
+\begin{quote}\scriptsize\ttfamily
+PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope\\
+AND CompletedTraceOrKloostermanVariableForMovingPrimeDenominator\\
+AND DiagonalPGhostSubtractionDiscipline\\
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl\\
+AND UniformCancellationAcrossSparseKSupportRadialKernels\\
+AND RoughBetaSiegelWalfiszUniformityOrReplacement\\
+AND PointwisePKUniformTransferFromExternalAverageEstimate\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still not an unconditional proof of the Phi--LPF target.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+rough-envelope-cap-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

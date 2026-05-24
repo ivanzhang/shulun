@@ -22536,6 +22536,54 @@ AND FiniteThirtyWheelSmallLPFBlockerPacketControl
 并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
 prime-q reciprocal phase saving、Rate 与 DStructure。该更新是有限结构压缩，不是行/列命题闭合。
 
+### 1.184 Phi-LPF prime-survivor rough-envelope cap 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_rough_envelope_cap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.json
+```
+
+同步读数为：
+
+```text
+selected_residual_rough_envelope_formula_closed=true
+prime_survivor_rough_envelope_identity_closed=true
+nested_envelope_endpoint_monotonicity_closed=true
+global_qprefix_unimodal_structure_explained=true
+selected_formula_m_count_total=299977
+selected_envelope_formula_mismatch_count=0
+predicted_prime_edge_count_total=355919
+prime_envelope_missing_count=0
+prime_envelope_extra_count=0
+cap_min_threshold_mismatch_count=0
+prefix_cap_trace_or_typeii_embedding_closed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：q-prefix cap 不再只是有限图形观察；其支撑来源已压成嵌套
+residual rough envelope：
+
+```text
+R_{P,q}=R_P cap [q,P^2/q),      M_prime(P,q)={prime m in [A_q,B_q]} \ {P}.
+```
+
+最新活动硬点更新为：
+
+```text
+PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope
+AND CompletedTraceOrKloostermanVariableForMovingPrimeDenominator
+AND DiagonalPGhostSubtractionDiscipline
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+```
+
+并行仍需 sparse kernel cancellation、rough beta/Siegel-Walfisz 替代、pointwise transfer、
+prime-q reciprocal phase saving、Rate 与 DStructure。该更新关闭的是支撑形状来源，
+不是行/列命题闭合。
+
 ### 1.180 two replacement lines common unconditional kernel 更新
 
 新增机器证书：

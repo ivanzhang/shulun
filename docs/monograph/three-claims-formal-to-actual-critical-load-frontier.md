@@ -24348,3 +24348,55 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```
 
 本层删除的是转置稀疏点云黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。
+
+## 330AC. Phi-LPF prime-survivor rough-envelope cap frontier
+
+新增文件：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_rough_envelope_cap_audit.py
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.json
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-ledger.json
+```
+
+同步结果：
+
+```text
+status=qprefix_unimodal_cap_explained_by_nested_residual_rough_envelope_phase_saving_open
+q_checked_count=6115
+nonempty_envelope_q_count=6020
+selected_formula_m_count_total=299977
+selected_existing_m_count_total=299977
+selected_envelope_formula_mismatch_count=0
+actual_prime_edge_count_total=355919
+predicted_prime_edge_count_total=355919
+prime_envelope_missing_count=0
+prime_envelope_extra_count=0
+A_monotonicity_bad_step_count=0
+B_monotonicity_bad_step_count=0
+cap_min_threshold_mismatch_count=0
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：prime-survivor q-prefix cap 的来源已归约为 nested rough envelope：
+
+```text
+R_{P,q}=R_P cap [q,P^2/q), A_q=min R_{P,q}, B_q=max R_{P,q}.
+```
+
+因此 q-prefix 与 unimodal cap 不再是 standalone finite phenomenon，而是 residual support
+上下包络的直接后果。剩余不在支撑形状，而在将 nested cap 变成可估计的相位对象：
+
+```text
+PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope
+AND CompletedTraceOrKloostermanVariableForMovingPrimeDenominator
+AND DiagonalPGhostSubtractionDiscipline
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+本层删除的是 q-prefix/unimodal 来源黑箱，不是 Phi-LPF 奇偶性障碍的无条件突破。

@@ -4001,6 +4001,95 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13R：Phi-LPF q-support row-averaged additive-k prime-survivor rough-envelope cap 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_rough_envelope_cap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-rough-envelope-cap-audit.md
+```
+
+本层承接 Q13Q 并解释 q-prefix/unimodal cap 的结构来源。固定 row prime `P`，
+令 `R_P` 为 residual rough composite cofactor 集，则 selected residual support 是：
+
+```text
+R_{P,q}=R_P cap [q,P^2/q).
+```
+
+于是 `A_q=min R_{P,q}` 与 `B_q=max R_{P,q}` 满足 `A_q` 随 q 不降、`B_q`
+随 q 不升，prime survivor 为：
+
+```text
+M_prime(P,q)={prime m in [A_q,B_q]} \ {P}.
+```
+
+固定 `m` 后的 cap 由两个单调阈值给出：
+
+```text
+Q*(P,m)=min(max{q:A_q<m}, max{q:B_q>m}).
+```
+
+### Q13R.1 有限审计
+
+有限实现 `P<=1009` 给出：
+
+```text
+q_checked_count=6115
+nonempty_envelope_q_count=6020
+selected_formula_m_count_total=299977
+selected_existing_m_count_total=299977
+selected_envelope_formula_mismatch_count=0
+actual_prime_edge_count_total=355919
+predicted_prime_edge_count_total=355919
+prime_envelope_missing_count=0
+prime_envelope_extra_count=0
+A_monotonicity_bad_step_count=0
+B_monotonicity_bad_step_count=0
+pm_bucket_count=16328
+cap_min_threshold_mismatch_count=0
+predicted_qprefix_mismatch_count=0
+total_bad_rough_envelope_cap_count=0
+```
+
+### Q13R.2 诚实边界
+
+本层关闭的是 q-prefix/unimodal 支撑形状的来源：它来自嵌套 residual rough envelope
+`R_P cap [q,P^2/q)`。这仍没有产生相位节省，也没有把 moving prime denominator
+变成 completed trace/Kloosterman variable。
+
+最新最窄口：
+
+```text
+PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope
+AND CompletedTraceOrKloostermanVariableForMovingPrimeDenominator
+AND DiagonalPGhostSubtractionDiscipline
+AND FiniteThirtyWheelSmallLPFBlockerPacketControl
+AND UniformCancellationAcrossSparseKSupportRadialKernels
+AND RoughBetaSiegelWalfiszUniformityOrReplacement
+AND PointwisePKUniformTransferFromExternalAverageEstimate
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+selected_residual_rough_envelope_formula_closed=true
+prime_survivor_rough_envelope_identity_closed=true
+nested_envelope_endpoint_monotonicity_closed=true
+global_qprefix_unimodal_structure_explained=true
+prefix_cap_trace_or_typeii_embedding_closed=false
+completed_trace_or_kloosterman_variable_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q9：Phi-LPF q-support dynamic sqrt-sieve selector 审计（2026-05-23）
 
 新增证书：

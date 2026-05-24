@@ -1,0 +1,319 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_rough_envelope_cap_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SelectedResidualRoughEnvelopeFormula",
+      "meaning": "The selected residual support is exactly R_P intersected with q<=m and q*m<P^2.",
+      "proved": true,
+      "remaining": "none for the structural identity"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeSurvivorRoughEnvelopeIdentity",
+      "meaning": "Prime survivors are precisely primes inside [A_q,B_q] after removing the diagonal m=P.",
+      "proved": true,
+      "remaining": "none for the structural identity"
+    },
+    {
+      "closed": true,
+      "gate": "NestedEnvelopeEndpointMonotonicity",
+      "meaning": "A_q is nondecreasing and B_q is nonincreasing because R_{P,q} is nested as q increases.",
+      "proved": true,
+      "remaining": "none for the structural identity"
+    },
+    {
+      "closed": true,
+      "gate": "QPrefixUnimodalCapStructureExplained",
+      "meaning": "The q-prefix and unimodal cap follow from the two monotone endpoint thresholds.",
+      "proved": true,
+      "remaining": "none for the support-shape reduction"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixCapTraceOrTypeIIPhaseSaving",
+      "meaning": "Use the nested rough-envelope cap to obtain cancellation or a completed bilinear/trace family.",
+      "proved": false,
+      "remaining": "new analytic embedding still required"
+    }
+  ],
+  "completed_trace_or_kloosterman_variable_closed": false,
+  "current_object": {
+    "cap_formula": "Q*(P,m)=min(max{q:A_q<m}, max{q:B_q>m})",
+    "envelope": "R_{P,q}=R_P cap [q,P^2/q), A_q=min R_{P,q}, B_q=max R_{P,q}",
+    "prime_survivor_identity": "M_prime(P,q)={prime m in [A_q,B_q]}\\{P}",
+    "remaining": "exploit the nested envelope cap analytically through trace/Type-II/convolution phase saving",
+    "selected_residual_formula": "m in R_P and q<=m and q*m<P^2"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear",
+      "role": "candidate only after the rough-envelope cap is converted into a trace bilinear family",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "candidate after completed Kloosterman variables replace the moving floor denominator",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "candidate after splitting the rough-envelope cap into genuine Type-II fibres",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "candidate if the cap can be reorganised as an unbalanced convolution",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2024_squarefree_smooth_kloosterman",
+      "role": "candidate after matching smooth/squarefree parameters; not direct here",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052",
+      "role": "still does not provide the pointwise theta=1/2 closure needed here",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_function_bilinear": "the support shape is now nested, but no trace-family sheaf or completed sum has been produced",
+    "Li_short_interval_x_052": "short-interval theta=0.52 remains above the required pointwise half-scale",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "the moving denominator q is not yet transformed into a completed Kloosterman variable",
+    "Pascadi_composite_Type_II": "nested support may help split fibres, but Type-II lengths and weights remain unproved",
+    "Shao_Shparlinski_Wijaya_smooth_squarefree_Kloosterman": "additional smooth/squarefree parameter matching remains absent",
+    "Wright_unbalanced_convolution": "the cap is compatible with an unbalanced viewpoint, but no convolution identity is closed"
+  },
+  "finite_audit": {
+    "A_monotonicity_bad_step_count": 0,
+    "B_monotonicity_bad_step_count": 0,
+    "active_P_count": 155,
+    "actual_prime_edge_count_total": 355919,
+    "cap_min_threshold_identity_verified": true,
+    "cap_min_threshold_mismatch_count": 0,
+    "cap_paths": [
+      "P=101: left 79->min(73,89)=73, 83->min(73,89)=73, 89->min(73,89)=73, 97->min(89,83)=83, 103->min(89,83)=83, 107->min(89,83)=83; right 157->min(89,61)=61, 163->min(89,59)=59, 167->min(89,59)=59, 173->min(89,53)=53, 179->min(89,53)=53, 181->min(89,53)=53",
+      "P=257: left 137->min(131,251)=131, 139->min(131,251)=131, 149->min(139,251)=139, 151->min(139,251)=139, 157->min(139,251)=139, 163->min(157,251)=157; right 461->min(251,139)=139, 463->min(251,139)=139, 467->min(251,139)=139, 479->min(251,137)=137, 487->min(251,131)=131, 491->min(251,131)=131",
+      "P=971: left 499->min(491,967)=491, 503->min(491,967)=491, 509->min(491,967)=491, 521->min(509,967)=509, 523->min(509,967)=509, 541->min(523,967)=523; right 1877->min(967,499)=499, 1879->min(967,499)=499, 1889->min(967,491)=491, 1901->min(967,491)=491, 1907->min(967,491)=491, 1913->min(967,491)=491",
+      "P=1009: left 521->min(509,997)=509, 523->min(509,997)=509, 541->min(523,997)=523, 547->min(523,997)=523, 557->min(547,997)=547, 563->min(557,997)=557; right 1933->min(997,523)=523, 1949->min(997,509)=509, 1951->min(997,509)=509, 1973->min(997,509)=509, 1979->min(997,509)=509, 1987->min(997,509)=509"
+    ],
+    "cap_threshold_empty_side_count": 0,
+    "cap_turn_count_total": 154,
+    "cap_unimodality_bad_row_count": 0,
+    "finite_evidence_not_used_as_target_proof": true,
+    "global_qprefix_unimodal_structure_explained": true,
+    "max_prime": 1009,
+    "nonempty_envelope_q_count": 6020,
+    "pm_bucket_count": 16328,
+    "predicted_prime_edge_count_total": 355919,
+    "predicted_qprefix_mismatch_count": 0,
+    "prefix_cap_trace_or_typeii_embedding_closed": false,
+    "previous_active_P_count": 155,
+    "previous_pm_bucket_count_total": 16328,
+    "previous_prime_survivor_edge_count_total": 355919,
+    "prime_envelope_bad_q_count": 0,
+    "prime_envelope_extra_count": 0,
+    "prime_envelope_missing_count": 0,
+    "prime_survivor_rough_envelope_identity_verified": true,
+    "q_checked_count": 6115,
+    "rough_envelope_endpoint_monotonicity_verified": true,
+    "sample_envelopes": [
+      {
+        "A": 49,
+        "B": 49,
+        "P": 29,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 17,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 31,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 17,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 31,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 19,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 37,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 19,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 37,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 23,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 41,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 23,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 41,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 29,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 41,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 31,
+        "residual_count": 1
+      },
+      {
+        "A": 49,
+        "B": 77,
+        "P": 43,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 6,
+        "q": 23,
+        "residual_count": 2
+      },
+      {
+        "A": 49,
+        "B": 49,
+        "P": 43,
+        "bad_formula": 0,
+        "bad_prime_envelope": 0,
+        "prime_edges": 0,
+        "q": 29,
+        "residual_count": 1
+      }
+    ],
+    "sample_rows": [
+      {
+        "A_bad_steps": 0,
+        "B_bad_steps": 0,
+        "P": 101,
+        "bad_after_down_increase": 0,
+        "edge_count": 96,
+        "max_cap_q": 83,
+        "peak_m_max": 113,
+        "peak_m_min": 97,
+        "pm_buckets": 20,
+        "turn_count": 1
+      },
+      {
+        "A_bad_steps": 0,
+        "B_bad_steps": 0,
+        "P": 257,
+        "bad_after_down_increase": 0,
+        "edge_count": 591,
+        "max_cap_q": 241,
+        "peak_m_max": 251,
+        "peak_m_min": 251,
+        "pm_buckets": 61,
+        "turn_count": 1
+      },
+      {
+        "A_bad_steps": 0,
+        "B_bad_steps": 0,
+        "P": 971,
+        "bad_after_down_increase": 0,
+        "edge_count": 6206,
+        "max_cap_q": 953,
+        "peak_m_max": 983,
+        "peak_m_min": 967,
+        "pm_buckets": 198,
+        "turn_count": 1
+      },
+      {
+        "A_bad_steps": 0,
+        "B_bad_steps": 0,
+        "P": 1009,
+        "bad_after_down_increase": 0,
+        "edge_count": 6414,
+        "max_cap_q": 991,
+        "peak_m_max": 1021,
+        "peak_m_min": 1013,
+        "pm_buckets": 202,
+        "turn_count": 1
+      }
+    ],
+    "selected_envelope_formula_mismatch_count": 0,
+    "selected_existing_m_count_total": 299977,
+    "selected_formula_m_count_total": 299977,
+    "selected_residual_envelope_formula_verified": true,
+    "total_bad_rough_envelope_cap_count": 0
+  },
+  "frontier_verified_date": "2026-05-24",
+  "global_qprefix_unimodal_structure_explained": true,
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "PrefixCapTraceOrTypeIIPhaseSavingFromNestedRoughEnvelope",
+    "AND CompletedTraceOrKloostermanVariableForMovingPrimeDenominator",
+    "AND DiagonalPGhostSubtractionDiscipline",
+    "AND FiniteThirtyWheelSmallLPFBlockerPacketControl",
+    "AND UniformCancellationAcrossSparseKSupportRadialKernels",
+    "AND RoughBetaSiegelWalfiszUniformityOrReplacement",
+    "AND PointwisePKUniformTransferFromExternalAverageEstimate",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "nested_envelope_endpoint_monotonicity_closed": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pointwise_pk_transfer_closed": false,
+  "prefix_cap_trace_or_typeii_embedding_closed": false,
+  "prime_floor_span_trace_or_typeii_phase_saving_closed": false,
+  "prime_survivor_rough_envelope_identity_closed": true,
+  "q_support_phase_saving_closed": false,
+  "reason_chosen": "the q-prefix cap audit left a structural source question; the fastest non-cyclic advance is to derive the cap from the residual rough-composite envelope",
+  "rough_beta_siegel_walfisz_factor_extracted": false,
+  "row_column_unconditional_closed": false,
+  "selected_residual_rough_envelope_formula_closed": true,
+  "small_lpf_blocker_packet_control_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "0a8c2fb7d7562c82b2e1bbfc7cb461021ad56d29a7e22b98e0c9faa4b349e0df",
+    "docs/monograph/external-theorem-index.md": "180476c2ea4c9ac2f35266f6ca3b25e1c83911b7812369720914518d2c720806",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "dab103a4b2bb78f71676369e13b4e7eccec28848c6fde085d64abf92c3905cbf",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-floor-span-completion-audit.json": "a1b1fd53368dcbe3e19e87353e3335034aef4b2d7774cc4ce1d1e5a088f1050e",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-qprefix-unimodal-audit.json": "0d01167dd468a8e6e3e5da8189112e31d970a81ee070e9606c5be9f3e85fbd70",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "35951569870a431da3da5a3aab7b3c8ee78c454fa20f3a5b9167fedef443288c",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "acc70cfafec47a58dae801da7060637303188f156ce6c06aa92c69c3d651e3c6",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_rough_envelope_cap_audit.py": "4dfb6aafe15933f77fe6f5e44f6bf856e950dbdb88475b0e02c0e64f10b39675",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "19fb087e11d8984f664c39a6e3e223988d0d737d9d3ca2bdfa9ba744df4eadaf"
+  },
+  "status": "qprefix_unimodal_cap_explained_by_nested_residual_rough_envelope_phase_saving_open",
+  "uniform_cancellation_across_sparse_k_support_radial_kernels_closed": false
+}
