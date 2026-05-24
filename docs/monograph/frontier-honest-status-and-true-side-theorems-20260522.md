@@ -2623,6 +2623,67 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC12：Phi-LPF q-prefix single-P local same-packet multi-m gap 审计（2026-05-24）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.json
+```
+
+本层只处理上一层的 `single_packet_multi_m` repeated templates：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+same_packet_multi_m_template_count=78
+same_packet_multi_m_edge_mass=720
+adjacent_prime_pair_collision_template_count=71
+adjacent_prime_pair_collision_edge_mass=662
+nonadjacent_prime_pair_collision_template_count=6
+nonadjacent_prime_pair_collision_edge_mass=50
+adjacent_prime_chain_collision_template_count=1
+adjacent_prime_chain_collision_edge_mass=8
+observed_adjacent_prime_pair_dominant=true
+```
+
+最新最窄口改写为：
+
+```text
+LocalCycleLengthUniformBound
+AND AdjacentPrimePairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+外部 theorem 影响没有发生闭合性改变：trace/Kloosterman 平均、composite Type-II、
+smooth/square-free parameter、prime-gap 与短区间素数存在输入，都不能直接证明
+same-packet adjacent-prime-pair signed collision bound。
+
+状态边界：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+adjacent_prime_pair_collision_bound_proved=false
+nonadjacent_prime_pair_collision_bound_proved=false
+adjacent_prime_chain_collision_bound_proved=false
+same_packet_multi_m_collision_bound_proved=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AD：Phi-LPF q-prefix phase normal-form 审计（2026-05-24）
 
 新增证书：

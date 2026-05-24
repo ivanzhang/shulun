@@ -2145,6 +2145,73 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65Q. Phi-LPF q-prefix single-P local same-packet multi-m gap 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.md
+```
+
+本层继续下钻 `SinglePacketMultiMCollisionBound`。上一层显示 same-packet
+multi-m repeated templates 为 `78` 个、质量 `720`；本层按 selected m-values
+的整数 gap 与素数序号 gap 拆成：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+same_packet_multi_m_template_count=78
+same_packet_multi_m_edge_mass=720
+adjacent_prime_pair_collision_template_count=71
+adjacent_prime_pair_collision_edge_mass=662
+nonadjacent_prime_pair_collision_template_count=6
+nonadjacent_prime_pair_collision_edge_mass=50
+adjacent_prime_chain_collision_template_count=1
+adjacent_prime_chain_collision_edge_mass=8
+same_packet_multi_m_prime_index_gap_max=3
+same_packet_multi_m_integer_gap_max=18
+```
+
+主导形状是相邻素数对 collision；整数 m-gap 主项为 `[4]` 与 `[2]`：
+
+```text
+integer_gap_[4]_edge_mass=316
+integer_gap_[2]_edge_mass=296
+prime_index_gap_[1]_edge_mass=662
+```
+
+最新 occurrence 门改写为：
+
+```text
+AdjacentPrimePairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+```
+
+外部前沿边界：trace/Kloosterman 平均输入需要非局部求和变量；普通 prime-gap
+信息不能控制 adjacent m-values 上的 signed template equality；短区间素数存在
+结果不估计 same-packet signed collision classes。
+
+状态边界：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+adjacent_prime_pair_collision_bound_proved=false
+nonadjacent_prime_pair_collision_bound_proved=false
+adjacent_prime_chain_collision_bound_proved=false
+same_packet_multi_m_collision_bound_proved=false
+local_occurrence_multiplicity_uniform_bound_proved=false
+single_P_slice_endpoint_packet_summation_closed=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 59. Phi-LPF dynamic Ramanujan unit expansion 审计
 
 新增证书：

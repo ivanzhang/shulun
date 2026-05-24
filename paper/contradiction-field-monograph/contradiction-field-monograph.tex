@@ -35855,6 +35855,98 @@ template-occurrence-class-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Same-packet multi-\(m\) gap classes}
+
+\begin{theorem}[Single-\(P\) same-packet multi-\(m\) gap ledger]
+In the audit range \(P\le 1009\), the same-packet multi-\(m\) repeated
+templates have the following finite gap classification:
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{single\_P\_local\_same\_packet\_multi\_m\_gap\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{same\_packet\_multi\_m\_template\_count} & 78\\
+\texttt{same\_packet\_multi\_m\_edge\_mass} & 720\\
+\texttt{adjacent\_prime\_pair\_collision\_template\_count} & 71\\
+\texttt{adjacent\_prime\_pair\_collision\_edge\_mass} & 662\\
+\texttt{nonadjacent\_prime\_pair\_collision\_template\_count} & 6\\
+\texttt{nonadjacent\_prime\_pair\_collision\_edge\_mass} & 50\\
+\texttt{adjacent\_prime\_chain\_collision\_template\_count} & 1\\
+\texttt{adjacent\_prime\_chain\_collision\_edge\_mass} & 8 .
+\end{array}
+\]
+The maximal observed prime-index gap between selected \(m\)-values is \(3\),
+and the maximal observed integer \(m\)-gap is \(18\).  The two dominant integer
+gap vectors have edge masses
+\[
+[4]\mapsto 316,\qquad [2]\mapsto 296,
+\]
+while the dominant prime-index gap vector is
+\[
+[1]\mapsto 662.
+\]
+\end{theorem}
+\begin{proof}
+The audit imports the repeated-template occurrence class ledger and restricts
+to the \(78\) templates classified there as same-packet multi-\(m\).  For each
+template it sorts the selected \(m\)-values, records the integer gap vector, and
+also records the gap vector in the ambient prime sequence.  A selected support
+of two consecutive primes is placed in the adjacent-prime-pair class; a selected
+support of two nonconsecutive primes is placed in the nonadjacent-prime-pair
+class; and a selected support of more than two consecutive primes is placed in
+the adjacent-prime-chain class.  The three class masses are
+\[
+662,\qquad 50,\qquad 8,
+\]
+and these sum to the imported same-packet multi-\(m\) mass \(720\).  The ledger
+also checks that all records remain in a single packet and that the factor
+identity \(\texttt{edge\_mass}=\texttt{cycle\_length}\cdot
+\texttt{occurrence\_count}\) is preserved.
+\end{proof}
+
+\begin{remark}[Adjacent-pair collision gate]
+The same-packet multi-\(m\) gate is now replaced by
+\begin{quote}\scriptsize\ttfamily
+AdjacentPrimePairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound.
+\end{quote}
+Consequently the current mouth is
+\begin{quote}\scriptsize\ttfamily
+LocalCycleLengthUniformBound\\
+AND AdjacentPrimePairCollisionBound\\
+AND NonAdjacentPrimePairCollisionBound\\
+AND AdjacentPrimeChainCollisionBound\\
+AND MultiPacketDuplicateTransportBound\\
+AND SinglePacketSingleMMultiCycleSuppression\\
+AND RepeatedOccurrenceAggregationOrPDEC\\
+AND CycleOccurrenceProductBoundOrPDEC\\
+AND SinglePSliceEndpointPacketSummationOrPDEC\\
+AND MultiPPureEndpointTraceKloostermanCompletion\\
+AND PureEndpointCarrierPhaseSaving\\
+AND MixedRightTailEndpointRouterNoLoss\\
+AND UnequalMirrorPairResidualPhaseSaving\\
+AND ThinPSupportCarrierSummationWithoutLoss\\
+AND ResidualEndpointPathSummationWithoutBoundaryLoss\\
+AND NoLossAggregationAcross15439QPrefixFlowAtoms\\
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity.
+\end{quote}
+This is still only a finite \(m\)-gap classification.  It does not prove a
+global adjacent-prime-pair signed collision bound, a nonadjacent-pair bound, an
+adjacent-chain suppression theorem, or a repeated-occurrence PDEC/SAE return.
+Trace/Kloosterman average estimates and ordinary prime-gap information do not
+by themselves control equality of signed local templates across adjacent
+\(m\)-values inside one endpoint packet.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+same-packet-multi-m-gap-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

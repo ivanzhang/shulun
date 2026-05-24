@@ -1,0 +1,987 @@
+{
+  "adjacent_prime_chain_collision_bound_proved": false,
+  "adjacent_prime_pair_collision_bound_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "RepeatedTemplateOccurrenceClassImported",
+      "meaning": "The previous repeated-template occurrence class ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SamePacketMultiMGapLedger",
+      "meaning": "The same-packet multi-m collision class is split by selected m prime gaps.",
+      "proved": true,
+      "remaining": "none for the finite gap ledger"
+    },
+    {
+      "closed": false,
+      "gate": "AdjacentPrimePairCollisionBound",
+      "meaning": "Promote adjacent prime-pair dominance to a global local collision bound.",
+      "proved": false,
+      "remaining": "finite audit shows 71 templates / 662 edge mass but gives no theorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonAdjacentPrimePairCollisionBound",
+      "meaning": "Control the six nonadjacent same-packet prime-pair collisions.",
+      "proved": false,
+      "remaining": "finite audit shows 6 templates / 50 edge mass but no global exclusion"
+    },
+    {
+      "closed": false,
+      "gate": "AdjacentPrimeChainCollisionBound",
+      "meaning": "Control the only observed adjacent prime chain collision.",
+      "proved": false,
+      "remaining": "finite audit shows 1 template / 8 edge mass but no global suppression"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "adjacent prime-pair collisions carry almost all same-packet multi-m mass",
+    "input": "the 78 single-P repeated templates whose occurrences stay in one packet but use multiple m-values",
+    "operation": "classify selected m-values by integer gaps and prime-index gaps",
+    "remaining": "prove local adjacent-prime-pair collision bounds or route excess to PDEC/SAE"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; not a same-packet adjacent-m collision theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "arbitrary-modulus Kloosterman input; needs extracted bilinear variables",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced average input; does not bound local m-gap template collisions",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_amplification_kloosterman",
+      "role": "composite Type-II input; still requires a nonlocal bilinear family",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Shao_Shparlinski_Wijaya_2025_squarefree_smooth_kloosterman",
+      "role": "parameter-sum input; not a fixed-packet m-gap collision bound",
+      "url": "https://arxiv.org/abs/2411.12113"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "prime existence input; does not estimate signed same-packet collisions",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "ordinary prime-gap information does not control signed template equality across adjacent m-values",
+    "short_interval_prime_inputs": "do not estimate local signed same-packet collision classes",
+    "trace_or_kloosterman_inputs": "need nonlocal summation variables and do not directly bound same-packet m-gap collisions"
+  },
+  "finite_audit": {
+    "adjacent_prime_chain_collision_bound_proved": false,
+    "adjacent_prime_chain_collision_edge_mass": 8,
+    "adjacent_prime_chain_collision_template_count": 1,
+    "adjacent_prime_pair_collision_bound_proved": false,
+    "adjacent_prime_pair_collision_edge_mass": 662,
+    "adjacent_prime_pair_collision_template_count": 71,
+    "bad_same_packet_template_count": 0,
+    "integer_gap_vector_rows": [
+      {
+        "edge_mass": 316,
+        "edge_ratio": 0.4388888888888889,
+        "integer_gap_vector": "[4]",
+        "template_count": 31,
+        "template_ratio": 0.3974358974358974
+      },
+      {
+        "edge_mass": 296,
+        "edge_ratio": 0.4111111111111111,
+        "integer_gap_vector": "[2]",
+        "template_count": 33,
+        "template_ratio": 0.4230769230769231
+      },
+      {
+        "edge_mass": 60,
+        "edge_ratio": 0.08333333333333333,
+        "integer_gap_vector": "[6]",
+        "template_count": 8,
+        "template_ratio": 0.10256410256410256
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "integer_gap_vector": "[8]",
+        "template_count": 3,
+        "template_ratio": 0.038461538461538464
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "integer_gap_vector": "[4, 2, 4]",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "integer_gap_vector": "[10]",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.008333333333333333,
+        "integer_gap_vector": "[18]",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      }
+    ],
+    "m_shell_prime_count_edge_rows": [
+      {
+        "edge_mass": 150,
+        "edge_ratio": 0.20833333333333334,
+        "m_shell_prime_count": 4
+      },
+      {
+        "edge_mass": 138,
+        "edge_ratio": 0.19166666666666668,
+        "m_shell_prime_count": 6
+      },
+      {
+        "edge_mass": 102,
+        "edge_ratio": 0.14166666666666666,
+        "m_shell_prime_count": 3
+      },
+      {
+        "edge_mass": 100,
+        "edge_ratio": 0.1388888888888889,
+        "m_shell_prime_count": 5
+      },
+      {
+        "edge_mass": 78,
+        "edge_ratio": 0.10833333333333334,
+        "m_shell_prime_count": 2
+      },
+      {
+        "edge_mass": 68,
+        "edge_ratio": 0.09444444444444444,
+        "m_shell_prime_count": 9
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.05,
+        "m_shell_prime_count": 7
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "m_shell_prime_count": 8
+      },
+      {
+        "edge_mass": 12,
+        "edge_ratio": 0.016666666666666666,
+        "m_shell_prime_count": 10
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.013888888888888888,
+        "m_shell_prime_count": 11
+      }
+    ],
+    "m_span_edge_rows": [
+      {
+        "edge_mass": 316,
+        "edge_ratio": 0.4388888888888889,
+        "m_span": 4
+      },
+      {
+        "edge_mass": 296,
+        "edge_ratio": 0.4111111111111111,
+        "m_span": 2
+      },
+      {
+        "edge_mass": 60,
+        "edge_ratio": 0.08333333333333333,
+        "m_span": 6
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "m_span": 8
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223,
+        "m_span": 10
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.008333333333333333,
+        "m_span": 18
+      }
+    ],
+    "max_prime": 1009,
+    "nonadjacent_prime_chain_collision_edge_mass": 0,
+    "nonadjacent_prime_chain_collision_template_count": 0,
+    "nonadjacent_prime_pair_collision_bound_proved": false,
+    "nonadjacent_prime_pair_collision_edge_mass": 50,
+    "nonadjacent_prime_pair_collision_template_count": 6,
+    "observed_adjacent_prime_pair_dominant": true,
+    "observed_same_packet_multi_m_occurrence_count_le_4": true,
+    "observed_same_packet_multi_m_prime_index_gap_le_3": true,
+    "observed_same_packet_multi_m_selected_support_le_4": true,
+    "occurrence_count_edge_rows": [
+      {
+        "edge_mass": 712,
+        "edge_ratio": 0.9888888888888889,
+        "occurrence_count": 2
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "occurrence_count": 4
+      }
+    ],
+    "previous_single_P_local_template_occurrence_class_ledger_closed": true,
+    "prime_index_gap_vector_rows": [
+      {
+        "edge_mass": 662,
+        "edge_ratio": 0.9194444444444444,
+        "prime_index_gap_vector": "[1]",
+        "template_count": 71,
+        "template_ratio": 0.9102564102564102
+      },
+      {
+        "edge_mass": 44,
+        "edge_ratio": 0.06111111111111111,
+        "prime_index_gap_vector": "[2]",
+        "template_count": 5,
+        "template_ratio": 0.0641025641025641
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "prime_index_gap_vector": "[1, 1, 1]",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      },
+      {
+        "edge_mass": 6,
+        "edge_ratio": 0.008333333333333333,
+        "prime_index_gap_vector": "[3]",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      }
+    ],
+    "q_prefix_count_edge_rows": [
+      {
+        "edge_mass": 70,
+        "edge_ratio": 0.09722222222222222,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 48,
+        "edge_ratio": 0.06666666666666667,
+        "q_prefix_count": 28
+      },
+      {
+        "edge_mass": 42,
+        "edge_ratio": 0.058333333333333334,
+        "q_prefix_count": 16
+      },
+      {
+        "edge_mass": 42,
+        "edge_ratio": 0.058333333333333334,
+        "q_prefix_count": 19
+      },
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.05555555555555555,
+        "q_prefix_count": 7
+      },
+      {
+        "edge_mass": 40,
+        "edge_ratio": 0.05555555555555555,
+        "q_prefix_count": 9
+      },
+      {
+        "edge_mass": 38,
+        "edge_ratio": 0.05277777777777778,
+        "q_prefix_count": 21
+      },
+      {
+        "edge_mass": 38,
+        "edge_ratio": 0.05277777777777778,
+        "q_prefix_count": 8
+      },
+      {
+        "edge_mass": 36,
+        "edge_ratio": 0.05,
+        "q_prefix_count": 20
+      },
+      {
+        "edge_mass": 34,
+        "edge_ratio": 0.04722222222222222,
+        "q_prefix_count": 12
+      },
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.041666666666666664,
+        "q_prefix_count": 5
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "q_prefix_count": 13
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "q_prefix_count": 27
+      },
+      {
+        "edge_mass": 22,
+        "edge_ratio": 0.030555555555555555,
+        "q_prefix_count": 14
+      },
+      {
+        "edge_mass": 22,
+        "edge_ratio": 0.030555555555555555,
+        "q_prefix_count": 26
+      },
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.027777777777777776,
+        "q_prefix_count": 15
+      },
+      {
+        "edge_mass": 18,
+        "edge_ratio": 0.025,
+        "q_prefix_count": 18
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223,
+        "q_prefix_count": 17
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223,
+        "q_prefix_count": 24
+      },
+      {
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223,
+        "q_prefix_count": 32
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "same_packet_gap_class_edge_rows": [
+      {
+        "edge_mass": 662,
+        "edge_ratio": 0.9194444444444444,
+        "same_packet_gap_class": "adjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 50,
+        "edge_ratio": 0.06944444444444445,
+        "same_packet_gap_class": "nonadjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "same_packet_gap_class": "adjacent_prime_chain_collision"
+      }
+    ],
+    "same_packet_gap_class_route_edge_rows": [
+      {
+        "edge_mass": 288,
+        "edge_ratio": 0.4,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "same_packet_gap_class": "adjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 260,
+        "edge_ratio": 0.3611111111111111,
+        "route_class": "pure_upper_wing_single_shell",
+        "same_packet_gap_class": "adjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 84,
+        "edge_ratio": 0.11666666666666667,
+        "route_class": "pure_lower_wing_single_shell",
+        "same_packet_gap_class": "adjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 30,
+        "edge_ratio": 0.041666666666666664,
+        "route_class": "pure_right_tail_left_collar",
+        "same_packet_gap_class": "adjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "same_packet_gap_class": "nonadjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 14,
+        "edge_ratio": 0.019444444444444445,
+        "route_class": "pure_upper_wing_single_shell",
+        "same_packet_gap_class": "nonadjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.013888888888888888,
+        "route_class": "pure_right_tail_right_collar",
+        "same_packet_gap_class": "nonadjacent_prime_pair_collision"
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "route_class": "pure_upper_wing_single_shell",
+        "same_packet_gap_class": "adjacent_prime_chain_collision"
+      }
+    ],
+    "same_packet_gap_class_template_rows": [
+      {
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "template_count": 71,
+        "template_ratio": 0.9102564102564102
+      },
+      {
+        "same_packet_gap_class": "nonadjacent_prime_pair_collision",
+        "template_count": 6,
+        "template_ratio": 0.07692307692307693
+      },
+      {
+        "same_packet_gap_class": "adjacent_prime_chain_collision",
+        "template_count": 1,
+        "template_ratio": 0.01282051282051282
+      }
+    ],
+    "same_packet_multi_m_collision_bound_proved": false,
+    "same_packet_multi_m_edge_mass": 720,
+    "same_packet_multi_m_integer_gap_max": 18,
+    "same_packet_multi_m_occurrence_count_max": 4,
+    "same_packet_multi_m_prime_index_gap_max": 3,
+    "same_packet_multi_m_selected_m_support_count_max": 4,
+    "same_packet_multi_m_template_count": 78,
+    "selected_m_support_edge_rows": [
+      {
+        "edge_mass": 712,
+        "edge_ratio": 0.9888888888888889,
+        "selected_m_support_count": 2
+      },
+      {
+        "edge_mass": 8,
+        "edge_ratio": 0.011111111111111112,
+        "selected_m_support_count": 4
+      }
+    ],
+    "single_P_local_same_packet_multi_m_gap_ledger_closed": true,
+    "top_p_edge_rows": [
+      {
+        "P": 977,
+        "edge_mass": 36,
+        "edge_ratio": 0.05
+      },
+      {
+        "P": 613,
+        "edge_mass": 34,
+        "edge_ratio": 0.04722222222222222
+      },
+      {
+        "P": 823,
+        "edge_mass": 34,
+        "edge_ratio": 0.04722222222222222
+      },
+      {
+        "P": 883,
+        "edge_mass": 34,
+        "edge_ratio": 0.04722222222222222
+      },
+      {
+        "P": 919,
+        "edge_mass": 32,
+        "edge_ratio": 0.044444444444444446
+      },
+      {
+        "P": 1009,
+        "edge_mass": 30,
+        "edge_ratio": 0.041666666666666664
+      },
+      {
+        "P": 991,
+        "edge_mass": 30,
+        "edge_ratio": 0.041666666666666664
+      },
+      {
+        "P": 617,
+        "edge_mass": 28,
+        "edge_ratio": 0.03888888888888889
+      },
+      {
+        "P": 773,
+        "edge_mass": 28,
+        "edge_ratio": 0.03888888888888889
+      },
+      {
+        "P": 829,
+        "edge_mass": 26,
+        "edge_ratio": 0.03611111111111111
+      },
+      {
+        "P": 971,
+        "edge_mass": 22,
+        "edge_ratio": 0.030555555555555555
+      },
+      {
+        "P": 607,
+        "edge_mass": 20,
+        "edge_ratio": 0.027777777777777776
+      },
+      {
+        "P": 619,
+        "edge_mass": 20,
+        "edge_ratio": 0.027777777777777776
+      },
+      {
+        "P": 887,
+        "edge_mass": 20,
+        "edge_ratio": 0.027777777777777776
+      },
+      {
+        "P": 449,
+        "edge_mass": 18,
+        "edge_ratio": 0.025
+      },
+      {
+        "P": 739,
+        "edge_mass": 18,
+        "edge_ratio": 0.025
+      },
+      {
+        "P": 761,
+        "edge_mass": 18,
+        "edge_ratio": 0.025
+      },
+      {
+        "P": 677,
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223
+      },
+      {
+        "P": 701,
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223
+      },
+      {
+        "P": 809,
+        "edge_mass": 16,
+        "edge_ratio": 0.022222222222222223
+      }
+    ],
+    "top_same_packet_multi_m_rows": [
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 829,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 9,
+        "occurrence_count": 2,
+        "packet_index": 3622,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 19,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1303, 1307]",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=positive -> g=4,c=6,A=negative -> g=6,c=9,A=positive -> g=8,c=13,A=negative -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 971,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 5,
+        "occurrence_count": 2,
+        "packet_index": 4742,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[907, 911]",
+        "signed_child": "g=10,c=9,A=negative -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive -> g=4,c=3,A=positive -> g=8,c=8,A=negative -> g=4,c=4,A=positive -> g=14,c=13,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 809,
+        "cycle_length": 8,
+        "edge_mass": 16,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 6,
+        "occurrence_count": 2,
+        "packet_index": 3316,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 24,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[739, 743]",
+        "signed_child": "g=2,c=1,A=negative -> g=6,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=positive -> g=4,c=4,A=positive -> g=6,c=5,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 919,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 6,
+        "occurrence_count": 2,
+        "packet_index": 4307,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 27,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[883, 887]",
+        "signed_child": "g=10,c=10,A=negative -> g=8,c=8,A=positive -> g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=6,A=positive -> g=4,c=4,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 613,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap_vector": "[2]",
+        "m_shell_prime_count": 2,
+        "occurrence_count": 2,
+        "packet_index": 1948,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 9,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1049, 1051]",
+        "signed_child": "g=10,c=17,A=negative -> g=2,c=4,A=positive -> g=4,c=7,A=positive -> g=2,c=3,A=positive -> g=4,c=7,A=negative -> g=14,c=24,A=positive -> g=6,c=10,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 977,
+        "cycle_length": 7,
+        "edge_mass": 14,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 8,
+        "occurrence_count": 2,
+        "packet_index": 4807,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 23,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[877, 881]",
+        "signed_child": "g=4,c=3,A=positive -> g=8,c=8,A=positive -> g=6,c=5,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 3478,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 16,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[937, 941]",
+        "signed_child": "g=10,c=11,A=positive -> g=2,c=3,A=negative -> g=4,c=4,A=negative -> g=6,c=7,A=positive -> g=2,c=2,A=negative -> g=12,c=14,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 769,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 5,
+        "occurrence_count": 2,
+        "packet_index": 3101,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[823, 827]",
+        "signed_child": "g=10,c=11,A=positive -> g=6,c=6,A=negative -> g=6,c=7,A=positive -> g=4,c=4,A=negative -> g=2,c=2,A=negative -> g=12,c=13,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 1009,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[2]",
+        "m_shell_prime_count": 6,
+        "occurrence_count": 2,
+        "packet_index": 5099,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 27,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1481, 1483]",
+        "signed_child": "g=10,c=15,A=positive -> g=6,c=9,A=negative -> g=6,c=9,A=positive -> g=2,c=3,A=positive -> g=18,c=27,A=positive -> g=6,c=8,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 821,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[2]",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 3443,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 16,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1319, 1321]",
+        "signed_child": "g=10,c=16,A=negative -> g=2,c=3,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=6,A=positive -> g=2,c=3,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 937,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 2,
+        "occurrence_count": 2,
+        "packet_index": 4419,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 14,
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[769, 773]",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=positive -> g=10,c=9,A=positive -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 733,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 2788,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 25,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[673, 677]",
+        "signed_child": "g=10,c=9,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=2,c=2,A=positive -> g=18,c=16,A=negative -> g=6,c=6,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 2,
+        "occurrence_count": 2,
+        "packet_index": 4061,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 21,
+        "route_class": "pure_right_tail_left_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[769, 773]",
+        "signed_child": "g=10,c=9,A=positive -> g=2,c=1,A=negative -> g=4,c=4,A=negative -> g=6,c=5,A=negative -> g=6,c=5,A=positive -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 947,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 10,
+        "occurrence_count": 2,
+        "packet_index": 4550,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 26,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[877, 881]",
+        "signed_child": "g=10,c=9,A=positive -> g=8,c=8,A=negative -> g=6,c=5,A=positive -> g=6,c=6,A=negative -> g=4,c=4,A=positive -> g=8,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 883,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[2]",
+        "m_shell_prime_count": 8,
+        "occurrence_count": 2,
+        "packet_index": 4082,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 12,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1487, 1489]",
+        "signed_child": "g=12,c=20,A=positive -> g=8,c=14,A=negative -> g=4,c=7,A=positive -> g=6,c=10,A=negative -> g=8,c=13,A=positive -> g=4,c=7,A=negative"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "cycle_length": 6,
+        "edge_mass": 12,
+        "integer_gap_vector": "[2]",
+        "m_shell_prime_count": 9,
+        "occurrence_count": 2,
+        "packet_index": 3502,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 17,
+        "route_class": "pure_upper_wing_single_shell",
+        "route_superclass": "wing_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[1289, 1291]",
+        "signed_child": "g=2,c=3,A=negative -> g=6,c=9,A=positive -> g=4,c=6,A=negative -> g=6,c=10,A=positive -> g=8,c=12,A=positive -> g=4,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 727,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 2741,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 29,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[739, 743]",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=2,c=2,A=negative -> g=18,c=18,A=positive -> g=6,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 739,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 2842,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 28,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[757, 761]",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 829,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap_vector": "[6]",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 3600,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 21,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[751, 757]",
+        "signed_child": "g=10,c=10,A=positive -> g=8,c=7,A=negative -> g=6,c=6,A=positive -> g=6,c=5,A=negative -> g=8,c=7,A=positive"
+      },
+      {
+        "A_class": "mixed_positive_negative",
+        "P": 823,
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "integer_gap_vector": "[4]",
+        "m_shell_prime_count": 5,
+        "occurrence_count": 2,
+        "packet_index": 3485,
+        "prime_index_gap_vector": "[1]",
+        "q_prefix_count": 26,
+        "route_class": "pure_right_tail_two_sided_collar",
+        "route_superclass": "right_tail_single_P_local",
+        "same_packet_gap_class": "adjacent_prime_pair_collision",
+        "selected_m_values": "[859, 863]",
+        "signed_child": "g=10,c=11,A=positive -> g=2,c=2,A=negative -> g=4,c=4,A=negative -> g=2,c=3,A=positive -> g=12,c=12,A=negative"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "LocalCycleLengthUniformBound",
+    "AND AdjacentPrimePairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "local_occurrence_multiplicity_uniform_bound_proved": false,
+  "local_template_multiplicity_uniform_bound_proved": false,
+  "mixed_right_tail_endpoint_router_no_loss_closed": false,
+  "multi_P_trace_completion_closed": false,
+  "multi_packet_duplicate_transport_bound_proved": false,
+  "nonadjacent_prime_pair_collision_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pure_endpoint_carrier_phase_saving_closed": false,
+  "reason_chosen": "same-packet multi-m collisions carry most repeated occurrence mass",
+  "repeated_occurrence_aggregation_or_pdec_closed": false,
+  "residual_endpoint_path_summation_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_packet_multi_m_collision_bound_proved": false,
+  "single_P_local_endpoint_packet_bound_closed": false,
+  "single_P_local_same_packet_multi_m_gap_ledger_closed": true,
+  "single_P_slice_endpoint_packet_summation_closed": false,
+  "single_packet_single_m_multi_cycle_suppression_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "19f1e928109bd7e6b9af179525b1be38136b3ff1a1ba0b075fd5884f65cf3375",
+    "docs/monograph/external-theorem-index.md": "ffabb90b5934cc49d7a085ba04eb3ee1cd8969b0cfcb3572cced4a6d812bd5e9",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "01cde20bf1500c95f0ef5f863e96808120d16762d9187a0223a8395215ec9380",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-multiplicity-audit.json": "410cb5ef8d65ce3068bec20ec6a040da9b08599fe7c6fca4a4808789753ad65d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-template-occurrence-class-audit.json": "5c1747f0c5f67a2d1e495c8f8d4f3ae989fca89448b4a708b598bf6749faa1d9",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "bd6b1b3b40d0f3e77a47d5809d6ff3ac3f94475635bc75793bca81069a61dda9",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "5996eed8cc3efd5e05a0981f33c8532e1541e0cf173ef0c6c3da94d251c916d3",
+    "experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit.py": "1ebd7677e44a535ebadc30d7e4602bbc07f65af19f7385c881e0c25869a94b87",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "701f958b175cf856254e988e30faaac2768b3b338b4ca2746455732dff62d84c"
+  },
+  "status": "single_p_local_same_packet_multi_m_gap_ledger_closed_uniform_bound_open",
+  "thin_P_support_carrier_summation_closed": false,
+  "unequal_mirror_pair_residual_phase_saving_closed": false
+}

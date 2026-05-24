@@ -23097,6 +23097,49 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 repeated occurrence 分类账本；三个 collision bound、重复部分聚合/回流、
 cycle-occurrence product 与 P-slice 求和仍未闭合。
 
+### 1.179K Phi-LPF q-prefix single-P local same-packet multi-m gap actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.json
+```
+
+actual-load 含义继续收缩：same-packet multi-m repeated class 的主量已经拆成
+相邻素数对、非相邻素数对和相邻素数链：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+same_packet_multi_m_template_count=78
+same_packet_multi_m_edge_mass=720
+adjacent_prime_pair_collision_template_count=71
+adjacent_prime_pair_collision_edge_mass=662
+nonadjacent_prime_pair_collision_template_count=6
+nonadjacent_prime_pair_collision_edge_mass=50
+adjacent_prime_chain_collision_template_count=1
+adjacent_prime_chain_collision_edge_mass=8
+```
+
+最新直接主攻改为：
+
+```text
+LocalCycleLengthUniformBound
+AdjacentPrimePairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite m-gap 分类账本；相邻素数对 signed collision bound、非相邻对
+控制、相邻链控制和 repeated occurrence 回流仍未闭合。
+
 ### 1.180 Phi-LPF boundary layer-cake phase-interface 更新
 
 新增机器证书：

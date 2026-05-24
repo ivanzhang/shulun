@@ -25705,3 +25705,43 @@ unclassified_repeated_template_count=0
 本层删除的是“occurrence multiplicity 是单一黑箱”的含混说法；没有删除
 same-packet multi-m collision、multi-packet duplicate transport、same-m multi-cycle
 suppression 或 repeated occurrence 聚合/回流的全局证明缺口。
+
+### Phi-LPF q-prefix single-P local same-packet multi-m gap formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_same_packet_multi_m_gap_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-same-packet-multi-m-gap-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+SinglePacketMultiMCollisionBound
+```
+
+现在被拆成：
+
+```text
+AdjacentPrimePairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+```
+
+关键审计读数为：
+
+```text
+single_P_local_same_packet_multi_m_gap_ledger_closed=true
+same_packet_multi_m_edge_mass=720
+adjacent_prime_pair_collision_edge_mass=662
+nonadjacent_prime_pair_collision_edge_mass=50
+adjacent_prime_chain_collision_edge_mass=8
+prime_index_gap_[1]_edge_mass=662
+```
+
+本层删除的是“same-packet multi-m collision 是单一黑箱”的含混说法；没有删除
+相邻素数对 signed template equality、非相邻素数对、相邻素数链或 repeated
+occurrence 聚合/回流的全局证明缺口。
