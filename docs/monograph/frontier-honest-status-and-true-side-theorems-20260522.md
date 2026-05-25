@@ -2110,6 +2110,47 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+## 附录 Q13AC40：Phi-LPF terminal boundary old-residual return alignment（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.md
+```
+
+诚实状态：这是一个真实收缩而非最终闭合。5 个 old-side boundary residual 全部被
+source-key partition 的 nonboundary/internal return 精确支付：
+
+```text
+old_residual_return_alignment_closed=true
+old_residual_total=0.215539338772
+matched_old_residual_return_mass=0.215539338772
+unmatched_old_residual_return_mass=0
+```
+
+因此 old-side transport 不再是主要剩余硬点。当前 Prime Matrix 线最快的非循环攻击口为：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryNewResidualReturnOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+new_residual_mass_total_still_open=13.264539470882
+new_residual_return_alignment_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ---
 
 ## 附录 Q13AC28：Phi-LPF factor-word parity shadow orientation no-go（2026-05-25）

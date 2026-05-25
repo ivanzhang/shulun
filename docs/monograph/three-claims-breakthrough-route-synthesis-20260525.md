@@ -618,6 +618,52 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.9 terminal boundary old-residual return alignment 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json
+```
+
+本层抓住上一轮的精确重合：5 个 old-side boundary residual 的总质量等于
+nonboundary/internal obstruction mass，并逐项检查 atom/run/q key。结果不是仅有总量相等，
+而是逐项返回闭合：
+
+```text
+old_residual_return_alignment_closed=true
+old_residual_event_count=5
+nonboundary_record_jump_event_count=4
+internal_survivor_return_count=1
+old_residual_equals_nonboundary_plus_internal_obstruction=true
+old_residual_total=0.215539338772
+matched_old_residual_return_mass=0.215539338772
+unmatched_old_residual_return_mass=0
+row_column_unconditional_closed=false
+```
+
+因此 old-side residual transport 子门关闭：四个 nonboundary record jump 和一个 internal
+survivor 不是额外残差库，而是正好支付 old-side boundary residual。剩余真正硬点进一步
+集中为 dominant new-side residual source：
+
+```text
+new_residual_mass_total_still_open=13.264539470882
+```
+
+最新口：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryNewResidualReturnOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

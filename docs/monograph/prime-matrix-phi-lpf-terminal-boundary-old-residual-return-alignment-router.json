@@ -1,0 +1,233 @@
+{
+  "boundary_dominant_new_residual_source_law_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router",
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "OldResidualReturnAlignmentClosed",
+      "meaning": "the five old-side boundary residuals match four nonboundary jumps plus one internal survivor exactly.",
+      "proved": true,
+      "remaining": "finite old-side return ledger"
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryResidualTransportToNonBoundaryInternalReturnsOldSide",
+      "meaning": "old-side residual transport is fully accounted for in the finite source-key partition.",
+      "proved": true,
+      "remaining": "old-side transport closed only"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryDominantNewResidualSource",
+      "meaning": "new-side residual mass remains dominant and has no return alignment in this certificate.",
+      "proved": false,
+      "remaining": "BoundaryDominantNewResidualSourceLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite old-side return alignment, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily"
+    }
+  ],
+  "internal_survivor_mass_total": {
+    "decimal": "0.017995938314",
+    "denominator": 202379,
+    "fraction": "3642/202379",
+    "numerator": 3642
+  },
+  "internal_survivor_return_count": 1,
+  "matched_old_residual_return_mass": {
+    "decimal": "0.215539338772",
+    "denominator": 21679492133206013,
+    "fraction": "4672783399294642/21679492133206013",
+    "numerator": 4672783399294642
+  },
+  "new_residual_mass_total_still_open": {
+    "decimal": "13.264539470882",
+    "denominator": 3160780921765953306422353215107991553097814357054137917186575616177,
+    "fraction": "41926303295575689754715570945220742196966577484713147368977982770741/3160780921765953306422353215107991553097814357054137917186575616177",
+    "numerator": 41926303295575689754715570945220742196966577484713147368977982770741
+  },
+  "new_residual_return_alignment_closed": false,
+  "next_primary_attack_target": "BoundaryDominantNewResidualSourceLawOrPDEC AND BoundaryNewResidualReturnOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily",
+  "nonboundary_plus_internal_obstruction_mass": {
+    "decimal": "0.215539338772",
+    "denominator": 21679492133206013,
+    "fraction": "4672783399294642/21679492133206013",
+    "numerator": 4672783399294642
+  },
+  "nonboundary_record_jump_event_count": 4,
+  "nonboundary_record_jump_mass_total": {
+    "decimal": "0.197543400458",
+    "denominator": 107123229847,
+    "fraction": "21161487092/107123229847",
+    "numerator": 21161487092
+  },
+  "old_residual_equals_nonboundary_plus_internal_obstruction": true,
+  "old_residual_event_count": 5,
+  "old_residual_return_aligned_event_count": 5,
+  "old_residual_return_alignment_closed": true,
+  "old_residual_total": {
+    "decimal": "0.215539338772",
+    "denominator": 21679492133206013,
+    "fraction": "4672783399294642/21679492133206013",
+    "numerator": 4672783399294642
+  },
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The five old-side boundary residuals align exactly with the four nonboundary record jumps and the one internal survivor.  The old-side transport subgate is therefore closed in the finite ledger, but the dominant new-side residual mass is still open and must be explained by a source law, a new-return alignment, or PDEC.",
+  "previous_residual_flow_side_decomposition_closed": true,
+  "previous_source_key_obstruction_partition_closed": true,
+  "return_alignment_rows": [
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "boundary_q": 569,
+      "direction_pair": "positive->negative",
+      "mass_difference": {
+        "decimal": "0.000000000000",
+        "denominator": 1,
+        "fraction": "0/1",
+        "numerator": 0
+      },
+      "matched": true,
+      "old_residual_mass": {
+        "decimal": "0.067012828938",
+        "denominator": 308911,
+        "fraction": "20701/308911",
+        "numerator": 20701
+      },
+      "old_run_id": 1,
+      "return_endpoint": "old_q_end=569, new_q_start=577",
+      "return_mass": {
+        "decimal": "0.067012828938",
+        "denominator": 308911,
+        "fraction": "20701/308911",
+        "numerator": 20701
+      },
+      "return_type": "nonboundary_record_jump"
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "boundary_q": 563,
+      "direction_pair": "negative->positive",
+      "mass_difference": {
+        "decimal": "0.000000000000",
+        "denominator": 1,
+        "fraction": "0/1",
+        "numerator": 0
+      },
+      "matched": true,
+      "old_residual_mass": {
+        "decimal": "0.075506206368",
+        "denominator": 307829,
+        "fraction": "23243/307829",
+        "numerator": 23243
+      },
+      "old_run_id": 0,
+      "return_endpoint": "old_q_end=563, new_q_start=593",
+      "return_mass": {
+        "decimal": "0.075506206368",
+        "denominator": 307829,
+        "fraction": "23243/307829",
+        "numerator": 23243
+      },
+      "return_type": "nonboundary_record_jump"
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "boundary_q": 571,
+      "direction_pair": "negative->positive",
+      "mass_difference": {
+        "decimal": "0.000000000000",
+        "denominator": 1,
+        "fraction": "0/1",
+        "numerator": 0
+      },
+      "matched": true,
+      "old_residual_mass": {
+        "decimal": "0.007352739611",
+        "denominator": 328313,
+        "fraction": "2414/328313",
+        "numerator": 2414
+      },
+      "old_run_id": 2,
+      "return_endpoint": "old_q_end=571, new_q_start=593",
+      "return_mass": {
+        "decimal": "0.007352739611",
+        "denominator": 328313,
+        "fraction": "2414/328313",
+        "numerator": 2414
+      },
+      "return_type": "nonboundary_record_jump"
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "boundary_q": 599,
+      "direction_pair": "positive->negative",
+      "mass_difference": {
+        "decimal": "0.000000000000",
+        "denominator": 1,
+        "fraction": "0/1",
+        "numerator": 0
+      },
+      "matched": true,
+      "old_residual_mass": {
+        "decimal": "0.047671625541",
+        "denominator": 325141,
+        "fraction": "15500/325141",
+        "numerator": 15500
+      },
+      "old_run_id": 5,
+      "return_endpoint": "old_q_end=599, new_q_start=607",
+      "return_mass": {
+        "decimal": "0.047671625541",
+        "denominator": 325141,
+        "fraction": "15500/325141",
+        "numerator": 15500
+      },
+      "return_type": "nonboundary_record_jump"
+    },
+    {
+      "atom_key": "right:1887:selected_terminal:m773",
+      "boundary_q": 457,
+      "direction_pair": "negative->positive",
+      "mass_difference": {
+        "decimal": "0.000000000000",
+        "denominator": 1,
+        "fraction": "0/1",
+        "numerator": 0
+      },
+      "matched": true,
+      "old_residual_mass": {
+        "decimal": "0.017995938314",
+        "denominator": 202379,
+        "fraction": "3642/202379",
+        "numerator": 3642
+      },
+      "old_run_id": 2,
+      "return_endpoint": "q_start=449, q_end=457",
+      "return_mass": {
+        "decimal": "0.017995938314",
+        "denominator": 202379,
+        "fraction": "3642/202379",
+        "numerator": 3642
+      },
+      "return_type": "internal_survivor"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json": "4023c41551ce51476161cd01fce05b5de460b37c42c870000d0a1c853544ef88",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json": "5f855cce874423998dc3046cbf66f7a3930b939520d1103766f0f0bae77a65e3",
+    "experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py": "0c04f928b27408820b0722704b7926b009d56107dee6bb8d877ebff6d52d39c1"
+  },
+  "status": "old_residual_return_alignment_closed_new_source_open",
+  "unmatched_old_residual_return_mass": {
+    "decimal": "0.000000000000",
+    "denominator": 1,
+    "fraction": "0/1",
+    "numerator": 0
+  },
+  "verified_date": "2026-05-25"
+}

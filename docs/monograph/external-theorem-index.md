@@ -2131,6 +2131,44 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+## 附录 Q13AC44：terminal boundary old-residual return alignment（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.md
+```
+
+本层不调用新的外部定理，而是把外部定理入口进一步推后：old-side residual 已经在
+有限 source-key ledger 内精确返回。
+
+```text
+old_residual_return_alignment_closed=true
+old_residual_event_count=5
+nonboundary_record_jump_event_count=4
+internal_survivor_return_count=1
+old_residual_equals_nonboundary_plus_internal_obstruction=true
+unmatched_old_residual_return_mass=0
+new_residual_mass_total_still_open=13.264539470882
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界更新：Kloosterman、Type-II、DI/BFI/Kuznetsov 或 L-function-free
+sieve 输入不需要解释 old-side residual；该子门已经由 finite source-key return
+alignment 支付。它们仍然不能替代以下缺失对象：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryNewResidualReturnOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+```
+
+只有在 new-side source/return 被构造成 admissible signed family 后，外部求和定理才有
+可验证入口。
+
 ## 附录 Q13AC42：terminal boundary split ratio obstruction（2026-05-25）
 
 新增证书：

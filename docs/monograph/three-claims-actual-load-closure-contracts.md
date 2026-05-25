@@ -43,6 +43,51 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### terminal boundary old-residual return actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json
+```
+
+actual-load 含义：old-side boundary residual 可以完全支付，不再作为剩余硬点：
+
+```text
+old_residual_return_alignment_closed=true
+old_residual_total=0.215539338772
+matched_old_residual_return_mass=0.215539338772
+unmatched_old_residual_return_mass=0
+```
+
+具体支付对象为：
+
+```text
+4 nonboundary_record_jump
+1 internal_survivor
+```
+
+因此 actual-load 合同收窄为：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryNewResidualReturnOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+状态边界：
+
+```text
+new_residual_mass_total_still_open=13.264539470882
+new_residual_return_alignment_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 这说明当前数据中，形式上界 `M_q^{form}` 远大于 actual packet 数 `N_q`。临界负载必须按 `N_q^2` 计，而不能按 `(A_gA_f)^2` 计。
 
 ### 1.2 合同陈述

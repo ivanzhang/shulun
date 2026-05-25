@@ -38330,6 +38330,102 @@ this source-key residual family has been constructed or returned as a named
 PDEC obstruction.
 \end{remark}
 
+\section{Terminal boundary old-residual return alignment}
+
+\begin{theorem}[Old residual return alignment]
+The five old-side q-boundary residuals are exactly accounted for by the
+source-key partition outside the q-boundary split branch:
+\[
+  \texttt{old\_residual\_return\_alignment\_closed}=\texttt{true}.
+\]
+More precisely,
+\[
+  \texttt{old\_residual\_event\_count}=5,
+  \qquad
+  \texttt{nonboundary\_record\_jump\_event\_count}=4,
+  \qquad
+  \texttt{internal\_survivor\_return\_count}=1.
+\]
+The total old residual mass equals the nonboundary plus internal obstruction
+mass:
+\[
+  R_{\rm old}
+  =
+  0.215539338772\ldots
+  =
+  \texttt{nonboundary\_plus\_internal\_obstruction\_mass}.
+\]
+\end{theorem}
+
+\begin{proof}
+For each old-side boundary residual the audit forms the key
+\[
+  (\texttt{atom\_key},\texttt{old\_run\_id},\texttt{boundary\_q}).
+\]
+For each nonboundary record jump it forms
+\[
+  (\texttt{atom\_key},\texttt{old\_run\_id},\texttt{old\_q\_end}),
+\]
+and for each internal survivor it forms
+\[
+  (\texttt{atom\_key},\texttt{run\_id},\texttt{q\_end}).
+\]
+All five old residual keys have matching return keys, and in each case the
+exact rational mass is identical.  Four matches are nonboundary record jumps;
+one match is the internal survivor.
+\end{proof}
+
+\begin{proposition}[Remaining new-side source]
+The old-side transport subgate is closed, but this does not close the
+row/column theorem.  The unmatched old-side mass is zero:
+\[
+  \texttt{unmatched\_old\_residual\_return\_mass}=0.
+\]
+The remaining boundary mass is a new-side source of size
+\[
+  \texttt{new\_residual\_mass\_total\_still\_open}
+  =
+  13.264539470882\ldots.
+\]
+Thus the next non-cyclic target is a dominant new-residual source law, a
+new-residual return alignment, or a named PDEC.
+\end{proposition}
+
+\begin{certificatestatement}[Old residual return alignment audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+old\_residual\_return\_alignment\_closed=true\\
+old\_residual\_event\_count=5\\
+nonboundary\_record\_jump\_event\_count=4\\
+internal\_survivor\_return\_count=1\\
+old\_residual\_equals\_nonboundary\_plus\_internal\_obstruction=true\\
+matched\_old\_residual\_return\_mass=0.215539338772\\
+unmatched\_old\_residual\_return\_mass=0\\
+new\_residual\_return\_alignment\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+old-residual-return-alignment-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated old-return gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BoundaryDominantNewResidualSourceLawOrPDEC\\
+AND BoundaryNewResidualReturnOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+The nonboundary record jumps and the internal survivor are no longer an
+unpaid old-side reservoir in the finite ledger; the unpaid object is the
+dominant new-side residual source.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

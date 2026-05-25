@@ -26861,6 +26861,39 @@ AND BoundaryAdjacentRunMassRatioLawOrPDEC
 在这些 actual-load 对象出现前，Kloosterman/Type-II 只能作为后续求和工具，不能替代
 source-key conservation。
 
+### terminal boundary old-residual return formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_old_residual_return_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json
+```
+
+formal-to-actual 结论：上一层的 `old_residual_mass_total=0.215539338772` 不是悬空
+source。它精确等于 source-key partition 中的 `4` 个 nonboundary record jump 和
+`1` 个 internal survivor，并且逐项 atom/run/q key 对齐：
+
+```text
+old_residual_return_alignment_closed=true
+old_residual_event_count=5
+nonboundary_record_jump_event_count=4
+internal_survivor_return_count=1
+old_residual_equals_nonboundary_plus_internal_obstruction=true
+unmatched_old_residual_return_mass=0
+```
+
+因此 formal-to-actual 缺口进一步压缩：old-side return transport 已关闭，真正剩余是
+new-side residual 的 source/return：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryNewResidualReturnOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：
