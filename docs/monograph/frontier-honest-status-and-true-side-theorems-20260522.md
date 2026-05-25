@@ -1755,6 +1755,58 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC28：三命题突破路线总合成（2026-05-25）
+
+新增归档：
+
+```text
+docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md
+```
+
+本轮重新盘点 Prime Matrix 行/列、二点筛和 RH contradiction-field 三条命题线，并把
+Phi-LPF 最新 terminal phase variation budget、actual-load 原则和外部前沿定理边界合并。
+诚实裁定如下：
+
+```text
+three_claim_breakthrough_synthesis_archived=true
+row_column_unconditional_closed=false
+two_point_unconditional_closed=false
+rh_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心结论：最快真推进仍在 Prime Matrix/Phi-LPF 线，但必须停止只做同口径有限细分。
+上一层 signed variation budget 已经显示 selected terminal 没有自动平衡：
+
+```text
+selected_terminal_total_variation=17.979169131897
+selected_terminal_net_phase_displacement=-1.456565972578
+selected_terminal_phase_run_count=35
+extra_total_variation=14.109301881162
+extra_phase_run_count=24
+```
+
+因此下一步非循环目标不是继续升级 wheel 或重复 terminal ledger，而是三分接口：
+
+```text
+ActualSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+OR MonotoneRunPhaseSavingWithExtraBudgetAbsorption
+OR PDEC/SAE/LocalSurvivor named return
+```
+
+若能把 selected terminal 与 extra shell 的 run 预算构造成 admissible averaged
+trace/Kloosterman/Type-II family，FKMS、Milićević--Qin--Wu、Pascadi、Wright 类
+外部输入才可能进入；若构造失败，失败形态必须命名回流，不能保留匿名
+`PrimeQSupportSetReciprocalPhaseSavingBeyondParity`。
+
+二点筛线保留为第二候选突破口：它的外部 DI/BFI/KLS 分子方向清楚，但完整命题仍取决于
+同一奇异级数 convention 下的 actual denominator floor。RH 线继续作为 controlled-exit
+审稿包，不作为本轮最快突破目标。
+
+---
+
 ## 附录 Q13AC29：Phi-LPF repeated-step affine-skeleton packet-enclosure 审计（2026-05-25）
 
 新增证书：

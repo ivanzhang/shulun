@@ -2081,6 +2081,50 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+---
+
+## 附录 Q13AC28：三命题突破路线总合成的外部定理边界（2026-05-25）
+
+新增归档：
+
+```text
+docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md
+```
+
+本层不是新增外部定理引用，而是重新排序外部定理可用边界：
+
+```text
+three_claim_breakthrough_synthesis_archived=true
+external_theorem_requires_admissible_family=true
+support_only_is_parity_blind=true
+rankone_ap_positivity_direct_route_not_closed=true
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+外部前沿输入的准确使用纪律如下。
+
+| 输入 | 当前可用位置 | 仍缺的项目 |
+| --- | --- | --- |
+| DI/BFI/Kuznetsov | 二点筛 `BMD/KLS-window` 外部版；可服务 well-factorable 权重与 Kloosterman 平均 | `BMD=>TLI` 的 actual denominator floor 与同 convention 误差优势 |
+| FKMS trace/bilinear、Milićević--Qin--Wu、Pascadi、Wright | Prime Matrix/Phi-LPF 线只有在 terminal signed payload 被构造成 averaged trace/Kloosterman/Type-II family 后才能调用 | 当前 terminal phase variation budget 还不是可求和完成型族 |
+| Li short intervals、Maynard small gaps | 可作为邻近素数分布背景 | 不控制每个 row、每个 residue class 或 terminal signed variation |
+| Dong--Robles--Zeindler withdrawn item | 只保留为不可用边界 | 不得作为证明输入 |
+
+本层把下一步外部定理接口压成：
+
+```text
+ActualSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+OR MonotoneRunPhaseSavingWithExtraBudgetAbsorption
+OR PDEC/SAE/LocalSurvivor named return
+```
+
+因此后续若引用 FKMS、Milićević--Qin--Wu、Pascadi 或 Wright，必须先提交
+admissible family constructor；若无法构造，则失败必须回流到命名
+PDEC/SAE/LocalSurvivor 出口，不能保留匿名 parity gap。
+
 ## 65AH. Phi-LPF repeated-step affine-skeleton packet-enclosure 证书
 
 新增证书：

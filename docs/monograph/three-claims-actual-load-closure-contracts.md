@@ -29225,3 +29225,38 @@ RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
 
 本层只关闭 finite signed variation ledger；没有证明 monotone-run phase saving、
 extra variation absorption、trace/Kloosterman completion 或全局 row/column 闭合。
+
+### 三命题突破路线总合成 actual-load 更新（2026-05-25）
+
+新增归档：
+
+```text
+docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md
+```
+
+本层把三命题的 actual-load 纪律统一成同一个选择器：完整无条件闭合尚未完成；
+下一步 Prime Matrix/Phi-LPF 首攻必须把 terminal signed variation 变成 actual
+signed payload，而不能继续只扩大 formal envelope。
+
+```text
+three_claim_breakthrough_synthesis_archived=true
+actual_load_not_formal_envelope=true
+finite_ledgers_are_evidence_not_final_proof=true
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+actual-load 合同相应更新为：
+
+```text
+Terminal signed payload either
+  (A) forms an admissible averaged trace/Kloosterman or Type-II family,
+  (B) has monotone-run phase saving large enough to absorb extra variation,
+  (C) returns a named PDEC/SAE/LocalSurvivor defect.
+```
+
+二点筛线保留为第二候选突破口：它的 actual-ratio 合同仍是 numerator bound 与
+denominator floor 在同一 singular-series convention 下闭合。RH 线继续作为
+controlled-exit 审稿包，不作为本轮最快 actual-load 突破目标。

@@ -26669,3 +26669,37 @@ phase_variation_budget_phase_saving_proved=false
 本层删除的是“phase-turn word 是否隐藏自然平衡”的含混说法；结论是否定的。
 selected terminal 负变差占优，剩余必须证明负变差过剩 word 的 phase-saving cap
 或给出 PDEC/SAE 吸收。
+
+### 三命题突破路线总合成 formal-to-actual 更新（2026-05-25）
+
+新增归档：
+
+```text
+docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md
+```
+
+本层把三条命题线重新排序为 formal-to-actual 的非循环选择：
+
+```text
+three_claim_breakthrough_synthesis_archived=true
+support_only_is_parity_blind=true
+external_theorem_requires_admissible_family=true
+rankone_ap_positivity_direct_route_not_closed=true
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+因此下一步不能再把 formal wheel refinement、finite terminal ledger 或 support
+saturation 当作实际相消。Prime Matrix/Phi-LPF 的最窄 formal-to-actual 接口改为：
+
+```text
+ActualSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+OR MonotoneRunPhaseSavingWithExtraBudgetAbsorption
+OR PDEC/SAE/LocalSurvivor named return
+```
+
+只有当 terminal signed payload 已构造成 averaged trace/Kloosterman/Type-II family
+后，FKMS、Milićević--Qin--Wu、Pascadi 或 Wright 型外部输入才有可审稿入口。
+否则失败必须作为 actual defect 回流，而不能继续保留匿名 parity gap。
