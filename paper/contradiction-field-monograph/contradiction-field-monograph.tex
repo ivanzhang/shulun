@@ -38522,6 +38522,95 @@ tail-return ledger supplies that sharper target; it does not itself break the
 Phi--LPF parity barrier.
 \end{remark}
 
+\section{Terminal boundary bulk carry-chain normal form}
+
+\begin{theorem}[Bulk new-residual carry-chain normal form]
+The \(42\) new-side boundary residual events admit an atomwise carry-chain
+normal form.  They split into \(11\) carry segments on \(7\) atoms, with
+\[
+  \texttt{carry\_transition\_count}=31,
+  \qquad
+  \texttt{carry\_break\_count}=4.
+\]
+For every carry transition inside a segment,
+\[
+  \texttt{old\_mass(next)}
+  =
+  \texttt{residual\_mass(previous)}
+\]
+as exact rational numbers.  Hence the \(36\) unmatched bulk events are not
+independent scatter; they are roots or interiors of this finite carry normal
+form.
+\end{theorem}
+
+\begin{proof}
+For each atom the audit sorts the new-side residual rows by new run id.  A
+transition from one row to the next is declared a carry transition exactly when
+the next old run id equals the previous new run id and the next old mass equals
+the previous residual mass.  This gives \(31\) exact transitions.  The remaining
+noninitial discontinuities are the four recorded carry breaks.  The segment
+partition covers all \(42\) new-side residual rows, and the six previously
+matched tail returns occur at segment terminal rows.
+\end{proof}
+
+\begin{proposition}[Source law still open after carry compression]
+The carry normal form is a finite structural compression, not a row/column
+proof:
+\[
+  \texttt{bulk\_carry\_chain\_normal\_form\_closed}
+  =
+  \texttt{true},
+  \qquad
+  \texttt{row\_column\_unconditional\_closed}
+  =
+  \texttt{false}.
+\]
+The open objects are now the \(11\) segment roots, the \(4\) carry breaks, and
+the single right selected-terminal tail overhang.  A proof must supply a
+uniform segment-root source law, a named PDEC, or an admissible averaged
+trace/Type-II/group-orbit family.
+\end{proposition}
+
+\begin{certificatestatement}[Bulk carry-chain normal form audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+new\_residual\_event\_count=42\\
+bulk\_unmatched\_new\_residual\_event\_count=36\\
+atom\_count=7\\
+carry\_segment\_count=11\\
+carry\_transition\_count=31\\
+carry\_break\_count=4\\
+tail\_closed\_segment\_count=6\\
+open\_segment\_count=5\\
+all\_carry\_transitions\_exact=true\\
+all\_tail\_matched\_events\_are\_segment\_terminal=true\\
+bulk\_carry\_chain\_normal\_form\_closed=true\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bulk-carry-chain-normal-form-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated carry-chain gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+The spectral and group-theoretic frontier is therefore sharply located: one
+must first turn the carry-segment roots into a completed signed family or a
+finite group orbit with expansion.  Current trace/Kloosterman, Type-II, and
+thin-group tools do not act directly on the finite ledger alone.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

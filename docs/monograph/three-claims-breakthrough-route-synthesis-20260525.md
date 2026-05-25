@@ -711,6 +711,57 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.11 terminal boundary bulk carry-chain normal form 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json
+```
+
+本层继续压缩上一层的 `36` 个 bulk new residual。它们并非 `36` 个独立异常，而是
+落入 atomwise carry-chain normal form：
+
+```text
+new_residual_event_count=42
+bulk_unmatched_new_residual_event_count=36
+atom_count=7
+carry_segment_count=11
+carry_transition_count=31
+carry_break_count=4
+tail_closed_segment_count=6
+open_segment_count=5
+all_carry_transitions_exact=true
+bulk_carry_chain_normal_form_closed=true
+row_column_unconditional_closed=false
+```
+
+递推原子为：
+
+```text
+old_mass(next boundary run) = residual_mass(previous boundary run)
+```
+
+这一步的非循环收益是把 bulk source 从散点问题改写为 `11` 个 segment root
+和 `4` 个 carry break 的 source law 问题。它不是奇偶性突破：还没有 uniform
+segment-root source bound、right-tail overhang PDEC，也没有可接入 FKMS/MQW/Wright/
+Pascadi 型 trace/Kloosterman/Type-II 或 thin-group expansion 的 admissible family。
+
+最新口：
+
+```text
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

@@ -2062,6 +2062,64 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC30：Phi-LPF terminal boundary bulk carry-chain normal form 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.md
+```
+
+本层承接 new-residual tail alignment。有限审计读数：
+
+```text
+new_residual_event_count=42
+bulk_unmatched_new_residual_event_count=36
+atom_count=7
+carry_segment_count=11
+carry_transition_count=31
+carry_break_count=4
+tail_closed_segment_count=6
+open_segment_count=5
+all_carry_transitions_exact=true
+bulk_carry_chain_normal_form_closed=true
+row_column_unconditional_closed=false
+```
+
+本层真正推进：删除了“36 个 bulk residual 是互不相关散点”的含混口径；它们落入
+`11` 段 atomwise carry segments，其中 `31` 个相邻转移精确递推。
+
+### Q13AC30.1 最新最窄口
+
+```text
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bulk_carry_chain_normal_form_closed=true
+carry_segment_root_source_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC28：Phi-LPF terminal boundary new-residual tail alignment 审计（2026-05-25）
 
 新增证书：

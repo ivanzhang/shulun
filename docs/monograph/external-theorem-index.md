@@ -2081,6 +2081,51 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AI. Phi-LPF terminal boundary bulk carry-chain normal form 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.md
+```
+
+本层把上一节的 `36` 个 bulk new residual 从散点压缩为 carry-chain normal form：
+
+```text
+new_residual_event_count=42
+bulk_unmatched_new_residual_event_count=36
+atom_count=7
+carry_segment_count=11
+carry_transition_count=31
+carry_break_count=4
+tail_closed_segment_count=6
+open_segment_count=5
+all_carry_transitions_exact=true
+bulk_carry_chain_normal_form_closed=true
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界：谱分析与群论工具的作用更精确了。FKMS/Milićević--Qin--Wu/
+Wright 型 trace/Kloosterman 工具需要把 `11` 个 segment root 变成 completed
+averaged signed family；Pascadi/Type-II 需要二维 box 或 well-factorable 平均；
+thin-group/expander/affine sieve 需要真正的 finite group orbit 与 expansion。当前证书
+只给 finite carry normal form，没有给这些 admissible family。
+
+最新开放口：
+
+```text
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

@@ -26936,6 +26936,47 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bulk carry-chain normal form formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json
+```
+
+formal-to-actual 结论：`36` 个 bulk new residual 可以压成 carry normal form；
+`42` 个 new-side residual 全部被 `11` 段 atomwise carry segment 覆盖，其中
+`31` 个相邻转移精确满足：
+
+```text
+old_mass(next)=residual_mass(previous)
+```
+
+审计读数：
+
+```text
+carry_segment_count=11
+carry_transition_count=31
+carry_break_count=4
+tail_closed_segment_count=6
+open_segment_count=5
+bulk_carry_chain_normal_form_closed=true
+```
+
+因此 formal-to-actual 缺口从 `36` 个散点 residual 进一步降维为 segment-root
+source law、right-tail overhang PDEC、以及能否把这些 segment roots 组织成可平均
+谱/群论族：
+
+```text
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

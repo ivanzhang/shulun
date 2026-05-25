@@ -130,6 +130,43 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bulk carry-chain normal form actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json
+```
+
+actual-load 含义：bulk new residual 的实际负载不再按 `36` 个独立散点记账，而按
+`11` 段 carry segment 和 `4` 个 carry break 记账：
+
+```text
+new_residual_event_count=42
+bulk_unmatched_new_residual_event_count=36
+carry_segment_count=11
+carry_transition_count=31
+carry_break_count=4
+tail_closed_segment_count=6
+open_segment_count=5
+bulk_carry_chain_normal_form_closed=true
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BoundaryBulkCarrySegmentRootSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 这说明当前数据中，形式上界 `M_q^{form}` 远大于 actual packet 数 `N_q`。临界负载必须按 `N_q^2` 计，而不能按 `(A_gA_f)^2` 计。
 
 ### 1.2 合同陈述

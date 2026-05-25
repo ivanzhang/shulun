@@ -1,0 +1,572 @@
+{
+  "admissible_trace_or_typeii_family_constructed": false,
+  "all_carry_transitions_exact": true,
+  "all_new_residual_events_partitioned": true,
+  "all_tail_matched_events_are_segment_terminal": true,
+  "atom_count": 7,
+  "atom_initial_segment_count": 7,
+  "bulk_carry_chain_normal_form_closed": true,
+  "bulk_events_accounted_by_segment_normal_form": true,
+  "bulk_unmatched_new_residual_event_count": 36,
+  "carry_break_count": 4,
+  "carry_break_rows": [
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "previous_boundary_q": 563,
+      "previous_new_run_id": 1,
+      "previous_residual_mass": {
+        "decimal": "0.126151207326",
+        "denominator": 307829,
+        "fraction": "38833/307829",
+        "numerator": 38833
+      },
+      "q_gap": 14,
+      "root_boundary_q": 577,
+      "root_minus_previous_residual": {
+        "decimal": "-0.020343948936",
+        "denominator": 101419497143,
+        "fraction": "-2063273071/101419497143",
+        "numerator": -2063273071
+      },
+      "root_new_run_id": 4,
+      "root_old_mass": {
+        "decimal": "0.105807258390",
+        "denominator": 329467,
+        "fraction": "34860/329467",
+        "numerator": 34860
+      },
+      "run_gap": 3,
+      "tail_before_break": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "previous_boundary_q": 577,
+      "previous_new_run_id": 4,
+      "previous_residual_mass": {
+        "decimal": "0.780387597123",
+        "denominator": 346597,
+        "fraction": "270480/346597",
+        "numerator": 270480
+      },
+      "q_gap": 30,
+      "root_boundary_q": 607,
+      "root_minus_previous_residual": {
+        "decimal": "-0.067012828938",
+        "denominator": 308911,
+        "fraction": "-20701/308911",
+        "numerator": -20701
+      },
+      "root_new_run_id": 5,
+      "root_old_mass": {
+        "decimal": "0.713374768185",
+        "denominator": 328387,
+        "fraction": "234263/328387",
+        "numerator": 234263
+      },
+      "run_gap": 1,
+      "tail_before_break": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "previous_boundary_q": 593,
+      "previous_new_run_id": 5,
+      "previous_residual_mass": {
+        "decimal": "0.200325209838",
+        "denominator": 345623,
+        "fraction": "69237/345623",
+        "numerator": 69237
+      },
+      "q_gap": 14,
+      "root_boundary_q": 607,
+      "root_minus_previous_residual": {
+        "decimal": "-0.189486602027",
+        "denominator": 126085689761,
+        "fraction": "-23891548917/126085689761",
+        "numerator": -23891548917
+      },
+      "root_new_run_id": 8,
+      "root_old_mass": {
+        "decimal": "0.010838607812",
+        "denominator": 364807,
+        "fraction": "3954/364807",
+        "numerator": 3954
+      },
+      "run_gap": 3,
+      "tail_before_break": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "previous_boundary_q": 607,
+      "previous_new_run_id": 8,
+      "previous_residual_mass": {
+        "decimal": "0.822670087625",
+        "denominator": 379231,
+        "fraction": "311982/379231",
+        "numerator": 311982
+      },
+      "q_gap": 24,
+      "root_boundary_q": 631,
+      "root_minus_previous_residual": {
+        "decimal": "-0.047671625541",
+        "denominator": 325141,
+        "fraction": "-15500/325141",
+        "numerator": -15500
+      },
+      "root_new_run_id": 9,
+      "root_old_mass": {
+        "decimal": "0.774998462084",
+        "denominator": 341371,
+        "fraction": "264562/341371",
+        "numerator": 264562
+      },
+      "run_gap": 1,
+      "tail_before_break": false
+    }
+  ],
+  "carry_segment_count": 11,
+  "carry_segment_root_source_law_proved": false,
+  "carry_transition_count": 31,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router",
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "BulkCarryChainNormalForm",
+      "meaning": "42 new-side residual events are partitioned into 11 atomwise carry segments with 31 exact carry transitions.",
+      "proved": true,
+      "remaining": "finite carry-chain ledger"
+    },
+    {
+      "closed": true,
+      "gate": "BulkResidualIndependentEventReduction",
+      "meaning": "the 36 unmatched bulk events are no longer independent scatter; they are segment roots/interiors in the carry normal form.",
+      "proved": true,
+      "remaining": "BoundaryBulkCarrySegmentRootSourceLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "CarrySegmentRootSourceLaw",
+      "meaning": "the 11 segment roots and 4 carry breaks still need a uniform source law or named PDEC.",
+      "proved": false,
+      "remaining": "BoundaryBulkCarrySegmentRootSourceLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RightTailOverhangPDEC",
+      "meaning": "the single unmatched right selected-terminal tail survivor is carried forward.",
+      "proved": false,
+      "remaining": "RightSelectedTerminalTailOverhangPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalTraceOrGroupEntry",
+      "meaning": "frontier trace/Kloosterman/Type-II or group-expansion inputs still require an admissible family built from these segments.",
+      "proved": false,
+      "remaining": "AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite normal form, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "new_residual_event_count": 42,
+  "next_primary_attack_target": "BoundaryBulkCarrySegmentRootSourceLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "open_segment_count": 5,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The 36 bulk new-side residual events are compressed into an atomwise carry-chain normal form: 42 new residual events form 11 segments with 31 exact carry transitions. Six segments end in the already matched tail returns; five segments remain open, together with the right selected-terminal tail overhang.  The remaining theorem-level task is a uniform segment-root source law, a tail-overhang PDEC, or an admissible trace/Type-II/group-orbit family.",
+  "previous_new_residual_tail_alignment_partial_closed": true,
+  "previous_old_residual_return_alignment_closed": true,
+  "right_tail_overhang_pdec_constructed": false,
+  "row_column_unconditional_closed": false,
+  "segment_rows": [
+    {
+      "atom_key": "left:2842:extra_shell:m719",
+      "bulk_unmatched_event_count": 8,
+      "carry_transition_count": 8,
+      "direction_end": "positive->negative",
+      "direction_start": "positive->negative",
+      "event_count": 9,
+      "new_run_end": 9,
+      "new_run_start": 1,
+      "q_end": 701,
+      "q_start": 563,
+      "role": "extra_shell",
+      "root_old_mass": {
+        "decimal": "0.488057442471",
+        "denominator": 304583,
+        "fraction": "148654/304583",
+        "numerator": 148654
+      },
+      "segment_id": 1,
+      "segment_residual_mass_total": {
+        "decimal": "3.347346333033",
+        "denominator": 9679270361816100105882629459,
+        "fraction": "32399870152060550712283521969/9679270361816100105882629459",
+        "numerator": 32399870152060550712283521969
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.356428699921",
+        "denominator": 383569,
+        "fraction": "136715/383569",
+        "numerator": 136715
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "left:2842:extra_shell:m751",
+      "bulk_unmatched_event_count": 7,
+      "carry_transition_count": 7,
+      "direction_end": "positive->negative",
+      "direction_start": "negative->positive",
+      "event_count": 8,
+      "new_run_end": 8,
+      "new_run_start": 1,
+      "q_end": 673,
+      "q_start": 547,
+      "role": "extra_shell",
+      "root_old_mass": {
+        "decimal": "0.119867399730",
+        "denominator": 295927,
+        "fraction": "35472/295927",
+        "numerator": 35472
+      },
+      "segment_id": 2,
+      "segment_residual_mass_total": {
+        "decimal": "2.293964781395",
+        "denominator": 24239672939547702829783,
+        "fraction": "55604956035864843393004/24239672939547702829783",
+        "numerator": 55604956035864843393004
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.462466987687",
+        "denominator": 383569,
+        "fraction": "177388/383569",
+        "numerator": 177388
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "bulk_unmatched_event_count": 1,
+      "carry_transition_count": 0,
+      "direction_end": "negative->positive",
+      "direction_start": "negative->positive",
+      "event_count": 1,
+      "new_run_end": 1,
+      "new_run_start": 1,
+      "q_end": 563,
+      "q_start": 563,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.693912660917",
+        "denominator": 304583,
+        "fraction": "211354/304583",
+        "numerator": 211354
+      },
+      "segment_id": 3,
+      "segment_residual_mass_total": {
+        "decimal": "0.126151207326",
+        "denominator": 307829,
+        "fraction": "38833/307829",
+        "numerator": 38833
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.126151207326",
+        "denominator": 307829,
+        "fraction": "38833/307829",
+        "numerator": 38833
+      },
+      "terminal_tail_closed": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "bulk_unmatched_event_count": 1,
+      "carry_transition_count": 0,
+      "direction_end": "positive->negative",
+      "direction_start": "positive->negative",
+      "event_count": 1,
+      "new_run_end": 4,
+      "new_run_start": 4,
+      "q_end": 577,
+      "q_start": 577,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.105807258390",
+        "denominator": 329467,
+        "fraction": "34860/329467",
+        "numerator": 34860
+      },
+      "segment_id": 4,
+      "segment_residual_mass_total": {
+        "decimal": "0.780387597123",
+        "denominator": 346597,
+        "fraction": "270480/346597",
+        "numerator": 270480
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.780387597123",
+        "denominator": 346597,
+        "fraction": "270480/346597",
+        "numerator": 270480
+      },
+      "terminal_tail_closed": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "bulk_unmatched_event_count": 5,
+      "carry_transition_count": 5,
+      "direction_end": "positive->negative",
+      "direction_start": "negative->positive",
+      "event_count": 6,
+      "new_run_end": 10,
+      "new_run_start": 5,
+      "q_end": 701,
+      "q_start": 607,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.713374768185",
+        "denominator": 328387,
+        "fraction": "234263/328387",
+        "numerator": 234263
+      },
+      "segment_id": 5,
+      "segment_residual_mass_total": {
+        "decimal": "1.899325831711",
+        "denominator": 89525123027302393,
+        "fraction": "170037378752867684/89525123027302393",
+        "numerator": 170037378752867684
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.038532832424",
+        "denominator": 383569,
+        "fraction": "14780/383569",
+        "numerator": 14780
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "bulk_unmatched_event_count": 1,
+      "carry_transition_count": 0,
+      "direction_end": "negative->positive",
+      "direction_start": "negative->positive",
+      "event_count": 1,
+      "new_run_end": 5,
+      "new_run_start": 5,
+      "q_end": 593,
+      "q_start": 593,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.587466134364",
+        "denominator": 342161,
+        "fraction": "201008/342161",
+        "numerator": 201008
+      },
+      "segment_id": 6,
+      "segment_residual_mass_total": {
+        "decimal": "0.200325209838",
+        "denominator": 345623,
+        "fraction": "69237/345623",
+        "numerator": 69237
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.200325209838",
+        "denominator": 345623,
+        "fraction": "69237/345623",
+        "numerator": 69237
+      },
+      "terminal_tail_closed": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "bulk_unmatched_event_count": 1,
+      "carry_transition_count": 0,
+      "direction_end": "positive->negative",
+      "direction_start": "positive->negative",
+      "event_count": 1,
+      "new_run_end": 8,
+      "new_run_start": 8,
+      "q_end": 607,
+      "q_start": 607,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.010838607812",
+        "denominator": 364807,
+        "fraction": "3954/364807",
+        "numerator": 3954
+      },
+      "segment_id": 7,
+      "segment_residual_mass_total": {
+        "decimal": "0.822670087625",
+        "denominator": 379231,
+        "fraction": "311982/379231",
+        "numerator": 311982
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.822670087625",
+        "denominator": 379231,
+        "fraction": "311982/379231",
+        "numerator": 311982
+      },
+      "terminal_tail_closed": false
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "bulk_unmatched_event_count": 4,
+      "carry_transition_count": 4,
+      "direction_end": "negative->positive",
+      "direction_start": "negative->positive",
+      "event_count": 5,
+      "new_run_end": 13,
+      "new_run_start": 9,
+      "q_end": 701,
+      "q_start": 631,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.774998462084",
+        "denominator": 341371,
+        "fraction": "264562/341371",
+        "numerator": 264562
+      },
+      "segment_id": 8,
+      "segment_residual_mass_total": {
+        "decimal": "1.572733147839",
+        "denominator": 76671872791034737,
+        "fraction": "120584395845333799/76671872791034737",
+        "numerator": 120584395845333799
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.032752907560",
+        "denominator": 383569,
+        "fraction": "12563/383569",
+        "numerator": 12563
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "right:1887:extra_shell:m479",
+      "bulk_unmatched_event_count": 3,
+      "carry_transition_count": 3,
+      "direction_end": "positive->negative",
+      "direction_start": "negative->positive",
+      "event_count": 4,
+      "new_run_end": 4,
+      "new_run_start": 1,
+      "q_end": 461,
+      "q_start": 443,
+      "role": "extra_shell",
+      "root_old_mass": {
+        "decimal": "0.209119844506",
+        "denominator": 194477,
+        "fraction": "40669/194477",
+        "numerator": 40669
+      },
+      "segment_id": 9,
+      "segment_residual_mass_total": {
+        "decimal": "1.050154801037",
+        "denominator": 44175385391,
+        "fraction": "46390993056/44175385391",
+        "numerator": 46390993056
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.088823635574",
+        "denominator": 205013,
+        "fraction": "18210/205013",
+        "numerator": 18210
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "right:1887:selected_terminal:m769",
+      "bulk_unmatched_event_count": 3,
+      "carry_transition_count": 3,
+      "direction_end": "positive->negative",
+      "direction_start": "negative->positive",
+      "event_count": 4,
+      "new_run_end": 4,
+      "new_run_start": 1,
+      "q_end": 461,
+      "q_start": 443,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.090514559562",
+        "denominator": 194477,
+        "fraction": "17603/194477",
+        "numerator": 17603
+      },
+      "segment_id": 10,
+      "segment_residual_mass_total": {
+        "decimal": "0.940741608594",
+        "denominator": 44175385391,
+        "fraction": "41557623113/44175385391",
+        "numerator": 41557623113
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.601039934053",
+        "denominator": 205013,
+        "fraction": "123221/205013",
+        "numerator": 123221
+      },
+      "terminal_tail_closed": true
+    },
+    {
+      "atom_key": "right:1887:selected_terminal:m773",
+      "bulk_unmatched_event_count": 2,
+      "carry_transition_count": 1,
+      "direction_end": "positive->negative",
+      "direction_start": "negative->positive",
+      "event_count": 2,
+      "new_run_end": 2,
+      "new_run_start": 1,
+      "q_end": 449,
+      "q_start": 443,
+      "role": "selected_terminal",
+      "root_old_mass": {
+        "decimal": "0.127968860071",
+        "denominator": 194477,
+        "fraction": "24887/194477",
+        "numerator": 24887
+      },
+      "segment_id": 11,
+      "segment_residual_mass_total": {
+        "decimal": "0.230738865361",
+        "denominator": 205193,
+        "fraction": "47346/205193",
+        "numerator": 47346
+      },
+      "terminal_residual_mass": {
+        "decimal": "0.222332434467",
+        "denominator": 200623,
+        "fraction": "44605/200623",
+        "numerator": 44605
+      },
+      "terminal_tail_closed": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json": "a6abbc588de0905e4f96855b5bfe7f0594d2f46351732cf3bc3c9a34048c508f",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json": "4f2f4be70956f3ab1da6e3fd1cd790630014cc1213eb83a1d0111e61cdca5641",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json": "4023c41551ce51476161cd01fce05b5de460b37c42c870000d0a1c853544ef88",
+    "experiments/prime_matrix_phi_lpf_terminal_boundary_bulk_carry_chain_normal_form_router.py": "20f5be201ef341e33b6e12768f12015f5eab6b4592ed2c4485ce0c53a7603e12"
+  },
+  "status": "bulk_new_residual_carry_chain_normal_form_closed_uniform_source_open",
+  "tail_closed_segment_count": 6,
+  "tail_overhang_rows": [
+    {
+      "atom_key": "right:1887:selected_terminal:m773",
+      "mass": {
+        "decimal": "0.831750175347",
+        "denominator": 215287,
+        "fraction": "179065/215287",
+        "numerator": 179065
+      },
+      "q_end": 467,
+      "q_start": 461,
+      "run_id": 4
+    }
+  ],
+  "verified_date": "2026-05-25"
+}
