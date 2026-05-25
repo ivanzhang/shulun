@@ -394,6 +394,54 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.4 terminal adjacent-run Jordan cancellation 源保持障碍更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_adjacent_run_jordan_cancellation_source_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.json
+```
+
+本层找到了统一相邻抵消律的形式版本：
+
+```text
+sign_matches_Awrap_all_transitions=true
+maximal_run_reconstruction_closed=true
+signed_telescoping_identity_closed=true
+formal_jordan_cancellation_law_closed=true
+```
+
+精确说，符号由 `A(q)/q` 是否 wrap 决定；相邻 run 抵消就是一维相位路径的
+signed telescoping/Jordan 分解。这是有用的统一结构，但还不是 actual-load 闭合。
+阻断点也被精确量化：
+
+```text
+cancellation_event_count=51
+complete_whole_run_pair_event_count=0
+synthetic_split_cancellation_event_count=51
+internal_survivor_fragment_count=1
+tail_only_survivor_law_proved=false
+source_preserving_adjacent_run_pairing_constructed=false
+```
+
+也就是说，有限抵消需要切分 run 质量块，并且存在内部 survivor：
+
+```text
+right:1887:selected_terminal:m773, run 2, q=[449,457], mass=0.017995938314
+```
+
+所以最新非循环口不是“再找形式 telescoping”，而是：
+
+```text
+SourcePreservingAdjacentRunPairingOrInternalSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

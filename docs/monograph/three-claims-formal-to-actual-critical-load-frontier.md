@@ -26922,6 +26922,39 @@ admissible_averaged_trace_family_created=false
 row_column_unconditional_closed=false
 ```
 
+### terminal adjacent-run Jordan cancellation formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_adjacent_run_jordan_cancellation_source_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.json
+```
+
+formal-to-actual 结论：形式相邻抵消律已经完全识别。对 7 条 terminal 相位路径：
+
+```text
+sign_matches_Awrap_all_transitions=true
+maximal_run_reconstruction_closed=true
+signed_telescoping_identity_closed=true
+formal_jordan_cancellation_law_closed=true
+```
+
+即 `A(q)/q` 的 wrap/no-wrap 给出 signed phase direction，run 间抵消是 Jordan
+分解。但是 actual-load 层不能只靠这个形式恒等式闭合，因为抵消块不是源保持对象：
+
+```text
+complete_whole_run_pair_event_count=0
+synthetic_split_cancellation_event_count=51
+internal_survivor_fragment_count=1
+source_preserving_adjacent_run_pairing_constructed=false
+```
+
+因此 actual signed load 仍需新增 pre-Cauchy/source/orientation/local-factor 键，或把内部
+survivor 回流为 PDEC/LocalSurvivor，或构造可求和外部 trace/Kloosterman/Type-II family。
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

@@ -1673,6 +1673,58 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC31：Phi-LPF terminal adjacent-run Jordan cancellation source obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_adjacent_run_jordan_cancellation_source_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.md
+```
+
+诚实结论：统一相邻抵消律的形式版本已经找到，但它只是 `A(q)/q` 一维相位路径的
+Jordan/telescoping 恒等式：
+
+```text
+sign_matches_Awrap_all_transitions=true
+maximal_run_reconstruction_closed=true
+signed_telescoping_identity_closed=true
+formal_jordan_cancellation_law_closed=true
+```
+
+真正未闭合的是源保持版本：
+
+```text
+cancellation_event_count=51
+complete_whole_run_pair_event_count=0
+synthetic_split_cancellation_event_count=51
+internal_survivor_fragment_count=1
+tail_only_survivor_law_proved=false
+source_preserving_adjacent_run_pairing_constructed=false
+```
+
+所以本层推进后状态仍为：
+
+```text
+primitive_orientation_local_factor_law_proved=false
+admissible_averaged_trace_family_created=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最新最窄口：
+
+```text
+SourcePreservingAdjacentRunPairingOrInternalSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC30：Phi-LPF terminal monotone-run total-to-net compression frontier（2026-05-25）
 
 新增证书：

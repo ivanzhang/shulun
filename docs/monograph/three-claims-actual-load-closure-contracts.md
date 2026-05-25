@@ -29425,6 +29425,52 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 本层闭合的是有限分解与条件闭合入口；没有证明 uniform run cancellation law，也没有
 突破 Phi-LPF 奇偶性障碍。
 
+### Phi-LPF terminal adjacent-run Jordan cancellation actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_adjacent_run_jordan_cancellation_source_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.json
+```
+
+actual-load 含义：统一相邻抵消律的形式版本已经闭合为 `A(q)/q` 的一维 Jordan
+恒等式：
+
+```text
+terminal_phase_path_count=7
+terminal_transition_count_total=126
+terminal_run_count_total=59
+sign_matches_Awrap_all_transitions=true
+signed_telescoping_identity_closed=true
+formal_jordan_cancellation_law_closed=true
+```
+
+但用于证明的 actual pairing 尚未形成：
+
+```text
+cancellation_event_count=51
+complete_whole_run_pair_event_count=0
+synthetic_split_cancellation_event_count=51
+survivor_fragment_count_total=8
+internal_survivor_fragment_count=1
+tail_only_survivor_law_proved=false
+source_preserving_adjacent_run_pairing_constructed=false
+```
+
+因此 actual-load 合同进一步改写为：
+
+```text
+SourcePreservingAdjacentRunPairingOrInternalSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+本层不是无条件闭合；它把“找抵消律”推进为“形式律已找到，源保持律待证明”。
+
 ### 三命题突破路线总合成 actual-load 更新（2026-05-25）
 
 新增归档：

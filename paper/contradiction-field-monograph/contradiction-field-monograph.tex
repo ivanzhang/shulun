@@ -37868,6 +37868,91 @@ It does not by itself break the Phi--LPF parity barrier, because every
 monotone run has local compression ratio \(1\).
 \end{remark}
 
+\section{Terminal adjacent-run Jordan cancellation and source obstruction}
+
+\begin{theorem}[Formal adjacent-run cancellation law]
+For the seven terminal phase paths \(A(q)/q\), the sign of every adjacent
+transition is determined by the wrap flag:
+\[
+  \delta(q,q')<0 \Longleftrightarrow A(q')<A(q),
+  \qquad
+  \delta(q,q')>0 \Longleftrightarrow A(q')>A(q).
+\]
+The maximal same-sign blocks are exactly the \(59\) monotone runs recorded in
+the run ledger.  Moreover each atom satisfies the signed telescoping identity
+\[
+  \sum_{q\to q'} \delta(q,q')
+  =
+  \frac{A(q_{\rm end})}{q_{\rm end}}
+  -
+  \frac{A(q_{\rm start})}{q_{\rm start}}.
+\]
+Consequently the formal adjacent-run cancellation law is just the Jordan
+decomposition of the one-dimensional phase path \(A(q)/q\).
+\end{theorem}
+
+\begin{proof}
+The audit rebuilds the maximal monotone runs directly from the phase-turn
+transition list and compares them with the terminal variation runs.  All signs
+match the \(A\)-wrap flag, all maximal runs match, and the exact rational sum
+of signed phase increments equals the endpoint phase difference for each atom.
+The Jordan identity follows by subtracting the cancelled opposite-sign chunks
+from the total variation.
+\end{proof}
+
+\begin{proposition}[Source-preserving cancellation is still open]
+The finite cancellation ledger contains \(51\) cancellation events.  None is a
+complete whole-run involution:
+\[
+  \texttt{complete\_whole\_run\_pair\_event\_count}=0.
+\]
+All \(51\) events require synthetic splitting of run masses.  In addition, the
+selected atom \(\texttt{right:1887:selected\_terminal:m773}\) has an internal
+negative survivor fragment on the run \(q\in[449,457]\) of mass
+\[
+  0.017995938314\ldots.
+\]
+Thus the tail-only survivor law and the source-preserving adjacent-run pairing
+are not proved by the finite Jordan identity.
+\end{proposition}
+
+\begin{proof}
+The audit runs the same ordered opposite-sign stack cancellation used in the
+finite run-compression certificate, but records each cancellation chunk.  In
+every event, one side is a proper residual chunk rather than a whole run
+matched to a whole run.  After all cancellations, one survivor fragment is not
+on the last run of its atom, giving the internal survivor stated above.
+\end{proof}
+
+\begin{certificatestatement}[Adjacent-run Jordan cancellation audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+sign\_matches\_Awrap\_all\_transitions=true\\
+maximal\_run\_reconstruction\_closed=true\\
+signed\_telescoping\_identity\_closed=true\\
+formal\_jordan\_cancellation\_law\_closed=true\\
+cancellation\_event\_count=51\\
+complete\_whole\_run\_pair\_event\_count=0\\
+synthetic\_split\_cancellation\_event\_count=51\\
+internal\_survivor\_fragment\_count=1\\
+source\_preserving\_adjacent\_run\_pairing\_constructed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-\\
+jordan-cancellation-source-obstruction-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[New narrow gate]
+The next gate is no longer to rediscover telescoping.  It is to construct a
+source-preserving adjacent-run pairing, prove an orientation local-factor law
+before pushforward, turn the moving Beatty numerator into an admissible
+averaged trace/Kloosterman or Type-II family, or route the internal survivor
+to a named PDEC/LocalSurvivor certificate.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

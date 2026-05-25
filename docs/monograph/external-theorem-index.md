@@ -2081,6 +2081,57 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC39：terminal adjacent-run Jordan cancellation source obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_adjacent_run_jordan_cancellation_source_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-adjacent-run-jordan-cancellation-source-obstruction-router.md
+```
+
+本层把 `UniformAdjacentRunCancellationFamilyOrPDEC` 分成形式恒等式与 actual
+source-preserving 两层。形式层已经闭合：
+
+```text
+terminal_phase_path_count=7
+terminal_transition_count_total=126
+terminal_run_count_total=59
+sign_matches_Awrap_all_transitions=true
+signed_telescoping_identity_closed=true
+formal_jordan_cancellation_law_closed=true
+```
+
+但外部定理仍不能直接接入，因为当前抵消不是完整 run involution：
+
+```text
+cancellation_event_count=51
+complete_whole_run_pair_event_count=0
+synthetic_split_cancellation_event_count=51
+internal_survivor_fragment_count=1
+source_preserving_adjacent_run_pairing_constructed=false
+```
+
+外部输入边界相应更新：
+
+| 外部输入 | 主源 | 当前缺口 |
+| --- | --- | --- |
+| Fouvry--Kowalski--Michel--Sawin, bilinear trace functions | https://arxiv.org/abs/2511.09459 | 需要把 adjacent-run chunks 晋级为 trace-function bilinear family |
+| Milićević--Qin--Wu, arbitrary-modulus Kloosterman bilinear forms | https://arxiv.org/abs/2511.07550 | 需要把 moving Beatty phase 完成成双变量 Kloosterman family |
+| Pascadi, distribution of primes and smooth numbers | https://arxiv.org/abs/2505.00653 | 需要把逐行/逐列点态负载转成 well-factorable AP averages |
+| Wright, trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要三线性 convolution 与 equidistributed beta sequence |
+
+最新非循环口：
+
+```text
+SourcePreservingAdjacentRunPairingOrInternalSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC38：terminal monotone-run total-to-net compression frontier（2026-05-25）
 
 新增证书：
