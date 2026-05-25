@@ -1755,6 +1755,95 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC29：Phi-LPF repeated-step affine-skeleton packet-enclosure 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_affine_skeleton_packet_enclosure_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.md
+```
+
+本层承接 Q13AC28，把共享 affine skeleton 嵌入实际 right-tail shell-step packet。
+有限审计读数：
+
+```text
+packet_enclosure_ledger_closed=true
+splice_count=2
+unique_left_packet_indices=[2842]
+unique_right_packet_indices=[1887]
+left_q_prefix_count=28
+right_q_prefix_count=7
+q_prefix_count_delta=-21
+left_m_shell_prime_count=4
+right_m_shell_prime_count=3
+all_q_windows_disjoint=true
+all_m_shells_disjoint=true
+all_selected_pairs_terminal=true
+```
+
+包络对象：
+
+```text
+packet2842: P739, q-window [541,709], m={719,751,757,761}, edge=112
+packet1887: P607, q-window [439,467], m={479,769,773}, edge=21
+```
+
+### Q13AC29.1 最新最窄口
+
+```text
+RepeatedStepAffineSkeletonPacketEnclosureUniformBound(packet2842:[q=541..709,m={719,751,757,761}] -> packet1887:[q=439..467,m={479,769,773}])
+AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinResidualCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+packet_enclosure_ledger_closed=true
+packet_enclosure_uniform_bound_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
 
 新增证书：

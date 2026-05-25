@@ -37284,6 +37284,63 @@ repeated-step-occurrence-splice-affine-skeleton-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step packet enclosure}
+
+\begin{theorem}[Repeated-step affine-skeleton packet enclosure]
+In the audit range \(P\le 1009\), the shared affine skeleton is enclosed in
+two concrete right-tail shell-step packets.  The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{packet\_enclosure\_ledger\_closed} & \texttt{true}\\
+\texttt{unique\_left\_packet\_indices} & \texttt{[2842]}\\
+\texttt{unique\_right\_packet\_indices} & \texttt{[1887]}\\
+\texttt{left\_q\_prefix\_count} & 28\\
+\texttt{right\_q\_prefix\_count} & 7\\
+\texttt{all\_q\_windows\_disjoint} & \texttt{true}\\
+\texttt{all\_m\_shells\_disjoint} & \texttt{true}\\
+\texttt{all\_selected\_pairs\_terminal} & \texttt{true}.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The left packet is \(\texttt{packet2842}\) with \(P=739\), right-tail
+q-window \([541,709]\), \(28\) prime \(q\)'s, and \(m\)-shell
+\[
+\{719,751,757,761\}.
+\]
+The right packet is \(\texttt{packet1887}\) with \(P=607\), right-tail
+q-window \([439,467]\), \(7\) prime \(q\)'s, and \(m\)-shell
+\[
+\{479,769,773\}.
+\]
+The selected affine skeleton uses the terminal pairs \([757,761]\) and
+\([769,773]\).  The two q-windows are disjoint, with the \(P607\) window
+strictly to the left of the \(P739\) window; the two \(m\)-shell supports are
+also disjoint.  Thus the shared witness-pair skeleton is not already a
+completed bilinear or Kloosterman family: it is a fixed asymmetric
+right-tail packet enclosure.
+\end{proof}
+
+\begin{remark}[Packet-enclosure gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepAffineSkeletonPacketEnclosureUniformBound\\
+(packet2842:[q=541..709,m=\{719,751,757,761\}] ->\\
+ packet1887:[q=439..467,m=\{479,769,773\}]).
+\end{quote}
+This closes another finite localization question, but it still does not
+prove a uniform family bound, create a summable trace/Kloosterman family, or
+break the Phi--LPF parity barrier globally.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-affine-skeleton-packet-enclosure-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

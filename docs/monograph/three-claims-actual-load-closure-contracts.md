@@ -28958,3 +28958,68 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite shared witness-pair affine skeleton 账本；没有生成可求和族，
 也没有完成 trace/Kloosterman completion 或全局 row/column 闭合。
+
+### Phi-LPF repeated-step affine-skeleton packet-enclosure actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_affine_skeleton_packet_enclosure_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.json
+```
+
+actual-load 含义继续收缩：共享 affine skeleton 必须在两个具体 right-tail
+shell-step packets 之间转移，而不是在一个已完成的长 trace family 中平均。
+
+```text
+packet_enclosure_ledger_closed=true
+unique_left_packet_indices=[2842]
+unique_right_packet_indices=[1887]
+left_q_prefix_count=28
+right_q_prefix_count=7
+all_q_windows_disjoint=true
+all_m_shells_disjoint=true
+all_selected_pairs_terminal=true
+```
+
+具体包络为：
+
+```text
+packet2842: P739, q-window [541,709], m={719,751,757,761}, edge=112
+packet1887: P607, q-window [439,467], m={479,769,773}, edge=21
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepAffineSkeletonPacketEnclosureUniformBound(packet2842:[q=541..709,m={719,751,757,761}] -> packet1887:[q=439..467,m={479,769,773}])
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinResidualCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite packet-enclosure 账本；q-window 与 m-shell 已精确定位，但
+仍没有生成可求和族、trace/Kloosterman completion 或全局 row/column 闭合。

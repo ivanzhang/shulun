@@ -2081,6 +2081,61 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AH. Phi-LPF repeated-step affine-skeleton packet-enclosure 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_affine_skeleton_packet_enclosure_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.md
+```
+
+本层承接 65AG，把 one-pair affine skeleton 嵌回实际 right-tail shell-step
+packets：
+
+```text
+packet_enclosure_ledger_closed=true
+unique_left_packet_indices=[2842]
+unique_right_packet_indices=[1887]
+left_q_prefix_count=28
+right_q_prefix_count=7
+q_prefix_count_delta=-21
+left_m_shell_prime_count=4
+right_m_shell_prime_count=3
+left_edge_count=112
+right_edge_count=21
+all_q_windows_disjoint=true
+all_m_shells_disjoint=true
+all_selected_pairs_terminal=true
+```
+
+具体包络为：
+
+```text
+packet2842: P739, q-window [541,709], m={719,751,757,761}
+packet1887: P607, q-window [439,467], m={479,769,773}
+```
+
+这把 affine-skeleton obstruction 进一步定位到两个不相交 q-window 与两个不相交
+m-shell 的 right-tail packet enclosure。外部 theorem 边界仍不变：
+trace/Kloosterman 平均输入需要把该固定包络扩展为可求和族；Maynard 小间距与
+Li 短区间素数不控制该固定包络的相消。
+
+状态边界：
+
+```text
+packet_enclosure_ledger_closed=true
+packet_enclosure_uniform_bound_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
 
 新增证书：

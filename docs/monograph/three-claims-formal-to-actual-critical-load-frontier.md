@@ -26416,3 +26416,46 @@ shared_witness_pair_affine_skeleton_uniform_bound_proved=false
 本层删除的是“两条 occurrence splice 是否来自不同 witness-pair”的含混说法；
 没有删除 shared witness-pair affine skeleton 的 uniform bound、PDEC/SAE 聚合、
 single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF repeated-step affine-skeleton packet-enclosure formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_affine_skeleton_packet_enclosure_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBound(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887)
+```
+
+现在拆成：
+
+```text
+RepeatedStepAffineSkeletonPacketEnclosureUniformBound(packet2842:[q=541..709,m={719,751,757,761}] -> packet1887:[q=439..467,m={479,769,773}])
+AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+```
+
+关键审计读数为：
+
+```text
+packet_enclosure_ledger_closed=true
+left_q_prefix_count=28
+right_q_prefix_count=7
+q_prefix_count_delta=-21
+left_m_shell_prime_count=4
+right_m_shell_prime_count=3
+all_q_windows_disjoint=true
+all_m_shells_disjoint=true
+all_selected_pairs_terminal=true
+packet_enclosure_uniform_bound_proved=false
+```
+
+本层删除的是“affine skeleton 是否已落入具体 packet window”的含混说法；没有
+删除 packet-enclosure uniform bound、PDEC/SAE 聚合、single-P slice summation
+或 prime-q reciprocal phase saving 缺口。

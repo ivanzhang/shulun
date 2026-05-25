@@ -1,0 +1,537 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_affine_skeleton_packet_enclosure_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SharedAffineSkeletonImported",
+      "meaning": "The shared witness-pair affine skeleton is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "ShellStepPacketIdentityImported",
+      "meaning": "The boundary shell-step packet identity is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "PacketEnclosureLedger",
+      "meaning": "The affine skeleton is enclosed in packet2842 and packet1887 with exact q-window and m-shell support.",
+      "proved": true,
+      "remaining": "none for the finite packet enclosure"
+    },
+    {
+      "closed": false,
+      "gate": "PacketEnclosureUniformBound",
+      "meaning": "Control the asymmetric right-tail packet enclosure uniformly.",
+      "proved": false,
+      "remaining": "finite enclosure data still has disjoint q-windows and no completed summable family"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "P739 packet2842 q-window [541,709] with 28 q-primes to P607 packet1887 q-window [439,467] with 7 q-primes",
+    "input": "the shared P739-to-P607 witness-pair affine skeleton",
+    "operation": "embed the selected m-pairs in their shell-step packet q-windows and m-shell supports",
+    "remaining": "convert this asymmetric right-tail packet enclosure into a summable family or a PDEC/SAE certificate"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "Maynard-type gap inputs do not control the q-window/m-shell enclosure of a signed Phi-LPF packet",
+    "short_interval_prime_inputs": "Li's x^0.52 theorem gives prime existence, not cancellation across this fixed packet enclosure",
+    "trace_or_kloosterman_inputs": "the packets expose q-windows, but they are two fixed disjoint prime-q prefixes rather than a completed bilinear family"
+  },
+  "finite_audit": {
+    "all_m_shells_disjoint": true,
+    "all_packets_right_tail": true,
+    "all_q_windows_disjoint": true,
+    "all_right_q_windows_strictly_left_of_left": true,
+    "all_selected_pairs_inside_packets": true,
+    "all_selected_pairs_terminal": true,
+    "edge_count_delta": -91,
+    "edge_count_ratio": "21/112",
+    "left_edge_count": 112,
+    "left_m_shell_prime_count": 4,
+    "left_packet_index": 2842,
+    "left_q_prefix_count": 28,
+    "m_shell_prime_count_delta": -1,
+    "max_prime": 1009,
+    "packet_enclosure_ledger_closed": true,
+    "packet_enclosure_uniform_bound_proved": false,
+    "packet_pair_profiles": [
+      {
+        "both_packets_right_tail": true,
+        "both_selected_pairs_inside_packets": true,
+        "both_selected_pairs_terminal": true,
+        "edge_count_delta": -91,
+        "edge_count_ratio": "21/112",
+        "extra_m_total_count": 3,
+        "left_extra_m_value_count": 2,
+        "left_packet_profile": {
+          "P": 739,
+          "edge_count": 112,
+          "extra_m_offsets_from_P": [
+            -20,
+            12
+          ],
+          "extra_m_values": [
+            719,
+            751
+          ],
+          "internal_prime_gap_count": 1,
+          "m_block_count": 2,
+          "m_end": 761,
+          "m_offsets_from_P": [
+            -20,
+            12,
+            18,
+            22
+          ],
+          "m_shell_prime_count": 4,
+          "m_shell_prime_count_recomputed": 4,
+          "m_start": 719,
+          "m_values": [
+            719,
+            751,
+            757,
+            761
+          ],
+          "packet_index": 2842,
+          "q_end": 709,
+          "q_prefix_contiguous": true,
+          "q_prefix_count": 28,
+          "q_prefix_count_recomputed": 28,
+          "q_start": 541,
+          "q_values": [
+            541,
+            547,
+            557,
+            563,
+            569,
+            571,
+            577,
+            587,
+            593,
+            599,
+            601,
+            607,
+            613,
+            617,
+            619,
+            631,
+            641,
+            643,
+            647,
+            653,
+            659,
+            661,
+            673,
+            677,
+            683,
+            691,
+            701,
+            709
+          ],
+          "selected_m_pair": [
+            757,
+            761
+          ],
+          "selected_m_pair_ranks": [
+            3,
+            4
+          ],
+          "selected_m_pair_terminal": true,
+          "selected_m_pair_width": 4,
+          "selected_pair_inside_packet": true,
+          "source_rectangle_count": 2,
+          "source_rectangles": [
+            {
+              "edge_count": 28,
+              "m_end": 719,
+              "m_shell_prime_count": 1,
+              "m_start": 719
+            },
+            {
+              "edge_count": 84,
+              "m_end": 761,
+              "m_shell_prime_count": 3,
+              "m_start": 751
+            }
+          ],
+          "strip": "right_tail"
+        },
+        "m_shell_intersection": [],
+        "m_shell_prime_count_delta": -1,
+        "m_shells_disjoint": true,
+        "q_prefix_count_delta": -21,
+        "q_prefix_count_ratio": "7/28",
+        "q_window_delta": [
+          -102,
+          -242
+        ],
+        "q_window_intersection": [],
+        "q_windows_disjoint": true,
+        "right_extra_m_value_count": 1,
+        "right_packet_profile": {
+          "P": 607,
+          "edge_count": 21,
+          "extra_m_offsets_from_P": [
+            -128
+          ],
+          "extra_m_values": [
+            479
+          ],
+          "internal_prime_gap_count": 1,
+          "m_block_count": 2,
+          "m_end": 773,
+          "m_offsets_from_P": [
+            -128,
+            162,
+            166
+          ],
+          "m_shell_prime_count": 3,
+          "m_shell_prime_count_recomputed": 3,
+          "m_start": 479,
+          "m_values": [
+            479,
+            769,
+            773
+          ],
+          "packet_index": 1887,
+          "q_end": 467,
+          "q_prefix_contiguous": true,
+          "q_prefix_count": 7,
+          "q_prefix_count_recomputed": 7,
+          "q_start": 439,
+          "q_values": [
+            439,
+            443,
+            449,
+            457,
+            461,
+            463,
+            467
+          ],
+          "selected_m_pair": [
+            769,
+            773
+          ],
+          "selected_m_pair_ranks": [
+            2,
+            3
+          ],
+          "selected_m_pair_terminal": true,
+          "selected_m_pair_width": 4,
+          "selected_pair_inside_packet": true,
+          "source_rectangle_count": 2,
+          "source_rectangles": [
+            {
+              "edge_count": 7,
+              "m_end": 479,
+              "m_shell_prime_count": 1,
+              "m_start": 479
+            },
+            {
+              "edge_count": 14,
+              "m_end": 773,
+              "m_shell_prime_count": 2,
+              "m_start": 769
+            }
+          ],
+          "strip": "right_tail"
+        },
+        "right_q_window_strictly_left_of_left": true,
+        "signed_atom": "g=2,c=2,A=negative",
+        "splice_id": "path_1:splice_after_edge_1"
+      },
+      {
+        "both_packets_right_tail": true,
+        "both_selected_pairs_inside_packets": true,
+        "both_selected_pairs_terminal": true,
+        "edge_count_delta": -91,
+        "edge_count_ratio": "21/112",
+        "extra_m_total_count": 3,
+        "left_extra_m_value_count": 2,
+        "left_packet_profile": {
+          "P": 739,
+          "edge_count": 112,
+          "extra_m_offsets_from_P": [
+            -20,
+            12
+          ],
+          "extra_m_values": [
+            719,
+            751
+          ],
+          "internal_prime_gap_count": 1,
+          "m_block_count": 2,
+          "m_end": 761,
+          "m_offsets_from_P": [
+            -20,
+            12,
+            18,
+            22
+          ],
+          "m_shell_prime_count": 4,
+          "m_shell_prime_count_recomputed": 4,
+          "m_start": 719,
+          "m_values": [
+            719,
+            751,
+            757,
+            761
+          ],
+          "packet_index": 2842,
+          "q_end": 709,
+          "q_prefix_contiguous": true,
+          "q_prefix_count": 28,
+          "q_prefix_count_recomputed": 28,
+          "q_start": 541,
+          "q_values": [
+            541,
+            547,
+            557,
+            563,
+            569,
+            571,
+            577,
+            587,
+            593,
+            599,
+            601,
+            607,
+            613,
+            617,
+            619,
+            631,
+            641,
+            643,
+            647,
+            653,
+            659,
+            661,
+            673,
+            677,
+            683,
+            691,
+            701,
+            709
+          ],
+          "selected_m_pair": [
+            757,
+            761
+          ],
+          "selected_m_pair_ranks": [
+            3,
+            4
+          ],
+          "selected_m_pair_terminal": true,
+          "selected_m_pair_width": 4,
+          "selected_pair_inside_packet": true,
+          "source_rectangle_count": 2,
+          "source_rectangles": [
+            {
+              "edge_count": 28,
+              "m_end": 719,
+              "m_shell_prime_count": 1,
+              "m_start": 719
+            },
+            {
+              "edge_count": 84,
+              "m_end": 761,
+              "m_shell_prime_count": 3,
+              "m_start": 751
+            }
+          ],
+          "strip": "right_tail"
+        },
+        "m_shell_intersection": [],
+        "m_shell_prime_count_delta": -1,
+        "m_shells_disjoint": true,
+        "q_prefix_count_delta": -21,
+        "q_prefix_count_ratio": "7/28",
+        "q_window_delta": [
+          -102,
+          -242
+        ],
+        "q_window_intersection": [],
+        "q_windows_disjoint": true,
+        "right_extra_m_value_count": 1,
+        "right_packet_profile": {
+          "P": 607,
+          "edge_count": 21,
+          "extra_m_offsets_from_P": [
+            -128
+          ],
+          "extra_m_values": [
+            479
+          ],
+          "internal_prime_gap_count": 1,
+          "m_block_count": 2,
+          "m_end": 773,
+          "m_offsets_from_P": [
+            -128,
+            162,
+            166
+          ],
+          "m_shell_prime_count": 3,
+          "m_shell_prime_count_recomputed": 3,
+          "m_start": 479,
+          "m_values": [
+            479,
+            769,
+            773
+          ],
+          "packet_index": 1887,
+          "q_end": 467,
+          "q_prefix_contiguous": true,
+          "q_prefix_count": 7,
+          "q_prefix_count_recomputed": 7,
+          "q_start": 439,
+          "q_values": [
+            439,
+            443,
+            449,
+            457,
+            461,
+            463,
+            467
+          ],
+          "selected_m_pair": [
+            769,
+            773
+          ],
+          "selected_m_pair_ranks": [
+            2,
+            3
+          ],
+          "selected_m_pair_terminal": true,
+          "selected_m_pair_width": 4,
+          "selected_pair_inside_packet": true,
+          "source_rectangle_count": 2,
+          "source_rectangles": [
+            {
+              "edge_count": 7,
+              "m_end": 479,
+              "m_shell_prime_count": 1,
+              "m_start": 479
+            },
+            {
+              "edge_count": 14,
+              "m_end": 773,
+              "m_shell_prime_count": 2,
+              "m_start": 769
+            }
+          ],
+          "strip": "right_tail"
+        },
+        "right_q_window_strictly_left_of_left": true,
+        "signed_atom": "g=6,c=7,A=positive",
+        "splice_id": "path_2:splice_after_edge_2"
+      }
+    ],
+    "previous_affine_skeleton_ledger_closed": true,
+    "previous_shell_step_packet_identity_verified": true,
+    "q_prefix_count_delta": -21,
+    "q_prefix_count_ratio": "7/28",
+    "right_edge_count": 21,
+    "right_m_shell_prime_count": 3,
+    "right_packet_index": 1887,
+    "right_q_prefix_count": 7,
+    "row_column_unconditional_closed": false,
+    "splice_count": 2,
+    "summable_family_created": false,
+    "trace_or_kloosterman_completion_ready": false,
+    "unique_left_packet_indices": [
+      2842
+    ],
+    "unique_right_packet_indices": [
+      1887
+    ]
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepAffineSkeletonPacketEnclosureUniformBound(packet2842:[q=541..709,m={719,751,757,761}] -> packet1887:[q=439..467,m={479,769,773}])",
+    "AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure",
+    "AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton",
+    "AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinResidualCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "packet_enclosure_ledger_closed": true,
+  "packet_enclosure_uniform_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the shared affine skeleton must be embedded in its actual q-window/m-shell packets before any summation theorem can apply",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "b63eab341238fc8d8249b9020724180f6da147c5259c0125b6048d944b0545d1",
+    "docs/monograph/external-theorem-index.md": "eb40fdb309f562bbc6a123c9ec2d178fac0e4e2df6bbf9cd782b40f3c52cb4e9",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "d88ae894278d568bdaafc818b553b0ea45e2d6d99c88c757b959e3aa6f7a9bae",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.json": "efd320e749ae32543d8aeccbdc3ced3941fcec3376e90824c4b810fcdad46bb1",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "45b7e04454ef8746b2438923e3860864b8250b1d4ed8e5f153ff29aa573a0603",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "c2aa134b6378f665249c9f266c2c3b4d75836d90777b89eabc382660d34712ab",
+    "experiments/prime_matrix_phi_lpf_repeated_step_affine_skeleton_packet_enclosure_audit.py": "367f77326b8ea108831459951cf78a3b60bb28beb99e8cf75dab63b5c491c0d1",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "4842c2e6cf630ad908de64fd96e3b4faef44d6555c377cf25dc6c8c1b25dc937"
+  },
+  "status": "packet_enclosure_ledger_closed_family_bound_open",
+  "summable_family_created": false,
+  "trace_or_kloosterman_completion_ready": false
+}
