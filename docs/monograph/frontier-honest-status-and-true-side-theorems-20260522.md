@@ -1673,6 +1673,54 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC38：Phi-LPF terminal boundary split ratio obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_split_ratio_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.md
+```
+
+诚实结论：q-boundary synthetic split 的边界相邻性已经闭合，但没有等量 whole-run
+involution：
+
+```text
+boundary_ratio_spectrum_closed=true
+q_boundary_synthetic_split_event_count=47
+boundary_adjacency_closed=true
+whole_equal_pair_event_count=0
+old_consumed_new_residual_event_count=42
+old_residual_new_consumed_event_count=5
+```
+
+真实障碍是相邻 run 质量比率：
+
+```text
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+boundary_residual_gap_mass_total=13.480078809654
+boundary_residual_gap_mass_max=0.861355534983
+boundary_synthetic_split_ratio_source_key_law_proved=false
+row_column_unconditional_closed=false
+```
+
+最新最窄口：
+
+```text
+BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC37：Phi-LPF terminal source-key obstruction partition（2026-05-25）
 
 新增证书：

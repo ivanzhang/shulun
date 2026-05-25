@@ -38132,6 +38132,103 @@ non-boundary jumps and one internal survivor are now separate named returns,
 not hidden parity reservoirs.
 \end{remark}
 
+\section{Terminal boundary split ratio obstruction}
+
+\begin{theorem}[Boundary split ratio spectrum]
+The \(47\) q-boundary synthetic splits are all genuinely adjacent boundary
+events:
+\[
+  \texttt{boundary\_adjacency\_closed}=\texttt{true},
+  \qquad
+  \texttt{q\_boundary\_synthetic\_split\_event\_count}=47.
+\]
+None is an equal whole-run involution:
+\[
+  \texttt{whole\_equal\_pair\_event\_count}=0.
+\]
+The split patterns are
+\[
+  42 \text{ old-consumed/new-residual events},\qquad
+  5 \text{ old-residual/new-consumed events}.
+\]
+\end{theorem}
+
+\begin{proof}
+The audit filters the prefix-record cancellation events to those satisfying
+\(\texttt{old\_q\_end}=\texttt{new\_q\_start}\).  For each such event it
+records the two pre-split run masses, their minimum chunk, their residual
+gap, and the smaller-to-larger ratio.  All filtered rows have run distance
+one.  No row has equal old and new run mass, and the consumed-side counts are
+as displayed.
+\end{proof}
+
+\begin{proposition}[Ratio-law obstruction]
+The boundary ratio spectrum has
+\[
+  \min \frac{\min(M_{\rm old},M_{\rm new})}{\max(M_{\rm old},M_{\rm new})}
+  =
+  0.013003592969\ldots
+\]
+and
+\[
+  \max |M_{\rm old}-M_{\rm new}|
+  =
+  0.861355534983\ldots.
+\]
+The total finite boundary residual gap mass is
+\[
+  13.480078809654\ldots.
+\]
+Thus boundary adjacency alone cannot provide a source-key pairing; one needs
+an adjacent-run mass ratio law or a source-key residual-flow conservation law.
+\end{proposition}
+
+\begin{proof}
+For each q-boundary event, the audit computes the exact rational ratio
+\(\min(M_{\rm old},M_{\rm new})/\max(M_{\rm old},M_{\rm new})\) and the exact
+residual gap \(|M_{\rm old}-M_{\rm new}|\).  Taking the minimum ratio, maximum
+gap, and total gap over all \(47\) events gives the displayed values.  Since
+the equal-pair count is zero, these data cannot be upgraded to whole-run
+involutions without an additional mass-ratio/source-key law.
+\end{proof}
+
+\begin{certificatestatement}[Boundary split ratio obstruction audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+boundary\_ratio\_spectrum\_closed=true\\
+q\_boundary\_synthetic\_split\_event\_count=47\\
+boundary\_adjacency\_closed=true\\
+whole\_equal\_pair\_event\_count=0\\
+old\_consumed\_new\_residual\_event\_count=42\\
+old\_residual\_new\_consumed\_event\_count=5\\
+negative\_to\_positive\_event\_count=24\\
+positive\_to\_negative\_event\_count=23\\
+boundary\_synthetic\_split\_ratio\_source\_key\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+split-ratio-obstruction-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated boundary gate]
+The current boundary gate is
+\begin{quote}\scriptsize\ttfamily
+BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC\\
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC\\
+AND InternalPrefixRecordSurvivorPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+External trace/Kloosterman or Type-II estimates still cannot enter directly:
+the missing object is a pre-pushforward source-key law explaining the
+adjacent run mass ratios and residual flows.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

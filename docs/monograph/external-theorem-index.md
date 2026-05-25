@@ -2081,6 +2081,55 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC42：terminal boundary split ratio obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_split_ratio_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.md
+```
+
+本层继续 Q13AC41，把最大的 q-boundary split 分支压成相邻 run 质量比率谱：
+
+```text
+boundary_ratio_spectrum_closed=true
+q_boundary_synthetic_split_event_count=47
+boundary_adjacency_closed=true
+whole_equal_pair_event_count=0
+old_consumed_new_residual_event_count=42
+old_residual_new_consumed_event_count=5
+negative_to_positive_event_count=24
+positive_to_negative_event_count=23
+```
+
+比率谱读数：
+
+```text
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+boundary_chunk_mass_total=14.631796550631
+boundary_residual_gap_mass_total=13.480078809654
+boundary_residual_gap_mass_max=0.861355534983
+```
+
+外部 trace/Kloosterman/Type-II 工具仍不能直接接入：边界定位已经闭合，缺的是
+相邻 run 质量比率律或 source-key 残流守恒律。
+
+最新非循环口：
+
+```text
+BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC41：terminal source-key obstruction partition（2026-05-25）
 
 新增证书：

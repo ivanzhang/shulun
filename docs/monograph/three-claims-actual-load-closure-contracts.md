@@ -29560,6 +29560,52 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 本层仍不是无条件闭合；它只把 source-key lift 的失败拆成三个可单独攻击的 actual gate。
 
+### Phi-LPF terminal boundary split ratio actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_split_ratio_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.json
+```
+
+actual-load 含义：最大的 q-boundary synthetic split 分支已经不再是定位问题；
+所有事件都是真 q-boundary 相邻事件：
+
+```text
+boundary_ratio_spectrum_closed=true
+q_boundary_synthetic_split_event_count=47
+boundary_adjacency_closed=true
+whole_equal_pair_event_count=0
+old_consumed_new_residual_event_count=42
+old_residual_new_consumed_event_count=5
+```
+
+剩余 actual 障碍是相邻 run 质量比率/残流守恒：
+
+```text
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+boundary_residual_gap_mass_total=13.480078809654
+boundary_residual_gap_mass_max=0.861355534983
+```
+
+actual-load 合同进一步改写为：
+
+```text
+BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+本层仍不是无条件闭合；它只把最大边界分支压成 exact ratio spectrum。
+
 ### 三命题突破路线总合成 actual-load 更新（2026-05-25）
 
 新增归档：

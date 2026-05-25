@@ -528,6 +528,50 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.7 terminal boundary split ratio obstruction 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_split_ratio_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.json
+```
+
+本层把最大分支 `47` 个 q-boundary synthetic split 压成 exact ratio spectrum：
+
+```text
+boundary_ratio_spectrum_closed=true
+q_boundary_synthetic_split_event_count=47
+boundary_adjacency_closed=true
+whole_equal_pair_event_count=0
+old_consumed_new_residual_event_count=42
+old_residual_new_consumed_event_count=5
+```
+
+关键读数：
+
+```text
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+boundary_residual_gap_mass_total=13.480078809654
+boundary_residual_gap_mass_max=0.861355534983
+```
+
+因此边界分支的下一步不是再证明“相邻”，而是证明相邻 run 质量比率律，或证明残流在
+source-key 层可守恒/回流。最新口：
+
+```text
+BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

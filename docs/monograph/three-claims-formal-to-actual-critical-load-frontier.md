@@ -27041,6 +27041,49 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### terminal boundary split ratio formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_split_ratio_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-split-ratio-obstruction-router.json
+```
+
+formal-to-actual 结论：边界 split 分支的 formal 定位已经闭合：
+
+```text
+boundary_adjacency_closed=true
+q_boundary_synthetic_split_event_count=47
+negative_to_positive_event_count=24
+positive_to_negative_event_count=23
+```
+
+但是 actual-load 层没有得到等量配对。比率谱显示：
+
+```text
+whole_equal_pair_event_count=0
+old_consumed_new_residual_event_count=42
+old_residual_new_consumed_event_count=5
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+boundary_residual_gap_mass_total=13.480078809654
+```
+
+所以最新缺口为：
+
+```text
+BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：
