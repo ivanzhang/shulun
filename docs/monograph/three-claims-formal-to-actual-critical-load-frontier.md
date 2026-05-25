@@ -26583,3 +26583,47 @@ prime_gap_carry_word_phase_saving_proved=false
 本层删除的是“moving numerator 运动是否仍未结构化”的含混说法；它已被
 prime-gap/carry recurrence 结构化。但 `66` 个 selected transition 的 signed
 phase saving 与 `60` 个 extra transition 的 absorption 仍未证明。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase-turn word formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_turn_word_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+SelectedTerminalPrimeGapCarryWordPhaseSaving(66 transitions, 49 A-wraps, carry spectrum 2..13)
+```
+
+现在拆成：
+
+```text
+SelectedTerminalAwrapPhaseTurnWordSaving(66 transitions: 49 negative/A-wrap, 17 positive/no-wrap; 35 runs; max run 6)
+AND ExtraPhaseTurnRunAbsorption(60 transitions: 33 negative, 27 positive; 24 runs)
+AND SelectedTerminalPrimeGapCarryWordPhaseSavingOutsidePhaseTurnLedger
+```
+
+关键审计读数为：
+
+```text
+terminal_phase_turn_word_closed=true
+terminal_phase_turn_transition_count_total=126
+selected_terminal_transition_count=66
+selected_terminal_positive_transition_count=17
+selected_terminal_negative_transition_count=49
+selected_terminal_phase_run_count=35
+selected_terminal_phase_run_max_length=6
+phase_direction_Awrap_mismatch_count=0
+lift_identity_mismatch_count=0
+phase_turn_word_phase_saving_proved=false
+```
+
+本层删除的是“carry word 是否已经给出 phase direction”的含混说法；phase
+direction 已完全落到 A-wrap/no-wrap word。但 selected A-wrap word 的 signed
+cancellation 与 extra run absorption 仍未证明。

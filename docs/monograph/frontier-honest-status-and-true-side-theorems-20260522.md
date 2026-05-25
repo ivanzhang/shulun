@@ -2121,6 +2121,76 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC33：Phi-LPF repeated-step packet-enclosure terminal phase-turn word 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_turn_word_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.md
+```
+
+本层承接 Q13AC32，把 carry orbit 的 phase 方向完全原子化。有限账本中每条边
+满足 two-lift 表示：
+
+```text
+A(q)=lambda(q)*q-D(q),  lambda(q) in {1,2}.
+```
+
+逐 transition 审计 `A(q')/q'-A(q)/q` 的符号，得到：
+
+```text
+terminal_phase_turn_word_closed=true
+terminal_phase_turn_transition_count_total=126
+terminal_phase_turn_run_count_total=59
+selected_terminal_transition_count=66
+selected_terminal_positive_transition_count=17
+selected_terminal_negative_transition_count=49
+selected_terminal_phase_run_count=35
+selected_terminal_phase_run_max_length=6
+extra_transition_count=60
+extra_positive_transition_count=27
+extra_negative_transition_count=33
+extra_phase_run_count=24
+extra_phase_run_max_length=8
+phase_direction_Awrap_mismatch_count=0
+lift_identity_mismatch_count=0
+zero_phase_delta_count=0
+```
+
+### Q13AC33.1 最新最窄口
+
+```text
+SelectedTerminalAwrapPhaseTurnWordSaving(66 transitions: 49 negative/A-wrap, 17 positive/no-wrap; 35 runs; max run 6)
+AND ExtraPhaseTurnRunAbsorption(60 transitions: 33 negative, 27 positive; 24 runs)
+AND SelectedTerminalPrimeGapCarryWordPhaseSavingOutsidePhaseTurnLedger
+AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+terminal_phase_turn_word_closed=true
+selected_terminal_phase_turn_word_closed=true
+phase_turn_word_phase_saving_proved=false
+extra_phase_turn_run_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+本层只关闭 finite phase-turn ledger：相位下降恰好是 `A_wrap`，相位上升恰好是
+no-wrap。它没有证明 A-wrap word 的 signed cancellation，也没有闭合三个合著稿
+命题中的任何一个。
+
+---
+
 ## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
 
 新增证书：

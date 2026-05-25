@@ -29136,3 +29136,49 @@ RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
 本层只关闭 finite terminal carry-orbit recurrence；没有证明 prime-gap/carry word
 phase saving、extra carry-orbit absorption、trace/Kloosterman completion 或全局
 row/column 闭合。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase-turn word actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_turn_word_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.json
+```
+
+actual-load 含义继续收缩：carry orbit 的相位已经压成 two-lift phase-turn word。
+每条边满足 `A(q)=lambda(q)*q-D(q)`，其中 `lambda in {1,2}`；在本有限账本中
+相位下降恰好等于 `A_wrap`。
+
+```text
+terminal_phase_turn_word_closed=true
+terminal_phase_turn_transition_count_total=126
+terminal_phase_turn_run_count_total=59
+selected_terminal_transition_count=66
+selected_terminal_positive_transition_count=17
+selected_terminal_negative_transition_count=49
+selected_terminal_phase_run_count=35
+selected_terminal_phase_run_max_length=6
+extra_transition_count=60
+extra_positive_transition_count=27
+extra_negative_transition_count=33
+extra_phase_run_count=24
+phase_direction_Awrap_mismatch_count=0
+lift_identity_mismatch_count=0
+zero_phase_delta_count=0
+```
+
+最新直接主攻改为：
+
+```text
+SelectedTerminalAwrapPhaseTurnWordSaving(66 transitions: 49 negative/A-wrap, 17 positive/no-wrap; 35 runs; max run 6)
+ExtraPhaseTurnRunAbsorption(60 transitions: 33 negative, 27 positive; 24 runs)
+SelectedTerminalPrimeGapCarryWordPhaseSavingOutsidePhaseTurnLedger
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+```
+
+本层只关闭 finite phase-turn word ledger；没有证明 A-wrap word phase saving、
+extra phase-turn run absorption、trace/Kloosterman completion 或全局 row/column
+闭合。

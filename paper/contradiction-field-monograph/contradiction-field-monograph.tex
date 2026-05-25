@@ -37528,6 +37528,84 @@ repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step terminal phase-turn word}
+
+\begin{theorem}[Repeated-step terminal phase-turn word]
+In the audit range \(P\le 1009\), the terminal carry-orbit phase has a
+two-lift representation
+\[
+A(q)=\lambda(q)q-D(q),\qquad \lambda(q)\in\{1,2\},
+\]
+on every terminal/extra phase edge.  Moreover, for every adjacent prime
+transition \(q<q'\), the sign of
+\[
+\frac{A(q')}{q'}-\frac{A(q)}{q}
+\]
+agrees with the \(A\)-wrap word: the phase decreases exactly on
+\(A(q')<A(q)\), and increases exactly on no-wrap transitions.  The principal
+audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{terminal\_phase\_turn\_word\_closed} & \texttt{true}\\
+\texttt{terminal\_phase\_turn\_transition\_count\_total} & 126\\
+\texttt{terminal\_phase\_turn\_run\_count\_total} & 59\\
+\texttt{selected\_terminal\_transition\_count} & 66\\
+\texttt{selected\_terminal\_positive\_transition\_count} & 17\\
+\texttt{selected\_terminal\_negative\_transition\_count} & 49\\
+\texttt{selected\_terminal\_phase\_run\_count} & 35\\
+\texttt{selected\_terminal\_phase\_run\_max\_length} & 6\\
+\texttt{extra\_transition\_count} & 60\\
+\texttt{extra\_positive\_transition\_count} & 27\\
+\texttt{extra\_negative\_transition\_count} & 33\\
+\texttt{extra\_phase\_run\_count} & 24\\
+\texttt{phase\_direction\_Awrap\_mismatch\_count} & 0\\
+\texttt{lift\_identity\_mismatch\_count} & 0\\
+\texttt{zero\_phase\_delta\_count} & 0 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The carry-orbit layer gives \(0<D(q)<P\) and \(A(q)\equiv -D(q)\pmod q\).
+Since all q-prefix denominators in these terminal atoms lie above \(P/2\),
+we have \(D(q)<P<2q\).  Hence the lift
+\[
+\lambda(q)=\left\lceil \frac{D(q)}{q}\right\rceil
+\]
+belongs to \(\{1,2\}\), and the residue representative is exactly
+\[
+A(q)=\lambda(q)q-D(q).
+\]
+The audit checks this identity on every edge.  It then computes the exact
+rational difference \(A(q')/q'-A(q)/q\) for each of the \(126\) adjacent
+prime transitions.  There are no zero differences.  In all \(126\) cases the
+phase decreases precisely when \(A(q')<A(q)\), and increases precisely when
+there is no \(A\)-wrap.  The selected terminal word therefore consists of
+\(49\) negative \(A\)-wrap turns and \(17\) positive no-wrap turns, split
+into \(35\) monotone runs of maximum length \(6\).  The extra-shell word has
+\(33\) negative turns and \(27\) positive turns, split into \(24\) runs.
+\end{proof}
+
+\begin{remark}[A-wrap phase-turn gate]
+The repeated-step terminal gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+SelectedTerminalAwrapPhaseTurnWordSaving\\
+(66 transitions: 49 negative/A-wrap, 17 positive/no-wrap;\\
+ 35 runs; max run 6).
+\end{quote}
+This is a sharper finite phase ledger than the carry recurrence alone.  It
+does not prove signed cancellation for the A-wrap word, does not absorb the
+extra phase-turn runs, does not create a completed trace/Kloosterman family,
+and does not close the row/column Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-packet-enclosure-terminal-phase-turn-word-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
