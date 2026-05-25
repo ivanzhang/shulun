@@ -2125,6 +2125,48 @@ OR PDEC/SAE/LocalSurvivor named return
 admissible family constructor；若无法构造，则失败必须回流到命名
 PDEC/SAE/LocalSurvivor 出口，不能保留匿名 parity gap。
 
+---
+
+## 附录 Q13AC29：affine `2n+1` Euler-LPF 诊断的外部定理边界（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_affine_2n_plus_1_euler_lpf_parity_audit.py
+data/prime-matrix-affine-2n-plus-1-euler-lpf-parity-ledger.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md
+```
+
+本层不需要新的外部定理。它是一个归一化与筛余双射审计：
+
+```text
+n = kP + (P-1)/2
+2n+1 = (2k+1)P
+p | (2n+1) <=> n == (p-1)/2 mod p
+```
+
+审计结论：
+
+```text
+affine_sieve_bijection_verified_all_samples=true
+apparent_half_main_gap_explained_by_missing_p2_all_samples=true
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部定理边界因此保持不变：该 affine map 只把 `m` 侧零同余类转成 `n` 侧 shifted
+同余类。若在 `m` 侧漏掉 `p=2` 或不先限制到奇数样本空间，就会出现半主项 gap
+假象；这不是 FKMS、Milićević--Qin--Wu、Pascadi、Wright 或 DI/BFI 可以直接使用的
+相消 family。要调用这些外部输入，仍必须先构造 admissible averaged signed
+payload family；要用该 affine 路线破奇偶，仍需
+
+```text
+AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
+AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
+```
+
 ## 65AH. Phi-LPF repeated-step affine-skeleton packet-enclosure 证书
 
 新增证书：

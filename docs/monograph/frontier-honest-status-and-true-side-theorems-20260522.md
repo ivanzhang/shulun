@@ -1807,6 +1807,54 @@ trace/Kloosterman/Type-II family，FKMS、Milićević--Qin--Wu、Pascadi、Wrigh
 
 ---
 
+## 附录 Q13AC29：affine `2n+1` Euler-LPF parity 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_affine_2n_plus_1_euler_lpf_parity_audit.py
+data/prime-matrix-affine-2n-plus-1-euler-lpf-parity-ledger.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md
+```
+
+本层审计用户提出的结构：
+
+```text
+n = kP + (P-1)/2  =>  2n+1 = (2k+1)P.
+```
+
+关键修正是：`P` 是 `2n+1` 的因子，不是 `n` 的因子。若 `k>=1` 且 `2k+1`
+无小于 `P` 的素因子，则 `P=LPF(2n+1)`。同时 affine map `m=2n+1` 给出精确筛余双射：
+
+```text
+p | m  <=>  n == (p-1)/2 mod p       (p odd).
+```
+
+有限审计 `P=11,31,101,251,1009`、`x=P^2` 的主要读数：
+
+```text
+affine_sieve_bijection_verified_all_samples=true
+apparent_half_main_gap_explained_by_missing_p2_all_samples=true
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+解释：如果在 `m` 侧使用长度约 `2x` 的区间却只乘奇素数部分欧拉乘积，会得到约两倍主项；
+于是 exact count 与 naive main 的差看起来约为 naive main 的一半。该半主项现象不是有限欧拉乘积
+截断误差定理，而是漏掉 `p=2` 或没有先进入 odd-space 的归一化错误。正确 odd-space 主项与
+`n` 侧 shifted-residue 主项相等。
+
+最新开放口：
+
+```text
+AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
+AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
+```
+
+---
+
 ## 附录 Q13AC29：Phi-LPF repeated-step affine-skeleton packet-enclosure 审计（2026-05-25）
 
 新增证书：

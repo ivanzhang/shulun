@@ -37755,6 +37755,82 @@ Short-interval prime theorems and bounded-gap theorems likewise do not close
 the row-by-row or residue-by-residue positivity required here.
 \end{remark}
 
+\section{Affine \(2n+1\) Euler--LPF parity diagnostic}
+
+\begin{lemma}[Shifted-residue sieve identity]
+Let \(P\) be an odd prime and write
+\[
+  n=kP+\frac{P-1}{2}.
+\]
+Then
+\[
+  2n+1=(2k+1)P.
+\]
+Thus \(P\) is a factor of \(2n+1\), not of \(n\).  If \(k\ge 1\) and
+\(2k+1\) has no prime factor below \(P\), then \(P=\operatorname{LPF}(2n+1)\).
+Moreover, for every odd prime \(p\),
+\[
+  p\mid(2n+1)
+  \quad\Longleftrightarrow\quad
+  n\equiv \frac{p-1}{2}\pmod p .
+\]
+\end{lemma}
+
+\begin{proof}
+The first identity follows by direct substitution.  The divisibility criterion
+is the congruence \(2n+1\equiv0\pmod p\), and \(2^{-1}( -1)\equiv(p-1)/2\pmod p\)
+for odd \(p\).  The least-prime-factor statement follows because every prime
+factor of \(2k+1\) is then at least \(P\).
+\end{proof}
+
+\begin{theorem}[Affine Euler-product normalization audit]
+In the finite audit for \(P=11,31,101,251,1009\), with \(x=P^2\), the map
+\[
+  m=2n+1,\qquad 0\le n\le x,
+\]
+gives an exact bijection between
+\[
+\{m\le 2x+1:\ (m,\prod_{p\le P}p)=1,\ m\ {\rm odd}\}
+\]
+and
+\[
+\{n\le x:\ n\not\equiv (p-1)/2\pmod p\ \hbox{for every odd }p\le P\}.
+\]
+The audit records
+\begin{quote}\scriptsize\ttfamily
+affine\_sieve\_bijection\_verified\_all\_samples=true\\
+apparent\_half\_main\_gap\_explained\_by\_missing\_p2\_all\_samples=true\\
+euler\_product\_half\_main\_error\_proved=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false.
+\end{quote}
+\end{theorem}
+
+\begin{proof}[Audit interpretation]
+If the \(m\)-side interval of length approximately \(2x\) is multiplied only by
+the odd-prime Euler product, its naive main term is approximately twice the
+correct odd-space main term.  The exact count then appears to miss the naive
+main term by about one half.  This is not a theorem saying that the finite
+Euler-product truncation error has half-main size.  It is the missing
+\(p=2\), or equivalently the failure to restrict first to the odd sample space.
+After the \(2\)-adic normalization is included, the \(m\)-side main term and
+the shifted-residue \(n\)-side main term agree.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Remaining gate]
+The affine identity is useful as a shifted-residue Phi--LPF ledger, but it still
+counts rough survivors.  It does not separate prime \(2n+1\) values from rough
+composites and therefore does not break the parity barrier.  The new open gate is
+\begin{quote}\scriptsize\ttfamily
+AffineShiftedResidueSieveSignedPayloadConstructorOrReturn\\
+AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

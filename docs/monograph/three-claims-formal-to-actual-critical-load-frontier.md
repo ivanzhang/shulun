@@ -26703,3 +26703,43 @@ OR PDEC/SAE/LocalSurvivor named return
 只有当 terminal signed payload 已构造成 averaged trace/Kloosterman/Type-II family
 后，FKMS、Milićević--Qin--Wu、Pascadi 或 Wright 型外部输入才有可审稿入口。
 否则失败必须作为 actual defect 回流，而不能继续保留匿名 parity gap。
+
+### affine `2n+1` Euler-LPF formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_affine_2n_plus_1_euler_lpf_parity_audit.py
+data/prime-matrix-affine-2n-plus-1-euler-lpf-parity-ledger.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.json
+```
+
+formal-to-actual 修正如下：
+
+```text
+n = kP + (P-1)/2  =>  2n+1 = (2k+1)P
+```
+
+这里 `P` 是 `2n+1` 的 potential LPF，不是 `n` 的 LPF。`m=2n+1` 的筛余双射为：
+
+```text
+p | m  <=>  n == (p-1)/2 mod p.
+```
+
+如果在 `m` 侧把长度 `2x` 的区间直接乘奇素数欧拉乘积，就会形成 formal envelope
+约为 actual odd-space load 两倍的假象；这个半主项差不是 truncation error，而是漏掉
+`p=2`/odd-space 归一化。审计读数：
+
+```text
+affine_sieve_bijection_verified_all_samples=true
+apparent_half_main_gap_explained_by_missing_p2_all_samples=true
+euler_product_half_main_error_proved=false
+```
+
+因此该路线的 non-cyclic 入口是 shifted-residue signed payload，而不是半主项误差断言：
+
+```text
+AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
+AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
+```

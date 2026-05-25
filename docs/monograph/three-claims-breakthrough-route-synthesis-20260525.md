@@ -56,6 +56,47 @@ OR PDEC/SAE/LocalSurvivor named return
 - rank-one 负评价排斥等价于 `theta(P^2;P,a)>0` 对每个非零类成立，本质上是 sharp pointwise AP positivity / Linnik=2 型硬点；
 - `30`-wheel、`210`-wheel、`2310`-wheel 可以细分 parity packets，但若没有新的 signed phase saving 或 actual-load return，只会重命名同一个障碍。
 
+### 2.2A affine `2n+1` Euler-LPF 诊断
+
+用户提出的结构
+
+```text
+n = kP + (P-1)/2  =>  2n+1 = (2k+1)P
+```
+
+给出一个有用但必须修正口径的 affine 筛余恒等式。`P` 是 `2n+1` 的因子，不是 `n`
+的因子；若 `k>=1` 且 `2k+1` 无小于 `P` 的素因子，则 `P=LPF(2n+1)`。
+
+新增审计：
+
+```text
+experiments/prime_matrix_affine_2n_plus_1_euler_lpf_parity_audit.py
+data/prime-matrix-affine-2n-plus-1-euler-lpf-parity-ledger.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.json
+```
+
+它验证了精确双射
+
+```text
+p | (2n+1)  <=>  n == (p-1)/2 mod p       (p odd)
+```
+
+并在 `P=11,31,101,251,1009`、`x=P^2` 上确认：
+
+```text
+affine_sieve_bijection_verified_all_samples=true
+apparent_half_main_gap_explained_by_missing_p2_all_samples=true
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+结论是：若在 `m=2n+1` 侧用长度约 `2x` 的区间却只乘奇素数部分欧拉乘积，会出现
+“exact count 比 naive main 少约一半”的假象；但这是漏掉 `p=2` 或没有先限制到
+奇数样本空间造成的归一化错误。正确 odd-space 主项与 `n` 侧 shifted-residue 主项已经对齐。
+因此该结构可作为 shifted-residue Phi-LPF 账本迭代，但不能直接推出有限欧拉乘积截断误差为
+主项一半，也不能从 rough survivors 中分离素数。
+
 ### 2.3 二点筛线
 
 已知强点是外部谱工具方向最接近标准解析数论形态：DI/BFI/Kloosterman 大筛与 well-factorable 权重可以服务 BMD/KLS 分子估计。当前缺口不是“再找一个 Kloosterman 定理”，而是：

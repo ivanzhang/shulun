@@ -29260,3 +29260,43 @@ Terminal signed payload either
 二点筛线保留为第二候选突破口：它的 actual-ratio 合同仍是 numerator bound 与
 denominator floor 在同一 singular-series convention 下闭合。RH 线继续作为
 controlled-exit 审稿包，不作为本轮最快 actual-load 突破目标。
+
+### affine `2n+1` Euler-LPF actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_affine_2n_plus_1_euler_lpf_parity_audit.py
+data/prime-matrix-affine-2n-plus-1-euler-lpf-parity-ledger.json
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.md
+docs/monograph/prime-matrix-affine-2n-plus-1-euler-lpf-parity-audit.json
+```
+
+actual-load 含义：`m=2n+1` 把 `m` 侧零同余类精确转成 `n` 侧 shifted residue：
+
+```text
+p | (2n+1) <=> n == (p-1)/2 mod p.
+```
+
+本层关闭的是归一化账本：
+
+```text
+affine_sieve_bijection_verified_all_samples=true
+apparent_half_main_gap_explained_by_missing_p2_all_samples=true
+```
+
+但它不关闭 prime extraction。样本中 `2n+1` 的 rough composite survivors 仍大量存在，
+所以 actual-load 合同不是“有限欧拉乘积误差为半主项”，而是：
+
+```text
+AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
+AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
+```
+
+状态边界：
+
+```text
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
