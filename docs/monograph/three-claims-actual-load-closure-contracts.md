@@ -28612,3 +28612,56 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite step-transition grammar 账本；step-transition uniform bound 与
 其余 witness/core residual 仍未闭合。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word repeated-step occurrence actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json
+```
+
+actual-load 含义继续收缩：step-transition grammar 中两个重复 signed step atoms
+不再作为未定位重复块，而是拆成 4 个 occurrence 与 5 条 touching transition。
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+repeated_signed_step_atom_count=2
+repeated_step_occurrence_count=4
+repeated_step_occurrence_mass=40
+endpoint_role_law_closed=true
+touching_transition_count=5
+touching_transition_mass=50
+touching_transition_repeated_endpoint_incidence_count=6
+touching_transition_repeated_endpoint_incidence_mass=60
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepUniformFamilyBound(g=2,c=2,A=negative and g=6,c=7,A=positive)
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite repeated-step occurrence/touching-transition 账本；repeated-step
+uniform bound 与其余 witness/core residual 仍未闭合。

@@ -9747,3 +9747,53 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AB. Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word repeated-step occurrence 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.md
+```
+
+本层承接 65AA，只处理 step-transition 账本里的两个 repeated signed step
+atoms，把它们拆成 occurrence 位置与 touching transition：
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+repeated_signed_step_atom_count=2
+repeated_signed_step_atoms={g=2,c=2,A=negative:20, g=6,c=7,A=positive:20}
+repeated_step_occurrence_count=4
+repeated_step_occurrence_mass=40
+endpoint_role_law_closed=true
+touching_transition_count=5
+touching_transition_mass=50
+touching_transition_repeated_endpoint_incidence_count=6
+touching_transition_repeated_endpoint_incidence_mass=60
+```
+
+精确 occurrence 为：
+
+```text
+g=2,c=2,A=negative: P607 step1 [769,773] above_P; P739 step4 [757,761] above_P
+g=6,c=7,A=positive: P607 step3 [769,773] above_P; P739 step5 [757,761] above_P
+```
+
+外部 theorem 边界仍不变：FKMS、Milićević--Qin--Wu 与 Wright 型
+trace/Kloosterman 平均输入需要先把这些局部 grammar 数据提升为非局部可求和族；
+Maynard 小间距与 Li 短区间素数结果也不直接推出 repeated-step uniform
+collision bound。
+
+状态边界：
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+dominant_sign_word_repeated_step_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

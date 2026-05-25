@@ -36836,6 +36836,83 @@ step-transition-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dominant sign-word repeated step occurrences}
+
+\begin{theorem}[Dominant sign-word repeated-step occurrence ledger]
+In the audit range \(P\le 1009\), the two repeated signed step atoms inside
+the dominant sign word \(\texttt{--+-+}\) split into four exact occurrence
+positions and five adjacent transitions touching those repeated atoms.  The
+principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{dominant\_sign\_word\_repeated\_step\_occurrence\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{repeated\_signed\_step\_atom\_count} & 2\\
+\texttt{repeated\_step\_occurrence\_count} & 4\\
+\texttt{repeated\_step\_occurrence\_mass} & 40\\
+\texttt{endpoint\_role\_law\_closed} & \texttt{true}\\
+\texttt{touching\_transition\_count} & 5\\
+\texttt{touching\_transition\_mass} & 50\\
+\texttt{touching\_transition\_repeated\_endpoint\_incidence\_count} & 6\\
+\texttt{touching\_transition\_repeated\_endpoint\_incidence\_mass} & 60 .
+\end{array}
+\]
+The two repeated atoms have endpoint-role profiles
+\[
+\begin{array}{c|c|c|c|c}
+\hbox{atom} & \hbox{mass} & \hbox{initial} & \hbox{internal} & \hbox{terminal}\\
+\hline
+\texttt{g=2,c=2,A=negative} & 20 & 1 & 1 & 0\\
+\texttt{g=6,c=7,A=positive} & 20 & 0 & 1 & 1 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The audit imports the closed step-transition ledger and selects exactly the
+two signed step labels whose step mass is \(20\):
+\(\texttt{g=2,c=2,A=negative}\) and
+\(\texttt{g=6,c=7,A=positive}\).  Their four occurrences are
+\[
+\begin{array}{c|c|c|c}
+\hbox{atom} & P & \hbox{step} & \hbox{\(m\)-pair}\\
+\hline
+\texttt{g=2,c=2,A=negative} & 607 & 1 & [769,773]\\
+\texttt{g=6,c=7,A=positive} & 607 & 3 & [769,773]\\
+\texttt{g=2,c=2,A=negative} & 739 & 4 & [757,761]\\
+\texttt{g=6,c=7,A=positive} & 739 & 5 & [757,761].
+\end{array}
+\]
+All four have inherited mass \(10\), giving occurrence mass \(40\).  Reading
+the adjacent transition ledger on the same paths gives five transition rows
+touching at least one repeated atom.  One of these transitions,
+\(\texttt{g=2,c=2,A=negative}\to\texttt{g=6,c=7,A=positive}\), touches both
+repeated atoms, so the transition count is \(5\) but the repeated-endpoint
+incidence count is \(6\).  The endpoint-role profile follows immediately from
+the step positions \(1,3,4,5\).
+\end{proof}
+
+\begin{remark}[Repeated-step gate]
+The step-transition gate is now refined by isolating the finite repeated-step
+carrier
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepUniformFamilyBound(g=2,c=2,A=negative and g=6,c=7,A=positive).
+\end{quote}
+This is still a finite occurrence ledger.  It does not prove the uniform
+signed collision estimate, PDEC/SAE aggregation, or prime-q reciprocal phase
+saving required for the global Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-dominant-sign-word-\\
+repeated-step-occurrence-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

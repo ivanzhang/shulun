@@ -26169,3 +26169,42 @@ repeated_signed_step_atom_count=2
 本层删除的是“coordinate path 字符串仍可藏内部 step/transition 结构”的含混说法；
 没有删除 step-transition grammar 的 uniform signed equality、PDEC/SAE 聚合、其他
 witness/core residual、single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word repeated-step occurrence formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar)
+```
+
+现在拆出最集中重复载体：
+
+```text
+RepeatedStepUniformFamilyBound(g=2,c=2,A=negative and g=6,c=7,A=positive)
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+```
+
+关键审计读数为：
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+repeated_step_occurrence_count=4
+touching_transition_count=5
+touching_transition_repeated_endpoint_incidence_count=6
+endpoint_role_law_closed=true
+```
+
+本层删除的是“两个 repeated signed step atoms 仍未拆成 occurrence/touching
+transition”的含混说法；没有删除 repeated-step uniform signed equality、PDEC/SAE
+聚合、其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
+phase saving 缺口。

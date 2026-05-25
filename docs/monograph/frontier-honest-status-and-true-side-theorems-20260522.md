@@ -1753,8 +1753,6 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
----
-
 ## 附录 Q13AE：Phi-LPF q-prefix successor carry dynamics 审计（2026-05-24）
 
 新增证书：
@@ -10462,6 +10460,89 @@ AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
 ```text
 dominant_sign_word_step_transition_ledger_closed=true
 dominant_sign_word_step_transition_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
+## 附录 Q13AC23：Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word repeated-step occurrence 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.md
+```
+
+本层承接 Q13AC22，把两个 repeated signed step atoms 继续定位到 occurrence
+位置和相邻 transition 接触账本。
+
+有限审计读数：
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+repeated_signed_step_atom_count=2
+repeated_step_occurrence_count=4
+repeated_step_occurrence_mass=40
+endpoint_role_law_closed=true
+touching_transition_count=5
+touching_transition_mass=50
+touching_transition_repeated_endpoint_incidence_count=6
+touching_transition_repeated_endpoint_incidence_mass=60
+```
+
+两个 repeated atom 的角色律为：
+
+```text
+g=2,c=2,A=negative: occurrence_mass=20, initial=1, internal=1, terminal=0, touching_incidence=3
+g=6,c=7,A=positive: occurrence_mass=20, initial=0, internal=1, terminal=1, touching_incidence=3
+```
+
+本层删除了“两个 repeated step atoms 内部仍未定位到 occurrence/transition
+接触”的含混说法，但没有证明 repeated-step uniform family bound。
+
+### Q13AC23.1 最新最窄口
+
+```text
+RepeatedStepUniformFamilyBound(g=2,c=2,A=negative and g=6,c=7,A=positive)
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dominant_sign_word_repeated_step_occurrence_ledger_closed=true
+dominant_sign_word_repeated_step_family_bound_proved=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
