@@ -206,6 +206,41 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine microtemplate actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json
+```
+
+actual-load 含义：两个 bridge-root debt 是一个共享 `q=607` pivot 的 q-spine，
+不是两个独立源项：
+
+```text
+bridge_root_packet_count=2
+all_bridge_roots_share_ad_singleton_template=true
+unit_to_bridge_pivot_alignment_closed=true
+shared_pivot_q=607
+bridge_root_debt_open_mass=0.209830550963
+bridge_root_qspine_microtemplate_closed=true
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BridgeRootADSingletonQSpineSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解

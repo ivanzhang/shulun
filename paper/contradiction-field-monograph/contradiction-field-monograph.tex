@@ -38692,6 +38692,81 @@ construct the averaged signed trace, Type-II, or finite group orbit family
 needed for external spectral or group-theoretic inputs.
 \end{remark}
 
+\begin{theorem}[Bridge-root \(q\)-spine microtemplate]
+The two bridge-root debts in the carry-break source-packet reduction lie on a
+single selected-terminal \(q\)-spine.  Both occur in the left \(P=739\),
+packet \(2842\), selected-terminal pair \(m=757,761\).  Both bridge roots are
+preceded by the same local run template:
+\[
+  \text{negative }A1/D0\text{ carry }2\text{ singleton}
+  \quad\text{then}\quad
+  \text{positive }A0/D1\text{ carry }7\text{ singleton}.
+\]
+Moreover the first unit root \(q=607\) is the second bridge root, so the spine
+is
+\[
+  577 \longrightarrow 607 \longrightarrow 631.
+\]
+\end{theorem}
+
+\begin{proof}
+The audit reads the two bridge/unit packets from the carry-break source
+certificate and the run templates from the terminal phase-variation ledger.
+For \(m=757\), the bridge microtemplate is
+\[
+  r2:\ q569\to571,\ A1/D0,\ c=2
+  \quad\hbox{then}\quad
+  r3:\ q571\to577,\ A0/D1,\ c=7.
+\]
+For \(m=761\), it is
+\[
+  r6:\ q599\to601,\ A1/D0,\ c=2
+  \quad\hbox{then}\quad
+  r7:\ q601\to607,\ A0/D1,\ c=7.
+\]
+Thus both bridge roots share the same AD-singleton microtemplate.  The first
+packet has bridge/unit roots \(577,607\), while the second has \(607,631\).
+This proves the finite \(q\)-spine microtemplate ledger.  The source law for
+the spine remains open.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root \(q\)-spine audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+bridge\_root\_packet\_count=2\\
+all\_bridge\_roots\_share\_ad\_singleton\_template=true\\
+unit\_to\_bridge\_pivot\_alignment\_closed=true\\
+shared\_pivot\_q=607\\
+m\_gap\_between\_bridge\_packets=4\\
+root\_micro\_q\_shift=30\\
+bridge\_to\_unit\_q\_gaps=[30,24]\\
+bridge\_root\_qspine\_microtemplate\_closed=true\\
+bridge\_root\_qspine\_source\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-qspine-microtemplate-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated \(q\)-spine gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootADSingletonQSpineSourceLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+The external trace/Kloosterman, Type-II, and thin-group tools still require an
+admissible averaged signed family or a genuine finite group orbit built from
+this spine; the finite microtemplate itself is not enough.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

@@ -27014,6 +27014,47 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine microtemplate formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json
+```
+
+formal-to-actual 结论：两个 bridge-root debt 进一步压成一个共享 q-spine 微模板。
+两个 bridge root 都由相同局部模板产生：
+
+```text
+negative A1/D0 carry 2 singleton
+then positive A0/D1 carry 7 singleton
+```
+
+审计读数：
+
+```text
+bridge_root_packet_count=2
+all_bridge_roots_share_ad_singleton_template=true
+unit_to_bridge_pivot_alignment_closed=true
+shared_pivot_q=607
+m_gap_between_bridge_packets=4
+root_micro_q_shift=30
+bridge_to_unit_q_gaps=[30,24]
+bridge_root_qspine_microtemplate_closed=true
+```
+
+因此 formal-to-actual 缺口从两个 bridge-root debts 进一步降维为：
+
+```text
+BridgeRootADSingletonQSpineSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

@@ -2169,6 +2169,56 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AK. Phi-LPF terminal boundary bridge-root q-spine microtemplate 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.md
+```
+
+本层把上一节的两个 bridge-root debt 压成共享 `q=607` 枢轴的 AD-singleton
+q-spine 微模板：
+
+```text
+bridge_root_packet_count=2
+all_bridge_roots_share_ad_singleton_template=true
+unit_to_bridge_pivot_alignment_closed=true
+shared_pivot_q=607
+m_gap_between_bridge_packets=4
+root_micro_q_shift=30
+bridge_root_qspine_microtemplate_closed=true
+bridge_root_qspine_source_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界继续收窄：FKMS/Milićević--Qin--Wu/Wright 型 trace/Kloosterman、
+Pascadi Type-II、以及 thin-group/expander 方法现在只可能作用在这个
+AD-singleton q-spine 生成的 averaged signed family 上。当前证书只给 finite
+microtemplate 和 shared pivot，不给可求和 family 或群轨道。
+
+外部源核对（2026-05-25）：`arXiv:2511.09459` 是 trace-function 双线性平均；
+`arXiv:2511.07550` 是任意模 Kloosterman 双线性平均；`arXiv:2505.00653`
+处理 primes/smooth numbers 的分布指数与 Type-II/平均问题；`arXiv:2604.25177`
+处理三线性 Kloosterman fractions；`arXiv:2411.12113` 处理 square-free/smooth
+整数参数化的 Kloosterman sums。它们都要求先有 completed/averaged family，
+不能替代本节的 `BridgeRootADSingletonQSpineSourceLawOrPDEC`。
+
+最新开放口：
+
+```text
+BridgeRootADSingletonQSpineSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

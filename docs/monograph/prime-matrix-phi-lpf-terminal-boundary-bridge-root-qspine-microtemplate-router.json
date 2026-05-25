@@ -1,0 +1,357 @@
+{
+  "admissible_trace_or_typeii_family_constructed": false,
+  "all_bridge_endpoint_links_closed": true,
+  "all_bridge_roots_share_ad_singleton_template": true,
+  "bridge_root_debt_open_mass": {
+    "decimal": "0.209830550963",
+    "denominator": 22162126954053594199,
+    "fraction": "4650291309275317106/22162126954053594199",
+    "numerator": 4650291309275317106
+  },
+  "bridge_root_packet_count": 2,
+  "bridge_root_qspine_microtemplate_closed": true,
+  "bridge_root_qspine_source_law_proved": false,
+  "bridge_to_unit_q_gaps": [
+    30,
+    24
+  ],
+  "certificate_type": "prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router",
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "BridgeRootADSingletonMicrotemplateLedger",
+      "meaning": "both bridge roots are preceded by the same negative A-singleton and positive D-singleton run pair.",
+      "proved": true,
+      "remaining": "finite bridge-root microtemplate ledger"
+    },
+    {
+      "closed": true,
+      "gate": "BridgeRootQSpinePivotLedger",
+      "meaning": "the first packet unit root q equals the second packet bridge root q.",
+      "proved": true,
+      "remaining": "shared q=607 pivot ledger"
+    },
+    {
+      "closed": false,
+      "gate": "BridgeRootQSpineSourceLaw",
+      "meaning": "the shared AD-singleton q-spine still needs a uniform source law or named PDEC.",
+      "proved": false,
+      "remaining": "BridgeRootADSingletonQSpineSourceLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RightTailOverhangPDEC",
+      "meaning": "the single right selected-terminal tail overhang is unchanged.",
+      "proved": false,
+      "remaining": "RightSelectedTerminalTailOverhangPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalTraceOrGroupEntry",
+      "meaning": "trace/Kloosterman/Type-II or group-expansion inputs still need a signed averaged family built from the q-spine.",
+      "proved": false,
+      "remaining": "AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite q-spine microtemplate reduction, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "BridgeRootADSingletonQSpineSourceLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "m_gap_between_bridge_packets": 4,
+  "microtemplate_rows": [
+    {
+      "P": 739,
+      "atom_key": "left:2842:selected_terminal:m757",
+      "bridge_ad_singleton_template_closed": true,
+      "bridge_micro_q_interval": "569->577",
+      "bridge_micro_q_width": 8,
+      "bridge_old_run": {
+        "A_wrap_count": 0,
+        "D_wrap_count": 1,
+        "carry_max": 7,
+        "carry_min": 7,
+        "direction": "positive",
+        "length": 1,
+        "q_end": 577,
+        "q_start": 571,
+        "run_id": 3,
+        "signed_delta": {
+          "decimal": "0.105807258390",
+          "denominator": 329467,
+          "fraction": "34860/329467",
+          "numerator": 34860
+        },
+        "variation": {
+          "decimal": "0.105807258390",
+          "denominator": 329467,
+          "fraction": "34860/329467",
+          "numerator": 34860
+        }
+      },
+      "bridge_root_debt": {
+        "decimal": "0.020343948936",
+        "denominator": 101419497143,
+        "fraction": "2063273071/101419497143",
+        "numerator": 2063273071
+      },
+      "bridge_root_q": 577,
+      "following_negative_run": {
+        "A_wrap_count": 5,
+        "D_wrap_count": 0,
+        "carry_max": 10,
+        "carry_min": 2,
+        "direction": "negative",
+        "length": 5,
+        "q_end": 607,
+        "q_start": 577,
+        "run_id": 4,
+        "signed_delta": {
+          "decimal": "-0.886194855513",
+          "denominator": 350239,
+          "fraction": "-310380/350239",
+          "numerator": -310380
+        },
+        "variation": {
+          "decimal": "0.886194855513",
+          "denominator": 350239,
+          "fraction": "310380/350239",
+          "numerator": 310380
+        }
+      },
+      "following_negative_run_starts_at_bridge_q": true,
+      "following_negative_width": 30,
+      "m": 757,
+      "old_return_boundary_q": 569,
+      "old_return_new_q_start": 577,
+      "packet_id": 1,
+      "packet_index": 2842,
+      "packet_side": "left",
+      "pre_bridge_run": {
+        "A_wrap_count": 1,
+        "D_wrap_count": 0,
+        "carry_max": 2,
+        "carry_min": 2,
+        "direction": "negative",
+        "length": 1,
+        "q_end": 571,
+        "q_start": 569,
+        "run_id": 2,
+        "signed_delta": {
+          "decimal": "-0.059138378388",
+          "denominator": 324899,
+          "fraction": "-19214/324899",
+          "numerator": -19214
+        },
+        "variation": {
+          "decimal": "0.059138378388",
+          "denominator": 324899,
+          "fraction": "19214/324899",
+          "numerator": 19214
+        }
+      },
+      "role": "selected_terminal",
+      "unit_old_return_echo_mass": {
+        "decimal": "0.067012828938",
+        "denominator": 308911,
+        "fraction": "20701/308911",
+        "numerator": 20701
+      },
+      "unit_positive_run": {
+        "A_wrap_count": 0,
+        "D_wrap_count": 1,
+        "carry_max": 6,
+        "carry_min": 5,
+        "direction": "positive",
+        "length": 2,
+        "q_end": 617,
+        "q_start": 607,
+        "run_id": 5,
+        "signed_delta": {
+          "decimal": "0.921483289232",
+          "denominator": 374519,
+          "fraction": "345113/374519",
+          "numerator": 345113
+        },
+        "variation": {
+          "decimal": "0.921483289232",
+          "denominator": 374519,
+          "fraction": "345113/374519",
+          "numerator": 345113
+        }
+      },
+      "unit_positive_run_starts_at_unit_q": true,
+      "unit_positive_width": 10,
+      "unit_root_q": 607
+    },
+    {
+      "P": 739,
+      "atom_key": "left:2842:selected_terminal:m761",
+      "bridge_ad_singleton_template_closed": true,
+      "bridge_micro_q_interval": "599->607",
+      "bridge_micro_q_width": 8,
+      "bridge_old_run": {
+        "A_wrap_count": 0,
+        "D_wrap_count": 1,
+        "carry_max": 7,
+        "carry_min": 7,
+        "direction": "positive",
+        "length": 1,
+        "q_end": 607,
+        "q_start": 601,
+        "run_id": 7,
+        "signed_delta": {
+          "decimal": "0.010838607812",
+          "denominator": 364807,
+          "fraction": "3954/364807",
+          "numerator": 3954
+        },
+        "variation": {
+          "decimal": "0.010838607812",
+          "denominator": 364807,
+          "fraction": "3954/364807",
+          "numerator": 3954
+        }
+      },
+      "bridge_root_debt": {
+        "decimal": "0.189486602027",
+        "denominator": 126085689761,
+        "fraction": "23891548917/126085689761",
+        "numerator": 23891548917
+      },
+      "bridge_root_q": 607,
+      "following_negative_run": {
+        "A_wrap_count": 4,
+        "D_wrap_count": 0,
+        "carry_max": 12,
+        "carry_min": 2,
+        "direction": "negative",
+        "length": 4,
+        "q_end": 631,
+        "q_start": 607,
+        "run_id": 8,
+        "signed_delta": {
+          "decimal": "-0.833508695436",
+          "denominator": 383017,
+          "fraction": "-319248/383017",
+          "numerator": -319248
+        },
+        "variation": {
+          "decimal": "0.833508695436",
+          "denominator": 383017,
+          "fraction": "319248/383017",
+          "numerator": 319248
+        }
+      },
+      "following_negative_run_starts_at_bridge_q": true,
+      "following_negative_width": 24,
+      "m": 761,
+      "old_return_boundary_q": 599,
+      "old_return_new_q_start": 607,
+      "packet_id": 2,
+      "packet_index": 2842,
+      "packet_side": "left",
+      "pre_bridge_run": {
+        "A_wrap_count": 1,
+        "D_wrap_count": 0,
+        "carry_max": 2,
+        "carry_min": 2,
+        "direction": "negative",
+        "length": 1,
+        "q_end": 601,
+        "q_start": 599,
+        "run_id": 6,
+        "signed_delta": {
+          "decimal": "-0.069794638318",
+          "denominator": 359999,
+          "fraction": "-25126/359999",
+          "numerator": -25126
+        },
+        "variation": {
+          "decimal": "0.069794638318",
+          "denominator": 359999,
+          "fraction": "25126/359999",
+          "numerator": 25126
+        }
+      },
+      "role": "selected_terminal",
+      "unit_old_return_echo_mass": {
+        "decimal": "0.047671625541",
+        "denominator": 325141,
+        "fraction": "15500/325141",
+        "numerator": 15500
+      },
+      "unit_positive_run": {
+        "A_wrap_count": 0,
+        "D_wrap_count": 1,
+        "carry_max": 11,
+        "carry_min": 11,
+        "direction": "positive",
+        "length": 1,
+        "q_end": 641,
+        "q_start": 631,
+        "run_id": 9,
+        "signed_delta": {
+          "decimal": "0.824012104700",
+          "denominator": 404471,
+          "fraction": "333289/404471",
+          "numerator": 333289
+        },
+        "variation": {
+          "decimal": "0.824012104700",
+          "denominator": 404471,
+          "fraction": "333289/404471",
+          "numerator": 333289
+        }
+      },
+      "unit_positive_run_starts_at_unit_q": true,
+      "unit_positive_width": 10,
+      "unit_root_q": 631
+    }
+  ],
+  "next_primary_attack_target": "BridgeRootADSingletonQSpineSourceLawOrPDEC",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The two bridge-root debts form one selected-terminal q-spine: both roots are preceded by the same negative A-singleton and positive D-singleton microtemplate, and the first unit root q=607 is the second bridge root. The source law for this q-spine remains open.",
+  "previous_carry_break_source_packet_reduction_closed": true,
+  "q_spine_summary": {
+    "bridge_to_unit_q_gaps": [
+      30,
+      24
+    ],
+    "m_gap_between_bridge_packets": 4,
+    "q_spine_node_count": 3,
+    "q_spine_nodes": [
+      577,
+      607,
+      631
+    ],
+    "root_micro_q_shift": 30,
+    "same_P": true,
+    "same_packet_index": true,
+    "same_packet_side": true,
+    "same_role": true,
+    "shared_pivot_q": 607,
+    "unit_to_bridge_pivot_alignment_closed": true
+  },
+  "right_tail_overhang_pdec_constructed": false,
+  "root_micro_q_shift": 30,
+  "row_column_unconditional_closed": false,
+  "shared_pivot_q": 607,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json": "284aadf7447ca0c0c9bc5d8af87a9ba3ff62826b35185de2b495d5175d7087eb",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json": "e352152ebee0b366126014257df6013cd054e827004ff882dc67e943dde1ea4c",
+    "experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py": "9f17b8544cfd719f8a1d3f0f117c18cede1c78b18d530117124a6ae7019da375"
+  },
+  "status": "bridge_root_qspine_microtemplate_closed_source_law_open",
+  "unit_old_return_echo_mass": {
+    "decimal": "0.114684454479",
+    "denominator": 185655511,
+    "fraction": "21291801/185655511",
+    "numerator": 21291801
+  },
+  "unit_to_bridge_pivot_alignment_closed": true,
+  "verified_date": "2026-05-25"
+}

@@ -811,6 +811,60 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.13 terminal boundary bridge-root q-spine microtemplate 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json
+```
+
+本层继续拆解上一层剩余的两个 bridge-root debt。它们不是两个无关 debt，而是同一个
+left `P=739`、packet `2842`、selected-terminal 终端对 `m=757,761` 上的
+AD-singleton q-spine：
+
+```text
+bridge_root_packet_count=2
+all_bridge_roots_share_ad_singleton_template=true
+unit_to_bridge_pivot_alignment_closed=true
+shared_pivot_q=607
+m_gap_between_bridge_packets=4
+root_micro_q_shift=30
+bridge_to_unit_q_gaps=[30,24]
+bridge_root_qspine_microtemplate_closed=true
+bridge_root_qspine_source_law_proved=false
+row_column_unconditional_closed=false
+```
+
+局部模板为：
+
+```text
+negative A1/D0 carry 2 singleton
+then positive A0/D1 carry 7 singleton
+```
+
+并且 q-spine 节点为 `577 -> 607 -> 631`，其中第一包的 unit root `q=607`
+正好是第二包的 bridge root。这是对“相邻抵消律”的进一步物化：bridge-root 硬点
+现在不是任意源项，而是共享 `q=607` 枢轴的 AD-singleton q-spine 源律。
+
+这仍不是奇偶性突破。外部谱分析、Kloosterman/Type-II 或 thin-group 工具的入口
+仍要求先把该 q-spine 变成可平均 signed family 或有限群轨道。
+
+最新口：
+
+```text
+BridgeRootADSingletonQSpineSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

@@ -2062,6 +2062,71 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC32：Phi-LPF terminal boundary bridge-root q-spine microtemplate 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_microtemplate_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.md
+```
+
+本层承接 carry-break source-packet reduction。有限审计读数：
+
+```text
+bridge_root_packet_count=2
+all_bridge_roots_share_ad_singleton_template=true
+unit_to_bridge_pivot_alignment_closed=true
+shared_pivot_q=607
+m_gap_between_bridge_packets=4
+root_micro_q_shift=30
+bridge_to_unit_q_gaps=[30,24]
+bridge_root_qspine_microtemplate_closed=true
+row_column_unconditional_closed=false
+```
+
+本层真正推进：删除了“两个 bridge-root debt 仍是两个自由源项”的含混口径。
+二者同属 `P=739`、left packet `2842`、selected-terminal `m=757,761`，并共享
+局部模板
+
+```text
+negative A1/D0 carry 2 singleton
+then positive A0/D1 carry 7 singleton.
+```
+
+第一包的 unit root `q=607` 同时是第二包的 bridge root，所以 q-spine 为
+`577 -> 607 -> 631`。
+
+### Q13AC32.1 最新最窄口
+
+```text
+BridgeRootADSingletonQSpineSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bridge_root_qspine_microtemplate_closed=true
+bridge_root_qspine_source_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC31：Phi-LPF terminal boundary carry-break source-packet 审计（2026-05-25）
 
 新增证书：
