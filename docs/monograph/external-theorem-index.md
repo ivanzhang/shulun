@@ -2081,6 +2081,60 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_affine_skeleton_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.md
+```
+
+本层承接 65AF，把两条 same-atom occurrence splice 继续解析为同一个
+left/right witness-pair 的仿射骨架：
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+splice_count=2
+splice_mass_total=40
+distinct_witness_pair_count=1
+shared_witness_pair=true
+all_same_affine_deltas=true
+affine_identity_offset_delta_equals_m_delta_minus_P_delta=true
+coordinate_atom_recheck_closed=true
+```
+
+共享 witness-pair 与统一仿射差分为：
+
+```text
+P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773
+P_delta=-132
+q_delta=-21
+packet_delta=-955
+m_pair_delta=[12,12]
+offset_delta=[144,144]
+```
+
+这把 occurrence-splice obstruction 进一步压缩为一个 one-pair affine
+skeleton。外部 theorem 边界仍不变：FKMS、Milićević--Qin--Wu 与 Wright
+型 trace/Kloosterman 平均输入需要可求和族；Maynard 小间距与 Li 短区间素数
+不控制这种 fixed witness-pair affine skeleton。
+
+状态边界：
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+shared_witness_pair_affine_skeleton_uniform_bound_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65P. Phi-LPF q-prefix single-P local template occurrence class 证书
 
 新增证书：

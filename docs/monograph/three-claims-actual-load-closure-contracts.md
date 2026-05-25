@@ -28891,3 +28891,70 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite occurrence-splice 账本；occurrence-splice uniform bound、
 PDEC/SAE 聚合、single-P slice summation 与 prime-q reciprocal phase saving
 仍未闭合。
+
+### Phi-LPF repeated-step occurrence-splice affine-skeleton actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_affine_skeleton_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.json
+```
+
+actual-load 含义继续收缩：两条 occurrence splice 并非两个独立 cross-witness
+对象，而是同一个 left/right witness-pair 的两个 signed-atom 投影。
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+splice_count=2
+splice_mass_total=40
+distinct_witness_pair_count=1
+shared_witness_pair=true
+all_same_affine_deltas=true
+affine_identity_offset_delta_equals_m_delta_minus_P_delta=true
+```
+
+统一 witness-pair 与差分为：
+
+```text
+P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773
+P_delta=-132
+q_delta=-21
+packet_delta=-955
+m_pair_delta=[12,12]
+offset_delta=[144,144]
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBound(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887)
+RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinResidualCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite shared witness-pair affine skeleton 账本；没有生成可求和族，
+也没有完成 trace/Kloosterman completion 或全局 row/column 闭合。

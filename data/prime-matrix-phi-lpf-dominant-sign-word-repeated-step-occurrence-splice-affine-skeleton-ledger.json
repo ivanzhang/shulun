@@ -1,0 +1,330 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_occurrence_splice_affine_skeleton_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "OccurrenceSpliceImported",
+      "meaning": "The same-atom occurrence-splice ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SharedWitnessPairAffineSkeletonLedger",
+      "meaning": "Both occurrence splices use the same left/right witness pair and the same affine deltas.",
+      "proved": true,
+      "remaining": "none for the finite affine skeleton ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AffineOffsetIdentity",
+      "meaning": "For each endpoint, offset_delta equals m_delta minus P_delta.",
+      "proved": true,
+      "remaining": "none for this finite identity"
+    },
+    {
+      "closed": false,
+      "gate": "SummableFamilyCreated",
+      "meaning": "Promote the one witness-pair skeleton to a summable trace/Kloosterman family.",
+      "proved": false,
+      "remaining": "the present ledger has one witness pair, not a completed family"
+    },
+    {
+      "closed": false,
+      "gate": "SharedWitnessPairAffineSkeletonUniformBound",
+      "meaning": "Control the P739/q28 to P607/q7 affine skeleton uniformly.",
+      "proved": false,
+      "remaining": "finite affine localization gives exact data but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "one witness-pair skeleton P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887",
+    "input": "the two same-atom P739-to-P607 occurrence splices",
+    "operation": "resolve their shared witness pair and affine P/q/m/offset/packet skeleton",
+    "remaining": "turn the one-pair skeleton into a uniform family bound or a PDEC/SAE certificate"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "Maynard-type bounded gap inputs do not control the local P/q/m/packet affine splice",
+    "short_interval_prime_inputs": "Li's x^0.52 short-interval existence theorem does not bound a fixed cross-witness affine skeleton",
+    "trace_or_kloosterman_inputs": "FKMS, Mili\u0107evi\u0107-Qin-Wu and Wright become relevant only after this one-pair skeleton is embedded into a summable family"
+  },
+  "finite_audit": {
+    "affine_identity_offset_delta_equals_m_delta_minus_P_delta": true,
+    "affine_rows": [
+      {
+        "P_delta": -132,
+        "left_P": 739,
+        "left_m_pair": "[757, 761]",
+        "left_offsets_from_P": [
+          18,
+          22
+        ],
+        "left_orientation": "above_P",
+        "left_packet": 2842,
+        "left_path_gap_carry_sign": [
+          2,
+          2,
+          "negative"
+        ],
+        "left_q": 28,
+        "left_step": 4,
+        "left_witness_id": "P739_packet2842_q28_mpair_757_761",
+        "m_midpoint_delta": "12",
+        "m_pair_delta": [
+          12,
+          12
+        ],
+        "m_width_left": 4,
+        "m_width_preserved": true,
+        "m_width_right": 4,
+        "offset_delta": [
+          144,
+          144
+        ],
+        "offset_delta_equals_m_delta_minus_P_delta": true,
+        "orientation_preserved": true,
+        "packet_delta": -955,
+        "q_delta": -21,
+        "right_P": 607,
+        "right_m_pair": "[769, 773]",
+        "right_offsets_from_P": [
+          162,
+          166
+        ],
+        "right_orientation": "above_P",
+        "right_packet": 1887,
+        "right_path_gap_carry_sign": [
+          2,
+          2,
+          "negative"
+        ],
+        "right_q": 7,
+        "right_step": 1,
+        "right_witness_id": "P607_packet1887_q7_mpair_769_773",
+        "same_atom_step_coordinates": true,
+        "signed_atom": "g=2,c=2,A=negative",
+        "splice_id": "path_1:splice_after_edge_1",
+        "splice_occurrence_mass": 20,
+        "step_delta": -3,
+        "step_rewind_amount": 3,
+        "witness_pair_key": "P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P_delta": -132,
+        "left_P": 739,
+        "left_m_pair": "[757, 761]",
+        "left_offsets_from_P": [
+          18,
+          22
+        ],
+        "left_orientation": "above_P",
+        "left_packet": 2842,
+        "left_path_gap_carry_sign": [
+          6,
+          7,
+          "positive"
+        ],
+        "left_q": 28,
+        "left_step": 5,
+        "left_witness_id": "P739_packet2842_q28_mpair_757_761",
+        "m_midpoint_delta": "12",
+        "m_pair_delta": [
+          12,
+          12
+        ],
+        "m_width_left": 4,
+        "m_width_preserved": true,
+        "m_width_right": 4,
+        "offset_delta": [
+          144,
+          144
+        ],
+        "offset_delta_equals_m_delta_minus_P_delta": true,
+        "orientation_preserved": true,
+        "packet_delta": -955,
+        "q_delta": -21,
+        "right_P": 607,
+        "right_m_pair": "[769, 773]",
+        "right_offsets_from_P": [
+          162,
+          166
+        ],
+        "right_orientation": "above_P",
+        "right_packet": 1887,
+        "right_path_gap_carry_sign": [
+          6,
+          7,
+          "positive"
+        ],
+        "right_q": 7,
+        "right_step": 3,
+        "right_witness_id": "P607_packet1887_q7_mpair_769_773",
+        "same_atom_step_coordinates": true,
+        "signed_atom": "g=6,c=7,A=positive",
+        "splice_id": "path_2:splice_after_edge_2",
+        "splice_occurrence_mass": 20,
+        "step_delta": -2,
+        "step_rewind_amount": 2,
+        "witness_pair_key": "P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773"
+      }
+    ],
+    "all_orientation_preserved": true,
+    "all_same_affine_deltas": true,
+    "all_width_preserved": true,
+    "coordinate_atom_recheck_closed": true,
+    "distinct_witness_pair_count": 1,
+    "offset_delta_rows": [
+      {
+        "mass": 40,
+        "offset_delta": "[144, 144]",
+        "ratio": 1.0
+      }
+    ],
+    "p_delta_rows": [
+      {
+        "P_delta": -132,
+        "mass": 40,
+        "ratio": 1.0
+      }
+    ],
+    "packet_delta_rows": [
+      {
+        "mass": 40,
+        "packet_delta": -955,
+        "ratio": 1.0
+      }
+    ],
+    "previous_occurrence_splice_ledger_closed": true,
+    "q_delta_rows": [
+      {
+        "mass": 40,
+        "q_delta": -21,
+        "ratio": 1.0
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "shared_witness_pair": true,
+    "shared_witness_pair_affine_skeleton_ledger_closed": true,
+    "shared_witness_pair_affine_skeleton_uniform_bound_proved": false,
+    "signed_atom_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "signed_atom": "g=2,c=2,A=negative"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "signed_atom": "g=6,c=7,A=positive"
+      }
+    ],
+    "splice_count": 2,
+    "splice_mass_total": 40,
+    "step_delta_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "step_delta": -2
+      },
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "step_delta": -3
+      }
+    ],
+    "summable_family_created": false,
+    "target_sign_word": "--+-+",
+    "trace_or_kloosterman_completion_ready": false,
+    "witness_pair_rows": [
+      {
+        "mass": 40,
+        "ratio": 1.0,
+        "witness_pair_key": "P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepSharedWitnessPairAffineSkeletonUniformBound(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887)",
+    "AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton",
+    "AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinResidualCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the two occurrence splices collapse to one shared left/right witness pair with fixed affine deltas",
+  "row_column_unconditional_closed": false,
+  "shared_witness_pair_affine_skeleton_ledger_closed": true,
+  "shared_witness_pair_affine_skeleton_uniform_bound_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "6a2b2e3f4da058eac2bbdb711c6c6fb451c78bbc20de2e7c56bc8768c957b37b",
+    "docs/monograph/external-theorem-index.md": "df7f6756dc4272e17923a775387dfd2ab4b5ee55d406aa507411892a7538b2c1",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "ff5f7072c0f844d4414472e63dc248cb63e74f130b33798952140a2498503a71",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.json": "89f14b824e548781f641e11579d0611896a797a0efcaba94b07655a44f633d11",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.json": "7f5ae93b072f66b917089001e775efc8e01a76a26f84e712bc5e4bee9943b24b",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "77c1f6377cf963121e9899effef7df730650b7fb58e3d77988fd8182dd7d99de",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "662bf6c3f4bd397402020654a41f450de174089cb2c759989e699e62aceb264e",
+    "experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_affine_skeleton_audit.py": "1ec784ce0c7b86f5a0ecf7175525c88db1f7a4f9d209d430d006c985c9d0c68e",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "7d73ae951030ce823caed3a74f11c1c639d37ca3b2761114b83ed1d74540c4db"
+  },
+  "status": "shared_witness_pair_affine_skeleton_ledger_closed_family_bound_open",
+  "summable_family_created": false,
+  "trace_or_kloosterman_completion_ready": false
+}

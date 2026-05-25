@@ -37218,6 +37218,72 @@ repeated-step-occurrence-splice-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step affine skeleton}
+
+\begin{theorem}[Repeated-step shared witness-pair affine skeleton]
+In the audit range \(P\le 1009\), the two same-atom \(P739\)-to-\(P607\)
+occurrence splices use one common left/right witness pair.  The principal
+audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{shared\_witness\_pair\_affine\_skeleton\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{splice\_count} & 2\\
+\texttt{splice\_mass\_total} & 40\\
+\texttt{distinct\_witness\_pair\_count} & 1\\
+\texttt{all\_same\_affine\_deltas} & \texttt{true}\\
+\texttt{affine\_identity\_offset\_delta\_equals\_m\_delta\_minus\_P\_delta}
+  & \texttt{true}\\
+\texttt{coordinate\_atom\_recheck\_closed} & \texttt{true}.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+Both splices share the witness-pair skeleton
+\[
+\texttt{P739\_packet2842\_q28\_mpair\_757\_761}
+\longrightarrow
+\texttt{P607\_packet1887\_q7\_mpair\_769\_773}.
+\]
+For each splice the affine deltas are
+\[
+\Delta P=-132,\qquad \Delta q=-21,\qquad
+\Delta\hbox{packet}=-955,\qquad
+\Delta m=[12,12],
+\]
+and the offsets from \(P\) move by
+\[
+[162,166]-[18,22]=[144,144]=[12,12]-(-132).
+\]
+The \(m\)-width \(773-769=761-757=4\) and the endpoint orientation are
+preserved.  Rechecking the signed step coordinates gives the two atoms
+\(\texttt{g=2,c=2,A=negative}\) and
+\(\texttt{g=6,c=7,A=positive}\), with the same gap/carry/sign on the left and
+right occurrences.  Hence the two local splices are not independent witness
+pairs; they are two signed-atom projections of one affine witness-pair
+skeleton.
+\end{proof}
+
+\begin{remark}[Affine-skeleton gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBound\\
+(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887).
+\end{quote}
+This is a genuine finite compression of the obstruction, but it still does
+not create a summable trace/Kloosterman family and it does not prove a
+uniform family bound.  The external short-interval and prime-gap inputs also
+do not estimate this fixed witness-pair affine skeleton.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-occurrence-splice-affine-skeleton-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

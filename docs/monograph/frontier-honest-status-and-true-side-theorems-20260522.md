@@ -1753,6 +1753,94 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+---
+
+## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_affine_skeleton_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.md
+```
+
+本层承接 Q13AC27，把两条 `P739-to-P607` occurrence splice 压缩为一个
+共享 witness-pair 仿射骨架。有限审计读数：
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+splice_count=2
+splice_mass_total=40
+distinct_witness_pair_count=1
+shared_witness_pair=true
+all_same_affine_deltas=true
+affine_identity_offset_delta_equals_m_delta_minus_P_delta=true
+coordinate_atom_recheck_closed=true
+```
+
+统一骨架为：
+
+```text
+P739_packet2842_q28_mpair_757_761 -> P607_packet1887_q7_mpair_769_773
+P_delta=-132
+q_delta=-21
+packet_delta=-955
+m_pair_delta=[12,12]
+offset_delta=[144,144]
+```
+
+### Q13AC28.1 最新最窄口
+
+```text
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBound(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887)
+AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinResidualCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+shared_witness_pair_affine_skeleton_uniform_bound_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 Q13AE：Phi-LPF q-prefix successor carry dynamics 审计（2026-05-24）
 
 新增证书：

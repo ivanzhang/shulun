@@ -26373,3 +26373,46 @@ occurrence_splice_uniform_family_bound_proved=false
 删除 same-atom occurrence-splice uniform signed equality、PDEC/SAE 聚合、其他
 witness/core residual、single-P slice summation 或 prime-q reciprocal phase
 saving 缺口。
+
+### Phi-LPF repeated-step occurrence-splice affine-skeleton formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_affine_skeleton_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-affine-skeleton-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices)
+```
+
+现在拆成：
+
+```text
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBound(P739/q28/[757,761]/packet2842 -> P607/q7/[769,773]/packet1887)
+AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+```
+
+关键审计读数为：
+
+```text
+shared_witness_pair_affine_skeleton_ledger_closed=true
+splice_count=2
+distinct_witness_pair_count=1
+all_same_affine_deltas=true
+P_delta=-132
+q_delta=-21
+packet_delta=-955
+m_pair_delta=[12,12]
+offset_delta=[144,144]
+shared_witness_pair_affine_skeleton_uniform_bound_proved=false
+```
+
+本层删除的是“两条 occurrence splice 是否来自不同 witness-pair”的含混说法；
+没有删除 shared witness-pair affine skeleton 的 uniform bound、PDEC/SAE 聚合、
+single-P slice summation 或 prime-q reciprocal phase saving 缺口。
