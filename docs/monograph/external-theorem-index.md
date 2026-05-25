@@ -9688,3 +9688,62 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+## 65AA. Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word step-transition 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_step_transition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.md
+```
+
+本层把 dominant sign word `--+-+` 的三条 m-pair coordinate path 拆成
+signed step atoms 与 adjacent transition atoms：
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+coordinate_witness_count=3
+coordinate_witness_edge_mass=30
+step_atom_count=15
+step_atom_mass=150
+transition_atom_count=12
+transition_atom_mass=120
+all_witness_length_equals_5=true
+all_step_atom_mass_equals_10=true
+all_transition_atom_mass_equals_10=true
+all_initial_steps_negative=true
+all_terminal_steps_positive=true
+sign_word_position_law_closed=true
+transition_sign_law_closed=true
+negative_step_mass=90
+positive_step_mass=60
+same_sign_transition_mass=30
+sign_switch_transition_mass=90
+distinct_signed_step_atom_count=13
+repeated_signed_step_atom_count=2
+```
+
+重复 step 原子恰为：
+
+```text
+g=2,c=2,A=negative -> mass 20
+g=6,c=7,A=positive -> mass 20
+```
+
+外部 theorem 边界仍不变：这些 step/transition atoms 仍需先聚合为非局部
+trace、bilinear 或 Kloosterman family；FKMS、Milićević--Qin--Wu、Wright
+等平均型输入不直接估计固定 grammar，Maynard prime gaps 与 Li short intervals
+也不直接给出 signed path equality。
+
+状态边界：
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+dominant_sign_word_step_transition_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

@@ -26132,3 +26132,40 @@ below_P_edge_mass=10
 本层删除的是“dominant sign word 内仍可藏未坐标化 m-pair 块”的含混说法；没有删除
 三坐标 witness 族的 uniform signed equality、PDEC/SAE 聚合、其他 witness/core residual、
 single-P slice summation 或 prime-q reciprocal phase saving 缺口。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word step-transition formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_step_transition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+DominantSignWordEndpointCoordinateUniformFamilyBound(--+-+; m_pair partition)
+```
+
+现在被替换为：
+
+```text
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar)
+```
+
+关键审计读数为：
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+step_atom_count=15
+transition_atom_count=12
+sign_word_position_law_closed=true
+transition_sign_law_closed=true
+repeated_signed_step_atom_count=2
+```
+
+本层删除的是“coordinate path 字符串仍可藏内部 step/transition 结构”的含混说法；
+没有删除 step-transition grammar 的 uniform signed equality、PDEC/SAE 聚合、其他
+witness/core residual、single-P slice summation 或 prime-q reciprocal phase saving 缺口。

@@ -28559,3 +28559,56 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite dominant sign-word 坐标分区；三坐标 witness 族的 uniform bound
 与其余 witness/core residual 仍未闭合。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word step-transition actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_step_transition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.json
+```
+
+actual-load 含义继续收缩：`--+-+` 的三条 coordinate path 不再作为字符串黑箱保留，
+而是拆成 15 个 signed step atoms 与 12 个 adjacent transition atoms。
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+step_atom_count=15
+step_atom_mass=150
+transition_atom_count=12
+transition_atom_mass=120
+sign_word_position_law_closed=true
+transition_sign_law_closed=true
+negative_step_mass=90
+positive_step_mass=60
+same_sign_transition_mass=30
+sign_switch_transition_mass=90
+```
+
+最新直接主攻改为：
+
+```text
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite step-transition grammar 账本；step-transition uniform bound 与
+其余 witness/core residual 仍未闭合。

@@ -1,0 +1,847 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_step_transition_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "DominantSignWordCoordinatePartitionImported",
+      "meaning": "The full --+-+ m-pair coordinate partition is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SignedStepAtomLedger",
+      "meaning": "The three paths are split into 15 signed step atoms.",
+      "proved": true,
+      "remaining": "none for the finite step ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AdjacentTransitionAtomLedger",
+      "meaning": "The three paths are split into 12 adjacent transition atoms.",
+      "proved": true,
+      "remaining": "none for the finite transition ledger"
+    },
+    {
+      "closed": false,
+      "gate": "StepTransitionUniformFamilyBound",
+      "meaning": "Control the step-transition grammar as a uniform family.",
+      "proved": false,
+      "remaining": "finite grammar audit gives exact atoms but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "15 signed step atoms and 12 adjacent transition atoms with fixed sign-position law",
+    "input": "three m-pair coordinate witnesses of sign word --+-+",
+    "operation": "split length-5 signed coordinate paths into step atoms and adjacent transition atoms",
+    "remaining": "turn the step-transition grammar into a uniform signed collision bound or a PDEC/SAE certificate"
+  },
+  "dominant_sign_word_step_transition_family_bound_proved": false,
+  "dominant_sign_word_step_transition_ledger_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the gap labels are local path grammar data, not prime-gap existence estimates",
+    "short_interval_prime_inputs": "theta=0.52 remains above the endpoint half-scale and does not estimate this fixed grammar",
+    "trace_or_kloosterman_inputs": "step atoms still need aggregation into a nonlocal trace or bilinear sum before these theorems apply"
+  },
+  "finite_audit": {
+    "all_initial_steps_negative": true,
+    "all_step_atom_mass_equals_10": true,
+    "all_terminal_steps_positive": true,
+    "all_transition_atom_mass_equals_10": true,
+    "all_witness_length_equals_5": true,
+    "carry_delta_transition_rows": [
+      {
+        "carry_delta": -4,
+        "mass": 30,
+        "ratio": 0.25
+      },
+      {
+        "carry_delta": -2,
+        "mass": 20,
+        "ratio": 0.16666666666666666
+      },
+      {
+        "carry_delta": 3,
+        "mass": 20,
+        "ratio": 0.16666666666666666
+      },
+      {
+        "carry_delta": -1,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      },
+      {
+        "carry_delta": 0,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      },
+      {
+        "carry_delta": 2,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      },
+      {
+        "carry_delta": 4,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      },
+      {
+        "carry_delta": 5,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      }
+    ],
+    "coordinate_witness_count": 3,
+    "coordinate_witness_edge_mass": 30,
+    "distinct_raw_step_atom_count": 12,
+    "distinct_signed_step_atom_count": 13,
+    "dominant_sign_word_step_transition_family_bound_proved": false,
+    "dominant_sign_word_step_transition_ledger_closed": true,
+    "gap_delta_transition_rows": [
+      {
+        "gap_delta": -2,
+        "mass": 30,
+        "ratio": 0.25
+      },
+      {
+        "gap_delta": -4,
+        "mass": 30,
+        "ratio": 0.25
+      },
+      {
+        "gap_delta": 2,
+        "mass": 30,
+        "ratio": 0.25
+      },
+      {
+        "gap_delta": 4,
+        "mass": 20,
+        "ratio": 0.16666666666666666
+      },
+      {
+        "gap_delta": 0,
+        "mass": 10,
+        "ratio": 0.08333333333333333
+      }
+    ],
+    "max_prime": 1009,
+    "negative_step_mass": 90,
+    "positive_step_mass": 60,
+    "previous_coordinate_partition_ledger_closed": true,
+    "raw_step_atom_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.13333333333333333,
+        "raw_step_atom": "g=2,c=2"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.13333333333333333,
+        "raw_step_atom": "g=6,c=6"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.13333333333333333,
+        "raw_step_atom": "g=6,c=7"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=10,c=10"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=10,c=8"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=4,c=3"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=4,c=5"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=4,c=6"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=6,c=5"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=8,c=10"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=8,c=6"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "raw_step_atom": "g=8,c=7"
+      }
+    ],
+    "repeated_signed_step_atom_count": 2,
+    "repeated_signed_step_atoms": {
+      "g=2,c=2,A=negative": 20,
+      "g=6,c=7,A=positive": 20
+    },
+    "row_column_unconditional_closed": false,
+    "same_sign_transition_mass": 30,
+    "sign_pair_transition_rows": [
+      {
+        "mass": 60,
+        "ratio": 0.5,
+        "sign_pair": "-+"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.25,
+        "sign_pair": "+-"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.25,
+        "sign_pair": "--"
+      }
+    ],
+    "sign_position_rows": [
+      {
+        "mass": 30,
+        "ratio": 0.2,
+        "sign_position": "step1:-"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.2,
+        "sign_position": "step2:-"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.2,
+        "sign_position": "step3:+"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.2,
+        "sign_position": "step4:-"
+      },
+      {
+        "mass": 30,
+        "ratio": 0.2,
+        "sign_position": "step5:+"
+      }
+    ],
+    "sign_switch_transition_mass": 90,
+    "sign_word_position_law_closed": true,
+    "signed_step_atom_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.13333333333333333,
+        "signed_step_atom": "g=2,c=2,A=negative"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.13333333333333333,
+        "signed_step_atom": "g=6,c=7,A=positive"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=10,c=10,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=10,c=8,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=4,c=3,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=4,c=5,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=4,c=6,A=positive"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=6,c=5,A=positive"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=6,c=6,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=6,c=6,A=positive"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=8,c=10,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=8,c=6,A=negative"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.06666666666666667,
+        "signed_step_atom": "g=8,c=7,A=positive"
+      }
+    ],
+    "step_atom_count": 15,
+    "step_atom_mass": 150,
+    "step_atom_rows": [
+      {
+        "P": 607,
+        "carry": 2,
+        "endpoint_orientation": "above_P",
+        "gap": 2,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=2,c=2",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=2,c=2,A=negative",
+        "step": 1,
+        "step_mass": 10,
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry": 5,
+        "endpoint_orientation": "above_P",
+        "gap": 4,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=4,c=5",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=4,c=5,A=negative",
+        "step": 2,
+        "step_mass": 10,
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry": 7,
+        "endpoint_orientation": "above_P",
+        "gap": 6,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=6,c=7",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=6,c=7,A=positive",
+        "step": 3,
+        "step_mass": 10,
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry": 10,
+        "endpoint_orientation": "above_P",
+        "gap": 8,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=8,c=10",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=8,c=10,A=negative",
+        "step": 4,
+        "step_mass": 10,
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry": 6,
+        "endpoint_orientation": "above_P",
+        "gap": 4,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=4,c=6",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=4,c=6,A=positive",
+        "step": 5,
+        "step_mass": 10,
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 739,
+        "carry": 10,
+        "endpoint_orientation": "above_P",
+        "gap": 10,
+        "m_pair": "[757, 761]",
+        "raw_step_signature": "g=10,c=10",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=10,c=10,A=negative",
+        "step": 1,
+        "step_mass": 10,
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry": 6,
+        "endpoint_orientation": "above_P",
+        "gap": 6,
+        "m_pair": "[757, 761]",
+        "raw_step_signature": "g=6,c=6",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=6,c=6,A=negative",
+        "step": 2,
+        "step_mass": 10,
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry": 6,
+        "endpoint_orientation": "above_P",
+        "gap": 6,
+        "m_pair": "[757, 761]",
+        "raw_step_signature": "g=6,c=6",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=6,c=6,A=positive",
+        "step": 3,
+        "step_mass": 10,
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry": 2,
+        "endpoint_orientation": "above_P",
+        "gap": 2,
+        "m_pair": "[757, 761]",
+        "raw_step_signature": "g=2,c=2",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=2,c=2,A=negative",
+        "step": 4,
+        "step_mass": 10,
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry": 7,
+        "endpoint_orientation": "above_P",
+        "gap": 6,
+        "m_pair": "[757, 761]",
+        "raw_step_signature": "g=6,c=7",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=6,c=7,A=positive",
+        "step": 5,
+        "step_mass": 10,
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 953,
+        "carry": 8,
+        "endpoint_orientation": "below_P",
+        "gap": 10,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=10,c=8",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=10,c=8,A=negative",
+        "step": 1,
+        "step_mass": 10,
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry": 6,
+        "endpoint_orientation": "below_P",
+        "gap": 8,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=8,c=6",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=8,c=6,A=negative",
+        "step": 2,
+        "step_mass": 10,
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry": 5,
+        "endpoint_orientation": "below_P",
+        "gap": 6,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=6,c=5",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=6,c=5,A=positive",
+        "step": 3,
+        "step_mass": 10,
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry": 3,
+        "endpoint_orientation": "below_P",
+        "gap": 4,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=4,c=3",
+        "sign": "negative",
+        "sign_char": "-",
+        "signed_step_signature": "g=4,c=3,A=negative",
+        "step": 4,
+        "step_mass": 10,
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry": 7,
+        "endpoint_orientation": "below_P",
+        "gap": 8,
+        "m_pair": "[769, 773]",
+        "raw_step_signature": "g=8,c=7",
+        "sign": "positive",
+        "sign_char": "+",
+        "signed_step_signature": "g=8,c=7,A=positive",
+        "step": 5,
+        "step_mass": 10,
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      }
+    ],
+    "target_sign_word": "--+-+",
+    "transition_atom_count": 12,
+    "transition_atom_mass": 120,
+    "transition_atom_rows": [
+      {
+        "P": 607,
+        "carry_delta": 3,
+        "endpoint_orientation": "above_P",
+        "from_carry": 2,
+        "from_gap": 2,
+        "from_sign": "negative",
+        "from_step": 1,
+        "gap_delta": 2,
+        "is_sign_switch": false,
+        "m_pair": "[769, 773]",
+        "sign_pair": "--",
+        "to_carry": 5,
+        "to_gap": 4,
+        "to_sign": "negative",
+        "to_step": 2,
+        "transition_mass": 10,
+        "transition_signature": "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry_delta": 2,
+        "endpoint_orientation": "above_P",
+        "from_carry": 5,
+        "from_gap": 4,
+        "from_sign": "negative",
+        "from_step": 2,
+        "gap_delta": 2,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "-+",
+        "to_carry": 7,
+        "to_gap": 6,
+        "to_sign": "positive",
+        "to_step": 3,
+        "transition_mass": 10,
+        "transition_signature": "g=4,c=5,A=negative -> g=6,c=7,A=positive",
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry_delta": 3,
+        "endpoint_orientation": "above_P",
+        "from_carry": 7,
+        "from_gap": 6,
+        "from_sign": "positive",
+        "from_step": 3,
+        "gap_delta": 2,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "+-",
+        "to_carry": 10,
+        "to_gap": 8,
+        "to_sign": "negative",
+        "to_step": 4,
+        "transition_mass": 10,
+        "transition_signature": "g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 607,
+        "carry_delta": -4,
+        "endpoint_orientation": "above_P",
+        "from_carry": 10,
+        "from_gap": 8,
+        "from_sign": "negative",
+        "from_step": 4,
+        "gap_delta": -4,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "-+",
+        "to_carry": 6,
+        "to_gap": 4,
+        "to_sign": "positive",
+        "to_step": 5,
+        "transition_mass": 10,
+        "transition_signature": "g=8,c=10,A=negative -> g=4,c=6,A=positive",
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 739,
+        "carry_delta": -4,
+        "endpoint_orientation": "above_P",
+        "from_carry": 10,
+        "from_gap": 10,
+        "from_sign": "negative",
+        "from_step": 1,
+        "gap_delta": -4,
+        "is_sign_switch": false,
+        "m_pair": "[757, 761]",
+        "sign_pair": "--",
+        "to_carry": 6,
+        "to_gap": 6,
+        "to_sign": "negative",
+        "to_step": 2,
+        "transition_mass": 10,
+        "transition_signature": "g=10,c=10,A=negative -> g=6,c=6,A=negative",
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry_delta": 0,
+        "endpoint_orientation": "above_P",
+        "from_carry": 6,
+        "from_gap": 6,
+        "from_sign": "negative",
+        "from_step": 2,
+        "gap_delta": 0,
+        "is_sign_switch": true,
+        "m_pair": "[757, 761]",
+        "sign_pair": "-+",
+        "to_carry": 6,
+        "to_gap": 6,
+        "to_sign": "positive",
+        "to_step": 3,
+        "transition_mass": 10,
+        "transition_signature": "g=6,c=6,A=negative -> g=6,c=6,A=positive",
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry_delta": -4,
+        "endpoint_orientation": "above_P",
+        "from_carry": 6,
+        "from_gap": 6,
+        "from_sign": "positive",
+        "from_step": 3,
+        "gap_delta": -4,
+        "is_sign_switch": true,
+        "m_pair": "[757, 761]",
+        "sign_pair": "+-",
+        "to_carry": 2,
+        "to_gap": 2,
+        "to_sign": "negative",
+        "to_step": 4,
+        "transition_mass": 10,
+        "transition_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 739,
+        "carry_delta": 5,
+        "endpoint_orientation": "above_P",
+        "from_carry": 2,
+        "from_gap": 2,
+        "from_sign": "negative",
+        "from_step": 4,
+        "gap_delta": 4,
+        "is_sign_switch": true,
+        "m_pair": "[757, 761]",
+        "sign_pair": "-+",
+        "to_carry": 7,
+        "to_gap": 6,
+        "to_sign": "positive",
+        "to_step": 5,
+        "transition_mass": 10,
+        "transition_signature": "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 953,
+        "carry_delta": -2,
+        "endpoint_orientation": "below_P",
+        "from_carry": 8,
+        "from_gap": 10,
+        "from_sign": "negative",
+        "from_step": 1,
+        "gap_delta": -2,
+        "is_sign_switch": false,
+        "m_pair": "[769, 773]",
+        "sign_pair": "--",
+        "to_carry": 6,
+        "to_gap": 8,
+        "to_sign": "negative",
+        "to_step": 2,
+        "transition_mass": 10,
+        "transition_signature": "g=10,c=8,A=negative -> g=8,c=6,A=negative",
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry_delta": -1,
+        "endpoint_orientation": "below_P",
+        "from_carry": 6,
+        "from_gap": 8,
+        "from_sign": "negative",
+        "from_step": 2,
+        "gap_delta": -2,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "-+",
+        "to_carry": 5,
+        "to_gap": 6,
+        "to_sign": "positive",
+        "to_step": 3,
+        "transition_mass": 10,
+        "transition_signature": "g=8,c=6,A=negative -> g=6,c=5,A=positive",
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry_delta": -2,
+        "endpoint_orientation": "below_P",
+        "from_carry": 5,
+        "from_gap": 6,
+        "from_sign": "positive",
+        "from_step": 3,
+        "gap_delta": -2,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "+-",
+        "to_carry": 3,
+        "to_gap": 4,
+        "to_sign": "negative",
+        "to_step": 4,
+        "transition_mass": 10,
+        "transition_signature": "g=6,c=5,A=positive -> g=4,c=3,A=negative",
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      },
+      {
+        "P": 953,
+        "carry_delta": 4,
+        "endpoint_orientation": "below_P",
+        "from_carry": 3,
+        "from_gap": 4,
+        "from_sign": "negative",
+        "from_step": 4,
+        "gap_delta": 4,
+        "is_sign_switch": true,
+        "m_pair": "[769, 773]",
+        "sign_pair": "-+",
+        "to_carry": 7,
+        "to_gap": 8,
+        "to_sign": "positive",
+        "to_step": 5,
+        "transition_mass": 10,
+        "transition_signature": "g=4,c=3,A=negative -> g=8,c=7,A=positive",
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      }
+    ],
+    "transition_sign_law_closed": true
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after m-pair coordinate partition, the path strings themselves are the next non-circular object to atomize",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "65b3d33557fa1b72cdd781b66b1081afd2c47b7a3c15e2b1f20f69b572f0d1d2",
+    "docs/monograph/external-theorem-index.md": "35896e5057fee64a646aa3f95b2c4433d72825fdc793b57e7e47299827e0b95a",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "db91e9c5a60945cd243bdfe14003e32f8a484f93c90ea47cd5c7d3bc593cc32d",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.json": "7f5ae93b072f66b917089001e775efc8e01a76a26f84e712bc5e4bee9943b24b",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "13c88c005b6d3610a095eb22c2d0471ca997c574db622024034cfbc3cd80912a",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "29410b6c39eede1e4169bf03f2c645e4983d7640d2d226307d4f64725d3e77bd",
+    "experiments/prime_matrix_phi_lpf_dominant_sign_word_step_transition_audit.py": "3a9dfe7e3e4e2759dd84da1e5167d04f2b19753c9455570b69c2e22371065f18",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "a3ce7a0f9799834893e538fd5ddd63387adc91e7526601666b77667d38f067d8"
+  },
+  "status": "dominant_sign_word_step_transition_ledger_closed_family_bound_open"
+}

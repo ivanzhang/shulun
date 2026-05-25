@@ -10375,3 +10375,95 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+---
+
+## 附录 Q13AC22：Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word step-transition 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_step_transition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-step-transition-audit.md
+```
+
+本层承接 Q13AC21，把 `--+-+` 的三条坐标路径继续拆成 signed step atoms
+和 adjacent transition atoms。
+
+有限审计读数：
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+coordinate_witness_count=3
+coordinate_witness_edge_mass=30
+step_atom_count=15
+step_atom_mass=150
+transition_atom_count=12
+transition_atom_mass=120
+all_witness_length_equals_5=true
+all_step_atom_mass_equals_10=true
+all_transition_atom_mass_equals_10=true
+all_initial_steps_negative=true
+all_terminal_steps_positive=true
+sign_word_position_law_closed=true
+transition_sign_law_closed=true
+negative_step_mass=90
+positive_step_mass=60
+same_sign_transition_mass=30
+sign_switch_transition_mass=90
+distinct_signed_step_atom_count=13
+repeated_signed_step_atom_count=2
+```
+
+两个重复 signed step atom 分别为：
+
+```text
+g=2,c=2,A=negative  mass=20
+g=6,c=7,A=positive  mass=20
+```
+
+本层删除了“coordinate path 字符串内部仍可藏未原子化 step/transition 结构”的
+含混说法，但没有证明 step-transition grammar 的 uniform signed collision bound。
+
+### Q13AC22.1 最新最窄口
+
+```text
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+dominant_sign_word_step_transition_ledger_closed=true
+dominant_sign_word_step_transition_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

@@ -36768,6 +36768,74 @@ m-pair-coordinate-partition-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dominant sign-word step-transition grammar}
+
+\begin{theorem}[Dominant sign-word step-transition ledger]
+In the audit range \(P\le 1009\), the three coordinate witnesses of the
+dominant sign word \(\texttt{--+-+}\) split into \(15\) signed step atoms and
+\(12\) adjacent transition atoms.  The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{dominant\_sign\_word\_step\_transition\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{coordinate\_witness\_count} & 3\\
+\texttt{coordinate\_witness\_edge\_mass} & 30\\
+\texttt{step\_atom\_count} & 15\\
+\texttt{step\_atom\_mass} & 150\\
+\texttt{transition\_atom\_count} & 12\\
+\texttt{transition\_atom\_mass} & 120\\
+\texttt{all\_witness\_length\_equals\_5} & \texttt{true}\\
+\texttt{all\_initial\_steps\_negative} & \texttt{true}\\
+\texttt{all\_terminal\_steps\_positive} & \texttt{true}\\
+\texttt{sign\_word\_position\_law\_closed} & \texttt{true}\\
+\texttt{transition\_sign\_law\_closed} & \texttt{true}\\
+\texttt{negative\_step\_mass} & 90\\
+\texttt{positive\_step\_mass} & 60\\
+\texttt{same\_sign\_transition\_mass} & 30\\
+\texttt{sign\_switch\_transition\_mass} & 90 .
+\end{array}
+\]
+The two repeated signed step atoms are
+\[
+\texttt{g=2,c=2,A=negative},\qquad
+\texttt{g=6,c=7,A=positive},
+\]
+each with step mass \(20\).
+\end{theorem}
+\begin{proof}
+The audit imports the full m-pair coordinate partition and expands each
+length-\(5\) signed coordinate path.  Each of the three paths contributes five
+signed step atoms and four adjacent transition atoms, with inherited mass
+\(10\).  Thus the total derived step mass is \(3\cdot5\cdot10=150\), and the
+total derived transition mass is \(3\cdot4\cdot10=120\).  The sign at each
+position is fixed by \(\texttt{--+-+}\): steps \(1,2,4\) are negative and
+steps \(3,5\) are positive.  The transition signs are consequently
+\(\texttt{--}\), \(\texttt{-+}\), \(\texttt{+-}\), \(\texttt{-+}\) in every
+path, giving same-sign mass \(30\) and sign-switch mass \(90\).  Direct
+aggregation of the \((g,c,A)\) step labels gives exactly the two repeated
+signed step atoms listed above.
+\end{proof}
+
+\begin{remark}[Step-transition gate]
+The coordinate-family gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar).
+\end{quote}
+This is still a finite grammar ledger.  It does not by itself give the
+uniform signed equality estimate, the required PDEC/SAE aggregation, or the
+prime-q reciprocal phase saving needed for the global Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-dominant-sign-word-\\
+step-transition-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
