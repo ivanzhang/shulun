@@ -1757,3 +1757,80 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
 ```
+
+## 20. LPF bucket inclusive survival formula 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_inclusive_survival_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.md
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.json
+```
+
+本层审计用户修正后的草式：
+
+```text
+LPF(P) = (N-P^2) * prod_{q<=P}(1-1/q).
+```
+
+结论：这一步已经把上一版中 `q<P` 的小素数生存密度改对，但 `P` 自身不能按
+`1-1/P` 处理。对 `LPF(n)=P` 的 bucket，`n` 必须满足
+
+```text
+n = 0 mod P,
+```
+
+所以 `P` 这一层是一个指定零类，密度为 `1/P`。小素数 `q<P` 才是避开零类，
+密度为 `1-1/q`。因此正确的 n 轴连续主项为：
+
+```text
+(N-P^2) * (1/P) * prod_{q<P}(1-1/q).
+```
+
+精确式仍是：
+
+```text
+C_P(N)=Phi(floor(N/P); primes<P)-1.
+```
+
+用户修正版与正确 n 轴主项相差因子：
+
+```text
+P*(1-1/P)=P-1.
+```
+
+所以只在 `P=2` 偶然相同，从 `P=3` 起系统性高估。
+
+有限审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+inclusive_survival_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+样本总量：
+
+| N | exact LPF total | composite count | correct total/exact | user total/exact |
+| --- | --- | --- | --- | --- |
+| 100 | 74 | 74 | 0.947426 | 1.486358 |
+| 1000 | 831 | 831 | 0.980306 | 2.398928 |
+| 10000 | 8770 | 8770 | 0.985832 | 4.047312 |
+| 100000 | 90407 | 90407 | 0.988315 | 7.385319 |
+
+这把 LPF 分桶的局部密度口径完全固定：`q<P` 是 survival classes，`P`
+是 divisibility owner class。该修正仍不提供 signed saving；无符号分桶只能告诉我们
+合数由唯一最小素因子拥有，不能从 bucket 中抽出素数质量。
+
+最新非循环口为：
+
+```text
+PrimeDivisibilityClassIsOneOverPNotOneMinusOneOverP
+AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```

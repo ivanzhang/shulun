@@ -12029,3 +12029,44 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
 ```
+
+## 65AK. LPF bucket inclusive survival formula 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_inclusive_survival_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.md
+```
+
+本层继续校正 LPF bucket 的主项口径。用户修正版把 `q<p` 的 survival
+factor 改为 `1-1/q`，但把 bucket owner `p` 也当作 survival prime。正确角色分裂为：
+
+```text
+q<p: avoid 0 mod q, density 1-1/q
+p:   hit   0 mod p, density 1/p
+```
+
+审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+inclusive_survival_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界不变：该修正只关闭 owner class 与 survival class 的算术口径。
+它不构造 signed divisor family、Type-II/trace family 或 finite-group orbit family。
+
+最新开放口：
+
+```text
+PrimeDivisibilityClassIsOneOverPNotOneMinusOneOverP
+AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```

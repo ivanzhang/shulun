@@ -13344,3 +13344,59 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
 ```
+
+---
+
+## 附录 Q13AC32：LPF bucket inclusive survival formula（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_inclusive_survival_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.md
+```
+
+本层审计修正后的 LPF 分桶近似：
+
+```text
+(N-p^2)*prod_{q<=p}(1-1/q).
+```
+
+正确结论是：`q<p` 的确应为 survival factors `1-1/q`，但 `p` 本身是
+owner divisibility class，不是 survival class。正确 n 轴主项为：
+
+```text
+(N-p^2)*(1/p)*prod_{q<p}(1-1/q).
+```
+
+因此用户修正版与正确主项差因子 `p-1`，只在 `p=2` 偶然相同。
+
+有限审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+inclusive_survival_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+这一步把 LPF bucket 的 local density grammar 固定为：
+
+```text
+small-prime survival classes + owner-prime divisibility class.
+```
+
+它仍不突破奇偶性障碍。下一步必须构造全局 Möbius/von-Mangoldt signed
+payload、可平均 Type-II/trace family，或回流为命名 PDEC。
+
+最新 honest 口：
+
+```text
+PrimeDivisibilityClassIsOneOverPNotOneMinusOneOverP
+AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```

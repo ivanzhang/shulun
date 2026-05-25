@@ -39989,6 +39989,71 @@ AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[LPF owner class is divisibility, not survival]
+For the composite bucket \(C_p(N)\), the small-prime conditions split into two
+different local roles.  For every prime \(q<p\) one must avoid the class
+\[
+  n\equiv 0 \pmod q,
+\]
+which contributes the survival density \(1-1/q\).  For the owner prime \(p\),
+however, one must hit the class
+\[
+  n\equiv 0 \pmod p,
+\]
+which contributes the divisibility density \(1/p\).  Hence the \(n\)-axis
+continuous main term is
+\[
+  (N-p^2)\frac1p\prod_{q<p}(1-1/q),
+\]
+whereas
+\[
+  (N-p^2)\prod_{q\le p}(1-1/q)
+\]
+is larger by the factor \(p-1\).
+\end{proposition}
+
+\begin{proof}
+The condition \({\rm LPF}(n)=p\) means exactly that \(p\mid n\) and no prime
+below \(p\) divides \(n\).  The first condition selects one residue class
+modulo \(p\), while each second condition deletes one residue class modulo
+\(q\).  Since these congruence conditions are independent modulo the
+squarefree product of the primes involved, the local density is
+\[
+  \frac1p\prod_{q<p}(1-1/q).
+\]
+Replacing the \(p\)-factor by \(1-1/p\) changes the required zero class
+modulo \(p\) into the forbidden nonzero-class survival condition and multiplies
+the correct density by \(p-1\).
+\end{proof}
+
+\begin{certificatestatement}[LPF inclusive survival formula audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+exact\_lpf\_bucket\_identity\_closed=true\\
+inclusive\_survival\_formula\_supported=false\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-\\
+inclusive-survival-formula-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated LPF density grammar]
+The corrected local grammar is: survival classes for primes \(q<p\), and an
+owner divisibility class for \(p\).  This fixes the density bookkeeping but
+does not create a signed prime-extraction mechanism.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+PrimeDivisibilityClassIsOneOverPNotOneMinusOneOverP\\
+AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct\\
+AND UnsignedLPFBucketCountStillParityBlind\\
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

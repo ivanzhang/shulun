@@ -191,6 +191,47 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+### LPF bucket inclusive survival formula actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_inclusive_survival_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.md
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-inclusive-survival-formula-audit.json
+```
+
+actual-load 含义：LPF bucket 的小素数层分两种角色。对 `q<p`，需要避开
+`0 mod q`，密度为 `1-1/q`；但对 bucket owner `p`，需要命中 `0 mod p`，
+密度为 `1/p`。
+
+```text
+correct n-axis main = (N-p^2)*(1/p)*prod_{q<p}(1-1/q)
+user inclusive main = (N-p^2)*prod_{q<=p}(1-1/q)
+```
+
+二者相差因子 `p-1`，所以用户修正版只在 `p=2` 偶然相同，从 `p=3` 起高估。
+
+PM-ALC 的当前实际合同相应加入 owner-class 挡板：
+
+```text
+PrimeDivisibilityClassIsOneOverPNotOneMinusOneOverP
+AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```
+
+状态边界：
+
+```text
+exact_lpf_bucket_identity_closed=true
+inclusive_survival_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### affine odd Euler normalization actual-load 更新（2026-05-25）
 
 新增机器证书：
