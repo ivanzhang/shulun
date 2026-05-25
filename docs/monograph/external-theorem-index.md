@@ -2126,6 +2126,59 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AH-2. Phi-LPF terminal double-Awrap sibling q-spine kernel 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_double_awrap_sibling_qspine_kernel_router.py
+data/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：terminal double-Awrap endpoint collar
+已经被写成 paid sibling 与 P-scaled q-spine 三分母 kernel。
+
+审计读数：
+
+```text
+same_q_path=true
+same_turn_words=true
+same_gap_carry=true
+paid_sibling_tail_closed=true
+sibling_gap_is_ten_internal_units=true
+endpoint_offset_is_three_endpoint_units=true
+target_kernel_identity_closed=true
+p_scaled_kernel_identity_closed=true
+terminal_double_awrap_sibling_qspine_kernel_closed=true
+terminal_double_awrap_sibling_qspine_kernel_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+179065/215287
+= 123221/205013 + 36420/202379 + 10926/215287
+= 607*(203/(439*467) + 60/(439*461) + 18/(461*467)).
+```
+
+外部定理边界：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、Type-II 输入现在
+必须作用在这个 P-scaled q-spine kernel 的可平均族上；Becker--Breuillard 型谱隙仍
+需要先构造有限群轨道或 thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
 
 新增证书：

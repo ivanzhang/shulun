@@ -39302,6 +39302,104 @@ Thus the former final-tail payment problem is now a terminal double-\(A\)-wrap
 endpoint-collar payment or exclusion problem.
 \end{remark}
 
+\begin{theorem}[Terminal double-\(A\)-wrap sibling q-spine kernel]
+The terminal double-\(A\)-wrap endpoint-collar debt of \(m773\) is aligned with
+the already-paid sibling \(m769\).  The two selected-terminal atoms
+\[
+{\rm right}:1887:{\rm selected\_terminal}:m769,\qquad
+{\rm right}:1887:{\rm selected\_terminal}:m773
+\]
+share the same terminal path \(461\to463\to467\), the same gaps \(2,4\), the
+same carries \(2,5\), and the same two turn words
+\[
+\texttt{negative\_Awrap1\_Dwrap0\_L1to1}.
+\]
+Moreover the \(m773\) final tail has the exact sibling-kernel decomposition
+\[
+\frac{179065}{215287}
+  = \frac{123221}{205013}
+    + \frac{36420}{202379}
+    + \frac{10926}{215287},
+\]
+or, after factoring the row prime \(P=607\),
+\[
+\frac{179065}{215287}
+ =607\left(
+     \frac{203}{439\cdot467}
+    +\frac{60}{439\cdot461}
+    +\frac{18}{461\cdot467}
+   \right).
+\]
+\end{theorem}
+
+\begin{proof}
+The tail-alignment ledger pays the \(m769\) sibling tail by the new-residual
+return
+\[
+\frac{123221}{205013}.
+\]
+The variation ledger gives the \(m769\) final collar mass as \(168139/215287\)
+and the \(m773\) final collar mass as \(179065/215287\).  Therefore
+\[
+\frac{168139}{215287}-\frac{123221}{205013}
+   =\frac{36420}{202379}
+   =10\cdot\frac{3642}{202379},
+\]
+where \(3642/202379\) is the \(m773\) internal survivor unit already isolated
+in the source-key partition.  Also
+\[
+\frac{179065}{215287}-\frac{168139}{215287}
+   =\frac{10926}{215287}
+   =3\cdot\frac{3642}{215287}.
+\]
+Adding the paid sibling tail, the ten internal units, and the three endpoint
+units gives the claimed identity.  Finally,
+\[
+123221=203\cdot607,\quad
+36420=60\cdot607,\quad
+10926=18\cdot607,\quad
+179065=295\cdot607,
+\]
+which gives the displayed \(P\)-scaled q-spine kernel form.
+\end{proof}
+
+\begin{certificatestatement}[Sibling q-spine kernel audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+same\_q\_path=true\\
+same\_turn\_words=true\\
+same\_gap\_carry=true\\
+paid\_sibling\_tail\_closed=true\\
+sibling\_gap\_is\_ten\_internal\_units=true\\
+endpoint\_offset\_is\_three\_endpoint\_units=true\\
+target\_kernel\_identity\_closed=true\\
+p\_scaled\_kernel\_identity\_closed=true\\
+terminal\_double\_awrap\_sibling\_qspine\_kernel\_closed=true\\
+terminal\_double\_awrap\_sibling\_qspine\_kernel\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-\\
+sibling-qspine-kernel-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated sibling-kernel gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Thus the remaining terminal collar problem is a \(P\)-scaled q-spine kernel
+payment or exclusion problem, not an isolated endpoint fluctuation.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

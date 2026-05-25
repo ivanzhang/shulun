@@ -1276,3 +1276,50 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 这仍不是三命题无条件闭合。真正下一步是证明 terminal double-Awrap endpoint-collar
 的 uniform payment/exclusion，或把这类 terminal collar 聚合成可调用
 trace/Kloosterman/Type-II 或 finite-group orbit family。
+
+## 11. terminal double-Awrap sibling q-spine kernel 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_double_awrap_sibling_qspine_kernel_router.py
+data/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.json
+```
+
+本层把 m773 的 terminal double-Awrap endpoint collar 与同 packet 已支付 sibling
+`m769` 对齐。两个 sibling 共享：
+
+```text
+q_path=[461,463,467]
+phase words:
+negative_Awrap1_Dwrap0_L1to1_gap2_carry2
+negative_Awrap1_Dwrap0_L1to1_gap4_carry5
+```
+
+关键新恒等式为：
+
+```text
+179065/215287
+= 123221/205013 + 36420/202379 + 10926/215287
+= 607*(203/(439*467) + 60/(439*461) + 18/(461*467)).
+```
+
+其中 `123221/205013` 是已支付的 m769 sibling tail；`36420/202379` 是 m769
+final collar 超出已支付 tail 的部分，等于 `10` 个 m773 internal survivor unit；
+`10926/215287` 是 m773 相对 m769 的 endpoint offset，等于同分子 unit 的 `3`
+倍。最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是无条件闭合；它把 terminal collar payment 从单点相位问题降到 P-scaled
+q-spine 三分母 kernel 的 uniform payment/exclusion 或可平均族构造问题。

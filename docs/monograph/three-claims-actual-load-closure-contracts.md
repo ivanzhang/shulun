@@ -30262,3 +30262,58 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### terminal double-Awrap sibling q-spine kernel actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_double_awrap_sibling_qspine_kernel_router.py
+data/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.json
+```
+
+actual-load 含义：m773 的 terminal double-Awrap debt 已不再是孤立 endpoint
+collar，而是与已支付 sibling m769 构成同一 q-spine kernel：
+
+```text
+same_q_path=true
+same_turn_words=true
+same_gap_carry=true
+paid_sibling_tail_closed=true
+sibling_gap_is_ten_internal_units=true
+endpoint_offset_is_three_endpoint_units=true
+p_scaled_kernel_identity_closed=true
+terminal_double_awrap_sibling_qspine_kernel_closed=true
+```
+
+具体恒等式为：
+
+```text
+179065/215287
+= 123221/205013 + 36420/202379 + 10926/215287
+= 607*(203/(439*467) + 60/(439*461) + 18/(461*467))
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_double_awrap_sibling_qspine_kernel_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

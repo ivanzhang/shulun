@@ -2160,6 +2160,63 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 仍未构造无条件闭合证明；下一步只能是 uniform terminal-collar payment/exclusion，
 或把 terminal collars 聚合成可调用的 averaged trace/Type-II/expander family。
 
+---
+
+## 附录 Q13AC31：terminal double-Awrap sibling q-spine kernel（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_double_awrap_sibling_qspine_kernel_router.py
+data/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.md
+```
+
+本层把 terminal double-Awrap endpoint-collar debt 与同 packet 的已支付 sibling
+对齐。有限审计读数：
+
+```text
+sibling_atom_key=right:1887:selected_terminal:m769
+target_atom_key=right:1887:selected_terminal:m773
+q_path=[461,463,467]
+same_q_path=true
+same_turn_words=true
+same_gap_carry=true
+paid_sibling_tail_closed=true
+sibling_gap_is_ten_internal_units=true
+endpoint_offset_is_three_endpoint_units=true
+target_kernel_identity_closed=true
+p_scaled_kernel_identity_closed=true
+terminal_double_awrap_sibling_qspine_kernel_closed=true
+terminal_double_awrap_sibling_qspine_kernel_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+179065/215287
+= 123221/205013 + 36420/202379 + 10926/215287
+= 607*(203/(439*467) + 60/(439*461) + 18/(461*467)).
+```
+
+其中第一项是 m769 的已支付 tail；第二项是 m769 final collar 超出已支付 tail 的
+内部 unit 缩放；第三项是 m773 相对 m769 的 endpoint offset。honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍未闭合三命题；但最新剩余对象已从孤立 endpoint-collar debt 降为 P-scaled
+q-spine 三分母 kernel 的 uniform payment/exclusion 或可平均族构造问题。
+
 状态边界：
 
 ```text
