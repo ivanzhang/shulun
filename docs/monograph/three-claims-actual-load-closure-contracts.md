@@ -29380,6 +29380,51 @@ RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
 本层只关闭 finite signed variation ledger；没有证明 monotone-run phase saving、
 extra variation absorption、trace/Kloosterman completion 或全局 row/column 闭合。
 
+### Phi-LPF terminal monotone-run total-to-net compression actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_monotone_run_total_to_net_compression_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.json
+```
+
+actual-load 含义继续收缩：59 个 terminal monotone run 全部可审计，但 run 内没有节省。
+
+```text
+terminal_monotone_run_ledger_closed=true
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+run_local_compression_ratio_min=1
+run_local_compression_ratio_max=1
+strict_run_local_compression_count=0
+```
+
+finite cancellation 分解给出：
+
+```text
+extra_total_variation=14.109301881162
+extra_atom_local_survivor_total=0.907719323182
+extra_total_to_atom_survivor_compression_ratio=0.064334814779
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+finite_absorption_would_close_after_uniform_cancellation_law=true
+```
+
+因此 actual-load 合同不再是泛泛的 `total-to-net compression`，而是：
+
+```text
+UniformAdjacentRunCancellationFamilyOrPDEC
+AND AtomLocalSurvivorPaymentOrPDEC
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+本层闭合的是有限分解与条件闭合入口；没有证明 uniform run cancellation law，也没有
+突破 Phi-LPF 奇偶性障碍。
+
 ### 三命题突破路线总合成 actual-load 更新（2026-05-25）
 
 新增归档：

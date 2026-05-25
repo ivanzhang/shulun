@@ -2081,6 +2081,59 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC38：terminal monotone-run total-to-net compression frontier（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_monotone_run_total_to_net_compression_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.md
+```
+
+本层沿上一轮的 `MonotoneRunTotalToNetCompressionOrPDEC` 开口继续下钻。机器读数为：
+
+```text
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+run_local_compression_ratio_min=1
+run_local_compression_ratio_max=1
+strict_run_local_compression_count=0
+atom_adjacent_cancellation_decomposition_closed=true
+finite_absorption_would_close_after_uniform_cancellation_law=true
+monotone_run_total_to_net_compression_proved=false
+```
+
+因此，finite run ledger 的真实结构不是“run 内变差自动变小”，而是：
+
+```text
+total variation = adjacent opposite-run cancelled chunks + atom-local survivor.
+```
+
+若可证明统一相邻 run 抵消律，extra total variation
+`14.109301881162` 会压到 extra atom-local survivor `0.907719323182`，
+并被 selected negative excess `1.456565972578` 支付。但目前外部定理仍不能直接给出这条律。
+
+外部适配边界更新：
+
+| 外部输入 | 可用前提 | 当前缺口 |
+| --- | --- | --- |
+| FKMS trace/bilinear, arXiv:2511.09459v3 | terminal runs 晋级为带 monodromy 数据的 bilinear trace-function family | 当前只是有限 run ledger |
+| Milićević--Qin--Wu, arXiv:2511.07550v1 | moving Beatty numerator 完成成真正双变量 Kloosterman family | prime-`q` prefix 尚未构成可求和族 |
+| Pascadi, arXiv:2505.00653v2 | 权重成为 triply-well-factorable AP averages | 所需是 `P^2` 尺度逐行/逐列正性 |
+| Wright, arXiv:2604.25177v1 | payload 晋级为三线性 Kloosterman-fraction convolution | 当前没有二维/三维 beta 序列 |
+
+最新非循环口压成：
+
+```text
+UniformAdjacentRunCancellationFamilyOrPDEC
+AND AtomLocalSurvivorPaymentOrPDEC
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC37：terminal signed payload measure absorption frontier（2026-05-25）
 
 新增证书：

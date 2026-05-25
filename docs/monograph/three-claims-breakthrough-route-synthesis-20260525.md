@@ -335,6 +335,65 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 若 total-to-net 压缩失败，失败形态必须命名为 PDEC/SAE/LocalSurvivor，而不能保留为
 匿名 phase-saving open。
 
+### 6.3 terminal monotone-run total-to-net compression 前沿更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_monotone_run_total_to_net_compression_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.json
+```
+
+本层把上一节的 `MonotoneRunTotalToNetCompressionOrPDEC` 真正拆开：
+
+```text
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+strict_run_local_compression_count=0
+atom_adjacent_cancellation_decomposition_closed=true
+finite_absorption_would_close_after_uniform_cancellation_law=true
+monotone_run_total_to_net_compression_proved=false
+uniform_run_cancellation_family_created=false
+```
+
+关键新读数是：每个 monotone run 内部都有
+
+```text
+variation=abs(signed_delta)
+```
+
+所以 run 内没有任何相消。有限压缩全部来自相邻反向 run 的抵消；按 atom 分解后，
+extra total variation 从
+
+```text
+14.109301881162
+```
+
+压到 atom-local survivor
+
+```text
+0.907719323182
+```
+
+而 selected negative excess 为
+
+```text
+1.456565972578
+```
+
+因此若能证明 uniform adjacent-run cancellation law，有限 terminal extra budget 会被支付。
+但这恰好是新硬点：有限分解不是全局 phase saving。下一步必须提交以下之一：
+
+```text
+UniformAdjacentRunCancellationFamilyOrPDEC
+AND AtomLocalSurvivorPaymentOrPDEC
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

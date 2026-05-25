@@ -37784,6 +37784,90 @@ measure is promoted to a genuine averaged family, or after a named return
 absorbs the total variation loss.
 \end{remark}
 
+\section{Terminal monotone-run total-to-net compression frontier}
+
+\begin{theorem}[Finite monotone-run decomposition]
+For the terminal signed payload measure above, the phase-variation ledger
+decomposes into \(59\) monotone runs: \(35\) selected-terminal runs and \(24\)
+extra-shell runs.  On every monotone run,
+\[
+  {\rm variation}=|\delta_{\rm run}|.
+\]
+Thus the run-local total-to-net compression ratio is identically \(1\); there
+is no cancellation inside a single monotone run.
+\end{theorem}
+
+\begin{proof}
+The machine audit reads every \texttt{run\_variation\_row} from the terminal
+phase-variation certificate and matches it with the corresponding phase-turn
+run.  For each row it compares the recorded total variation with the absolute
+value of the recorded signed displacement.  All \(59\) identities match.
+\end{proof}
+
+\begin{proposition}[Adjacent-run cancellation explains the finite surplus]
+Within each terminal atom, the ordered monotone runs admit an exact finite
+decomposition into adjacent opposite-run cancelled chunks plus an atom-local
+survivor.  In the extra-shell role,
+\[
+  V_{\rm extra}=14.109301881162\ldots
+\]
+compresses, under this finite cancellation decomposition, to the atom-local
+survivor
+\[
+  S_{\rm extra}=0.907719323182\ldots.
+\]
+The selected-terminal negative excess is
+\[
+  E_{\rm sel}=1.456565972578\ldots,
+\]
+so the finite post-cancellation margin would be
+\[
+  E_{\rm sel}-S_{\rm extra}=0.548846649396\ldots>0.
+\]
+\end{proposition}
+
+\begin{proof}
+For each atom, order the monotone runs by their transition index and greedily
+cancel adjacent positive and negative run masses.  The audit checks the exact
+identity
+\[
+  V_{\rm atom}-2C_{\rm atom}=S_{\rm atom},
+  \qquad
+  \Delta_{\rm atom}=S_{\rm atom}^{\rm signed}.
+\]
+Summing the three extra-shell atom survivors gives the displayed
+\(S_{\rm extra}\).  Subtracting this from the selected-terminal negative
+excess gives the positive margin above.
+\end{proof}
+
+\begin{certificatestatement}[Terminal monotone-run compression audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+terminal\_run\_count\_total=59\\
+selected\_terminal\_run\_count=35\\
+extra\_shell\_run\_count=24\\
+strict\_run\_local\_compression\_count=0\\
+atom\_adjacent\_cancellation\_decomposition\_closed=true\\
+finite\_absorption\_would\_close\_after\_uniform\_cancellation\_law=true\\
+monotone\_run\_total\_to\_net\_compression\_proved=false\\
+uniform\_run\_cancellation\_family\_created=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-\\
+total-to-net-compression-frontier-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[What remains]
+The finite cancellation ledger shows exactly what a proof would need to
+promote: a uniform adjacent-run cancellation family, an admissible averaged
+trace/Kloosterman or Type-II family, or a named PDEC/SAE/LocalSurvivor return.
+It does not by itself break the Phi--LPF parity barrier, because every
+monotone run has local compression ratio \(1\).
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

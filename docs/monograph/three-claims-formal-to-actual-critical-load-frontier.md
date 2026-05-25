@@ -26879,6 +26879,49 @@ trace_or_kloosterman_completion_ready=false
 row_column_unconditional_closed=false
 ```
 
+### terminal monotone-run total-to-net compression formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_monotone_run_total_to_net_compression_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.json
+```
+
+formal-to-actual 结论：上一层 `mu(q,m,packet)` 已足以逐 run 形成 actual signed
+variation ledger，但 run 内部不产生节省：
+
+```text
+terminal_run_count_total=59
+run_local_compression_ratio_min=1
+run_local_compression_ratio_max=1
+strict_run_local_compression_count=0
+```
+
+真正可用的 formal 结构是相邻反向 run 的有限抵消分解：
+
+```text
+atom_adjacent_cancellation_decomposition_closed=true
+extra_total_variation=14.109301881162
+extra_atom_local_survivor_total=0.907719323182
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+finite_absorption_would_close_after_uniform_cancellation_law=true
+```
+
+actual-load 缺口因此被压成：证明 uniform adjacent-run cancellation law，或把未抵消
+survivor 登记为 PDEC/SAE/LocalSurvivor，或构造可调用外部定理的 averaged signed
+trace/Kloosterman/Type-II family。状态边界：
+
+```text
+monotone_run_total_to_net_compression_proved=false
+uniform_run_cancellation_family_created=false
+extra_total_variation_absorption_proved=false
+admissible_averaged_trace_family_created=false
+row_column_unconditional_closed=false
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

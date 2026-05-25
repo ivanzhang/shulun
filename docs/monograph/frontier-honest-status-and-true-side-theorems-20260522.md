@@ -1673,6 +1673,54 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC30：Phi-LPF terminal monotone-run total-to-net compression frontier（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_monotone_run_total_to_net_compression_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-monotone-run-total-to-net-compression-frontier-router.md
+```
+
+本层把上一轮的强吸收失败拆成 run 内与 run 间两个层级：
+
+```text
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+strict_run_local_compression_count=0
+atom_adjacent_cancellation_decomposition_closed=true
+extra_total_variation=14.109301881162
+extra_atom_local_survivor_total=0.907719323182
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+finite_absorption_would_close_after_uniform_cancellation_law=true
+```
+
+诚实边界：这不是无条件闭合。每个 monotone run 的局部压缩比都是 `1`，
+所以真正需要证明的是相邻反向 run 抵消律，或把失败的 survivor 命名回流到
+PDEC/SAE/LocalSurvivor。当前状态仍为：
+
+```text
+uniform_run_cancellation_family_created=false
+extra_total_variation_absorption_proved=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最新最窄口：
+
+```text
+UniformAdjacentRunCancellationFamilyOrPDEC
+AND AtomLocalSurvivorPaymentOrPDEC
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC29：Phi-LPF terminal signed payload measure absorption frontier（2026-05-25）
 
 新增证书：
