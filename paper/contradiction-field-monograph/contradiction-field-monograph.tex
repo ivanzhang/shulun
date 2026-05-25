@@ -39736,6 +39736,75 @@ Thus the remaining terminal payment problem is no longer just a
 exclusion problem.
 \end{remark}
 
+\begin{theorem}[Affine odd Euler normalization does not supply a half-error]
+Let \(m=2n+1\) and let \(p\) be an odd prime.  Then
+\[
+  m\equiv 0\pmod p \quad\Longleftrightarrow\quad
+  n\equiv (p-1)/2\pmod p .
+\]
+Consequently the odd-prime zero class on the \(m\)-axis is pulled back
+exactly to one forbidden affine class on the \(n\)-axis.  For every finite
+odd-prime cutoff \(Y\), the Euler product main term on the full interval of
+length \(2X\), with the \(p=2\) factor included, is
+\[
+  2X\left(1-\frac12\right)
+  \prod_{\substack{3\le p\le Y\\ p\ {\rm prime}}}
+  \left(1-\frac1p\right)
+  =
+  X\prod_{\substack{3\le p\le Y\\ p\ {\rm prime}}}
+  \left(1-\frac1p\right).
+\]
+Thus the factor two is a parity normalization, not evidence that the finite
+Euler product truncation error is one half of the main term.
+\end{theorem}
+
+\begin{proof}
+The congruence \(2n+1\equiv0\pmod p\) is equivalent to
+\(2n\equiv-1\pmod p\).  Since \(p\) is odd, \(2^{-1}\equiv(p+1)/2\pmod p\),
+so \(n\equiv-(p+1)/2\equiv(p-1)/2\pmod p\).  This proves the exact pullback.
+The displayed Euler-product identity is then only the \(p=2\) factor
+normalizing the full interval of length \(2X\) to the odd affine axis of
+length \(X\).
+\end{proof}
+
+\begin{certificatestatement}[Affine odd Euler normalization audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+affine\_forbidden\_class\_bijection\_verified=true\\
+finite\_euler\_product\_full\_with\_p2\_equals\_affine\_odd\_main=true\\
+finite\_euler\_product\_half\_error\_claim\_supported=false\\
+p2\_normalization\_explains\_factor\_two=true\\
+lpf\_bucket\_identity\_verified=true\\
+phi\_lpf\_iteration\_route\_closes\_parity\_barrier=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-affine-odd-\\
+euler-normalization-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[LPF synchronization and the remaining signed gate]
+For a prime \(P\) and \(n=kP+(P-1)/2\),
+\[
+  2n+1=P(2k+1).
+\]
+If \(k\ge1\) and \(2k+1\) has no prime factor below \(P\), then \(P\) is the
+least prime factor of \(2n+1\).  The endpoint \(k=0\) gives the prime
+\(2n+1=P\), so it is an endpoint exception to the composite wording but not
+to the least-prime-factor identity.  This synchronization is useful for
+aligning Phi and LPF ledgers; it still does not create the signed cofactor
+saving needed to cross the parity barrier.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+AffineOddLiftOnlyNormalizesParityNoSignedSaving\\
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

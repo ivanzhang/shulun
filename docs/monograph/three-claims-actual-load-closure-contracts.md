@@ -43,6 +43,63 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### affine odd Euler normalization actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_odd_euler_normalization_router.py
+data/prime-matrix-phi-lpf-affine-odd-euler-normalization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.json
+```
+
+actual-load 含义：`m=2n+1` 把奇素数零同余类精确拉回到 `n` 轴的单一禁类，
+但该拉回只负责 parity normalization，不产生可支付的 signed cofactor saving。
+
+```text
+m=0 mod p iff n=(p-1)/2 mod p
+2X*(1-1/2)*prod_{3<=p<=Y}(1-1/p)
+  = X*prod_{3<=p<=Y}(1-1/p)
+```
+
+审计读数：
+
+```text
+affine_forbidden_class_bijection_verified=true
+finite_euler_product_full_with_p2_equals_affine_odd_main=true
+finite_euler_product_half_error_claim_supported=false
+p2_normalization_explains_factor_two=true
+lpf_bucket_identity_verified=true
+```
+
+LPF 递推可同步使用的身份为：
+
+```text
+n=kP+(P-1)/2
+2n+1=P(2k+1)
+k>=1 and LPF(2k+1)>=P => LPF(2n+1)=P
+```
+
+PM-ALC 的当前实际合同相应加入归一化挡板：
+
+```text
+AffineOddLiftOnlyNormalizesParityNoSignedSaving
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+phi_lpf_iteration_route_closes_parity_barrier=false
+admissible_trace_or_typeii_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### terminal boundary old-residual return actual-load 更新（2026-05-25）
 
 新增机器证书：

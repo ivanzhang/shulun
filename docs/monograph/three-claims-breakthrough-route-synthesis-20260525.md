@@ -1516,3 +1516,64 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从
 30-wheel residue carrier 继续降到 terminal wheel-gap-lock 的 uniform
 payment/exclusion 或 PDEC。
+
+## 16. affine odd Euler normalization 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_odd_euler_normalization_router.py
+data/prime-matrix-phi-lpf-affine-odd-euler-normalization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.json
+```
+
+本层回答 `m=2n+1` 仿射提升与有限欧拉乘积截断是否给出 `1/2` 主项误差的问题。
+结论是否定的：对任意奇素数 `p`，
+
+```text
+m=0 mod p  iff  n=(p-1)/2 mod p.
+```
+
+因此 `m=2n+1` 给出奇素数零同余类与 `n` 轴仿射 forbidden class 的逐点双射。
+长度为两倍的完整区间欧拉乘积主项满足
+
+```text
+2X*(1-1/2)*prod_{3<=p<=Y}(1-1/p)
+  = X*prod_{3<=p<=Y}(1-1/p).
+```
+
+这里的因子二被 `p=2` 因子完全归一化，不是有限截断误差的 `1/2` 量级。
+审计读数为：
+
+```text
+affine_forbidden_class_bijection_verified=true
+finite_euler_product_full_with_p2_equals_affine_odd_main=true
+finite_euler_product_half_error_claim_supported=false
+p2_normalization_explains_factor_two=true
+lpf_bucket_identity_verified=true
+phi_lpf_iteration_route_closes_parity_barrier=false
+row_column_unconditional_closed=false
+```
+
+LPF 侧同步为：
+
+```text
+n=kP+(P-1)/2
+2n+1=P(2k+1)
+k>=1 and LPF(2k+1)>=P  =>  LPF(2n+1)=P.
+```
+
+`k=0` 是端点素数例外：`2n+1=P`，仍有 LPF 为 `P`，但不是合数。
+
+这条路的价值是校准 Phi 递推与 LPF 分桶，避免把 `p=2` 归一化误读成可支付误差；
+它本身不提供 signed cofactor saving。最新非循环口因此不是“Euler product half-error”，
+而是：
+
+```text
+AffineOddLiftOnlyNormalizesParityNoSignedSaving
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

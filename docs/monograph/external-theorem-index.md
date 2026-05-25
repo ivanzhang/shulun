@@ -2126,6 +2126,49 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AI. 2026-05-25 affine odd Euler normalization
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_odd_euler_normalization_router.py
+data/prime-matrix-phi-lpf-affine-odd-euler-normalization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.md
+```
+
+本层不引入新外部定理，而是把一个可能误用外部筛法直觉的入口关掉：
+`m=2n+1` 的仿射提升只把奇数轴与完整区间的 `p=2` 因子对齐。有限欧拉乘积主项满足
+
+```text
+2X*(1-1/2)*prod_{3<=p<=Y}(1-1/p)
+  = X*prod_{3<=p<=Y}(1-1/p).
+```
+
+因此不能把长度二倍关系解释为 Euler product finite truncation error 的 `1/2`
+主项级节省。审计读数：
+
+```text
+affine_forbidden_class_bijection_verified=true
+finite_euler_product_half_error_claim_supported=false
+p2_normalization_explains_factor_two=true
+lpf_bucket_identity_verified=true
+phi_lpf_iteration_route_closes_parity_barrier=false
+row_column_unconditional_closed=false
+```
+
+外部前沿的使用边界不变：Kloosterman/Type-II 或谱隙/群轨道输入只能在我们先构造
+admissible signed family 或 finite-group orbit family 后调用；仿射归一化本身不是这类 family。
+最新非循环口为：
+
+```text
+AffineOddLiftOnlyNormalizesParityNoSignedSaving
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 65AH-2. Phi-LPF terminal double-Awrap sibling q-spine kernel 证书
 
 新增证书：

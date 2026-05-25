@@ -2108,6 +2108,53 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 ---
 
+## 附录 Q13AC30：affine odd Euler normalization（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_odd_euler_normalization_router.py
+data/prime-matrix-phi-lpf-affine-odd-euler-normalization-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-odd-euler-normalization-router.md
+```
+
+本层审计 `m=2n+1` 对奇素数零同余类的仿射拉回。结论是：
+
+```text
+m=0 mod p iff n=(p-1)/2 mod p
+2X*(1-1/2)*prod_{3<=p<=Y}(1-1/p)
+  = X*prod_{3<=p<=Y}(1-1/p)
+```
+
+有限欧拉乘积的长度二倍现象由 `p=2` 归一化解释，不是可用的 `1/2`
+主项误差。LPF 侧同步为 `2n+1=P(2k+1)`，且当 `k>=1`、`LPF(2k+1)>=P`
+时 `LPF(2n+1)=P`。
+
+有限审计读数：
+
+```text
+affine_forbidden_class_bijection_verified=true
+finite_euler_product_full_with_p2_equals_affine_odd_main=true
+finite_euler_product_half_error_claim_supported=false
+p2_normalization_explains_factor_two=true
+lpf_bucket_identity_verified=true
+phi_lpf_iteration_route_closes_parity_barrier=false
+row_column_unconditional_closed=false
+```
+
+这给 Phi-LPF 递推提供了可靠归一化，但没有产生 signed cofactor saving。最新 honest 口：
+
+```text
+AffineOddLiftOnlyNormalizesParityNoSignedSaving
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC30：final negative-run endpoint-collar reduction（2026-05-25）
 
 新增证书：
