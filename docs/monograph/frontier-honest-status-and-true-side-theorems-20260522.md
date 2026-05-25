@@ -2043,6 +2043,84 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC32：Phi-LPF repeated-step packet-enclosure terminal phase carry-orbit 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_carry_orbit_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.md
+```
+
+本层承接 Q13AC31，把每个 fixed-`m` atom 的 moving numerator
+`A(q)` 下钻为相邻 prime-gap 的 carry recurrence：
+
+```text
+q'=q+g
+q*m=k*P+D
+c=floor((D+g*m)/P)
+k'=k+c
+D'=D+g*m-c*P
+A(q')=-D' mod q'
+```
+
+有限审计读数：
+
+```text
+terminal_phase_carry_orbit_closed=true
+terminal_carry_atom_count_total=7
+terminal_carry_transition_count_total=126
+selected_terminal_transition_count=66
+extra_transition_count=60
+selected_terminal_A_wrap_count=49
+selected_terminal_D_wrap_count=11
+selected_terminal_A_wrap_fraction=49/66
+selected_terminal_D_wrap_fraction=11/66
+carry_identity_mismatch_count=0
+prime_gap_carry_word_phase_saving_proved=false
+```
+
+selected terminal carry rows：
+
+```text
+packet2842,m=757: transitions=27, q_gap=[2,12], carry=[2,12], A_wrap=21/27, D_wrap=4/27
+packet2842,m=761: transitions=27, q_gap=[2,12], carry=[2,13], A_wrap=20/27, D_wrap=5/27
+packet1887,m=769: transitions=6, q_gap=[2,8], carry=[2,10], A_wrap=4/6, D_wrap=1/6
+packet1887,m=773: transitions=6, q_gap=[2,8], carry=[2,10], A_wrap=4/6, D_wrap=1/6
+```
+
+### Q13AC32.1 最新最窄口
+
+```text
+SelectedTerminalPrimeGapCarryWordPhaseSaving(66 transitions, 49 A-wraps, carry spectrum 2..13)
+AND ExtraCarryOrbitAbsorption(60 transitions)
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSavingOutsideCarryOrbit
+AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+terminal_phase_carry_orbit_closed=true
+selected_terminal_carry_orbit_recurrence_closed=true
+prime_gap_carry_word_phase_saving_proved=false
+extra_carry_orbit_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+本层只关闭 finite carry recurrence ledger。它没有生成 completed trace/Kloosterman
+变量，也没有证明 prime-gap/carry word 的 signed phase saving。
+
+---
+
 ## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
 
 新增证书：

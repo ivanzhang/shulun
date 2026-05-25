@@ -2249,6 +2249,78 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AK. Phi-LPF repeated-step packet-enclosure terminal phase carry-orbit 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_carry_orbit_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.md
+```
+
+本层承接 65AJ，把 moving Beatty numerator 的相邻 prime-q 运动写成
+确定性 carry recurrence。若 `q'=q+g` 且
+
+```text
+q*m=k*P+D,  q'*m=k'*P+D',
+c=floor((D+g*m)/P),
+```
+
+则
+
+```text
+k'=k+c,  D'=D+g*m-c*P,  A(q')=-D' mod q'.
+```
+
+有限审计读数：
+
+```text
+terminal_phase_carry_orbit_closed=true
+terminal_carry_atom_count_total=7
+terminal_carry_transition_count_total=126
+selected_terminal_transition_count=66
+extra_transition_count=60
+selected_terminal_A_wrap_count=49
+selected_terminal_D_wrap_count=11
+selected_terminal_A_wrap_fraction=49/66
+selected_terminal_D_wrap_fraction=11/66
+carry_identity_mismatch_count=0
+prime_gap_carry_word_phase_saving_proved=false
+```
+
+selected terminal carry rows：
+
+```text
+P739,m=757: transitions=27, q_gap=[2,12], carry=[2,12], A_wrap=21/27, D_wrap=4/27
+P739,m=761: transitions=27, q_gap=[2,12], carry=[2,13], A_wrap=20/27, D_wrap=5/27
+P607,m=769: transitions=6,  q_gap=[2,8],  carry=[2,10], A_wrap=4/6,  D_wrap=1/6
+P607,m=773: transitions=6,  q_gap=[2,8],  carry=[2,10], A_wrap=4/6,  D_wrap=1/6
+```
+
+外部 theorem 边界保持诚实：FKMS trace/bilinear、
+Milićević--Qin--Wu arbitrary-modulus Kloosterman、Wright unbalanced
+Kloosterman fractions 和 Pascadi composite Type-II 都需要 completed family、
+可平均变量或 Type-II rectangle；当前对象只是有限 prime-gap/carry word。Li 的
+`x^0.52` 短区间素数与 Maynard 小间距只给存在性或 gap 结构，不估计 carry-word
+的 signed phase。
+
+状态边界：
+
+```text
+terminal_phase_carry_orbit_closed=true
+selected_terminal_carry_orbit_recurrence_closed=true
+prime_gap_carry_word_phase_saving_proved=false
+extra_carry_orbit_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
 
 新增证书：

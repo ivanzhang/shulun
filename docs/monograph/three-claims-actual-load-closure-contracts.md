@@ -29098,3 +29098,41 @@ RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
 
 本层只关闭 finite terminal phase normal form；没有证明 moving-numerator phase
 saving、extra phase absorption、trace/Kloosterman completion 或全局 row/column 闭合。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase carry-orbit actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_carry_orbit_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.json
+```
+
+actual-load 含义继续收缩：moving Beatty numerator 已经不是未解析黑箱，而是
+由相邻 prime-gap `g` 与 carry `c=floor((D+g*m)/P)` 驱动的确定性 orbit。
+
+```text
+terminal_phase_carry_orbit_closed=true
+terminal_carry_atom_count_total=7
+terminal_carry_transition_count_total=126
+selected_terminal_transition_count=66
+extra_transition_count=60
+selected_terminal_A_wrap_fraction=49/66
+selected_terminal_D_wrap_fraction=11/66
+carry_identity_mismatch_count=0
+```
+
+最新直接主攻改为：
+
+```text
+SelectedTerminalPrimeGapCarryWordPhaseSaving(66 transitions, 49 A-wraps, carry spectrum 2..13)
+ExtraCarryOrbitAbsorption(60 transitions)
+SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSavingOutsideCarryOrbit
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+```
+
+本层只关闭 finite terminal carry-orbit recurrence；没有证明 prime-gap/carry word
+phase saving、extra carry-orbit absorption、trace/Kloosterman completion 或全局
+row/column 闭合。

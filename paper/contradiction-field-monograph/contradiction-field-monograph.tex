@@ -37450,6 +37450,84 @@ repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step terminal phase carry orbits}
+
+\begin{theorem}[Repeated-step terminal phase carry recurrence]
+In the audit range \(P\le 1009\), every adjacent prime-\(q\) transition in
+the seven terminal/extra phase atoms satisfies the exact carry recurrence
+\[
+q'=q+g,\qquad qm=kP+D,\qquad c=\left\lfloor \frac{D+gm}{P}\right\rfloor,
+\]
+and hence
+\[
+k'=k+c,\qquad D'=D+gm-cP,\qquad A(q')\equiv -D' \pmod {q'}.
+\]
+The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{terminal\_phase\_carry\_orbit\_closed} & \texttt{true}\\
+\texttt{terminal\_carry\_atom\_count\_total} & 7\\
+\texttt{terminal\_carry\_transition\_count\_total} & 126\\
+\texttt{selected\_terminal\_transition\_count} & 66\\
+\texttt{extra\_transition\_count} & 60\\
+\texttt{selected\_terminal\_A\_wrap\_count} & 49\\
+\texttt{selected\_terminal\_D\_wrap\_count} & 11\\
+\texttt{selected\_terminal\_A\_wrap\_fraction} & \texttt{49/66}\\
+\texttt{selected\_terminal\_D\_wrap\_fraction} & \texttt{11/66}\\
+\texttt{carry\_identity\_mismatch\_count} & 0 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The previous normal-form layer gives, on every phase edge,
+\[
+qm=kP+D,\qquad 0<D<P,\qquad A(q)\equiv -D\pmod q.
+\]
+For adjacent prime denominators \(q<q'\), write \(g=q'-q\).  Then
+\[
+q'm=qm+gm=kP+D+gm.
+\]
+Dividing \(D+gm\) by \(P\) gives the unique integer
+\[
+c=\left\lfloor \frac{D+gm}{P}\right\rfloor
+\]
+and residue \(D'=D+gm-cP\) with \(0<D'<P\).  Therefore
+\[
+q'm=(k+c)P+D',
+\]
+so \(k'=k+c\) and \(A(q')\equiv -D'\pmod {q'}\).  The certificate checks this
+identity for all \(126\) adjacent transitions.  The selected terminal part has
+\(66\) transitions: \(27+27\) in \(\texttt{packet2842}\) for
+\(m=757,761\), and \(6+6\) in \(\texttt{packet1887}\) for \(m=769,773\).
+Among those selected transitions \(49\) wrap in \(A\) and \(11\) wrap in
+\(D\), with carry spectrum \(2,\ldots,13\).  The extra-shell part contributes
+\(60\) further verified transitions.  No carry identity mismatch occurs.
+\end{proof}
+
+\begin{remark}[Carry-word gate]
+The repeated-step terminal gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+SelectedTerminalPrimeGapCarryWordPhaseSaving\\
+(66 transitions, 49 A-wraps, carry spectrum 2..13).
+\end{quote}
+This closes the finite deterministic carry-orbit ledger, but it still does
+not prove cancellation along the prime-gap/carry word, absorb the \(60\)
+extra carry transitions, create a summable trace/Kloosterman family, or break
+the Phi--LPF parity barrier globally.  Current external inputs such as
+trace/bilinear estimates, arbitrary-modulus Kloosterman bounds, composite
+Type-II estimates, unbalanced Kloosterman fractions, short-interval prime
+theorems, and bounded prime-gap theorems do not by themselves estimate this
+finite signed carry word.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-packet-enclosure-terminal-phase-carry-orbit-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
