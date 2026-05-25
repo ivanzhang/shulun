@@ -11463,3 +11463,39 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AG. 2026-05-25 外部前沿可用性同步
+
+新增证书：
+
+```text
+experiments/prime_matrix_external_live_frontier_applicability_sync_20260525.py
+data/prime-matrix-external-live-frontier-applicability-sync-20260525-ledger.json
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.json
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.md
+```
+
+本层核对四类最新外部输入对当前 PM/Phi-LPF 门的可用性：
+
+| 外部输入 | 主源 | 当前可用边界 |
+| --- | --- | --- |
+| Milićević--Qin--Wu arbitrary-modulus Kloosterman bilinear forms | https://arxiv.org/abs/2511.07550 | 需要 moving Beatty numerator 与 source-key 被完成成双变量 Kloosterman family；当前只是 finite pivot/right-tail/adjacent-run ledger |
+| Wright trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要三线性 convolution 与 equidistributed beta sequence；当前没有 source-key lift |
+| Runbo Li large-modulus AP primes / Harman sieve refinements | https://arxiv.org/abs/2602.20917 | 属于大模数平均型/almost-all AP 输入；不能直接给逐行逐列 `x=P^2` 点态正性 |
+| Becker--Breuillard uniform spectral gaps and anti-concentration | https://arxiv.org/abs/2512.15364 | 需要先构造 finite-group orbit 或 thin-group sieve family；当前 q-spine pivot 账本不是群轨道 |
+
+审计读数：
+
+```text
+external_input_count=4
+all_inputs_require_admissible_family_before_use=true
+admissible_averaged_signed_trace_family_constructed=false
+admissible_finite_group_orbit_family_constructed=false
+pointwise_row_column_ap_positivity_imported=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+因此，本轮外部前沿没有改变闭合边界。非循环下一步仍是先构造
+`SourceKeyLift/PrimitiveOrientationLocalFactorProduct`，或把失败回流为
+PDEC/SAE/LocalSurvivor；然后才可调用 trace/Kloosterman/Type-II/expander 输入。

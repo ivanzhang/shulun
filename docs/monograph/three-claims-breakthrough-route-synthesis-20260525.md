@@ -1153,3 +1153,32 @@ rankone_ap_positivity_direct_route_not_closed=true
 ```
 
 本文件的作用是防止回到循环路线：它没有宣称完成任何三命题的无条件证明，而是把下一步真突破压成可验证的 signed-payload/trace-constructor 或 named-return 合同。
+
+## 8. 外部前沿可用性同步（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_external_live_frontier_applicability_sync_20260525.py
+data/prime-matrix-external-live-frontier-applicability-sync-20260525-ledger.json
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.md
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.json
+```
+
+本轮核对 Milićević--Qin--Wu、Wright、Runbo Li 与 Becker--Breuillard 四类
+2025-2026 外部前沿输入后，路线选择没有改变：
+
+```text
+all_inputs_require_admissible_family_before_use=true
+admissible_averaged_signed_trace_family_constructed=false
+admissible_finite_group_orbit_family_constructed=false
+pointwise_row_column_ap_positivity_imported=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+结论：这些输入是后续可调用的强工具，但不是当前有限 q-spine pivot/right-tail/
+adjacent-run ledger 的替代证明。下一步仍应先构造
+`SourceKeyLift/PrimitiveOrientationLocalFactorProduct`，或把失败回流为明确
+PDEC/SAE/LocalSurvivor；得到 admissible averaged family 后再调用
+trace/Kloosterman/Type-II/expander 输入。

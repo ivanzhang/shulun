@@ -12688,3 +12688,46 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q13AC28：外部前沿可用性同步（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_external_live_frontier_applicability_sync_20260525.py
+data/prime-matrix-external-live-frontier-applicability-sync-20260525-ledger.json
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.json
+docs/monograph/prime-matrix-external-live-frontier-applicability-sync-20260525.md
+```
+
+本层把本轮核对的 2025-2026 外部前沿输入接回当前真实硬点：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+核对结果：
+
+```text
+external_input_count=4
+all_inputs_require_admissible_family_before_use=true
+admissible_averaged_signed_trace_family_constructed=false
+admissible_finite_group_orbit_family_constructed=false
+pointwise_row_column_ap_positivity_imported=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+具体边界是：Milićević--Qin--Wu 与 Wright 型 Kloosterman 输入需要 completed
+bilinear/trilinear family；Runbo Li 2026 是平均模数/AP 输入，不是每个
+`P`、每个 residue class 的 `x=P^2` 点态正性；Becker--Breuillard 谱隙/反集中
+输入需要群轨道或 thin-group sieve family。当前有限 q-spine pivot/right-tail/
+adjacent-run ledger 仍不能直接调用这些定理。
