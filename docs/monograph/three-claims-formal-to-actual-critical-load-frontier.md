@@ -26332,3 +26332,44 @@ single_p_orbit_repair_proved=false
 删除 repeated-node P-switch uniform signed equality、PDEC/SAE 聚合、其他
 witness/core residual、single-P slice summation 或 prime-q reciprocal phase
 saving 缺口。
+
+### Phi-LPF dominant sign-word repeated-step occurrence-splice formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts)
+```
+
+现在拆成：
+
+```text
+RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices)
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+```
+
+关键审计读数为：
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_count=2
+all_splices_same_signed_atom=true
+all_splices_m_pair_delta_12_12=true
+all_splices_q_delta_minus_21=true
+all_splices_step_rewind=true
+occurrence_splice_uniform_family_bound_proved=false
+```
+
+本层删除的是“P-switch cut 的 occurrence-splice 尚未定位”的含混说法；没有
+删除 same-atom occurrence-splice uniform signed equality、PDEC/SAE 聚合、其他
+witness/core residual、single-P slice summation 或 prime-q reciprocal phase
+saving 缺口。

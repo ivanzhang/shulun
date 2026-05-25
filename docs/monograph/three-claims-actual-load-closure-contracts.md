@@ -28834,3 +28834,60 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite repeated-node P-switch cut 账本；P-switch cut uniform bound、
 PDEC/SAE 聚合、single-P slice summation 与 prime-q reciprocal phase saving
 仍未闭合。
+
+### Phi-LPF dominant sign-word repeated-step occurrence-splice actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.json
+```
+
+actual-load 含义继续收缩：repeated-node P-switch cut 不再只是跨 P 拼接，而是
+两个同 signed atom 的 cross-witness occurrence splice。
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_count=2
+occurrence_splice_endpoint_cover_complete=true
+all_splices_same_signed_atom=true
+all_splices_739_to_607=true
+all_splices_m_pair_delta_12_12=true
+all_splices_q_delta_minus_21=true
+all_splices_step_rewind=true
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices)
+RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinResidualCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite occurrence-splice 账本；occurrence-splice uniform bound、
+PDEC/SAE 聚合、single-P slice summation 与 prime-q reciprocal phase saving
+仍未闭合。

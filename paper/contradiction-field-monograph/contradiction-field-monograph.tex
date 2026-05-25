@@ -37153,6 +37153,71 @@ repeated-step-p-switch-cut-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step occurrence splices}
+
+\begin{theorem}[Repeated-step occurrence-splice ledger]
+In the audit range \(P\le 1009\), the two repeated-node \(P\)-switch cuts are
+exactly two same-signed-atom cross-witness occurrence splices.  The principal
+audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{repeated\_step\_occurrence\_splice\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{occurrence\_splice\_count} & 2\\
+\texttt{occurrence\_splice\_mass\_total} & 40\\
+\texttt{occurrence\_splice\_endpoint\_count} & 4\\
+\texttt{occurrence\_splice\_endpoint\_cover\_complete} & \texttt{true}\\
+\texttt{all\_splices\_same\_signed\_atom} & \texttt{true}\\
+\texttt{all\_splices\_same\_gap\_carry} & \texttt{true}\\
+\texttt{all\_splices\_same\_orientation} & \texttt{true}\\
+\texttt{all\_splices\_739\_to\_607} & \texttt{true}\\
+\texttt{all\_splices\_m\_pair\_delta\_12\_12} & \texttt{true}\\
+\texttt{all\_splices\_q\_delta\_minus\_21} & \texttt{true}\\
+\texttt{all\_splices\_step\_rewind} & \texttt{true}\\
+\texttt{step\_rewind\_total} & 5 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+Resolving the left and right endpoints of the two \(P\)-switch cuts gives
+\[
+\begin{array}{c|c|c}
+\hbox{signed atom} & \hbox{left occurrence} & \hbox{right occurrence}\\ \hline
+\texttt{g=2,c=2,A=negative}
+  & \texttt{P739:step4:[757,761]:above\_P}
+  & \texttt{P607:step1:[769,773]:above\_P}\\
+\texttt{g=6,c=7,A=positive}
+  & \texttt{P739:step5:[757,761]:above\_P}
+  & \texttt{P607:step3:[769,773]:above\_P}.
+\end{array}
+\]
+Both rows preserve the signed atom, the gap/carry coordinate, the sign, and
+the endpoint orientation.  Both change \(P\) by \(607-739=-132\), change the
+underlying \(q\)-slot from \(28\) to \(7\), and translate the \(m\)-pair by
+\([12,12]\).  The step slots rewind from \(4\) to \(1\), and from \(5\) to
+\(3\), so the total rewind is \(3+2=5\).  The four repeated-step occurrences
+are all used exactly once as splice endpoints, giving endpoint mass \(40\).
+\end{proof}
+
+\begin{remark}[Occurrence-splice gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices).
+\end{quote}
+This removes another finite ambiguity in the mixed-\(P\) obstruction, but it
+does not prove a uniform family bound.  The object is still a local
+cross-witness splice, not a trace/Kloosterman family or a short-interval prime
+statement.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-occurrence-splice-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

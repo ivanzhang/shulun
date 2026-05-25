@@ -10805,3 +10805,87 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q13AC27：Phi-LPF dominant sign-word repeated-step occurrence-splice 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.md
+```
+
+本层承接 Q13AC26，把 `739_to_607` P-switch cut 解析为具体 occurrence splice。
+有限审计读数：
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_count=2
+occurrence_splice_mass_total=40
+occurrence_splice_endpoint_count=4
+occurrence_splice_endpoint_cover_complete=true
+all_splices_same_signed_atom=true
+all_splices_same_gap_carry=true
+all_splices_same_orientation=true
+all_splices_739_to_607=true
+all_splices_m_pair_delta_12_12=true
+all_splices_q_delta_minus_21=true
+all_splices_step_rewind=true
+step_rewind_total=5
+```
+
+本层删除了“P-switch cut 左右 occurrence 尚未定位”的含混说法；没有证明
+same-atom cross-witness occurrence splice 的 uniform family bound。两个 splice
+均从 `P739/q28/[757,761]` 回绕到 `P607/q7/[769,773]`。
+
+### Q13AC27.1 最新最窄口
+
+```text
+RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices)
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_uniform_family_bound_proved=false
+single_occurrence_orbit_repair_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

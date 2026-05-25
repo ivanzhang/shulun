@@ -9973,3 +9973,59 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AF. Phi-LPF dominant sign-word repeated-step occurrence-splice 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-occurrence-splice-audit.md
+```
+
+本层承接 65AE，把两个 repeated-node P-switch cut 的左右端点解析回具体
+occurrence：
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_count=2
+occurrence_splice_mass_total=40
+occurrence_splice_endpoint_count=4
+occurrence_splice_endpoint_mass=40
+occurrence_splice_endpoint_cover_complete=true
+all_splices_same_signed_atom=true
+all_splices_same_gap_carry=true
+all_splices_same_sign=true
+all_splices_same_orientation=true
+all_splices_739_to_607=true
+all_splices_m_pair_delta_12_12=true
+all_splices_q_delta_minus_21=true
+all_splices_step_rewind=true
+step_rewind_total=5
+```
+
+两条 splice 为：
+
+```text
+g=2,c=2,A=negative: P739 step4 [757,761] q28 -> P607 step1 [769,773] q7
+g=6,c=7,A=positive: P739 step5 [757,761] q28 -> P607 step3 [769,773] q7
+```
+
+这把 repeated-node `739_to_607` cut 进一步压缩为 same signed atom 的
+cross-witness occurrence splice。外部 theorem 边界仍不变：trace/bilinear/
+Kloosterman 前沿输入需要可求和族；Maynard 小间距与 Li 短区间素数不控制这种
+同 atom、跨 witness、跨 step slot 的局部 splice。
+
+状态边界：
+
+```text
+repeated_step_occurrence_splice_ledger_closed=true
+occurrence_splice_uniform_family_bound_proved=false
+single_occurrence_orbit_repair_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

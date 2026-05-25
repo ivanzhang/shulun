@@ -1,0 +1,363 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_occurrence_splice_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PSwitchCutImported",
+      "meaning": "The repeated-node P-switch cut ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "OccurrenceSpliceLedger",
+      "meaning": "Each P-switch cut is resolved into its left and right repeated-step occurrences.",
+      "proved": true,
+      "remaining": "none for the finite occurrence-splice ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SameAtomCrossWitnessSpliceDetected",
+      "meaning": "Every splice keeps the same signed atom but changes P, q, m-pair and step slot.",
+      "proved": true,
+      "remaining": "uniform proof must control cross-witness occurrence splices"
+    },
+    {
+      "closed": false,
+      "gate": "OccurrenceSpliceUniformFamilyBound",
+      "meaning": "Control same-atom P739-to-P607 occurrence splices uniformly.",
+      "proved": false,
+      "remaining": "finite occurrence-splice localization gives exact data but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "two same-signed-atom occurrence splices from P739/[757,761] to P607/[769,773]",
+    "input": "the two 739->607 repeated-node P-switch cuts",
+    "operation": "identify the occurrence on each side of every switch cut",
+    "remaining": "prove a uniform bound for same-atom cross-witness occurrence splices or replace them by PDEC/SAE certificates"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the splice keeps a signed atom but changes witness P/q/m-pair, so it is not a prime-gap existence statement",
+    "short_interval_prime_inputs": "theta=0.52 does not control same-atom cross-witness occurrence splices",
+    "trace_or_kloosterman_inputs": "the occurrence splice is still a two-witness local gluing datum, not a completed bilinear family"
+  },
+  "finite_audit": {
+    "all_splices_739_to_607": true,
+    "all_splices_m_pair_delta_12_12": true,
+    "all_splices_q_delta_minus_21": true,
+    "all_splices_same_gap_carry": true,
+    "all_splices_same_orientation": true,
+    "all_splices_same_sign": true,
+    "all_splices_same_signed_atom": true,
+    "all_splices_step_rewind": true,
+    "m_pair_delta_rows": [
+      {
+        "m_pair_delta": "[12, 12]",
+        "mass": 40,
+        "ratio": 1.0
+      }
+    ],
+    "max_prime": 1009,
+    "occurrence_endpoint_rows": [
+      {
+        "P": 607,
+        "is_splice_endpoint": true,
+        "m_pair": "[769, 773]",
+        "occurrence_key": "P607:step1:[769, 773]:above_P",
+        "occurrence_mass": 10,
+        "position_class": "initial",
+        "signed_step_signature": "g=2,c=2,A=negative",
+        "splice_ids": [
+          "path_1:splice_after_edge_1"
+        ],
+        "splice_membership_count": 1,
+        "splice_sides": [
+          "right"
+        ],
+        "step": 1
+      },
+      {
+        "P": 607,
+        "is_splice_endpoint": true,
+        "m_pair": "[769, 773]",
+        "occurrence_key": "P607:step3:[769, 773]:above_P",
+        "occurrence_mass": 10,
+        "position_class": "internal",
+        "signed_step_signature": "g=6,c=7,A=positive",
+        "splice_ids": [
+          "path_2:splice_after_edge_2"
+        ],
+        "splice_membership_count": 1,
+        "splice_sides": [
+          "right"
+        ],
+        "step": 3
+      },
+      {
+        "P": 739,
+        "is_splice_endpoint": true,
+        "m_pair": "[757, 761]",
+        "occurrence_key": "P739:step4:[757, 761]:above_P",
+        "occurrence_mass": 10,
+        "position_class": "internal",
+        "signed_step_signature": "g=2,c=2,A=negative",
+        "splice_ids": [
+          "path_1:splice_after_edge_1"
+        ],
+        "splice_membership_count": 1,
+        "splice_sides": [
+          "left"
+        ],
+        "step": 4
+      },
+      {
+        "P": 739,
+        "is_splice_endpoint": true,
+        "m_pair": "[757, 761]",
+        "occurrence_key": "P739:step5:[757, 761]:above_P",
+        "occurrence_mass": 10,
+        "position_class": "terminal",
+        "signed_step_signature": "g=6,c=7,A=positive",
+        "splice_ids": [
+          "path_2:splice_after_edge_2"
+        ],
+        "splice_membership_count": 1,
+        "splice_sides": [
+          "left"
+        ],
+        "step": 5
+      }
+    ],
+    "occurrence_splice_count": 2,
+    "occurrence_splice_endpoint_count": 4,
+    "occurrence_splice_endpoint_cover_complete": true,
+    "occurrence_splice_endpoint_mass": 40,
+    "occurrence_splice_mass_total": 40,
+    "occurrence_splice_uniform_family_bound_proved": false,
+    "p_transition_rows": [
+      {
+        "P_transition": "739_to_607",
+        "mass": 40,
+        "ratio": 1.0
+      }
+    ],
+    "position_transition_rows": [
+      {
+        "mass": 20,
+        "position_transition": "internal_to_initial",
+        "ratio": 0.5
+      },
+      {
+        "mass": 20,
+        "position_transition": "terminal_to_internal",
+        "ratio": 0.5
+      }
+    ],
+    "previous_p_switch_cut_ledger_closed": true,
+    "previous_repeated_step_occurrence_ledger_closed": true,
+    "q_delta_rows": [
+      {
+        "mass": 40,
+        "q_delta": "-21",
+        "ratio": 1.0
+      }
+    ],
+    "repeated_step_occurrence_splice_ledger_closed": true,
+    "row_column_unconditional_closed": false,
+    "single_occurrence_orbit_repair_proved": false,
+    "splice_rows": [
+      {
+        "P_delta": -132,
+        "P_transition": "739_to_607",
+        "carry": 2,
+        "endpoint_orientation_preserved": true,
+        "gap": 2,
+        "left_P": 739,
+        "left_edge_class": "neighbor_to_repeated",
+        "left_edge_key": "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+        "left_m_pair": "[757, 761]",
+        "left_occurrence_key": "P739:step4:[757, 761]:above_P",
+        "left_position_class": "internal",
+        "left_q": 28,
+        "left_step": 4,
+        "left_transition_role": "internal_entry",
+        "left_witness_id": "P739_packet2842_q28_mpair_757_761",
+        "m_pair_delta": [
+          12,
+          12
+        ],
+        "m_pair_width_preserved": true,
+        "path_id": "path_1",
+        "position_transition": "internal_to_initial",
+        "q_delta": -21,
+        "raw_step_signature": "g=2,c=2",
+        "right_P": 607,
+        "right_edge_class": "repeated_to_neighbor",
+        "right_edge_key": "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "right_m_pair": "[769, 773]",
+        "right_occurrence_key": "P607:step1:[769, 773]:above_P",
+        "right_position_class": "initial",
+        "right_q": 7,
+        "right_step": 1,
+        "right_transition_role": "initial_exit",
+        "right_witness_id": "P607_packet1887_q7_mpair_769_773",
+        "same_gap_carry": true,
+        "same_sign": true,
+        "same_signed_atom": true,
+        "sign": "negative",
+        "signed_atom": "g=2,c=2,A=negative",
+        "source_switch_id": "path_1:switch_after_edge_1",
+        "splice_id": "path_1:splice_after_edge_1",
+        "splice_occurrence_mass": 20,
+        "splice_signature": "P739:step4:[757, 761]:above_P || P607:step1:[769, 773]:above_P",
+        "step_delta": -3,
+        "step_rewind_amount": 3,
+        "step_splice_kind": "rewind",
+        "switch_node": "g=2,c=2,A=negative",
+        "touches_repeated_bridge": false
+      },
+      {
+        "P_delta": -132,
+        "P_transition": "739_to_607",
+        "carry": 7,
+        "endpoint_orientation_preserved": true,
+        "gap": 6,
+        "left_P": 739,
+        "left_edge_class": "repeated_to_repeated",
+        "left_edge_key": "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "left_m_pair": "[757, 761]",
+        "left_occurrence_key": "P739:step5:[757, 761]:above_P",
+        "left_position_class": "terminal",
+        "left_q": 28,
+        "left_step": 5,
+        "left_transition_role": "repeated_bridge",
+        "left_witness_id": "P739_packet2842_q28_mpair_757_761",
+        "m_pair_delta": [
+          12,
+          12
+        ],
+        "m_pair_width_preserved": true,
+        "path_id": "path_2",
+        "position_transition": "terminal_to_internal",
+        "q_delta": -21,
+        "raw_step_signature": "g=6,c=7",
+        "right_P": 607,
+        "right_edge_class": "repeated_to_neighbor",
+        "right_edge_key": "g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "right_m_pair": "[769, 773]",
+        "right_occurrence_key": "P607:step3:[769, 773]:above_P",
+        "right_position_class": "internal",
+        "right_q": 7,
+        "right_step": 3,
+        "right_transition_role": "internal_exit",
+        "right_witness_id": "P607_packet1887_q7_mpair_769_773",
+        "same_gap_carry": true,
+        "same_sign": true,
+        "same_signed_atom": true,
+        "sign": "positive",
+        "signed_atom": "g=6,c=7,A=positive",
+        "source_switch_id": "path_2:switch_after_edge_2",
+        "splice_id": "path_2:splice_after_edge_2",
+        "splice_occurrence_mass": 20,
+        "splice_signature": "P739:step5:[757, 761]:above_P || P607:step3:[769, 773]:above_P",
+        "step_delta": -2,
+        "step_rewind_amount": 2,
+        "step_splice_kind": "rewind",
+        "switch_node": "g=6,c=7,A=positive",
+        "touches_repeated_bridge": true
+      }
+    ],
+    "step_rewind_total": 5,
+    "step_splice_kind_rows": [
+      {
+        "mass": 40,
+        "ratio": 1.0,
+        "step_splice_kind": "rewind"
+      }
+    ],
+    "target_sign_word": "--+-+"
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepSameAtomOccurrenceSpliceUniformBound(two P739-to-P607 splices)",
+    "AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "occurrence_splice_uniform_family_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the P-switch cut can be localized to a same-atom cross-witness occurrence splice",
+  "repeated_step_occurrence_splice_ledger_closed": true,
+  "row_column_unconditional_closed": false,
+  "single_occurrence_orbit_repair_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "04162e11acc1948b784113415bf46507446c18bcdf431168c6cbadb6e3c777cc",
+    "docs/monograph/external-theorem-index.md": "ca1ea681f5c97b08435a931dbeb159db1cc0ed30bf0ef77e1fbdb4a99b52d18d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f1e04f4671885b8c973b9895b40acf193adc2d1f991b203334203a647ad7729b",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json": "13b506fba485e57848a1fd220612fee3705672ec1494b2fcb6c7f136c4b6bdad",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.json": "81d9887d026ed40bf4c1d73b1ba3fd949b8017f44cc3ad38f3a856556bbc997c",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json": "0c4f617abd5ca0fc9fbdb7be2f4cfa1be4269c6e4dae2fcf12d63f456ada8a47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "f144859b973548b94e2815ecafca6a6c957f70c770974f835d6ad86f82c7041e",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "ac7c39fa32dd2d613d066cc02080b7ba1d8b7aedd06fe8ecd9cc392349155e60",
+    "experiments/prime_matrix_phi_lpf_repeated_step_occurrence_splice_audit.py": "51cea35333e68eab50dc304daad75330acd73201b86550f50754228d088193ec",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "0d796e96536c51f6278e224fd7cc69d232167d808c45cc3a1d23c7950299902a"
+  },
+  "status": "repeated_step_occurrence_splice_ledger_closed_family_bound_open"
+}
