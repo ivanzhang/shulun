@@ -12731,3 +12731,53 @@ bilinear/trilinear family；Runbo Li 2026 是平均模数/AP 输入，不是每�
 `P`、每个 residue class 的 `x=P^2` 点态正性；Becker--Breuillard 谱隙/反集中
 输入需要群轨道或 thin-group sieve family。当前有限 q-spine pivot/right-tail/
 adjacent-run ledger 仍不能直接调用这些定理。
+
+---
+
+## 附录 Q13AC29：right-tail overhang excess decomposition（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router.py
+data/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.md
+```
+
+本层把唯一 `RightSelectedTerminalTailOverhangPDEC` 精确压成 m773 的 final
+negative-run 剩余。有限审计读数：
+
+```text
+atom_key=right:1887:selected_terminal:m773
+negative_excess_equals_internal_plus_tail=true
+tail_overhang_equals_excess_after_internal_return=true
+internal_survivor_old_return_paid=true
+final_run_tail_matches=true
+right_tail_overhang_excess_decomposition_closed=true
+right_tail_final_negative_run_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+m773 selected-terminal negative excess
+  = internal survivor return + final negative tail overhang.
+```
+
+internal survivor 已经在 old-side return alignment 中支付，剩余尾段正是最终负 run
+`q=461->467`，质量 `179065/215287`。这删除了“尾巴是独立 residual pool”的宽松说法；
+但仍没有证明 uniform final-tail payment law，也没有构造 PDEC/LocalSurvivor return。
+
+最新 honest 口：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```

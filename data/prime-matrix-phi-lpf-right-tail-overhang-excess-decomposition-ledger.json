@@ -1,0 +1,145 @@
+{
+  "P": 607,
+  "admissible_trace_or_typeii_family_constructed": false,
+  "atom_key": "right:1887:selected_terminal:m773",
+  "certificate_type": "prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router",
+  "final_run": {
+    "A_wrap_count": 2,
+    "D_wrap_count": 0,
+    "carry_max": 5,
+    "carry_min": 2,
+    "direction": "negative",
+    "length": 2,
+    "negative_variation": {
+      "decimal": "0.831750175347",
+      "denominator": 215287,
+      "fraction": "179065/215287",
+      "numerator": 179065
+    },
+    "q_end": 467,
+    "q_start": 461,
+    "run_id": 4,
+    "signed_delta": {
+      "decimal": "-0.831750175347",
+      "denominator": 215287,
+      "fraction": "-179065/215287",
+      "numerator": -179065
+    }
+  },
+  "final_run_tail_matches": true,
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "M773NegativeExcessDecomposition",
+      "meaning": "m773 selected-terminal negative excess equals internal survivor return plus final tail overhang.",
+      "proved": true,
+      "remaining": "finite excess decomposition ledger"
+    },
+    {
+      "closed": true,
+      "gate": "InternalSurvivorAlreadyPaid",
+      "meaning": "the internal survivor part is already matched by old-residual return alignment.",
+      "proved": true,
+      "remaining": "none for internal survivor payment"
+    },
+    {
+      "closed": true,
+      "gate": "FinalNegativeRunTailIdentification",
+      "meaning": "the unmatched tail is exactly the final negative run q=461->467 of m773.",
+      "proved": true,
+      "remaining": "finite final-run identification"
+    },
+    {
+      "closed": false,
+      "gate": "RightTailFinalNegativeRunPaymentLaw",
+      "meaning": "a uniform law must pay or exclude such final negative tail excess.",
+      "proved": false,
+      "remaining": "RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite decomposition, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "internal_survivor_mass": {
+    "decimal": "0.017995938314",
+    "denominator": 202379,
+    "fraction": "3642/202379",
+    "numerator": 3642
+  },
+  "internal_survivor_old_return_paid": true,
+  "internal_survivor_row": {
+    "direction": "negative",
+    "mass": {
+      "decimal": "0.017995938314",
+      "denominator": 202379,
+      "fraction": "3642/202379",
+      "numerator": 3642
+    },
+    "q_end": 457,
+    "q_start": 449,
+    "run_id": 2,
+    "survivor_type": "internal_survivor"
+  },
+  "latest_open_gate": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "m": 773,
+  "negative_excess_equals_internal_plus_tail": true,
+  "negative_variation_excess": {
+    "decimal": "0.849746113661",
+    "denominator": 205013,
+    "fraction": "174209/205013",
+    "numerator": 174209
+  },
+  "next_primary_attack_target": "RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The only right selected-terminal tail overhang is not an independent residual pool: for m773, selected-terminal negative excess equals the already-paid internal survivor plus the final negative run q=461->467.  The remaining open task is a uniform final negative-tail payment law or a named PDEC/LocalSurvivor return.",
+  "previous_bulk_carry_chain_normal_form_closed": true,
+  "previous_old_residual_return_alignment_closed": true,
+  "previous_pivot_enclosure_reduction_closed": true,
+  "previous_source_key_obstruction_partition_closed": true,
+  "residual_after_internal_return": {
+    "decimal": "0.831750175347",
+    "denominator": 215287,
+    "fraction": "179065/215287",
+    "numerator": 179065
+  },
+  "right_tail_final_negative_run_payment_law_proved": false,
+  "right_tail_overhang_excess_decomposition_closed": true,
+  "right_tail_overhang_pdec_constructed": false,
+  "role": "selected_terminal",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json": "284aadf7447ca0c0c9bc5d8af87a9ba3ff62826b35185de2b495d5175d7087eb",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.json": "23ca4dfcd8fe7771e24bb62c0e0a4bc8aa0fbb57b5406690c9175bec78eb5440",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bulk-carry-chain-normal-form-router.json": "e2482fea4f855b9e66c2c8d16f5d6ae7f020a83a8b0d16cbb29f02562f72539e",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-old-residual-return-alignment-router.json": "4f2f4be70956f3ab1da6e3fd1cd790630014cc1213eb83a1d0111e61cdca5641",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json": "5f855cce874423998dc3046cbf66f7a3930b939520d1103766f0f0bae77a65e3",
+    "experiments/prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router.py": "5c6217ae4f420d760885939ff9ada68b12d3924490edc6b44f991661202fbcf6"
+  },
+  "status": "right_tail_overhang_excess_decomposition_closed_final_payment_law_open",
+  "tail_overhang_equals_excess_after_internal_return": true,
+  "tail_overhang_mass": {
+    "decimal": "0.831750175347",
+    "denominator": 215287,
+    "fraction": "179065/215287",
+    "numerator": 179065
+  },
+  "tail_survivor_row": {
+    "direction": "negative",
+    "mass": {
+      "decimal": "0.831750175347",
+      "denominator": 215287,
+      "fraction": "179065/215287",
+      "numerator": 179065
+    },
+    "q_end": 467,
+    "q_start": 461,
+    "run_id": 4,
+    "survivor_type": "tail_survivor"
+  },
+  "verified_date": "2026-05-25"
+}

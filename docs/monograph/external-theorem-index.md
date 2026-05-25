@@ -11499,3 +11499,45 @@ phi_lpf_parity_barrier_globally_broken=false
 因此，本轮外部前沿没有改变闭合边界。非循环下一步仍是先构造
 `SourceKeyLift/PrimitiveOrientationLocalFactorProduct`，或把失败回流为
 PDEC/SAE/LocalSurvivor；然后才可调用 trace/Kloosterman/Type-II/expander 输入。
+
+## 65AH. Phi-LPF right-tail overhang excess decomposition 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router.py
+data/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.md
+```
+
+本层不引入新外部定理，而是继续压缩外部定理的前置对象：唯一 right-tail
+overhang 不是 completed Kloosterman/trace family，也不是群轨道；它被证明为
+m773 final negative run 的剩余负变差。
+
+审计读数：
+
+```text
+negative_excess_equals_internal_plus_tail=true
+tail_overhang_equals_excess_after_internal_return=true
+internal_survivor_old_return_paid=true
+final_run_tail_matches=true
+right_tail_overhang_excess_decomposition_closed=true
+right_tail_final_negative_run_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+因此外部 theorem 边界进一步收窄但未闭合：FKMS/Milićević--Qin--Wu/Wright/Pascadi
+仍需要 final negative-tail 对象被提升为可平均 signed family；Becker--Breuillard 型
+谱隙仍需要有限群轨道。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```

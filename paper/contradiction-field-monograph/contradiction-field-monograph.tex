@@ -39151,6 +39151,74 @@ shared pivot remains enclosed between the bridge root and the moving barrier,
 or else by a named pivot-enclosure PDEC.
 \end{remark}
 
+\begin{theorem}[Right-tail overhang excess decomposition]
+The single right selected-terminal tail overhang is not an independent residual
+pool.  For the audited atom
+\[
+  {\rm atom}=({\rm right}:1887:{\rm selected\_terminal}:m773),
+\]
+the selected-terminal negative variation excess decomposes exactly as
+\[
+  \frac{174209}{205013}
+  =\frac{3642}{202379}+\frac{179065}{215287}.
+\]
+The first summand is the internal survivor already paid by old-residual return
+alignment.  The second summand is precisely the final negative run
+\[
+  q=461\to467,\qquad {\rm run}=4,
+\]
+whose signed delta is \(-179065/215287\).
+\end{theorem}
+
+\begin{proof}
+The source-key partition certificate identifies two \(m773\) survivor
+fragments: the internal survivor \(q=449\to457\), of mass \(3642/202379\), and
+the tail survivor \(q=461\to467\), of mass \(179065/215287\).  The old-side
+return-alignment certificate pays the internal survivor exactly.  The terminal
+variation certificate gives the \(m773\) selected-terminal negative excess as
+\(174209/205013\).  Direct rational comparison gives
+\[
+  \frac{174209}{205013}-\frac{3642}{202379}
+  =\frac{179065}{215287},
+\]
+and the terminal run ledger identifies the right-hand side with the final
+negative run \(q=461\to467\).  This proves the finite decomposition.  The
+uniform final-tail payment law remains open.
+\end{proof}
+
+\begin{certificatestatement}[Right-tail overhang excess audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+negative\_excess\_equals\_internal\_plus\_tail=true\\
+tail\_overhang\_equals\_excess\_after\_internal\_return=true\\
+internal\_survivor\_old\_return\_paid=true\\
+final\_run\_tail\_matches=true\\
+right\_tail\_overhang\_excess\_decomposition\_closed=true\\
+right\_tail\_final\_negative\_run\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-\\
+excess-decomposition-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated final-tail gate]
+The current shortest Prime Matrix gate becomes
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+The old right-tail overhang label is therefore replaced by a sharper final
+negative-tail payment law or named PDEC.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

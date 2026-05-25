@@ -30156,3 +30156,56 @@ boundary_residual_flow_source_key_conservation_proved=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### right-tail overhang excess decomposition actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router.py
+data/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.md
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.json
+```
+
+actual-load 含义：唯一 right selected-terminal tail overhang 不是独立负载池，而是
+`right:1887:selected_terminal:m773` 的负变差超额在 internal survivor 已支付后的
+最终负 run 剩余：
+
+```text
+negative_excess_equals_internal_plus_tail=true
+tail_overhang_equals_excess_after_internal_return=true
+internal_survivor_old_return_paid=true
+final_run_tail_matches=true
+right_tail_overhang_excess_decomposition_closed=true
+```
+
+具体数值为：
+
+```text
+negative_variation_excess = 174209/205013
+internal_survivor_mass    = 3642/202379
+tail_overhang_mass        = 179065/215287
+174209/205013 = 3642/202379 + 179065/215287
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+right_tail_final_negative_run_payment_law_proved=false
+right_tail_overhang_pdec_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

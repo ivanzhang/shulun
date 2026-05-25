@@ -1182,3 +1182,52 @@ adjacent-run ledger 的替代证明。下一步仍应先构造
 `SourceKeyLift/PrimitiveOrientationLocalFactorProduct`，或把失败回流为明确
 PDEC/SAE/LocalSurvivor；得到 admissible averaged family 后再调用
 trace/Kloosterman/Type-II/expander 输入。
+
+## 9. right-tail overhang excess decomposition 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_overhang_excess_decomposition_router.py
+data/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.md
+docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.json
+```
+
+本层把唯一 `RightSelectedTerminalTailOverhangPDEC` 从匿名尾段压成 m773 的
+final negative-run 剩余：
+
+```text
+negative_excess_equals_internal_plus_tail=true
+tail_overhang_equals_excess_after_internal_return=true
+internal_survivor_old_return_paid=true
+final_run_tail_matches=true
+right_tail_overhang_excess_decomposition_closed=true
+row_column_unconditional_closed=false
+```
+
+精确恒等式为：
+
+```text
+m773 selected-terminal negative excess
+  = internal survivor return + final negative tail overhang
+  = 0.017995938314 + 0.831750175347
+  = 0.849746113661.
+```
+
+其中 internal survivor 已由 old-side return alignment 支付；未支付对象因此不是
+独立 residual pool，而是 `right:1887:selected_terminal:m773` 的最终负 run
+`q=461->467`。最新口相应改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalFinalNegativeRunExcessPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是无条件闭合；下一步必须证明 final negative-tail payment law，或把该最终
+负 run 回流为命名 PDEC/LocalSurvivor。
