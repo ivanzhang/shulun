@@ -130,6 +130,50 @@ phi_lpf_parity_barrier_globally_broken=false
 naive gap 跟随 `1-2^{-t}`，所以迭代只改变固定 `2^t`-adic residue space；归一化后
 仍是 affine rough survivors 的 prime extraction 问题。
 
+### 2.2B small-to-large factor-peeling 诊断
+
+用户提出的“从小到大精细化分剥素因子”是 Phi-LPF 路线中真实可物化的一层，但必须区分
+两件事：
+
+```text
+closed:  ordered factor word, squarefree, Möbius, Liouville, depth parity
+open:    pre-Cauchy signed coefficient, orientation/local factor, ExactUV source trace
+```
+
+新增审计：
+
+```text
+experiments/prime_matrix_phi_lpf_small_to_large_factor_peeling_signed_state_boundary_router.py
+data/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-ledger.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.md
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json
+```
+
+对 `N=100,997,5003,10000,30030` 的 LPF-owned composite buckets 逐个剥离 cofactor，
+最大样本 `N=30030` 给出：
+
+```text
+composite_support_keys=26781
+owner_bucket_count=40
+total_small_to_large_factor_steps=69651
+max_factor_depth=13
+tail_mobius_positive/negative/zero=8367/11306/7108
+tail_liouville_positive/negative=11810/14971
+small_to_large_factor_peeling_verified_all_samples=true
+mobius_liouville_state_computable_from_factor_word_all_samples=true
+```
+
+因此，所有自然 parity-state 都只是 factor word 的后验标签。它们关闭了“继续剥离也许自动
+生成 signed payload”的误出口，但不能替代
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows.
+```
+
+这一步的真实推进是把“剥离素因子”从开放口移入无符号已支付边界，并把非循环主攻继续压在
+pre-Cauchy signed law / built-in pairing 上。它没有破奇偶性障碍。
+
 ### 2.3 二点筛线
 
 已知强点是外部谱工具方向最接近标准解析数论形态：DI/BFI/Kloosterman 大筛与 well-factorable 权重可以服务 BMD/KLS 分子估计。当前缺口不是“再找一个 Kloosterman 定理”，而是：

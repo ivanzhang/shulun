@@ -26784,3 +26784,42 @@ row_column_unconditional_closed=false
 PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
 AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
 ```
+
+### small-to-large factor-peeling formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_small_to_large_factor_peeling_signed_state_boundary_router.py
+data/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-ledger.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.md
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json
+```
+
+formal-to-actual 结论：从小到大剥离素因子可以完全关闭 LPF-owned composite bucket 的
+无符号 factor word 和自然 parity-state：
+
+```text
+small_to_large_factor_peeling_verified_all_samples=true
+mobius_liouville_state_computable_from_factor_word_all_samples=true
+prime_row_or_virtual_unit_leak_blocked_all_samples=true
+```
+
+但这不是 actual signed load。`mu`、`lambda`、squarefree 与 depth parity 都是 factor word
+的后验标签；它们没有同 formal unit 的 pre-Cauchy source、orientation/local factor、
+ExactUV fixed pair 或内置 pairing 闭式。因此本层的状态边界是：
+
+```text
+peeling_generates_new_precauchy_signed_payload=false
+orientation_local_factor_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+built_in_signed_pairing_proved=false
+row_column_unconditional_closed=false
+```
+
+最新非循环口为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```

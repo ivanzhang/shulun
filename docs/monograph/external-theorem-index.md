@@ -10529,6 +10529,39 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC35：small-to-large factor-peeling signed-state 边界（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_small_to_large_factor_peeling_signed_state_boundary_router.py
+data/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-ledger.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.md
+```
+
+本层不引入新外部定理。它把 LPF-owned composite buckets 的 cofactor 从小到大剥离，
+并把 squarefree、Möbius、Liouville 与 depth parity 全部登记为 factor word 的机械状态。
+审计边界：
+
+```text
+small_to_large_factor_peeling_verified_all_samples=true
+mobius_liouville_state_computable_from_factor_word_all_samples=true
+peeling_generates_new_precauchy_signed_payload=false
+orientation_local_factor_law_proved=false
+built_in_signed_pairing_proved=false
+row_column_unconditional_closed=false
+```
+
+因此外部 trace/Kloosterman/Type-II 定理仍没有新的 admissible family 入口。若要调用
+FKMS、Milićević--Qin--Wu、Pascadi、Wright 或 DI/BFI/Kuznetsov，仍必须先提交
+pre-Cauchy signed payload 或 atomic built-in pairing。新的开放口为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
 ## 65AF. Phi-LPF dominant sign-word repeated-step occurrence-splice 证书
 
 新增证书：

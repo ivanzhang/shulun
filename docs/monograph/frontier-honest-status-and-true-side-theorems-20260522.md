@@ -1755,6 +1755,49 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC35：small-to-large factor-peeling signed-state 边界（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_small_to_large_factor_peeling_signed_state_boundary_router.py
+data/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-ledger.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.md
+```
+
+本层检验“从小到大精细化分剥素因子”能否突破 Phi-LPF signed 缺口。最大样本
+`N=30030` 中：
+
+```text
+composite_support_keys=26781
+owner_bucket_count=40
+total_small_to_large_factor_steps=69651
+max_factor_depth=13
+tail_mobius_positive/negative/zero=8367/11306/7108
+tail_liouville_positive/negative=11810/14971
+```
+
+所有 natural parity-state 都能由 factor word 计算，但它们仍是后验标签。状态边界为：
+
+```text
+small_to_large_factor_peeling_verified_all_samples=true
+mobius_liouville_state_computable_from_factor_word_all_samples=true
+peeling_generates_new_precauchy_signed_payload=false
+orientation_local_factor_law_proved=false
+built_in_signed_pairing_proved=false
+row_column_unconditional_closed=false
+```
+
+最新开放口为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+---
+
 ## 附录 Q13AC28：三命题突破路线总合成（2026-05-25）
 
 新增归档：

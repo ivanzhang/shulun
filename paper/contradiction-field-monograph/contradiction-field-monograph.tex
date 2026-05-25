@@ -37900,6 +37900,70 @@ AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity.
 \end{quote}
 \end{remark}
 
+\section{Small-to-large Phi--LPF factor peeling}
+
+\begin{theorem}[Small-to-large factor peeling is an unsigned state ledger]
+Fix \(N\).  For every composite \(n\le N\), let \(p=\operatorname{LPF}(n)\)
+and write \(n=pm\).  Then \(m\) is \(p\)-rough and has a unique nondecreasing
+prime factor word
+\[
+  m=q_1q_2\cdots q_r,\qquad p\le q_1\le\cdots\le q_r .
+\]
+Consequently the squarefree flag, the Mobius value of \(m\), the Liouville
+value of \(m\), and the depth parity \(r\bmod 2\) are all functions of the
+closed unsigned factor word.  They are not, by themselves, pre-Cauchy signed
+payload data.
+\end{theorem}
+
+\begin{proof}
+The existence and uniqueness of the ordered word is the fundamental theorem of
+arithmetic, with the factors sorted increasingly.  Since \(p\) is the least
+prime factor of \(n\), every prime factor of \(m\) is at least \(p\).  The
+listed parity states are then read directly from the multiplicities in this
+word.  None of these operations selects a pre-Cauchy source key, an
+orientation, a local factor, or an ExactUV trace.
+\end{proof}
+
+\begin{theorem}[Small-to-large factor-peeling audit]
+The finite audit for \(N=100,997,5003,10000,30030\) verifies the ordered
+factor-peeling ledger for all tested composite LPF buckets.  For \(N=30030\)
+it records \(26781\) composite support keys, \(40\) owner buckets, \(69651\)
+small-to-large factor steps, and maximum depth \(13\).  The same audit records
+\begin{quote}\scriptsize\ttfamily
+small\_to\_large\_factor\_peeling\_verified\_all\_samples=true\\
+mobius\_liouville\_state\_computable\_from\_factor\_word\_all\_samples=true\\
+peeling\_generates\_new\_precauchy\_signed\_payload=false\\
+orientation\_local\_factor\_law\_proved=false\\
+built\_in\_signed\_pairing\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+\end{theorem}
+
+\begin{proof}[Audit interpretation]
+At \(N=30030\), the tail Mobius split is \(8367/11306/7108\) for
+positive, negative, and zero, while the Liouville split is \(11810/14971\).
+These numbers confirm that the natural parity states are fully visible after
+factorization.  This visibility is not a signed-emission law: it is still a
+post-factorization label attached to the LPF bucket.  Thus small-to-large
+peeling closes an unsigned boundary but does not break the parity barrier.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-small-to-large-\\
+factor-peeling-signed-state-boundary-router.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Remaining signed gate]
+The LPF-adjacent remaining gate is
+\begin{quote}\scriptsize\ttfamily
+PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows.
+\end{quote}
+The global strict basis still also requires source entropy, ExactUV
+multiplicity, model-gap, rate-preservation, and D-structure/Rankin gates.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

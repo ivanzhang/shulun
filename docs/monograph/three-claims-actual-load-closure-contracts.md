@@ -7604,6 +7604,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 LPF/Phi 桶恒等式仍只给无符号桶容量，不能生成 signed coefficient。行/列命题仍未无条件闭合。
 
+### 1.212 Phi-LPF small-to-large factor-peeling signed-state boundary 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_small_to_large_factor_peeling_signed_state_boundary_router.py
+data/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-ledger.json
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.md
+docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json
+```
+
+同步读数为：
+
+```text
+small_to_large_factor_peeling_verified_all_samples=true
+mobius_liouville_state_computable_from_factor_word_all_samples=true
+prime_row_or_virtual_unit_leak_blocked_all_samples=true
+peeling_generates_new_precauchy_signed_payload=false
+orientation_local_factor_law_proved=false
+pointwise_phi_lpf_bucket_signed_value_table_proved=false
+built_in_signed_pairing_proved=false
+actual_emitter_source_domain_entropy_proved=false
+exact_uv_map_fixed_pair_polylog_fiber_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：固定 LPF owner `p` 后，composite source bucket 的 cofactor
+`m=n/p` 可以从小到大唯一剥离为非降素因子词。样本 `N=30030` 中 `26781` 个
+composite support keys 全部通过，合计 `69651` 个 factor steps，最大深度 `13`。
+Möbius、Liouville、depth parity 与 squarefree 状态都可由该 factor word 机械给出。
+
+但这些状态仍是推后 factorization label；它们不携带 pre-Cauchy source key、orientation
+parity、local factor、alpha/delta side 或 ExactUV trace。因此 small-to-large 剥离不能作为
+signed coefficient law 的替代品。最新 LPF-adjacent 开放口为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+严格全局基底仍保留：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+AND ActualEmitterSourceDomainEntropyLedger
+AND ExactUVMapFixedPairPolylogFiberBoundLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+行/列命题仍未无条件闭合。
+
 ### 1.212 Phi-LPF latest current built-in pairing to branch trace sync 更新
 
 新增机器证书：
