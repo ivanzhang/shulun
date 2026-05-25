@@ -29718,3 +29718,49 @@ iteration_creates_new_phi_lpf_information=false
 PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
 AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
 ```
+
+### terminal boundary residual-flow actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_residual_flow_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json
+```
+
+actual-load 含义：`47` 个 q-boundary split 的 residual-flow 不是边界内部守恒流，
+而是 dominant new-side source：
+
+```text
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_mass_total=13.264539470882
+old_residual_mass_total=0.215539338772
+atomwise_unmatched_residual_mass=13.049000132111
+```
+
+所以本轮删除一个循环合同：
+
+```text
+BoundaryLocalOppositeSideResidualCancellation
+```
+
+正确 actual-load 合同改为：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+状态边界：
+
+```text
+finite_boundary_local_opposite_side_cancellation_refuted=true
+boundary_residual_flow_source_key_conservation_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

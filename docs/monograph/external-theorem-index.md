@@ -2081,6 +2081,56 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC43：terminal boundary residual-flow obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_residual_flow_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.md
+```
+
+本层继续 Q13AC42，不引入新的外部定理结论，而是重新定位外部定理能够进入的位置。
+有限证书给出：
+
+```text
+residual_flow_side_decomposition_closed=true
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_mass_total=13.264539470882
+old_residual_mass_total=0.215539338772
+net_new_minus_old_residual_mass=13.049000132111
+finite_boundary_local_opposite_side_cancellation_refuted=true
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界：
+
+```text
+Kowalski-Michel-Sawin bilinear Kloosterman input: 后置求和工具，不能生成 source-key residual law.
+Milicevic-Qin-Wu arbitrary-modulus Kloosterman saving: 需要 admissible family，不能替代边界残差源项。
+Shao-Shparlinski-Wijaya smooth/squarefree Kloosterman input: 控制模数族求和，不控制 47 个局部 run residual side。
+Matomaki-Merikoski-Teravainen L-function-free sieve input: 可作筛法比较，不给出 Phi-LPF pre-pushforward signed payload。
+```
+
+因此下一条可调用外部定理的合同不是“local opposite-side cancellation”，而是：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+boundary_residual_flow_source_key_conservation_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ## 附录 Q13AC42：terminal boundary split ratio obstruction（2026-05-25）
 
 新增证书：

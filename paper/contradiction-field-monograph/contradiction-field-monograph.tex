@@ -38229,6 +38229,107 @@ the missing object is a pre-pushforward source-key law explaining the
 adjacent run mass ratios and residual flows.
 \end{remark}
 
+\section{Terminal boundary residual-flow obstruction}
+
+\begin{theorem}[Boundary residual side ledger]
+For the same \(47\) q-boundary synthetic splits, the residual side ledger is
+finite and exact:
+\[
+  \texttt{residual\_flow\_side\_decomposition\_closed}=\texttt{true}.
+\]
+The side counts are
+\[
+  42 \text{ new-side residual events},\qquad
+  5 \text{ old-side residual events}.
+\]
+Their exact total masses are
+\[
+  R_{\rm new}=13.264539470882\ldots,\qquad
+  R_{\rm old}=0.215539338772\ldots.
+\]
+Hence the finite boundary ledger has
+\[
+  R_{\rm new}-R_{\rm old}=13.049000132111\ldots.
+\]
+\end{theorem}
+
+\begin{proof}
+The audit reuses the exact q-boundary ratio rows.  For each row it compares
+the old and new pre-split masses, records which side retains the residual
+\(|M_{\rm old}-M_{\rm new}|\), and sums these rational residuals by side.
+The displayed values are the exact rational totals rendered in decimal form.
+\end{proof}
+
+\begin{proposition}[No local opposite-side boundary conservation]
+The q-boundary residuals do not form a local opposite-side conservation law
+inside the boundary ledger:
+\[
+  \texttt{finite\_boundary\_local\_opposite\_side\_cancellation\_refuted}
+  =\texttt{true}.
+\]
+Even after atomwise matching of old-side and new-side residual mass, the
+unmatched residual is
+\[
+  13.049000132111\ldots.
+\]
+The direction counts are nearly balanced, \(24\) negative-to-positive events
+against \(23\) positive-to-negative events, but the residual mass by direction
+is not balanced.
+\end{proposition}
+
+\begin{proof}
+The atomwise matching amount is
+\[
+  \sum_A \min(R_{\rm new}(A),R_{\rm old}(A)).
+\]
+The audit computes this amount as \(0.215539338772\ldots\), equal to the total
+old-side residual mass.  Thus all old-side residual mass can be matched, but a
+new-side residual source of \(13.049000132111\ldots\) remains.  This proves
+that the boundary ledger cannot be closed by an internal opposite-side
+pairing.  The separate direction tally only counts event orientation; it does
+not control the residual masses.
+\end{proof}
+
+\begin{certificatestatement}[Boundary residual-flow obstruction audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+residual\_flow\_side\_decomposition\_closed=true\\
+new\_residual\_side\_event\_count=42\\
+old\_residual\_side\_event\_count=5\\
+new\_residual\_mass\_total=13.264539470882\\
+old\_residual\_mass\_total=0.215539338772\\
+net\_new\_minus\_old\_residual\_mass=13.049000132111\\
+atomwise\_unmatched\_residual\_mass=13.049000132111\\
+boundary\_residual\_flow\_source\_key\_conservation\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+residual-flow-obstruction-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated residual-flow gate]
+This removes one cyclic route: the next proof cannot be another search for
+equal adjacent whole-run pairs or boundary-internal residual conservation.
+The narrowed gate is
+\begin{quote}\scriptsize\ttfamily
+BoundaryDominantNewResidualSourceLawOrPDEC\\
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC\\
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC\\
+AND InternalPrefixRecordSurvivorPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+External Kloosterman, Type-II, and sieve theorems become relevant only after
+this source-key residual family has been constructed or returned as a named
+PDEC obstruction.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

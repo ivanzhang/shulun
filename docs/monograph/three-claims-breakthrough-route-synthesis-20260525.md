@@ -572,6 +572,52 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.8 terminal boundary residual-flow obstruction 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_residual_flow_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json
+```
+
+本层不再重复证明 q-boundary adjacency，而是检验 residual-flow 能否在边界内部
+opposite-side 抵消。有限审计读数：
+
+```text
+residual_flow_side_decomposition_closed=true
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_mass_total=13.264539470882
+old_residual_mass_total=0.215539338772
+net_new_minus_old_residual_mass=13.049000132111
+atomwise_unmatched_residual_mass=13.049000132111
+finite_boundary_local_opposite_side_cancellation_refuted=true
+row_column_unconditional_closed=false
+```
+
+因此“统一相邻抵消律”的形式层已经走到边界：方向事件数几乎平衡
+`24` 对 `23`，但质量不平衡，且 residual side 极度偏向 new-run。继续寻找
+whole-run 等量配对会回到循环；下一条非循环路线必须解释这个 dominant new
+residual source，或把它无损搬运到 non-boundary jump/internal survivor/PDEC
+合同中。
+
+最新口：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

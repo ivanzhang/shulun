@@ -2060,6 +2060,56 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC39：Phi-LPF terminal boundary residual-flow obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_residual_flow_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.md
+```
+
+诚实状态：上一层把 q-boundary split 压成 adjacent ratio spectrum；本层进一步证明
+finite residual-flow side ledger 已闭合，但它同时排除了边界内部局部抵消捷径：
+
+```text
+residual_flow_side_decomposition_closed=true
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_mass_total=13.264539470882
+old_residual_mass_total=0.215539338772
+atomwise_unmatched_residual_mass=13.049000132111
+finite_boundary_local_opposite_side_cancellation_refuted=true
+```
+
+这不是失败的重复，而是路线收缩：若三命题中 Prime Matrix 线要率先闭合，必须解释
+dominant new-side residual source，或给出把该源项搬运到 non-boundary/internal/PDEC
+返回的守恒律。外部 trace/Kloosterman/Type-II 结果仍只能在 source-key family 已构造后使用。
+
+最新开放口：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND BoundaryResidualFlowSourceKeyConservationOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+boundary_residual_flow_source_key_conservation_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ---
 
 ## 附录 Q13AC28：Phi-LPF factor-word parity shadow orientation no-go（2026-05-25）

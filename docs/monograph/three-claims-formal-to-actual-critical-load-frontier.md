@@ -26824,6 +26824,43 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### terminal boundary residual-flow formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_residual_flow_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-residual-flow-obstruction-router.json
+```
+
+formal-to-actual 结论：上一层已经把 boundary split 的 formal adjacency 和 ratio
+spectrum 定位清楚；本层继续检查 actual residual-flow，发现边界内部 opposite-side
+守恒不成立：
+
+```text
+residual_flow_side_decomposition_closed=true
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_mass_total=13.264539470882
+old_residual_mass_total=0.215539338772
+net_new_minus_old_residual_mass=13.049000132111
+finite_boundary_local_opposite_side_cancellation_refuted=true
+```
+
+这把 formal-to-actual 缺口从“找到相邻”进一步收缩为“解释残差源项”。若要完成
+三命题中 Prime Matrix 线的 actual closure，必须给出：
+
+```text
+BoundaryDominantNewResidualSourceLawOrPDEC
+AND BoundaryResidualTransportToNonBoundaryInternalReturnsOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+```
+
+在这些 actual-load 对象出现前，Kloosterman/Type-II 只能作为后续求和工具，不能替代
+source-key conservation。
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：
