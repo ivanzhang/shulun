@@ -972,6 +972,69 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.16 terminal boundary bridge-root moving endpoint barrier 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.json
+```
+
+本层把 D-singleton endpoint slack 进一步改写为 moving endpoint barrier 距离。若
+`q_bridge=q_next`，则
+
+```text
+endpoint_slack = P-q-g*(1+r) = (P-g*r)-q_bridge
+```
+
+有限审计读数：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+endpoint_slack_equals_barrier_distance_closed=true
+all_barriers_lie_on_qspine=true
+all_bridge_roots_lie_on_qspine=true
+finite_bridge_root_barrier_order_closed=true
+zero_barrier_contact_count=1
+row_column_unconditional_closed=false
+```
+
+两条 barrier row 为：
+
+```text
+m757 q571->577: r=18, bridge q=577, barrier q=P-gr=631, slack=54
+m761 q601->607: r=22, bridge q=607, barrier q=P-gr=607, slack=0
+```
+
+关键点：`m761 q601->607` 的最薄行是精确 barrier contact，而不是隐藏负项。
+两个 barrier 与两个 bridge root 都落在同一条 q-spine `577 -> 607 -> 631` 上。
+两包位移满足
+
+```text
+bridge_shift=30
+barrier_shift=-24
+slack_drop=54=bridge_shift-barrier_shift
+```
+
+因此最新硬点从 `BridgeRootEndpointSlackNonnegativeLawOrPDEC` 收窄为
+`BridgeRootMovingEndpointBarrierOrderLawOrPDEC`：要么证明 bridge root 统一不越过
+moving barrier `P-gr`，要么把越界行命名为 PDEC。
+
+最新口：
+
+```text
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

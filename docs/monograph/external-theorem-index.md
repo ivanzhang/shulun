@@ -2315,6 +2315,55 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AN. Phi-LPF terminal boundary bridge-root moving endpoint barrier 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.md
+```
+
+本层把 endpoint slack 非负门继续压成 moving endpoint barrier 顺序：
+
+```text
+D-singleton endpoint_slack = (P-g*r)-q_bridge, where q_bridge=q_next
+```
+
+有限读数：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+q_spine_nodes=[577, 607, 631]
+all_barriers_lie_on_qspine=true
+all_bridge_roots_lie_on_qspine=true
+finite_bridge_root_barrier_order_closed=true
+zero_barrier_contact_count=1
+bridge_root_uniform_barrier_order_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界同步收窄：Wright 型 unbalanced Kloosterman fractions、
+Milićević--Qin--Wu 型 arbitrary-modulus Kloosterman 平均、Pascadi Type-II
+分布、FKMS trace family 以及 thin-group/expander 工具，都不能直接证明
+`q_bridge <= P-gr`。它们仍需要先把该 barrier-order 对象提升成 completed
+averaged signed family、Type-II bilinear family 或真实有限群轨道。当前证书只给出
+点态 q-spine 顺序账本和一个精确接触行。
+
+最新开放口：
+
+```text
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

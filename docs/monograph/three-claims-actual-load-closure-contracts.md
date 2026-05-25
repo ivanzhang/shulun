@@ -320,6 +320,45 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root moving endpoint barrier actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.json
+```
+
+actual-load 含义：endpoint slack 非负不是独立估计，而是 bridge root 与移动端点屏障
+的同一 q-spine 顺序：
+
+```text
+endpoint_slack = (P-g*r)-q_bridge, where q_bridge=q_next
+```
+
+有限读数：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+q_spine_nodes=[577, 607, 631]
+finite_bridge_root_barrier_order_closed=true
+zero_barrier_contact_count=1
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解

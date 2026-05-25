@@ -38925,6 +38925,80 @@ that the relevant endpoint slack \(P-q-g(1+r)\) be nonnegative, or else that a
 negative-slack row be named as PDEC.
 \end{remark}
 
+\begin{theorem}[Bridge-root moving endpoint barrier reduction]
+In every audited D-singleton bridge-root microstep, put
+\[
+  q_{\rm br}=q'=q+g,\qquad q_{\rm bar}=P-gr.
+\]
+Then the endpoint slack is exactly the moving endpoint barrier distance
+\[
+  P-q-g(1+r)=q_{\rm bar}-q_{\rm br}.
+\]
+For the two audited bridge-root rows the data are
+\[
+\begin{array}{c|c|c|c}
+{\rm transition} & q_{\rm br} & q_{\rm bar} & q_{\rm bar}-q_{\rm br}\\
+\hline
+m757,\ q571\to577 & 577 & 631 & 54\\
+m761,\ q601\to607 & 607 & 607 & 0 .
+\end{array}
+\]
+Both bridge roots and both moving barriers lie on the same \(q\)-spine
+\[
+  577\longrightarrow607\longrightarrow631,
+\]
+and the second row is exact barrier contact.
+\end{theorem}
+
+\begin{proof}
+The D-singleton bridge root is the next \(q\)-node, so \(q_{\rm br}=q+g\).
+Therefore
+\[
+  P-q-g(1+r)=P-gr-(q+g)=q_{\rm bar}-q_{\rm br}.
+\]
+The finite certificate checks that both values \(q_{\rm br}\) and
+\(q_{\rm bar}\) belong to the audited \(q\)-spine, that
+\(q_{\rm br}\le q_{\rm bar}\) in the two bridge rows, and that the endpoint
+slack distances are \(54\) and \(0\).  Thus the audited endpoint-slack
+nonnegativity is reduced to a finite moving-barrier order ledger.  The uniform
+moving-barrier order law remains open.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root moving endpoint barrier audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+bridge\_root\_moving\_endpoint\_barrier\_reduction\_closed=true\\
+q\_spine\_nodes=[577, 607, 631]\\
+endpoint\_slack\_equals\_barrier\_distance\_closed=true\\
+all\_barriers\_lie\_on\_qspine=true\\
+all\_bridge\_roots\_lie\_on\_qspine=true\\
+finite\_bridge\_root\_barrier\_order\_closed=true\\
+zero\_barrier\_contact\_count=1\\
+bridge\_root\_uniform\_barrier\_order\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-moving-endpoint-barrier-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated moving-barrier gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+This replaces endpoint slack nonnegativity by the sharper order problem
+\(q_{\rm br}\le P-gr\), or else by a named moving-barrier PDEC.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

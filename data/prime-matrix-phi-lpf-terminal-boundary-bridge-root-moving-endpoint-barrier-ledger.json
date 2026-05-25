@@ -1,0 +1,138 @@
+{
+  "D_singleton_barrier_row_count": 2,
+  "admissible_trace_or_typeii_family_constructed": false,
+  "all_barriers_lie_on_qspine": true,
+  "all_bridge_roots_lie_on_qspine": true,
+  "barrier_rows": [
+    {
+      "P": 739,
+      "atom_key": "left:2842:selected_terminal:m757",
+      "barrier_distance_to_bridge": 54,
+      "barrier_on_qspine": true,
+      "barrier_order_closed": true,
+      "barrier_qspine_index": 2,
+      "bridge_on_qspine": true,
+      "bridge_qspine_index": 0,
+      "bridge_root_q": 577,
+      "endpoint_slack": 54,
+      "endpoint_slack_equals_barrier_distance": true,
+      "g": 6,
+      "m": 757,
+      "moving_endpoint_barrier_q": 631,
+      "packet_id": 1,
+      "phase_delta_num": 34860,
+      "r": 18,
+      "residual_term_gD": 4026,
+      "transition": "m757 q571->577",
+      "zero_barrier_contact": false
+    },
+    {
+      "P": 739,
+      "atom_key": "left:2842:selected_terminal:m761",
+      "barrier_distance_to_bridge": 0,
+      "barrier_on_qspine": true,
+      "barrier_order_closed": true,
+      "barrier_qspine_index": 1,
+      "bridge_on_qspine": true,
+      "bridge_qspine_index": 1,
+      "bridge_root_q": 607,
+      "endpoint_slack": 0,
+      "endpoint_slack_equals_barrier_distance": true,
+      "g": 6,
+      "m": 761,
+      "moving_endpoint_barrier_q": 607,
+      "packet_id": 2,
+      "phase_delta_num": 3954,
+      "r": 22,
+      "residual_term_gD": 3954,
+      "transition": "m761 q601->607",
+      "zero_barrier_contact": true
+    }
+  ],
+  "bridge_root_moving_endpoint_barrier_reduction_closed": true,
+  "bridge_root_uniform_barrier_order_law_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router",
+  "endpoint_slack_equals_barrier_distance_closed": true,
+  "finite_bridge_root_barrier_order_closed": true,
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "EndpointSlackImported",
+      "meaning": "the endpoint slack reduction is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SlackAsBarrierDistance",
+      "meaning": "D-singleton endpoint slack equals (P-g*r)-bridge_root_q.",
+      "proved": true,
+      "remaining": "finite barrier-distance identity"
+    },
+    {
+      "closed": true,
+      "gate": "BarrierNodesOnQSpine",
+      "meaning": "both bridge roots and both moving barriers are q-spine nodes.",
+      "proved": true,
+      "remaining": "finite q-spine barrier ledger"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteBridgeRootBarrierOrder",
+      "meaning": "in the audited rows bridge_root_q <= moving_endpoint_barrier_q.",
+      "proved": true,
+      "remaining": "finite barrier order ledger"
+    },
+    {
+      "closed": false,
+      "gate": "UniformMovingEndpointBarrierOrderLaw",
+      "meaning": "a uniform law must force bridge roots not to pass the moving endpoint barrier.",
+      "proved": false,
+      "remaining": "BridgeRootMovingEndpointBarrierOrderLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite moving-barrier reduction, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "BridgeRootMovingEndpointBarrierOrderLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "identity": "D-singleton endpoint_slack = (P-g*r)-q_bridge, where q_bridge=q_next",
+  "latest_open_gate": "BridgeRootMovingEndpointBarrierOrderLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "next_primary_attack_target": "BridgeRootMovingEndpointBarrierOrderLawOrPDEC",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "Endpoint slack nonnegativity is equivalent in the audited D-singletons to bridge_root_q <= P-g*r.  Both moving barriers lie on the same q-spine; the thin m761 row is exact barrier contact at q=607.  The remaining uniform problem is the moving endpoint barrier order law or PDEC.",
+  "previous_endpoint_slack_reduction_closed": true,
+  "q_spine_nodes": [
+    577,
+    607,
+    631
+  ],
+  "right_tail_overhang_pdec_constructed": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json": "e9b3b5c48e6a1ca9b7142f5e98c1afb740b24bcf2dcdf8466d63c590ab8d8ef7",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json": "0b04b0f60f1c95e20bfbde8eb6ab7485a46e6d1f798b58b40e9cc3d09e6c2fa8",
+    "experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py": "ad042212291f8f5156c95620d9ae8a26b6f882eac25a949f383232bc02bd3b4f"
+  },
+  "status": "bridge_root_moving_endpoint_barrier_reduction_closed_uniform_order_law_open",
+  "two_packet_shift_summary": {
+    "barrier_shift": -24,
+    "barrier_slope_times_r_gap": -24,
+    "bridge_shift": 30,
+    "common_D_gap_g": 6,
+    "first_barrier": 631,
+    "m_gap": 4,
+    "packet_count": 2,
+    "r_gap": 4,
+    "second_barrier": 607,
+    "slack_drop": 54,
+    "slack_drop_equals_bridge_shift_minus_barrier_shift": true,
+    "two_packet_shift_closed": true,
+    "zero_contact_transition": "m761 q601->607"
+  },
+  "verified_date": "2026-05-25",
+  "zero_barrier_contact_count": 1
+}

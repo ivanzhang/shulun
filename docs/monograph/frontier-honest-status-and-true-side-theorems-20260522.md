@@ -2122,6 +2122,73 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC41：Phi-LPF terminal boundary bridge-root moving endpoint barrier 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.md
+```
+
+本层承接 endpoint slack。有限审计读数：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+endpoint_slack_equals_barrier_distance_closed=true
+all_barriers_lie_on_qspine=true
+all_bridge_roots_lie_on_qspine=true
+finite_bridge_root_barrier_order_closed=true
+zero_barrier_contact_count=1
+row_column_unconditional_closed=false
+```
+
+核心恒等式：
+
+```text
+D-singleton endpoint_slack = (P-g*r)-q_bridge, where q_bridge=q_next
+```
+
+barrier rows：
+
+```text
+m757 q571->577: r=18, bridge q=577, barrier q=631, slack=54
+m761 q601->607: r=22, bridge q=607, barrier q=607, slack=0
+```
+
+本层真正推进：最薄行是 moving endpoint barrier 的精确接触；endpoint slack
+非负律已被替换为 bridge root 不越过 `P-gr` 的同对象顺序律。
+
+### Q13AC41.1 最新最窄口
+
+```text
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+bridge_root_uniform_barrier_order_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC33：Phi-LPF terminal boundary bridge-root q-spine Beatty margin 审计（2026-05-25）
 
 新增证书：

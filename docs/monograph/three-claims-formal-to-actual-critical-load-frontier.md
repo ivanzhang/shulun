@@ -27128,6 +27128,44 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root moving endpoint barrier formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_moving_endpoint_barrier_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-moving-endpoint-barrier-router.json
+```
+
+formal-to-actual 结论：D-singleton endpoint slack 的形式正性已降到同对象的移动端点
+顺序问题：
+
+```text
+endpoint_slack = (P-g*r)-q_bridge, where q_bridge=q_next
+```
+
+审计读数：
+
+```text
+bridge_root_moving_endpoint_barrier_reduction_closed=true
+endpoint_slack_equals_barrier_distance_closed=true
+all_barriers_lie_on_qspine=true
+all_bridge_roots_lie_on_qspine=true
+finite_bridge_root_barrier_order_closed=true
+zero_barrier_contact_count=1
+```
+
+因此 formal-to-actual 缺口从 endpoint slack 非负律进一步降维为：
+
+```text
+BridgeRootMovingEndpointBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：
