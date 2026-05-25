@@ -28506,3 +28506,56 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite dominant m-pair endpoint-coordinate 账本；该二路径族的 uniform bound、
 另一个 `m_pair=[757,761]` witness、其余 witness/core residual 仍未闭合。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word m-pair coordinate partition actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_mpair_coordinate_partition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.json
+```
+
+actual-load 含义继续收缩：dominant sign word `--+-+` 的全部质量 `30` 已经被
+坐标化为三个 m-pair/offset/orientation witness。
+
+```text
+dominant_sign_word_m_pair_coordinate_partition_ledger_closed=true
+path_template_count=3
+path_edge_mass=30
+dominant_m_pair=[769, 773]
+dominant_m_pair_edge_mass=20
+residual_singleton_m_pair=[757, 761]
+residual_singleton_m_pair_edge_mass=10
+above_P_edge_mass=20
+below_P_edge_mass=10
+q_prefix_band_q_le_10_edge_mass=20
+q_prefix_band_q_gt_20_edge_mass=10
+```
+
+最新直接主攻改为：
+
+```text
+DominantSignWordEndpointCoordinateUniformFamilyBound(--+-+; m_pair partition)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite dominant sign-word 坐标分区；三坐标 witness 族的 uniform bound
+与其余 witness/core residual 仍未闭合。

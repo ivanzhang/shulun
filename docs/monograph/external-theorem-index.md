@@ -9630,3 +9630,61 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+## 65Z. Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word m-pair coordinate partition 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_mpair_coordinate_partition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.md
+```
+
+本层把 dominant sign word `--+-+` 的全部 30 质量统一落到 m-pair/offset/orientation
+坐标分区：
+
+```text
+dominant_sign_word_m_pair_coordinate_partition_ledger_closed=true
+path_template_count=3
+path_edge_mass=30
+all_path_edge_mass_equals_10=true
+all_path_integer_gap_equals_4=true
+all_path_occurrence_count_equals_2=true
+all_path_m_shell_band_m_le_4=true
+all_path_cycle_length_equals_5=true
+all_path_sign_word_is_target=true
+distinct_m_pair_count=2
+dominant_m_pair=[769, 773]
+dominant_m_pair_edge_mass=20
+residual_singleton_m_pair=[757, 761]
+residual_singleton_m_pair_edge_mass=10
+residual_singleton_coordinate_closed=true
+above_P_edge_mass=20
+below_P_edge_mass=10
+q_prefix_band_q_le_10_edge_mass=20
+q_prefix_band_q_gt_20_edge_mass=10
+```
+
+三个坐标 witness 为：
+
+```text
+P=607, m_pair=[769,773], above_P, offsets=[162,166], q_prefix_count=7
+P=739, m_pair=[757,761], above_P, offsets=[18,22], q_prefix_count=28
+P=953, m_pair=[769,773], below_P, offsets=[-184,-180], q_prefix_count=10
+```
+
+外部 theorem 边界仍不变：trace/Kloosterman 平均型输入仍需要先完成到非局部
+family；prime-gap 与短区间素数输入仍不直接估计 fixed endpoint-coordinate
+signed equality。
+
+状态边界：
+
+```text
+dominant_sign_word_m_pair_coordinate_partition_ledger_closed=true
+dominant_sign_word_endpoint_coordinate_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

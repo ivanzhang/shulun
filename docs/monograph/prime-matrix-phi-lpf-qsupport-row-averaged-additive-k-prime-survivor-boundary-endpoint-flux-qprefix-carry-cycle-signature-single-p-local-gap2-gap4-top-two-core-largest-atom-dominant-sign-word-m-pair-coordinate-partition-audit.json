@@ -1,0 +1,508 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_qsupport_row_averaged_additive_k_prime_survivor_boundary_endpoint_flux_qprefix_carry_cycle_signature_single_p_local_gap2_gap4_top_two_core_largest_atom_dominant_sign_word_m_pair_coordinate_partition_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "DominantSignWordPathLedgerImported",
+      "meaning": "The 3-path dominant sign-word ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "DominantMPairEndpointCoordinatePathLedgerImported",
+      "meaning": "The [769,773] endpoint-coordinate subledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "ResidualSingletonMPairCoordinateLedger",
+      "meaning": "The [757,761] singleton witness is fixed at P=739 with offsets [18,22].",
+      "proved": true,
+      "remaining": "none for the finite singleton coordinate"
+    },
+    {
+      "closed": true,
+      "gate": "DominantSignWordMPairCoordinatePartitionLedger",
+      "meaning": "The full --+-+ mass 30 is split into three endpoint-coordinate witnesses.",
+      "proved": true,
+      "remaining": "none for the finite coordinate partition"
+    },
+    {
+      "closed": false,
+      "gate": "DominantSignWordEndpointCoordinateUniformFamilyBound",
+      "meaning": "Control the three coordinate witnesses as a uniform family.",
+      "proved": false,
+      "remaining": "finite coordinate partition gives exact witnesses but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "three mass-10 coordinate witnesses across two m-pairs and two endpoint orientations",
+    "input": "all three path witnesses of dominant sign word --+-+",
+    "operation": "split the full 30 edge mass into m-pair/offset/orientation coordinate witnesses",
+    "remaining": "prove a uniform endpoint-coordinate family bound or route the three witnesses through PDEC/SAE"
+  },
+  "dominant_sign_word_endpoint_coordinate_family_bound_proved": false,
+  "dominant_sign_word_m_pair_coordinate_partition_ledger_closed": true,
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "gap4 adjacency labels remain structural; prime-gap existence theorems do not bound signed template equality",
+    "short_interval_prime_inputs": "theta=0.52 does not imply a pointwise half-scale endpoint coordinate estimate",
+    "trace_or_kloosterman_inputs": "the three fixed coordinate witnesses still need completion into a nonlocal trace or bilinear family"
+  },
+  "finite_audit": {
+    "above_P_edge_mass": 20,
+    "all_path_cycle_length_equals_5": true,
+    "all_path_edge_mass_equals_10": true,
+    "all_path_integer_gap_equals_4": true,
+    "all_path_m_shell_band_m_le_4": true,
+    "all_path_occurrence_count_equals_2": true,
+    "all_path_sign_balance_plus2_minus3": true,
+    "all_path_sign_switch_count_equals_3": true,
+    "all_path_sign_word_is_target": true,
+    "below_P_edge_mass": 10,
+    "distinct_coordinate_fingerprint_count": 3,
+    "distinct_m_pair_count": 2,
+    "distinct_raw_base_template_count": 3,
+    "distinct_signed_child_count": 3,
+    "dominant_m_pair": "[769, 773]",
+    "dominant_m_pair_edge_mass": 20,
+    "dominant_sign_word_endpoint_coordinate_family_bound_proved": false,
+    "dominant_sign_word_m_pair_coordinate_partition_ledger_closed": true,
+    "endpoint_coordinate_witness_rows": [
+      {
+        "P": 607,
+        "P_band": "P<=700",
+        "coordinate_fingerprint": "P=607|packet=1887|m_pair=[769, 773]|offset=[162, 166]|q=7|raw=g=2,c=2 -> g=4,c=5 -> g=6,c=7 -> g=8,c=10 -> g=4,c=6",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "endpoint_orientation": "above_P",
+        "integer_gap": 4,
+        "m_left": 769,
+        "m_offset_pair": "[162, 166]",
+        "m_offsets_from_P": [
+          162,
+          166
+        ],
+        "m_pair": "[769, 773]",
+        "m_right": 773,
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 3,
+        "occurrence_count": 2,
+        "packet_index": 1887,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 7,
+        "raw_base_template": "g=2,c=2 -> g=4,c=5 -> g=6,c=7 -> g=8,c=10 -> g=4,c=6",
+        "raw_coordinate_path": [
+          {
+            "carry": 2,
+            "gap": 2,
+            "step": 1
+          },
+          {
+            "carry": 5,
+            "gap": 4,
+            "step": 2
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "step": 3
+          },
+          {
+            "carry": 10,
+            "gap": 8,
+            "step": 4
+          },
+          {
+            "carry": 6,
+            "gap": 4,
+            "step": 5
+          }
+        ],
+        "sign_balance": "plus=2,minus=3",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+",
+        "signed_child": "g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative -> g=4,c=6,A=positive",
+        "signed_coordinate_path": [
+          {
+            "carry": 2,
+            "gap": 2,
+            "sign": "negative",
+            "step": 1
+          },
+          {
+            "carry": 5,
+            "gap": 4,
+            "sign": "negative",
+            "step": 2
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "sign": "positive",
+            "step": 3
+          },
+          {
+            "carry": 10,
+            "gap": 8,
+            "sign": "negative",
+            "step": 4
+          },
+          {
+            "carry": 6,
+            "gap": 4,
+            "sign": "positive",
+            "step": 5
+          }
+        ],
+        "witness_id": "P607_packet1887_q7_mpair_769_773"
+      },
+      {
+        "P": 739,
+        "P_band": "P<=850",
+        "coordinate_fingerprint": "P=739|packet=2842|m_pair=[757, 761]|offset=[18, 22]|q=28|raw=g=10,c=10 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "endpoint_orientation": "above_P",
+        "integer_gap": 4,
+        "m_left": 757,
+        "m_offset_pair": "[18, 22]",
+        "m_offsets_from_P": [
+          18,
+          22
+        ],
+        "m_pair": "[757, 761]",
+        "m_right": 761,
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 2842,
+        "q_prefix_band": "q>20",
+        "q_prefix_count": 28,
+        "raw_base_template": "g=10,c=10 -> g=6,c=6 -> g=6,c=6 -> g=2,c=2 -> g=6,c=7",
+        "raw_coordinate_path": [
+          {
+            "carry": 10,
+            "gap": 10,
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 6,
+            "step": 2
+          },
+          {
+            "carry": 6,
+            "gap": 6,
+            "step": 3
+          },
+          {
+            "carry": 2,
+            "gap": 2,
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "step": 5
+          }
+        ],
+        "sign_balance": "plus=2,minus=3",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+",
+        "signed_child": "g=10,c=10,A=negative -> g=6,c=6,A=negative -> g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "signed_coordinate_path": [
+          {
+            "carry": 10,
+            "gap": 10,
+            "sign": "negative",
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 6,
+            "sign": "negative",
+            "step": 2
+          },
+          {
+            "carry": 6,
+            "gap": 6,
+            "sign": "positive",
+            "step": 3
+          },
+          {
+            "carry": 2,
+            "gap": 2,
+            "sign": "negative",
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 6,
+            "sign": "positive",
+            "step": 5
+          }
+        ],
+        "witness_id": "P739_packet2842_q28_mpair_757_761"
+      },
+      {
+        "P": 953,
+        "P_band": "P>850",
+        "coordinate_fingerprint": "P=953|packet=4601|m_pair=[769, 773]|offset=[-184, -180]|q=10|raw=g=10,c=8 -> g=8,c=6 -> g=6,c=5 -> g=4,c=3 -> g=8,c=7",
+        "cycle_length": 5,
+        "edge_mass": 10,
+        "endpoint_orientation": "below_P",
+        "integer_gap": 4,
+        "m_left": 769,
+        "m_offset_pair": "[-184, -180]",
+        "m_offsets_from_P": [
+          -184,
+          -180
+        ],
+        "m_pair": "[769, 773]",
+        "m_right": 773,
+        "m_shell_band": "m<=4",
+        "m_shell_prime_count": 4,
+        "occurrence_count": 2,
+        "packet_index": 4601,
+        "q_prefix_band": "q<=10",
+        "q_prefix_count": 10,
+        "raw_base_template": "g=10,c=8 -> g=8,c=6 -> g=6,c=5 -> g=4,c=3 -> g=8,c=7",
+        "raw_coordinate_path": [
+          {
+            "carry": 8,
+            "gap": 10,
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 8,
+            "step": 2
+          },
+          {
+            "carry": 5,
+            "gap": 6,
+            "step": 3
+          },
+          {
+            "carry": 3,
+            "gap": 4,
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 8,
+            "step": 5
+          }
+        ],
+        "sign_balance": "plus=2,minus=3",
+        "sign_switch_count": 3,
+        "sign_word": "--+-+",
+        "signed_child": "g=10,c=8,A=negative -> g=8,c=6,A=negative -> g=6,c=5,A=positive -> g=4,c=3,A=negative -> g=8,c=7,A=positive",
+        "signed_coordinate_path": [
+          {
+            "carry": 8,
+            "gap": 10,
+            "sign": "negative",
+            "step": 1
+          },
+          {
+            "carry": 6,
+            "gap": 8,
+            "sign": "negative",
+            "step": 2
+          },
+          {
+            "carry": 5,
+            "gap": 6,
+            "sign": "positive",
+            "step": 3
+          },
+          {
+            "carry": 3,
+            "gap": 4,
+            "sign": "negative",
+            "step": 4
+          },
+          {
+            "carry": 7,
+            "gap": 8,
+            "sign": "positive",
+            "step": 5
+          }
+        ],
+        "witness_id": "P953_packet4601_q10_mpair_769_773"
+      }
+    ],
+    "m_offset_pair_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_offset_pair": "[-184, -180]"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_offset_pair": "[162, 166]"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_offset_pair": "[18, 22]"
+      }
+    ],
+    "m_pair_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "m_pair": "[769, 773]"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_pair": "[757, 761]"
+      }
+    ],
+    "m_shell_prime_count_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "m_shell_prime_count": 4
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "m_shell_prime_count": 3
+      }
+    ],
+    "max_prime": 1009,
+    "orientation_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "endpoint_orientation": "above_P"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "endpoint_orientation": "below_P"
+      }
+    ],
+    "path_edge_mass": 30,
+    "path_template_count": 3,
+    "previous_dominant_m_pair_endpoint_coordinate_path_ledger_closed": true,
+    "previous_dominant_sign_word_path_ledger_closed": true,
+    "q_prefix_band_edge_rows": [
+      {
+        "edge_mass": 20,
+        "edge_ratio": 0.6666666666666666,
+        "q_prefix_band": "q<=10"
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_band": "q>20"
+      }
+    ],
+    "q_prefix_band_q_gt_20_edge_mass": 10,
+    "q_prefix_band_q_le_10_edge_mass": 20,
+    "q_prefix_count_edge_rows": [
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 10
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 28
+      },
+      {
+        "edge_mass": 10,
+        "edge_ratio": 0.3333333333333333,
+        "q_prefix_count": 7
+      }
+    ],
+    "residual_singleton_coordinate_closed": true,
+    "residual_singleton_m_pair": "[757, 761]",
+    "residual_singleton_m_pair_edge_mass": 10,
+    "row_column_unconditional_closed": false,
+    "target_sign_word": "--+-+"
+  },
+  "frontier_verified_date": "2026-05-24",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "DominantSignWordEndpointCoordinateUniformFamilyBound(--+-+; m_pair partition)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "other_largest_atom_template_witness_family_bounds_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the full dominant sign-word block is the current smallest concrete open block after splitting the dominant m-pair",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c8fbb46d3b5b16340df1837aabbe668b68d13cc888675c875de9768966a0c719",
+    "docs/monograph/external-theorem-index.md": "2cb278c04da7d2af3e98b55dd57bf91d95ad530a43f933a7f8e6c729930b3a09",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "2926bc16555b47851cc235ff09920f2558a2f51cf38873837ea8bda8d96e1c77",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-dominant-m-pair-path-audit.json": "c31eeba0e5f8e62d36a1988ed447b11ecc41d3b299ad30ee87f4b16cf243c650",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-path-audit.json": "23f16e4bf548b3f4b070f872ba9ab3b01b5e08884abe3b138f4012623dafa214",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "19f7739fd4f4112c448a03e55f2b55ecaebf4211cdaca7ed3efcdacb19ffc769",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "e409ea4dd8d7c919a0356cc917df0ca4b8ac5ef9e651694767e8383ebb8ba072",
+    "experiments/prime_matrix_phi_lpf_dominant_sign_word_mpair_coordinate_partition_audit.py": "c0335c34deb2f7303cc54c46f94f33edcbb6ca761ebd5f462863da18fd0ce7a7",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "c3da3ee0399ac86f21abea90c4e7409e4b31f702c1aa774eb549df043bbe6776"
+  },
+  "status": "dominant_sign_word_m_pair_coordinate_partition_ledger_closed_family_bound_open"
+}

@@ -36696,6 +36696,78 @@ dominant-m-pair-path-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Dominant sign-word m-pair coordinate partition}
+
+\begin{theorem}[Dominant sign-word coordinate partition ledger]
+In the audit range \(P\le 1009\), the whole dominant sign-word block
+\(\texttt{--+-+}\) of edge mass \(30\) splits into three
+m-pair/offset/orientation coordinate witnesses.  The principal audit values
+are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{dominant\_sign\_word\_m\_pair\_coordinate\_partition\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{path\_template\_count} & 3\\
+\texttt{path\_edge\_mass} & 30\\
+\texttt{all\_path\_edge\_mass\_equals\_10} & \texttt{true}\\
+\texttt{all\_path\_integer\_gap\_equals\_4} & \texttt{true}\\
+\texttt{all\_path\_occurrence\_count\_equals\_2} & \texttt{true}\\
+\texttt{all\_path\_m\_shell\_band\_m\_le\_4} & \texttt{true}\\
+\texttt{distinct\_m\_pair\_count} & 2\\
+\texttt{dominant\_m\_pair} & \texttt{[769, 773]}\\
+\texttt{dominant\_m\_pair\_edge\_mass} & 20\\
+\texttt{residual\_singleton\_m\_pair} & \texttt{[757, 761]}\\
+\texttt{residual\_singleton\_m\_pair\_edge\_mass} & 10\\
+\texttt{above\_P\_edge\_mass} & 20\\
+\texttt{below\_P\_edge\_mass} & 10 .
+\end{array}
+\]
+The coordinate witnesses are
+\[
+\begin{array}{c|c|c|c}
+P & \hbox{m-pair} & \hbox{orientation} & \hbox{offsets from }P\\ \hline
+607 & \texttt{[769,773]} & \texttt{above\_P} & \texttt{[162,166]}\\
+739 & \texttt{[757,761]} & \texttt{above\_P} & \texttt{[18,22]}\\
+953 & \texttt{[769,773]} & \texttt{below\_P} & \texttt{[-184,-180]} .
+\end{array}
+\]
+\end{theorem}
+\begin{proof}
+The audit imports the three-path dominant sign-word ledger and the already
+closed \(\texttt{[769,773]}\) coordinate subledger.  It then parses each
+m-pair, computes its offsets from the corresponding \(P\), and classifies the
+orientation as above or below \(P\).  The residual m-pair
+\(\texttt{[757,761]}\) is a singleton at \(P=739\) with offsets
+\(\texttt{[18,22]}\), q-prefix count \(28\), and edge mass \(10\).  Together
+with the two \(\texttt{[769,773]}\) rows, this accounts for all mass \(30\)
+with three distinct coordinate fingerprints.
+\end{proof}
+
+\begin{remark}[Full dominant sign-word coordinate gate]
+The two gates
+\begin{quote}\scriptsize\ttfamily
+DominantMPairEndpointCoordinateUniformFamilyBound([769,773])\\
+AND OtherDominantSignWordMPairBound([757,761])
+\end{quote}
+are now replaced by the single finer gate
+\begin{quote}\scriptsize\ttfamily
+DominantSignWordEndpointCoordinateUniformFamilyBound(--+-+; m\_pair partition).
+\end{quote}
+This still closes only a finite coordinate partition.  It does not give the
+uniform signed collision estimate, PDEC/SAE aggregation, or prime-q reciprocal
+phase saving needed for the global Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-q-\\
+support-row-averaged-additive-k-prime-survivor-\\
+boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-\\
+gap2-gap4-top-two-core-largest-atom-dominant-sign-word-\\
+m-pair-coordinate-partition-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -26091,3 +26091,44 @@ distinct_signed_child_count=2
 二路径坐标族的 uniform signed equality、PDEC/SAE 聚合、另一个 dominant sign-word
 `m_pair`、其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
 phase saving 缺口。
+### Phi-LPF q-prefix single-P local gap2/gap4 top-two core largest-atom dominant sign-word m-pair coordinate partition formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_dominant_sign_word_mpair_coordinate_partition_audit.py
+data/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.md
+docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-m-pair-coordinate-partition-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+DominantMPairEndpointCoordinateUniformFamilyBound([769,773])
+AND OtherDominantSignWordMPairBound([757,761])
+```
+
+现在被替换为：
+
+```text
+DominantSignWordEndpointCoordinateUniformFamilyBound(--+-+; m_pair partition)
+```
+
+关键审计读数为：
+
+```text
+dominant_sign_word_m_pair_coordinate_partition_ledger_closed=true
+path_template_count=3
+path_edge_mass=30
+distinct_m_pair_count=2
+dominant_m_pair_edge_mass=20
+residual_singleton_m_pair_edge_mass=10
+residual_singleton_coordinate_closed=true
+above_P_edge_mass=20
+below_P_edge_mass=10
+```
+
+本层删除的是“dominant sign word 内仍可藏未坐标化 m-pair 块”的含混说法；没有删除
+三坐标 witness 族的 uniform signed equality、PDEC/SAE 聚合、其他 witness/core residual、
+single-P slice summation 或 prime-q reciprocal phase saving 缺口。
