@@ -30379,3 +30379,58 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### terminal sibling q-spine gap-drift actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_gap_drift_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.json
+```
+
+actual-load 含义：上一层 terminal integer balance 已可继续降为 q-spine gap
+drift。offset 项不再是独立硬点；它在清分母后并入 drift defect。
+
+```text
+q_gaps_from_prefix=[22,28]
+primitive_gap_vector=[11,14]
+offset_cancels_from_gap_drift=true
+gap_drift_identity_closed=true
+primitive_gap_drift_identity_closed=true
+lpf_factor_peeling_closed=true
+terminal_sibling_qspine_gap_drift_closed=true
+```
+
+具体恒等式为：
+
+```text
+(295-203-60-18)*439 = 22*203 + 28*60
+14*439 = 22*203 + 28*60
+7*439 = 11*203 + 14*60
+439 = 11*29 + 2*60
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpinePrimitiveGapDriftPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_sibling_qspine_gap_drift_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

@@ -2297,6 +2297,69 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31.2：terminal sibling q-spine gap-drift（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_gap_drift_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.md
+```
+
+本层把 terminal integer balance 再压成 primitive q-spine gap-drift。有限审计读数：
+
+```text
+q_gaps_from_prefix=[22,28]
+primitive_gap_vector=[11,14]
+offset_cancels_from_gap_drift=true
+gap_drift_identity_closed=true
+primitive_gap_drift_identity_closed=true
+lpf_factor_peeling_closed=true
+terminal_sibling_qspine_gap_drift_closed=true
+terminal_sibling_qspine_gap_drift_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+(295-203-60-18)*439 = 22*203 + 28*60
+14*439 = 22*203 + 28*60
+7*439 = 11*203 + 14*60
+439 = 11*29 + 2*60.
+```
+
+honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpinePrimitiveGapDriftPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍未闭合三命题；最新剩余对象只是从 integer balance 降为 primitive
+gap-drift 的 uniform payment/exclusion 或 PDEC。
+
+状态边界：
+
+```text
+terminal_sibling_qspine_gap_drift_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC41：Phi-LPF terminal boundary bridge-root moving endpoint barrier 审计（2026-05-25）
 
 新增证书：

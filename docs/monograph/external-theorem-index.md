@@ -2229,6 +2229,58 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AH-4. Phi-LPF terminal sibling q-spine gap-drift 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_gap_drift_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：terminal integer balance 已被改写为
+primitive q-spine gap-drift，并显式剥离 LPF-threshold 因子 `7`。
+
+审计读数：
+
+```text
+q_gaps_from_prefix=[22,28]
+primitive_gap_vector=[11,14]
+offset_cancels_from_gap_drift=true
+gap_drift_identity_closed=true
+primitive_gap_drift_identity_closed=true
+lpf_factor_peeling_closed=true
+terminal_sibling_qspine_gap_drift_closed=true
+terminal_sibling_qspine_gap_drift_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+(295-203-60-18)*439 = 22*203 + 28*60
+14*439 = 22*203 + 28*60
+7*439 = 11*203 + 14*60
+439 = 11*29 + 2*60.
+```
+
+外部定理边界仍不变：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、Type-II
+输入必须作用在可平均的 signed gap-drift family 上；Becker--Breuillard 型谱隙
+仍需要有限群轨道或 thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpinePrimitiveGapDriftPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
 
 新增证书：

@@ -39509,6 +39509,91 @@ three-denominator kernel; it is an integer-balance payment or exclusion
 problem on the local right-side q-spine.
 \end{remark}
 
+\begin{theorem}[Terminal sibling q-spine primitive gap drift]
+The terminal sibling q-spine integer balance is equivalent to a primitive
+gap-drift identity.  Writing
+\[
+461=439+22,\qquad 467=439+28,
+\]
+the balance
+\[
+295\cdot439=203\cdot461+60\cdot467+18\cdot439
+\]
+is equivalent to
+\[
+(295-203-60-18)\cdot439=22\cdot203+28\cdot60,
+\]
+that is,
+\[
+14\cdot439=22\cdot203+28\cdot60.
+\]
+After division by the common q-spine gap factor \(2\), this becomes
+\[
+7\cdot439=11\cdot203+14\cdot60.
+\]
+Finally, since \(203=7\cdot29\) and \(14=7\cdot2\), the same finite identity
+has the \(7\)-peeled form
+\[
+439=11\cdot29+2\cdot60.
+\]
+\end{theorem}
+
+\begin{proof}
+Substitute \(461=439+22\) and \(467=439+28\) into the integer-balance identity:
+\[
+295\cdot439
+ =203(439+22)+60(439+28)+18\cdot439.
+\]
+Collecting the \(439\)-terms on the left gives
+\[
+(295-203-60-18)\cdot439=22\cdot203+28\cdot60.
+\]
+The coefficient defect is \(295-203-60-18=14\).  Both q-spine gaps have common
+factor \(2\), so division by \(2\) gives
+\[
+7\cdot439=11\cdot203+14\cdot60.
+\]
+The left defect is the LPF-threshold value \(7\); moreover \(203=7\cdot29\) and
+\(14=7\cdot2\).  Dividing by this common \(7\)-factor yields the final
+peeled identity \(439=11\cdot29+2\cdot60\).
+\end{proof}
+
+\begin{certificatestatement}[Sibling q-spine gap-drift audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+q\_spine\_for\_balance=[439,461,467]\\
+q\_gaps\_from\_prefix=[22,28]\\
+primitive\_gap\_vector=[11,14]\\
+offset\_cancels\_from\_gap\_drift=true\\
+gap\_drift\_identity\_closed=true\\
+primitive\_gap\_drift\_identity\_closed=true\\
+lpf\_factor\_peeling\_closed=true\\
+terminal\_sibling\_qspine\_gap\_drift\_closed=true\\
+terminal\_sibling\_qspine\_gap\_drift\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-\\
+qspine-gap-drift-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated primitive gap-drift gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND TerminalSiblingQSpinePrimitiveGapDriftPaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Thus the remaining terminal payment problem is no longer just an integer
+balance; it is a primitive q-spine gap-drift payment or exclusion problem.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

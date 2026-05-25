@@ -1371,3 +1371,56 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从有理三分母核
 降到整数 balance 的 uniform payment/exclusion 或 PDEC。
+
+## 13. terminal sibling q-spine gap-drift 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_gap_drift_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.json
+```
+
+本层把上一节的整数 balance 继续改写为 q-spine gap-drift 正规形。将
+`461=439+22`、`467=439+28` 代入
+
+```text
+295*439 = 203*461 + 60*467 + 18*439
+```
+
+并把 offset 系数 `18` 并入左侧 defect，得到：
+
+```text
+(295-203-60-18)*439 = 22*203 + 28*60
+14*439 = 22*203 + 28*60.
+```
+
+除以 gap 公因子 `2` 后是 primitive drift law：
+
+```text
+7*439 = 11*203 + 14*60.
+```
+
+再剥离 LPF-threshold 因子 `7`：
+
+```text
+203=7*29, 14=7*2,
+439 = 11*29 + 2*60.
+```
+
+最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpinePrimitiveGapDriftPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从整数 balance
+继续降到 primitive gap-drift 的 uniform payment/exclusion 或 PDEC。
