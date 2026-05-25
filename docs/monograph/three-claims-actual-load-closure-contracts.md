@@ -359,6 +359,45 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine index-gap actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_index_gap_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.json
+```
+
+actual-load 含义：moving barrier 顺序已变成同一 q-spine 上的离散索引顺序：
+
+```text
+endpoint_slack = sum of adjacent q-spine gaps from bridge index to barrier index
+```
+
+有限读数：
+
+```text
+bridge_root_qspine_index_gap_reduction_closed=true
+q_spine_gap_vector=[30, 24]
+qspine_index_gaps=[2, 0]
+finite_qspine_index_order_closed=true
+zero_index_contact_count=1
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BridgeRootQSpineIndexBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解

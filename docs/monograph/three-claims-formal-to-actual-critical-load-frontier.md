@@ -27166,6 +27166,43 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine index-gap formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_index_gap_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.json
+```
+
+formal-to-actual 结论：moving barrier 顺序已降到 q-spine index gap：
+
+```text
+endpoint_slack equals the q-spine adjacent-gap sum from bridge index to moving-barrier index
+```
+
+审计读数：
+
+```text
+bridge_root_qspine_index_gap_reduction_closed=true
+q_spine_gap_vector=[30, 24]
+qspine_index_gaps=[2, 0]
+endpoint_slack_equals_qspine_gap_sum_closed=true
+finite_qspine_index_order_closed=true
+zero_index_contact_count=1
+```
+
+因此 formal-to-actual 缺口从 moving barrier order 进一步降维为：
+
+```text
+BridgeRootQSpineIndexBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

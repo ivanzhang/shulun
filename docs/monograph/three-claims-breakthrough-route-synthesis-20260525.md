@@ -1035,6 +1035,62 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.17 terminal boundary bridge-root q-spine index-gap 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_index_gap_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.json
+```
+
+本层把 moving endpoint barrier 顺序继续离散化。由于 bridge roots 与 moving
+barriers 都在同一条 q-spine
+
+```text
+577 -> 607 -> 631
+```
+
+上，endpoint slack 等于从 bridge index 到 barrier index 的相邻 q-gap 和。
+
+有限审计读数：
+
+```text
+bridge_root_qspine_index_gap_reduction_closed=true
+q_spine_gap_vector=[30, 24]
+qspine_index_gaps=[2, 0]
+endpoint_slack_equals_qspine_gap_sum_closed=true
+finite_qspine_index_order_closed=true
+zero_index_contact_count=1
+row_column_unconditional_closed=false
+```
+
+两条 index-gap row 为：
+
+```text
+m757 q571->577: bridge index 0, barrier index 2, index gap 2, q-gap sum 30+24=54
+m761 q601->607: bridge index 1, barrier index 1, index gap 0, q-gap sum 0
+```
+
+这一步的实际推进是：`BridgeRootMovingEndpointBarrierOrderLawOrPDEC` 被替换为
+更离散的 `BridgeRootQSpineIndexBarrierOrderLawOrPDEC`。现在最新硬点不是一般
+整数距离不等式，而是证明 bridge index 不超过 moving-barrier index，或把索引越界行
+命名为 PDEC。
+
+最新口：
+
+```text
+BridgeRootQSpineIndexBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

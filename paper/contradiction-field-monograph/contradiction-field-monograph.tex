@@ -38999,6 +38999,80 @@ This replaces endpoint slack nonnegativity by the sharper order problem
 \(q_{\rm br}\le P-gr\), or else by a named moving-barrier PDEC.
 \end{remark}
 
+\begin{theorem}[Bridge-root \(q\)-spine index-gap reduction]
+For the audited bridge-root rows, the moving endpoint barrier order is
+equivalent to a nonnegative \(q\)-spine index gap.  With
+\[
+  Q=(577,607,631),\qquad \Delta Q=(30,24),
+\]
+the endpoint slack is the adjacent-gap sum from the bridge-root index to the
+moving-barrier index:
+\[
+  {\rm slack}=\sum_{i=i_{\rm br}}^{i_{\rm bar}-1}(Q_{i+1}-Q_i).
+\]
+The two audited rows have index gaps
+\[
+\begin{array}{c|c|c|c|c}
+{\rm transition} & i_{\rm br} & i_{\rm bar} & i_{\rm bar}-i_{\rm br}
+& {\rm slack}\\
+\hline
+m757,\ q571\to577 & 0 & 2 & 2 & 30+24=54\\
+m761,\ q601\to607 & 1 & 1 & 0 & 0 .
+\end{array}
+\]
+Thus the thin second row is exact \(q\)-spine index contact.
+\end{theorem}
+
+\begin{proof}
+The previous moving-barrier certificate shows that bridge roots and barriers
+belong to the same ordered \(q\)-spine \(Q\).  Therefore
+\[
+  q_{\rm bar}-q_{\rm br}
+  =Q_{i_{\rm bar}}-Q_{i_{\rm br}}
+  =\sum_{i=i_{\rm br}}^{i_{\rm bar}-1}(Q_{i+1}-Q_i)
+\]
+whenever \(i_{\rm br}\le i_{\rm bar}\).  In the finite audit the first row
+uses the two adjacent gaps \(607-577=30\) and \(631-607=24\), while the second
+row has \(i_{\rm br}=i_{\rm bar}=1\).  Hence endpoint slack nonnegativity has
+been reduced to the finite index-order ledger.  The uniform \(q\)-spine
+index-order law remains open.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root \(q\)-spine index-gap audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+bridge\_root\_qspine\_index\_gap\_reduction\_closed=true\\
+q\_spine\_gap\_vector=[30, 24]\\
+qspine\_index\_gaps=[2, 0]\\
+endpoint\_slack\_equals\_qspine\_gap\_sum\_closed=true\\
+finite\_qspine\_index\_order\_closed=true\\
+zero\_index\_contact\_count=1\\
+bridge\_root\_uniform\_qspine\_index\_order\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-qspine-index-gap-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated \(q\)-spine index gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpineIndexBarrierOrderLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+This replaces moving-barrier distance positivity by the discrete assertion
+\(i_{\rm br}\le i_{\rm bar}\) on the named \(q\)-spine, or else by a named
+index-barrier PDEC.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

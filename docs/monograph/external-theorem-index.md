@@ -2364,6 +2364,54 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AO. Phi-LPF terminal boundary bridge-root q-spine index-gap 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_index_gap_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.md
+```
+
+本层把 moving endpoint barrier 顺序继续压成 q-spine index-gap：
+
+```text
+endpoint_slack = sum of adjacent q-spine gaps from bridge index to barrier index
+```
+
+有限读数：
+
+```text
+bridge_root_qspine_index_gap_reduction_closed=true
+q_spine_gap_vector=[30, 24]
+qspine_index_gaps=[2, 0]
+endpoint_slack_equals_qspine_gap_sum_closed=true
+finite_qspine_index_order_closed=true
+zero_index_contact_count=1
+bridge_root_uniform_qspine_index_order_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界再次收窄：目前缺的不是一般 Kloosterman/Type-II 平均，也不是
+抽象 expansion，而是同一 q-spine 上 bridge index 不超过 barrier index 的点态顺序律。
+FKMS、Milićević--Qin--Wu、Pascadi、Wright 与 thin-group/expander 工具仍只能在该
+index-gap 对象被提升成 completed averaged signed family、Type-II bilinear family
+或真实有限群轨道后进入。
+
+最新开放口：
+
+```text
+BridgeRootQSpineIndexBarrierOrderLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：
