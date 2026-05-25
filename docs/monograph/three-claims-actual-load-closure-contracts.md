@@ -29063,3 +29063,38 @@ RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
 
 本层只关闭 finite terminal line-atom ledger；没有证明 selected terminal atom
 uniform bound、extra absorption、trace/Kloosterman completion 或全局 row/column 闭合。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase-normal-form actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.json
+```
+
+actual-load 含义继续收缩：selected terminal atoms 不是 fixed-numerator
+Kloosterman-ready 对象，而是 moving Beatty numerator reciprocal orbits。
+
+```text
+terminal_phase_normal_form_closed=true
+selected_terminal_phase_atom_count=4
+selected_terminal_phase_edge_count=70
+selected_terminal_all_moving_numerator=true
+selected_terminal_all_full_distinct_numerator=true
+selected_terminal_fixed_numerator_atom_count=0
+```
+
+最新直接主攻改为：
+
+```text
+SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving(packet2842:m=757,761; packet1887:m=769,773)
+ExtraPhaseAtomAbsorption(m=719,751,479)
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
+```
+
+本层只关闭 finite terminal phase normal form；没有证明 moving-numerator phase
+saving、extra phase absorption、trace/Kloosterman completion 或全局 row/column 闭合。

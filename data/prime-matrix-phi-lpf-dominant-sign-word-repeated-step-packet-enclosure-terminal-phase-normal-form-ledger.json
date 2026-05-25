@@ -1,0 +1,1682 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_packet_enclosure_terminal_phase_normal_form_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "TerminalLineAtomLedgerImported",
+      "meaning": "The seven terminal/extra fixed-m line atoms are imported.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalPhaseNormalFormImported",
+      "meaning": "The global fixed-m q-prefix phase normal form is imported.",
+      "proved": true,
+      "remaining": "none for formula import"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalPhaseNormalForm",
+      "meaning": "All 133 local edges satisfy q*m=kP+D and e(hkP/q)=e(-hD/q).",
+      "proved": true,
+      "remaining": "none for deterministic terminal phase normal form"
+    },
+    {
+      "closed": true,
+      "gate": "SelectedTerminalMovingNumeratorDiagnosis",
+      "meaning": "Every selected terminal atom has moving normalized numerator A(q).",
+      "proved": true,
+      "remaining": "none for finite diagnosis"
+    },
+    {
+      "closed": false,
+      "gate": "SelectedTerminalFixedNumeratorKloostermanReady",
+      "meaning": "A direct fixed-numerator Kloosterman input is available for the selected terminal atoms.",
+      "proved": false,
+      "remaining": "false: selected terminal atoms have no fixed numerator"
+    },
+    {
+      "closed": false,
+      "gate": "SelectedTerminalMovingBeattyNumeratorPhaseSaving",
+      "meaning": "Prove cancellation for the selected terminal moving-numerator reciprocal orbits.",
+      "proved": false,
+      "remaining": "requires a new moving-numerator completion or PDEC/SAE cap"
+    },
+    {
+      "closed": false,
+      "gate": "ExtraPhaseAbsorption",
+      "meaning": "Absorb the three extra phase atoms without losing the selected terminal gain.",
+      "proved": false,
+      "remaining": "requires a summable family or explicit absorption certificate"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "all four selected terminal atoms have moving, full-distinct Beatty numerators A(q)",
+    "identity": "q*m=k*P+D and e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+    "input": "seven terminal/extra fixed-m line atoms from packet2842 and packet1887",
+    "remaining": "phase saving for selected terminal moving-numerator prime-q reciprocal orbits plus absorption of three extra atoms"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input still needs a completed family, not seven fixed local terminal orbits",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "Kloosterman estimates require an admissible inverse or completed denominator variable beyond A(q)/q samples",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "terminal q-prefix orbits are one-dimensional and do not form a Type-II rectangle",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "closest unbalanced interface after promoting terminal moving numerators to a family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short interval prime existence does not estimate the terminal reciprocal phases",
+      "url": "https://arxiv.org/abs/2308.04458"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "bounded prime gaps do not control the signed terminal phase orbit",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "the local normal form exposes reciprocal phases but still not a completed bilinear trace family",
+    "Li_short_interval_x_052": "short interval prime existence does not estimate e(h*A(q)/q)",
+    "Maynard_small_gaps": "bounded gaps do not control the signed moving-numerator phase",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "the selected terminal atoms have moving A(q), so no fixed-numerator Kloosterman input is ready",
+    "Pascadi_composite_Type_II": "seven q-prefix orbits are not a two-dimensional Type-II box",
+    "Wright_unbalanced_Kloosterman": "unbalanced fraction technology is closest only after these local orbits are promoted to a family"
+  },
+  "extra_phase_absorption_proved": false,
+  "finite_audit": {
+    "A_zero_count": 0,
+    "D_out_of_range_count": 0,
+    "all_phase_k_strictly_increasing": true,
+    "atom_count_by_numerator_motion_rows": [
+      {
+        "atom_count": 6,
+        "edge_weight_sum": 105,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator"
+      },
+      {
+        "atom_count": 1,
+        "edge_weight_sum": 28,
+        "numerator_motion_class": "moving_beatty_numerator_with_collision"
+      }
+    ],
+    "atom_count_by_packet_rows": [
+      {
+        "atom_count": 4,
+        "edge_weight_sum": 112,
+        "packet": "left:packet2842"
+      },
+      {
+        "atom_count": 3,
+        "edge_weight_sum": 21,
+        "packet": "right:packet1887"
+      }
+    ],
+    "atom_count_by_role_rows": [
+      {
+        "atom_count": 3,
+        "edge_weight_sum": 63,
+        "role": "extra_shell"
+      },
+      {
+        "atom_count": 4,
+        "edge_weight_sum": 70,
+        "role": "selected_terminal"
+      }
+    ],
+    "bad_edge_samples": [],
+    "extra_phase_absorption_proved": false,
+    "extra_phase_atom_count": 3,
+    "extra_phase_edge_count": 63,
+    "fixed_numerator_atom_count_total": 0,
+    "full_distinct_moving_numerator_atom_count_total": 6,
+    "max_prime": 1009,
+    "moving_numerator_atom_count_total": 7,
+    "phase_congruence_mismatch_count": 0,
+    "phase_profiles": [
+      {
+        "A_distinct_count": 28,
+        "A_full_distinct": true,
+        "A_max": 680,
+        "A_min": 16,
+        "A_step_max": 210,
+        "A_step_min": -571,
+        "A_wrap_count": 6,
+        "D_max": 703,
+        "D_min": 21,
+        "D_step_max": 619,
+        "D_step_min": -200,
+        "D_wrap_count": 22,
+        "P": 739,
+        "edge_count": 28,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 28,
+        "k_max": 689,
+        "k_min": 526,
+        "k_span": 164,
+        "k_step_max": 11,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 719,
+        "m_rank": 1,
+        "m_rank_terminal": false,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_edge_sample": [
+          {
+            "A": 276,
+            "D": 265,
+            "k": 526,
+            "m": 719,
+            "q": 541
+          },
+          {
+            "A": 402,
+            "D": 145,
+            "k": 532,
+            "m": 719,
+            "q": 547
+          },
+          {
+            "A": 430,
+            "D": 684,
+            "k": 541,
+            "m": 719,
+            "q": 557
+          },
+          {
+            "A": 562,
+            "D": 564,
+            "k": 547,
+            "m": 719,
+            "q": 563
+          },
+          {
+            "A": 125,
+            "D": 444,
+            "k": 553,
+            "m": 719,
+            "q": 569
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 276,
+            "D": 265,
+            "k": 526,
+            "m": 719,
+            "q": 541
+          },
+          {
+            "A": 402,
+            "D": 145,
+            "k": 532,
+            "m": 719,
+            "q": 547
+          },
+          {
+            "A": 430,
+            "D": 684,
+            "k": 541,
+            "m": 719,
+            "q": 557
+          },
+          {
+            "A": 562,
+            "D": 564,
+            "k": 547,
+            "m": 719,
+            "q": 563
+          },
+          {
+            "A": 125,
+            "D": 444,
+            "k": 553,
+            "m": 719,
+            "q": 569
+          },
+          {
+            "A": 167,
+            "D": 404,
+            "k": 555,
+            "m": 719,
+            "q": 571
+          },
+          {
+            "A": 293,
+            "D": 284,
+            "k": 561,
+            "m": 719,
+            "q": 577
+          },
+          {
+            "A": 503,
+            "D": 84,
+            "k": 571,
+            "m": 719,
+            "q": 587
+          },
+          {
+            "A": 483,
+            "D": 703,
+            "k": 576,
+            "m": 719,
+            "q": 593
+          },
+          {
+            "A": 16,
+            "D": 583,
+            "k": 582,
+            "m": 719,
+            "q": 599
+          },
+          {
+            "A": 58,
+            "D": 543,
+            "k": 584,
+            "m": 719,
+            "q": 601
+          },
+          {
+            "A": 184,
+            "D": 423,
+            "k": 590,
+            "m": 719,
+            "q": 607
+          },
+          {
+            "A": 310,
+            "D": 303,
+            "k": 596,
+            "m": 719,
+            "q": 613
+          },
+          {
+            "A": 394,
+            "D": 223,
+            "k": 600,
+            "m": 719,
+            "q": 617
+          },
+          {
+            "A": 436,
+            "D": 183,
+            "k": 602,
+            "m": 719,
+            "q": 619
+          },
+          {
+            "A": 580,
+            "D": 682,
+            "k": 613,
+            "m": 719,
+            "q": 631
+          },
+          {
+            "A": 159,
+            "D": 482,
+            "k": 623,
+            "m": 719,
+            "q": 641
+          },
+          {
+            "A": 201,
+            "D": 442,
+            "k": 625,
+            "m": 719,
+            "q": 643
+          },
+          {
+            "A": 285,
+            "D": 362,
+            "k": 629,
+            "m": 719,
+            "q": 647
+          },
+          {
+            "A": 411,
+            "D": 242,
+            "k": 635,
+            "m": 719,
+            "q": 653
+          },
+          {
+            "A": 537,
+            "D": 122,
+            "k": 641,
+            "m": 719,
+            "q": 659
+          },
+          {
+            "A": 579,
+            "D": 82,
+            "k": 643,
+            "m": 719,
+            "q": 661
+          },
+          {
+            "A": 92,
+            "D": 581,
+            "k": 654,
+            "m": 719,
+            "q": 673
+          },
+          {
+            "A": 176,
+            "D": 501,
+            "k": 658,
+            "m": 719,
+            "q": 677
+          },
+          {
+            "A": 302,
+            "D": 381,
+            "k": 664,
+            "m": 719,
+            "q": 683
+          },
+          {
+            "A": 470,
+            "D": 221,
+            "k": 672,
+            "m": 719,
+            "q": 691
+          },
+          {
+            "A": 680,
+            "D": 21,
+            "k": 682,
+            "m": 719,
+            "q": 701
+          },
+          {
+            "A": 109,
+            "D": 600,
+            "k": 689,
+            "m": 719,
+            "q": 709
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 709,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "role": "extra_shell"
+      },
+      {
+        "A_distinct_count": 27,
+        "A_full_distinct": false,
+        "A_max": 660,
+        "A_min": 40,
+        "A_step_max": 541,
+        "A_step_min": -132,
+        "A_wrap_count": 23,
+        "D_max": 734,
+        "D_min": 14,
+        "D_step_max": 144,
+        "D_step_min": -691,
+        "D_wrap_count": 3,
+        "P": 739,
+        "edge_count": 28,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 28,
+        "k_max": 720,
+        "k_min": 549,
+        "k_span": 172,
+        "k_step_max": 12,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 751,
+        "m_rank": 2,
+        "m_rank_terminal": false,
+        "numerator_motion_class": "moving_beatty_numerator_with_collision",
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_edge_sample": [
+          {
+            "A": 502,
+            "D": 580,
+            "k": 549,
+            "m": 751,
+            "q": 541
+          },
+          {
+            "A": 442,
+            "D": 652,
+            "k": 555,
+            "m": 751,
+            "q": 547
+          },
+          {
+            "A": 524,
+            "D": 33,
+            "k": 566,
+            "m": 751,
+            "q": 557
+          },
+          {
+            "A": 458,
+            "D": 105,
+            "k": 572,
+            "m": 751,
+            "q": 563
+          },
+          {
+            "A": 392,
+            "D": 177,
+            "k": 578,
+            "m": 751,
+            "q": 569
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 502,
+            "D": 580,
+            "k": 549,
+            "m": 751,
+            "q": 541
+          },
+          {
+            "A": 442,
+            "D": 652,
+            "k": 555,
+            "m": 751,
+            "q": 547
+          },
+          {
+            "A": 524,
+            "D": 33,
+            "k": 566,
+            "m": 751,
+            "q": 557
+          },
+          {
+            "A": 458,
+            "D": 105,
+            "k": 572,
+            "m": 751,
+            "q": 563
+          },
+          {
+            "A": 392,
+            "D": 177,
+            "k": 578,
+            "m": 751,
+            "q": 569
+          },
+          {
+            "A": 370,
+            "D": 201,
+            "k": 580,
+            "m": 751,
+            "q": 571
+          },
+          {
+            "A": 304,
+            "D": 273,
+            "k": 586,
+            "m": 751,
+            "q": 577
+          },
+          {
+            "A": 194,
+            "D": 393,
+            "k": 596,
+            "m": 751,
+            "q": 587
+          },
+          {
+            "A": 128,
+            "D": 465,
+            "k": 602,
+            "m": 751,
+            "q": 593
+          },
+          {
+            "A": 62,
+            "D": 537,
+            "k": 608,
+            "m": 751,
+            "q": 599
+          },
+          {
+            "A": 40,
+            "D": 561,
+            "k": 610,
+            "m": 751,
+            "q": 601
+          },
+          {
+            "A": 581,
+            "D": 633,
+            "k": 616,
+            "m": 751,
+            "q": 607
+          },
+          {
+            "A": 521,
+            "D": 705,
+            "k": 622,
+            "m": 751,
+            "q": 613
+          },
+          {
+            "A": 603,
+            "D": 14,
+            "k": 627,
+            "m": 751,
+            "q": 617
+          },
+          {
+            "A": 581,
+            "D": 38,
+            "k": 629,
+            "m": 751,
+            "q": 619
+          },
+          {
+            "A": 449,
+            "D": 182,
+            "k": 641,
+            "m": 751,
+            "q": 631
+          },
+          {
+            "A": 339,
+            "D": 302,
+            "k": 651,
+            "m": 751,
+            "q": 641
+          },
+          {
+            "A": 317,
+            "D": 326,
+            "k": 653,
+            "m": 751,
+            "q": 643
+          },
+          {
+            "A": 273,
+            "D": 374,
+            "k": 657,
+            "m": 751,
+            "q": 647
+          },
+          {
+            "A": 207,
+            "D": 446,
+            "k": 663,
+            "m": 751,
+            "q": 653
+          },
+          {
+            "A": 141,
+            "D": 518,
+            "k": 669,
+            "m": 751,
+            "q": 659
+          },
+          {
+            "A": 119,
+            "D": 542,
+            "k": 671,
+            "m": 751,
+            "q": 661
+          },
+          {
+            "A": 660,
+            "D": 686,
+            "k": 683,
+            "m": 751,
+            "q": 673
+          },
+          {
+            "A": 620,
+            "D": 734,
+            "k": 687,
+            "m": 751,
+            "q": 677
+          },
+          {
+            "A": 616,
+            "D": 67,
+            "k": 694,
+            "m": 751,
+            "q": 683
+          },
+          {
+            "A": 528,
+            "D": 163,
+            "k": 702,
+            "m": 751,
+            "q": 691
+          },
+          {
+            "A": 418,
+            "D": 283,
+            "k": 712,
+            "m": 751,
+            "q": 701
+          },
+          {
+            "A": 330,
+            "D": 379,
+            "k": 720,
+            "m": 751,
+            "q": 709
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 709,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "role": "extra_shell"
+      },
+      {
+        "A_distinct_count": 28,
+        "A_full_distinct": true,
+        "A_max": 646,
+        "A_min": 27,
+        "A_step_max": 569,
+        "A_step_min": -204,
+        "A_wrap_count": 21,
+        "D_max": 688,
+        "D_min": 21,
+        "D_step_max": 216,
+        "D_step_min": -667,
+        "D_wrap_count": 4,
+        "P": 739,
+        "edge_count": 28,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 28,
+        "k_max": 726,
+        "k_min": 554,
+        "k_span": 173,
+        "k_step_max": 12,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 757,
+        "m_rank": 3,
+        "m_rank_terminal": true,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_edge_sample": [
+          {
+            "A": 410,
+            "D": 131,
+            "k": 554,
+            "m": 757,
+            "q": 541
+          },
+          {
+            "A": 308,
+            "D": 239,
+            "k": 560,
+            "m": 757,
+            "q": 547
+          },
+          {
+            "A": 138,
+            "D": 419,
+            "k": 570,
+            "m": 757,
+            "q": 557
+          },
+          {
+            "A": 36,
+            "D": 527,
+            "k": 576,
+            "m": 757,
+            "q": 563
+          },
+          {
+            "A": 503,
+            "D": 635,
+            "k": 582,
+            "m": 757,
+            "q": 569
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 410,
+            "D": 131,
+            "k": 554,
+            "m": 757,
+            "q": 541
+          },
+          {
+            "A": 308,
+            "D": 239,
+            "k": 560,
+            "m": 757,
+            "q": 547
+          },
+          {
+            "A": 138,
+            "D": 419,
+            "k": 570,
+            "m": 757,
+            "q": 557
+          },
+          {
+            "A": 36,
+            "D": 527,
+            "k": 576,
+            "m": 757,
+            "q": 563
+          },
+          {
+            "A": 503,
+            "D": 635,
+            "k": 582,
+            "m": 757,
+            "q": 569
+          },
+          {
+            "A": 471,
+            "D": 671,
+            "k": 584,
+            "m": 757,
+            "q": 571
+          },
+          {
+            "A": 537,
+            "D": 40,
+            "k": 591,
+            "m": 757,
+            "q": 577
+          },
+          {
+            "A": 367,
+            "D": 220,
+            "k": 601,
+            "m": 757,
+            "q": 587
+          },
+          {
+            "A": 265,
+            "D": 328,
+            "k": 607,
+            "m": 757,
+            "q": 593
+          },
+          {
+            "A": 163,
+            "D": 436,
+            "k": 613,
+            "m": 757,
+            "q": 599
+          },
+          {
+            "A": 129,
+            "D": 472,
+            "k": 615,
+            "m": 757,
+            "q": 601
+          },
+          {
+            "A": 27,
+            "D": 580,
+            "k": 621,
+            "m": 757,
+            "q": 607
+          },
+          {
+            "A": 538,
+            "D": 688,
+            "k": 627,
+            "m": 757,
+            "q": 613
+          },
+          {
+            "A": 596,
+            "D": 21,
+            "k": 632,
+            "m": 757,
+            "q": 617
+          },
+          {
+            "A": 562,
+            "D": 57,
+            "k": 634,
+            "m": 757,
+            "q": 619
+          },
+          {
+            "A": 358,
+            "D": 273,
+            "k": 646,
+            "m": 757,
+            "q": 631
+          },
+          {
+            "A": 188,
+            "D": 453,
+            "k": 656,
+            "m": 757,
+            "q": 641
+          },
+          {
+            "A": 154,
+            "D": 489,
+            "k": 658,
+            "m": 757,
+            "q": 643
+          },
+          {
+            "A": 86,
+            "D": 561,
+            "k": 662,
+            "m": 757,
+            "q": 647
+          },
+          {
+            "A": 637,
+            "D": 669,
+            "k": 668,
+            "m": 757,
+            "q": 653
+          },
+          {
+            "A": 621,
+            "D": 38,
+            "k": 675,
+            "m": 757,
+            "q": 659
+          },
+          {
+            "A": 587,
+            "D": 74,
+            "k": 677,
+            "m": 757,
+            "q": 661
+          },
+          {
+            "A": 383,
+            "D": 290,
+            "k": 689,
+            "m": 757,
+            "q": 673
+          },
+          {
+            "A": 315,
+            "D": 362,
+            "k": 693,
+            "m": 757,
+            "q": 677
+          },
+          {
+            "A": 213,
+            "D": 470,
+            "k": 699,
+            "m": 757,
+            "q": 683
+          },
+          {
+            "A": 77,
+            "D": 614,
+            "k": 707,
+            "m": 757,
+            "q": 691
+          },
+          {
+            "A": 646,
+            "D": 55,
+            "k": 718,
+            "m": 757,
+            "q": 701
+          },
+          {
+            "A": 510,
+            "D": 199,
+            "k": 726,
+            "m": 757,
+            "q": 709
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 709,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "role": "selected_terminal"
+      },
+      {
+        "A_distinct_count": 28,
+        "A_full_distinct": true,
+        "A_max": 647,
+        "A_min": 1,
+        "A_step_max": 571,
+        "A_step_min": -252,
+        "A_wrap_count": 20,
+        "D_max": 738,
+        "D_min": 26,
+        "D_step_max": 264,
+        "D_step_min": -607,
+        "D_wrap_count": 5,
+        "P": 739,
+        "edge_count": 28,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 28,
+        "k_max": 730,
+        "k_min": 557,
+        "k_span": 174,
+        "k_step_max": 13,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 761,
+        "m_rank": 4,
+        "m_rank_terminal": true,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_edge_sample": [
+          {
+            "A": 463,
+            "D": 78,
+            "k": 557,
+            "m": 761,
+            "q": 541
+          },
+          {
+            "A": 337,
+            "D": 210,
+            "k": 563,
+            "m": 761,
+            "q": 547
+          },
+          {
+            "A": 127,
+            "D": 430,
+            "k": 573,
+            "m": 761,
+            "q": 557
+          },
+          {
+            "A": 1,
+            "D": 562,
+            "k": 579,
+            "m": 761,
+            "q": 563
+          },
+          {
+            "A": 444,
+            "D": 694,
+            "k": 585,
+            "m": 761,
+            "q": 569
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 463,
+            "D": 78,
+            "k": 557,
+            "m": 761,
+            "q": 541
+          },
+          {
+            "A": 337,
+            "D": 210,
+            "k": 563,
+            "m": 761,
+            "q": 547
+          },
+          {
+            "A": 127,
+            "D": 430,
+            "k": 573,
+            "m": 761,
+            "q": 557
+          },
+          {
+            "A": 1,
+            "D": 562,
+            "k": 579,
+            "m": 761,
+            "q": 563
+          },
+          {
+            "A": 444,
+            "D": 694,
+            "k": 585,
+            "m": 761,
+            "q": 569
+          },
+          {
+            "A": 404,
+            "D": 738,
+            "k": 587,
+            "m": 761,
+            "q": 571
+          },
+          {
+            "A": 446,
+            "D": 131,
+            "k": 594,
+            "m": 761,
+            "q": 577
+          },
+          {
+            "A": 236,
+            "D": 351,
+            "k": 604,
+            "m": 761,
+            "q": 587
+          },
+          {
+            "A": 110,
+            "D": 483,
+            "k": 610,
+            "m": 761,
+            "q": 593
+          },
+          {
+            "A": 583,
+            "D": 615,
+            "k": 616,
+            "m": 761,
+            "q": 599
+          },
+          {
+            "A": 543,
+            "D": 659,
+            "k": 618,
+            "m": 761,
+            "q": 601
+          },
+          {
+            "A": 555,
+            "D": 52,
+            "k": 625,
+            "m": 761,
+            "q": 607
+          },
+          {
+            "A": 429,
+            "D": 184,
+            "k": 631,
+            "m": 761,
+            "q": 613
+          },
+          {
+            "A": 345,
+            "D": 272,
+            "k": 635,
+            "m": 761,
+            "q": 617
+          },
+          {
+            "A": 303,
+            "D": 316,
+            "k": 637,
+            "m": 761,
+            "q": 619
+          },
+          {
+            "A": 51,
+            "D": 580,
+            "k": 649,
+            "m": 761,
+            "q": 631
+          },
+          {
+            "A": 580,
+            "D": 61,
+            "k": 660,
+            "m": 761,
+            "q": 641
+          },
+          {
+            "A": 538,
+            "D": 105,
+            "k": 662,
+            "m": 761,
+            "q": 643
+          },
+          {
+            "A": 454,
+            "D": 193,
+            "k": 666,
+            "m": 761,
+            "q": 647
+          },
+          {
+            "A": 328,
+            "D": 325,
+            "k": 672,
+            "m": 761,
+            "q": 653
+          },
+          {
+            "A": 202,
+            "D": 457,
+            "k": 678,
+            "m": 761,
+            "q": 659
+          },
+          {
+            "A": 160,
+            "D": 501,
+            "k": 680,
+            "m": 761,
+            "q": 661
+          },
+          {
+            "A": 647,
+            "D": 26,
+            "k": 693,
+            "m": 761,
+            "q": 673
+          },
+          {
+            "A": 563,
+            "D": 114,
+            "k": 697,
+            "m": 761,
+            "q": 677
+          },
+          {
+            "A": 437,
+            "D": 246,
+            "k": 703,
+            "m": 761,
+            "q": 683
+          },
+          {
+            "A": 269,
+            "D": 422,
+            "k": 711,
+            "m": 761,
+            "q": 691
+          },
+          {
+            "A": 59,
+            "D": 642,
+            "k": 721,
+            "m": 761,
+            "q": 701
+          },
+          {
+            "A": 630,
+            "D": 79,
+            "k": 730,
+            "m": 761,
+            "q": 709
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 709,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "role": "selected_terminal"
+      },
+      {
+        "A_distinct_count": 7,
+        "A_full_distinct": true,
+        "A_max": 444,
+        "A_min": 74,
+        "A_step_max": 370,
+        "A_step_min": -203,
+        "A_wrap_count": 4,
+        "D_max": 478,
+        "D_min": 193,
+        "D_step_max": 190,
+        "D_step_min": -256,
+        "D_wrap_count": 2,
+        "P": 607,
+        "edge_count": 7,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 7,
+        "k_max": 368,
+        "k_min": 346,
+        "k_span": 23,
+        "k_step_max": 6,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 479,
+        "m_rank": 1,
+        "m_rank_terminal": false,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_edge_sample": [
+          {
+            "A": 180,
+            "D": 259,
+            "k": 346,
+            "m": 479,
+            "q": 439
+          },
+          {
+            "A": 89,
+            "D": 354,
+            "k": 349,
+            "m": 479,
+            "q": 443
+          },
+          {
+            "A": 256,
+            "D": 193,
+            "k": 354,
+            "m": 479,
+            "q": 449
+          },
+          {
+            "A": 74,
+            "D": 383,
+            "k": 360,
+            "m": 479,
+            "q": 457
+          },
+          {
+            "A": 444,
+            "D": 478,
+            "k": 363,
+            "m": 479,
+            "q": 461
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 180,
+            "D": 259,
+            "k": 346,
+            "m": 479,
+            "q": 439
+          },
+          {
+            "A": 89,
+            "D": 354,
+            "k": 349,
+            "m": 479,
+            "q": 443
+          },
+          {
+            "A": 256,
+            "D": 193,
+            "k": 354,
+            "m": 479,
+            "q": 449
+          },
+          {
+            "A": 74,
+            "D": 383,
+            "k": 360,
+            "m": 479,
+            "q": 457
+          },
+          {
+            "A": 444,
+            "D": 478,
+            "k": 363,
+            "m": 479,
+            "q": 461
+          },
+          {
+            "A": 241,
+            "D": 222,
+            "k": 365,
+            "m": 479,
+            "q": 463
+          },
+          {
+            "A": 150,
+            "D": 317,
+            "k": 368,
+            "m": 479,
+            "q": 467
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 467,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "role": "extra_shell"
+      },
+      {
+        "A_distinct_count": 7,
+        "A_full_distinct": true,
+        "A_max": 440,
+        "A_min": 81,
+        "A_step_max": 113,
+        "A_step_min": -322,
+        "A_wrap_count": 4,
+        "D_max": 587,
+        "D_min": 21,
+        "D_step_max": 365,
+        "D_step_min": -566,
+        "D_wrap_count": 1,
+        "P": 607,
+        "edge_count": 7,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 7,
+        "k_max": 591,
+        "k_min": 556,
+        "k_span": 36,
+        "k_step_max": 10,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 769,
+        "m_rank": 2,
+        "m_rank_terminal": true,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_edge_sample": [
+          {
+            "A": 340,
+            "D": 99,
+            "k": 556,
+            "m": 769,
+            "q": 439
+          },
+          {
+            "A": 303,
+            "D": 140,
+            "k": 561,
+            "m": 769,
+            "q": 443
+          },
+          {
+            "A": 393,
+            "D": 505,
+            "k": 568,
+            "m": 769,
+            "q": 449
+          },
+          {
+            "A": 327,
+            "D": 587,
+            "k": 578,
+            "m": 769,
+            "q": 457
+          },
+          {
+            "A": 440,
+            "D": 21,
+            "k": 584,
+            "m": 769,
+            "q": 461
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 340,
+            "D": 99,
+            "k": 556,
+            "m": 769,
+            "q": 439
+          },
+          {
+            "A": 303,
+            "D": 140,
+            "k": 561,
+            "m": 769,
+            "q": 443
+          },
+          {
+            "A": 393,
+            "D": 505,
+            "k": 568,
+            "m": 769,
+            "q": 449
+          },
+          {
+            "A": 327,
+            "D": 587,
+            "k": 578,
+            "m": 769,
+            "q": 457
+          },
+          {
+            "A": 440,
+            "D": 21,
+            "k": 584,
+            "m": 769,
+            "q": 461
+          },
+          {
+            "A": 118,
+            "D": 345,
+            "k": 586,
+            "m": 769,
+            "q": 463
+          },
+          {
+            "A": 81,
+            "D": 386,
+            "k": 591,
+            "m": 769,
+            "q": 467
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 467,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "role": "selected_terminal"
+      },
+      {
+        "A_distinct_count": 7,
+        "A_full_distinct": true,
+        "A_max": 418,
+        "A_min": 34,
+        "A_step_max": 97,
+        "A_step_min": -330,
+        "A_wrap_count": 4,
+        "D_max": 594,
+        "D_min": 34,
+        "D_step_max": 389,
+        "D_step_min": -550,
+        "D_wrap_count": 1,
+        "P": 607,
+        "edge_count": 7,
+        "fixed_numerator_kloosterman_ready": false,
+        "k_distinct_count": 7,
+        "k_max": 594,
+        "k_min": 559,
+        "k_span": 36,
+        "k_step_max": 10,
+        "k_step_min": 2,
+        "k_strictly_increasing": true,
+        "m": 773,
+        "m_rank": 3,
+        "m_rank_terminal": true,
+        "numerator_motion_class": "full_distinct_moving_beatty_numerator",
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_edge_sample": [
+          {
+            "A": 405,
+            "D": 34,
+            "k": 559,
+            "m": 773,
+            "q": 439
+          },
+          {
+            "A": 352,
+            "D": 91,
+            "k": 564,
+            "m": 773,
+            "q": 443
+          },
+          {
+            "A": 418,
+            "D": 480,
+            "k": 571,
+            "m": 773,
+            "q": 449
+          },
+          {
+            "A": 320,
+            "D": 594,
+            "k": 581,
+            "m": 773,
+            "q": 457
+          },
+          {
+            "A": 417,
+            "D": 44,
+            "k": 587,
+            "m": 773,
+            "q": 461
+          }
+        ],
+        "phase_edges": [
+          {
+            "A": 405,
+            "D": 34,
+            "k": 559,
+            "m": 773,
+            "q": 439
+          },
+          {
+            "A": 352,
+            "D": 91,
+            "k": 564,
+            "m": 773,
+            "q": 443
+          },
+          {
+            "A": 418,
+            "D": 480,
+            "k": 571,
+            "m": 773,
+            "q": 449
+          },
+          {
+            "A": 320,
+            "D": 594,
+            "k": 581,
+            "m": 773,
+            "q": 457
+          },
+          {
+            "A": 417,
+            "D": 44,
+            "k": 587,
+            "m": 773,
+            "q": 461
+          },
+          {
+            "A": 87,
+            "D": 376,
+            "k": 589,
+            "m": 773,
+            "q": 463
+          },
+          {
+            "A": 34,
+            "D": 433,
+            "k": 594,
+            "m": 773,
+            "q": 467
+          }
+        ],
+        "phase_normal_form": "e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q)",
+        "q_end": 467,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "role": "selected_terminal"
+      }
+    ],
+    "previous_global_phase_normal_form_closed": true,
+    "previous_terminal_line_atom_ledger_closed": true,
+    "product_division_mismatch_count": 0,
+    "row_column_unconditional_closed": false,
+    "selected_terminal_all_full_distinct_numerator": true,
+    "selected_terminal_all_moving_numerator": true,
+    "selected_terminal_fixed_numerator_atom_count": 0,
+    "selected_terminal_fixed_numerator_kloosterman_ready": false,
+    "selected_terminal_full_distinct_numerator_atom_count": 4,
+    "selected_terminal_moving_beatty_numerator_phase_saving_proved": false,
+    "selected_terminal_moving_numerator_atom_count": 4,
+    "selected_terminal_phase_atom_count": 4,
+    "selected_terminal_phase_edge_count": 70,
+    "summable_family_created": false,
+    "terminal_phase_normal_form_atom_count_total": 7,
+    "terminal_phase_normal_form_closed": true,
+    "terminal_phase_normal_form_edge_count_total": 133,
+    "trace_or_kloosterman_completion_ready": false
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving(packet2842:m=757,761; packet1887:m=769,773)",
+    "AND ExtraPhaseAtomAbsorption(m=719,751,479)",
+    "AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm",
+    "AND RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms",
+    "AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure",
+    "AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton",
+    "AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinResidualCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after terminal line-atom support is isolated, the next acyclic step is to compute the exact local reciprocal phase orbit",
+  "row_column_unconditional_closed": false,
+  "selected_terminal_fixed_numerator_kloosterman_ready": false,
+  "selected_terminal_moving_beatty_numerator_phase_saving_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "b71cb5b362cafb8baf92cf8c8bb3191dfb57c34f396b498fbe72be42a4f472eb",
+    "docs/monograph/external-theorem-index.md": "7ebdb226bddd6aed85e99523714d325cf982680b8d36eac6cad479768f7d961a",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "617ebcc0fd390f8074a1c2c9ccbdd0acb655d4be710880841d6a4fb46b9ca785",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.json": "3aa9adfdb40006df5cc610eb89ee975f396569c6d2be87661dc7793f572213aa",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-phase-normal-form-audit.json": "66046c1ff4c9ccf5c49ce021ac6831a00e39227d982ae663ae7106a0cb08ce47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "2d0f17cef2ccbc7a682b9d791227d7e85b496a3b1c30819ec98a8cdad4d0045b",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "f529e5e5b21a6c1db3403141c863081f6e9269bf418b658347cb14e3f9d740f4",
+    "experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_normal_form_audit.py": "95f547ca834b4ee820bfe069dba8d70bc4e58b9cfde5b276730c85e06b2dabfd",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "5ebae9c1a914b88b4f313312abbf7b63676b7a2888ad304268e7947adff004c6"
+  },
+  "status": "terminal_phase_normal_form_closed_moving_numerator_saving_open",
+  "summable_family_created": false,
+  "terminal_phase_normal_form_closed": true,
+  "trace_or_kloosterman_completion_ready": false
+}

@@ -1946,6 +1946,103 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31：Phi-LPF repeated-step packet-enclosure terminal phase-normal-form 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md
+```
+
+本层承接 Q13AC30，把 `7` 个 fixed-`m` terminal/extra line atoms 的 `133` 条边
+全部正规化为 `A(q)/q` 的 reciprocal phase。有限审计读数：
+
+```text
+terminal_phase_normal_form_closed=true
+terminal_phase_normal_form_atom_count_total=7
+terminal_phase_normal_form_edge_count_total=133
+selected_terminal_phase_atom_count=4
+selected_terminal_phase_edge_count=70
+extra_phase_atom_count=3
+extra_phase_edge_count=63
+product_division_mismatch_count=0
+phase_congruence_mismatch_count=0
+all_phase_k_strictly_increasing=true
+selected_terminal_all_moving_numerator=true
+selected_terminal_all_full_distinct_numerator=true
+selected_terminal_fixed_numerator_atom_count=0
+```
+
+selected terminal phase profiles：
+
+```text
+packet2842,m=757: q_count=28, k=[554,726], A_distinct=28
+packet2842,m=761: q_count=28, k=[557,730], A_distinct=28
+packet1887,m=769: q_count=7,  k=[556,591], A_distinct=7
+packet1887,m=773: q_count=7,  k=[559,594], A_distinct=7
+```
+
+### Q13AC31.1 最新最窄口
+
+```text
+SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving(packet2842:m=757,761; packet1887:m=769,773)
+AND ExtraPhaseAtomAbsorption(m=719,751,479)
+AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+AND RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
+AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinResidualCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+terminal_phase_normal_form_closed=true
+selected_terminal_fixed_numerator_kloosterman_ready=false
+selected_terminal_moving_beatty_numerator_phase_saving_proved=false
+extra_phase_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
 
 新增证书：

@@ -37393,6 +37393,63 @@ repeated-step-packet-enclosure-terminal-line-atom-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step terminal phase normal form}
+
+\begin{theorem}[Repeated-step terminal phase normal form]
+In the audit range \(P\le 1009\), all seven terminal/extra line atoms in the
+repeated-step packet enclosure satisfy the local phase normal form
+\[
+qm=kP+D,\qquad 0<D<P,\qquad A(q)\equiv -D \pmod q,
+\]
+and therefore
+\[
+e(hkP/q)=e(-hD/q)=e(hA(q)/q).
+\]
+The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{terminal\_phase\_normal\_form\_closed} & \texttt{true}\\
+\texttt{terminal\_phase\_normal\_form\_edge\_count\_total} & 133\\
+\texttt{selected\_terminal\_phase\_atom\_count} & 4\\
+\texttt{selected\_terminal\_phase\_edge\_count} & 70\\
+\texttt{extra\_phase\_atom\_count} & 3\\
+\texttt{extra\_phase\_edge\_count} & 63\\
+\texttt{selected\_terminal\_all\_moving\_numerator} & \texttt{true}\\
+\texttt{selected\_terminal\_fixed\_numerator\_atom\_count} & 0.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The audit applies the deterministic division identity \(qm=kP+D\) to every
+edge in the seven line atoms and checks that all division and phase
+congruence mismatches are zero.  On the four selected terminal atoms the
+normalized numerator \(A(q)\) is moving and full-distinct along the prime
+q-prefix: for \(m=757,761\) in \(\texttt{packet2842}\) the prefix length is
+\(28\), and for \(m=769,773\) in \(\texttt{packet1887}\) the prefix length is
+\(7\).  Thus no selected terminal atom is a fixed-numerator Kloosterman input.
+\end{proof}
+
+\begin{remark}[Moving-numerator terminal gate]
+The repeated-step terminal gate is now
+\begin{quote}\scriptsize\ttfamily
+SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+(packet2842:m=757,761; packet1887:m=769,773).
+\end{quote}
+This is a narrower obstruction than terminal support: the local phase is
+known exactly, but the numerator \(A(q)\) moves with \(q\).  Therefore this
+step does not prove moving-numerator phase saving, absorb the extra phase
+atoms, create a summable trace/Kloosterman family, or break the Phi--LPF
+parity barrier globally.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

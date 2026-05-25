@@ -2191,6 +2191,64 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AJ. Phi-LPF repeated-step packet-enclosure terminal phase-normal-form 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md
+```
+
+本层承接 65AI，对 7 个 terminal/extra line atoms 的每条边写
+
+```text
+q*m=k*P+D,  0<D<P,  A(q)=-D mod q,
+e(h*k*P/q)=e(-h*D/q)=e(h*A(q)/q).
+```
+
+有限审计读数：
+
+```text
+terminal_phase_normal_form_closed=true
+terminal_phase_normal_form_atom_count_total=7
+terminal_phase_normal_form_edge_count_total=133
+selected_terminal_phase_atom_count=4
+selected_terminal_phase_edge_count=70
+extra_phase_atom_count=3
+extra_phase_edge_count=63
+product_division_mismatch_count=0
+phase_congruence_mismatch_count=0
+D_out_of_range_count=0
+A_zero_count=0
+all_phase_k_strictly_increasing=true
+selected_terminal_all_moving_numerator=true
+selected_terminal_all_full_distinct_numerator=true
+selected_terminal_fixed_numerator_atom_count=0
+```
+
+结论是更窄但仍未闭合：四个 selected terminal atoms 全部是 moving 且
+full-distinct 的 Beatty numerator orbit。外部 theorem 边界进一步精确为：
+FKMS/Milićević--Qin--Wu/Wright/Pascadi 仍需要 completed family 或 Type-II box；
+Li 短区间素数与 Maynard 小间距不估计 `e(h*A(q)/q)`。
+
+状态边界：
+
+```text
+terminal_phase_normal_form_closed=true
+selected_terminal_fixed_numerator_kloosterman_ready=false
+selected_terminal_moving_beatty_numerator_phase_saving_proved=false
+extra_phase_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
 
 新增证书：

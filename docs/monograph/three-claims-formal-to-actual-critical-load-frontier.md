@@ -26501,3 +26501,43 @@ selected_terminal_line_atom_uniform_bound_proved=false
 本层删除的是“terminal selected pair 与 packet extra shell 尚未分离”的含混说法；
 没有删除 terminal line-atom uniform bound、extra absorption、PDEC/SAE 聚合或
 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase-normal-form formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_normal_form_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBound(packet2842:selected m={757,761}, q=541..709; packet1887:selected m={769,773}, q=439..467)
+```
+
+现在拆成：
+
+```text
+SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving(packet2842:m=757,761; packet1887:m=769,773)
+AND ExtraPhaseAtomAbsorption(m=719,751,479)
+AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+```
+
+关键审计读数为：
+
+```text
+terminal_phase_normal_form_closed=true
+terminal_phase_normal_form_edge_count_total=133
+selected_terminal_phase_edge_count=70
+extra_phase_edge_count=63
+selected_terminal_all_moving_numerator=true
+selected_terminal_fixed_numerator_atom_count=0
+selected_terminal_moving_beatty_numerator_phase_saving_proved=false
+```
+
+本层删除的是“selected terminal 相位是否为 fixed-numerator Kloosterman-ready”的
+含混说法；结论是否定的，剩余转为 moving Beatty numerator phase saving。
