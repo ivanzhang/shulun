@@ -26459,3 +26459,45 @@ packet_enclosure_uniform_bound_proved=false
 本层删除的是“affine skeleton 是否已落入具体 packet window”的含混说法；没有
 删除 packet-enclosure uniform bound、PDEC/SAE 聚合、single-P slice summation
 或 prime-q reciprocal phase saving 缺口。
+
+### Phi-LPF repeated-step packet-enclosure terminal line-atom formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_line_atom_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepAffineSkeletonPacketEnclosureUniformBound(packet2842:[q=541..709,m={719,751,757,761}] -> packet1887:[q=439..467,m={479,769,773}])
+```
+
+现在拆成：
+
+```text
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBound(packet2842:selected m={757,761}, q=541..709; packet1887:selected m={769,773}, q=439..467)
+AND PacketEnclosureExtraLineAtomAbsorption(m={719,751,479})
+AND RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
+```
+
+关键审计读数为：
+
+```text
+terminal_line_atom_ledger_closed=true
+support_packet_edge_mass=133
+unique_line_atom_count_total=7
+selected_terminal_line_atom_count=4
+selected_terminal_line_atom_edge_mass=70
+extra_line_atom_count=3
+extra_line_atom_edge_mass=63
+selected_terminal_line_atom_uniform_bound_proved=false
+```
+
+本层删除的是“terminal selected pair 与 packet extra shell 尚未分离”的含混说法；
+没有删除 terminal line-atom uniform bound、extra absorption、PDEC/SAE 聚合或
+prime-q reciprocal phase saving 缺口。

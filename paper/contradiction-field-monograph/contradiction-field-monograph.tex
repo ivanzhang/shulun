@@ -37341,6 +37341,58 @@ repeated-step-affine-skeleton-packet-enclosure-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step terminal line atoms}
+
+\begin{theorem}[Repeated-step packet-enclosure terminal line atoms]
+In the audit range \(P\le 1009\), the repeated-step packet enclosure splits
+into seven unique fixed-\(m\) q-prefix line atoms.  The principal audit values
+are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{terminal\_line\_atom\_ledger\_closed} & \texttt{true}\\
+\texttt{support\_packet\_edge\_mass} & 133\\
+\texttt{unique\_line\_atom\_count\_total} & 7\\
+\texttt{selected\_terminal\_line\_atom\_count} & 4\\
+\texttt{selected\_terminal\_line\_atom\_edge\_mass} & 70\\
+\texttt{extra\_line\_atom\_count} & 3\\
+\texttt{extra\_line\_atom\_edge\_mass} & 63\\
+\texttt{all\_selected\_line\_atoms\_terminal} & \texttt{true}.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The left packet \(\texttt{packet2842}\) contributes two selected terminal
+line atoms \(m=757,761\), each with \(28\) q-prefix edges, and two extra line
+atoms \(m=719,751\).  The right packet \(\texttt{packet1887}\) contributes
+two selected terminal line atoms \(m=769,773\), each with \(7\) q-prefix
+edges, and one extra line atom \(m=479\).  Hence the selected terminal edge
+mass is \(2\cdot 28+2\cdot 7=70\), while the extra shell edge mass is
+\(2\cdot 28+1\cdot 7=63\).  The selected and extra expanded edge sets are
+disjoint and together recover the packet support mass \(133\).
+\end{proof}
+
+\begin{remark}[Terminal line-atom gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBound\\
+(packet2842:selected m=\{757,761\}, q=541..709;\\
+ packet1887:selected m=\{769,773\}, q=439..467).
+\end{quote}
+The two splices share the same packet support, so the splice-incidence mass
+is only a repeated count of this unique line-atom support.  This closes the
+finite terminal line-atom ledger, but it still does not prove a uniform
+bound, absorb the extra line atoms, create a summable trace/Kloosterman
+family, or break the Phi--LPF parity barrier globally.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-packet-enclosure-terminal-line-atom-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

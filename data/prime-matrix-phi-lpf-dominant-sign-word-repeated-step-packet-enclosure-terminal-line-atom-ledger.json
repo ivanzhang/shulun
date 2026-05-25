@@ -1,0 +1,527 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_packet_enclosure_terminal_line_atom_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "PacketEnclosureImported",
+      "meaning": "The affine-skeleton packet enclosure is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalQPrefixLineAtomizationImported",
+      "meaning": "The global fixed-m q-prefix line atom identity is imported.",
+      "proved": true,
+      "remaining": "none for support import"
+    },
+    {
+      "closed": true,
+      "gate": "PacketLineAtomMassIdentity",
+      "meaning": "The two packets split into seven unique line atoms with edge mass 133.",
+      "proved": true,
+      "remaining": "none for finite packet support"
+    },
+    {
+      "closed": true,
+      "gate": "SelectedTerminalLineAtomLedger",
+      "meaning": "The selected witness pairs are exactly four terminal line atoms of edge mass 70.",
+      "proved": true,
+      "remaining": "none for finite terminal atom ledger"
+    },
+    {
+      "closed": false,
+      "gate": "SelectedTerminalLineAtomUniformBound",
+      "meaning": "Control the selected terminal q-prefix line atoms uniformly.",
+      "proved": false,
+      "remaining": "requires cancellation beyond finite packet support"
+    },
+    {
+      "closed": false,
+      "gate": "ExtraLineAtomAbsorption",
+      "meaning": "Absorb the three extra packet line atoms without losing the terminal gain.",
+      "proved": false,
+      "remaining": "requires a summable family or PDEC/SAE certificate"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "selected terminal support has 4 line atoms and edge mass 70; extra shell support has 3 line atoms and edge mass 63",
+    "input": "packet2842 and packet1887 from the repeated-step affine-skeleton packet enclosure",
+    "operation": "deduplicate the two splices to unique packet support and split support into selected terminal versus extra q-prefix line atoms",
+    "remaining": "prove a uniform bound for these terminal q-prefix line atoms or convert them into a summable trace/Kloosterman family"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; terminal line atoms still lack a completed moving q denominator family",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "power-saving Kloosterman bilinear input applies after a valid completed Kloosterman variable is exposed",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "composite-modulus Type-II input does not directly estimate two fixed prime-q prefixes",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman-fraction geometry is closest after line atoms are promoted to a family",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence does not supply fixed terminal line-atom phase cancellation",
+      "url": "https://arxiv.org/abs/2308.04458"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "small-gap existence does not control signed Phi-LPF terminal packet line atoms",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    }
+  ],
+  "external_theorem_implication": {
+    "FKMS_trace_bilinear": "terminal atoms are explicit but remain fixed short prime-q prefixes rather than a completed trace bilinear family",
+    "Li_short_interval_x_052": "prime existence in short intervals does not control terminal line-atom phases",
+    "Maynard_small_gaps": "bounded prime-gap existence does not supply signed packet cancellation",
+    "Milicevic_Qin_Wu_arbitrary_modulus_Kloosterman": "the Kloosterman input still needs a completed moving denominator and averaging range",
+    "Pascadi_composite_Type_II": "the seven line atoms are one-dimensional supports, not composite Type-II boxes",
+    "Wright_unbalanced_Kloosterman": "the packet geometry resembles an unbalanced interface only after promotion to a family"
+  },
+  "finite_audit": {
+    "all_line_atoms_qprefix_contiguous": true,
+    "all_selected_line_atoms_terminal": true,
+    "extra_atom_summary": {
+      "edge_mass": 63,
+      "line_atom_count": 3,
+      "m_values": [
+        719,
+        751,
+        479
+      ],
+      "packet_indices": [
+        1887,
+        2842
+      ],
+      "role": "extra_shell"
+    },
+    "extra_line_atom_count": 3,
+    "extra_line_atom_edge_mass": 63,
+    "extra_line_atom_edge_mass_by_packet": [
+      {
+        "extra_edge_mass": 56,
+        "extra_line_atom_count": 2,
+        "extra_m_values": [
+          719,
+          751
+        ],
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_prefix_count": 28
+      },
+      {
+        "extra_edge_mass": 7,
+        "extra_line_atom_count": 1,
+        "extra_m_values": [
+          479
+        ],
+        "packet_index": 1887,
+        "packet_side": "right",
+        "q_prefix_count": 7
+      }
+    ],
+    "line_atoms": [
+      {
+        "P": 739,
+        "edge_count": 28,
+        "m": 719,
+        "m_offset_from_P": -20,
+        "m_rank": 1,
+        "m_rank_terminal": false,
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_end": 709,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "q_values": [
+          541,
+          547,
+          557,
+          563,
+          569,
+          571,
+          577,
+          587,
+          593,
+          599,
+          601,
+          607,
+          613,
+          617,
+          619,
+          631,
+          641,
+          643,
+          647,
+          653,
+          659,
+          661,
+          673,
+          677,
+          683,
+          691,
+          701,
+          709
+        ],
+        "role": "extra_shell",
+        "strip": "right_tail"
+      },
+      {
+        "P": 739,
+        "edge_count": 28,
+        "m": 751,
+        "m_offset_from_P": 12,
+        "m_rank": 2,
+        "m_rank_terminal": false,
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_end": 709,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "q_values": [
+          541,
+          547,
+          557,
+          563,
+          569,
+          571,
+          577,
+          587,
+          593,
+          599,
+          601,
+          607,
+          613,
+          617,
+          619,
+          631,
+          641,
+          643,
+          647,
+          653,
+          659,
+          661,
+          673,
+          677,
+          683,
+          691,
+          701,
+          709
+        ],
+        "role": "extra_shell",
+        "strip": "right_tail"
+      },
+      {
+        "P": 739,
+        "edge_count": 28,
+        "m": 757,
+        "m_offset_from_P": 18,
+        "m_rank": 3,
+        "m_rank_terminal": true,
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_end": 709,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "q_values": [
+          541,
+          547,
+          557,
+          563,
+          569,
+          571,
+          577,
+          587,
+          593,
+          599,
+          601,
+          607,
+          613,
+          617,
+          619,
+          631,
+          641,
+          643,
+          647,
+          653,
+          659,
+          661,
+          673,
+          677,
+          683,
+          691,
+          701,
+          709
+        ],
+        "role": "selected_terminal",
+        "strip": "right_tail"
+      },
+      {
+        "P": 739,
+        "edge_count": 28,
+        "m": 761,
+        "m_offset_from_P": 22,
+        "m_rank": 4,
+        "m_rank_terminal": true,
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_end": 709,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 28,
+        "q_start": 541,
+        "q_values": [
+          541,
+          547,
+          557,
+          563,
+          569,
+          571,
+          577,
+          587,
+          593,
+          599,
+          601,
+          607,
+          613,
+          617,
+          619,
+          631,
+          641,
+          643,
+          647,
+          653,
+          659,
+          661,
+          673,
+          677,
+          683,
+          691,
+          701,
+          709
+        ],
+        "role": "selected_terminal",
+        "strip": "right_tail"
+      },
+      {
+        "P": 607,
+        "edge_count": 7,
+        "m": 479,
+        "m_offset_from_P": -128,
+        "m_rank": 1,
+        "m_rank_terminal": false,
+        "packet_index": 1887,
+        "packet_side": "right",
+        "q_end": 467,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "q_values": [
+          439,
+          443,
+          449,
+          457,
+          461,
+          463,
+          467
+        ],
+        "role": "extra_shell",
+        "strip": "right_tail"
+      },
+      {
+        "P": 607,
+        "edge_count": 7,
+        "m": 769,
+        "m_offset_from_P": 162,
+        "m_rank": 2,
+        "m_rank_terminal": true,
+        "packet_index": 1887,
+        "packet_side": "right",
+        "q_end": 467,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "q_values": [
+          439,
+          443,
+          449,
+          457,
+          461,
+          463,
+          467
+        ],
+        "role": "selected_terminal",
+        "strip": "right_tail"
+      },
+      {
+        "P": 607,
+        "edge_count": 7,
+        "m": 773,
+        "m_offset_from_P": 166,
+        "m_rank": 3,
+        "m_rank_terminal": true,
+        "packet_index": 1887,
+        "packet_side": "right",
+        "q_end": 467,
+        "q_prefix_contiguous": true,
+        "q_prefix_count": 7,
+        "q_start": 439,
+        "q_values": [
+          439,
+          443,
+          449,
+          457,
+          461,
+          463,
+          467
+        ],
+        "role": "selected_terminal",
+        "strip": "right_tail"
+      }
+    ],
+    "max_prime": 1009,
+    "packet_extra_line_atom_absorption_proved": false,
+    "packet_line_atom_mass_identity_verified": true,
+    "previous_packet_enclosure_ledger_closed": true,
+    "previous_qprefix_line_atomization_closed": true,
+    "previous_shell_step_packet_identity_verified": true,
+    "row_column_unconditional_closed": false,
+    "selected_and_extra_edges_disjoint": true,
+    "selected_atom_summary": {
+      "edge_mass": 70,
+      "line_atom_count": 4,
+      "m_values": [
+        757,
+        761,
+        769,
+        773
+      ],
+      "packet_indices": [
+        1887,
+        2842
+      ],
+      "role": "selected_terminal"
+    },
+    "selected_plus_extra_edge_mass": 133,
+    "selected_terminal_line_atom_count": 4,
+    "selected_terminal_line_atom_edge_mass": 70,
+    "selected_terminal_line_atom_edge_mass_by_packet": [
+      {
+        "packet_index": 2842,
+        "packet_side": "left",
+        "q_prefix_count": 28,
+        "selected_edge_mass": 56,
+        "selected_line_atom_count": 2,
+        "selected_m_values": [
+          757,
+          761
+        ]
+      },
+      {
+        "packet_index": 1887,
+        "packet_side": "right",
+        "q_prefix_count": 7,
+        "selected_edge_mass": 14,
+        "selected_line_atom_count": 2,
+        "selected_m_values": [
+          769,
+          773
+        ]
+      }
+    ],
+    "selected_terminal_line_atom_uniform_bound_proved": false,
+    "splice_count": 2,
+    "splice_incidence_extra_edge_mass": 126,
+    "splice_incidence_extra_line_atom_count": 6,
+    "splice_incidence_selected_edge_mass": 140,
+    "splice_incidence_selected_line_atom_count": 8,
+    "summable_family_created": false,
+    "support_packet_edge_mass": 133,
+    "support_packet_indices": [
+      2842,
+      1887
+    ],
+    "support_vs_splice_incidence_duplicate_factor": 2,
+    "terminal_line_atom_ledger_closed": true,
+    "trace_or_kloosterman_completion_ready": false,
+    "unique_expanded_edge_set_size": 133,
+    "unique_line_atom_count_total": 7,
+    "unique_line_atom_edge_mass_total": 133
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepPacketEnclosureTerminalLineAtomUniformBound(packet2842:selected m={757,761}, q=541..709; packet1887:selected m={769,773}, q=439..467)",
+    "AND PacketEnclosureExtraLineAtomAbsorption(m={719,751,479})",
+    "AND RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms",
+    "AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure",
+    "AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton",
+    "AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinResidualCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "packet_extra_line_atom_absorption_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the packet enclosure is fixed; the next acyclic refinement is to split selected terminal pairs and extra shell points into fixed-m q-prefix line atoms",
+  "row_column_unconditional_closed": false,
+  "selected_terminal_line_atom_uniform_bound_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "6731c5f2579f23e084a7acedfa7139718f71cbe185889d3257f20d34f99e9301",
+    "docs/monograph/external-theorem-index.md": "d9e72e24a736bcc86b5cee1771a984d113416b40d87e1824179a17f5edf2b2f8",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f24076b9465c90851451c79d53e6708a38562760a72b80bd64e2288e86d8929a",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-affine-skeleton-packet-enclosure-audit.json": "967ec7d305f30d99c802565217e3fb2dabe2a24ad73d83a22aa872cb0a818998",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json": "cbfe0b837d418fa6270d654476e23489291c3e183d87740d853c7d30fa8fb452",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "2d7e7cbdba17ad7be2e89df494a5d8726e9e0aa1992dd18784b86f625fa9aa2f",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "e25e53ff4c643ed6fbda6a74e1a98dc07ca9536c0426023517a5c139b222d888",
+    "experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_line_atom_audit.py": "750bdc102bc0269ce94a527025189ad7d63f5613f7a538f2533a21ab08e5a07d",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "e1cdb07e7b6294d043452916609292098370f59a4fbc481245ceb47c65c35f98"
+  },
+  "status": "terminal_line_atom_ledger_closed_uniform_bound_open",
+  "summable_family_created": false,
+  "terminal_line_atom_ledger_closed": true,
+  "trace_or_kloosterman_completion_ready": false
+}

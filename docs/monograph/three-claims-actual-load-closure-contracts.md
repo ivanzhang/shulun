@@ -29023,3 +29023,43 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite packet-enclosure 账本；q-window 与 m-shell 已精确定位，但
 仍没有生成可求和族、trace/Kloosterman completion 或全局 row/column 闭合。
+
+### Phi-LPF repeated-step packet-enclosure terminal line-atom actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_line_atom_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.json
+```
+
+actual-load 含义继续收缩：两个 packet 的唯一支撑必须先拆成 selected terminal
+line atoms 与 extra shell line atoms；两条 splice 的重复 incidence 不能当作
+新的独立相消。
+
+```text
+terminal_line_atom_ledger_closed=true
+support_packet_edge_mass=133
+unique_line_atom_count_total=7
+selected_terminal_line_atom_count=4
+selected_terminal_line_atom_edge_mass=70
+extra_line_atom_count=3
+extra_line_atom_edge_mass=63
+all_selected_line_atoms_terminal=true
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBound(packet2842:selected m={757,761}, q=541..709; packet1887:selected m={769,773}, q=439..467)
+PacketEnclosureExtraLineAtomAbsorption(m={719,751,479})
+RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
+RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+```
+
+本层只关闭 finite terminal line-atom ledger；没有证明 selected terminal atom
+uniform bound、extra absorption、trace/Kloosterman completion 或全局 row/column 闭合。

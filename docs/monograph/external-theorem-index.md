@@ -2136,6 +2136,61 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AI. Phi-LPF repeated-step packet-enclosure terminal line-atom 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_line_atom_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.md
+```
+
+本层承接 65AH，把两个 right-tail packet 的唯一支撑拆成固定 `m` 的
+q-prefix line atoms，并区分 selected terminal 支撑与 extra shell 支撑：
+
+```text
+terminal_line_atom_ledger_closed=true
+support_packet_indices=[2842,1887]
+support_packet_edge_mass=133
+unique_line_atom_count_total=7
+unique_line_atom_edge_mass_total=133
+selected_terminal_line_atom_count=4
+selected_terminal_line_atom_edge_mass=70
+extra_line_atom_count=3
+extra_line_atom_edge_mass=63
+selected_and_extra_edges_disjoint=true
+all_line_atoms_qprefix_contiguous=true
+all_selected_line_atoms_terminal=true
+packet_line_atom_mass_identity_verified=true
+splice_incidence_selected_edge_mass=140
+splice_incidence_extra_edge_mass=126
+```
+
+selected terminal line atoms 为
+`(P739,m=757),(P739,m=761),(P607,m=769),(P607,m=773)`；extra line atoms
+为 `(P739,m=719),(P739,m=751),(P607,m=479)`。两条 splice 共享同一 packet
+支撑，所以 incidence 质量只是唯一支撑质量的两倍，不是新的相消来源。
+
+外部 theorem 边界仍不变：FKMS、Milićević--Qin--Wu、Pascadi 与 Wright 型
+trace/Kloosterman/Type-II 输入需要 completed moving-denominator family；Li
+短区间素数与 Maynard 小间距不控制这些固定 terminal line atoms 的相位。
+
+状态边界：
+
+```text
+terminal_line_atom_ledger_closed=true
+selected_terminal_line_atom_uniform_bound_proved=false
+packet_extra_line_atom_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
 
 新增证书：

@@ -1844,6 +1844,108 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC30：Phi-LPF repeated-step packet-enclosure terminal line-atom 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_line_atom_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-line-atom-audit.md
+```
+
+本层承接 Q13AC29，把 `packet2842` 与 `packet1887` 的唯一 packet 支撑拆成
+固定 `m` 的 q-prefix line atoms。有限审计读数：
+
+```text
+terminal_line_atom_ledger_closed=true
+support_packet_edge_mass=133
+unique_line_atom_count_total=7
+unique_line_atom_edge_mass_total=133
+selected_terminal_line_atom_count=4
+selected_terminal_line_atom_edge_mass=70
+extra_line_atom_count=3
+extra_line_atom_edge_mass=63
+selected_and_extra_edges_disjoint=true
+all_line_atoms_qprefix_contiguous=true
+all_selected_line_atoms_terminal=true
+packet_line_atom_mass_identity_verified=true
+```
+
+selected terminal 支撑为：
+
+```text
+packet2842: selected m={757,761}, q-prefix count=28, selected edge mass=56
+packet1887: selected m={769,773}, q-prefix count=7, selected edge mass=14
+```
+
+extra shell 支撑为：
+
+```text
+packet2842: extra m={719,751}, edge mass=56
+packet1887: extra m={479}, edge mass=7
+```
+
+两条 splice 共享同一 packet 支撑，因此 `splice_incidence_selected_edge_mass=140`
+只是唯一 selected 支撑质量 `70` 的重复 incidence 计数。
+
+### Q13AC30.1 最新最窄口
+
+```text
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBound(packet2842:selected m={757,761}, q=541..709; packet1887:selected m={769,773}, q=439..467)
+AND PacketEnclosureExtraLineAtomAbsorption(m={719,751,479})
+AND RepeatedStepAffineSkeletonPacketEnclosureUniformBoundOutsideTerminalLineAtoms
+AND RepeatedStepSharedWitnessPairAffineSkeletonUniformBoundOutsidePacketEnclosure
+AND RepeatedStepSameAtomOccurrenceSpliceUniformBoundOutsideSharedWitnessPairSkeleton
+AND RepeatedStepRepeatedNodePSwitchCutUniformBoundOutsideOccurrenceSplice
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinResidualCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+terminal_line_atom_ledger_closed=true
+selected_terminal_line_atom_uniform_bound_proved=false
+packet_extra_line_atom_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC28：Phi-LPF repeated-step occurrence-splice affine-skeleton 审计（2026-05-25）
 
 新增证书：
