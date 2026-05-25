@@ -7705,6 +7705,59 @@ OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 外部 trace/Kloosterman/Type-II 定理仍需先构造 admissible averaged signed family；
 factor-word shadow 本身不是可求和族。行/列命题仍未无条件闭合。
 
+### 1.214 Phi-LPF terminal signed payload measure absorption frontier 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_signed_payload_measure_absorption_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.json
+```
+
+同步读数为：
+
+```text
+terminal_signed_payload_measure_schema_closed=true
+mu_transition_count=126
+selected_net_excess_beats_extra_net_excess=true
+selected_net_excess_beats_extra_total_variation=false
+monotone_run_total_to_net_compression_proved=false
+extra_total_variation_absorption_proved=false
+admissible_averaged_trace_family_created=false
+trace_or_kloosterman_completion_ready=false
+row_column_unconditional_closed=false
+```
+
+actual-load 含义是：七个 terminal/extra fixed-`m` line atoms 已被统一写成
+`mu(q,m,packet)` signed transition measure，字段包含 packet、`P,m,q,q_next,A,D,lift`、
+carry、phase direction 与 signed delta。关键余量分裂为：
+
+```text
+selected_negative_excess=1.456565972578
+extra_negative_excess=0.907719323182
+net_excess_absorption_margin=0.548846649396
+extra_total_variation=14.109301881162
+strong_total_variation_absorption_margin=-12.652735908584
+selected_excess_to_extra_total_ratio=0.103234446668
+selected_excess_to_extra_negative_excess_ratio=1.604643566991
+```
+
+因此 selected terminal 在净超额账本上有正余量，但这不足以支付 extra shell 的总变差。
+本层排除了“净超额余额自动给出相位节省”的误读。下一真实硬点变为：
+
+```text
+MonotoneRunTotalToNetCompressionOrPDEC
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+外部 FKMS、DI/BFI/Kuznetsov、Milićević--Qin--Wu、Pascadi、Wright 型输入只有在
+`mu` 从有限 transition measure 晋级为 averaged signed trace/Kloosterman/Type-II family 后
+才可调用。行/列命题仍未无条件闭合。
+
 ### 1.212 Phi-LPF latest current built-in pairing to branch trace sync 更新
 
 新增机器证书：

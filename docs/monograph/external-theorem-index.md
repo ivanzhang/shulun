@@ -2081,6 +2081,44 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC37：terminal signed payload measure absorption frontier（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_signed_payload_measure_absorption_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.md
+```
+
+本层把 terminal/extra phase-turn 数据压成有限 signed payload measure `mu(q,m,packet)`，
+并检查它是否已经满足外部 trace/Kloosterman/Type-II 输入所需的 averaged family 条件。
+读数为：
+
+```text
+terminal_signed_payload_measure_schema_closed=true
+mu_transition_count=126
+selected_net_excess_beats_extra_net_excess=true
+selected_net_excess_beats_extra_total_variation=false
+admissible_averaged_trace_family_created=false
+trace_or_kloosterman_completion_ready=false
+```
+
+FKMS 与 DI/BFI/Kuznetsov 可在 `mu` 晋级为 averaged trace family 后进入；Milićević--Qin--Wu
+与 Wright 型 Kloosterman/fraction 输入需要 moving Beatty numerator `A(q)/q` 的可求和完成；
+Pascadi Type-II 需要真正二维 Type-II rectangle。当前对象仍只是两个 `P` packet、七个
+fixed-`m` atoms 的一维 prime-`q` prefix transition measure。
+
+最新外部适配入口压成：
+
+```text
+MonotoneRunTotalToNetCompressionOrPDEC
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC36：factor-word parity shadow orientation no-go（2026-05-25）
 
 新增证书：

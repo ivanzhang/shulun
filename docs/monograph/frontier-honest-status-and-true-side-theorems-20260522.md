@@ -1673,6 +1673,60 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC29：Phi-LPF terminal signed payload measure absorption frontier（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_signed_payload_measure_absorption_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.md
+```
+
+本层把 terminal/extra phase-turn ledger 晋级为有限 signed payload measure schema：
+
+```text
+terminal_signed_payload_measure_schema_closed=true
+mu_transition_count=126
+```
+
+同时发现吸收门分成净超额和强总变差两个层级：
+
+```text
+selected_negative_excess=1.456565972578
+extra_negative_excess=0.907719323182
+net_excess_absorption_margin=0.548846649396
+extra_total_variation=14.109301881162
+strong_total_variation_absorption_margin=-12.652735908584
+selected_excess_to_extra_total_ratio=0.103234446668
+```
+
+因此 selected terminal 的负净超额可覆盖 extra 的负净超额，但不能覆盖 extra 的总变差。
+这删除了“净超额余量已经足以破奇偶性”的误读。
+
+### Q13AC29.1 最新最窄口
+
+```text
+MonotoneRunTotalToNetCompressionOrPDEC
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+monotone_run_total_to_net_compression_proved=false
+extra_total_variation_absorption_proved=false
+admissible_averaged_trace_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 AA：Phi-LPF punctured endpoint 30-wheel capacity（2026-05-23 第二十五轮）
 
 本轮继续攻击上一层最窄口：

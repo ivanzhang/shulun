@@ -37686,6 +37686,104 @@ repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Terminal signed payload measure and absorption frontier}
+
+\begin{theorem}[Terminal signed payload measure schema]
+The seven terminal and extra fixed-\(m\) line atoms in the repeated-step packet
+enclosure can be written as a single finite signed payload measure
+\[
+  \mu=\mu(q,m,\texttt{packet})
+\]
+on \(126\) adjacent phase transitions.  Each transition carries the fields
+\[
+\texttt{packet}, P,m,q,q',A,A',D,D',
+\texttt{lift},\texttt{lift}',\texttt{carry},
+\texttt{phase\_direction},\delta,
+\]
+where
+\[
+  \delta=\frac{A(q')}{q'}-\frac{A(q)}{q}.
+\]
+The measure schema is closed as a finite ledger.
+\end{theorem}
+
+\begin{proof}
+The phase-turn certificate supplies, for each terminal or extra atom, the
+adjacent prime-\(q\) transitions together with \(A,D\), the lift class, carry,
+wrap flags, and the exact rational phase increment.  Collecting these
+transition records over the four selected-terminal atoms and the three
+extra-shell atoms gives \(126\) records.  The audit checks that every record
+has the required fields and that no required field is missing.
+\end{proof}
+
+\begin{theorem}[Net absorption succeeds but total-variation absorption fails]
+For the finite measure \(\mu(q,m,\texttt{packet})\), the selected-terminal
+negative net excess is
+\[
+  1.456565972578\ldots,
+\]
+whereas the extra-shell negative net excess is
+\[
+  0.907719323182\ldots.
+\]
+Thus the net-excess margin is positive:
+\[
+  0.548846649396\ldots.
+\]
+However the extra-shell total variation is
+\[
+  14.109301881162\ldots,
+\]
+so the strong total-variation margin is negative:
+\[
+  -12.652735908584\ldots.
+\]
+Consequently this ledger proves a net-level surplus, but not the strong
+absorption needed for phase saving.
+\end{theorem}
+
+\begin{proof}
+The variation-budget ledger gives exact rational values for the selected and
+extra role aggregates.  Subtracting the extra negative net excess from the
+selected negative net excess gives the positive margin above.  Subtracting the
+extra total variation from the selected negative net excess gives the negative
+strong margin above.  Hence there is no contradiction in the finite ledger:
+net surplus and total-variation failure coexist.
+\end{proof}
+
+\begin{certificatestatement}[Terminal signed measure absorption audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+terminal\_signed\_payload\_measure\_schema\_closed=true\\
+mu\_transition\_count=126\\
+selected\_net\_excess\_beats\_extra\_net\_excess=true\\
+selected\_net\_excess\_beats\_extra\_total\_variation=false\\
+monotone\_run\_total\_to\_net\_compression\_proved=false\\
+extra\_total\_variation\_absorption\_proved=false\\
+admissible\_averaged\_trace\_family\_created=false\\
+trace\_or\_kloosterman\_completion\_ready=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-\\
+payload-measure-absorption-frontier-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Next non-cyclic absorption gate]
+The new frontier is
+\begin{quote}\scriptsize\ttfamily
+MonotoneRunTotalToNetCompressionOrPDEC\\
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+External trace/Kloosterman or Type-II inputs can enter only after this finite
+measure is promoted to a genuine averaged family, or after a named return
+absorbs the total variation loss.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

@@ -26824,6 +26824,61 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_signed_payload_measure_absorption_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.json
+```
+
+formal-to-actual 结论：terminal phase-turn ledger 已能形成有限 actual signed payload
+measure：
+
+```text
+mu(q,m,packet)
+```
+
+其 formal 字段完整：
+
+```text
+packet, P, m, q, q_next, A, A_next, D, D_next,
+lift, lift_next, carry, phase_direction, signed_delta
+```
+
+但 absorption inequality 分成两个不同层级：
+
+```text
+selected_net_excess_beats_extra_net_excess=true
+net_excess_absorption_margin=0.548846649396
+selected_net_excess_beats_extra_total_variation=false
+strong_total_variation_absorption_margin=-12.652735908584
+```
+
+因此净账本可支付不等于 actual phase saving。若要把 formal `mu` 晋级为 actual
+contradiction load，必须新增：
+
+```text
+MonotoneRunTotalToNetCompressionOrPDEC
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+terminal_signed_payload_measure_schema_closed=true
+monotone_run_total_to_net_compression_proved=false
+extra_total_variation_absorption_proved=false
+admissible_averaged_trace_family_created=false
+trace_or_kloosterman_completion_ready=false
+row_column_unconditional_closed=false
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

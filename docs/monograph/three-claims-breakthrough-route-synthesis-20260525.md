@@ -298,6 +298,43 @@ OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 OR admissible averaged signed trace/Kloosterman/Type-II family with named returns
 ```
 
+### 6.2 terminal signed payload measure 吸收前沿更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_signed_payload_measure_absorption_frontier_router.py
+data/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-signed-payload-measure-absorption-frontier-router.json
+```
+
+本层完成了上一轮清单中的第一步和第二步：建立 `mu(q,m,packet)` signed payload schema，
+并把 selected terminal 与 extra shell 的预算放进同一个 absorption inequality。读数为：
+
+```text
+terminal_signed_payload_measure_schema_closed=true
+mu_transition_count=126
+selected_net_excess_beats_extra_net_excess=true
+net_excess_absorption_margin=0.548846649396
+selected_net_excess_beats_extra_total_variation=false
+strong_total_variation_absorption_margin=-12.652735908584
+selected_excess_to_extra_total_ratio=0.103234446668
+```
+
+这是真推进但不是闭合：净超额吸收可过，强总变差吸收不过。下一步不应回到
+factor-word、wheel 或有限 run 细分，而应攻击：
+
+```text
+MonotoneRunTotalToNetCompressionOrPDEC
+AND ExtraTotalVariationAbsorptionOrLocalSurvivor
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+若 total-to-net 压缩失败，失败形态必须命名为 PDEC/SAE/LocalSurvivor，而不能保留为
+匿名 phase-saving open。
+
 ## 7. 审稿边界
 
 ```text
