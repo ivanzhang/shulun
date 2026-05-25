@@ -2268,6 +2268,53 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AM. Phi-LPF terminal boundary bridge-root endpoint slack 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_endpoint_slack_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.md
+```
+
+本层把 D-singleton 的 Beatty 正 margin 继续拆成 endpoint slack 与 residual
+项：
+
+```text
+D-singleton phase_delta_num = q*(P-q-g*(1+r)) + g*D
+A-singleton phase_delta_num = -P*a*g
+```
+
+有限读数：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+D_singleton_min_endpoint_slack=0
+D_singleton_min_positive_margin=3954
+D_singleton_zero_slack_rows=['m761 q601->607']
+bridge_root_uniform_endpoint_slack_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界进一步收窄：当前需要的不是一个一般 Kloosterman/Type-II
+平均估计，而是先证明同对象的 endpoint slack 非负源律，或把 slack 负值行
+命名为 PDEC。FKMS、Milićević--Qin--Wu、Wright、Pascadi 与 thin-group 工具
+仍只能在该 slack 对象被提升成 completed averaged family 或有限群轨道后进入。
+
+最新开放口：
+
+```text
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

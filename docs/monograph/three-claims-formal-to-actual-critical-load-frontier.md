@@ -27092,6 +27092,42 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root endpoint slack formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_endpoint_slack_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json
+```
+
+formal-to-actual 结论：Beatty margin 的 D-singleton 正性已降到 endpoint slack
+恒等式：
+
+```text
+phase_delta_num = q*(P-q-g*(1+r)) + g*D
+```
+
+审计读数：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+D_singleton_min_endpoint_slack=0
+D_singleton_min_positive_margin=3954
+D_singleton_zero_slack_rows=['m761 q601->607']
+```
+
+因此 formal-to-actual 缺口从 Beatty margin source law 进一步降维为：
+
+```text
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

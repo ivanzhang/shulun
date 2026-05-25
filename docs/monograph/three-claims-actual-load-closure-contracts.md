@@ -281,6 +281,45 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root endpoint slack actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_endpoint_slack_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json
+```
+
+actual-load 含义：D-singleton margin 的正性被降为 endpoint slack 非负加
+residual `D>0`：
+
+```text
+phase_delta_num = q*(P-q-g*(1+r)) + g*D
+```
+
+有限读数：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+D_singleton_min_endpoint_slack=0
+D_singleton_min_positive_margin=3954
+D_singleton_zero_slack_rows=['m761 q601->607']
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解

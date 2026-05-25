@@ -2062,6 +2062,66 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC34：Phi-LPF terminal boundary bridge-root endpoint slack 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_endpoint_slack_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.md
+```
+
+本层承接 q-spine Beatty margin。有限审计读数：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+D_singleton_min_endpoint_slack=0
+D_singleton_min_positive_margin=3954
+D_singleton_zero_slack_rows=['m761 q601->607']
+row_column_unconditional_closed=false
+```
+
+核心恒等式：
+
+```text
+D-singleton phase_delta_num = q*(P-q-g*(1+r)) + g*D
+A-singleton phase_delta_num = -P*a*g
+```
+
+本层真正推进：最薄的 `m761 q601->607` 行 endpoint slack 为 `0`，所以正
+margin 不是黑箱，而是完全来自 `gD=6*659=3954`。因此最新硬点是证明
+endpoint slack 的同对象非负律，或把负 slack 行命名为 PDEC。
+
+### Q13AC34.1 最新最窄口
+
+```text
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+bridge_root_uniform_endpoint_slack_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC33：Phi-LPF terminal boundary bridge-root q-spine Beatty margin 审计（2026-05-25）
 
 新增证书：

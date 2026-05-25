@@ -38852,6 +38852,79 @@ identity is a pointwise source factorization, not by itself a parity-breaking
 estimate.
 \end{remark}
 
+\begin{theorem}[Bridge-root endpoint slack reduction]
+For the AD-singleton rows in the bridge-root \(q\)-spine, the A-singleton
+microsteps satisfy
+\[
+  \Delta_{\rm num}=-Pag<0,
+\]
+while every D-singleton microstep satisfies the endpoint slack identity
+\[
+  \Delta_{\rm num}=q\bigl(P-q-g(1+r)\bigr)+gD.
+\]
+In the audited spine the two D-singleton endpoint slacks are \(54\) and \(0\),
+and the zero-slack row is
+\[
+  m=761,\qquad q=601,\qquad q'=607,\qquad D=659,
+\]
+so its positive margin is exactly \(6\cdot659=3954\).
+\end{theorem}
+
+\begin{proof}
+The A-singleton case has \(s=0\) and \(\lambda'=\lambda\) in the Beatty-margin
+identity, hence
+\[
+  \Delta_{\rm num}=P(0\cdot q-ag)=-Pag<0.
+\]
+For the D-singleton case, \(s=1\) and \(\lambda'-\lambda=-1\).  Since
+\(D=qr-aP\), the previous identity gives
+\[
+\begin{aligned}
+  \Delta_{\rm num}
+  &= -q(q+g)+P(q-ag)\\
+  &= q\bigl(P-q-g(1+r)\bigr)+g(qr-aP)\\
+  &= q\bigl(P-q-g(1+r)\bigr)+gD.
+\end{aligned}
+\]
+The finite audit records endpoint slacks \(54\) and \(0\) for the two
+D-singleton rows, with residual \(D>0\) in both cases.  Thus positivity in the
+audited rows follows from endpoint slack nonnegativity plus residual
+nonvanishing.  The uniform endpoint slack law remains open.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root endpoint slack audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+bridge\_root\_endpoint\_slack\_reduction\_closed=true\\
+D\_singleton\_min\_endpoint\_slack=0\\
+D\_singleton\_min\_positive\_margin=3954\\
+D\_singleton\_zero\_slack\_rows=['m761 q601->607']\\
+bridge\_root\_uniform\_endpoint\_slack\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-endpoint-slack-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated endpoint-slack gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootEndpointSlackNonnegativeLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+This replaces a generic Beatty-margin source law by the smaller requirement
+that the relevant endpoint slack \(P-q-g(1+r)\) be nonnegative, or else that a
+negative-slack row be named as PDEC.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

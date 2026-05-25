@@ -922,6 +922,56 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.15 terminal boundary bridge-root endpoint slack 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_endpoint_slack_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-endpoint-slack-router.json
+```
+
+本层继续拆开 D-singleton 的 Beatty 正 margin。对 D-singleton，
+
+```text
+phase_delta_num = q*(P-q-g*(1+r)) + g*D
+```
+
+对 A-singleton，
+
+```text
+phase_delta_num = -P*a*g
+```
+
+有限审计读数：
+
+```text
+bridge_root_endpoint_slack_reduction_closed=true
+D_singleton_min_endpoint_slack=0
+D_singleton_min_positive_margin=3954
+D_singleton_zero_slack_rows=['m761 q601->607']
+row_column_unconditional_closed=false
+```
+
+关键点：最薄的 `m761 q601->607` 行不再是不明正 margin；它的 endpoint slack
+正好为 `0`，所以正 margin 全部来自 `gD=6*659=3954`。这把上一层的
+`BridgeRootADSingletonBeattyMarginSourceLawOrPDEC` 再替换为更小的
+`BridgeRootEndpointSlackNonnegativeLawOrPDEC`。
+
+最新口：
+
+```text
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text
