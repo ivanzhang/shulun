@@ -43,6 +43,58 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_endpoint_lpf_first_hit_router.py
+data/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.json
+```
+
+actual-load 含义：`2n+1` 轴上的每个奇数必须按 `LPF(m)` first-hit 分配，而不是把
+所有零同余类直接相加。对 `m=2n+1`：
+
+```text
+m=p           -> endpoint prime leak, k=0
+m=p(2k+1)     -> composite LPF tail, k>=1
+n=kp+(p-1)/2
+```
+
+有限审计确认：
+
+```text
+endpoint_prime_leak_separated=true
+lpf_tail_composite_partition_closed=true
+zero_class_duplicate_overcount_positive=true
+cofactor_parity_mixture_present_in_tail=true
+```
+
+这关闭了 `k=0` endpoint leak 的归属问题：端点素数是 first-hit prime emission，
+合数尾才进入 LPF bucket。它同时说明：未按 LPF 分配的零类总和会重复计数合数。
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+EndpointPrimeLeakSeparatedFromLPFTailButPrimeExtractionStillParityBlocked
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+prime_extraction_from_lpf_tail_proved=false
+signed_payload_or_von_mangoldt_weight_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### affine odd Euler normalization actual-load 更新（2026-05-25）
 
 新增机器证书：

@@ -1577,3 +1577,52 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 17. affine endpoint LPF first-hit 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_endpoint_lpf_first_hit_router.py
+data/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.json
+```
+
+本层继续把 `2n+1` 仿射归一化接入从小到大剥离素因子的 LPF first-hit 递推。
+对任意奇数 `m>=3`，令 `p=LPF(m)`。则第一次命中恰好分为两类：
+
+```text
+m=p           -> endpoint prime leak, k=0
+m=p(2k+1)     -> composite LPF tail, k>=1
+2n+1=p(2k+1)  -> n=kp+(p-1)/2
+LPF(2k+1)>=p  -> LPF(2n+1)=p
+```
+
+有限审计读数：
+
+```text
+endpoint_prime_leak_separated=true
+lpf_tail_composite_partition_closed=true
+zero_class_duplicate_overcount_positive=true
+cofactor_parity_mixture_present_in_tail=true
+prime_extraction_from_lpf_tail_proved=false
+signed_payload_or_von_mangoldt_weight_constructed=false
+row_column_unconditional_closed=false
+```
+
+这一步真正推进了 `k=0` 端点问题：端点素数不再被误塞进合数尾，也不再被解释为
+Euler product 的误差；它们是 first-hit 递推中的 prime leak 发射项。合数尾则是
+`m=p(2k+1)` 的 LPF bucket。
+
+同时，审计也确认所有零类命中不能直接相加：合数会被多个素因子重复命中，必须按
+`LPF(m)` 分配。尾部仍含半素数层与更高合数层，因此仅靠 forbidden residue、Phi
+递推和 LPF 计数仍不能完成 prime extraction。最新非循环口为：
+
+```text
+EndpointPrimeLeakSeparatedFromLPFTailButPrimeExtractionStillParityBlocked
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

@@ -2169,6 +2169,50 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+## 65AI-1. 2026-05-25 affine endpoint LPF first-hit partition
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_endpoint_lpf_first_hit_router.py
+data/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.md
+```
+
+本层仍不引入新外部定理，而是把 `2n+1` 归一化推进为 LPF first-hit 分割：
+
+```text
+m=p           -> endpoint prime leak
+m=p(2k+1)     -> composite LPF tail
+n=kp+(p-1)/2
+```
+
+审计读数：
+
+```text
+endpoint_prime_leak_separated=true
+lpf_tail_composite_partition_closed=true
+zero_class_duplicate_overcount_positive=true
+cofactor_parity_mixture_present_in_tail=true
+prime_extraction_from_lpf_tail_proved=false
+signed_payload_or_von_mangoldt_weight_constructed=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界因此更明确：FKMS/Milićević--Qin--Wu/Wright/Pascadi 型
+trace/Kloosterman/Type-II 输入不能作用在未加符号的 LPF tail count 上；它们需要
+先把 composite tail 提升为 admissible signed payload 或 von-Mangoldt-like
+cofactor family。最新非循环口为：
+
+```text
+EndpointPrimeLeakSeparatedFromLPFTailButPrimeExtractionStillParityBlocked
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 65AH-2. Phi-LPF terminal double-Awrap sibling q-spine kernel 证书
 
 新增证书：

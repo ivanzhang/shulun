@@ -2155,6 +2155,52 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 ---
 
+## 附录 Q13AC31：affine endpoint LPF first-hit partition（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_endpoint_lpf_first_hit_router.py
+data/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-lpf-first-hit-router.md
+```
+
+本层把 `2n+1` 归一化继续推进为从小到大剥离素因子的 first-hit 账本：
+
+```text
+m=p           -> endpoint prime leak, k=0
+m=p(2k+1)     -> composite LPF tail, k>=1
+n=kp+(p-1)/2
+```
+
+有限审计读数：
+
+```text
+endpoint_prime_leak_separated=true
+lpf_tail_composite_partition_closed=true
+zero_class_duplicate_overcount_positive=true
+cofactor_parity_mixture_present_in_tail=true
+prime_extraction_from_lpf_tail_proved=false
+signed_payload_or_von_mangoldt_weight_constructed=false
+row_column_unconditional_closed=false
+```
+
+这一步关闭的是 `k=0` 端点素数泄漏的归属问题：端点素数作为 first-hit prime
+emission 发射；合数尾才进入 LPF bucket。尾部仍含半素数层与更高合数层，所以
+仍需 signed payload、von-Mangoldt-like cofactor weight、Type-II/trace family
+或命名 PDEC。最新 honest 口：
+
+```text
+EndpointPrimeLeakSeparatedFromLPFTailButPrimeExtractionStillParityBlocked
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC30：final negative-run endpoint-collar reduction（2026-05-25）
 
 新增证书：

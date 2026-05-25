@@ -39805,6 +39805,72 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
 \end{quote}
 \end{remark}
 
+\begin{theorem}[Affine endpoint first-hit LPF partition]
+Let \(M=2X+1\), and let \(m\) range over odd integers \(3\le m\le M\).  If
+\(p=\operatorname{LPF}(m)\), then exactly one of the following alternatives
+holds:
+\[
+  m=p
+\]
+or
+\[
+  m=p(2k+1),\qquad k\ge1,\qquad
+  \operatorname{LPF}(2k+1)\ge p .
+\]
+In the second case, with \(n=(m-1)/2\),
+\[
+  n=kp+(p-1)/2 .
+\]
+Thus the increasing LPF peel partitions the affine odd axis into endpoint
+prime leaks and composite LPF tails.
+\end{theorem}
+
+\begin{proof}
+If \(m\) is prime then \(p=m\), giving the endpoint case.  Otherwise write
+\(m=pc\), where \(c>1\) is odd.  Since \(p\) is the least prime factor of
+\(m\), no prime below \(p\) divides \(c\); hence
+\(\operatorname{LPF}(c)\ge p\).  Writing \(c=2k+1\) gives \(k\ge1\).  Finally
+\[
+  n=(m-1)/2=(p(2k+1)-1)/2=kp+(p-1)/2.
+\]
+The two cases are disjoint and exhaustive.
+\end{proof}
+
+\begin{certificatestatement}[Affine endpoint LPF first-hit audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+endpoint\_prime\_leak\_separated=true\\
+lpf\_tail\_composite\_partition\_closed=true\\
+zero\_class\_duplicate\_overcount\_positive=true\\
+cofactor\_parity\_mixture\_present\_in\_tail=true\\
+prime\_extraction\_from\_lpf\_tail\_proved=false\\
+signed\_payload\_or\_von\_mangoldt\_weight\_constructed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-affine-endpoint-\\
+lpf-first-hit-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Why this still does not break parity]
+The first-hit partition removes the \(k=0\) ambiguity: \(m=p\) is a prime
+emission, while \(m=p(2k+1)\) with \(k\ge1\) is a composite LPF tail.  But the
+tail still contains both semiprime and higher-composite cofactor layers.
+Moreover, raw zero-class counts overcount composites unless they are assigned
+by their least prime factor.  Hence the next non-cyclic object remains a
+signed payload, a von-Mangoldt-like cofactor weight, a completed Type-II/trace
+family, or a named PDEC:
+\begin{quote}\scriptsize\ttfamily
+EndpointPrimeLeakSeparatedFromLPFTailButPrimeExtractionStillParityBlocked\\
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]
