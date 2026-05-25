@@ -39400,6 +39400,115 @@ Thus the remaining terminal collar problem is a \(P\)-scaled q-spine kernel
 payment or exclusion problem, not an isolated endpoint fluctuation.
 \end{remark}
 
+\begin{theorem}[Terminal sibling q-spine integer balance]
+The \(P\)-scaled sibling q-spine kernel in the preceding theorem is equivalent
+to a single integer balance on the right-side q-spine
+\[
+439,\quad 461,\quad 467.
+\]
+Precisely,
+\[
+\frac{295}{461\cdot467}
+ =
+ \frac{203}{439\cdot467}
+ +\frac{60}{439\cdot461}
+ +\frac{18}{461\cdot467},
+\]
+or, after clearing denominators,
+\[
+295\cdot439=203\cdot461+60\cdot467+18\cdot439=129505.
+\]
+Moreover the endpoint-collar coefficient for both \(m769\) and \(m773\) is
+given by the same formula
+\[
+c=\frac{461\cdot467-D_{\rm start}\cdot467-A_{\rm end}\cdot461}{607}.
+\]
+For \(m769\) this gives
+\[
+\frac{461\cdot467-21\cdot467-81\cdot461}{607}=277,
+\]
+and for \(m773\) it gives
+\[
+\frac{461\cdot467-44\cdot467-34\cdot461}{607}=295.
+\]
+The offset coefficient is the corresponding endpoint difference
+\[
+\frac{(21-44)\cdot467+(81-34)\cdot461}{607}=18.
+\]
+\end{theorem}
+
+\begin{proof}
+The previous certificate gives the normalized sibling-kernel identity
+\[
+\frac{179065}{215287}
+ =607\left(
+     \frac{203}{439\cdot467}
+    +\frac{60}{439\cdot461}
+    +\frac{18}{461\cdot467}
+   \right)
+\]
+and \(179065=295\cdot607\), while
+\[
+215287=461\cdot467,\qquad
+205013=439\cdot467,\qquad
+202379=439\cdot461.
+\]
+Dividing by \(607\) gives the displayed three-denominator identity.  Clearing
+the common denominator \(439\cdot461\cdot467\) gives the integer balance
+\[
+295\cdot439=203\cdot461+60\cdot467+18\cdot439.
+\]
+For the endpoint coefficients, the terminal signatures recorded by the ledger
+are
+\[
+(D_{\rm start},A_{\rm end})=(21,81)\quad\hbox{for }m769
+\]
+and
+\[
+(D_{\rm start},A_{\rm end})=(44,34)\quad\hbox{for }m773.
+\]
+Substitution gives the two coefficients \(277\) and \(295\).  Subtracting the
+two endpoint formulas gives the offset identity, whose quotient by \(607\) is
+\(18\).
+\end{proof}
+
+\begin{certificatestatement}[Sibling q-spine integer-balance audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+q\_spine\_for\_balance=[439,461,467]\\
+q\_path\_from\_double\_awrap=[461,463,467]\\
+denominators\_closed=true\\
+normalized\_identity\_closed=true\\
+integer\_balance\_closed=true\\
+endpoint\_coefficients\_closed=true\\
+endpoint\_offset\_formula\_closed=true\\
+terminal\_sibling\_qspine\_integer\_balance\_closed=true\\
+terminal\_sibling\_qspine\_integer\_balance\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-\\
+qspine-integer-balance-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated integer-balance gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Thus the remaining terminal payment problem is no longer a generic rational
+three-denominator kernel; it is an integer-balance payment or exclusion
+problem on the local right-side q-spine.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

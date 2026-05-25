@@ -1323,3 +1323,51 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这仍不是无条件闭合；它把 terminal collar payment 从单点相位问题降到 P-scaled
 q-spine 三分母 kernel 的 uniform payment/exclusion 或可平均族构造问题。
+
+## 12. terminal sibling q-spine integer-balance 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.json
+```
+
+本层把上一节的 P-scaled q-spine 三分母 kernel 再压成一个整数守恒。right-side
+q-spine 是 `[439,461,467]`，而 terminal double-Awrap 的本地路径仍是
+`[461,463,467]`；两者不能与 bridge-root q-spine 混同。
+
+关键新恒等式为：
+
+```text
+295/(461*467)
+= 203/(439*467) + 60/(439*461) + 18/(461*467)
+
+295*439 = 203*461 + 60*467 + 18*439 = 129505.
+```
+
+同一 endpoint collar 系数公式同时解释 sibling 与 target：
+
+```text
+coeff=(461*467 - D_start*467 - A_end*461)/607
+m769: (461*467 - 21*467 - 81*461)/607 = 277
+m773: (461*467 - 44*467 - 34*461)/607 = 295
+offset: ((21-44)*467 + (81-34)*461)/607 = 18
+```
+
+最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从有理三分母核
+降到整数 balance 的 uniform payment/exclusion 或 PDEC。

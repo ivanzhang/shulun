@@ -2233,6 +2233,70 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31.1：terminal sibling q-spine integer-balance（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.md
+```
+
+本层把 terminal sibling q-spine 三分母 kernel 再压成整数 balance。有限审计读数：
+
+```text
+q_spine_for_balance=[439,461,467]
+q_path_from_double_awrap=[461,463,467]
+denominators_closed=true
+normalized_identity_closed=true
+integer_balance_closed=true
+endpoint_coefficients_closed=true
+endpoint_offset_formula_closed=true
+terminal_sibling_qspine_integer_balance_closed=true
+terminal_sibling_qspine_integer_balance_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+295/(461*467)
+= 203/(439*467) + 60/(439*461) + 18/(461*467)
+295*439 = 203*461 + 60*467 + 18*439 = 129505.
+```
+
+同一 endpoint coefficient 公式给出 m769 的 `277`、m773 的 `295`，offset 差分给出
+`18`。honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍未闭合三命题；最新剩余对象只是从 P-scaled 三分母有理核进一步降为一个
+整数 balance 的 uniform payment/exclusion 或 PDEC。
+
+状态边界：
+
+```text
+terminal_sibling_qspine_integer_balance_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC41：Phi-LPF terminal boundary bridge-root moving endpoint barrier 审计（2026-05-25）
 
 新增证书：

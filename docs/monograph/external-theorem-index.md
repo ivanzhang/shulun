@@ -2179,6 +2179,56 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AH-3. Phi-LPF terminal sibling q-spine integer-balance 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：P-scaled q-spine 三分母 kernel
+已经被写成 right-side q-spine `[439,461,467]` 上的整数守恒。
+
+审计读数：
+
+```text
+denominators_closed=true
+normalized_identity_closed=true
+integer_balance_closed=true
+endpoint_coefficients_closed=true
+endpoint_offset_formula_closed=true
+terminal_sibling_qspine_integer_balance_closed=true
+terminal_sibling_qspine_integer_balance_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+295/(461*467)
+= 203/(439*467) + 60/(439*461) + 18/(461*467)
+295*439 = 203*461 + 60*467 + 18*439 = 129505.
+```
+
+外部定理边界没有改变：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、
+Type-II 输入仍需要把这个整数 balance 升成可平均 signed family；
+Becker--Breuillard 型谱隙仍需要有限群轨道或 thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
 
 新增证书：

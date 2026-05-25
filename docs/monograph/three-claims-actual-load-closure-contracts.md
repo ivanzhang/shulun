@@ -30317,3 +30317,65 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### terminal sibling q-spine integer-balance actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-integer-balance-router.json
+```
+
+actual-load 含义：上一层 P-scaled sibling q-spine kernel 已经不是一般有理尾项，
+而是 right-side q-spine `[439,461,467]` 上的整数 balance：
+
+```text
+denominators_closed=true
+normalized_identity_closed=true
+integer_balance_closed=true
+endpoint_coefficients_closed=true
+endpoint_offset_formula_closed=true
+terminal_sibling_qspine_integer_balance_closed=true
+```
+
+具体恒等式为：
+
+```text
+295/(461*467)
+= 203/(439*467) + 60/(439*461) + 18/(461*467)
+
+295*439 = 203*461 + 60*467 + 18*439 = 129505
+```
+
+并且 endpoint 系数统一为：
+
+```text
+coeff=(461*467 - D_start*467 - A_end*461)/607
+m769: (461*467 - 21*467 - 81*461)/607 = 277
+m773: (461*467 - 44*467 - 34*461)/607 = 295
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_sibling_qspine_integer_balance_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

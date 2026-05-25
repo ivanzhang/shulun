@@ -1,0 +1,157 @@
+{
+  "P": 607,
+  "admissible_trace_or_typeii_family_constructed": false,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router",
+  "coefficients": {
+    "endpoint_offset": 18,
+    "middle_kernel": 60,
+    "paid_sibling_tail": 203,
+    "sibling_final_collar": 277,
+    "target_final_tail": 295
+  },
+  "denominators_closed": true,
+  "endpoint_coefficient_formula": "coeff=(q_mid*q_right - D_start*q_right - A_end*q_mid)/607",
+  "endpoint_coefficients_closed": true,
+  "endpoint_offset_formula": {
+    "closed": true,
+    "coefficient": 18,
+    "formula": "((21-44)*467 + (81-34)*461)/607",
+    "numerator": 10926
+  },
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "SiblingQSpineKernelImported",
+      "meaning": "上一层 P-scaled sibling q-spine kernel 已有限闭合，支付律仍未证明。",
+      "proved": true,
+      "remaining": "finite sibling-kernel ledger"
+    },
+    {
+      "closed": true,
+      "gate": "QSpineDenominatorAlignment",
+      "meaning": "三个分母精确落在 right-side q-spine [439,461,467] 的三条二点边上。",
+      "proved": true,
+      "remaining": "finite denominator ledger"
+    },
+    {
+      "closed": true,
+      "gate": "IntegerBalanceIdentity",
+      "meaning": "三分母 kernel 等价于整数守恒 295*439=203*461+60*467+18*439。",
+      "proved": true,
+      "remaining": "finite integer identity"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointCoefficientFormula",
+      "meaning": "m769 与 m773 的 endpoint collar 系数服从同一 D_start/A_end 公式。",
+      "proved": true,
+      "remaining": "finite endpoint coefficient ledger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointOffsetFormula",
+      "meaning": "m773 相对 m769 的 offset 系数 18 来自两个 endpoint 数据的差分公式。",
+      "proved": true,
+      "remaining": "finite endpoint difference ledger"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalSiblingQSpineIntegerBalancePaymentLaw",
+      "meaning": "仍需一个 uniform law 支付或排除该整数 balance，而不能只在 m773 有限点成立。",
+      "proved": false,
+      "remaining": "TerminalSiblingQSpineIntegerBalancePaymentOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "这是 finite integer-balance reduction，不是全局奇偶性突破定理。",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "integer_balance": {
+    "formula": "295*439 = 203*461 + 60*467 + 18*439",
+    "left": 129505,
+    "right": 129505,
+    "terms": {
+      "endpoint_offset_term": 7902,
+      "middle_kernel_term": 28020,
+      "paid_tail_term": 93583
+    }
+  },
+  "integer_balance_closed": true,
+  "kernel_masses": {
+    "endpoint_offset_mass": {
+      "decimal": "0.050750858157",
+      "denominator": 215287,
+      "fraction": "10926/215287",
+      "numerator": 10926
+    },
+    "middle_kernel_mass": {
+      "decimal": "0.179959383138",
+      "denominator": 202379,
+      "fraction": "36420/202379",
+      "numerator": 36420
+    },
+    "paid_sibling_tail_mass": {
+      "decimal": "0.601039934053",
+      "denominator": 205013,
+      "fraction": "123221/205013",
+      "numerator": 123221
+    },
+    "sibling_final_collar_mass": {
+      "decimal": "0.780999317191",
+      "denominator": 215287,
+      "fraction": "168139/215287",
+      "numerator": 168139
+    },
+    "target_final_tail_mass": {
+      "decimal": "0.831750175347",
+      "denominator": 215287,
+      "fraction": "179065/215287",
+      "numerator": 179065
+    }
+  },
+  "latest_open_gate": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND TerminalSiblingQSpineIntegerBalancePaymentOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "next_primary_attack_target": "TerminalSiblingQSpineIntegerBalancePaymentOrPDEC",
+  "normalized_identity": "295/(461*467) = 203/(439*467) + 60/(439*461) + 18/(461*467)",
+  "normalized_identity_closed": true,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The terminal sibling q-spine kernel is equivalent to the integer balance 295*439 = 203*461 + 60*467 + 18*439, and both m769/m773 endpoint collar coefficients are given by the same D_start/A_end formula. The remaining task is a uniform integer-balance payment/exclusion law or PDEC.",
+  "previous_sibling_qspine_kernel_closed": true,
+  "q_mid": 461,
+  "q_path_from_double_awrap": [
+    461,
+    463,
+    467
+  ],
+  "q_prefix": 439,
+  "q_right": 467,
+  "q_spine_for_balance": [
+    439,
+    461,
+    467
+  ],
+  "row_column_unconditional_closed": false,
+  "sibling_endpoint_coefficient": {
+    "coefficient": 277,
+    "divisible_by_P": true,
+    "formula": "(461*467 - 21*467 - 81*461)/607",
+    "numerator": 168139
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-double-awrap-sibling-qspine-kernel-router.json": "8ee3a54cdd7ed21521fee953ef6d2f3433235a0e6a7a81b4055f89e31e1603da",
+    "experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_integer_balance_router.py": "bbb50a10be014d88e783698d173edc282f2b650cd486981a410a3da91557f464"
+  },
+  "status": "terminal_sibling_qspine_integer_balance_closed_payment_law_open",
+  "target_endpoint_coefficient": {
+    "coefficient": 295,
+    "divisible_by_P": true,
+    "formula": "(461*467 - 44*467 - 34*461)/607",
+    "numerator": 179065
+  },
+  "terminal_sibling_qspine_integer_balance_closed": true,
+  "terminal_sibling_qspine_integer_balance_payment_law_proved": false,
+  "verified_date": "2026-05-25"
+}
