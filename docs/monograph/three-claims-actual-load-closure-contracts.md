@@ -30209,3 +30209,56 @@ right_tail_overhang_pdec_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### final negative-run endpoint-collar actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router.py
+data/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.md
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.json
+```
+
+actual-load 含义：上一节的 final negative-tail payment 不是黑箱尾段，而是两步
+terminal endpoint-collar debt：
+
+```text
+q_path=[461,463,467]
+A_path=[417,87,34]
+D_path=[44,376,433]
+two_edge_sum_matches_variation_and_tail=true
+endpoint_telescoping_closed=true
+endpoint_collar_debt_formula_closed=true
+double_awrap_same_lift_word_closed=true
+right_tail_final_negative_run_endpoint_collar_reduction_closed=true
+```
+
+具体恒等式为：
+
+```text
+179065/215287 = 417/461 - 34/467 = 1 - 44/461 - 34/467
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_double_awrap_endpoint_collar_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

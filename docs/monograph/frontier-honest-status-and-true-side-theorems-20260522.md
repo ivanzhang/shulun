@@ -2106,6 +2106,60 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+---
+
+## 附录 Q13AC30：final negative-run endpoint-collar reduction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router.py
+data/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.md
+```
+
+本层把上一轮 final negative run 继续压成 endpoint-collar 端点恒等式。有限审计读数：
+
+```text
+atom_key=right:1887:selected_terminal:m773
+q_path=[461,463,467]
+A_path=[417,87,34]
+D_path=[44,376,433]
+q_gap_path=[2,4]
+carry_path=[2,5]
+two_edge_sum_matches_variation_and_tail=true
+endpoint_telescoping_closed=true
+middle_phase_cancels=true
+endpoint_collar_debt_formula_closed=true
+double_awrap_same_lift_word_closed=true
+right_tail_final_negative_run_endpoint_collar_reduction_closed=true
+terminal_double_awrap_endpoint_collar_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+179065/215287 = 417/461 - 34/467 = 1 - 44/461 - 34/467.
+```
+
+中间相位 `87/463` 已完全消去；剩余不是匿名 final-tail，而是 terminal
+double-Awrap endpoint-collar debt。honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+仍未构造无条件闭合证明；下一步只能是 uniform terminal-collar payment/exclusion，
+或把 terminal collars 聚合成可调用的 averaged trace/Type-II/expander family。
+
 状态边界：
 
 ```text

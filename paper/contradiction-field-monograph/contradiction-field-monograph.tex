@@ -39219,6 +39219,89 @@ The old right-tail overhang label is therefore replaced by a sharper final
 negative-tail payment law or named PDEC.
 \end{remark}
 
+\begin{theorem}[Final negative run endpoint-collar reduction]
+The final negative run in the preceding theorem is a two-edge terminal
+endpoint-collar wrap debt.  More precisely, for
+\[
+{\rm atom}=({\rm right}:1887:{\rm selected\_terminal}:m773),
+\]
+the final path is
+\[
+q:461\to463\to467,\qquad
+A:417\to87\to34,\qquad
+D:44\to376\to433.
+\]
+Both edges have turn word
+\[
+\texttt{negative\_Awrap1\_Dwrap0\_L1to1}
+\]
+with gaps \(2,4\) and carries \(2,5\).  The middle phase \(87/463\)
+telescopes away, and the exact remaining mass is
+\[
+\frac{179065}{215287}
+  = \frac{417}{461}-\frac{34}{467}
+  = 1-\frac{44}{461}-\frac{34}{467}.
+\]
+\end{theorem}
+
+\begin{proof}
+The phase-turn certificate gives the two final transitions
+\[
+\frac{87}{463}-\frac{417}{461}=-\frac{152964}{213443},
+\qquad
+\frac{34}{467}-\frac{87}{463}=-\frac{24887}{216221}.
+\]
+Adding them cancels the middle term \(87/463\) and gives
+\[
+\frac{34}{467}-\frac{417}{461}=-\frac{179065}{215287}.
+\]
+Since \(417=461-44\), the positive tail mass is equivalently
+\[
+\frac{417}{461}-\frac{34}{467}
+ = 1-\frac{44}{461}-\frac{34}{467}.
+\]
+This is exactly the final-tail mass recorded in the variation and right-tail
+overhang certificates.  The proof is finite and does not supply a uniform
+payment law for all terminal double-\(A\)-wrap endpoint collars.
+\end{proof}
+
+\begin{certificatestatement}[Final negative-run endpoint-collar audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+q\_path=[461,463,467]\\
+A\_path=[417,87,34]\\
+D\_path=[44,376,433]\\
+two\_edge\_sum\_matches\_variation\_and\_tail=true\\
+endpoint\_telescoping\_closed=true\\
+middle\_phase\_cancels=true\\
+endpoint\_collar\_debt\_formula\_closed=true\\
+double\_awrap\_same\_lift\_word\_closed=true\\
+right\_tail\_final\_negative\_run\_endpoint\_collar\_reduction\_closed=true\\
+terminal\_double\_awrap\_endpoint\_collar\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-\\
+endpoint-collar-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated terminal-collar gate]
+The shortest Prime Matrix gate is sharpened to
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Thus the former final-tail payment problem is now a terminal double-\(A\)-wrap
+endpoint-collar payment or exclusion problem.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

@@ -1231,3 +1231,48 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这仍不是无条件闭合；下一步必须证明 final negative-tail payment law，或把该最终
 负 run 回流为命名 PDEC/LocalSurvivor。
+
+## 10. final negative-run endpoint-collar 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router.py
+data/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.md
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.json
+```
+
+本层把上一节的 final negative run 继续原子化。它不是任意 tail payment 门，而是
+两步 terminal endpoint-collar wrap debt：
+
+```text
+q_path=[461,463,467]
+A_path=[417,87,34]
+D_path=[44,376,433]
+phase words:
+negative_Awrap1_Dwrap0_L1to1_gap2_carry2
+negative_Awrap1_Dwrap0_L1to1_gap4_carry5
+```
+
+核心恒等式为：
+
+```text
+179065/215287 = 417/461 - 34/467 = 1 - 44/461 - 34/467.
+```
+
+中间相位 `87/463` 完全 telescoping 消去。因此最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是三命题无条件闭合。真正下一步是证明 terminal double-Awrap endpoint-collar
+的 uniform payment/exclusion，或把这类 terminal collar 聚合成可调用
+trace/Kloosterman/Type-II 或 finite-group orbit family。

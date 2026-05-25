@@ -2126,6 +2126,58 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router.py
+data/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-ledger.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.json
+docs/monograph/prime-matrix-phi-lpf-right-tail-final-negative-run-endpoint-collar-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：上一层的 final negative run 实际是两步
+terminal endpoint-collar wrap debt，而不是 completed trace family 或 group orbit。
+
+审计读数：
+
+```text
+q_path=[461,463,467]
+A_path=[417,87,34]
+D_path=[44,376,433]
+two_edge_sum_matches_variation_and_tail=true
+endpoint_telescoping_closed=true
+middle_phase_cancels=true
+endpoint_collar_debt_formula_closed=true
+double_awrap_same_lift_word_closed=true
+right_tail_final_negative_run_endpoint_collar_reduction_closed=true
+terminal_double_awrap_endpoint_collar_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+179065/215287 = 417/461 - 34/467 = 1 - 44/461 - 34/467
+```
+
+外部定理边界因此更明确：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、
+Type-II 输入仍需先把 terminal double-Awrap collars 聚合成可平均的
+moving-denominator family；Becker--Breuillard 型谱隙仍需先构造有限群轨道或
+thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AJ. Phi-LPF terminal boundary carry-break source-packet 证书
 
 新增证书：

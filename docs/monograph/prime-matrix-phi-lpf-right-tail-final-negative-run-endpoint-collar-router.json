@@ -1,0 +1,169 @@
+{
+  "A_path": [
+    417,
+    87,
+    34
+  ],
+  "D_path": [
+    44,
+    376,
+    433
+  ],
+  "P": 607,
+  "admissible_trace_or_typeii_family_constructed": false,
+  "atom_key": "right:1887:selected_terminal:m773",
+  "carry_path": [
+    2,
+    5
+  ],
+  "certificate_type": "prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router",
+  "double_awrap_same_lift_word_closed": true,
+  "endpoint_collar_debt_formula_closed": true,
+  "endpoint_collar_formula_tail": {
+    "decimal": "0.831750175347",
+    "denominator": 215287,
+    "fraction": "179065/215287",
+    "numerator": 179065
+  },
+  "endpoint_drop_signed": {
+    "decimal": "-0.831750175347",
+    "denominator": 215287,
+    "fraction": "-179065/215287",
+    "numerator": -179065
+  },
+  "endpoint_tail_mass": {
+    "decimal": "0.831750175347",
+    "denominator": 215287,
+    "fraction": "179065/215287",
+    "numerator": 179065
+  },
+  "endpoint_telescoping_closed": true,
+  "external_frontier_implication": {
+    "finite_group_orbit": "The path q=461->463->467 gives a deterministic collar orbit segment, not yet a finite-group expansion family with spectral gap.",
+    "trace_kloosterman_typeii": "The two-edge final collar is too local for direct averaged trace/Kloosterman or Type-II input; one must first aggregate terminal double-Awrap collars into an admissible moving-denominator family."
+  },
+  "final_tail_mass": {
+    "decimal": "0.831750175347",
+    "denominator": 215287,
+    "fraction": "179065/215287",
+    "numerator": 179065
+  },
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "FinalRunTwoEdgeTurnWordIdentified",
+      "meaning": "the remaining tail is exactly the q=461->463->467 two-edge terminal run.",
+      "proved": true,
+      "remaining": "finite turn-word ledger"
+    },
+    {
+      "closed": true,
+      "gate": "DoubleAwrapSameLiftEndpointCollar",
+      "meaning": "both final edges are negative Awrap=1, Dwrap=0, L1->L1 transitions.",
+      "proved": true,
+      "remaining": "finite phase-turn ledger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointTelescopingIdentity",
+      "meaning": "the middle phase A=87/q=463 cancels, leaving only endpoint collar data.",
+      "proved": true,
+      "remaining": "finite rational identity"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointCollarDebtFormula",
+      "meaning": "tail mass equals 1 - D_start/q_start - A_end/q_end.",
+      "proved": true,
+      "remaining": "finite endpoint-collar identity"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalDoubleAwrapEndpointCollarPaymentLaw",
+      "meaning": "a uniform law must pay or exclude this terminal double-Awrap collar debt.",
+      "proved": false,
+      "remaining": "TerminalDoubleAwrapEndpointCollarPaymentOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite collar reduction, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "latest_open_gate": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND TerminalDoubleAwrapEndpointCollarPaymentOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "left_collar_start_D_over_q": {
+    "decimal": "0.095444685466",
+    "denominator": 461,
+    "fraction": "44/461",
+    "numerator": 44
+  },
+  "m": 773,
+  "middle_phase_cancels": true,
+  "moving_beatty_numerator_obstruction_confirmed": true,
+  "next_primary_attack_target": "TerminalDoubleAwrapEndpointCollarPaymentOrPDEC",
+  "phase_turn_words": [
+    "negative_Awrap1_Dwrap0_L1to1_gap2_carry2",
+    "negative_Awrap1_Dwrap0_L1to1_gap4_carry5"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The final right-tail excess is exactly a two-edge terminal endpoint-collar wrap debt: 179065/215287 = 417/461 - 34/467 = 1 - 44/461 - 34/467.  The remaining open task is a uniform payment or exclusion law for terminal double-Awrap endpoint collars.",
+  "previous_right_tail_overhang_excess_decomposition_closed": true,
+  "q_gap_path": [
+    2,
+    4
+  ],
+  "q_path": [
+    461,
+    463,
+    467
+  ],
+  "right_collar_end_A_over_q": {
+    "decimal": "0.072805139186",
+    "denominator": 467,
+    "fraction": "34/467",
+    "numerator": 34
+  },
+  "right_tail_final_negative_run_endpoint_collar_reduction_closed": true,
+  "role": "selected_terminal",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-normal-form-audit.json": "45e13789a89eca78b31950a4fa13b50e4712160e2ff835fb8a33be28c8fff931",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.json": "e05dc6c48cd18aaa25cef5abe9aa5dc346d5b07db0827c8443dcefe536111615",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json": "284aadf7447ca0c0c9bc5d8af87a9ba3ff62826b35185de2b495d5175d7087eb",
+    "docs/monograph/prime-matrix-phi-lpf-right-tail-overhang-excess-decomposition-router.json": "508b72f5bee9144dc953ea64dbb14ebb2d4be39e32ce93fa4dafeb23fb977a7a",
+    "experiments/prime_matrix_phi_lpf_right_tail_final_negative_run_endpoint_collar_router.py": "021ceac2c4c524240e6580f6efa7dc705f2cbc28547b0a2a5448249bc7bc5db9"
+  },
+  "status": "final_negative_run_endpoint_collar_reduction_closed_payment_law_open",
+  "terminal_double_awrap_endpoint_collar_payment_law_proved": false,
+  "transition_signed_delta_sum": {
+    "decimal": "-0.831750175347",
+    "denominator": 215287,
+    "fraction": "-179065/215287",
+    "numerator": -179065
+  },
+  "transition_signed_deltas": [
+    {
+      "decimal": "-0.716650346931",
+      "denominator": 213443,
+      "fraction": "-152964/213443",
+      "numerator": -152964
+    },
+    {
+      "decimal": "-0.115099828416",
+      "denominator": 216221,
+      "fraction": "-24887/216221",
+      "numerator": -24887
+    }
+  ],
+  "two_edge_sum_matches_variation_and_tail": true,
+  "variation_final_signed_delta": {
+    "decimal": "-0.831750175347",
+    "denominator": 215287,
+    "fraction": "-179065/215287",
+    "numerator": -179065
+  },
+  "verified_date": "2026-05-25"
+}
