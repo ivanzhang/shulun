@@ -11941,3 +11941,48 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
+
+## 65AI. affine LPF first-hit von Mangoldt lift 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_lpf_first_hit_von_mangoldt_lift_router.py
+data/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.md
+```
+
+本层不声称新外部定理已闭合当前命题。它把 LPF first-hit tail 与
+von Mangoldt 权重的关系精确化：`Lambda` 的提升需要 Möbius divisor signed
+payload，不能由 LPF-local unsigned count 替代。
+
+审计读数：
+
+```text
+mobius_von_mangoldt_identity_closed=true
+lpf_first_hit_identity_imported_and_verified=true
+tail_prime_power_leak_present=true
+nonprimepower_tail_cancelled_only_by_mobius_divisor_sum=true
+lpf_local_unsigned_count_sufficient_for_prime_extraction=false
+global_divisor_signed_payload_required=true
+admissible_typeii_or_trace_family_constructed=false
+pointwise_theta_ap_positivity_at_p2_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+对外部前沿的同步结论是：Milićević--Qin--Wu 与 Pascadi 型
+Kloosterman/Type-II 输入需要先有 admissible signed family；almost-all
+short-interval `Lambda` 均匀性不提供每个 `P`、每个 residue class 在
+`x=P^2` 的点态正性；已撤回的 Kloosterman fractions 预印本不能作为有效输入。
+
+最新开放口：
+
+```text
+VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```

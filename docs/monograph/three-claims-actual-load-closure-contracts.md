@@ -95,6 +95,56 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+### affine LPF first-hit von Mangoldt lift actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_lpf_first_hit_von_mangoldt_lift_router.py
+data/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.json
+```
+
+actual-load 含义：`LPF(m)=p` 的 first-hit tail 可以精确接入
+von Mangoldt 函数，但该接入是全局 Möbius 除子和，不是 LPF-local
+无符号计数。核心身份为：
+
+```text
+Lambda(m)=sum_{d|m} mu(d) log(m/d)
+Lambda(m)=log p if m=p^a, otherwise 0
+```
+
+有限审计确认：
+
+```text
+mobius_von_mangoldt_identity_closed=true
+lpf_first_hit_identity_imported_and_verified=true
+tail_prime_power_leak_present=true
+nonprimepower_tail_cancelled_only_by_mobius_divisor_sum=true
+lpf_local_unsigned_count_sufficient_for_prime_extraction=false
+global_divisor_signed_payload_required=true
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```
+
+状态边界：
+
+```text
+admissible_typeii_or_trace_family_constructed=false
+pointwise_theta_ap_positivity_at_p2_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### affine odd Euler normalization actual-load 更新（2026-05-25）
 
 新增机器证书：

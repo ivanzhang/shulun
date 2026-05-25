@@ -1626,3 +1626,65 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 18. affine LPF first-hit von Mangoldt lift 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_lpf_first_hit_von_mangoldt_lift_router.py
+data/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.md
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.json
+```
+
+本层把上一节的 LPF first-hit 分割接到 von Mangoldt 的 Möbius 反演恒等式：
+
+```text
+Lambda(m) = sum_{d|m} mu(d) log(m/d)
+Lambda(m) = log p  if m=p^a
+Lambda(m) = 0      otherwise
+```
+
+有限审计读数：
+
+```text
+mobius_von_mangoldt_identity_closed=true
+lpf_first_hit_identity_imported_and_verified=true
+tail_prime_power_leak_present=true
+nonprimepower_tail_cancelled_only_by_mobius_divisor_sum=true
+lpf_local_unsigned_count_sufficient_for_prime_extraction=false
+global_divisor_signed_payload_required=true
+admissible_typeii_or_trace_family_constructed=false
+row_column_unconditional_closed=false
+```
+
+这一步给出真正有用的路线校正：若要从 `LPF(m)=p` 的合数尾抽出素数质量，
+必须改用全局除子层的 signed payload。端点素数给出 `theta` 质量，尾部
+prime powers 仍有小的 `Lambda` 泄漏，而非 prime powers 的消失依赖所有
+Möbius 除子的符号抵消。于是仅从小到大剥离 LPF 因子、再做无符号桶计数，
+仍无法跨过奇偶性障碍。
+
+样本读数显示 prime-power 泄漏不是闭合主项：
+
+| X | endpoint primes | composite tails | tail prime powers | tail non-prime-powers | tail prime-power Lambda fraction |
+| --- | --- | --- | --- | --- | --- |
+| 100 | 45 | 55 | 8 | 47 | 0.066686 |
+| 1000 | 302 | 698 | 21 | 677 | 0.024339 |
+| 10000 | 2261 | 7739 | 53 | 7686 | 0.008123 |
+| 50000 | 9591 | 40409 | 93 | 40316 | 0.003556 |
+
+外部前沿输入的作用也因此被精确重写：Milićević--Qin--Wu、Pascadi 与
+almost-all short-interval `Lambda` 均不能直接作用于无符号 LPF tail；它们需要
+先有 admissible signed divisor/Type-II/trace family，或者给出逐点
+`theta` AP positivity at `P^2` 的替代定理。
+
+最新非循环口为：
+
+```text
+VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```

@@ -39871,6 +39871,64 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Affine LPF first-hit von Mangoldt lift]
+For every odd integer \(m\ge 3\),
+\[
+  \Lambda(m)=\sum_{d\mid m}\mu(d)\log(m/d).
+\]
+Equivalently, \(\Lambda(m)=\log p\) if \(m=p^a\) is a prime power and
+\(\Lambda(m)=0\) otherwise.  Therefore the affine first-hit partition can be
+lifted exactly to a von-Mangoldt payload, but the lift is a global Mobius
+divisor signed payload.  It is not an unsigned local count on the
+\(\operatorname{LPF}(m)\) bucket.
+\end{proposition}
+
+\begin{proof}
+The displayed identity is the standard Mobius inversion of
+\(\log n=\sum_{d\mid n}\Lambda(d)\).  If \(m=p^a\), the nonzero terms in the
+Mobius sum occur only for \(d=1,p\), giving \(a\log p-(a-1)\log p=\log p\).
+If \(m\) has at least two distinct prime factors, the squarefree divisor
+sum cancels the logarithmic contribution in each prime coordinate, hence the
+value is zero.  Combining this with the first-hit decomposition above
+separates endpoint primes from composite tails, but the cancellation on
+non-prime-power tails uses all Mobius divisor signs.
+\end{proof}
+
+\begin{certificatestatement}[Affine LPF first-hit von Mangoldt lift audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+mobius\_von\_mangoldt\_identity\_closed=true\\
+lpf\_first\_hit\_identity\_imported\_and\_verified=true\\
+tail\_prime\_power\_leak\_present=true\\
+nonprimepower\_tail\_cancelled\_only\_by\_mobius\_divisor\_sum=true\\
+lpf\_local\_unsigned\_count\_sufficient\_for\_prime\_extraction=false\\
+global\_divisor\_signed\_payload\_required=true\\
+admissible\_typeii\_or\_trace\_family\_constructed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-\\
+first-hit-von-mangoldt-lift-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated non-cyclic gate after the von-Mangoldt lift]
+The lift answers the natural follow-up to the endpoint LPF partition.  A
+prime extraction mechanism must now build a signed divisor family, a
+Type-II/trace family to which external Kloosterman technology applies, or a
+pointwise \(\theta\)-in-progressions substitute at the \(P^2\) scale.  Raw
+LPF bucket counts and finite Euler-product normalization still do not break
+the parity barrier.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount\\
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily\\
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

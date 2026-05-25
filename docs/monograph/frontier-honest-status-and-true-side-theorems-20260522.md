@@ -13241,3 +13241,52 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
+
+---
+
+## 附录 Q13AC30：affine LPF first-hit von Mangoldt lift（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_affine_lpf_first_hit_von_mangoldt_lift_router.py
+data/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.json
+docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.md
+```
+
+本层承接 affine endpoint LPF first-hit，把端点 prime leak、合数 LPF tail 与
+`Lambda` 权重放在同一账本中。精确恒等式闭合：
+
+```text
+Lambda(m)=sum_{d|m} mu(d) log(m/d)
+Lambda(m)=log p if m=p^a, otherwise 0
+```
+
+有限审计读数：
+
+```text
+mobius_von_mangoldt_identity_closed=true
+lpf_first_hit_identity_imported_and_verified=true
+tail_prime_power_leak_present=true
+nonprimepower_tail_cancelled_only_by_mobius_divisor_sum=true
+lpf_local_unsigned_count_sufficient_for_prime_extraction=false
+global_divisor_signed_payload_required=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+这给出 honest 结论：LPF 从小到大剥离可以定位 first-hit bucket，但不能凭无符号
+bucket count 抽取素数。若要真突破奇偶性障碍，下一对象必须是全局
+Möbius divisor signed payload、可平均 Type-II/trace family，或能替代它的逐点
+`theta` AP positivity at `P^2`；否则必须回流成命名 PDEC。
+
+最新 honest 口：
+
+```text
+VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```
