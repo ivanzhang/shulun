@@ -1834,3 +1834,65 @@ AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+## 21. Legendre-Phi periodic truncation error 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_legendre_phi_periodic_truncation_error_audit.py
+data/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-ledger.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.md
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.json
+```
+
+本层把“有限欧拉乘积截断误差是否为半主项”的问题改写为精确周期公式。设
+
+```text
+W_<p = prod_{q<p} q.
+```
+
+则
+
+```text
+Phi(x; primes<p)=floor(x/W_<p)*phi(W_<p)+R_p(x mod W_<p).
+```
+
+因此 composite LPF bucket 的端点修正式为：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+      =(floor(N/p)-p+1)*phi(W_<p)/W_<p
+       + B_p(floor(N/p))-B_p(p-1),
+|B_p(t)| <= phi(W_<p).
+```
+
+结论：截断误差是 primorial 周期余数边界项，不是普遍 `1/2 main`。这进一步修正
+前几轮的密度口径：`p=2` 归一化、owner-prime divisibility class 与端点 `Phi(p-1)`
+都必须同时保留。
+
+有限审计读数：
+
+```text
+legendre_phi_periodic_truncation_error_closed=true
+exact_lpf_bucket_identity_closed=true
+half_main_truncation_error_claim_supported=false
+truncation_error_is_periodic_residue_boundary=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+同步外部前沿：Milićević--Qin--Wu Kloosterman 双线性、Zheng simultaneous AP、
+Runbo Li 大模数 AP/Harman、Wright 三线性 Kloosterman fractions 与
+Becker--Breuillard 谱间隙/反集中均仍需先构造 admissible signed trace/Type-II
+或 finite-group orbit family。它们不能直接把周期边界误差变成素数抽取。
+
+最新非循环口为：
+
+```text
+LegendrePhiTruncationErrorIsPeriodicBoundaryNotHalfMain
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

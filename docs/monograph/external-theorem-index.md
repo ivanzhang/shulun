@@ -12070,3 +12070,60 @@ AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+## 65AL. Legendre-Phi periodic truncation error 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_legendre_phi_periodic_truncation_error_audit.py
+data/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-ledger.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.md
+```
+
+本层把 LPF bucket 的有限截断误差改写为 Legendre-`Phi` 的完整 primorial 周期余数：
+
+```text
+Phi(x; primes<p)=floor(x/W_<p)*phi(W_<p)+R_p(x mod W_<p)
+C_p(N)=Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+```
+
+因此
+
+```text
+C_p(N)=(floor(N/p)-p+1)*phi(W_<p)/W_<p
+       + B_p(floor(N/p))-B_p(p-1),
+|B_p(t)| <= phi(W_<p).
+```
+
+审计读数：
+
+```text
+legendre_phi_periodic_truncation_error_closed=true
+exact_lpf_bucket_identity_closed=true
+half_main_truncation_error_claim_supported=false
+truncation_error_is_periodic_residue_boundary=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界同步：
+
+| 外部输入 | 主源 | 当前边界 |
+| --- | --- | --- |
+| Milićević--Qin--Wu bilinear Kloosterman sums | https://arxiv.org/abs/2511.07550 | 需要先完成双变量 Kloosterman family |
+| Zheng simultaneous AP primes | https://arxiv.org/abs/2512.22798 | 需要把两个 AP 条件放入同一 signed family |
+| Runbo Li large-modulus AP/Harman | https://arxiv.org/abs/2602.20917 | 平均型输入，不给 `x=P^2` 逐列点态正性 |
+| Wright trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要三线性 convolution 与 equidistributed 系数 |
+| Becker--Breuillard spectral gaps/anti-concentration | https://arxiv.org/abs/2512.15364 | 需要 finite-group orbit 或 thin-group sieve family |
+
+最新开放口：
+
+```text
+LegendrePhiTruncationErrorIsPeriodicBoundaryNotHalfMain
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

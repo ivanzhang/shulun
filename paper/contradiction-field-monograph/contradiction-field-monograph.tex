@@ -40054,6 +40054,84 @@ AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Legendre-Phi truncation error is periodic boundary error]
+Let \(p\) be prime and put
+\[
+  W_{<p}=\prod_{q<p}q .
+\]
+For every \(x\ge0\),
+\[
+  \Phi(x;q<p)
+  =
+  \Big\lfloor\frac{x}{W_{<p}}\Big\rfloor\varphi(W_{<p})
+  +R_p(x\bmod W_{<p}),
+\]
+where \(R_p(r)\) counts the reduced residues \(1\le a\le r\) modulo
+\(W_{<p}\).  Hence
+\[
+  C_p(N)=\Phi(\lfloor N/p\rfloor;q<p)-\Phi(p-1;q<p)
+\]
+equals
+\[
+  (\lfloor N/p\rfloor-p+1)\frac{\varphi(W_{<p})}{W_{<p}}
+  +B_p(\lfloor N/p\rfloor)-B_p(p-1),
+\]
+with
+\[
+  |B_p(t)|\le \varphi(W_{<p}).
+\]
+Thus the finite Legendre-Phi truncation error is a primorial-periodic boundary
+term, not a universal half-main term.
+\end{proposition}
+
+\begin{proof}
+The condition counted by \(\Phi(x;q<p)\) depends only on the residue class of
+the integer modulo \(W_{<p}\).  Each complete block of length \(W_{<p}\)
+therefore contributes exactly \(\varphi(W_{<p})\) admissible classes.  The
+remaining incomplete block contributes \(R_p(x\bmod W_{<p})\).  Defining
+\[
+  B_p(t)=\Phi(t;q<p)-t\frac{\varphi(W_{<p})}{W_{<p}}
+\]
+gives the displayed formula after subtracting the endpoint
+\(\Phi(p-1;q<p)\).  Since the incomplete block contains at most
+\(\varphi(W_{<p})\) admissible residue classes and its continuous main is also
+between \(0\) and \(\varphi(W_{<p})\), the stated bound follows.
+\end{proof}
+
+\begin{certificatestatement}[Legendre-Phi periodic truncation error audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+legendre\_phi\_periodic\_truncation\_error\_closed=true\\
+exact\_lpf\_bucket\_identity\_closed=true\\
+half\_main\_truncation\_error\_claim\_supported=false\\
+truncation\_error\_is\_periodic\_residue\_boundary=true\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-\\
+periodic-truncation-error-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[External frontier after the periodic error correction]
+The periodic correction closes the local truncation grammar but supplies no
+signed prime-extraction payload.  Milićević--Qin--Wu bilinear Kloosterman
+estimates, Zheng simultaneous arithmetic-progressions input, Runbo Li large
+modulus arithmetic progressions, Wright trilinear Kloosterman fractions, and
+Becker--Breuillard spectral-gap/anti-concentration tools remain candidate
+inputs only after an admissible signed trace, Type-II, or finite-group orbit
+family has been constructed.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+LegendrePhiTruncationErrorIsPeriodicBoundaryNotHalfMain\\
+AND UnsignedLPFBucketCountStillParityBlind\\
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

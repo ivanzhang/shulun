@@ -13400,3 +13400,62 @@ AND ExactLPFBucketCountIsLegendrePhiNotInclusiveSurvivalProduct
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+---
+
+## 附录 Q13AC33：Legendre-Phi periodic truncation error（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_legendre_phi_periodic_truncation_error_audit.py
+data/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-ledger.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.md
+```
+
+本层把“有限欧拉乘积误差约为半主项”的启发式修正为严格周期公式。对
+
+```text
+W_<p=prod_{q<p}q
+```
+
+有：
+
+```text
+Phi(x; primes<p)=floor(x/W_<p)*phi(W_<p)+R_p(x mod W_<p)
+```
+
+并且：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+      =(floor(N/p)-p+1)*phi(W_<p)/W_<p
+       + B_p(floor(N/p))-B_p(p-1)
+```
+
+其中 `|B_p(t)|<=phi(W_<p)`。所以这里的截断误差是周期边界项，不是稳定的
+`1/2 main`。有限审计读数：
+
+```text
+legendre_phi_periodic_truncation_error_closed=true
+exact_lpf_bucket_identity_closed=true
+half_main_truncation_error_claim_supported=false
+truncation_error_is_periodic_residue_boundary=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+外部前沿同步：Milićević--Qin--Wu、Zheng simultaneous AP、Runbo Li、
+Wright、Becker--Breuillard 都仍是“构造 admissible family 之后”的工具；
+它们不直接把无符号周期边界误差转为素数抽取或 signed saving。
+
+最新 honest 口：
+
+```text
+LegendrePhiTruncationErrorIsPeriodicBoundaryNotHalfMain
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

@@ -43,6 +43,53 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### Legendre-Phi periodic truncation error actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_legendre_phi_periodic_truncation_error_audit.py
+data/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-ledger.json
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.md
+docs/monograph/prime-matrix-phi-lpf-legendre-phi-periodic-truncation-error-audit.json
+```
+
+actual-load 含义：LPF bucket 的截断误差不是一个可用的半主项节省，而是
+Legendre-`Phi` 的 primorial 周期边界项。
+
+```text
+Phi(x; primes<p)=floor(x/W_<p)*phi(W_<p)+R_p(x mod W_<p)
+C_p(N)=Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+```
+
+端点修正后的误差公式为：
+
+```text
+C_p(N)-(floor(N/p)-p+1)*phi(W_<p)/W_<p
+  = B_p(floor(N/p))-B_p(p-1)
+|B_p(t)| <= phi(W_<p)
+```
+
+状态边界：
+
+```text
+legendre_phi_periodic_truncation_error_closed=true
+half_main_truncation_error_claim_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+admissible_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应加入周期截断挡板：
+
+```text
+LegendrePhiTruncationErrorIsPeriodicBoundaryNotHalfMain
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：
