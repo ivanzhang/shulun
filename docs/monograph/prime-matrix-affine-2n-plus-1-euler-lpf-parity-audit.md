@@ -76,3 +76,37 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 7. 迭代审计更新
+
+后续审计把 `2n+1` 推广为
+
+```text
+m_t = 2^t n + (2^t-1),   t=1,2,3,4.
+```
+
+新增证书：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+```
+
+结论：
+
+```text
+all_shifted_residue_formula_verified=true
+iteration_creates_new_phi_lpf_information=false
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+迭代只把 `p | m_t` 变成另一个 shifted residue 类：
+
+```text
+p | m_t  <=>  n == -(2^t-1)*(2^t)^(-1) mod p     (p odd).
+```
+
+naive gap 从约 `1/2` 变成约 `1-2^{-t}`，说明半主项不是 truncation error，而是漏掉固定 `2^t`-adic 样本空间。归一化后仍需从 affine rough survivors 中提取素数。

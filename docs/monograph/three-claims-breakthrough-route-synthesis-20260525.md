@@ -97,6 +97,39 @@ phi_lpf_parity_barrier_globally_broken=false
 因此该结构可作为 shifted-residue Phi-LPF 账本迭代，但不能直接推出有限欧拉乘积截断误差为
 主项一半，也不能从 rough survivors 中分离素数。
 
+后续 power-two 迭代审计进一步确认这一点：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+```
+
+对
+
+```text
+m_t = 2^t n + (2^t-1)
+```
+
+仍有
+
+```text
+p | m_t  <=>  n == -(2^t-1)*(2^t)^(-1) mod p     (p odd).
+```
+
+有限审计 `P=31,101,251,1009`、`t=1,2,3,4` 显示：
+
+```text
+all_shifted_residue_formula_verified=true
+iteration_creates_new_phi_lpf_information=false
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+naive gap 跟随 `1-2^{-t}`，所以迭代只改变固定 `2^t`-adic residue space；归一化后
+仍是 affine rough survivors 的 prime extraction 问题。
+
 ### 2.3 二点筛线
 
 已知强点是外部谱工具方向最接近标准解析数论形态：DI/BFI/Kloosterman 大筛与 well-factorable 权重可以服务 BMD/KLS 分子估计。当前缺口不是“再找一个 Kloosterman 定理”，而是：

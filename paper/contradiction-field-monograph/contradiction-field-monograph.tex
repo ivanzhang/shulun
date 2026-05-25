@@ -37831,6 +37831,75 @@ AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity.
 \end{quote}
 \end{remark}
 
+\section{Power-two affine Phi--LPF iteration}
+
+\begin{theorem}[Power-two affine iteration is shifted-residue conjugacy]
+For \(t\ge1\), put
+\[
+  m_t=2^t n+(2^t-1).
+\]
+For every odd prime \(p\),
+\[
+  p\mid m_t
+  \quad\Longleftrightarrow\quad
+  n\equiv -(2^t-1)(2^t)^{-1}\pmod p .
+\]
+Thus each power-two affine iterate again deletes exactly one residue class
+modulo each odd prime.  It does not create a new sieve dimension or a new
+Phi--LPF cancellation identity.
+\end{theorem}
+
+\begin{proof}
+Modulo an odd prime \(p\), \(2^t\) is invertible.  Solving
+\[
+  2^t n+(2^t-1)\equiv0\pmod p
+\]
+gives the displayed residue class.  This is a conjugate of the ordinary
+zero-residue sieve under an affine change of variables.
+\end{proof}
+
+\begin{theorem}[Power-two affine iteration audit]
+In the finite audit for \(P=31,101,251,1009\) and \(t=1,2,3,4\), the shifted
+residue formula above is verified for every tested \(P,t\).  The observed
+naive Euler-product gap follows the missing \(2\)-adic density \(1-2^{-t}\).
+The audit records
+\begin{quote}\scriptsize\ttfamily
+all\_shifted\_residue\_formula\_verified=true\\
+naive\_gap\_tracks\_two\_adic\_density=true\\
+iteration\_creates\_new\_phi\_lpf\_information=false\\
+euler\_product\_half\_main\_error\_proved=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false.
+\end{quote}
+\end{theorem}
+
+\begin{proof}[Audit interpretation]
+For \(t=1\), forgetting the \(2\)-adic restriction gives the apparent half-main
+gap.  For \(t=2,3,4\), the same mistake gives the apparent gaps
+\[
+  1-2^{-t}=3/4,\ 7/8,\ 15/16.
+\]
+Hence the phenomenon is not a finite Euler-product truncation error.  It is the
+cost of using a full interval main term for a single \(2^t\)-adic residue
+class.  After the correct residue-space normalization, the remaining task is
+unchanged: one must separate prime values of \(m_t\) from affine rough
+survivors.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-affine-power-two-\\
+phi-lpf-iteration-no-gain-audit.md.
+\end{quote}
+\end{proof}
+
+\begin{remark}[Iterated affine open gate]
+The iterated affine route is therefore useful only if it produces a genuine
+signed payload family or returns to a named defect.  The current open gate is
+\begin{quote}\scriptsize\ttfamily
+PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn\\
+AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

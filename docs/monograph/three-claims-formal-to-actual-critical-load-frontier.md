@@ -26743,3 +26743,44 @@ euler_product_half_main_error_proved=false
 AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
 AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
 ```
+
+### power-two affine/Phi-LPF 迭代 formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+```
+
+formal-to-actual 结论：`2n+1` 的迭代族
+
+```text
+m_t = 2^t n + (2^t-1)
+```
+
+不会创造新的 sieve dimension 或 LPF/Phi 相消。它只把 `m_t` 侧的零同余类搬成
+`n` 侧的 shifted residue：
+
+```text
+p | m_t  <=>  n == -(2^t-1)*(2^t)^(-1) mod p.
+```
+
+naive full-interval 欧拉乘积 gap 跟随 `1-2^{-t}`，所以半主项现象是 `t=1`
+的 `2`-adic 归一化特例。状态边界：
+
+```text
+iteration_creates_new_phi_lpf_information=false
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最新非循环口为：
+
+```text
+PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
+AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
+```

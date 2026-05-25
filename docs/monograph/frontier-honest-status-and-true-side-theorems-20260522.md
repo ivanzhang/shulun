@@ -1855,6 +1855,50 @@ AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
 
 ---
 
+## 附录 Q13AC30：power-two affine/Phi-LPF 迭代无新增益审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+```
+
+本层检验 affine `2n+1` 思路是否能通过 LPF/Phi 递推迭代产生新信息。取
+
+```text
+m_t = 2^t n + (2^t-1),   t=1,2,3,4.
+```
+
+则每个奇素数仍只删除 `n` 的一个 shifted residue 类：
+
+```text
+p | m_t  <=>  n == -(2^t-1)*(2^t)^(-1) mod p.
+```
+
+有限审计 `P=31,101,251,1009` 的主要读数：
+
+```text
+all_shifted_residue_formula_verified=true
+naive_gap_tracks_two_adic_density=true
+iteration_creates_new_phi_lpf_information=false
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+naive gap 随 `t` 跟随 `1-2^{-t}`，说明半主项只是 `t=1` 的 2-adic 归一化特例；
+迭代并未削弱 rough survivors 的 prime-extraction 障碍。最新开放口为：
+
+```text
+PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
+AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
+```
+
+---
+
 ## 附录 Q13AC29：Phi-LPF repeated-step affine-skeleton packet-enclosure 审计（2026-05-25）
 
 新增证书：

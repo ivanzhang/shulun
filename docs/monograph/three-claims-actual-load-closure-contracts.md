@@ -29300,3 +29300,41 @@ euler_product_half_main_error_proved=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### power-two affine/Phi-LPF 迭代 actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+```
+
+把 `2n+1` 迭代为
+
+```text
+m_t = 2^t n + (2^t-1)
+```
+
+后，actual-load 仍只是 shifted-residue conjugacy：
+
+```text
+p | m_t <=> n == -(2^t-1)*(2^t)^(-1) mod p     (p odd).
+```
+
+审计读数：
+
+```text
+all_shifted_residue_formula_verified=true
+naive_gap_tracks_two_adic_density=true
+iteration_creates_new_phi_lpf_information=false
+```
+
+因此 actual-load 合同不能写成“迭代产生 LPF/Phi 增益”。正确合同是：
+
+```text
+PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
+AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
+```

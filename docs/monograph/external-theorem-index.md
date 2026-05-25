@@ -2167,6 +2167,51 @@ AffineShiftedResidueSieveSignedPayloadConstructorOrReturn
 AND PrimeExtractionFrom2nPlus1RoughSurvivorsBeyondParity
 ```
 
+---
+
+## 附录 Q13AC30：power-two affine/Phi-LPF 迭代无新增益边界（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_affine_power_two_phi_lpf_iteration_no_gain_audit.py
+data/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-ledger.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.json
+docs/monograph/prime-matrix-affine-power-two-phi-lpf-iteration-no-gain-audit.md
+```
+
+本层不引入新外部定理。它把 `2n+1` 推广为
+
+```text
+m_t = 2^t n + (2^t-1)
+```
+
+并验证对每个奇素数 `p`：
+
+```text
+p | m_t  <=>  n == -(2^t-1)*(2^t)^(-1) mod p.
+```
+
+审计边界：
+
+```text
+all_shifted_residue_formula_verified=true
+naive_gap_tracks_two_adic_density=true
+iteration_creates_new_phi_lpf_information=false
+euler_product_half_main_error_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+因此 affine/Phi-LPF 迭代不能作为外部 trace/Kloosterman 输入的替代品。它仍只是
+shifted-residue conjugacy；要使用 FKMS、Milićević--Qin--Wu、Pascadi、Wright 或
+DI/BFI/Kuznetsov，仍必须先构造 averaged signed payload family。新的开放口为：
+
+```text
+PowerTwoAffineShiftedResidueSignedPayloadConstructorOrNamedReturn
+AND PrimeExtractionFromAffineRoughSurvivorsBeyondParity
+```
+
 ## 65AH. Phi-LPF repeated-step affine-skeleton packet-enclosure 证书
 
 新增证书：
