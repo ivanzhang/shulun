@@ -27055,6 +27055,43 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine Beatty margin formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_beatty_margin_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.json
+```
+
+formal-to-actual 结论：q-spine 源律的局部相位不再是黑箱。四个 AD-singleton
+微转移全部满足同一个整数分子恒等式：
+
+```text
+phase_delta_num = lift_step*q*q_next + P*(s*q-a*g)
+```
+
+审计读数：
+
+```text
+micro_transition_count=4
+beatty_numerator_identity_closed=true
+A_singleton_negative_pure_P_multiple_closed=true
+D_singleton_positive_margin_closed=true
+bridge_root_qspine_beatty_margin_closed=true
+```
+
+因此 formal-to-actual 缺口从 q-spine source law 进一步降维为：
+
+```text
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

@@ -865,6 +865,63 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.14 terminal boundary bridge-root q-spine Beatty margin 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_beatty_margin_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.json
+```
+
+本层不再把 q-spine 源律停留在几何模板上，而是把四个 AD-singleton 微转移的
+相位分子全部压成同一个 Beatty 整数恒等式。若 `m=P+r`、`q'=q+g`、
+`a=floor(qr/P)`、`D=qr-aP`、`s=floor((D+gr)/P)`，则
+
+```text
+phase_delta_num = lift_step*q*q_next + P*(s*q-a*g)
+```
+
+有限审计读数：
+
+```text
+micro_transition_count=4
+beatty_numerator_identity_closed=true
+A_singleton_negative_pure_P_multiple_closed=true
+D_singleton_positive_margin_closed=true
+bridge_root_qspine_beatty_margin_closed=true
+bridge_root_uniform_beatty_margin_source_law_proved=false
+row_column_unconditional_closed=false
+```
+
+四个微转移的整数 margin 是：
+
+```text
+m757 q569->571: r=18, a=13, s=0, B=-26, lift_step=0, numerator=-19214
+m757 q571->577: r=18, a=13, s=1, B=493, lift_step=-1, numerator=34860
+m761 q599->601: r=22, a=17, s=0, B=-34, lift_step=0, numerator=-25126
+m761 q601->607: r=22, a=17, s=1, B=499, lift_step=-1, numerator=3954
+```
+
+这一步的实际推进是：`BridgeRootADSingletonQSpineSourceLawOrPDEC` 被替换为更具体的
+`BridgeRootADSingletonBeattyMarginSourceLawOrPDEC`。第二个 D-singleton 正
+margin 只有 `3954`，说明真正硬点不是有限分子恒等式，而是统一证明该 Beatty
+正 margin 不会坍塌，或者给出同对象 PDEC。
+
+最新口：
+
+```text
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

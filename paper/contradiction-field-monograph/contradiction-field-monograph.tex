@@ -38767,6 +38767,91 @@ admissible averaged signed family or a genuine finite group orbit built from
 this spine; the finite microtemplate itself is not enough.
 \end{remark}
 
+\begin{theorem}[Bridge-root \(q\)-spine Beatty margin]
+Let \(m=P+r\), \(q'=q+g\),
+\[
+  a=\Big\lfloor \frac{qr}{P}\Big\rfloor,\qquad
+  D=qr-aP,\qquad
+  s=\Big\lfloor \frac{D+gr}{P}\Big\rfloor .
+\]
+For each of the four AD-singleton micro-transitions in the bridge-root
+\(q\)-spine, the phase numerator satisfies
+\[
+  \Delta_{\rm num}
+  =
+  (\lambda'-\lambda)qq' + P(sq-ag),
+\]
+where \(\lambda,\lambda'\in\{1,2\}\) are the two-lift numerators
+\(A(q)=\lambda q-D(q)\).  In the finite spine the four integer rows are
+\[
+\begin{array}{c|c|c|c|c|c|c}
+m & q\to q' & r & a & s & sq-ag & \Delta_{\rm num}\\ \hline
+757 & 569\to571 & 18 & 13 & 0 & -26 & -19214\\
+757 & 571\to577 & 18 & 13 & 1 & 493 & 34860\\
+761 & 599\to601 & 22 & 17 & 0 & -34 & -25126\\
+761 & 601\to607 & 22 & 17 & 1 & 499 & 3954.
+\end{array}
+\]
+Thus the two pre-bridge A-singletons are pure negative \(P\)-multiples, while
+the two bridge-old D-singletons have positive Beatty margins.
+\end{theorem}
+
+\begin{proof}
+Write \(q'=q+g\), \(m=P+r\), and \(qm=kP+D\).  Since
+\(qm=qP+qr\), we have \(k=q+\lfloor qr/P\rfloor=q+a\) and
+\(D=qr-aP\).  The carry recurrence gives
+\[
+  D'=D+gm-cP,\qquad c=g+s.
+\]
+With \(A(q)=\lambda q-D\) and \(A(q')=\lambda' q'-D'\),
+\[
+\begin{aligned}
+  A(q')q-A(q)q'
+  &=(\lambda'-\lambda)qq' -D'q+Dq'\\
+  &=(\lambda'-\lambda)qq' + P(cq-kg)\\
+  &=(\lambda'-\lambda)qq' + P(sq-ag).
+\end{aligned}
+\]
+Substitution of the four audited AD-singleton transitions gives the table.
+The second D-singleton margin is only \(3954\), so this is a finite
+factorization of the source problem, not a uniform source law.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root \(q\)-spine Beatty margin audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+micro\_transition\_count=4\\
+beatty\_numerator\_identity\_closed=true\\
+A\_singleton\_negative\_pure\_P\_multiple\_closed=true\\
+D\_singleton\_positive\_margin\_closed=true\\
+bridge\_root\_qspine\_beatty\_margin\_closed=true\\
+bridge\_root\_uniform\_beatty\_margin\_source\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-qspine-beatty-margin-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated Beatty-margin gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+The external trace/Kloosterman, Type-II, and thin-group tools still require a
+completed averaged family or a genuine finite group orbit.  The Beatty-margin
+identity is a pointwise source factorization, not by itself a parity-breaking
+estimate.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

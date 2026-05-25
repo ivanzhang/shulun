@@ -2219,6 +2219,55 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AL. Phi-LPF terminal boundary bridge-root q-spine Beatty margin 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_beatty_margin_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.md
+```
+
+本层把 AD-singleton q-spine 的局部源律降到 Beatty 整数分子恒等式。若
+`m=P+r`、`q'=q+g`、`a=floor(qr/P)`、`D=qr-aP`、
+`s=floor((D+gr)/P)`，则四个微转移都满足
+
+```text
+phase_delta_num = lift_step*q*q_next + P*(s*q-a*g)
+```
+
+有限读数：
+
+```text
+micro_transition_count=4
+beatty_numerator_identity_closed=true
+A_singleton_negative_pure_P_multiple_closed=true
+D_singleton_positive_margin_closed=true
+bridge_root_qspine_beatty_margin_closed=true
+bridge_root_uniform_beatty_margin_source_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界随之更新：FKMS/Milićević--Qin--Wu/Wright 型 trace/Kloosterman
+与 Pascadi Type-II 工具现在只能在这个 Beatty margin 对象被提升为 completed
+averaged family 后进入；thin-group/expander 方法仍需要把 `r,a,s,B` 的有限
+状态组织成真实有限群轨道与 expansion。当前证书给的是点态整数恒等式，不给
+平均族、谱变量或群扩张。
+
+最新开放口：
+
+```text
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

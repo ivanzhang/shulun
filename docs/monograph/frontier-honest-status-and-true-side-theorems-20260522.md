@@ -2062,6 +2062,75 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC33：Phi-LPF terminal boundary bridge-root q-spine Beatty margin 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_beatty_margin_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.md
+```
+
+本层承接 q-spine microtemplate。有限审计读数：
+
+```text
+micro_transition_count=4
+beatty_numerator_identity_closed=true
+A_singleton_negative_pure_P_multiple_closed=true
+D_singleton_positive_margin_closed=true
+bridge_root_qspine_beatty_margin_closed=true
+row_column_unconditional_closed=false
+```
+
+核心恒等式：
+
+```text
+phase_delta_num = lift_step*q*q_next + P*(s*q-a*g)
+```
+
+四个微转移：
+
+```text
+m757 q569->571: r=18, a=13, s=0, B=-26, lift_step=0, numerator=-19214
+m757 q571->577: r=18, a=13, s=1, B=493, lift_step=-1, numerator=34860
+m761 q599->601: r=22, a=17, s=0, B=-34, lift_step=0, numerator=-25126
+m761 q601->607: r=22, a=17, s=1, B=499, lift_step=-1, numerator=3954
+```
+
+本层真正推进：q-spine 源律不再是局部几何黑箱，而是明确的 Beatty margin
+门。第二个 D-singleton 正 margin 仅 `3954`，所以剩余硬点是统一证明该
+margin source law，或给出同对象 PDEC。
+
+### Q13AC33.1 最新最窄口
+
+```text
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bridge_root_qspine_beatty_margin_closed=true
+bridge_root_uniform_beatty_margin_source_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC32：Phi-LPF terminal boundary bridge-root q-spine microtemplate 审计（2026-05-25）
 
 新增证书：

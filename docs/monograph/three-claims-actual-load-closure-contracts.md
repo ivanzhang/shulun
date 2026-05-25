@@ -241,6 +241,46 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine Beatty margin actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_beatty_margin_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-beatty-margin-router.json
+```
+
+actual-load 含义：两个 bridge-root debt 的局部源律已经降到 Beatty 分子 margin。
+核心恒等式为：
+
+```text
+phase_delta_num = lift_step*q*q_next + P*(s*q-a*g)
+```
+
+有限读数：
+
+```text
+micro_transition_count=4
+beatty_numerator_identity_closed=true
+A_singleton_negative_pure_P_multiple_closed=true
+D_singleton_positive_margin_closed=true
+bridge_root_qspine_beatty_margin_closed=true
+```
+
+PM-ALC 的当前实际合同变为：
+
+```text
+BridgeRootADSingletonBeattyMarginSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解
