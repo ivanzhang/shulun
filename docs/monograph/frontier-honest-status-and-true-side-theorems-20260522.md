@@ -10548,3 +10548,95 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q13AC24：Phi-LPF dominant sign-word repeated-step directed-incidence graph 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_incidence_graph_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.md
+```
+
+本层承接 Q13AC23，把五条 touching transition 组成的 repeated-step carrier
+闭合为有向 incidence graph。
+
+有限审计读数：
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+node_count=5
+repeated_node_count=2
+neighbor_node_count=3
+directed_edge_count=5
+directed_edge_mass=50
+repeated_endpoint_incidence_count=6
+weak_component_count=1
+directed_acyclic=true
+source_nodes=[g=6,c=6,A=positive]
+sink_nodes=[g=8,c=10,A=negative]
+longest_directed_path_length=4
+cross_repeated_bridge_edge_count=1
+```
+
+edge-class 质量为 `neighbor_to_repeated=20`、`repeated_to_neighbor=20`、
+`repeated_to_repeated=10`。最长有向链为
+
+```text
+g=6,c=6,A=positive
+-> g=2,c=2,A=negative
+-> g=4,c=5,A=negative
+-> g=6,c=7,A=positive
+-> g=8,c=10,A=negative
+```
+
+本层删除了“repeated-step touching carrier 仍未图化”的含混说法，但没有证明
+directed-incidence uniform family bound。
+
+### Q13AC24.1 最新最窄口
+
+```text
+RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier)
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+repeated_step_directed_incidence_graph_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

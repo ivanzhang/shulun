@@ -1,0 +1,389 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_directed_incidence_graph_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "RepeatedStepOccurrenceImported",
+      "meaning": "The repeated-step occurrence/touching-transition ledger is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "DirectedIncidenceGraphLedger",
+      "meaning": "The five touching transitions form an exact directed node/edge graph.",
+      "proved": true,
+      "remaining": "none for the finite graph ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AcyclicCarrierLedger",
+      "meaning": "The finite carrier is a DAG with one source and one sink.",
+      "proved": true,
+      "remaining": "none for the finite acyclicity ledger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectedIncidenceUniformFamilyBound",
+      "meaning": "Control this acyclic carrier uniformly in the full Phi-LPF family.",
+      "proved": false,
+      "remaining": "finite graph audit gives exact structure but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "one acyclic weak component with two repeated nodes, three neighbor nodes, and one repeated-to-repeated bridge",
+    "input": "five touching transitions around two repeated signed step atoms",
+    "operation": "view touching transitions as a directed incidence graph",
+    "remaining": "upgrade the finite acyclic carrier to a uniform directed-incidence family bound or PDEC/SAE certificate"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the directed source/sink structure is local grammar data, not a prime-gap existence result",
+    "short_interval_prime_inputs": "theta=0.52 remains an external scale bound and does not imply this directed-incidence family estimate",
+    "trace_or_kloosterman_inputs": "the acyclic finite graph is not yet a complete trace, bilinear, or Kloosterman summation family"
+  },
+  "finite_audit": {
+    "cross_repeated_bridge_edge_count": 1,
+    "cross_repeated_bridge_edge_mass": 10,
+    "directed_acyclic": true,
+    "directed_edge_count": 5,
+    "directed_edge_mass": 50,
+    "directed_edge_rows": [
+      {
+        "P": 607,
+        "carry_delta": 3,
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step1-2",
+        "edge_mass": 10,
+        "from_atom": "g=2,c=2,A=negative",
+        "from_node_class": "repeated",
+        "from_step": 1,
+        "gap_delta": 2,
+        "m_pair": "[769, 773]",
+        "repeated_endpoint_incidence_count": 1,
+        "sign_pair": "--",
+        "to_atom": "g=4,c=5,A=negative",
+        "to_node_class": "neighbor",
+        "to_step": 2,
+        "transition_role": "initial_exit",
+        "transition_signature": "g=2,c=2,A=negative -> g=4,c=5,A=negative"
+      },
+      {
+        "P": 607,
+        "carry_delta": 2,
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P607:step2-3",
+        "edge_mass": 10,
+        "from_atom": "g=4,c=5,A=negative",
+        "from_node_class": "neighbor",
+        "from_step": 2,
+        "gap_delta": 2,
+        "m_pair": "[769, 773]",
+        "repeated_endpoint_incidence_count": 1,
+        "sign_pair": "-+",
+        "to_atom": "g=6,c=7,A=positive",
+        "to_node_class": "repeated",
+        "to_step": 3,
+        "transition_role": "internal_entry",
+        "transition_signature": "g=4,c=5,A=negative -> g=6,c=7,A=positive"
+      },
+      {
+        "P": 607,
+        "carry_delta": 3,
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step3-4",
+        "edge_mass": 10,
+        "from_atom": "g=6,c=7,A=positive",
+        "from_node_class": "repeated",
+        "from_step": 3,
+        "gap_delta": 2,
+        "m_pair": "[769, 773]",
+        "repeated_endpoint_incidence_count": 1,
+        "sign_pair": "+-",
+        "to_atom": "g=8,c=10,A=negative",
+        "to_node_class": "neighbor",
+        "to_step": 4,
+        "transition_role": "internal_exit",
+        "transition_signature": "g=6,c=7,A=positive -> g=8,c=10,A=negative"
+      },
+      {
+        "P": 739,
+        "carry_delta": -4,
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P739:step3-4",
+        "edge_mass": 10,
+        "from_atom": "g=6,c=6,A=positive",
+        "from_node_class": "neighbor",
+        "from_step": 3,
+        "gap_delta": -4,
+        "m_pair": "[757, 761]",
+        "repeated_endpoint_incidence_count": 1,
+        "sign_pair": "+-",
+        "to_atom": "g=2,c=2,A=negative",
+        "to_node_class": "repeated",
+        "to_step": 4,
+        "transition_role": "internal_entry",
+        "transition_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative"
+      },
+      {
+        "P": 739,
+        "carry_delta": 5,
+        "edge_class": "repeated_to_repeated",
+        "edge_id": "P739:step4-5",
+        "edge_mass": 10,
+        "from_atom": "g=2,c=2,A=negative",
+        "from_node_class": "repeated",
+        "from_step": 4,
+        "gap_delta": 4,
+        "m_pair": "[757, 761]",
+        "repeated_endpoint_incidence_count": 2,
+        "sign_pair": "-+",
+        "to_atom": "g=6,c=7,A=positive",
+        "to_node_class": "repeated",
+        "to_step": 5,
+        "transition_role": "repeated_bridge",
+        "transition_signature": "g=2,c=2,A=negative -> g=6,c=7,A=positive"
+      }
+    ],
+    "edge_class_rows": [
+      {
+        "edge_class": "neighbor_to_repeated",
+        "mass": 20,
+        "ratio": 0.4
+      },
+      {
+        "edge_class": "repeated_to_neighbor",
+        "mass": 20,
+        "ratio": 0.4
+      },
+      {
+        "edge_class": "repeated_to_repeated",
+        "mass": 10,
+        "ratio": 0.2
+      }
+    ],
+    "longest_directed_path_length": 4,
+    "longest_directed_path_nodes": [
+      "g=6,c=6,A=positive",
+      "g=2,c=2,A=negative",
+      "g=4,c=5,A=negative",
+      "g=6,c=7,A=positive",
+      "g=8,c=10,A=negative"
+    ],
+    "max_prime": 1009,
+    "neighbor_node_count": 3,
+    "node_count": 5,
+    "node_rows": [
+      {
+        "in_degree": 1,
+        "in_mass": 10,
+        "is_sink": false,
+        "is_source": false,
+        "node": "g=2,c=2,A=negative",
+        "node_class": "repeated",
+        "occurrence_keys": [
+          "P607:step1:[769, 773]:above_P",
+          "P739:step4:[757, 761]:above_P"
+        ],
+        "out_degree": 2,
+        "out_mass": 20,
+        "total_degree": 3,
+        "total_incident_mass": 30
+      },
+      {
+        "in_degree": 1,
+        "in_mass": 10,
+        "is_sink": false,
+        "is_source": false,
+        "node": "g=4,c=5,A=negative",
+        "node_class": "neighbor",
+        "occurrence_keys": [],
+        "out_degree": 1,
+        "out_mass": 10,
+        "total_degree": 2,
+        "total_incident_mass": 20
+      },
+      {
+        "in_degree": 0,
+        "in_mass": 0,
+        "is_sink": false,
+        "is_source": true,
+        "node": "g=6,c=6,A=positive",
+        "node_class": "neighbor",
+        "occurrence_keys": [],
+        "out_degree": 1,
+        "out_mass": 10,
+        "total_degree": 1,
+        "total_incident_mass": 10
+      },
+      {
+        "in_degree": 2,
+        "in_mass": 20,
+        "is_sink": false,
+        "is_source": false,
+        "node": "g=6,c=7,A=positive",
+        "node_class": "repeated",
+        "occurrence_keys": [
+          "P607:step3:[769, 773]:above_P",
+          "P739:step5:[757, 761]:above_P"
+        ],
+        "out_degree": 1,
+        "out_mass": 10,
+        "total_degree": 3,
+        "total_incident_mass": 30
+      },
+      {
+        "in_degree": 1,
+        "in_mass": 10,
+        "is_sink": true,
+        "is_source": false,
+        "node": "g=8,c=10,A=negative",
+        "node_class": "neighbor",
+        "occurrence_keys": [],
+        "out_degree": 0,
+        "out_mass": 0,
+        "total_degree": 1,
+        "total_incident_mass": 10
+      }
+    ],
+    "previous_repeated_step_occurrence_ledger_closed": true,
+    "repeated_endpoint_incidence_count": 6,
+    "repeated_endpoint_incidence_mass": 60,
+    "repeated_node_count": 2,
+    "repeated_step_directed_incidence_graph_family_bound_proved": false,
+    "repeated_step_directed_incidence_graph_ledger_closed": true,
+    "row_column_unconditional_closed": false,
+    "sign_pair_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.4,
+        "sign_pair": "+-"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.4,
+        "sign_pair": "-+"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.2,
+        "sign_pair": "--"
+      }
+    ],
+    "sink_nodes": [
+      "g=8,c=10,A=negative"
+    ],
+    "source_nodes": [
+      "g=6,c=6,A=positive"
+    ],
+    "target_sign_word": "--+-+",
+    "transition_role_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.4,
+        "transition_role": "internal_entry"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.2,
+        "transition_role": "initial_exit"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.2,
+        "transition_role": "internal_exit"
+      },
+      {
+        "mass": 10,
+        "ratio": 0.2,
+        "transition_role": "repeated_bridge"
+      }
+    ],
+    "weak_component_count": 1,
+    "weak_components": [
+      [
+        "g=2,c=2,A=negative",
+        "g=4,c=5,A=negative",
+        "g=6,c=6,A=positive",
+        "g=6,c=7,A=positive",
+        "g=8,c=10,A=negative"
+      ]
+    ]
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier)",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the repeated-step carrier is the smallest current non-circular finite obstruction after occurrence localization",
+  "repeated_step_directed_incidence_graph_family_bound_proved": false,
+  "repeated_step_directed_incidence_graph_ledger_closed": true,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "efac6dcb9354248690513c4ce8d693877c5e9d85d00f050981f2d8de58e6fef0",
+    "docs/monograph/external-theorem-index.md": "90b14164d798b8acef04ed3889ccea1c779ea2c33999c0d27dac2e57eab7a480",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "c2fe56879a8ccaadb4b5a7a40b113d227e998811cb8d6b2798f166ec7764d968",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-carry-cycle-signature-single-p-local-gap2-gap4-top-two-core-largest-atom-dominant-sign-word-repeated-step-occurrence-audit.json": "0c4f617abd5ca0fc9fbdb7be2f4cfa1be4269c6e4dae2fcf12d63f456ada8a47",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "82c09eee79aea8482702a2fd4d8881fa8b60427763a077f76d8aef3120fd4a41",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "7f3be8395878f0ee0882a10207321e0dd7cc8b1f198610ed30102787db11f362",
+    "experiments/prime_matrix_phi_lpf_repeated_step_incidence_graph_audit.py": "1a7608618ba2dc270e8c2759c01ace1d7867434892e84a7881d6f8fe4aaf0559",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "063ba82431fa460bc6d02649bda59088a04caf4a8a089d89d3018ab7cd0a151f"
+  },
+  "status": "repeated_step_directed_incidence_graph_ledger_closed_family_bound_open"
+}

@@ -9797,3 +9797,67 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AC. Phi-LPF dominant sign-word repeated-step directed-incidence graph 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_incidence_graph_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.md
+```
+
+本层承接 65AB，把 repeated-step 的五条 touching transition 视为有向
+incidence graph：
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+node_count=5
+repeated_node_count=2
+neighbor_node_count=3
+directed_edge_count=5
+directed_edge_mass=50
+repeated_endpoint_incidence_count=6
+weak_component_count=1
+directed_acyclic=true
+source_nodes=[g=6,c=6,A=positive]
+sink_nodes=[g=8,c=10,A=negative]
+longest_directed_path_length=4
+cross_repeated_bridge_edge_count=1
+```
+
+edge-class 质量为：
+
+```text
+neighbor_to_repeated=20
+repeated_to_neighbor=20
+repeated_to_repeated=10
+```
+
+最长有向链为：
+
+```text
+g=6,c=6,A=positive
+-> g=2,c=2,A=negative
+-> g=4,c=5,A=negative
+-> g=6,c=7,A=positive
+-> g=8,c=10,A=negative
+```
+
+外部 theorem 边界仍不变：该有限 DAG 仍不是 trace/bilinear/Kloosterman
+可求和族；FKMS、Milićević--Qin--Wu、Wright 的平均型输入，以及 Maynard
+小间距和 Li 短区间素数结果，都不直接给出这个 directed-incidence family
+bound。
+
+状态边界：
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+repeated_step_directed_incidence_graph_family_bound_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

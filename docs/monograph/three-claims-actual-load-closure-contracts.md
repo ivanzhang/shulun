@@ -28665,3 +28665,58 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite repeated-step occurrence/touching-transition 账本；repeated-step
 uniform bound 与其余 witness/core residual 仍未闭合。
+
+### Phi-LPF dominant sign-word repeated-step directed-incidence graph actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_incidence_graph_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json
+```
+
+actual-load 含义继续收缩：五条 touching transition 不再只是列表，而是闭合为
+一个有向无环 incidence graph。
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+node_count=5
+repeated_node_count=2
+neighbor_node_count=3
+directed_edge_count=5
+directed_edge_mass=50
+weak_component_count=1
+directed_acyclic=true
+longest_directed_path_length=4
+cross_repeated_bridge_edge_count=1
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier)
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite directed-incidence graph 账本；directed-incidence uniform
+bound 与其余 witness/core residual 仍未闭合。

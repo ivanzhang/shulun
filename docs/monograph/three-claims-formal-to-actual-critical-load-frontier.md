@@ -26208,3 +26208,44 @@ endpoint_role_law_closed=true
 transition”的含混说法；没有删除 repeated-step uniform signed equality、PDEC/SAE
 聚合、其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
 phase saving 缺口。
+
+### Phi-LPF dominant sign-word repeated-step directed-incidence graph formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_incidence_graph_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepUniformFamilyBound(g=2,c=2,A=negative and g=6,c=7,A=positive)
+```
+
+现在拆出更小的有向图载体：
+
+```text
+RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier)
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+```
+
+关键审计读数为：
+
+```text
+repeated_step_directed_incidence_graph_ledger_closed=true
+node_count=5
+directed_edge_count=5
+directed_acyclic=true
+source_nodes=[g=6,c=6,A=positive]
+sink_nodes=[g=8,c=10,A=negative]
+longest_directed_path_length=4
+```
+
+本层删除的是“repeated-step touching transition 仍未组织成有向 incidence graph”
+的含混说法；没有删除 directed-incidence uniform signed equality、PDEC/SAE 聚合、
+其他 witness/core residual、single-P slice summation 或 prime-q reciprocal phase
+saving 缺口。

@@ -36913,6 +36913,90 @@ repeated-step-occurrence-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step directed incidence graph}
+
+\begin{theorem}[Repeated-step directed-incidence graph ledger]
+In the audit range \(P\le 1009\), the five adjacent transitions touching the
+two repeated signed step atoms form a finite directed incidence graph with
+five nodes and five directed edges.  The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{repeated\_step\_directed\_incidence\_graph\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{node\_count} & 5\\
+\texttt{repeated\_node\_count} & 2\\
+\texttt{neighbor\_node\_count} & 3\\
+\texttt{directed\_edge\_count} & 5\\
+\texttt{directed\_edge\_mass} & 50\\
+\texttt{repeated\_endpoint\_incidence\_count} & 6\\
+\texttt{weak\_component\_count} & 1\\
+\texttt{directed\_acyclic} & \texttt{true}\\
+\texttt{cross\_repeated\_bridge\_edge\_count} & 1 .
+\end{array}
+\]
+The edge-class masses are
+\[
+\begin{array}{c|c}
+\hbox{edge class} & \hbox{mass}\\ \hline
+\texttt{neighbor\_to\_repeated} & 20\\
+\texttt{repeated\_to\_neighbor} & 20\\
+\texttt{repeated\_to\_repeated} & 10 .
+\end{array}
+\]
+The unique source is \(\texttt{g=6,c=6,A=positive}\), the unique sink is
+\(\texttt{g=8,c=10,A=negative}\), and the longest directed path has length
+\(4\).
+\end{theorem}
+
+\begin{proof}
+The audit imports the repeated-step occurrence ledger and uses each touching
+transition as a directed edge from its left signed step atom to its right
+signed step atom.  The resulting edges are
+\[
+\begin{array}{c|c|c}
+\hbox{edge} & \hbox{class} & \hbox{mass}\\ \hline
+\texttt{g=2,c=2,A=negative}\to\texttt{g=4,c=5,A=negative}
+  & \texttt{repeated\_to\_neighbor} & 10\\
+\texttt{g=4,c=5,A=negative}\to\texttt{g=6,c=7,A=positive}
+  & \texttt{neighbor\_to\_repeated} & 10\\
+\texttt{g=6,c=7,A=positive}\to\texttt{g=8,c=10,A=negative}
+  & \texttt{repeated\_to\_neighbor} & 10\\
+\texttt{g=6,c=6,A=positive}\to\texttt{g=2,c=2,A=negative}
+  & \texttt{neighbor\_to\_repeated} & 10\\
+\texttt{g=2,c=2,A=negative}\to\texttt{g=6,c=7,A=positive}
+  & \texttt{repeated\_to\_repeated} & 10 .
+\end{array}
+\]
+Thus there are two repeated nodes and three neighbouring nodes, and the
+total edge mass is \(50\).  Reading directions gives the topological chain
+\[
+\texttt{g=6,c=6,A=positive}\to
+\texttt{g=2,c=2,A=negative}\to
+\texttt{g=4,c=5,A=negative}\to
+\texttt{g=6,c=7,A=positive}\to
+\texttt{g=8,c=10,A=negative},
+\]
+which has length \(4\).  The same ordering contains every directed edge, so
+the carrier is acyclic and has one weak component.
+\end{proof}
+
+\begin{remark}[Directed-incidence gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier).
+\end{quote}
+This is still a finite graph ledger.  It does not prove the corresponding
+uniform family estimate, PDEC/SAE aggregation, or prime-q reciprocal phase
+saving required for the global Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-directed-incidence-graph-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
