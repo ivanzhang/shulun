@@ -10640,3 +10640,86 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q13AC25：Phi-LPF dominant sign-word repeated-step source-sink path-cover 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_path_cover_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.md
+```
+
+本层承接 Q13AC24，把 5 边 DAG 的 source-sink 结构完全枚举。有限审计读数：
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+source_sink_path_count=2
+source_sink_path_edge_incidence_count=7
+source_sink_path_edge_incidence_mass=70
+edge_cover_complete=true
+shared_edge_count=2
+shared_edge_mass=20
+shared_edge_path_incidence_mass=40
+single_witness_source_sink_path_count=0
+mixed_witness_source_sink_path_count=2
+all_source_sink_paths_mixed_P=true
+all_source_sink_paths_have_one_P_switch=true
+diamond_decomposition_closed=true
+single_witness_orbit_interpretation_valid=false
+```
+
+本层删除了“DAG source-sink carrier 仍未 path-cover 化”的含混说法，但没有证明
+mixed-P source-sink path cover 的 uniform family bound。两条图路径都需要跨
+`P=607` 与 `P=739` 拼接；因此 path-cover 是有限签名账本，不是单一 witness
+orbit。
+
+### Q13AC25.1 最新最窄口
+
+```text
+RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths)
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+repeated_step_source_sink_path_cover_family_bound_proved=false
+single_witness_orbit_interpretation_valid=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

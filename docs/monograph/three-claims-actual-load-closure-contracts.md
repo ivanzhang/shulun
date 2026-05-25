@@ -28720,3 +28720,61 @@ SinglePSliceEndpointPacketSummationOrPDEC
 
 本层只关闭 finite directed-incidence graph 账本；directed-incidence uniform
 bound 与其余 witness/core residual 仍未闭合。
+
+### Phi-LPF dominant sign-word repeated-step source-sink path-cover actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_path_cover_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.json
+```
+
+actual-load 含义继续收缩：有向 incidence graph 不再只是一个 DAG，而是被
+完全枚举为两条 source-sink 图路径与共享边/diamond 账本。
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+source_sink_path_count=2
+source_sink_path_edge_incidence_count=7
+source_sink_path_edge_incidence_mass=70
+edge_cover_complete=true
+shared_edge_count=2
+shared_edge_mass=20
+single_witness_source_sink_path_count=0
+mixed_witness_source_sink_path_count=2
+all_source_sink_paths_mixed_P=true
+diamond_decomposition_closed=true
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths)
+RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinResidualCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite source-sink path-cover 账本；mixed-P path-cover uniform
+bound、single-P slice summation、PDEC/SAE 聚合与 prime-q reciprocal phase
+saving 仍未闭合。

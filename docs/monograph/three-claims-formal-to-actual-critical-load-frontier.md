@@ -26249,3 +26249,45 @@ longest_directed_path_length=4
 的含混说法；没有删除 directed-incidence uniform signed equality、PDEC/SAE 聚合、
 其他 witness/core residual、single-P slice summation 或 prime-q reciprocal phase
 saving 缺口。
+
+### Phi-LPF dominant sign-word repeated-step source-sink path-cover formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_path_cover_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepDirectedIncidenceGraphUniformBound(acyclic two-repeated-node carrier)
+```
+
+现在拆成：
+
+```text
+RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths)
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+```
+
+关键审计读数为：
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+source_sink_path_count=2
+edge_cover_complete=true
+shared_edge_count=2
+all_source_sink_paths_mixed_P=true
+single_witness_source_sink_path_count=0
+diamond_decomposition_closed=true
+single_witness_orbit_interpretation_valid=false
+```
+
+本层删除的是“有向 DAG 的 source-sink path cover 尚未枚举”的含混说法；没有
+删除 mixed-P source-sink path-cover uniform signed equality、PDEC/SAE 聚合、
+其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
+phase saving 缺口。

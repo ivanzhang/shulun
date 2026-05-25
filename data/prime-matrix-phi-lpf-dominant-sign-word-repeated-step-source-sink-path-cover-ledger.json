@@ -1,0 +1,323 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_source_sink_path_cover_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "DirectedIncidenceGraphImported",
+      "meaning": "The 5-node repeated-step DAG is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SourceSinkPathCoverLedger",
+      "meaning": "All source-sink graph paths and edge memberships are enumerated.",
+      "proved": true,
+      "remaining": "none for the finite path-cover ledger"
+    },
+    {
+      "closed": true,
+      "gate": "MixedPWitnessStitchingDetected",
+      "meaning": "Every source-sink graph path mixes P=607 and P=739.",
+      "proved": true,
+      "remaining": "uniform proof must not treat graph paths as single-witness orbits"
+    },
+    {
+      "closed": false,
+      "gate": "SourceSinkPathCoverUniformFamilyBound",
+      "meaning": "Control the mixed-P source-sink path cover uniformly.",
+      "proved": false,
+      "remaining": "finite path cover gives exact stitching data but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "two source-sink graph paths, both mixed-P, with a branch-join diamond between the repeated nodes",
+    "input": "the 5-edge acyclic repeated-step directed incidence graph",
+    "operation": "enumerate source-sink graph paths and classify shared/branch/bridge edges",
+    "remaining": "turn mixed-P graph stitching into a uniform family bound or replace it by a PDEC/SAE certificate"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the source-sink graph paths are signature paths, not prime-gap existence statements",
+    "short_interval_prime_inputs": "theta=0.52 does not produce a half-scale or mixed-P stitching estimate here",
+    "trace_or_kloosterman_inputs": "mixed-P graph stitching is not yet a completed trace, bilinear, or Kloosterman family"
+  },
+  "finite_audit": {
+    "all_source_sink_paths_have_one_P_switch": true,
+    "all_source_sink_paths_mixed_P": true,
+    "branch_node": "g=2,c=2,A=negative",
+    "bridge_usage_rows": [
+      {
+        "bridge_usage": "avoids_bridge",
+        "mass": 40,
+        "ratio": 0.5714285714285714
+      },
+      {
+        "bridge_usage": "uses_bridge",
+        "mass": 30,
+        "ratio": 0.42857142857142855
+      }
+    ],
+    "diamond_decomposition_closed": true,
+    "edge_cover_complete": true,
+    "edge_membership_rows": [
+      {
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P739:step3-4",
+        "edge_key": "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+        "edge_mass": 10,
+        "path_ids": [
+          "path_1",
+          "path_2"
+        ],
+        "path_incidence_mass": 20,
+        "path_membership_count": 2,
+        "shared_by_all_paths": true
+      },
+      {
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step3-4",
+        "edge_key": "g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "edge_mass": 10,
+        "path_ids": [
+          "path_1",
+          "path_2"
+        ],
+        "path_incidence_mass": 20,
+        "path_membership_count": 2,
+        "shared_by_all_paths": true
+      },
+      {
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step1-2",
+        "edge_key": "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "edge_mass": 10,
+        "path_ids": [
+          "path_1"
+        ],
+        "path_incidence_mass": 10,
+        "path_membership_count": 1,
+        "shared_by_all_paths": false
+      },
+      {
+        "edge_class": "repeated_to_repeated",
+        "edge_id": "P739:step4-5",
+        "edge_key": "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "edge_mass": 10,
+        "path_ids": [
+          "path_2"
+        ],
+        "path_incidence_mass": 10,
+        "path_membership_count": 1,
+        "shared_by_all_paths": false
+      },
+      {
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P607:step2-3",
+        "edge_key": "g=4,c=5,A=negative -> g=6,c=7,A=positive",
+        "edge_mass": 10,
+        "path_ids": [
+          "path_1"
+        ],
+        "path_incidence_mass": 10,
+        "path_membership_count": 1,
+        "shared_by_all_paths": false
+      }
+    ],
+    "join_node": "g=6,c=7,A=positive",
+    "max_prime": 1009,
+    "mixed_witness_source_sink_path_count": 2,
+    "path_kind_rows": [
+      {
+        "mass": 40,
+        "path_kind": "long_neighbor_corridor",
+        "ratio": 0.5714285714285714
+      },
+      {
+        "mass": 30,
+        "path_kind": "bridge_shortcut_corridor",
+        "ratio": 0.42857142857142855
+      }
+    ],
+    "path_rows": [
+      {
+        "P_sequence": [
+          739,
+          607,
+          607,
+          607
+        ],
+        "P_support": [
+          607,
+          739
+        ],
+        "P_switch_count": 1,
+        "edge_count": 4,
+        "edge_ids": [
+          "P739:step3-4",
+          "P607:step1-2",
+          "P607:step2-3",
+          "P607:step3-4"
+        ],
+        "edge_keys": [
+          "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+          "g=4,c=5,A=negative -> g=6,c=7,A=positive",
+          "g=6,c=7,A=positive -> g=8,c=10,A=negative"
+        ],
+        "node_count": 5,
+        "node_sequence": [
+          "g=6,c=6,A=positive",
+          "g=2,c=2,A=negative",
+          "g=4,c=5,A=negative",
+          "g=6,c=7,A=positive",
+          "g=8,c=10,A=negative"
+        ],
+        "path_edge_mass": 40,
+        "path_id": "path_1",
+        "path_kind": "long_neighbor_corridor",
+        "path_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "single_witness_path": false,
+        "uses_neighbor_corridor": true,
+        "uses_repeated_bridge": false
+      },
+      {
+        "P_sequence": [
+          739,
+          739,
+          607
+        ],
+        "P_support": [
+          607,
+          739
+        ],
+        "P_switch_count": 1,
+        "edge_count": 3,
+        "edge_ids": [
+          "P739:step3-4",
+          "P739:step4-5",
+          "P607:step3-4"
+        ],
+        "edge_keys": [
+          "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+          "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+          "g=6,c=7,A=positive -> g=8,c=10,A=negative"
+        ],
+        "node_count": 4,
+        "node_sequence": [
+          "g=6,c=6,A=positive",
+          "g=2,c=2,A=negative",
+          "g=6,c=7,A=positive",
+          "g=8,c=10,A=negative"
+        ],
+        "path_edge_mass": 30,
+        "path_id": "path_2",
+        "path_kind": "bridge_shortcut_corridor",
+        "path_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "single_witness_path": false,
+        "uses_neighbor_corridor": true,
+        "uses_repeated_bridge": true
+      }
+    ],
+    "previous_directed_incidence_graph_ledger_closed": true,
+    "repeated_step_source_sink_path_cover_family_bound_proved": false,
+    "repeated_step_source_sink_path_cover_ledger_closed": true,
+    "row_column_unconditional_closed": false,
+    "shared_edge_count": 2,
+    "shared_edge_mass": 20,
+    "shared_edge_path_incidence_mass": 40,
+    "single_witness_orbit_interpretation_valid": false,
+    "single_witness_source_sink_path_count": 0,
+    "sink_node": "g=8,c=10,A=negative",
+    "source_node": "g=6,c=6,A=positive",
+    "source_sink_path_count": 2,
+    "source_sink_path_edge_incidence_count": 7,
+    "source_sink_path_edge_incidence_mass": 70,
+    "target_sign_word": "--+-+",
+    "witness_support_rows": [
+      {
+        "mass": 70,
+        "ratio": 1.0,
+        "witness_support": "mixed_P"
+      }
+    ]
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths)",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "after the DAG ledger, the next non-circular object is the exact source-sink path cover and its witness-stitching obstruction",
+  "repeated_step_source_sink_path_cover_family_bound_proved": false,
+  "repeated_step_source_sink_path_cover_ledger_closed": true,
+  "row_column_unconditional_closed": false,
+  "single_witness_orbit_interpretation_valid": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "7c173936934e13cf550892eb5a762a90097b6b2c49fa1ae1c2dab70702e66363",
+    "docs/monograph/external-theorem-index.md": "b2fa10eac22651e04c99f5cfe563ebe5921763c4e275e8b71220f84756979d38",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "1e6cd8223b2a2a20077764051a18f2460a79b9a0a4ae9029e766a80654dd935d",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json": "13b506fba485e57848a1fd220612fee3705672ec1494b2fcb6c7f136c4b6bdad",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "53f5680bd84f53b7cdde16e27e7bca7fe7af97cd6ae942abd8f77d38ab99dcc5",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "6e356a2abff227afec01fa2be7491593e39ccece6b46eb47d8409d82fd3f47f8",
+    "experiments/prime_matrix_phi_lpf_repeated_step_path_cover_audit.py": "4fc38216d60a847f3d49574b238e7d0cac95269ed774c3456b75b4a2d177089c",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "6058381012b9370105641b6218e183e68900150347eb4138883fb42cf9c420de"
+  },
+  "status": "repeated_step_source_sink_path_cover_ledger_closed_family_bound_open"
+}

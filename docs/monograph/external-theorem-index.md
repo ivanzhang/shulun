@@ -9861,3 +9861,61 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AD. Phi-LPF dominant sign-word repeated-step source-sink path-cover 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_path_cover_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.md
+```
+
+本层承接 65AC，把 repeated-step DAG 的所有 source-sink 图路径枚举为
+path-cover 账本：
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+source_node=g=6,c=6,A=positive
+sink_node=g=8,c=10,A=negative
+source_sink_path_count=2
+source_sink_path_edge_incidence_count=7
+source_sink_path_edge_incidence_mass=70
+edge_cover_complete=true
+shared_edge_count=2
+shared_edge_mass=20
+shared_edge_path_incidence_mass=40
+single_witness_source_sink_path_count=0
+mixed_witness_source_sink_path_count=2
+all_source_sink_paths_mixed_P=true
+all_source_sink_paths_have_one_P_switch=true
+diamond_decomposition_closed=true
+single_witness_orbit_interpretation_valid=false
+```
+
+两条图路径为：
+
+```text
+g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative
+g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative
+```
+
+关键边界：两条 source-sink 图路径都混合 `P=607` 与 `P=739`，所以它们
+只是 signature graph stitching，不能当作 single witness orbit。FKMS、
+Milićević--Qin--Wu 与 Wright 型 trace/Kloosterman 平均输入仍需要先把这个
+mixed-P stitching 提升为可求和族；Maynard 小间距与 Li 短区间素数结果也不
+直接推出该 path-cover uniform bound。
+
+状态边界：
+
+```text
+repeated_step_source_sink_path_cover_ledger_closed=true
+repeated_step_source_sink_path_cover_family_bound_proved=false
+single_witness_orbit_interpretation_valid=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

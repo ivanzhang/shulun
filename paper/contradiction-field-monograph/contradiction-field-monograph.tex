@@ -36997,6 +36997,83 @@ repeated-step-directed-incidence-graph-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step source-sink path cover}
+
+\begin{theorem}[Repeated-step source-sink path-cover ledger]
+In the audit range \(P\le 1009\), the directed repeated-step graph has exactly
+two source-sink graph paths.  The source is
+\(\texttt{g=6,c=6,A=positive}\) and the sink is
+\(\texttt{g=8,c=10,A=negative}\).  The principal path-cover values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{repeated\_step\_source\_sink\_path\_cover\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{source\_sink\_path\_count} & 2\\
+\texttt{source\_sink\_path\_edge\_incidence\_count} & 7\\
+\texttt{source\_sink\_path\_edge\_incidence\_mass} & 70\\
+\texttt{edge\_cover\_complete} & \texttt{true}\\
+\texttt{shared\_edge\_count} & 2\\
+\texttt{shared\_edge\_mass} & 20\\
+\texttt{shared\_edge\_path\_incidence\_mass} & 40\\
+\texttt{single\_witness\_source\_sink\_path\_count} & 0\\
+\texttt{mixed\_witness\_source\_sink\_path\_count} & 2\\
+\texttt{all\_source\_sink\_paths\_mixed\_P} & \texttt{true}\\
+\texttt{all\_source\_sink\_paths\_have\_one\_P\_switch} & \texttt{true}\\
+\texttt{diamond\_decomposition\_closed} & \texttt{true}.
+\end{array}
+\]
+The single-witness orbit interpretation is therefore invalid for these graph
+paths.
+\end{theorem}
+
+\begin{proof}
+Enumerating the source-sink paths in the five-edge DAG gives
+\[
+\begin{split}
+&\texttt{g=6,c=6,A=positive}\to
+\texttt{g=2,c=2,A=negative}\to
+\texttt{g=4,c=5,A=negative}\\
+&\qquad\to
+\texttt{g=6,c=7,A=positive}\to
+\texttt{g=8,c=10,A=negative},
+\end{split}
+\]
+and
+\[
+\texttt{g=6,c=6,A=positive}\to
+\texttt{g=2,c=2,A=negative}\to
+\texttt{g=6,c=7,A=positive}\to
+\texttt{g=8,c=10,A=negative}.
+\]
+The two common edges are the source edge into
+\(\texttt{g=2,c=2,A=negative}\) and the terminal edge out of
+\(\texttt{g=6,c=7,A=positive}\); their ordinary mass is \(20\), while their
+path-incidence mass is \(40\).  The branch edge through
+\(\texttt{g=4,c=5,A=negative}\) and the direct repeated-to-repeated bridge
+close the branch-join diamond.  Both source-sink paths use data from
+\(P=607\) and \(P=739\), with one \(P\)-switch.  Hence the path cover is exact
+as a finite signature graph ledger, but it is not a single-\(P\) witness
+orbit.
+\end{proof}
+
+\begin{remark}[Mixed-\(P\) path-cover gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths).
+\end{quote}
+This still does not prove the required uniform family estimate.  The
+available trace, bilinear, Kloosterman, small-gap, and short-interval prime
+inputs do not by themselves turn this mixed-\(P\) signature stitching into a
+global Phi--LPF bound.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-source-sink-path-cover-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
