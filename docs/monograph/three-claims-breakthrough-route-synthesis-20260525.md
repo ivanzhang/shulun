@@ -442,6 +442,51 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.5 terminal prefix-record source-key lift 障碍更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_prefix_record_source_key_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.json
+```
+
+本层不是重复上一轮 Jordan 账本，而是把它继续压成 prefix-record/reflection 账本：
+
+```text
+previous_formal_jordan_cancellation_law_closed=true
+prefix_record_reflection_schema_closed=true
+terminal_atom_count=7
+terminal_run_count_total=59
+cancellation_event_count=51
+```
+
+这给出一个更窄但仍未闭合的真实硬点。所有抵消事件都不是完整 run pair：
+
+```text
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+q_boundary_pair_event_count=47
+non_q_boundary_pair_event_count=4
+survivor_fragment_count_total=8
+internal_survivor_fragment_count=1
+prefix_record_source_key_lift_constructed=false
+row_column_unconditional_closed=false
+```
+
+因此当前最快路线不是再找一维反射恒等式，而是把 prefix-record chunk 提升为
+source-key/source-preserving actual object，或者把内部 survivor 回流为 PDEC/LocalSurvivor，
+或者构造可求和的 averaged trace/Kloosterman/Type-II family：
+
+```text
+PrefixRecordSourceKeyLiftOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

@@ -1673,6 +1673,59 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC36：Phi-LPF terminal prefix-record source-key obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_prefix_record_source_key_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.md
+```
+
+诚实结论：形式 Jordan/telescoping 已进一步压成 prefix-record/reflection 账本：
+
+```text
+previous_formal_jordan_cancellation_law_closed=true
+prefix_record_reflection_schema_closed=true
+terminal_atom_count=7
+terminal_run_count_total=59
+cancellation_event_count=51
+```
+
+真正未闭合的是 prefix record 到 actual source-key 的提升：
+
+```text
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+non_q_boundary_pair_event_count=4
+survivor_fragment_count_total=8
+internal_survivor_fragment_count=1
+tail_only_survivor_law_proved=false
+prefix_record_source_key_lift_constructed=false
+```
+
+所以本层推进后状态仍为：
+
+```text
+primitive_orientation_local_factor_law_proved=false
+admissible_averaged_trace_family_created=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最新最窄口：
+
+```text
+PrefixRecordSourceKeyLiftOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC31：Phi-LPF terminal adjacent-run Jordan cancellation source obstruction（2026-05-25）
 
 新增证书：

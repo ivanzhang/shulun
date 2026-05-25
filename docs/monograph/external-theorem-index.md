@@ -2081,6 +2081,60 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC40：terminal prefix-record reflection source-key obstruction（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_prefix_record_source_key_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.md
+```
+
+本层继续上一层 adjacent-run Jordan cancellation，把形式抵消写成 prefix-record/reflection
+账本。确定性一维账本已经闭合：
+
+```text
+previous_formal_jordan_cancellation_law_closed=true
+terminal_atom_count=7
+terminal_run_count_total=59
+prefix_record_reflection_schema_closed=true
+cancellation_event_count=51
+```
+
+但是这仍不能直接调用外部 trace/Kloosterman/Type-II 定理，因为抵消块没有 source-key
+lift：
+
+```text
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+q_boundary_pair_event_count=47
+non_q_boundary_pair_event_count=4
+survivor_fragment_count_total=8
+internal_survivor_fragment_count=1
+prefix_record_source_key_lift_constructed=false
+row_column_unconditional_closed=false
+```
+
+外部输入边界相应收窄为：
+
+| 外部输入 | 主源 | 当前缺口 |
+| --- | --- | --- |
+| Fouvry--Kowalski--Michel--Sawin, bilinear trace functions | https://arxiv.org/abs/2511.09459 | 需要先把 prefix-record chunks 晋级为带 source-key 的 trace-function bilinear family |
+| Milićević--Qin--Wu, arbitrary-modulus Kloosterman bilinear forms | https://arxiv.org/abs/2511.07550 | 需要把 moving Beatty phase 与 prefix record 同时完成成双变量 Kloosterman family |
+| Pascadi, distribution of primes and smooth numbers | https://arxiv.org/abs/2505.00653 | 需要把 pointwise terminal load 改写成 well-factorable AP averages |
+| Wright, trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要三线性 convolution、source-key lift 与 equidistributed beta sequence |
+
+最新非循环口：
+
+```text
+PrefixRecordSourceKeyLiftOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC39：terminal adjacent-run Jordan cancellation source obstruction（2026-05-25）
 
 新增证书：

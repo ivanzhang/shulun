@@ -29471,6 +29471,53 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 本层不是无条件闭合；它把“找抵消律”推进为“形式律已找到，源保持律待证明”。
 
+### Phi-LPF terminal prefix-record source-key actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_prefix_record_source_key_obstruction_router.py
+data/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-source-key-obstruction-router.json
+```
+
+actual-load 含义：上一层 `A(q)/q` 的 Jordan 抵消可以完全改写为
+prefix-record/reflection 账本：
+
+```text
+previous_formal_jordan_cancellation_law_closed=true
+prefix_record_reflection_schema_closed=true
+terminal_atom_count=7
+terminal_run_count_total=59
+cancellation_event_count=51
+```
+
+但 actual pairing 仍未形成，因为所有抵消都要切分 run mass，且有非边界 pairing
+和内部 survivor：
+
+```text
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+q_boundary_pair_event_count=47
+non_q_boundary_pair_event_count=4
+survivor_fragment_count_total=8
+internal_survivor_fragment_count=1
+prefix_record_source_key_lift_constructed=false
+```
+
+因此 actual-load 合同进一步改写为：
+
+```text
+PrefixRecordSourceKeyLiftOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+本层不是无条件闭合；它把“形式抵消律”继续推进为“prefix-record 已闭合，
+source-key lift 待证明”。
+
 ### 三命题突破路线总合成 actual-load 更新（2026-05-25）
 
 新增归档：

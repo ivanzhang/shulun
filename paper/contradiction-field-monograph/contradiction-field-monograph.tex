@@ -37953,6 +37953,96 @@ averaged trace/Kloosterman or Type-II family, or route the internal survivor
 to a named PDEC/LocalSurvivor certificate.
 \end{remark}
 
+\section{Terminal prefix-record reflection and source-key obstruction}
+
+\begin{theorem}[Prefix-record reflection ledger]
+The formal adjacent-run Jordan cancellation law admits an equivalent
+prefix-record/reflection ledger on the seven terminal atoms.  The certificate
+checks
+\[
+  \texttt{terminal\_atom\_count}=7,\qquad
+  \texttt{terminal\_run\_count\_total}=59,
+\]
+and records
+\[
+  \texttt{prefix\_record\_reflection\_schema\_closed}=\texttt{true}.
+\]
+Thus the one-dimensional path accounting has been fully compressed to
+prefix minima, prefix maxima, cancelled opposite-sign chunks, and survivor
+fragments.
+\end{theorem}
+
+\begin{proof}
+For each terminal atom, the audit orders the monotone runs and forms the
+exact rational cumulative sum of the signed run displacements.  It records
+the prefix extrema and then repeats the opposite-sign stack cancellation.
+The total number of cancellation events is \(51\), matching the previous
+Jordan audit, and the total survivor count is \(8\).  Hence the reflection
+ledger is the same finite signed path, written in prefix-record coordinates.
+\end{proof}
+
+\begin{proposition}[Source-key lift remains open]
+The prefix-record ledger does not yet give an actual source-preserving
+pairing.  It has
+\[
+\begin{gathered}
+  \texttt{whole\_run\_pair\_event\_count}=0,\qquad
+  \texttt{synthetic\_split\_event\_count}=51,\\
+  \texttt{q\_boundary\_pair\_event\_count}=47,\qquad
+  \texttt{non\_q\_boundary\_pair\_event\_count}=4,\\
+  \texttt{survivor\_fragment\_count\_total}=8,\qquad
+  \texttt{internal\_survivor\_fragment\_count}=1.
+\end{gathered}
+\]
+Consequently the source-key lift, the tail-only survivor law, and the global
+Phi--LPF parity-breaking conclusion all remain unproved.
+\end{proposition}
+
+\begin{proof}
+The audit labels each cancellation chunk by its old run, new run, boundary
+status, and consumed mass.  No event consumes both full runs, so every
+cancellation requires synthetic mass splitting.  Four cancellations pair
+non-adjacent \(q\)-boundaries, and one survivor fragment remains internal
+rather than terminal.  These are source-level obstructions rather than
+rounding artefacts of the prefix representation.
+\end{proof}
+
+\begin{certificatestatement}[Prefix-record source-key obstruction audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+previous\_formal\_jordan\_cancellation\_law\_closed=true\\
+prefix\_record\_reflection\_schema\_closed=true\\
+cancellation\_event\_count=51\\
+whole\_run\_pair\_event\_count=0\\
+synthetic\_split\_event\_count=51\\
+q\_boundary\_pair\_event\_count=47\\
+non\_q\_boundary\_pair\_event\_count=4\\
+survivor\_fragment\_count\_total=8\\
+internal\_survivor\_fragment\_count=1\\
+prefix\_record\_source\_key\_lift\_constructed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-prefix-record-\\
+source-key-obstruction-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Current non-cyclic gate]
+The current narrow gate is
+\begin{quote}\scriptsize\ttfamily
+PrefixRecordSourceKeyLiftOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+The prefix-record ledger is useful because it removes another formal escape:
+the missing object is now specifically a source-key lift, a local orientation
+law before pushforward, or a genuine averaged family to which external
+trace/Kloosterman/Type-II tools can apply.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]
