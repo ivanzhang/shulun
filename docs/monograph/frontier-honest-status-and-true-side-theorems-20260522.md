@@ -2257,6 +2257,74 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC43：Phi-LPF terminal boundary bridge-root q-spine pivot-enclosure 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.md
+```
+
+本层承接 q-spine index-gap。有限审计读数：
+
+```text
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+shared_pivot_q=607
+shared_pivot_index=1
+finite_pivot_enclosure_closed=true
+endpoint_slack_equals_pivot_gap_sum_closed=true
+exact_pivot_contact_count=1
+row_column_unconditional_closed=false
+```
+
+核心恒等式：
+
+```text
+bridge_index <= pivot_index <= barrier_index
+```
+
+pivot-enclosure rows：
+
+```text
+m757 q571->577: 577 <= 607 <= 631, gap 30+24=54
+m761 q601->607: 607 = 607 = 607, gap 0+0=0
+```
+
+本层真正推进：index order 已变成 shared pivot enclosure。最薄行是 exact pivot
+contact，因此最新硬点是统一证明 shared pivot 总夹在 bridge root 与 barrier 之间，
+或把 pivot 越界行命名为 PDEC。
+
+### Q13AC43.1 最新最窄口
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC33：Phi-LPF terminal boundary bridge-root q-spine Beatty margin 审计（2026-05-25）
 
 新增证书：

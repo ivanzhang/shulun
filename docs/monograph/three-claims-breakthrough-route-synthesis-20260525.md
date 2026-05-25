@@ -1091,6 +1091,57 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.18 terminal boundary bridge-root q-spine pivot-enclosure 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.json
+```
+
+本层把 q-spine index-gap 顺序继续压成 shared-pivot enclosure。共享 pivot 为
+
+```text
+shared_pivot_q=607
+shared_pivot_index=1
+```
+
+有限审计读数：
+
+```text
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+finite_pivot_enclosure_closed=true
+endpoint_slack_equals_pivot_gap_sum_closed=true
+exact_pivot_contact_count=1
+row_column_unconditional_closed=false
+```
+
+两条 pivot-enclosure row 为：
+
+```text
+m757 q571->577: 577 <= 607 <= 631, left gap 30, right gap 24, slack 54
+m761 q601->607: 607 = 607 = 607, left gap 0, right gap 0, slack 0
+```
+
+这一步的实际推进是：`BridgeRootQSpineIndexBarrierOrderLawOrPDEC` 被替换为
+`BridgeRootQSpinePivotEnclosureLawOrPDEC`。最新硬点变成证明 shared pivot 总在
+bridge root 与 moving barrier 之间，或把 pivot 越界行命名为 PDEC。
+
+最新口：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

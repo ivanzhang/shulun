@@ -1,0 +1,131 @@
+{
+  "admissible_trace_or_typeii_family_constructed": false,
+  "bridge_root_qspine_pivot_enclosure_reduction_closed": true,
+  "bridge_root_uniform_qspine_pivot_enclosure_law_proved": false,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router",
+  "endpoint_slack_equals_pivot_gap_sum_closed": true,
+  "exact_pivot_contact_count": 1,
+  "finite_group_orbit_expansion_family_constructed": false,
+  "finite_pivot_enclosure_closed": true,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "QSpineIndexGapImported",
+      "meaning": "the q-spine index-gap reduction is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SharedPivotImported",
+      "meaning": "the q-spine has shared pivot q=607.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "FinitePivotEnclosure",
+      "meaning": "bridge index <= pivot index <= barrier index in the audited rows.",
+      "proved": true,
+      "remaining": "finite pivot enclosure ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SlackAsPivotGapSum",
+      "meaning": "endpoint slack splits into bridge-to-pivot and pivot-to-barrier gap sums.",
+      "proved": true,
+      "remaining": "finite pivot gap ledger"
+    },
+    {
+      "closed": false,
+      "gate": "UniformQSpinePivotEnclosureLaw",
+      "meaning": "a uniform law must force the shared pivot to lie between bridge root and barrier.",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "this is a finite pivot-enclosure reduction, not a global parity-breaking theorem.",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "identity": "index order is certified by bridge_index <= pivot_index <= barrier_index",
+  "latest_open_gate": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND RightSelectedTerminalTailOverhangPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "next_primary_attack_target": "BridgeRootQSpinePivotEnclosureLawOrPDEC",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "pivot_enclosure_row_count": 2,
+  "pivot_enclosure_rows": [
+    {
+      "atom_key": "left:2842:selected_terminal:m757",
+      "barrier_qspine_index": 2,
+      "bridge_qspine_index": 0,
+      "bridge_root_q": 577,
+      "bridge_to_pivot_gap_sum": 30,
+      "bridge_to_pivot_index_gap": 1,
+      "endpoint_slack": 54,
+      "endpoint_slack_equals_pivot_gap_sum": true,
+      "exact_pivot_contact": false,
+      "m": 757,
+      "moving_endpoint_barrier_q": 631,
+      "packet_id": 1,
+      "pivot_enclosure_closed": true,
+      "pivot_gap_sum_total": 54,
+      "pivot_qspine_index": 1,
+      "pivot_to_barrier_gap_sum": 24,
+      "pivot_to_barrier_index_gap": 1,
+      "transition": "m757 q571->577"
+    },
+    {
+      "atom_key": "left:2842:selected_terminal:m761",
+      "barrier_qspine_index": 1,
+      "bridge_qspine_index": 1,
+      "bridge_root_q": 607,
+      "bridge_to_pivot_gap_sum": 0,
+      "bridge_to_pivot_index_gap": 0,
+      "endpoint_slack": 0,
+      "endpoint_slack_equals_pivot_gap_sum": true,
+      "exact_pivot_contact": true,
+      "m": 761,
+      "moving_endpoint_barrier_q": 607,
+      "packet_id": 2,
+      "pivot_enclosure_closed": true,
+      "pivot_gap_sum_total": 0,
+      "pivot_qspine_index": 1,
+      "pivot_to_barrier_gap_sum": 0,
+      "pivot_to_barrier_index_gap": 0,
+      "transition": "m761 q601->607"
+    }
+  ],
+  "plain_conclusion": "The audited q-spine index order is explained by shared-pivot enclosure. The first row encloses q=607 between 577 and 631; the second row is exact pivot contact.  The remaining uniform problem is the q-spine pivot enclosure law or PDEC.",
+  "previous_qspine_index_gap_reduction_closed": true,
+  "q_spine_nodes": [
+    577,
+    607,
+    631
+  ],
+  "right_tail_overhang_pdec_constructed": false,
+  "row_column_unconditional_closed": false,
+  "shared_pivot_index": 1,
+  "shared_pivot_q": 607,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-index-gap-router.json": "f2e4da58e2bdd41f4561174cfea8fe2127f4b5b02ef35b2690812dba4c667a6f",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-microtemplate-router.json": "0b04b0f60f1c95e20bfbde8eb6ab7485a46e6d1f798b58b40e9cc3d09e6c2fa8",
+    "experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router.py": "1c3d3da888ff60a636cad509f3bab849e761bd8ce1bcd52bff2736368c94fa13"
+  },
+  "status": "bridge_root_qspine_pivot_enclosure_reduction_closed_uniform_enclosure_law_open",
+  "two_packet_pivot_shift_summary": {
+    "both_sides_collapse_to_pivot": true,
+    "bridge_to_pivot_drop": 1,
+    "exact_contact_transition": "m761 q601->607",
+    "first_bridge_to_pivot_index_gap": 1,
+    "first_pivot_to_barrier_index_gap": 1,
+    "packet_count": 2,
+    "pivot_to_barrier_drop": 1,
+    "second_bridge_to_pivot_index_gap": 0,
+    "second_pivot_to_barrier_index_gap": 0,
+    "two_packet_pivot_shift_closed": true
+  },
+  "verified_date": "2026-05-25"
+}

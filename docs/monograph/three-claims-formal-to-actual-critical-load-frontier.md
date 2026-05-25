@@ -27203,6 +27203,43 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary bridge-root q-spine pivot-enclosure formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.json
+```
+
+formal-to-actual 结论：q-spine index order 已降到 shared-pivot enclosure：
+
+```text
+bridge_index <= pivot_index <= barrier_index
+```
+
+审计读数：
+
+```text
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+shared_pivot_q=607
+shared_pivot_index=1
+finite_pivot_enclosure_closed=true
+endpoint_slack_equals_pivot_gap_sum_closed=true
+exact_pivot_contact_count=1
+```
+
+因此 formal-to-actual 缺口从 q-spine index order 进一步降维为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

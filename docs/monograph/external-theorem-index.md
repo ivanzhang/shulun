@@ -2412,6 +2412,53 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AP. Phi-LPF terminal boundary bridge-root q-spine pivot-enclosure 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_bridge_root_qspine_pivot_enclosure_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-bridge-root-qspine-pivot-enclosure-router.md
+```
+
+本层把 q-spine index-gap 顺序继续压成 shared-pivot enclosure：
+
+```text
+bridge_index <= pivot_index <= barrier_index
+```
+
+有限读数：
+
+```text
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+shared_pivot_q=607
+shared_pivot_index=1
+finite_pivot_enclosure_closed=true
+endpoint_slack_equals_pivot_gap_sum_closed=true
+exact_pivot_contact_count=1
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界再次收窄：当前缺的是同一个 terminal q-spine 上 shared pivot
+`607` 的点态包围律。FKMS、Milićević--Qin--Wu、Pascadi、Wright 与
+thin-group/expander 工具不能直接推出这种 pivot enclosure；它们仍要求先构造
+completed averaged signed family、Type-II bilinear family 或有限群轨道。
+
+最新开放口：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

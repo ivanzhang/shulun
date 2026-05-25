@@ -39073,6 +39073,84 @@ This replaces moving-barrier distance positivity by the discrete assertion
 index-barrier PDEC.
 \end{remark}
 
+\begin{theorem}[Bridge-root \(q\)-spine pivot-enclosure reduction]
+The audited \(q\)-spine index order is certified by the shared pivot
+\[
+  q_\ast=607,\qquad i_\ast=1.
+\]
+For each audited bridge-root row,
+\[
+  i_{\rm br}\le i_\ast\le i_{\rm bar},
+\]
+and the endpoint slack splits as
+\[
+  {\rm slack}
+  =\sum_{i=i_{\rm br}}^{i_\ast-1}(Q_{i+1}-Q_i)
+  +\sum_{i=i_\ast}^{i_{\rm bar}-1}(Q_{i+1}-Q_i).
+\]
+Concretely,
+\[
+\begin{array}{c|c|c|c|c}
+{\rm transition} & q_{\rm br} & q_\ast & q_{\rm bar}
+& {\rm slack}\\
+\hline
+m757,\ q571\to577 & 577 & 607 & 631 & 30+24=54\\
+m761,\ q601\to607 & 607 & 607 & 607 & 0+0=0 .
+\end{array}
+\]
+Thus the thin second row is exact pivot contact.
+\end{theorem}
+
+\begin{proof}
+The previous index-gap certificate imports the \(q\)-spine
+\[
+  Q=(577,607,631).
+\]
+The earlier microtemplate certificate identifies \(607\) as the shared pivot:
+the first packet unit root is the second packet bridge root.  Therefore the
+finite index-order inequality is equivalent in the audited rows to enclosing
+this shared pivot.  The first row has indices \(0\le1\le2\), and its slack
+splits into the left gap \(607-577=30\) and the right gap \(631-607=24\).  The
+second row has indices \(1=1=1\), hence zero left and right gap.  This proves
+the finite pivot-enclosure reduction.  The uniform pivot-enclosure law remains
+open.
+\end{proof}
+
+\begin{certificatestatement}[Bridge-root \(q\)-spine pivot-enclosure audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+bridge\_root\_qspine\_pivot\_enclosure\_reduction\_closed=true\\
+shared\_pivot\_q=607\\
+shared\_pivot\_index=1\\
+finite\_pivot\_enclosure\_closed=true\\
+endpoint\_slack\_equals\_pivot\_gap\_sum\_closed=true\\
+exact\_pivot\_contact\_count=1\\
+bridge\_root\_uniform\_qspine\_pivot\_enclosure\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+bridge-root-qspine-pivot-enclosure-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated \(q\)-spine pivot gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+This replaces the index-order assertion by the sharper statement that the
+shared pivot remains enclosed between the bridge root and the moving barrier,
+or else by a named pivot-enclosure PDEC.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]
