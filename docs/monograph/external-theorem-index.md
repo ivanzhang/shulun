@@ -2333,6 +2333,60 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AH-6. Phi-LPF terminal sibling q-spine wheel-gap-lock 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_gap_lock_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：30-wheel residue-carrier 已锁定到
+terminal double-Awrap q-gap/carry path。
+
+审计读数：
+
+```text
+right_side_q_spine=[439,461,467]
+terminal_q_gap_path=[2,4]
+terminal_carry_path=[2,5]
+first_gap_lock_closed=true
+second_gap_lock_closed=true
+q_spine_generation_closed=true
+carry_gap_lock_closed=true
+terminal_sibling_qspine_wheel_gap_lock_closed=true
+terminal_sibling_qspine_wheel_gap_lock_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+2 = middle_kernel/30 = right_gap_after_7_peel
+4 = wheel_lift_height = 2^2
+461-439 = 11*2
+467-439 = 14*2 = 7*2*2
+carry_path=[2,4+1]=[2,5].
+```
+
+外部定理边界仍不变：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、Type-II
+输入必须作用在可平均的 signed wheel-gap-lock family 上；Becker--Breuillard
+型谱隙仍需要有限群轨道或 thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
 
 新增证书：

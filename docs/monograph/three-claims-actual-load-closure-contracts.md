@@ -30489,3 +30489,60 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### terminal sibling q-spine wheel-gap-lock actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_gap_lock_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.json
+```
+
+actual-load 含义：上一层 wheel-residue carrier 已不再是独立 residue 现象；
+它锁定到同一 terminal double-Awrap q-gap/carry path。
+
+```text
+right_side_q_spine=[439,461,467]
+terminal_q_gap_path=[2,4]
+terminal_carry_path=[2,5]
+first_gap_lock_closed=true
+second_gap_lock_closed=true
+q_spine_generation_closed=true
+carry_gap_lock_closed=true
+terminal_sibling_qspine_wheel_gap_lock_closed=true
+```
+
+具体恒等式为：
+
+```text
+2 = middle_kernel/30 = right_gap_after_7_peel
+4 = wheel_lift_height = 2^2
+461-439 = 11*2
+467-439 = 14*2 = 7*2*2
+carry_path=[2,4+1]=[2,5]
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_sibling_qspine_wheel_gap_lock_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

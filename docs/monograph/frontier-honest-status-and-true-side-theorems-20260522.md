@@ -2423,6 +2423,72 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31.4：terminal sibling q-spine wheel-gap-lock（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_gap_lock_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.md
+```
+
+本层把 30-wheel residue-carrier 锁定到 terminal double-Awrap q-gap/carry path。
+有限审计读数：
+
+```text
+right_side_q_spine=[439,461,467]
+terminal_q_gap_path=[2,4]
+terminal_carry_path=[2,5]
+first_gap_lock_closed=true
+second_gap_lock_closed=true
+q_spine_generation_closed=true
+carry_gap_lock_closed=true
+terminal_sibling_qspine_wheel_gap_lock_closed=true
+terminal_sibling_qspine_wheel_gap_lock_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+2 = middle_kernel/30 = right_gap_after_7_peel
+4 = wheel_lift_height = 2^2
+461-439 = 11*2
+467-439 = 14*2 = 7*2*2
+carry_path=[2,4+1]=[2,5].
+```
+
+honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍未闭合三命题；最新剩余对象只是从 30-wheel residue carrier 降为
+terminal wheel-gap-lock 的 uniform payment/exclusion 或 PDEC。
+
+状态边界：
+
+```text
+terminal_sibling_qspine_wheel_gap_lock_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC41：Phi-LPF terminal boundary bridge-root moving endpoint barrier 审计（2026-05-25）
 
 新增证书：

@@ -1471,3 +1471,48 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从 primitive
 gap-drift 继续降到 30-wheel residue carrier 的 uniform payment/exclusion 或 PDEC。
+
+## 15. terminal sibling q-spine wheel-gap-lock 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_gap_lock_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-gap-lock-router.json
+```
+
+本层把上一节的 30-wheel residue carrier 锁定到 terminal double-Awrap
+q-gap/carry path。共同 terminal signature 为：
+
+```text
+terminal_q_gap_path=[2,4]
+terminal_carry_path=[2,5]
+```
+
+关键 gap-lock 恒等式为：
+
+```text
+2 = middle_kernel/30 = right_gap_after_7_peel
+4 = wheel_lift_height = 2^2
+461-439 = 11*2
+467-439 = 14*2 = 7*2*2
+carry_path=[2,4+1]=[2,5]
+```
+
+最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从
+30-wheel residue carrier 继续降到 terminal wheel-gap-lock 的 uniform
+payment/exclusion 或 PDEC。
