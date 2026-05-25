@@ -1424,3 +1424,50 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从整数 balance
 继续降到 primitive gap-drift 的 uniform payment/exclusion 或 PDEC。
+
+## 14. terminal sibling q-spine 30-wheel residue-carrier 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.json
+```
+
+本层把上一节的 7-peeled primitive gap-drift 继续改写成 30-wheel residue
+carrier：
+
+```text
+439 = 11*29 + 2*60
+    = 11*29 + 4*30.
+```
+
+非 30-wheel 周期 residue 完全由 `11*29` 承载：
+
+```text
+439 mod 30 = 19
+(11*29) mod 30 = 19.
+```
+
+而 lift height 正好由 right primitive gap after 7-peel 与 middle wheel units 给出：
+
+```text
+4 = 2*(60/30).
+```
+
+最新非循环口进一步改写为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍不是三命题的无条件闭合；它把 terminal payment 的剩余对象从 primitive
+gap-drift 继续降到 30-wheel residue carrier 的 uniform payment/exclusion 或 PDEC。

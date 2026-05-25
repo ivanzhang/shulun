@@ -2360,6 +2360,69 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31.3：terminal sibling q-spine 30-wheel residue-carrier（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.md
+```
+
+本层把 7-peeled primitive gap-drift 再压成 30-wheel residue-carrier。有限审计读数：
+
+```text
+q_prefix=439
+wheel_modulus=30
+residue_carrier=319
+wheel_neutral_mass=120
+residue_match_closed=true
+wheel_lift_closed=true
+carrier_identity_closed=true
+terminal_sibling_qspine_wheel_residue_closed=true
+terminal_sibling_qspine_wheel_residue_payment_law_proved=false
+row_column_unconditional_closed=false
+```
+
+也就是说：
+
+```text
+439 = 11*29 + 4*30
+439 mod 30 = (11*29) mod 30 = 19
+4 = 2*(60/30).
+```
+
+honest 口更新为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+这仍未闭合三命题；最新剩余对象只是从 primitive gap-drift 降为 30-wheel
+residue-carrier 的 uniform payment/exclusion 或 PDEC。
+
+状态边界：
+
+```text
+terminal_sibling_qspine_wheel_residue_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC41：Phi-LPF terminal boundary bridge-root moving endpoint barrier 审计（2026-05-25）
 
 新增证书：

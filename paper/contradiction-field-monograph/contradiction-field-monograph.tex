@@ -39594,6 +39594,73 @@ Thus the remaining terminal payment problem is no longer just an integer
 balance; it is a primitive q-spine gap-drift payment or exclusion problem.
 \end{remark}
 
+\begin{theorem}[Terminal sibling q-spine wheel-residue carrier]
+The \(7\)-peeled primitive gap-drift identity is equivalent to a \(30\)-wheel
+residue-carrier identity.  Namely,
+\[
+439=11\cdot29+2\cdot60
+\]
+can be written as
+\[
+439=11\cdot29+4\cdot30.
+\]
+The non-wheel residue is carried by \(11\cdot29\), since
+\[
+439\equiv 11\cdot29\equiv 19\pmod {30}.
+\]
+The remaining lift is an integral wheel lift,
+\[
+4=2\cdot(60/30).
+\]
+\end{theorem}
+
+\begin{proof}
+The previous theorem gives \(439=11\cdot29+2\cdot60\).  Since \(60=2\cdot30\),
+the second summand is \(4\cdot30\), giving the displayed wheel-residue identity.
+Furthermore \(439=14\cdot30+19\), while \(11\cdot29=319=10\cdot30+19\).  Thus
+the two terms have the same residue \(19\) modulo \(30\), and their quotient
+difference is \(14-10=4\).  This equals \(2\cdot(60/30)\), which is the right
+primitive gap after the \(7\)-peel multiplied by the number of wheel units in
+the middle kernel.
+\end{proof}
+
+\begin{certificatestatement}[Sibling q-spine wheel-residue audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+q\_prefix=439\\
+wheel\_modulus=30\\
+residue\_carrier=319\\
+wheel\_neutral\_mass=120\\
+residue\_match\_closed=true\\
+wheel\_lift\_closed=true\\
+carrier\_identity\_closed=true\\
+terminal\_sibling\_qspine\_wheel\_residue\_closed=true\\
+terminal\_sibling\_qspine\_wheel\_residue\_payment\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-\\
+qspine-wheel-residue-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated wheel-residue gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Thus the remaining terminal payment problem is no longer just a primitive
+gap-drift identity; it is a \(30\)-wheel residue-carrier payment or exclusion
+problem.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

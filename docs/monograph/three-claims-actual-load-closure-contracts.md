@@ -30434,3 +30434,58 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### terminal sibling q-spine 30-wheel residue actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.json
+```
+
+actual-load 含义：上一层 7-peeled primitive drift 已可继续降为 30-wheel
+residue carrier；middle kernel 的作用是完整 wheel 周期 lift，而不是新 residue。
+
+```text
+q_prefix=439
+wheel_modulus=30
+residue_carrier=319
+wheel_neutral_mass=120
+residue_match_closed=true
+wheel_lift_closed=true
+carrier_identity_closed=true
+terminal_sibling_qspine_wheel_residue_closed=true
+```
+
+具体恒等式为：
+
+```text
+439 = 11*29 + 4*30
+439 mod 30 = (11*29) mod 30 = 19
+4 = 2*(60/30)
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+terminal_sibling_qspine_wheel_residue_payment_law_proved=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```

@@ -2281,6 +2281,58 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AH-5. Phi-LPF terminal sibling q-spine 30-wheel residue-carrier 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router.py
+data/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-wheel-residue-router.md
+```
+
+本层继续收窄外部 theorem 的前置对象：7-peeled primitive gap-drift 已被改写为
+30-wheel residue-carrier。
+
+审计读数：
+
+```text
+q_prefix=439
+wheel_modulus=30
+residue_carrier=319
+wheel_neutral_mass=120
+residue_match_closed=true
+wheel_lift_closed=true
+carrier_identity_closed=true
+terminal_sibling_qspine_wheel_residue_closed=true
+terminal_sibling_qspine_wheel_residue_payment_law_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+核心恒等式：
+
+```text
+439 = 11*29 + 4*30
+439 mod 30 = (11*29) mod 30 = 19
+4 = 2*(60/30).
+```
+
+外部定理边界仍不变：MQW/FKMS/Wright/Pascadi 型 trace、Kloosterman、Type-II
+输入必须作用在可平均的 signed wheel-residue carrier family 上；Becker--Breuillard
+型谱隙仍需要有限群轨道或 thin-group sieve family。最新非循环口为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AI-3. Phi-LPF final negative-run endpoint-collar 证书
 
 新增证书：

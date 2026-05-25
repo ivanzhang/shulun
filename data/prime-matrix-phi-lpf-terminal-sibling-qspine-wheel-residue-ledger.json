@@ -1,0 +1,107 @@
+{
+  "P": 607,
+  "actual_wheel_lift_height": 4,
+  "admissible_trace_or_typeii_family_constructed": false,
+  "carrier_identity_closed": true,
+  "certificate_type": "prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router",
+  "finite_group_orbit_expansion_family_constructed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "PrimitiveGapDriftImported",
+      "meaning": "上一层 primitive gap-drift 已有限闭合，支付律仍未证明。",
+      "proved": true,
+      "remaining": "finite gap-drift ledger"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleKernelWheelNeutrality",
+      "meaning": "middle kernel coefficient 60 是两个完整 30-wheel 周期。",
+      "proved": true,
+      "remaining": "finite wheel-unit ledger"
+    },
+    {
+      "closed": true,
+      "gate": "ResidueCarrierCongruence",
+      "meaning": "q_prefix 与 11*29 有相同 30-wheel residue，非轮周期 residue 已由 11*29 承载。",
+      "proved": true,
+      "remaining": "finite residue congruence"
+    },
+    {
+      "closed": true,
+      "gate": "WheelLiftHeightIdentity",
+      "meaning": "q_prefix 与 residue carrier 的 quotient 差正好等于 right gap after 7-peel 乘以 middle wheel units。",
+      "proved": true,
+      "remaining": "finite wheel-lift ledger"
+    },
+    {
+      "closed": true,
+      "gate": "WheelResidueCarrierIdentity",
+      "meaning": "7-peeled primitive drift 等价于 q_prefix=residue carrier+完整 wheel periods。",
+      "proved": true,
+      "remaining": "finite wheel-residue identity"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalSiblingQSpineWheelResidueCarrierPaymentLaw",
+      "meaning": "仍需 uniform law 支付或排除该 wheel-residue carrier，而不能只在 m773 有限点成立。",
+      "proved": false,
+      "remaining": "TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "这是 finite wheel-residue reduction，不是全局奇偶性突破定理。",
+      "proved": false,
+      "remaining": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving"
+    }
+  ],
+  "latest_open_gate": "BridgeRootQSpinePivotEnclosureLawOrPDEC AND TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC AND BoundaryAdjacentRunMassRatioLawOrPDEC AND PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily",
+  "middle_kernel": 60,
+  "middle_kernel_wheel_units": 2,
+  "next_primary_attack_target": "TerminalSiblingQSpineWheelResidueCarrierPaymentOrPDEC",
+  "paid_after_lpf_peel": 29,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The 7-peeled primitive gap-drift 439 = 11*29 + 2*60 is equivalent to a 30-wheel residue-carrier identity: 439 = 11*29 + 4*30, with 439 mod 30 = 11*29 mod 30 = 19 and 4 = 2*(60/30). The remaining task is a uniform wheel-residue carrier payment/exclusion law or PDEC.",
+  "predicted_wheel_lift_height": 4,
+  "previous_gap_drift_closed": true,
+  "primitive_mid_gap": 11,
+  "q_prefix": 439,
+  "q_prefix_divmod_wheel": {
+    "quotient": 14,
+    "residue": 19,
+    "value": 439
+  },
+  "quotient_residue_lift_closed": true,
+  "residue_carrier": 319,
+  "residue_carrier_divmod_wheel": {
+    "quotient": 10,
+    "residue": 19,
+    "value": 319
+  },
+  "residue_match_closed": true,
+  "right_gap_after_lpf_peel": 2,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-terminal-sibling-qspine-gap-drift-router.json": "480c3d7aadbb744313e1ebd64c1bed7e19b014dfc1ac063e3d81400c89318bd1",
+    "experiments/prime_matrix_phi_lpf_terminal_sibling_qspine_wheel_residue_router.py": "32b71607e6889e6cbe97ee564a045f7bf9cc7188f0072b0e8e7eb9b77eb4ed63"
+  },
+  "status": "terminal_sibling_qspine_wheel_residue_closed_payment_law_open",
+  "terminal_sibling_qspine_wheel_residue_closed": true,
+  "terminal_sibling_qspine_wheel_residue_payment_law_proved": false,
+  "verified_date": "2026-05-25",
+  "wheel_lift_closed": true,
+  "wheel_lift_height_identity": {
+    "formula": "4 = 2*(60/30)",
+    "left": 4,
+    "right": 4
+  },
+  "wheel_modulus": 30,
+  "wheel_neutral_mass": 120,
+  "wheel_neutral_mass_closed": true,
+  "wheel_residue_identity": {
+    "formula": "439 = 11*29 + 4*30",
+    "left": 439,
+    "right": 439
+  }
+}
