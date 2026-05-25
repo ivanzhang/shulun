@@ -1,0 +1,198 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router",
+  "status": "factor_word_parity_shadow_rejected_as_orientation_or_builtin_pairing_law",
+  "verified_date": "2026-05-25",
+  "factor_word_mobius_shadow_closed": true,
+  "factor_word_liouville_shadow_closed": true,
+  "depth_parity_shadow_closed": true,
+  "squarefree_shadow_closed": true,
+  "shadow_depends_only_on_unsigned_factor_word": true,
+  "shadow_lacks_precauchy_source_key": true,
+  "shadow_lacks_orientation_branch_trace": true,
+  "shadow_lacks_exactuv_payload": true,
+  "shadow_orientation_twin_collision_registered": true,
+  "factor_word_shadow_proves_orientation_local_factor_law": false,
+  "factor_word_shadow_proves_builtin_pairing": false,
+  "orientation_local_factor_law_proved": false,
+  "built_in_signed_pairing_proved": false,
+  "exact_atomic_joint_branch_trace_signed_coefficient_formula_proved": false,
+  "peeling_generates_new_precauchy_signed_payload": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "largest_sample_summary_imported": {
+    "N": 30030,
+    "composite_support_keys": 26781,
+    "owner_bucket_count": 40,
+    "total_small_to_large_factor_steps": 69651,
+    "max_factor_depth": 13,
+    "tail_mobius_positive": 8367,
+    "tail_mobius_negative": 11306,
+    "tail_mobius_zero": 7108,
+    "tail_liouville_positive": 11810,
+    "tail_liouville_negative": 14971
+  },
+  "abstract_orientation_twin_collision": {
+    "support_keys_in_largest_sample": 26781,
+    "abstract_orientation_states_per_key": 2,
+    "abstract_twin_state_count": 53562,
+    "factor_word_shadow_collision_count": 26781,
+    "collision_meaning": "same unsigned factor word admits two formal orientation slots in the current contract; parity shadows are identical on the slots while a signed law must record orientation/local-factor data before pushforward"
+  },
+  "shadow_candidates": [
+    {
+      "shadow": "MobiusFactorWordShadow",
+      "formula": "0 if factor_word has repeated prime else (-1)^len(factor_word)",
+      "depends_only_on_unsigned_factor_word": true,
+      "orientation_sensitive": false,
+      "has_precauchy_source_key": false,
+      "has_branch_trace": false,
+      "has_exactuv_payload": false,
+      "can_be_signed_law": false
+    },
+    {
+      "shadow": "LiouvilleFactorWordShadow",
+      "formula": "(-1)^len(factor_word)",
+      "depends_only_on_unsigned_factor_word": true,
+      "orientation_sensitive": false,
+      "has_precauchy_source_key": false,
+      "has_branch_trace": false,
+      "has_exactuv_payload": false,
+      "can_be_signed_law": false
+    },
+    {
+      "shadow": "DepthParityShadow",
+      "formula": "len(factor_word) mod 2",
+      "depends_only_on_unsigned_factor_word": true,
+      "orientation_sensitive": false,
+      "has_precauchy_source_key": false,
+      "has_branch_trace": false,
+      "has_exactuv_payload": false,
+      "can_be_signed_law": false
+    },
+    {
+      "shadow": "SquarefreeZeroShadow",
+      "formula": "1 if factor_word has no repeated prime else 0",
+      "depends_only_on_unsigned_factor_word": true,
+      "orientation_sensitive": false,
+      "has_precauchy_source_key": false,
+      "has_branch_trace": false,
+      "has_exactuv_payload": false,
+      "can_be_signed_law": false
+    }
+  ],
+  "gate_rows": [
+    {
+      "gate": "FactorWordParityShadowsClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "small-to-large 剥离已闭合 Möbius、Liouville、depth parity 与 squarefree 等自然 shadow。",
+      "remaining": "closed unsigned factor-word state table"
+    },
+    {
+      "gate": "ShadowsDependOnlyOnUnsignedFactorWord",
+      "closed": true,
+      "proved": true,
+      "meaning": "这些 shadow 的输入只有非降素因子词和重复素因子信息，不读取 source、orientation、UV 或 branch tag。",
+      "remaining": "post-factorization labels"
+    },
+    {
+      "gate": "OrientationFlipContractImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "既有 row-level 证书登记：无符号几何在取向翻转下不变，而 signed coefficient 对取向敏感。",
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward"
+    },
+    {
+      "gate": "PointwiseSignedTableStillNeedsOrientationLaw",
+      "closed": true,
+      "proved": false,
+      "meaning": "Phi-LPF support 上的逐点 signed table 首字段仍是 primitive orientation/local-factor product law。",
+      "remaining": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward"
+    },
+    {
+      "gate": "BranchTraceStillMissing",
+      "closed": true,
+      "proved": false,
+      "meaning": "orientation/local-factor law 已压到 actual noncanonical complete branch trace formula 或命名回流。",
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "gate": "BuiltInPairingStillNeedsAtomicTrace",
+      "closed": true,
+      "proved": false,
+      "meaning": "atomic joint rows 的 built-in signed pairing 仍需 ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn。",
+      "remaining": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "gate": "PreviousParityKernelRejectionsImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "既有 noncircular kernel 证书已拒绝 Mobius truncation 与 three-edge parity audit 作为 exact kernel。",
+      "remaining": "parity shadow is not a kernel"
+    },
+    {
+      "gate": "ShadowLacksPreCauchySourceKey",
+      "closed": true,
+      "proved": true,
+      "meaning": "factor word 不声明同 formal unit 的 pre-Cauchy source tuple 或 emitter source key。",
+      "remaining": "PreCauchyActualNoncanonicalEmitterSourceDeclarationPacket"
+    },
+    {
+      "gate": "ShadowLacksExactUVPayload",
+      "closed": true,
+      "proved": false,
+      "meaning": "factor word 不输出 exact `(u,v)`、fixed-pair multiplicity、branch key 或 nonzero condition。",
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "gate": "FactorWordShadowProvesOrientationLocalFactorLaw",
+      "closed": false,
+      "proved": false,
+      "meaning": "只读 factor word 的 parity shadow 在 orientation twin 上取同值，不能给反变号取向/local-factor 乘积律。",
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward"
+    },
+    {
+      "gate": "FactorWordShadowProvesBuiltInPairing",
+      "closed": false,
+      "proved": false,
+      "meaning": "built-in pairing 要同一 atomic trace 同时给 word、signed coefficient、alpha/delta payload 与 ExactUV；shadow 不足。",
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只排除了 parity shadow 直升 signed law 的捷径；三命题仍未无条件闭合。",
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    }
+  ],
+  "external_frontier_note": [
+    {
+      "input_family": "DI/BFI/Kuznetsov, FKMS, Milicevic-Qin-Wu, Pascadi, Wright-type trace or Kloosterman tools",
+      "usable_after": "提交 admissible averaged trace/Kloosterman/Type-II family with signed payload",
+      "not_supplied_by_shadow": "factor-word parity shadow is a pointwise post-factorization label, not an averaged trace family"
+    },
+    {
+      "input_family": "Maynard small gaps or Li short intervals",
+      "usable_after": "转化为目标尺度的行/列或 residue-level positivity statement",
+      "not_supplied_by_shadow": "does not provide fixed row/AP positivity or signed coefficient generation"
+    },
+    {
+      "input_family": "linear or beta-sieve parity inputs",
+      "usable_after": "出现 independent odd data or named return beyond support saturation",
+      "not_supplied_by_shadow": "Möbius/Liouville visibility remains exactly parity-shadow information"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py": "6ac9ecbb0110dbf81028d0268b509ae2919df13c045005ba57f3592584d7f57d",
+    "docs/monograph/prime-matrix-phi-lpf-small-to-large-factor-peeling-signed-state-boundary-router.json": "bee6ba7d14330a7a2cf52547f8b37902314ba8ffa9b10186ae5d1e71efe4a534",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-table-orientation-law-sync-router.json": "7c76acab60f95b655941cb563439aca48116d80cd4dc1733a0210d96e4a45fb0",
+    "docs/monograph/prime-matrix-strict-row-level-noncircular-orientation-law-router.json": "9c03e809ea7c2a1b9edc2863b065f3f93f1fa07d9487ec96753c6b140e62bfff",
+    "docs/monograph/prime-matrix-strict-orientation-law-branch-trace-router.json": "bb8aed1a370f0de4ee4407787110b9cf3e379437e32f1a9d755997fca7acd7a5",
+    "docs/monograph/prime-matrix-strict-builtin-pairing-closed-form-frontier-router.json": "2f8b25613865c4e79e23a78ac7ed2b52e603ad3652c2a4865bc1b9ae50138bdb",
+    "docs/monograph/prime-matrix-strict-noncircular-signed-coefficient-emission-kernel-router.json": "96d6dadbc5add815f8623295aae5ae519c0b5e44db556d85d657259db97a9773"
+  },
+  "next_primary_attack_target": "PrimitiveOrientationLocalFactorProductLawBeforePushforward OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+  "retained_strict_basis": "(PrimitiveOrientationLocalFactorProductLawBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger) OR (BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn AND ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)",
+  "plain_conclusion": "Factor-word parity shadows are fully computable after small-to-large LPF peeling, but they are unsigned post-factorization labels.  Because the current strict contracts require orientation-sensitive pre-Cauchy data before pushforward, a shadow depending only on the factor word cannot prove the orientation/local-factor law or built-in atomic signed pairing.  The route is therefore a no-go shortcut, not an unconditional closure."
+}

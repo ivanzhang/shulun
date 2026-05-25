@@ -1755,6 +1755,59 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC28：Phi-LPF factor-word parity shadow orientation no-go（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py
+data/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-ledger.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.md
+```
+
+本层承接 small-to-large factor peeling，把自然 parity-state 直升 signed law 的捷径正式排除。
+有限/合同级读数：
+
+```text
+factor_word_mobius_shadow_closed=true
+factor_word_liouville_shadow_closed=true
+depth_parity_shadow_closed=true
+squarefree_shadow_closed=true
+shadow_depends_only_on_unsigned_factor_word=true
+shadow_orientation_twin_collision_registered=true
+factor_word_shadow_proves_orientation_local_factor_law=false
+factor_word_shadow_proves_builtin_pairing=false
+row_column_unconditional_closed=false
+```
+
+最大样本继承 `N=30030` 的 `26781` 个 composite support keys，并登记同数目的
+abstract orientation-twin collisions。含义是：factor word 不含 orientation 字段；
+若 signed coefficient 对取向/local factor 敏感，则只读 factor word 的 shadow 在
+两个取向槽上必定同值。
+
+### Q13AC28.1 最新最窄口
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+OR admissible averaged signed trace/Kloosterman/Type-II family with named returns
+```
+
+状态边界：
+
+```text
+shadow_lacks_precauchy_source_key=true
+shadow_lacks_orientation_branch_trace=true
+shadow_lacks_exactuv_payload=true
+orientation_local_factor_law_proved=false
+built_in_signed_pairing_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+---
+
 ## 附录 Q13AC35：small-to-large factor-peeling signed-state 边界（2026-05-25）
 
 新增证书：

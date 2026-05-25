@@ -2081,6 +2081,45 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC36：factor-word parity shadow orientation no-go（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py
+data/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-ledger.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.md
+```
+
+本层不引入新外部定理，而是审计外部定理是否能直接吃掉 factor-word parity shadow。
+结论是否定的：
+
+```text
+factor_word_mobius_shadow_closed=true
+factor_word_liouville_shadow_closed=true
+depth_parity_shadow_closed=true
+shadow_depends_only_on_unsigned_factor_word=true
+shadow_lacks_precauchy_source_key=true
+shadow_lacks_orientation_branch_trace=true
+shadow_lacks_exactuv_payload=true
+factor_word_shadow_proves_orientation_local_factor_law=false
+factor_word_shadow_proves_builtin_pairing=false
+```
+
+FKMS、Milićević--Qin--Wu、Pascadi、Wright 型 trace/Kloosterman/Type-II 输入仍需
+可求和的 averaged signed payload family；DI/BFI/Kuznetsov 仍需相位、模数、频率与
+well-factorable 权重同口径化。Möbius/Liouville/depth parity 只是 pointwise
+post-factorization label，不能作为这些外部定理的 admissible family。
+
+最新外部适配入口保持为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+OR admissible averaged signed trace/Kloosterman/Type-II family with named returns
+```
+
 ---
 
 ## 附录 Q13AC28：三命题突破路线总合成的外部定理边界（2026-05-25）

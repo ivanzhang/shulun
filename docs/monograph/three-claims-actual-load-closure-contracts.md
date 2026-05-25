@@ -7660,6 +7660,51 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 行/列命题仍未无条件闭合。
 
+### 1.213 Phi-LPF factor-word parity shadow orientation no-go 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py
+data/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-ledger.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.md
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.json
+```
+
+同步读数为：
+
+```text
+factor_word_mobius_shadow_closed=true
+factor_word_liouville_shadow_closed=true
+depth_parity_shadow_closed=true
+squarefree_shadow_closed=true
+shadow_depends_only_on_unsigned_factor_word=true
+shadow_lacks_precauchy_source_key=true
+shadow_lacks_orientation_branch_trace=true
+shadow_lacks_exactuv_payload=true
+factor_word_shadow_proves_orientation_local_factor_law=false
+factor_word_shadow_proves_builtin_pairing=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+actual-load 含义是：上一节的 factor word parity-state 全部可计算，但它们只是
+post-factorization shadow。最大样本继承 `N=30030` 的 `26781` 个 composite support
+keys；本层登记 `26781` 个 abstract orientation-twin collisions，说明任何只读取
+factor word 的函数都会在当前合同中把两个取向槽压成同一值。
+
+因此 Möbius、Liouville、depth parity 与 squarefree 不能替代同 formal unit 的
+pre-Cauchy source key、orientation branch trace、ExactUV payload 或 atomic built-in
+pairing。最新非循环口保持为：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```
+
+外部 trace/Kloosterman/Type-II 定理仍需先构造 admissible averaged signed family；
+factor-word shadow 本身不是可求和族。行/列命题仍未无条件闭合。
+
 ### 1.212 Phi-LPF latest current built-in pairing to branch trace sync 更新
 
 新增机器证书：

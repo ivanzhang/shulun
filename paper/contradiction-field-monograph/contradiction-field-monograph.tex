@@ -37964,6 +37964,65 @@ The global strict basis still also requires source entropy, ExactUV
 multiplicity, model-gap, rate-preservation, and D-structure/Rankin gates.
 \end{remark}
 
+\section{Factor-word parity shadows do not give orientation}
+
+\begin{theorem}[Factor-word parity shadow no-go]
+The Mobius value, Liouville value, depth parity, and squarefree flag obtained
+from the LPF factor word are functions only of the unsigned post-factorization
+word.  They do not determine a primitive orientation/local-factor product law
+before pushforward, nor do they determine a built-in signed coefficient pairing
+for atomic joint rows.
+\end{theorem}
+
+\begin{proof}
+The preceding small-to-large peeling theorem gives a unique unsigned factor
+word.  Every listed parity shadow is a deterministic function of this word and
+therefore remains unchanged under any formal change of the missing orientation
+slot.  The signed coefficient required by the row-level contract is
+orientation/local-factor sensitive before Cauchy, Phi, or payment
+pushforward.  Thus a function that reads only the factor word cannot supply the
+pre-Cauchy source key, branch trace, ExactUV payload, or named return required
+by the signed law.
+
+The associated audit imports the largest peeling sample \(N=30030\), with
+\(26781\) composite support keys, and registers \(26781\) abstract
+orientation-twin collisions: the same unsigned word gives the same parity
+shadow on both formal orientation slots.  This is a contract-level obstruction
+to using the shadow as an orientation-sensitive signed coefficient formula.
+\end{proof}
+
+\begin{certificatestatement}[Factor-word parity shadow audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+factor\_word\_mobius\_shadow\_closed=true\\
+factor\_word\_liouville\_shadow\_closed=true\\
+depth\_parity\_shadow\_closed=true\\
+shadow\_depends\_only\_on\_unsigned\_factor\_word=true\\
+shadow\_lacks\_precauchy\_source\_key=true\\
+shadow\_lacks\_orientation\_branch\_trace=true\\
+shadow\_lacks\_exactuv\_payload=true\\
+factor\_word\_shadow\_proves\_orientation\_local\_factor\_law=false\\
+factor\_word\_shadow\_proves\_builtin\_pairing=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-factor-word-\\
+parity-shadow-orientation-nogo-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Non-cyclic next target]
+This removes one natural Mobius/Liouville shortcut.  The remaining non-cyclic
+target is still
+\begin{quote}\scriptsize\ttfamily
+PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows,
+\end{quote}
+or else a newly constructed admissible averaged signed
+trace/Kloosterman/Type-II family with named returns.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

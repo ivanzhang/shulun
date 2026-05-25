@@ -26823,3 +26823,45 @@ row_column_unconditional_closed=false
 PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
+
+### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py
+data/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-ledger.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.md
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.json
+```
+
+formal-to-actual 结论：`mu`、`lambda`、depth parity 与 squarefree 等 shadow 全部可由
+factor word 机械读取，但这些量的 formal input 只有无符号分解词。它们缺少 actual
+signed load 所需的四个字段：
+
+```text
+pre-Cauchy source key
+orientation/local-factor branch trace
+ExactUV payload
+atomic built-in word/coefficient pairing
+```
+
+所以本层状态边界为：
+
+```text
+shadow_depends_only_on_unsigned_factor_word=true
+shadow_lacks_precauchy_source_key=true
+shadow_lacks_orientation_branch_trace=true
+shadow_lacks_exactuv_payload=true
+factor_word_shadow_proves_orientation_local_factor_law=false
+factor_word_shadow_proves_builtin_pairing=false
+row_column_unconditional_closed=false
+```
+
+该更新的实际推进是删除一个循环捷径：不能把后验 parity shadow 当作推前前 signed
+coefficient law。最新非循环口不变：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+```

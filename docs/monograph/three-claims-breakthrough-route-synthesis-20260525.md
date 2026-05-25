@@ -262,6 +262,42 @@ Terminal signed payload either
 4. 只有在得到 averaged family 后，才调用 FKMS/Milićević--Qin--Wu/Pascadi/Wright 类输入。
 5. 并行保留二点筛 denominator-floor 合同作为第二候选突破口。
 
+### 6.1 factor-word parity shadow no-go 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_factor_word_parity_shadow_orientation_nogo_router.py
+data/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-ledger.json
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.md
+docs/monograph/prime-matrix-phi-lpf-factor-word-parity-shadow-orientation-nogo-router.json
+```
+
+本轮检验了最直接的“从小到大剥离素因子后用 parity shadow 破 signed law”捷径。
+结果是：
+
+```text
+factor_word_mobius_shadow_closed=true
+factor_word_liouville_shadow_closed=true
+depth_parity_shadow_closed=true
+shadow_depends_only_on_unsigned_factor_word=true
+shadow_lacks_precauchy_source_key=true
+shadow_lacks_orientation_branch_trace=true
+shadow_lacks_exactuv_payload=true
+factor_word_shadow_proves_orientation_local_factor_law=false
+factor_word_shadow_proves_builtin_pairing=false
+```
+
+这一步把一个看似接近 Euler/Mobius 的入口精确归档为 no-go：它能解释 factorization
+parity，却不能生成推前前 signed coefficient。突破选择因此更窄，不再是继续找
+factor-word 标签，而是必须提交下列之一：
+
+```text
+PrimitiveOrientationLocalFactorProductLawBeforePushforward
+OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+OR admissible averaged signed trace/Kloosterman/Type-II family with named returns
+```
+
 ## 7. 审稿边界
 
 ```text
