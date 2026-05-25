@@ -2060,6 +2060,66 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+---
+
+## 附录 Q13AC28：Phi-LPF terminal boundary new-residual tail alignment 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_new_residual_tail_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.md
+```
+
+本层承接 boundary residual-flow 与 old-residual return alignment。有限审计读数：
+
+```text
+previous_residual_flow_side_decomposition_closed=true
+previous_old_residual_return_alignment_closed=true
+new_residual_event_count=42
+tail_survivor_count=7
+new_residual_tail_matched_event_count=6
+new_residual_tail_alignment_partial_closed=true
+new_residual_tail_matched_mass=1.580044997219
+new_residual_unmatched_after_tail_event_count=36
+new_residual_unmatched_after_tail_mass=11.684494473663
+tail_survivor_unmatched_count=1
+tail_survivor_unmatched_mass=0.831750175347
+all_new_residual_return_alignment_closed=false
+row_column_unconditional_closed=false
+```
+
+本层真正推进：删除了“所有 new-side residual 都可能只是 terminal tail return”的含混口径；
+`6` 个 tail return 已闭合，剩余硬点被固定为 `36` 个 bulk new-residual source
+事件和 `1` 个 right selected-terminal tail overhang。
+
+### Q13AC28.1 最新最窄口
+
+```text
+BoundaryBulkNewResidualSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+new_residual_tail_alignment_partial_closed=true
+all_new_residual_return_alignment_closed=false
+bulk_new_residual_source_law_proved=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 附录 Q13AC39：Phi-LPF terminal boundary residual-flow obstruction（2026-05-25）
 
 新增证书：

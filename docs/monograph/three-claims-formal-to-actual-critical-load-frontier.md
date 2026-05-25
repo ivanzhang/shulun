@@ -26894,6 +26894,48 @@ AND BoundaryNewResidualReturnOrPDEC
 AND BoundaryAdjacentRunMassRatioLawOrPDEC
 ```
 
+### terminal boundary new-residual tail alignment formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_new_residual_tail_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json
+```
+
+formal-to-actual 结论：new-side residual 并非完全悬空；`7` 个 tail survivor 中有
+`6` 个逐项精确返回到 new-side boundary residual：
+
+```text
+new_residual_tail_alignment_partial_closed=true
+new_residual_tail_matched_event_count=6
+new_residual_tail_matched_mass=1.580044997219
+```
+
+但这个返回不是全闭合。仍有 `36` 个 new-side bulk residual 事件未支付，且有
+`1` 个 right selected-terminal tail survivor 成为 overhang：
+
+```text
+new_residual_unmatched_after_tail_event_count=36
+new_residual_unmatched_after_tail_mass=11.684494473663
+tail_survivor_unmatched_count=1
+tail_survivor_unmatched_mass=0.831750175347
+all_new_residual_return_alignment_closed=false
+```
+
+因此 formal-to-actual 缺口从“new-side return 是否存在”压缩成以下实际对象：
+
+```text
+BoundaryBulkNewResidualSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

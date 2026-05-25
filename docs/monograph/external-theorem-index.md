@@ -2081,6 +2081,55 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_new_residual_tail_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.md
+```
+
+本层承接 terminal boundary residual-flow 与 old-residual return alignment，把
+new-side residual 的 tail-return 逐项核对：
+
+```text
+previous_residual_flow_side_decomposition_closed=true
+previous_old_residual_return_alignment_closed=true
+new_residual_event_count=42
+tail_survivor_count=7
+new_residual_tail_matched_event_count=6
+new_residual_tail_alignment_partial_closed=true
+new_residual_tail_matched_mass=1.580044997219
+new_residual_unmatched_after_tail_event_count=36
+new_residual_unmatched_after_tail_mass=11.684494473663
+tail_survivor_unmatched_count=1
+tail_survivor_unmatched_mass=0.831750175347
+all_new_residual_return_alignment_closed=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界同步收紧：FKMS trace bilinear、Milićević--Qin--Wu arbitrary-modulus
+Kloosterman、Pascadi distribution/Type-II、Wright unbalanced Kloosterman fractions、
+Shao--Shparlinski--Wijaya smooth/squarefree Kloosterman，以及 affine/thin-group
+expansion 工具，都不能直接消去这 `36` 个 bulk residual 或 `1` 个 right-tail
+overhang。它们只有在这些对象先被组织成可平均 signed trace/Type-II family 或
+可扩张的有限群轨道族后才能进入。
+
+最新开放口：
+
+```text
+BoundaryBulkNewResidualSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 附录 Q13AC43：terminal boundary residual-flow obstruction（2026-05-25）
 
 新增证书：

@@ -664,6 +664,53 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.10 terminal boundary new-residual tail alignment 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_new_residual_tail_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json
+```
+
+本层继续追踪上一轮剩余的 new-side residual。结论是：terminal tail survivor
+确实支付了其中一部分，但不是全部：
+
+```text
+new_residual_event_count=42
+tail_survivor_count=7
+new_residual_tail_matched_event_count=6
+new_residual_tail_alignment_partial_closed=true
+new_residual_tail_matched_mass=1.580044997219
+new_residual_unmatched_after_tail_event_count=36
+new_residual_unmatched_after_tail_mass=11.684494473663
+tail_survivor_unmatched_count=1
+tail_survivor_unmatched_mass=0.831750175347
+all_new_residual_return_alignment_closed=false
+row_column_unconditional_closed=false
+```
+
+因此非循环推进的真实收益是把 `BoundaryNewResidualReturnOrPDEC` 拆细：`6`
+个 new-side residual 已由 tail return 精确关闭；剩余不再是模糊的 return
+问题，而是 `36` 个 bulk source event 加 `1` 个 right selected-terminal tail
+overhang。继续寻找全局相邻等量配对会回到旧循环；下一步必须证明 bulk
+new-residual source law、给出 overhang PDEC，或把这 `36+1` 个对象构造成
+可求和的 signed trace/Type-II/群轨道族。
+
+最新口：
+
+```text
+BoundaryBulkNewResidualSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

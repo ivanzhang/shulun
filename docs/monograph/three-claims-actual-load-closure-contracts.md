@@ -88,6 +88,48 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+### terminal boundary new-residual tail alignment actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_new_residual_tail_alignment_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-new-residual-tail-alignment-router.json
+```
+
+actual-load 含义：new-side boundary residual 的 tail-return 子合同部分关闭：
+
+```text
+new_residual_tail_alignment_partial_closed=true
+new_residual_tail_matched_event_count=6
+new_residual_tail_matched_mass=1.580044997219
+```
+
+但主合同尚未关闭：
+
+```text
+new_residual_unmatched_after_tail_event_count=36
+new_residual_unmatched_after_tail_mass=11.684494473663
+tail_survivor_unmatched_count=1
+tail_survivor_unmatched_mass=0.831750175347
+all_new_residual_return_alignment_closed=false
+```
+
+因此 PM-ALC 的下一步不再是寻找 old-side payment，也不是重复 boundary
+opposite-side cancellation，而是：
+
+```text
+BoundaryBulkNewResidualSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 这说明当前数据中，形式上界 `M_q^{form}` 远大于 actual packet 数 `N_q`。临界负载必须按 `N_q^2` 计，而不能按 `(A_gA_f)^2` 计。
 
 ### 1.2 合同陈述

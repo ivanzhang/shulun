@@ -38426,6 +38426,102 @@ unpaid old-side reservoir in the finite ledger; the unpaid object is the
 dominant new-side residual source.
 \end{remark}
 
+\section{Terminal boundary new-residual tail alignment}
+
+\begin{theorem}[New residual tail-return partial alignment]
+After the old-side q-boundary residuals have been returned to the
+nonboundary/internal source-key partition, the new-side residuals admit an
+exact terminal-tail subalignment:
+\[
+  \texttt{new\_residual\_tail\_alignment\_partial\_closed}
+  =
+  \texttt{true}.
+\]
+Among the \(42\) new-side residual events, exactly \(6\) are matched by
+terminal tail survivors.  Their total matched mass is
+\[
+  1.580044997219\ldots.
+\]
+\end{theorem}
+
+\begin{proof}
+The audit compares each new-side residual key with the terminal tail survivor
+key using the common atom, run, boundary prime \(q\), and exact rational mass.
+Six keys agree exactly, including the two left extra-shell returns, two left
+selected-terminal returns, one right extra-shell return, and one right
+selected-terminal return.  In each case the rational mass on the residual side
+is identical to the rational mass on the tail-survivor side.
+\end{proof}
+
+\begin{proposition}[Bulk new-residual source and tail overhang remain]
+The tail-return subalignment is not a row/column proof.  The remaining new-side
+bulk residual is
+\[
+  \texttt{new\_residual\_unmatched\_after\_tail\_event\_count}=36,
+  \qquad
+  \texttt{new\_residual\_unmatched\_after\_tail\_mass}
+  =
+  11.684494473663\ldots.
+\]
+There is also one unmatched right selected-terminal tail survivor of mass
+\[
+  0.831750175347\ldots.
+\]
+Consequently
+\[
+  \texttt{all\_new\_residual\_return\_alignment\_closed}
+  =
+  \texttt{false},
+  \qquad
+  \texttt{row\_column\_unconditional\_closed}
+  =
+  \texttt{false}.
+\]
+\end{proposition}
+
+\begin{certificatestatement}[New residual tail alignment audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+previous\_residual\_flow\_side\_decomposition\_closed=true\\
+previous\_old\_residual\_return\_alignment\_closed=true\\
+new\_residual\_event\_count=42\\
+tail\_survivor\_count=7\\
+new\_residual\_tail\_matched\_event\_count=6\\
+new\_residual\_tail\_alignment\_partial\_closed=true\\
+new\_residual\_tail\_matched\_mass=1.580044997219\\
+new\_residual\_unmatched\_after\_tail\_event\_count=36\\
+new\_residual\_unmatched\_after\_tail\_mass=11.684494473663\\
+tail\_survivor\_unmatched\_count=1\\
+tail\_survivor\_unmatched\_mass=0.831750175347\\
+all\_new\_residual\_return\_alignment\_closed=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+new-residual-tail-alignment-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[External and group-theoretic entry after tail alignment]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BoundaryBulkNewResidualSourceLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+Trace/Kloosterman, Type-II, affine-sieve, or thin-group expansion inputs can
+enter only after the \(36\) bulk new-residual events and the one overhang have
+been organized into an admissible averaged signed family, a finite group orbit
+family with expansion, or a named PDEC obstruction.  The present finite
+tail-return ledger supplies that sharper target; it does not itself break the
+Phi--LPF parity barrier.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]
