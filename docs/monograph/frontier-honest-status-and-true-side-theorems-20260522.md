@@ -13290,3 +13290,57 @@ AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 ```
+
+---
+
+## 附录 Q13AC31：LPF bucket count formula（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_count_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-count-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.md
+```
+
+本层审计用户提出的最小素因子分桶近似。正确精确式为：
+
+```text
+C_p(N)=#{n<=N composite: LPF(n)=p}
+      =Phi(floor(N/p); primes<p)-1.
+```
+
+正确连续主项为：
+
+```text
+(N/p-p)*prod_{q<p}(1-1/q).
+```
+
+用户草式 `(N-p^2)prod_{q<=p}1/q` 中的 `N-p^2` 捕捉了 composite bucket
+从 `p^2` 开始的截断，但密度因子从 `p=5` 起错误：避开小素数 `q` 的零类时，
+保留的是 `q-1` 个非零类，密度为 `1-1/q`。
+
+有限审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+user_reciprocal_density_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+这一步把 LPF 分桶计数公式口径闭合，但不改变 honest frontier：无符号
+Legendre-`Phi` 分桶仍是 parity-blind。要继续推进，只能构造全局
+Möbius/von-Mangoldt signed payload、可平均 Type-II/trace family，或给出
+`P^2` 尺度点态 `theta` AP 正性；否则回流为命名 PDEC。
+
+最新 honest 口：
+
+```text
+ExactLPFBucketCountIsLegendrePhiNotReciprocalDensity
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+```

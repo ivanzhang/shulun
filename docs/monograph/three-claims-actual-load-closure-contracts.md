@@ -145,6 +145,52 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+### LPF bucket count formula actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_count_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-count-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.md
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.json
+```
+
+actual-load 含义：composite LPF bucket 的精确计数不是 reciprocal-density
+乘积，而是 Legendre-`Phi` 粗数计数：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+```
+
+连续主项只可写成：
+
+```text
+(N/p-p)*prod_{q<p}(1-1/q)
+```
+
+其中 `-1` 去掉 `m=1` 端点素数；对每个 `q<p`，保留的是所有非零同余类，
+密度为 `1-1/q`。用户草式 `(N-p^2)prod_{q<=p}1/q` 从 `p=5` 起错误。
+
+PM-ALC 的当前实际合同相应加入计数挡板：
+
+```text
+ExactLPFBucketCountIsLegendrePhiNotReciprocalDensity
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+```
+
+状态边界：
+
+```text
+exact_lpf_bucket_identity_closed=true
+user_reciprocal_density_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### affine odd Euler normalization actual-load 更新（2026-05-25）
 
 新增机器证书：

@@ -11986,3 +11986,46 @@ AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 ```
+
+## 65AJ. LPF bucket count formula 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_count_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-count-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.md
+```
+
+本层不引入新外部定理。它用经典 Legendre-`Phi` 粗数计数校正 LPF bucket
+主项，并排除 reciprocal-density 草式作为闭合工具：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+correct_main=(N/p-p)*prod_{q<p}(1-1/q)
+user_main=(N-p^2)*prod_{q<=p}1/q
+```
+
+审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+user_reciprocal_density_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界不变：这个校正只关闭无符号 LPF bucket 的算术口径。
+Milićević--Qin--Wu、Pascadi、Wright、FKMS 或 DI/BFI/Kuznetsov 型输入仍要求
+先有 signed divisor/trace/Type-II family；Legendre-`Phi` 分桶本身不是这种族。
+
+最新开放口：
+
+```text
+ExactLPFBucketCountIsLegendrePhiNotReciprocalDensity
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+```

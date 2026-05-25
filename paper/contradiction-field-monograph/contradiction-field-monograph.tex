@@ -39929,6 +39929,66 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Exact LPF bucket count is a Legendre-Phi count]
+Let \(N\ge4\) and let \(p\le\sqrt N\) be prime.  Put
+\[
+  C_p(N)=\#\{n\le N:n\ {\rm composite},\ {\rm LPF}(n)=p\}.
+\]
+Then
+\[
+  C_p(N)=\Phi(\lfloor N/p\rfloor;\ q<p)-1,
+\]
+where \(\Phi(x;q<p)\) counts positive integers \(m\le x\) divisible by no
+prime \(q<p\).  Consequently the continuous main term is
+\[
+  (N/p-p)\prod_{q<p}(1-1/q)
+  =\frac{N-p^2}{p}\prod_{q<p}(1-1/q),
+\]
+not \((N-p^2)\prod_{q\le p}q^{-1}\) except for the accidental low-prime cases
+\(p=2,3\).
+\end{proposition}
+
+\begin{proof}
+If \({\rm LPF}(n)=p\), write \(n=pm\).  Since \(n\) is composite and \(p\) is
+least, \(m\le\lfloor N/p\rfloor\), \(m\) is divisible by no prime below \(p\),
+and \(m\ne1\).  Conversely, every \(m\le\lfloor N/p\rfloor\) with no prime
+factor below \(p\) and \(m\ne1\) gives a composite \(pm\le N\) whose least
+prime factor is \(p\).  This proves the exact formula.  The displayed main
+term is the interval-length approximation to the same rough-number count.  For
+each \(q<p\), the sieve keeps all nonzero residue classes modulo \(q\), of
+density \(1-1/q\); multiplying by \(1/q\) would keep only one residue class.
+\end{proof}
+
+\begin{certificatestatement}[LPF bucket count formula audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+exact\_lpf\_bucket\_identity\_closed=true\\
+user\_reciprocal\_density\_formula\_supported=false\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-\\
+count-formula-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Why the corrected count still does not break parity]
+The correction is useful because it closes the arithmetic meaning of the
+\({\rm LPF}=p\) bucket: it is an exact Legendre-Phi rough-number bucket, not a
+full reciprocal-density Euler product.  But it is still an unsigned sieve
+count.  It does not distinguish prime emission from semiprime and
+higher-composite tails after the first-hit assignment.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+ExactLPFBucketCountIsLegendrePhiNotReciprocalDensity\\
+AND UnsignedLPFBucketCountStillParityBlind\\
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount\\
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

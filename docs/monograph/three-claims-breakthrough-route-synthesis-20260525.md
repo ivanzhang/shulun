@@ -1688,3 +1688,72 @@ AND TerminalSiblingQSpineWheelGapLockPaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 ```
+
+## 19. LPF bucket count formula 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_lpf_bucket_count_formula_audit.py
+data/prime-matrix-phi-lpf-lpf-bucket-count-formula-ledger.json
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.md
+docs/monograph/prime-matrix-phi-lpf-lpf-bucket-count-formula-audit.json
+```
+
+本层严格审计如下草式：
+
+```text
+LPF(P) = (N-P^2) * prod_{q<=P} 1/q.
+```
+
+结论：`N-P^2` 的截断方向抓到了 composite bucket 的起点，但密度因子写错。
+精确 composite LPF bucket 是 Legendre-Phi 粗数计数：
+
+```text
+C_p(N) = #{n<=N composite : LPF(n)=p}
+       = Phi(floor(N/p); primes<p)-1.
+```
+
+正确连续主项是：
+
+```text
+(N/p-p) * prod_{q<p}(1-1/q)
+  = (N-p^2)/p * prod_{q<p}(1-1/q).
+```
+
+这里 `-1` 去掉端点素数 `n=p`。对每个小素数 `q<p`，应当保留所有非零同余类，
+密度是 `1-1/q`，不是只保留一个同余类的 `1/q`。因此用户草式在 `p=2,3`
+因低阶偶然相同，从 `p=5` 起系统性低估。
+
+有限审计读数：
+
+```text
+exact_lpf_bucket_identity_closed=true
+user_reciprocal_density_formula_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+样本总量：
+
+| N | exact LPF total | composite count | corrected total/exact | user total/exact |
+| --- | --- | --- | --- | --- |
+| 100 | 74 | 74 | 0.947426 | 0.890669 |
+| 1000 | 831 | 831 | 0.980306 | 0.843087 |
+| 10000 | 8770 | 8770 | 0.985832 | 0.803612 |
+| 100000 | 90407 | 90407 | 0.988315 | 0.780010 |
+
+这一步的作用是把 LPF 分桶计数从“全 reciprocal product”纠正为精确
+Legendre-Phi 递推。它不产生 signed saving；因此它与上一节的结论相合：
+无符号 LPF bucket 身份闭合，但 prime extraction 仍必须走 von Mangoldt/Möbius
+signed divisor payload、Type-II/trace family 或点态 `theta` AP 正性。
+
+最新非循环口为：
+
+```text
+ExactLPFBucketCountIsLegendrePhiNotReciprocalDensity
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+AND PointwiseThetaAPPositivityAtP2OrAdmissibleSignedDivisorPayloadTypeIIFamily
+```
