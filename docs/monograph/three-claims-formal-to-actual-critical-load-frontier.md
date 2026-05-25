@@ -26291,3 +26291,44 @@ single_witness_orbit_interpretation_valid=false
 删除 mixed-P source-sink path-cover uniform signed equality、PDEC/SAE 聚合、
 其他 witness/core residual、single-P slice summation 或 prime-q reciprocal
 phase saving 缺口。
+
+### Phi-LPF dominant sign-word repeated-step P-switch cut formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_p_switch_cut_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+RepeatedStepMixedPSourceSinkPathCoverUniformBound(two mixed-P graph paths)
+```
+
+现在拆成：
+
+```text
+RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts)
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+```
+
+关键审计读数为：
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+path_switch_cut_count=2
+switch_nodes=[g=2,c=2,A=negative, g=6,c=7,A=positive]
+all_switches_at_repeated_nodes=true
+all_switches_739_to_607=true
+switch_edge_incidence_mass=40
+single_p_orbit_repair_proved=false
+```
+
+本层删除的是“mixed-P path-cover 的 P-switch cut 尚未定位”的含混说法；没有
+删除 repeated-node P-switch uniform signed equality、PDEC/SAE 聚合、其他
+witness/core residual、single-P slice summation 或 prime-q reciprocal phase
+saving 缺口。

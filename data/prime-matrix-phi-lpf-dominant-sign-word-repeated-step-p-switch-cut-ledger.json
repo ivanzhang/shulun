@@ -1,0 +1,416 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_dominant_sign_word_repeated_step_p_switch_cut_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "SourceSinkPathCoverImported",
+      "meaning": "The exact two-path mixed-P source-sink cover is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "PSwitchCutLedger",
+      "meaning": "Every mixed-P path switch is localized to a repeated node and adjacent edge pair.",
+      "proved": true,
+      "remaining": "none for the finite P-switch cut ledger"
+    },
+    {
+      "closed": true,
+      "gate": "RepeatedNodeSwitchCover",
+      "meaning": "The two switch nodes are exactly the two repeated nodes.",
+      "proved": true,
+      "remaining": "uniform proof must control repeated-node switch cuts, not just graph paths"
+    },
+    {
+      "closed": false,
+      "gate": "PSwitchCutUniformFamilyBound",
+      "meaning": "Control the 739->607 repeated-node switch cuts uniformly.",
+      "proved": false,
+      "remaining": "finite switch-cut localization gives exact data but no global theorem"
+    }
+  ],
+  "current_object": {
+    "dominant_shape": "two 739->607 cuts, exactly one at each repeated node",
+    "input": "the two mixed-P source-sink graph paths",
+    "operation": "localize every P-switch to its switch node and adjacent edge pair",
+    "remaining": "prove a uniform bound for repeated-node P-switch cuts or replace them by PDEC/SAE certificates"
+  },
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear input; still not a local gap2-wing or gap4-tail equality theorem",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "useful after Kloosterman completion; does not prove fixed packet route-superclass collision control",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "average inverse-fraction input; not pointwise for one gap2/gap4 carrier",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "prime-gap existence input; not a signed Phi-LPF route-superclass theorem",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence input; does not estimate local adjacent-pair template equality",
+      "url": "https://arxiv.org/abs/2308.04458"
+    }
+  ],
+  "external_theorem_implication": {
+    "prime_gap_inputs": "the switch cuts are signed grammar events, not prime-gap existence statements",
+    "short_interval_prime_inputs": "theta=0.52 does not control these repeated-node 739->607 cuts",
+    "trace_or_kloosterman_inputs": "the P-switch cut is still a local repeated-node stitching event, not yet a trace family"
+  },
+  "finite_audit": {
+    "all_switches_739_to_607": true,
+    "all_switches_at_repeated_nodes": true,
+    "all_switches_high_to_low": true,
+    "max_prime": 1009,
+    "neighbor_switch_node_count": 0,
+    "non_switch_edge_rows": [
+      {
+        "P": 607,
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P607:step2-3",
+        "edge_key": "g=4,c=5,A=negative -> g=6,c=7,A=positive",
+        "edge_mass": 10,
+        "is_switch_edge": false,
+        "switch_ids": [],
+        "switch_incidence_mass": 0,
+        "switch_membership_count": 0,
+        "switch_sides": [],
+        "transition_role": "internal_entry"
+      }
+    ],
+    "non_switch_edge_unique_count": 1,
+    "p_direction_rows": [
+      {
+        "P_direction": "high_to_low",
+        "mass": 40,
+        "ratio": 1.0
+      }
+    ],
+    "p_switch_cut_uniform_family_bound_proved": false,
+    "p_transition_rows": [
+      {
+        "P_transition": "739_to_607",
+        "mass": 40,
+        "ratio": 1.0
+      }
+    ],
+    "path_switch_cut_count": 2,
+    "previous_directed_incidence_graph_ledger_closed": true,
+    "previous_source_sink_path_cover_ledger_closed": true,
+    "repeated_nodes": [
+      "g=2,c=2,A=negative",
+      "g=6,c=7,A=positive"
+    ],
+    "repeated_step_p_switch_cut_ledger_closed": true,
+    "repeated_switch_node_cover_complete": true,
+    "row_column_unconditional_closed": false,
+    "single_p_orbit_repair_proved": false,
+    "source_sink_path_count": 2,
+    "switch_edge_incidence_count": 4,
+    "switch_edge_incidence_mass": 40,
+    "switch_edge_rows": [
+      {
+        "P": 607,
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step1-2",
+        "edge_key": "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "edge_mass": 10,
+        "is_switch_edge": true,
+        "switch_ids": [
+          "path_1:switch_after_edge_1"
+        ],
+        "switch_incidence_mass": 10,
+        "switch_membership_count": 1,
+        "switch_sides": [
+          "right"
+        ],
+        "transition_role": "initial_exit"
+      },
+      {
+        "P": 739,
+        "edge_class": "repeated_to_repeated",
+        "edge_id": "P739:step4-5",
+        "edge_key": "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "edge_mass": 10,
+        "is_switch_edge": true,
+        "switch_ids": [
+          "path_2:switch_after_edge_2"
+        ],
+        "switch_incidence_mass": 10,
+        "switch_membership_count": 1,
+        "switch_sides": [
+          "left"
+        ],
+        "transition_role": "repeated_bridge"
+      },
+      {
+        "P": 739,
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P739:step3-4",
+        "edge_key": "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+        "edge_mass": 10,
+        "is_switch_edge": true,
+        "switch_ids": [
+          "path_1:switch_after_edge_1"
+        ],
+        "switch_incidence_mass": 10,
+        "switch_membership_count": 1,
+        "switch_sides": [
+          "left"
+        ],
+        "transition_role": "internal_entry"
+      },
+      {
+        "P": 607,
+        "edge_class": "repeated_to_neighbor",
+        "edge_id": "P607:step3-4",
+        "edge_key": "g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "edge_mass": 10,
+        "is_switch_edge": true,
+        "switch_ids": [
+          "path_2:switch_after_edge_2"
+        ],
+        "switch_incidence_mass": 10,
+        "switch_membership_count": 1,
+        "switch_sides": [
+          "right"
+        ],
+        "transition_role": "internal_exit"
+      },
+      {
+        "P": 607,
+        "edge_class": "neighbor_to_repeated",
+        "edge_id": "P607:step2-3",
+        "edge_key": "g=4,c=5,A=negative -> g=6,c=7,A=positive",
+        "edge_mass": 10,
+        "is_switch_edge": false,
+        "switch_ids": [],
+        "switch_incidence_mass": 0,
+        "switch_membership_count": 0,
+        "switch_sides": [],
+        "transition_role": "internal_entry"
+      }
+    ],
+    "switch_edge_unique_count": 4,
+    "switch_node_class_rows": [
+      {
+        "mass": 40,
+        "ratio": 1.0,
+        "switch_node_class": "repeated"
+      }
+    ],
+    "switch_node_count": 2,
+    "switch_node_rows": [
+      {
+        "is_switch_node": true,
+        "node": "g=2,c=2,A=negative",
+        "node_class": "repeated",
+        "roles": [
+          "negative_repeated_node_entry_to_exit_cut"
+        ],
+        "switch_count": 1,
+        "switch_pair_edge_mass": 20,
+        "total_incident_mass": 30
+      },
+      {
+        "is_switch_node": true,
+        "node": "g=6,c=7,A=positive",
+        "node_class": "repeated",
+        "roles": [
+          "positive_repeated_node_bridge_to_exit_cut"
+        ],
+        "switch_count": 1,
+        "switch_pair_edge_mass": 20,
+        "total_incident_mass": 30
+      },
+      {
+        "is_switch_node": false,
+        "node": "g=4,c=5,A=negative",
+        "node_class": "neighbor",
+        "roles": [],
+        "switch_count": 0,
+        "switch_pair_edge_mass": 0,
+        "total_incident_mass": 20
+      },
+      {
+        "is_switch_node": false,
+        "node": "g=6,c=6,A=positive",
+        "node_class": "neighbor",
+        "roles": [],
+        "switch_count": 0,
+        "switch_pair_edge_mass": 0,
+        "total_incident_mass": 10
+      },
+      {
+        "is_switch_node": false,
+        "node": "g=8,c=10,A=negative",
+        "node_class": "neighbor",
+        "roles": [],
+        "switch_count": 0,
+        "switch_pair_edge_mass": 0,
+        "total_incident_mass": 10
+      }
+    ],
+    "switch_nodes": [
+      "g=2,c=2,A=negative",
+      "g=6,c=7,A=positive"
+    ],
+    "switch_pair_edge_mass_total": 40,
+    "switch_role_rows": [
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "switch_role": "negative_repeated_node_entry_to_exit_cut"
+      },
+      {
+        "mass": 20,
+        "ratio": 0.5,
+        "switch_role": "positive_repeated_node_bridge_to_exit_cut"
+      }
+    ],
+    "switch_rows": [
+      {
+        "P_delta": -132,
+        "P_direction": "high_to_low",
+        "P_transition": "739_to_607",
+        "left_P": 739,
+        "left_carry_delta": -4,
+        "left_edge_class": "neighbor_to_repeated",
+        "left_edge_id": "P739:step3-4",
+        "left_edge_key": "g=6,c=6,A=positive -> g=2,c=2,A=negative",
+        "left_edge_mass": 10,
+        "left_gap_delta": -4,
+        "left_m_pair": "[757, 761]",
+        "left_transition_role": "internal_entry",
+        "local_cut_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative || g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "path_id": "path_1",
+        "path_kind": "long_neighbor_corridor",
+        "path_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=4,c=5,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "right_P": 607,
+        "right_carry_delta": 3,
+        "right_edge_class": "repeated_to_neighbor",
+        "right_edge_id": "P607:step1-2",
+        "right_edge_key": "g=2,c=2,A=negative -> g=4,c=5,A=negative",
+        "right_edge_mass": 10,
+        "right_gap_delta": 2,
+        "right_m_pair": "[769, 773]",
+        "right_transition_role": "initial_exit",
+        "switch_id": "path_1:switch_after_edge_1",
+        "switch_index_after_edge": 1,
+        "switch_node": "g=2,c=2,A=negative",
+        "switch_node_class": "repeated",
+        "switch_node_occurrence_keys": [
+          "P607:step1:[769, 773]:above_P",
+          "P739:step4:[757, 761]:above_P"
+        ],
+        "switch_pair_edge_mass": 20,
+        "switch_role": "negative_repeated_node_entry_to_exit_cut",
+        "touches_repeated_bridge": false
+      },
+      {
+        "P_delta": -132,
+        "P_direction": "high_to_low",
+        "P_transition": "739_to_607",
+        "left_P": 739,
+        "left_carry_delta": 5,
+        "left_edge_class": "repeated_to_repeated",
+        "left_edge_id": "P739:step4-5",
+        "left_edge_key": "g=2,c=2,A=negative -> g=6,c=7,A=positive",
+        "left_edge_mass": 10,
+        "left_gap_delta": 4,
+        "left_m_pair": "[757, 761]",
+        "left_transition_role": "repeated_bridge",
+        "local_cut_signature": "g=2,c=2,A=negative -> g=6,c=7,A=positive || g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "path_id": "path_2",
+        "path_kind": "bridge_shortcut_corridor",
+        "path_signature": "g=6,c=6,A=positive -> g=2,c=2,A=negative -> g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "right_P": 607,
+        "right_carry_delta": 3,
+        "right_edge_class": "repeated_to_neighbor",
+        "right_edge_id": "P607:step3-4",
+        "right_edge_key": "g=6,c=7,A=positive -> g=8,c=10,A=negative",
+        "right_edge_mass": 10,
+        "right_gap_delta": 2,
+        "right_m_pair": "[769, 773]",
+        "right_transition_role": "internal_exit",
+        "switch_id": "path_2:switch_after_edge_2",
+        "switch_index_after_edge": 2,
+        "switch_node": "g=6,c=7,A=positive",
+        "switch_node_class": "repeated",
+        "switch_node_occurrence_keys": [
+          "P607:step3:[769, 773]:above_P",
+          "P739:step5:[757, 761]:above_P"
+        ],
+        "switch_pair_edge_mass": 20,
+        "switch_role": "positive_repeated_node_bridge_to_exit_cut",
+        "touches_repeated_bridge": true
+      }
+    ],
+    "target_sign_word": "--+-+"
+  },
+  "frontier_verified_date": "2026-05-25",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts)",
+    "AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts",
+    "AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover",
+    "AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph",
+    "AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)",
+    "AND OtherLargestAtomTemplateWitnessFamilyBounds",
+    "AND OtherCoreRouteCycleSwitchAtomBounds",
+    "AND TopTwoNonCoreSignCycleResidualBound",
+    "AND Gap2LowerWingTwinCollisionBound",
+    "AND Gap2RightTailTwoSidedTwinResidualCollisionBound",
+    "AND Gap4RightTailLeftCollarCousinCollisionBound",
+    "AND Gap4UpperWingCousinResidualCollisionBound",
+    "AND Gap4LowerWingCousinResidualCollisionBound",
+    "AND Gap6SexyAdjacentPairCollisionBound",
+    "AND GapGe8AdjacentPairCollisionBound",
+    "AND NonAdjacentPrimePairCollisionBound",
+    "AND AdjacentPrimeChainCollisionBound",
+    "AND MultiPacketDuplicateTransportBound",
+    "AND SinglePacketSingleMMultiCycleSuppression",
+    "AND RepeatedOccurrenceAggregationOrPDEC",
+    "AND CycleOccurrenceProductBoundOrPDEC",
+    "AND SinglePSliceEndpointPacketSummationOrPDEC",
+    "AND MultiPPureEndpointTraceKloostermanCompletion",
+    "AND PureEndpointCarrierPhaseSaving",
+    "AND MixedRightTailEndpointRouterNoLoss",
+    "AND UnequalMirrorPairResidualPhaseSaving",
+    "AND ThinPSupportCarrierSummationWithoutLoss",
+    "AND ResidualEndpointPathSummationWithoutBoundaryLoss",
+    "AND NoLossAggregationAcross15439QPrefixFlowAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "p_switch_cut_uniform_family_bound_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "reason_chosen": "the mixed-P path-cover obstruction can be localized to repeated-node P-switch cuts",
+  "repeated_step_p_switch_cut_ledger_closed": true,
+  "row_column_unconditional_closed": false,
+  "single_p_orbit_repair_proved": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "0e85152c5496865a07a081718729b365ea6c5251c21ce648a92959845ee90c57",
+    "docs/monograph/external-theorem-index.md": "32fbfb19dd114891de6559b88b44893c9c3b2d61fd1d1943b0a01fa0078be8b8",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "10fc5b8c79042e08920d5e61109ad5bcb1f969229fa136e34dbf4399653a8304",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-directed-incidence-graph-audit.json": "13b506fba485e57848a1fd220612fee3705672ec1494b2fcb6c7f136c4b6bdad",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-source-sink-path-cover-audit.json": "3f4129bfad8f69b73c6985a241ef1a6cfa6d0be57e76bcd38d16d039013e0666",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "09a4e67c03598c90a8b80e57b4d485358e52668822149bbd97c9a058e47b504c",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "cd497aff8e1707232c3d1eb8a07ca65eae724e7045a536ee5822f61367617bb0",
+    "experiments/prime_matrix_phi_lpf_repeated_step_p_switch_cut_audit.py": "cdb4a47e6d3ae19119f6f96ecfa81adb55296c29703d0de8078f875e2c751f45",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "dc2f72e3b0f6f18490a0d634a00eee655eba6b0da33163aaee5461f28a102143"
+  },
+  "status": "repeated_step_p_switch_cut_ledger_closed_family_bound_open"
+}

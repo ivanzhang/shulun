@@ -10723,3 +10723,85 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+---
+
+## 附录 Q13AC26：Phi-LPF dominant sign-word repeated-step P-switch cut 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_p_switch_cut_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.md
+```
+
+本层承接 Q13AC25，把两条 mixed-P source-sink 路径的 P-switch 精确定位。有限审计读数：
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+path_switch_cut_count=2
+switch_nodes=[g=2,c=2,A=negative, g=6,c=7,A=positive]
+repeated_switch_node_cover_complete=true
+neighbor_switch_node_count=0
+all_switches_at_repeated_nodes=true
+all_switches_high_to_low=true
+all_switches_739_to_607=true
+switch_pair_edge_mass_total=40
+switch_edge_incidence_count=4
+switch_edge_incidence_mass=40
+non_switch_edge_unique_count=1
+```
+
+本层删除了“mixed-P stitching 仍未定位到局部 cut”的含混说法；没有证明
+repeated-node P-switch cut 的 uniform family bound。两个 cut 都是 `739_to_607`
+且都发生在 repeated nodes，说明下一硬点不是整条 DAG，而是 repeated node
+处的跨 P 拼接。
+
+### Q13AC26.1 最新最窄口
+
+```text
+RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts)
+AND RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+AND RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+AND RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+AND DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+AND OtherLargestAtomTemplateWitnessFamilyBounds
+AND OtherCoreRouteCycleSwitchAtomBounds
+AND TopTwoNonCoreSignCycleResidualBound
+AND Gap2LowerWingTwinCollisionBound
+AND Gap2RightTailTwoSidedTwinResidualCollisionBound
+AND Gap4RightTailLeftCollarCousinCollisionBound
+AND Gap4UpperWingCousinResidualCollisionBound
+AND Gap4LowerWingCousinResidualCollisionBound
+AND Gap6SexyAdjacentPairCollisionBound
+AND GapGe8AdjacentPairCollisionBound
+AND NonAdjacentPrimePairCollisionBound
+AND AdjacentPrimeChainCollisionBound
+AND MultiPacketDuplicateTransportBound
+AND SinglePacketSingleMMultiCycleSuppression
+AND RepeatedOccurrenceAggregationOrPDEC
+AND CycleOccurrenceProductBoundOrPDEC
+AND SinglePSliceEndpointPacketSummationOrPDEC
+AND MultiPPureEndpointTraceKloostermanCompletion
+AND PureEndpointCarrierPhaseSaving
+AND MixedRightTailEndpointRouterNoLoss
+AND UnequalMirrorPairResidualPhaseSaving
+AND ThinPSupportCarrierSummationWithoutLoss
+AND ResidualEndpointPathSummationWithoutBoundaryLoss
+AND NoLossAggregationAcross15439QPrefixFlowAtoms
+AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity
+```
+
+状态边界：
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+p_switch_cut_uniform_family_bound_proved=false
+single_p_orbit_repair_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```

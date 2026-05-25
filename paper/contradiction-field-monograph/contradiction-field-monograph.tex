@@ -37074,6 +37074,85 @@ repeated-step-source-sink-path-cover-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step repeated-node \(P\)-switch cuts}
+
+\begin{theorem}[Repeated-step \(P\)-switch cut ledger]
+In the audit range \(P\le 1009\), the two mixed-\(P\) source-sink paths have
+exactly two \(P\)-switch cuts.  Both are monotone
+\[
+739\longrightarrow 607
+\]
+switches, and they occur exactly at the two repeated nodes.  The principal
+audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{repeated\_step\_p\_switch\_cut\_ledger\_closed}
+  & \texttt{true}\\
+\texttt{path\_switch\_cut\_count} & 2\\
+\texttt{switch\_node\_count} & 2\\
+\texttt{repeated\_switch\_node\_cover\_complete} & \texttt{true}\\
+\texttt{neighbor\_switch\_node\_count} & 0\\
+\texttt{all\_switches\_at\_repeated\_nodes} & \texttt{true}\\
+\texttt{all\_switches\_high\_to\_low} & \texttt{true}\\
+\texttt{all\_switches\_739\_to\_607} & \texttt{true}\\
+\texttt{switch\_pair\_edge\_mass\_total} & 40\\
+\texttt{switch\_edge\_incidence\_count} & 4\\
+\texttt{switch\_edge\_incidence\_mass} & 40 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+The long corridor path has \(P\)-sequence \((739,607,607,607)\), so its only
+switch is at
+\[
+\texttt{g=2,c=2,A=negative}.
+\]
+The bridge shortcut path has \(P\)-sequence \((739,739,607)\), so its only
+switch is at
+\[
+\texttt{g=6,c=7,A=positive}.
+\]
+These two nodes are exactly the repeated nodes in the directed-incidence
+graph.  The corresponding local cuts are
+\[
+\begin{split}
+&\texttt{g=6,c=6,A=positive}\to
+\texttt{g=2,c=2,A=negative}\ \Vert\
+\texttt{g=2,c=2,A=negative}\to
+\texttt{g=4,c=5,A=negative},\\
+&\texttt{g=2,c=2,A=negative}\to
+\texttt{g=6,c=7,A=positive}\ \Vert\
+\texttt{g=6,c=7,A=positive}\to
+\texttt{g=8,c=10,A=negative}.
+\end{split}
+\]
+Each cut has adjacent edge mass \(20\), giving total switch-pair edge mass
+\(40\).  Four distinct edges participate in a \(P\)-switch; the only
+non-switch edge is
+\[
+\texttt{g=4,c=5,A=negative}\to\texttt{g=6,c=7,A=positive}.
+\]
+\end{proof}
+
+\begin{remark}[Repeated-node \(P\)-switch gate]
+The repeated-step gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts).
+\end{quote}
+This is a sharper finite localization of the mixed-\(P\) obstruction, not a
+proof of the uniform family estimate.  The switch-cut object is still a local
+signed grammar event rather than a completed trace, bilinear, Kloosterman, or
+short-interval prime family.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-p-switch-cut-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -28778,3 +28778,59 @@ SinglePSliceEndpointPacketSummationOrPDEC
 本层只关闭 finite source-sink path-cover 账本；mixed-P path-cover uniform
 bound、single-P slice summation、PDEC/SAE 聚合与 prime-q reciprocal phase
 saving 仍未闭合。
+
+### Phi-LPF dominant sign-word repeated-step P-switch cut actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_p_switch_cut_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.json
+```
+
+actual-load 含义继续收缩：mixed-P path cover 不再只说明“路径跨 P”，而是
+定位为两个 repeated node 上的 `739_to_607` cut。
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+path_switch_cut_count=2
+switch_node_count=2
+repeated_switch_node_cover_complete=true
+neighbor_switch_node_count=0
+all_switches_739_to_607=true
+switch_pair_edge_mass_total=40
+switch_edge_incidence_count=4
+```
+
+最新直接主攻改为：
+
+```text
+RepeatedStepRepeatedNodePSwitchCutUniformBound(two 739->607 cuts)
+RepeatedStepMixedPSourceSinkPathCoverUniformBoundOutsideSwitchCuts
+RepeatedStepDirectedIncidenceGraphUniformBoundOutsidePathCover
+RepeatedStepUniformFamilyBoundOutsideDirectedIncidenceGraph
+DominantSignWordStepTransitionUniformFamilyBound(--+-+ grammar outside repeated atoms)
+OtherLargestAtomTemplateWitnessFamilyBounds
+OtherCoreRouteCycleSwitchAtomBounds
+TopTwoNonCoreSignCycleResidualBound
+Gap2LowerWingTwinCollisionBound
+Gap2RightTailTwoSidedTwinResidualCollisionBound
+Gap4RightTailLeftCollarCousinResidualCollisionBound
+Gap4UpperWingCousinResidualCollisionBound
+Gap4LowerWingCousinResidualCollisionBound
+Gap6SexyAdjacentPairCollisionBound
+GapGe8AdjacentPairCollisionBound
+NonAdjacentPrimePairCollisionBound
+AdjacentPrimeChainCollisionBound
+MultiPacketDuplicateTransportBound
+SinglePacketSingleMMultiCycleSuppression
+RepeatedOccurrenceAggregationOrPDEC
+CycleOccurrenceProductBoundOrPDEC
+SinglePSliceEndpointPacketSummationOrPDEC
+```
+
+本层只关闭 finite repeated-node P-switch cut 账本；P-switch cut uniform bound、
+PDEC/SAE 聚合、single-P slice summation 与 prime-q reciprocal phase saving
+仍未闭合。

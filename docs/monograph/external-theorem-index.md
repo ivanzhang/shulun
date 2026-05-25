@@ -9919,3 +9919,57 @@ row_column_unconditional_closed=false
 external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
+
+## 65AE. Phi-LPF dominant sign-word repeated-step P-switch cut 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_p_switch_cut_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-p-switch-cut-audit.md
+```
+
+本层承接 65AD，把 mixed-P source-sink path cover 中每条路径的唯一
+P-switch 局部化到 adjacent edge pair：
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+path_switch_cut_count=2
+switch_nodes=[g=2,c=2,A=negative, g=6,c=7,A=positive]
+repeated_switch_node_cover_complete=true
+neighbor_switch_node_count=0
+all_switches_at_repeated_nodes=true
+all_switches_high_to_low=true
+all_switches_739_to_607=true
+switch_pair_edge_mass_total=40
+switch_edge_incidence_count=4
+switch_edge_incidence_mass=40
+switch_edge_unique_count=4
+non_switch_edge_unique_count=1
+```
+
+两个 cut 为：
+
+```text
+path_1: g=6,c=6,A=positive -> g=2,c=2,A=negative || g=2,c=2,A=negative -> g=4,c=5,A=negative
+path_2: g=2,c=2,A=negative -> g=6,c=7,A=positive || g=6,c=7,A=positive -> g=8,c=10,A=negative
+```
+
+这把 mixed-P obstruction 从整条 graph path 压缩到两个 repeated nodes 上的
+`739_to_607` cut。外部 theorem 边界仍不变：FKMS、Milićević--Qin--Wu 与
+Wright 型 trace/Kloosterman 平均输入需要可求和族；Maynard 小间距与 Li
+短区间素数不控制这种 signed grammar P-switch cut。
+
+状态边界：
+
+```text
+repeated_step_p_switch_cut_ledger_closed=true
+p_switch_cut_uniform_family_bound_proved=false
+single_p_orbit_repair_proved=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
