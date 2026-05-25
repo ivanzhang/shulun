@@ -38043,6 +38043,95 @@ law before pushforward, or a genuine averaged family to which external
 trace/Kloosterman/Type-II tools can apply.
 \end{remark}
 
+\section{Terminal source-key obstruction partition}
+
+\begin{theorem}[Three-way source-key obstruction partition]
+The prefix-record source-key obstruction has an exact finite partition into
+three actual gates:
+\[
+\begin{gathered}
+  \texttt{q\_boundary\_synthetic\_split\_event\_count}=47,\\
+  \texttt{nonboundary\_record\_jump\_event\_count}=4,\\
+  \texttt{internal\_survivor\_fragment\_count}=1.
+\end{gathered}
+\]
+Together with the seven tail survivors, these rows account for all
+\(51\) cancellation events and all \(8\) survivor fragments in the
+prefix-record ledger.
+\end{theorem}
+
+\begin{proof}
+The audit recomputes the opposite-sign prefix-record cancellation events and
+labels each event by whether its old \(q\)-endpoint equals its new
+\(q\)-start.  The \(47\) matching-boundary events form the
+q-boundary synthetic-split class, while the remaining \(4\) events are
+non-boundary record jumps.  It also compares every survivor run with the last
+run of its atom; exactly one survivor is internal, and the other seven are
+tail survivors.  The counts add to the previous prefix-record certificate.
+\end{proof}
+
+\begin{proposition}[Finite mass is not the final obstruction]
+The four non-boundary record jumps and the internal survivor have total mass
+\[
+  0.215539338772\ldots.
+\]
+Subtracting this finite mass from the selected-terminal post-cancellation
+margin leaves
+\[
+  0.333307310624\ldots>0.
+\]
+This scalar check does not prove the row/column claim: the q-boundary split
+ratio law, the non-boundary jump source-key lift, and the internal survivor
+return are still unproved.
+\end{proposition}
+
+\begin{proof}
+The audit sums the exact rational chunk masses of the four non-boundary
+cancellation events and adds the unique internal survivor mass.  It then
+subtracts this total from the previously certified finite margin
+\(\texttt{selected\_negative\_excess\_minus\_extra\_atom\_survivor}\).
+The resulting rational number is positive.  The computation is only a finite
+budget check; it does not construct a uniform source-key law.
+\end{proof}
+
+\begin{certificatestatement}[Source-key obstruction partition audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+source\_key\_obstruction\_partition\_closed=true\\
+cancellation\_event\_count=51\\
+whole\_run\_pair\_event\_count=0\\
+synthetic\_split\_event\_count=51\\
+q\_boundary\_synthetic\_split\_event\_count=47\\
+nonboundary\_record\_jump\_event\_count=4\\
+nonboundary\_record\_jump\_atom\_count=2\\
+tail\_survivor\_fragment\_count=7\\
+internal\_survivor\_fragment\_count=1\\
+finite\_margin\_after\_nonboundary\_internal\_payment\_positive=true\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-\\
+obstruction-partition-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated source-key gate]
+The next gate is
+\begin{quote}\scriptsize\ttfamily
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC\\
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC\\
+AND InternalPrefixRecordSurvivorPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+The largest remaining structural task is to turn the \(47\) q-boundary
+synthetic splits into a source-key ratio law before pushforward.  The four
+non-boundary jumps and one internal survivor are now separate named returns,
+not hidden parity reservoirs.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

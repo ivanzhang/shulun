@@ -29518,6 +29518,48 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 本层不是无条件闭合；它把“形式抵消律”继续推进为“prefix-record 已闭合，
 source-key lift 待证明”。
 
+### Phi-LPF terminal source-key obstruction partition actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_source_key_obstruction_partition_router.py
+data/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json
+```
+
+actual-load 含义：`PrefixRecordSourceKeyLiftOrPDEC` 已拆成三类实际缺口：
+
+```text
+source_key_obstruction_partition_closed=true
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+tail_survivor_fragment_count=7
+internal_survivor_fragment_count=1
+```
+
+其中非边界 jump 与内部 survivor 的有限质量合计为：
+
+```text
+nonboundary_plus_internal_obstruction_mass=0.215539338772
+finite_selected_margin_after_nonboundary_internal_payment=0.333307310624
+```
+
+这说明在有限账本中，当前最大 actual 缺口不是数值余量，而是 source-key law 本身。
+actual-load 合同进一步改写为：
+
+```text
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+本层仍不是无条件闭合；它只把 source-key lift 的失败拆成三个可单独攻击的 actual gate。
+
 ### 三命题突破路线总合成 actual-load 更新（2026-05-25）
 
 新增归档：

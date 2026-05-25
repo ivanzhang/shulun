@@ -26998,6 +26998,49 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### terminal source-key obstruction partition formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_source_key_obstruction_partition_router.py
+data/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json
+```
+
+formal-to-actual 结论：上一层 source-key lift 失败不再是一个单口径黑箱，而被拆成
+三类互不混淆的 actual 缺口：
+
+```text
+source_key_obstruction_partition_closed=true
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+tail_survivor_fragment_count=7
+internal_survivor_fragment_count=1
+```
+
+有限标量检查：
+
+```text
+nonboundary_plus_internal_obstruction_mass=0.215539338772
+finite_selected_margin_after_nonboundary_internal_payment=0.333307310624
+finite_margin_after_nonboundary_internal_payment_positive=true
+```
+
+但 formal-to-actual 含义恰恰是：有限正余量不能替代 source-key lift。最新缺口为：
+
+```text
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

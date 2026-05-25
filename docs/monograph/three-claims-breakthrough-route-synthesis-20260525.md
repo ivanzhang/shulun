@@ -487,6 +487,47 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### 6.6 terminal source-key obstruction partition 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_source_key_obstruction_partition_router.py
+data/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json
+```
+
+本层继续非循环推进：不再把 `source-key lift` 当成单个黑箱，而是拆成三类明确对象：
+
+```text
+source_key_obstruction_partition_closed=true
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+tail_survivor_fragment_count=7
+internal_survivor_fragment_count=1
+```
+
+非边界 jump 只出现在两个 selected-terminal atom；内部 survivor 只有一处。有限标量检查：
+
+```text
+nonboundary_plus_internal_obstruction_mass=0.215539338772
+finite_selected_margin_after_nonboundary_internal_payment=0.333307310624
+```
+
+因此下一步不应继续寻找新的形式反射恒等式，而应优先攻击 47 个 q-boundary synthetic
+split 的 ratio/source-key law；其余两个出口则是 non-boundary record jump lift 和 internal
+survivor PDEC 回流。最新口：
+
+```text
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 7. 审稿边界
 
 ```text

@@ -1673,6 +1673,58 @@ row_column_unconditional_closed=false
 
 ---
 
+## 附录 Q13AC37：Phi-LPF terminal source-key obstruction partition（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_source_key_obstruction_partition_router.py
+data/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.md
+```
+
+诚实结论：上一层 prefix-record/source-key 障碍已经可拆成三类：
+
+```text
+source_key_obstruction_partition_closed=true
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+tail_survivor_fragment_count=7
+internal_survivor_fragment_count=1
+```
+
+有限标量余量仍为正：
+
+```text
+nonboundary_plus_internal_obstruction_mass=0.215539338772
+finite_selected_margin_after_nonboundary_internal_payment=0.333307310624
+```
+
+但三类 actual law 均未证明：
+
+```text
+boundary_synthetic_split_ratio_source_key_law_proved=false
+nonboundary_record_jump_source_key_lift_constructed=false
+internal_survivor_pdec_constructed=false
+primitive_orientation_local_factor_law_proved=false
+admissible_averaged_trace_family_created=false
+row_column_unconditional_closed=false
+```
+
+最新最窄口：
+
+```text
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC36：Phi-LPF terminal prefix-record source-key obstruction（2026-05-25）
 
 新增证书：

@@ -2081,6 +2081,53 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 附录 Q13AC41：terminal source-key obstruction partition（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_source_key_obstruction_partition_router.py
+data/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-source-key-obstruction-partition-router.md
+```
+
+本层继续 Q13AC40，把 `PrefixRecordSourceKeyLiftOrPDEC` 拆成三个 actual 缺口：
+
+```text
+source_key_obstruction_partition_closed=true
+cancellation_event_count=51
+whole_run_pair_event_count=0
+synthetic_split_event_count=51
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+nonboundary_record_jump_atom_count=2
+tail_survivor_fragment_count=7
+internal_survivor_fragment_count=1
+```
+
+有限标量检查显示，非边界 jump 与内部 survivor 的合计质量不是当前最大数值障碍：
+
+```text
+nonboundary_plus_internal_obstruction_mass=0.215539338772
+finite_selected_margin_after_nonboundary_internal_payment=0.333307310624
+finite_margin_after_nonboundary_internal_payment_positive=true
+```
+
+但这不是证明。外部 trace/Kloosterman/Type-II 工具仍不能直接接入，因为 q-boundary
+split ratio、non-boundary record jump 与 internal survivor 都没有 source-key lift。
+
+最新非循环口：
+
+```text
+BoundarySyntheticSplitRatioSourceKeyLawOrPDEC
+AND NonBoundaryPrefixRecordJumpSourceKeyLiftOrPDEC
+AND InternalPrefixRecordSurvivorPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 附录 Q13AC40：terminal prefix-record reflection source-key obstruction（2026-05-25）
 
 新增证书：
