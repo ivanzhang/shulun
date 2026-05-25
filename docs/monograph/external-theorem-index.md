@@ -2387,6 +2387,70 @@ external_lemma_version_unconditional_closed=false
 internal_self_contained_closed=false
 ```
 
+## 65AM. Phi-LPF repeated-step packet-enclosure terminal phase variation-budget 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_variation_budget_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.md
+```
+
+本层承接 65AL，把 phase-turn word 进一步压成 signed variation budget：
+
+```text
+total variation = positive variation + negative variation
+net displacement = positive variation - negative variation
+```
+
+有限审计读数：
+
+```text
+terminal_phase_variation_budget_closed=true
+terminal_phase_variation_transition_count_total=126
+terminal_phase_variation_run_count_total=59
+selected_terminal_transition_count=66
+selected_terminal_phase_run_count=35
+selected_terminal_phase_run_max_length=6
+selected_terminal_positive_transition_count=17
+selected_terminal_negative_transition_count=49
+selected_terminal_positive_variation=8.261301579660
+selected_terminal_negative_variation=9.717867552237
+selected_terminal_total_variation=17.979169131897
+selected_terminal_net_phase_displacement=-1.456565972578
+extra_transition_count=60
+extra_phase_run_count=24
+extra_total_variation=14.109301881162
+extra_net_phase_displacement=-0.907719323182
+bad_atom_variation_identity_count=0
+bad_role_variation_identity_count=0
+phase_variation_budget_phase_saving_proved=false
+```
+
+外部 theorem 边界进一步明确：当前对象仍只是 finite variation ledger，不是
+completed trace/bilinear sum、Kloosterman variable 或 Type-II box。FKMS、
+Milićević--Qin--Wu、Pascadi、Wright 仍只可能在后续构造出 averaging family 后
+使用。`arXiv:2601.00292` 的 Kloosterman-fraction 双线性形式已撤稿，本文只把它
+记录为不可用边界，不作为输入。Li 短区间素数与 Maynard 小间距不估计 signed
+variation imbalance。
+
+状态边界：
+
+```text
+terminal_phase_variation_budget_closed=true
+selected_terminal_variation_budget_closed=true
+phase_variation_budget_phase_saving_proved=false
+extra_variation_budget_absorption_proved=false
+summable_family_created=false
+trace_or_kloosterman_completion_ready=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
 ## 65AG. Phi-LPF dominant sign-word repeated-step occurrence-splice affine-skeleton 证书
 
 新增证书：

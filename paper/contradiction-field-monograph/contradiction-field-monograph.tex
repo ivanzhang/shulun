@@ -37606,6 +37606,86 @@ repeated-step-packet-enclosure-terminal-phase-turn-word-audit.md.
 \end{quote}
 \end{remark}
 
+\section{Repeated-step terminal phase variation budget}
+
+\begin{theorem}[Repeated-step terminal signed variation budget]
+In the audit range \(P\le 1009\), the terminal phase-turn word admits an exact
+signed variation ledger.  For every atom and for each role aggregate,
+\[
+\operatorname{Var}_{\rm tot}
+ =\operatorname{Var}_{+}+\operatorname{Var}_{-},
+\qquad
+\Delta_{\rm net}
+ =\operatorname{Var}_{+}-\operatorname{Var}_{-}.
+\]
+The principal audit values are
+\[
+\begin{array}{c|c}
+\hbox{quantity} & \hbox{value}\\ \hline
+\texttt{terminal\_phase\_variation\_budget\_closed} & \texttt{true}\\
+\texttt{terminal\_phase\_variation\_transition\_count\_total} & 126\\
+\texttt{terminal\_phase\_variation\_run\_count\_total} & 59\\
+\texttt{selected\_terminal\_transition\_count} & 66\\
+\texttt{selected\_terminal\_phase\_run\_count} & 35\\
+\texttt{selected\_terminal\_phase\_run\_max\_length} & 6\\
+\texttt{selected\_terminal\_positive\_variation} & 8.261301579660\\
+\texttt{selected\_terminal\_negative\_variation} & 9.717867552237\\
+\texttt{selected\_terminal\_total\_variation} & 17.979169131897\\
+\texttt{selected\_terminal\_net\_phase\_displacement} & -1.456565972578\\
+\texttt{extra\_phase\_run\_count} & 24\\
+\texttt{extra\_total\_variation} & 14.109301881162\\
+\texttt{extra\_net\_phase\_displacement} & -0.907719323182\\
+\texttt{bad\_atom\_variation\_identity\_count} & 0\\
+\texttt{bad\_role\_variation\_identity\_count} & 0 .
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+For each adjacent transition the previous phase-turn certificate gives the
+exact rational increment
+\[
+\delta_i=\frac{A(q_{i+1})}{q_{i+1}}-\frac{A(q_i)}{q_i}.
+\]
+Define
+\[
+\operatorname{Var}_{+}=\sum_{\delta_i>0}\delta_i,\qquad
+\operatorname{Var}_{-}=\sum_{\delta_i<0}(-\delta_i),\qquad
+\operatorname{Var}_{\rm tot}=\sum_i|\delta_i|.
+\]
+The net phase displacement is \(\sum_i\delta_i\), which telescopes to the
+endpoint phase difference.  The audit checks these identities for each of the
+seven atoms, for the selected-terminal aggregate, and for the extra-shell
+aggregate.  It also verifies that the run-level variation sums equal the
+atom-level variation sums.  On the selected terminal aggregate the negative
+variation is larger than the positive variation by
+\[
+1.456565972578\ldots,
+\]
+and the total variation is approximately \(17.979169131897\).  Thus the
+selected phase-turn word is not naturally balanced at the signed-variation
+level.
+\end{proof}
+
+\begin{remark}[Variation-budget gate]
+The repeated-step terminal gate is now refined to
+\begin{quote}\scriptsize\ttfamily
+SelectedTerminalNegativeVariationExcessPhaseSaving\\
+(total variation 17.979169131897; net -1.456565972578;\\
+ 35 runs; max run 6).
+\end{quote}
+This closes the finite variation ledger and rules out an unproved
+``automatic balance'' interpretation of the A-wrap word.  It does not prove a
+monotone-run phase-saving cap, absorb the extra variation budget, create a
+completed trace/Kloosterman family, or close the row/column Phi--LPF theorem.
+
+The machine certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-\\
+repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.md.
+\end{quote}
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

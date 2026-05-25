@@ -29182,3 +29182,46 @@ RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
 本层只关闭 finite phase-turn word ledger；没有证明 A-wrap word phase saving、
 extra phase-turn run absorption、trace/Kloosterman completion 或全局 row/column
 闭合。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase variation-budget actual-load 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_variation_budget_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json
+```
+
+actual-load 含义继续收缩：phase-turn word 已经列成正变差、负变差、总变差和
+净位移。selected terminal 并非已自然平衡；负变差严格超过正变差。
+
+```text
+terminal_phase_variation_budget_closed=true
+terminal_phase_variation_transition_count_total=126
+terminal_phase_variation_run_count_total=59
+selected_terminal_transition_count=66
+selected_terminal_phase_run_count=35
+selected_terminal_phase_run_max_length=6
+selected_terminal_positive_variation=8.261301579660
+selected_terminal_negative_variation=9.717867552237
+selected_terminal_total_variation=17.979169131897
+selected_terminal_net_phase_displacement=-1.456565972578
+extra_total_variation=14.109301881162
+extra_net_phase_displacement=-0.907719323182
+bad_atom_variation_identity_count=0
+bad_role_variation_identity_count=0
+```
+
+最新直接主攻改为：
+
+```text
+SelectedTerminalNegativeVariationExcessPhaseSaving(total variation 17.979169131897; net -1.456565972578; 35 runs; max run 6)
+ExtraNegativeVariationBudgetAbsorption(total variation 14.109301881162; net -0.907719323182; 24 runs)
+SelectedTerminalAwrapPhaseTurnWordSavingOutsideVariationBudget
+RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm
+```
+
+本层只关闭 finite signed variation ledger；没有证明 monotone-run phase saving、
+extra variation absorption、trace/Kloosterman completion 或全局 row/column 闭合。

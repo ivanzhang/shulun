@@ -26627,3 +26627,45 @@ phase_turn_word_phase_saving_proved=false
 本层删除的是“carry word 是否已经给出 phase direction”的含混说法；phase
 direction 已完全落到 A-wrap/no-wrap word。但 selected A-wrap word 的 signed
 cancellation 与 extra run absorption 仍未证明。
+
+### Phi-LPF repeated-step packet-enclosure terminal phase variation-budget formal-to-actual 更新
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_variation_budget_audit.py
+data/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-ledger.json
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.md
+docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-variation-budget-audit.json
+```
+
+formal-to-actual 含义继续下钻：上一层的
+
+```text
+SelectedTerminalAwrapPhaseTurnWordSaving(66 transitions: 49 negative/A-wrap, 17 positive/no-wrap; 35 runs; max run 6)
+```
+
+现在拆成：
+
+```text
+SelectedTerminalNegativeVariationExcessPhaseSaving(total variation 17.979169131897; net -1.456565972578; 35 runs; max run 6)
+AND ExtraNegativeVariationBudgetAbsorption(total variation 14.109301881162; net -0.907719323182; 24 runs)
+AND SelectedTerminalAwrapPhaseTurnWordSavingOutsideVariationBudget
+```
+
+关键审计读数为：
+
+```text
+terminal_phase_variation_budget_closed=true
+selected_terminal_positive_variation=8.261301579660
+selected_terminal_negative_variation=9.717867552237
+selected_terminal_total_variation=17.979169131897
+selected_terminal_net_phase_displacement=-1.456565972578
+bad_atom_variation_identity_count=0
+bad_role_variation_identity_count=0
+phase_variation_budget_phase_saving_proved=false
+```
+
+本层删除的是“phase-turn word 是否隐藏自然平衡”的含混说法；结论是否定的。
+selected terminal 负变差占优，剩余必须证明负变差过剩 word 的 phase-saving cap
+或给出 PDEC/SAE 吸收。

@@ -1,0 +1,3012 @@
+{
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "TerminalPhaseTurnWordImported",
+      "meaning": "The two-lift phase-turn word is imported.",
+      "proved": true,
+      "remaining": "none for import"
+    },
+    {
+      "closed": true,
+      "gate": "SignedVariationBudgetIdentity",
+      "meaning": "Every atom and role satisfies total=positive+negative and net=positive-negative.",
+      "proved": true,
+      "remaining": "none for finite variation ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SelectedTerminalVariationLedger",
+      "meaning": "The selected terminal word has exact positive/negative variation and run budgets.",
+      "proved": true,
+      "remaining": "none for finite selected variation ledger"
+    },
+    {
+      "closed": false,
+      "gate": "VariationBudgetPhaseSaving",
+      "meaning": "Use the variation budget to prove phase saving.",
+      "proved": false,
+      "remaining": "requires analytic monotone-run cap or PDEC/SAE certificate"
+    },
+    {
+      "closed": false,
+      "gate": "ExtraVariationBudgetAbsorption",
+      "meaning": "Absorb extra variation budgets without losing selected gain.",
+      "proved": false,
+      "remaining": "requires dominance or summable absorption"
+    }
+  ],
+  "external_lemma_version_unconditional_closed": false,
+  "external_sources_consulted": [
+    {
+      "key": "Fouvry_Kowalski_Michel_Sawin_2025_trace_bilinear_v3",
+      "role": "trace bilinear estimates need a completed averaging family; this audit only gives finite variation budgets",
+      "url": "https://arxiv.org/abs/2511.09459"
+    },
+    {
+      "key": "Milicevic_Qin_Wu_2025_arbitrary_modulus_kloosterman",
+      "role": "Kloosterman estimates need an admissible summation variable and do not act on the finite run ledger directly",
+      "url": "https://arxiv.org/abs/2511.07550"
+    },
+    {
+      "key": "Pascadi_2025_nonabelian_composite_type_II",
+      "role": "the variation ledger is one-dimensional, not a Type-II rectangle",
+      "url": "https://arxiv.org/abs/2511.08445"
+    },
+    {
+      "key": "Wright_2026_unbalanced_kloosterman_fractions",
+      "role": "unbalanced Kloosterman fractions remain candidate input only after an averaged fraction family is built",
+      "url": "https://arxiv.org/abs/2604.25177"
+    },
+    {
+      "key": "Dong_Robles_Zeindler_2026_bilinear_kloosterman_fractions_withdrawn",
+      "role": "withdrawn on arXiv; recorded only as a non-usable boundary, not as an input",
+      "url": "https://arxiv.org/abs/2601.00292"
+    },
+    {
+      "key": "Li_2023_short_interval_primes_x_052_v8",
+      "role": "short-interval prime existence does not estimate signed variation imbalance",
+      "url": "https://arxiv.org/abs/2308.04458"
+    },
+    {
+      "key": "Maynard_2015_small_gaps_prime_gaps",
+      "role": "bounded gaps do not control total variation or run-level cancellation",
+      "url": "https://doi.org/10.4007/annals.2015.181.1.7"
+    }
+  ],
+  "external_theorem_implication": {
+    "Dong_Robles_Zeindler_2026": "withdrawn on arXiv and not used",
+    "FKMS_trace_bilinear": "variation budgets are not completed trace/bilinear sums",
+    "Li_short_interval_x_052": "does not estimate signed variation",
+    "Maynard_small_gaps": "does not estimate run-level cancellation",
+    "Milicevic_Qin_Wu_Kloosterman": "no Kloosterman summation variable follows from a finite variation ledger",
+    "Pascadi_Type_II": "no Type-II rectangle is created",
+    "Wright_unbalanced_Kloosterman": "requires an averaged fraction family absent here"
+  },
+  "extra_variation_budget_absorption_proved": false,
+  "finite_audit": {
+    "atom_variation_profiles": [
+      {
+        "P": 739,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 719,
+        "negative_transition_count": 6,
+        "negative_variation": {
+          "decimal": "3.835403775504",
+          "denominator": 10072882095568325988192089437,
+          "fraction": "38633570019545065319372724473/10072882095568325988192089437",
+          "numerator": 38633570019545065319372724473
+        },
+        "negative_variation_excess": {
+          "decimal": "0.356428699921",
+          "denominator": 383569,
+          "fraction": "136715/383569",
+          "numerator": 136715
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.356428699921",
+          "denominator": 383569,
+          "fraction": "-136715/383569",
+          "numerator": -136715
+        },
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_end": {
+          "decimal": "0.153737658674",
+          "denominator": 709,
+          "fraction": "109/709",
+          "numerator": 109
+        },
+        "phase_run_count": 10,
+        "phase_run_max_length": 6,
+        "phase_start": {
+          "decimal": "0.510166358595",
+          "denominator": 541,
+          "fraction": "276/541",
+          "numerator": 276
+        },
+        "positive_transition_count": 21,
+        "positive_variation": {
+          "decimal": "3.478975075583",
+          "denominator": 7686077875461867926109901813,
+          "fraction": "26739673357718428729175749722/7686077875461867926109901813",
+          "numerator": 26739673357718428729175749722
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.356428699921",
+          "denominator": 383569,
+          "fraction": "-136715/383569",
+          "numerator": -136715
+        },
+        "role": "extra_shell",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 2,
+            "carry_max": 9,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 2,
+            "length": 3,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.488057442471",
+              "denominator": 304583,
+              "fraction": "148654/304583",
+              "numerator": 148654
+            },
+            "q_end": 563,
+            "q_start": 541,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.488057442471",
+              "denominator": 304583,
+              "fraction": "148654/304583",
+              "numerator": 148654
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.488057442471",
+              "denominator": 304583,
+              "fraction": "148654/304583",
+              "numerator": 148654
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 1,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.778540145530",
+              "denominator": 320347,
+              "fraction": "249403/320347",
+              "numerator": 249403
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 569,
+            "q_start": 563,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.778540145530",
+              "denominator": 320347,
+              "fraction": "-249403/320347",
+              "numerator": -249403
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.778540145530",
+              "denominator": 320347,
+              "fraction": "249403/320347",
+              "numerator": 249403
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 3,
+            "carry_max": 10,
+            "carry_min": 2,
+            "direction": "positive",
+            "end_transition_index": 6,
+            "length": 3,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.637215833391",
+              "denominator": 334003,
+              "fraction": "212832/334003",
+              "numerator": 212832
+            },
+            "q_end": 587,
+            "q_start": 569,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.637215833391",
+              "denominator": 334003,
+              "fraction": "212832/334003",
+              "numerator": 212832
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.637215833391",
+              "denominator": 334003,
+              "fraction": "212832/334003",
+              "numerator": 212832
+            }
+          },
+          {
+            "A_wrap_count": 2,
+            "D_wrap_count": 1,
+            "carry_max": 6,
+            "carry_min": 5,
+            "direction": "negative",
+            "end_transition_index": 8,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.830188303618",
+              "denominator": 351613,
+              "fraction": "291905/351613",
+              "numerator": 291905
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 599,
+            "q_start": 587,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.830188303618",
+              "denominator": 351613,
+              "fraction": "-291905/351613",
+              "numerator": -291905
+            },
+            "start_transition_index": 7,
+            "variation": {
+              "decimal": "0.830188303618",
+              "denominator": 351613,
+              "fraction": "291905/351613",
+              "numerator": 291905
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 5,
+            "carry_max": 11,
+            "carry_min": 2,
+            "direction": "positive",
+            "end_transition_index": 14,
+            "length": 6,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.892464725943",
+              "denominator": 377969,
+              "fraction": "337324/377969",
+              "numerator": 337324
+            },
+            "q_end": 631,
+            "q_start": 599,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.892464725943",
+              "denominator": 377969,
+              "fraction": "337324/377969",
+              "numerator": 337324
+            },
+            "start_transition_index": 9,
+            "variation": {
+              "decimal": "0.892464725943",
+              "denominator": 377969,
+              "fraction": "337324/377969",
+              "numerator": 337324
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 1,
+            "carry_max": 10,
+            "carry_min": 10,
+            "direction": "negative",
+            "end_transition_index": 15,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.671125989255",
+              "denominator": 404471,
+              "fraction": "271451/404471",
+              "numerator": 271451
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 641,
+            "q_start": 631,
+            "run_id": 5,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.671125989255",
+              "denominator": 404471,
+              "fraction": "-271451/404471",
+              "numerator": -271451
+            },
+            "start_transition_index": 15,
+            "variation": {
+              "decimal": "0.671125989255",
+              "denominator": 404471,
+              "fraction": "271451/404471",
+              "numerator": 271451
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 5,
+            "carry_max": 6,
+            "carry_min": 2,
+            "direction": "positive",
+            "end_transition_index": 20,
+            "length": 5,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.627895615068",
+              "denominator": 423701,
+              "fraction": "266040/423701",
+              "numerator": 266040
+            },
+            "q_end": 661,
+            "q_start": 641,
+            "run_id": 6,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.627895615068",
+              "denominator": 423701,
+              "fraction": "266040/423701",
+              "numerator": 266040
+            },
+            "start_transition_index": 16,
+            "variation": {
+              "decimal": "0.627895615068",
+              "denominator": 423701,
+              "fraction": "266040/423701",
+              "numerator": 266040
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 11,
+            "carry_min": 11,
+            "direction": "negative",
+            "end_transition_index": 21,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.739244199769",
+              "denominator": 444853,
+              "fraction": "328855/444853",
+              "numerator": 328855
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 673,
+            "q_start": 661,
+            "run_id": 7,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.739244199769",
+              "denominator": 444853,
+              "fraction": "-328855/444853",
+              "numerator": -328855
+            },
+            "start_transition_index": 21,
+            "variation": {
+              "decimal": "0.739244199769",
+              "denominator": 444853,
+              "fraction": "328855/444853",
+              "numerator": 328855
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 4,
+            "carry_max": 10,
+            "carry_min": 4,
+            "direction": "positive",
+            "end_transition_index": 25,
+            "length": 4,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.833341458710",
+              "denominator": 471773,
+              "fraction": "393148/471773",
+              "numerator": 393148
+            },
+            "q_end": 701,
+            "q_start": 673,
+            "run_id": 8,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.833341458710",
+              "denominator": 471773,
+              "fraction": "393148/471773",
+              "numerator": 393148
+            },
+            "start_transition_index": 22,
+            "variation": {
+              "decimal": "0.833341458710",
+              "denominator": 471773,
+              "fraction": "393148/471773",
+              "numerator": 393148
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "negative",
+            "end_transition_index": 26,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.816305137332",
+              "denominator": 497009,
+              "fraction": "405711/497009",
+              "numerator": 405711
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 709,
+            "q_start": 701,
+            "run_id": 9,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.816305137332",
+              "denominator": 497009,
+              "fraction": "-405711/497009",
+              "numerator": -405711
+            },
+            "start_transition_index": 26,
+            "variation": {
+              "decimal": "0.816305137332",
+              "denominator": 497009,
+              "fraction": "405711/497009",
+              "numerator": 405711
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "7.314378851086",
+          "denominator": 5449429213702464359611920385417,
+          "fraction": "39859189791196246306766250492791/5449429213702464359611920385417",
+          "numerator": 39859189791196246306766250492791
+        },
+        "transition_count": 27,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 739,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 751,
+        "negative_transition_count": 23,
+        "negative_variation": {
+          "decimal": "2.413832181126",
+          "denominator": 7173173693981533055309193841,
+          "fraction": "17314837503337011625539557284/7173173693981533055309193841",
+          "numerator": 17314837503337011625539557284
+        },
+        "negative_variation_excess": {
+          "decimal": "0.462466987687",
+          "denominator": 383569,
+          "fraction": "177388/383569",
+          "numerator": 177388
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.462466987687",
+          "denominator": 383569,
+          "fraction": "-177388/383569",
+          "numerator": -177388
+        },
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_end": {
+          "decimal": "0.465444287729",
+          "denominator": 709,
+          "fraction": "330/709",
+          "numerator": 330
+        },
+        "phase_run_count": 9,
+        "phase_run_max_length": 8,
+        "phase_start": {
+          "decimal": "0.927911275416",
+          "denominator": 541,
+          "fraction": "502/541",
+          "numerator": 502
+        },
+        "positive_transition_count": 4,
+        "positive_variation": {
+          "decimal": "1.951365193439",
+          "denominator": 18701129898353446329889,
+          "fraction": "36492733961628521825208/18701129898353446329889",
+          "numerator": 36492733961628521825208
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.462466987687",
+          "denominator": 383569,
+          "fraction": "-177388/383569",
+          "numerator": -177388
+        },
+        "role": "extra_shell",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 0,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.119867399730",
+              "denominator": 295927,
+              "fraction": "35472/295927",
+              "numerator": 35472
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 547,
+            "q_start": 541,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.119867399730",
+              "denominator": 295927,
+              "fraction": "-35472/295927",
+              "numerator": -35472
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.119867399730",
+              "denominator": 295927,
+              "fraction": "35472/295927",
+              "numerator": 35472
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 11,
+            "carry_min": 11,
+            "direction": "positive",
+            "end_transition_index": 1,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.132710163812",
+              "denominator": 304679,
+              "fraction": "40434/304679",
+              "numerator": 40434
+            },
+            "q_end": 557,
+            "q_start": 547,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.132710163812",
+              "denominator": 304679,
+              "fraction": "40434/304679",
+              "numerator": 40434
+            },
+            "start_transition_index": 1,
+            "variation": {
+              "decimal": "0.132710163812",
+              "denominator": 304679,
+              "fraction": "40434/304679",
+              "numerator": 40434
+            }
+          },
+          {
+            "A_wrap_count": 8,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 9,
+            "length": 8,
+            "negative_variation": {
+              "decimal": "0.874198299065",
+              "denominator": 334757,
+              "fraction": "292644/334757",
+              "numerator": 292644
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 601,
+            "q_start": 557,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.874198299065",
+              "denominator": 334757,
+              "fraction": "-292644/334757",
+              "numerator": -292644
+            },
+            "start_transition_index": 2,
+            "variation": {
+              "decimal": "0.874198299065",
+              "denominator": 334757,
+              "fraction": "292644/334757",
+              "numerator": 292644
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 10,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.890610651660",
+              "denominator": 364807,
+              "fraction": "324901/364807",
+              "numerator": 324901
+            },
+            "q_end": 607,
+            "q_start": 601,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.890610651660",
+              "denominator": 364807,
+              "fraction": "324901/364807",
+              "numerator": 324901
+            },
+            "start_transition_index": 10,
+            "variation": {
+              "decimal": "0.890610651660",
+              "denominator": 364807,
+              "fraction": "324901/364807",
+              "numerator": 324901
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 11,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.107247958161",
+              "denominator": 372091,
+              "fraction": "39906/372091",
+              "numerator": 39906
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 613,
+            "q_start": 607,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.107247958161",
+              "denominator": 372091,
+              "fraction": "-39906/372091",
+              "numerator": -39906
+            },
+            "start_transition_index": 11,
+            "variation": {
+              "decimal": "0.107247958161",
+              "denominator": 372091,
+              "fraction": "39906/372091",
+              "numerator": 39906
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 5,
+            "carry_min": 5,
+            "direction": "positive",
+            "end_transition_index": 12,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.127391128467",
+              "denominator": 378221,
+              "fraction": "48182/378221",
+              "numerator": 48182
+            },
+            "q_end": 617,
+            "q_start": 613,
+            "run_id": 5,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.127391128467",
+              "denominator": 378221,
+              "fraction": "48182/378221",
+              "numerator": 48182
+            },
+            "start_transition_index": 12,
+            "variation": {
+              "decimal": "0.127391128467",
+              "denominator": 378221,
+              "fraction": "48182/378221",
+              "numerator": 48182
+            }
+          },
+          {
+            "A_wrap_count": 8,
+            "D_wrap_count": 0,
+            "carry_max": 12,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 20,
+            "length": 8,
+            "negative_variation": {
+              "decimal": "0.797279305213",
+              "denominator": 407837,
+              "fraction": "325160/407837",
+              "numerator": 325160
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 661,
+            "q_start": 617,
+            "run_id": 6,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.797279305213",
+              "denominator": 407837,
+              "fraction": "-325160/407837",
+              "numerator": -325160
+            },
+            "start_transition_index": 13,
+            "variation": {
+              "decimal": "0.797279305213",
+              "denominator": 407837,
+              "fraction": "325160/407837",
+              "numerator": 325160
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 12,
+            "carry_min": 12,
+            "direction": "positive",
+            "end_transition_index": 21,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.800653249500",
+              "denominator": 444853,
+              "fraction": "356173/444853",
+              "numerator": 356173
+            },
+            "q_end": 673,
+            "q_start": 661,
+            "run_id": 7,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.800653249500",
+              "denominator": 444853,
+              "fraction": "356173/444853",
+              "numerator": 356173
+            },
+            "start_transition_index": 21,
+            "variation": {
+              "decimal": "0.800653249500",
+              "denominator": 444853,
+              "fraction": "356173/444853",
+              "numerator": 356173
+            }
+          },
+          {
+            "A_wrap_count": 5,
+            "D_wrap_count": 1,
+            "carry_max": 10,
+            "carry_min": 4,
+            "direction": "negative",
+            "end_transition_index": 26,
+            "length": 5,
+            "negative_variation": {
+              "decimal": "0.515239218957",
+              "denominator": 477157,
+              "fraction": "245850/477157",
+              "numerator": 245850
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 709,
+            "q_start": 673,
+            "run_id": 8,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.515239218957",
+              "denominator": 477157,
+              "fraction": "-245850/477157",
+              "numerator": -245850
+            },
+            "start_transition_index": 22,
+            "variation": {
+              "decimal": "0.515239218957",
+              "denominator": 477157,
+              "fraction": "245850/477157",
+              "numerator": 245850
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "4.365197374565",
+          "denominator": 7173173693981533055309193841,
+          "fraction": "31312318976264902113512764636/7173173693981533055309193841",
+          "numerator": 31312318976264902113512764636
+        },
+        "transition_count": 27,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 739,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 757,
+        "negative_transition_count": 21,
+        "negative_variation": {
+          "decimal": "3.538571726529",
+          "denominator": 3102869177433817344181826728189459,
+          "fraction": "10979725142385964208889475560764888/3102869177433817344181826728189459",
+          "numerator": 10979725142385964208889475560764888
+        },
+        "negative_variation_excess": {
+          "decimal": "0.038532832424",
+          "denominator": 383569,
+          "fraction": "14780/383569",
+          "numerator": 14780
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.038532832424",
+          "denominator": 383569,
+          "fraction": "-14780/383569",
+          "numerator": -14780
+        },
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_end": {
+          "decimal": "0.719322990127",
+          "denominator": 709,
+          "fraction": "510/709",
+          "numerator": 510
+        },
+        "phase_run_count": 11,
+        "phase_run_max_length": 6,
+        "phase_start": {
+          "decimal": "0.757855822551",
+          "denominator": 541,
+          "fraction": "410/541",
+          "numerator": 410
+        },
+        "positive_transition_count": 6,
+        "positive_variation": {
+          "decimal": "3.500038894105",
+          "denominator": 8089468068154145262473835811,
+          "fraction": "28313452871161762139041768932/8089468068154145262473835811",
+          "numerator": 28313452871161762139041768932
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.038532832424",
+          "denominator": 383569,
+          "fraction": "-14780/383569",
+          "numerator": -14780
+        },
+        "role": "selected_terminal",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 3,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 2,
+            "length": 3,
+            "negative_variation": {
+              "decimal": "0.693912660917",
+              "denominator": 304583,
+              "fraction": "211354/304583",
+              "numerator": 211354
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 563,
+            "q_start": 541,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.693912660917",
+              "denominator": 304583,
+              "fraction": "-211354/304583",
+              "numerator": -211354
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.693912660917",
+              "denominator": 304583,
+              "fraction": "211354/304583",
+              "numerator": 211354
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.820063868243",
+              "denominator": 320347,
+              "fraction": "262705/320347",
+              "numerator": 262705
+            },
+            "q_end": 569,
+            "q_start": 563,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.820063868243",
+              "denominator": 320347,
+              "fraction": "262705/320347",
+              "numerator": 262705
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.820063868243",
+              "denominator": 320347,
+              "fraction": "262705/320347",
+              "numerator": 262705
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 2,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 4,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.059138378388",
+              "denominator": 324899,
+              "fraction": "19214/324899",
+              "numerator": 19214
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 571,
+            "q_start": 569,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.059138378388",
+              "denominator": 324899,
+              "fraction": "-19214/324899",
+              "numerator": -19214
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.059138378388",
+              "denominator": 324899,
+              "fraction": "19214/324899",
+              "numerator": 19214
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "positive",
+            "end_transition_index": 5,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.105807258390",
+              "denominator": 329467,
+              "fraction": "34860/329467",
+              "numerator": 34860
+            },
+            "q_end": 577,
+            "q_start": 571,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.105807258390",
+              "denominator": 329467,
+              "fraction": "34860/329467",
+              "numerator": 34860
+            },
+            "start_transition_index": 5,
+            "variation": {
+              "decimal": "0.105807258390",
+              "denominator": 329467,
+              "fraction": "34860/329467",
+              "numerator": 34860
+            }
+          },
+          {
+            "A_wrap_count": 5,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 10,
+            "length": 5,
+            "negative_variation": {
+              "decimal": "0.886194855513",
+              "denominator": 350239,
+              "fraction": "310380/350239",
+              "numerator": 310380
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 607,
+            "q_start": 577,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.886194855513",
+              "denominator": 350239,
+              "fraction": "-310380/350239",
+              "numerator": -310380
+            },
+            "start_transition_index": 6,
+            "variation": {
+              "decimal": "0.886194855513",
+              "denominator": 350239,
+              "fraction": "310380/350239",
+              "numerator": 310380
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 6,
+            "carry_min": 5,
+            "direction": "positive",
+            "end_transition_index": 12,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.921483289232",
+              "denominator": 374519,
+              "fraction": "345113/374519",
+              "numerator": 345113
+            },
+            "q_end": 617,
+            "q_start": 607,
+            "run_id": 5,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.921483289232",
+              "denominator": 374519,
+              "fraction": "345113/374519",
+              "numerator": 345113
+            },
+            "start_transition_index": 11,
+            "variation": {
+              "decimal": "0.921483289232",
+              "denominator": 374519,
+              "fraction": "345113/374519",
+              "numerator": 345113
+            }
+          },
+          {
+            "A_wrap_count": 5,
+            "D_wrap_count": 0,
+            "carry_max": 12,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 17,
+            "length": 5,
+            "negative_variation": {
+              "decimal": "0.833043168946",
+              "denominator": 399199,
+              "fraction": "332550/399199",
+              "numerator": 332550
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 647,
+            "q_start": 617,
+            "run_id": 6,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.833043168946",
+              "denominator": 399199,
+              "fraction": "-332550/399199",
+              "numerator": -332550
+            },
+            "start_transition_index": 13,
+            "variation": {
+              "decimal": "0.833043168946",
+              "denominator": 399199,
+              "fraction": "332550/399199",
+              "numerator": 332550
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 18,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.842576528257",
+              "denominator": 422491,
+              "fraction": "355981/422491",
+              "numerator": 355981
+            },
+            "q_end": 653,
+            "q_start": 647,
+            "run_id": 7,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.842576528257",
+              "denominator": 422491,
+              "fraction": "355981/422491",
+              "numerator": 355981
+            },
+            "start_transition_index": 18,
+            "variation": {
+              "decimal": "0.842576528257",
+              "denominator": 422491,
+              "fraction": "355981/422491",
+              "numerator": 355981
+            }
+          },
+          {
+            "A_wrap_count": 6,
+            "D_wrap_count": 1,
+            "carry_max": 12,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 24,
+            "length": 6,
+            "negative_variation": {
+              "decimal": "0.864064996687",
+              "denominator": 451223,
+              "fraction": "389886/451223",
+              "numerator": 389886
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 691,
+            "q_start": 653,
+            "run_id": 8,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.864064996687",
+              "denominator": 451223,
+              "fraction": "-389886/451223",
+              "numerator": -389886
+            },
+            "start_transition_index": 19,
+            "variation": {
+              "decimal": "0.864064996687",
+              "denominator": 451223,
+              "fraction": "389886/451223",
+              "numerator": 389886
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 11,
+            "carry_min": 11,
+            "direction": "positive",
+            "end_transition_index": 25,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.810107949983",
+              "denominator": 484391,
+              "fraction": "392409/484391",
+              "numerator": 392409
+            },
+            "q_end": 701,
+            "q_start": 691,
+            "run_id": 9,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.810107949983",
+              "denominator": 484391,
+              "fraction": "392409/484391",
+              "numerator": 392409
+            },
+            "start_transition_index": 25,
+            "variation": {
+              "decimal": "0.810107949983",
+              "denominator": 484391,
+              "fraction": "392409/484391",
+              "numerator": 392409
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 8,
+            "carry_min": 8,
+            "direction": "negative",
+            "end_transition_index": 26,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.202217666078",
+              "denominator": 497009,
+              "fraction": "100504/497009",
+              "numerator": 100504
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 709,
+            "q_start": 701,
+            "run_id": 10,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.202217666078",
+              "denominator": 497009,
+              "fraction": "-100504/497009",
+              "numerator": -100504
+            },
+            "start_transition_index": 26,
+            "variation": {
+              "decimal": "0.202217666078",
+              "denominator": 497009,
+              "fraction": "100504/497009",
+              "numerator": 100504
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "7.038610620634",
+          "denominator": 3102869177433817344181826728189459,
+          "fraction": "21839887946724610150799587828243196/3102869177433817344181826728189459",
+          "numerator": 21839887946724610150799587828243196
+        },
+        "transition_count": 27,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 739,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "positive",
+        "endpoint_net_identity_verified": true,
+        "m": 761,
+        "negative_transition_count": 20,
+        "negative_variation": {
+          "decimal": "3.957581756772",
+          "denominator": 933246687338919490296248231194601552083,
+          "fraction": "3693400064380864170521634540136979181962/933246687338919490296248231194601552083",
+          "numerator": 3693400064380864170521634540136979181962
+        },
+        "negative_variation_excess": {
+          "decimal": "-0.032752907560",
+          "denominator": 383569,
+          "fraction": "-12563/383569",
+          "numerator": -12563
+        },
+        "net_phase_displacement": {
+          "decimal": "0.032752907560",
+          "denominator": 383569,
+          "fraction": "12563/383569",
+          "numerator": 12563
+        },
+        "packet_index": 2842,
+        "packet_side": "left",
+        "phase_end": {
+          "decimal": "0.888575458392",
+          "denominator": 709,
+          "fraction": "630/709",
+          "numerator": 630
+        },
+        "phase_run_count": 14,
+        "phase_run_max_length": 5,
+        "phase_start": {
+          "decimal": "0.855822550832",
+          "denominator": 541,
+          "fraction": "463/541",
+          "numerator": 463
+        },
+        "positive_transition_count": 7,
+        "positive_variation": {
+          "decimal": "3.990334664333",
+          "denominator": 1223053422039360293197855815003646026667,
+          "fraction": "4880392466294506765315837397898390217147/1223053422039360293197855815003646026667",
+          "numerator": 4880392466294506765315837397898390217147
+        },
+        "positive_variation_excess": {
+          "decimal": "0.032752907560",
+          "denominator": 383569,
+          "fraction": "12563/383569",
+          "numerator": 12563
+        },
+        "role": "selected_terminal",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 3,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 2,
+            "length": 3,
+            "negative_variation": {
+              "decimal": "0.854046351898",
+              "denominator": 304583,
+              "fraction": "260128/304583",
+              "numerator": 260128
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 563,
+            "q_start": 541,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.854046351898",
+              "denominator": 304583,
+              "fraction": "-260128/304583",
+              "numerator": -260128
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.854046351898",
+              "denominator": 304583,
+              "fraction": "260128/304583",
+              "numerator": 260128
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.778540145530",
+              "denominator": 320347,
+              "fraction": "249403/320347",
+              "numerator": 249403
+            },
+            "q_end": 569,
+            "q_start": 563,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.778540145530",
+              "denominator": 320347,
+              "fraction": "249403/320347",
+              "numerator": 249403
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.778540145530",
+              "denominator": 320347,
+              "fraction": "249403/320347",
+              "numerator": 249403
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 2,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 4,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.072785696478",
+              "denominator": 324899,
+              "fraction": "23648/324899",
+              "numerator": 23648
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 571,
+            "q_start": 569,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.072785696478",
+              "denominator": 324899,
+              "fraction": "-23648/324899",
+              "numerator": -23648
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.072785696478",
+              "denominator": 324899,
+              "fraction": "23648/324899",
+              "numerator": 23648
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "positive",
+            "end_transition_index": 5,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.065432956867",
+              "denominator": 329467,
+              "fraction": "21558/329467",
+              "numerator": 21558
+            },
+            "q_end": 577,
+            "q_start": 571,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.065432956867",
+              "denominator": 329467,
+              "fraction": "21558/329467",
+              "numerator": 21558
+            },
+            "start_transition_index": 5,
+            "variation": {
+              "decimal": "0.065432956867",
+              "denominator": 329467,
+              "fraction": "21558/329467",
+              "numerator": 21558
+            }
+          },
+          {
+            "A_wrap_count": 2,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 7,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.587466134364",
+              "denominator": 342161,
+              "fraction": "201008/342161",
+              "numerator": 201008
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 593,
+            "q_start": 577,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.587466134364",
+              "denominator": 342161,
+              "fraction": "-201008/342161",
+              "numerator": -201008
+            },
+            "start_transition_index": 6,
+            "variation": {
+              "decimal": "0.587466134364",
+              "denominator": 342161,
+              "fraction": "201008/342161",
+              "numerator": 201008
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 8,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.787791344202",
+              "denominator": 355207,
+              "fraction": "279829/355207",
+              "numerator": 279829
+            },
+            "q_end": 599,
+            "q_start": 593,
+            "run_id": 5,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.787791344202",
+              "denominator": 355207,
+              "fraction": "279829/355207",
+              "numerator": 279829
+            },
+            "start_transition_index": 8,
+            "variation": {
+              "decimal": "0.787791344202",
+              "denominator": 355207,
+              "fraction": "279829/355207",
+              "numerator": 279829
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 2,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 9,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.069794638318",
+              "denominator": 359999,
+              "fraction": "25126/359999",
+              "numerator": 25126
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 601,
+            "q_start": 599,
+            "run_id": 6,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.069794638318",
+              "denominator": 359999,
+              "fraction": "-25126/359999",
+              "numerator": -25126
+            },
+            "start_transition_index": 9,
+            "variation": {
+              "decimal": "0.069794638318",
+              "denominator": 359999,
+              "fraction": "25126/359999",
+              "numerator": 25126
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "positive",
+            "end_transition_index": 10,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.010838607812",
+              "denominator": 364807,
+              "fraction": "3954/364807",
+              "numerator": 3954
+            },
+            "q_end": 607,
+            "q_start": 601,
+            "run_id": 7,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.010838607812",
+              "denominator": 364807,
+              "fraction": "3954/364807",
+              "numerator": 3954
+            },
+            "start_transition_index": 10,
+            "variation": {
+              "decimal": "0.010838607812",
+              "denominator": 364807,
+              "fraction": "3954/364807",
+              "numerator": 3954
+            }
+          },
+          {
+            "A_wrap_count": 4,
+            "D_wrap_count": 0,
+            "carry_max": 12,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 14,
+            "length": 4,
+            "negative_variation": {
+              "decimal": "0.833508695436",
+              "denominator": 383017,
+              "fraction": "319248/383017",
+              "numerator": 319248
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 631,
+            "q_start": 607,
+            "run_id": 8,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.833508695436",
+              "denominator": 383017,
+              "fraction": "-319248/383017",
+              "numerator": -319248
+            },
+            "start_transition_index": 11,
+            "variation": {
+              "decimal": "0.833508695436",
+              "denominator": 383017,
+              "fraction": "319248/383017",
+              "numerator": 319248
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 11,
+            "carry_min": 11,
+            "direction": "positive",
+            "end_transition_index": 15,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.824012104700",
+              "denominator": 404471,
+              "fraction": "333289/404471",
+              "numerator": 333289
+            },
+            "q_end": 641,
+            "q_start": 631,
+            "run_id": 9,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.824012104700",
+              "denominator": 404471,
+              "fraction": "333289/404471",
+              "numerator": 333289
+            },
+            "start_transition_index": 15,
+            "variation": {
+              "decimal": "0.824012104700",
+              "denominator": 404471,
+              "fraction": "333289/404471",
+              "numerator": 333289
+            }
+          },
+          {
+            "A_wrap_count": 5,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 20,
+            "length": 5,
+            "negative_variation": {
+              "decimal": "0.662778704794",
+              "denominator": 423701,
+              "fraction": "280820/423701",
+              "numerator": 280820
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 661,
+            "q_start": 641,
+            "run_id": 10,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.662778704794",
+              "denominator": 423701,
+              "fraction": "-280820/423701",
+              "numerator": -280820
+            },
+            "start_transition_index": 16,
+            "variation": {
+              "decimal": "0.662778704794",
+              "denominator": 423701,
+              "fraction": "280820/423701",
+              "numerator": 280820
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 13,
+            "carry_min": 13,
+            "direction": "positive",
+            "end_transition_index": 21,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.719309524719",
+              "denominator": 444853,
+              "fraction": "319987/444853",
+              "numerator": 319987
+            },
+            "q_end": 673,
+            "q_start": 661,
+            "run_id": 11,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.719309524719",
+              "denominator": 444853,
+              "fraction": "319987/444853",
+              "numerator": 319987
+            },
+            "start_transition_index": 21,
+            "variation": {
+              "decimal": "0.719309524719",
+              "denominator": 444853,
+              "fraction": "319987/444853",
+              "numerator": 319987
+            }
+          },
+          {
+            "A_wrap_count": 4,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 4,
+            "direction": "negative",
+            "end_transition_index": 25,
+            "length": 4,
+            "negative_variation": {
+              "decimal": "0.877201535484",
+              "denominator": 471773,
+              "fraction": "413840/471773",
+              "numerator": 413840
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 701,
+            "q_start": 673,
+            "run_id": 12,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.877201535484",
+              "denominator": 471773,
+              "fraction": "-413840/471773",
+              "numerator": -413840
+            },
+            "start_transition_index": 22,
+            "variation": {
+              "decimal": "0.877201535484",
+              "denominator": 471773,
+              "fraction": "413840/471773",
+              "numerator": 413840
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 9,
+            "carry_min": 9,
+            "direction": "positive",
+            "end_transition_index": 26,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.804409980503",
+              "denominator": 497009,
+              "fraction": "399799/497009",
+              "numerator": 399799
+            },
+            "q_end": 709,
+            "q_start": 701,
+            "run_id": 13,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.804409980503",
+              "denominator": 497009,
+              "fraction": "399799/497009",
+              "numerator": 399799
+            },
+            "start_transition_index": 26,
+            "variation": {
+              "decimal": "0.804409980503",
+              "denominator": 497009,
+              "fraction": "399799/497009",
+              "numerator": 399799
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "7.947916421105",
+          "denominator": 661671901323293918620039995916972500426847,
+          "fraction": "5258912969911360856935706921220147347487585/661671901323293918620039995916972500426847",
+          "numerator": 5258912969911360856935706921220147347487585
+        },
+        "transition_count": 27,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 607,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 479,
+        "negative_transition_count": 4,
+        "negative_variation": {
+          "decimal": "1.259274645543",
+          "denominator": 8591096424685507,
+          "fraction": "10818549905018291/8591096424685507",
+          "numerator": 10818549905018291
+        },
+        "negative_variation_excess": {
+          "decimal": "0.088823635574",
+          "denominator": 205013,
+          "fraction": "18210/205013",
+          "numerator": 18210
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.088823635574",
+          "denominator": 205013,
+          "fraction": "-18210/205013",
+          "numerator": -18210
+        },
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_end": {
+          "decimal": "0.321199143469",
+          "denominator": 467,
+          "fraction": "150/467",
+          "numerator": 150
+        },
+        "phase_run_count": 5,
+        "phase_run_max_length": 2,
+        "phase_start": {
+          "decimal": "0.410022779043",
+          "denominator": 439,
+          "fraction": "180/439",
+          "numerator": 180
+        },
+        "positive_transition_count": 2,
+        "positive_variation": {
+          "decimal": "1.170451009968",
+          "denominator": 41905130039,
+          "fraction": "49047901777/41905130039",
+          "numerator": 49047901777
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.088823635574",
+          "denominator": 205013,
+          "fraction": "-18210/205013",
+          "numerator": -18210
+        },
+        "role": "extra_shell",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 3,
+            "carry_min": 3,
+            "direction": "negative",
+            "end_transition_index": 0,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.209119844506",
+              "denominator": 194477,
+              "fraction": "40669/194477",
+              "numerator": 40669
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 443,
+            "q_start": 439,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.209119844506",
+              "denominator": 194477,
+              "fraction": "-40669/194477",
+              "numerator": -40669
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.209119844506",
+              "denominator": 194477,
+              "fraction": "40669/194477",
+              "numerator": 40669
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 5,
+            "carry_min": 5,
+            "direction": "positive",
+            "end_transition_index": 1,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.369252967467",
+              "denominator": 198907,
+              "fraction": "73447/198907",
+              "numerator": 73447
+            },
+            "q_end": 449,
+            "q_start": 443,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.369252967467",
+              "denominator": 198907,
+              "fraction": "73447/198907",
+              "numerator": 73447
+            },
+            "start_transition_index": 1,
+            "variation": {
+              "decimal": "0.369252967467",
+              "denominator": 198907,
+              "fraction": "73447/198907",
+              "numerator": 73447
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "negative",
+            "end_transition_index": 2,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.408230300254",
+              "denominator": 205193,
+              "fraction": "83766/205193",
+              "numerator": 83766
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 457,
+            "q_start": 449,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.408230300254",
+              "denominator": 205193,
+              "fraction": "-83766/205193",
+              "numerator": -83766
+            },
+            "start_transition_index": 2,
+            "variation": {
+              "decimal": "0.408230300254",
+              "denominator": 205193,
+              "fraction": "83766/205193",
+              "numerator": 83766
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 3,
+            "carry_min": 3,
+            "direction": "positive",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.801198042501",
+              "denominator": 210677,
+              "fraction": "168794/210677",
+              "numerator": 168794
+            },
+            "q_end": 461,
+            "q_start": 457,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.801198042501",
+              "denominator": 210677,
+              "fraction": "168794/210677",
+              "numerator": 168794
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.801198042501",
+              "denominator": 210677,
+              "fraction": "168794/210677",
+              "numerator": 168794
+            }
+          },
+          {
+            "A_wrap_count": 2,
+            "D_wrap_count": 1,
+            "carry_max": 3,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 5,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.641924500783",
+              "denominator": 215287,
+              "fraction": "138198/215287",
+              "numerator": 138198
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 467,
+            "q_start": 461,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.641924500783",
+              "denominator": 215287,
+              "fraction": "-138198/215287",
+              "numerator": -138198
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.641924500783",
+              "denominator": 215287,
+              "fraction": "138198/215287",
+              "numerator": 138198
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "2.429725655511",
+          "denominator": 8591096424685507,
+          "fraction": "20874007392026392/8591096424685507",
+          "numerator": 20874007392026392
+        },
+        "transition_count": 6,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 607,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 769,
+        "negative_transition_count": 4,
+        "negative_variation": {
+          "decimal": "1.031256168157",
+          "denominator": 8591096424685507,
+          "fraction": "8859621179184674/8591096424685507",
+          "numerator": 8859621179184674
+        },
+        "negative_variation_excess": {
+          "decimal": "0.601039934053",
+          "denominator": 205013,
+          "fraction": "123221/205013",
+          "numerator": 123221
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.601039934053",
+          "denominator": 205013,
+          "fraction": "-123221/205013",
+          "numerator": -123221
+        },
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_end": {
+          "decimal": "0.173447537473",
+          "denominator": 467,
+          "fraction": "81/467",
+          "numerator": 81
+        },
+        "phase_run_count": 5,
+        "phase_run_max_length": 2,
+        "phase_start": {
+          "decimal": "0.774487471526",
+          "denominator": 439,
+          "fraction": "340/439",
+          "numerator": 340
+        },
+        "positive_transition_count": 2,
+        "positive_variation": {
+          "decimal": "0.430216234104",
+          "denominator": 41905130039,
+          "fraction": "18028267235/41905130039",
+          "numerator": 18028267235
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.601039934053",
+          "denominator": 205013,
+          "fraction": "-123221/205013",
+          "numerator": -123221
+        },
+        "role": "selected_terminal",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 5,
+            "carry_min": 5,
+            "direction": "negative",
+            "end_transition_index": 0,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.090514559562",
+              "denominator": 194477,
+              "fraction": "17603/194477",
+              "numerator": 17603
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 443,
+            "q_start": 439,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.090514559562",
+              "denominator": 194477,
+              "fraction": "-17603/194477",
+              "numerator": -17603
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.090514559562",
+              "denominator": 194477,
+              "fraction": "17603/194477",
+              "numerator": 17603
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "positive",
+            "end_transition_index": 1,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.191305484473",
+              "denominator": 198907,
+              "fraction": "38052/198907",
+              "numerator": 38052
+            },
+            "q_end": 449,
+            "q_start": 443,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.191305484473",
+              "denominator": 198907,
+              "fraction": "38052/198907",
+              "numerator": 38052
+            },
+            "start_transition_index": 1,
+            "variation": {
+              "decimal": "0.191305484473",
+              "denominator": 198907,
+              "fraction": "38052/198907",
+              "numerator": 38052
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 10,
+            "direction": "negative",
+            "end_transition_index": 2,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.159742291404",
+              "denominator": 205193,
+              "fraction": "32778/205193",
+              "numerator": 32778
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 457,
+            "q_start": 449,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.159742291404",
+              "denominator": 205193,
+              "fraction": "-32778/205193",
+              "numerator": -32778
+            },
+            "start_transition_index": 2,
+            "variation": {
+              "decimal": "0.159742291404",
+              "denominator": 205193,
+              "fraction": "32778/205193",
+              "numerator": 32778
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.238910749631",
+              "denominator": 210677,
+              "fraction": "50333/210677",
+              "numerator": 50333
+            },
+            "q_end": 461,
+            "q_start": 457,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.238910749631",
+              "denominator": 210677,
+              "fraction": "50333/210677",
+              "numerator": 50333
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.238910749631",
+              "denominator": 210677,
+              "fraction": "50333/210677",
+              "numerator": 50333
+            }
+          },
+          {
+            "A_wrap_count": 2,
+            "D_wrap_count": 0,
+            "carry_max": 5,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 5,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.780999317191",
+              "denominator": 215287,
+              "fraction": "168139/215287",
+              "numerator": 168139
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 467,
+            "q_start": 461,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.780999317191",
+              "denominator": 215287,
+              "fraction": "-168139/215287",
+              "numerator": -168139
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.780999317191",
+              "denominator": 215287,
+              "fraction": "168139/215287",
+              "numerator": 168139
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "1.461472402260",
+          "denominator": 8591096424685507,
+          "fraction": "12555650329833729/8591096424685507",
+          "numerator": 12555650329833729
+        },
+        "transition_count": 6,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      },
+      {
+        "P": 607,
+        "all_run_variation_identities_verified": true,
+        "dominant_variation_direction": "negative",
+        "endpoint_net_identity_verified": true,
+        "m": 773,
+        "negative_transition_count": 4,
+        "negative_variation": {
+          "decimal": "1.190457900779",
+          "denominator": 8591096424685507,
+          "fraction": "10227338615121836/8591096424685507",
+          "numerator": 10227338615121836
+        },
+        "negative_variation_excess": {
+          "decimal": "0.849746113661",
+          "denominator": 205013,
+          "fraction": "174209/205013",
+          "numerator": 174209
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.849746113661",
+          "denominator": 205013,
+          "fraction": "-174209/205013",
+          "numerator": -174209
+        },
+        "packet_index": 1887,
+        "packet_side": "right",
+        "phase_end": {
+          "decimal": "0.072805139186",
+          "denominator": 467,
+          "fraction": "34/467",
+          "numerator": 34
+        },
+        "phase_run_count": 5,
+        "phase_run_max_length": 2,
+        "phase_start": {
+          "decimal": "0.922551252847",
+          "denominator": 439,
+          "fraction": "405/439",
+          "numerator": 405
+        },
+        "positive_transition_count": 2,
+        "positive_variation": {
+          "decimal": "0.340711787118",
+          "denominator": 41905130039,
+          "fraction": "14277571745/41905130039",
+          "numerator": 14277571745
+        },
+        "positive_variation_excess": {
+          "decimal": "-0.849746113661",
+          "denominator": 205013,
+          "fraction": "-174209/205013",
+          "numerator": -174209
+        },
+        "role": "selected_terminal",
+        "run_signed_sum_identity_verified": true,
+        "run_variation_rows": [
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 5,
+            "carry_min": 5,
+            "direction": "negative",
+            "end_transition_index": 0,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.127968860071",
+              "denominator": 194477,
+              "fraction": "24887/194477",
+              "numerator": 24887
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 443,
+            "q_start": 439,
+            "run_id": 0,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.127968860071",
+              "denominator": 194477,
+              "fraction": "-24887/194477",
+              "numerator": -24887
+            },
+            "start_transition_index": 0,
+            "variation": {
+              "decimal": "0.127968860071",
+              "denominator": 194477,
+              "fraction": "24887/194477",
+              "numerator": 24887
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 0,
+            "carry_max": 7,
+            "carry_min": 7,
+            "direction": "positive",
+            "end_transition_index": 1,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.136375290965",
+              "denominator": 198907,
+              "fraction": "27126/198907",
+              "numerator": 27126
+            },
+            "q_end": 449,
+            "q_start": 443,
+            "run_id": 1,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.136375290965",
+              "denominator": 198907,
+              "fraction": "27126/198907",
+              "numerator": 27126
+            },
+            "start_transition_index": 1,
+            "variation": {
+              "decimal": "0.136375290965",
+              "denominator": 198907,
+              "fraction": "27126/198907",
+              "numerator": 27126
+            }
+          },
+          {
+            "A_wrap_count": 1,
+            "D_wrap_count": 0,
+            "carry_max": 10,
+            "carry_min": 10,
+            "direction": "negative",
+            "end_transition_index": 2,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.230738865361",
+              "denominator": 205193,
+              "fraction": "47346/205193",
+              "numerator": 47346
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 457,
+            "q_start": 449,
+            "run_id": 2,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.230738865361",
+              "denominator": 205193,
+              "fraction": "-47346/205193",
+              "numerator": -47346
+            },
+            "start_transition_index": 2,
+            "variation": {
+              "decimal": "0.230738865361",
+              "denominator": 205193,
+              "fraction": "47346/205193",
+              "numerator": 47346
+            }
+          },
+          {
+            "A_wrap_count": 0,
+            "D_wrap_count": 1,
+            "carry_max": 6,
+            "carry_min": 6,
+            "direction": "positive",
+            "end_transition_index": 3,
+            "length": 1,
+            "negative_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "positive_variation": {
+              "decimal": "0.204336496153",
+              "denominator": 210677,
+              "fraction": "43049/210677",
+              "numerator": 43049
+            },
+            "q_end": 461,
+            "q_start": 457,
+            "run_id": 3,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "0.204336496153",
+              "denominator": 210677,
+              "fraction": "43049/210677",
+              "numerator": 43049
+            },
+            "start_transition_index": 3,
+            "variation": {
+              "decimal": "0.204336496153",
+              "denominator": 210677,
+              "fraction": "43049/210677",
+              "numerator": 43049
+            }
+          },
+          {
+            "A_wrap_count": 2,
+            "D_wrap_count": 0,
+            "carry_max": 5,
+            "carry_min": 2,
+            "direction": "negative",
+            "end_transition_index": 5,
+            "length": 2,
+            "negative_variation": {
+              "decimal": "0.831750175347",
+              "denominator": 215287,
+              "fraction": "179065/215287",
+              "numerator": 179065
+            },
+            "positive_variation": {
+              "decimal": "0.000000000000",
+              "denominator": 1,
+              "fraction": "0/1",
+              "numerator": 0
+            },
+            "q_end": 467,
+            "q_start": 461,
+            "run_id": 4,
+            "run_variation_identity_verified": true,
+            "signed_delta": {
+              "decimal": "-0.831750175347",
+              "denominator": 215287,
+              "fraction": "-179065/215287",
+              "numerator": -179065
+            },
+            "start_transition_index": 4,
+            "variation": {
+              "decimal": "0.831750175347",
+              "denominator": 215287,
+              "fraction": "179065/215287",
+              "numerator": 179065
+            }
+          }
+        ],
+        "run_variation_sum_identity_verified": true,
+        "total_variation": {
+          "decimal": "1.531169687897",
+          "denominator": 8591096424685507,
+          "fraction": "13154426431279521/8591096424685507",
+          "numerator": 13154426431279521
+        },
+        "transition_count": 6,
+        "variation_identity_verified": true,
+        "zero_transition_count": 0
+      }
+    ],
+    "bad_atom_variation_identity_count": 0,
+    "bad_role_variation_identity_count": 0,
+    "extra_negative_variation": {
+      "decimal": "7.508510602172",
+      "denominator": 1968117088725958506051611620121066252424277248250429833368124847,
+      "fraction": "14777628027014548257473022291700918764250186339695668956706267102/1968117088725958506051611620121066252424277248250429833368124847",
+      "numerator": 14777628027014548257473022291700918764250186339695668956706267102
+    },
+    "extra_negative_variation_excess": {
+      "decimal": "0.907719323182",
+      "denominator": 78636631397,
+      "fraction": "71379989829/78636631397",
+      "numerator": 71379989829
+    },
+    "extra_net_phase_displacement": {
+      "decimal": "-0.907719323182",
+      "denominator": 78636631397,
+      "fraction": "-71379989829/78636631397",
+      "numerator": -71379989829
+    },
+    "extra_phase_run_count": 24,
+    "extra_positive_variation": {
+      "decimal": "6.600791278990",
+      "denominator": 13540144409611167359882043326758564235011339562652178391,
+      "fraction": "89375667135224732842579294705573709213366931607063726519/13540144409611167359882043326758564235011339562652178391",
+      "numerator": 89375667135224732842579294705573709213366931607063726519
+    },
+    "extra_total_variation": {
+      "decimal": "14.109301881162",
+      "denominator": 1968117088725958506051611620121066252424277248250429833368124847,
+      "fraction": "27768758142307772418840319934041830802744822617132968593977647725/1968117088725958506051611620121066252424277248250429833368124847",
+      "numerator": 27768758142307772418840319934041830802744822617132968593977647725
+    },
+    "extra_transition_count": 60,
+    "extra_variation_budget_absorption_proved": false,
+    "max_prime": 1009,
+    "phase_variation_budget_phase_saving_proved": false,
+    "previous_terminal_phase_turn_word_closed": true,
+    "role_variation_rows": [
+      {
+        "atom_count": 3,
+        "dominant_variation_direction": "negative",
+        "negative_transition_count": 33,
+        "negative_variation": {
+          "decimal": "7.508510602172",
+          "denominator": 1968117088725958506051611620121066252424277248250429833368124847,
+          "fraction": "14777628027014548257473022291700918764250186339695668956706267102/1968117088725958506051611620121066252424277248250429833368124847",
+          "numerator": 14777628027014548257473022291700918764250186339695668956706267102
+        },
+        "negative_variation_excess": {
+          "decimal": "0.907719323182",
+          "denominator": 78636631397,
+          "fraction": "71379989829/78636631397",
+          "numerator": 71379989829
+        },
+        "net_phase_displacement": {
+          "decimal": "-0.907719323182",
+          "denominator": 78636631397,
+          "fraction": "-71379989829/78636631397",
+          "numerator": -71379989829
+        },
+        "phase_run_count": 24,
+        "phase_run_max_length": 8,
+        "positive_transition_count": 27,
+        "positive_variation": {
+          "decimal": "6.600791278990",
+          "denominator": 13540144409611167359882043326758564235011339562652178391,
+          "fraction": "89375667135224732842579294705573709213366931607063726519/13540144409611167359882043326758564235011339562652178391",
+          "numerator": 89375667135224732842579294705573709213366931607063726519
+        },
+        "role": "extra_shell",
+        "role_net_identity_verified": true,
+        "role_variation_identity_verified": true,
+        "total_variation": {
+          "decimal": "14.109301881162",
+          "denominator": 1968117088725958506051611620121066252424277248250429833368124847,
+          "fraction": "27768758142307772418840319934041830802744822617132968593977647725/1968117088725958506051611620121066252424277248250429833368124847",
+          "numerator": 27768758142307772418840319934041830802744822617132968593977647725
+        },
+        "transition_count": 60
+      },
+      {
+        "atom_count": 4,
+        "dominant_variation_direction": "negative",
+        "negative_transition_count": 49,
+        "negative_variation": {
+          "decimal": "9.717867552237",
+          "denominator": 1023933988099770462723506583596845526698662565115878981568636879953733,
+          "fraction": "9950454878587640089507829653560449297788227640865029853815370356082608/1023933988099770462723506583596845526698662565115878981568636879953733",
+          "numerator": 9950454878587640089507829653560449297788227640865029853815370356082608
+        },
+        "negative_variation_excess": {
+          "decimal": "1.456565972578",
+          "denominator": 78636631397,
+          "fraction": "114539441491/78636631397",
+          "numerator": 114539441491
+        },
+        "net_phase_displacement": {
+          "decimal": "-1.456565972578",
+          "denominator": 78636631397,
+          "fraction": "-114539441491/78636631397",
+          "numerator": -114539441491
+        },
+        "phase_run_count": 35,
+        "phase_run_max_length": 6,
+        "positive_transition_count": 17,
+        "positive_variation": {
+          "decimal": "8.261301579660",
+          "denominator": 9231946799674751816365196223540916671310700482028663035764901,
+          "fraction": "76267896679486572971372265243720452221010528916079563987190173/9231946799674751816365196223540916671310700482028663035764901",
+          "numerator": 76267896679486572971372265243720452221010528916079563987190173
+        },
+        "role": "selected_terminal",
+        "role_net_identity_verified": true,
+        "role_variation_identity_verified": true,
+        "total_variation": {
+          "decimal": "17.979169131897",
+          "denominator": 1023933988099770462723506583596845526698662565115878981568636879953733,
+          "fraction": "18409482351943445293965578391556725137299870717352700685388218401134317/1023933988099770462723506583596845526698662565115878981568636879953733",
+          "numerator": 18409482351943445293965578391556725137299870717352700685388218401134317
+        },
+        "transition_count": 66
+      }
+    ],
+    "row_column_unconditional_closed": false,
+    "selected_terminal_negative_transition_count": 49,
+    "selected_terminal_negative_variation": {
+      "decimal": "9.717867552237",
+      "denominator": 1023933988099770462723506583596845526698662565115878981568636879953733,
+      "fraction": "9950454878587640089507829653560449297788227640865029853815370356082608/1023933988099770462723506583596845526698662565115878981568636879953733",
+      "numerator": 9950454878587640089507829653560449297788227640865029853815370356082608
+    },
+    "selected_terminal_negative_variation_excess": {
+      "decimal": "1.456565972578",
+      "denominator": 78636631397,
+      "fraction": "114539441491/78636631397",
+      "numerator": 114539441491
+    },
+    "selected_terminal_net_phase_displacement": {
+      "decimal": "-1.456565972578",
+      "denominator": 78636631397,
+      "fraction": "-114539441491/78636631397",
+      "numerator": -114539441491
+    },
+    "selected_terminal_phase_run_count": 35,
+    "selected_terminal_phase_run_max_length": 6,
+    "selected_terminal_positive_transition_count": 17,
+    "selected_terminal_positive_variation": {
+      "decimal": "8.261301579660",
+      "denominator": 9231946799674751816365196223540916671310700482028663035764901,
+      "fraction": "76267896679486572971372265243720452221010528916079563987190173/9231946799674751816365196223540916671310700482028663035764901",
+      "numerator": 76267896679486572971372265243720452221010528916079563987190173
+    },
+    "selected_terminal_total_variation": {
+      "decimal": "17.979169131897",
+      "denominator": 1023933988099770462723506583596845526698662565115878981568636879953733,
+      "fraction": "18409482351943445293965578391556725137299870717352700685388218401134317/1023933988099770462723506583596845526698662565115878981568636879953733",
+      "numerator": 18409482351943445293965578391556725137299870717352700685388218401134317
+    },
+    "selected_terminal_transition_count": 66,
+    "selected_terminal_variation_budget_closed": true,
+    "summable_family_created": false,
+    "terminal_phase_variation_atom_count_total": 7,
+    "terminal_phase_variation_budget_closed": true,
+    "terminal_phase_variation_run_count_total": 59,
+    "terminal_phase_variation_transition_count_total": 126,
+    "trace_or_kloosterman_completion_ready": false
+  },
+  "frontier_verified_date": "2026-05-25",
+  "identity": "total variation = positive variation + negative variation; net displacement = positive variation - negative variation",
+  "input": "terminal phase-turn word audit",
+  "internal_self_contained_closed": false,
+  "latest_narrowest_mouth": [
+    "SelectedTerminalNegativeVariationExcessPhaseSaving(total variation 17.979169131897; net -1.456565972578; 35 runs; max run 6)",
+    "AND ExtraNegativeVariationBudgetAbsorption(total variation 14.109301881162; net -0.907719323182; 24 runs)",
+    "AND SelectedTerminalAwrapPhaseTurnWordSavingOutsideVariationBudget",
+    "AND RepeatedStepPacketEnclosureTerminalLineAtomUniformBoundOutsidePhaseNormalForm",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "phase_variation_budget_phase_saving_proved": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "selected_terminal_variation_budget_closed": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "1e09019bbdd01c5109e3f4783148227a0ff14d2fa5d6f5ab1cd3d48801e82f34",
+    "docs/monograph/external-theorem-index.md": "6e97c8235166744758f10b2462727140e47a963d9e8b354e69d0aa00c2a4b55b",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "240a3e063fb14c00ce60e0ec21f4283a20d03f16cea03c8e61d874e08ef22846",
+    "docs/monograph/prime-matrix-phi-lpf-dominant-sign-word-repeated-step-packet-enclosure-terminal-phase-turn-word-audit.json": "e05dc6c48cd18aaa25cef5abe9aa5dc346d5b07db0827c8443dcefe536111615",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "23d74bf4e63c1f54b5c05adeece5e10c4083b0e0e0d39221dc0e8723cb336ce0",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "9a76cdef6f6e8a094ed6a00231511d3c64e87c2c5079987f212ee0c4cab2c174",
+    "experiments/prime_matrix_phi_lpf_repeated_step_packet_enclosure_terminal_phase_variation_budget_audit.py": "687265201fb7686fdf28db14736b19e4b215430b7f4ae2e6582f445d881294ea",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "8d4eedac72aa6d2684dbea6893c0d381c2379aef6d4133998c17051cbcb82dc4"
+  },
+  "status": "terminal_phase_variation_budget_closed_phase_saving_open",
+  "summable_family_created": false,
+  "terminal_phase_variation_budget_closed": true,
+  "trace_or_kloosterman_completion_ready": false
+}
