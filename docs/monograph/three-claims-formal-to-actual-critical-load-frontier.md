@@ -26977,6 +26977,43 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### terminal boundary carry-break source-packet formal-to-actual 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_carry_break_source_packet_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json
+```
+
+formal-to-actual 结论：上一层的 `4` 个 carry break 进一步降维为 `2` 个
+bridge/unit source packet。两个 unit break 的 debt 与已闭合 old-return
+mass 精确相等；两个 bridge root 正好落在该 old-return 的 `new_q_start`
+端点，但其 bridge-root debt 尚未由 uniform source law 产生。
+
+审计读数：
+
+```text
+unit_old_return_echo_break_count=2
+bridge_root_debt_break_count=2
+paired_bridge_unit_packet_count=2
+all_unit_echo_breaks_source_aligned_to_old_returns=true
+all_bridge_roots_packetized_with_following_unit_echo=true
+bridge_root_debt_open_mass=0.209830550963
+carry_break_source_packet_reduction_closed=true
+```
+
+因此 formal-to-actual 缺口不再是一般 `carry_break_count=4`，而是：
+
+```text
+BoundaryBridgeRootDebtSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### terminal signed payload measure absorption formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

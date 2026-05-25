@@ -762,6 +762,55 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+### 6.12 terminal boundary carry-break source-packet 更新
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_carry_break_source_packet_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json
+```
+
+本层继续拆解 carry-chain normal form 中真正不连续的 `4` 个 carry break。审计显示
+它们不是四个独立硬点，而是两个同型 bridge/unit packet：
+
+```text
+carry_break_count=4
+unit_old_return_echo_break_count=2
+bridge_root_debt_break_count=2
+paired_bridge_unit_packet_count=2
+unmatched_unit_break_count=0
+all_unit_echo_breaks_source_aligned_to_old_returns=true
+all_bridge_roots_packetized_with_following_unit_echo=true
+carry_break_source_packet_reduction_closed=true
+row_column_unconditional_closed=false
+```
+
+两个 `run_gap=1` 断点的 debt 精确等于同 atom 已登记的 old-side
+`nonboundary_record_jump` return mass；两个 `run_gap=3` 断点是对应 old-return
+endpoint 的 bridge root，其中 `root_boundary_q` 正好等于该 old-return 的
+`new_q_start`。因此 carry-break 层的真实剩余从 `4` 个断点降为 `2` 个
+bridge-root debt source law/PDEC。
+
+这一步对用户提出的“统一相邻抵消律”给出一个可检查版本：单位步断点已经是 old-return
+echo，不再是新源项；但 bridge-root debt 仍没有 uniform source law。外部谱分析、
+Kloosterman/Type-II 或 thin-group 工具仍只能在这些 bridge roots 被组织成可平均
+signed family 或群轨道后进入。
+
+最新口：
+
+```text
+BoundaryBridgeRootDebtSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 7. 审稿边界
 
 ```text

@@ -2126,6 +2126,49 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AJ. Phi-LPF terminal boundary carry-break source-packet 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_carry_break_source_packet_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.md
+```
+
+本层把上一节的 `4` 个 carry break 拆成 `2` 个 bridge-root debt 与 `2` 个
+unit old-return echo：
+
+```text
+carry_break_count=4
+unit_old_return_echo_break_count=2
+bridge_root_debt_break_count=2
+paired_bridge_unit_packet_count=2
+unmatched_unit_break_count=0
+carry_break_source_packet_reduction_closed=true
+bridge_root_source_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部前沿匹配边界更加尖锐：单位步 echo 已回到 old-return 账本，不能再当作新的
+trace/Kloosterman 平均对象；真正需要外部输入的只剩两个 bridge-root debt 和一个
+right-tail overhang。FKMS/Milićević--Qin--Wu/Wright 型工具仍需要这些 bridge roots
+先形成 completed averaged signed family；Pascadi/Type-II 仍需要二维可平均 box；
+thin-group/expander 仍需要可证明的有限群轨道和扩张。
+
+最新开放口：
+
+```text
+BoundaryBridgeRootDebtSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ## 65AG. Phi-LPF terminal boundary new-residual tail alignment 证书
 
 新增证书：

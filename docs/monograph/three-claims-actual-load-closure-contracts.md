@@ -169,6 +169,43 @@ AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 
 这说明当前数据中，形式上界 `M_q^{form}` 远大于 actual packet 数 `N_q`。临界负载必须按 `N_q^2` 计，而不能按 `(A_gA_f)^2` 计。
 
+### terminal boundary carry-break source-packet actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_carry_break_source_packet_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json
+```
+
+actual-load 含义：`4` 个 carry break 不再按四个独立 source 记账，而按
+`2` 个 bridge/unit packet 记账：
+
+```text
+carry_break_count=4
+unit_old_return_echo_break_count=2
+bridge_root_debt_break_count=2
+paired_bridge_unit_packet_count=2
+unit_old_return_echo_debt_mass=0.114684454479
+bridge_root_debt_open_mass=0.209830550963
+carry_break_source_packet_reduction_closed=true
+```
+
+两个 unit break 是已闭合 old-return source 的 echo；剩余 actual-load 是两个
+bridge-root debt 与单个 right-tail overhang。PM-ALC 的当前实际合同变为：
+
+```text
+BoundaryBridgeRootDebtSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
 ### 1.2 合同陈述
 
 **PM-ALC.** 对每个持久 AffineTwin `q>=13`，构造实际包集合 `Pi_q`，并证明分解

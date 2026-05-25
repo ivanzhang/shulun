@@ -38611,6 +38611,87 @@ finite group orbit with expansion.  Current trace/Kloosterman, Type-II, and
 thin-group tools do not act directly on the finite ledger alone.
 \end{remark}
 
+\begin{theorem}[Carry-break source-packet reduction]
+In the terminal boundary carry-chain normal form, the four carry breaks are
+not four independent source obligations.  They split into two bridge/unit
+packets:
+\[
+  4\ \text{breaks}
+  =
+  2\ \text{unit old-return echoes}
+  +
+  2\ \text{bridge-root debts}.
+\]
+The two unit breaks have debt exactly equal to already aligned old-side
+nonboundary-record-jump return masses.  The two bridge roots occur at the
+\texttt{new\_q\_start} endpoint of those old returns.  Thus the carry-break
+layer is reduced to the two bridge-root debt source laws, together with the
+previous right-tail overhang.
+\end{theorem}
+
+\begin{proof}
+The machine certificate reads the four breaks from the bulk carry-chain normal
+form and the five old-return rows from the old-residual return alignment.  For
+each break it compares
+\[
+  \text{debt}
+  =
+  \text{previous residual mass} - \text{root old mass}.
+\]
+Two breaks have \texttt{run\_gap}=1, and their debts are exactly
+\[
+  \frac{20701}{308911}
+  \quad\text{and}\quad
+  \frac{15500}{325141},
+\]
+the old-return masses at \(q=569\) and \(q=599\).  The corresponding bridge
+roots are at \(q=577\) and \(q=607\), precisely the recorded
+\texttt{new\_q\_start} endpoints of those returns.  The remaining two
+breaks have \texttt{run\_gap}=3 and carry the open bridge-root debt mass
+\[
+0.209830550963\ldots .
+\]
+Therefore the finite source-packet reduction is closed, but the bridge-root
+source law is not.
+\end{proof}
+
+\begin{certificatestatement}[Carry-break source-packet audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+carry\_break\_count=4\\
+unit\_old\_return\_echo\_break\_count=2\\
+bridge\_root\_debt\_break\_count=2\\
+paired\_bridge\_unit\_packet\_count=2\\
+unmatched\_unit\_break\_count=0\\
+all\_unit\_echo\_breaks\_source\_aligned\_to\_old\_returns=true\\
+all\_bridge\_roots\_packetized\_with\_following\_unit\_echo=true\\
+carry\_break\_source\_packet\_reduction\_closed=true\\
+bridge\_root\_source\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-\\
+carry-break-source-packet-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated bridge-root gate]
+The current shortest Prime Matrix gate is now
+\begin{quote}\scriptsize\ttfamily
+BoundaryBridgeRootDebtSourceLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND BoundaryAdjacentRunMassRatioLawOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily\\
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily.
+\end{quote}
+This is a non-cyclic narrowing of the source problem.  It still does not
+construct the averaged signed trace, Type-II, or finite group orbit family
+needed for external spectral or group-theoretic inputs.
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

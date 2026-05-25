@@ -2062,6 +2062,63 @@ internal_self_contained_closed=false
 
 ---
 
+## 附录 Q13AC31：Phi-LPF terminal boundary carry-break source-packet 审计（2026-05-25）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_boundary_carry_break_source_packet_router.py
+data/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-boundary-carry-break-source-packet-router.md
+```
+
+本层承接 bulk carry-chain normal form。有限审计读数：
+
+```text
+carry_break_count=4
+unit_old_return_echo_break_count=2
+bridge_root_debt_break_count=2
+paired_bridge_unit_packet_count=2
+unmatched_unit_break_count=0
+all_unit_echo_breaks_source_aligned_to_old_returns=true
+all_bridge_roots_packetized_with_following_unit_echo=true
+carry_break_source_packet_reduction_closed=true
+row_column_unconditional_closed=false
+```
+
+本层真正推进：删除了“4 个 carry break 都是独立新源项”的含混口径。两个
+`run_gap=1` break 是 old-return echo；两个 `run_gap=3` break 是 bridge-root debt，
+并且 bridge root 正好是对应 old-return endpoint 的 `new_q_start`。
+
+### Q13AC31.1 最新最窄口
+
+```text
+BoundaryBridgeRootDebtSourceLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND BoundaryAdjacentRunMassRatioLawOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
+```
+
+状态边界：
+
+```text
+carry_break_source_packet_reduction_closed=true
+bridge_root_source_law_proved=false
+right_tail_overhang_pdec_constructed=false
+admissible_trace_or_typeii_family_constructed=false
+finite_group_orbit_expansion_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+external_lemma_version_unconditional_closed=false
+internal_self_contained_closed=false
+```
+
+---
+
 ## 附录 Q13AC30：Phi-LPF terminal boundary bulk carry-chain normal form 审计（2026-05-25）
 
 新增证书：
