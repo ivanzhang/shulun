@@ -12452,3 +12452,46 @@ AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AS. sqrt constant threshold router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_constant_threshold_router.py
+data/prime-matrix-phi-lpf-sqrt-constant-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.md
+```
+
+外部 theorem 边界：普通短区间输入即使达到 `theta=1/2`，仍必须有正确常数。若只知道
+每个足够大 `x` 后有素数落在长度 `C sqrt(x)` 的区间中，则嵌入 strict row 后：
+
+```text
+C<=1  =>  可闭合全部充分大 strict rows
+C>1   =>  只闭合约 P/C^2 条低行，留下 top band 密度 1-1/C^2
+```
+
+审计读数：
+
+```text
+sqrt_constant_one_pointwise_input_would_close_all_strict_rows=true
+fixed_constant_greater_than_one_leaves_positive_density_top_band=true
+known_unconditional_C_at_most_one_pointwise_input_available=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+外部输入对照：Runbo Li、Baker--Harman--Pintz、Hieu/AP short-interval scale 等仍在
+`theta>1/2` 区域；即使未来有固定 `C>1` 的平方根尺度存在性输入，也不能直接闭合全部
+rows。纯短区间路线需要 `C<=1` 点态结论；否则必须回到项目对象自己的 signed
+Type-II/trace family 或 structural parity break。
+
+最新开放口：
+
+```text
+SqrtScaleConstantAtMostOnePointwiseInputWouldCloseStrictRows
+AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```

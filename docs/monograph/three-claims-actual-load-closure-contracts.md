@@ -399,6 +399,58 @@ AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### sqrt constant threshold actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_constant_threshold_router.py
+data/prime-matrix-phi-lpf-sqrt-constant-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.md
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.json
+```
+
+actual-load 含义：上一层证明所有固定 `theta>1/2` 短区间输入只闭合零密度低行；本层把
+`theta=1/2` 本身的常数门槛精确化。对 strict row
+
+```text
+I_{P,k}=(kP,(k+1)P)
+```
+
+左端点前进输入 `(x,x+C sqrt(x)]` 取 `x=kP` 时，要落入 row 需
+
+```text
+C^2 k <= P.
+```
+
+右端点后退输入 `[X-C sqrt(X),X]` 取 `X=(k+1)P` 时，要落入 row 需
+
+```text
+C^2 (k+1) <= P.
+```
+
+因此 `C<=1` 的点态平方根输入会闭合所有充分大的 strict rows；但任意固定 `C>1`
+只闭合约 `P/C^2` 条低行，留下 top band 密度 `1-1/C^2`。
+
+状态边界：
+
+```text
+sqrt_constant_one_pointwise_input_would_close_all_strict_rows=true
+fixed_constant_greater_than_one_leaves_positive_density_top_band=true
+known_unconditional_C_at_most_one_pointwise_input_available=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+SqrtScaleConstantAtMostOnePointwiseInputWouldCloseStrictRows
+AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

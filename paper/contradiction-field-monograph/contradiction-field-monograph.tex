@@ -40568,6 +40568,77 @@ AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Sharp constant gate on the square-root short-interval lane]
+Assume a pointwise square-root short-interval input with constant \(C>0\).
+For a left-endpoint version
+\[
+  (x,x+C\sqrt{x}]\hbox{ contains a prime},
+\]
+applied at \(x=kP\), the guaranteed interval is contained in
+\((kP,(k+1)P)\) whenever
+\[
+  C^2 k\le P.
+\]
+For a right-endpoint version
+\[
+  [X-C\sqrt{X},X]\hbox{ contains a prime},
+\]
+applied at \(X=(k+1)P\), the guaranteed interval is contained in the closed
+row whenever
+\[
+  C^2(k+1)\le P.
+\]
+Endpoint equality is harmless, since \(kP\) and \((k+1)P\) are composite row
+endpoints.  Consequently, a pointwise input with \(C\le1\) would close every
+sufficiently large strict row, while any fixed \(C>1\) closes only
+approximately \(P/C^2\) low rows and leaves a top band of density
+\[
+  1-\frac1{C^2}.
+\]
+\end{proposition}
+
+\begin{proof}
+For the left-endpoint input, containment is \(C\sqrt{kP}\le P\), equivalent to
+\(C^2k\le P\).  For the right-endpoint input, containment is
+\(C\sqrt{(k+1)P}\le P\), equivalent to \(C^2(k+1)\le P\).  If \(C\le1\), these
+inequalities hold for all \(1\le k<P\), up to the equality case at the top
+right endpoint when \(C=1\).  Since both row endpoints are multiples of \(P\),
+any prime supplied by the closed interval must lie in the open row.  If
+\(C>1\), the inequalities restrict \(k\) to \(k\le P/C^2\), or
+\(k+1\le P/C^2\), so the asymptotic closed density is \(1/C^2\) and the
+uncovered top-band density is \(1-1/C^2\).
+\end{proof}
+
+\begin{certificatestatement}[Sqrt constant threshold router]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+sqrt\_constant\_one\_pointwise\_input\_would\_close\_all\_strict\_rows=true\\
+fixed\_constant\_greater\_than\_one\_leaves\_positive\_density\_top\_band=true\\
+known\_unconditional\_C\_at\_most\_one\_pointwise\_input\_available=false\\
+row\_column\_unconditional\_closed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-\\
+threshold-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated square-root constant boundary]
+This is the sharp constant form of the previous \(\theta>1/2\) obstruction.
+The pure short-interval route does not merely need an exponent equal to
+\(1/2\); it needs the aligned constant \(C\le1\).  A fixed \(C>1\) theorem,
+even at exact square-root scale, still leaves a positive-density top band.
+The active gate is
+\begin{quote}\scriptsize\ttfamily
+SqrtScaleConstantAtMostOnePointwiseInputWouldCloseStrictRows\\
+AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand\\
+AND PrimePowerTailSublinearThresholdClosed\\
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

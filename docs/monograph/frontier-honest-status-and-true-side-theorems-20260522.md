@@ -13769,3 +13769,54 @@ AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC40：sqrt constant threshold router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_constant_threshold_router.py
+data/prime-matrix-phi-lpf-sqrt-constant-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.md
+```
+
+本层把 `theta=1/2` 的常数门槛写成精确 row 条件。左端点前进输入需要
+
+```text
+C^2 k <= P,
+```
+
+右端点后退输入需要
+
+```text
+C^2(k+1)<=P.
+```
+
+因此 `C<=1` 点态平方根短区间输入会闭合所有充分大的 strict rows；任意固定 `C>1`
+留下 top band 密度 `1-1/C^2`。
+
+有限审计读数：
+
+```text
+sqrt_constant_one_pointwise_input_would_close_all_strict_rows=true
+fixed_constant_greater_than_one_leaves_positive_density_top_band=true
+known_unconditional_C_at_most_one_pointwise_input_available=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：平方根尺度本身还不够，常数也必须对齐。当前语料没有无条件
+`C<=1` 点态输入；素幂尾巴虽已压成 `o(P)`，但仍需要 sharp sqrt-scale 的逐行
+`psi/theta` 正量，或 admissible signed Type-II/trace family 返回该负载。
+
+最新 honest 口：
+
+```text
+SqrtScaleConstantAtMostOnePointwiseInputWouldCloseStrictRows
+AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```

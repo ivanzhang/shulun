@@ -2223,3 +2223,56 @@ AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 28. sqrt constant threshold router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_constant_threshold_router.py
+data/prime-matrix-phi-lpf-sqrt-constant-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.md
+docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.json
+```
+
+本层继续非循环推进：既然固定 `theta>1/2` 已经被排除为完整闭合路线，就必须审计
+`theta=1/2` 自身的常数。对左端点输入
+
+```text
+(kP, kP + C sqrt(kP)]
+```
+
+落入 strict row 的条件是 `C^2 k<=P`；对右端点输入
+
+```text
+[(k+1)P-C sqrt((k+1)P),(k+1)P]
+```
+
+落入 strict row 的条件是 `C^2(k+1)<=P`。端点等号不造成素数泄漏，因为 `kP`
+和 `(k+1)P` 都是合数端点。
+
+结论是平方根路线的尖点不是“任意常数的 `sqrt(x)`”，而是 `C<=1`。任意固定
+`C>1` 只闭合约 `P/C^2` 条低行，留下密度
+
+```text
+1-1/C^2
+```
+
+的 top band。例如 `C=1.0001` 仍留下约 `0.000199970` 的正密度顶层带；
+`C=sqrt(2)` 留下一半顶层带。
+
+这一步不证明新的素数存在定理，但把纯短区间路线的最后尺度口精确化：
+
+```text
+需要 C<=1 的点态 sqrt-scale 输入
+OR 需要 structural parity break / admissible signed Type-II/trace family.
+```
+
+最新非循环口为：
+
+```text
+SqrtScaleConstantAtMostOnePointwiseInputWouldCloseStrictRows
+AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
