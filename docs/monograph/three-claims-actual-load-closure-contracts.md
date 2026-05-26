@@ -517,6 +517,45 @@ OR NonTautologicalProductWindowPDEC
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window bucket stack bridge actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_bucket_stack_bridge_router.py
+data/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.json
+```
+
+actual-load 含义：上一节的 `PhiLPFBucketSignedCoefficientLawBeforePushforward`
+已接入既有 transport/edge/pointwise 前沿。递推路线不再停在抽象 bucket law；
+它必须穿过 rough cofactor transport、ordered LPF path、逐 edge signed multiplier，
+并最终给出 first-edge semiprime signed seed 与 internal prime-adjoin signed transition。
+直接逐点 signed table 旁路则压到 primitive summand origin identity。
+
+```text
+product_window_signed_source_imported=true
+bucket_transport_stack_imported=true
+ordered_cofactor_coherence_imported=true
+edge_multiplier_slab_imported=true
+pointwise_origin_imported=true
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND source-rank/ExactUV/model/rate/DStructure gates
+
+parallel:
+PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

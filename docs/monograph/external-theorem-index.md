@@ -13453,3 +13453,29 @@ PhiLPFBucketSignedCoefficientLawBeforePushforward
 OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
 ```
+
+## 65BM. product-window bucket stack bridge router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_bucket_stack_bridge_router.py
+data/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.md
+```
+
+外部 theorem 边界进一步细化：当前 product-window hardpoint 已经落到
+first-edge semiprime signed seed、internal prime-adjoin transition 或 primitive
+summand origin identity。FKMS trace-function bilinear forms、Pascadi/DI-BFI
+Kloosterman Type-II 等谱输入仍需先有 signed coefficient table 与 admissible
+trace/Kloosterman family；Guth--Maynard/Runbo Li 短区间输入仍需达到
+\(H=P=x^{1/2}\) 的点态行尺度。
+
+```text
+edge_multiplier_slab_imported=true
+pointwise_origin_imported=true
+trace_bridge_admissible_coefficients_proved=false
+pointwise_sqrt_prime_input_c_one_proved=false
+row_column_unconditional_closed=false
+```

@@ -14731,3 +14731,29 @@ independent_signed_defect_source_equivalent_to_phi_lpf_bucket_signed_law=true
 completed_trace_bridge_requires_signed_defect_first=true
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC58：product-window bucket stack bridge router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_bucket_stack_bridge_router.py
+data/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.md
+```
+
+本层 honest 边界：bucket signed law 已经接入既有 transport/edge/pointwise stack。
+下一直接主攻为 `PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward`，且必须与
+`PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward` 配套；逐点表旁路压到
+`PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward`。这仍不是无条件闭合。
+
+```text
+product_window_signed_source_imported=true
+bucket_transport_stack_imported=true
+edge_multiplier_slab_imported=true
+pointwise_origin_imported=true
+row_column_unconditional_closed=false
+```

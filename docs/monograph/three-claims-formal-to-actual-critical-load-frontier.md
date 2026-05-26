@@ -27280,6 +27280,32 @@ selected_parallel_distribution_gate=PointwiseSqrtPrimeInputCOne
 row_column_unconditional_closed=false
 ```
 
+### product-window bucket stack bridge formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_bucket_stack_bridge_router.py
+data/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.json
+```
+
+formal-to-actual 结论：`PhiLPFBucketSignedCoefficientLawBeforePushforward`
+若要成为 actual proof，不能停留在桶名。递推路线必须给出可乘的逐 edge signed
+multiplier；edge multiplier 再被 LPF ordered path 拆成 first-edge semiprime seed
+与 internal prime-adjoin transition。逐点表旁路同样必须落到 primitive summand
+origin identity，不能由 LPF/Phi support 反推。
+
+```text
+next_primary_attack_target=PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+paired_required_attack_target=PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+parallel_pointwise_attack_target=PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+parallel_trace_attack_target=ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+parallel_distribution_attack_target=PointwiseSqrtPrimeInputCOne
+row_column_unconditional_closed=false
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

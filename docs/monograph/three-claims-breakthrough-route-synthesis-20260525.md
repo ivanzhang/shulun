@@ -2331,6 +2331,38 @@ OR NonTautologicalProductWindowPDEC
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+## 48B. product-window bucket stack bridge router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_bucket_stack_bridge_router.py
+data/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-bucket-stack-bridge-router.json
+```
+
+本层把 product-window 最新 bucket signed law 与既有下游账本合流。非循环路线的
+真实下一步不是继续重复“bucket signed law”，而是：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+  -> PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+  -> PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+     AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行逐点表路线为：
+
+```text
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+  -> PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+```
+
+外部 trace/Kloosterman 与短区间素数路线仍只是旁路对象条件：前者需要 signed
+coefficients 与 admissible trace/Type-II family，后者需要 \(H=P=x^{1/2}\) 的点态行尺度。
+因此本步推进了硬点定位，但没有证明任一目标命题无条件闭合。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：
