@@ -26868,6 +26868,34 @@ LPF/Phi 侧的修正继续作为负边界：精确分桶公式已修正，但它
 Legendre-Phi 计数；finite Euler half-main 不是可用于 prime extraction 的 signed
 saving。
 
+### minimal parity-breaker route-forcing formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_minimal_parity_breaker_route_forcing_router.py
+data/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-ledger.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.md
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json
+```
+
+formal-to-actual 结论：所有“更细 LPF/Phi/wheel”formal refinement 都被排除为 first
+break。它们只改变 domain/support，不提供 actual signed coefficient。因此最新
+formal-to-actual 口是最小路线选择：
+
+```text
+minimal_route_forcing_closed=true
+pointwise_theta_gap_formula_required=theta((kP,(k+1)P))>0 iff h(kP)<P
+pointwise_psi_tail_formula_required=psi(I_{P,k})>PrimePowerTail(I_{P,k})
+signed_transport_formula_required=a_p(q*m) source-key transport before pushforward
+chosen_next_primary_attack_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+```
+
+这一步的推进是删除循环证明形态：不能从已知 LPF 计数、Euler product 边界、后验
+factor word 或 terminal payment 反推出 signed law。若不提交点态 `C<=1` 平方根
+输入，则必须正向给出 `a_p(q*m)` 在 cofactor 乘法下的 orientation、local factor、
+alpha/delta side、branch transition 与 named failure return。
+
 ### parity barrier prime-distribution formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

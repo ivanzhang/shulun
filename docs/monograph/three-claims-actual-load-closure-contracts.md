@@ -43,6 +43,40 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_minimal_parity_breaker_route_forcing_router.py
+data/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-ledger.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.md
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json
+```
+
+actual-load 含义：奇偶性障碍不再作为泛化口号使用，而是被压成四类可交付对象。
+若不输入点态平方根行素数分布，则 actual load 必须是一个推前前 signed 系数族：
+
+```text
+minimal_route_forcing_closed=true
+more_wheel_or_lpf_refinement_rejected_as_first_break=true
+chosen_next_primary_attack_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+chosen_parallel_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+row_column_unconditional_closed=false
+```
+
+因此 PM-ALC 的下一实际负载从“继续细化 LPF/Phi support”改为：
+
+```text
+PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR PointwiseThetaPsiCOneInput
+OR NamedPDECSAEControlledReturn
+```
+
+外部 trace/Type-II/Kloosterman 工具当前只能作为后续 cancellation 引擎；在
+source-keyed signed coefficient family 构造出来以前，它们不能直接替代 actual load。
+
 ### parity barrier prime-distribution contract actual-load 更新（2026-05-26）
 
 新增机器证书：

@@ -41562,6 +41562,74 @@ admissible signed family or a genuine group orbit.  In the current ledger they
 do not directly close any of the three target claims.
 \end{remark}
 
+\section{Minimal parity-breaker route forcing}
+
+\begin{theorem}[Minimal parity-breaker alternatives]
+After the Phi--LPF endpoint correction and the parity-barrier diagnosis, a
+Prime Matrix closure cannot be obtained by further unsigned wheel or LPF
+refinement alone.  A closure must supply one of the following actual objects:
+\[
+  \theta((kP,(k+1)P))>0
+  \quad(1\le k<P),
+\]
+equivalently \(h(kP)<P\) for every strict row; or
+\[
+  \psi(I_{P,k})>{\rm PrimePowerTail}(I_{P,k});
+\]
+or a pushforward-before signed coefficient transport law
+\[
+  a_p(qm)\quad\hbox{from the source key, local factor, orientation, and branch
+  data};
+\]
+or a completed source-keyed trace/Type--II family, or a named PDEC/SAE return.
+The first internal non-cyclic target is therefore
+\[
+  {\rm PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward},
+\]
+with the parallel equivalent target
+\[
+  {\rm PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward}.
+\]
+\end{theorem}
+
+\begin{proof}
+The preceding theorem shows that \(\Phi\)- and LPF-based counts determine only
+the support and endpoint boundary.  The bucket signed-transport ledger adds the
+formal identity
+\[
+  \sum_{m\ {\rm rough}} a_p(m)
+  =
+  \sum_{m\ {\rm next\mbox{-}rough}} a_p(m)
+  +
+  \sum_{m'} a_p(qm'),
+\]
+but the second term is still unknown unless a forward law for \(a_p(qm')\)
+is supplied.  Thus the first recursive signed field is exactly the cofactor
+multiplication transport law: it must state how the source key, orientation,
+local factor, alpha/delta side, and branch transition move when a small prime
+factor is peeled in or out.  External spectral or Type--II theorems require
+such factorable signed coefficients before they can attach; ordinary
+short-interval inputs instead require the unavailable pointwise \(C\le1\)
+square-root-scale theorem.  Hence additional unsigned refinement is not a
+first-break route.
+\end{proof}
+
+\begin{certificatestatement}[Minimal parity-breaker route-forcing certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+minimal\_route\_forcing\_closed=true\\
+more\_wheel\_or\_lpf\_refinement\_rejected\_as\_first\_break=true\\
+chosen\_next\_primary\_attack\_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward\\
+chosen\_parallel\_attack\_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-\\
+route-forcing-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

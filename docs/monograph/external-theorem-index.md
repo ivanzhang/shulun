@@ -11985,6 +11985,39 @@ AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+## 65BB. minimal parity-breaker route-forcing router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_minimal_parity_breaker_route_forcing_router.py
+data/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-ledger.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.md
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json
+```
+
+本层把外部前沿输入的角色进一步固定：它们都不是无中介的 closure theorem，
+而是需要内部先交付最小破障对象后才能调用的 cancellation 工具。
+
+| input | direct status |
+| --- | --- |
+| Guth--Maynard `x^{17/30+o(1)}` short intervals | 仍高于 `theta=1/2`，顶端 `P^2` 行未闭合。 |
+| Runbo Li `x^0.52` short intervals | 只能闭合低行带，不能覆盖密度一的 top band。 |
+| Runbo Li large-modulus AP/Harman sieve | 平均型输入不能直接替代固定 row/column pointwise positivity。 |
+| FKMS trace functions | 需要先构造 source-keyed trace family。 |
+| Milićević--Qin--Wu Kloosterman bilinear forms | 需要先构造两变量 Kloosterman family 与 factorable coefficients。 |
+| Wright trilinear Kloosterman fractions | 需要三线性 convolution 与 equidistributed beta sequence。 |
+| Pascadi distribution / non-abelian Type-II inputs | 需要 well-factorable signed coefficient family。 |
+
+最新外部接口结论：
+
+```text
+minimal_route_forcing_closed=true
+frontier_external_inputs_directly_close_now=false
+chosen_next_primary_attack_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+row_column_unconditional_closed=false
+```
+
 ## 65BA. parity barrier prime-distribution contract router
 
 新增证书：

@@ -1689,6 +1689,45 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 ```
 
+## 37. minimal parity-breaker route-forcing router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_minimal_parity_breaker_route_forcing_router.py
+data/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-ledger.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.md
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json
+```
+
+本层把 parity-barrier contract 继续推进为“最小破障路线强制”：若要真正闭合三命题之一，
+不能再把 LPF/Phi 支撑精细化当作突破。可破障对象被压成四类：
+
+```text
+Pointwise theta/gap:
+  theta((kP,(k+1)P))>0, equivalently h(kP)<P
+Pointwise psi:
+  psi(I_{P,k})>PrimePowerTail(I_{P,k})
+Internal signed transport:
+  a_p(q*m) transport law before pushforward
+Trace/Type-II/PDEC:
+  source-keyed signed family or controlled contradiction return
+```
+
+证书读数：
+
+```text
+minimal_route_forcing_closed=true
+more_wheel_or_lpf_refinement_rejected_as_first_break=true
+chosen_next_primary_attack_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+chosen_parallel_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+row_column_unconditional_closed=false
+```
+
+因此最快非循环突破口不再是“继续升级 210/2310/... wheel”，而是把从小到大剥离素因子的
+LPF cofactor multiplication 写成推前前 signed 传输律；外部 FKMS/MQW/Wright/Pascadi
+等工具必须等该 signed family 或等价 trace family 构造完成后才能实际接入。
+
 ## 19. LPF bucket count formula 更新
 
 新增证书：

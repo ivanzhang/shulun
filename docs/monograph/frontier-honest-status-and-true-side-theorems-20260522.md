@@ -1721,6 +1721,42 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 ---
 
+## 附录 Q13AC49：minimal parity-breaker route-forcing router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_minimal_parity_breaker_route_forcing_router.py
+data/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-ledger.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json
+docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.md
+```
+
+honest 结论：奇偶性障碍现在被压成最小路线选择，而不是继续扩大 LPF/Phi 账本。
+如果没有点态 `theta/psi` 平方根尺度输入，则必须正向构造 signed coefficient family。
+
+```text
+minimal_route_forcing_closed=true
+more_wheel_or_lpf_refinement_rejected_as_first_break=true
+chosen_next_primary_attack_target=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+chosen_parallel_attack_target=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+row_column_unconditional_closed=false
+```
+
+最新 honest 口：
+
+```text
+MinimalParityBreakerRouteForcingClosed
+AND NeedEitherPointwiseThetaPsiCOneInputOrSignedCofactorTransport
+AND PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+AND BoundaryRatioSourceKeyLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND AdmissibleSignedTraceTypeIIFamilyStillOpen
+```
+
+---
+
 ## 附录 Q13AC48：parity barrier prime-distribution contract router（2026-05-26）
 
 新增证书：
