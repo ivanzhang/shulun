@@ -13130,3 +13130,51 @@ OR PointwiseThetaPsiCOneInputAtSqrtRowScale
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 OR SpectralKloostermanTraceLift
 ```
+
+## 65BE. row inequality target residue-cover router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py
+data/prime-matrix-phi-lpf-row-inequality-target-residue-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.md
+```
+
+外部 theorem 边界：目标行已经标准化为 residue-cover 问题：
+
+```text
+R_{P,k}={kP+r:1<=r<=P-1}
+D_p(P,k)={r: r == -kP mod p}
+full-cover equality: union_p D_p(P,k)=[1,P-1]
+```
+
+Guth--Maynard/Hieu、Runbo Li 与 Harm 的输入仍不能直接支付该 full-cover 排除：
+
+```text
+Guth--Maynard / Hieu: P^(17/15), row thickness P^(2/15)
+Runbo Li: P^(26/25), row thickness P^(1/25)
+Harm conditional AP: P*exp((2log P)^alpha), alpha>2/3 under GDH
+```
+
+这些输入可作为加厚窗口、条件近临界边界或 signed trace 设计参考，但不能替代目标
+residue-cover 的单行缺口证明。
+
+审计读数：
+
+```text
+target_row_residue_cover_standard_form_synced=true
+generic_interval_uniform_defect_false=true
+target_punctured_row_full_cover_found_in_scan=false
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+FullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTrace
+OR SpectralKloostermanResidueLift
+```

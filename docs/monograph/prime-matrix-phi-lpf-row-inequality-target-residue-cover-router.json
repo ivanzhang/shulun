@@ -1,0 +1,251 @@
+{
+  "attack_interface_rows": [
+    {
+      "name": "TargetPuncturedRowResidueCoverDefect",
+      "noncircular_requirement": "prove a structural obstruction to full cover that is not just a restatement of primality",
+      "statement": "union_{p<=sqrt((k+1)P-1)}D_p(P,k) != [1,P-1]",
+      "status": "open; equivalent to target row prime positivity if used alone"
+    },
+    {
+      "name": "FullCoverOwnerResiduePDEC",
+      "noncircular_requirement": "extract a forbidden CRT/phase packet from the equality case before invoking prime existence",
+      "statement": "full cover => named incompatible owner-residue/phase packet",
+      "status": "open; selected next primary target"
+    },
+    {
+      "name": "MobiusResidueCoverSignedTrace",
+      "noncircular_requirement": "obtain cancellation in the signed divisor sum at row length P, not just Euler-product density",
+      "statement": "sum_{d|Q} mu(d) N_d(P,k)>0 with controlled source-key error",
+      "status": "open"
+    },
+    {
+      "name": "SpectralKloostermanResidueLift",
+      "noncircular_requirement": "supply conductor/coefficient control for q-spine/hinge source keys",
+      "statement": "complete the kP+r residue fibers into a uniform trace family",
+      "status": "open"
+    }
+  ],
+  "certificate_type": "prime_matrix_phi_lpf_row_inequality_target_residue_cover_router",
+  "external_rows": [
+    {
+      "input": "Guth--Maynard / Hieu",
+      "row_thickness": "P^(2/15)",
+      "scale_at_x=P^2": "P^(17/15)",
+      "source": "https://arxiv.org/abs/2405.20552 and https://arxiv.org/abs/2509.04883",
+      "status": "unconditional/preprint scale still thicker than one target row"
+    },
+    {
+      "input": "Runbo Li Harman-sieve short intervals",
+      "row_thickness": "P^(1/25)",
+      "scale_at_x=P^2": "P^(26/25)",
+      "source": "https://arxiv.org/abs/2308.04458",
+      "status": "unconditional/preprint scale still thicker than one target row"
+    },
+    {
+      "input": "Harm conditional short AP refinement",
+      "row_thickness": "exp((2log P)^alpha)",
+      "scale_at_x=P^2": "P*exp((2log P)^alpha), alpha>2/3 under GDH",
+      "source": "https://arxiv.org/abs/2507.15334",
+      "status": "conditional and still super-one-row; useful as near-critical boundary, not a closure input"
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "generic_full_cover_samples": [
+    {
+      "delta_phi_cover": 6,
+      "full_cover_equality": true,
+      "interval": "(90,96]",
+      "length": 6,
+      "owner_buckets": {
+        "2": [
+          92,
+          94,
+          96
+        ],
+        "3": [
+          93
+        ],
+        "5": [
+          95
+        ],
+        "7": [
+          91
+        ]
+      },
+      "prime_count": 0,
+      "strict_defect": 0
+    },
+    {
+      "delta_phi_cover": 12,
+      "full_cover_equality": true,
+      "interval": "(114,126]",
+      "length": 12,
+      "owner_buckets": {
+        "11": [
+          121
+        ],
+        "2": [
+          116,
+          118,
+          120,
+          122,
+          124,
+          126
+        ],
+        "3": [
+          117,
+          123
+        ],
+        "5": [
+          115,
+          125
+        ],
+        "7": [
+          119
+        ]
+      },
+      "prime_count": 0,
+      "strict_defect": 0
+    },
+    {
+      "delta_phi_cover": 10,
+      "full_cover_equality": true,
+      "interval": "(200,210]",
+      "length": 10,
+      "owner_buckets": {
+        "11": [
+          209
+        ],
+        "2": [
+          202,
+          204,
+          206,
+          208,
+          210
+        ],
+        "3": [
+          201,
+          207
+        ],
+        "5": [
+          205
+        ],
+        "7": [
+          203
+        ]
+      },
+      "prime_count": 0,
+      "strict_defect": 0
+    }
+  ],
+  "generic_interval_uniform_defect_false": true,
+  "plain_conclusion": "行级严格不等式不能推广为任意短区间命题；普通短区间存在 Delta-Phi full-cover 等号。目标必须限制在 Prime Matrix punctured 行 R_{P,k}。在该行上，失败态等价于小素因子同余类 D_p(P,k) 覆盖全部 offset。下一步最快的非循环攻击不是再做无符号计数，而是从 full-cover equality 中抽取命名 owner-residue PDEC，或把 Mobius/trace 签名求和接到同一 residue-cover 标准形上。",
+  "residue_cover_normal_form": [
+    {
+      "formula": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "meaning": "目标行端点低于 P^2，因而任何合数都有最小素因子 < P。",
+      "object": "target row"
+    },
+    {
+      "formula": "D_p(P,k)={r: 1<=r<=P-1, r == -kP mod p}",
+      "meaning": "p<P 时 P 可逆，斜线/圆柱 residue fiber 是一个确定同余类。",
+      "object": "coarse divisor fiber"
+    },
+    {
+      "formula": "O_p(P,k)=D_p(P,k) minus union_{q<p}D_q(P,k)",
+      "meaning": "按最小素因子分桶后的 owner fiber 两两不交。",
+      "object": "LPF owner fiber"
+    },
+    {
+      "formula": "pi(R_{P,k})=#[1,P-1] minus union_{p<=sqrt((k+1)P-1)}D_p(P,k)",
+      "meaning": "未被任何小素因子同余类覆盖的 offset 必为素数。",
+      "object": "row prime count"
+    },
+    {
+      "formula": "union_p D_p(P,k)=[1,P-1]",
+      "meaning": "这是行级严格不等式失败的 residue-cover 形式，也是 PDEC/SAE 的唯一可攻等号态。",
+      "object": "full-cover equality"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_primary_next_gate": "FullCoverOwnerResiduePDEC",
+  "selected_signed_parallel_gate": "MobiusResidueCoverSignedTrace",
+  "selected_spectral_parallel_gate": "SpectralKloostermanResidueLift",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "6180a3b1a548942367f2cf9ef1699f91fd48d110a7dd876d96a7ff3a6319d7dc",
+    "docs/monograph/external-theorem-index.md": "9db6409144a63528bceffd5305f47b74d0a48fe4b010b35e1e58825a2b61f1b3",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "f306fe5c67ba8f71fb21202397f777089eb190fa3883b9f9abcb626b316adcc8",
+    "docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json": "74636f1bc6c8e7088a213b0df5440bf93aadb10482989dca7615eb4edaaf3f06",
+    "docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json": "de0f3fdf91e7b571cdf60a07c2457cf1ec36255ae1367a59b2f725b028ed4f5e",
+    "docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json": "234ad3d23afb443ae53e5b0faf095f0621e38614b737de87b541a6b194da0cdd",
+    "docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json": "93b9420810fe6a699bb79d3591e65e1e3f6077e3d0c94e37842649ed8a3bfb32",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "c68973fa30142137c121ab269fbe7495012495f26d4e94f9d383d3c87293ab6e",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "53e9ffbe3f4de355ba86ad4d29aacde8add8ee454f22bcb3ca2117b9c77bc8d6",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "e731c49ebe43dd35676534e372b9934f1b69c6d61a56ed0593cb25dc410a58ca",
+    "experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py": "3ead605b5a6a6fac8d2889cc481b50245678d4777cd754e25ae6fa7bb291b687",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "472eebac8bbfbb1c5dc398fd643d076baf77bfcbbd08744f74c4387d73be95e7"
+  },
+  "status": "target_row_residue_cover_standard_form_synced_open",
+  "strict_cover_inequality_proved_uniformly": false,
+  "target_punctured_row_full_cover_found_in_scan": false,
+  "target_punctured_row_scan": [
+    {
+      "P": 31,
+      "max_prime_count": 7,
+      "min_prime_count": 2,
+      "min_prime_count_k": 25,
+      "row_model": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "rows_scanned": 30,
+      "strict_defect_found_in_every_scanned_row": true,
+      "zero_row_count": 0,
+      "zero_rows": []
+    },
+    {
+      "P": 101,
+      "max_prime_count": 20,
+      "min_prime_count": 7,
+      "min_prime_count_k": 73,
+      "row_model": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "rows_scanned": 100,
+      "strict_defect_found_in_every_scanned_row": true,
+      "zero_row_count": 0,
+      "zero_rows": []
+    },
+    {
+      "P": 251,
+      "max_prime_count": 41,
+      "min_prime_count": 18,
+      "min_prime_count_k": 108,
+      "row_model": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "rows_scanned": 250,
+      "strict_defect_found_in_every_scanned_row": true,
+      "zero_row_count": 0,
+      "zero_rows": []
+    },
+    {
+      "P": 499,
+      "max_prime_count": 73,
+      "min_prime_count": 29,
+      "min_prime_count_k": 362,
+      "row_model": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "rows_scanned": 498,
+      "strict_defect_found_in_every_scanned_row": true,
+      "zero_row_count": 0,
+      "zero_rows": []
+    },
+    {
+      "P": 1009,
+      "max_prime_count": 137,
+      "min_prime_count": 52,
+      "min_prime_count_k": 905,
+      "row_model": "R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1",
+      "rows_scanned": 1008,
+      "strict_defect_found_in_every_scanned_row": true,
+      "zero_row_count": 0,
+      "zero_rows": []
+    }
+  ],
+  "target_row_residue_cover_standard_form_synced": true,
+  "verified_date": "2026-05-26"
+}

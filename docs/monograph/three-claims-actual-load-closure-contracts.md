@@ -251,6 +251,44 @@ strict_cover_inequality_proved_uniformly=false
 row_column_unconditional_closed=false
 ```
 
+### row inequality target residue-cover actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py
+data/prime-matrix-phi-lpf-row-inequality-target-residue-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json
+```
+
+actual-load 含义：行级严格缺口不能作为任意短区间输入；普通短区间存在 full-cover
+等号。因此当前 actual 负载必须锁定目标行结构：
+
+```text
+R_{P,k}={kP+r:1<=r<=P-1}
+D_p(P,k)={r: r == -kP mod p}
+full-cover failure state: union_p D_p(P,k)=[1,P-1]
+```
+
+实际可支付的新负载只剩三类：
+
+```text
+FullCoverOwnerResiduePDEC
+MobiusResidueCoverSignedTrace
+SpectralKloostermanResidueLift
+```
+
+状态边界：
+
+```text
+target_row_residue_cover_standard_form_synced=true
+generic_interval_uniform_defect_false=true
+target_punctured_row_full_cover_found_in_scan=false
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

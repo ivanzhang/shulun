@@ -27021,6 +27021,46 @@ OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 OR SpectralKloostermanTraceLift
 ```
 
+### row inequality target residue-cover formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py
+data/prime-matrix-phi-lpf-row-inequality-target-residue-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json
+```
+
+formal-to-actual 结论：`sum Delta C_p<=B-A-1` 若写成任意短区间命题是假的；
+`(90,96]`、`(114,126]`、`(200,210]` 都给出 full-cover 等号。因此实际命题必须附着
+Prime Matrix punctured 行的结构约束。
+
+目标行标准形为：
+
+```text
+R_{P,k}={kP+r:1<=r<=P-1}
+D_p(P,k)={r:1<=r<=P-1, r == -kP mod p}
+O_p(P,k)=D_p(P,k) minus union_{q<p}D_q(P,k)
+```
+
+行级不等式失败等价于 residue-cover 等号：
+
+```text
+union_{p<=sqrt((k+1)P-1)}D_p(P,k)=[1,P-1].
+```
+
+这仍与行内素数正性等价；要变成 actual proof，必须从 full cover 抽取一个独立的
+owner-residue/CRT/phase PDEC，或建立带 source-key 的 Möbius/trace signed cancellation。
+
+最新前沿：
+
+```text
+FullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTrace
+OR SpectralKloostermanResidueLift
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

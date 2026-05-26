@@ -42004,6 +42004,65 @@ breakthrough-frontier-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Target-row residue-cover normal form}
+
+\begin{theorem}[Target punctured-row residue-cover frontier]
+The row Delta-Phi strict cover inequality cannot be promoted to a theorem for
+arbitrary integer short intervals.  There are ordinary intervals, for example
+\((90,96]\), on which the Delta-Phi composite cover equals the whole interval
+and \(\pi(90,96]=0\).  Therefore the current target must remain the Prime Matrix
+punctured row
+\[
+  R_{P,k}=\{kP+r:1\le r\le P-1\},\qquad 1\le k\le P-1 .
+\]
+For every prime \(p<P\), define
+\[
+  D_p(P,k)=\{1\le r\le P-1:r\equiv -kP\pmod p\}.
+\]
+The row inequality fails exactly when these small-prime residue fibers cover all
+offsets:
+\[
+  \bigcup_{p\le\sqrt{(k+1)P-1}}D_p(P,k)=[1,P-1].
+\]
+Thus the next non-circular target is a full-cover owner-residue PDEC, or a
+source-keyed Mobius/trace/spectral cancellation formula attached to these same
+fibers.
+\end{theorem}
+
+\begin{proof}
+The ordinary interval counterexample shows that a universal short-interval
+Delta-Phi defect is false.  On the punctured row \(R_{P,k}\), all entries are
+less than \(P^2\).  Hence any composite entry has a prime factor
+\(\le\sqrt{(k+1)P-1}<P\).  Since \(p<P\), the residue of \(P\) is invertible
+modulo \(p\), and divisibility of \(kP+r\) by \(p\) is the single congruence
+\(r\equiv -kP\pmod p\).  Therefore an offset not lying in any displayed
+\(D_p(P,k)\) has no prime factor up to the square-root bound and is prime.  The
+only failure mode for the strict cover inequality is complete coverage of all
+offsets by these residue fibers.  Proving that complete coverage is impossible
+without merely restating prime existence is exactly the remaining
+owner-residue PDEC or signed-trace problem.
+\end{proof}
+
+\begin{certificatestatement}[Target residue-cover certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+target\_row\_residue\_cover\_standard\_form\_synced=true\\
+generic\_interval\_uniform\_defect\_false=true\\
+target\_punctured\_row\_full\_cover\_found\_in\_scan=false\\
+strict\_cover\_inequality\_proved\_uniformly=false\\
+row\_column\_unconditional\_closed=false\\
+selected\_primary\_next\_gate=FullCoverOwnerResiduePDEC\\
+selected\_signed\_parallel\_gate=MobiusResidueCoverSignedTrace\\
+selected\_spectral\_parallel\_gate=SpectralKloostermanResidueLift.
+\end{quote}
+The finite scan covers \(P=31,101,251,499,1009\) only and is not used as a
+global proof.  The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-row-inequality-\\
+target-residue-cover-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

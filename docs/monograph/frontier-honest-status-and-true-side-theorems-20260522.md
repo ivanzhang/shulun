@@ -14474,3 +14474,41 @@ OR PointwiseThetaPsiCOneInputAtSqrtRowScale
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 OR SpectralKloostermanTraceLift
 ```
+
+---
+
+## 附录 Q13AC50：row inequality target residue-cover router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py
+data/prime-matrix-phi-lpf-row-inequality-target-residue-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.md
+```
+
+本层的 honest 边界是：不能把行级严格缺口推广到任意短区间；普通短区间存在
+Delta-Phi full-cover 等号。因此下一步必须绑定目标行：
+
+```text
+R_{P,k}={kP+r:1<=r<=P-1}
+D_p(P,k)={r: r == -kP mod p}
+```
+
+行级失败态为：
+
+```text
+union_{p<=sqrt((k+1)P-1)}D_p(P,k)=[1,P-1]
+```
+
+这是目前最窄的 honest 口。有限扫描到 `P=1009` 未见目标行 full-cover，但有限证据
+不升级为证明。
+
+最新 honest 口：
+
+```text
+FullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTrace
+OR SpectralKloostermanResidueLift
+```

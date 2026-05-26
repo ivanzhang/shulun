@@ -1960,6 +1960,66 @@ OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 OR SpectralKloostermanTraceLift
 ```
 
+## 42. row inequality target residue-cover router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_target_residue_cover_router.py
+data/prime-matrix-phi-lpf-row-inequality-target-residue-cover-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json
+```
+
+本层把上一节的抽象行级严格不等式继续压成目标行 residue-cover 标准形，并排除一个
+会循环的错误推广：该不等式不能作为任意短区间命题。普通短区间已有 full-cover 等号：
+
+```text
+(90,96]:  length=6,  Delta-Phi cover=6,  primes=0
+(114,126]: length=12, Delta-Phi cover=12, primes=0
+(200,210]: length=10, Delta-Phi cover=10, primes=0
+```
+
+因此真正目标必须保持为 Prime Matrix punctured 行
+
+```text
+R_{P,k}={kP+r:1<=r<=P-1}, 1<=k<=P-1.
+```
+
+在该行上，每个 `p<P` 给出一个确定 residue fiber：
+
+```text
+D_p(P,k)={r: 1<=r<=P-1, r == -kP mod p}
+O_p(P,k)=D_p(P,k) minus union_{q<p}D_q(P,k)
+```
+
+行级失败态等价于
+
+```text
+union_{p<=sqrt((k+1)P-1)} D_p(P,k) = [1,P-1].
+```
+
+有限扫描 `P=31,101,251,499,1009` 的全部 punctured 行未见 full-cover；最小素数数分别为
+`2,7,18,29,52`。这只是定位结构，不作为证明。
+
+机器审计给出：
+
+```text
+target_row_residue_cover_standard_form_synced=true
+generic_interval_uniform_defect_false=true
+target_punctured_row_full_cover_found_in_scan=false
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+```
+
+最新非循环主攻收窄为：
+
+```text
+FullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTrace
+OR SpectralKloostermanResidueLift
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：
