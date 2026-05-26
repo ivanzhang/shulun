@@ -27532,6 +27532,37 @@ AND TerminalSiblingQSpinePaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 ```
 
+### boundary ratio q-spine pivot reduction formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boundary_ratio_qspine_pivot_reduction_router.py
+data/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.md
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.json
+```
+
+formal-to-actual 结论：boundary ratio 的形式比率谱不能直接用作 source-key law，
+但它已经沿 actual residual-flow 链压到 q-spine pivot：
+
+```text
+boundary_ratio_source_key_law_reduced_to_qspine_pivot=true
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+finite_pivot_enclosure_closed=true
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+```
+
+实际门变为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

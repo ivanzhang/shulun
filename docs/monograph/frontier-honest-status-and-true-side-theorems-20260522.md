@@ -14086,3 +14086,44 @@ AND TerminalSiblingQSpinePaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+---
+
+## 附录 Q13AC46：boundary ratio q-spine pivot reduction router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boundary_ratio_qspine_pivot_reduction_router.py
+data/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.md
+```
+
+本层把 boundary ratio source-key 门继续收窄：
+
+```text
+boundary_ratio_source_key_law_reduced_to_qspine_pivot=true
+old_residual_side_closed=true
+new_residual_tail_alignment_partial_closed=true
+bulk_carry_chain_normal_form_closed=true
+carry_break_source_packet_reduction_closed=true
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+```
+
+honest 边界：这仍不是无条件闭合证明。有限 pivot enclosure 必须升级为 uniform law，
+或者回流为命名 PDEC；同时右侧 selected-terminal tail overhang 与 sibling q-spine payment
+仍未支付。
+
+最新 honest 口：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

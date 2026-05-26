@@ -2531,3 +2531,54 @@ AND TerminalSiblingQSpinePaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+## 34. boundary ratio q-spine pivot reduction router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boundary_ratio_qspine_pivot_reduction_router.py
+data/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.md
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.json
+```
+
+本层把上一节的 `BoundaryRatioSourceKeyLawOrPDEC` 继续降维。47 个 q-boundary split
+不再是散乱比率谱，而是沿 residual-flow 链压到 q-spine pivot enclosure：
+
+```text
+old_residual_side_closed=true
+new_residual_tail_alignment_partial_closed=true
+bulk_carry_chain_normal_form_closed=true
+carry_break_source_packet_reduction_closed=true
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+boundary_ratio_source_key_law_reduced_to_qspine_pivot=true
+```
+
+实际账本：
+
+```text
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+old_residual_return_aligned_event_count=5
+new_residual_tail_matched_event_count=6
+new_residual_unmatched_after_tail_event_count=36
+carry_segment_count=11
+carry_transition_count=31
+bridge_root_debt_break_count=2
+bridge_root_debt_still_open=0.209830550963
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+```
+
+因此真正剩余不再是一般 boundary ratio law，而是：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

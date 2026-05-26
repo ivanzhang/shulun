@@ -12746,3 +12746,44 @@ AND TerminalSiblingQSpinePaymentOrPDEC
 AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+## 65AY. boundary ratio q-spine pivot reduction router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boundary_ratio_qspine_pivot_reduction_router.py
+data/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.md
+```
+
+外部 theorem 边界：本层继续说明为什么外部 trace/Kloosterman/Type-II 工具仍不能直接
+接入。boundary ratio law 已经不是原始比率谱，而是 q-spine pivot enclosure 门；
+外部工具仍需一个 uniform source-key law，而不是有限 pivot ledger。
+
+审计读数：
+
+```text
+boundary_ratio_source_key_law_reduced_to_qspine_pivot=true
+new_residual_side_event_count=42
+old_residual_side_event_count=5
+new_residual_unmatched_after_tail_event_count=36
+bridge_root_debt_break_count=2
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+trace_or_typeii_family_admissible_now=false
+```
+
+最新开放口：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```

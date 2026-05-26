@@ -40976,6 +40976,68 @@ AND UniformAdjacentRunCancellationStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Boundary ratio reduces to q-spine pivot enclosure]
+The boundary ratio source-key gate has a further finite reduction.  The
+old-side residuals are exactly returned by the non-boundary jumps and the
+internal survivor.  On the new side, six residuals are terminal-tail returns,
+and the remaining \(36\) bulk residuals form an atomwise carry-chain normal
+form with \(11\) carry segments, \(31\) carry transitions, and \(4\) carry
+breaks.  Those breaks split into two unit old-return echoes and two bridge-root
+debts.  The bridge-root debts are then enclosed by the finite q-spine
+\[
+  577,\quad 607,\quad 631,
+\]
+with shared pivot \(607\).
+\end{proposition}
+
+\begin{proof}
+The boundary residual-flow certificate separates the \(47\) adjacent boundary
+splits into \(42\) new-side and \(5\) old-side residuals, and refutes local
+opposite-side cancellation.  The old-side certificate matches all \(5\)
+old residuals to four non-boundary returns and one internal survivor.  The
+new-side certificate matches \(6\) residuals to terminal tails and leaves
+\(36\) bulk events.  The bulk normal-form certificate organizes these events
+into carry segments; the carry-break certificate reduces the four breaks to
+two already-accounted unit echoes and two bridge-root debts.  Finally, the
+q-spine pivot certificate proves the finite enclosure of those bridge roots
+between the q-spine endpoints and the shared pivot.  Thus the actual gate is
+no longer a generic boundary ratio law; it is the uniform q-spine pivot
+enclosure law, plus the right-tail overhang and sibling q-spine payment.
+\end{proof}
+
+\begin{certificatestatement}[Boundary ratio q-spine pivot reduction router]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+boundary\_ratio\_source\_key\_law\_reduced\_to\_qspine\_pivot=true\\
+old\_residual\_side\_closed=true\\
+new\_residual\_tail\_alignment\_partial\_closed=true\\
+bulk\_carry\_chain\_normal\_form\_closed=true\\
+carry\_break\_source\_packet\_reduction\_closed=true\\
+bridge\_root\_qspine\_pivot\_enclosure\_reduction\_closed=true\\
+bridge\_root\_uniform\_qspine\_pivot\_enclosure\_law\_proved=false\\
+trace\_or\_typeii\_family\_admissible\_now=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-\\
+qspine-pivot-reduction-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated boundary source-key gate]
+The active gate is now
+\begin{quote}\scriptsize\ttfamily
+BoundaryRatioQSpinePivotReductionClosed\\
+AND BridgeRootQSpinePivotEnclosureLawOrPDEC\\
+AND RightSelectedTerminalTailOverhangPDEC\\
+AND TerminalSiblingQSpinePaymentOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

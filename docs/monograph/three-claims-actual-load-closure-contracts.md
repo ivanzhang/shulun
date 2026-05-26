@@ -703,6 +703,46 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND UniformAdjacentRunCancellationStillOpen
 ```
 
+### boundary ratio q-spine pivot reduction actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_boundary_ratio_qspine_pivot_reduction_router.py
+data/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-ledger.json
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.md
+docs/monograph/prime-matrix-phi-lpf-boundary-ratio-qspine-pivot-reduction-router.json
+```
+
+actual-load 含义：`BoundaryRatioSourceKeyLawOrPDEC` 已经被实质降维到 q-spine pivot
+enclosure。old-side residual 全部返回，new-side residual 有 6 个 tail return，剩余
+36 个 bulk event 进入 carry-chain normal form，4 个 carry break 再压成 2 个
+bridge-root debt 与 2 个 unit echo。
+
+状态边界：
+
+```text
+boundary_ratio_source_key_law_reduced_to_qspine_pivot=true
+old_residual_side_closed=true
+new_residual_tail_alignment_partial_closed=true
+bulk_carry_chain_normal_form_closed=true
+carry_break_source_packet_reduction_closed=true
+bridge_root_qspine_pivot_enclosure_reduction_closed=true
+bridge_root_uniform_qspine_pivot_enclosure_law_proved=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+BridgeRootQSpinePivotEnclosureLawOrPDEC
+AND RightSelectedTerminalTailOverhangPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：
