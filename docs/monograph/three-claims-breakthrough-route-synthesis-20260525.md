@@ -2070,3 +2070,61 @@ AND PrimePowerTailAbsorptionThresholdClosed
 AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 25. LPF prime-power tail sublinear threshold 修正
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_sublinear_threshold_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.md
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.json
+```
+
+本层继续修正 LPF 精确计数和 `Lambda` lift 的剩余误差口径：合数素幂尾巴不是半主项，
+也不是新的奇偶性来源，而是 strict row 长度 `P` 的次线性阈值。
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*((sqrt(2)-1)*sqrt(P)+1
+    +(floor(log2(P^2-1))-2)*((2^(1/3)-1)*P^(1/3)+1))
+ = O(sqrt(P)*log(P)+P^(1/3)*log(P)^2)=o(P).
+```
+
+有限审计 `P=31,101,251,1009,3001,10007` 逐行确认：
+
+```text
+actual_tail_bound_all_samples=true
+sublinear_tail_bound_all_samples=true
+prime_power_tail_sublinear_threshold_closed=true
+positive_proportion_psi_would_close_rows_eventually=true
+known_short_interval_input_reaches_sqrt_window=false
+pointwise_psi_row_positive_proportion_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最大样本 `P=10007` 的最大合数素幂尾巴仍在 `k=1`，尾巴质量为 `53.795750`，
+即 `0.005376P`；统一次线性上界为 `0.184886P`。解析趋势显示该上界比例随 `P`
+下降到 `0`。因此真正剩余的不是尾巴大小，而是逐行 `psi` 正比例下界：
+
+```text
+psi(I_{P,k}) >= eta*P  (eta>0 fixed)
+```
+
+一旦有这个输入，素幂尾巴可被自动吸收，`theta(I_{P,k})>0` 随之成立。当前外部定理仍未
+到达这个口：Runbo Li 的短区间指数 `0.52` 在 `x=P^2` 处需要长度 `P^1.04`，
+仍长于目标行长 `P`；大模数 AP 平均、Milićević--Qin--Wu、Pascadi、Wright
+等 Kloosterman/Type-II 工具则需要先构造 admissible signed trace family。
+
+最新非循环口为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND PrimePowerTailSublinearThresholdClosed
+AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

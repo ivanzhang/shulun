@@ -40354,6 +40354,90 @@ AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Strict-row prime-power tail is sublinear]
+Let \(P\ge3\) be prime, \(1\le k<P\), and
+\[
+  I_{P,k}=(kP,(k+1)P)\cap\mathbb Z.
+\]
+Then the composite prime-power tail satisfies
+\[
+\sum_{\substack{p^a\in I_{P,k}\\ a\ge2}}\log p
+\le
+\log P\left((\sqrt2-1)\sqrt P+1+
+(\lfloor\log_2(P^2-1)\rfloor-2)
+\bigl((2^{1/3}-1)P^{1/3}+1\bigr)\right).
+\]
+In particular this tail is
+\[
+  O\bigl(\sqrt P\log P+P^{1/3}(\log P)^2\bigr)=o(P).
+\]
+Consequently, any pointwise lower bound
+\[
+  \psi(I_{P,k})\ge \eta P
+\]
+with fixed \(\eta>0\), uniformly in all strict rows and all sufficiently large
+\(P\), would imply \(\theta(I_{P,k})>0\) for all those rows.
+\end{proposition}
+
+\begin{proof}
+For every prime power \(p^a\in I_{P,k}\) with \(a\ge2\), the base satisfies
+\(p<P\), so \(\log p\le\log P\).  It remains to bound the possible integer
+bases.  For \(a=2\),
+\[
+\lfloor ((k+1)P-1)^{1/2}\rfloor-\lfloor(kP)^{1/2}\rfloor
+\le (\sqrt2-1)\sqrt P+1,
+\]
+because the square-root increment \(\sqrt{k+1}-\sqrt k\) is largest at
+\(k=1\).  For each \(a\ge3\), concavity gives
+\[
+\lfloor ((k+1)P-1)^{1/a}\rfloor-\lfloor(kP)^{1/a}\rfloor
+\le (2^{1/a}-1)P^{1/a}+1
+\le (2^{1/3}-1)P^{1/3}+1 .
+\]
+There are at most \(\lfloor\log_2(P^2-1)\rfloor-2\) exponents \(a\ge3\).
+Multiplying the resulting base-count bound by \(\log P\) proves the displayed
+inequality and the \(o(P)\) estimate.  Combining this with the preceding
+prime-power tail absorption equivalence gives the final implication.
+\end{proof}
+
+\begin{certificatestatement}[LPF prime-power tail sublinear threshold audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+actual\_tail\_bound\_all\_samples=true\\
+sublinear\_tail\_bound\_all\_samples=true\\
+prime\_power\_tail\_sublinear\_threshold\_closed=true\\
+positive\_proportion\_psi\_would\_close\_rows\_eventually=true\\
+known\_short\_interval\_input\_reaches\_sqrt\_window=false\\
+pointwise\_psi\_row\_positive\_proportion\_proved=false\\
+admissible\_signed\_typeii\_or\_trace\_family\_constructed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-prime-power-\\
+tail-sublinear-threshold-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated square-root-scale psi gate]
+This closes a real load estimate: the prime-power correction is not a
+main-term obstruction after the LPF counting formula has been corrected.  It is
+uniformly \(o(P)\).  The remaining obstacle is sharper: one needs a pointwise
+positive-proportion lower bound for \(\psi\) on every interval of length
+\(P=x^{1/2}\) near \(x=P^2\), or an admissible signed Type-II/trace family that
+returns such rowwise load.  Current short-interval and averaged AP/Kloosterman
+inputs remain insufficient without that additional construction.  The active
+gate is
+\begin{quote}\scriptsize\ttfamily
+LPFPurePowerVonMangoldtCompressionClosed\\
+AND PrimePowerTailAbsorptionThresholdClosed\\
+AND PrimePowerTailSublinearThresholdClosed\\
+AND NeedPointwisePsiRowPositiveProportionAtSqrtScale\\
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

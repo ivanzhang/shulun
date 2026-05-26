@@ -13623,3 +13623,53 @@ AND PrimePowerTailAbsorptionThresholdClosed
 AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC37：LPF prime-power tail sublinear threshold（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_sublinear_threshold_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.md
+```
+
+本层把 strict row 的合数素幂尾巴压成统一次线性阈值：
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*((sqrt(2)-1)*sqrt(P)+1
+    +(floor(log2(P^2-1))-2)*((2^(1/3)-1)*P^(1/3)+1))
+ = O(sqrt(P)*log(P)+P^(1/3)*log(P)^2)=o(P).
+```
+
+有限审计读数：
+
+```text
+actual_tail_bound_all_samples=true
+sublinear_tail_bound_all_samples=true
+prime_power_tail_sublinear_threshold_closed=true
+positive_proportion_psi_would_close_rows_eventually=true
+known_short_interval_input_reaches_sqrt_window=false
+pointwise_psi_row_positive_proportion_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：素幂尾巴已不再是主量级障碍；任意固定正比例逐行 `psi(I_{P,k})>=eta*P`
+足以最终吸收它。但当前短区间最前沿仍未达到 `x=P^2` 的 `x^(1/2)` 点态窗口，平均型
+AP/Kloosterman/谱工具也仍需先构造 admissible signed Type-II/trace family。
+
+最新 honest 口：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND PrimePowerTailSublinearThresholdClosed
+AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

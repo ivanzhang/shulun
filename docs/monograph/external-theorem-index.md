@@ -12295,3 +12295,61 @@ AND PrimePowerTailAbsorptionThresholdClosed
 AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AP. LPF prime-power tail sublinear threshold 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_sublinear_threshold_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.md
+```
+
+本层把上一节的 `psi` 吸收阈值进一步解析化：strict row 内合数素幂尾巴满足
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*((sqrt(2)-1)*sqrt(P)+1
+    +(floor(log2(P^2-1))-2)*((2^(1/3)-1)*P^(1/3)+1))
+ = O(sqrt(P)*log(P)+P^(1/3)*log(P)^2)=o(P).
+```
+
+因此，任意固定正比例逐行下界 `psi(I_{P,k})>=eta*P` 都会在足够大 `P` 后吸收素幂
+尾巴并推出行内素数存在。有限审计 `P=31,101,251,1009,3001,10007` 逐行确认
+实际尾巴、整数根上界与统一次线性上界相容。
+
+审计读数：
+
+```text
+actual_tail_bound_all_samples=true
+sublinear_tail_bound_all_samples=true
+prime_power_tail_sublinear_threshold_closed=true
+positive_proportion_psi_would_close_rows_eventually=true
+known_short_interval_input_reaches_sqrt_window=false
+pointwise_psi_row_positive_proportion_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界同步：
+
+| 外部输入 | 主源 | 当前边界 |
+| --- | --- | --- |
+| Runbo Li short intervals | https://arxiv.org/abs/2308.04458 | `x=P^2` 处给长度 `P^1.04`，仍长于 strict row 的 `P` |
+| Runbo Li large-modulus AP/Harman | https://arxiv.org/abs/2602.20917 | 平均型大模数输入，不给每个 row 的零例外 `psi` 正比例下界 |
+| Milićević--Qin--Wu bilinear Kloosterman | https://arxiv.org/abs/2511.07550 | 需要先构造真实双线性 trace family |
+| Pascadi composite-modulus Type-II Kloosterman | https://arxiv.org/abs/2511.08445 | 需要 composite-modulus 系数族与返回 row 的 actual load |
+| Wright trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要满足其分布假设的三线性 convolution |
+
+最新开放口：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND PrimePowerTailSublinearThresholdClosed
+AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

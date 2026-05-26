@@ -242,6 +242,60 @@ AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### LPF prime-power tail sublinear threshold actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_sublinear_threshold_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.md
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-sublinear-threshold-audit.json
+```
+
+actual-load 含义：上一层把素数存在性改写成
+`psi(I_{P,k})` 吸收合数素幂尾巴。本层证明该尾巴本身是 strict row 长度 `P` 的
+次线性误差：
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*((sqrt(2)-1)*sqrt(P)+1
+    +(floor(log2(P^2-1))-2)*((2^(1/3)-1)*P^(1/3)+1))
+ = O(sqrt(P)*log(P)+P^(1/3)*log(P)^2)=o(P).
+```
+
+因此，若存在任意固定 `eta>0` 的逐行下界
+
+```text
+psi(I_{P,k}) >= eta*P
+```
+
+则对足够大的 `P` 自动有 `theta(I_{P,k})>0`。这不是闭合证明，因为当前外部短区间、
+AP 平均、Kloosterman/Type-II 和谱工具都还没有提供 `x=P^2`、窗口长 `P=x^(1/2)`
+的逐行零例外 `psi` 正比例下界。
+
+状态边界：
+
+```text
+prime_power_tail_sublinear_threshold_closed=true
+positive_proportion_psi_would_close_rows_eventually=true
+known_short_interval_input_reaches_sqrt_window=false
+pointwise_psi_row_positive_proportion_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND PrimePowerTailSublinearThresholdClosed
+AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：
