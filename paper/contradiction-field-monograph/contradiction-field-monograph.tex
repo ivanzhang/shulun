@@ -40438,6 +40438,70 @@ AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Runbo Li short intervals close the low-row band]
+Assume the external theorem of Runbo Li that, for all sufficiently large
+\(X\), the interval \([X-X^{13/25},X]\) contains a prime.  Let \(P\) be prime
+and \(1\le k<P\), with \(X=(k+1)P\) sufficiently large.  If
+\[
+  ((k+1)P)^{13/25}<P,
+\]
+equivalently
+\[
+  (k+1)^{13}<P^{12},
+\]
+then the strict row
+\[
+  (kP,(k+1)P)
+\]
+contains a prime.  Thus the external short-interval theorem closes the
+low-row band \(k+1<P^{12/13}\), up to the integer floor and the external
+threshold.
+\end{proposition}
+
+\begin{proof}
+Put \(X=(k+1)P\).  The displayed inequality gives
+\[
+  X-X^{13/25}>X-P=kP.
+\]
+By Li's theorem, \([X-X^{13/25},X]\) contains a prime.  Since
+\(X=(k+1)P\) is composite for \(1\le k<P\), that prime is strictly below
+\(X\).  Hence it lies in \((kP,(k+1)P)\).  The equivalence of the two
+conditions follows by raising to the \(25\)-th power and cancelling \(P^{13}\).
+\end{proof}
+
+\begin{certificatestatement}[Runbo Li low-row band bridge audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+runbo\_li\_low\_row\_band\_closed=true\\
+top\_band\_sqrt\_scale\_gap\_remains=true\\
+closes\_all\_strict\_rows=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-runbo-li-\\
+low-row-band-bridge-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated top-band localization]
+This is a genuine unconditional external bridge, but it is not a full closure.
+It closes about \(P^{12/13}\) low rows, whose density among the \(P-1\) strict
+rows is \(P^{-1/13}\).  The dominant top band
+\[
+  k+1\ge P^{12/13}
+\]
+still requires a square-root-scale pointwise \(\psi/\theta\) lower bound or an
+admissible signed Type-II/trace family.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+RunboLiLowRowBandClosedForKPlusOneLessThanPTo12Over13\\
+AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi\\
+AND PrimePowerTailSublinearThresholdClosed\\
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

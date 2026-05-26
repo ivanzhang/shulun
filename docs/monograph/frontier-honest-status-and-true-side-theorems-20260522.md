@@ -13673,3 +13673,53 @@ AND PrimePowerTailSublinearThresholdClosed
 AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC38：Runbo Li short-interval low-row band bridge（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_runbo_li_low_row_band_bridge_audit.py
+data/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.md
+```
+
+Runbo Li 的短区间定理给出充分大 `X` 时 `[X-X^0.52,X]` 含素数。取
+`X=(k+1)P`，若
+
+```text
+((k+1)P)^(13/25)<P  <=>  (k+1)^13<P^12,
+```
+
+则该短区间落入 Prime Matrix strict row `(kP,(k+1)P)`。因此低行带
+
+```text
+1<=k<=P^(12/13)-1
+```
+
+由外部短区间定理闭合。
+
+有限审计读数：
+
+```text
+runbo_li_low_row_band_closed=true
+top_band_sqrt_scale_gap_remains=true
+closes_all_strict_rows=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：该桥接是真正无条件推进，但只闭合约 `P^(12/13)` 条低行，密度
+`P^(-1/13)` 趋零。完整行/列命题仍卡在 top band 的平方根尺度逐行正性。
+
+最新 honest 口：
+
+```text
+RunboLiLowRowBandClosedForKPlusOneLessThanPTo12Over13
+AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

@@ -12353,3 +12353,57 @@ AND PrimePowerTailSublinearThresholdClosed
 AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AQ. Runbo Li short-interval low-row band bridge 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_runbo_li_low_row_band_bridge_audit.py
+data/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.md
+```
+
+外部输入：Runbo Li, `https://arxiv.org/abs/2308.04458`，证明充分大 `X` 时
+`[X-X^0.52,X]` 含素数。嵌入 Prime Matrix strict row 时取
+
+```text
+X=(k+1)P.
+```
+
+若
+
+```text
+X^(13/25)<P  <=>  (k+1)^13<P^12,
+```
+
+则短区间落入 `(kP,(k+1)P)`，给出行内素数。因此外部短区间定理闭合低行带
+
+```text
+1<=k<=P^(12/13)-1.
+```
+
+审计读数：
+
+```text
+runbo_li_low_row_band_closed=true
+top_band_sqrt_scale_gap_remains=true
+closes_all_strict_rows=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界同步：这是 Runbo Li `0.52` 指数在本项目中的精确可用范围。它比
+Baker--Harman--Pintz 的 `0.525` 指数给出更宽低行带，但闭合行数仍为
+`P^(12/13)` 量级，密度趋零；top band 仍需要 `x=P^2` 上长度 `P=x^(1/2)` 的
+逐行 `psi/theta` 输入或 admissible signed Type-II/trace family。
+
+最新开放口：
+
+```text
+RunboLiLowRowBandClosedForKPlusOneLessThanPTo12Over13
+AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

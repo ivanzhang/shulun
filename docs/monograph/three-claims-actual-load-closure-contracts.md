@@ -296,6 +296,63 @@ AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### Runbo Li short-interval low-row band actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_runbo_li_low_row_band_bridge_audit.py
+data/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.md
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.json
+```
+
+actual-load 含义：Runbo Li 的短区间定理给出充分大 `X` 时
+`[X-X^0.52,X]` 含素数。把它嵌入 strict row 右端点
+
+```text
+X=(k+1)P
+I_{P,k}=(kP,(k+1)P)
+```
+
+若
+
+```text
+X^(13/25)<P  <=>  (k+1)^13<P^12,
+```
+
+则该短区间完全落入 strict row，且右端点 `(k+1)P` 本身是合数，所以行内有素数。
+于是低行带
+
+```text
+1<=k<=P^(12/13)-1   (integer floor understood)
+```
+
+由外部无条件短区间定理闭合。剩余 top band 仍为
+
+```text
+k+1>=P^(12/13).
+```
+
+状态边界：
+
+```text
+runbo_li_low_row_band_closed=true
+top_band_sqrt_scale_gap_remains=true
+closes_all_strict_rows=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+RunboLiLowRowBandClosedForKPlusOneLessThanPTo12Over13
+AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

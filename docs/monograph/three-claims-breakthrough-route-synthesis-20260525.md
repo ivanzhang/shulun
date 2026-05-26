@@ -2128,3 +2128,55 @@ AND PrimePowerTailSublinearThresholdClosed
 AND NeedPointwisePsiRowPositiveProportionAtSqrtScale
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 26. Runbo Li short-interval low-row band bridge
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_runbo_li_low_row_band_bridge_audit.py
+data/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-ledger.json
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.md
+docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.json
+```
+
+本层把上一节的平方根尺度 `psi/theta` 硬点与已知最强短区间输入精确对接。Runbo Li
+证明充分大 `X` 时 `[X-X^0.52,X]` 含素数。对 strict row 取右端点
+
+```text
+X=(k+1)P.
+```
+
+若
+
+```text
+((k+1)P)^(13/25)<P  <=>  (k+1)^13<P^12,
+```
+
+则 Li 短区间完全落在 `(kP,(k+1)P)` 内；右端点 `(k+1)P` 是合数，因此该 row
+无条件含素数。于是低行带
+
+```text
+1<=k<=P^(12/13)-1
+```
+
+由外部定理闭合。有限审计记录精确整数条件：例如 `P=1009` 时闭合 `591/1008`
+行，`P=1000003` 时闭合 `345510/1000002` 行。
+
+这是真推进，但不是完整闭合：闭合行数约 `P^(12/13)`，占全部 strict rows 的比例约
+`P^(-1/13)`，趋向 `0`。主硬点仍集中在
+
+```text
+k+1>=P^(12/13)
+```
+
+的 top band，尤其 `k~P` 的平方根尺度行窗口。
+
+最新非循环口为：
+
+```text
+RunboLiLowRowBandClosedForKPlusOneLessThanPTo12Over13
+AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
