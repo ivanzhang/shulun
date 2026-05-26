@@ -451,6 +451,62 @@ AND PrimePowerTailSublinearThresholdClosed
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### sqrt-Oppermann top-row alignment actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_oppermann_toprow_alignment_router.py
+data/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.json
+```
+
+actual-load 含义：`C=1` 的右端点平方根输入在 top row 上不是近似匹配，而是精确匹配。
+当 `k=P-1` 时
+
+```text
+I_top=(P^2-P,P^2),   X=P^2,
+[X-sqrt(X),X]=[P^2-P,P^2].
+```
+
+两个端点 `P^2-P` 与 `P^2` 都是合数，因此闭区间中的素数必在开 top row 内。这正是
+prime-indexed Oppermann left half：
+
+```text
+pi(P^2-1)-pi(P^2-P)>=1.
+```
+
+同时 Legendre 的宽平方区间只给
+
+```text
+((P-1)^2,P^2)=((P-1)^2,P^2-P] union (P^2-P,P^2),
+```
+
+且两半各有 `P-1` 个整数。Legendre prime 可以完全落在 lower leak half，故不能推出
+top-row positivity。任意固定 `C>1` 的平方根输入同样包含 lower leak strip，不能隔离
+top row。
+
+状态边界：
+
+```text
+top_row_equals_prime_indexed_oppermann_left_half=true
+sqrt_C_one_right_endpoint_equivalent_to_top_row=true
+legendre_interval_splits_into_equal_lower_leak_and_target_halves=true
+legendre_wide_square_interval_implies_top_row=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+PrimeIndexedOppermannLeftTopRowOrSharpCOneSqrtInputStillOpen
+AND LegendreWideSquareIntervalDoesNotImplyTopRow
+AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

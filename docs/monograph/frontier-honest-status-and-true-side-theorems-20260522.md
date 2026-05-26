@@ -13820,3 +13820,58 @@ AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC41：sqrt-Oppermann top-row alignment router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_oppermann_toprow_alignment_router.py
+data/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.md
+```
+
+本层把 top row 与 `C=1` 平方根输入完全对齐：
+
+```text
+k=P-1 gives I_top=(P^2-P,P^2)
+X=P^2 and [X-sqrt(X),X]=[P^2-P,P^2]
+```
+
+两个端点为合数，因此该闭区间中的素数等价于开 top row 中的素数。换言之，top row
+硬核正是 prime-indexed Oppermann left half。
+
+Legendre 的宽平方区间只能给：
+
+```text
+((P-1)^2,P^2)=((P-1)^2,P^2-P] union (P^2-P,P^2),
+```
+
+两半各有 `P-1` 个整数。它不推出右半 top row 非空。
+
+有限审计读数：
+
+```text
+top_row_equals_prime_indexed_oppermann_left_half=true
+sqrt_C_one_right_endpoint_equivalent_to_top_row=true
+legendre_interval_splits_into_equal_lower_leak_and_target_halves=true
+legendre_wide_square_interval_implies_top_row=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：当前不能把 Legendre、`C>1` sqrt 输入、`theta>1/2` 短区间或有限核查写成
+top row 证明。最新真实口是 prime-indexed Oppermann-left 点态定理，或同对象 signed
+Type-II/trace family 破奇偶。
+
+最新 honest 口：
+
+```text
+PrimeIndexedOppermannLeftTopRowOrSharpCOneSqrtInputStillOpen
+AND LegendreWideSquareIntervalDoesNotImplyTopRow
+AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```

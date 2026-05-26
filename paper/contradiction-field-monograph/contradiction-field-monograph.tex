@@ -40639,6 +40639,77 @@ AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Sqrt \(C=1\) equals the prime-indexed Oppermann top row]
+For the top strict row \(k=P-1\),
+\[
+  I_{\rm top}=(P^2-P,P^2).
+\]
+At the square endpoint \(X=P^2\), the right-endpoint square-root interval with
+constant \(C=1\) is exactly
+\[
+  [X-\sqrt X,X]=[P^2-P,P^2].
+\]
+Since both endpoints \(P^2-P=P(P-1)\) and \(P^2\) are composite, a prime in
+this closed interval is equivalent to a prime in the open top row.  Thus the
+top-row obstruction is precisely the prime-indexed left Oppermann half
+\[
+  \pi(P^2-1)-\pi(P^2-P)\ge1\qquad(P\ {\rm prime}).
+\]
+By contrast, the Legendre square interval decomposes as
+\[
+  ((P-1)^2,P^2)
+  =((P-1)^2,P^2-P]\ \cup\ (P^2-P,P^2),
+\]
+and the two integer halves have the same size \(P-1\).  Therefore Legendre's
+wider interval, or any fixed \(C>1\) square-root input, does not isolate the
+top row.
+\end{proposition}
+
+\begin{proof}
+The identity \(I_{\rm top}=(P^2-P,P^2)\) is the specialization \(k=P-1\) of
+\((kP,(k+1)P)\).  Since \(\sqrt{P^2}=P\), the \(C=1\) right-endpoint interval
+at \(X=P^2\) is \([P^2-P,P^2]\).  The endpoint compositeness removes any
+closed-endpoint ambiguity.  Finally,
+\[
+  (P-1)^2=P^2-2P+1,
+\]
+so the integer set in \(((P-1)^2,P^2-P]\) has cardinality \(P-1\), and the
+integer set in \((P^2-P,P^2)\) also has cardinality \(P-1\).  A Legendre prime
+may lie entirely in the lower half, so it gives no implication for top-row
+positivity without an additional localization input.
+\end{proof}
+
+\begin{certificatestatement}[Sqrt-Oppermann top-row alignment router]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+top\_row\_equals\_prime\_indexed\_oppermann\_left\_half=true\\
+sqrt\_C\_one\_right\_endpoint\_equivalent\_to\_top\_row=true\\
+legendre\_interval\_splits\_into\_equal\_lower\_leak\_and\_target\_halves=true\\
+legendre\_wide\_square\_interval\_implies\_top\_row=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-\\
+toprow-alignment-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated top-row external boundary]
+This removes a common shortcut.  A Legendre-scale result is a \(C\approx2\)
+right-endpoint square-root input at \(P^2\), and it contains a lower leakage
+half of the same integer size as the target top row.  The remaining top-row
+external input is not Legendre but prime-indexed Oppermann left, equivalently
+the sharp \(C=1\) right-endpoint square-root statement at \(X=P^2\).  The active
+gate is
+\begin{quote}\scriptsize\ttfamily
+PrimeIndexedOppermannLeftTopRowOrSharpCOneSqrtInputStillOpen\\
+AND LegendreWideSquareIntervalDoesNotImplyTopRow\\
+AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip\\
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

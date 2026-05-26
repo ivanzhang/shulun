@@ -1,0 +1,373 @@
+{
+  "C_one_right_endpoint_identity": "X=P^2 and [X-sqrt(X),X]=[P^2-P,P^2]",
+  "certificate_type": "prime_matrix_phi_lpf_sqrt_oppermann_toprow_alignment_router",
+  "fixed_C_greater_than_one_toprow_isolation": false,
+  "known_unconditional_prime_indexed_oppermann_left_available": false,
+  "latest_open_gate": "PrimeIndexedOppermannLeftTopRowOrSharpCOneSqrtInputStillOpen AND LegendreWideSquareIntervalDoesNotImplyTopRow AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen",
+  "legendre_interval_splits_into_equal_lower_leak_and_target_halves": true,
+  "legendre_split_identity": "((P-1)^2,P^2)=((P-1)^2,P^2-P] union (P^2-P,P^2), with P-1 integers in each half.",
+  "legendre_wide_square_interval_implies_top_row": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The top strict row is exactly the prime-indexed Oppermann left half. A C=1 right-endpoint square-root theorem at X=P^2 is precisely the needed top-row input, while Legendre's wider interval splits into a lower leak half and the target half. Thus Legendre-scale or any fixed C>1 square-root input cannot by itself close the row/column theorem.",
+  "prime_endpoint_note": "Both endpoints P^2-P and P^2 are composite, so any prime in the closed C=1 interval lies in the open top row.",
+  "row_column_unconditional_closed": false,
+  "samples": [
+    {
+      "P": 3,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 1,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "5/3",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 2,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 3,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(4,9)",
+      "lower_leak_integer_count": 2,
+      "lower_leak_interval": "(4,6]",
+      "lower_leak_prime_count": 1,
+      "top_row_integer_count": 2,
+      "top_row_interval": "(6,9)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 1
+    },
+    {
+      "P": 5,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 2,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "9/5",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 4,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 5,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(16,25)",
+      "lower_leak_integer_count": 4,
+      "lower_leak_interval": "(16,20]",
+      "lower_leak_prime_count": 2,
+      "top_row_integer_count": 4,
+      "top_row_interval": "(20,25)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 1
+    },
+    {
+      "P": 11,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 4,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "21/11",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 10,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 11,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(100,121)",
+      "lower_leak_integer_count": 10,
+      "lower_leak_interval": "(100,110]",
+      "lower_leak_prime_count": 4,
+      "top_row_integer_count": 10,
+      "top_row_interval": "(110,121)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 1
+    },
+    {
+      "P": 31,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 12,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "61/31",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 30,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 31,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(900,961)",
+      "lower_leak_integer_count": 30,
+      "lower_leak_interval": "(900,930]",
+      "lower_leak_prime_count": 4,
+      "top_row_integer_count": 30,
+      "top_row_interval": "(930,961)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 4
+    },
+    {
+      "P": 101,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 41,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "201/101",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 100,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 101,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(10000,10201)",
+      "lower_leak_integer_count": 100,
+      "lower_leak_interval": "(10000,10100]",
+      "lower_leak_prime_count": 11,
+      "top_row_integer_count": 100,
+      "top_row_interval": "(10100,10201)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 12
+    },
+    {
+      "P": 1009,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 1,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 417,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2017/1009",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 1008,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 1009,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(1016064,1018081)",
+      "lower_leak_integer_count": 1008,
+      "lower_leak_interval": "(1016064,1017072]",
+      "lower_leak_prime_count": 71,
+      "top_row_integer_count": 1008,
+      "top_row_interval": "(1017072,1018081)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 70
+    },
+    {
+      "P": 10007,
+      "constant_leaks": [
+        {
+          "C": "1/1",
+          "label": "C=1",
+          "lower_leak_integer_count": 0,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": true
+        },
+        {
+          "C": "10001/10000",
+          "label": "C=1.0001",
+          "lower_leak_integer_count": 2,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "sqrt(2)",
+          "label": "C=sqrt(2) lower bound",
+          "lower_leak_integer_count_at_least": 4145,
+          "meaning": "positive fixed-proportion leakage below P^2-P",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "20013/10007",
+          "label": "Legendre C=(2P-1)/P",
+          "lower_leak_integer_count": 10006,
+          "meaning": "Legendre open square interval splits into two equal integer halves",
+          "top_row_is_isolated": false
+        },
+        {
+          "C": "2/1",
+          "label": "C=2",
+          "lower_leak_integer_count": 10007,
+          "meaning": "C=1 isolates top row; fixed C>1 creates lower leak strip",
+          "top_row_is_isolated": false
+        }
+      ],
+      "equal_half_counts": true,
+      "legendre_open_interval": "(100120036,100140049)",
+      "lower_leak_integer_count": 10006,
+      "lower_leak_interval": "(100120036,100130042]",
+      "lower_leak_prime_count": 548,
+      "top_row_integer_count": 10006,
+      "top_row_interval": "(100130042,100140049)",
+      "top_row_positive_in_sample": true,
+      "top_row_prime_count": 566
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/external-theorem-index.md": "c0d27706c9114d73ff3b0b872cd863b305b06a774e1c3e0b60788ce9f70ce464",
+    "docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.json": "26d483db1f25930b40cd2389a16de1e30f01973723adcf5afb54d8b18d2f9191",
+    "docs/monograph/prime-matrix-phi-lpf-sqrt-constant-threshold-router.md": "45a9c72f0cdd008e76b9ee0f1b6e445fc6101ce569784c4278921ca660c09988",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-top-row-square-collar-router.json": "d1a4c61c54b866038f6263dd795dad16f3d486faf53a9fcbaa45e0ae2228f058",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "47fe5479f28561d4e35268a1851f9637cacb1d5086de5e485f5e7bdc3fad9453",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "b7b27008481045b6017de0210e01af835b8d8c498ff3134a4f81bcf6a03f9883",
+    "experiments/prime_matrix_phi_lpf_sqrt_oppermann_toprow_alignment_router.py": "f163753942294fc77c3bf0a21962d35401e05c2e0a3f17fd884a6c7679902fb8"
+  },
+  "sqrt_C_one_right_endpoint_equivalent_to_top_row": true,
+  "status": "sqrt_C_one_equals_prime_indexed_oppermann_left_toprow",
+  "top_row_equals_prime_indexed_oppermann_left_half": true,
+  "top_row_identity": "k=P-1 gives I_top=(P^2-P,P^2)",
+  "verified_date": "2026-05-26"
+}

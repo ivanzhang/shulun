@@ -2276,3 +2276,53 @@ AND AnyFixedSqrtConstantGreaterThanOneLeavesPositiveDensityTopBand
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 29. sqrt-Oppermann top-row alignment router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_sqrt_oppermann_toprow_alignment_router.py
+data/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-ledger.json
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.md
+docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.json
+```
+
+本层把上一节 `C<=1` 的平方根门槛在最坏 top row 上完全对齐。令 `k=P-1`，则
+
+```text
+I_top=(P^2-P,P^2).
+```
+
+右端点取 `X=P^2` 时，`C=1` 的平方根区间是
+
+```text
+[X-sqrt(X),X]=[P^2-P,P^2].
+```
+
+由于两个端点都是合数，任何由该闭区间输入给出的素数都必须落在开 top row 中。因此
+`C=1` right-endpoint sqrt input 在 top row 上等价于 prime-indexed Oppermann left half：
+
+```text
+pi(P^2-1)-pi(P^2-P)>=1   (P prime).
+```
+
+同时，本层把 Legendre 型误出口切掉。Legendre 区间满足
+
+```text
+((P-1)^2,P^2)
+=((P-1)^2,P^2-P] union (P^2-P,P^2),
+```
+
+且左右两半各有 `P-1` 个整数。Legendre theorem 允许素数全部出现在 lower leak half，
+所以不能推出 top row。任意固定 `C>1` 的平方根输入同样包含 `P^2-P` 以下的泄漏带；
+`C=sqrt(2)` 已有固定比例泄漏，`C=2` 比 Legendre 还多一个整数层。
+
+最新非循环口为：
+
+```text
+PrimeIndexedOppermannLeftTopRowOrSharpCOneSqrtInputStillOpen
+AND LegendreWideSquareIntervalDoesNotImplyTopRow
+AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
