@@ -2363,6 +2363,39 @@ PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 coefficients 与 admissible trace/Type-II family，后者需要 \(H=P=x^{1/2}\) 的点态行尺度。
 因此本步推进了硬点定位，但没有证明任一目标命题无条件闭合。
 
+## 48C. product-window first seed to edge-local fields router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_first_seed_to_edge_local_fields_router.py
+data/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.json
+```
+
+本层继续展开上一节的
+`PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward`。diagonal `(p,p)`
+已回到 source 三原子；offdiagonal `(p,q,t)` 的 owner、first q、q-rough tail
+与 Phi fiber mass 是闭合的无符号字段；pure two-prime edge 的 LPF/Ferrers
+label 也已闭合。因而 LPF/Phi/Ferrers 在 first-seed 分支上的支撑与容量已经
+耗尽，最新非循环口变为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行出口仍是逐点 signed table、primitive origin、new primitive payload/trace、
+terminal descent、same-set PDEC、completed trace bridge 或平方根行尺度点态素数输入。
+本步仍不是无条件闭合证明。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

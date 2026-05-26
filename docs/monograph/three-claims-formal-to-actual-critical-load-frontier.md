@@ -27306,6 +27306,34 @@ parallel_distribution_attack_target=PointwiseSqrtPrimeInputCOne
 row_column_unconditional_closed=false
 ```
 
+### product-window first seed to edge-local fields formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_first_seed_to_edge_local_fields_router.py
+data/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.json
+```
+
+formal-to-actual 结论：`PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward`
+不能由 LPF/Phi 支撑计数直接支付。formal first seed 被拆成 diagonal/source
+packet、offdiagonal tuple fields 与 pure edge-local label fields；这些无符号字段
+闭合后，actual proof 仍必须提交推前前 signed seed formula、signed atom fields
+或命名 return。
+
+```text
+product_window_first_seed_imported=true
+diagonal_private_signed_escape_removed=true
+offdiagonal_tuple_unsigned_fields_closed=true
+edge_local_unsigned_labels_closed=true
+lpf_phi_unsigned_scope_exhausted=true
+next_primary_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+tuple_level_required_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+row_column_unconditional_closed=false
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

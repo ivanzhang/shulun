@@ -556,6 +556,50 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window first seed to edge-local fields actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_first_seed_to_edge_local_fields_router.py
+data/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.json
+```
+
+actual-load 含义：上一节的 first-edge semiprime seed 不再是未拆解黑箱。它先
+分成 diagonal 与 offdiagonal；diagonal 被 source 三原子吸收，offdiagonal 的
+LPF/Phi tuple 字段闭合；pure two-prime edge 的 canonical label 也由 LPF/Phi/Ferrers
+闭合。剩余负载不是继续加细 LPF 计数，而是 signed 字段本身。
+
+```text
+product_window_first_seed_imported=true
+diagonal_private_signed_escape_removed=true
+offdiagonal_tuple_unsigned_fields_closed=true
+edge_local_unsigned_labels_closed=true
+lpf_phi_unsigned_scope_exhausted=true
+signed_atom_field_table_proved=false
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND source-atoms/ExactUV/model/rate/DStructure gates
+
+parallel:
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+OR NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

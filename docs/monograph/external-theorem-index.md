@@ -13479,3 +13479,30 @@ trace_bridge_admissible_coefficients_proved=false
 pointwise_sqrt_prime_input_c_one_proved=false
 row_column_unconditional_closed=false
 ```
+
+## 65BN. product-window first seed to edge-local fields router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_first_seed_to_edge_local_fields_router.py
+data/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.md
+```
+
+外部 theorem 边界再次收窄：product-window first seed 的 LPF/Phi/Ferrers
+无符号部分已经落到 closed tuple fields 与 closed edge labels。FKMS/trace-function、
+Kloosterman Type-II、DI-BFI/Pascadi 等谱工具若要进入，必须先有
+`PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward`
+或 `PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward`
+这样的 signed coefficient 对象；短区间素数输入仍需达到 \(H=P=x^{1/2}\) 的点态行尺度。
+
+```text
+offdiagonal_tuple_unsigned_fields_closed=true
+edge_local_unsigned_labels_closed=true
+lpf_phi_unsigned_scope_exhausted=true
+signed_atom_field_table_proved=false
+new_primitive_payload_or_trace_artifact_present=false
+row_column_unconditional_closed=false
+```

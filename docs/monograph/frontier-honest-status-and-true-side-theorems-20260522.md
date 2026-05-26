@@ -14757,3 +14757,30 @@ edge_multiplier_slab_imported=true
 pointwise_origin_imported=true
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC59：product-window first seed to edge-local fields router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_first_seed_to_edge_local_fields_router.py
+data/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-first-seed-to-edge-local-fields-router.md
+```
+
+本层 honest 边界：first-edge seed 的 diagonal 已吸收到 source 三原子；offdiagonal
+tuple 与 pure edge label 的无符号字段已闭合；但 signed seed formula、edge-local
+signed atom fields、orientation、ExactUV return 与 internal transition 仍未证明。
+所以最新结论是“LPF/Phi/Ferrers 无符号字段耗尽”，不是“行/列命题已闭合”。
+
+```text
+product_window_first_seed_imported=true
+offdiagonal_tuple_unsigned_fields_closed=true
+edge_local_unsigned_labels_closed=true
+lpf_phi_unsigned_scope_exhausted=true
+signed_atom_field_table_proved=false
+row_column_unconditional_closed=false
+```
