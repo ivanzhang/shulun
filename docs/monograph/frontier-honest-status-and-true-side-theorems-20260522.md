@@ -14036,3 +14036,53 @@ AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
 AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+---
+
+## 附录 Q13AC45：terminal trace-kernel source-key lift router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_trace_kernel_source_key_lift_router.py
+data/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.md
+```
+
+本层把 `TerminalRunKernelFormula` 从黑箱合同变为具体 actual-load 门。诚实边界是：
+形式 Jordan 相位核闭合，但 trace kernel 的 source-key lift 未闭合。
+
+```text
+formal_jordan_phase_kernel_closed=true
+prefix_record_reflection_schema_closed=true
+source_key_obstruction_partition_closed=true
+boundary_ratio_spectrum_closed=true
+sibling_qspine_finite_kernel_closed=true
+terminal_run_kernel_formula_reduced_to_actual_source_key_gates=true
+terminal_run_kernel_formula_proved=false
+```
+
+剩余 actual 缺口：
+
+```text
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+internal_survivor_fragment_count=1
+terminal_double_awrap_sibling_qspine_kernel_payment_law_proved=false
+```
+
+honest 结论：不能把 `A(q)/q` 的后验 telescope 当作外部 trace theorem 的输入。
+下一步必须证明边界比率的 source-key law，或把它命名回流为 PDEC/SAE/LocalSurvivor。
+
+最新 honest 口：
+
+```text
+TraceKernelSourceKeyLiftReductionClosed
+AND BoundaryRatioSourceKeyLawOrPDEC
+AND NonBoundaryRecordJumpSourceKeyLiftOrPDEC
+AND InternalSurvivorPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND UniformAdjacentRunCancellationStillOpen
+```

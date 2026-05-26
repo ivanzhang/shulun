@@ -27500,6 +27500,38 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### terminal trace-kernel source-key lift formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_trace_kernel_source_key_lift_router.py
+data/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.json
+```
+
+formal-to-actual 结论：`A(q)/q` telescope 和 prefix-record reflection 已经给出
+形式 trace kernel，但它尚未升格为 actual pre-Cauchy source-key kernel。
+
+```text
+formal_jordan_phase_kernel_closed=true
+prefix_record_reflection_schema_closed=true
+terminal_run_kernel_formula_reduced_to_actual_source_key_gates=true
+terminal_run_kernel_formula_proved=false
+same_trace_key_source_consistency_proved=false
+```
+
+实际门仍是：
+
+```text
+BoundaryRatioSourceKeyLawOrPDEC
+AND NonBoundaryRecordJumpSourceKeyLiftOrPDEC
+AND InternalSurvivorPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
 ### factor-word parity shadow orientation no-go formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

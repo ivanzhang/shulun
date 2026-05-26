@@ -2476,3 +2476,58 @@ AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
 AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+## 33. terminal trace-kernel source-key lift router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_trace_kernel_source_key_lift_router.py
+data/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.json
+```
+
+本层把上一节六接口合同中的 `TerminalRunKernelFormula` 和
+`SameTraceKeySourceConsistency` 继续向下拆。结论是：形式相位核已经存在，
+但它是 post-pushforward 的 Jordan 账本，还不是 pre-Cauchy trace kernel。
+
+已闭合的有限部分：
+
+```text
+formal_jordan_phase_kernel_closed=true
+prefix_record_reflection_schema_closed=true
+source_key_obstruction_partition_closed=true
+boundary_ratio_spectrum_closed=true
+sibling_qspine_finite_kernel_closed=true
+```
+
+未闭合的 actual source-key 门：
+
+```text
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+internal_survivor_fragment_count=1
+terminal_double_awrap_sibling_qspine_kernel_payment_law_proved=false
+```
+
+因此最快下一攻击点不再是抽象 trace theorem，而是 `BoundaryRatioSourceKeyLawOrPDEC`。
+边界比率谱已经精确到：
+
+```text
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+whole_equal_pair_event_count=0
+```
+
+最新非循环口为：
+
+```text
+TraceKernelSourceKeyLiftReductionClosed
+AND BoundaryRatioSourceKeyLawOrPDEC
+AND NonBoundaryRecordJumpSourceKeyLiftOrPDEC
+AND InternalSurvivorPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND UniformAdjacentRunCancellationStillOpen
+```

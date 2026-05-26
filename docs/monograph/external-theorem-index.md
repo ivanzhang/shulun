@@ -12695,3 +12695,54 @@ AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
 AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
 AND UniformAdjacentRunCancellationStillOpen
 ```
+
+## 65AX. terminal trace-kernel source-key lift router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_trace_kernel_source_key_lift_router.py
+data/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.md
+```
+
+外部 theorem 边界：本层说明为什么 FKMS trace functions、MQW Kloosterman、
+Pascadi Type-II、Wright trilinear Kloosterman 和 Runbo Li AP/Harman 仍不能直接接入。
+形式相位核已经闭合，但尚未成为带 source key、orientation/local factor、ExactUV
+payload 的 forward trace kernel。
+
+审计读数：
+
+```text
+formal_jordan_phase_kernel_closed=true
+source_key_obstruction_partition_closed=true
+boundary_ratio_spectrum_closed=true
+terminal_run_kernel_formula_reduced_to_actual_source_key_gates=true
+terminal_run_kernel_formula_proved=false
+same_trace_key_source_consistency_proved=false
+trace_or_typeii_family_admissible_now=false
+row_column_unconditional_closed=false
+```
+
+边界比率谱提供下一主攻目标：
+
+```text
+q_boundary_synthetic_split_event_count=47
+ratio_min=0.013003592969
+ratio_max=0.967151620496
+whole_equal_pair_event_count=0
+next_primary_attack_target=BoundaryRatioSourceKeyLawOrPDEC
+```
+
+最新开放口：
+
+```text
+TraceKernelSourceKeyLiftReductionClosed
+AND BoundaryRatioSourceKeyLawOrPDEC
+AND NonBoundaryRecordJumpSourceKeyLiftOrPDEC
+AND InternalSurvivorPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND UniformAdjacentRunCancellationStillOpen
+```

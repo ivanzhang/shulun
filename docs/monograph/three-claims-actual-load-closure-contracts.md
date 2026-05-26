@@ -654,6 +654,55 @@ AND ConductorOrModulusControlOrConductorRangePDEC
 AND UniformAdjacentRunCancellationOrAdjacentRunCancellationFailureLocalSurvivor
 ```
 
+### terminal trace-kernel source-key lift actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_trace_kernel_source_key_lift_router.py
+data/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-trace-kernel-source-key-lift-router.json
+```
+
+actual-load 含义：`TerminalRunKernelFormula` 不是完全空白；其形式核已经由
+`A(q)/q` signed telescoping/Jordan 分解给出。但这仍是推后相位账本，不是外部
+trace/Type-II 可接收的 pre-Cauchy source-key kernel。
+
+状态边界：
+
+```text
+formal_jordan_phase_kernel_closed=true
+prefix_record_reflection_schema_closed=true
+terminal_run_kernel_formula_reduced_to_actual_source_key_gates=true
+terminal_run_kernel_formula_proved=false
+same_trace_key_source_consistency_proved=false
+trace_or_typeii_family_admissible_now=false
+```
+
+事件降维为：
+
+```text
+cancellation_event_count=51
+q_boundary_synthetic_split_event_count=47
+nonboundary_record_jump_event_count=4
+internal_survivor_fragment_count=1
+tail_survivor_fragment_count=7
+whole_equal_pair_event_count=0
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+TraceKernelSourceKeyLiftReductionClosed
+AND BoundaryRatioSourceKeyLawOrPDEC
+AND NonBoundaryRecordJumpSourceKeyLiftOrPDEC
+AND InternalSurvivorPDEC
+AND TerminalSiblingQSpinePaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND UniformAdjacentRunCancellationStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：
