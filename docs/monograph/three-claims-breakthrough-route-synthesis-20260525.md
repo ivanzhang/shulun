@@ -2434,6 +2434,47 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 
 这是真前沿收窄，不是闭合证明。
 
+## 48E. product-window alpha/kernel frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_alpha_kernel_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.json
+```
+
+本层继续展开上一节留下的 `AlphaRowAnchorPhaseEmissionFormulaLedger`。已有
+strict alpha row formula 终端前沿证书说明：alpha 的 unsigned carry-shell/phase
+局部分支已闭合，signed-lift 分支经 signed weight、pre-Cauchy identity 与
+moving-block/NC-BLK 回流到终端容量/模型账本，overload 进入命名 return。因此
+product-window 路线不能继续把 alpha 局部字段名当作新出口，而应替换成：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+最新 product-window 非循环负载因此更新为：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行出口仍是逐点 Phi-LPF signed table、primitive origin、terminal descent、
+same-set PDEC、completed trace bridge 或平方根行尺度点态素数输入。本步只是把
+alpha 局部口继续压到终端门；三命题仍未无条件闭合。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

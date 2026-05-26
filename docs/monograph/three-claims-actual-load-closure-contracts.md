@@ -644,6 +644,50 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window alpha/kernel frontier actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_alpha_kernel_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.json
+```
+
+actual-load 含义：上一层的 alpha row anchor/phase 字段不是新的可自由证明对象。
+它的 unsigned 局部分支已经在 strict alpha formula 体系内同步，signed-lift 分支
+回到终端容量/模型账本。因此当前 actual load 必须把 alpha 入口替换为全局终端门，
+同时仍携带 pointwise kernel 的 pre-Cauchy identity 与 same-unit rank/multiplicity。
+
+```text
+product_window_alpha_anchor_imported=true
+pointwise_kernel_three_atom_basis_imported=true
+alpha_signed_lift_terminal_return_imported=true
+alpha_local_frontier_synced_to_terminal=true
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+
+parallel:
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

@@ -27359,6 +27359,37 @@ next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
 row_column_unconditional_closed=false
 ```
 
+### product-window alpha/kernel frontier formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_alpha_kernel_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.json
+```
+
+formal-to-actual 结论：`AlphaRowAnchorPhaseEmissionFormulaLedger` 不能只作为形式名词
+继续挂在 product-window 前沿。strict alpha row formula 的局部同步已经给出它的
+actual 去向：unsigned skeleton 局部闭合，signed-lift 回到终端容量/模型账本，
+overload 是命名 return。故 formal alpha 字段必须降解为：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+但这不证明 pointwise kernel 的另两项，也不证明 product-window offdiagonal 传输字段：
+
+```text
+independent_noncanonical_precauchy_arithmetic_identity_statement_proved=false
+same_unit_exact_uv_rank_multiplicity_certificate_proved=false
+offdiagonal_signed_formula_orientation_exactuv_internal_transition_proved=false
+row_column_unconditional_closed=false
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

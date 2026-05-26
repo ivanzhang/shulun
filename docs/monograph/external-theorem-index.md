@@ -13532,3 +13532,29 @@ source_rank_package_atomized=true
 next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
 row_column_unconditional_closed=false
 ```
+
+## 65BP. product-window alpha/kernel frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_alpha_kernel_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-alpha-kernel-frontier-router.md
+```
+
+外部 theorem 边界继续收窄：product-window signed fields 的 alpha 入口已经接入
+strict alpha row formula 终端前沿。外部 trace/Kloosterman/Type-II 工具仍不能直接
+作用在 alpha 局部字段名上；它们需要先有 admissible signed coefficient family、
+source-rank/no-collapse、pre-Cauchy identity 与 same-unit rank/multiplicity。短区间素数
+输入仍需 \(H=P=x^{1/2}\) 的点态行尺度结论。
+
+```text
+product_window_alpha_anchor_imported=true
+alpha_local_frontier_synced_to_terminal=true
+next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+independent_noncanonical_precauchy_arithmetic_identity_statement_proved=false
+same_unit_exact_uv_rank_multiplicity_certificate_proved=false
+row_column_unconditional_closed=false
+```
