@@ -2081,6 +2081,49 @@ OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
 
+## 44. target-affine gap equivalence router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-target-affine-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json
+```
+
+本层继续攻击上一节剩余的 target-affine 口。结论是：目标仿射锚
+`A=kP,length=P-1` 是必要字段，但它本身不产生 PDEC；它把 full-cover 等号精确改写为
+目标行无素数，即一个 prime gap 覆盖整行：
+
+```text
+union_{p<=sqrt((k+1)P-1)}D_p(P,k)=[1,P-1]
+<=> pi(kP,(k+1)P)=0
+```
+
+最坏 `k≈P` 时这是 `x≈P^2,H≈sqrt(x)` 的 `C=1` 点态短区间问题；top row
+`k=P-1` 正是 prime-indexed Oppermann-left 半窗。Baker-Harman-Pintz `21/40`、
+Guth-Maynard `17/30`、Runbo Li `13/25` 在 `x=P^2` 分别仍厚出
+`P^(1/20),P^(2/15),P^(1/25)` 行，因此不能直接支付单行正性。
+
+机器审计给出：
+
+```text
+target_affine_gap_equivalence_synced=true
+owner_only_pdec_rejected_imported=true
+target_affine_anchor_alone_closes=false
+target_affine_owner_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
+最新非循环主攻收窄为：
+
+```text
+TargetAffineSignedPhasePayload
+OR PointwiseSqrtPrimeInputCOne
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

@@ -328,6 +328,35 @@ target_affine_owner_pdec_proved=false
 row_column_unconditional_closed=false
 ```
 
+### target-affine gap equivalence actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-target-affine-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json
+```
+
+actual-load 含义：目标仿射锚不是新的可支付负载，它只是把剩余门变成点态行内素数
+正性/整行 prime gap 排除。实际可用负载必须增加以下三者之一：
+
+```text
+TargetAffineSignedPhasePayload
+OR PointwiseSqrtPrimeInputCOne
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
+状态边界：
+
+```text
+target_affine_gap_equivalence_synced=true
+target_affine_anchor_alone_closes=false
+target_affine_owner_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

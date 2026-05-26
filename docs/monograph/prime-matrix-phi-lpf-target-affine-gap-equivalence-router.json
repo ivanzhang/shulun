@@ -1,0 +1,176 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_target_affine_gap_equivalence_router",
+  "equivalence_rows": [
+    {
+      "equivalent_form": "pi(kP,(k+1)P)=0 on the punctured row",
+      "formula": "union_{p<=sqrt((k+1)P-1)}D_p(P,k)=[1,P-1]",
+      "name": "TargetAffineFullCover",
+      "status": "open to exclude"
+    },
+    {
+      "equivalent_form": "a prime gap covers the whole target row",
+      "formula": "there exist adjacent primes u<v with u<=kP and v>=(k+1)P",
+      "name": "PrimeGapCrossingRow",
+      "status": "open to exclude uniformly"
+    },
+    {
+      "equivalent_form": "H/P=1 while sqrt(x)/P=sqrt(k/P)<1",
+      "formula": "for x=kP, a prime exists in (x,x+P)",
+      "name": "SqrtScaleLocalInput",
+      "status": "requires C=1 sqrt-scale pointwise input near k~P"
+    },
+    {
+      "equivalent_form": "prime-indexed Oppermann left half-window",
+      "formula": "k=P-1 gives (P^2-P,P^2)",
+      "name": "TopRowOppermannLeft",
+      "status": "necessary subcore, still open"
+    }
+  ],
+  "external_gap_rows": [
+    {
+      "input": "Baker-Harman-Pintz prime gaps",
+      "interval_length_at_x=P^2": "P^(21/20)",
+      "meaning": "unconditional x^0.525 prime-gap bound is still thicker than one P-row at x=P^2",
+      "row_thickness_over_P": "P^(1/20)",
+      "single_row_closed": "false",
+      "source": "https://www.cambridge.org/core/journals/proceedings-of-the-london-mathematical-society/article/abs/difference-between-consecutive-primes-ii/2EF13261B3B25458A25F41ED74AA2FC2",
+      "theta": "21/40"
+    },
+    {
+      "input": "Guth-Maynard short intervals",
+      "interval_length_at_x=P^2": "P^(17/15)",
+      "meaning": "zero-density breakthrough gives P^(2/15) row thickening at x=P^2",
+      "row_thickness_over_P": "P^(2/15)",
+      "single_row_closed": "false",
+      "source": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "theta": "17/30"
+    },
+    {
+      "input": "Runbo Li Harman-sieve short intervals",
+      "interval_length_at_x=P^2": "P^(26/25)",
+      "meaning": "nearer to 1/2, but still P^(1/25) rows thick at x=P^2",
+      "row_thickness_over_P": "P^(1/25)",
+      "single_row_closed": "false",
+      "source": "https://arxiv.org/abs/2308.04458",
+      "theta": "13/25"
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_scan_summary": [
+    {
+      "P": 31,
+      "full_cover": false,
+      "min_k": 25,
+      "min_prime_count": 2,
+      "strict_defect": 2
+    },
+    {
+      "P": 101,
+      "full_cover": false,
+      "min_k": 73,
+      "min_prime_count": 7,
+      "strict_defect": 7
+    },
+    {
+      "P": 251,
+      "full_cover": false,
+      "min_k": 108,
+      "min_prime_count": 18,
+      "strict_defect": 18
+    },
+    {
+      "P": 499,
+      "full_cover": false,
+      "min_k": 362,
+      "min_prime_count": 29,
+      "strict_defect": 29
+    },
+    {
+      "P": 1009,
+      "full_cover": false,
+      "min_k": 905,
+      "min_prime_count": 52,
+      "strict_defect": 52
+    },
+    {
+      "P": 2003,
+      "full_cover": false,
+      "min_k": 1256,
+      "min_prime_count": 113,
+      "strict_defect": 113
+    },
+    {
+      "P": 5003,
+      "full_cover": false,
+      "min_k": 4980,
+      "min_prime_count": 260,
+      "strict_defect": 260
+    }
+  ],
+  "next_gate_rows": [
+    {
+      "gate": "TargetAffineSignedPhasePayload",
+      "needed_statement": "the residues a_p=-kP mod p carry a signed Mobius/Von-Mangoldt or phase law before LPF pushforward",
+      "why_not_circular": "adds cancellation not present in support coverage"
+    },
+    {
+      "gate": "PointwiseSqrtPrimeInputCOne",
+      "needed_statement": "for every x=kP in the target range, (x,x+P) contains a prime; near k=P this is C=1 sqrt scale",
+      "why_not_circular": "external analytic prime distribution would directly pay the row"
+    },
+    {
+      "gate": "SpectralKloostermanResidueLiftWithSourceKeys",
+      "needed_statement": "complete target-affine residue fibers into a trace family with conductor and coefficient control",
+      "why_not_circular": "turns residue support into oscillatory cancellation"
+    }
+  ],
+  "owner_only_pdec_rejected_imported": true,
+  "plain_conclusion": "目标仿射锚 A=kP 并没有自行产生 PDEC；它把 full-cover 等号精确改写为一个 prime gap 覆盖整行的问题。最坏 k≈P 时就是 x≈P^2、H≈sqrt(x) 的 C=1 点态短区间问题；top row 是 prime-indexed Oppermann-left 半窗。因而 target-affine-only 路线也不能闭合，下一手必须加入 signed/phase payload、真正 C=1 sqrt 输入，或 source-keyed spectral/Kloosterman lift。",
+  "rejected_affine_only_rows": [
+    {
+      "failure": "A=kP merely rewrites the row as a prime-gap exclusion problem",
+      "route": "Affine anchor only",
+      "surviving_need": "add a signed/phase payload or a genuine pointwise sqrt-scale prime theorem"
+    },
+    {
+      "failure": "Legendre's interval splits into two halves and does not force the left top row (P^2-P,P^2)",
+      "route": "Legendre wide square interval",
+      "surviving_need": "prime-indexed Oppermann-left or full target-row positivity"
+    },
+    {
+      "failure": "at x=P^2 it gives length P^1.05, i.e. P^0.05 rows thick",
+      "route": "Baker-Harman-Pintz x^0.525",
+      "surviving_need": "exponent 1/2 with constant <=1, or structural signed substitute"
+    },
+    {
+      "failure": "sqrt(x) log^2 x errors are larger than the one-row main term scale",
+      "route": "RH-shaped explicit formula",
+      "surviving_need": "cancellation beyond standard RH-size bounds at H=sqrt(x)"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_next_primary_gate": "TargetAffineSignedPhasePayload",
+  "selected_parallel_distribution_gate": "PointwiseSqrtPrimeInputCOne",
+  "selected_parallel_spectral_gate": "SpectralKloostermanResidueLiftWithSourceKeys",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "beacb1a89a6d085cb9e93d47add7339560e296f187809f9e030ba8c72de4a1bf",
+    "docs/monograph/external-theorem-index.md": "207e9ed7e9de3810b7c046c4ad8255e40e1408ee51a643c027b6c49151e21f89",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "4c044305510ceae54c91fa45b1443d7bd9e33872374f8d13e02c6f46bda0459c",
+    "docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json": "1cacda64073306121b9a09f0859fe640d8ec30119304ad39d7d824644ab8b0f0",
+    "docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json": "93b9420810fe6a699bb79d3591e65e1e3f6077e3d0c94e37842649ed8a3bfb32",
+    "docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json": "04b3e0b14d2f12b48232ea386ad31895d9a5b550a631bb8530539335f45b216b",
+    "docs/monograph/prime-matrix-phi-lpf-sqrt-oppermann-toprow-alignment-router.json": "44cdef5d82dccf99d5dbfd4ef3a8cecde44b77e9f75e5fb04921085498e0cb75",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "12078e5619d66407e5202d49a4b4c8434772edd9b98366a682a4c8a4c951780b",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "595e390ca34f846c4f99ab9264c06464a5046e2b1394f4aca44e9ed1cff9b9c7",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "cd4cc0150ff518dc3cbcd6c6b791042f8e4a4c398db1f43293c2b8275a82267e",
+    "experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py": "72f77b8237928020edd093f17fe7f18b5716322c28e1e5cbe72c803974059a49",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "dd249f462f564c6313d4cb7d811aa9663726450c428e98c535aaa16c660a7dbf"
+  },
+  "status": "target_affine_anchor_reduced_to_sqrt_prime_gap_or_signed_phase_payload",
+  "target_affine_anchor_alone_closes": false,
+  "target_affine_gap_equivalence_synced": true,
+  "target_affine_owner_pdec_proved": false,
+  "top_row_oppermann_left_imported": true,
+  "verified_date": "2026-05-26"
+}

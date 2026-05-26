@@ -14547,3 +14547,35 @@ TargetAffineFullCoverOwnerResiduePDEC
 OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
+
+---
+
+## 附录 Q13AC52：target-affine gap equivalence router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-target-affine-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.md
+```
+
+本层 honest 边界：target-affine-only 不能闭合。它把 full-cover 等号精确改写为
+目标行无素数/整行 prime gap 覆盖；top row 是 prime-indexed Oppermann-left 半窗。
+
+外部短区间输入目前仍厚于一行：
+
+```text
+Baker-Harman-Pintz theta=21/40 -> P^(1/20) rows
+Guth-Maynard theta=17/30 -> P^(2/15) rows
+Runbo Li theta=13/25 -> P^(1/25) rows
+```
+
+最新 honest 口：
+
+```text
+TargetAffineSignedPhasePayload
+OR PointwiseSqrtPrimeInputCOne
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```

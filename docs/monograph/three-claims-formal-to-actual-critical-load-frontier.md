@@ -27099,6 +27099,34 @@ OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
 
+### target-affine gap equivalence formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-target-affine-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json
+```
+
+formal-to-actual 结论：`A=kP,length=P-1` 不能作为独立闭合机制。它把形式覆盖等号
+转成 actual row prime gap 问题：
+
+```text
+full cover on R_{P,k}
+<=> pi(kP,(k+1)P)=0
+<=> a prime gap crosses the whole target row
+```
+
+因此 actual proof 现在必须支付一个真输入：
+
+```text
+TargetAffineSignedPhasePayload
+OR PointwiseSqrtPrimeInputCOne
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

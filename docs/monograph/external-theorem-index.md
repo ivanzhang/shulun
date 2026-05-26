@@ -13219,3 +13219,42 @@ TargetAffineFullCoverOwnerResiduePDEC
 OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
+
+## 65BG. target-affine gap equivalence router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_gap_equivalence_router.py
+data/prime-matrix-phi-lpf-target-affine-gap-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.md
+```
+
+外部 theorem 边界：target-affine 锚已经降格为 `H=P` 的点态短区间正性。
+在最坏 `x≈P^2` 处，Baker-Harman-Pintz `theta=21/40`、Guth-Maynard
+`theta=17/30`、Runbo Li `theta=13/25` 仍分别给出多于一行的厚度：
+
+```text
+P^(1/20), P^(2/15), P^(1/25)
+```
+
+因此现有短区间 theorem 不能直接支付 `C=1` 的 sqrt 行输入。谱/Type-II/Kloosterman
+路线仍需先构造 LPF owner source-key 与 signed/phase payload。
+
+审计读数：
+
+```text
+target_affine_gap_equivalence_synced=true
+target_affine_anchor_alone_closes=false
+target_affine_owner_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+TargetAffineSignedPhasePayload
+OR PointwiseSqrtPrimeInputCOne
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
