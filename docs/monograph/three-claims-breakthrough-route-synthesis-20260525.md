@@ -2379,3 +2379,52 @@ AND FullRowsRequireGapBoundHkPLessThanPForEveryK
 AND LPFPhiExactCountsRemainUnsignedParityBlind
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 31. corrected-LPF signed-trace breakthrough router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_corrected_lpf_signed_trace_breakthrough_router.py
+data/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-ledger.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.md
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.json
+```
+
+本层把 LPF 精确计数修正、有限 Euler 截断误差、Oppermann top-row 子核和外部
+Type-II/trace 输入放在同一门控表里。结论不是三命题闭合，而是把最快非循环路线
+明确改写为 signed payload 路线：
+
+```text
+lpf_exact_count_formula=C_p(N)=Phi(floor(N/p);q<p)-1
+                    =Phi(floor(N/p);q<p)-Phi(p-1;q<p)
+Phi(p-1;q<p)=1
+finite_euler_truncation_error_type=primorial periodic boundary term
+von_mangoldt_lift_requires_global_signed_payload=true
+top_row_oppermann_necessary_not_sufficient=true
+all_external_inputs_require_internal_admissible_family=true
+row_column_unconditional_closed=false
+```
+
+路线裁定为：
+
+```text
+corrected LPF/Phi exact count        -> supporting only
+ordinary short intervals/Oppermann   -> boundary only
+terminal signed monotone-run payload -> fastest first-break candidate
+two-point sieve                      -> second candidate
+RH controlled exits                  -> verification package
+```
+
+外部前沿输入的适配判定也被统一：Runbo Li 短区间/大模 AP、Milićević--Qin--Wu
+Kloosterman、Pascadi Type-II、Wright trilinear Kloosterman 与谱/群扩张工具都不能
+直接从无符号 LPF bucket 使用；它们都要求先构造项目内部 admissible signed family。
+
+最新非循环口进一步收窄为：
+
+```text
+CorrectedLPFExactCountsAndPeriodicErrorsDoNotGivePrimeEmission
+AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
+AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
+AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
+```

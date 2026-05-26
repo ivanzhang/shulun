@@ -557,6 +557,50 @@ AND LPFPhiExactCountsRemainUnsignedParityBlind
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### corrected-LPF signed-trace breakthrough actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_corrected_lpf_signed_trace_breakthrough_router.py
+data/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-ledger.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.md
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.json
+```
+
+actual-load 含义：LPF 精确计数已修正，但它只给 owner/support/capacity，
+不支付 prime-emission。正确账本为：
+
+```text
+C_p(N)=Phi(floor(N/p);q<p)-1
+      =Phi(floor(N/p);q<p)-Phi(p-1;q<p)
+Phi(p-1;q<p)=1
+```
+
+有限 Euler 截断误差是 primorial 周期边界项，不是 `1/2` 主项节省。von Mangoldt
+提升也需要全局 Mobius divisor signed payload，不是 LPF-local unsigned count。
+
+状态边界：
+
+```text
+lpf_exact_count_fixed=true
+finite_euler_truncation_error_type=primorial_periodic_boundary
+von_mangoldt_lift_requires_global_signed_payload=true
+top_row_oppermann_necessary_not_sufficient=true
+all_external_inputs_require_internal_admissible_family=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+CorrectedLPFExactCountsAndPeriodicErrorsDoNotGivePrimeEmission
+AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
+AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
+AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

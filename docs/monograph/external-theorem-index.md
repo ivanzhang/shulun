@@ -12594,3 +12594,50 @@ AND FullRowsRequireGapBoundHkPLessThanPForEveryK
 AND LPFPhiExactCountsRemainUnsignedParityBlind
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AV. corrected-LPF signed-trace breakthrough router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_corrected_lpf_signed_trace_breakthrough_router.py
+data/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-ledger.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.md
+```
+
+外部 theorem 边界：修正后的 LPF/Phi 计数和有限 Euler 截断误差只能给精确
+ownership/capacity 账本。它们不自动生成可套用外部 Kloosterman、Type-II 或谱扩张工具的
+signed family。
+
+统一适配表：
+
+```text
+Runbo Li short intervals -> zero-density low rows only
+Runbo Li large-modulus AP/Harman -> needs admissible averaged AP family
+Milićević-Qin-Wu Kloosterman -> needs genuine two-variable Kloosterman family
+Pascadi Type-II -> needs well-factorable signed coefficients
+Wright trilinear Kloosterman -> needs trilinear convolution and beta sequence
+spectral/finite-group expansion -> needs genuine group orbit model
+```
+
+审计读数：
+
+```text
+lpf_exact_count_fixed=true
+finite_euler_truncation_error_type=primorial_periodic_boundary
+von_mangoldt_lift_requires_global_signed_payload=true
+all_external_inputs_require_internal_admissible_family=true
+fastest_first_break_candidate=Prime Matrix terminal signed monotone-run payload
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+最新开放口：
+
+```text
+CorrectedLPFExactCountsAndPeriodicErrorsDoNotGivePrimeEmission
+AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
+AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
+AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
+```

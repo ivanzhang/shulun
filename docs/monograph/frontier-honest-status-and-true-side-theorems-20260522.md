@@ -13928,3 +13928,55 @@ AND FullRowsRequireGapBoundHkPLessThanPForEveryK
 AND LPFPhiExactCountsRemainUnsignedParityBlind
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC43：corrected-LPF signed-trace breakthrough router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_corrected_lpf_signed_trace_breakthrough_router.py
+data/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-ledger.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.json
+docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.md
+```
+
+本层把 LPF 精确计数修正后的 honest 边界写成统一路线裁定：
+
+```text
+C_p(N)=Phi(floor(N/p);q<p)-1
+      =Phi(floor(N/p);q<p)-Phi(p-1;q<p)
+Phi(p-1;q<p)=1
+finite_euler_truncation_error_type=primorial_periodic_boundary
+von_mangoldt_lift_requires_global_signed_payload=true
+```
+
+因此无符号 LPF/Phi count、有限 Euler 主项、top-row Oppermann-left 或普通短区间输入
+都不能直接写成三命题闭合。外部前沿工具也必须先接到内部 signed family：
+Runbo Li 输入需要 pointwise/admissible AP family，MQW/Pascadi/Wright 需要
+Kloosterman/Type-II/trilinear coefficient family，谱/群论工具需要 genuine orbit model。
+
+有限审计读数：
+
+```text
+lpf_exact_count_fixed=true
+top_row_oppermann_necessary_not_sufficient=true
+all_external_inputs_require_internal_admissible_family=true
+fastest_first_break_candidate=Prime Matrix terminal signed monotone-run payload
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：当前最快可真突破者仍是 Prime Matrix terminal signed monotone-run
+路线，但下一步必须产出 uniform adjacent-run cancellation / signed trace / Type-II
+family，或者把失败回流成命名 PDEC/SAE/LocalSurvivor。
+
+最新 honest 口：
+
+```text
+CorrectedLPFExactCountsAndPeriodicErrorsDoNotGivePrimeEmission
+AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
+AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
+AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
+```
