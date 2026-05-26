@@ -1,0 +1,752 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_product_window_additive_saving_firewall_router",
+  "complete_nonzero_residue_fourier_fingerprint_closed": true,
+  "contract_rows": [
+    {
+      "closed": true,
+      "gate": "CompleteNonzeroResidueFourierFingerprint",
+      "meaning": "full-cover 时 owner residues=F_P^*，故每个非零频率 Fourier 和都等于 -1。",
+      "proved": true,
+      "remaining": "identity only"
+    },
+    {
+      "closed": true,
+      "gate": "OrdinaryProductWindowAdditiveSavingAsPrimaryGate",
+      "meaning": "任何只给 |S_h|<=B(P) 且 B(P)>=1 的普通节省都与 full-cover 完全兼容。",
+      "proved": false,
+      "remaining": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC",
+      "meaning": "需要证明 owner product-window 测度不能等于完整非零剩余类测度，或给出 subunit Fourier 矛盾/PDEC。",
+      "proved": false,
+      "remaining": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC OR signed defect transport"
+    },
+    {
+      "closed": false,
+      "gate": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect",
+      "meaning": "外部 Kloosterman/Type-II 输入只能在完成 trace family 且携带 signed defect 后使用。",
+      "proved": false,
+      "remaining": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect"
+    },
+    {
+      "closed": false,
+      "gate": "TargetAffineRowClosureReached",
+      "meaning": "本层剪掉普通 additive saving 假出口，但不证明行级正性。",
+      "proved": false,
+      "remaining": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect OR PointwiseSqrtPrimeInputCOne"
+    }
+  ],
+  "external_applicability_rows": [
+    {
+      "applicability_to_target_row": "not enough for a pointwise row of length P at x≈P^2, since x^(17/30)=P^(17/15)>P",
+      "date_checked": "2026-05-26",
+      "reported_strength": "zero-density estimate implying primes in intervals of length x^(17/30+o(1))",
+      "source": "Guth--Maynard, arXiv:2405.20552v2, New large value estimates for Dirichlet polynomials",
+      "url": "https://arxiv.org/abs/2405.20552",
+      "usable_as_closure": false
+    },
+    {
+      "applicability_to_target_row": "inherits theta>17/30; still above the required theta=1/2 scale",
+      "date_checked": "2026-05-26",
+      "reported_strength": "uses uniform short-interval PNT at exponents theta>17/30",
+      "source": "Le Duc Hieu, arXiv:2509.04883, APs of primes in short intervals beyond 17/30",
+      "url": "https://arxiv.org/abs/2509.04883",
+      "usable_as_closure": false
+    },
+    {
+      "applicability_to_target_row": "our modulus is prime P and current phase is additive e_P(hpm), not a completed inverse-variable Kloosterman family",
+      "date_checked": "2026-05-26",
+      "reported_strength": "Type-II Kloosterman savings for composite moduli, with near-prime exceptions and prior prime-modulus inputs",
+      "source": "Pascadi, arXiv:2511.08445, Non-abelian amplification and bilinear forms with Kloosterman sums",
+      "url": "https://arxiv.org/abs/2511.08445",
+      "usable_as_closure": false
+    },
+    {
+      "applicability_to_target_row": "helpful only after a bridge to Kloosterman trace parameters; p-rough cofactor owner weights are not yet an admissible completed coefficient family",
+      "date_checked": "2026-05-26",
+      "reported_strength": "bounds Kloosterman trace sums over square-free/smooth parameters and multiplicative-function twists",
+      "source": "Shao--Shparlinski--Wijaya, 2025, Sums of Kloosterman sums over square-free and smooth integers",
+      "url": "https://doi.org/10.1017/S0004972725100609",
+      "usable_as_closure": false
+    }
+  ],
+  "finite_complete_measure_identity_all_ok": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_firewall_audit": [
+    {
+      "P": 31,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 25,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 28,
+      "partition_count_ok": true,
+      "row_length": 30,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 2.628841177,
+            "P_to_3_over_4": 13.13775838,
+            "sqrt_P": 5.567764363
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 2.628841177,
+            "P_to_3_over_4": 13.13775838,
+            "sqrt_P": 5.567764363
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 2.628841177,
+            "P_to_3_over_4": 13.13775838,
+            "sqrt_P": 5.567764363
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 15,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 2.628841177,
+            "P_to_3_over_4": 13.13775838,
+            "sqrt_P": 5.567764363
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 30,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 2.628841177,
+            "P_to_3_over_4": 13.13775838,
+            "sqrt_P": 5.567764363
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 2
+    },
+    {
+      "P": 101,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 73,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 93,
+      "partition_count_ok": true,
+      "row_length": 100,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 4.741931553,
+            "P_to_3_over_4": 31.859652191,
+            "sqrt_P": 10.049875621
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 4.741931553,
+            "P_to_3_over_4": 31.859652191,
+            "sqrt_P": 10.049875621
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 4.741931553,
+            "P_to_3_over_4": 31.859652191,
+            "sqrt_P": 10.049875621
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 50,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 4.741931553,
+            "P_to_3_over_4": 31.859652191,
+            "sqrt_P": 10.049875621
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 100,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 4.741931553,
+            "P_to_3_over_4": 31.859652191,
+            "sqrt_P": 10.049875621
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 7
+    },
+    {
+      "P": 251,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 108,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 232,
+      "partition_count_ok": true,
+      "row_length": 250,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 8.221251854,
+            "P_to_3_over_4": 63.060192348,
+            "sqrt_P": 15.842979518
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 8.221251854,
+            "P_to_3_over_4": 63.060192348,
+            "sqrt_P": 15.842979518
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 8.221251854,
+            "P_to_3_over_4": 63.060192348,
+            "sqrt_P": 15.842979518
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 125,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 8.221251854,
+            "P_to_3_over_4": 63.060192348,
+            "sqrt_P": 15.842979518
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 7e-12,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -0.999999999993,
+          "full_cover_abs": 0.999999999993,
+          "h": 250,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 8.221251854,
+            "P_to_3_over_4": 63.060192348,
+            "sqrt_P": 15.842979518
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 7e-12,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 18
+    },
+    {
+      "P": 499,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 362,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 469,
+      "partition_count_ok": true,
+      "row_length": 498,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 12.928641967,
+            "P_to_3_over_4": 105.57848097,
+            "sqrt_P": 22.338307904
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 12.928641967,
+            "P_to_3_over_4": 105.57848097,
+            "sqrt_P": 22.338307904
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 12.928641967,
+            "P_to_3_over_4": 105.57848097,
+            "sqrt_P": 22.338307904
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 249,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 12.928641967,
+            "P_to_3_over_4": 105.57848097,
+            "sqrt_P": 22.338307904
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 2.3e-11,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -0.999999999977,
+          "full_cover_abs": 0.999999999977,
+          "h": 498,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 12.928641967,
+            "P_to_3_over_4": 105.57848097,
+            "sqrt_P": 22.338307904
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 2.3e-11,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 29
+    },
+    {
+      "P": 1009,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 905,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 956,
+      "partition_count_ok": true,
+      "row_length": 1008,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 21.090719774,
+            "P_to_3_over_4": 179.026934263,
+            "sqrt_P": 31.764760349
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 21.090719774,
+            "P_to_3_over_4": 179.026934263,
+            "sqrt_P": 31.764760349
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 21.090719774,
+            "P_to_3_over_4": 179.026934263,
+            "sqrt_P": 31.764760349
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 1e-12,
+          "complete_sum_imag": -1e-12,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 504,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 21.090719774,
+            "P_to_3_over_4": 179.026934263,
+            "sqrt_P": 31.764760349
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 1e-12,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 1.5e-11,
+          "complete_sum_imag": -1e-12,
+          "complete_sum_real": -1.000000000015,
+          "full_cover_abs": 1.000000000015,
+          "h": 1008,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 21.090719774,
+            "P_to_3_over_4": 179.026934263,
+            "sqrt_P": 31.764760349
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 1.5e-11,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 52
+    },
+    {
+      "P": 2003,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 1256,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 1889,
+      "partition_count_ok": true,
+      "row_length": 2002,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 34.656074151,
+            "P_to_3_over_4": 299.406146674,
+            "sqrt_P": 44.754888001
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 34.656074151,
+            "P_to_3_over_4": 299.406146674,
+            "sqrt_P": 44.754888001
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 34.656074151,
+            "P_to_3_over_4": 299.406146674,
+            "sqrt_P": 44.754888001
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 2e-12,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -0.999999999998,
+          "full_cover_abs": 0.999999999998,
+          "h": 1001,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 34.656074151,
+            "P_to_3_over_4": 299.406146674,
+            "sqrt_P": 44.754888001
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 2e-12,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 9e-12,
+          "complete_sum_imag": 3e-12,
+          "complete_sum_real": -1.000000000009,
+          "full_cover_abs": 1.000000000009,
+          "h": 2002,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 34.656074151,
+            "P_to_3_over_4": 299.406146674,
+            "sqrt_P": 44.754888001
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 1e-11,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 113
+    },
+    {
+      "P": 5003,
+      "full_cover_fourier_profile_if_survivor_count_zero": "S_h=-1 for every h=1,...,P-1",
+      "k": 4980,
+      "ordinary_additive_saving_excludes_full_cover": false,
+      "owner_count": 4742,
+      "partition_count_ok": true,
+      "row_length": 5002,
+      "sampled_frequency_rows": [
+        {
+          "complete_equals_minus_one_error": 1e-12,
+          "complete_sum_imag": -0.0,
+          "complete_sum_real": -1.000000000001,
+          "full_cover_abs": 1.000000000001,
+          "h": 1,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 68.956679172,
+            "P_to_3_over_4": 594.871109039,
+            "sqrt_P": 70.731888141
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 2e-12,
+          "owner_plus_survivor_partition_error": 1e-12,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 2,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 68.956679172,
+            "P_to_3_over_4": 594.871109039,
+            "sqrt_P": 70.731888141
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 0.0,
+          "complete_sum_imag": 0.0,
+          "complete_sum_real": -1.0,
+          "full_cover_abs": 1.0,
+          "h": 3,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 68.956679172,
+            "P_to_3_over_4": 594.871109039,
+            "sqrt_P": 70.731888141
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 0.0,
+          "owner_plus_survivor_partition_error": 0.0,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 1.4e-11,
+          "complete_sum_imag": 1.3e-11,
+          "complete_sum_real": -1.000000000003,
+          "full_cover_abs": 1.000000000003,
+          "h": 2501,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 68.956679172,
+            "P_to_3_over_4": 594.871109039,
+            "sqrt_P": 70.731888141
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 1.4e-11,
+          "owner_plus_survivor_partition_error": 1e-12,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        },
+        {
+          "complete_equals_minus_one_error": 2.242e-09,
+          "complete_sum_imag": -4e-12,
+          "complete_sum_real": -0.999999997758,
+          "full_cover_abs": 0.999999997758,
+          "h": 5002,
+          "ordinary_upper_bounds": {
+            "P_over_logP_squared": 68.956679172,
+            "P_to_3_over_4": 594.871109039,
+            "sqrt_P": 70.731888141
+          },
+          "ordinary_upper_bounds_all_allow_full_cover": true,
+          "owner_defect_equals_negative_survivor_error": 2.241e-09,
+          "owner_plus_survivor_partition_error": 1e-12,
+          "subunit_bound_needed_to_exclude_full_cover": true
+        }
+      ],
+      "survivor_count": 260
+    }
+  ],
+  "numeric_tolerance": 1e-08,
+  "old_gate_demoted": "ProductWindowBilinearAdditivePhaseSavingOrPDEC",
+  "ordinary_product_window_additive_saving_rejected_as_primary_gate": true,
+  "ordinary_upper_bounds_all_allow_full_cover_on_audit_rows": true,
+  "plain_conclusion": "Product-window 相位 e_P(hpm) 的普通非零频率节省不能作为主闭合门。若 full-cover 成立，owner product residues 正好是 F_P^*，所以每个非零频率的完整和就是 -1；任何上界 |S_h|<=B(P) 且 B(P)>=1 都不会产生矛盾。因此下一步必须改成精确系数分离、subunit Fourier contradiction、带符号缺陷的 trace/Kloosterman 桥，或点态 C=1 sqrt 素数输入。",
+  "product_window_exact_coefficient_separation_proved": false,
+  "product_window_to_completed_kloosterman_bridge_with_signed_defect_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_next_primary_gate": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC",
+  "selected_parallel_distribution_gate": "PointwiseSqrtPrimeInputCOne",
+  "selected_parallel_trace_gate": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "28ce3b0607aadc806dd25c5e0ca36e48cf9c0826478b8900db0f9cca7bfa0169",
+    "docs/monograph/external-theorem-index.md": "cc562010ef29c58669d0823bf797b5519262c9d3c70f4b4017a1053dff1a6d8c",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "d383e088a9ae8d8b32e21a7246d8aa3251b7594552c59dc02d139cab380c55cf",
+    "docs/monograph/prime-matrix-external-frontier-theorem-stress-router.json": "3a8f50d512a77ad9eeb8f113226fd0e1c3e33e6637b4accec90f77f381195780",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json": "f1f62e09e90bf4af6eeee23095f8bb3e5f707d8211d3f328781bf1bce6a62a6f",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json": "a394e6c16817f5d5e043053cc8d983738650385abb058bb01dea9e70a54e12d5",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json": "15a238a2621cc6d5585299ce86fe08bc22bb6dc205b5a346dac45f948bd89a44",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "e9eaaba57413e2f3c70b4a1dfb88cbd3dcb2e41337b2cfc3b90731b454e88acf",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "3707999f3c5aad173af5d7b239e0a1745f4665cdcbb1fea50a0dbf2fe86f77d8",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "d408c7b49f1ebdfefea21ad4a6438555aa07c5e7ff9b4b9ab4c711a7393dc91e",
+    "experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py": "b570f1101d55222c510a8599c9d20870304e684a381fbef91bc3e6611a59697e",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "2fc8a91088a2f4a202c328338b6c77406e9b4a010ccc592b495233483d808cf9"
+  },
+  "source_product_phase_imported": true,
+  "status": "ordinary_product_window_additive_saving_rejected_as_primary_closure_gate",
+  "verified_date": "2026-05-26"
+}

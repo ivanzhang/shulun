@@ -415,6 +415,39 @@ product_window_bilinear_additive_phase_saving_proved=false
 row_column_unconditional_closed=false
 ```
 
+### product-window additive saving firewall actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py
+data/prime-matrix-phi-lpf-product-window-additive-saving-firewall-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json
+```
+
+actual-load 含义：普通非零频率上界节省不能作为主闭合门。若 full-cover 成立，
+owner product residues 就是完整非零剩余类 `F_P^*`，所以每个非零频率 Fourier 和
+已经等于 `-1`。因此任何只证明 `|S_h|<=B(P)` 且 `B(P)>=1` 的 product-window
+additive saving 都与 full-cover 相容，不能支付行级正性。
+
+本层把最新 actual-load 改写为：
+
+```text
+complete_nonzero_residue_fourier_fingerprint_closed=true
+ordinary_product_window_additive_saving_rejected_as_primary_gate=true
+product_window_exact_coefficient_separation_proved=false
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

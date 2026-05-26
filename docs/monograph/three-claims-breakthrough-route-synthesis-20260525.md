@@ -2218,7 +2218,47 @@ OR ProductWindowToCompletedKloostermanOrTraceBridge
 OR PointwiseSqrtPrimeInputCOne
 ```
 
-## 37. minimal parity-breaker route-forcing router
+## 47. product-window additive saving firewall router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py
+data/prime-matrix-phi-lpf-product-window-additive-saving-firewall-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json
+```
+
+本层把上一节的 product-window 硬点再压缩一步：普通 additive saving 不是可闭合主门。
+理由是 full-cover 自身已经具有极小的非零频率指纹：
+
+```text
+sum_{r in F_P^*} e_P(hr) = -1  for every h!=0.
+```
+
+所以任何 `|S_h|<=B(P)` 且 `B(P)>=1` 的上界都不能排除 full-cover。有限审计只核验
+恒等式：
+
+```text
+complete_nonzero_residue_fourier_fingerprint_closed=true
+finite_complete_measure_identity_all_ok=true
+ordinary_product_window_additive_saving_rejected_as_primary_gate=true
+```
+
+外部前沿压力测试同步显示：Guth--Maynard `17/30` 短区间、Hieu 的 `theta>17/30`
+输入、Pascadi 复合模 Kloosterman Type-II、Shao--Shparlinski--Wijaya smooth/square-free
+Kloosterman 求和都不能直接闭合本行；它们必须先接入带 signed defect 的 completed
+trace/Kloosterman family，或改由点态 `C=1` sqrt 素数输入。
+
+最新非循环口：
+
+```text
+ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
+OR PointwiseSqrtPrimeInputCOne
+```
+
+## 48. minimal parity-breaker route-forcing router
 
 新增证书：
 

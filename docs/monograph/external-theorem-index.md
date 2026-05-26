@@ -13329,3 +13329,49 @@ ProductWindowBilinearAdditivePhaseSavingOrPDEC
 OR ProductWindowToCompletedKloostermanOrTraceBridge
 OR PointwiseSqrtPrimeInputCOne
 ```
+
+## 65BJ. product-window additive saving firewall router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py
+data/prime-matrix-phi-lpf-product-window-additive-saving-firewall-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.md
+```
+
+外部 theorem 边界：product-window phase 的普通非零频率节省不能排除 full-cover。
+若 full-cover 成立，则 owner residues 已经是完整非零剩余类，所以
+
+```text
+sum_{r in F_P^*} e_P(hr) = -1  for every h!=0.
+```
+
+因此 Guth--Maynard `17/30` 短区间、Hieu 的 `theta>17/30` 短区间 AP 输入、
+Pascadi 复合模 Kloosterman Type-II、Shao--Shparlinski--Wijaya square-free/smooth
+Kloosterman 求和都不能以“普通 additive saving”形式直接闭合本行。可用外部输入
+必须先完成 signed defect 的对象转换：
+
+```text
+owner product-window measure - complete nonzero residue measure
+  -> admissible completed trace/Kloosterman/Type-II coefficient family
+```
+
+审计读数：
+
+```text
+complete_nonzero_residue_fourier_fingerprint_closed=true
+finite_complete_measure_identity_all_ok=true
+ordinary_product_window_additive_saving_rejected_as_primary_gate=true
+product_window_exact_coefficient_separation_proved=false
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
+OR PointwiseSqrtPrimeInputCOne
+```

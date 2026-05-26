@@ -42278,6 +42278,59 @@ source-keyed-product-phase-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Product-window additive-saving firewall}
+
+\begin{theorem}[Complete nonzero residue Fourier fingerprint]
+Let \(P\) be prime and let \(h\not\equiv0\pmod P\).  Then
+\[
+  \sum_{r\in(\mathbb Z/P\mathbb Z)^\times} e_P(hr)=-1 .
+\]
+Consequently, if a target row were fully covered by LPF owner keys, the
+source-keyed product-window owner sum
+\[
+  \sum_{\substack{kP<pm<(k+1)P\\ p={\rm LPF}(pm)}} e_P(hpm)
+\]
+would have value \(-1\) at every nonzero row frequency.  Any estimate of the
+form \(|S_h|\le B(P)\) with \(B(P)\ge1\) is therefore compatible with the
+full-cover obstruction.
+\end{theorem}
+
+\begin{proof}
+The complete sum over all residues modulo \(P\) is zero for nonzero \(h\).
+Removing the zero residue gives the displayed value \(-1\).  Under full cover,
+the owner residues are exactly \((\mathbb Z/P\mathbb Z)^\times\), and the
+source-keyed identity \(e_P(hr)=e_P(hpm)\) transfers the same fingerprint to the
+product-window owner sum.
+\end{proof}
+
+\begin{remark}[What the next analytic input must see]
+The previous product-window reduction is still useful, but an ordinary
+additive cancellation bound is not a contradiction.  A non-circular analytic
+input must instead separate the actual owner product-window measure from the
+complete nonzero residue measure, give a subunit Fourier contradiction, carry a
+signed defect into a completed trace/Kloosterman or Type-II family, or import a
+genuine \(C=1\) square-root-scale pointwise prime theorem.
+\end{remark}
+
+\begin{certificatestatement}[Product-window additive-saving firewall certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+source\_product\_phase\_imported=true\\
+complete\_nonzero\_residue\_fourier\_fingerprint\_closed=true\\
+finite\_complete\_measure\_identity\_all\_ok=true\\
+ordinary\_product\_window\_additive\_saving\_rejected\_as\_primary\_gate=true\\
+product\_window\_exact\_coefficient\_separation\_proved=false\\
+row\_column\_unconditional\_closed=false\\
+selected\_next\_primary\_gate=ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC\\
+selected\_parallel\_trace\_gate=ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-product-window-\\
+additive-saving-firewall-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

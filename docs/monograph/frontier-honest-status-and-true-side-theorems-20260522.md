@@ -14635,3 +14635,36 @@ ProductWindowBilinearAdditivePhaseSavingOrPDEC
 OR ProductWindowToCompletedKloostermanOrTraceBridge
 OR PointwiseSqrtPrimeInputCOne
 ```
+
+---
+
+## 附录 Q13AC55：product-window additive saving firewall router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py
+data/prime-matrix-phi-lpf-product-window-additive-saving-firewall-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.md
+```
+
+本层 honest 边界：普通 product-window additive saving 不能作为主闭合门。full-cover
+状态自身的非零频率 Fourier 指纹就是 `-1`，所以任何仍允许大小 `1` 的上界都不会
+产生矛盾。有限证书只核验完整非零剩余类指纹和 owner/survivor 缺陷恒等式，不声称
+行级正性。
+
+```text
+complete_nonzero_residue_fourier_fingerprint_closed=true
+ordinary_product_window_additive_saving_rejected_as_primary_gate=true
+product_window_exact_coefficient_separation_proved=false
+row_column_unconditional_closed=false
+```
+
+最新 honest 口：
+
+```text
+ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
+OR PointwiseSqrtPrimeInputCOne
+```

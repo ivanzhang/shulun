@@ -27181,6 +27181,41 @@ OR ProductWindowToCompletedKloostermanOrTraceBridge
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window additive saving firewall formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_additive_saving_firewall_router.py
+data/prime-matrix-phi-lpf-product-window-additive-saving-firewall-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json
+```
+
+formal-to-actual 结论：`e_P(hpm)` 的普通 additive cancellation 不是 actual 正性载荷。
+full-cover formal object 正好推成完整非零剩余类测度，故
+
+```text
+sum_{r=1}^{P-1} e_P(hr)=-1  (h!=0).
+```
+
+因此一个普通上界节省只要仍允许大小 `1`，就无法区分“完整非零测度”和“实际
+LPF owner product-window 测度”。actual proof 必须携带缺陷：
+
+```text
+owner_sum(h)+1 = - survivor_sum(h)
+```
+
+并证明这个缺陷非零，或用 PDEC/点态素数输入支付。
+
+最新 actual 口：
+
+```text
+ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：
