@@ -1671,8 +1671,6 @@ internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
 
----
-
 ## 附录 Q13AC38：Phi-LPF terminal boundary split ratio obstruction（2026-05-25）
 
 新增证书：
@@ -14949,5 +14947,63 @@ canonical_terminal_promotion_imported=true
 product_window_modelgap_downstream_imported=true
 identity_removed_from_product_window_first_target=true
 next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```
+
+---
+
+## 附录 Q13AC66：product-window same-unit rank ExactUV atomization sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_same_unit_rank_exactuv_atomization_sync_router.py
+data/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows` 已经不是
+product-window 当前第一主攻。它同步到 exact-UV map rank/incidence、source-rank
+atomization、complete key partition 与 actual emitter source table；fixed-pair fiber
+形式不等式只关闭形式上界，不给出 actual key 表或 fixed-key O(1) 原像。
+
+```text
+exact_uv_map_rank_incidence_imported=true
+exactuv_fiber_atomization_imported=true
+fixed_pair_fiber_formal_inequality_imported=true
+complete_key_partition_imported=true
+actual_emitter_source_table_imported=true
+same_unit_rank_removed_from_product_window_first_target=true
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+---
+
+## 附录 Q13AC67：product-window pre-Cauchy declaration LPF ownership sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_precauchy_declaration_lpf_ownership_sync_router.py
+data/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter` 已经不是
+product-window 当前第一主攻。其 unsigned LPF ownership declaration 字段由最小素因子
+唯一分桶和素数计数恒等式支付；剩余的是 signed alpha/delta constructor rule，以及
+domain、UV/key/sign/local-factor rows、failure returns、fixed-key ExactUV、orientation、
+ExactUV return、internal transition、RatePreservation 与 DStructure/Rankin 验收门。
+
+```text
+lpf_ownership_unsigned_declaration_imported=true
+lpf_ownership_unsigned_declaration_line_closed=true
+precauchy_declaration_removed_from_product_window_first_target=true
+next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
 row_column_unconditional_closed=false
 ```

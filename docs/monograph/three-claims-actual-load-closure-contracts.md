@@ -32415,3 +32415,93 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 可并行保留的旁路仍是 edge-local signed atom fields、逐点 signed table、trace/Type-II
 family、平方根行尺度输入或命名 PDEC/SAE。它们都不是无符号 LPF/Phi 计数的直接推论；
 必须提交 actual signed coefficient、rank/multiplicity 或可验收的外部相位族。
+
+### product-window same-unit rank ExactUV atomization actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_same_unit_rank_exactuv_atomization_sync_router.py
+data/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.json
+```
+
+actual-load 含义：上一层留下的
+`SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows` 已经不能作为一个
+未拆分的第一硬点。strict exact-UV map rank/incidence、ExactUV fiber noncycle、
+fixed-pair fiber bound、complete key partition 与 actual emitter source table 证书把它
+拆成 actual source/key/local multiplicity 接口。
+
+```text
+exact_uv_map_rank_incidence_imported=true
+exactuv_fiber_atomization_imported=true
+fixed_pair_fiber_formal_inequality_imported=true
+complete_key_partition_imported=true
+actual_emitter_source_table_imported=true
+same_unit_rank_removed_from_product_window_first_target=true
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+AND PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable
+AND AlphaDeltaCoefficientIdentityBeforePushforwardLedger
+AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该更新排除了“rank/multiplicity 单名自证”的捷径。若要真正推进，必须先给 actual
+noncanonical emitter 的 pre-Cauchy constructor declaration，或独立证明 fixed-key exact-UV
+local multiplicity O(1)。
+
+### product-window pre-Cauchy declaration LPF ownership actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_precauchy_declaration_lpf_ownership_sync_router.py
+data/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.json
+```
+
+actual-load 含义：上一层留下的
+`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter` 不是纯空白。
+LPF ownership sieve source declaration 已经支付其中的 unsigned ownership 字段：最小素
+因子分桶是唯一、非重叠、升序剥离的，并给出精确素数计数恒等式。
+
+```text
+lpf_ownership_unsigned_declaration_imported=true
+lpf_ownership_unsigned_declaration_line_closed=true
+precauchy_declaration_removed_from_product_window_first_target=true
+next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+AND ConstructorDomainCleanCoreMembershipLedger
+AND ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger
+AND ConstructorFormulaFailureReturnTagsLedger
+AND SourceDeclarationNoDownstreamRecoveryAndNamedReturnLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该更新保留 LPF 精确分桶的正面成果，但也明确其边界：unsigned ownership 不能自动生成
+signed alpha/delta constructor、local factor、ExactUV fixed-key 重数或失败回流标签。

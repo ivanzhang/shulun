@@ -13664,3 +13664,56 @@ identity_removed_from_product_window_first_target=true
 next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 row_column_unconditional_closed=false
 ```
+
+## 65BU. product-window same-unit rank ExactUV atomization sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_same_unit_rank_exactuv_atomization_sync_router.py
+data/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的 same-unit rank/multiplicity 旧名已经接入
+strict exact-UV map rank/incidence、fixed-pair fiber bound、complete key partition
+与 actual emitter source table。外部短区间、trace/Kloosterman、Type-II、谱或群论工具
+仍不能直接替代 actual emitter source declaration，也不能替代 fixed-key exact-UV local
+multiplicity O(1)。
+
+```text
+exact_uv_map_rank_incidence_imported=true
+exactuv_fiber_atomization_imported=true
+fixed_pair_fiber_formal_inequality_imported=true
+complete_key_partition_imported=true
+actual_emitter_source_table_imported=true
+same_unit_rank_removed_from_product_window_first_target=true
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+## 65BV. product-window pre-Cauchy declaration LPF ownership sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_precauchy_declaration_lpf_ownership_sync_router.py
+data/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的 pre-Cauchy declaration 旧名中，unsigned
+LPF ownership 字段已由最小素因子唯一分桶与素数计数恒等式支付。外部短区间、
+trace/Kloosterman、Type-II、谱或群论工具仍不能直接替代 signed alpha/delta
+constructor rule，也不能替代 fixed-key exact-UV local multiplicity、orientation
+和 internal transition。
+
+```text
+lpf_ownership_unsigned_declaration_imported=true
+lpf_ownership_unsigned_declaration_line_closed=true
+precauchy_declaration_removed_from_product_window_first_target=true
+next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```

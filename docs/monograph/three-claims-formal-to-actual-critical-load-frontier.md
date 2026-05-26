@@ -26914,6 +26914,98 @@ DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 kernel row 上的 ExactUV rank/multiplicity，或绕到可审查的 signed atom/trace/Type-II
 family。
 
+### product-window same-unit rank ExactUV atomization formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_same_unit_rank_exactuv_atomization_sync_router.py
+data/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.json
+```
+
+formal-to-actual 结论：`SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows`
+不是一个可以直接用 CRT 或后验 payment skeleton 支付的形式名。它的正面内容是
+actual noncanonical pre-Cauchy emitter 到 exact `(u,v)` 的有界重数 incidence。现有
+ExactUV 链已经把这个接口拆成：
+
+```text
+ActualNoncanonicalPrimitiveEmitterSourceTableLedger
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+并继续把 actual source table 拆成：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable
+AlphaDeltaCoefficientIdentityBeforePushforwardLedger
+SourceTableNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+同步读数：
+
+```text
+same_unit_rank_removed_from_product_window_first_target=true
+fixed_pair_fiber_formal_inequality_imported=true
+actual_emitter_source_table_imported=true
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+所以 product-window 路线的下一步不是继续扩大 same-unit rank 名称，而是在推前前给出
+actual emitter source declaration；并行的局部几何门是 `FixedKeyExactUVLocalMultiplicityO1Ledger`。
+
+### product-window pre-Cauchy declaration LPF ownership formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_precauchy_declaration_lpf_ownership_sync_router.py
+data/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.json
+```
+
+formal-to-actual 结论：`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter`
+的 formal ownership 部分已经由 LPF ownership source declaration 支付，但该支付只在
+无符号最小素因子分桶层面成立。它把形式声明拆成：
+
+```text
+LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger
+AND ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+```
+
+同步读数：
+
+```text
+lpf_ownership_unsigned_declaration_imported=true
+lpf_ownership_unsigned_declaration_line_closed=true
+precauchy_declaration_removed_from_product_window_first_target=true
+next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+actual 侧仍需正向提交：
+
+```text
+ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+ConstructorDomainCleanCoreMembershipLedger
+ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger
+ConstructorFormulaFailureReturnTagsLedger
+SourceDeclarationNoDownstreamRecoveryAndNamedReturnLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+因此 product-window 路线的下一步不是重新证明 LPF/Phi 的 unsigned survivor 计数，而是
+构造 actual noncanonical primitive emitter 的 signed alpha/delta 规则，或给出等价的
+pointwise signed table、admissible trace/Type-II family、平方根行尺度输入或命名 PDEC/SAE。
+
 ### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

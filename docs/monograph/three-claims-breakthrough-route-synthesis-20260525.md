@@ -2652,6 +2652,116 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 或平方根行尺度输入；但这些旁路都必须提交 actual signed/rank 负载，不能再由 LPF/Phi
 无符号 survivor 计数推出。
 
+## 48J. product-window same-unit rank ExactUV atomization sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_same_unit_rank_exactuv_atomization_sync_router.py
+data/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-same-unit-rank-exactuv-atomization-sync-router.json
+```
+
+本层继续推进 48I 留下的 same-unit ExactUV rank/multiplicity 第一硬点。既有 ExactUV
+链给出：
+
+```text
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+=> ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+=> ActualPreCauchySourceDomainAbsoluteEntropyLedger
+   AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+   AND FixedKeyExactUVLocalMultiplicityO1Ledger
+=> PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+   AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+同步读数：
+
+```text
+exact_uv_map_rank_incidence_imported=true
+exactuv_fiber_atomization_imported=true
+fixed_pair_fiber_formal_inequality_imported=true
+complete_key_partition_imported=true
+actual_emitter_source_table_imported=true
+same_unit_rank_removed_from_product_window_first_target=true
+next_primary_attack_target=PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+因此 product-window 不应再把 same-unit rank/multiplicity 当作一个单体第一主攻。它已
+拆成 source table、complete key 与 fixed-key local multiplicity 三类 actual 接口；
+其中 source/key 侧的第一实际入口是：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+```
+
+并行仍需：
+
+```text
+FixedKeyExactUVLocalMultiplicityO1Ledger
+PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable
+AlphaDeltaCoefficientIdentityBeforePushforwardLedger
+SourceTableNoDownstreamRecoveryAndNamedReturnLedger
+```
+
+这一步继续压缩 LPF/Phi 行级不等式的实际剩余：不是无符号 survivor mass，也不是 CRT
+位置刚性，而是 Cauchy/dispersion 前 actual emitter 的 source declaration、complete
+key 和 fixed-key local multiplicity。
+
+## 48K. product-window pre-Cauchy declaration LPF ownership sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_precauchy_declaration_lpf_ownership_sync_router.py
+data/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-precauchy-declaration-lpf-ownership-sync-router.json
+```
+
+本层继续推进 48J 留下的 pre-Cauchy declaration 第一硬点。既有 LPF ownership
+source declaration 证书给出：
+
+```text
+PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter
+=> LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger
+   AND ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+```
+
+其中 `LeastPrimeFactorOwnershipUnsignedSourceDeclarationLedger` 已由最小素因子唯一分桶
+和素数计数恒等式支付；它只关闭无符号 ownership 字段，不产生 signed alpha/delta
+coefficient。
+
+```text
+lpf_ownership_unsigned_declaration_imported=true
+lpf_ownership_unsigned_declaration_line_closed=true
+precauchy_declaration_removed_from_product_window_first_target=true
+next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+row_column_unconditional_closed=false
+```
+
+因此最新第一硬点继续推进为：
+
+```text
+ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+```
+
+并行仍需：
+
+```text
+ConstructorDomainCleanCoreMembershipLedger
+ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger
+ConstructorFormulaFailureReturnTagsLedger
+SourceDeclarationNoDownstreamRecoveryAndNamedReturnLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+这一步保留了用户关于“从小到大精细剥离素因子”的正确部分：LPF ownership 是精确的
+非重叠分桶和素数计数恒等式；但它仍不能越过奇偶性障碍，因为 signed alpha/delta
+lift、local factor 与 exact-UV fixed-key 重数还没有被构造出来。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：
