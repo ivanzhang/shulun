@@ -12407,3 +12407,48 @@ AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AR. fixed theta short-interval zero-density band router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router.py
+data/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-ledger.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.md
+```
+
+外部 theorem 边界：任何固定 `theta>1/2` 的点态短区间素数存在性输入，嵌入
+Prime Matrix strict row 时只能闭合
+
+```text
+k+1 < P^((1-theta)/theta)
+```
+
+的低行带。因为 `(1-theta)/theta<1`，该闭合带在全部 strict rows 中密度趋零，
+剩余 top band 密度趋一。
+
+审计读数：
+
+```text
+all_fixed_theta_gt_half_close_only_zero_density_low_rows=true
+theta_half_identified_as_short_interval_lane_threshold=true
+density_one_top_band_remains_for_all_fixed_theta_gt_half=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+外部输入对照：Baker--Harman--Pintz `21/40`、Runbo Li `13/25`、Hieu/AP scale
+representative `17/30` 都在 `theta>1/2` 区域，因此它们可扩大低行带但不能闭合密度一
+的 top band。要走纯短区间路线，必须达到 `theta=1/2` 点态尺度；否则必须构造项目对象
+自己的 admissible signed Type-II/trace family。
+
+最新开放口：
+
+```text
+AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows
+AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

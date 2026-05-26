@@ -40502,6 +40502,72 @@ AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Fixed \(\theta>1/2\) short intervals close only zero-density low rows]
+Assume a pointwise short-interval input which, for all sufficiently large
+\(X\), guarantees a prime in \([X-X^\theta,X]\), where \(\theta>1/2\) is
+fixed.  Embed it into the strict row
+\[
+  I_{P,k}=(kP,(k+1)P)
+\]
+by taking \(X=(k+1)P\).  For the guaranteed interval to lie inside
+\(I_{P,k}\), it is necessary and sufficient up to endpoint constants that
+\[
+  X^\theta<P,
+\]
+and hence
+\[
+  k+1<P^{(1-\theta)/\theta}.
+\]
+Since \((1-\theta)/\theta<1\), every fixed \(\theta>1/2\) input closes only a
+zero-density family of low rows among the \(P-1\) strict rows.  The density-one
+top band remains outside the reach of ordinary fixed-exponent short-interval
+theorems.
+\end{proposition}
+
+\begin{proof}
+With \(X=(k+1)P\), the interval \([X-X^\theta,X]\) is contained in the strict
+row if and only if \(X-X^\theta>kP\), which is \(X^\theta<P\).  Substituting
+\(X=(k+1)P\) gives
+\[
+  (k+1)^\theta P^\theta<P,
+\]
+or \(k+1<P^{(1-\theta)/\theta}\).  The exponent
+\((1-\theta)/\theta\) is strictly less than \(1\) when \(\theta>1/2\), so the
+closed low-row count is \(O(P^{(1-\theta)/\theta})=o(P)\).  This includes the
+Runbo Li \(13/25\) bridge as the special case \(P^{12/13}\), but also shows
+that any fixed exponent still above \(1/2\) leaves a density-one top band.
+\end{proof}
+
+\begin{certificatestatement}[Fixed theta short-interval zero-density band router]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+all\_fixed\_theta\_gt\_half\_close\_only\_zero\_density\_low\_rows=true\\
+theta\_half\_identified\_as\_short\_interval\_lane\_threshold=true\\
+density\_one\_top\_band\_remains\_for\_all\_fixed\_theta\_gt\_half=true\\
+row\_column\_unconditional\_closed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-theta-short-\\
+interval-zero-density-band-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated short-interval boundary]
+This rules out a full closure by merely improving the ordinary short-interval
+exponent while it remains fixed above \(1/2\).  Baker--Harman--Pintz
+\(\theta=21/40\), Runbo Li \(\theta=13/25\), and any hypothetical fixed
+\(\theta=0.5001\) input all close only \(P^\alpha\) low rows with
+\(\alpha<1\).  Therefore the active gate is
+\begin{quote}\scriptsize\ttfamily
+AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows\\
+AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak\\
+AND PrimePowerTailSublinearThresholdClosed\\
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

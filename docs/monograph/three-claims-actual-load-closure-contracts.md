@@ -353,6 +353,52 @@ AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### fixed theta short-interval zero-density band actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router.py
+data/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-ledger.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.md
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.json
+```
+
+actual-load 含义：Runbo Li 低行带不是孤立现象，而是所有固定
+`theta>1/2` 点态短区间输入的共同嵌入律。对 strict row 取右端点
+
+```text
+X=(k+1)P,  I_{P,k}=(kP,(k+1)P).
+```
+
+若一个外部输入只保证长度 `X^theta` 的短区间含素数，则要完全落入该 row 必须有
+
+```text
+X^theta<P  =>  k+1 < P^((1-theta)/theta).
+```
+
+当 `theta>1/2` 固定时，`alpha=(1-theta)/theta<1`，所以闭合行数
+`P^alpha` 在 `P` 条 strict rows 中密度趋零；剩余 top band 密度趋一。
+
+状态边界：
+
+```text
+all_fixed_theta_gt_half_close_only_zero_density_low_rows=true
+theta_half_identified_as_short_interval_lane_threshold=true
+density_one_top_band_remains_for_all_fixed_theta_gt_half=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows
+AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

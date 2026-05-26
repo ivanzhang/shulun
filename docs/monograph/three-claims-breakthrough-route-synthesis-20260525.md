@@ -2180,3 +2180,46 @@ AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 27. fixed theta short-interval zero-density band router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router.py
+data/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-ledger.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.md
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.json
+```
+
+本层把上一节的 Runbo Li 低行带桥接升级为一般路由。对任意固定
+`theta>1/2` 的点态短区间输入，取 strict row 右端点
+
+```text
+X=(k+1)P.
+```
+
+要让长度 `X^theta` 的保证区间完全落入 `(kP,(k+1)P)`，必须满足
+
+```text
+X^theta<P  =>  k+1<P^((1-theta)/theta).
+```
+
+令 `alpha=(1-theta)/theta`。当 `theta>1/2` 时 `alpha<1`，所以外部输入最多闭合
+`P^alpha` 量级低行，闭合比例 `P^(alpha-1)` 趋向 `0`；未闭合 top band 的密度趋向
+`1`。Baker--Harman--Pintz `21/40`、Runbo Li `13/25`、Hieu/AP scale
+representative `17/30` 以及任意固定 `0.5001` 级别输入都服从同一结论。
+
+这一步的实际价值是排除一整类循环希望：继续把普通短区间指数从 `0.525` 改到
+`0.52`、`0.5001` 等，只要仍是固定大于 `1/2`，就不能靠有限核查闭合全部 strict rows。
+真正门槛是 `theta=1/2` 点态正比例 `psi/theta`，或绕过普通短区间框架的 structural
+signed Type-II/trace family。
+
+最新非循环口为：
+
+```text
+AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows
+AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

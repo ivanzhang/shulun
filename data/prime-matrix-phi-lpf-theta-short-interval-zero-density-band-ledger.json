@@ -1,0 +1,147 @@
+{
+  "all_fixed_theta_gt_half_close_only_zero_density_low_rows": true,
+  "certificate_type": "prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router",
+  "closes_row_column_unconditionally": false,
+  "density_law": "for every fixed theta>1/2, P^((1-theta)/theta)/(P-1)->0",
+  "density_one_top_band_remains_for_all_fixed_theta_gt_half": true,
+  "general_condition": "k+1 < P^((1-theta)/theta), constants only change prefactors",
+  "latest_open_gate": "AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak AND PrimePowerTailSublinearThresholdClosed AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen",
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "plain_conclusion": "The Runbo Li bridge is the best current pointwise short-interval low-row input, but the phenomenon is general: any fixed exponent theta>1/2 embeds into only P^((1-theta)/theta) low rows, a zero-density set of the P strict rows. Thus ordinary fixed-exponent short-interval progress cannot close the row/column theorem unless it reaches the theta=1/2 scale or is supplemented by a structural top-band parity break.",
+  "right_endpoint_embedding": "X=(k+1)P and X^theta<P",
+  "row_column_unconditional_closed": false,
+  "row_interval": "I_{P,k}=(kP,(k+1)P), integers kP<n<(k+1)P",
+  "source_hashes": {
+    "docs/monograph/external-theorem-index.md": "67e5172450a1dbc46eeee90e48e9757cdfb838569293248a674b09073d010687",
+    "docs/monograph/prime-matrix-phi-lpf-runbo-li-low-row-band-bridge-audit.json": "03e3d0030f018ff25fab2cbb7c3aa1f15ec6f6aaa37c347e7ea7980f57302589",
+    "docs/monograph/prime-matrix-phi-lpf-strict-k-short-interval-exponent-barrier-router.json": "9c8b4ae328fe2254bf81e16e4f058921efc6c3ea616a97f196a42482151dd028",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "55b9bbfb44c1c29800dd5581e66d504fa910f790d0e45eb85251e9db45599660",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "5fc519f30a3992ecda8eda481ea128491fbb146253ae481a574bff119d2409f4",
+    "experiments/prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router.py": "ad8fc1a8191958faaab30dc92390d9577370df8dcac14db26f3dffa7eb8420c3"
+  },
+  "status": "fixed_theta_gt_half_short_intervals_close_only_zero_density_low_rows",
+  "theta_half_identified_as_short_interval_lane_threshold": true,
+  "theta_inputs": [
+    {
+      "closed_rows_density_tends_zero": true,
+      "covered_row_exponent": "19/21",
+      "covered_row_exponent_decimal": 0.9047619047619048,
+      "name": "Baker-Harman-Pintz 2001",
+      "samples": [
+        {
+          "P": 1000000,
+          "covered_fraction": 0.2682695795279726,
+          "covered_rows_approx": 268269.5795279726,
+          "top_band_fraction": 0.7317304204720274
+        },
+        {
+          "P": 1000000000000,
+          "covered_fraction": 0.07196856730011522,
+          "covered_rows_approx": 71968567300.11522,
+          "top_band_fraction": 0.9280314326998848
+        },
+        {
+          "P": 1000000000000000000000000,
+          "covered_fraction": 0.005179474679231213,
+          "covered_rows_approx": 5.179474679231213e+21,
+          "top_band_fraction": 0.9948205253207688
+        }
+      ],
+      "source": "classical pointwise short-interval exponent 0.525",
+      "theta": "21/40",
+      "theta_decimal": 0.525,
+      "top_band_density_tends_one": true
+    },
+    {
+      "closed_rows_density_tends_zero": true,
+      "covered_row_exponent": "12/13",
+      "covered_row_exponent_decimal": 0.9230769230769231,
+      "name": "Runbo Li arXiv:2308.04458 v8",
+      "samples": [
+        {
+          "P": 1000000,
+          "covered_fraction": 0.3455107294592222,
+          "covered_rows_approx": 345510.7294592222,
+          "top_band_fraction": 0.6544892705407779
+        },
+        {
+          "P": 1000000000000,
+          "covered_fraction": 0.11937766417144381,
+          "covered_rows_approx": 119377664171.44382,
+          "top_band_fraction": 0.8806223358285562
+        },
+        {
+          "P": 1000000000000000000000000,
+          "covered_fraction": 0.014251026703030021,
+          "covered_rows_approx": 1.425102670303002e+22,
+          "top_band_fraction": 0.98574897329697
+        }
+      ],
+      "source": "https://arxiv.org/abs/2308.04458",
+      "theta": "13/25",
+      "theta_decimal": 0.52,
+      "top_band_density_tends_one": true
+    },
+    {
+      "closed_rows_density_tends_zero": true,
+      "covered_row_exponent": "13/17",
+      "covered_row_exponent_decimal": 0.7647058823529411,
+      "name": "Guth-Maynard/Hieu scale representative",
+      "samples": [
+        {
+          "P": 1000000,
+          "covered_fraction": 0.03874675120456128,
+          "covered_rows_approx": 38746.75120456128,
+          "top_band_fraction": 0.9612532487954387
+        },
+        {
+          "P": 1000000000000,
+          "covered_fraction": 0.001501310728908171,
+          "covered_rows_approx": 1501310728.9081712,
+          "top_band_fraction": 0.9984986892710919
+        },
+        {
+          "P": 1000000000000000000000000,
+          "covered_fraction": 2.2539339047347844e-06,
+          "covered_rows_approx": 2.2539339047347843e+18,
+          "top_band_fraction": 0.9999977460660953
+        }
+      ],
+      "source": "zero-density/AP short-interval PNT scale, still above 1/2",
+      "theta": "17/30",
+      "theta_decimal": 0.5666666666666667,
+      "top_band_density_tends_one": true
+    },
+    {
+      "closed_rows_density_tends_zero": true,
+      "covered_row_exponent": "4999/5001",
+      "covered_row_exponent_decimal": 0.9996000799840032,
+      "name": "Hypothetical theta=0.5001",
+      "samples": [
+        {
+          "P": 1000000,
+          "covered_fraction": 0.9944901360855173,
+          "covered_rows_approx": 994490.1360855172,
+          "top_band_fraction": 0.0055098639144827155
+        },
+        {
+          "P": 1000000000000,
+          "covered_fraction": 0.9890106307713906,
+          "covered_rows_approx": 989010630771.3906,
+          "top_band_fraction": 0.01098936922860938
+        },
+        {
+          "P": 1000000000000000000000000,
+          "covered_fraction": 0.9781420277788241,
+          "covered_rows_approx": 9.781420277788241e+23,
+          "top_band_fraction": 0.021857972221175914
+        }
+      ],
+      "source": "near-half fixed exponent stress test",
+      "theta": "5001/10000",
+      "theta_decimal": 0.5001,
+      "top_band_density_tends_one": true
+    }
+  ],
+  "verified_date": "2026-05-26"
+}

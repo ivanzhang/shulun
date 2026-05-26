@@ -13723,3 +13723,49 @@ AND TopBandKPlusOneAtLeastPTo12Over13StillRequiresSqrtScalePointwisePsi
 AND PrimePowerTailSublinearThresholdClosed
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC39：fixed theta short-interval zero-density band router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_theta_short_interval_zero_density_band_router.py
+data/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-ledger.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.json
+docs/monograph/prime-matrix-phi-lpf-theta-short-interval-zero-density-band-router.md
+```
+
+本层把 Runbo Li 低行带桥接提升为所有固定 `theta>1/2` 短区间输入的共同边界。取
+`X=(k+1)P`，要把 `[X-X^theta,X]` 放入 strict row `(kP,(k+1)P)`，必须有
+
+```text
+X^theta<P  =>  k+1<P^((1-theta)/theta).
+```
+
+因此每个固定 `theta>1/2` 只闭合零密度低行带，且留下密度一 top band。
+
+有限审计读数：
+
+```text
+all_fixed_theta_gt_half_close_only_zero_density_low_rows=true
+theta_half_identified_as_short_interval_lane_threshold=true
+density_one_top_band_remains_for_all_fixed_theta_gt_half=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：继续改进普通短区间指数但仍停在 `theta>1/2`，不会闭合行/列命题；只能
+把低行带指数从 BHP 的 `19/21` 推到 Runbo Li 的 `12/13`，或进一步推近 `1` 但仍为
+零密度。完整闭合仍要求 `theta=1/2` 点态 `psi/theta` 正比例输入，或 structural parity
+break 的 admissible signed Type-II/trace family。
+
+最新 honest 口：
+
+```text
+AllFixedThetaGreaterThanHalfShortIntervalInputsCloseOnlyZeroDensityLowRows
+AND DensityOneTopBandStillRequiresThetaHalfPointwisePsiOrStructuralParityBreak
+AND PrimePowerTailSublinearThresholdClosed
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
