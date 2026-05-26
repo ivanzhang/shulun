@@ -13086,3 +13086,47 @@ OR PointwiseThetaPsiCOneInputAtSqrtRowScale
 OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 ```
+
+## 65BD. row inequality breakthrough frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_breakthrough_frontier_router.py
+data/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.md
+```
+
+外部 theorem 边界：行级不等式现在已经明确，外部输入若要直接破障，必须在
+`x=P^2,H=P=x^(1/2)` 的点态尺度给出素数正性，或提供可接入 source-key 的 signed
+trace/Type-II cancellation。当前短区间输入的尺度缺口为：
+
+```text
+Guth--Maynard / Hieu: theta=17/30, row thickening=P^(2/15)
+Runbo Li: theta=13/25, row thickening=P^(1/25)
+```
+
+这些结果可以支持加厚窗口或零行串控制，但不能直接推出每个固定 Prime Matrix row
+存在素数。trace/Kloosterman/Type-II 工具仍需先构造 admissible source-keyed signed
+family，不能从 support-only LPF/Phi 计数自动得到。
+
+审计读数：
+
+```text
+breakthrough_formula_frontier_synced=true
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+chosen_primary_attack_target=UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+chosen_parallel_signed_target=SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+chosen_parallel_distribution_target=PointwiseThetaPsiCOneInputAtSqrtRowScale
+```
+
+最新开放口：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+OR SpectralKloostermanTraceLift
+```

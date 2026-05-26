@@ -1906,6 +1906,60 @@ OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 ```
 
+## 41. row inequality breakthrough frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_breakthrough_frontier_router.py
+data/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json
+```
+
+本层把上一节的行级 Delta-Phi 恒等式继续压成真正破障公式前沿。现在目标不是再
+重写 `pi(A,B]`，而是证明下面四类之一：
+
+```text
+UniformDeltaPhiCoverDefect:
+  sum_{p<=sqrt(B)}(C_p(B)-C_p(A)) <= B-A-1
+NamedLPFOwnerResiduePDEC:
+  Delta-Phi cover equality => forbidden LPF-owner residue/phase packet
+PointwiseThetaPsiCOneInputAtSqrtRowScale:
+  theta(B)-theta(A)>0, or psi(B)-psi(A)>PrimePowerTail(A,B)
+SourceKeyedMobiusVonMangoldtTraceTypeIIFamily:
+  signed divisor/trace/Type-II error < row main term
+```
+
+尺度换算固定为：
+
+```text
+x=P^2
+row_length=P=x^(1/2)
+expected_prime_count=P/(2 log P)
+```
+
+因此外部短区间定理若只有 `theta>1/2`，在当前行尺度上仍是加厚行结果。
+Guth--Maynard 与 Hieu 的 `theta=17/30` 给出约 `P^(2/15)` 行厚度，Runbo Li
+的 `theta=13/25` 仍有 `P^(1/25)` 行厚度，不能直接闭合每一固定行。
+
+机器审计给出：
+
+```text
+breakthrough_formula_frontier_synced=true
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+```
+
+最新非循环主攻因此固定为：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+OR SpectralKloostermanTraceLift
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

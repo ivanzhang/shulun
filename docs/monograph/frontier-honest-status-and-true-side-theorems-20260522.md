@@ -14436,3 +14436,41 @@ OR PointwiseThetaPsiCOneInputAtSqrtRowScale
 OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 ```
+
+---
+
+## 附录 Q13AC49：row inequality breakthrough frontier router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_breakthrough_frontier_router.py
+data/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.md
+```
+
+本层把 honest 边界从“前缀差恒等式不能自动给正性”继续压到“哪些公式才真正足够”：
+
+```text
+UniformDeltaPhiCoverDefect
+NamedLPFOwnerResiduePDEC
+PointwiseThetaPsiCOneInputAtSqrtRowScale
+SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+SpectralKloostermanTraceLift
+ExplicitFormulaBeyondRHAtH=sqrt(x)
+```
+
+honest 边界：以上接口尚未证明。Guth--Maynard/Hieu `theta=17/30` 和 Runbo Li
+`theta=13/25` 在 `x=P^2` 仍分别对应 `P^(2/15)` 与 `P^(1/25)` 的行厚度；它们
+不是固定单行闭合证明。更多 wheel、Euler product 主项和 support-only P2/rough
+count 只能定位残差，不能替代 signed cancellation 或点态素数正性。
+
+最新 honest 口：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+OR SpectralKloostermanTraceLift
+```

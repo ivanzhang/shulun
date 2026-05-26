@@ -210,6 +210,47 @@ OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 ```
 
+### row inequality breakthrough frontier actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_breakthrough_frontier_router.py
+data/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json
+```
+
+actual-load 含义：当前障碍已经不是 LPF/Phi 计数公式是否精确，而是行级
+`Delta-Phi` 合数覆盖是否有严格缺口。要支付 actual prime survivor，必须新增以下
+任一负载：
+
+```text
+UniformDeltaPhiCoverDefect
+NamedLPFOwnerResiduePDEC
+PointwiseThetaPsiCOneInputAtSqrtRowScale
+SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+SpectralKloostermanTraceLift
+```
+
+普通 Euler product 主项、固定 wheel refinement、support-only P2/rough count 和
+`theta>1/2` 的加厚短区间输入都不能单独支付一行正性。PM-ALC 的当前实际合同相应为：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+OR SpectralKloostermanTraceLift
+```
+
+状态边界：
+
+```text
+breakthrough_formula_frontier_synced=true
+strict_cover_inequality_proved_uniformly=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

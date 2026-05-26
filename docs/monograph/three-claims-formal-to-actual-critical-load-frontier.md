@@ -26980,6 +26980,47 @@ OR PointwiseThetaPsiCOneInputAtSqrtRowScale
 OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
 ```
 
+### row inequality breakthrough frontier formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_inequality_breakthrough_frontier_router.py
+data/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json
+```
+
+formal-to-actual 结论：行级恒等式已经把目标变成一个明确不等式，但 actual-load
+不能来自同一个恒等式的重命名。需要的最小新公式是：
+
+```text
+For every target row (A,B], either
+  sum_{p<=sqrt(B)}(C_p(B)-C_p(A)) <= B-A-1,
+or the equality/overcover case returns a named LPF-owner residue PDEC/SAE.
+```
+
+可替代的 actual 输入只有点态平方根行分布或推前前 signed cancellation：
+
+```text
+theta(B)-theta(A)>0
+psi(B)-psi(A)>PrimePowerTail(A,B)
+source-keyed Mobius/Von Mangoldt/Type-I-II trace family
+completed spectral/Kloosterman trace lift
+```
+
+外部 `theta=17/30` 与 `theta=13/25` 短区间输入在 `x=P^2` 仍分别厚出
+`P^(2/15)` 与 `P^(1/25)` 行，所以只能限制零行串或给加厚窗口，不能闭合每个固定行。
+
+最新前沿：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+OR SpectralKloostermanTraceLift
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：
