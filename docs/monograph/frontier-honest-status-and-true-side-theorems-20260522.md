@@ -14512,3 +14512,38 @@ FullCoverOwnerResiduePDEC
 OR MobiusResidueCoverSignedTrace
 OR SpectralKloostermanResidueLift
 ```
+
+---
+
+## 附录 Q13AC51：full-cover owner PDEC stress router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py
+data/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-ledger.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.md
+```
+
+本层 honest 边界：owner-only PDEC 已被排除。普通零素数 full-cover 短区间同样满足
+LPF owner 分桶、纤维互不相交和一素数一同余类，因此这些性质不能构成矛盾。
+
+仍可用的非循环字段必须包括：
+
+```text
+A=kP, length=P-1, P prime, 1<=k<=P-1
+a_p=-kP mod p
+owner minimality
+signed/phase payload
+```
+
+有限目标扫描扩展到 `P=5003` 未见 full-cover，但仍不作为证明。
+
+最新 honest 口：
+
+```text
+TargetAffineFullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```

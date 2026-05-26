@@ -289,6 +289,45 @@ strict_cover_inequality_proved_uniformly=false
 row_column_unconditional_closed=false
 ```
 
+### full-cover owner PDEC stress actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py
+data/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-ledger.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.md
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json
+```
+
+actual-load 含义：`FullCoverOwnerResiduePDEC` 不能只使用 owner 支撑结构；普通
+零素数短区间已经满足这些支撑性质并 full cover。实际可用负载必须增加目标行仿射锚：
+
+```text
+A=kP
+length=P-1
+P prime
+1<=k<=P-1
+a_p=-kP mod p
+```
+
+因此 PM-ALC 的实际负载口更新为：
+
+```text
+TargetAffineFullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
+状态边界：
+
+```text
+full_cover_owner_pdec_stress_synced=true
+owner_only_pdec_rejected=true
+target_affine_owner_pdec_proved=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

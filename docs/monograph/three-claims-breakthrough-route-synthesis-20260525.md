@@ -2020,6 +2020,67 @@ OR MobiusResidueCoverSignedTrace
 OR SpectralKloostermanResidueLift
 ```
 
+## 43. full-cover owner PDEC stress router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py
+data/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-ledger.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.md
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json
+```
+
+本层直接攻击上一节选择的 `FullCoverOwnerResiduePDEC`，结论是：只依赖 LPF owner 分桶、
+owner fibers 互不相交、一素数一同余类、Euler/wheel 容量等普通支撑性质的 PDEC
+会被普通 full-cover 短区间反例排除。例如：
+
+```text
+(90,96], (114,126], (200,210]
+```
+
+这些区间均为零素数 full-cover，并且同样满足 owner 分桶、互不相交和一素数一同余类。
+因此 naive owner-only PDEC 已经被压力测试否定。
+
+目标行有限扫描扩展到：
+
+```text
+P=31,101,251,499,1009,2003,5003
+```
+
+未见 full-cover；最小素数数分别为：
+
+```text
+2, 7, 18, 29, 52, 113, 260
+```
+
+这仍只是证据，不是证明。真正还能非循环的 PDEC 必须同时使用：
+
+```text
+target_affine_anchor: A=kP, length=P-1, P prime, 1<=k<=P-1
+global_residue_coupling: a_p=-kP mod p
+owner_minimality: O_p=D_p minus union_{q<p}D_q
+signed_or_phase_payload: Mobius/Von Mangoldt/trace/CRT phase before pushforward
+```
+
+机器审计给出：
+
+```text
+full_cover_owner_pdec_stress_synced=true
+owner_only_pdec_rejected=true
+target_affine_owner_pdec_proved=false
+target_scan_no_full_cover=true
+row_column_unconditional_closed=false
+```
+
+最新非循环主攻收窄为：
+
+```text
+TargetAffineFullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

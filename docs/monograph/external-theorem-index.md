@@ -13178,3 +13178,44 @@ FullCoverOwnerResiduePDEC
 OR MobiusResidueCoverSignedTrace
 OR SpectralKloostermanResidueLift
 ```
+
+## 65BF. full-cover owner PDEC stress router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py
+data/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-ledger.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.md
+```
+
+外部 theorem 边界：full-cover owner PDEC 已被压力测试到 target-affine 级别。
+一般 Jacobsthal/covering-system、普通短区间素数定理和 trace/Kloosterman 技术目前都不能
+直接支付该门：
+
+```text
+owner_only_pdec_rejected=true
+target_affine_owner_pdec_proved=false
+```
+
+Jacobsthal/covering-system 型输入只能说明一般残基覆盖长空隙的上界，尺度仍远高于
+这里所需的单行 `P`；短区间定理仍厚于一行；谱/Type-II 技术尚未接入 LPF owner
+source-key。
+
+审计读数：
+
+```text
+full_cover_owner_pdec_stress_synced=true
+owner_only_pdec_rejected=true
+target_scan_no_full_cover=true
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+TargetAffineFullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```

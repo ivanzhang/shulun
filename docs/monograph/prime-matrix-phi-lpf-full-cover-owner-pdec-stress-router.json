@@ -1,0 +1,549 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router",
+  "external_boundary_rows": [
+    {
+      "current_gap": "known general bounds are far above the one-row P scale needed here; no target-affine PDEC follows",
+      "input": "Jacobsthal / covering-system bounds",
+      "source": "https://doi.org/10.1007/BF02564232",
+      "usable_content": "general bounds on long runs covered by residue classes of small primes"
+    },
+    {
+      "current_gap": "at x=P^2 the theorem still covers many rows, not one target row",
+      "input": "Short-interval prime theorems",
+      "source": "https://arxiv.org/abs/2405.20552",
+      "usable_content": "zero-density driven primes in intervals thicker than x^(1/2)"
+    },
+    {
+      "current_gap": "the current LPF owner fibers have not been promoted to an admissible source-keyed trace family",
+      "input": "Spectral/Kloosterman/Type-II methods",
+      "source": "https://arxiv.org/abs/2509.04883",
+      "usable_content": "AP/trace technology indicates the right kind of signed family"
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "full_cover_owner_pdec_stress_synced": true,
+  "generic_full_cover_witnesses": [
+    {
+      "a": 90,
+      "b": 96,
+      "composite_cover": 6,
+      "full_cover": true,
+      "interval": "(90,96]",
+      "length": 6,
+      "one_residue_per_prime": true,
+      "owner_bucket_count": 4,
+      "owner_buckets": {
+        "2": [
+          92,
+          94,
+          96
+        ],
+        "3": [
+          93
+        ],
+        "5": [
+          95
+        ],
+        "7": [
+          91
+        ]
+      },
+      "owner_fibers_disjoint": true,
+      "prime_count": 0,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": false
+    },
+    {
+      "a": 114,
+      "b": 126,
+      "composite_cover": 12,
+      "full_cover": true,
+      "interval": "(114,126]",
+      "length": 12,
+      "one_residue_per_prime": true,
+      "owner_bucket_count": 5,
+      "owner_buckets": {
+        "11": [
+          121
+        ],
+        "2": [
+          116,
+          118,
+          120,
+          122,
+          124,
+          126
+        ],
+        "3": [
+          117,
+          123
+        ],
+        "5": [
+          115,
+          125
+        ],
+        "7": [
+          119
+        ]
+      },
+      "owner_fibers_disjoint": true,
+      "prime_count": 0,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": false
+    },
+    {
+      "a": 200,
+      "b": 210,
+      "composite_cover": 10,
+      "full_cover": true,
+      "interval": "(200,210]",
+      "length": 10,
+      "one_residue_per_prime": true,
+      "owner_bucket_count": 5,
+      "owner_buckets": {
+        "11": [
+          209
+        ],
+        "2": [
+          202,
+          204,
+          206,
+          208,
+          210
+        ],
+        "3": [
+          201,
+          207
+        ],
+        "5": [
+          205
+        ],
+        "7": [
+          203
+        ]
+      },
+      "owner_fibers_disjoint": true,
+      "prime_count": 0,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": false
+    }
+  ],
+  "owner_only_pdec_rejected": true,
+  "plain_conclusion": "Full-cover owner PDEC 不能只依赖 LPF owner 分桶、纤维互不相交或一素数一同余类；普通零素数短区间已经满足这些性质并形成 full cover。因此 owner-only PDEC 被排除。剩余可行口必须使用目标行特有的 A=kP、P 为素数、k<P、长度 P-1 的全局仿射锚，并附带 owner minimality 与 signed/phase payload。有限目标行扫描继续未见 full cover，但仍只是证据，不是证明。",
+  "rejected_owner_only_predicates": [
+    {
+      "predicate": "LPFOwnerFibersDisjointAndCoverRow",
+      "reason_rejected": "generic full-cover intervals satisfy it with no contradiction",
+      "surviving_requirement": "must use target anchor A=kP, P prime, k<P, length P-1"
+    },
+    {
+      "predicate": "OneResidueClassPerPrimeFiber",
+      "reason_rejected": "every ordinary interval has one divisibility residue class per prime after choosing offset from A",
+      "surviving_requirement": "must exploit the special residues -kP mod p across all p, not one class locally"
+    },
+    {
+      "predicate": "LPFRoughCofactorOwnerPartition",
+      "reason_rejected": "this is exactly the LPF definition and is true in zero-prime ordinary intervals",
+      "surviving_requirement": "must add a non-tautological CRT/phase incompatibility"
+    },
+    {
+      "predicate": "EulerProductDensityOrWheelCapacityOnly",
+      "reason_rejected": "full-cover witnesses show support capacity can saturate without signed information",
+      "surviving_requirement": "must add Mobius/Von Mangoldt/trace cancellation or a named PDEC"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_next_primary_gate": "TargetAffineFullCoverOwnerResiduePDEC",
+  "selected_parallel_signed_gate": "MobiusResidueCoverSignedTraceWithTargetAffineAnchor",
+  "selected_parallel_spectral_gate": "SpectralKloostermanResidueLiftWithSourceKeys",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "7d8fcb401c9515bae493bed57eb5e6fa597a7d10d405676f8a5471dea8e44705",
+    "docs/monograph/external-theorem-index.md": "cc8764f0b71685b315a4ee815e80ac349173f14705ccbe41691297bca037ff90",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "9e0b4444d5633c653edf9e5a72bbcd90ca0f6f0a9efc19466335575436a8f580",
+    "docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json": "74636f1bc6c8e7088a213b0df5440bf93aadb10482989dca7615eb4edaaf3f06",
+    "docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json": "234ad3d23afb443ae53e5b0faf095f0621e38614b737de87b541a6b194da0cdd",
+    "docs/monograph/prime-matrix-phi-lpf-row-inequality-breakthrough-frontier-router.json": "93b9420810fe6a699bb79d3591e65e1e3f6077e3d0c94e37842649ed8a3bfb32",
+    "docs/monograph/prime-matrix-phi-lpf-row-inequality-target-residue-cover-router.json": "04b3e0b14d2f12b48232ea386ad31895d9a5b550a631bb8530539335f45b216b",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "a8dcf58155c3b8611ea9b4eaf095b159764de417f3e80ca6db378ff2a6bbeb85",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "5bd83b585553e8b0c51793c64d414e13de3d4790c2317d089b148e8be02ac96d",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "5ec1a1f30e082ef4b542e4a49b622d6391e4fab8b7e6b996bdfb5ddc003b15cf",
+    "experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py": "6994171369e63abd4d4fc0556e33e253ecd91f02363c502a48fab49b42df54bc",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "24173fec1dcaa935079b1405e74978583f893ec75a79654f093171f77858b857"
+  },
+  "status": "owner_only_pdec_rejected_target_affine_pdec_still_open",
+  "surviving_pdec_requirements": [
+    {
+      "content": "A=kP, length=P-1, P prime, 1<=k<=P-1",
+      "field": "target_affine_anchor",
+      "why_needed": "ordinary full-cover intervals lack this exact anchor"
+    },
+    {
+      "content": "a_p=-kP mod p for all p<=sqrt((k+1)P-1)",
+      "field": "global_residue_coupling",
+      "why_needed": "local one-residue-per-prime facts are generic and cannot produce PDEC"
+    },
+    {
+      "content": "O_p=D_p minus union_{q<p}D_q with a named first-owner transition",
+      "field": "owner_minimality",
+      "why_needed": "must distinguish owner buckets from coarse divisor support"
+    },
+    {
+      "content": "Mobius/Von Mangoldt sign, trace phase, or CRT phase packet before pushforward",
+      "field": "signed_or_phase_payload",
+      "why_needed": "pure support is parity-blind and already known insufficient"
+    }
+  ],
+  "target_affine_owner_pdec_proved": false,
+  "target_min_defect_scan": [
+    {
+      "P": 31,
+      "composite_cover_at_min_row": 28,
+      "full_cover": false,
+      "largest_owner_prime": 19,
+      "max_prime_count": 7,
+      "min_k": 25,
+      "min_prime_count": 2,
+      "owner_bucket_count": 8,
+      "row": "(775,805]",
+      "row_length": 30,
+      "sqrt_bound": 28,
+      "strict_defect": 2,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 15,
+          "p": 2
+        },
+        {
+          "count": 5,
+          "p": 3
+        },
+        {
+          "count": 2,
+          "p": 5
+        },
+        {
+          "count": 2,
+          "p": 11
+        },
+        {
+          "count": 1,
+          "p": 7
+        },
+        {
+          "count": 1,
+          "p": 13
+        },
+        {
+          "count": 1,
+          "p": 17
+        },
+        {
+          "count": 1,
+          "p": 19
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 101,
+      "composite_cover_at_min_row": 93,
+      "full_cover": false,
+      "largest_owner_prime": 83,
+      "max_prime_count": 20,
+      "min_k": 73,
+      "min_prime_count": 7,
+      "owner_bucket_count": 14,
+      "row": "(7373,7473]",
+      "row_length": 100,
+      "sqrt_bound": 86,
+      "strict_defect": 7,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 50,
+          "p": 2
+        },
+        {
+          "count": 17,
+          "p": 3
+        },
+        {
+          "count": 7,
+          "p": 5
+        },
+        {
+          "count": 4,
+          "p": 7
+        },
+        {
+          "count": 3,
+          "p": 11
+        },
+        {
+          "count": 2,
+          "p": 13
+        },
+        {
+          "count": 2,
+          "p": 17
+        },
+        {
+          "count": 2,
+          "p": 31
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 251,
+      "composite_cover_at_min_row": 232,
+      "full_cover": false,
+      "largest_owner_prime": 163,
+      "max_prime_count": 41,
+      "min_k": 108,
+      "min_prime_count": 18,
+      "owner_bucket_count": 25,
+      "row": "(27108,27358]",
+      "row_length": 250,
+      "sqrt_bound": 165,
+      "strict_defect": 18,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 125,
+          "p": 2
+        },
+        {
+          "count": 42,
+          "p": 3
+        },
+        {
+          "count": 17,
+          "p": 5
+        },
+        {
+          "count": 9,
+          "p": 7
+        },
+        {
+          "count": 5,
+          "p": 11
+        },
+        {
+          "count": 4,
+          "p": 17
+        },
+        {
+          "count": 4,
+          "p": 19
+        },
+        {
+          "count": 3,
+          "p": 13
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 499,
+      "composite_cover_at_min_row": 469,
+      "full_cover": false,
+      "largest_owner_prime": 347,
+      "max_prime_count": 73,
+      "min_k": 362,
+      "min_prime_count": 29,
+      "owner_bucket_count": 48,
+      "row": "(180638,181136]",
+      "row_length": 498,
+      "sqrt_bound": 425,
+      "strict_defect": 29,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 249,
+          "p": 2
+        },
+        {
+          "count": 83,
+          "p": 3
+        },
+        {
+          "count": 33,
+          "p": 5
+        },
+        {
+          "count": 19,
+          "p": 7
+        },
+        {
+          "count": 10,
+          "p": 11
+        },
+        {
+          "count": 10,
+          "p": 13
+        },
+        {
+          "count": 6,
+          "p": 17
+        },
+        {
+          "count": 6,
+          "p": 19
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 1009,
+      "composite_cover_at_min_row": 956,
+      "full_cover": false,
+      "largest_owner_prime": 941,
+      "max_prime_count": 137,
+      "min_k": 905,
+      "min_prime_count": 52,
+      "owner_bucket_count": 80,
+      "row": "(913145,914153]",
+      "row_length": 1008,
+      "sqrt_bound": 956,
+      "strict_defect": 52,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 504,
+          "p": 2
+        },
+        {
+          "count": 168,
+          "p": 3
+        },
+        {
+          "count": 66,
+          "p": 5
+        },
+        {
+          "count": 39,
+          "p": 7
+        },
+        {
+          "count": 20,
+          "p": 11
+        },
+        {
+          "count": 17,
+          "p": 13
+        },
+        {
+          "count": 13,
+          "p": 17
+        },
+        {
+          "count": 10,
+          "p": 19
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 2003,
+      "composite_cover_at_min_row": 1889,
+      "full_cover": false,
+      "largest_owner_prime": 1553,
+      "max_prime_count": 248,
+      "min_k": 1256,
+      "min_prime_count": 113,
+      "owner_bucket_count": 120,
+      "row": "(2515768,2517770]",
+      "row_length": 2002,
+      "sqrt_bound": 1586,
+      "strict_defect": 113,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 1001,
+          "p": 2
+        },
+        {
+          "count": 333,
+          "p": 3
+        },
+        {
+          "count": 133,
+          "p": 5
+        },
+        {
+          "count": 76,
+          "p": 7
+        },
+        {
+          "count": 43,
+          "p": 11
+        },
+        {
+          "count": 31,
+          "p": 13
+        },
+        {
+          "count": 24,
+          "p": 17
+        },
+        {
+          "count": 17,
+          "p": 19
+        }
+      ],
+      "zero_row_count": 0
+    },
+    {
+      "P": 5003,
+      "composite_cover_at_min_row": 4742,
+      "full_cover": false,
+      "largest_owner_prime": 4973,
+      "max_prime_count": 559,
+      "min_k": 4980,
+      "min_prime_count": 260,
+      "owner_bucket_count": 244,
+      "row": "(24914940,24919942]",
+      "row_length": 5002,
+      "sqrt_bound": 4991,
+      "strict_defect": 260,
+      "target_anchor_A_equals_kP_with_P_length_plus_one": true,
+      "top_owner_counts": [
+        {
+          "count": 2501,
+          "p": 2
+        },
+        {
+          "count": 834,
+          "p": 3
+        },
+        {
+          "count": 333,
+          "p": 5
+        },
+        {
+          "count": 190,
+          "p": 7
+        },
+        {
+          "count": 104,
+          "p": 11
+        },
+        {
+          "count": 79,
+          "p": 13
+        },
+        {
+          "count": 54,
+          "p": 17
+        },
+        {
+          "count": 46,
+          "p": 19
+        }
+      ],
+      "zero_row_count": 0
+    }
+  ],
+  "target_scan_no_full_cover": true,
+  "verified_date": "2026-05-26"
+}

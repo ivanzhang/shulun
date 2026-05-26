@@ -27061,6 +27061,44 @@ OR MobiusResidueCoverSignedTrace
 OR SpectralKloostermanResidueLift
 ```
 
+### full-cover owner PDEC stress formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_full_cover_owner_pdec_stress_router.py
+data/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-ledger.json
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.md
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-pdec-stress-router.json
+```
+
+formal-to-actual 结论：owner fibers 的形式分解本身不能产生矛盾。普通 full-cover
+短区间已经满足：
+
+```text
+LPF owner fibers disjoint and cover row
+one residue class per prime fiber
+LPF rough cofactor owner partition
+Euler/wheel support capacity saturation
+```
+
+所以 naive owner-only PDEC 必须删除。actual proof 仍可能来自目标行专有字段：
+
+```text
+target_affine_anchor
+global_residue_coupling
+owner_minimality
+signed_or_phase_payload
+```
+
+最新前沿：
+
+```text
+TargetAffineFullCoverOwnerResiduePDEC
+OR MobiusResidueCoverSignedTraceWithTargetAffineAnchor
+OR SpectralKloostermanResidueLiftWithSourceKeys
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

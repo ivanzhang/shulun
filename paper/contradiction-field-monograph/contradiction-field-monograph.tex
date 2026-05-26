@@ -42063,6 +42063,54 @@ target-residue-cover-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Full-cover owner PDEC stress test}
+
+\begin{theorem}[Owner-only full-cover PDEC is insufficient]
+A contradiction extracted from a full-cover row cannot depend only on the facts
+that LPF owner fibers are disjoint, that they cover the row, or that each prime
+defines one residue class.  Ordinary zero-prime intervals such as \((90,96]\),
+\((114,126]\), and \((200,210]\) already satisfy these owner-support
+properties and have full Delta-Phi cover.  Hence any non-circular
+full-cover PDEC for the Prime Matrix row must use the target-affine data
+\[
+  A=kP,\qquad |R_{P,k}|=P-1,\qquad P\ {\rm prime},\qquad 1\le k\le P-1,
+\]
+together with global residue coupling \(a_p=-kP\bmod p\), owner minimality, and
+a signed or phase payload before pushforward.
+\end{theorem}
+
+\begin{proof}
+The listed ordinary intervals contain no primes, so their LPF owner buckets
+partition the whole interval.  For each prime \(p\), divisibility in any
+ordinary interval \((A,B]\) is still one residue class in the offset variable.
+Thus disjoint owner support, full cover, and one-residue-per-prime structure are
+not contradictions.  These are tautological consequences of LPF ownership and
+local congruence, not target-specific constraints.  The Prime Matrix row adds
+the global affine anchor \(A=kP\) with \(P\) prime and \(k<P\).  Any surviving
+PDEC must therefore use this global coupling across all primes, or else import
+signed Mobius/Von Mangoldt, trace, or spectral cancellation.  The finite scan
+through \(P=5003\) found no target-row full cover, but this is evidence only.
+\end{proof}
+
+\begin{certificatestatement}[Full-cover owner PDEC stress certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+full\_cover\_owner\_pdec\_stress\_synced=true\\
+owner\_only\_pdec\_rejected=true\\
+target\_affine\_owner\_pdec\_proved=false\\
+target\_scan\_no\_full\_cover=true\\
+row\_column\_unconditional\_closed=false\\
+selected\_next\_primary\_gate=TargetAffineFullCoverOwnerResiduePDEC\\
+selected\_parallel\_signed\_gate=MobiusResidueCoverSignedTraceWithTargetAffineAnchor\\
+selected\_parallel\_spectral\_gate=SpectralKloostermanResidueLiftWithSourceKeys.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-full-cover-owner-\\
+pdec-stress-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
