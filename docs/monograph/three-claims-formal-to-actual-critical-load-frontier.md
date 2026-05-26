@@ -27154,6 +27154,33 @@ OR CompletedTraceKloostermanFamilyFromOwnerFibers
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### target-affine source-keyed product phase formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py
+data/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json
+```
+
+formal-to-actual 结论：source key 可以完全显式化。owner 元素写成 `n=pm=kP+r` 后，
+offset phase 与 product phase 相同：
+
+```text
+e_P(h r)=e_P(h p m)
+```
+
+因此 actual proof 的新对象不是抽象 trace key，而是带 `p`-rough cofactor 权重的双曲
+product-window 双线性相位。最新前沿为：
+
+```text
+ProductWindowBilinearAdditivePhaseSavingOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridge
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

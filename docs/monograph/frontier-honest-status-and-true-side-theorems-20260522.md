@@ -14610,3 +14610,28 @@ SourceKeyedOwnerPhaseEmissionFormula
 OR PointwiseSqrtPrimeInputCOne
 OR CompletedTraceKloostermanFamilyFromOwnerFibers
 ```
+
+---
+
+## 附录 Q13AC54：target-affine source-keyed product phase router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py
+data/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.md
+```
+
+本层 honest 边界：`SourceKeyedOwnerPhaseEmissionFormula` 已代数闭合为
+`e_P(hpm)` product-window phase；但这仍不是全局正性证明。full-cover 时这些 product
+residue 只是排列 `F_P^*`，不会自动矛盾。
+
+最新 honest 口：
+
+```text
+ProductWindowBilinearAdditivePhaseSavingOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridge
+OR PointwiseSqrtPrimeInputCOne
+```

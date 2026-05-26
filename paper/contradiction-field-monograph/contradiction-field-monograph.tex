@@ -42224,6 +42224,60 @@ signed-phase-contract-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Target-affine source-keyed product phase}
+
+\begin{theorem}[Source-keyed owner phase emission identity]
+Let \(n=kP+r\) be a composite element of a target row, and let
+\[
+  n=pm,\qquad p=\operatorname{LPF}(n).
+\]
+Then \(m\) is \(p\)-rough, \(kP<pm<(k+1)P\), and for every row frequency
+\(h\bmod P\),
+\[
+  e_P(hr)=e_P(hpm).
+\]
+Thus the source-keyed owner phase is not merely formal: it is exactly the
+product-window phase attached to the key \((p,m)\).
+\end{theorem}
+
+\begin{proof}
+Since \(n=kP+r=pm\), we have \(r\equiv pm\pmod P\), which gives the displayed
+phase identity.  Since \(p\) is the least prime factor of \(n\), the cofactor
+\(m\) has no prime factor below \(p\).  Conversely, every key \((p,m)\) with
+\(m\) \(p\)-rough and \(kP<pm<(k+1)P\), when owned by \(p\), maps to the row
+offset \(r\equiv pm\pmod P\).  Therefore the owner Fourier sum can be written
+as a product-window source-keyed sum.
+\end{proof}
+
+\begin{remark}[Why this still does not close the row]
+If a full cover existed, the product residues \(pm\bmod P\) over the owner keys
+would be exactly all nonzero residues modulo \(P\), so every nonzero row
+frequency would sum to \(-1\).  Hence the identity alone is not a contradiction.
+The remaining non-circular input must prove a product-window bilinear additive
+phase saving or PDEC, complete this object to a trace/Kloosterman family, or
+import a genuine \(C=1\) square-root-scale prime theorem.
+\end{remark}
+
+\begin{certificatestatement}[Target-affine source-keyed product phase certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+target\_affine\_source\_keyed\_product\_phase\_synced=true\\
+source\_keyed\_owner\_phase\_emission\_formula\_closed=true\\
+finite\_product\_phase\_identity\_all\_ok=true\\
+product\_window\_bilinear\_additive\_phase\_saving\_proved=false\\
+product\_window\_to\_completed\_kloosterman\_bridge\_proved=false\\
+row\_column\_unconditional\_closed=false\\
+selected\_next\_primary\_gate=ProductWindowBilinearAdditivePhaseSavingOrPDEC\\
+selected\_parallel\_trace\_gate=ProductWindowToCompletedKloostermanOrTraceBridge\\
+selected\_parallel\_typeii\_gate=LPFOwnerRoughCofactorWeightsToTypeIICoefficients.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-target-affine-\\
+source-keyed-product-phase-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

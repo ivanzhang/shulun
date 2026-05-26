@@ -2173,6 +2173,51 @@ OR PointwiseSqrtPrimeInputCOne
 OR CompletedTraceKloostermanFamilyFromOwnerFibers
 ```
 
+## 46. target-affine source-keyed product phase router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py
+data/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json
+```
+
+本层把上一节的抽象 `SourceKeyedOwnerPhaseEmissionFormula` 具体闭合为显式 product-window
+相位恒等式。对每个 LPF owner 元素：
+
+```text
+n=pm=kP+r
+```
+
+有：
+
+```text
+r == pm (mod P)
+e_P(h r)=e_P(h p m)
+```
+
+其中 `p=LPF(n)`，`m` 为 `p`-rough，且 `kP<pm<(k+1)P`。有限审计对
+`P=31,101,251,499,1009,2003,5003` 的目标行全部验证：
+
+```text
+source_keyed_product_phase_congruence_ok=true
+rough_cofactor_condition_ok=true
+product_window_condition_ok=true
+selected_frequency_phase_error=0
+```
+
+这是真推进：source key 从形式名词变成了 `(p,m)` product phase。但它仍只是恒等式。
+若 full-cover 成立，owner product residues 正好成为 `F_P^*` 的排列，所有非零频率和为
+`-1`。因此非循环突破现在被压成：
+
+```text
+ProductWindowBilinearAdditivePhaseSavingOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridge
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

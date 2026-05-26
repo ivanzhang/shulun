@@ -1,0 +1,641 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router",
+  "contract_rows": [
+    {
+      "closed": true,
+      "gate": "SourceKeyedProductWindowPhaseEmissionIdentity",
+      "meaning": "对每个 owner key n=pm=kP+r，offset phase e_P(hr) 精确等于 product phase e_P(hpm)。",
+      "proved": true,
+      "remaining": "identity only"
+    },
+    {
+      "closed": true,
+      "gate": "FullCoverProductPhaseEquation",
+      "meaning": "若 full cover 成立，则 owner product residues 是 F_P^* 的排列，所有非零频率和为 -1。",
+      "proved": false,
+      "remaining": "ProductWindowBilinearAdditivePhaseSavingOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ProductWindowBilinearAdditivePhaseSavingOrPDEC",
+      "meaning": "需要证明目标 product-window rough-owner 集不可能模拟全体非零 residue，或给出符号节省。",
+      "proved": false,
+      "remaining": "ProductWindowBilinearAdditivePhaseSavingOrPDEC OR named PDEC/SAE/LocalSurvivor"
+    },
+    {
+      "closed": false,
+      "gate": "ProductWindowToCompletedKloostermanOrTraceBridge",
+      "meaning": "当前相位是 e_P(hpm) 与双曲窗口；不是已完成的 inverse-variable Kloosterman family。",
+      "proved": false,
+      "remaining": "ProductWindowToCompletedKloostermanOrTraceBridge"
+    },
+    {
+      "closed": false,
+      "gate": "LPFOwnerRoughCofactorWeightsToTypeIICoefficients",
+      "meaning": "p-rough cofactor weights 还没有转成外部 Type-II theorem 可接受的 well-factorable 系数。",
+      "proved": false,
+      "remaining": "LPFOwnerRoughCofactorWeightsToTypeIICoefficients"
+    },
+    {
+      "closed": false,
+      "gate": "TargetAffineRowClosureReached",
+      "meaning": "本层关闭 source-keyed emission identity，但不证明行级正性。",
+      "proved": false,
+      "remaining": "ProductWindowBilinearAdditivePhaseSavingOrPDEC OR ProductWindowToCompletedKloostermanOrTraceBridge OR PointwiseSqrtPrimeInputCOne"
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_product_phase_audit": [
+    {
+      "P": 31,
+      "k": 25,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 28,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 30,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 0.316844421,
+          "phase_error": 0.0,
+          "product_abs": 0.316844421
+        },
+        {
+          "h": 2,
+          "owner_abs": 0.574413055,
+          "phase_error": 0.0,
+          "product_abs": 0.574413055
+        },
+        {
+          "h": 3,
+          "owner_abs": 2.719360539,
+          "phase_error": 0.0,
+          "product_abs": 2.719360539
+        },
+        {
+          "h": 15,
+          "owner_abs": 1.878384029,
+          "phase_error": 0.0,
+          "product_abs": 1.878384029
+        },
+        {
+          "h": 30,
+          "owner_abs": 0.316844421,
+          "phase_error": 0.0,
+          "product_abs": 0.316844421
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 2,
+      "top_owner_bucket_counts": [
+        {
+          "count": 15,
+          "p": 2
+        },
+        {
+          "count": 5,
+          "p": 3
+        },
+        {
+          "count": 2,
+          "p": 5
+        },
+        {
+          "count": 2,
+          "p": 11
+        },
+        {
+          "count": 1,
+          "p": 7
+        },
+        {
+          "count": 1,
+          "p": 13
+        },
+        {
+          "count": 1,
+          "p": 17
+        },
+        {
+          "count": 1,
+          "p": 19
+        }
+      ]
+    },
+    {
+      "P": 101,
+      "k": 73,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 93,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 100,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 1.182915707,
+          "phase_error": 0.0,
+          "product_abs": 1.182915707
+        },
+        {
+          "h": 2,
+          "owner_abs": 2.328472447,
+          "phase_error": 0.0,
+          "product_abs": 2.328472447
+        },
+        {
+          "h": 3,
+          "owner_abs": 1.794597016,
+          "phase_error": 0.0,
+          "product_abs": 1.794597016
+        },
+        {
+          "h": 50,
+          "owner_abs": 5.071232619,
+          "phase_error": 0.0,
+          "product_abs": 5.071232619
+        },
+        {
+          "h": 100,
+          "owner_abs": 1.182915707,
+          "phase_error": 0.0,
+          "product_abs": 1.182915707
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 7,
+      "top_owner_bucket_counts": [
+        {
+          "count": 50,
+          "p": 2
+        },
+        {
+          "count": 17,
+          "p": 3
+        },
+        {
+          "count": 7,
+          "p": 5
+        },
+        {
+          "count": 4,
+          "p": 7
+        },
+        {
+          "count": 3,
+          "p": 11
+        },
+        {
+          "count": 2,
+          "p": 13
+        },
+        {
+          "count": 2,
+          "p": 17
+        },
+        {
+          "count": 2,
+          "p": 31
+        }
+      ]
+    },
+    {
+      "P": 251,
+      "k": 108,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 232,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 250,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 3.61927516,
+          "phase_error": 0.0,
+          "product_abs": 3.61927516
+        },
+        {
+          "h": 2,
+          "owner_abs": 2.431399974,
+          "phase_error": 0.0,
+          "product_abs": 2.431399974
+        },
+        {
+          "h": 3,
+          "owner_abs": 5.197119898,
+          "phase_error": 0.0,
+          "product_abs": 5.197119898
+        },
+        {
+          "h": 125,
+          "owner_abs": 12.907201694,
+          "phase_error": 0.0,
+          "product_abs": 12.907201694
+        },
+        {
+          "h": 250,
+          "owner_abs": 3.61927516,
+          "phase_error": 0.0,
+          "product_abs": 3.61927516
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 18,
+      "top_owner_bucket_counts": [
+        {
+          "count": 125,
+          "p": 2
+        },
+        {
+          "count": 42,
+          "p": 3
+        },
+        {
+          "count": 17,
+          "p": 5
+        },
+        {
+          "count": 9,
+          "p": 7
+        },
+        {
+          "count": 5,
+          "p": 11
+        },
+        {
+          "count": 4,
+          "p": 17
+        },
+        {
+          "count": 4,
+          "p": 19
+        },
+        {
+          "count": 3,
+          "p": 13
+        }
+      ]
+    },
+    {
+      "P": 499,
+      "k": 362,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 469,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 498,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 2.361869378,
+          "phase_error": 0.0,
+          "product_abs": 2.361869378
+        },
+        {
+          "h": 2,
+          "owner_abs": 5.593030722,
+          "phase_error": 0.0,
+          "product_abs": 5.593030722
+        },
+        {
+          "h": 3,
+          "owner_abs": 0.900498351,
+          "phase_error": 0.0,
+          "product_abs": 0.900498351
+        },
+        {
+          "h": 249,
+          "owner_abs": 18.472242878,
+          "phase_error": 0.0,
+          "product_abs": 18.472242878
+        },
+        {
+          "h": 498,
+          "owner_abs": 2.361869378,
+          "phase_error": 0.0,
+          "product_abs": 2.361869378
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 29,
+      "top_owner_bucket_counts": [
+        {
+          "count": 249,
+          "p": 2
+        },
+        {
+          "count": 83,
+          "p": 3
+        },
+        {
+          "count": 33,
+          "p": 5
+        },
+        {
+          "count": 19,
+          "p": 7
+        },
+        {
+          "count": 10,
+          "p": 11
+        },
+        {
+          "count": 10,
+          "p": 13
+        },
+        {
+          "count": 6,
+          "p": 17
+        },
+        {
+          "count": 6,
+          "p": 19
+        }
+      ]
+    },
+    {
+      "P": 1009,
+      "k": 905,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 956,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 1008,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 3.35784525,
+          "phase_error": 0.0,
+          "product_abs": 3.35784525
+        },
+        {
+          "h": 2,
+          "owner_abs": 5.011005935,
+          "phase_error": 0.0,
+          "product_abs": 5.011005935
+        },
+        {
+          "h": 3,
+          "owner_abs": 1.787629363,
+          "phase_error": 0.0,
+          "product_abs": 1.787629363
+        },
+        {
+          "h": 504,
+          "owner_abs": 34.227171114,
+          "phase_error": 0.0,
+          "product_abs": 34.227171114
+        },
+        {
+          "h": 1008,
+          "owner_abs": 3.35784525,
+          "phase_error": 0.0,
+          "product_abs": 3.35784525
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 52,
+      "top_owner_bucket_counts": [
+        {
+          "count": 504,
+          "p": 2
+        },
+        {
+          "count": 168,
+          "p": 3
+        },
+        {
+          "count": 66,
+          "p": 5
+        },
+        {
+          "count": 39,
+          "p": 7
+        },
+        {
+          "count": 20,
+          "p": 11
+        },
+        {
+          "count": 17,
+          "p": 13
+        },
+        {
+          "count": 13,
+          "p": 17
+        },
+        {
+          "count": 10,
+          "p": 19
+        }
+      ]
+    },
+    {
+      "P": 2003,
+      "k": 1256,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 1889,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 2002,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 8.242203175,
+          "phase_error": 0.0,
+          "product_abs": 8.242203175
+        },
+        {
+          "h": 2,
+          "owner_abs": 4.083883937,
+          "phase_error": 0.0,
+          "product_abs": 4.083883937
+        },
+        {
+          "h": 3,
+          "owner_abs": 17.66480118,
+          "phase_error": 0.0,
+          "product_abs": 17.66480118
+        },
+        {
+          "h": 1001,
+          "owner_abs": 73.872762225,
+          "phase_error": 0.0,
+          "product_abs": 73.872762225
+        },
+        {
+          "h": 2002,
+          "owner_abs": 8.242203175,
+          "phase_error": 0.0,
+          "product_abs": 8.242203175
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 113,
+      "top_owner_bucket_counts": [
+        {
+          "count": 1001,
+          "p": 2
+        },
+        {
+          "count": 333,
+          "p": 3
+        },
+        {
+          "count": 133,
+          "p": 5
+        },
+        {
+          "count": 76,
+          "p": 7
+        },
+        {
+          "count": 43,
+          "p": 11
+        },
+        {
+          "count": 31,
+          "p": 13
+        },
+        {
+          "count": 24,
+          "p": 17
+        },
+        {
+          "count": 17,
+          "p": 19
+        }
+      ]
+    },
+    {
+      "P": 5003,
+      "k": 4980,
+      "lpf_bound_condition_ok": true,
+      "owner_key_count": 4742,
+      "owner_residue_condition_ok": true,
+      "partition_count_ok": true,
+      "product_residue_collision_free_on_owner_keys": true,
+      "product_window_condition_ok": true,
+      "rough_cofactor_condition_ok": true,
+      "row_length": 5002,
+      "selected_frequency_phase_rows": [
+        {
+          "h": 1,
+          "owner_abs": 14.045276634,
+          "phase_error": 0.0,
+          "product_abs": 14.045276634
+        },
+        {
+          "h": 2,
+          "owner_abs": 13.411628705,
+          "phase_error": 0.0,
+          "product_abs": 13.411628705
+        },
+        {
+          "h": 3,
+          "owner_abs": 7.174186575,
+          "phase_error": 0.0,
+          "product_abs": 7.174186575
+        },
+        {
+          "h": 2501,
+          "owner_abs": 170.888958159,
+          "phase_error": 0.0,
+          "product_abs": 170.888958159
+        },
+        {
+          "h": 5002,
+          "owner_abs": 14.045276636,
+          "phase_error": 0.0,
+          "product_abs": 14.045276636
+        }
+      ],
+      "source_keyed_product_phase_congruence_ok": true,
+      "survivor_count": 260,
+      "top_owner_bucket_counts": [
+        {
+          "count": 2501,
+          "p": 2
+        },
+        {
+          "count": 834,
+          "p": 3
+        },
+        {
+          "count": 333,
+          "p": 5
+        },
+        {
+          "count": 190,
+          "p": 7
+        },
+        {
+          "count": 104,
+          "p": 11
+        },
+        {
+          "count": 79,
+          "p": 13
+        },
+        {
+          "count": 54,
+          "p": 17
+        },
+        {
+          "count": 46,
+          "p": 19
+        }
+      ]
+    }
+  ],
+  "finite_product_phase_identity_all_ok": true,
+  "full_cover_product_phase_equation_closed": true,
+  "lpf_owner_rough_cofactor_weights_to_typeii_coefficients_proved": false,
+  "plain_conclusion": "Source-keyed owner phase 的代数发射式已经闭合：每个 LPF owner 元素 n=pm=kP+r 都满足 r≡pm mod P，因此 offset Fourier phase 可无损改写为 source-keyed product-window phase e_P(hpm)。这是真推进，因为抽象 source key 已变成显式 (p,m) product phase；但它仍只是恒等式。full-cover 时该 product residue 集会成为 F_P^* 的排列，非零频率和等于 -1。要非循环突破，下一步必须证明 ProductWindowBilinearAdditivePhaseSaving/PDEC，或把这个双曲 product-window 完成到外部 trace/Kloosterman/Type-II 可接受的系数族，或输入 C=1 sqrt 级点态素数定理。",
+  "product_window_bilinear_additive_phase_saving_proved": false,
+  "product_window_to_completed_kloosterman_bridge_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_next_primary_gate": "ProductWindowBilinearAdditivePhaseSavingOrPDEC",
+  "selected_parallel_distribution_gate": "PointwiseSqrtPrimeInputCOne",
+  "selected_parallel_trace_gate": "ProductWindowToCompletedKloostermanOrTraceBridge",
+  "selected_parallel_typeii_gate": "LPFOwnerRoughCofactorWeightsToTypeIICoefficients",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "bb5f6c2c0394dc15be36f0b06139b1137f360621fce599f29a11a50264d1fbfc",
+    "docs/monograph/external-theorem-index.md": "8f6f6c542b3aaf42beaac4f001b26edecac66ff177d64e6447a42f78d74d7731",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "bb30c0650ea80fb537b0aa401f48d57ef4e9e4bb0a7b33571fee287c16760109",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json": "f1f62e09e90bf4af6eeee23095f8bb3e5f707d8211d3f328781bf1bce6a62a6f",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json": "a394e6c16817f5d5e043053cc8d983738650385abb058bb01dea9e70a54e12d5",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json": "68d92a76de9afa0228d9e9dae12de19bb4b8189e69397c66c7d967ce4b915b0e",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "19e44c42b1e43a77d5ab8d518f2d2f0de51544be4e174251df37ccadbc31ab25",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "9c0d5623e85fef7fe004caff27f6f00f68af083d6d51527414bbb5d2457f69b7",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "97fe483cf602d3f1d68d59f7241970440fd0aef1c3fd0be19d4ca1be7256d036",
+    "experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py": "054bd7ec21a5691e4565df90c6986c123d85752b7868904c5124f57278c963f8",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "233bff8d8bec71f508b95e0ca83676664453f2e4c9b0893f1fda545f2289dc33"
+  },
+  "source_keyed_owner_phase_emission_formula_closed": true,
+  "source_keyed_product_phase_identity": "n=pm=kP+r => r≡pm (mod P), hence e_P(h r)=e_P(h p m)",
+  "status": "source_keyed_owner_phase_emission_closed_to_product_window_phase",
+  "target_affine_source_keyed_product_phase_synced": true,
+  "verified_date": "2026-05-26"
+}

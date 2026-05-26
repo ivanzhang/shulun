@@ -13295,3 +13295,37 @@ SourceKeyedOwnerPhaseEmissionFormula
 OR PointwiseSqrtPrimeInputCOne
 OR CompletedTraceKloostermanFamilyFromOwnerFibers
 ```
+
+## 65BI. target-affine source-keyed product phase router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py
+data/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.md
+```
+
+外部 theorem 边界：本层已把 source-keyed owner phase 显式化为 product-window
+additive phase：
+
+```text
+e_P(hpm),  kP<pm<(k+1)P,  p=LPF(pm),  m is p-rough
+```
+
+这还不是 DI/BFI 型 inverse Kloosterman、FKMS trace family、Pascadi Type-II 或
+Wright trilinear Kloosterman fraction。要使用这些外部输入，仍需完成：
+
+```text
+ProductWindowToCompletedKloostermanOrTraceBridge
+AND LPFOwnerRoughCofactorWeightsToTypeIICoefficients
+```
+
+最新开放口：
+
+```text
+ProductWindowBilinearAdditivePhaseSavingOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridge
+OR PointwiseSqrtPrimeInputCOne
+```

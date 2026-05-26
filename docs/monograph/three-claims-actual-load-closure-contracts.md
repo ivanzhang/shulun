@@ -387,6 +387,34 @@ row_fourier_positive_lower_bound_proved=false
 row_column_unconditional_closed=false
 ```
 
+### target-affine source-keyed product phase actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_source_keyed_product_phase_router.py
+data/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json
+```
+
+actual-load 含义：source-keyed owner phase 发射式已经闭合为 `e_P(hpm)`，但 actual
+负载仍未支付。full-cover 时 product residues 会模拟全体非零 residue，因此需要实际证明：
+
+```text
+ProductWindowBilinearAdditivePhaseSavingOrPDEC
+OR ProductWindowToCompletedKloostermanOrTraceBridge
+OR PointwiseSqrtPrimeInputCOne
+```
+
+状态边界：
+
+```text
+source_keyed_owner_phase_emission_formula_closed=true
+product_window_bilinear_additive_phase_saving_proved=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：
