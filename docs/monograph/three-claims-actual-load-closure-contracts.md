@@ -32328,3 +32328,49 @@ finite_group_orbit_expansion_family_constructed=false
 phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
+
+### product-window signed payload downstream sync actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_payload_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.json
+```
+
+actual-load 含义：上一轮 product-window modelgap 下游同步留下的
+`PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward`
+已经可以沿既有 pure-pair、Ferrers、two-prime no-swap、edge-local field-cut
+和 product-window signed-fields/source-rank 链继续下钻；它不应再作为当前第一硬点。
+
+```text
+old_source_tuple_gate_removed_from_product_window_first_target=true
+edge_local_field_cut_imported=true
+product_window_signed_fields_source_rank_imported=true
+next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+row_column_unconditional_closed=false
+```
+
+若直接构造 signed payload，实际对象是：
+
+```text
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+若沿 source-rank/alpha 下游继续推进，实际剩余包是：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步继续确认 LPF/Phi 行级不等式的剩余不是无符号计数，而是推前前 signed
+source identity、rank/multiplicity、orientation/local-factor、ExactUV return 和
+internal transition 的共同闭合。

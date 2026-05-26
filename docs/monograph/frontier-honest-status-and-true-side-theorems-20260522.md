@@ -14892,3 +14892,33 @@ strict_mertens_tail_closed_by_latest_rate_sync=true
 next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC64：product-window signed payload downstream sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_payload_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward`
+已经不是 product-window 当前第一主攻。它可沿既有 latest 链下钻到 edge-local signed
+atom fields，再沿 product-window source-rank/alpha/terminal 链压到 pre-Cauchy
+identity、same-unit rank、orientation、ExactUV return、internal transition 与终端验收门。
+
+```text
+old_source_tuple_gate_removed_from_product_window_first_target=true
+source_tuple_to_pure_pair_atom_imported=true
+pure_pair_ferrers_support_imported=true
+two_prime_no_swap_imported=true
+edge_local_field_cut_imported=true
+product_window_signed_fields_source_rank_imported=true
+next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+row_column_unconditional_closed=false
+```

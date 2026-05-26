@@ -2549,6 +2549,60 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 平方根行尺度点态输入。本步不是三命题无条件闭合证明；它只把模型缺口侧
 非循环推进到已知最新下游边界。
 
+## 48H. product-window signed payload downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_payload_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.json
+```
+
+本层继续推进 48G 留下的 offdiagonal source-tuple signed payload。既有下游链给出
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+=> PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+=> PhiLPFOffDiagonalTwoPrimeInteractionSignedKernelBeforePushforward
+=> PhiLPFEdgeLocalTwoPrimeSignedInteractionFormulaOrReturnBeforePushforward
+=> PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+=> AlphaRowAnchorPhaseEmissionFormulaLedger
+   AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+   AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+同步读数：
+
+```text
+source_tuple_to_pure_pair_atom_imported=true
+pure_pair_ferrers_support_imported=true
+two_prime_no_swap_imported=true
+edge_local_field_cut_imported=true
+product_window_signed_fields_source_rank_imported=true
+old_source_tuple_gate_removed_from_product_window_first_target=true
+next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+row_column_unconditional_closed=false
+```
+
+因此 product-window 不应再把 source-tuple formula 当作第一主攻。若直接构造 signed
+payload，最前沿是逐 edge signed atom fields 或命名 return；沿现有 source-rank/alpha
+链继续下钻后，当前更小实际包为：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步不是无条件闭合；它只把 LPF/Phi 无符号支撑耗尽后的 signed payload 旧名继续压到
+source identity/rank、orientation、ExactUV、internal transition 和终端验收门。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

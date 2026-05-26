@@ -13611,3 +13611,28 @@ product_window_modelgap_downstream_removed_from_active_basis=true
 next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
 row_column_unconditional_closed=false
 ```
+
+## 65BS. product-window signed payload downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_payload_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的旧 offdiagonal source-tuple signed
+payload 已接入 pure-pair、Ferrers、ordered no-swap、edge-local field-cut 与
+source-rank/alpha/terminal 下游链。外部短区间、trace/Kloosterman 或 Type-II 工具
+仍不能直接作用在这个旧形式名上；必须先得到 source-keyed signed fields、pre-Cauchy
+identity/rank，或真正 admissible signed coefficient family。
+
+```text
+old_source_tuple_gate_removed_from_product_window_first_target=true
+edge_local_field_cut_imported=true
+product_window_signed_fields_source_rank_imported=true
+next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+row_column_unconditional_closed=false
+```

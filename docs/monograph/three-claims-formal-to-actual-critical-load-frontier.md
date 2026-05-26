@@ -26824,6 +26824,55 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### product-window signed payload downstream sync formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_payload_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-payload-downstream-sync-router.json
+```
+
+formal-to-actual 结论：旧的 source-tuple signed formula 是一个形式接口名，不是
+最终 actual 负载。既有证书已经把其中的无符号字段逐层剥离：
+
+```text
+source tuple -> pure pair atom -> Ferrers support -> no-swap edge
+-> edge-local unsigned field-cut -> source-rank/alpha terminal chain
+```
+
+同步后读数为：
+
+```text
+old_source_tuple_gate_removed_from_product_window_first_target=true
+next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+row_column_unconditional_closed=false
+```
+
+actual 侧仍需正向支付：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+终端侧仍需：
+
+```text
+RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此形式 LPF/Phi support、Ferrers degree、no-swap owner 和 edge label 均已耗尽；
+下一步不能再循环重命名 source tuple，而要证明 pre-Cauchy identity/rank 或直接提交
+edge-local signed atom fields、逐点 signed table、trace/Type-II family、平方根行尺度输入
+或命名 PDEC/SAE。
+
 ### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：
