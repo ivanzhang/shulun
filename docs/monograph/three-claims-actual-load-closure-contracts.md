@@ -32554,3 +32554,99 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 该更新将“从小到大剥离素因子”的可用部分推到 alpha 候选行层；剩余不是候选行是否存在，
 而是每个候选行的 signed coefficient、local factor、exact `(u,v)`/key 与失败回流。
+
+### product-window signed-expression origin-table actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.json
+```
+
+actual-load 含义：`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`
+不能作为第一硬点终点。strict signed-expression 证书把它压成 signed coefficient 来源恒等式；
+strict origin-identity 与 Phi-LPF signed-survival origin-table 证书继续把来源恒等式压到
+逐行 clean-core 原始生成表。
+
+```text
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+product_window_signed_expression_removed_from_first_target=true
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger
+AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger
+AND PrimitiveRuleNonzeroSignLocalFactorLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该更新把“signed expression”从命名层降到可审计对象层：必须提交逐行来源表，而不是用
+LPF/Phi 的无符号候选地址反推 signed coefficient。
+
+### product-window row-level noncircular-kernel actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_row_level_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.json
+```
+
+actual-load 含义：`RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`
+仍是粗接口名。strict row-level 证书要求它由无环 pre-Cauchy seed signed-row emitter
+产生；strict signed-source fixed-point 证书说明现有内部展开会回到同一 row-level 表。
+删除该固定点后，product-window 第一主攻变为：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+同步读数：
+
+```text
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+product_window_row_level_coarse_target_removed=true
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+     OR (NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+         AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+         AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger))
+AND CompletePrimitiveEmitterKeyPartitionLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该更新把 signed-source 自证环从 product-window 路线中删除；剩余必须是 Cauchy/Phi/payment
+推前前的非循环 signed coefficient 发射核，或命名终端回流。

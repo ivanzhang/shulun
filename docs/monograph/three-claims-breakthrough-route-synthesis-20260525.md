@@ -2815,6 +2815,94 @@ ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
 ownership，也支付 alpha 侧候选 row 的唯一来源索引。但真正突破奇偶性障碍仍要求在
 Phi/payment 推前前给出 signed primitive summand expression，而不是继续细化无符号候选量。
 
+## 48M. product-window signed-expression origin-table sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.json
+```
+
+本层继续推进 48L 留下的 signed primitive summand expression 第一硬点。既有 strict
+signed-expression 与 origin-identity 证书给出非循环压缩：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+=> PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+=> RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+同步读数：
+
+```text
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+phi_lpf_signed_survival_origin_table_imported=true
+lpf_candidate_ownership_carried=true
+product_window_signed_expression_removed_from_first_target=true
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+row_column_unconditional_closed=false
+```
+
+因此最新第一硬点推进为：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+严格含义：LPF/Phi 候选 row ownership 仍是正面成果，但 signed expression 不能只是字段名。
+要突破行级不等式，必须在同一 formal unit 内逐行给出 clean-core 原始生成表，使 signed
+coefficient、local factor、exact `(u,v)`/key、prepushforward sum identity 与 named return
+同时正向出现。
+
+## 48N. product-window row-level noncircular-kernel sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_row_level_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.json
+```
+
+本层继续推进 48M 留下的 row-level clean-core 原始生成表第一硬点。既有 strict row-level
+与 signed-source fixed-point 证书给出：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+=> AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity
+=> signed source spine
+=> RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+这条内部链回到自身，不能作为证明。删除固定点后，最新第一硬点推进为：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+同步读数：
+
+```text
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+latest_constructor_row_level_sync_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+product_window_row_level_coarse_target_removed=true
+next_primary_attack_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+row_column_unconditional_closed=false
+```
+
+失败回流保持命名：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily
+```
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

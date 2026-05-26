@@ -27054,6 +27054,90 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 actual noncanonical primitive summand 的 signed coefficient 表达式；外部谱或 Type-II 工具
 只有在该 signed family 先可接入后才有用。
 
+### product-window signed-expression origin-table formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.json
+```
+
+formal-to-actual 结论：signed expression 字段名必须继续展开为来源表：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+-> PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward
+-> RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+同步读数：
+
+```text
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+lpf_candidate_ownership_carried=true
+product_window_signed_expression_removed_from_first_target=true
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+row_column_unconditional_closed=false
+```
+
+actual 侧仍需正向提交：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+因此下一步不是继续细化 LPF 无符号桶，而是在同一 formal unit 中构造 actual primitive
+summand 的 row-level clean-core 原始生成表。
+
+### product-window row-level noncircular-kernel formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_row_level_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.json
+```
+
+formal-to-actual 结论：row-level 表名继续展开会形成 signed-source 固定点：
+
+```text
+RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+-> AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity
+-> signed source spine
+-> RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+```
+
+因此 product-window 最新第一实际门是：
+
+```text
+NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+```
+
+同步读数：
+
+```text
+signed_source_fixed_point_cut_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+product_window_row_level_coarse_target_removed=true
+next_primary_attack_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+row_column_unconditional_closed=false
+```
+
+该 kernel 必须在不读取 row-level 表、来源恒等式、payment/Phi 下游或早期零行覆盖的条件下，
+正向输出 signed coefficient、sign/local factor、branch key 与推前前求和恒等式。
+
 ### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

@@ -1,0 +1,145 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router",
+  "counterexample_absence_not_used": true,
+  "finite_evidence_not_used_as_global_proof": true,
+  "frontier_sync_only": true,
+  "gates": [
+    {
+      "closed": true,
+      "gate": "ProductWindowSignedExpressionActiveBeforeSync",
+      "meaning": "上一层 product-window explicit alpha/delta 同步把第一硬点推进到 signed primitive summand expression。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "StrictSignedExpressionRouterImported",
+      "meaning": "strict signed-expression 证书说明表达式名不能自证；必须给 signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "StrictOriginIdentityRouterImported",
+      "meaning": "strict origin-identity 证书把来源恒等式继续压到 row-level clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "PhiLPFSignedSurvivalOriginTableSyncImported",
+      "meaning": "Phi-LPF signed-survival 线已经独立确认同一压缩：候选容量不能生成 signed origin。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "LPFCandidateOwnershipCarriedButNotSignedOrigin",
+      "meaning": "LPF/Phi 最小素因子候选 row ownership 继续可用，但只给无符号地址和 skeleton。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelCleanCoreOriginGenerationStillOpen",
+      "meaning": "当前材料还没有逐 actual noncanonical primitive summand 的 signed coefficient 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "NonzeroSignedSurvivalStillOpen",
+      "meaning": "没有 row-level signed origin table，候选 row 的非零 signed survival 仍不能推出。",
+      "proved": false,
+      "remaining": "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitRowMassStillIndependent",
+      "meaning": "即使 row-level 表存在，仍需同一 formal unit 的 row-mass/no-heavy-row 归一化账本。",
+      "proved": false,
+      "remaining": "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ProductWindowSignedExpressionRemovedFromFirstTarget",
+      "meaning": "product-window 第一主攻不应停在 signed expression 字段名；应推进到 row-level origin generation table。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本证书只同步 signed expression 的来源表前沿，不证明该表、row-mass、ExactUV、orientation 或终端排斥。",
+      "proved": false,
+      "remaining": "row_column_unconditional_closed=false"
+    }
+  ],
+  "latest_open_basis_summary": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward AND CompletePrimitiveEmitterKeyPartitionLedger AND ActualNoncanonicalAlphaSourceTupleDomainLedger AND AlphaPrimitiveCoefficientWeightFormulaLedger AND AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaPrimitiveRuleFailureNamedReturnLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger AND PrimitiveRuleNonzeroSignLocalFactorLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_candidate_ownership_carried": true,
+  "next_primary_attack_target": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "no_theorem_switch": true,
+  "nonzero_signed_row_survival_proved": false,
+  "old_primary_attack_target": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "origin_identity_reduced_to_row_level_generation": true,
+  "parallel_primary_attack_targets": [
+    "NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward",
+    "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+    "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+    "CompletePrimitiveEmitterKeyPartitionLedger",
+    "ActualNoncanonicalAlphaSourceTupleDomainLedger",
+    "AlphaPrimitiveCoefficientWeightFormulaLedger",
+    "AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger",
+    "AlphaPrimitiveRuleFailureNamedReturnLedger",
+    "ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger",
+    "AlphaDeltaPairingCompatibilityBeforeCauchyLedger",
+    "PrimitiveRuleNonzeroSignLocalFactorLedger",
+    "FixedKeyExactUVLocalMultiplicityO1Ledger",
+    "PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward",
+    "PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward",
+    "PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "phi_lpf_signed_survival_origin_table_imported": true,
+  "plain_conclusion": "本步把 product-window 最新第一硬点 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` 接入 strict signed-expression、strict origin-identity 与 Phi-LPF signed-survival origin-table 证书。结论是：signed expression 不能作为证明终点；它必须正向给出 pre-Cauchy signed coefficient 来源恒等式，而该来源恒等式又等价于逐行 clean-core 原始生成表。LPF/Phi 候选 row ownership 继续保留，但仍不能生成 signed coefficient origin。",
+  "primitive_expression_reduced_to_origin_identity": true,
+  "primitive_summand_signed_coefficient_origin_identity_proved": false,
+  "primitive_summand_signed_weight_expression_proved": false,
+  "product_window_signed_expression_removed_from_first_target": true,
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-lpf-candidate-row-map-alpha-rule-router.json": "735c6efd0580444f1b541b01a5a7184dff79497191657bb2da6bf0b6b1d3778f",
+    "docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json": "c68dc27f633a43ba92d06d4f4b534b9b162ecbef161dc5d45ca65e65ffcefdc2",
+    "docs/monograph/prime-matrix-phi-lpf-signed-survival-origin-table-sync-router.json": "2a1b6082621d0c9d8ddd1acfa69d12f9c3f3a38cebe422ba3d14b196661b5a30",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py": "6cb083d2864830c7850d1257c7441dbebf90b0c7062e1e976d19fa7843a6cc7f"
+  },
+  "status": "product_window_signed_expression_reduced_to_row_level_origin_table_open",
+  "sync_chain": [
+    {
+      "from": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+      "meaning": "signed expression 不是证明；必须给 pre-Cauchy signed coefficient 来源恒等式。",
+      "to": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward",
+      "meaning": "来源恒等式等价于同一 formal unit 的逐行 clean-core 原始生成表。",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "from": "LPF/Phi candidate row ownership",
+      "meaning": "最小素因子分桶继续支付候选 row 地址，但不产生 signed coefficient origin。",
+      "to": "unsigned candidate address only"
+    },
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "meaning": "row-level 表必须正向同时给出 actual primitive summand 的所有 signed 字段。",
+      "to": "signed coefficient, local factor, exact (u,v), branch key, prepushforward sum identity, named return"
+    }
+  ]
+}

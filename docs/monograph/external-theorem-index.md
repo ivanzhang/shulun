@@ -1728,6 +1728,54 @@ next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpress
 row_column_unconditional_closed=false
 ```
 
+## 65BX. product-window signed-expression origin-table sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的 signed primitive summand expression 旧名
+已经被 strict 路由压成 pre-Cauchy signed coefficient 来源恒等式，再压成 row-level
+clean-core 原始生成表。外部短区间、trace/Kloosterman、Type-II、谱或群论工具仍不能直接
+生成该逐行来源表；它们只能在该 signed family 已经正向构造后用于平均估计或相位取消。
+
+```text
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+product_window_signed_expression_removed_from_first_target=true
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+row_column_unconditional_closed=false
+```
+
+## 65BY. product-window row-level noncircular-kernel sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_row_level_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.md
+```
+
+外部 theorem 边界继续收窄：row-level clean-core 原始生成表的内部 signed-source 展开会回到
+自身，不能作为证明。外部短区间、trace/Kloosterman、Type-II、谱或群论工具仍不能替代
+noncircular pre-Cauchy signed coefficient emission kernel；这些工具只能在 kernel 已经给出
+可接入 signed family 后使用。
+
+```text
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+product_window_row_level_coarse_target_removed=true
+next_primary_attack_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+row_column_unconditional_closed=false
+```
+
 含义：`ExactCleanCoreFullSNonAPWFDSourceEntropy`、`ActualNoncanonicalExactUVSupportLowerBound`
 和 `CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn` 是同一源侧链条的连续接口，不是
 三个可循环替换的证明。该链经 clean-core 原始生成账本继续下钻后，旧

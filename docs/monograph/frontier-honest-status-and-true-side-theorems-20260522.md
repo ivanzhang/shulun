@@ -1701,6 +1701,64 @@ next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpress
 row_column_unconditional_closed=false
 ```
 
+---
+
+## 附录 Q13AC69：product-window signed-expression origin-table sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_expression_origin_table_sync_router.py
+data/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-expression-origin-table-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` 已经不是
+product-window 当前第一主攻。signed expression 必须给出 pre-Cauchy signed coefficient
+来源恒等式，而来源恒等式又等价于同一 formal unit 的 row-level clean-core 原始生成表。
+LPF/Phi 候选 row ownership 继续保留，但不能生成 signed coefficient origin。
+
+```text
+primitive_expression_reduced_to_origin_identity=true
+origin_identity_reduced_to_row_level_generation=true
+phi_lpf_signed_survival_origin_table_imported=true
+lpf_candidate_ownership_carried=true
+product_window_signed_expression_removed_from_first_target=true
+next_primary_attack_target=RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands
+row_column_unconditional_closed=false
+```
+
+---
+
+## 附录 Q13AC70：product-window row-level noncircular-kernel sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_row_level_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-row-level-noncircular-kernel-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`
+已经不是 product-window 当前第一主攻。row-level 表必须由无环 pre-Cauchy signed-row
+emitter 产生；但现有 signed-source 内部展开回到同一 row-level 表，不能自证。删除固定点后
+第一主攻为 `NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows`。
+
+```text
+row_table_to_seed_emitter_imported=true
+signed_source_fixed_point_cut_imported=true
+latest_constructor_row_level_sync_imported=true
+reverse_payment_and_zero_row_recovery_blocked=true
+product_window_row_level_coarse_target_removed=true
+next_primary_attack_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+row_column_unconditional_closed=false
+```
+
 ## 附录 Q13AC38：Phi-LPF terminal boundary split ratio obstruction（2026-05-25）
 
 新增证书：
