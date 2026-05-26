@@ -40710,6 +40710,81 @@ AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Oppermann top-row subcore is necessary but not sufficient]
+Let \(P\) be prime and write \(p_+(x)\) for the least prime strictly larger
+than \(x\).  Put
+\[
+  h(x)=p_+(x)-x.
+\]
+Full strict-row positivity for the Prime Matrix row/column target is equivalent
+to
+\[
+  h(kP)<P\qquad(1\le k<P),
+\]
+or, equivalently,
+\[
+  \pi((k+1)P-1)-\pi(kP)\ge1\qquad(1\le k<P).
+\]
+The prime-indexed Oppermann-left top row is only the single specialization
+\[
+  k=P-1,\qquad h(P^2-P)<P,
+\]
+that is,
+\[
+  \pi(P^2-1)-\pi(P^2-P)\ge1.
+\]
+Therefore full strict-row positivity implies the top-row Oppermann-left
+statement, but a top-row input alone is a necessary subcore rather than a full
+closure of all strict rows.
+\end{proposition}
+
+\begin{proof}
+The row \(I_{P,k}=(kP,(k+1)P)\) contains a prime if and only if the least
+prime after its left endpoint satisfies \(p_+(kP)<(k+1)P\), which is exactly
+\(h(kP)<P\).  Requiring this for all \(1\le k<P\) gives the full strict-row
+positivity statement.  Taking \(k=P-1\) gives
+\[
+  I_{P,P-1}=(P^2-P,P^2),
+\]
+which is the prime-indexed Oppermann-left half already identified above.
+Thus the full statement contains the top row as one of its conjuncts.  Conversely,
+the top-row interval is disjoint from every row \(I_{P,k}\) with \(k<P-1\);
+as a local short-interval or Oppermann-left input it supplies a prime only in
+the \(k=P-1\) row and gives no containment information for the remaining
+\(P-2\) strict rows.
+\end{proof}
+
+\begin{certificatestatement}[Oppermann subcore not-full-closure router]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+row\_column\_strict\_positivity\_implies\_toprow=true\\
+top\_row\_input\_alone\_closes\_all\_strict\_rows=false\\
+top\_row\_input\_is\_necessary\_not\_sufficient=true\\
+all\_rows\_equivalent\_to\_prime\_gap\_bound\_h\_kP\_less\_than\_P=true\\
+row\_column\_unconditional\_closed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-oppermann-\\
+subcore-not-full-closure-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated necessary-subcore boundary]
+This prevents a final shortcut.  Even if the top-row prime-indexed
+Oppermann-left statement were supplied externally, the complete row/column
+claim would still require \(h(kP)<P\) for every strict row \(1\le k<P\), or an
+internal signed Type-II/trace family that returns this positivity without
+passing through ordinary unsigned LPF/Phi counts.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+TopRowOppermannLeftIsNecessarySubcoreNotFullClosure\\
+AND FullRowsRequireGapBoundHkPLessThanPForEveryK\\
+AND LPFPhiExactCountsRemainUnsignedParityBlind\\
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

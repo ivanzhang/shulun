@@ -13875,3 +13875,56 @@ AND LegendreWideSquareIntervalDoesNotImplyTopRow
 AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+---
+
+## 附录 Q13AC42：Oppermann subcore not-full-closure router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_oppermann_subcore_not_full_closure_router.py
+data/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.md
+```
+
+本层把 top-row 输入的 honest 边界再收紧：prime-indexed Oppermann-left 是完整行正性的
+必要子核，不是完整闭合证明。完整目标是
+
+```text
+pi((k+1)P-1)-pi(kP)>=1   for every 1<=k<P,
+```
+
+等价于
+
+```text
+h(kP)<P   for every 1<=k<P.
+```
+
+top row 只对应 `k=P-1`，即 `h(P^2-P)<P`。它在 containment 意义下只覆盖一行，
+不能支付其余 strict rows。
+
+有限审计读数：
+
+```text
+row_column_strict_positivity_implies_toprow=true
+top_row_input_alone_closes_all_strict_rows=false
+top_row_input_is_necessary_not_sufficient=true
+all_rows_equivalent_to_prime_gap_bound_h_kP_less_than_P=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：当前仍不能把 top-row Oppermann-left、Legendre、`C>1` sqrt 输入、
+有限样本或 LPF/Phi 精确计数写成三命题无条件闭合。最新真实口是逐行
+`h(kP)<P` 点态输入，或一个可接入外部 Type-II/trace/Kloosterman 工具的 signed family。
+
+最新 honest 口：
+
+```text
+TopRowOppermannLeftIsNecessarySubcoreNotFullClosure
+AND FullRowsRequireGapBoundHkPLessThanPForEveryK
+AND LPFPhiExactCountsRemainUnsignedParityBlind
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```

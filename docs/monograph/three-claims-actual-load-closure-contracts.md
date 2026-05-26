@@ -507,6 +507,56 @@ AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### Oppermann subcore not-full-closure actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_oppermann_subcore_not_full_closure_router.py
+data/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.md
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.json
+```
+
+actual-load 含义：top-row/Oppermann-left 是完整 strict-row 正性的必要子核，
+但不能单独升级为完整 row-column 闭合。完整行正性是
+
+```text
+pi((k+1)P-1)-pi(kP)>=1   for every 1<=k<P,
+```
+
+等价于逐行素数间隙条件：
+
+```text
+h(kP)<P   for every 1<=k<P.
+```
+
+top row 只给单点：
+
+```text
+k=P-1: h(P^2-P)<P.
+```
+
+状态边界：
+
+```text
+row_column_strict_positivity_implies_toprow=true
+top_row_input_alone_closes_all_strict_rows=false
+top_row_input_is_necessary_not_sufficient=true
+all_rows_equivalent_to_prime_gap_bound_h_kP_less_than_P=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+TopRowOppermannLeftIsNecessarySubcoreNotFullClosure
+AND FullRowsRequireGapBoundHkPLessThanPForEveryK
+AND LPFPhiExactCountsRemainUnsignedParityBlind
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

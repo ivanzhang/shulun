@@ -12545,3 +12545,52 @@ AND LegendreWideSquareIntervalDoesNotImplyTopRow
 AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AU. Oppermann subcore not-full-closure router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_oppermann_subcore_not_full_closure_router.py
+data/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.md
+```
+
+外部 theorem 边界：即使未来有 prime-indexed Oppermann-left top-row 输入，它也只是完整
+strict-row 正性的必要子核。完整 row-column 路线仍需要逐行输入
+
+```text
+h(kP)<P   for every 1<=k<P,
+```
+
+而 top row 只给
+
+```text
+h(P^2-P)<P.
+```
+
+审计读数：
+
+```text
+row_column_strict_positivity_implies_toprow=true
+top_row_input_alone_closes_all_strict_rows=false
+top_row_input_is_necessary_not_sufficient=true
+all_rows_equivalent_to_prime_gap_bound_h_kP_less_than_P=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+外部输入对照：Runbo Li/Baker--Harman--Pintz 型固定 `theta>1/2` 只闭合零密度低行；
+Legendre 或固定 `C>1` 有 lower leak；top-row Oppermann-left 只覆盖 `k=P-1`。
+因此外部路线必须升级为逐行 `C<=1` 点态输入，或者先由项目内部构造 admissible signed
+Type-II/trace family。
+
+最新开放口：
+
+```text
+TopRowOppermannLeftIsNecessarySubcoreNotFullClosure
+AND FullRowsRequireGapBoundHkPLessThanPForEveryK
+AND LPFPhiExactCountsRemainUnsignedParityBlind
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```

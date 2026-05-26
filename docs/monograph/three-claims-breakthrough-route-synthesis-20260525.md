@@ -2326,3 +2326,56 @@ AND LegendreWideSquareIntervalDoesNotImplyTopRow
 AND AnyFixedSqrtConstantGreaterThanOneHasLowerLeakStrip
 AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 30. Oppermann subcore not-full-closure router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_oppermann_subcore_not_full_closure_router.py
+data/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-ledger.json
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.md
+docs/monograph/prime-matrix-phi-lpf-oppermann-subcore-not-full-closure-router.json
+```
+
+本层切掉一个更细的误闭合出口：prime-indexed Oppermann-left top row 是完整
+strict-row 正性的必要子核，但不是完整闭合本身。对每个素数 `P`，完整行正性要求
+
+```text
+pi((k+1)P-1)-pi(kP)>=1   for every 1<=k<P.
+```
+
+而 top row 只给 `k=P-1`：
+
+```text
+pi(P^2-1)-pi(P^2-P)>=1.
+```
+
+令 `h(x)=next_prime_after(x)-x`，则完整行正性等价于
+
+```text
+h(kP)<P   for every 1<=k<P,
+```
+
+top-row/Oppermann-left 只等价于单点 `h(P^2-P)<P`。因此它是必要条件，
+但 containment 嵌入下只覆盖 `1` 行，不能替代其余 `P-2` 行。
+
+审计读数：
+
+```text
+row_column_strict_positivity_implies_toprow=true
+top_row_input_alone_closes_all_strict_rows=false
+top_row_input_is_necessary_not_sufficient=true
+all_rows_equivalent_to_prime_gap_bound_h_kP_less_than_P=true
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+最新非循环口进一步收窄为：
+
+```text
+TopRowOppermannLeftIsNecessarySubcoreNotFullClosure
+AND FullRowsRequireGapBoundHkPLessThanPForEveryK
+AND LPFPhiExactCountsRemainUnsignedParityBlind
+AND PointwisePsiAtSharpSqrtScaleOrAdmissibleSignedTypeIIFamilyStillOpen
+```
