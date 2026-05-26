@@ -1805,6 +1805,58 @@ row_column_unconditional_closed=false
 Pascadi 等 trace/Type-II 工具仍需先由上述 bucket signed law/非循环 kernel 产生
 source-keyed signed coefficient family。
 
+## 39. parity barrier transport-edge sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_transport_edge_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json
+```
+
+本层把上一节的 `PhiLPFBucketSignedCoefficientLawBeforePushforward` 继续接入既有
+bucket transport stack。bucket signed law 若不直接提交逐点 signed 表，就必须给
+rough-cofactor signed transport；该 transport 的 ordered factorization coherence、
+unit/square-base 私有出口和 common packet 回环已由既有证书剥离，所以递推支路进一步
+落到逐 edge signed multiplier 表。first-edge slab 前沿再把该表拆成两张边表：
+
+```text
+PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+继续接入 semiprime diagonal/offdiagonal、offdiagonal tuple-fields 与 pure-pair atom
+证书后，diagonal `(p,p)` 被并回 source packet，offdiagonal 的 owner/first-q/tail/Phi
+mass 无符号字段被剥离，`tail>1` 不再是新 first seed，而是 internal transition lift。
+因此真正窄口继续收缩为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+LPF/Phi 继续能精确支付 `(p,q)` 的 q-rough continuation 纤维大小，但不能产生 signed
+seed、orientation parity、ExactUV return、internal transition local factor、branch trace。
+因此本轮把“从小到大精细剥离素因子”的可审稿硬点压到：
+
+```text
+chosen_primary_attack_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+paired_required_attack_target=PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+paired_orientation_attack_target=PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+paired_exactuv_attack_target=PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+parallel_source_rank=AlphaRowAnchorPhaseEmissionFormulaLedger
+  AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+  AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+若不走这条递推 signed edge 表路线，剩余旁路仍是逐点 Phi-LPF signed value table、
+完整 branch/atomic trace、same-set PDEC/SAE 回流、点态 `theta/psi` 平方根行输入或
+外部 source-keyed trace/Type-II family。三命题仍未无条件闭合。
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

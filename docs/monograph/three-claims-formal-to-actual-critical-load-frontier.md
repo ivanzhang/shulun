@@ -26904,6 +26904,47 @@ AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 这一步继续阻断一个循环捷径：不能把 source-entropy 回环或 row-level 固定点当作
 三命题闭合证明。
 
+### parity barrier transport-edge formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_transport_edge_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json
+```
+
+formal-to-actual 结论：`PhiLPFBucketSignedCoefficientLawBeforePushforward` 可以是形式
+接口名，但 actual load 必须说明 signed coefficient 怎样从 first seed 与内部乘素转移
+正向产生。已有 transport stack、first-edge slab、diagonal/offdiagonal、tuple-fields
+与 pure-pair atom 证书给出非循环拆解：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+=> PhiLPFRoughCofactorStepSignedMultiplierTableBeforePushforward
+=> PhiLPFSemiprimeFirstEdgeSignedSeedTableBeforePushforward
+   AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+=> PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+   AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+   AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+   AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+同时 `Phi(floor(N/(p*q)),q)` 只是支撑/质量纤维公式；diagonal 并回 source packet，
+offdiagonal tuple/tail 无符号字段剥离后，也仍不是 signed seed 公式。实际剩余变为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND source-rank 三原子
+```
+
+否则必须走逐点 signed table、branch/atomic trace、PDEC/SAE 或点态 `theta/psi`/外部
+trace-Type-II 旁路。
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

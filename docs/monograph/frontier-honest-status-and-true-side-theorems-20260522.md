@@ -1807,6 +1807,55 @@ source-keyed signed family 才能接入。
 
 ---
 
+## 附录 Q13AC47B：parity barrier transport-edge sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_transport_edge_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.md
+```
+
+honest 边界：bucket signed law 的非循环递推路线已经同步到 offdiagonal pure-pair
+signed seed atom、orientation/ExactUV 与 internal transition 门，但这仍不是无条件闭合。
+Phi 的 q-rough continuation 纤维、offdiagonal tuple 字段和 tail lift 都只给无符号结构，
+不能给 signed seed。
+
+```text
+transport_edge_sync_closed=true
+edge_table_split_into_first_seed_and_internal_transition=true
+first_edge_phi_fiber_formula_proved=true
+first_edge_phi_fiber_supplies_signed_seed=false
+diagonal_offdiagonal_support_split_closed=true
+offdiagonal_source_tuple_bijection_synced=true
+pure_pair_atom_bijection_synced=true
+tail_lift_no_new_first_seed_closed=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+最新 honest 口：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+并行旁路：逐点 signed table、branch/atomic trace、PDEC/SAE、点态 `theta/psi`
+平方根行输入或外部 source-keyed trace/Type-II family。
+
+---
+
 ## 附录 Q13AC49：minimal parity-breaker route-forcing router（2026-05-26）
 
 新增证书：

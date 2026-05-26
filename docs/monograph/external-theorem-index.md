@@ -2271,6 +2271,61 @@ AND (
 )
 ```
 
+## 65BB. parity barrier transport-edge sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_transport_edge_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.md
+```
+
+外部 theorem 边界：本层把外部工具的接入口继续从 bucket signed law 收缩到
+offdiagonal pure-pair signed seed atom、orientation/ExactUV 字段与 internal
+prime-adjoin transition。没有这些 prepushforward signed 字段，FKMS/MQW/Wright/
+Pascadi/Kuznetsov/dispersion 仍没有可消费的 source-keyed signed coefficients。
+
+审计读数：
+
+```text
+transport_edge_sync_closed=true
+edge_multiplier_table_reached=true
+edge_table_split_into_first_seed_and_internal_transition=true
+first_edge_phi_fiber_formula_proved=true
+first_edge_phi_fiber_supplies_signed_seed=false
+diagonal_offdiagonal_support_split_closed=true
+offdiagonal_source_tuple_bijection_synced=true
+pure_pair_atom_bijection_synced=true
+tail_lift_no_new_first_seed_closed=true
+pure_semiprime_pair_signed_seed_atom_proved=false
+offdiagonal_orientation_parity_law_proved=false
+offdiagonal_exactuv_fixed_pair_return_ledger_proved=false
+internal_prime_adjoin_signed_transition_law_proved=false
+row_column_unconditional_closed=false
+```
+
+外部输入边界：
+
+```text
+Guth-Maynard/Hieu short intervals: theta>17/30 still above required x^(1/2)
+Runbo Li short intervals: x^0.52 still above required x^(1/2)
+FKMS/MQW/Wright/Pascadi: need pure-pair/orientation/ExactUV/internal-transition signed coefficients with source keys
+```
+
+最新开放口：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
 ## 65AI-1. 2026-05-25 affine endpoint LPF first-hit partition
 
 新增证书：

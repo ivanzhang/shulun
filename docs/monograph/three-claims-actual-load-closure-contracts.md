@@ -135,6 +135,50 @@ AND (
 
 并行仍需 complete/fixed-key、ExactUV source/fiber、Rate 与 DStructure 账本。
 
+### parity barrier transport-edge actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_transport_edge_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-transport-edge-sync-router.json
+```
+
+actual-load 含义：bucket signed coefficient law 不是最终原子。若不直接提交逐点
+signed table，它必须沿 rough-cofactor transport 给出 ordered edge 的 signed multiplier。
+first-edge slab、diagonal/offdiagonal、tuple-fields 与 pure-pair atom 证书继续把该
+负载压成 pure pair atom 与配套字段：
+
+```text
+transport_edge_sync_closed=true
+edge_multiplier_table_reached=true
+edge_table_split_into_first_seed_and_internal_transition=true
+first_edge_phi_fiber_formula_proved=true
+first_edge_phi_fiber_supplies_signed_seed=false
+diagonal_offdiagonal_support_split_closed=true
+offdiagonal_source_tuple_bijection_synced=true
+pure_pair_atom_bijection_synced=true
+tail_lift_no_new_first_seed_closed=true
+```
+
+因此 PM-ALC 的当前实际负载更新为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+或由 `PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward`、
+branch/atomic trace、PDEC/SAE、点态 `theta/psi` 或外部 source-keyed trace/Type-II
+family 替代。
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：
