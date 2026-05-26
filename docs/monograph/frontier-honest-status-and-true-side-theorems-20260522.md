@@ -1721,6 +1721,60 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 ---
 
+## 附录 Q13AC47：bridge-root shared-pivot hinge contract router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bridge_root_shared_pivot_hinge_contract_router.py
+data/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.md
+```
+
+本层把有限 pivot enclosure 再拆成 shared-pivot hinge 合同：
+
+```text
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+finite_endpoint_algebra_closed=true
+finite_gap_payment_closed=true
+two_packet_hinge_closed=true
+bridge_root_qspine_pivot_to_shared_hinge_contract_closed=true
+```
+
+核心实际恒等式为：
+
+```text
+endpoint_slack=moving_barrier_q-bridge_root_q=P-q-g*(1+r)
+packet1.unit_root=packet2.bridge_root=packet2.barrier=607
+packet1.barrier=packet2.unit_root=631
+```
+
+honest 边界：这一步是真推进，但仍是有限合同，不是三命题无条件闭合证明。
+LPF 侧修正后的精确公式仍是无符号 Legendre-Phi 计数：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+euler_product_half_main_error_proved=false
+```
+
+最新 honest 口：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootSharedPivotHingeLawOrPDEC
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND BridgeRootQSpineGapPaymentLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+---
+
 ## 附录 Q13AC37：Phi-LPF terminal source-key obstruction partition（2026-05-25）
 
 新增证书：

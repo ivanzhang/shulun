@@ -2582,3 +2582,61 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 35. bridge-root shared-pivot hinge contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bridge_root_shared_pivot_hinge_contract_router.py
+data/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.json
+```
+
+本层不重复上一节的 finite pivot-enclosure，而是把 `BridgeRootQSpinePivotEnclosureLawOrPDEC`
+拆成更小的 shared-pivot hinge 合同。两个 bridge-root packet 满足：
+
+```text
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+endpoint_slack=moving_barrier_q-bridge_root_q=P-q-g*(1+r)
+packet1.unit_root=packet2.bridge_root=packet2.barrier=607
+packet1.barrier=packet2.unit_root=631
+bridge_root_qspine_pivot_to_shared_hinge_contract_closed=true
+```
+
+这给出一个非循环推进：boundary ratio source-key 的剩余硬口不再是抽象的
+`q=607` pivot 描述，而是三类具体统一律：
+
+```text
+BridgeRootSharedPivotHingeLawOrPDEC
+BridgeRootEndpointSlackNonnegativeLawOrPDEC
+BridgeRootQSpineGapPaymentLawOrPDEC
+```
+
+同时本层重新锁定 LPF/Phi 边界：正确 LPF bucket 精确公式仍是
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+```
+
+有限 Euler half-main 现象不是截断误差定理，而是 odd-axis 归一化问题；因此
+无符号 LPF 计数仍不能替代 signed payload。
+
+最新开放口：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootSharedPivotHingeLawOrPDEC
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND BridgeRootQSpineGapPaymentLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+外部前沿定理的使用边界同步收缩：FKMS、Kloosterman/Type-II、Wright 三线性、
+Runbo Li Harman sieve 和 thin-group expansion 都仍需先从该 hinge 合同构造
+admissible signed family；当前尚不能直接闭合三命题之一。

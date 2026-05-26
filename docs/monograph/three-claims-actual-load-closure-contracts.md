@@ -43,6 +43,63 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### bridge-root shared-pivot hinge contract actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bridge_root_shared_pivot_hinge_contract_router.py
+data/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.json
+```
+
+actual-load 含义：上一层 `BridgeRootQSpinePivotEnclosureLawOrPDEC` 的有限
+`577<=607<=631` 不再作为单个黑箱使用，而是拆成 endpoint algebra、shared pivot
+角色和 q-spine gap payment 三个实际负载。
+
+```text
+finite_endpoint_algebra_closed=true
+finite_gap_payment_closed=true
+two_packet_hinge_closed=true
+bridge_root_qspine_pivot_to_shared_hinge_contract_closed=true
+bridge_root_shared_pivot_hinge_law_proved=false
+bridge_root_endpoint_slack_uniform_nonnegative_law_proved=false
+bridge_root_qspine_gap_payment_law_proved=false
+```
+
+具体实际合同为：
+
+```text
+packet1: 577 -> 607 -> 631, slack=54
+packet2: 607 = 607 = 607, slack=0
+endpoint_slack=moving_barrier_q-bridge_root_q=P-q-g*(1+r)
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+BoundaryRatioQSpinePivotReductionClosed
+AND BridgeRootSharedPivotHingeLawOrPDEC
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND BridgeRootQSpineGapPaymentLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
+状态边界：
+
+```text
+exact_lpf_bucket_identity_closed=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+euler_product_half_main_error_proved=false
+admissible_trace_or_typeii_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### Legendre-Phi periodic truncation error actual-load 更新（2026-05-25）
 
 新增机器证书：

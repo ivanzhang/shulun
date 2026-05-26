@@ -26824,6 +26824,50 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bridge_root_shared_pivot_hinge_contract_router.py
+data/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.json
+```
+
+formal-to-actual 结论：shared pivot 不是新的形式自由参数。它在 actual ledger 中有
+两包角色：
+
+```text
+packet1.unit_root=607
+packet2.bridge_root=607
+packet2.moving_barrier=607
+packet1.moving_barrier=packet2.unit_root=631
+```
+
+因此 finite pivot-enclosure 已经可以替换为：
+
+```text
+endpoint_slack=moving_barrier_q-bridge_root_q=P-q-g*(1+r)
+AND shared-pivot hinge role ledger
+AND q-spine gap payment ledger
+```
+
+这一步删除了一个循环风险：不能继续把 `BridgeRootQSpinePivotEnclosureLawOrPDEC`
+当作未分解的神秘 pivot；但也不能把 finite hinge 当作 uniform law。实际剩余为：
+
+```text
+BridgeRootSharedPivotHingeLawOrPDEC
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND BridgeRootQSpineGapPaymentLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+```
+
+LPF/Phi 侧的修正继续作为负边界：精确分桶公式已修正，但它仍是无符号
+Legendre-Phi 计数；finite Euler half-main 不是可用于 prime extraction 的 signed
+saving。
+
 ### terminal boundary residual-flow formal-to-actual 更新（2026-05-25）
 
 新增机器证书：

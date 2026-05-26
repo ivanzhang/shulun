@@ -11942,6 +11942,49 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 AND AdmissibleFiniteGroupOrbitExpansionOrThinGroupSieveFamily
 ```
 
+## 65AZ. bridge-root shared-pivot hinge contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_bridge_root_shared_pivot_hinge_contract_router.py
+data/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-bridge-root-shared-pivot-hinge-contract-router.json
+```
+
+本层把 boundary ratio q-spine pivot reduction 后的 `BridgeRootQSpinePivotEnclosureLawOrPDEC`
+压成 shared-pivot hinge 合同。有限账本闭合：
+
+```text
+q_spine_nodes=[577,607,631]
+shared_pivot_q=607
+finite_endpoint_algebra_closed=true
+finite_gap_payment_closed=true
+bridge_root_qspine_pivot_to_shared_hinge_contract_closed=true
+```
+
+外部前沿输入的可用性因此更加明确：
+
+| input | current blocker |
+| --- | --- |
+| FKMS trace-function bilinear technology (`arXiv:2511.09459`) | 仍需从 hinge packets 构造 admissible signed trace family。 |
+| Kloosterman bilinear/Type-II inputs (`arXiv:2511.07550`, Pascadi line) | 当前只有有限 q-spine 三分母核，没有 uniform Type-II coefficient factorability。 |
+| Wright trilinear Kloosterman fractions (`arXiv:2604.25177`) | 需要三线性变量族与 conductor control；shared pivot 仍是固定有限 hinge。 |
+| Runbo Li AP/Harman-sieve refinements (`arXiv:2602.20917`) | LPF/Phi 分桶仍是无符号粗数计数，尚未给出 prime-extraction signed payload。 |
+| finite group orbit / thin group expansion | 需要实际 group orbit 与 expansion；目前只有两包 q-spine hinge。 |
+
+所以本层没有调用任何外部定理闭合三命题。它只是把外部定理的入口从抽象
+`BridgeRootQSpinePivotEnclosureLawOrPDEC` 收缩为：
+
+```text
+BridgeRootSharedPivotHingeLawOrPDEC
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC
+AND BridgeRootQSpineGapPaymentLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
+```
+
 ## 65AI. affine LPF first-hit von Mangoldt lift 证书
 
 新增证书：

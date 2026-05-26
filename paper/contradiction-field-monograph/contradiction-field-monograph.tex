@@ -41375,6 +41375,104 @@ or else a newly constructed admissible averaged signed
 trace/Kloosterman/Type-II family with named returns.
 \end{remark}
 
+\section{Bridge-root shared-pivot hinge contract}
+
+\begin{theorem}[Bridge-root shared-pivot hinge reduction]
+The finite bridge-root \(q\)-spine pivot enclosure in the boundary-ratio
+source-key route reduces to a shared-pivot hinge contract.  In the audited
+ledger the \(q\)-spine is
+\[
+  577,\ 607,\ 631,
+\]
+with shared pivot \(607\).  The two bridge-root packets satisfy
+\[
+\begin{aligned}
+{\rm packet}\ 1 &: 577\to 607\to 631,\qquad {\rm slack}=54,\\
+{\rm packet}\ 2 &: 607=607=607,\qquad {\rm slack}=0.
+\end{aligned}
+\]
+For each packet the endpoint slack is the actual moving-barrier distance
+\[
+  {\rm slack}
+  = q_{\rm barrier}-q_{\rm bridge}
+  = P-q-g(1+r).
+\]
+Thus the finite pivot enclosure is equivalent, on this ledger, to the
+endpoint algebra, the shared-pivot role assignment, and the \(q\)-spine gap
+payment identity.
+\end{theorem}
+
+\begin{proof}
+For the first bridge packet the D-singleton transition is
+\((P,m,r,q,g)=(739,757,18,571,6)\).  Hence
+\[
+  q_{\rm bridge}=q+g=577,\qquad
+  q_{\rm barrier}=P-gr=631,
+\]
+and the slack is \(631-577=54=P-q-g(1+r)\).  The shared pivot \(607\)
+lies between these two nodes, with gap split \(30+24=54\).
+
+For the second bridge packet the D-singleton transition is
+\((P,m,r,q,g)=(739,761,22,601,6)\).  Hence
+\[
+  q_{\rm bridge}=607,\qquad q_{\rm barrier}=607,
+\]
+and the slack is \(0\).  The same \(607\) is now both bridge root and
+moving barrier.  The carry-packet ledger also gives
+\[
+{\rm packet}\ 1\ {\rm unit}=607,\quad
+{\rm packet}\ 2\ {\rm bridge}=607,\quad
+{\rm packet}\ 2\ {\rm unit}=631,
+\]
+so the first packet's barrier is the second packet's unit root.  These
+equalities give the stated shared-pivot hinge.  They are finite identities;
+they do not by themselves prove a uniform pivot law.
+\end{proof}
+
+\begin{certificatestatement}[Shared-pivot hinge contract audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+q\_spine\_nodes=[577,607,631]\\
+shared\_pivot\_q=607\\
+finite\_endpoint\_algebra\_closed=true\\
+finite\_gap\_payment\_closed=true\\
+bridge\_root\_qspine\_pivot\_to\_shared\_hinge\_contract\_closed=true\\
+bridge\_root\_shared\_pivot\_hinge\_law\_proved=false\\
+bridge\_root\_endpoint\_slack\_uniform\_nonnegative\_law\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It also imports the corrected LPF bucket boundary
+\[
+  C_p(N)=\Phi(\lfloor N/p\rfloor;\ q<p)-1,
+\]
+and records that this is still an unsigned count:
+\begin{quote}\scriptsize\ttfamily
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+euler\_product\_half\_main\_error\_proved=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-bridge-root-\\
+shared-pivot-hinge-contract-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Remaining hinge gates]
+The latest non-cyclic boundary-ratio gate is
+\begin{quote}\scriptsize\ttfamily
+BoundaryRatioQSpinePivotReductionClosed\\
+AND BridgeRootSharedPivotHingeLawOrPDEC\\
+AND BridgeRootEndpointSlackNonnegativeLawOrPDEC\\
+AND BridgeRootQSpineGapPaymentLawOrPDEC\\
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC\\
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward\\
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving\\
+AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
+\end{quote}
+Thus the hinge contract is a strict reduction of the previous pivot hard
+point, not an unconditional closure of the row/column theorem.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
