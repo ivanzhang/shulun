@@ -26860,6 +26860,50 @@ AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforwar
 或者必须由 `theta/psi` 点态平方根行下界、admissible trace/Type-II family、
 pointwise signed table 或命名 PDEC/SAE return 替代。
 
+### parity barrier noncircular kernel formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.json
+```
+
+formal-to-actual 结论：atom 字段、new payload、source entropy、joint declaration 和
+row-level 表都可以是形式接口名；它们只有在给出非循环 signed coefficient 发射规则时
+才成为 actual load。已有 support stripping 还会剥掉 noncircular kernel 的无符号
+LPF/Phi 支撑容量，留下 bucket signed coefficient law。否则只是把同一个缺失 signed
+payload 在不同层重命名。
+
+```text
+noncircular_kernel_sync_closed=true
+payload_source_entropy_loop_cut_synced=true
+row_level_fixed_point_cut_synced=true
+actual_signed_emission_kernel_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+```
+
+实际门变为：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+或并行证明：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+这一步继续阻断一个循环捷径：不能把 source-entropy 回环或 row-level 固定点当作
+三命题闭合证明。
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

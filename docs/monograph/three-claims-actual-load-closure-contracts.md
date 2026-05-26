@@ -90,6 +90,51 @@ phi_lpf_parity_barrier_globally_broken=false
 row_column_unconditional_closed=false
 ```
 
+### parity barrier noncircular kernel actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.json
+```
+
+actual-load 含义：atom-cut 之后的 constructor signed-field 路线若继续沿现有语料展开，
+会进入 payload/source-entropy 回环或 row-level signed-source 固定点。真实 actual
+load 不能是这些回环的名称；必须是一个在 Cauchy/Phi/payment 推前之前正向发射
+signed coefficients 的非循环 kernel；而该 kernel 的无符号支撑/容量已经剥离到
+Phi-LPF bucket，所以当前 actual load 是 bucket signed coefficient law。
+
+```text
+noncircular_kernel_sync_closed=true
+chosen_internal_primary_attack_target=PhiLPFBucketSignedCoefficientLawBeforePushforward
+chosen_kernel_discipline_target=NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows
+chosen_parallel_source_rank_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (
+  AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR (PhiLPFBucketSignedCoefficientLawBeforePushforward
+      AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+      AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger)
+  OR (AlphaRowAnchorPhaseEmissionFormulaLedger
+      AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+      AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows)
+  OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+  OR PointwiseThetaPsiCOneInput
+  OR ExternalSourceKeyedTraceTypeIIFamily
+)
+```
+
+并行仍需 complete/fixed-key、ExactUV source/fiber、Rate 与 DStructure 账本。
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

@@ -2217,6 +2217,60 @@ OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
 OR NamedPDECOrSAEReturn
 ```
 
+## 65BA. parity barrier noncircular kernel sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.md
+```
+
+外部 theorem 边界：本层把外部工具的接入口从“signed atom 字段”继续收缩为
+`PhiLPFBucketSignedCoefficientLawBeforePushforward`，同时保留
+`NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows`
+作为不可回读的 kernel 纪律，或 alpha-row/source-rank 三原子。没有这个正向 signed
+bucket law 时，FKMS、MQW、Wright、Pascadi、Kuznetsov/dispersion 等工具没有可消费的
+source-keyed coefficients。
+
+审计读数：
+
+```text
+noncircular_kernel_sync_closed=true
+phi_lpf_bucket_signed_coefficient_law_proved=false
+external_trace_typeii_family_directly_attaches_now=false
+pointwise_theta_psi_c_one_input_proved=false
+row_column_unconditional_closed=false
+```
+
+外部输入边界：
+
+```text
+Guth-Maynard short intervals: x^(17/30+o(1)) still above required x^(1/2)
+Le Duc Hieu short-interval APs: theta>17/30 transfers AP structure but still above x^(1/2)
+Runbo Li short intervals: x^0.52 still above required x^(1/2)
+FKMS trace functions: needs an ell-adic/source-keyed trace family
+Milićević-Qin-Wu Kloosterman: needs a two-variable Kloosterman coefficient family
+Wright trilinear Kloosterman: needs a trilinear beta sequence/source convolution
+Pascadi Type-II: needs well-factorable signed coefficients
+```
+
+最新开放口：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND (
+  AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+  OR PhiLPFBucketSignedCoefficientLawBeforePushforward
+  OR AlphaRowAnchorPhaseEmissionFormulaLedger
+  OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+  OR PointwiseThetaPsiCOneInput
+  OR ExternalSourceKeyedTraceTypeIIFamily
+)
+```
+
 ## 65AI-1. 2026-05-25 affine endpoint LPF first-hit partition
 
 新增证书：

@@ -1759,6 +1759,54 @@ signed atom 字段；没有证明三命题任一条无条件闭合。若不证�
 
 ---
 
+## 附录 Q13AC48：parity barrier noncircular kernel sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.md
+```
+
+本层的 honest 边界是：atom 字段之后不能通过 source-entropy payload 回环或 row-level
+signed-source 固定点自证。真正的非循环内部硬点是一个推前前 signed coefficient
+emission kernel；剥掉 LPF/Phi 无符号支撑容量后，最新实际硬点是 bucket signed
+coefficient law。
+
+```text
+noncircular_kernel_sync_closed=true
+constructor_payload_loop_cut_synced=true
+row_level_fixed_point_cut_synced=true
+noncircular_signed_emission_kernel_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+external_trace_typeii_family_directly_attaches_now=false
+```
+
+最新 honest 口：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+并行保留：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+honest 结论：本步是向真硬点的同步推进，不是无条件闭合证明；外部短区间、
+短区间中素数等差数列、trace/Type-II 输入仍需点态 \(x^{1/2}\) 行尺度或
+source-keyed signed family 才能接入。
+
+---
+
 ## 附录 Q13AC49：minimal parity-breaker route-forcing router（2026-05-26）
 
 新增证书：

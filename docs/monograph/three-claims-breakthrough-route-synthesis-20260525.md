@@ -1744,6 +1744,67 @@ named PDEC/SAE return
 因此本步推进的是“奇偶性障碍从无符号 LPF 账本压到 signed atom 字段”的精确
 定位，不是三命题无条件闭合。
 
+## 38. parity barrier noncircular kernel sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_noncircular_kernel_sync_router.py
+data/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-noncircular-kernel-sync-router.json
+```
+
+本层继续沿非循环路线把上一节 atom-cut 前沿向下同步。constructor edge signed fields
+经同 trace key/命名 return 矩阵后，生产性出口只能是
+`NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact`；该出口若不是 signed-lane
+改名，又必须携带 source-rank/no-collapse 包，并先落到
+`ActualPreCauchySourceDomainAbsoluteEntropyLedger`。继续展开会触发两类闭环：
+
+```text
+joint declaration -> built-in pairing -> new payload -> source entropy -> joint declaration
+row-level table -> signed source spine -> row-level table
+```
+
+因此最新内部主攻不再是 atom 字段名；已有 support stripping 继续剥掉
+noncircular kernel 的找行/容量部分，真正剩余是每个 LPF/Phi bucket 的 signed law：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+```
+
+kernel 纪律仍由
+`NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows`
+表达：该 signed law 不能回读 row-level 表、source-entropy payload 环或 Phi/payment
+下游结果。
+
+并行 source-rank 路线同步为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+审计读数：
+
+```text
+noncircular_kernel_sync_closed=true
+lpf_phi_unsigned_scope_exhausted=true
+noncircular_signed_emission_kernel_proved=false
+phi_lpf_bucket_signed_coefficient_law_proved=false
+alpha_row_anchor_phase_emission_formula_proved=false
+external_trace_typeii_family_directly_attaches_now=false
+row_column_unconditional_closed=false
+```
+
+外部最前沿输入的边界也同步收缩：Guth--Maynard、Runbo Li 等短区间输入仍未达到
+每个 strict row 所需的 \(x^{1/2}\) 点态尺度；FKMS、Milićević--Qin--Wu、Wright、
+Pascadi 等 trace/Type-II 工具仍需先由上述 bucket signed law/非循环 kernel 产生
+source-keyed signed coefficient family。
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：
