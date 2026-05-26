@@ -14703,3 +14703,31 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 OR NonTautologicalProductWindowPDEC
 ```
+
+---
+
+## 附录 Q13AC57：product-window independent signed defect source router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_independent_signed_defect_source_router.py
+data/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.md
+```
+
+本层 honest 边界：`IndependentSignedDefectEmissionBeforeProductWindowPushforward`
+已经不是独立黑箱。若 defect 从 survivor 后验读出则循环；若只从 LPF/Phi
+无符号支撑读出则没有 sign 信息。非循环突破必须提交 pushforward 前的
+`PhiLPFBucketSignedCoefficientLawBeforePushforward`，或给出等价逐点 signed table、
+rough-cofactor signed transport、带 admissible coefficients 的 trace bridge、
+非平凡 PDEC 或点态 sqrt 素数输入。
+
+```text
+survivor_defined_defect_rejected_as_circular=true
+unsigned_lpf_phi_support_cannot_emit_independent_signed_defect=true
+independent_signed_defect_source_equivalent_to_phi_lpf_bucket_signed_law=true
+completed_trace_bridge_requires_signed_defect_first=true
+row_column_unconditional_closed=false
+```

@@ -13421,3 +13421,35 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 OR NonTautologicalProductWindowPDEC
 ```
+
+## 65BL. product-window independent signed defect source router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_independent_signed_defect_source_router.py
+data/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.md
+```
+
+外部 theorem 边界：FKMS trace-function bilinear estimates、DI/BFI/Kuznetsov、
+Pascadi Kloosterman Type-II 或其它谱/trace 输入，当前仍不能直接作用在
+product-window survivor defect 上。它们需要先有 pushforward 前的 signed
+coefficient table 与 admissible coefficient norms；否则对象仍是 survivor 后验缺口。
+
+```text
+survivor_defined_defect_rejected_as_circular=true
+unsigned_lpf_phi_support_cannot_emit_independent_signed_defect=true
+independent_signed_defect_source_equivalent_to_phi_lpf_bucket_signed_law=true
+completed_trace_bridge_requires_signed_defect_first=true
+row_column_unconditional_closed=false
+```
+
+最新可接外部 theorem 的对象门：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+```

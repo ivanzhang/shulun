@@ -27253,6 +27253,33 @@ OR PointwiseSqrtPrimeInputCOne
 OR NonTautologicalProductWindowPDEC
 ```
 
+### product-window independent signed defect source formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_independent_signed_defect_source_router.py
+data/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.json
+```
+
+formal-to-actual 结论：抽象的 signed defect emission 不是一个可空填的名字。若
+defect 来自 `1_S` 或 `1_O-1_*`，它已经使用了 survivor 分割；若只来自 LPF/Phi
+无符号支撑，它缺少 sign、local factor、orientation 和 source identity。因此
+actual proof 必须在 pushforward 前提交 Phi-LPF bucket signed coefficient law。
+
+```text
+old_gate_rebased=IndependentSignedDefectEmissionBeforeProductWindowPushforward
+selected_next_primary_gate=PhiLPFBucketSignedCoefficientLawBeforePushforward
+selected_parallel_pointwise_gate=PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+selected_parallel_transport_gate=PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+selected_parallel_trace_gate=ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+selected_parallel_pdec_gate=NonTautologicalProductWindowPDEC
+selected_parallel_distribution_gate=PointwiseSqrtPrimeInputCOne
+row_column_unconditional_closed=false
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

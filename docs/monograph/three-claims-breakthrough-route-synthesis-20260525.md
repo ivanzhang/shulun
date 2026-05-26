@@ -2290,6 +2290,47 @@ OR PointwiseSqrtPrimeInputCOne
 OR NonTautologicalProductWindowPDEC
 ```
 
+## 48A. product-window independent signed defect source router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_independent_signed_defect_source_router.py
+data/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.json
+```
+
+本层把上一节留下的抽象 `IndependentSignedDefectEmissionBeforeProductWindowPushforward`
+继续压到可审计对象：独立 signed defect 不能由 survivor 后验定义，也不能由无符号
+LPF/Phi support、owner 分桶、rough cofactor split 或 product phase identity 自动发射。
+若不走点态平方根级素数输入或非平凡 PDEC，则必须提交真正的
+`PhiLPFBucketSignedCoefficientLawBeforePushforward`。
+
+所需 payload 字段是：
+
+```text
+owner_key
+signed_coefficient
+local_factor
+orientation_and_branch
+source_identity
+pushforward_identity
+admissible_norms
+return_tag
+```
+
+最新非循环口：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR NonTautologicalProductWindowPDEC
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

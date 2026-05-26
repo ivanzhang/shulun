@@ -480,6 +480,43 @@ OR PointwiseSqrtPrimeInputCOne
 OR NonTautologicalProductWindowPDEC
 ```
 
+### product-window independent signed defect source actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_independent_signed_defect_source_router.py
+data/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-independent-signed-defect-source-router.json
+```
+
+actual-load 含义：`IndependentSignedDefectEmissionBeforeProductWindowPushforward`
+不能由 `1_S`、`1_O-1_*` 或无符号 LPF/Phi support 后验定义产生；否则又回到
+行 prime survivor 非空的等价式。非循环版本必须在 product-window pushforward 前，
+对每个 LPF owner key `(p,m)` 给出 signed coefficient、local factor、
+orientation/source key 与 prepushforward sum identity。
+
+```text
+product_window_exact_equivalence_imported=true
+survivor_defined_defect_rejected_as_circular=true
+unsigned_lpf_phi_support_cannot_emit_independent_signed_defect=true
+independent_signed_defect_source_equivalent_to_phi_lpf_bucket_signed_law=true
+completed_trace_bridge_requires_signed_defect_first=true
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+PhiLPFBucketSignedCoefficientLawBeforePushforward
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR NonTautologicalProductWindowPDEC
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：
