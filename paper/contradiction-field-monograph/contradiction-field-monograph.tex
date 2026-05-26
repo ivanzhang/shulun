@@ -40132,6 +40132,77 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[LPF endpoint singleton fixes the exact bucket formula]
+Let \(p\le\sqrt N\) be prime and put \(X=\lfloor N/p\rfloor\).  Then the exact
+composite LPF bucket is
+\[
+  C_p(N)=\Phi(X;q<p)-1.
+\]
+Equivalently,
+\[
+  C_p(N)=\Phi(X;q<p)-\Phi(p-1;q<p),
+\]
+because
+\[
+  \Phi(p-1;q<p)=1.
+\]
+Consequently
+\[
+  (N-p^2)\frac1p\prod_{q<p}(1-1/q)
+\]
+is only the continuous Euler-product main term.  It is not the exact bucket
+count unless the floor, the endpoint singleton, and the periodic boundary term
+are also supplied.
+\end{proposition}
+
+\begin{proof}
+The formula \(C_p(N)=\Phi(X;q<p)-1\) follows from writing \(n=pm\): the
+cofactor \(m\le X\) must be indivisible by every prime \(q<p\), and the single
+cofactor \(m=1\) gives the prime \(n=p\), not a composite bucket element.  For
+the endpoint form, every integer \(2\le m\le p-1\) has a prime factor below
+\(p\), so the only \(p\)-rough integer in \([1,p-1]\) is \(1\).  Hence
+\(\Phi(p-1;q<p)=1\), proving the equivalence.  The final displayed expression
+replaces \(X\) by \(N/p\) and replaces the exact periodic count by its
+continuous density; it is therefore a main term, not an exact identity.
+\end{proof}
+
+\begin{certificatestatement}[LPF exact bucket endpoint equivalence audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+exact\_endpoint\_singleton\_fixed=true\\
+minus\_one\_and\_endpoint\_forms\_equivalent=true\\
+exact\_lpf\_bucket\_identity\_closed=true\\
+continuous\_euler\_main\_is\_exact\_count=false\\
+floor\_endpoint\_and\_periodic\_boundary\_required=true\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-\\
+endpoint-equivalence-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated LPF exact-count gate]
+The corrected exact formula layer is now fixed:
+\[
+  \Phi(\lfloor N/p\rfloor;q<p)-1
+  =
+  \Phi(\lfloor N/p\rfloor;q<p)-\Phi(p-1;q<p).
+\]
+This removes the endpoint ambiguity but does not construct a signed payload.
+The active gate is
+\begin{quote}\scriptsize\ttfamily
+ExactLPFBucketEndpointSingletonFixed\\
+AND FloorEndpointAndPeriodicBoundaryRetained\\
+AND ContinuousEulerMainNotExactCount\\
+AND UnsignedLPFBucketCountStillParityBlind\\
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

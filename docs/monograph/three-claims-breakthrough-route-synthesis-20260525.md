@@ -1896,3 +1896,54 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 22. LPF exact bucket endpoint equivalence 修正
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_exact_bucket_endpoint_equivalence_audit.py
+data/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.md
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.json
+```
+
+本层修正 LPF 精确计数公式中最容易混淆的端点口径。对 `p<=sqrt(N)`：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+      =Phi(floor(N/p); primes<p)-Phi(p-1; primes<p),
+Phi(p-1; primes<p)=1.
+```
+
+因此 `-1` 与 `-Phi(p-1)` 没有冲突；它们是同一个 endpoint singleton。
+真正错误的读法是把连续 Euler 主项当成精确计数：
+
+```text
+(N-p^2)*(1/p)*prod_{q<p}(1-1/q)
+```
+
+它只是连续主项，不含 `floor(N/p)`、端点 singleton 和 primorial 周期边界项。
+
+有限审计读数：
+
+```text
+exact_endpoint_singleton_fixed=true
+minus_one_and_endpoint_forms_equivalent=true
+exact_lpf_bucket_identity_closed=true
+continuous_euler_main_is_exact_count=false
+floor_endpoint_and_periodic_boundary_required=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最新非循环口为：
+
+```text
+ExactLPFBucketEndpointSingletonFixed
+AND FloorEndpointAndPeriodicBoundaryRetained
+AND ContinuousEulerMainNotExactCount
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```

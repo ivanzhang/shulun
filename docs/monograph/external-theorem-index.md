@@ -12127,3 +12127,56 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 65AM. LPF exact bucket endpoint equivalence 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_exact_bucket_endpoint_equivalence_audit.py
+data/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.json
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.md
+```
+
+本层修正 LPF 精确计数公式端点口径：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+      =Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+Phi(p-1; primes<p)=1
+```
+
+连续 Euler 主项：
+
+```text
+(N-p^2)*(1/p)*prod_{q<p}(1-1/q)
+```
+
+不是精确计数；精确式必须保留 floor、endpoint singleton 和周期边界。
+
+审计读数：
+
+```text
+exact_endpoint_singleton_fixed=true
+minus_one_and_endpoint_forms_equivalent=true
+exact_lpf_bucket_identity_closed=true
+continuous_euler_main_is_exact_count=false
+floor_endpoint_and_periodic_boundary_required=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界不变：这个修正只关闭 LPF 精确计数 grammar。它没有构造
+Möbius/von-Mangoldt signed divisor payload、Type-II/trace family 或有限群轨道。
+
+最新开放口：
+
+```text
+ExactLPFBucketEndpointSingletonFixed
+AND FloorEndpointAndPeriodicBoundaryRetained
+AND ContinuousEulerMainNotExactCount
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```

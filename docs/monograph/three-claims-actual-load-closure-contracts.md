@@ -90,6 +90,57 @@ AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+### LPF exact bucket endpoint equivalence actual-load 更新（2026-05-25）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_exact_bucket_endpoint_equivalence_audit.py
+data/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.md
+docs/monograph/prime-matrix-phi-lpf-exact-bucket-endpoint-equivalence-audit.json
+```
+
+actual-load 含义：精确 LPF bucket count 必须使用 `floor(N/p)` 并扣掉唯一端点
+`m=1`。等价地：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+      =Phi(floor(N/p); primes<p)-Phi(p-1; primes<p)
+Phi(p-1; primes<p)=1
+```
+
+连续主项：
+
+```text
+(N-p^2)*(1/p)*prod_{q<p}(1-1/q)
+```
+
+不是精确计数。精确公式还需要 floor、endpoint singleton 与周期边界项。
+
+状态边界：
+
+```text
+exact_endpoint_singleton_fixed=true
+minus_one_and_endpoint_forms_equivalent=true
+exact_lpf_bucket_identity_closed=true
+continuous_euler_main_is_exact_count=false
+floor_endpoint_and_periodic_boundary_required=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应加入 endpoint/floor 挡板：
+
+```text
+ExactLPFBucketEndpointSingletonFixed
+AND FloorEndpointAndPeriodicBoundaryRetained
+AND ContinuousEulerMainNotExactCount
+AND UnsignedLPFBucketCountStillParityBlind
+AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：
