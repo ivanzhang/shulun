@@ -26945,6 +26945,41 @@ AND source-rank 三原子
 否则必须走逐点 signed table、branch/atomic trace、PDEC/SAE 或点态 `theta/psi`/外部
 trace-Type-II 旁路。
 
+### row Delta-Phi cover formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_delta_phi_cover_contract_router.py
+data/prime-matrix-phi-lpf-row-delta-phi-cover-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json
+```
+
+formal-to-actual 结论：`pi(A,B]` 的前缀差写法是精确恒等式，但不能把它升级为
+actual positive survivor。实际需要证明的是：
+
+```text
+sum_{p<=sqrt(B)}(C_p(B)-C_p(A)) <= B-A-1
+```
+
+其中
+
+```text
+C_p(N)=0 if N<p^2, else Phi(floor(N/p); primes<p)-1.
+```
+
+该不等式与 `pi(A,B]>0` 等价；若无额外 saving、signed trace、点态 `theta/psi`
+或 PDEC/SAE 回流，就只是 formal equality 而不是 actual load 支付。
+
+最新前沿：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

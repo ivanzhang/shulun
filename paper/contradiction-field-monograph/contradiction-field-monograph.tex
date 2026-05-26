@@ -41888,6 +41888,64 @@ transport-edge-sync-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Row Delta-Phi cover contract}
+
+\begin{theorem}[Phi-LPF row Delta-Phi cover identity and boundary]
+For an integer interval \(I=(A,B]\), \(1\le A<B\), the LPF bucket prefix is
+\[
+  C_p(N)=
+  \begin{cases}
+    0, & N<p^2,\\
+    \Phi(\lfloor N/p\rfloor;\hbox{ primes }<p)-1, & N\ge p^2.
+  \end{cases}
+\]
+Consequently the row prime count is exactly
+\[
+  \pi(A,B]=B-A-\sum_{p\le\sqrt B}\bigl(C_p(B)-C_p(A)\bigr).
+\]
+Thus row positivity is equivalent to the strict Delta-Phi cover defect
+\[
+  \sum_{p\le\sqrt B}\bigl(C_p(B)-C_p(A)\bigr)\le B-A-1.
+\]
+This equivalence is an exact reduction, not by itself a proof of the strict
+defect.  A proof must either produce a uniform Delta-Phi cover saving, return a
+named LPF-owner residue PDEC/SAE when equality occurs, or attach a pointwise
+\(\theta/\psi\), signed divisor, trace, or Type--II input.
+\end{theorem}
+
+\begin{proof}
+The prefix formula follows from the bijection \(n=pm\).  The condition
+\({\rm LPF}(n)=p\) is exactly that \(m\) is not divisible by any prime
+less than \(p\); the composite bucket begins at \(p^2\), and the subtraction
+of \(1\) removes the single prefix survivor \(m=1\), which corresponds to the
+prime endpoint \(n=p\).  Taking the difference at \(B\) and \(A\) counts the
+composites in the row with LPF \(p\).  Summing over \(p\le\sqrt B\) gives every
+composite in \((A,B]\) exactly once.  Therefore the displayed formula for
+\(\pi(A,B]\) is exact.  The strict inequality is just the statement that at
+least one integer in the row is not covered by any composite LPF bucket.  It is
+therefore equivalent to the existence of a prime in the row and cannot be
+deduced from the equality alone without an independent saving or a controlled
+return.
+\end{proof}
+
+\begin{certificatestatement}[Row Delta-Phi cover contract certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+row\_delta\_phi\_identity\_closed=true\\
+row\_delta\_phi\_prefix\_difference\_is\_exact=true\\
+strict\_cover\_inequality\_proved\_uniformly=false\\
+row\_delta\_phi\_positive\_lower\_bound\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It also records the prime-free check \((90,96]\), where the Delta-Phi composite
+cover is \(6\), the row length is \(6\), and the prime count is \(0\).  The
+certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-\\
+cover-contract-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

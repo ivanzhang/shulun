@@ -14398,3 +14398,41 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+---
+
+## 附录 Q13AC48：row Delta-Phi cover contract router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_delta_phi_cover_contract_router.py
+data/prime-matrix-phi-lpf-row-delta-phi-cover-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.md
+```
+
+本层确认用户提出的前缀差想法：
+
+```text
+row_delta_phi_identity_closed=true
+row_delta_phi_prefix_difference_is_exact=true
+```
+
+诚实边界是：行级严格覆盖缺口
+
+```text
+sum_{p<=sqrt(B)}(C_p(B)-C_p(A)) <= B-A-1
+```
+
+与 `pi(A,B]>0` 等价，尚未被独立证明。样本 `(90,96]` 精确满足 Delta-Phi 合数覆盖
+等于行长，因此前缀差公式会给出零素数行；它不会自动排除零行。
+
+最新 honest 口：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+```

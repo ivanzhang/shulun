@@ -179,6 +179,37 @@ AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 branch/atomic trace、PDEC/SAE、点态 `theta/psi` 或外部 source-keyed trace/Type-II
 family 替代。
 
+### row Delta-Phi cover actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_delta_phi_cover_contract_router.py
+data/prime-matrix-phi-lpf-row-delta-phi-cover-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json
+```
+
+actual-load 含义：行内短区间素数计数确实是两个 LPF/Phi 前缀的精确差值，但这个差值
+只把目标换成行级覆盖缺口；覆盖缺口本身就是 actual prime survivor。不能把
+`Delta-Phi` 恒等式当作已经支付的正性输入。
+
+```text
+row_delta_phi_identity_closed=true
+row_delta_phi_prefix_difference_is_exact=true
+strict_cover_inequality_proved_uniformly=false
+row_delta_phi_positive_lower_bound_proved=false
+```
+
+PM-ALC 新增实际负载口：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

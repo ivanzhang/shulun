@@ -13052,3 +13052,37 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
+
+## 65BC. row Delta-Phi cover contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_delta_phi_cover_contract_router.py
+data/prime-matrix-phi-lpf-row-delta-phi-cover-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.md
+```
+
+外部 theorem 边界：行级 `Delta-Phi` 前缀差恒等式完全精确，但外部定理真正需要支付的是
+严格覆盖缺口或等价的点态素数存在。Guth--Maynard、Runbo Li 与 Hieu 型短区间输入仍
+未给当前 strict row 所需的零例外 `x^(1/2)` 点态结论；trace/Kloosterman/Type-II 工具
+仍需 source-keyed signed coefficient family。
+
+审计读数：
+
+```text
+row_delta_phi_identity_closed=true
+row_delta_phi_prefix_difference_is_exact=true
+strict_cover_inequality_proved_uniformly=false
+row_delta_phi_positive_lower_bound_proved=false
+```
+
+最新开放口：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+```

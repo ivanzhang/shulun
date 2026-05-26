@@ -1857,6 +1857,55 @@ parallel_source_rank=AlphaRowAnchorPhaseEmissionFormulaLedger
 完整 branch/atomic trace、same-set PDEC/SAE 回流、点态 `theta/psi` 平方根行输入或
 外部 source-keyed trace/Type-II family。三命题仍未无条件闭合。
 
+## 40. row Delta-Phi cover contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_row_delta_phi_cover_contract_router.py
+data/prime-matrix-phi-lpf-row-delta-phi-cover-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-row-delta-phi-cover-contract-router.json
+```
+
+本层专门处理“每行短区间计数是否就是两个前缀计数之差”。答案是肯定的，而且可以
+写成完全精确的 LPF/Phi 恒等式。对整数区间 `(A,B]`：
+
+```text
+C_p(N)=0 if N<p^2, else Phi(floor(N/p); primes<p)-1
+pi(A,B]=B-A-sum_{p<=sqrt(B)}(C_p(B)-C_p(A))
+```
+
+因此行内正性等价于严格覆盖缺口：
+
+```text
+sum_{p<=sqrt(B)}(C_p(B)-C_p(A)) <= B-A-1.
+```
+
+机器审计给出：
+
+```text
+row_delta_phi_identity_closed=true
+row_delta_phi_prefix_difference_is_exact=true
+strict_cover_inequality_proved_uniformly=false
+row_delta_phi_positive_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+该层的关键诚实边界是：覆盖缺口不等式与 `pi(A,B]>0` 等价，不能由恒等式本身推出。
+例如 `(90,96]` 的 Delta-Phi 合数覆盖为 `6`、行长为 `6`、素数数为 `0`，前缀差公式
+会精确给出零行，而不是自动排除零行。小 `P<=31` 的 Prime Matrix punctured rows
+样本均为正，但这仍是有限证据。
+
+最新非循环主攻改写为：
+
+```text
+UniformDeltaPhiCoverDefectOrNamedLPFOwnerResiduePDEC
+OR PointwiseThetaPsiCOneInputAtSqrtRowScale
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR SourceKeyedMobiusVonMangoldtTraceTypeIIFamily
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：
