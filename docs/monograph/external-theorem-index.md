@@ -13258,3 +13258,40 @@ TargetAffineSignedPhasePayload
 OR PointwiseSqrtPrimeInputCOne
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
+
+## 65BH. target-affine signed phase contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py
+data/prime-matrix-phi-lpf-target-affine-signed-phase-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.md
+```
+
+外部 theorem 边界：row Fourier defect identity 已闭合，但不构成外部 theorem 输入。
+FKMS trace-function、Milićević-Qin-Wu Kloosterman、Pascadi composite Type-II、Wright
+trilinear Kloosterman fractions 目前都需要先完成同一个对象转换：
+
+```text
+owner fibers -> source-keyed signed coefficients -> completed trace/Kloosterman family
+```
+
+审计读数：
+
+```text
+target_affine_signed_phase_contract_synced=true
+row_fourier_defect_identity_closed=true
+row_fourier_positive_lower_bound_proved=false
+external_trace_inputs_directly_admissible_now=false
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+SourceKeyedOwnerPhaseEmissionFormula
+OR PointwiseSqrtPrimeInputCOne
+OR CompletedTraceKloostermanFamilyFromOwnerFibers
+```

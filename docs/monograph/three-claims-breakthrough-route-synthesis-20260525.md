@@ -2124,6 +2124,55 @@ OR PointwiseSqrtPrimeInputCOne
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
 
+## 45. target-affine signed phase contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py
+data/prime-matrix-phi-lpf-target-affine-signed-phase-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json
+```
+
+本层继续拆上一节的 `TargetAffineSignedPhasePayload`。核心结论：target-affine 的第一层
+phase 恒等式确实闭合，但它只是等价检测，不是非循环正性。对任意 \(h\bmod P\)，有：
+
+```text
+row indicator = LPF owner composite indicator + prime survivor indicator
+```
+
+所以 row Fourier defect 精确等于 prime survivor Fourier transform。有限审计中
+`P=31,101,251,499,1009,2003,5003` 的最小素数行均满足 owner/prime partition 和 Parseval
+恒等式，最大非零 Fourier 幅度为：
+
+```text
+1.9897, 5.2476, 12.8124, 18.4850, 34.1045, 73.7658, 170.9404
+```
+
+这说明 phase 可以检测 survivor；但要给出非零/正下界仍等价于证明行内有素数。只使用
+`a_p=-kP mod p` 或 offset Fourier 相位会回到 full-cover/prime-gap 等价式；直接引入
+`Lambda/Mobius` 行负载则变成 `theta/psi` 点态短区间输入。
+
+机器审计给出：
+
+```text
+target_affine_signed_phase_contract_synced=true
+row_fourier_defect_identity_closed=true
+row_fourier_positive_lower_bound_proved=false
+source_keyed_owner_phase_emission_formula_proved=false
+completed_trace_kloosterman_family_from_owner_fibers_proved=false
+row_column_unconditional_closed=false
+```
+
+最新非循环主攻收窄为：
+
+```text
+SourceKeyedOwnerPhaseEmissionFormula
+OR PointwiseSqrtPrimeInputCOne
+OR CompletedTraceKloostermanFamilyFromOwnerFibers
+```
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

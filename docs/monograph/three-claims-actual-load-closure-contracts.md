@@ -357,6 +357,36 @@ target_affine_owner_pdec_proved=false
 row_column_unconditional_closed=false
 ```
 
+### target-affine signed phase contract actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py
+data/prime-matrix-phi-lpf-target-affine-signed-phase-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json
+```
+
+actual-load 含义：row Fourier defect 是精确恒等式，但不是可支付负载。`h=0` 频率
+就是行内素数个数；非零频率的 Parseval 能量也只等价检测 survivor。若 actual proof
+不直接输入 `theta/psi`，则必须提交：
+
+```text
+SourceKeyedOwnerPhaseEmissionFormula
+OR CompletedTraceKloostermanFamilyFromOwnerFibers
+OR PointwiseSqrtPrimeInputCOne
+```
+
+状态边界：
+
+```text
+target_affine_signed_phase_contract_synced=true
+row_fourier_defect_identity_closed=true
+row_fourier_positive_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

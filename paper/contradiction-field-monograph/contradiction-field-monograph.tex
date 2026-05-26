@@ -42166,6 +42166,64 @@ gap-equivalence-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Target-affine signed phase contract}
+
+\begin{theorem}[Row Fourier phase is an exact defect identity, not a closure]
+For every target row \(R_{P,k}=\{kP+r:1\le r\le P-1\}\) and every
+frequency \(h\bmod P\), the offset Fourier decomposition satisfies
+\[
+  \sum_{r=1}^{P-1}e(hr/P)
+  =
+  \sum_{p}\sum_{r\in O_p(P,k)}e(hr/P)
+  +
+  \sum_{\substack{1\le r\le P-1\\ kP+r\ {\rm prime}}}e(hr/P),
+\]
+where \(O_p(P,k)\) is the LPF owner fiber in the row.  Hence the row Fourier
+defect is exactly the Fourier transform of the prime-survivor set.  This phase
+identity detects survivors, but a nonzero lower bound for the defect is still
+equivalent to proving the row contains a prime.
+\end{theorem}
+
+\begin{proof}
+The LPF owner fibers and the prime survivors form a disjoint partition of
+\(\{1,\ldots,P-1\}\).  Summing the additive character \(e(hr/P)\) over this
+partition gives the displayed identity.  The zero frequency gives precisely the
+survivor count.  For the nonzero frequencies, Parseval gives
+\[
+  \sum_{h=1}^{P-1}\left|
+    \sum_{\substack{1\le r\le P-1\\ kP+r\ {\rm prime}}}e(hr/P)
+  \right|^2
+  =
+  P s-s^2,
+\]
+where \(s\) is the number of prime survivors.  Thus the phase energy is positive
+if and only if \(s>0\).  Consequently, offset Fourier phase alone is only a
+rephrasing of the same prime-gap exclusion problem.  A non-circular proof must
+produce a source-keyed signed owner phase before pushforward, complete the owner
+fibers into an admissible trace/Kloosterman family, or import a genuine
+\(C=1\) square-root-scale pointwise prime theorem.
+\end{proof}
+
+\begin{certificatestatement}[Target-affine signed phase contract certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+target\_affine\_signed\_phase\_contract\_synced=true\\
+row\_fourier\_defect\_identity\_closed=true\\
+row\_fourier\_positive\_lower\_bound\_proved=false\\
+source\_keyed\_owner\_phase\_emission\_formula\_proved=false\\
+completed\_trace\_kloosterman\_family\_from\_owner\_fibers\_proved=false\\
+row\_column\_unconditional\_closed=false\\
+selected\_next\_primary\_gate=SourceKeyedOwnerPhaseEmissionFormula\\
+selected\_parallel\_distribution\_gate=PointwiseSqrtPrimeInputCOne\\
+selected\_parallel\_trace\_gate=CompletedTraceKloostermanFamilyFromOwnerFibers.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-target-affine-\\
+signed-phase-contract-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

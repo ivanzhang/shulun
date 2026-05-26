@@ -1,0 +1,280 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_target_affine_signed_phase_contract_router",
+  "completed_trace_kloosterman_family_from_owner_fibers_proved": false,
+  "contract_rows": [
+    {
+      "closed": true,
+      "gate": "TargetAffineRowFourierDefectIdentity",
+      "meaning": "对任意 h mod P，row indicator = owner composite indicator + prime survivor indicator。",
+      "proved": true,
+      "remaining": "identity only"
+    },
+    {
+      "closed": true,
+      "gate": "RowFourierDefectPositiveLowerBound",
+      "meaning": "非零 Fourier 能量等价检测 survivor；但给正下界仍等价于证明行内有素数。",
+      "proved": false,
+      "remaining": "PointwiseSqrtPrimeInputCOne"
+    },
+    {
+      "closed": true,
+      "gate": "OwnerResiduePhaseOnlyPayload",
+      "meaning": "只给 a_p=-kP mod p 或 offset Fourier 相位会回到 full-cover/prime-gap 等价式。",
+      "proved": false,
+      "remaining": "SourceKeyedOwnerPhaseEmissionFormula"
+    },
+    {
+      "closed": true,
+      "gate": "LambdaMobiusRowPayload",
+      "meaning": "若直接使用 Lambda 或 Mobius-Von-Mangoldt 行权重，就是 theta/psi 行输入，不是 LPF 内生证明。",
+      "proved": false,
+      "remaining": "PointwiseSqrtPrimeInputCOne"
+    },
+    {
+      "closed": false,
+      "gate": "SourceKeyedOwnerPhaseEmissionFormula",
+      "meaning": "必须正向给出依赖 owner key、source key、orientation、ExactUV 的相位发射公式。",
+      "proved": false,
+      "remaining": "SourceKeyedOwnerPhaseEmissionFormula OR named PDEC/SAE/LocalSurvivor"
+    },
+    {
+      "closed": false,
+      "gate": "CompletedTraceKloostermanFamilyFromOwnerFibers",
+      "meaning": "必须把 owner fibers 完成到真正 bilinear/trilinear trace 或 Kloosterman family。",
+      "proved": false,
+      "remaining": "CompletedTraceKloostermanFamilyFromOwnerFibers"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalKloostermanTraceInputsAdmissibleNow",
+      "meaning": "FKMS/MQW/Pascadi/Wright 等输入是候选，但当前对象还没有完成成它们需要的系数族。",
+      "proved": false,
+      "remaining": "SourceKeyedOwnerPhaseEmissionFormula AND CompletedTraceKloostermanFamilyFromOwnerFibers"
+    },
+    {
+      "closed": false,
+      "gate": "TargetAffineSignedPhasePayloadProved",
+      "meaning": "本步只固定 signed phase 的最小合同，不证明全局行级不等式。",
+      "proved": false,
+      "remaining": "SourceKeyedOwnerPhaseEmissionFormula OR PointwiseSqrtPrimeInputCOne OR CompletedTraceKloostermanFamilyFromOwnerFibers"
+    }
+  ],
+  "corrected_lpf_signed_trace_frontier_imported": true,
+  "external_trace_inputs_directly_admissible_now": false,
+  "external_trace_rows": [
+    {
+      "directly_admissible_now": false,
+      "input": "Fouvry-Kowalski-Michel-Sawin bilinear trace functions",
+      "source": "https://arxiv.org/abs/2511.09459",
+      "usable_after": "ell-adic trace family with monodromy/conductor data is constructed"
+    },
+    {
+      "directly_admissible_now": false,
+      "input": "Milicevic-Qin-Wu bilinear Kloosterman sums",
+      "source": "https://arxiv.org/abs/2511.07550",
+      "usable_after": "owner fibers become a two-variable Kloosterman sum modulo moving q"
+    },
+    {
+      "directly_admissible_now": false,
+      "input": "Pascadi non-abelian amplification / composite Type-II",
+      "source": "https://arxiv.org/abs/2511.08445",
+      "usable_after": "well-factorable composite-modulus Type-II coefficients are exposed"
+    },
+    {
+      "directly_admissible_now": false,
+      "input": "Wright trilinear Kloosterman fractions",
+      "source": "https://arxiv.org/abs/2604.25177",
+      "usable_after": "terminal payload becomes a trilinear convolution with equidistributed beta sequence"
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "finite_row_phase_audit": [
+    {
+      "P": 31,
+      "imported_min_prime_count": 2,
+      "k": 25,
+      "owner_bucket_count": 8,
+      "owner_total": 28,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 1.989738647,
+        "max_nonzero_h": 28,
+        "nonzero_l2_formula": 58,
+        "nonzero_l2_numeric": 58.0,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 0.0,
+        "survivor_count": 2,
+        "zero_frequency_defect": 2
+      },
+      "row_interval": "(25*31,26*31)",
+      "row_length": 30,
+      "survivor_total": 2
+    },
+    {
+      "P": 101,
+      "imported_min_prime_count": 7,
+      "k": 73,
+      "owner_bucket_count": 14,
+      "owner_total": 93,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 5.247613004,
+        "max_nonzero_h": 51,
+        "nonzero_l2_formula": 658,
+        "nonzero_l2_numeric": 658.0,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 0.0,
+        "survivor_count": 7,
+        "zero_frequency_defect": 7
+      },
+      "row_interval": "(73*101,74*101)",
+      "row_length": 100,
+      "survivor_total": 7
+    },
+    {
+      "P": 251,
+      "imported_min_prime_count": 18,
+      "k": 108,
+      "owner_bucket_count": 25,
+      "owner_total": 232,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 12.812437924,
+        "max_nonzero_h": 126,
+        "nonzero_l2_formula": 4194,
+        "nonzero_l2_numeric": 4194.0,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 0.0,
+        "survivor_count": 18,
+        "zero_frequency_defect": 18
+      },
+      "row_interval": "(108*251,109*251)",
+      "row_length": 250,
+      "survivor_total": 18
+    },
+    {
+      "P": 499,
+      "imported_min_prime_count": 29,
+      "k": 362,
+      "owner_bucket_count": 48,
+      "owner_total": 469,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 18.484986504,
+        "max_nonzero_h": 250,
+        "nonzero_l2_formula": 13630,
+        "nonzero_l2_numeric": 13630.0,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 0.0,
+        "survivor_count": 29,
+        "zero_frequency_defect": 29
+      },
+      "row_interval": "(362*499,363*499)",
+      "row_length": 498,
+      "survivor_total": 29
+    },
+    {
+      "P": 1009,
+      "imported_min_prime_count": 52,
+      "k": 905,
+      "owner_bucket_count": 80,
+      "owner_total": 956,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 34.104549083,
+        "max_nonzero_h": 505,
+        "nonzero_l2_formula": 49764,
+        "nonzero_l2_numeric": 49764.000000001,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 1e-09,
+        "survivor_count": 52,
+        "zero_frequency_defect": 52
+      },
+      "row_interval": "(905*1009,906*1009)",
+      "row_length": 1008,
+      "survivor_total": 52
+    },
+    {
+      "P": 2003,
+      "imported_min_prime_count": 113,
+      "k": 1256,
+      "owner_bucket_count": 120,
+      "owner_total": 1889,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 73.765790315,
+        "max_nonzero_h": 1002,
+        "nonzero_l2_formula": 213570,
+        "nonzero_l2_numeric": 213570.000000002,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 2e-09,
+        "survivor_count": 113,
+        "zero_frequency_defect": 113
+      },
+      "row_interval": "(1256*2003,1257*2003)",
+      "row_length": 2002,
+      "survivor_total": 113
+    },
+    {
+      "P": 5003,
+      "imported_min_prime_count": 260,
+      "k": 4980,
+      "owner_bucket_count": 244,
+      "owner_total": 4742,
+      "partition_covers_row": true,
+      "phase_stats": {
+        "detection_is_equivalent_not_lower_bound": true,
+        "max_nonzero_abs": 170.940382297,
+        "max_nonzero_h": 2502,
+        "nonzero_l2_formula": 1233180,
+        "nonzero_l2_numeric": 1233179.999999962,
+        "nonzero_phase_detects_survivors_if_count_positive": true,
+        "parseval_error": 3.8e-08,
+        "survivor_count": 260,
+        "zero_frequency_defect": 260
+      },
+      "row_interval": "(4980*5003,4981*5003)",
+      "row_length": 5002,
+      "survivor_total": 260
+    }
+  ],
+  "lambda_mobius_payload_is_external_prime_input": true,
+  "owner_residue_phase_only_closes": false,
+  "plain_conclusion": "target-affine signed phase 的第一层相位恒等式已经闭合：row Fourier defect 精确等于 prime survivor Fourier transform。但这只是等价检测；给出正下界仍等价于证明行内有素数。只使用 owner residue phase 会回到 prime-gap 等价式，直接使用 Lambda/Mobius 又变成 theta/psi 行输入。非循环突破必须正向构造 source-keyed owner phase emission formula，或把 owner fibers 完成到可用 trace/Kloosterman family，或输入真正 C=1 sqrt-scale 点态素数定理。",
+  "pointwise_signed_table_frontier_imported": true,
+  "row_column_unconditional_closed": false,
+  "row_fourier_defect_identity_closed": true,
+  "row_fourier_positive_lower_bound_proved": false,
+  "same_theorem_target_preserved": true,
+  "selected_direct_table_gate": "PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward",
+  "selected_next_primary_gate": "SourceKeyedOwnerPhaseEmissionFormula",
+  "selected_parallel_distribution_gate": "PointwiseSqrtPrimeInputCOne",
+  "selected_parallel_trace_gate": "CompletedTraceKloostermanFamilyFromOwnerFibers",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "643f5cad187c396b5c1daba4fb6f6fdd027e8b1251fe74fe4f48caf1fe1b335a",
+    "docs/monograph/external-theorem-index.md": "faf9970243ff90d4f8b9c5c1d8496a614a1c429e9f2b0cf8b162138d0c3b6f1d",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "0b395898191eb4e9f504e6617d0e30b5ca37d87851c4239b0cda89738abc032e",
+    "docs/monograph/prime-matrix-phi-lpf-corrected-lpf-signed-trace-breakthrough-router.json": "3a52ce41b6380ad6b884271d246183005d023c29eb162d745a54f668acb16120",
+    "docs/monograph/prime-matrix-phi-lpf-pointwise-signed-value-table-frontier-router.json": "c78bc14420695f82fbb46cc5c3de28dbf38c85ba678d9aa4ffe0fb0f1c98d868",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-gap-equivalence-router.json": "f1f62e09e90bf4af6eeee23095f8bb3e5f707d8211d3f328781bf1bce6a62a6f",
+    "docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json": "68d92a76de9afa0228d9e9dae12de19bb4b8189e69397c66c7d967ce4b915b0e",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "61bfc836860afe0da01eee3163b4b6d5be035bb75209b4de415ba61366ce0605",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "4b7665eef5896ba574ba635eb8e67c4d78481854f72a41b7d037f503e4a161fb",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "13a9ffb81186ec126ac6d2743937ed5edca284bd0ac20e545f52fc6c7c9d2d3d",
+    "experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py": "74fc1e2050042fff6a4f7ce0a357e3359c37001eec3c1747f629400845010d69",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "8fa3c4ca62a9254f3d9d20980e93d5dd08816f88366c670ea14f1c27e5272145"
+  },
+  "source_keyed_owner_phase_emission_formula_proved": false,
+  "status": "target_affine_signed_phase_reduced_to_source_keyed_phase_or_sqrt_input",
+  "target_affine_gap_equivalence_imported": true,
+  "target_affine_signed_phase_contract_synced": true,
+  "target_affine_signed_phase_payload_proved": false,
+  "terminal_run_trace_contract_imported": true,
+  "verified_date": "2026-05-26"
+}

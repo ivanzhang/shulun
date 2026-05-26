@@ -27127,6 +27127,33 @@ OR PointwiseSqrtPrimeInputCOne
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
 
+### target-affine signed phase contract formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py
+data/prime-matrix-phi-lpf-target-affine-signed-phase-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json
+```
+
+formal-to-actual 结论：offset Fourier/owner-residue phase 是形式恒等式，不是 actual
+闭合机制。它把 full-cover 缺口重写为 survivor Fourier transform：
+
+```text
+1_survivor = 1_row - sum_owner 1_owner
+```
+
+因此需要的新 actual 字段不是“相位存在”，而是相位在推前前携带 source key 并产生
+独立符号取消，或完成成外部 trace/Kloosterman 可接受的系数族：
+
+```text
+SourceKeyedOwnerPhaseEmissionFormula
+OR CompletedTraceKloostermanFamilyFromOwnerFibers
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

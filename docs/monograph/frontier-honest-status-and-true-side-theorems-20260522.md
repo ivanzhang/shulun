@@ -14579,3 +14579,34 @@ TargetAffineSignedPhasePayload
 OR PointwiseSqrtPrimeInputCOne
 OR SpectralKloostermanResidueLiftWithSourceKeys
 ```
+
+---
+
+## 附录 Q13AC53：target-affine signed phase contract router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_target_affine_signed_phase_contract_router.py
+data/prime-matrix-phi-lpf-target-affine-signed-phase-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-target-affine-signed-phase-contract-router.md
+```
+
+本层 honest 边界：signed phase 的第一层 Fourier 恒等式已经闭合，但不是最终证明。
+它只能把 survivor 变成 Fourier defect；要证明 defect 非零仍是行内素数正性。
+
+有限行审计验证：
+
+```text
+partition_covers_row=true
+parseval_error≈0
+```
+
+最新 honest 口：
+
+```text
+SourceKeyedOwnerPhaseEmissionFormula
+OR PointwiseSqrtPrimeInputCOne
+OR CompletedTraceKloostermanFamilyFromOwnerFibers
+```
