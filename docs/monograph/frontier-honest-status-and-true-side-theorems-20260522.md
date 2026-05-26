@@ -1721,6 +1721,52 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 ---
 
+## 附录 Q13AC48：parity barrier prime-distribution contract router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_prime_distribution_contract_router.py
+data/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.md
+```
+
+honest 结论：奇偶性障碍的本质不是 LPF 计数尚不够精细，而是 LPF/Phi 计数
+本身是无符号 support 账本。它无法把素数从两个或更多大素因子的粗合数中分离。
+
+```text
+lpf_correction_closed=true
+lpf_bucket_exact_formula=C_p(N)=Phi(floor(N/p); primes<p)-1
+legendre_periodic_boundary_not_half_main=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+trace_or_typeii_family_admissible_now=false
+row_column_unconditional_closed=false
+```
+
+真正需要攻克的公式是点态素数分布或可求和有符号族：
+
+```text
+theta((kP,(k+1)P))>0
+OR psi((kP,(k+1)P)) > prime_power_tail((kP,(k+1)P))
+OR source-key consistent signed Type-I/II or trace/Kloosterman family
+OR controlled PDEC/SAE return
+```
+
+最新 honest 口：
+
+```text
+ParityBarrierContractPinned
+AND NeedPointwiseThetaOrPsiRowLowerBoundBeyondPrimePowerTail
+AND NeedAdmissibleSignedDivisorTraceOrTypeIIFamily
+AND BridgeRootSharedPivotHingeLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```
+
+---
+
 ## 附录 Q13AC47：bridge-root shared-pivot hinge contract router（2026-05-26）
 
 新增证书：

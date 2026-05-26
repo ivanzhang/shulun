@@ -11985,6 +11985,38 @@ AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+## 65BA. parity barrier prime-distribution contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_prime_distribution_contract_router.py
+data/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json
+```
+
+本层把外部前沿输入与奇偶性障碍的关系固定为如下合同：
+
+| input | current status |
+| --- | --- |
+| Fouvry--Kowalski--Michel--Sawin trace functions, `arXiv:2511.09459` | 需要先把 terminal/hinge ledger 提升为 source-keyed trace family。 |
+| Milićević--Qin--Wu Kloosterman bilinear forms, `arXiv:2511.07550` | 需要真正双变量 Kloosterman family 与 coefficient factorability。 |
+| Wright trilinear Kloosterman fractions, `arXiv:2604.25177` | 需要三线性 convolution、source-key lift 与 conductor control。 |
+| Runbo Li large-modulus AP/Harman sieve, `arXiv:2602.20917` | 当前目标是 pointwise row/column positivity，不是 almost-all/平均模数结论。 |
+| Pascadi Type-II / smooth-number distribution, `arXiv:2505.00653` | 需要把点态 row load 改写为 well-factorable AP average。 |
+| finite-group/expander inputs | 需要实际 group orbit；当前 q-spine 仍只是有限 hinge ledger。 |
+
+所以外部前沿工具的作用边界不是“直接破奇偶”，而是：一旦内部构造出
+admissible signed divisor/trace/Type-II family，它们可能提供所需 cancellation。
+在当前状态下：
+
+```text
+frontier_external_inputs_directly_close_now=false
+trace_or_typeii_family_admissible_now=false
+row_column_unconditional_closed=false
+```
+
 ## 65AI. affine LPF first-hit von Mangoldt lift 证书
 
 新增证书：

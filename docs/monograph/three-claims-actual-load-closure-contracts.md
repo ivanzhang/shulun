@@ -43,6 +43,39 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### parity barrier prime-distribution contract actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_prime_distribution_contract_router.py
+data/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json
+```
+
+actual-load 含义：LPF/Phi 计数的实际负载已经被完全校准，但它不是 prime
+extraction 负载。当前可用的 LPF 结果是：
+
+```text
+C_p(N)=Phi(floor(N/p); primes<p)-1
+continuous_euler_main_is_exact_count=false
+half_main_truncation_error_claim_supported=false
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+```
+
+因此 PM-ALC 的实际突破合同必须进入 signed 或 pointwise prime distribution 层：
+
+```text
+NeedPointwiseThetaOrPsiRowLowerBoundBeyondPrimePowerTail
+OR NeedAdmissibleSignedDivisorTraceOrTypeIIFamily
+OR NamedPDECOrSAEReturn
+```
+
+换言之，下一步不能再用“更多 wheel / 更细 LPF bucket / 更长 Euler product”
+作为终局闭合理由；这些只改变 support bookkeeping。真正的 actual load 是
+`theta/psi` 点态下界、同一 source-key 上的有符号分布族，或 controlled PDEC 回流。
+
 ### bridge-root shared-pivot hinge contract actual-load 更新（2026-05-26）
 
 新增机器证书：

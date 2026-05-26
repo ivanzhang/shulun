@@ -2640,3 +2640,57 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 外部前沿定理的使用边界同步收缩：FKMS、Kloosterman/Type-II、Wright 三线性、
 Runbo Li Harman sieve 和 thin-group expansion 都仍需先从该 hinge 合同构造
 admissible signed family；当前尚不能直接闭合三命题之一。
+
+## 36. parity barrier prime-distribution contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_prime_distribution_contract_router.py
+data/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json
+```
+
+本层回答“奇偶性障碍究竟是什么”。经过 LPF 精确计数、Legendre-Phi 周期截断误差、
+affine `2n+1` 归一化、von Mangoldt 纯素幂压缩、prime-power tail absorption、
+terminal trace contract 与 shared-pivot hinge 的串联审计，结论是：
+
+```text
+parity_barrier_diagnosis_closed=true
+lpf_correction_closed=true
+lpf_bucket_exact_formula=C_p(N)=Phi(floor(N/p); primes<p)-1
+legendre_periodic_boundary_not_half_main=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+trace_or_typeii_family_admissible_now=false
+row_column_unconditional_closed=false
+```
+
+障碍的本质不是“还少一个更精细 Euler product”。无符号粗数 survivor 计数即使完全精确，
+仍同时容纳素数、P2、P3 和更深粗合数；它没有 Möbius/von Mangoldt 符号相消，也没有
+trace/Kloosterman 的相位取消。因此真正能越过障碍的合同只有几类：
+
+```text
+PointwiseThetaShortIntervalAtSqrtScale:
+  theta((kP,(k+1)P))>0
+PsiBeyondPrimePowerTail:
+  psi((kP,(k+1)P)) > prime_power_tail((kP,(k+1)P))
+SignedMobiusVonMangoldtTypeITypeII:
+  source-key consistent Type-I/II or Vaughan/Heath-Brown family
+TraceKloostermanFamilyFromQSpineHinge:
+  completed source-keyed Kloosterman/trace sums
+NamedPDECOrSAEReturn:
+  uniform-law failure returns to a controlled contradiction
+```
+
+最新开放口：
+
+```text
+ParityBarrierContractPinned
+AND NeedPointwiseThetaOrPsiRowLowerBoundBeyondPrimePowerTail
+AND NeedAdmissibleSignedDivisorTraceOrTypeIIFamily
+AND BridgeRootSharedPivotHingeLawOrPDEC
+AND TerminalDoubleAwrapSiblingQSpineKernelPaymentOrPDEC
+AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
+AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
+```

@@ -41473,6 +41473,95 @@ Thus the hinge contract is a strict reduction of the previous pivot hard
 point, not an unconditional closure of the row/column theorem.
 \end{remark}
 
+\section{Parity barrier and the prime-distribution contract}
+
+\begin{theorem}[Phi--LPF parity-barrier contract]
+The Phi--LPF identities, after correcting their exact endpoint and truncation
+terms, are exact unsigned rough-number identities.  They do not by themselves
+separate primes from integers with two or more large prime factors.  The
+correct composite LPF bucket formula is
+\[
+  C_p(N)=\Phi(\lfloor N/p\rfloor;\ q<p)-1,
+\]
+equivalently
+\[
+  C_p(N)=\Phi(\lfloor N/p\rfloor;\ q<p)-\Phi(p-1;\ q<p),
+\]
+since \(\Phi(p-1;\ q<p)=1\).  The finite Euler-product error is the
+Legendre-\(\Phi\) periodic boundary term, not a universal half-main saving.
+\end{theorem}
+
+\begin{proof}
+If \(n=pm\) has least prime factor \(p\), then \(m\le N/p\) and \(m\) has no
+prime factor below \(p\).  The case \(m=1\) gives the prime \(p\), not a
+composite bucket member, so it must be removed.  This gives the displayed
+formula.  Writing \(\Phi(x;\ q<p)\) over a period of \(W_{<p}\) gives a main
+term plus a residue-class boundary term depending on \(x\bmod W_{<p}\).  Thus
+refining wheels or LPF buckets controls support and boundary bookkeeping; it
+does not create a signed prime selector.
+\end{proof}
+
+\begin{theorem}[What would actually break parity]
+For the Prime Matrix row problem at the \(P^2\) scale, a genuine parity
+breakthrough must supply at least one of the following inputs:
+\[
+\theta((kP,(k+1)P))>0
+\]
+for the relevant rows, or the equivalent von-Mangoldt tail absorption
+\[
+  \psi((kP,(k+1)P))
+  >
+  {\rm PrimePowerTail}((kP,(k+1)P)),
+\]
+or a source-key consistent signed divisor/trace/Kloosterman/Type--II family
+whose cancellation distinguishes primes from \(P_2/P_3\) rough composites.
+Alternatively, the failure of such a uniform law must return as a named
+PDEC/SAE/local-survivor contradiction.
+\end{theorem}
+
+\begin{proof}
+The prime-power tail identity writes
+\[
+  \psi(I)=\theta(I)+\sum_{p^a\in I,\ a\ge2}\log p.
+\]
+Hence \(\psi(I)\) exceeding the pure prime-power tail forces
+\(\theta(I)>0\).  This is a signed prime-distribution assertion.  By contrast,
+LPF ownership, Phi recursion, affine shifted-residue conjugacy, and
+small-to-large factor peeling only partition or relabel the same unsigned
+support.  Such data are invariant under the usual sieve parity obstruction:
+rough primes and rough products of two large primes remain together unless a
+signed divisor payload, a trace-family cancellation, or a pointwise prime
+lower bound is added.
+\end{proof}
+
+\begin{certificatestatement}[Parity-barrier prime-distribution contract]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+parity\_barrier\_diagnosis\_closed=true\\
+lpf\_correction\_closed=true\\
+legendre\_periodic\_boundary\_not\_half\_main=true\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+pure\_power\_selector\_supplies\_additive\_signed\_distribution\_family=false\\
+pointwise\_psi\_row\_lower\_bound\_beyond\_tail\_proved=false\\
+trace\_or\_typeii\_family\_admissible\_now=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-\\
+prime-distribution-contract-router.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[External frontier boundary]
+FKMS trace functions, Milićević--Qin--Wu Kloosterman bilinear forms, Wright
+trilinear Kloosterman fractions, Runbo Li large-modulus AP/Harman-sieve
+inputs, Pascadi Type--II inputs, and thin-group/expander methods are all
+potentially relevant only after the Prime Matrix payload is promoted to an
+admissible signed family or a genuine group orbit.  In the current ledger they
+do not directly close any of the three target claims.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

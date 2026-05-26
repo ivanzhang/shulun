@@ -26868,6 +26868,40 @@ LPF/Phi 侧的修正继续作为负边界：精确分桶公式已修正，但它
 Legendre-Phi 计数；finite Euler half-main 不是可用于 prime extraction 的 signed
 saving。
 
+### parity barrier prime-distribution formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_prime_distribution_contract_router.py
+data/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-prime-distribution-contract-router.json
+```
+
+formal-to-actual 结论：所有 LPF/Phi formal identities 都已经降到 actual endpoint
+和周期边界账本，但这类账本仍不含 signed prime selector。具体说：
+
+```text
+parity_barrier_diagnosis_closed=true
+lpf_correction_closed=true
+trace_or_typeii_family_admissible_now=false
+pointwise_psi_row_lower_bound_beyond_tail_proved=false
+row_column_unconditional_closed=false
+```
+
+因此 `Phi` 递推、LPF 分桶、affine shifted residue、primorial wheel 和 small-to-large
+factor peeling 都只能作为 support/ownership/normalization 层。actual breakthrough
+必须额外给出：
+
+```text
+PointwiseThetaShortIntervalAtSqrtScale
+OR PsiBeyondPrimePowerTail
+OR SignedMobiusVonMangoldtTypeITypeII
+OR TraceKloostermanFamilyFromQSpineHinge
+OR NamedPDECOrSAEReturn
+```
+
 ### terminal boundary residual-flow formal-to-actual 更新（2026-05-25）
 
 新增机器证书：
