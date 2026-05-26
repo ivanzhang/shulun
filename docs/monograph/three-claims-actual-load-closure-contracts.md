@@ -32505,3 +32505,52 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 该更新保留 LPF 精确分桶的正面成果，但也明确其边界：unsigned ownership 不能自动生成
 signed alpha/delta constructor、local factor、ExactUV fixed-key 重数或失败回流标签。
+
+### product-window explicit alpha/delta signed-summand actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_explicit_alpha_delta_signed_summand_sync_router.py
+data/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json
+```
+
+actual-load 含义：上一层留下的 `ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`
+已经不能作为未拆分第一硬点。strict explicit-rule 把它拆成 alpha-side、delta-side、
+pairing 和 nonzero/local-factor；alpha-side 继续拆到 deterministic alpha row map。LPF
+candidate-row map 已关闭候选 row ownership/几何索引，但 actual signed primitive row 仍需
+推前前 signed summand 表达式。
+
+```text
+strict_explicit_rule_imported=true
+alpha_side_primitive_rule_imported=true
+deterministic_alpha_map_imported=true
+lpf_candidate_row_map_closed=true
+explicit_alpha_delta_removed_from_product_window_first_target=true
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+AND ActualNoncanonicalAlphaSourceTupleDomainLedger
+AND AlphaPrimitiveCoefficientWeightFormulaLedger
+AND AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger
+AND AlphaPrimitiveRuleFailureNamedReturnLedger
+AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger
+AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger
+AND PrimitiveRuleNonzeroSignLocalFactorLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该更新将“从小到大剥离素因子”的可用部分推到 alpha 候选行层；剩余不是候选行是否存在，
+而是每个候选行的 signed coefficient、local factor、exact `(u,v)`/key 与失败回流。

@@ -27006,6 +27006,54 @@ PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 构造 actual noncanonical primitive emitter 的 signed alpha/delta 规则，或给出等价的
 pointwise signed table、admissible trace/Type-II family、平方根行尺度输入或命名 PDEC/SAE。
 
+### product-window explicit alpha/delta signed-summand formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_explicit_alpha_delta_signed_summand_sync_router.py
+data/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json
+```
+
+formal-to-actual 结论：`ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`
+是一个复合接口名。它的 alpha-side 可沿已有证书拆成：
+
+```text
+ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger
+-> DeterministicAlphaPrimitiveRowEmissionMapLedger
+-> LPFOwnershipAlphaCandidateRowEmissionMapLedger
+   AND ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+```
+
+同步读数：
+
+```text
+lpf_candidate_row_map_closed=true
+primitive_summand_signed_expression_still_open=true
+explicit_alpha_delta_removed_from_product_window_first_target=true
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+row_column_unconditional_closed=false
+```
+
+actual 侧仍需正向提交：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger
+AlphaDeltaPairingCompatibilityBeforeCauchyLedger
+PrimitiveRuleNonzeroSignLocalFactorLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+所以 product-window 路线的下一步不是继续重命名 explicit alpha/delta rule，而是写出
+actual noncanonical primitive summand 的 signed coefficient 表达式；外部谱或 Type-II 工具
+只有在该 signed family 先可接入后才有用。
+
 ### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

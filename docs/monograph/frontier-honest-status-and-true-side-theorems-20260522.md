@@ -1671,6 +1671,36 @@ internal_self_contained_closed=false
 row_column_unconditional_closed=false
 ```
 
+---
+
+## 附录 Q13AC68：product-window explicit alpha/delta signed-summand sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_explicit_alpha_delta_signed_summand_sync_router.py
+data/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter` 已经不是
+product-window 当前第一主攻。alpha-side 通过 strict rule 与 LPF candidate-row map 支付了
+候选 row ownership/几何索引；但 actual signed primitive summand expression 仍未构造。
+delta-side、pairing、nonzero/local-factor、fixed-key ExactUV、orientation、ExactUV return、
+internal transition、RatePreservation 与 DStructure/Rankin 仍并行开放。
+
+```text
+strict_explicit_rule_imported=true
+alpha_side_primitive_rule_imported=true
+deterministic_alpha_map_imported=true
+lpf_candidate_row_map_closed=true
+explicit_alpha_delta_removed_from_product_window_first_target=true
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+row_column_unconditional_closed=false
+```
+
 ## 附录 Q13AC38：Phi-LPF terminal boundary split ratio obstruction（2026-05-25）
 
 新增证书：

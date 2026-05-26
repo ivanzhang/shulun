@@ -1705,6 +1705,29 @@ latest_internal_source_hardpoint=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeed
 row_column_unconditional_closed=false
 ```
 
+## 65BW. product-window explicit alpha/delta signed-summand sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_explicit_alpha_delta_signed_summand_sync_router.py
+data/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的显式 alpha/delta 旧名已经被拆到 alpha
+候选 row ownership 与 signed primitive summand expression。外部短区间、trace/Kloosterman、
+Type-II、谱或群论工具仍不能直接生成该 signed expression；它们只能在内部先给出
+source-key consistent signed family 后作为相位取消或平均估计输入。
+
+```text
+lpf_candidate_row_map_closed=true
+explicit_alpha_delta_removed_from_product_window_first_target=true
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+row_column_unconditional_closed=false
+```
+
 含义：`ExactCleanCoreFullSNonAPWFDSourceEntropy`、`ActualNoncanonicalExactUVSupportLowerBound`
 和 `CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn` 是同一源侧链条的连续接口，不是
 三个可循环替换的证明。该链经 clean-core 原始生成账本继续下钻后，旧

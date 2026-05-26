@@ -2762,6 +2762,59 @@ FixedKeyExactUVLocalMultiplicityO1Ledger
 非重叠分桶和素数计数恒等式；但它仍不能越过奇偶性障碍，因为 signed alpha/delta
 lift、local factor 与 exact-UV fixed-key 重数还没有被构造出来。
 
+## 48L. product-window explicit alpha/delta signed-summand sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_explicit_alpha_delta_signed_summand_sync_router.py
+data/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-explicit-alpha-delta-signed-summand-sync-router.json
+```
+
+本层继续推进 48K 留下的显式 alpha/delta constructor 第一硬点。既有 strict explicit
+rule 与 alpha-side primitive rule 给出：
+
+```text
+ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
+=> ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger
+   AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger
+   AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger
+   AND PrimitiveRuleNonzeroSignLocalFactorLedger
+```
+
+alpha-side 继续经 deterministic row map 接到 LPF candidate-row map：
+
+```text
+DeterministicAlphaPrimitiveRowEmissionMapLedger
+=> LPFOwnershipAlphaCandidateRowEmissionMapLedger
+   AND ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+```
+
+同步读数：
+
+```text
+strict_explicit_rule_imported=true
+alpha_side_primitive_rule_imported=true
+deterministic_alpha_map_imported=true
+lpf_candidate_row_map_closed=true
+primitive_summand_signed_expression_still_open=true
+explicit_alpha_delta_removed_from_product_window_first_target=true
+next_primary_attack_target=ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+row_column_unconditional_closed=false
+```
+
+因此最新第一硬点推进为：
+
+```text
+ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward
+```
+
+这一步进一步吸收 LPF/Phi 的正面成果：最小素因子分桶不仅支付 declaration unsigned
+ownership，也支付 alpha 侧候选 row 的唯一来源索引。但真正突破奇偶性障碍仍要求在
+Phi/payment 推前前给出 signed primitive summand expression，而不是继续细化无符号候选量。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：
