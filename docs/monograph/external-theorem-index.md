@@ -13375,3 +13375,49 @@ ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
 OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
 OR PointwiseSqrtPrimeInputCOne
 ```
+
+## 65BK. product-window exact separation equivalence router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py
+data/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.md
+```
+
+外部 theorem 边界：exact coefficient separation 不是可直接引用的外部输入；它与
+目标行 survivor 非空等价。若 \(s\) 是 survivor 数，则 owner-complete defect 的
+非零频率能量为
+
+```text
+P*s-s^2
+```
+
+因此 FKMS trace-function bilinear estimates、DI/BFI/Kuznetsov、Pascadi Kloosterman
+Type-II 等外部 theorem 只有在以下桥完成后才可用：
+
+```text
+independent signed defect before pushforward
+  -> admissible coefficients and completed trace/Kloosterman family
+```
+
+审计读数：
+
+```text
+fourier_inversion_defect_identity_closed=true
+exact_coefficient_separation_equivalent_to_survivor_nonempty=true
+standalone_exact_separation_rejected_as_noncircular_primary_gate=true
+independent_signed_defect_emission_proved=false
+row_column_unconditional_closed=false
+```
+
+最新开放口：
+
+```text
+IndependentSignedDefectEmissionBeforeProductWindowPushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+OR NonTautologicalProductWindowPDEC
+```

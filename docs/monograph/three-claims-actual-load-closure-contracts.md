@@ -448,6 +448,38 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window exact separation equivalence actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py
+data/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.json
+```
+
+actual-load 含义：`exact coefficient separation` 不能作为 standalone 主闭合门。若
+令 `s` 为目标行 prime survivor 数，则
+
+```text
+owner-complete defect = - survivor measure
+sum_{h=1}^{P-1} |defect_hat(h)|^2 = P*s-s^2
+```
+
+因此 defect Fourier 正性、owner 测度不同于完整非零剩余类、以及行内 prime survivor
+非空是同一件事。若没有 pushforward 前的独立 signed defect 来源，这只是目标命题的
+傅里叶重写。
+
+最新真实负载：
+
+```text
+IndependentSignedDefectEmissionBeforeProductWindowPushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+OR NonTautologicalProductWindowPDEC
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

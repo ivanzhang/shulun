@@ -2258,7 +2258,39 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
 OR PointwiseSqrtPrimeInputCOne
 ```
 
-## 48. minimal parity-breaker route-forcing router
+## 48. product-window exact separation equivalence router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py
+data/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.json
+```
+
+本层把 `exact coefficient separation/subunit Fourier contradiction` 再压缩为等价边界。
+记 `s` 为目标行 prime survivor 数，owner 测度与完整非零剩余类测度之差就是负
+survivor 测度，因此
+
+```text
+sum_{h=1}^{P-1} |defect_hat(h)|^2 = P*s-s^2.
+```
+
+所以 standalone exact separation、非 `-1` Fourier 指纹、subunit contradiction 都不是
+独立证明；没有 pushforward 前的 signed defect emission 时，它们与“行内有素数”
+完全等价。
+
+最新非循环口：
+
+```text
+IndependentSignedDefectEmissionBeforeProductWindowPushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+OR NonTautologicalProductWindowPDEC
+```
+
+## 49. minimal parity-breaker route-forcing router
 
 新增证书：
 

@@ -27216,6 +27216,43 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window exact separation equivalence formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py
+data/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.json
+```
+
+formal-to-actual 结论：exact separation 若只在 pushforward 后定义，就是目标命题
+的等价形式。设 `1_O` 为 owner 指示函数，`1_*` 为完整非零剩余类指示函数，
+`1_S` 为 prime survivor 指示函数，则
+
+```text
+1_O - 1_* = -1_S
+```
+
+Fourier 反演给出：
+
+```text
+sum_{h=1}^{P-1} |widehat(1_O-1_*)(h)|^2 = P*s-s^2.
+```
+
+所以 formal separation 要变成 actual proof，必须有独立的 signed coefficient
+emission，而不是事后把 survivor 作为 defect。
+
+最新 actual 口：
+
+```text
+IndependentSignedDefectEmissionBeforeProductWindowPushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+OR NonTautologicalProductWindowPDEC
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

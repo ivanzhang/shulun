@@ -42331,6 +42331,67 @@ additive-saving-firewall-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Product-window exact separation equivalence}
+
+\begin{theorem}[Owner-complete defect is the survivor measure]
+For a fixed target row modulo a prime \(P\), let \(1_O\) be the indicator of
+LPF owner offsets, let \(1_\ast\) be the indicator of the nonzero residue
+classes, and let \(1_S\) be the indicator of prime survivor offsets.  Then
+\[
+  1_O-1_\ast=-1_S
+\]
+as functions on \(\mathbb Z/P\mathbb Z\).  If \(s=|S|\), then
+\[
+  \sum_{h=1}^{P-1}\left|\widehat{1_O-1_\ast}(h)\right|^2
+  =Ps-s^2.
+\]
+Thus exact coefficient separation, non-\(-1\) Fourier defect, and survivor
+nonemptiness are equivalent unless the defect is produced by an independent
+signed source before pushforward.
+\end{theorem}
+
+\begin{proof}
+Every nonzero row offset is either an LPF owner offset or a prime survivor
+offset, and the two classes are disjoint.  This gives \(1_O+1_S=1_\ast\).
+Taking Fourier transforms gives \(\widehat{1_O-1_\ast}=-\widehat{1_S}\).  The
+Parseval identity on \(\mathbb Z/P\mathbb Z\), with the zero frequency removed,
+gives
+\[
+  \sum_{h=1}^{P-1}|\widehat{1_S}(h)|^2
+  = P\sum_r 1_S(r)^2-|\widehat{1_S}(0)|^2
+  =Ps-s^2.
+\]
+The right side is positive exactly when \(s>0\).  Therefore a standalone
+Fourier separation is only a reformulation of the row prime-survivor statement.
+\end{proof}
+
+\begin{remark}[Non-circular route after the equivalence]
+The next usable input must construct a signed defect before the survivor
+indicator is used, or must complete such a defect to an admissible
+trace/Kloosterman or Type-II coefficient family.  Otherwise the proposed exact
+separation is a circular restatement of the target row positivity.
+\end{remark}
+
+\begin{certificatestatement}[Product-window exact separation equivalence certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+source\_firewall\_imported=true\\
+fourier\_inversion\_defect\_identity\_closed=true\\
+exact\_coefficient\_separation\_equivalent\_to\_survivor\_nonempty=true\\
+subunit\_or\_nonminusone\_fourier\_contradiction\_equivalent\_to\_survivor\_nonempty\_without\_independent\_defect=true\\
+standalone\_exact\_separation\_rejected\_as\_noncircular\_primary\_gate=true\\
+independent\_signed\_defect\_emission\_proved=false\\
+row\_column\_unconditional\_closed=false\\
+selected\_next\_primary\_gate=IndependentSignedDefectEmissionBeforeProductWindowPushforward\\
+selected\_parallel\_trace\_gate=ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-product-window-\\
+exact-separation-equivalence-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

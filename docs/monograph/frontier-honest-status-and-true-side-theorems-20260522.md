@@ -14668,3 +14668,38 @@ ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC
 OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefect
 OR PointwiseSqrtPrimeInputCOne
 ```
+
+---
+
+## 附录 Q13AC56：product-window exact separation equivalence router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py
+data/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-exact-separation-equivalence-router.md
+```
+
+本层 honest 边界：exact coefficient separation 或 subunit Fourier contradiction 若没有
+独立 signed defect 来源，就只是 survivor 非空的等价重写。有限证书核验
+owner-complete defect 与 survivor 测度的 Fourier/Parseval 恒等式；这不提供行级
+正性。
+
+```text
+fourier_inversion_defect_identity_closed=true
+exact_coefficient_separation_equivalent_to_survivor_nonempty=true
+standalone_exact_separation_rejected_as_noncircular_primary_gate=true
+independent_signed_defect_emission_proved=false
+row_column_unconditional_closed=false
+```
+
+最新 honest 口：
+
+```text
+IndependentSignedDefectEmissionBeforeProductWindowPushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+OR NonTautologicalProductWindowPDEC
+```

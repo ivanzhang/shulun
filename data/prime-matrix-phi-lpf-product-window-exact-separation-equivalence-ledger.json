@@ -1,0 +1,223 @@
+{
+  "certificate_type": "prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router",
+  "completed_trace_bridge_with_signed_defect_proved": false,
+  "contract_rows": [
+    {
+      "closed": true,
+      "gate": "OwnerCompleteDefectFourierInversionIdentity",
+      "meaning": "owner-complete defect equals negative survivor measure; Parseval energy is P*s-s^2.",
+      "proved": true,
+      "remaining": "identity only"
+    },
+    {
+      "closed": true,
+      "gate": "ExactCoefficientSeparationAsStandaloneClosure",
+      "meaning": "standalone exact separation is equivalent to survivor nonempty and cannot be used as independent proof.",
+      "proved": false,
+      "remaining": "IndependentSignedDefectEmissionBeforeProductWindowPushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SubunitFourierContradictionAsStandaloneClosure",
+      "meaning": "without an independent source for the defect, Fourier non-minus-one/subunit contradiction is the same row prime statement.",
+      "proved": false,
+      "remaining": "IndependentSignedDefectEmissionBeforeProductWindowPushforward"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentSignedDefectEmissionBeforeProductWindowPushforward",
+      "meaning": "需要在 Fourier pushforward 前产生独立 signed defect，不是事后用 survivor 定义 defect。",
+      "proved": false,
+      "remaining": "IndependentSignedDefectEmissionBeforeProductWindowPushforward OR NonTautologicalProductWindowPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients",
+      "meaning": "需要把 signed defect 完成到可套用 FKMS/DI/BFI/Pascadi 类 theorem 的 coefficient/trace family。",
+      "proved": false,
+      "remaining": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients"
+    },
+    {
+      "closed": false,
+      "gate": "TargetAffineRowClosureReached",
+      "meaning": "本层只排除 exact separation 的循环用法，不证明行级正性。",
+      "proved": false,
+      "remaining": "IndependentSignedDefectEmissionBeforeProductWindowPushforward OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients OR PointwiseSqrtPrimeInputCOne OR NonTautologicalProductWindowPDEC"
+    }
+  ],
+  "exact_coefficient_separation_equivalent_to_survivor_nonempty": true,
+  "external_trace_applicability_rows": [
+    {
+      "frontier_value": "general bilinear trace-function bounds below the Polya--Vinogradov range under geometric monodromy hypotheses",
+      "missing_bridge": "our current defect is an owner-minus-complete coefficient on product-window residues, not yet an l-adic trace sheaf family with admissible coefficient norms",
+      "source": "Fouvry--Kowalski--Michel--Sawin, arXiv:2511.09459, Bilinear forms with trace functions",
+      "url": "https://arxiv.org/abs/2511.09459",
+      "usable_now": false
+    },
+    {
+      "frontier_value": "Type-II Kloosterman savings, especially for composite moduli with prime-modulus inputs imported",
+      "missing_bridge": "our modulus is prime P and the phase is additive product-window defect, not completed inverse-variable Kloosterman data",
+      "source": "Pascadi, arXiv:2511.08445, Non-abelian amplification and bilinear forms with Kloosterman sums",
+      "url": "https://arxiv.org/abs/2511.08445",
+      "usable_now": false
+    },
+    {
+      "frontier_value": "pointwise short intervals only beyond theta>17/30 in the current corpus",
+      "missing_bridge": "target row at x≈P^2 requires theta=1/2 with constant C<=1",
+      "source": "Guth--Maynard and Hieu short-interval inputs",
+      "url": "https://arxiv.org/abs/2405.20552",
+      "usable_now": false
+    }
+  ],
+  "finite_equivalence_audit": [
+    {
+      "P": 31,
+      "defect_parseval_energy": 58.0,
+      "defect_parseval_energy_error": 0.0,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 58,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 25,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.101298337677,
+      "nonzero_defect_frequency_count": 30,
+      "owner_count": 28,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 30,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 2
+    },
+    {
+      "P": 101,
+      "defect_parseval_energy": 658.0,
+      "defect_parseval_energy_error": 0.0,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 658,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 73,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.639002938238,
+      "nonzero_defect_frequency_count": 100,
+      "owner_count": 93,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 100,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 7
+    },
+    {
+      "P": 251,
+      "defect_parseval_energy": 4194.0,
+      "defect_parseval_energy_error": 0.0,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 4194,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 108,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.574961341775,
+      "nonzero_defect_frequency_count": 250,
+      "owner_count": 232,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 250,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 18
+    },
+    {
+      "P": 499,
+      "defect_parseval_energy": 13630.0,
+      "defect_parseval_energy_error": 0.0,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 13630,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 362,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.403385454086,
+      "nonzero_defect_frequency_count": 498,
+      "owner_count": 469,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 498,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 29
+    },
+    {
+      "P": 1009,
+      "defect_parseval_energy": 49764.000000001,
+      "defect_parseval_energy_error": 1e-09,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 49764,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 905,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.156347777428,
+      "nonzero_defect_frequency_count": 1008,
+      "owner_count": 956,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 1008,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 52
+    },
+    {
+      "P": 2003,
+      "defect_parseval_energy": 213570.000000001,
+      "defect_parseval_energy_error": 1e-09,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 213570,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 1256,
+      "max_defect_partition_error": 0.0,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.239529926702,
+      "nonzero_defect_frequency_count": 2002,
+      "owner_count": 1889,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 2002,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 113
+    },
+    {
+      "P": 5003,
+      "defect_parseval_energy": 1233179.999999961,
+      "defect_parseval_energy_error": 3.9e-08,
+      "exact_measure_separation_holds": true,
+      "expected_parseval_energy_Ps_minus_s2": 1233180,
+      "fourier_nonminusone_contradiction_holds": true,
+      "k": 4980,
+      "max_defect_partition_error": 2e-12,
+      "min_abs_owner_minus_complete_over_nonzero_frequencies": 0.255220624757,
+      "nonzero_defect_frequency_count": 5002,
+      "owner_count": 4742,
+      "owner_plus_survivor_equals_complete_count": true,
+      "row_length": 5002,
+      "separation_equivalent_to_survivor_nonempty_on_row": true,
+      "survivor_count": 260
+    }
+  ],
+  "finite_evidence_not_used_as_global_proof": true,
+  "fourier_inversion_defect_identity_closed": true,
+  "independent_signed_defect_emission_proved": false,
+  "minimal_route_context_status": "minimal_parity_breaker_route_forcing_pinned_signed_transport_open",
+  "old_gate_demoted": "ProductWindowExactCoefficientSeparationOrSubunitFourierContradictionOrPDEC",
+  "plain_conclusion": "Product-window 的 exact coefficient separation 若只是说 owner measure 不等于完整非零剩余类 measure，则它与 prime survivor 非空完全等价。Fourier 形式同样如此：owner-complete defect 等于负 survivor measure，非零频率 Parseval 能量为 P*s-s^2，正性当且仅当 survivor 数 s>0。因此本层把 standalone exact separation/subunit Fourier contradiction 降级为循环门；下一步必须在 pushforward 前构造独立 signed defect，或完成带 defect 的 trace/Type-II family，或输入 C=1 sqrt 级点态素数定理，或给出非平凡 PDEC。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "selected_next_primary_gate": "IndependentSignedDefectEmissionBeforeProductWindowPushforward",
+  "selected_parallel_distribution_gate": "PointwiseSqrtPrimeInputCOne",
+  "selected_parallel_pdec_gate": "NonTautologicalProductWindowPDEC",
+  "selected_parallel_trace_gate": "ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients",
+  "source_firewall_imported": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "2339a9b21dafab0c902f9f9dbce04e0ee167b1a7a4d310583b2d162607d281fc",
+    "docs/monograph/external-theorem-index.md": "0ea139a9dbcfc2d201ee62389dcd2ee8e3046e3c21002bebe35340fb06852609",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "6b6d1a08f2f1cd26fdcd1abd0b8ffc45df2e897a5eecfdd52fb82044223f1bbd",
+    "docs/monograph/prime-matrix-phi-lpf-minimal-parity-breaker-route-forcing-router.json": "127e2a68aa49568ecc36f2ea3c2b048a396d1e3cd58ccb3bdb7dd7df9b49b8b9",
+    "docs/monograph/prime-matrix-phi-lpf-product-window-additive-saving-firewall-router.json": "c47579ae37b423858dfc6012233069b3bc33206cd97f1c82dd9b8551eeeb15db",
+    "docs/monograph/prime-matrix-phi-lpf-target-affine-source-keyed-product-phase-router.json": "15a238a2621cc6d5585299ce86fe08bc22bb6dc205b5a346dac45f948bd89a44",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "88e33b9706410e3123154fbc60ea8f1d6bd797e47bba9a348c75aa19f4a1a5b4",
+    "docs/monograph/three-claims-breakthrough-route-synthesis-20260525.md": "616e8632cb24556122f7e618ba8931e820425cd0f7d2e114e25a2775ffb1c28e",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "0a59c71d7af222b71b8431d5bc821c3850ec8c6005804447172b66f1b51a81c0",
+    "experiments/prime_matrix_phi_lpf_product_window_exact_separation_equivalence_router.py": "e57347c045dccf28b7972c2910b1a671a088ea511345f35ea8762fe9027f6cc1",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "60c852f9e24eab7e6e206d01f9e8811d3b7e84c37daf44220b1b1f04d71a6346"
+  },
+  "standalone_exact_separation_rejected_as_noncircular_primary_gate": true,
+  "status": "exact_coefficient_separation_demoted_to_survivor_equivalence",
+  "subunit_or_nonminusone_fourier_contradiction_equivalent_to_survivor_nonempty_without_independent_defect": true,
+  "verified_date": "2026-05-26"
+}
