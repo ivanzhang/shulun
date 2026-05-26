@@ -2006,3 +2006,67 @@ AND PrimePowerTailSeparated
 AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 24. LPF prime-power tail absorption 修正
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_absorption_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-absorption-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.md
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.json
+```
+
+本层把上一节的点态 `Lambda` 压缩继续推进到 Prime Matrix strict row。对
+
+```text
+I_{P,k}=(kP,(k+1)P),  kP<n<(k+1)P
+```
+
+有：
+
+```text
+psi(I_{P,k})=theta(I_{P,k})+sum_{p^a in I_{P,k}, a>=2}log p.
+```
+
+因此行内素数存在性可替换为素幂尾巴吸收阈值：
+
+```text
+theta(I_{P,k})>0 iff psi(I_{P,k})>prime_power_tail(I_{P,k}).
+```
+
+尾巴有确定性整数根上界：
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*sum_{a>=2}(floor(((k+1)P-1)^(1/a))-floor((kP)^(1/a))).
+```
+
+有限审计 `P=31,101,251,1009` 逐行确认：
+
+```text
+psi_theta_tail_identity_all_samples=true
+prime_power_tail_bound_all_samples=true
+psi_tail_absorption_equivalent_to_prime_presence_all_samples=true
+prime_power_tail_absorption_threshold_closed=true
+pointwise_psi_row_lower_bound_beyond_tail_proved=false
+pointwise_theta_ap_lower_bound_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+最大样本 `P=1009` 中，最大合数素幂尾巴出现在 `k=1`，尾巴质量为 `14.176733`，
+整数根上界为 `124.500870`；同一行实际 `theta` 质量为 `999.495375`。这些有限数据
+说明尾巴不是主障碍，但证明仍需要逐行 `psi` 下界超过该尾巴，或构造可平均的 signed
+Type-II/trace family。
+
+最新非循环口为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

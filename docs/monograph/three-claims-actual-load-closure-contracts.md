@@ -188,6 +188,60 @@ AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
 
+### LPF prime-power tail absorption actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_absorption_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-absorption-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.md
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.json
+```
+
+actual-load 含义：在 strict row
+
+```text
+I_{P,k}=(kP,(k+1)P),  kP<n<(k+1)P
+```
+
+上，`Lambda` 质量和素数质量只差合数素幂尾巴：
+
+```text
+psi(I_{P,k})=theta(I_{P,k})+sum_{p^a in I_{P,k}, a>=2}log p
+theta(I_{P,k})>0 iff psi(I_{P,k})>prime_power_tail(I_{P,k})
+```
+
+并且尾巴有确定性整数根上界：
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*sum_{a>=2}(floor(((k+1)P-1)^(1/a))-floor((kP)^(1/a)))
+```
+
+状态边界：
+
+```text
+psi_theta_tail_identity_all_samples=true
+prime_power_tail_bound_all_samples=true
+psi_tail_absorption_equivalent_to_prime_presence_all_samples=true
+prime_power_tail_absorption_threshold_closed=true
+pointwise_psi_row_lower_bound_beyond_tail_proved=false
+pointwise_theta_ap_lower_bound_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

@@ -40270,6 +40270,90 @@ AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[Strict-row prime-power tail absorption]
+Let \(P\) be prime and let \(1\le k<P\).  Put
+\[
+  I_{P,k}=(kP,(k+1)P)\cap\mathbb Z.
+\]
+Then
+\[
+  \psi(I_{P,k})
+  =
+  \theta(I_{P,k})
+  +
+  \sum_{\substack{p^a\in I_{P,k}\\ a\ge2}}\log p.
+\]
+Consequently,
+\[
+  \theta(I_{P,k})>0
+  \quad\Longleftrightarrow\quad
+  \psi(I_{P,k})>
+  \sum_{\substack{p^a\in I_{P,k}\\ a\ge2}}\log p.
+\]
+Moreover the prime-power tail obeys the deterministic bound
+\[
+  \sum_{\substack{p^a\in I_{P,k}\\ a\ge2}}\log p
+  \le
+  \log P
+  \sum_{a\ge2}
+  \left(
+    \left\lfloor ((k+1)P-1)^{1/a}\right\rfloor
+    -
+    \left\lfloor (kP)^{1/a}\right\rfloor
+  \right).
+\]
+\end{proposition}
+
+\begin{proof}
+The first identity is the defining decomposition of \(\psi\) into prime and
+higher prime-power contributions on the row.  The equivalence follows because
+\(\theta(I_{P,k})=\psi(I_{P,k})-\) the displayed prime-power tail and
+\(\theta\) is nonnegative.  For the bound, if \(p^a\in I_{P,k}\) with
+\(a\ge2\), then \(p<P\) because the row lies below \(P^2\).  For each fixed
+exponent \(a\), the number of possible prime bases is at most the number of
+integer bases \(b\) satisfying
+\[
+  kP<b^a<(k+1)P,
+\]
+which is the corresponding difference of integer roots.  Multiplying by
+\(\log P\) and summing over \(a\) gives the claim.
+\end{proof}
+
+\begin{certificatestatement}[LPF prime-power tail absorption audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+psi\_theta\_tail\_identity\_all\_samples=true\\
+prime\_power\_tail\_bound\_all\_samples=true\\
+psi\_tail\_absorption\_equivalent\_to\_prime\_presence\_all\_samples=true\\
+prime\_power\_tail\_absorption\_threshold\_closed=true\\
+pointwise\_psi\_row\_lower\_bound\_beyond\_tail\_proved=false\\
+pointwise\_theta\_ap\_lower\_bound\_proved=false\\
+admissible\_signed\_typeii\_or\_trace\_family\_constructed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-prime-power-\\
+tail-absorption-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated prime-extraction load]
+This reduces the final prime-extraction load from direct rowwise
+\(\theta(I_{P,k})>0\) to a rowwise lower bound for \(\psi(I_{P,k})\) that
+exceeds the explicit prime-power tail.  It does not prove such a pointwise
+\(\psi\) bound.  Average theorems for \(\Lambda\), Kloosterman/Type-II tools,
+or simultaneous arithmetic-progressions inputs still need a zero-exception
+rowwise upgrade or an admissible signed trace family.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+LPFPurePowerVonMangoldtCompressionClosed\\
+AND PrimePowerTailAbsorptionThresholdClosed\\
+AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail\\
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

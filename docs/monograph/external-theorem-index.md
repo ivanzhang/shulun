@@ -12241,3 +12241,57 @@ AND PrimePowerTailSeparated
 AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
 AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
 ```
+
+## 65AO. LPF prime-power tail absorption 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_prime_power_tail_absorption_audit.py
+data/prime-matrix-phi-lpf-prime-power-tail-absorption-ledger.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.json
+docs/monograph/prime-matrix-phi-lpf-prime-power-tail-absorption-audit.md
+```
+
+本层把外部 `Lambda` 输入需要承担的精确负载压到 strict row 的 `psi` 下界。对
+`I_{P,k}=(kP,(k+1)P)`：
+
+```text
+psi(I_{P,k})=theta(I_{P,k})+sum_{p^a in I_{P,k}, a>=2}log p
+theta(I_{P,k})>0 iff psi(I_{P,k})>prime_power_tail(I_{P,k})
+```
+
+素幂尾巴由整数根控制：
+
+```text
+prime_power_tail(I_{P,k})
+ <= log(P)*sum_{a>=2}(floor(((k+1)P-1)^(1/a))-floor((kP)^(1/a)))
+```
+
+审计读数：
+
+```text
+psi_theta_tail_identity_all_samples=true
+prime_power_tail_bound_all_samples=true
+psi_tail_absorption_equivalent_to_prime_presence_all_samples=true
+prime_power_tail_absorption_threshold_closed=true
+pointwise_psi_row_lower_bound_beyond_tail_proved=false
+pointwise_theta_ap_lower_bound_proved=false
+admissible_signed_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界：BFI/DI/Kloosterman、simultaneous AP、large-modulus AP 或
+almost-all short-interval `Lambda` 工具若要替代 `theta`，只需输出逐行
+`psi(I_{P,k})` 超过上述素幂尾巴；但当前没有可用定理提供每个 strict row 的这种
+点态下界。平均型结果仍必须先升级到零例外 rowwise statement。
+
+最新开放口：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailAbsorptionThresholdClosed
+AND NeedPointwisePsiRowLowerBoundBeyondPrimePowerTail
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
