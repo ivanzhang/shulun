@@ -14865,3 +14865,30 @@ moving_block_dprc_compatibility_imported=true
 next_primary_attack_target=ExplicitModelGapAndFiniteDPRCLedger
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC63：product-window modelgap downstream sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_modelgap_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.md
+```
+
+本层 honest 边界：上一层第一硬点 `ExplicitModelGapAndFiniteDPRCLedger`
+已经由既有下游证书同步到有限 DPRC、高段因子化、Dusart 调和窗口、动态骨架、
+B3/Mertens 尾段闭合链。因此 product-window 不应继续把模型缺口作为当前第一主攻。
+新的直接主攻是推前前 offdiagonal semiprime signed payload；pre-Cauchy identity、
+same-unit rank/ExactUV、orientation、internal transition、RatePreservation、
+DStructure/Rankin 与 trace/Type-II admissibility 仍未闭合。
+
+```text
+product_window_modelgap_downstream_removed_from_active_basis=true
+strict_mertens_tail_closed_by_latest_rate_sync=true
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+row_column_unconditional_closed=false
+```

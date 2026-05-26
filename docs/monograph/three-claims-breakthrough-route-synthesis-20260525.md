@@ -2510,6 +2510,45 @@ signed formula、orientation、ExactUV、internal transition、逐点 Phi-LPF
 signed table、completed trace/Type-II admissible family 或平方根行尺度点态输入。
 这一步只删除旧终端名作为 product-window 第一主攻；三命题仍未无条件闭合。
 
+## 48G. product-window modelgap downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_modelgap_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.json
+```
+
+本层把 48F 留下的 `ExplicitModelGapAndFiniteDPRCLedger` 接入已有下游链：
+低段有限 DPRC、`HighSegmentModelGapAlpha043C3AnalyticLedger` 因子化、
+Dusart 调和窗口、动态粗骨架有限桥、`P>=100000` lower-sieve 尾段、
+B3/Mertens 最新同步。同步后的结论是：模型缺口不再是 product-window
+当前第一主攻。
+
+```text
+product_window_modelgap_downstream_removed_from_active_basis=true
+strict_mertens_tail_closed_by_latest_rate_sync=true
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+row_column_unconditional_closed=false
+```
+
+最新真实剩余转为 signed payload 与 source-key 接口：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行仍需 RatePreservation、DStructure/Rankin、admissible trace/Type-II 或
+平方根行尺度点态输入。本步不是三命题无条件闭合证明；它只把模型缺口侧
+非循环推进到已知最新下游边界。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

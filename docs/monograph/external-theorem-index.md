@@ -13584,3 +13584,30 @@ next_primary_attack_target=ExplicitModelGapAndFiniteDPRCLedger
 explicit_model_gap_and_finite_dprc_ledger_proved=false
 row_column_unconditional_closed=false
 ```
+
+## 65BR. product-window modelgap downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_modelgap_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的 `ExplicitModelGapAndFiniteDPRCLedger`
+已经接入既有下游链。调和窗口上界使用 Dusart 素数倒数和显式估计；B3/Mertens
+尾段同步导入的是仓库已登记的 strict rate-bearing tail 证书。本步不新增外部黑箱，
+也不把外部 theorem 自动升级为行/列无条件闭合。
+
+```text
+explicit_model_gap_finite_split_imported=true
+high_segment_factorization_imported=true
+harmonic_window_dusart_closed=true
+dynamic_skeleton_lower_factorization_imported=true
+strict_mertens_tail_closed_by_latest_rate_sync=true
+product_window_modelgap_downstream_removed_from_active_basis=true
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+row_column_unconditional_closed=false
+```

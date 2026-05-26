@@ -26855,6 +26855,39 @@ ExplicitModelGapAndFiniteDPRCLedger
 仍未闭合的 actual 字段包括 signed payload、pre-Cauchy source key、
 same-unit rank/multiplicity、admissible trace/Type-II family 与 DStructure/Rankin。
 
+### product-window modelgap downstream sync formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_modelgap_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.json
+```
+
+formal-to-actual 结论：形式上登记的模型缺口原子已经不能继续作为 product-window
+第一硬点。把 finite DPRC、高段因子化、Dusart 调和窗口、动态骨架、B3/Mertens
+尾段同步合并后，actual 侧仍未闭合的是 signed source payload 与终端验收门：
+
+```text
+product_window_modelgap_downstream_removed_from_active_basis=true
+next_primary_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+row_column_unconditional_closed=false
+```
+
+剩余 actual 字段：
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
 ### parity barrier atom-cut frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

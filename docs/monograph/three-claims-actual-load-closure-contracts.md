@@ -724,6 +724,37 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这不证明 signed payload、DStructure/Rankin 或行/列命题；它只把第一硬点从旧
 终端名推进到模型余量账本。
 
+### product-window modelgap downstream sync actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_modelgap_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-modelgap-downstream-sync-router.json
+```
+
+actual-load 含义：`ExplicitModelGapAndFiniteDPRCLedger` 已接入既有下游拆分与
+B3/Mertens 尾段同步，不能再作为 product-window 第一主攻。模型缺口侧被移出后，
+实际负载落回推前前 signed payload、source-key、same-unit rank/ExactUV、Rate 与
+DStructure。
+
+```text
+product_window_modelgap_downstream_removed_from_active_basis=true
+strict_mertens_tail_closed_by_latest_rate_sync=true
+product_window_signed_payload_proved=false
+rate_preservation_ledger_proved=false
+dstructure_tail_log4_finite_rankin_full_ledger_independent_acceptance_proved=false
+row_column_unconditional_closed=false
+```
+
+下一直接 actual-load：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：
