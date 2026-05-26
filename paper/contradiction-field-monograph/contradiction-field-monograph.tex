@@ -42643,6 +42643,64 @@ frontier-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\begin{proposition}[Product-window terminal/modelgap frontier synchronization]
+In the current corpus, the product-window terminal-side hard point
+\[
+  \mbox{\scriptsize\ttfamily PDEC\_CAP\_OR\_INTERNAL\_CleanKLS\_LargeSieve}
+\]
+is no longer the first active target for the product-window line.  It is
+replaced, inside the canonical-source terminal promotion boundary, by
+\[
+  \mbox{\scriptsize\ttfamily NoFurtherCanonicalSourceTerminalPromotionGap},
+\]
+and the moving-block/DPRC compatibility interface introduces no additional
+DPRC ledger object.  Thus the product-window terminal side is synchronized to
+\[
+  \begin{gathered}
+  \mbox{\scriptsize\ttfamily NoFurtherCanonicalSourceTerminalPromotionGap}\\
+  \wedge\ \mbox{\scriptsize\ttfamily ExplicitModelGapAndFiniteDPRCLedger}\\
+  \wedge\ \mbox{\scriptsize\ttfamily DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance}.
+  \end{gathered}
+\]
+The first remaining terminal-side target is
+\(\mbox{\scriptsize\ttfamily ExplicitModelGapAndFiniteDPRCLedger}\).
+\end{proposition}
+
+\begin{proof}
+The previous product-window certificate left the old terminal gate
+\(\mbox{\scriptsize\ttfamily PDEC\_CAP\_OR\_INTERNAL\_CleanKLS\_LargeSieve}\)
+as the first target.  The current terminal-promotion reconciliation certificate
+closes that promotion inside the canonical-source boundary and records the
+replacement by
+\(\mbox{\scriptsize\ttfamily NoFurtherCanonicalSourceTerminalPromotionGap}\),
+while preserving the generic/external DI--BFI branch outside that boundary.
+The moving-block/DPRC compatibility certificate then records that this terminal
+replacement does not rename or absorb
+\(\mbox{\scriptsize\ttfamily ExplicitModelGapAndFiniteDPRCLedger}\).  Therefore
+the old terminal name is removed as the first product-window attack target, but
+the model-gap ledger itself, the DStructure/Rankin acceptance, and all signed
+payload obligations remain open.
+\end{proof}
+
+\begin{certificatestatement}[Product-window terminal/modelgap frontier certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+product\_window\_old\_terminal\_gate\_active=true\\
+canonical\_source\_terminal\_promotion\_imported=true\\
+moving\_block\_dprc\_compatibility\_imported=true\\
+explicit\_model\_gap\_and\_finite\_dprc\_ledger\_proved=false\\
+terminal\_gap\_before\_router=PDEC\_CAP\_OR\_INTERNAL\_CleanKLS\_LargeSieve\\
+terminal\_gap\_after\_router=NoFurtherCanonicalSourceTerminalPromotionGap\\
+next\_primary\_attack\_target=ExplicitModelGapAndFiniteDPRCLedger\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-\\
+frontier-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.

@@ -14837,3 +14837,31 @@ alpha_local_frontier_synced_to_terminal=true
 next_primary_attack_target=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC62：product-window terminal/modelgap frontier router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_terminal_modelgap_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.md
+```
+
+本层 honest 边界：product-window 的旧终端名已经接入 canonical-source 终端晋级
+闭合边界，并导入 moving-block/DPRC 兼容性闭合接口。最新直接主攻从
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 推进为
+`ExplicitModelGapAndFiniteDPRCLedger`。这不是无条件证明；pre-Cauchy identity、
+same-unit rank/multiplicity、product-window signed payload、DStructure/Rankin
+和 generic/external DI-BFI 分支仍未闭合。
+
+```text
+product_window_old_terminal_gate_active=true
+canonical_source_terminal_promotion_imported=true
+moving_block_dprc_compatibility_imported=true
+next_primary_attack_target=ExplicitModelGapAndFiniteDPRCLedger
+row_column_unconditional_closed=false
+```

@@ -688,6 +688,42 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window terminal/modelgap frontier actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_terminal_modelgap_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.json
+```
+
+actual-load 含义：上一层 product-window 的旧终端门已接入 canonical-source
+终端晋级闭合边界，moving-block/DPRC 兼容性门也已作为接口闭合。因此终端侧
+当前 actual load 不再是旧 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 名称，
+而是模型余量/有限 DPRC 账本本身：
+
+```text
+product_window_old_terminal_gate_active=true
+canonical_source_terminal_promotion_imported=true
+moving_block_dprc_compatibility_imported=true
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+next_primary_attack_target=ExplicitModelGapAndFiniteDPRCLedger
+row_column_unconditional_closed=false
+```
+
+最新终端侧负载：
+
+```text
+NoFurtherCanonicalSourceTerminalPromotionGap
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这不证明 signed payload、DStructure/Rankin 或行/列命题；它只把第一硬点从旧
+终端名推进到模型余量账本。
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

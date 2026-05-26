@@ -26824,6 +26824,37 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_terminal_modelgap_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.json
+```
+
+formal-to-actual 结论：形式上的旧终端名
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 已经不是 product-window 当前第一硬点。
+把 current-terminal promotion 与 moving-block/DPRC compatibility 两个下游证书合并后，
+实际承重门变为：
+
+```text
+NoFurtherCanonicalSourceTerminalPromotionGap
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一主攻：
+
+```text
+ExplicitModelGapAndFiniteDPRCLedger
+```
+
+仍未闭合的 actual 字段包括 signed payload、pre-Cauchy source key、
+same-unit rank/multiplicity、admissible trace/Type-II family 与 DStructure/Rankin。
+
 ### parity barrier atom-cut frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

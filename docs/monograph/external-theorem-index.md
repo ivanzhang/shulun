@@ -13558,3 +13558,29 @@ independent_noncanonical_precauchy_arithmetic_identity_statement_proved=false
 same_unit_exact_uv_rank_multiplicity_certificate_proved=false
 row_column_unconditional_closed=false
 ```
+
+## 65BQ. product-window terminal/modelgap frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_terminal_modelgap_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的旧终端门已在 canonical-source
+边界中同步为 `NoFurtherCanonicalSourceTerminalPromotionGap`，moving-block/DPRC
+兼容性接口已闭合为“没有新增 DPRC 账本对象”。外部 trace/Kloosterman/Type-II
+工具仍不能越过 `ExplicitModelGapAndFiniteDPRCLedger`、admissible signed
+coefficient family、source-rank/no-collapse 与 DStructure/Rankin 独立验收。
+
+```text
+product_window_old_terminal_gate_active=true
+canonical_source_terminal_promotion_imported=true
+moving_block_dprc_compatibility_imported=true
+next_primary_attack_target=ExplicitModelGapAndFiniteDPRCLedger
+explicit_model_gap_and_finite_dprc_ledger_proved=false
+row_column_unconditional_closed=false
+```

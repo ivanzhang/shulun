@@ -2475,6 +2475,41 @@ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
 same-set PDEC、completed trace bridge 或平方根行尺度点态素数输入。本步只是把
 alpha 局部口继续压到终端门；三命题仍未无条件闭合。
 
+## 48F. product-window terminal/modelgap frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_terminal_modelgap_frontier_router.py
+data/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-terminal-modelgap-frontier-router.json
+```
+
+本层继续推进 48E 留下的旧终端门。已有 `current-terminal-promotion`
+调和证书说明，在 canonical-source 自足边界内，
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 已接到
+`NoFurtherCanonicalSourceTerminalPromotionGap`；已有 moving-block/DPRC
+兼容性证书又说明该终端替换没有引入新的 DPRC 账本对象。因此 product-window
+路线的终端侧不应继续把旧终端名当作第一主攻，而应更新为：
+
+```text
+NoFurtherCanonicalSourceTerminalPromotionGap
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+最新直接主攻：
+
+```text
+ExplicitModelGapAndFiniteDPRCLedger
+```
+
+并行仍需 pre-Cauchy identity、same-unit rank/multiplicity、offdiagonal
+signed formula、orientation、ExactUV、internal transition、逐点 Phi-LPF
+signed table、completed trace/Type-II admissible family 或平方根行尺度点态输入。
+这一步只删除旧终端名作为 product-window 第一主攻；三命题仍未无条件闭合。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：
