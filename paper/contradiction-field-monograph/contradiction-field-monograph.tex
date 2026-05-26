@@ -40203,6 +40203,73 @@ AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount.
 \end{quote}
 \end{remark}
 
+\begin{proposition}[LPF pure-power compression of the von Mangoldt lift]
+Let \(m\ge2\), put \(p=\operatorname{LPF}(m)\), and write
+\[
+  m=p^a r,\qquad a\ge1,\qquad p\nmid r.
+\]
+Then
+\[
+  \Lambda(m)=
+  \begin{cases}
+    \log p,& r=1,\\
+    0,& r>1.
+  \end{cases}
+\]
+Equivalently, the pointwise von Mangoldt lift may be computed by stripping all
+powers of the LPF owner and testing whether the residual cofactor is \(1\).
+\end{proposition}
+
+\begin{proof}
+The von Mangoldt function is \(\log \ell\) exactly on prime powers
+\(\ell^b\), \(b\ge1\), and is \(0\) otherwise.  Since \(p\) is the least prime
+factor of \(m\), the factorization \(m=p^a r\) with \(p\nmid r\) has \(r=1\)
+if and only if \(m\) is a pure power of its LPF owner.  This gives
+\(\Lambda(m)=\log p\) in the pure-power case and \(0\) in the mixed-prime case.
+The identity is pointwise equivalent to the standard Mobius divisor formula
+\[
+  \Lambda(m)=\sum_{d\mid m}\mu(d)\log(m/d),
+\]
+but it is not a linear divisor family suitable for immediate averaging.
+\end{proof}
+
+\begin{certificatestatement}[LPF von Mangoldt pure-power compression audit]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+lpf\_pure\_power\_compression\_closed=true\\
+lambda\_mass\_reconstructed\_from\_endpoint\_plus\_prime\_power\_tail=true\\
+mixed\_composites\_cancel\_to\_zero\_pointwise=true\\
+prime\_power\_tail\_separated=true\\
+pure\_power\_selector\_supplies\_additive\_signed\_distribution\_family=false\\
+pointwise\_ap\_theta\_lower\_bound\_proved=false\\
+admissible\_typeii\_or\_trace\_family\_constructed=false\\
+phi\_lpf\_parity\_barrier\_globally\_broken=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+It is recorded at
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-\\
+pure-power-compression-audit.md.
+\end{quote}
+\end{certificatestatement}
+
+\begin{remark}[Updated von Mangoldt lift gate]
+This closes a pointwise correction: the lift from LPF ownership to
+\(\Lambda\) does not have to remain written as the full Mobius divisor cube.
+However, the pure-power selector is a nonlinear factorization predicate.  It is
+not an additive signed Type-II family, a trace/Kloosterman family, a simultaneous
+arithmetic-progression family, or a finite-group orbit.  Thus the external
+frontier inputs of Milićević--Qin--Wu, Zheng, Runbo Li, Wright, Pascadi, and
+Becker--Breuillard still require a separately constructed admissible signed
+family before they can be applied.  The active gate is
+\begin{quote}\scriptsize\ttfamily
+LPFPurePowerVonMangoldtCompressionClosed\\
+AND PrimePowerTailSeparated\\
+AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily\\
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen.
+\end{quote}
+\end{remark}
+
 \section{Three-claim breakthrough-route synthesis}
 
 \begin{proposition}[Non-cyclic selection among the three claims]

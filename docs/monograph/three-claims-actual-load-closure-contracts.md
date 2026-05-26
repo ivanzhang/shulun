@@ -141,6 +141,53 @@ AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
 
+### LPF von Mangoldt pure-power compression actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_von_mangoldt_pure_power_compression_audit.py
+data/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-ledger.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.md
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.json
+```
+
+actual-load 含义：点态 `Lambda` lift 不必永远保持完整 Mobius divisor cube；若
+`p=LPF(m)`，剥掉 `p` 的全部幂后余数为 `1`，则 `m=p^a` 且
+`Lambda(m)=log p`，否则 `Lambda(m)=0`。
+
+```text
+Lambda(m)=log(LPF(m)) if m is a power of LPF(m), else 0
+```
+
+这修正了 `VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount` 的过强点态
+读法：点态身份可以 LPF 纯素幂压缩；但 actual-load 仍没有关闭，因为这个纯素幂选择器是
+非线性因子分解谓词，不是可进入 BFI/DI/Kloosterman/finite-group 谱工具的加性 signed
+distribution family。
+
+状态边界：
+
+```text
+lpf_pure_power_compression_closed=true
+lambda_mass_reconstructed_from_endpoint_plus_prime_power_tail=true
+mixed_composites_cancel_to_zero_pointwise=true
+prime_power_tail_separated=true
+pure_power_selector_supplies_additive_signed_distribution_family=false
+pointwise_ap_theta_lower_bound_proved=false
+admissible_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailSeparated
+AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

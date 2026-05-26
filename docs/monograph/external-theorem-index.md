@@ -12180,3 +12180,64 @@ AND ContinuousEulerMainNotExactCount
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+## 65AN. LPF von Mangoldt pure-power compression 证书
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_von_mangoldt_pure_power_compression_audit.py
+data/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-ledger.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.md
+```
+
+本层修正 `LPF -> Lambda` lift 的外部定理接口。点态上：
+
+```text
+Lambda(m)=log(LPF(m)) if m is a power of LPF(m), else 0
+```
+
+这与全局 Mobius 线性式一致：
+
+```text
+Lambda(m)=sum_{d|m}mu(d)log(m/d)
+```
+
+但外部平均定理不能直接作用在“纯素幂选择器”上；它需要先被替换或提升为
+admissible signed Type-II/trace/AP/finite-group family。
+
+审计读数：
+
+```text
+lpf_pure_power_compression_closed=true
+lambda_mass_reconstructed_from_endpoint_plus_prime_power_tail=true
+mixed_composites_cancel_to_zero_pointwise=true
+prime_power_tail_separated=true
+pure_power_selector_supplies_additive_signed_distribution_family=false
+pointwise_ap_theta_lower_bound_proved=false
+admissible_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部 theorem 边界同步：
+
+| 外部输入 | 主源 | 当前边界 |
+| --- | --- | --- |
+| Milićević--Qin--Wu bilinear Kloosterman sums | https://arxiv.org/abs/2511.07550 | 需要先把 LPF 层转成真实双变量 Kloosterman family |
+| Zheng simultaneous AP primes | https://arxiv.org/abs/2512.22798 | 平均型 simultaneous AP 输入，不能替代每行点态 `theta` 正性 |
+| Runbo Li large-modulus AP/Harman | https://arxiv.org/abs/2602.20917 | 大模数平均结果，不给 `x=P^2` 单行闭合 |
+| Wright trilinear Kloosterman fractions | https://arxiv.org/abs/2604.25177 | 需要三线性 convolution 与 equidistributed 系数 |
+| Pascadi non-abelian composite-modulus Kloosterman Type-II | https://arxiv.org/abs/2511.08445 | 需要 composite-modulus Type-II 系数族 |
+| Becker--Breuillard spectral gaps/anti-concentration | https://arxiv.org/abs/2512.15364 | 需要 finite-group orbit 或 thin-group sieve family |
+| MRSTT almost-all short-interval Lambda uniformity | https://link.springer.com/article/10.1007/s00222-026-01408-6 | almost-all 输入，不是每个 row/residue 的点态定理 |
+
+最新开放口：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailSeparated
+AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

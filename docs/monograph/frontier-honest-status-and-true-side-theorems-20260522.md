@@ -13516,3 +13516,57 @@ AND ContinuousEulerMainNotExactCount
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+---
+
+## 附录 Q13AC35：LPF von Mangoldt pure-power compression（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_von_mangoldt_pure_power_compression_audit.py
+data/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-ledger.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.md
+```
+
+本层修正 LPF 到 von Mangoldt lift 的点态口径。若 `p=LPF(m)`，把 `p` 的全部幂
+从 `m` 中剥掉，则：
+
+```text
+Lambda(m)=log(p)  iff residual=1
+Lambda(m)=0       otherwise
+```
+
+因此点态 `Lambda` 可压缩为 LPF 纯素幂选择器，并与 Mobius divisor 线性式一致：
+
+```text
+Lambda(m)=sum_{d|m}mu(d)log(m/d)
+```
+
+有限审计读数：
+
+```text
+lpf_pure_power_compression_closed=true
+lambda_mass_reconstructed_from_endpoint_plus_prime_power_tail=true
+mixed_composites_cancel_to_zero_pointwise=true
+prime_power_tail_separated=true
+pure_power_selector_supplies_additive_signed_distribution_family=false
+pointwise_ap_theta_lower_bound_proved=false
+admissible_typeii_or_trace_family_constructed=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+honest 边界：这一步修正了“点态 lift 必须全局 divisor cube”的过强读法，但没有构造
+可进入 Kloosterman、simultaneous AP、large-modulus AP 或 spectral-gap 工具的 signed
+distribution family。纯素幂选择器仍是非线性 factorization predicate。
+
+最新 honest 口：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailSeparated
+AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```

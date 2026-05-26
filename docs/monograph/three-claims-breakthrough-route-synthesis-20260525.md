@@ -1947,3 +1947,62 @@ AND ContinuousEulerMainNotExactCount
 AND UnsignedLPFBucketCountStillParityBlind
 AND VonMangoldtLiftRequiresGlobalDivisorSignedPayloadNotLPFLocalCount
 ```
+
+## 23. LPF von Mangoldt pure-power compression 修正
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_von_mangoldt_pure_power_compression_audit.py
+data/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-ledger.json
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.md
+docs/monograph/prime-matrix-phi-lpf-von-mangoldt-pure-power-compression-audit.json
+```
+
+本层修正 `LPF -> Lambda` lift 的精确口径。标准线性形式仍是：
+
+```text
+Lambda(m)=sum_{d|m} mu(d) log(m/d)
+```
+
+但点态身份可由 LPF 剥离压缩为：
+
+```text
+Lambda(m)=log(LPF(m)) if m is a power of LPF(m), else 0.
+```
+
+因此，“von Mangoldt lift 必须使用全局 Mobius divisor signed payload”只应理解为
+“若要接入平均定理，仍需可线性化的 signed distribution family”；作为点态恒等式，
+LPF 纯素幂选择器已经足够。真正仍未突破的是：该选择器是非线性 factorization
+predicate，不是 Type-II、trace/Kloosterman、simultaneous AP 或 finite-group orbit
+可直接调用的加性有符号族。
+
+有限审计读数：
+
+```text
+lpf_pure_power_compression_closed=true
+lambda_mass_reconstructed_from_endpoint_plus_prime_power_tail=true
+mixed_composites_cancel_to_zero_pointwise=true
+prime_power_tail_separated=true
+pure_power_selector_supplies_additive_signed_distribution_family=false
+pointwise_ap_theta_lower_bound_proved=false
+admissible_typeii_or_trace_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
+外部前沿的重新定位：
+
+- Milićević--Qin--Wu、Pascadi、Wright 的 Kloosterman/Type-II 工具需要先构造双线性或三线性 trace family；
+- Zheng simultaneous AP 与 Runbo Li 大模数 AP/Harman 是平均型输入，不能替代 `x=P^2` 每行点态 `theta` 正性；
+- Becker--Breuillard 谱间隙/反集中需要 finite-group orbit；
+- Matomäki--Radziwiłł--Shao--Tao--Teräväinen almost-all short-interval uniformity 不是每个 row/residue 的点态定理。
+
+最新非循环口为：
+
+```text
+LPFPurePowerVonMangoldtCompressionClosed
+AND PrimePowerTailSeparated
+AND PurePowerSelectorNotAnAdditiveSignedDistributionFamily
+AND PointwiseAPThetaLowerBoundOrAdmissibleSignedTypeIIFamilyStillOpen
+```
