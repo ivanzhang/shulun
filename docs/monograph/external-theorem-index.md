@@ -13506,3 +13506,29 @@ signed_atom_field_table_proved=false
 new_primitive_payload_or_trace_artifact_present=false
 row_column_unconditional_closed=false
 ```
+
+## 65BO. product-window signed fields source-rank kernel router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_fields_source_rank_kernel_router.py
+data/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.md
+```
+
+外部 theorem 边界进一步具体化：product-window signed fields 已经不再停在
+edge-local 字段名或 `NewPrimitive...` 名称上。若调用 trace/Kloosterman/Type-II
+外部谱工具，必须先交付同 trace key 的 signed coefficient family，并且满足
+actual source-rank/no-collapse；若调用短区间素数分布，仍需 \(H=P=x^{1/2}\)
+的点态行尺度输入。
+
+```text
+latest_trace_sync_imported=true
+same_trace_key_and_named_return_matrix_synced=true
+new_payload_source_atom_alignment_imported=true
+source_rank_package_atomized=true
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+row_column_unconditional_closed=false
+```

@@ -14784,3 +14784,30 @@ lpf_phi_unsigned_scope_exhausted=true
 signed_atom_field_table_proved=false
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC60：product-window signed fields source-rank kernel router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_fields_source_rank_kernel_router.py
+data/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.md
+```
+
+本层 honest 边界：edge-local signed fields 已接入 same-trace-key/命名 return
+矩阵；`NewPrimitive...` 也被 source-rank/no-collapse 包吸收。最新直接主攻是
+`AlphaRowAnchorPhaseEmissionFormulaLedger`，并行仍需 pre-Cauchy 算术恒等式、
+同表 rank/multiplicity、offdiagonal signed formula、orientation、ExactUV 与
+internal transition。行/列命题仍未无条件闭合。
+
+```text
+product_window_signed_fields_imported=true
+latest_trace_sync_imported=true
+source_rank_package_atomized=true
+post_antisplit_convergence_imported=true
+row_column_unconditional_closed=false
+```

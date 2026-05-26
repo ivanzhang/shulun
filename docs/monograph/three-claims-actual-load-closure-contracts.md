@@ -600,6 +600,50 @@ OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissible
 OR PointwiseSqrtPrimeInputCOne
 ```
 
+### product-window signed fields source-rank kernel actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_fields_source_rank_kernel_router.py
+data/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.json
+```
+
+actual-load 含义：edge-local signed fields 的匿名缺口已经被 trace-sync 的 same-key
+与命名 return 矩阵吸收。若走生产性出口，`NewPrimitive...` 不能只是 signed-lane
+环内改名，而必须回到 actual pre-Cauchy source-rank/no-collapse 包；该包继续在
+共同 pointwise kernel 后落到 alpha row anchor、pre-Cauchy 算术恒等式与同表
+rank/multiplicity。
+
+```text
+product_window_signed_fields_imported=true
+latest_trace_sync_imported=true
+same_trace_key_and_named_return_matrix_synced=true
+new_payload_source_atom_alignment_imported=true
+source_rank_package_atomized=true
+post_antisplit_convergence_imported=true
+row_column_unconditional_closed=false
+```
+
+最新真实负载：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+
+parallel:
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ProductWindowToCompletedKloostermanOrTraceBridgeWithSignedDefectAndAdmissibleCoefficients
+OR PointwiseSqrtPrimeInputCOne
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

@@ -2396,6 +2396,44 @@ AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
 terminal descent、same-set PDEC、completed trace bridge 或平方根行尺度点态素数输入。
 本步仍不是无条件闭合证明。
 
+## 48D. product-window signed fields source-rank kernel router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_fields_source_rank_kernel_router.py
+data/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.json
+```
+
+本层继续展开上一节的
+`PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward`。
+signed fields 必须属于同一 pre-Cauchy trace key；否则进入命名 return 矩阵。
+生产性出口 `NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact` 也不能作为
+未解释黑箱停留，必须携带 actual source-rank/no-collapse 包，并在共同
+pointwise kernel 后落到：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+```
+
+因此 product-window 路线的最新非循环口是：
+
+```text
+PhiLPFOffDiagonalOrderedSemiprimeSourceTupleSignedSeedFormulaBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+这是真前沿收窄，不是闭合证明。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：

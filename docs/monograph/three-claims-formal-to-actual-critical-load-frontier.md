@@ -27334,6 +27334,31 @@ tuple_level_required_attack_target=PhiLPFOffDiagonalOrderedSemiprimeSourceTupleS
 row_column_unconditional_closed=false
 ```
 
+### product-window signed fields source-rank kernel formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_signed_fields_source_rank_kernel_router.py
+data/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-signed-fields-source-rank-kernel-router.json
+```
+
+formal-to-actual 结论：`PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward`
+若要成为 actual proof，必须先通过同 trace key 与命名 return 检查；随后生产性
+`NewPrimitive...` 也必须实际声明 source-rank/no-collapse 包。形式 payload 名称
+不能替代 source entropy、complete key、fixed-key multiplicity 与 pointwise kernel。
+
+```text
+product_window_signed_fields_imported=true
+latest_trace_sync_imported=true
+same_trace_key_and_named_return_matrix_synced=true
+source_rank_package_atomized=true
+next_primary_attack_target=AlphaRowAnchorPhaseEmissionFormulaLedger
+row_column_unconditional_closed=false
+```
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：
