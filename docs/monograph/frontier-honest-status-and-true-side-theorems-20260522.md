@@ -14922,3 +14922,32 @@ product_window_signed_fields_source_rank_imported=true
 next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
 row_column_unconditional_closed=false
 ```
+
+---
+
+## 附录 Q13AC65：product-window identity terminal downstream sync router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_identity_terminal_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.md
+```
+
+本层 honest 边界：上一层留下的
+`IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger` 已经不是
+product-window 当前第一主攻。它沿 strict identity taxonomy 压到 actual
+moving-block/NC-BLK，再同步到 canonical terminal promotion 与 product-window
+modelgap downstream 接口。这个同步不证明 same-unit rank，也不证明 row/column 命题。
+
+```text
+strict_identity_taxonomy_imported=true
+moving_block_terminal_imported=true
+canonical_terminal_promotion_imported=true
+product_window_modelgap_downstream_imported=true
+identity_removed_from_product_window_first_target=true
+next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```

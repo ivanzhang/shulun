@@ -32374,3 +32374,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步继续确认 LPF/Phi 行级不等式的剩余不是无符号计数，而是推前前 signed
 source identity、rank/multiplicity、orientation/local-factor、ExactUV return 和
 internal transition 的共同闭合。
+
+### product-window identity terminal downstream sync actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_identity_terminal_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.json
+```
+
+actual-load 含义：上一轮 product-window signed payload downstream sync 留下的
+`IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger` 已经沿 strict
+identity taxonomy、actual moving-block/NC-BLK、canonical terminal promotion 与
+product-window modelgap downstream 链压到终端接口；它不应再作为当前第一硬点。
+
+```text
+strict_identity_taxonomy_imported=true
+moving_block_terminal_imported=true
+canonical_terminal_promotion_imported=true
+product_window_modelgap_downstream_imported=true
+identity_removed_from_product_window_first_target=true
+next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```
+
+PM-ALC 的 product-window 实际合同相应改为：
+
+```text
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+可并行保留的旁路仍是 edge-local signed atom fields、逐点 signed table、trace/Type-II
+family、平方根行尺度输入或命名 PDEC/SAE。它们都不是无符号 LPF/Phi 计数的直接推论；
+必须提交 actual signed coefficient、rank/multiplicity 或可验收的外部相位族。

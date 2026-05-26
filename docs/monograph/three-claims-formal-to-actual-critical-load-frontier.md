@@ -26873,6 +26873,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 edge-local signed atom fields、逐点 signed table、trace/Type-II family、平方根行尺度输入
 或命名 PDEC/SAE。
 
+### product-window identity terminal downstream sync formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_identity_terminal_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.json
+```
+
+formal-to-actual 结论：`IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger`
+在 product-window 线上已经不是新的 actual 负载本体。strict identity taxonomy
+把它压到 actual moving-block/NC-BLK；moving-block 再压到 PDEC/CleanKLS 终端门
+与模型账本；product-window 侧已导入 canonical terminal promotion 与 modelgap downstream
+闭合接口。因此 identity 旧名移出第一主攻。
+
+```text
+identity_removed_from_product_window_first_target=true
+strict_identity_taxonomy_imported=true
+moving_block_terminal_imported=true
+product_window_modelgap_downstream_imported=true
+next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```
+
+actual 侧仍需提交：
+
+```text
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+RatePreservationLedger_FOR_moving_atom_packet
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+所以 product-window 路线的下一步不是继续扩大 identity 名称，而是证明同一 primitive
+kernel row 上的 ExactUV rank/multiplicity，或绕到可审查的 signed atom/trace/Type-II
+family。
+
 ### product-window terminal/modelgap frontier formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

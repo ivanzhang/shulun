@@ -13636,3 +13636,31 @@ product_window_signed_fields_source_rank_imported=true
 next_primary_attack_target=IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
 row_column_unconditional_closed=false
 ```
+
+## 65BT. product-window identity terminal downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_identity_terminal_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.md
+```
+
+外部 theorem 边界继续收窄：product-window 的 pre-Cauchy identity 旧名已经接入
+strict identity taxonomy、actual moving-block/NC-BLK 终端路由、canonical terminal
+promotion 与 product-window modelgap downstream。外部短区间、trace/Kloosterman、
+Type-II、谱或群论工具仍不能直接作用在这个 identity 黑箱上；必须先得到 same-unit
+ExactUV rank/multiplicity、orientation/ExactUV/internal transition，或真正 admissible
+signed coefficient family。
+
+```text
+strict_identity_taxonomy_imported=true
+moving_block_terminal_imported=true
+canonical_terminal_promotion_imported=true
+product_window_modelgap_downstream_imported=true
+identity_removed_from_product_window_first_target=true
+next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```

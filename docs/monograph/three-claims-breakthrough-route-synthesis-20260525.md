@@ -2603,6 +2603,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 本步不是无条件闭合；它只把 LPF/Phi 无符号支撑耗尽后的 signed payload 旧名继续压到
 source identity/rank、orientation、ExactUV、internal transition 和终端验收门。
 
+## 48I. product-window identity terminal downstream sync router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_product_window_identity_terminal_downstream_sync_router.py
+data/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-ledger.json
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.md
+docs/monograph/prime-matrix-phi-lpf-product-window-identity-terminal-downstream-sync-router.json
+```
+
+本层继续推进 48H 留下的 pre-Cauchy identity 第一硬点。既有下游链给出
+
+```text
+IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+=> ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+=> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger
+=> NoFurtherCanonicalSourceTerminalPromotionGap
+   AND ProductWindowExplicitModelGapDownstreamSubledgerClosedByExistingFiniteB3MertensSync
+```
+
+同步读数：
+
+```text
+strict_identity_taxonomy_imported=true
+moving_block_terminal_imported=true
+canonical_terminal_promotion_imported=true
+product_window_modelgap_downstream_imported=true
+identity_removed_from_product_window_first_target=true
+next_primary_attack_target=SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+row_column_unconditional_closed=false
+```
+
+因此 product-window 不应再把 noncanonical pre-Cauchy identity 旧名当作第一主攻。
+它只把负载回收到已同步的终端接口，并留下一个更窄的实际包：
+
+```text
+SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+直接构造路线仍可绕到 edge-local signed atom fields、逐点 signed table、trace/Type-II
+或平方根行尺度输入；但这些旁路都必须提交 actual signed/rank 负载，不能再由 LPF/Phi
+无符号 survivor 计数推出。
+
 ## 49. minimal parity-breaker route-forcing router
 
 新增证书：
