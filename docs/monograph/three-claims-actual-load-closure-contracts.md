@@ -601,6 +601,59 @@ AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
 AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
 ```
 
+### terminal-run trace-admissibility contract actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_run_trace_admissibility_contract_router.py
+data/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json
+```
+
+actual-load 含义：terminal finite signed run ledger 已经能证明有限相邻抵消分解和
+selected surplus：
+
+```text
+terminal_finite_signed_run_ledger_closed=true
+finite_adjacent_cancellation_decomposition_closed=true
+finite_absorption_would_close_after_uniform_cancellation_law=true
+selected_negative_excess_beats_extra_atom_survivor=true
+```
+
+但 actual theorem 还缺六个可接入接口：
+
+```text
+TerminalRunKernelFormula
+SameTraceKeySourceConsistency
+UniformFamilyInP
+TypeIICoefficientFactorability
+ConductorOrModulusControl
+UniformAdjacentRunCancellation
+```
+
+状态边界：
+
+```text
+trace_or_typeii_family_admissible_now=false
+external_theorems_directly_attach_now=false
+all_trace_contracts_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+PM-ALC 的当前实际合同相应收窄为：
+
+```text
+TerminalRunKernelFormulaOrMissingTraceKernelFormulaPDEC
+AND SameTraceKeySourceConsistencyOrSameTraceKeySplitPDEC
+AND UniformFamilyInPOrFiniteLedgerOnlyLocalSurvivor
+AND TypeIICoefficientFactorabilityOrTypeIIFactorabilityFailureSAE
+AND ConductorOrModulusControlOrConductorRangePDEC
+AND UniformAdjacentRunCancellationOrAdjacentRunCancellationFailureLocalSurvivor
+```
+
 ### affine endpoint LPF first-hit actual-load 更新（2026-05-25）
 
 新增机器证书：

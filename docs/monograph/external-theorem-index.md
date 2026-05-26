@@ -12641,3 +12641,57 @@ AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
 AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
 AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
 ```
+
+## 65AW. terminal-run trace-admissibility contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_run_trace_admissibility_contract_router.py
+data/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.md
+```
+
+外部 theorem 边界：terminal monotone-run 账本已经有 finite signed mass、相邻 run
+分解和 selected surplus，但外部定理仍不能直接套用。验收表固定如下：
+
+```text
+FKMS trace-family technology -> needs ell-adic/trace-function family with monodromy and conductor data
+Milićević-Qin-Wu Kloosterman -> needs genuine two-variable Kloosterman family
+Pascadi composite-modulus Type-II -> needs well-factorable signed coefficients and Type-II ranges
+Wright trilinear Kloosterman -> needs trilinear convolution with equidistributed beta sequence
+Runbo Li AP/Harman sieve -> needs admissible averaged AP family in the same singular-series convention
+```
+
+审计读数：
+
+```text
+terminal_finite_signed_run_ledger_closed=true
+finite_adjacent_cancellation_decomposition_closed=true
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+trace_or_typeii_family_admissible_now=false
+external_theorems_directly_attach_now=false
+all_trace_contracts_proved=false
+row_column_unconditional_closed=false
+```
+
+可接入前必须先证明：
+
+```text
+TerminalRunKernelFormula
+AND SameTraceKeySourceConsistency
+AND UniformFamilyInP
+AND TypeIICoefficientFactorability
+AND ConductorOrModulusControl
+AND UniformAdjacentRunCancellation
+```
+
+最新开放口：
+
+```text
+TerminalRunTraceAdmissibilityContractPinned
+AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
+AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
+AND UniformAdjacentRunCancellationStillOpen
+```

@@ -13980,3 +13980,59 @@ AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
 AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
 AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
 ```
+
+---
+
+## 附录 Q13AC44：terminal-run trace-admissibility contract router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_run_trace_admissibility_contract_router.py
+data/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.md
+```
+
+本层把 terminal signed monotone-run 路线的 honest 边界写成 trace/Type-II 可接入合同。
+有限账本强读数为：
+
+```text
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+finite_adjacent_cancellation_decomposition_closed=true
+selected_negative_excess_beats_extra_atom_survivor=true
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+finite_absorption_would_close_after_uniform_cancellation_law=true
+```
+
+但该 finite ledger 不是 uniform trace family。六个未证明接口是：
+
+```text
+TerminalRunKernelFormula
+SameTraceKeySourceConsistency
+UniformFamilyInP
+TypeIICoefficientFactorability
+ConductorOrModulusControl
+UniformAdjacentRunCancellation
+```
+
+honest 边界：
+
+```text
+trace_or_typeii_family_admissible_now=false
+external_theorems_directly_attach_now=false
+all_trace_contracts_proved=false
+row_column_unconditional_closed=false
+phi_lpf_parity_barrier_globally_broken=false
+```
+
+最新 honest 口：
+
+```text
+TerminalRunTraceAdmissibilityContractPinned
+AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
+AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
+AND UniformAdjacentRunCancellationStillOpen
+```

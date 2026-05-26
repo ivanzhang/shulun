@@ -2428,3 +2428,51 @@ AND PureShortIntervalOrTopRowInputsDoNotCloseAllRows
 AND FastestPrimeMatrixRouteRequiresSignedTraceOrTypeIIFamily
 AND UniformAdjacentRunCancellationOrNamedPDECSAEStillOpen
 ```
+
+## 32. terminal-run trace-admissibility contract router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_terminal_run_trace_admissibility_contract_router.py
+data/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-ledger.json
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.md
+docs/monograph/prime-matrix-phi-lpf-terminal-run-trace-admissibility-contract-router.json
+```
+
+本层继续上一节的最快非循环路线，但把“terminal signed monotone-run payload 能否接外部
+trace/Type-II 定理”改写成明确合同。有限账本已经闭合：
+
+```text
+terminal_run_count_total=59
+selected_terminal_run_count=35
+extra_shell_run_count=24
+strict_run_local_compression_count=0
+selected_negative_excess=1.456565972578
+extra_atom_local_survivor_total=0.907719323182
+selected_negative_excess_minus_extra_atom_survivor=0.548846649396
+finite_absorption_would_close_after_uniform_cancellation_law=true
+```
+
+但这还不是 admissible trace/Type-II family。要真正调用 FKMS trace functions、
+Milićević--Qin--Wu Kloosterman、Pascadi Type-II、Wright trilinear Kloosterman 或
+Runbo Li AP/Harman sieve，至少必须补齐六个接口：
+
+```text
+TerminalRunKernelFormula
+SameTraceKeySourceConsistency
+UniformFamilyInP
+TypeIICoefficientFactorability
+ConductorOrModulusControl
+UniformAdjacentRunCancellation
+```
+
+因此本层的推进是把最快突破口从“找一个外部定理可套”收缩为“先构造内部 signed kernel
+或返回命名 PDEC/SAE/LocalSurvivor”。最新非循环口为：
+
+```text
+TerminalRunTraceAdmissibilityContractPinned
+AND FiniteSignedRunLedgerIsNotYetUniformTraceFamily
+AND NeedTraceKernelOrTypeIICoefficientFormulaOrNamedPDECSAE
+AND UniformAdjacentRunCancellationStillOpen
+```
