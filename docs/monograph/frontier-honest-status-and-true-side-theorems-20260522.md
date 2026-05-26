@@ -1721,6 +1721,44 @@ AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 
 ---
 
+## 附录 Q13AC47：parity barrier atom-cut frontier router（2026-05-26）
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_atom_cut_frontier_router.py
+data/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.md
+```
+
+本层的 honest 边界是：LPF/Phi 精确计数和 Legendre-Phi 周期边界已经修正，但它们仍是
+unsigned sieve facts。它们不能从实际负载中抽出素数，也不能替代 signed payload。
+
+```text
+atom_cut_frontier_synced=true
+corrected_lpf_formula=C_p(N)=Phi(floor(N/p); primes<p)-1
+legendre_periodic_boundary_not_half_main=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+```
+
+最新诚实硬点：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+honest 结论：本步只把“如何突破奇偶性障碍”从粗 signed transport 同步到最小
+signed atom 字段；没有证明三命题任一条无条件闭合。若不证明点态 `theta/psi`
+平方根行分布，下一步必须给出这些 atom 的正向 signed formula 或命名 PDEC/SAE
+回流。
+
+---
+
 ## 附录 Q13AC49：minimal parity-breaker route-forcing router（2026-05-26）
 
 新增证书：

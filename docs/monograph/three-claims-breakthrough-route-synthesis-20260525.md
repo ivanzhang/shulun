@@ -1689,6 +1689,61 @@ AND PrimitiveOrientationLocalFactorProductLawBeforePushforward
 AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 ```
 
+## 37. parity barrier atom-cut frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_atom_cut_frontier_router.py
+data/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.json
+```
+
+本层把上一节“最小破障路线”的粗 signed transport 继续接入最新 atom-cut
+前沿。LPF 精确计数修正保持不变：
+
+```text
+A_p(N)=Phi(floor(N/p); primes<p)
+C_p(N)=Phi(floor(N/p); primes<p)-1
+```
+
+这修正了 `(N-p^2)*prod_{ell<=p}(1-1/ell)` 式的三个错误：计数变量应为
+cofactor `a<=floor(N/p)`，cofactor 可以含有 `p`，而 floor/primorial 周期边界不能
+被替换成普遍 half-main 误差。
+
+审计读数：
+
+```text
+atom_cut_frontier_synced=true
+legendre_periodic_boundary_not_half_main=true
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+more_wheel_or_lpf_refinement_rejected_as_first_break=true
+row_column_unconditional_closed=false
+```
+
+当前最快非循环硬点不再停在粗
+`PhiLPFRoughCofactorMultiplicationSignedTransportLawBeforePushforward`，而是同步为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+```
+
+并行绕行仍只有：
+
+```text
+theta((kP,(k+1)P))>0
+psi(I_{P,k})>PrimePowerTail(I_{P,k})
+PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+admissible trace/Type-II family
+named PDEC/SAE return
+```
+
+因此本步推进的是“奇偶性障碍从无符号 LPF 账本压到 signed atom 字段”的精确
+定位，不是三命题无条件闭合。
+
 ## 37. minimal parity-breaker route-forcing router
 
 新增证书：

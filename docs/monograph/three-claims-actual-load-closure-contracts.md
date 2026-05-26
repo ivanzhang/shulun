@@ -43,6 +43,53 @@ projection_collision_pdec_count_current=0
 row_column_unconditional_closed=false
 ```
 
+### parity barrier atom-cut frontier actual-load 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_atom_cut_frontier_router.py
+data/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.json
+```
+
+actual-load 含义：LPF/Phi 的精确计数只支付 unsigned rough support，不支付 prime
+emission。当前真实负载闭合格式必须进入 pushforward 前 signed atom 字段，或改用
+点态素数分布/trace/Type-II/PDEC 绕行。
+
+```text
+atom_cut_frontier_synced=true
+corrected_lpf_formula=C_p(N)=Phi(floor(N/p); primes<p)-1
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+next_seed_side_attack_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+next_constructor_side_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+PM-ALC 的当前实际合同相应改为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger
+AND NonzeroSignedRowSurvivalOnPhiLPFSupportBeforePushforward
+```
+
+状态边界：
+
+```text
+pointwise_theta_or_psi_sqrt_row_bound_proved=false
+admissible_trace_or_typeii_family_constructed=false
+phi_lpf_parity_barrier_globally_broken=false
+row_column_unconditional_closed=false
+```
+
 ### minimal parity-breaker route-forcing actual-load 更新（2026-05-26）
 
 新增机器证书：

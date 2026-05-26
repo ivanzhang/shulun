@@ -2169,6 +2169,54 @@ AND SelectedTerminalMovingBeattyNumeratorPrimeQPrefixPhaseSaving
 AND AdmissibleAveragedSignedTraceKloostermanOrTypeIIFamily
 ```
 
+## 65AZ. parity barrier atom-cut frontier router
+
+新增证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_atom_cut_frontier_router.py
+data/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.md
+```
+
+外部 theorem 边界：本层把奇偶性障碍的外部接口压到两类可审稿对象。第一类是
+点态 `theta/psi` 平方根行分布公式；第二类是从 Prime Matrix payload 正向构造的
+signed atom/trace/Type-II family。更多 LPF/Phi/wheel refinement 只改变 unsigned
+support，不是外部定理可直接消费的 signed family。
+
+审计读数：
+
+```text
+atom_cut_frontier_synced=true
+corrected_lpf_formula=C_p(N)=Phi(floor(N/p); primes<p)-1
+unsigned_lpf_bucket_count_sufficient_for_prime_extraction=false
+next_seed_side_attack_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+next_constructor_side_attack_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+```
+
+外部输入的当前适配边界：
+
+```text
+Guth-Maynard / Runbo Li short intervals -> would need pointwise C<=1 row scale
+Runbo Li large-modulus AP/Harman -> needs admissible averaged AP family in this source convention
+FKMS / MQW / Wright / Pascadi trace-Type-II -> needs source-keyed signed coefficients and conductor control
+finite-group or spectral expansion -> needs genuine group orbit model, not only q-spine finite ledger
+```
+
+最新开放口：
+
+```text
+(ParityBarrierContractPinned AND MinimalRouteForcingClosed
+ AND PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+ AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+ AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward)
+OR PointwiseSignedCoefficientValueTableOnPhiLPFBucketSupportBeforePushforward
+OR ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn
+OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+OR NamedPDECOrSAEReturn
+```
+
 ## 65AI-1. 2026-05-25 affine endpoint LPF first-hit partition
 
 新增证书：

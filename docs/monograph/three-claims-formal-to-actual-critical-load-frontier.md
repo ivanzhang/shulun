@@ -26824,6 +26824,42 @@ PrimitiveOrientationLocalFactorProductLawBeforePushforward
 OR BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```
 
+### parity barrier atom-cut frontier formal-to-actual 更新（2026-05-26）
+
+新增机器证书：
+
+```text
+experiments/prime_matrix_phi_lpf_parity_barrier_atom_cut_frontier_router.py
+data/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-ledger.json
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.md
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-atom-cut-frontier-router.json
+```
+
+formal-to-actual 结论：Euler product、Legendre-Phi 和 LPF bucket 公式给出的只是
+formal unsigned survivor count。真实 actual load 必须附带 signed value、orientation、
+ExactUV return、internal transition 与 source-row payload；否则仍不能区分素数与
+两大素因子粗合数。
+
+```text
+formal_unsigned_lpf_count_closed=true
+actual_signed_prime_extraction_closed=false
+legendre_periodic_boundary_not_half_main=true
+atom_cut_frontier_synced=true
+```
+
+实际门变为：
+
+```text
+PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward
+AND PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward
+AND PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeOrientationParityAndBranchSideLawBeforePushforward
+AND PhiLPFOffDiagonalSemiprimeExactUVFixedPairAndReturnTagLedgerBeforePushforward
+```
+
+或者必须由 `theta/psi` 点态平方根行下界、admissible trace/Type-II family、
+pointwise signed table 或命名 PDEC/SAE return 替代。
+
 ### bridge-root shared-pivot hinge contract formal-to-actual 更新（2026-05-26）
 
 新增机器证书：

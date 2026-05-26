@@ -41630,6 +41630,88 @@ route-forcing-router.md.
 \end{quote}
 \end{certificatestatement}
 
+\section{Parity barrier atom-cut frontier}
+
+\begin{theorem}[Phi-LPF parity barrier atom-cut frontier]
+The corrected least-prime-factor bucket identities are
+\[
+  A_p(N)=\Phi(\lfloor N/p\rfloor;\ell<p),
+  \qquad
+  C_p(N)=\Phi(\lfloor N/p\rfloor;\ell<p)-1,
+\]
+where \(A_p(N)\) includes the prime value \(p\), and \(C_p(N)\) counts only
+composite values with least prime factor \(p\).  Equivalently
+\[
+  \Phi(y;\ell<p)
+  =
+  \sum_{d\mid Q_{<p}}\mu(d)\lfloor y/d\rfloor
+  =
+  y\prod_{\ell<p}(1-1/\ell)+E_p(y),
+\]
+with a primorial-periodic floor boundary \(E_p\).  Thus the expression
+\[
+  (N-p^2)\prod_{\ell\le p}(1-1/\ell)
+\]
+is not an exact LPF bucket formula: it uses the wrong counting variable,
+removes multiples of \(p\) from the cofactor, and replaces the floor boundary
+by a continuous main term.
+
+Consequently the current non-cyclic Prime Matrix route cannot make further
+progress by more unsigned LPF, Phi, or wheel refinement alone.  The signed
+transport hard point has been synchronized to the following atom-cut frontier:
+\[
+\begin{gathered}
+\mathrm{PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward},\\
+\mathrm{PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward},\\
+\mathrm{PhiLPFInternalPrimeAdjoinSignedTransitionLawBeforePushforward}.
+\end{gathered}
+\]
+These must still be accompanied by orientation, ExactUV return, source-packet
+three-atom data, row-mass normalization, and signed row survival; otherwise a
+pointwise signed table, a completed branch/atomic trace, a pointwise
+\(\theta/\psi\) row theorem, or a named PDEC/SAE return must be supplied.
+\end{theorem}
+
+\begin{proof}
+Writing \(m=pa\), the condition that \(p\) is the least prime factor of \(m\)
+is exactly that \(a\) has no prime factor below \(p\).  The cofactor \(a\) may
+itself be divisible by \(p\), so the finite Euler product must run over
+\(\ell<p\), not \(\ell\le p\).  The value \(a=1\) is the prime \(p\), and
+subtracting this singleton gives the composite bucket formula for \(C_p(N)\).
+The Legendre expansion with floors is exact; replacing floors by \(y/d\) only
+creates a main term plus a periodic boundary, not a parity-breaking signed
+distribution.
+
+The earlier minimal route-forcing theorem therefore identifies the first
+possible internal break as a signed cofactor transport law.  The subsequent
+offdiagonal pure-pair and constructor edge-local field-cut certificates refine
+that law further: the seed side has only the pure pair \(pq\) as the first
+atom, while nonunit tails are internal continuation; the constructor side has
+only the unsigned edge label until signed atom fields or a named return are
+emitted.  Neither refinement emits a sign, orientation, ExactUV payload, or
+source-row coefficient.  Hence the row/column theorem remains open, and the
+first non-cyclic work item is the stated signed atom frontier or one of the
+listed genuine bypasses.
+\end{proof}
+
+\begin{certificatestatement}[Parity-barrier atom-cut frontier certificate]
+The machine certificate records
+\begin{quote}\scriptsize\ttfamily
+atom\_cut\_frontier\_synced=true\\
+corrected\_lpf\_formula=C\_p(N)=Phi(floor(N/p); primes<p)-1\\
+legendre\_periodic\_boundary\_not\_half\_main=true\\
+unsigned\_lpf\_bucket\_count\_sufficient\_for\_prime\_extraction=false\\
+next\_seed\_side\_attack\_target=PhiLPFOffDiagonalPureSemiprimePairSignedSeedAtomBeforePushforward\\
+next\_constructor\_side\_attack\_target=PhiLPFEdgeLocalTwoPrimeSignedAtomFieldsOrNamedReturnTagBeforePushforward\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+The certificate is
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-phi-lpf-parity-barrier-\\
+atom-cut-frontier-router.md.
+\end{quote}
+\end{certificatestatement}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
