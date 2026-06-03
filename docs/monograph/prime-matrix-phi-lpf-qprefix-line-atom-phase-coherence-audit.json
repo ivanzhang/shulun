@@ -1,0 +1,818 @@
+{
+  "atomwise_qprefix_phase_saving_closed": false,
+  "certificate_type": "prime_matrix_phi_lpf_qprefix_line_atom_phase_coherence_audit",
+  "chosen_claim": "Prime Matrix row/column Phi-LPF",
+  "closed_gates": [
+    {
+      "closed": true,
+      "gate": "QPrefixLineAtomPhaseIdentity",
+      "meaning": "The fixed-m atom phase is exactly e(h*P*floor(q*m/P)/q).",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "AtomwiseQPrefixPhaseSavingRoute",
+      "meaning": "Per-atom cancellation is not a valid standalone route for the current atom family.",
+      "proved": false,
+      "remaining": "short atoms and coherent atoms require aggregation or a stronger trace family"
+    },
+    {
+      "closed": false,
+      "gate": "ShortAtomAggregationGate",
+      "meaning": "Atoms with very short q-prefix cannot create internal cancellation.",
+      "proved": false,
+      "remaining": "aggregate short atoms with signed weights or absorb them by a separate budget"
+    },
+    {
+      "closed": false,
+      "gate": "LongAtomMovingDenominatorTraceGate",
+      "meaning": "Longer atoms still have moving prime denominator q and are not yet a completed trace/Kloosterman family.",
+      "proved": false,
+      "remaining": "construct completed moving-q denominator trace family"
+    }
+  ],
+  "current_object": {
+    "atom": "fixed m and contiguous prime-q prefix from endpoint-flux atomization",
+    "phase": "S_A(h)=sum_{q in A} e(h*P*floor(q*m/P)/q)=sum_{q in A} e(-h*(q*m mod P)/q)",
+    "tested_h_values": [
+      1,
+      2,
+      3,
+      5
+    ]
+  },
+  "finite_audit": {
+    "atom_count_total": 15439,
+    "atomwise_phase_saving_route_closed": false,
+    "edge_count_total": 177515,
+    "h1_ratio_ge_0_50": 3515,
+    "h1_ratio_ge_0_75": 2017,
+    "h1_ratio_ge_0_90": 1561,
+    "h1_sqrt_ratio_ge_2": 421,
+    "h1_sqrt_ratio_ge_3": 78,
+    "h_summaries": [
+      {
+        "h": 1,
+        "max_abs_over_length": 1.0,
+        "max_abs_over_sqrt_length": 4.528563,
+        "mean_abs_over_length": 0.365381,
+        "mean_abs_over_sqrt_length": 0.927972,
+        "median_abs_over_length": 0.277393,
+        "median_abs_over_sqrt_length": 0.911531,
+        "ratio_ge_0_50": 3515,
+        "ratio_ge_0_75": 2017,
+        "ratio_ge_0_90": 1561,
+        "sqrt_ratio_ge_2": 421,
+        "sqrt_ratio_ge_3": 78,
+        "sum_abs": 45631.233117,
+        "top_coherent_atoms": [
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 79,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 83,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 89,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 101,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 103,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 107,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 109,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 113,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 67,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 37,
+            "q_prefix_count": 1,
+            "q_sample": [
+              37
+            ],
+            "q_start": 37,
+            "strip": "upper_wing"
+          }
+        ]
+      },
+      {
+        "h": 2,
+        "max_abs_over_length": 1.0,
+        "max_abs_over_sqrt_length": 3.893219,
+        "mean_abs_over_length": 0.358427,
+        "mean_abs_over_sqrt_length": 0.891221,
+        "median_abs_over_length": 0.265844,
+        "median_abs_over_sqrt_length": 0.860048,
+        "ratio_ge_0_50": 3559,
+        "ratio_ge_0_75": 2034,
+        "ratio_ge_0_90": 1544,
+        "sqrt_ratio_ge_2": 439,
+        "sqrt_ratio_ge_3": 48,
+        "sum_abs": 42935.992317,
+        "top_coherent_atoms": [
+          {
+            "P": 641,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.414213,
+            "abs_sum": 2.0,
+            "endpoint_flux_class": "lower_wing_single_contiguous_endpoint_shell",
+            "m": 349,
+            "phase_range_mod_1": 0.000117,
+            "q_end": 337,
+            "q_prefix_count": 2,
+            "q_sample": [
+              331,
+              337
+            ],
+            "q_start": 331,
+            "strip": "lower_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 79,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 83,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 89,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 101,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 103,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 107,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 109,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 113,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          }
+        ]
+      },
+      {
+        "h": 3,
+        "max_abs_over_length": 1.0,
+        "max_abs_over_sqrt_length": 4.082005,
+        "mean_abs_over_length": 0.353522,
+        "mean_abs_over_sqrt_length": 0.867325,
+        "median_abs_over_length": 0.256399,
+        "median_abs_over_sqrt_length": 0.838395,
+        "ratio_ge_0_50": 3497,
+        "ratio_ge_0_75": 2063,
+        "ratio_ge_0_90": 1575,
+        "sqrt_ratio_ge_2": 319,
+        "sqrt_ratio_ge_3": 39,
+        "sum_abs": 41321.392852,
+        "top_coherent_atoms": [
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 79,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 83,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 89,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 101,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 103,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 107,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 109,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 113,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 67,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 37,
+            "q_prefix_count": 1,
+            "q_sample": [
+              37
+            ],
+            "q_start": 37,
+            "strip": "upper_wing"
+          }
+        ]
+      },
+      {
+        "h": 5,
+        "max_abs_over_length": 1.0,
+        "max_abs_over_sqrt_length": 3.976434,
+        "mean_abs_over_length": 0.352144,
+        "mean_abs_over_sqrt_length": 0.86655,
+        "median_abs_over_length": 0.260564,
+        "median_abs_over_sqrt_length": 0.846647,
+        "ratio_ge_0_50": 3421,
+        "ratio_ge_0_75": 1970,
+        "ratio_ge_0_90": 1534,
+        "sqrt_ratio_ge_2": 262,
+        "sqrt_ratio_ge_3": 21,
+        "sum_abs": 41410.714011,
+        "top_coherent_atoms": [
+          {
+            "P": 467,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.414213,
+            "abs_sum": 2.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 863,
+            "phase_range_mod_1": 0.000122,
+            "q_end": 241,
+            "q_prefix_count": 2,
+            "q_sample": [
+              239,
+              241
+            ],
+            "q_start": 239,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 79,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 83,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 53,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 89,
+            "phase_range_mod_1": 0.0,
+            "q_end": 29,
+            "q_prefix_count": 1,
+            "q_sample": [
+              29
+            ],
+            "q_start": 29,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 97,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 101,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 103,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 107,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 109,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          },
+          {
+            "P": 61,
+            "abs_over_length": 1.0,
+            "abs_over_sqrt_length": 1.0,
+            "abs_sum": 1.0,
+            "endpoint_flux_class": "upper_wing_single_contiguous_endpoint_shell",
+            "m": 113,
+            "phase_range_mod_1": 0.0,
+            "q_end": 31,
+            "q_prefix_count": 1,
+            "q_sample": [
+              31
+            ],
+            "q_start": 31,
+            "strip": "upper_wing"
+          }
+        ]
+      }
+    ],
+    "h_values": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "long_atom_count_q_ge_17": 4052,
+    "long_atom_ratio_q_ge_17": 0.262452,
+    "long_atom_trace_completion_needed": true,
+    "max_prime": 1009,
+    "q_prefix_bin_counts": {
+      "17<=q<=37": 4052,
+      "2<=q<=4": 2525,
+      "5<=q<=8": 3220,
+      "9<=q<=16": 4480,
+      "q=1": 1162
+    },
+    "q_prefix_count_max": 37,
+    "q_prefix_count_median": 10,
+    "q_prefix_count_min": 1,
+    "short_atom_aggregation_needed": true,
+    "short_atom_count_q_le_4": 3687,
+    "short_atom_ratio_q_le_4": 0.238811,
+    "strip_counts": {
+      "lower_wing": 2466,
+      "right_tail": 6962,
+      "upper_wing": 6011
+    }
+  },
+  "frontier_verified_date": "2026-06-03",
+  "latest_narrowest_mouth": [
+    "ShortQPrefixAtomSignedAggregationOrBudgetAbsorption",
+    "AND LongQPrefixMovingPrimeDenominatorTraceCompletion",
+    "AND NoLossAggregationAcrossQPrefixAtoms",
+    "AND PrimeQSupportSetReciprocalPhaseSavingBeyondParity"
+  ],
+  "long_atom_trace_completion_closed": false,
+  "no_loss_qprefix_atom_aggregation_closed": false,
+  "phi_lpf_parity_barrier_globally_broken": false,
+  "row_column_unconditional_closed": false,
+  "short_atom_aggregation_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "59b1717f2fdc3e0cd48647b1b003f38cff66e9625cffc9286e313ca9b00e2d14",
+    "docs/monograph/external-theorem-index.md": "69bc77e332554d9943c47960abeefb30505a49ce00772c772e6d4ce788588c64",
+    "docs/monograph/frontier-honest-status-and-true-side-theorems-20260522.md": "e5f4c1b44b6ae5bac819d76b424af394ac690e7c87622b26c17e82c9cd69510a",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-qprefix-atom-audit.json": "cbfe0b837d418fa6270d654476e23489291c3e183d87740d853c7d30fa8fb452",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-endpoint-flux-unification-audit.json": "f0e224a893f8a09e6b8ea2b8e247623680d3ae50bf1d45b05cb50ca99628f4c2",
+    "docs/monograph/prime-matrix-phi-lpf-qsupport-row-averaged-additive-k-prime-survivor-boundary-shell-step-packet-audit.json": "76e1bea931d165e46c91c26faee7c93cc49969c9113bdb9b1e5de9ed05a280dd",
+    "experiments/prime_matrix_phi_lpf_qprefix_line_atom_phase_coherence_audit.py": "84eeeb094fafbbcbbb5097339e59fecd2086c26924c1b0b1c5a28c748c2a47d6",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "664b232e4cc4ee7f98a657035e91ac5a66ae704d22108741afea6a59c84b98ba"
+  },
+  "status": "qprefix_line_atom_phase_coherence_blocks_atomwise_saving_route"
+}
