@@ -1,35 +1,68 @@
-<claude-mem-context>
+# shulun 项目操作守则（Codex / Claude 通用）
+
+本文件下面有 `<claude-mem-context>
 # Memory Context
 
-# [shulun] recent context, 2026-05-07 4:54am UTC
+# [shulun] recent context, 2026-08-01 1:34am PDT
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 20 obs (4,653t read) | 322,743t work | 99% savings
+Stats: 50 obs (12,006t read) | 813,349t work | 99% savings
 
-### May 5, 2026
-79 1:51p 🔵 shulun项目git状态：本地领先远端318个提交，存在未跟踪AGENTS.md
-80 1:52p 🔵 shulun项目HANDOFF_CODEX.md：C13热门带分类器交接状态与下一步任务
-81 " 🔵 shulun项目素数密度波研究完整交接：12篇文档核心结论与禁止重走路径
-84 1:53p 🔵 C13局部链合同架构：SlackFloor是闭合链的关键门控条件
-92 1:55p 🔵 SlackFloorExit窗口定量分析：7窗口总slack=1053 vs edge_env=4032，缺口约-2979
-95 " 🟣 新增C13热门带SlackFloorExit统一处理合同模块
-97 1:56p 🔵 SlackFloorExit处理合同运行结果：6窗口EndpointNoFailure，1窗口DirectedEndpointCRTDefect/PDEC
-100 1:57p ✅ SlackFloorExit处理合同运行结果保存至docs/
-101 1:59p 🟣 SlackFloorExit处理合同完整落地：代码+运行结果+数学文档三件套
-105 3:46p ⚖️ shulun行命题攻关策略：回归方阵斜线/圆柱覆盖几何模型
-107 " ⚖️ shulun行命题攻关四步计划已更新
-109 3:47p 🔵 shulun项目已有大量斜线/覆盖/零行相关研究文档，关键几何路径文件已定位
-111 " 🔵 shulun行命题核心等价链已闭合，最窄硬点为EDA短区间素数存在性
-116 3:48p 🔵 shulun行命题关键障碍：边界残洞迁移守恒是BPN闭合核心，零行≠p-光滑数
-121 3:50p 🔵 数值实验确认：边界帽每行最终残洞数始终≥2（p≤499全部测试通过），高素数补洞能力不足以封闭早期对角段
-124 3:52p 🟣 新实验脚本prime_matrix_cylindrical_completion_audit.py落地并验证：p=3至5003全部通过
-125 3:55p 🟣 shulun新合同落地：圆柱斜线完成屏障(CLB)将几何直觉严格化为可攻不等式|F_x|＜|R_x|
-127 " ✅ shulun本次会话新增文件清单确认，两个新实验脚本编译通过
-130 3:57p 🟣 新实验脚本prime_matrix_incomplete_filler_deficit_audit.py：专项审计底部缺口带的高素斜线补洞行为
-133 3:58p 🔵 底部缺口带"配对恒等式"全部成立：高素补洞命中点必满足q+m=P+x且column=(P-q)(P-m)
+### May 22, 2026
+441 6:57p ✅ shulun 外部前沿定理证书细化：已发表副产品与预印本/错误奇偶诊断分拆归类
+442 " 🔵 shulun H_P 两版本完全无条件闭合等价于 Cramér 局部/Linnik=2——70 年开放极限精确确认
+448 6:58p ✅ shulun 四个文档同步更新外部前沿定理压力测试：claim-status、external-index、frontier-honest、主稿 LaTeX 全部写入
+452 6:59p ✅ shulun 矛盾场专著 LaTeX 编译成功：447 页，PDF 增至 1,919,971 字节，外部前沿定理章节已入稿
+453 " ✅ shulun 外部前沿定理压力测试提交落地：commit a08d1955，9 文件 943 行插入
+480 8:20p 🔵 shulun 项目：继续非循环硬攻两条替代线会话启动确认
+481 8:21p 🔵 LZC 窗口内半素数对素数比率实验：所有剩余类半素数均多于素数
+485 8:22p 🔵 LZC 窗口内"最小 P2 型元素是合数优先"的列比例：57%-64% 且随 P 增大
+487 " 🔵 小素数模数验证：comp-first 行为在 P=3,5 时已出现
+489 8:23p 🟣 新增 P2 最早见证选择器路线反证审计脚本
+491 8:24p 🟣 P2 选择器路线反证审计证书成功生成落地
+493 8:25p ✅ claim-status-table.md 同步更新 P2 选择器路线反证审计条目
+495 " ✅ 三份主文档同步写入 P2 选择器路线反证审计第十六轮结论
+497 8:26p ✅ 矛盾场专著 LaTeX 主稿新增 P2 选择器路线为假的定理、证明与注记
+499 8:27p ✅ 证书重新生成并更新依赖哈希——主稿修改后同步刷新
+503 8:28p ✅ 矛盾场专著 LaTeX 编译成功：453 页，无硬错误
+504 8:30p 🔴 提交前全面校验完成：所有检查通过，external-theorem-index 节号乱序为历史插入设计
+505 " 🟣 Git commit de666d64：Reject least P2 prime selector route 落地提交
+507 8:31p 🔵 shulun 项目 git 状态：master 领先 origin 1797 提交，AGENTS.md 有未暂存修改
+508 8:32p 🔵 提交后全局扫描确认：FixedPrimeModulusZeroExceptionTransfer 是所有 AP 均值路线的共同剩余门
+510 8:38p 🔵 shulun S67 启动状态确认：git 领先 1797 提交，最新六提交序列
+511 " 🔵 P2 最早见证选择器路线被有限反例彻底排除：审计文档确认
+512 " 🔵 P2 到素数转移原子审计：cofactor AP 纤维定位闭合，升级路径仍未闭合
+513 8:39p 🔵 半素数 cofactor AP 纤维残差覆盖实验：P≥499 时 LZC 窗口内完全覆盖
+516 8:41p 🔵 LZC 窗口内素数与 P2 残差类分布精细实验：所有非零列均被完全覆盖
+517 8:43p 🔵 P2 逐列严格支配素数实验：P≥499 时每列 P2 计数严格大于素数计数
+518 " 🟣 新增 prime_matrix_composite_p2_support_saturation_audit.py 审计脚本落地
+521 8:44p 🔵 合成 P2 支持饱和审计证书验证通过，主稿 LaTeX 已写入 P2 选择器拒绝定理与 K6 推论
+524 8:45p ✅ 三份核心文档同步更新：合成 P2 支持饱和审计写入第十七轮附录 S
+525 8:46p 🟣 主稿 LaTeX 新增 ExternalStatement：Support-only P2-to-prime transfer is parity-blind
+527 " 🔵 主稿 LaTeX 编译启动：证书刷新后文档通过 diff --check，latexmk 开始重新编译
+530 8:47p 🔵 矛盾场专著 LaTeX 编译成功：455 页无硬错误，新增 ExternalStatement 通过双轮编译
+533 8:48p 🟣 shulun git 提交落地：Audit composite P2 support saturation（e485788a）
+535 8:49p 🔵 shulun S67 前沿侦察：Phi-LPF 与奇偶障碍文件全景确认，下一攻击方向定位
+537 8:55p 🔵 互反窗口小因子筛分实验：P=997,k=996 经 B=31 筛后剩 13 个候选
+538 " 🔵 关键突破：加入模3过滤后 P≤1009 全部 76789 行 delta > C_w，零例外
+539 8:56p 🟣 新增 Euler 6-wheel capacity 审计系统：parity-only 等号基例被完全消除
+541 8:57p ✅ claim-status-table.md 新增 6-wheel capacity 审计行
+544 8:58p ✅ external-theorem-index 第50节与前沿状态附录 T 同步写入 6-wheel capacity 结果
+545 " ✅ 矛盾场专著主稿新增 Punctured endpoint 6-wheel capacity bound 定理
+547 8:59p 🔵 6-wheel capacity 成果跨文档一致性验证通过，git diff 显示 4 文件 201 行新增
+549 9:02p ✅ LaTeX 编译成功 455 页，Git 提交 d697df16 落地，master 领先 origin 1799 提交
+552 9:03p 🔵 前沿侦察：专著中 sqrt-scale/Oppermann/P^2 结构分布扫描确认下一攻击方向
+554 9:04p 🔵 深度侦察：P^2 尺度攻击地图确认——三条主路线与各自硬点状态
+### Jun 3, 2026
+1231 3:43a 🔵 双线性 Kloosterman 和猜想 (BKS) 证明框架评审——逻辑链路与关键缺口识别
+1232 3:47a 🔵 shulun 项目 Kloosterman 前沿状态核查——row_column_unconditional_closed 全局为 false
+1238 4:01a ⚖️ shulun项目突破路线锁定——本轮专攻q-support到完成型Kloosterman桥接
+1239 4:04a 🔵 shulun q-support攻击链现状全量扫描——六层审计文档确认"相位节省"为唯一剩余障碍
+1246 4:06a 🟣 新审计脚本——q-prefix line atom逐atom相位相干性测量与闭合判定
+1248 4:08a 🔵 q-prefix line atom相位相干审计执行结果——逐atom相消路径被定量排除
 
-Access 323k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 813k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
