@@ -1,0 +1,54 @@
+{
+  "balanced_typeii_remainder_constructed": false,
+  "certificate_type": "prime_matrix_mfac_rough_cofactor_mobius_signed_transport_audit",
+  "divisor_history_augmentation_removes_payload_collision": true,
+  "downstream_recovery_used": false,
+  "lpf_local_state_collision_found": true,
+  "mfac_1a_constructed": false,
+  "minimal_lpf_local_state_collision": {
+    "members": [
+      {
+        "d": 3,
+        "log_d_parts": [
+          3
+        ],
+        "m": 2,
+        "mu_d": -1,
+        "n": 6,
+        "owner_lpf": 2,
+        "rough_step_q": 3
+      },
+      {
+        "d": 6,
+        "log_d_parts": [
+          2,
+          3
+        ],
+        "m": 2,
+        "mu_d": 1,
+        "n": 12,
+        "owner_lpf": 2,
+        "rough_step_q": 3
+      }
+    ],
+    "state": [
+      2,
+      3,
+      2
+    ]
+  },
+  "mobius_von_mangoldt_identity_verified": true,
+  "plain_conclusion": "全局 Möbius--von Mangoldt source pair 可逐项枚举，但仅以 owner LPF、当前 rough cofactor q 与 m 组成的局部状态会把不同 divisor-history 压到同一状态，并要求不同 Möbius 符号和 log(d) 分解。因此该 LPF-local 状态不足以构造 MFAC-1A 的 exact signed transport；必须保留完整 divisor-history 或等价的可追溯状态。",
+  "row_column_unconditional_closed": false,
+  "sample_limit": 997,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-phi-lpf-affine-lpf-first-hit-von-mangoldt-lift-router.json": "f745ed6c597dfcceed10f50249df139235cac727fd8086737b81bb894bda3a4c",
+    "docs/monograph/prime-matrix-phi-lpf-bucket-signed-transport-router.json": "8f696d3cb025e8d98790530763d5b87717c945b57c310f6d16f4c49711c8fdcb",
+    "docs/monograph/prime-matrix-strict-noncircular-signed-coefficient-emission-kernel-router.json": "96d6dadbc5add815f8623295aae5ae519c0b5e44db556d85d657259db97a9773",
+    "experiments/prime_matrix_mfac_rough_cofactor_mobius_signed_transport_audit.py": "8c11b60928eb4baad0a54f2d09177bf6de6ef78fd32b5a3888f17ca148217563"
+  },
+  "source_pair_count": 4975,
+  "source_pair_partition_verified": true,
+  "status": "lpf_local_state_insufficient_for_exact_mobius_payload_audit",
+  "verified_date": "2026-08-06"
+}
