@@ -7,6 +7,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 from typing import Any
@@ -14,6 +15,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
+SLUG = "prime-matrix-mfac-orientation-provenance-no-go-audit"
 
 REQUIRED_SOURCE_FIELDS = (
     "pre_cauchy",
@@ -151,6 +153,7 @@ def audit_orientation_provenance(docs: Path) -> dict[str, Any]:
         **result,
         "certificate_type": "prime_matrix_mfac_orientation_provenance_no_go_audit",
         "status": "current_corpus_has_no_admissible_forward_orientation_source",
+        "verified_date": "2026-08-07",
         "earliest_missing_forward_field": "origin_selector",
         "next_positive_gate": "PrimitiveOrientationLocalFactorProductLawBeforePushforward",
         "mathematical_nonexistence_proved": False,
@@ -158,5 +161,77 @@ def audit_orientation_provenance(docs: Path) -> dict[str, Any]:
     }
 
 
+def render_markdown(certificate: dict[str, Any]) -> str:
+    """将审计结果渲染为可人工核查的 Markdown。"""
+    lines = [
+        "# MFAC 取向来源 provenance no-go 审计",
+        "",
+        f"**状态：** `{certificate['status']}`",
+        f"**核验日期：** `{certificate['verified_date']}`",
+        "",
+        "```text",
+        "admissible_orientation_source_present="
+        f"{str(certificate['admissible_orientation_source_present']).lower()}",
+        "earliest_missing_forward_field="
+        f"{certificate['earliest_missing_forward_field']}",
+        f"next_positive_gate={certificate['next_positive_gate']}",
+        "mathematical_nonexistence_proved="
+        f"{str(certificate['mathematical_nonexistence_proved']).lower()}",
+        "row_column_unconditional_closed="
+        f"{str(certificate['row_column_unconditional_closed']).lower()}",
+        "```",
+        "",
+        "当前语料未提交满足全部前向字段的 actual primitive orientation 来源。",
+        "这不表示数学上不可能存在此类来源，也不证明 signed transport、行/列命题或 RH。",
+        "",
+        "## 候选来源",
+        "",
+        "| name | admissible | missing fields |",
+        "| --- | --- | --- |",
+    ]
+    for candidate in certificate["candidate_sources"]:
+        missing_fields = ", ".join(candidate["missing_fields"]) or "none"
+        lines.append(
+            "| `{name}` | `{admissible}` | `{missing}` |".format(
+                name=candidate["name"],
+                admissible=str(candidate["admissible"]).lower(),
+                missing=missing_fields,
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "## 正向门",
+            "",
+            "要继续内部 signed-source 路线，必须独立提交 "
+            f"`{certificate['next_positive_gate']}`：在 pre-Cauchy 层同时给出 "
+            "origin selector、orientation bit、local-factor product、actual-emitter registration "
+            "与 prepushforward signed-sum identity。",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def write_certificate(certificate: dict[str, Any], json_out: Path, markdown_out: Path) -> None:
+    """写出机器可读和人工可读的审计证书。"""
+    json_out.parent.mkdir(parents=True, exist_ok=True)
+    markdown_out.parent.mkdir(parents=True, exist_ok=True)
+    json_out.write_text(
+        json.dumps(certificate, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    markdown_out.write_text(render_markdown(certificate), encoding="utf-8")
+
+
 if __name__ == "__main__":
-    print(json.dumps(audit_orientation_provenance(DOCS), ensure_ascii=False, indent=2))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--docs", type=Path, default=DOCS)
+    parser.add_argument("--json-out", type=Path, default=DOCS / f"{SLUG}.json")
+    parser.add_argument("--md-out", type=Path, default=DOCS / f"{SLUG}.md")
+    args = parser.parse_args()
+
+    certificate = audit_orientation_provenance(args.docs)
+    write_certificate(certificate, args.json_out, args.md_out)
+    print(f"wrote {args.json_out}")
+    print(f"wrote {args.md_out}")
