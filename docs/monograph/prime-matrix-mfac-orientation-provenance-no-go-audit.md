@@ -8,6 +8,7 @@ admissible_orientation_source_present=false
 earliest_missing_forward_field=origin_selector
 next_positive_gate=PrimitiveOrientationLocalFactorProductLawBeforePushforward
 mathematical_nonexistence_proved=false
+rh_proved=false
 row_column_unconditional_closed=false
 ```
 

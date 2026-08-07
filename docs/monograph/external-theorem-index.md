@@ -13788,3 +13788,32 @@ precauchy_declaration_removed_from_product_window_first_target=true
 next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
 row_column_unconditional_closed=false
 ```
+
+## 附录 MFAC-OPN：MFAC 取向来源 provenance no-go 审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_orientation_provenance_no_go_audit.py
+experiments/prime_matrix_mfac_orientation_provenance_no_go_audit_test.py
+docs/monograph/prime-matrix-mfac-orientation-provenance-no-go-audit.json
+docs/monograph/prime-matrix-mfac-orientation-provenance-no-go-audit.md
+```
+
+本层不引入外部定理，也不把 Möbius/parity shadow 误作可送入 trace、Kloosterman 或
+Type-II 的 signed coefficient family。actual record、LPF owner support、rough-cofactor
+domain split 与 Möbius/parity shadow 均未在 pre-Cauchy 层同时登记 origin selector、
+orientation bit、local-factor product、actual-emitter registration 与 prepushforward
+signed-sum identity。
+
+```text
+admissible_orientation_source_present=false
+earliest_missing_forward_field=origin_selector
+next_positive_gate=PrimitiveOrientationLocalFactorProductLawBeforePushforward
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+因此外部解析工具仍须等待真正的可求和 signed family；该审计只记录当前语料缺口，
+不表示数学上不可能存在此类来源，不推出 signed transport、`ψ` 平滑误差、零点排除或 RH。

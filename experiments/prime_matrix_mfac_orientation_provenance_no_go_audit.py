@@ -157,6 +157,7 @@ def audit_orientation_provenance(docs: Path) -> dict[str, Any]:
         "earliest_missing_forward_field": "origin_selector",
         "next_positive_gate": "PrimitiveOrientationLocalFactorProductLawBeforePushforward",
         "mathematical_nonexistence_proved": False,
+        "rh_proved": False,
         "row_column_unconditional_closed": False,
     }
 
@@ -177,6 +178,7 @@ def render_markdown(certificate: dict[str, Any]) -> str:
         f"next_positive_gate={certificate['next_positive_gate']}",
         "mathematical_nonexistence_proved="
         f"{str(certificate['mathematical_nonexistence_proved']).lower()}",
+        f"rh_proved={str(certificate['rh_proved']).lower()}",
         "row_column_unconditional_closed="
         f"{str(certificate['row_column_unconditional_closed']).lower()}",
         "```",

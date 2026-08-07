@@ -99,6 +99,20 @@ class MFACOrientationProvenanceNoGoAuditTest(unittest.TestCase):
         self.assertIn("当前语料未提交", markdown)
         self.assertIn("不表示数学上不可能", markdown)
 
+    def test_certificate_keeps_rh_and_row_column_nonclosure_explicit(self) -> None:
+        """证书必须机器可读地保留 RH 与行/列非闭合边界。"""
+        certificate = audit_orientation_provenance(DOCS)
+        with tempfile.TemporaryDirectory() as directory:
+            json_out = Path(directory) / "certificate.json"
+            markdown_out = Path(directory) / "certificate.md"
+            write_certificate(certificate, json_out, markdown_out)
+            markdown = markdown_out.read_text(encoding="utf-8")
+
+        self.assertFalse(certificate["rh_proved"])
+        self.assertFalse(certificate["row_column_unconditional_closed"])
+        self.assertIn("rh_proved=false", markdown)
+        self.assertIn("row_column_unconditional_closed=false", markdown)
+
 
 if __name__ == "__main__":
     unittest.main()
