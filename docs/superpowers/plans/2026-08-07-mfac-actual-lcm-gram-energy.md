@@ -25,7 +25,7 @@
 - Create: `experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit_test.py`
 - Reference: `experiments/prime_matrix_mfac_global_free_mellin_mode_no_go_audit_test.py`
 
-- [ ] **Step 1: 声明目标 API 并写入精确 Gram 测试**
+- [x] **Step 1: 声明目标 API 并写入精确 Gram 测试**
 
 ```python
 from prime_matrix_mfac_actual_lcm_gram_energy_audit import (
@@ -55,7 +55,7 @@ def test_quadratic_form_equals_sum_of_divisor_feature_squares(self) -> None:
     self.assertAlmostEqual(lcm_gram_quadratic_form(24, coefficients), expected)
 ```
 
-- [ ] **Step 2: 写入 Möbius--`Lambda`、常数方向及循环合同测试**
+- [x] **Step 2: 写入 Möbius--`Lambda`、常数方向及循环合同测试**
 
 ```python
 def test_mobius_lcm_energy_recovers_lambda_square_energy(self) -> None:
@@ -82,7 +82,7 @@ def test_centering_contract_rejects_target_or_zero_input(self) -> None:
     )
 ```
 
-- [ ] **Step 3: 运行新测试，确认红灯**
+- [x] **Step 3: 运行新测试，确认红灯**
 
 ```bash
 python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_test -v
@@ -90,7 +90,7 @@ python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_t
 
 Expected: `ModuleNotFoundError: No module named 'prime_matrix_mfac_actual_lcm_gram_energy_audit'`；不得通过或跳过。
 
-- [ ] **Step 4: 提交红灯测试**
+- [x] **Step 4: 提交红灯测试**
 
 ```bash
 git add experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit_test.py
@@ -103,7 +103,7 @@ git commit -m "测试 MFAC 实际 LCM Gram 能量审计"
 - Create: `experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit.py`
 - Test: `experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit_test.py`
 
-- [ ] **Step 1: 实现基本算术与 LCM Gram API**
+- [x] **Step 1: 实现基本算术与 LCM Gram API**
 
 ```python
 def mobius(value: int) -> int:
@@ -130,7 +130,7 @@ def lcm_gram_quadratic_form(limit: int, coefficients: Mapping[int, float]) -> fl
 
 实现中拒绝 `limit < 1`、非正 divisor 和超过 `limit` 的 divisor；`mobius` 用试除分解，在平方因子出现时返回零。`von_mangoldt` 只在恰有一个不同素因子时返回该素数对数。
 
-- [ ] **Step 2: 实现 Möbius 权重、误差能量和常数方向界**
+- [x] **Step 2: 实现 Möbius 权重、误差能量和常数方向界**
 
 ```python
 def lcm_mobius_energy(limit: int) -> float:
@@ -171,7 +171,7 @@ def write_certificate(output_directory: Path, limit: int = 60) -> dict[str, Path
 
 此占位只解决模块导入边界，不生成任何证书，也不构成任务三的实现；任务三的红灯断言应期待该异常而不是缺失导入。
 
-- [ ] **Step 3: 实现六倍数见证与中心化合同分类**
+- [x] **Step 3: 实现六倍数见证与中心化合同分类**
 
 ```python
 FORBIDDEN_CENTERING_INPUTS = frozenset({
@@ -198,7 +198,7 @@ def audit_centering_contract(contract: Mapping[str, Any]) -> dict[str, Any]:
     }
 ```
 
-- [ ] **Step 4: 运行新测试，确认绿灯**
+- [x] **Step 4: 运行新测试，确认绿灯**
 
 ```bash
 python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_test -v
@@ -206,7 +206,7 @@ python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_t
 
 Expected: 所有已声明测试 `OK`。
 
-- [ ] **Step 5: 提交最小实现**
+- [x] **Step 5: 提交最小实现**
 
 ```bash
 git add \
@@ -225,7 +225,7 @@ git commit -m "审计 MFAC 实际 LCM Gram 能量"
 - Modify: `docs/monograph/claim-status-table.md`
 - Modify: `docs/monograph/external-theorem-index.md`
 
-- [ ] **Step 1: 写入证书失败测试**
+- [x] **Step 1: 写入证书失败测试**
 
 ```python
 def test_certificate_states_psd_gain_cauchy_obstruction_and_non_rh_boundary(self) -> None:
@@ -241,7 +241,7 @@ def test_certificate_states_psd_gain_cauchy_obstruction_and_non_rh_boundary(self
         self.assertFalse(payload["rh_proved"])
 ```
 
-- [ ] **Step 2: 运行该单测，确认因 `write_certificate` 缺失而失败**
+- [x] **Step 2: 运行该单测，确认因 `write_certificate` 缺失而失败**
 
 ```bash
 python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_test.MFACActualLCMGramEnergyAuditTest.test_certificate_states_psd_gain_cauchy_obstruction_and_non_rh_boundary -v
@@ -249,7 +249,7 @@ python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_t
 
 Expected: `NotImplementedError` 指向尚未实现的证书写出，而不是测试或导入错误。
 
-- [ ] **Step 3: 实现审计汇总、证书和 CLI**
+- [x] **Step 3: 实现审计汇总、证书和 CLI**
 
 ```python
 def audit_actual_lcm_gram_energy(limit: int) -> dict[str, Any]:
@@ -272,7 +272,7 @@ def audit_actual_lcm_gram_energy(limit: int) -> dict[str, Any]:
 
 将任务二的 `write_certificate` 占位替换为功能实现，使其同时输出 JSON 与 Markdown；Markdown 显示 `K_X(d,e)=floor(X/lcm(d,e))`、Gram 平方和、普通 Cauchy 的常数方向障碍，并写明它不是 `psi` 平滑误差、零点排除或 RH 结论。CLI 接受 `--limit` 和 `--output-directory`，默认输出到 `docs/monograph`。
 
-- [ ] **Step 4: 生成项目证书并更新索引**
+- [x] **Step 4: 生成项目证书并更新索引**
 
 ```bash
 python3 experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit.py --limit 60
@@ -280,7 +280,7 @@ python3 experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit.py --limit 60
 
 在 `claim-status-table.md` 新增一行，只声明“实际 LCM Gram 正半定核与普通 Cauchy 常数方向障碍已审计”；在 `external-theorem-index.md` 增加 `MFAC-ALGE`，明确其为内部有限审计、不是外部定理、不是 RH 证明。
 
-- [ ] **Step 5: 运行定向测试与全族回归**
+- [x] **Step 5: 运行定向测试与全族回归**
 
 ```bash
 python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_test -v
@@ -290,7 +290,7 @@ git --no-pager diff --check
 
 Expected: 新模块测试全绿、MFAC 全族回归全绿、无空白差异错误。
 
-- [ ] **Step 6: 提交证书与索引同步**
+- [x] **Step 6: 提交证书与索引同步**
 
 ```bash
 git add \

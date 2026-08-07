@@ -1,6 +1,6 @@
 # MFAC 实际 LCM Gram 能量与常数方向障碍审计设计
 
-**状态：** `design_approved_implementation_pending_user_spec_review`
+**状态：** `implemented_and_archived_non_rh_boundary_preserved`
 
 ## 1. 研究目标
 
