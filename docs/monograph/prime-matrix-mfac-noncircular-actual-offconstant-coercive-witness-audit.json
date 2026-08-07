@@ -1,0 +1,39 @@
+{
+  "slug": "prime-matrix-mfac-noncircular-actual-offconstant-coercive-witness-audit",
+  "limit": 60,
+  "witness": {
+    "limit": 60,
+    "coefficient_source": "K_X(1,2)/K_X(1,1)",
+    "K11_exact_numerator": 60,
+    "K12_exact_numerator": 30,
+    "coefficient_exact_numerator": 1,
+    "coefficient_exact_denominator": 2,
+    "constant_orthogonality_exact_numerator": 0,
+    "constant_orthogonality_exact_denominator": 1,
+    "energy_exact_numerator": 15,
+    "energy_exact_denominator": 1,
+    "energy": 15.0,
+    "coercivity_lower_bound": 13.333333333333334,
+    "scaled_energy": 15.0,
+    "scaled_coercivity_lower_bound": 13.333333333333334,
+    "witness_constructed_before_mellin": true,
+    "uses_target_error": false,
+    "uses_mellin_input": false
+  },
+  "dependency_contract": {
+    "witness_uses": [
+      "integer_limit_X",
+      "K_X(1,1)",
+      "K_X(1,2)"
+    ],
+    "forbidden_uses": [],
+    "classification": "noncircular_actual_gram_witness",
+    "actual_non_circular_witness_constructed": true
+  },
+  "noncircular_actual_offconstant_coercive_witness_constructed": true,
+  "one_dimensional_coercivity_established": true,
+  "full_offconstant_spectral_gap_established": false,
+  "actual_chebyshev_mellin_contraction_present": false,
+  "rh_proved": false,
+  "next_positive_gate": "UniformOffConstantCoercivityOrActualChebyshevMellinContractionLaw"
+}

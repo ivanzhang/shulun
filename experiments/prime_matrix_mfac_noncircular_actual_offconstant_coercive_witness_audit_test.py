@@ -3,8 +3,10 @@
 
 from __future__ import annotations
 
+import json
 import math
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -15,6 +17,7 @@ from prime_matrix_mfac_noncircular_actual_offconstant_coercive_witness_audit imp
     actual_offconstant_coercive_witness_data,
     audit_noncircular_actual_offconstant_coercive_witness_before_mellin,
     audit_witness_dependency_contract,
+    write_certificate,
 )
 
 
@@ -63,6 +66,21 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
             audit["next_positive_gate"],
             "UniformOffConstantCoercivityOrActualChebyshevMellinContractionLaw",
         )
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            paths = write_certificate(Path(temporary_directory), limit=60)
+            certificate = json.loads(paths["json_path"].read_text(encoding="utf-8"))
+            markdown = paths["markdown_path"].read_text(encoding="utf-8")
+
+        self.assertTrue(
+            certificate["noncircular_actual_offconstant_coercive_witness_constructed"]
+        )
+        self.assertTrue(certificate["one_dimensional_coercivity_established"])
+        self.assertFalse(certificate["actual_chebyshev_mellin_contraction_present"])
+        self.assertFalse(certificate["rh_proved"])
+        self.assertIn("2X/9", markdown)
+        self.assertIn("不是全空间谱隙", markdown)
+        self.assertIn("不是 Mellin 收缩", markdown)
 
     def test_witness_uses_only_actual_lcm_gram_entries(self) -> None:
         """见证只使用实际 LCM Gram 条目且在 Mellin 前构造。"""

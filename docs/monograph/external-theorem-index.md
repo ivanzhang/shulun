@@ -13982,3 +13982,33 @@ next_positive_gate=NoncircularActualOffConstantCoerciveWitnessBeforeMellin
 命名输入也只分类为 `independence_unverified`，并未被虚构为已经构造的见证。因此这不是
 \(\psi\) 平滑误差、Mellin 收缩、零点排除或 RH 结论，也不证明所有可能的 coercive
 能量机制不存在。
+
+## 附录 MFAC-NOOCW：MFAC 非循环实际去常数强制见证（Mellin 前）（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_noncircular_actual_offconstant_coercive_witness_audit.py
+experiments/prime_matrix_mfac_noncircular_actual_offconstant_coercive_witness_audit_test.py
+docs/monograph/prime-matrix-mfac-noncircular-actual-offconstant-coercive-witness-audit.json
+docs/monograph/prime-matrix-mfac-noncircular-actual-offconstant-coercive-witness-audit.md
+```
+
+这是内部有限整数证书，不引用新增外部定理。它只使用实际整数 LCM Gram 条目
+\(K_X(1,1)=X\)、\(K_X(1,2)=\lfloor X/2\rfloor\)，构造
+\(h_X=e_2-\lfloor X/2\rfloor e_1/X\)，从而有
+\(\lVert h_X\rVert_{K_X}^2=m_X(X-m_X)/X\)（\(m_X=\lfloor X/2\rfloor\)）和
+\(\lVert h_X\rVert_{K_X}^2\ge 2X/9\)。
+
+合同禁止并实际未使用 `psi(X)-X`、`Chebyshev_error`、`Mellin`、`zeta_zero` 与
+`explicit_formula`；因此见证保持非循环且在 Mellin 前。它只确立实际一维方向的强制性，
+不等同于 Mellin 收缩、Chebyshev 误差界、零点排除或 RH，也不是全空间谱隙。
+
+```text
+noncircular_actual_offconstant_coercive_witness_constructed=true
+one_dimensional_coercivity_established=true
+full_offconstant_spectral_gap_established=false
+actual_chebyshev_mellin_contraction_present=false
+rh_proved=false
+next_positive_gate=UniformOffConstantCoercivityOrActualChebyshevMellinContractionLaw
+```
