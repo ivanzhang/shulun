@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import math
 import sys
 import unittest
 from pathlib import Path
@@ -46,6 +47,13 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
 
         self.assertAlmostEqual(lcm_gram_quadratic_form(24, coefficients), expected)
 
+    def test_quadratic_form_rejects_nonfinite_coefficients(self) -> None:
+        """有限实 Gram 二次型拒绝非有限系数。"""
+        for coefficient in (math.nan, math.inf):
+            with self.subTest(coefficient=coefficient):
+                with self.assertRaises(ValueError):
+                    lcm_gram_quadratic_form(24, {1: coefficient})
+
     def test_mobius_lcm_energy_recovers_lambda_square_energy(self) -> None:
         """Möbius 加权 LCM 能量精确恢复 Lambda 平方和。"""
         self.assertAlmostEqual(lcm_mobius_energy(60), lambda_square_energy(60))
@@ -77,6 +85,13 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
             result["classification"],
             "centered_kernel_uses_target_or_forbidden_analytic_input",
         )
+
+    def test_centering_contract_rejects_non_mapping_input(self) -> None:
+        """中心化合同仅接受可读取 uses 字段的 Mapping。"""
+        for contract in (None, [], 1):
+            with self.subTest(contract=contract):
+                with self.assertRaises(ValueError):
+                    audit_centering_contract(contract)
 
 
 if __name__ == "__main__":

@@ -110,7 +110,13 @@ def lcm_gram_quadratic_form(
         checked_divisor = _require_divisor_within_limit(
             checked_limit, divisor, "coefficient divisor"
         )
-        checked_coefficients[checked_divisor] = float(weight)
+        try:
+            checked_weight = float(weight)
+        except (TypeError, ValueError, OverflowError) as error:
+            raise ValueError("coefficient weight 必须可转换为有限实数") from error
+        if not math.isfinite(checked_weight):
+            raise ValueError("coefficient weight 必须为有限实数")
+        checked_coefficients[checked_divisor] = checked_weight
 
     return sum(
         left_weight
@@ -173,6 +179,8 @@ def six_multiple_non_prime_power_witnesses(limit: int) -> tuple[int, ...]:
 
 def audit_centering_contract(contract: Mapping[str, Any]) -> dict[str, object]:
     """拒绝中心化核读取待估目标或预先禁止的解析输入。"""
+    if not isinstance(contract, Mapping):
+        raise ValueError("contract 必须为 Mapping")
     uses = contract.get("uses", ())
     if isinstance(uses, str):
         uses = (uses,)
