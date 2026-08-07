@@ -13847,3 +13847,34 @@ row_column_unconditional_closed=false
 
 外部解析输入仍需一个真正的 pre-Cauchy signed dispatch；本审计不表示数学上不存在该
 dispatch，不推出 signed transport、`ψ` 平滑误差、零点排除或 RH。
+
+## 附录 MFAC-SLNF：MFAC 半素数局部自然性分解审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_semiprime_local_naturality_factorization_audit.py
+experiments/prime_matrix_mfac_semiprime_local_naturality_factorization_audit_test.py
+docs/monograph/prime-matrix-mfac-semiprime-local-naturality-factorization-audit.json
+docs/monograph/prime-matrix-mfac-semiprime-local-naturality-factorization-audit.md
+```
+
+本步只在显式局部自然性模型内审计五类现有候选：global Möbius/Lambda、D/E colored
+divisor word、LPF/Phi factor word、square-base parity 及 canonical RIW/Buchstab T1。
+前四者分别只给 global 零和、global transport、无符号/规范支撑与后验 state；第五者
+只落入 canonical factorization。完整 synthetic 独立 noncanonical record 可被识别为最小
+collision certificate，说明审计器不把所有输入都拒绝。
+
+```text
+current_corpus_has_independent_semiprime_declaration_line=false
+minimal_collision_certificate_present=false
+conditional_scope=explicit_local_naturality_model_only
+next_positive_gate=SemiprimeTriadDeclarationLineFromIndependentArithmeticIdentity
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+这不是外部定理，也不证明该条件二分对所有可能的 arithmetic identity 成立；它只排除把
+当前五个候选族重命名为 actual source 的循环捷径。外部解析、signed transport、`ψ` 平滑
+误差、零点排除和 RH 仍没有在本步获得输入或闭合。
