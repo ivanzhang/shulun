@@ -161,6 +161,16 @@ def ordinary_cauchy_projection_bound(limit: int) -> dict[str, float | int]:
 
 `lcm_mobius_energy` 必须通过 `lcm_gram_quadratic_form` 计算；测试与逐项 `lambda_square_energy` 比较，不得以同一函数重算两侧。
 
+为满足任务一已经固定的公共导入，任务二还必须临时导出：
+
+```python
+def write_certificate(output_directory: Path, limit: int = 60) -> dict[str, Path]:
+    """保留证书 API；完整写出在任务三实现。"""
+    raise NotImplementedError("证书写出将在任务三实现")
+```
+
+此占位只解决模块导入边界，不生成任何证书，也不构成任务三的实现；任务三的红灯断言应期待该异常而不是缺失导入。
+
 - [ ] **Step 3: 实现六倍数见证与中心化合同分类**
 
 ```python
@@ -237,7 +247,7 @@ def test_certificate_states_psd_gain_cauchy_obstruction_and_non_rh_boundary(self
 python3 -m unittest experiments.prime_matrix_mfac_actual_lcm_gram_energy_audit_test.MFACActualLCMGramEnergyAuditTest.test_certificate_states_psd_gain_cauchy_obstruction_and_non_rh_boundary -v
 ```
 
-Expected: `ImportError` 或 `AttributeError` 指向缺失的 `write_certificate`。
+Expected: `NotImplementedError` 指向尚未实现的证书写出，而不是测试或导入错误。
 
 - [ ] **Step 3: 实现审计汇总、证书和 CLI**
 
@@ -260,7 +270,7 @@ def audit_actual_lcm_gram_energy(limit: int) -> dict[str, Any]:
     }
 ```
 
-`write_certificate(output_directory, limit)` 同时输出 JSON 与 Markdown；Markdown 显示 `K_X(d,e)=floor(X/lcm(d,e))`、Gram 平方和、普通 Cauchy 的常数方向障碍，并写明它不是 `psi` 平滑误差、零点排除或 RH 结论。CLI 接受 `--limit` 和 `--output-directory`，默认输出到 `docs/monograph`。
+将任务二的 `write_certificate` 占位替换为功能实现，使其同时输出 JSON 与 Markdown；Markdown 显示 `K_X(d,e)=floor(X/lcm(d,e))`、Gram 平方和、普通 Cauchy 的常数方向障碍，并写明它不是 `psi` 平滑误差、零点排除或 RH 结论。CLI 接受 `--limit` 和 `--output-directory`，默认输出到 `docs/monograph`。
 
 - [ ] **Step 4: 生成项目证书并更新索引**
 
