@@ -157,6 +157,16 @@ def audit_direct_projection_contract(contract: Mapping[str, Any]) -> dict[str, A
 
 `contract` 必须为 Mapping，`alpha_uses` 必须是非裸字符串的 `Iterable[str]`。若含禁止输入，返回严格分类 `direct_e1_projection_uses_target_or_forbidden_analytic_input`；否则返回 `direct_e1_projection_independence_unverified`。后者不是 actual witness，也不得返回数学不存在性。
 
+为满足任务一已经固定的公共导入，任务二还必须临时导出：
+
+```python
+def write_certificate(output_directory: Path, limit: int = 60) -> dict[str, Path]:
+    """保留证书 API；完整写出在任务三实现。"""
+    raise NotImplementedError("证书写出将在任务三实现")
+```
+
+该占位只解决模块导入边界，不生成证书；任务三的红灯应期待该异常而不是缺失导入。
+
 - [ ] **Step 4: 运行定向测试，确认绿灯**
 
 ```bash
@@ -208,7 +218,7 @@ def test_certificate_marks_direct_projection_circularity_not_global_nonexistence
 python3 -m unittest experiments.prime_matrix_mfac_lcm_offconstant_projection_circularity_audit_test.MFACLcmOffConstantProjectionCircularityAuditTest.test_certificate_marks_direct_projection_circularity_not_global_nonexistence -v
 ```
 
-Expected: `ImportError` 或 `AttributeError` 指向缺失的 `write_certificate`，而不是断言或数学计算失败。
+Expected: `NotImplementedError` 指向尚未实现的证书写出，而不是断言或数学计算失败。
 
 - [ ] **Step 3: 实现审计汇总、证书与 CLI**
 
@@ -232,7 +242,7 @@ def audit_direct_projection_circularity(limit: int) -> dict[str, Any]:
     }
 ```
 
-`write_certificate(output_directory, limit)` 必须写出 JSON/Markdown 并返回两个 `Path`。Markdown 必须展示 `<g,e_1>_K=psi(X)-X`、`||e_1||_K^2=X`、`alpha=(psi(X)-X)/X` 与“仅直接秩一模板被拒绝”的边界。CLI 接受 `--limit`、`--output-directory`，默认写到 `docs/monograph`。
+将任务二的 `write_certificate` 占位替换为功能实现，使其写出 JSON/Markdown 并返回两个 `Path`。Markdown 必须展示 `<g,e_1>_K=psi(X)-X`、`||e_1||_K^2=X`、`alpha=(psi(X)-X)/X` 与“仅直接秩一模板被拒绝”的边界。CLI 接受 `--limit`、`--output-directory`，默认写到 `docs/monograph`。
 
 - [ ] **Step 4: 生成项目证书并更新索引**
 
