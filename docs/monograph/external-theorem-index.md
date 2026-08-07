@@ -13890,3 +13890,29 @@ docs/monograph/mfac-frontier-conclusion-and-proof-obligation-chain-20260807.md
 该汇总按证据等级区分了精确 Möbius 恒等式、有限 D/E transport、source schema/条件审计与真正 pre-Cauchy signed emitter。唯一正向门仍是 `SemiprimeTriadDeclarationLineFromIndependentArithmeticIdentity`：它必须给出不从既有 divisor/LPF/word/parity/canonical 数据恢复的独立算术泛函，并完成 actual row、origin、orientation、local factor、exact `(u,v)` 与 prepushforward identity 的绑定。
 
 汇总不引入外部定理；它明确维持 `mathematical_nonexistence_proved=false`、`rh_proved=false` 和 `row_column_unconditional_closed=false`。
+
+## 附录 MFAC-GFMM：MFAC 全局自由 Mellin 增长模反模型审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_global_free_mellin_mode_no_go_audit.py
+experiments/prime_matrix_mfac_global_free_mellin_mode_no_go_audit_test.py
+docs/monograph/prime-matrix-mfac-global-free-mellin-mode-no-go-audit.json
+docs/monograph/prime-matrix-mfac-global-free-mellin-mode-no-go-audit.md
+```
+
+局部有限自由交换单子逐点满足 `Lambda=-mu*log`，保留多维 Möbius 交替与 divisor-lattice payload 守恒；但它允许 `1/2<beta<1` 的归一化 Mellin 增长轮廓。因此符号交替、递推和形式全局零和不能自行产生实际 `ψ` 的平方根消去。
+
+```text
+exact_divisor_lattice_identity_available=true
+free_mellin_growth_countermodel_constructed=true
+alternation_only_implies_sqrt_cancellation=false
+actual_chebyshev_mellin_contraction_present=false
+next_positive_gate=ActualChebyshevErrorMellinContractionLawBeforeExplicitFormula
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+这不是外部定理、自然数素数反例或实际 zeta 零点反例；它只定位了直接 RH 攻击所缺的实际整数嵌入、固定 Chebyshev 测度、非循环误差核与 Mellin 半平面收缩律。
