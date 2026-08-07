@@ -13,6 +13,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from prime_matrix_mfac_noncircular_actual_offconstant_coercive_witness_audit import (  # noqa: E402
     actual_offconstant_coercive_witness_data,
+    audit_noncircular_actual_offconstant_coercive_witness_before_mellin,
+    audit_witness_dependency_contract,
 )
 
 
@@ -44,6 +46,24 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
                     data["energy"], data["coercivity_lower_bound"]
                 )
 
+        audit = audit_noncircular_actual_offconstant_coercive_witness_before_mellin()
+        self.assertEqual(
+            audit["slug"],
+            "prime-matrix-mfac-noncircular-actual-offconstant-coercive-witness-audit",
+        )
+        self.assertEqual(audit["limit"], 60)
+        self.assertTrue(
+            audit["noncircular_actual_offconstant_coercive_witness_constructed"]
+        )
+        self.assertTrue(audit["one_dimensional_coercivity_established"])
+        self.assertFalse(audit["full_offconstant_spectral_gap_established"])
+        self.assertFalse(audit["actual_chebyshev_mellin_contraction_present"])
+        self.assertFalse(audit["rh_proved"])
+        self.assertEqual(
+            audit["next_positive_gate"],
+            "UniformOffConstantCoercivityOrActualChebyshevMellinContractionLaw",
+        )
+
     def test_witness_uses_only_actual_lcm_gram_entries(self) -> None:
         """见证只使用实际 LCM Gram 条目且在 Mellin 前构造。"""
         data = actual_offconstant_coercive_witness_data(5)
@@ -54,6 +74,40 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
         self.assertTrue(data["witness_constructed_before_mellin"])
         self.assertFalse(data["uses_target_error"])
         self.assertFalse(data["uses_mellin_input"])
+
+        allowed = audit_witness_dependency_contract(
+            {
+                "witness_uses": (
+                    "integer_limit_X",
+                    "K_X(1,1)",
+                    "K_X(1,2)",
+                )
+            }
+        )
+        self.assertEqual(
+            allowed["witness_uses"],
+            ("integer_limit_X", "K_X(1,1)", "K_X(1,2)"),
+        )
+        self.assertEqual(allowed["forbidden_uses"], ())
+        self.assertEqual(
+            allowed["classification"], "noncircular_actual_gram_witness"
+        )
+        self.assertTrue(allowed["actual_non_circular_witness_constructed"])
+
+        for forbidden_use in ("psi(X)-X", "Mellin"):
+            with self.subTest(forbidden_use=forbidden_use):
+                forbidden = audit_witness_dependency_contract(
+                    {"witness_uses": ("integer_limit_X", forbidden_use)}
+                )
+
+                self.assertEqual(forbidden["forbidden_uses"], (forbidden_use,))
+                self.assertEqual(
+                    forbidden["classification"],
+                    "forbidden_target_or_analytic_dependency",
+                )
+                self.assertFalse(
+                    forbidden["actual_non_circular_witness_constructed"]
+                )
 
     def test_scalar_direction_obeys_declared_coercivity(self) -> None:
         """缩放方向的能量和强制下界都按平方缩放。"""
@@ -96,6 +150,15 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
             with self.subTest(scalar=scalar):
                 with self.assertRaises(ValueError):
                     actual_offconstant_coercive_witness_data(2, scalar=scalar)
+
+        for contract in (
+            None,
+            {"witness_uses": "integer_limit_X"},
+            {"witness_uses": ("integer_limit_X", 2)},
+        ):
+            with self.subTest(contract=contract):
+                with self.assertRaises(ValueError):
+                    audit_witness_dependency_contract(contract)
 
 
 if __name__ == "__main__":
