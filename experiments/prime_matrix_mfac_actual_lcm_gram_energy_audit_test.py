@@ -19,7 +19,7 @@ from prime_matrix_mfac_actual_lcm_gram_energy_audit import (  # noqa: E402
     lcm_mobius_energy,
     ordinary_cauchy_projection_bound,
     six_multiple_non_prime_power_witnesses,
-    write_certificate,
+    write_certificate,  # noqa: F401 - 预先固定第三任务的证书 API 合同。
 )
 
 
