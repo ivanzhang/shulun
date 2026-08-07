@@ -16,6 +16,7 @@ from prime_matrix_mfac_registration_hash_audit import (  # noqa: E402
     DEFAULT_PATHS,
     audit_registration_evidence,
     complete_registration_fixture,
+    write_certificate,
 )
 
 
@@ -75,6 +76,22 @@ class MFACRegistrationHashAuditTest(unittest.TestCase):
 
         self.assertTrue(certificate["downstream_recovery_used"])
         self.assertFalse(certificate["registration_recoverable_from_hash"])
+
+    def test_certificate_writer_states_the_evidence_boundary(self) -> None:
+        """证书必须区分当前语料缺口与数学上不可能。"""
+        certificate = audit_registration_evidence(DEFAULT_PATHS)
+
+        with tempfile.TemporaryDirectory() as directory:
+            json_out = Path(directory) / "certificate.json"
+            markdown_out = Path(directory) / "certificate.md"
+            write_certificate(certificate, json_out, markdown_out)
+            markdown = markdown_out.read_text(encoding="utf-8")
+            json_exists = json_out.exists()
+
+        self.assertTrue(json_exists)
+        self.assertIn("earliest_missing_registration_field=emitter_id", markdown)
+        self.assertIn("当前语料未提交 registration 前向证据", markdown)
+        self.assertIn("不表示数学上不可能", markdown)
 
 
 if __name__ == "__main__":

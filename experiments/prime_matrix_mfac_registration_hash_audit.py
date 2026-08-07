@@ -7,6 +7,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 from typing import Any
@@ -14,6 +15,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
+SLUG = "prime-matrix-mfac-registration-hash-audit"
 MANIFEST_TYPE = "prime_matrix_actual_noncanonical_atomic_record_constructor"
 REGISTRATION_FIELDS = (
     "emitter_id",
@@ -135,6 +137,9 @@ def audit_registration_evidence(paths: dict[str, Path]) -> dict[str, Any]:
         and not manifest["forbidden_dependencies"]
     ]
     return {
+        "certificate_type": "prime_matrix_mfac_registration_hash_audit",
+        "status": "formal_unit_hash_does_not_supply_actual_emitter_registration",
+        "verified_date": "2026-08-07",
         "hash_contains_registration_fields": hash_fields_present,
         "actual_source_table_constructed": source_table_constructed,
         "registration_recoverable_from_hash": (
@@ -146,6 +151,10 @@ def audit_registration_evidence(paths: dict[str, Path]) -> dict[str, Any]:
         "downstream_recovery_used": downstream_recovery_used,
         "manifest_audits": manifest_audits,
         "row_column_unconditional_closed": False,
+        "plain_conclusion": (
+            "当前语料未提交由 formal-unit/source-tuple/source-record hash 前向恢复 "
+            "actual emitter registration 的证据；首缺字段为 emitter_id。"
+        ),
     }
 
 
@@ -198,3 +207,77 @@ def complete_registration_fixture(root: Path) -> dict[str, Path]:
         "manifest_root": root,
         "manifest": manifest_path,
     }
+
+
+def render_markdown(certificate: dict[str, Any]) -> str:
+    """渲染 registration-hash 审计报告。"""
+    return "\n".join(
+        [
+            "# MFAC registration 与 formal-unit hash 审计",
+            "",
+            f"**状态：** `{certificate['status']}`",
+            "",
+            "```text",
+            "hash_contains_registration_fields="
+            f"{str(certificate['hash_contains_registration_fields']).lower()}",
+            "actual_source_table_constructed="
+            f"{str(certificate['actual_source_table_constructed']).lower()}",
+            "registration_recoverable_from_hash="
+            f"{str(certificate['registration_recoverable_from_hash']).lower()}",
+            "earliest_missing_registration_field="
+            f"{certificate['earliest_missing_registration_field']}",
+            "downstream_recovery_used="
+            f"{str(certificate['downstream_recovery_used']).lower()}",
+            "row_column_unconditional_closed=false",
+            "```",
+            "",
+            certificate["plain_conclusion"],
+            "",
+            "本证书只表示当前语料未提交 registration 前向证据；不表示数学上不可能存在此类构造，"
+            "不声称哈希函数不可逆，更不推出零点排除、ψ 平滑误差或 RH。",
+            "",
+            "下一门必须是：",
+            "",
+            "```text",
+            "PreCauchyCarrierColoredWordSameFormalUnitSourceRegistrationOrNamedReturn",
+            "```",
+            "",
+        ]
+    )
+
+
+def write_certificate(certificate: dict[str, Any], json_out: Path, markdown_out: Path) -> None:
+    """写出机器可读与人工可读证书。"""
+    json_out.parent.mkdir(parents=True, exist_ok=True)
+    markdown_out.parent.mkdir(parents=True, exist_ok=True)
+    json_out.write_text(
+        json.dumps(certificate, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    markdown_out.write_text(render_markdown(certificate), encoding="utf-8")
+
+
+def main() -> None:
+    """运行审计并输出默认 monograph 证书。"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--hash", type=Path, default=DEFAULT_PATHS["hash"])
+    parser.add_argument("--source-table", type=Path, default=DEFAULT_PATHS["source_table"])
+    parser.add_argument("--manifest-root", type=Path, default=DEFAULT_PATHS["manifest_root"])
+    parser.add_argument("--json-out", type=Path, default=DOCS / f"{SLUG}.json")
+    parser.add_argument("--md-out", type=Path, default=DOCS / f"{SLUG}.md")
+    args = parser.parse_args()
+
+    certificate = audit_registration_evidence(
+        {
+            "hash": args.hash,
+            "source_table": args.source_table,
+            "manifest_root": args.manifest_root,
+        }
+    )
+    write_certificate(certificate, args.json_out, args.md_out)
+    print(f"wrote {args.json_out}")
+    print(f"wrote {args.md_out}")
+
+
+if __name__ == "__main__":
+    main()
