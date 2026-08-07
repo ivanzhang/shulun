@@ -13788,3 +13788,93 @@ precauchy_declaration_removed_from_product_window_first_target=true
 next_primary_attack_target=ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter
 row_column_unconditional_closed=false
 ```
+
+## 附录 MFAC-OPN：MFAC 取向来源 provenance no-go 审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_orientation_provenance_no_go_audit.py
+experiments/prime_matrix_mfac_orientation_provenance_no_go_audit_test.py
+docs/monograph/prime-matrix-mfac-orientation-provenance-no-go-audit.json
+docs/monograph/prime-matrix-mfac-orientation-provenance-no-go-audit.md
+```
+
+本层不引入外部定理，也不把 Möbius/parity shadow 误作可送入 trace、Kloosterman 或
+Type-II 的 signed coefficient family。actual record、LPF owner support、rough-cofactor
+domain split 与 Möbius/parity shadow 均未在 pre-Cauchy 层同时登记 origin selector、
+orientation bit、local-factor product、actual-emitter registration 与 prepushforward
+signed-sum identity。
+
+```text
+admissible_orientation_source_present=false
+earliest_missing_forward_field=origin_selector
+next_positive_gate=PrimitiveOrientationLocalFactorProductLawBeforePushforward
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+因此外部解析工具仍须等待真正的可求和 signed family；该审计只记录当前语料缺口，
+不表示数学上不可能存在此类来源，不推出 signed transport、`ψ` 平滑误差、零点排除或 RH。
+
+## 附录 MFAC-STD：MFAC 半素数三项 dispatch 审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_semiprime_triad_dispatch_audit.py
+experiments/prime_matrix_mfac_semiprime_triad_dispatch_audit_test.py
+docs/monograph/prime-matrix-mfac-semiprime-triad-dispatch-audit.json
+docs/monograph/prime-matrix-mfac-semiprime-triad-dispatch-audit.md
+```
+
+对 offdiagonal 素数对 `p<q`，global D/E transport 给出三项
+`(p,q,+log p)`、`(q,p,+log q)`、`(p*q,1,-log(p*q))`，总和为零。该零和本身
+不是 actual primitive-row dispatch：若没有前向 `row_key`，就不能判断为 canonical
+collapse，更不能把 global payload 送入 trace、Kloosterman 或 Type-II family。
+
+```text
+global_triad_reconstructed=true
+actual_dispatch_present=false
+canonical_zero_sum_collapse=false
+earliest_missing_field=origin_selector
+next_positive_gate=OffDiagonalSemiprimeTriadActualDispatchBeforePushforward
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+外部解析输入仍需一个真正的 pre-Cauchy signed dispatch；本审计不表示数学上不存在该
+dispatch，不推出 signed transport、`ψ` 平滑误差、零点排除或 RH。
+
+## 附录 MFAC-SLNF：MFAC 半素数局部自然性分解审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_semiprime_local_naturality_factorization_audit.py
+experiments/prime_matrix_mfac_semiprime_local_naturality_factorization_audit_test.py
+docs/monograph/prime-matrix-mfac-semiprime-local-naturality-factorization-audit.json
+docs/monograph/prime-matrix-mfac-semiprime-local-naturality-factorization-audit.md
+```
+
+本步只在显式局部自然性模型内审计五类现有候选：global Möbius/Lambda、D/E colored
+divisor word、LPF/Phi factor word、square-base parity 及 canonical RIW/Buchstab T1。
+前四者分别只给 global 零和、global transport、无符号/规范支撑与后验 state；第五者
+只落入 canonical factorization。完整 synthetic 独立 noncanonical record 可被识别为最小
+collision certificate，说明审计器不把所有输入都拒绝。
+
+```text
+current_corpus_has_independent_semiprime_declaration_line=false
+minimal_collision_certificate_present=false
+conditional_scope=explicit_local_naturality_model_only
+next_positive_gate=SemiprimeTriadDeclarationLineFromIndependentArithmeticIdentity
+mathematical_nonexistence_proved=false
+rh_proved=false
+row_column_unconditional_closed=false
+```
+
+这不是外部定理，也不证明该条件二分对所有可能的 arithmetic identity 成立；它只排除把
+当前五个候选族重命名为 actual source 的循环捷径。外部解析、signed transport、`ψ` 平滑
+误差、零点排除和 RH 仍没有在本步获得输入或闭合。
