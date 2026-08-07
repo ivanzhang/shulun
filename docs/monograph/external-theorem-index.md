@@ -13878,3 +13878,15 @@ row_column_unconditional_closed=false
 这不是外部定理，也不证明该条件二分对所有可能的 arithmetic identity 成立；它只排除把
 当前五个候选族重命名为 actual source 的循环捷径。外部解析、signed transport、`ψ` 平滑
 误差、零点排除和 RH 仍没有在本步获得输入或闭合。
+
+## 附录 MFAC-FRONTIER：MFAC 最前沿结论与证明义务链（2026-08-07）
+
+新增汇总：
+
+```text
+docs/monograph/mfac-frontier-conclusion-and-proof-obligation-chain-20260807.md
+```
+
+该汇总按证据等级区分了精确 Möbius 恒等式、有限 D/E transport、source schema/条件审计与真正 pre-Cauchy signed emitter。唯一正向门仍是 `SemiprimeTriadDeclarationLineFromIndependentArithmeticIdentity`：它必须给出不从既有 divisor/LPF/word/parity/canonical 数据恢复的独立算术泛函，并完成 actual row、origin、orientation、local factor、exact `(u,v)` 与 prepushforward identity 的绑定。
+
+汇总不引入外部定理；它明确维持 `mathematical_nonexistence_proved=false`、`rh_proved=false` 和 `row_column_unconditional_closed=false`。
