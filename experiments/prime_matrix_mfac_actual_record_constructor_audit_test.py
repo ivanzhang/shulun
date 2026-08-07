@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from prime_matrix_mfac_actual_record_constructor_audit import (  # noqa: E402
     audit_constructor_evidence,
     complete_manifest,
+    write_certificate,
 )
 
 
@@ -65,6 +66,22 @@ class MFACActualRecordConstructorAuditTest(unittest.TestCase):
         self.assertFalse(certificate["actual_noncanonical_atomic_record_present"])
         self.assertFalse(certificate["branch_alphabet_domain_defined"])
         self.assertTrue(certificate["downstream_recovery_used"])
+
+    def test_certificate_writer_marks_corpus_gap_not_mathematical_impossibility(self) -> None:
+        """证书必须把当前语料缺口与数学否定严格区分。"""
+        certificate = audit_constructor_evidence(DOCS)
+
+        with tempfile.TemporaryDirectory() as directory:
+            json_out = Path(directory) / "certificate.json"
+            markdown_out = Path(directory) / "certificate.md"
+            write_certificate(certificate, json_out, markdown_out)
+            markdown = markdown_out.read_text(encoding="utf-8")
+            json_exists = json_out.exists()
+
+        self.assertTrue(json_exists)
+        self.assertIn("earliest_missing_field=origin_selector", markdown)
+        self.assertIn("当前语料未提交", markdown)
+        self.assertIn("不表示数学上不可能", markdown)
 
 
 if __name__ == "__main__":

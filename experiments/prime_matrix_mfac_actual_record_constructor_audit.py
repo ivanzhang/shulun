@@ -7,12 +7,15 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs" / "monograph"
+SLUG = "prime-matrix-mfac-actual-record-constructor-audit"
 REQUIRED_RECORD_FIELDS = (
     "witness_id",
     "formal_unit_id",
@@ -150,6 +153,9 @@ def audit_constructor_evidence(root: Path) -> dict[str, Any]:
         and record["pre_cauchy"]
     ]
     return {
+        "certificate_type": "prime_matrix_mfac_actual_record_constructor_audit",
+        "status": "current_corpus_has_no_forward_actual_noncanonical_atomic_record_constructor",
+        "verified_date": "2026-08-07",
         "constructor_manifests": manifest_audits,
         "witness_to_record_constructor_present": witness_to_record_constructor_present,
         "actual_noncanonical_atomic_record_present": bool(atomic_records),
@@ -157,6 +163,10 @@ def audit_constructor_evidence(root: Path) -> dict[str, Any]:
         "branch_alphabet_domain_defined": bool(atomic_records),
         "downstream_recovery_used": downstream_recovery_used,
         "row_column_unconditional_closed": False,
+        "plain_conclusion": (
+            "当前语料未提交从假设 witness 到 actual noncanonical atomic record 的前向构造器；"
+            "最早缺失字段为 origin_selector，因此 branch alphabet 尚无定义域。"
+        ),
     }
 
 
@@ -189,3 +199,68 @@ def complete_manifest() -> dict[str, Any]:
             }
         ],
     }
+
+
+def render_markdown(certificate: dict[str, Any]) -> str:
+    """渲染边界明确的人工可读审计报告。"""
+    return "\n".join(
+        [
+            "# MFAC 实际原子记录构造审计",
+            "",
+            f"**状态：** `{certificate['status']}`",
+            "",
+            "```text",
+            "witness_to_record_constructor_present="
+            f"{str(certificate['witness_to_record_constructor_present']).lower()}",
+            "actual_noncanonical_atomic_record_present="
+            f"{str(certificate['actual_noncanonical_atomic_record_present']).lower()}",
+            f"earliest_missing_field={certificate['earliest_missing_field']}",
+            "branch_alphabet_domain_defined="
+            f"{str(certificate['branch_alphabet_domain_defined']).lower()}",
+            "downstream_recovery_used="
+            f"{str(certificate['downstream_recovery_used']).lower()}",
+            "row_column_unconditional_closed=false",
+            "```",
+            "",
+            certificate["plain_conclusion"],
+            "",
+            "本证书只表示当前语料未提交满足判据的构造器证据；不表示数学上不可能存在此类构造，"
+            "更不表示存在数值反例、已得到 ψ 平滑误差，或已证明 RH。",
+            "",
+            "下一门必须是：",
+            "",
+            "```text",
+            "PreCauchyActualNoncanonicalAtomicRecordConstructorOrNamedReturn",
+            "```",
+            "",
+        ]
+    )
+
+
+def write_certificate(certificate: dict[str, Any], json_out: Path, markdown_out: Path) -> None:
+    """写出机器可读与人工可读审计证书。"""
+    json_out.parent.mkdir(parents=True, exist_ok=True)
+    markdown_out.parent.mkdir(parents=True, exist_ok=True)
+    json_out.write_text(
+        json.dumps(certificate, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    markdown_out.write_text(render_markdown(certificate), encoding="utf-8")
+
+
+def main() -> None:
+    """运行审计并写出默认 monograph 证书。"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=DOCS)
+    parser.add_argument("--json-out", type=Path, default=DOCS / f"{SLUG}.json")
+    parser.add_argument("--md-out", type=Path, default=DOCS / f"{SLUG}.md")
+    args = parser.parse_args()
+
+    certificate = audit_constructor_evidence(args.root)
+    write_certificate(certificate, args.json_out, args.md_out)
+    print(f"wrote {args.json_out}")
+    print(f"wrote {args.md_out}")
+
+
+if __name__ == "__main__":
+    main()
