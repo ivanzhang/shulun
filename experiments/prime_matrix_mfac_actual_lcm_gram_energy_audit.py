@@ -4,7 +4,7 @@
 用法示例：
   python3 experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit.py --limit 60
 
-本模块只计算有限实际整数区间内的精确恒等式和普通 Cauchy 界，
+本模块只计算有限实际整数区间内的代数恒等式及其有限精度数值实例和普通 Cauchy 界，
 不提供任何关于 ψ 平滑误差、零点位置或 RH 的结论。
 """
 
@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
@@ -98,9 +98,9 @@ def lcm_gram_entry(limit: int, left: int, right: int) -> int:
 
 
 def lcm_gram_quadratic_form(
-    limit: int, coefficients: Mapping[int, float]
+    limit: int, coefficients: Mapping[int, int | float]
 ) -> float:
-    """计算 LCM Gram 核对应的有限系数二次型。"""
+    """计算内建有限实系数 LCM Gram 核对应的有限精度二次型。"""
     checked_limit = _require_positive_integer(limit, "limit")
     if not isinstance(coefficients, Mapping):
         raise ValueError("coefficients 必须为有限 Mapping")
@@ -110,6 +110,8 @@ def lcm_gram_quadratic_form(
         checked_divisor = _require_divisor_within_limit(
             checked_limit, divisor, "coefficient divisor"
         )
+        if type(weight) not in (int, float):
+            raise ValueError("coefficient weight 必须为非布尔的内建 int 或 float")
         try:
             checked_weight = float(weight)
         except (TypeError, ValueError, OverflowError) as error:
@@ -118,17 +120,28 @@ def lcm_gram_quadratic_form(
             raise ValueError("coefficient weight 必须为有限实数")
         checked_coefficients[checked_divisor] = checked_weight
 
-    return sum(
-        left_weight
-        * right_weight
-        * lcm_gram_entry(checked_limit, left, right)
-        for left, left_weight in checked_coefficients.items()
-        for right, right_weight in checked_coefficients.items()
-    )
+    terms: list[float] = []
+    for left, left_weight in checked_coefficients.items():
+        for right, right_weight in checked_coefficients.items():
+            term = (
+                left_weight
+                * right_weight
+                * lcm_gram_entry(checked_limit, left, right)
+            )
+            if not math.isfinite(term):
+                raise ValueError("LCM Gram 二次型乘积项必须为有限实数")
+            terms.append(term)
+    try:
+        result = math.fsum(terms)
+    except OverflowError as error:
+        raise ValueError("LCM Gram 二次型总和必须为有限实数") from error
+    if not math.isfinite(result):
+        raise ValueError("LCM Gram 二次型总和必须为有限实数")
+    return result
 
 
 def lcm_mobius_energy(limit: int) -> float:
-    """用 -μ(d)log(d) 权重计算有限 LCM Gram 能量。"""
+    """有限精度数值验证对应实数域精确恒等式的 LCM Gram 能量。"""
     checked_limit = _require_positive_integer(limit, "limit")
     coefficients = {
         divisor: -mobius(divisor) * math.log(divisor)
@@ -138,7 +151,7 @@ def lcm_mobius_energy(limit: int) -> float:
 
 
 def lambda_square_energy(limit: int) -> float:
-    """逐项计算有限区间内 von Mangoldt 函数的平方和。"""
+    """以有限精度逐项计算对应实数平方和的数值实例。"""
     checked_limit = _require_positive_integer(limit, "limit")
     return sum(von_mangoldt(value) ** 2 for value in range(1, checked_limit + 1))
 
@@ -153,7 +166,7 @@ def chebyshev_increment_energy(limit: int) -> float:
 
 
 def ordinary_cauchy_projection_bound(limit: int) -> dict[str, float | int]:
-    """记录常数方向的精确投影和普通 Cauchy 上界。"""
+    """记录常数方向的有限精度投影和普通 Cauchy 上界。"""
     checked_limit = _require_positive_integer(limit, "limit")
     chebyshev_error = sum(
         von_mangoldt(value) - 1.0 for value in range(1, checked_limit + 1)
@@ -182,12 +195,17 @@ def audit_centering_contract(contract: Mapping[str, Any]) -> dict[str, object]:
     if not isinstance(contract, Mapping):
         raise ValueError("contract 必须为 Mapping")
     uses = contract.get("uses", ())
-    if isinstance(uses, str):
-        uses = (uses,)
     try:
-        forbidden_inputs = tuple(sorted(set(uses).intersection(FORBIDDEN_CENTERING_INPUTS)))
+        if isinstance(uses, str) or not isinstance(uses, Iterable):
+            raise ValueError("contract uses 必须为非裸字符串的可迭代字符串对象")
+        checked_uses = tuple(uses)
     except TypeError as error:
-        raise ValueError("contract uses 必须为可哈希输入的可迭代对象") from error
+        raise ValueError("contract uses 必须为非裸字符串的可迭代字符串对象") from error
+    if not all(isinstance(item, str) for item in checked_uses):
+        raise ValueError("contract uses 的所有元素必须为字符串")
+    forbidden_inputs = tuple(
+        sorted(set(checked_uses).intersection(FORBIDDEN_CENTERING_INPUTS))
+    )
 
     classification = (
         "centered_kernel_uses_target_or_forbidden_analytic_input"

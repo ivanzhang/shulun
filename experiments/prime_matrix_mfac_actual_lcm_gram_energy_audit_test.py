@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import math
 import sys
+import tempfile
 import unittest
+from decimal import Decimal
 from pathlib import Path
 
 
@@ -18,9 +20,11 @@ from prime_matrix_mfac_actual_lcm_gram_energy_audit import (  # noqa: E402
     lcm_gram_entry,
     lcm_gram_quadratic_form,
     lcm_mobius_energy,
+    mobius,
     ordinary_cauchy_projection_bound,
     six_multiple_non_prime_power_witnesses,
-    write_certificate,  # noqa: F401 - 预先固定第三任务的证书 API 合同。
+    von_mangoldt,
+    write_certificate,
 )
 
 
@@ -54,9 +58,60 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     lcm_gram_quadratic_form(24, {1: coefficient})
 
+    def test_quadratic_form_rejects_overflowing_products(self) -> None:
+        """有限系数若使 Gram 乘积溢出也必须受控拒绝。"""
+        with self.assertRaises(ValueError):
+            lcm_gram_quadratic_form(1, {1: 1e308})
+
+    def test_quadratic_form_keeps_finite_strong_cancellation(self) -> None:
+        """有限强消去的 Gram 二次型保持有限而不被误拒绝。"""
+        result = lcm_gram_quadratic_form(100, {1: 1e153, 2: -1e153})
+
+        self.assertTrue(math.isfinite(result))
+
+    def test_quadratic_form_rejects_non_numeric_contract_weights(self) -> None:
+        """有限实系数合同只接受非布尔的内建 int 或 float。"""
+        for coefficient in (True, "1.0", Decimal("1.0")):
+            with self.subTest(coefficient=coefficient):
+                with self.assertRaises(ValueError):
+                    lcm_gram_quadratic_form(24, {1: coefficient})
+
     def test_mobius_lcm_energy_recovers_lambda_square_energy(self) -> None:
-        """Möbius 加权 LCM 能量精确恢复 Lambda 平方和。"""
-        self.assertAlmostEqual(lcm_mobius_energy(60), lambda_square_energy(60))
+        """有限精度数值验证实数域中的 Möbius-Lambda 能量恒等式。"""
+        self.assertTrue(
+            math.isclose(
+                lcm_mobius_energy(60),
+                lambda_square_energy(60),
+                rel_tol=1e-12,
+                abs_tol=1e-12,
+            )
+        )
+
+    def test_mobius_point_values_and_invalid_inputs(self) -> None:
+        """Möbius 点值及非正和布尔输入均遵守有限整数合同。"""
+        for value, expected in ((1, 1), (4, 0), (12, 0), (30, -1)):
+            with self.subTest(value=value):
+                self.assertEqual(mobius(value), expected)
+        for value in (0, -1, True):
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    mobius(value)
+
+    def test_von_mangoldt_point_values_and_invalid_inputs(self) -> None:
+        """von Mangoldt 点值及非正和布尔输入均遵守有限整数合同。"""
+        for value, expected in (
+            (1, 0.0),
+            (8, math.log(2)),
+            (12, 0.0),
+            (49, math.log(7)),
+            (97, math.log(97)),
+        ):
+            with self.subTest(value=value):
+                self.assertTrue(math.isclose(von_mangoldt(value), expected))
+        for value in (0, -1, True):
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    von_mangoldt(value)
 
     def test_increment_energy_has_ordinary_cauchy_projection_bound(self) -> None:
         """常数方向投影记录普通 Cauchy 界与实际增量能量。"""
@@ -92,6 +147,29 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
             with self.subTest(contract=contract):
                 with self.assertRaises(ValueError):
                     audit_centering_contract(contract)
+
+    def test_centering_contract_requires_iterable_string_uses(self) -> None:
+        """中心化合同的 uses 必须为字符串 iterable，而不能是裸字符串。"""
+        for uses in ("psi(X)", 1, (1,)):
+            with self.subTest(uses=uses):
+                with self.assertRaises(ValueError):
+                    audit_centering_contract({"uses": uses})
+
+        for uses in (("local_input",), ["local_input"], {"local_input"}):
+            with self.subTest(uses=uses):
+                result = audit_centering_contract({"uses": uses})
+                self.assertEqual(
+                    result["classification"],
+                    "centering_input_not_rejected_by_forbidden_input_audit",
+                )
+
+    def test_certificate_writer_is_task_three_placeholder(self) -> None:
+        """证书写出 API 在任务三前稳定保持占位错误。"""
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with self.assertRaisesRegex(
+                NotImplementedError, "证书写出将在任务三实现"
+            ):
+                write_certificate(Path(temporary_directory), 60)
 
 
 if __name__ == "__main__":
