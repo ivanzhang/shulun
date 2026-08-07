@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import itertools
+import json
 import math
 import sys
 import tempfile
@@ -191,13 +192,41 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
                     "centering_input_not_rejected_by_forbidden_input_audit",
                 )
 
-    def test_certificate_writer_is_task_three_placeholder(self) -> None:
-        """证书写出 API 在任务三前稳定保持占位错误。"""
+    def test_certificate_writer_archives_actual_lcm_gram_energy_boundary(self) -> None:
+        """证书写出实际 LCM Gram 读数，并保留非 RH 边界。"""
         with tempfile.TemporaryDirectory() as temporary_directory:
-            with self.assertRaisesRegex(
-                NotImplementedError, "证书写出将在任务三实现"
-            ):
-                write_certificate(Path(temporary_directory), 60)
+            paths = write_certificate(Path(temporary_directory), limit=60)
+            payload = json.loads(paths["json_path"].read_text(encoding="utf-8"))
+            markdown = paths["markdown_path"].read_text(encoding="utf-8")
+
+        for field in (
+            "actual_lcm_gram_identity_available",
+            "fixed_actual_integer_embedding",
+            "fixed_actual_chebyshev_measure",
+            "non_tagged_signed_kernel_available",
+            "positive_semidefinite_energy_identity_available",
+            "ordinary_cauchy_constant_direction_obstruction_present",
+        ):
+            with self.subTest(field=field):
+                self.assertTrue(payload[field])
+
+        for field in (
+            "centered_kernel_independent_arithmetic_input_constructed",
+            "actual_chebyshev_mellin_contraction_present",
+            "mathematical_nonexistence_proved",
+            "rh_proved",
+        ):
+            with self.subTest(field=field):
+                self.assertFalse(payload[field])
+
+        self.assertEqual(
+            payload["next_positive_gate"],
+            "ActualOffConstantCoerciveEnergyIdentityBeforeMellin",
+        )
+        self.assertIn("LCM", markdown)
+        self.assertIn("常数方向", markdown)
+        self.assertIn("不是", markdown)
+        self.assertIn("RH", markdown)
 
 
 if __name__ == "__main__":

@@ -13916,3 +13916,35 @@ row_column_unconditional_closed=false
 ```
 
 这不是外部定理、自然数素数反例或实际 zeta 零点反例；它只定位了直接 RH 攻击所缺的实际整数嵌入、固定 Chebyshev 测度、非循环误差核与 Mellin 半平面收缩律。
+
+## 附录 MFAC-ALGE：MFAC 实际 LCM Gram 能量审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit.py
+experiments/prime_matrix_mfac_actual_lcm_gram_energy_audit_test.py
+docs/monograph/prime-matrix-mfac-actual-lcm-gram-energy-audit.json
+docs/monograph/prime-matrix-mfac-actual-lcm-gram-energy-audit.md
+```
+
+这是内部有限审计，不是外部定理。它固定实际整数上的
+\(K_X(d,e)=\lfloor X/\operatorname{lcm}(d,e)\rfloor\) Gram 核，区分实数域精确
+Möbius--Lambda 恒等式和有限精度数值验证，并记录普通 Cauchy 在常数方向的
+\(\sqrt X\) 障碍；读取 `psi(X)` 的中心化合同样本被拒绝。
+
+```text
+actual_lcm_gram_identity_available=true
+fixed_actual_integer_embedding=true
+fixed_actual_chebyshev_measure=true
+non_tagged_signed_kernel_available=true
+positive_semidefinite_energy_identity_available=true
+ordinary_cauchy_constant_direction_obstruction_present=true
+centered_kernel_independent_arithmetic_input_constructed=false
+actual_chebyshev_mellin_contraction_present=false
+next_positive_gate=ActualOffConstantCoerciveEnergyIdentityBeforeMellin
+mathematical_nonexistence_proved=false
+rh_proved=false
+```
+
+本审计不构成 \(\psi\) 平滑误差估计、Mellin 收缩、零点排除或 RH 证明；它也不证明数学上任何可能的中心化、coercive 能量或收缩机制都不存在。
