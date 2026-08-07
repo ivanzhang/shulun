@@ -63,6 +63,13 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
             )
         )
 
+    def test_overflowing_scaled_energies_are_rejected(self) -> None:
+        """有限输入若导致缩放能量溢出，必须拒绝非安全 JSON 数值。"""
+        for scalar in (1e308, 10**400):
+            with self.subTest(scalar=scalar):
+                with self.assertRaises(ValueError):
+                    actual_offconstant_coercive_witness_data(2, scalar=scalar)
+
     def test_invalid_limits_and_scalars_are_rejected(self) -> None:
         """限制与缩放因子必须满足内建有限数值合同。"""
         for limit in (True, BuiltinIntSubclass(2), 1, 2.0, "2"):

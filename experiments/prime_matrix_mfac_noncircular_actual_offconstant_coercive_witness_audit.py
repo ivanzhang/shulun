@@ -16,9 +16,22 @@ def _require_integer_at_least_two(value: object, name: str) -> int:
 
 def _require_finite_builtin_number(value: object, name: str) -> int | float:
     """验证参数是有限的内建整数或浮点数。"""
-    if type(value) not in (int, float) or not math.isfinite(value):
+    if type(value) not in (int, float):
+        raise ValueError(f"{name} 必须是有限的内建 int 或 float")
+    if type(value) is float and not math.isfinite(value):
         raise ValueError(f"{name} 必须是有限的内建 int 或 float")
     return value
+
+
+def _finite_json_float(value: Fraction, name: str) -> float:
+    """将精确分数转换为有限且可安全写入 JSON 的浮点数。"""
+    try:
+        converted = float(value)
+    except OverflowError as error:
+        raise ValueError(f"{name} 必须能表示为有限 JSON 数值") from error
+    if not math.isfinite(converted):
+        raise ValueError(f"{name} 必须能表示为有限 JSON 数值")
+    return converted
 
 
 def actual_offconstant_coercive_witness_data(
@@ -32,6 +45,12 @@ def actual_offconstant_coercive_witness_data(
     energy = Fraction(half_limit * (checked_limit - half_limit), checked_limit)
     lower_bound = Fraction(2 * checked_limit, 9)
     scalar_squared = Fraction(checked_scalar) ** 2
+    energy_value = _finite_json_float(energy, "energy")
+    lower_bound_value = _finite_json_float(lower_bound, "coercivity_lower_bound")
+    scaled_energy = _finite_json_float(scalar_squared * energy, "scaled_energy")
+    scaled_lower_bound = _finite_json_float(
+        scalar_squared * lower_bound, "scaled_coercivity_lower_bound"
+    )
 
     return {
         "limit": checked_limit,
@@ -41,10 +60,10 @@ def actual_offconstant_coercive_witness_data(
         "constant_orthogonality_exact_numerator": 0,
         "energy_exact_numerator": energy.numerator,
         "energy_exact_denominator": energy.denominator,
-        "energy": float(energy),
-        "coercivity_lower_bound": float(lower_bound),
-        "scaled_energy": float(scalar_squared * energy),
-        "scaled_coercivity_lower_bound": float(scalar_squared * lower_bound),
+        "energy": energy_value,
+        "coercivity_lower_bound": lower_bound_value,
+        "scaled_energy": scaled_energy,
+        "scaled_coercivity_lower_bound": scaled_lower_bound,
         "witness_constructed_before_mellin": True,
         "uses_target_error": False,
         "uses_mellin_input": False,
