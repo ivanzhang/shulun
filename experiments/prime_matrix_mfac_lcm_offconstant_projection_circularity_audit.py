@@ -10,6 +10,8 @@
 
 from __future__ import annotations
 
+import argparse
+import json
 import math
 from collections.abc import Iterable, Mapping
 from pathlib import Path
@@ -21,6 +23,10 @@ from prime_matrix_mfac_actual_lcm_gram_energy_audit import (
     von_mangoldt,
 )
 
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs" / "monograph"
+SLUG = "prime-matrix-mfac-lcm-offconstant-projection-circularity-audit"
 
 FORBIDDEN_DIRECT_PROJECTION_INPUTS = frozenset(
     {
@@ -177,6 +183,150 @@ def audit_direct_projection_contract(contract: Mapping[str, Any]) -> dict[str, A
     }
 
 
+def audit_lcm_offconstant_projection_circularity(limit: int = 60) -> dict[str, Any]:
+    """汇总直接秩一 ``e_1`` 投影的有限实际整数循环审计。"""
+    checked_limit = _require_positive_integer(limit, "limit")
+    uncentered = direct_projection_data(checked_limit, 0.0)
+    unique_alpha = float(uncentered["unique_orthogonal_alpha"])
+    orthogonalized = direct_projection_data(checked_limit, unique_alpha)
+    circular_contract = audit_direct_projection_contract(
+        {"alpha_uses": ("psi(X)-X",)}
+    )
+    independent_named_contract = audit_direct_projection_contract(
+        {"alpha_uses": ("independent_arithmetic_name",)}
+    )
+    identity_residual = abs(
+        float(uncentered["g_e1_inner_product"])
+        - float(uncentered["chebyshev_error"])
+    )
+    defect_residual = abs(
+        float(orthogonalized["actual_defect"])
+        - float(orthogonalized["theoretical_defect"])
+    )
+
+    return {
+        "slug": SLUG,
+        "limit": checked_limit,
+        "actual_lcm_e1_projection_identity_available": True,
+        "unique_e1_orthogonal_alpha_requires_target_error": True,
+        "direct_e1_projection_template_rejected": True,
+        "noncircular_offconstant_witness_constructed": False,
+        "mathematical_nonexistence": False,
+        "actual_chebyshev_mellin_contraction": False,
+        "rh": False,
+        "next_positive_gate": (
+            "NoncircularActualOffConstantCoerciveWitnessBeforeMellin"
+        ),
+        "uncentered_projection": uncentered,
+        "unique_alpha_orthogonalization": orthogonalized,
+        "projection_identity_floating_point_audit_residual": identity_residual,
+        "orthogonal_defect_floating_point_audit_residual": defect_residual,
+        "rejected_direct_target_dependent_contract": circular_contract,
+        "independent_named_input_contract": independent_named_contract,
+    }
+
+
+def _render_markdown(payload: Mapping[str, Any]) -> str:
+    """渲染直接秩一投影循环审计的边界说明。"""
+    uncentered = payload["uncentered_projection"]
+    orthogonalized = payload["unique_alpha_orthogonalization"]
+    rejected = payload["rejected_direct_target_dependent_contract"]
+    independent = payload["independent_named_input_contract"]
+    return f"""# MFAC LCM 去常数投影循环审计
+
+## 范围
+
+本证书只审计实际整数区间 \\(1\\le n\\le {payload['limit']}\\) 上的直接秩一
+\\(e_1\\) 投影模板。LCM Gram 核为
+
+\\[
+K_X(d,e)=\\left\\lfloor\\frac{{X}}{{\\operatorname{{lcm}}(d,e)}}\\right\\rfloor.
+\\]
+
+令 \\(w_d=-\\mu(d)\\log d\\)、\\(g=w-e_1\\)。在实数域中，直接计算给出
+
+\\[
+\\langle g,e_1\\rangle_{{K_X}}=\\psi(X)-X,
+\\qquad \\lVert e_1\\rVert_{{K_X}}^2=X.
+\\]
+
+当前有限精度审计的投影残差为
+`{payload['projection_identity_floating_point_audit_residual']}`；未中心化读数为
+`{uncentered['g_e1_inner_product']}`，Chebyshev 误差读数为
+`{uncentered['chebyshev_error']}`。
+
+## 唯一系数与循环
+
+对任意实数 \\(\\alpha\\)，直接缺陷满足
+
+\\[
+\\langle g-\\alpha e_1,e_1\\rangle_{{K_X}}
+=\\psi(X)-X-\\alpha X.
+\\]
+
+因此令其正交的唯一系数为
+\\(\\alpha_X=(\\psi(X)-X)/X\\)。本证书的该系数读数为
+`{uncentered['unique_orthogonal_alpha']}`，正交化后的有限精度缺陷为
+`{orthogonalized['actual_defect']}`，理论缺陷残差为
+`{payload['orthogonal_defect_floating_point_audit_residual']}`。
+
+这说明**只拒绝直接秩一** \\(e_1\\) 模板：若它把 `psi(X)-X` 用作系数输入，
+分类为 `{rejected['classification']}`，即在中心化定义时读取待控制的目标误差。
+
+## 未被虚构的出口
+
+不读取目标误差的命名输入只被分类为
+`{independent['classification']}`，而不是被说成已经构造的独立算术对象。因此本步不排除
+非秩一、非后验的实际算术结构；它也不证明所有可能的 coercive 能量机制不存在。
+
+## 结论边界
+
+本步固定
+`actual_lcm_e1_projection_identity_available=true`、
+`unique_e1_orthogonal_alpha_requires_target_error=true` 与
+`direct_e1_projection_template_rejected=true`。它**不是 RH** 证明，也不提供
+\\(\\psi\\) 平滑误差、Mellin 收缩或零点排除；
+`noncircular_offconstant_witness_constructed=false`、
+`mathematical_nonexistence=false`、
+`actual_chebyshev_mellin_contraction=false`、`rh=false`。
+
+下一正向数学门为
+`{payload['next_positive_gate']}`。
+"""
+
+
 def write_certificate(output_directory: Path, limit: int = 60) -> dict[str, Path]:
-    """保留证书 API；完整写出在任务三实现。"""
-    raise NotImplementedError("证书写出将在任务三实现")
+    """写出直接秩一投影循环审计的 JSON 与 Markdown 证书。"""
+    if not isinstance(output_directory, Path):
+        raise ValueError("output_directory 必须为 Path")
+    if not output_directory.is_dir():
+        raise ValueError("output_directory 必须是存在的目录")
+
+    payload = audit_lcm_offconstant_projection_circularity(limit)
+    json_path = output_directory / f"{SLUG}.json"
+    markdown_path = output_directory / f"{SLUG}.md"
+    json_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    markdown_path.write_text(_render_markdown(payload), encoding="utf-8")
+    return {"json_path": json_path, "markdown_path": markdown_path}
+
+
+def main() -> None:
+    """生成 LCM 去常数投影循环证书并打印输出路径。"""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--limit", type=int, default=60, help="审计的正整数上限")
+    parser.add_argument(
+        "--output-directory",
+        type=Path,
+        default=DOCS,
+        help="证书输出目录，默认 docs/monograph",
+    )
+    arguments = parser.parse_args()
+    paths = write_certificate(arguments.output_directory, arguments.limit)
+    print(paths["json_path"])
+    print(paths["markdown_path"])
+
+
+if __name__ == "__main__":
+    main()

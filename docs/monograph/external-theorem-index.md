@@ -13948,3 +13948,37 @@ rh_proved=false
 ```
 
 本审计不构成 \(\psi\) 平滑误差估计、Mellin 收缩、零点排除或 RH 证明；它也不证明数学上任何可能的中心化、coercive 能量或收缩机制都不存在。
+
+## 附录 MFAC-LCPC：MFAC LCM 去常数投影循环审计（2026-08-07）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_lcm_offconstant_projection_circularity_audit.py
+experiments/prime_matrix_mfac_lcm_offconstant_projection_circularity_audit_test.py
+docs/monograph/prime-matrix-mfac-lcm-offconstant-projection-circularity-audit.json
+docs/monograph/prime-matrix-mfac-lcm-offconstant-projection-circularity-audit.md
+```
+
+这是内部有限审计，不是外部定理。它在实际整数 LCM Gram 核
+\(K_X(d,e)=\lfloor X/\operatorname{lcm}(d,e)\rfloor\) 中固定
+\(g=w-e_1\) 的直接投影恒等式
+\(\langle g,e_1\rangle_{K_X}=\psi(X)-X\) 与
+\(\lVert e_1\rVert_{K_X}^2=X\)。故直接令其正交的唯一系数为
+\(\alpha_X=(\psi(X)-X)/X\)，会读取待控制的目标误差。
+
+```text
+actual_lcm_e1_projection_identity_available=true
+unique_e1_orthogonal_alpha_requires_target_error=true
+direct_e1_projection_template_rejected=true
+noncircular_offconstant_witness_constructed=false
+mathematical_nonexistence=false
+actual_chebyshev_mellin_contraction=false
+rh=false
+next_positive_gate=NoncircularActualOffConstantCoerciveWitnessBeforeMellin
+```
+
+本步只拒绝直接秩一 `e_1` 模板，不排除非秩一、非后验的实际算术结构；不读取目标的
+命名输入也只分类为 `independence_unverified`，并未被虚构为已经构造的见证。因此这不是
+\(\psi\) 平滑误差、Mellin 收缩、零点排除或 RH 结论，也不证明所有可能的 coercive
+能量机制不存在。
