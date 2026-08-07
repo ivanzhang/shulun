@@ -3,8 +3,10 @@
 
 from __future__ import annotations
 
+import json
 import math
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -13,10 +15,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from prime_matrix_mfac_semiprime_triad_dispatch_audit import (  # noqa: E402
     audit_triad_dispatch,
+    audit_current_corpus,
     build_semiprime_triad,
     complete_synthetic_dispatch,
     same_row_zero_sum_dispatch,
+    write_certificate,
 )
+
+
+DOCS = Path(__file__).resolve().parents[1] / "docs" / "monograph"
 
 
 class MFACSemiprimeTriadDispatchAuditTest(unittest.TestCase):
@@ -61,6 +68,30 @@ class MFACSemiprimeTriadDispatchAuditTest(unittest.TestCase):
             "independent_of_downstream",
             certificate["entries"][0]["missing_fields"],
         )
+
+    def test_current_corpus_reconstructs_triad_but_has_no_actual_dispatch(self) -> None:
+        """当前语料只有 global triad，尚未登记 actual dispatch。"""
+        certificate = audit_current_corpus(DOCS)
+
+        self.assertTrue(certificate["global_triad_reconstructed"])
+        self.assertFalse(certificate["actual_dispatch_present"])
+        self.assertEqual(certificate["earliest_missing_field"], "origin_selector")
+        self.assertFalse(certificate["canonical_zero_sum_collapse"])
+
+    def test_writer_keeps_nonexistence_and_rh_boundary(self) -> None:
+        """证书必须区分语料缺口、数学不存在性与 RH。"""
+        certificate = audit_current_corpus(DOCS)
+        with tempfile.TemporaryDirectory() as directory:
+            json_out = Path(directory) / "certificate.json"
+            markdown_out = Path(directory) / "certificate.md"
+            write_certificate(certificate, json_out, markdown_out)
+            payload = json.loads(json_out.read_text(encoding="utf-8"))
+            markdown = markdown_out.read_text(encoding="utf-8")
+
+        self.assertTrue(payload["global_triad_reconstructed"])
+        self.assertIn("当前语料未提交", markdown)
+        self.assertIn("不表示数学上不可能", markdown)
+        self.assertIn("rh_proved=false", markdown)
 
 
 if __name__ == "__main__":
