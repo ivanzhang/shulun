@@ -33,7 +33,10 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
             with self.subTest(limit=limit):
                 data = actual_offconstant_coercive_witness_data(limit)
 
+                self.assertEqual(data["K11_exact_numerator"], limit)
+                self.assertEqual(data["K12_exact_numerator"], limit // 2)
                 self.assertEqual(data["constant_orthogonality_exact_numerator"], 0)
+                self.assertEqual(data["constant_orthogonality_exact_denominator"], 1)
                 self.assertEqual(data["energy_exact_numerator"], numerator)
                 self.assertEqual(data["energy_exact_denominator"], denominator)
                 self.assertGreater(data["energy"], 0.0)
@@ -69,6 +72,11 @@ class MFACNoncircularActualOffconstantCoerciveWitnessAuditTest(unittest.TestCase
             with self.subTest(scalar=scalar):
                 with self.assertRaises(ValueError):
                     actual_offconstant_coercive_witness_data(2, scalar=scalar)
+
+    def test_underflowing_nonzero_scaled_energy_is_rejected(self) -> None:
+        """非零精确缩放能量不得在 JSON 摘要中下溢为零。"""
+        with self.assertRaises(ValueError):
+            actual_offconstant_coercive_witness_data(2, scalar=1e-200)
 
     def test_invalid_limits_and_scalars_are_rejected(self) -> None:
         """限制与缩放因子必须满足内建有限数值合同。"""

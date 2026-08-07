@@ -31,6 +31,8 @@ def _finite_json_float(value: Fraction, name: str) -> float:
         raise ValueError(f"{name} 必须能表示为有限 JSON 数值") from error
     if not math.isfinite(converted):
         raise ValueError(f"{name} 必须能表示为有限 JSON 数值")
+    if value and converted == 0.0:
+        raise ValueError(f"{name} 不得在 JSON 数值中下溢为零")
     return converted
 
 
@@ -41,7 +43,10 @@ def actual_offconstant_coercive_witness_data(
     checked_limit = _require_integer_at_least_two(limit, "limit")
     checked_scalar = _require_finite_builtin_number(scalar, "scalar")
     half_limit = checked_limit // 2
+    kernel_11 = Fraction(checked_limit, 1)
+    kernel_12 = Fraction(half_limit, 1)
     coefficient = Fraction(half_limit, checked_limit)
+    orthogonality = kernel_12 - coefficient * kernel_11
     energy = Fraction(half_limit * (checked_limit - half_limit), checked_limit)
     lower_bound = Fraction(2 * checked_limit, 9)
     scalar_squared = Fraction(checked_scalar) ** 2
@@ -55,9 +60,12 @@ def actual_offconstant_coercive_witness_data(
     return {
         "limit": checked_limit,
         "coefficient_source": "K_X(1,2)/K_X(1,1)",
+        "K11_exact_numerator": kernel_11.numerator,
+        "K12_exact_numerator": kernel_12.numerator,
         "coefficient_exact_numerator": coefficient.numerator,
         "coefficient_exact_denominator": coefficient.denominator,
-        "constant_orthogonality_exact_numerator": 0,
+        "constant_orthogonality_exact_numerator": orthogonality.numerator,
+        "constant_orthogonality_exact_denominator": orthogonality.denominator,
         "energy_exact_numerator": energy.numerator,
         "energy_exact_denominator": energy.denominator,
         "energy": energy_value,
