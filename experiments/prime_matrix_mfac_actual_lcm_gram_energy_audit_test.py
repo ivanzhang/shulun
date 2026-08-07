@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import itertools
 import math
 import sys
 import tempfile
@@ -50,6 +51,33 @@ class MFACActualLCMGramEnergyAuditTest(unittest.TestCase):
         )
 
         self.assertAlmostEqual(lcm_gram_quadratic_form(24, coefficients), expected)
+
+    def test_quadratic_form_exhaustively_audits_small_bounded_integer_vectors(
+        self,
+    ) -> None:
+        """有限穷举 625 个小整数向量，审计 Gram 恒等式及非负性。"""
+        limit = 12
+        divisors = (1, 2, 3, 6)
+        coefficient_alphabet = (-2, -1, 0, 1, 2)
+
+        for weights in itertools.product(coefficient_alphabet, repeat=len(divisors)):
+            with self.subTest(weights=weights):
+                coefficients = dict(zip(divisors, weights))
+                expected = sum(
+                    (
+                        sum(
+                            weight
+                            for divisor, weight in coefficients.items()
+                            if number % divisor == 0
+                        )
+                    )
+                    ** 2
+                    for number in range(1, limit + 1)
+                )
+                result = lcm_gram_quadratic_form(limit, coefficients)
+
+                self.assertEqual(result, expected)
+                self.assertGreaterEqual(result, 0)
 
     def test_quadratic_form_rejects_nonfinite_coefficients(self) -> None:
         """有限实 Gram 二次型拒绝非有限系数。"""
