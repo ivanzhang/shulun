@@ -216,7 +216,7 @@ def build_certificate(limit: int) -> dict[str, object]:
     return {
         "certificate_type": "prime_matrix_mfac_colored_divisor_word_transport_audit",
         "status": "colored_divisor_word_arithmetic_transport_closed_actual_primitive_binding_open",
-        "verified_date": "2026-08-06",
+        "verified_date": "2026-08-07",
         "sample_limit": limit,
         "record_count": record_count,
         "record_reconstruction_verified": reconstruction_ok,
