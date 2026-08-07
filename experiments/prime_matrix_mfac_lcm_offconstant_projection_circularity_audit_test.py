@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from prime_matrix_mfac_lcm_offconstant_projection_circularity_audit import (  # noqa: E402
     audit_direct_projection_contract,
     direct_projection_data,
-    write_certificate,
+    write_certificate,  # noqa: F401  # 证书行为由任务三测试覆盖。
 )
 
 
@@ -67,7 +67,7 @@ class MFACLCMOffConstantProjectionCircularityAuditTest(unittest.TestCase):
         )
 
     def test_parameterized_alpha_matches_theoretical_defect(self) -> None:
-        """任意有限候选系数的实际投影缺陷符合精确缺陷公式。"""
+        """任意有限候选系数在有限精度容差内符合理论缺陷公式。"""
         for alpha in (-2.0, 0.0, 0.5, 3.0):
             with self.subTest(alpha=alpha):
                 data = direct_projection_data(limit=30, alpha=alpha)
