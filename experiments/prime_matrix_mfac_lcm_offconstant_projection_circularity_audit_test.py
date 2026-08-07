@@ -3,8 +3,10 @@
 
 from __future__ import annotations
 
+import json
 import math
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -99,6 +101,27 @@ class MFACLCMOffConstantProjectionCircularityAuditTest(unittest.TestCase):
             result["classification"],
             "direct_e1_projection_independence_unverified",
         )
+
+    def test_certificate_records_direct_rank_one_boundary(self) -> None:
+        """证书固定实际投影恒等式与非 RH 的直接模板拒绝边界。"""
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            paths = write_certificate(Path(temporary_directory), limit=60)
+            payload = json.loads(paths["json_path"].read_text(encoding="utf-8"))
+            markdown = paths["markdown_path"].read_text(encoding="utf-8")
+
+        self.assertTrue(payload["actual_lcm_e1_projection_identity_available"])
+        self.assertTrue(payload["unique_e1_orthogonal_alpha_requires_target_error"])
+        self.assertTrue(payload["direct_e1_projection_template_rejected"])
+        self.assertFalse(payload["noncircular_offconstant_witness_constructed"])
+        self.assertFalse(payload["mathematical_nonexistence"])
+        self.assertFalse(payload["actual_chebyshev_mellin_contraction"])
+        self.assertFalse(payload["rh"])
+        self.assertEqual(
+            payload["next_positive_gate"],
+            "NoncircularActualOffConstantCoerciveWitnessBeforeMellin",
+        )
+        self.assertIn("只拒绝直接秩一", markdown)
+        self.assertIn("不是 RH", markdown)
 
 
 if __name__ == "__main__":
