@@ -1,0 +1,144 @@
+{
+  "actual_mellin_contraction_present": false,
+  "block_count": 64,
+  "certificate_type": "prime_matrix_mfac_mertens_randomness_contraction_audit",
+  "contraction_contract": {
+    "actual_mellin_contraction_present": false,
+    "contract_complete": false,
+    "missing_contract_fields": [
+      "fixed_actual_integer_embedding",
+      "exact_mobius_block_decomposition",
+      "deterministic_dyadic_block_family",
+      "uniform_signed_block_covariance_bound",
+      "uniform_higher_cumulant_defect_bound",
+      "uniform_large_deviation_or_high_moment_bound",
+      "explicit_layer_interaction_identity",
+      "noncircular_offconstant_coercive_energy_identity",
+      "scale_summability_to_mellin_norm",
+      "no_use_of_RH_or_zero_free_input"
+    ],
+    "rh_proved": false,
+    "status": "empirical_randomness_model_not_a_rh_proof"
+  },
+  "degenerate_block_count": 64,
+  "layer_reconstruction_holds": true,
+  "limitations": [
+    "有限范围经验统计不等于概率定理",
+    "代理基线不等于真实 Möbius 动力学",
+    "不构成 RH 证明"
+  ],
+  "next_positive_gate": "ActualMertensBlockDefectToOffConstantCoerciveEnergyLawBeforeMellin",
+  "parameters": {
+    "block_length": 64,
+    "limit": 4096,
+    "seed": 17
+  },
+  "proxy_baselines": {
+    "actual_mellin_contraction_present": false,
+    "independent_sign": {
+      "degenerate_variance": false,
+      "excess_kurtosis": -1.9418051186389846,
+      "mean": 0.046875,
+      "sample_count": 64,
+      "sign_bias": 0.04918032786885246,
+      "standardized_skewness": -0.09376901434267015,
+      "tail_counts": {
+        "abs_ge_1": 61,
+        "abs_ge_2": 0
+      },
+      "variance": 0.950927734375,
+      "zero_count": 3
+    },
+    "layer_shuffle": {
+      "0": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": 1.0,
+        "sample_count": 1,
+        "sign_bias": 1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 1,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      },
+      "1": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": -1.0,
+        "sample_count": 564,
+        "sign_bias": -1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 564,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      },
+      "2": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": 1.0,
+        "sample_count": 1106,
+        "sign_bias": 1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 1106,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      },
+      "3": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": -1.0,
+        "sample_count": 687,
+        "sign_bias": -1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 687,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      },
+      "4": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": 1.0,
+        "sample_count": 129,
+        "sign_bias": 1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 129,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      },
+      "5": {
+        "degenerate_variance": true,
+        "excess_kurtosis": null,
+        "mean": -1.0,
+        "sample_count": 4,
+        "sign_bias": -1.0,
+        "standardized_skewness": null,
+        "tail_counts": {
+          "abs_ge_1": 4,
+          "abs_ge_2": 0
+        },
+        "variance": 0.0,
+        "zero_count": 0
+      }
+    },
+    "local_constraint_proxy": "not_implemented_with_actual_local_constraints",
+    "seed": 17,
+    "status": "empirical_proxy_baselines_only"
+  },
+  "rh_proved": false,
+  "status": "empirical_randomness_model_not_a_rh_proof"
+}

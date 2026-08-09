@@ -13982,3 +13982,29 @@ next_positive_gate=NoncircularActualOffConstantCoerciveWitnessBeforeMellin
 命名输入也只分类为 `independence_unverified`，并未被虚构为已经构造的见证。因此这不是
 \(\psi\) 平滑误差、Mellin 收缩、零点排除或 RH 结论，也不证明所有可能的 coercive
 能量机制不存在。
+
+## 附录 MFAC-MRCA：Mertens 分块随机性缺陷审计（2026-08-08）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_mertens_randomness_contraction_audit.py
+experiments/prime_matrix_mfac_mertens_randomness_contraction_audit_test.py
+docs/monograph/prime-matrix-mfac-mertens-randomness-contraction-audit.json
+docs/monograph/prime-matrix-mfac-mertens-randomness-contraction-audit.md
+```
+
+该模块在有限整数范围内精确筛出 Möbius 值，按固定区块及
+\(\omega(n)\) 层重构 Mertens 增量，并比较独立符号与层内洗牌代理。统计结果始终标记为
+经验读数；局部约束代理明确标记为未实现，不把随机模型升级为真实算术定理。
+
+```text
+exact_mobius_block_decomposition=true
+seeded_empirical_proxy_baselines=true
+actual_mellin_contraction_present=false
+rh_proved=false
+next_positive_gate=ActualMertensBlockDefectToOffConstantCoerciveEnergyLawBeforeMellin
+```
+
+本审计不构成外部定理、Mellin 收缩、零点排除或 RH 证明；有限样本的高阶矩和尾部计数
+不能替代统一协方差、累积量或大偏差界。
