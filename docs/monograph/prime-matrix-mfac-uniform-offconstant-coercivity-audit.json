@@ -1,0 +1,72 @@
+{
+  "certificate_type": "prime_matrix_mfac_uniform_offconstant_coercivity_audit",
+  "status": "finite_coercivity_scan_not_uniform_theorem",
+  "parameters": {
+    "limits": [
+      12,
+      18,
+      24
+    ],
+    "indices": [
+      2,
+      3
+    ]
+  },
+  "scans": [
+    {
+      "limit": 12,
+      "indices": [
+        2,
+        3
+      ],
+      "constant_orthogonality_holds": true,
+      "diagonal_energies": [
+        "3",
+        "8/3"
+      ],
+      "two_by_two_principal_minors": [
+        "8"
+      ],
+      "gershgorin_lower_bound": "8/3",
+      "minimum_eigenvalue_estimate": 2.6666666666666665
+    },
+    {
+      "limit": 18,
+      "indices": [
+        2,
+        3
+      ],
+      "constant_orthogonality_holds": true,
+      "diagonal_energies": [
+        "9/2",
+        "4"
+      ],
+      "two_by_two_principal_minors": [
+        "18"
+      ],
+      "gershgorin_lower_bound": "4",
+      "minimum_eigenvalue_estimate": 4.0
+    },
+    {
+      "limit": 24,
+      "indices": [
+        2,
+        3
+      ],
+      "constant_orthogonality_holds": true,
+      "diagonal_energies": [
+        "6",
+        "16/3"
+      ],
+      "two_by_two_principal_minors": [
+        "32"
+      ],
+      "gershgorin_lower_bound": "16/3",
+      "minimum_eigenvalue_estimate": 5.333333333333333
+    }
+  ],
+  "uniform_coercivity_proved": false,
+  "actual_mellin_contraction_present": false,
+  "rh_proved": false,
+  "next_positive_gate": "UniformOffConstantCoercivityAndActualChebyshevEnergyBridgeBeforeMellin"
+}

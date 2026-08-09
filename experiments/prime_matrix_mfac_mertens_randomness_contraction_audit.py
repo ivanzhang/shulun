@@ -144,6 +144,19 @@ def layer_shuffle_baseline(layers: Mapping[int, Sequence[int]], seed: int) -> di
     return shuffled
 
 
+def diagnose_layer_shuffle(layers: Mapping[int, Sequence[int]]) -> dict[str, bool | str]:
+    """判定层内洗牌是否因层内符号恒定而退化。"""
+    deterministic = all(len(set(values)) <= 1 for values in layers.values())
+    return {
+        "sign_deterministic_by_layer": deterministic,
+        "comparison_status": (
+            "degenerate_not_independent_baseline"
+            if deterministic
+            else "nondegenerate_empirical_permutation_only"
+        ),
+    }
+
+
 def build_proxy_baselines(values: Sequence[int], layers: Mapping[int, Sequence[int]], seed: int) -> dict[str, Any]:
     """构造三类代理的状态摘要，第三类明确标记未实现。"""
     independent = independent_sign_baseline(values, seed)
@@ -153,6 +166,7 @@ def build_proxy_baselines(values: Sequence[int], layers: Mapping[int, Sequence[i
         "seed": seed,
         "independent_sign": summarize_samples(independent),
         "layer_shuffle": {str(layer): summarize_samples(items) for layer, items in shuffled.items()},
+        "layer_shuffle_diagnosis": diagnose_layer_shuffle(layers),
         "local_constraint_proxy": "not_implemented_with_actual_local_constraints",
         "actual_mellin_contraction_present": False,
     }
@@ -220,7 +234,8 @@ def write_certificate(certificate: Mapping[str, Any], json_path: Path, markdown_
         f"- 区块重构：`{certificate['layer_reconstruction_holds']}`\n"
         "- 实际 Mellin 收缩：`false`\n"
         "- RH 证明：`false`\n\n"
-        "本证书只记录有限范围的经验读数与代理比较，**不构成 RH 证明**。\n",
+        "本证书只记录有限范围的经验读数与代理比较。按 `omega(n)` 分层的层内洗牌"
+        "可能因符号恒定而退化，不能视为独立基线；本证书**不构成 RH 证明**。\n",
         encoding="utf-8",
     )
 

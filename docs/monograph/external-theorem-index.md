@@ -13995,8 +13995,9 @@ docs/monograph/prime-matrix-mfac-mertens-randomness-contraction-audit.md
 ```
 
 该模块在有限整数范围内精确筛出 Möbius 值，按固定区块及
-\(\omega(n)\) 层重构 Mertens 增量，并比较独立符号与层内洗牌代理。统计结果始终标记为
-经验读数；局部约束代理明确标记为未实现，不把随机模型升级为真实算术定理。
+\(\omega(n)\) 层重构 Mertens 增量，并比较独立符号代理。层内洗牌现明确降级为退化诊断：
+平方自由项的符号由 \((-1)^{\omega(n)}\) 决定时，该洗牌不是独立随机性基线。统计结果始终
+标记为经验读数；局部约束代理明确标记为未实现，不把随机模型升级为真实算术定理。
 
 ```text
 exact_mobius_block_decomposition=true
@@ -14008,3 +14009,31 @@ next_positive_gate=ActualMertensBlockDefectToOffConstantCoerciveEnergyLawBeforeM
 
 本审计不构成外部定理、Mellin 收缩、零点排除或 RH 证明；有限样本的高阶矩和尾部计数
 不能替代统一协方差、累积量或大偏差界。
+
+## 附录 MFAC-UOCA：有限维非循环去常数强制性审计（2026-08-09）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_uniform_offconstant_coercivity_audit.py
+experiments/prime_matrix_mfac_uniform_offconstant_coercivity_audit_test.py
+docs/monograph/prime-matrix-mfac-uniform-offconstant-coercivity-audit.json
+docs/monograph/prime-matrix-mfac-uniform-offconstant-coercivity-audit.md
+docs/monograph/mfac-offconstant-coercivity-to-mellin-obligation.md
+```
+
+该审计以实际整数 LCM Gram 核条目构造 `e_2` 及有限固定索引的去常数候选，拒绝读取
+Chebyshev 目标误差、Mellin、零点或显式公式。默认扫描的有限 `2x2` 主子式为正，但只记录为
+有限范围读数。
+
+```text
+finite_offconstant_scan_available=true
+uniform_coercivity_proved=false
+actual_chebyshev_energy_bridge_proved=false
+actual_mellin_contraction_present=false
+rh_proved=false
+next_positive_gate=UniformOffConstantCoercivityAndActualChebyshevEnergyBridgeBeforeMellin
+```
+
+本审计不构成统一谱隙、实际 Chebyshev 误差界、Mellin 收缩、零点排除或 RH 证明。Mellin 前
+还必须独立闭合全尺度强制常数、非循环能量桥接和 dyadic 可和性三项义务。

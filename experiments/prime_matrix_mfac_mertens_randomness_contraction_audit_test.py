@@ -7,6 +7,7 @@ from experiments.prime_matrix_mfac_mertens_randomness_contraction_audit import (
     audit_mertens_randomness,
     classify_contraction_contract,
     complete_synthetic_contraction_contract,
+    diagnose_layer_shuffle,
     independent_sign_baseline,
     layer_shuffle_baseline,
     mobius_and_omega_sieve,
@@ -63,6 +64,11 @@ class MFACMertensRandomnessContractionAuditTest(unittest.TestCase):
         result = build_proxy_baselines([1, -1, 0, 1], {1: [1, -1], 2: [1]}, seed=3)
         self.assertEqual(result["status"], "empirical_proxy_baselines_only")
         self.assertFalse(result["actual_mellin_contraction_present"])
+
+    def test_squarefree_omega_layers_are_marked_as_sign_deterministic(self) -> None:
+        result = diagnose_layer_shuffle({1: [-1, -1], 2: [1, 1]})
+        self.assertTrue(result["sign_deterministic_by_layer"])
+        self.assertEqual(result["comparison_status"], "degenerate_not_independent_baseline")
 
     def test_missing_contract_fields_keep_empirical_audit_outside_mellin_closure(self) -> None:
         result = classify_contraction_contract({"fixed_actual_integer_embedding": True})
