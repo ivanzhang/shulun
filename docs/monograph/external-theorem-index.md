@@ -14037,3 +14037,34 @@ next_positive_gate=UniformOffConstantCoercivityAndActualChebyshevEnergyBridgeBef
 
 本审计不构成统一谱隙、实际 Chebyshev 误差界、Mellin 收缩、零点排除或 RH 证明。Mellin 前
 还必须独立闭合全尺度强制常数、非循环能量桥接和 dyadic 可和性三项义务。
+
+## 附录 MFAC-CDCA：中心化整除协方差有限谱审计（2026-08-09）
+
+新增证书：
+
+```text
+experiments/prime_matrix_mfac_centered_divisibility_covariance_audit.py
+experiments/prime_matrix_mfac_centered_divisibility_covariance_audit_test.py
+docs/monograph/prime-matrix-mfac-centered-divisibility-covariance-audit.json
+docs/monograph/prime-matrix-mfac-centered-divisibility-covariance-audit.md
+```
+
+该审计固定实际整数整除特征的中心化协方差核
+\(C_X(d,e)=\lfloor X/[d,e]\rfloor-\lfloor X/d\rfloor\lfloor X/e\rfloor/X\)。
+其二次型是中心化整除总负载的精确平方和；默认有限扫描计算相对于
+\(X\sum a_d^2/d\) 的最小比读数。对 `theta=0.25`，`X=4096` 的读数约为
+`0.1437035`，而 `X=8192` 的读数约为 `0.1403139`；这只是有限 dyadic 诊断，不能推出
+单调性、正下界或退化极限。
+
+```text
+finite_covariance_identity_available=true
+finite_spectral_profile_available=true
+uniform_weighted_coercivity_proved=false
+actual_chebyshev_energy_bridge_proved=false
+actual_mellin_contraction_present=false
+rh_proved=false
+next_positive_gate=UniformCenteredDivisibilityCoercivityAndNoncircularChebyshevEnergyBridge
+```
+
+本审计把“自筛—反馈—自约束”限制为实际整除协方差的有限结构读数。它不构成全尺度谱隙、
+Möbius 消去、Chebyshev 误差估计、Mellin 收缩、零点排除或 RH 证明。
