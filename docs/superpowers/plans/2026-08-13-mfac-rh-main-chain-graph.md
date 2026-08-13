@@ -418,7 +418,7 @@ assert payload["unmapped_modules"] == []
 assert payload["stale_registry_modules"] == []
 assert payload["rh_chain_closed"] is False
 assert payload["rh_proved"] is False
-assert payload["shortest_blocking_path"] == ["W0", "W1"]
+assert payload["shortest_blocking_path"] == ["W1", "W2"]
 PY
 ```
 
