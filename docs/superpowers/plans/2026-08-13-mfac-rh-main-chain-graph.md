@@ -46,15 +46,15 @@ class MFACRHMainChainGraphAuditTest(unittest.TestCase):
         inventory = {
             "modules": [
                 {
-                    "module_name": "actual_lcm_gram_energy",
-                    "classification": "open_or_unresolved",
-                    "rh_blockers": ["rh_not_proved_or_open_marker"],
-                },
-                {
-                    "module_name": "mertens_conditional_l2_upper",
-                    "classification": "conditional_or_external_dependency",
-                    "rh_blockers": ["conditional_or_external_marker"],
-                },
+                    "module_name": name,
+                    "classification": (
+                        "conditional_or_external_dependency"
+                        if name == "mertens_conditional_l2_upper"
+                        else "open_or_unresolved"
+                    ),
+                    "rh_blockers": [],
+                }
+                for name in MODULE_ROLE_REGISTRY
             ]
         }
 
