@@ -1,0 +1,501 @@
+{
+  "certificate_type": "prime_matrix_mfac_rh_main_chain_graph_audit",
+  "cycle_edges": {
+    "C1": "Chebyshev_error → W0/W2",
+    "C2": "Mellin_norm → W2",
+    "C3": "zero_free_region/zeta_zero → W3/W4",
+    "C4": "RH → W1--W5",
+    "C5": "finite_profile → W1/W3/W4",
+    "C6": "free_multiplicative_model → W3",
+    "C7": "Mertens/PNT cancellation → W1 tail L2"
+  },
+  "inventory_path": "docs/monograph/prime-matrix-mfac-project-inventory-audit.json",
+  "main_chain_edges": [
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W0",
+      "status": "unproved",
+      "target": "W1"
+    },
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W1",
+      "status": "unproved",
+      "target": "W2"
+    },
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W2",
+      "status": "unproved",
+      "target": "W3"
+    },
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W3",
+      "status": "unproved",
+      "target": "W4"
+    },
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W4",
+      "status": "unproved",
+      "target": "W5"
+    },
+    {
+      "forbidden_inputs": [
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "Mellin"
+      ],
+      "source": "W5",
+      "status": "unproved",
+      "target": "RH"
+    }
+  ],
+  "module_count": 19,
+  "module_roles": [
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "actual_lcm_gram_energy",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "实际 LCM Gram 能量仅提供 W0 的有限见证审计。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "W1",
+          "rationale": "实际 Gram 能量关联去常数强制性义务。",
+          "relation": "forward_obligation"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "actual_record_constructor",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "实际记录构造是 W0 的候选输入审计。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "C1",
+          "rationale": "目标量回灌构造会形成 C1 循环。",
+          "relation": "cycle_detected"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "centered_divisibility_covariance",
+      "roles": [
+        {
+          "node": "W1",
+          "rationale": "中心化整除协方差属于 W1 的有限谱诊断。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "C1",
+          "rationale": "以 Chebyshev 误差选取见证会形成 C1 循环。",
+          "relation": "cycle_detected"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "colored_divisor_word_transport",
+      "roles": [
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "运输结构未提供 W0--W5 正向全称边。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "global_free_mellin_mode_no_go",
+      "roles": [
+        {
+          "node": "C6",
+          "rationale": "自由乘法模型不足以建立实际 Mellin 收缩。",
+          "relation": "insufficient_not_cycle"
+        },
+        {
+          "node": "W3",
+          "rationale": "该反模型只约束 W3 所需的实际输入形式。",
+          "relation": "forward_obligation"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "lcm_offconstant_projection_circularity",
+      "roles": [
+        {
+          "node": "C1",
+          "rationale": "直接投影读取目标误差时形成 C1 循环。",
+          "relation": "cycle_detected"
+        },
+        {
+          "node": "W1",
+          "rationale": "去常数投影关联 W1，但未证明统一强制性。",
+          "relation": "forward_obligation"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "conditional_or_external_dependency",
+      "inventory_rh_blockers": [
+        "conditional_or_external_marker"
+      ],
+      "module_name": "mertens_conditional_l2_upper",
+      "roles": [
+        {
+          "node": "W1",
+          "rationale": "全 epsilon Mertens 界只条件化 W1 的尾和路线。",
+          "relation": "conditional_dependency"
+        },
+        {
+          "node": "C7",
+          "rationale": "Mertens 消去是 C7 的显式外部条件。",
+          "relation": "conditional_dependency"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "mertens_randomness_contraction",
+      "roles": [
+        {
+          "node": "W3",
+          "rationale": "随机性收缩仅以 Mertens 型假设条件化。",
+          "relation": "conditional_dependency"
+        },
+        {
+          "node": "C7",
+          "rationale": "Mertens 消去不可被标为 MFAC 自足来源。",
+          "relation": "conditional_dependency"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "mobius_tail_l2",
+      "roles": [
+        {
+          "node": "W1",
+          "rationale": "Euler--phi 尾和恒等式是 W1 的有限层。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "C7",
+          "rationale": "整体 L2 上界仍依赖命名 Möbius 消去。",
+          "relation": "conditional_dependency"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "orientation_provenance_no_go",
+      "roles": [
+        {
+          "node": "C1",
+          "rationale": "方向来源若读取目标信息会构成 C1 循环。",
+          "relation": "cycle_detected"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "来源否定审计不提供 RH 正向边。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "primitive_normalization_underdetermination",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "原始归一化欠定限制 W0 候选见证。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "欠定结论不是 W0 闭合定理。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "missing_or_unreadable_certificate",
+      "inventory_rh_blockers": [
+        "FileNotFoundError"
+      ],
+      "module_name": "project_inventory",
+      "roles": [
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "库存只提供模块状态索引。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "registration_hash",
+      "roles": [
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "注册哈希不提供 RH 主链解析边。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "rough_cofactor_mobius_signed_transport",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "带符号运输关联实际见证候选。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "局部运输没有 W0--W5 全称推论。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "conditional_or_external_dependency",
+      "inventory_rh_blockers": [
+        "conditional_or_external_marker"
+      ],
+      "module_name": "semiprime_local_naturality_factorization",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "局部自然性只在显式局部模型条件下成立。",
+          "relation": "conditional_dependency"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "局部模型不闭合 RH 主链。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "semiprime_triad_dispatch",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "实际 dispatch 仅重建 W0 候选资料。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "重建不等于独立全称见证定理。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_proved_missing_or_invalid"
+      ],
+      "module_name": "square_base_seed_binding",
+      "roles": [
+        {
+          "node": "W0",
+          "rationale": "square-base seed 限制 W0 的实际系数来源。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "no_direct_rh_role",
+          "rationale": "绑定审计不提供后续主链边。",
+          "relation": "no_direct_rh_role"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "truncated_mobius_log_coercivity",
+      "roles": [
+        {
+          "node": "W1",
+          "rationale": "固定截断族是 W1 的有限诊断。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "C5",
+          "rationale": "有限剖面不足以证明统一 W1。",
+          "relation": "insufficient_not_cycle"
+        }
+      ]
+    },
+    {
+      "inventory_classification": "open_or_unresolved",
+      "inventory_rh_blockers": [
+        "rh_not_proved_or_open_marker"
+      ],
+      "module_name": "uniform_offconstant_coercivity",
+      "roles": [
+        {
+          "node": "W1",
+          "rationale": "去常数候选扫描关联 W1。",
+          "relation": "forward_obligation"
+        },
+        {
+          "node": "C5",
+          "rationale": "有限扫描不是全称强制性定理。",
+          "relation": "insufficient_not_cycle"
+        }
+      ]
+    }
+  ],
+  "nodes": {
+    "W0": {
+      "blockers": [
+        "conditional_dependency_present"
+      ],
+      "status": "conditional",
+      "support_modules": [
+        "actual_lcm_gram_energy",
+        "actual_record_constructor",
+        "primitive_normalization_underdetermination",
+        "rough_cofactor_mobius_signed_transport",
+        "semiprime_local_naturality_factorization",
+        "semiprime_triad_dispatch",
+        "square_base_seed_binding"
+      ]
+    },
+    "W1": {
+      "blockers": [
+        "conditional_dependency_present"
+      ],
+      "status": "conditional",
+      "support_modules": [
+        "actual_lcm_gram_energy",
+        "centered_divisibility_covariance",
+        "lcm_offconstant_projection_circularity",
+        "mertens_conditional_l2_upper",
+        "mobius_tail_l2",
+        "truncated_mobius_log_coercivity",
+        "uniform_offconstant_coercivity"
+      ]
+    },
+    "W2": {
+      "blockers": [
+        "no_registered_support_module"
+      ],
+      "status": "not_started",
+      "support_modules": []
+    },
+    "W3": {
+      "blockers": [
+        "conditional_dependency_present"
+      ],
+      "status": "conditional",
+      "support_modules": [
+        "global_free_mellin_mode_no_go",
+        "mertens_randomness_contraction"
+      ]
+    },
+    "W4": {
+      "blockers": [
+        "no_registered_support_module"
+      ],
+      "status": "not_started",
+      "support_modules": []
+    },
+    "W5": {
+      "blockers": [
+        "no_registered_support_module"
+      ],
+      "status": "not_started",
+      "support_modules": []
+    }
+  },
+  "rh_chain_closed": false,
+  "rh_proved": false,
+  "shortest_blocking_path": [
+    "W1",
+    "W2"
+  ],
+  "stale_registry_modules": [],
+  "unmapped_modules": []
+}
