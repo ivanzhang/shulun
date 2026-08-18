@@ -13,7 +13,7 @@ import argparse
 from collections.abc import Mapping
 from fractions import Fraction
 import json
-from math import log
+from math import isfinite, log
 from pathlib import Path
 import sys
 
@@ -299,6 +299,46 @@ def audit_log_saving_diagnostic(cutoff: object) -> dict[str, object]:
     }
 
 
+def _validate_certificate(certificate: object) -> None:
+    """验证证书只能表达本审计实际生成的有限诊断结论。"""
+    if not isinstance(certificate, Mapping):
+        raise ValueError("certificate 必须是 Mapping")
+
+    required_statuses = {
+        "certificate_type": "prime_matrix_mfac_unconditional_w1_w2_log_saving_audit",
+        "formal_convolution_status": "verified_finite",
+        "actual_log_window_status": "numerical_only",
+        "baseline_bound_status": "not_proved",
+        "balanced_remainder_status": "open",
+        "w1_l2_upper_status": "open",
+    }
+    for field, expected_value in required_statuses.items():
+        value = certificate.get(field)
+        if type(value) is not str or value != expected_value:
+            raise ValueError(f"certificate 的 {field} 不符合有限审计合同")
+
+    cutoff = certificate.get("cutoff")
+    if type(cutoff) is not int or cutoff < 3:
+        raise ValueError("certificate 的 cutoff 必须是至少为 3 的内建整数")
+
+    for field in (
+        "limit_kernel_energy",
+        "euler_phi_square_energy",
+        "euler_phi_energy_residual",
+        "mass",
+        "log_scaled_ratio",
+    ):
+        value = certificate.get(field)
+        if type(value) is int:
+            continue
+        if type(value) is not float or not isfinite(value):
+            raise ValueError(f"certificate 的 {field} 必须是有限内建 int 或 float")
+
+    rh_proved = certificate.get("rh_proved")
+    if type(rh_proved) is not bool or rh_proved is not False:
+        raise ValueError("certificate 的 rh_proved 必须是内建 bool False")
+
+
 def render_markdown(certificate: Mapping[str, object]) -> str:
     """渲染诊断证书，并明确保留未证明的数学边界。
 
@@ -306,6 +346,7 @@ def render_markdown(certificate: Mapping[str, object]) -> str:
       markdown = render_markdown(audit_log_saving_diagnostic(64))
       assert "rh_proved=false" in markdown
     """
+    _validate_certificate(certificate)
     return (
         "# MFAC 无条件 W1 对数节省缺口有限审计\n\n"
         f"- 截断：`D={certificate['cutoff']}`\n"
@@ -340,6 +381,9 @@ def write_certificate(
       certificate = audit_log_saving_diagnostic(64)
       write_certificate(certificate, Path("audit.json"), Path("audit.md"))
     """
+    _validate_certificate(certificate)
+    if json_path.resolve() == markdown_path.resolve():
+        raise ValueError("JSON 与 Markdown 输出路径不得相同")
     json_path.parent.mkdir(parents=True, exist_ok=True)
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
     json_path.write_text(
