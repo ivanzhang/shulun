@@ -9,9 +9,23 @@
 
 from __future__ import annotations
 
+import argparse
 from collections.abc import Mapping
 from fractions import Fraction
+import json
+from math import log
+from pathlib import Path
+import sys
 
+if __package__ in (None, ""):
+    # 直接用脚本路径启动时，把仓库根目录加入导入路径。
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from experiments.prime_matrix_mfac_mobius_tail_l2_audit import (
+    euler_phi_square_energy_float,
+    limit_kernel_energy_float,
+    truncated_mobius_log_limit_coefficients,
+)
 from experiments.prime_matrix_mfac_truncated_mobius_log_coercivity_audit import (
     mobius_value,
 )
@@ -41,6 +55,16 @@ ALLOWED_SOURCES = frozenset(
     }
 )
 """无条件有限义务允许登记的来源名称。"""
+
+DEFAULT_JSON = Path(
+    "docs/monograph/prime-matrix-mfac-unconditional-w1-w2-log-saving-audit.json"
+)
+"""默认 JSON 证书路径。"""
+
+DEFAULT_MARKDOWN = Path(
+    "docs/monograph/prime-matrix-mfac-unconditional-w1-w2-log-saving-audit.md"
+)
+"""默认 Markdown 证书路径。"""
 
 
 def _require_index(index: object) -> int:
@@ -233,3 +257,111 @@ def audit_unconditional_w1_contract(
         "balanced_remainder_status": "open",
         "rh_proved": False,
     }
+
+
+def _require_cutoff(cutoff: object) -> int:
+    """验证能量诊断使用的截断点。"""
+    if type(cutoff) is not int or cutoff < 3:
+        raise ValueError("cutoff 必须是至少为 3 的内建整数")
+    return cutoff
+
+
+def audit_log_saving_diagnostic(cutoff: object) -> dict[str, object]:
+    """生成有限截断的数值能量诊断，不升级为统一对数节省定理。
+
+    用法示例：
+      certificate = audit_log_saving_diagnostic(64)
+      assert certificate["w1_l2_upper_status"] == "open"
+    """
+    checked_cutoff = _require_cutoff(cutoff)
+    for index in range(1, checked_cutoff):
+        if formal_mobius_lambda(index) != formal_negative_mobius_log(index):
+            raise RuntimeError(f"形式 Möbius--Lambda 恒等式在 index={index} 失败")
+
+    coefficients = truncated_mobius_log_limit_coefficients(checked_cutoff)
+    direct_energy = limit_kernel_energy_float(coefficients)
+    euler_phi_energy = euler_phi_square_energy_float(coefficients)
+    mass = sum(value * value / index for index, value in coefficients.items())
+    return {
+        "certificate_type": "prime_matrix_mfac_unconditional_w1_w2_log_saving_audit",
+        "cutoff": checked_cutoff,
+        "formal_convolution_status": "verified_finite",
+        "actual_log_window_status": "numerical_only",
+        "limit_kernel_energy": direct_energy,
+        "euler_phi_square_energy": euler_phi_energy,
+        "euler_phi_energy_residual": abs(direct_energy - euler_phi_energy),
+        "mass": mass,
+        "log_scaled_ratio": log(float(checked_cutoff)) * euler_phi_energy / mass,
+        "baseline_bound_status": "not_proved",
+        "balanced_remainder_status": "open",
+        "w1_l2_upper_status": "open",
+        "rh_proved": False,
+    }
+
+
+def render_markdown(certificate: Mapping[str, object]) -> str:
+    """渲染诊断证书，并明确保留未证明的数学边界。
+
+    用法示例：
+      markdown = render_markdown(audit_log_saving_diagnostic(64))
+      assert "rh_proved=false" in markdown
+    """
+    return (
+        "# MFAC 无条件 W1 对数节省缺口有限审计\n\n"
+        f"- 截断：`D={certificate['cutoff']}`\n"
+        f"- 极限核能量：`{certificate['limit_kernel_energy']}`\n"
+        f"- Euler--phi 能量：`{certificate['euler_phi_square_energy']}`\n"
+        f"- Euler--phi 残差：`{certificate['euler_phi_energy_residual']}`\n"
+        f"- 质量：`{certificate['mass']}`\n"
+        f"- log 缩放比率：`{certificate['log_scaled_ratio']}`\n\n"
+        "```text\n"
+        "formal_convolution_status="
+        f"{certificate['formal_convolution_status']}\n"
+        "actual_log_window_status="
+        f"{certificate['actual_log_window_status']}\n"
+        "baseline_bound_status="
+        f"{certificate['baseline_bound_status']}\n"
+        "balanced_remainder_status="
+        f"{certificate['balanced_remainder_status']}\n"
+        f"w1_l2_upper_status={certificate['w1_l2_upper_status']}\n"
+        f"rh_proved={str(certificate['rh_proved']).lower()}\n"
+        "```\n\n"
+        "该证书仅核验有限形式卷积恒等式并记录固定截断的浮点数值；"
+        "不证明统一对数节省、W2 或 RH。\n"
+    )
+
+
+def write_certificate(
+    certificate: Mapping[str, object], json_path: Path, markdown_path: Path
+) -> None:
+    """写出排序 JSON 与 Markdown 证书，并自动创建父目录。
+
+    用法示例：
+      certificate = audit_log_saving_diagnostic(64)
+      write_certificate(certificate, Path("audit.json"), Path("audit.md"))
+    """
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+    markdown_path.parent.mkdir(parents=True, exist_ok=True)
+    json_path.write_text(
+        json.dumps(certificate, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    markdown_path.write_text(render_markdown(certificate), encoding="utf-8")
+
+
+def main() -> None:
+    """命令行入口：生成无条件 W1 对数节省缺口有限证书。"""
+    parser = argparse.ArgumentParser(description="生成 MFAC 无条件 W1 对数节省缺口审计")
+    parser.add_argument("--cutoff", type=int, default=4096)
+    parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
+    parser.add_argument("--markdown-out", type=Path, default=DEFAULT_MARKDOWN)
+    args = parser.parse_args()
+
+    certificate = audit_log_saving_diagnostic(args.cutoff)
+    write_certificate(certificate, args.json_out, args.markdown_out)
+    print(f"wrote {args.json_out}")
+    print(f"wrote {args.markdown_out}")
+
+
+if __name__ == "__main__":
+    main()
