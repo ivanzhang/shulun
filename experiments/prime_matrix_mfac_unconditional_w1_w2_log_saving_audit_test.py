@@ -7,16 +7,24 @@
 from __future__ import annotations
 
 from fractions import Fraction
+import json
+from pathlib import Path
+import subprocess
+import sys
+from tempfile import TemporaryDirectory
 import unittest
 
 from experiments.prime_matrix_mfac_unconditional_w1_w2_log_saving_audit import (
     ALLOWED_SOURCES,
     FORBIDDEN_SOURCES,
     abel_sum_by_parts,
+    audit_log_saving_diagnostic,
     audit_unconditional_w1_contract,
     default_contract,
     formal_mobius_lambda,
     formal_negative_mobius_log,
+    render_markdown,
+    write_certificate,
 )
 
 
@@ -188,6 +196,89 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
         self.assertEqual(result["w1_l2_upper_status"], "open")
         self.assertEqual(result["balanced_remainder_status"], "open")
         self.assertIs(result["rh_proved"], False)
+
+    def test_log_saving_diagnostic_is_numerical_and_keeps_w1_open(self) -> None:
+        """有限能量诊断须区分形式核验、数值结果与开放命题。"""
+        certificate = audit_log_saving_diagnostic(64)
+
+        self.assertEqual(
+            certificate["certificate_type"],
+            "prime_matrix_mfac_unconditional_w1_w2_log_saving_audit",
+        )
+        self.assertEqual(certificate["cutoff"], 64)
+        self.assertEqual(certificate["formal_convolution_status"], "verified_finite")
+        self.assertEqual(certificate["actual_log_window_status"], "numerical_only")
+        self.assertLess(certificate["euler_phi_energy_residual"], 1e-10)
+        self.assertEqual(certificate["baseline_bound_status"], "not_proved")
+        self.assertEqual(certificate["balanced_remainder_status"], "open")
+        self.assertEqual(certificate["w1_l2_upper_status"], "open")
+        self.assertIs(certificate["rh_proved"], False)
+
+    def test_log_saving_diagnostic_rejects_invalid_cutoffs(self) -> None:
+        """诊断入口只接受至少为三的内建整数截断点。"""
+        for cutoff in (True, False, 2, 0, -1, 3.0, _IntegerSubclass(64)):
+            with self.subTest(cutoff=cutoff):
+                with self.assertRaises(ValueError):
+                    audit_log_saving_diagnostic(cutoff)
+
+    def test_certificate_writers_emit_sorted_json_and_boundary_markdown(self) -> None:
+        """证书写入器必须生成可解析 JSON 与明确的开放边界说明。"""
+        certificate = audit_log_saving_diagnostic(64)
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            json_path = root / "nested" / "certificate.json"
+            markdown_path = root / "nested" / "certificate.md"
+
+            write_certificate(certificate, json_path, markdown_path)
+
+            self.assertEqual(json.loads(json_path.read_text(encoding="utf-8")), certificate)
+            self.assertEqual(
+                json_path.read_text(encoding="utf-8").splitlines()[1],
+                '  "actual_log_window_status": "numerical_only",',
+            )
+            markdown = markdown_path.read_text(encoding="utf-8")
+            for field in (
+                "formal_convolution_status=verified_finite",
+                "actual_log_window_status=numerical_only",
+                "balanced_remainder_status=open",
+                "w1_l2_upper_status=open",
+                "rh_proved=false",
+                "不证明统一对数节省、W2 或 RH",
+            ):
+                with self.subTest(field=field):
+                    self.assertIn(field, markdown)
+            self.assertEqual(render_markdown(certificate), markdown)
+
+    def test_cli_writes_parseable_certificate_with_open_boundaries(self) -> None:
+        """脚本路径 CLI 必须写出可解析证书和不越界的 Markdown。"""
+        script = Path(__file__).with_name(
+            "prime_matrix_mfac_unconditional_w1_w2_log_saving_audit.py"
+        )
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            json_path = root / "result.json"
+            markdown_path = root / "result.md"
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--cutoff",
+                    "64",
+                    "--json-out",
+                    str(json_path),
+                    "--markdown-out",
+                    str(markdown_path),
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            certificate = json.loads(json_path.read_text(encoding="utf-8"))
+            self.assertEqual(certificate["cutoff"], 64)
+            self.assertEqual(certificate["w1_l2_upper_status"], "open")
+            self.assertIn(str(json_path), completed.stdout)
+            self.assertIn("不证明统一对数节省、W2 或 RH", markdown_path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
