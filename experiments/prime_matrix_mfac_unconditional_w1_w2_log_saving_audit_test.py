@@ -10,7 +10,11 @@ from fractions import Fraction
 import unittest
 
 from experiments.prime_matrix_mfac_unconditional_w1_w2_log_saving_audit import (
+    ALLOWED_SOURCES,
+    FORBIDDEN_SOURCES,
     abel_sum_by_parts,
+    audit_unconditional_w1_contract,
+    default_contract,
     formal_mobius_lambda,
     formal_negative_mobius_log,
 )
@@ -18,6 +22,10 @@ from experiments.prime_matrix_mfac_unconditional_w1_w2_log_saving_audit import (
 
 class _IntegerSubclass(int):
     """用于验证公开接口拒绝内建 int 的子类。"""
+
+
+class _StringSubclass(str):
+    """用于验证合同来源只接受内建 str。"""
 
 
 class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
@@ -93,6 +101,93 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             abel_sum_by_parts({2: Fraction(1, 2)}, {2: 1})
+
+    def test_default_contract_registers_only_open_finite_obligations(self) -> None:
+        """默认合同只登记允许的有限来源与未解决状态。"""
+        contract = default_contract()
+
+        self.assertEqual(
+            contract["uses"],
+            (
+                "finite_dirichlet_convolution",
+                "abel_summation_identity",
+                "euler_phi_identity",
+            ),
+        )
+        self.assertEqual(contract["uniformity_variable"], "truncation")
+        self.assertEqual(contract["constant_dependency"], ())
+        self.assertEqual(contract["w1_l2_upper_status"], "open")
+        self.assertEqual(contract["balanced_remainder_status"], "open")
+        self.assertIs(contract["rh_proved"], False)
+        self.assertTrue(set(contract["uses"]).issubset(ALLOWED_SOURCES))
+
+    def test_contract_rejects_forbidden_and_unknown_sources(self) -> None:
+        """禁止来源与未知来源均不得进入无条件合同。"""
+        for source in FORBIDDEN_SOURCES:
+            contract = default_contract()
+            contract["uses"] = (source,)
+            with self.subTest(source=source):
+                with self.assertRaisesRegex(ValueError, "禁止"):
+                    audit_unconditional_w1_contract(contract)
+
+        contract = default_contract()
+        contract["uses"] = ("unregistered_source",)
+        with self.assertRaises(ValueError):
+            audit_unconditional_w1_contract(contract)
+
+    def test_contract_rejects_invalid_scope_dependencies_and_uses(self) -> None:
+        """合同字段必须保持指定的统一性、常数依赖及来源数据类型。"""
+        invalid_contracts = (
+            {"uniformity_variable": "scale"},
+            {"constant_dependency": ("parameter",)},
+            {"constant_dependency": "parameter"},
+            {"constant_dependency": ["parameter"]},
+            {"uses": "finite_dirichlet_convolution"},
+            {"uses": ["finite_dirichlet_convolution"]},
+            {"uses": ()},
+            {"uses": (1,)},
+            {"uses": (_StringSubclass("finite_dirichlet_convolution"),)},
+        )
+        for overrides in invalid_contracts:
+            contract = default_contract()
+            contract.update(overrides)
+            with self.subTest(overrides=overrides):
+                with self.assertRaises(ValueError):
+                    audit_unconditional_w1_contract(contract)
+
+        with self.assertRaises(ValueError):
+            audit_unconditional_w1_contract([])
+
+    def test_contract_rejects_any_claim_promotion(self) -> None:
+        """合同不得把 W1、平衡余项或 RH 升格为已证明。"""
+        invalid_contracts = (
+            {"w1_l2_upper_status": "proved"},
+            {"balanced_remainder_status": "proved"},
+            {"rh_proved": True},
+            {"rh_proved": 1},
+            {"rh_proved": 0},
+        )
+        for overrides in invalid_contracts:
+            contract = default_contract()
+            contract.update(overrides)
+            with self.subTest(overrides=overrides):
+                with self.assertRaises(ValueError):
+                    audit_unconditional_w1_contract(contract)
+
+    def test_contract_returns_registered_open_status_without_proof_claim(self) -> None:
+        """审计结果只回传允许来源和固定开放状态。"""
+        contract = default_contract()
+        contract["uses"] = (
+            "finite_dirichlet_convolution",
+            "classical_sieve_bound",
+        )
+
+        result = audit_unconditional_w1_contract(contract)
+
+        self.assertEqual(result["uses"], contract["uses"])
+        self.assertEqual(result["w1_l2_upper_status"], "open")
+        self.assertEqual(result["balanced_remainder_status"], "open")
+        self.assertIs(result["rh_proved"], False)
 
 
 if __name__ == "__main__":
