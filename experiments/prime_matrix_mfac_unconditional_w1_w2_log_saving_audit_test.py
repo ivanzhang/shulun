@@ -214,6 +214,31 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
         self.assertEqual(certificate["w1_l2_upper_status"], "open")
         self.assertIs(certificate["rh_proved"], False)
 
+    def test_log_saving_diagnostic_keeps_conclusion_boundaries_across_cutoffs(
+        self,
+    ) -> None:
+        """不同截断的证书与渲染结果都不得升级开放结论。"""
+        for cutoff in (16, 64, 128):
+            with self.subTest(cutoff=cutoff):
+                certificate = audit_log_saving_diagnostic(cutoff)
+
+                self.assertEqual(
+                    certificate["actual_log_window_status"],
+                    "numerical_only",
+                )
+                self.assertEqual(certificate["baseline_bound_status"], "not_proved")
+                self.assertEqual(certificate["balanced_remainder_status"], "open")
+                self.assertEqual(certificate["w1_l2_upper_status"], "open")
+                self.assertIs(certificate["rh_proved"], False)
+
+                markdown = render_markdown(certificate)
+                self.assertIn(
+                    "balanced_remainder_status=open\n"
+                    "w1_l2_upper_status=open\n"
+                    "rh_proved=false",
+                    markdown,
+                )
+
     def test_log_saving_diagnostic_rejects_invalid_cutoffs(self) -> None:
         """诊断入口只接受至少为三的内建整数截断点。"""
         for cutoff in (True, False, 2, 0, -1, 3.0, _IntegerSubclass(64)):
