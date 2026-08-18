@@ -249,6 +249,105 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
                     self.assertIn(field, markdown)
             self.assertEqual(render_markdown(certificate), markdown)
 
+    def test_certificate_writers_reject_forged_or_malformed_diagnostics(self) -> None:
+        """渲染与写入入口必须拒绝伪造结论、缺失字段和非法数值。"""
+        certificate = audit_log_saving_diagnostic(64)
+        required_fields = (
+            "certificate_type",
+            "cutoff",
+            "formal_convolution_status",
+            "actual_log_window_status",
+            "limit_kernel_energy",
+            "euler_phi_square_energy",
+            "euler_phi_energy_residual",
+            "mass",
+            "log_scaled_ratio",
+            "baseline_bound_status",
+            "balanced_remainder_status",
+            "w1_l2_upper_status",
+            "rh_proved",
+        )
+        invalid_certificates: list[object] = [[], None]
+        for field in required_fields:
+            missing = dict(certificate)
+            del missing[field]
+            invalid_certificates.append(missing)
+
+        for field, value in (
+            ("certificate_type", "forged_certificate"),
+            ("cutoff", True),
+            ("cutoff", 2),
+            ("formal_convolution_status", "open"),
+            ("actual_log_window_status", "proved"),
+            ("baseline_bound_status", "proved"),
+            ("balanced_remainder_status", "proved"),
+            ("w1_l2_upper_status", "proved"),
+            ("rh_proved", True),
+            ("limit_kernel_energy", True),
+            ("euler_phi_square_energy", Fraction(1, 2)),
+            ("euler_phi_energy_residual", float("inf")),
+            ("mass", float("nan")),
+            ("log_scaled_ratio", "1.0"),
+        ):
+            malformed = dict(certificate)
+            malformed[field] = value
+            invalid_certificates.append(malformed)
+
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            for invalid_certificate in invalid_certificates:
+                with self.subTest(certificate=invalid_certificate):
+                    with self.assertRaises(ValueError):
+                        render_markdown(invalid_certificate)
+                    with self.assertRaises(ValueError):
+                        write_certificate(
+                            invalid_certificate,
+                            root / "certificate.json",
+                            root / "certificate.md",
+                        )
+
+    def test_certificate_writers_reject_same_resolved_output_path(self) -> None:
+        """同一规范化输出路径必须在建目录和写文件前被拒绝。"""
+        certificate = audit_log_saving_diagnostic(64)
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output_path = root / "nested" / "certificate"
+
+            with self.assertRaises(ValueError):
+                write_certificate(certificate, output_path, output_path)
+
+            self.assertFalse(output_path.exists())
+            self.assertFalse(output_path.parent.exists())
+
+    def test_cli_rejects_same_resolved_output_path_without_writing(self) -> None:
+        """CLI 对同一输出路径必须非零退出，且不得误报或写出文件。"""
+        script = Path(__file__).with_name(
+            "prime_matrix_mfac_unconditional_w1_w2_log_saving_audit.py"
+        )
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output_path = root / "nested" / "certificate"
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--cutoff",
+                    "64",
+                    "--json-out",
+                    str(output_path),
+                    "--markdown-out",
+                    str(output_path),
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertNotEqual(completed.returncode, 0)
+            self.assertNotIn("wrote", completed.stdout)
+            self.assertFalse(output_path.exists())
+            self.assertFalse(output_path.parent.exists())
+
     def test_cli_writes_parseable_certificate_with_open_boundaries(self) -> None:
         """脚本路径 CLI 必须写出可解析证书和不越界的 Markdown。"""
         script = Path(__file__).with_name(
