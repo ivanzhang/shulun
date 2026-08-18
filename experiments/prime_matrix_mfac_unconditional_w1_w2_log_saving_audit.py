@@ -17,6 +17,32 @@ from experiments.prime_matrix_mfac_truncated_mobius_log_coercivity_audit import 
 )
 
 
+FORBIDDEN_SOURCES = frozenset(
+    {
+        "Mertens",
+        "PNT",
+        "RH",
+        "zeta_zero",
+        "zero_free_region",
+        "explicit_formula",
+        "Mellin",
+        "Chebyshev_error",
+        "target_w1_upper",
+    }
+)
+"""无条件有限义务不得援引的来源名称。"""
+
+ALLOWED_SOURCES = frozenset(
+    {
+        "finite_dirichlet_convolution",
+        "abel_summation_identity",
+        "euler_phi_identity",
+        "classical_sieve_bound",
+    }
+)
+"""无条件有限义务允许登记的来源名称。"""
+
+
 def _require_index(index: object) -> int:
     """验证形式恒等式使用的正内建整数索引。"""
     if type(index) is not int or index < 1:
@@ -128,4 +154,82 @@ def abel_sum_by_parts(
         "direct": direct,
         "summation_by_parts": summation_by_parts,
         "residual": direct - summation_by_parts,
+    }
+
+
+def default_contract() -> dict[str, object]:
+    """返回只登记有限恒等式且保持开放结论的默认合同。
+
+    用法示例：
+      contract = default_contract()
+      assert contract["rh_proved"] is False
+    """
+    return {
+        "uses": (
+            "finite_dirichlet_convolution",
+            "abel_summation_identity",
+            "euler_phi_identity",
+        ),
+        "uniformity_variable": "truncation",
+        "constant_dependency": (),
+        "w1_l2_upper_status": "open",
+        "balanced_remainder_status": "open",
+        "rh_proved": False,
+    }
+
+
+def _require_open_status(contract: Mapping[str, object], field: str) -> None:
+    """拒绝把尚未解决的义务登记为已证明。"""
+    status = contract.get(field)
+    if type(status) is not str or status != "open":
+        raise ValueError(f"{field} 必须登记为 open，禁止提升为证明")
+
+
+def audit_unconditional_w1_contract(
+    contract: Mapping[str, object],
+) -> dict[str, object]:
+    """核验无条件 W1 合同仅登记有限来源与开放状态。
+
+    用法示例：
+      result = audit_unconditional_w1_contract(default_contract())
+      assert result["w1_l2_upper_status"] == "open"
+    """
+    if not isinstance(contract, Mapping):
+        raise ValueError("contract 必须是 Mapping")
+
+    uses = contract.get("uses")
+    if type(uses) is not tuple or not uses:
+        raise ValueError("uses 必须是非空 tuple")
+    checked_uses: list[str] = []
+    for source in uses:
+        if type(source) is not str:
+            raise ValueError("uses 的元素必须是内建 str")
+        if source in FORBIDDEN_SOURCES:
+            raise ValueError(f"禁止使用来源：{source}")
+        if source not in ALLOWED_SOURCES:
+            raise ValueError(f"未知来源：{source}")
+        checked_uses.append(source)
+
+    uniformity_variable = contract.get("uniformity_variable")
+    if type(uniformity_variable) is not str or uniformity_variable != "truncation":
+        raise ValueError("uniformity_variable 必须是 truncation")
+
+    constant_dependency = contract.get("constant_dependency")
+    if type(constant_dependency) is not tuple or constant_dependency:
+        raise ValueError("constant_dependency 必须是空 tuple")
+
+    _require_open_status(contract, "w1_l2_upper_status")
+    _require_open_status(contract, "balanced_remainder_status")
+
+    rh_proved = contract.get("rh_proved")
+    if type(rh_proved) is not bool or rh_proved is not False:
+        raise ValueError("rh_proved 必须是内建 bool False，禁止声称 RH 已证明")
+
+    return {
+        "uses": tuple(checked_uses),
+        "uniformity_variable": "truncation",
+        "constant_dependency": (),
+        "w1_l2_upper_status": "open",
+        "balanced_remainder_status": "open",
+        "rh_proved": False,
     }
