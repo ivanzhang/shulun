@@ -16,6 +16,10 @@ from experiments.prime_matrix_mfac_unconditional_w1_w2_log_saving_audit import (
 )
 
 
+class _IntegerSubclass(int):
+    """用于验证公开接口拒绝内建 int 的子类。"""
+
+
 class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
     """验证有限形式对数系数恒等式，不涉及 W1、W2 或 RH。"""
 
@@ -27,6 +31,20 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
                 formal_negative_mobius_log(index),
                 index,
             )
+
+    def test_formal_log_coefficients_match_independent_small_fixtures(self) -> None:
+        """已知小整数的形式系数必须匹配独立写出的数学夹具。"""
+        fixtures = {
+            1: {},
+            2: {2: Fraction(1, 1)},
+            6: {2: Fraction(-1, 1), 3: Fraction(-1, 1)},
+            8: {},
+            12: {},
+        }
+        for index, expected in fixtures.items():
+            with self.subTest(index=index):
+                self.assertEqual(formal_negative_mobius_log(index), expected)
+                self.assertEqual(formal_mobius_lambda(index), expected)
 
     def test_abel_sum_by_parts_has_zero_rational_residual(self) -> None:
         """有理夹具必须精确满足有限 Abel 求和恒等式。"""
@@ -47,16 +65,32 @@ class MFACUnconditionalW1W2LogSavingAuditTest(unittest.TestCase):
         self.assertEqual(result["direct"], result["summation_by_parts"])
 
     def test_public_apis_reject_invalid_inputs(self) -> None:
-        """公开接口必须拒绝布尔索引与非 Fraction 的 Abel 权重。"""
+        """公开接口必须拒绝非内建正整数索引与非法 Abel 数据。"""
         with self.assertRaises(ValueError):
             formal_negative_mobius_log(True)
         with self.assertRaises(ValueError):
             formal_mobius_lambda(0)
-        with self.assertRaises(ValueError):
-            abel_sum_by_parts(
+
+        invalid_abel_inputs = (
+            ({}, {}),
+            ([], {2: Fraction(1, 2)}),
+            ({2: Fraction(1, 2)}, []),
+            ({True: Fraction(1, 2)}, {True: Fraction(1, 2)}),
+            (
+                {_IntegerSubclass(2): Fraction(1, 2)},
+                {_IntegerSubclass(2): Fraction(1, 2)},
+            ),
+            ({2: 1}, {2: Fraction(1, 2)}),
+            (
                 {2: Fraction(1, 2)},
                 {2: Fraction(1, 2), 3: Fraction(1, 3)},
-            )
+            ),
+        )
+        for values, weights in invalid_abel_inputs:
+            with self.subTest(values=values, weights=weights):
+                with self.assertRaises(ValueError):
+                    abel_sum_by_parts(values, weights)
+
         with self.assertRaises(ValueError):
             abel_sum_by_parts({2: Fraction(1, 2)}, {2: 1})
 
