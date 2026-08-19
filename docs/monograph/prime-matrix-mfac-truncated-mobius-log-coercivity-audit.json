@@ -1,0 +1,109 @@
+{
+  "certificate_type": "prime_matrix_mfac_truncated_mobius_log_coercivity_audit",
+  "chebyshev_bridge_status": "not_started",
+  "coefficient_contract": {
+    "forbidden_inputs": [
+      "Chebyshev_error",
+      "Mellin",
+      "RH",
+      "explicit_formula",
+      "psi(X)-X",
+      "zeta_zero"
+    ],
+    "uses": [
+      "X",
+      "d",
+      "mobius",
+      "log",
+      "fixed_linear_window"
+    ]
+  },
+  "coefficient_contract_audit": {
+    "classification": "coefficient_input_not_rejected",
+    "forbidden_inputs": []
+  },
+  "coefficient_family_status": "specified",
+  "coefficient_independence_verified": true,
+  "coefficients": {
+    "2": 0.46209812037329684,
+    "3": 0.518192528544643,
+    "5": 0.363771543814899,
+    "6": -0.2478824564725334,
+    "7": 0.12495667077788648
+  },
+  "comparison_witness_profiles": {
+    "high_divisor_composite": {
+      "coefficient_count": 1,
+      "coefficient_support": [
+        8
+      ],
+      "kind": "high_divisor_composite",
+      "normalized_energy_ratio": 0.875,
+      "quadratic_centered_energy": 448.0,
+      "status": "computed_finite_scale",
+      "weighted_mass": 512.0
+    },
+    "primorial": {
+      "coefficient_count": 1,
+      "coefficient_support": [
+        6
+      ],
+      "kind": "primorial",
+      "normalized_energy_ratio": 0.8326821327209473,
+      "quadratic_centered_energy": 568.4443359375,
+      "status": "computed_finite_scale",
+      "weighted_mass": 682.6666666666666
+    },
+    "single_prime_layer": {
+      "coefficient_count": 2,
+      "coefficient_support": [
+        5,
+        7
+      ],
+      "kind": "single_prime_layer",
+      "normalized_energy_ratio": 0.8236920833587646,
+      "quadratic_centered_energy": 1156.74609375,
+      "status": "computed_finite_scale",
+      "weighted_mass": 1404.3428571428572
+    },
+    "squarefree_mobius": {
+      "coefficient_count": 5,
+      "coefficient_support": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "kind": "squarefree_mobius",
+      "normalized_energy_ratio": 0.37572724388000817,
+      "quadratic_centered_energy": 2066.628662109375,
+      "status": "computed_finite_scale",
+      "weighted_mass": 5500.342857142857
+    }
+  },
+  "cutoff": 8,
+  "direct_centered_energy": 397.23215936366086,
+  "energy_identity_residual": 5.684341886080802e-14,
+  "finite_profile_status": "completed_numerical_only",
+  "limit": 4096,
+  "mellin_status": "not_started",
+  "normalized_energy_ratio": 0.41230989094787657,
+  "quadratic_centered_energy": 397.2321593636609,
+  "rh_proved": false,
+  "status": "numerical_only_finite_structured_coercivity_profile",
+  "structured_coercivity_status": "unproved",
+  "support": [
+    2,
+    3,
+    5,
+    6,
+    7
+  ],
+  "support_size": 5,
+  "theta": 0.25,
+  "uniform_in_limit_coercivity_proved": false,
+  "weighted_mass": 963.431069893684,
+  "window": "linear",
+  "zero_free_region_proved": false
+}
